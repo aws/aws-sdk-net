@@ -28,6 +28,8 @@ namespace Amazon.Util
 {
     internal interface ITypeInfo
     {
+        Type BaseType { get; }
+
         Assembly Assembly { get; }
         bool IsArray { get; }
 
@@ -71,6 +73,7 @@ namespace Amazon.Util
         bool IsType(Type type);
 
         string FullName { get; }
+        string Name { get; }
 
         bool IsGenericTypeDefinition { get; }
         bool IsGenericType { get; }
@@ -101,6 +104,11 @@ namespace Amazon.Util
             internal AbstractTypeInfo(Type type)
             {
                 this._type = type;
+            }
+
+            public Type BaseType
+            {
+                get { return this._type; }
             }
 
             public Type Type
@@ -189,6 +197,14 @@ namespace Amazon.Util
                 get
                 {
                     return this._type.FullName;
+                }
+            }
+
+            public string Name
+            {
+                get
+                {
+                    return this._type.Name;
                 }
             }
        }

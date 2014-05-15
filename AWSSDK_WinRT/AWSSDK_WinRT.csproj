@@ -204,7 +204,7 @@
     <Compile Include="Amazon.Util\AWSSDKUtils.winrt.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\AWSSDK_DotNet35\Amazon.Util\*" Exclude="..\AWSSDK_DotNet35\Amazon.Util\CryptoUtil.bcl.cs;..\AWSSDK_DotNet35\Amazon.Util\AWSSDKUtils.bcl.cs;..\AWSSDK_DotNet35\Amazon.Util\TypeWrapper.bcl.cs">
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Util\*" Exclude="..\AWSSDK_DotNet35\Amazon.Util\ProfileManager.cs;..\AWSSDK_DotNet35\Amazon.Util\*.bcl.cs">
       <Visible>false</Visible>
     </Compile>
   </ItemGroup>
@@ -217,7 +217,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\AWSSDK_DotNet35\*.cs" Exclude="..\AWSSDK_DotNet35\AWSClientFactory.cs;..\AWSSDK_DotNet35\AWSConfigs.bcl.cs">
+    <Compile Include="..\AWSSDK_DotNet35\*.cs" Exclude="..\AWSSDK_DotNet35\AWSClientFactory.cs;..\AWSSDK_DotNet35\AWSConfigs.bcl.cs;..\AWSSDK_DotNet35\AWSSection.cs">
       <Visible>false</Visible>
     </Compile>
     <EmbeddedResource Include="..\AWSSDK_DotNet35\endpoints.xml">

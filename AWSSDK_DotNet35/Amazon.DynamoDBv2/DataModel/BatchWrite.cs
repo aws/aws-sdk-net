@@ -177,7 +177,7 @@ namespace Amazon.DynamoDBv2.DataModel
             : base(context, config)
         {
             Type type = typeof(T);
-            StorageConfig = ItemStorageConfigCache.GetConfig(type);
+            StorageConfig = context.StorageConfigCache.GetConfig(type, config);
 
             if (StorageConfig.HasVersion)
             {

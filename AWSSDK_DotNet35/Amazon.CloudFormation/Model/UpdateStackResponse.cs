@@ -24,7 +24,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Returns information about the  UpdateStack response and response metadata.
     /// </summary>
-    public class UpdateStackResponse : UpdateStackResult
+    public partial class UpdateStackResponse : UpdateStackResult
     {
         /// <summary>
         /// Gets and sets the UpdateStackResult property.

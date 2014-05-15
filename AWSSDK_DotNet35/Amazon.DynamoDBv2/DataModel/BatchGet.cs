@@ -160,7 +160,7 @@ namespace Amazon.DynamoDBv2.DataModel
         internal BatchGet(DynamoDBContext context, DynamoDBFlatConfig config)
             : base(context, config)
         {
-            ItemStorageConfig = ItemStorageConfigCache.GetConfig<T>();
+            ItemStorageConfig = context.StorageConfigCache.GetConfig<T>(config);
         }
 
         #endregion
@@ -177,7 +177,7 @@ namespace Amazon.DynamoDBv2.DataModel
         protected List<T> TypedResults { get; set; }
         internal override void CreateDocumentBatch()
         {
-            var storageConfig = ItemStorageConfigCache.GetConfig<T>();
+            var storageConfig = Context.StorageConfigCache.GetConfig<T>(Config);
             var table = Context.GetTargetTable(storageConfig, Config);
 
             DocumentBatchGet docBatch = new DocumentBatchGet(table)

@@ -39,7 +39,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>Empty strongly-typed BatchGet object</returns>
         public BatchGet<T> CreateBatchGet<T>(DynamoDBOperationConfig operationConfig = null)
         {
-            DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.config);
+            DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.Config);
             return new BatchGet<T>(this, config);
         }
 

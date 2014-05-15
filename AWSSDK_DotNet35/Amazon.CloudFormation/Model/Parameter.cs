@@ -23,11 +23,12 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// <para>The Parameter data type.</para>
     /// </summary>
-    public class Parameter
+    public partial class Parameter
     {
         
         private string parameterKey;
         private string parameterValue;
+        private bool? usePreviousValue;
 
 
         /// <summary>
@@ -60,6 +61,17 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetParameterValue()
         {
             return this.parameterValue != null;
+        }
+        public bool UsePreviousValue
+        {
+            get { return this.usePreviousValue ?? default(bool); }
+            set { this.usePreviousValue = value; }
+        }
+
+        // Check to see if UsePreviousValue property is set
+        internal bool IsSetUsePreviousValue()
+        {
+            return this.usePreviousValue.HasValue;
         }
     }
 }

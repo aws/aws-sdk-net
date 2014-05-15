@@ -47,7 +47,7 @@ namespace Amazon
         #region Statics
 
         // Dictionary of regions by system name
-        private static Dictionary<string, RegionEndpoint> hashBySystemName = new Dictionary<string, RegionEndpoint>();
+        private static Dictionary<string, RegionEndpoint> hashBySystemName = new Dictionary<string, RegionEndpoint>(StringComparer.OrdinalIgnoreCase);
 
         static bool loaded = false;
         static readonly object LOCK_OBJECT = new object();
@@ -138,7 +138,7 @@ namespace Amazon
                 RegionEndpoint.LoadEndpointDefinitions();
 
             RegionEndpoint region = null;
-            if (!hashBySystemName.TryGetValue(systemName.ToLower(CultureInfo.InvariantCulture), out region))
+            if (!hashBySystemName.TryGetValue(systemName, out region))
             {
                 if (systemName.StartsWith("cn-", StringComparison.Ordinal))
                     return NewEndpoint(systemName, "China (Unknown)", "amazonaws.com.cn");

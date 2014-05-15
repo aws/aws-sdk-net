@@ -45,7 +45,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// </summary>
         public EC2Signer()
         {
-            _useSigV4 = AWSConfigs.EC2UseSignatureVersion4;
+            _useSigV4 = AWSConfigs.EC2Config.UseSignatureVersion4;
         }
 
         /// <summary>

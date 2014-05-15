@@ -23,7 +23,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// <para>The StackEvent data type.</para>
     /// </summary>
-    public class StackEvent
+    public partial class StackEvent
     {
         
         private string stackId;

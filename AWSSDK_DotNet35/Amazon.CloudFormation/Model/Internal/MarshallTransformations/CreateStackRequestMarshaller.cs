@@ -62,6 +62,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("Parameters.member." + parametersListIndex + ".ParameterValue", StringUtils.FromString(parametersListValue.ParameterValue));
                     }
+                    if (parametersListValue != null && parametersListValue.IsSetUsePreviousValue())
+                    {
+                        request.Parameters.Add("Parameters.member." + parametersListIndex + ".UsePreviousValue", StringUtils.FromBool(parametersListValue.UsePreviousValue));
+                    }
 
                     parametersListIndex++;
                 }

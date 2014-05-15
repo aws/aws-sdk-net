@@ -23,7 +23,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// <para>Contains detailed information about the specified stack resource.</para>
     /// </summary>
-    public class StackResourceDetail
+    public partial class StackResourceDetail
     {
         
         private string stackName;

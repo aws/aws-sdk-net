@@ -220,6 +220,9 @@
     <Compile Include="..\AWSSDK_DotNet35\Amazon.Util\*">
       <Visible>false</Visible>
     </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Internal\Settings\*">
+      <Visible>false</Visible>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\AWSSDK_DotNet35\ThirdParty\BouncyCastle\Asn1\*">

@@ -38,7 +38,7 @@ namespace Amazon.Util
         internal const string DefaultRegion = "us-east-1";
         internal const string DefaultGovRegion = "us-gov-west-1";
 
-        internal const string SDKVersionNumber = "2.0.15.1";
+        internal const string SDKVersionNumber = "2.1.0.0";
 
         internal const string IfModifiedSinceHeader = "IfModifiedSince";
         internal const string IfMatchHeader = "If-Match";
@@ -464,6 +464,37 @@ namespace Amazon.Util
             }
 
             return parameters;
+        }
+
+        internal static void AddToDictionary<TKey, TValue>(Dictionary<TKey, TValue> dictionary, TKey key, TValue value)
+        {
+            if (dictionary.ContainsKey(key))
+                throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
+                    "Dictionary already contains item with key {0}", key));
+            dictionary[key] = value;
+        }
+
+        internal static void FillDictionary<T, TKey, TValue>(IEnumerable<T> items, Func<T, TKey> keyGenerator, Func<T, TValue> valueGenerator, Dictionary<TKey, TValue> targetDictionary)
+        {
+            foreach (var item in items)
+            {
+                var key = keyGenerator(item);
+                var value = valueGenerator(item);
+                AddToDictionary(targetDictionary, key, value);
+            }
+        }
+
+        internal static Dictionary<TKey, TValue> ToDictionary<T, TKey, TValue>(IEnumerable<T> items, Func<T, TKey> keyGenerator, Func<T, TValue> valueGenerator, IEqualityComparer<TKey> comparer = null)
+        {
+            Dictionary<TKey, TValue> dictionary;
+            if (comparer == null)
+                dictionary = new Dictionary<TKey, TValue>();
+            else
+                dictionary = new Dictionary<TKey, TValue>(comparer);
+
+            FillDictionary(items, keyGenerator, valueGenerator, dictionary);
+
+            return dictionary;
         }
 
         #endregion

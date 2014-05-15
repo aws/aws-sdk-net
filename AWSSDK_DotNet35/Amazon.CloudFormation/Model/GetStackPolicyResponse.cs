@@ -24,7 +24,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Returns information about the  GetStackPolicy response and response metadata.
     /// </summary>
-    public class GetStackPolicyResponse : GetStackPolicyResult
+    public partial class GetStackPolicyResponse : GetStackPolicyResult
     {
         /// <summary>
         /// Gets and sets the GetStackPolicyResult property.

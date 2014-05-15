@@ -55,16 +55,29 @@ namespace Amazon.Runtime
         /// </summary>
         public string ProxyHost
         {
-            get { return this.proxyHost; }
+            get 
+            {
+                if (string.IsNullOrEmpty(this.proxyHost))
+                    return AWSConfigs.ProxyConfig.Host;
+
+                return this.proxyHost; 
+            }
             set { this.proxyHost = value; }
         }
+
 
         /// <summary>
         /// Gets and sets of the ProxyPort property.
         /// </summary>
         public int ProxyPort
         {
-            get { return this.proxyPort; }
+            get 
+            {
+                if (this.proxyPort <= 0)
+                    return AWSConfigs.ProxyConfig.Port.GetValueOrDefault();
+
+                return this.proxyPort; 
+            }
             set { this.proxyPort = value; }
         }
 

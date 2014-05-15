@@ -23,7 +23,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// <para>The TemplateParameter data type.</para>
     /// </summary>
-    public class TemplateParameter
+    public partial class TemplateParameter
     {
         
         private string parameterKey;

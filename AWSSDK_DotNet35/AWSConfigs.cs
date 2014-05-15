@@ -20,28 +20,81 @@
  */
 
 using System;
-using System.Collections.Specialized;
+using System.Collections.Generic;
 using System.ComponentModel;
-
+using System.Diagnostics;
+using System.Globalization;
 
 #if !WIN_RT
 using System.Configuration;
 #endif
 
 using Amazon.Util;
-using System.Globalization;
-using System.Diagnostics;
 using Amazon.Runtime.Internal.Util;
-using System.Collections.Generic;
 
 namespace Amazon
 {
     /// <summary>
     /// Configuration options that apply to the entire SDK.
+    /// 
+    /// These settings can be configured through app.config or web.config.
+    /// Below is a full sample configuration that illustrates all the possible options.
+    /// <code>
+    /// &lt;configSections&gt;
+    ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK"/&gt;
+    /// &lt;/configSections&gt;
+    /// &lt;aws region="us-west-2"&gt;
+    ///   &lt;logging logTo="Log4Net, SystemDiagnostics" logResponses="Always" logMetrics="true" /&gt;
+    ///   &lt;s3 useSignatureVersion4="true" /&gt;
+    ///   &lt;ec2 useSignatureVersion4="false" /&gt;
+    ///   &lt;proxy host="localhost" port="8888" username="1" password="1" /&gt;
+    ///   
+    ///   &lt;dynamoDB&gt;
+    ///     &lt;dynamoDBContext tableNamePrefix="Prod-"&gt;
+    /// 
+    ///       &lt;tableAliases&gt;
+    ///         &lt;alias fromTable="FakeTable" toTable="People" /&gt;
+    ///         &lt;alias fromTable="Persons" toTable="People" /&gt;
+    ///       &lt;/tableAliases&gt;
+    /// 
+    ///       &lt;mappings&gt;
+    ///         &lt;map type="Sample.Tests.Author, SampleDLL" targetTable="People" /&gt;
+    ///         &lt;map type="Sample.Tests.Editor, SampleDLL" targetTable="People"&gt;
+    ///           &lt;property name="FullName" attribute="Name" /&gt;
+    ///           &lt;property name="EmployeeId" attribute="Id" /&gt;
+    ///           &lt;property name="ComplexData" converter="Sample.Tests.ComplexDataConverter, SampleDLL" /&gt;
+    ///           &lt;property name="Version" version="true" /&gt;
+    ///           &lt;property name="Password" ignore="true" /&gt;
+    ///         &lt;/map&gt;
+    ///       &lt;/mappings&gt;
+    /// 
+    ///     &lt;/dynamoDBContext&gt;
+    ///   &lt;/dynamoDB&gt;
+    /// &lt;/aws&gt;
+    /// </code>
     /// </summary>
     public static partial class AWSConfigs
     {
-        internal static event PropertyChangedEventHandler PropertyChanged;
+        #region Private static members
+
+        private static char[] validSeparators = new char[] { ' ', ',' };
+
+        // Deprecated configs
+        internal static string _awsRegion = GetConfig(AWSRegionKey);
+        internal static LoggingOptions _logging = GetLoggingSetting();
+        internal static ResponseLoggingOption _responseLogging = GetConfigEnum<ResponseLoggingOption>(ResponseLoggingKey);
+        internal static bool _logMetrics = GetConfigBool(LogMetricsKey);
+        internal static string _endpointDefinition = GetConfig(EndpointDefinitionKey);
+        internal static string _dynamoDBContextTableNamePrefix = GetConfig(DynamoDBContextTableNamePrefixKey);
+        internal static bool _s3UseSignatureVersion4 = GetConfigBool(S3UseSignatureVersion4Key);
+        internal static bool _ec2UseSignatureVersion4 = GetConfigBool(EC2UseSignatureVersion4Key);
+        internal static string _awsProfileName = GetConfig(AWSProfileNameKey);
+        internal static string _awsAccountsLocation = GetConfig(AWSProfilesLocationKey);
+
+        // New config section
+        private static RootConfig _rootConfig = new RootConfig();
+
+        #endregion
 
         #region Region
 
@@ -57,18 +110,81 @@ namespace Amazon
         /// 
         /// This setting can be configured through the App.config. For example:
         /// <code>
-        /// &lt;appSettings>
-        ///   &lt;add key="AWSRegion" value="us-west-2"/>
-        /// &lt;appSettings>
+        /// &lt;configSections&gt;
+        ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK"/&gt;
+        /// &lt;/configSections&gt;
+        /// &lt;aws region="us-west-2" /&gt;
         /// </code>
         /// </summary>
         public static string AWSRegion
         {
-            get { return _awsRegion; }
-            set { _awsRegion = value; }
+            get { return _rootConfig.Region; }
+            set { _rootConfig.Region = value; }
         }
 
-        private static string _awsRegion = GetConfig(AWSRegionKey);
+        #endregion
+
+        #region Account Name
+
+        /// <summary>
+        /// Key for the AWSProfileName property.
+        /// <seealso cref="Amazon.AWSConfigs.AWSProfileName"/>
+        /// </summary>
+        public const string AWSProfileNameKey = "AWSProfileName";
+
+        /// <summary>
+        /// Profile name for stored AWS credentials that will be used to make service calls.
+        /// Changes to this setting will only take effect in newly-constructed clients.
+        /// <para>
+        /// To reference the account from an application's App.config or Web.config use the AWSProfileName setting.
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="development"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </para>
+        /// </summary>
+        public static string AWSProfileName
+        {
+            get { return _rootConfig.ProfileName; }
+            set { _rootConfig.ProfileName = value; }
+        }
+
+        #endregion
+
+        #region Accounts Location
+
+        /// <summary>
+        /// Key for the AWSProfilesLocation property.
+        /// <seealso cref="Amazon.AWSConfigs.LogMetrics"/>
+        /// </summary>
+        public const string AWSProfilesLocationKey = "AWSProfilesLocation";
+
+        /// <summary>
+        /// Location of the credentials file shared with other AWS SDKs.
+        /// By default, the credentials file is stored in the .aws directory in the current user's home directory.
+        /// 
+        /// Changes to this setting will only take effect in newly-constructed clients.
+        /// <para>
+        /// To reference the profile from an application's App.config or Web.config use the AWSProfileName setting.
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfilesLocation" value="c:\config"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </para>
+        /// </summary>
+        public static string AWSProfilesLocation
+        {
+            get { return _rootConfig.ProfilesLocation; }
+            set { _rootConfig.ProfilesLocation = value; }
+        }
 
         #endregion
 
@@ -91,18 +207,13 @@ namespace Amazon
         /// &lt;/appSettings&gt;
         /// </code>
         /// </summary>
+        [Obsolete("This property is obsolete. Use LoggingConfig.LogTo instead.")]
         public static LoggingOptions Logging
         {
-            get { return _logging; }
-            set
-            {
-                _logging = value;
-                OnPropertyChanged("Logging");
-            }
+            get { return _rootConfig.Logging.LogTo; }
+            set { _rootConfig.Logging.LogTo = value; }
         }
 
-        private static char[] validSeparators = new char[] { ' ', ',' };
-        private static LoggingOptions _logging = GetLoggingSetting();
         private static LoggingOptions GetLoggingSetting()
         {
             string value = GetConfig(LoggingKey);
@@ -144,13 +255,12 @@ namespace Amazon
         /// &lt;/appSettings&gt;
         /// </code>
         /// </summary>
+        [Obsolete("This property is obsolete. Use LoggingConfig.LogResponses instead.")]
         public static ResponseLoggingOption ResponseLogging
         {
-            get { return _responseLogging; }
-            set { _responseLogging = value; }
+            get { return _rootConfig.Logging.LogResponses; }
+            set { _rootConfig.Logging.LogResponses = value; }
         }
-
-        private static ResponseLoggingOption _responseLogging = GetConfigEnum<ResponseLoggingOption>(ResponseLoggingKey);
 
         #endregion
 
@@ -174,13 +284,12 @@ namespace Amazon
         /// &lt;/appSettings&gt;
         /// </code>
         /// </summary>
+        [Obsolete("This property is obsolete. Use LoggingConfig.LogMetrics instead.")]
         public static bool LogMetrics
         {
-            get { return _logMetrics; }
-            set { _logMetrics = value; }
+            get { return _rootConfig.Logging.LogMetrics; }
+            set { _rootConfig.Logging.LogMetrics = value; }
         }
-
-        private static bool _logMetrics = GetConfigBool(LogMetricsKey);
 
         #endregion
 
@@ -195,18 +304,17 @@ namespace Amazon
         /// <summary>
         /// Configures if the SDK should use a custom configuration file that defines the regions and endpoints.
         /// <code>
-        /// &lt;appSettings&gt;
-        ///   &lt;add key="AWSEndpointDefinition" value="c:\config\endpoints.xml"/&gt;
-        /// &lt;/appSettings&gt;
+        /// &lt;configSections&gt;
+        ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK"/&gt;
+        /// &lt;/configSections&gt;
+        /// &lt;aws endpointDefinition="c:\config\endpoints.xml" /&gt;
         /// </code>
         /// </summary>
         public static string EndpointDefinition
         {
-            get { return _endpointDefinition; }
-            set { _endpointDefinition = value; }
+            get { return _rootConfig.EndpointDefinition; }
+            set { _rootConfig.EndpointDefinition = value; }
         }
-
-        private static string _endpointDefinition = GetConfig(EndpointDefinitionKey);
 
         #endregion
 
@@ -231,13 +339,12 @@ namespace Amazon
         /// &lt;/appSettings&gt;
         /// </code>
         /// </summary>
+        [Obsolete("This property is obsolete. Use DynamoDBConfig.Context.TableNamePrefix instead.")]
         public static string DynamoDBContextTableNamePrefix
         {
-            get { return _dynamoDBContextTableNamePrefix; }
-            set { _dynamoDBContextTableNamePrefix = value; }
+            get { return _rootConfig.DynamoDB.Context.TableNamePrefix; }
+            set { _rootConfig.DynamoDB.Context.TableNamePrefix = value; }
         }
-
-        private static string _dynamoDBContextTableNamePrefix = GetConfig(DynamoDBContextTableNamePrefixKey);
 
         #endregion
 
@@ -264,13 +371,12 @@ namespace Amazon
         /// &lt;/appSettings&gt;
         /// </code>
         /// </summary>
+        [Obsolete("This property is obsolete. Use S3Config.UseSignatureVersion4 instead.")]
         public static bool S3UseSignatureVersion4
         {
-            get { return _s3UseSignatureVersion4; }
-            set { _s3UseSignatureVersion4 = value; }
+            get { return _rootConfig.S3.UseSignatureVersion4; }
+            set { _rootConfig.S3.UseSignatureVersion4 = value; }
         }
-
-        private static bool _s3UseSignatureVersion4 = GetConfigBool(S3UseSignatureVersion4Key);
 
         #endregion
 
@@ -297,20 +403,142 @@ namespace Amazon
         /// &lt;/appSettings&gt;
         /// </code>
         /// </summary>
+        [Obsolete("This property is obsolete. Use EC2Config.UseSignatureVersion4 instead.")]
         public static bool EC2UseSignatureVersion4
         {
-            get { return _ec2UseSignatureVersion4; }
-            set { _ec2UseSignatureVersion4 = value; }
+            get { return _rootConfig.EC2.UseSignatureVersion4; }
+            set { _rootConfig.EC2.UseSignatureVersion4 = value; }
         }
-
-        private static bool _ec2UseSignatureVersion4 = GetConfigBool(EC2UseSignatureVersion4Key);
 
         #endregion
 
+        #region AWS Config Sections
 
-        #region Private general methods
+        /// <summary>
+        /// Configuration for the Logging section of AWS configuration.
+        /// Changes to some settings may not take effect until a new client is constructed.
+        /// 
+        /// Example section:
+        /// <code>
+        /// &lt;configSections&gt;
+        ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK"/&gt;
+        /// &lt;/configSections&gt;
+        /// &lt;aws&gt;
+        ///   &lt;logging logTo="Log4Net, SystemDiagnostics" logResponses="Always" logMetrics="true" /&gt;
+        /// &lt;/aws&gt;
+        /// </code>
+        /// </summary>
+        public static LoggingConfig LoggingConfig { get { return _rootConfig.Logging; } }
 
-        private static void OnPropertyChanged(string name)
+        /// <summary>
+        /// Configuration for the DynamoDB section of AWS configuration.
+        /// Changes to some settings may not take effect until a new client or context is constructed.
+        /// 
+        /// Example section:
+        /// <code>
+        /// &lt;configSections&gt;
+        ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK"/&gt;
+        /// &lt;/configSections&gt;
+        /// &lt;aws&gt;
+        ///   &lt;dynamoDB&gt;
+        ///     &lt;dynamoDBContext tableNamePrefix="Prod-"&gt;
+        /// 
+        ///       &lt;tableAliases&gt;
+        ///         &lt;alias fromTable="FakeTable" toTable="People" /&gt;
+        ///         &lt;alias fromTable="Persons" toTable="People" /&gt;
+        ///       &lt;/tableAliases&gt;
+        /// 
+        ///       &lt;mappings&gt;
+        ///         &lt;map type="Sample.Tests.Author, SampleDLL" targetTable="People" /&gt;
+        ///         &lt;map type="Sample.Tests.Editor, SampleDLL" targetTable="People"&gt;
+        ///           &lt;property name="FullName" attribute="Name" /&gt;
+        ///           &lt;property name="EmployeeId" attribute="Id" /&gt;
+        ///           &lt;property name="ComplexData" converter="Sample.Tests.ComplexDataConverter, SampleDLL" /&gt;
+        ///           &lt;property name="Version" version="true" /&gt;
+        ///           &lt;property name="Password" ignore="true" /&gt;
+        ///         &lt;/map&gt;
+        ///       &lt;/mappings&gt;
+        /// 
+        ///     &lt;/dynamoDBContext&gt;
+        ///   &lt;/dynamoDB&gt;
+        /// &lt;/aws&gt;
+        /// </code>
+        /// </summary>
+        public static DynamoDBConfig DynamoDBConfig { get { return _rootConfig.DynamoDB; } }
+
+        /// <summary>
+        /// Configuration for the S3 section of AWS configuration.
+        /// Changes to some settings may not take effect until a new client is constructed.
+        /// 
+        /// Example section:
+        /// <code>
+        /// &lt;configSections&gt;
+        ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK"/&gt;
+        /// &lt;/configSections&gt;
+        /// &lt;aws&gt;
+        ///   &lt;s3 useSignatureVersion4="true" /&gt;
+        /// &lt;/aws&gt;
+        /// </code>
+        /// </summary>
+        public static S3Config S3Config { get { return _rootConfig.S3; } }
+
+        /// <summary>
+        /// Configuration for the EC2 section of AWS configuration.
+        /// Changes to some settings may not take effect until a new client is constructed.
+        /// 
+        /// Example section:
+        /// <code>
+        /// &lt;configSections&gt;
+        ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK"/&gt;
+        /// &lt;/configSections&gt;
+        /// &lt;aws&gt;
+        ///   &lt;ec2 useSignatureVersion4="true" /&gt;
+        /// &lt;/aws&gt;
+        /// </code>
+        /// </summary>
+        public static EC2Config EC2Config { get { return _rootConfig.EC2; } }
+
+        /// <summary>
+        /// Configuration for the Proxy section of AWS configuration.
+        /// Changes to some settings may not take effect until a new client is constructed.
+        /// 
+        /// Example section:
+        /// <code>
+        /// &lt;configSections&gt;
+        ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK"/&gt;
+        /// &lt;/configSections&gt;
+        /// &lt;aws&gt;
+        ///   &lt;proxy host="localhost" port="8888" username="1" password="1" /&gt;
+        /// &lt;/aws&gt;
+        /// </code>
+        /// </summary>
+        public static ProxyConfig ProxyConfig { get { return _rootConfig.Proxy; } }
+
+        /// <summary>
+        /// Configuration for the region endpoint section of AWS configuration.
+        /// Changes may not take effect until a new client is constructed.
+        /// 
+        /// Example section:
+        /// <code>
+        /// &lt;configSections&gt;
+        ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK"/&gt;
+        /// &lt;/configSections&gt;
+        /// &lt;aws region="us-west-2" /&gt;
+        /// </code>
+        /// </summary>
+        public static RegionEndpoint RegionEndpoint
+        {
+            get { return _rootConfig.RegionEndpoint; }
+            set { _rootConfig.RegionEndpoint = value; }
+        }
+
+        #endregion
+
+        #region Internal members
+
+        internal static event PropertyChangedEventHandler PropertyChanged;
+        internal const string LoggingDestinationProperty = "LogTo";
+        internal static void OnPropertyChanged(string name)
         {
             PropertyChangedEventHandler handler = PropertyChanged;
             if (handler != null)
@@ -319,6 +547,9 @@ namespace Amazon
             }
         }
 
+        #endregion
+
+        #region Private general methods
 
         private static bool GetConfigBool(string name)
         {

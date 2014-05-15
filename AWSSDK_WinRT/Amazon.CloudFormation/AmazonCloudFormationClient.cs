@@ -38,6 +38,36 @@ namespace Amazon.CloudFormation
     /// products. If you need additional technical information about a specific AWS product, you can find the product's technical documentation at
     /// <a href="http://aws.amazon.com/documentation/">http://aws.amazon.com/documentation/</a> .</para>
     /// </summary>
+    /// <summary>
+    /// Implementation for accessing CloudFormation
+    /// 
+    /// AWS CloudFormation
+    /// <para>
+    /// AWS CloudFormation enables you to create and manage AWS infrastructure deployments
+    /// predictably and repeatedly.         AWS CloudFormation helps you leverage AWS products
+    /// such as Amazon EC2, EBS, Amazon SNS, ELB, and Auto Scaling         to build highly-reliable,
+    /// highly scalable, cost effective applications without worrying about creating and
+    /// configuring the underlying AWS infrastructure.
+    /// </para>
+    /// 
+    /// <para>
+    /// With AWS CloudFormation, you declare all of your resources and dependencies in a template
+    /// file. The template         defines a collection of resources as a single unit called
+    /// a stack. AWS CloudFormation creates and deletes all         member resources of the
+    /// stack together and manages all dependencies between the resources for you.
+    /// </para>
+    /// 
+    /// <para>
+    /// For more information about this product, go to the <a href="http://aws.amazon.com/cloudformation/">CloudFormation
+    /// Product Page</a>.
+    /// </para>
+    /// 
+    /// <para>
+    /// Amazon CloudFormation makes use of other AWS products. If you need additional technical
+    /// information about a         specific AWS product, you can find the product's technical
+    /// documentation at <a href="http://aws.amazon.com/documentation/">http://aws.amazon.com/documentation/</a>.
+    /// </para>
+    /// </summary>
 	public partial class AmazonCloudFormationClient : AmazonWebServiceClient, Amazon.CloudFormation.IAmazonCloudFormation
     {
 
@@ -97,10 +127,7 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Constructs AmazonCloudFormationClient with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonCloudFormationClient Configuration object. If the config object's
-        /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
-        /// is stored as a clear-text string. Please use this option only
-        /// if the application environment doesn't allow the use of SecureStrings.
+        /// AmazonCloudFormationClient Configuration object.
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
@@ -135,10 +162,7 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Constructs AmazonCloudFormationClient with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonCloudFormationClient Configuration object. If the config object's
-        /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
-        /// is stored as a clear-text string. Please use this option only
-        /// if the application environment doesn't allow the use of SecureStrings.
+        /// AmazonCloudFormationClient Configuration object.
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>

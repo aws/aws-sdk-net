@@ -93,6 +93,21 @@ namespace Amazon.S3.Transfer
         {
             this._shouldDispose = true;
         }
+
+        /// <summary>
+        /// 	Constructs a new <see cref="TransferUtility"/> class.
+        /// </summary>
+        /// <param name="config">
+        /// 	Specifies advanced configuration settings for <see cref="TransferUtility"/>.
+        /// </param>
+        /// <remarks>
+        /// </remarks>
+        public TransferUtility(TransferUtilityConfig config)
+            : this(new AmazonS3Client(), config)
+        {
+            this._config = config;
+        }
+
         #endregion 
 
         private static TransferUtilityDownloadRequest ConstructDownloadRequest(string filePath, string bucketName, string key)

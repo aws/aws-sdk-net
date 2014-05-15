@@ -23,7 +23,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// <para>The Output data type.</para>
     /// </summary>
-    public class Output
+    public partial class Output
     {
         
         private string outputKey;

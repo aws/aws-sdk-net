@@ -295,7 +295,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>Empty strongly-typed BatchGet object</returns>
         public BatchGet<T> CreateBatchGet<T>(DynamoDBOperationConfig operationConfig)
         {
-            DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.config);
+            DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.Config);
             return new BatchGet<T>(this, config);
         }
 
@@ -348,7 +348,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>Empty strongly-typed BatchWrite object</returns>
         public BatchWrite<T> CreateBatchWrite<T>(DynamoDBOperationConfig operationConfig)
         {
-            DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.config);
+            DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.Config);
             return new BatchWrite<T>(this, config);
         }
 
@@ -411,7 +411,7 @@ namespace Amazon.DynamoDBv2.DataModel
             if (conditions == null)
                 throw new ArgumentNullException("conditions");
 
-            Search scan = ConvertScan<T>(conditions, operationConfig);
+            var scan = ConvertScan<T>(conditions, operationConfig);
             return FromSearch<T>(scan);
         }
 
@@ -439,8 +439,8 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             if (scanConfig == null) throw new ArgumentNullException("scanConfig");
 
-            Search search = ConvertFromScan<T>(scanConfig, operationConfig);
-            return FromSearch<T>(search);
+            var scan = ConvertFromScan<T>(scanConfig, operationConfig);
+            return FromSearch<T>(scan);
         }
 
         #endregion
@@ -456,7 +456,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>Lazy-loaded collection of results.</returns>
         public IEnumerable<T> Query<T>(object hashKeyValue)
         {
-            Search query = ConvertQueryByValue<T>(hashKeyValue, null, null);
+            var query = ConvertQueryByValue<T>(hashKeyValue, null, null);
             return FromSearch<T>(query);
         }
 
@@ -470,7 +470,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>Lazy-loaded collection of results.</returns>
         public IEnumerable<T> Query<T>(object hashKeyValue, DynamoDBOperationConfig operationConfig)
         {
-            Search query = ConvertQueryByValue<T>(hashKeyValue, null, operationConfig);
+            var query = ConvertQueryByValue<T>(hashKeyValue, null, operationConfig);
             return FromSearch<T>(query);
         }
 
@@ -514,7 +514,7 @@ namespace Amazon.DynamoDBv2.DataModel
             if (values == null)
                 throw new ArgumentNullException("values");
 
-            Search query = ConvertQueryByValue<T>(hashKeyValue, op, values, operationConfig);
+            var query = ConvertQueryByValue<T>(hashKeyValue, op, values, operationConfig);
             return FromSearch<T>(query);
         }
 
@@ -542,7 +542,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             if (queryConfig == null) throw new ArgumentNullException("queryConfig");
 
-            Search search = ConvertFromQuery<T>(queryConfig, operationConfig);
+            var search = ConvertFromQuery<T>(queryConfig, operationConfig);
             return FromSearch<T>(search);
         }
 

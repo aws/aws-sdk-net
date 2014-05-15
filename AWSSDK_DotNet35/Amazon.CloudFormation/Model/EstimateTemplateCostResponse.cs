@@ -24,7 +24,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Returns information about the  EstimateTemplateCost response and response metadata.
     /// </summary>
-    public class EstimateTemplateCostResponse : EstimateTemplateCostResult
+    public partial class EstimateTemplateCostResponse : EstimateTemplateCostResult
     {
         /// <summary>
         /// Gets and sets the EstimateTemplateCostResult property.

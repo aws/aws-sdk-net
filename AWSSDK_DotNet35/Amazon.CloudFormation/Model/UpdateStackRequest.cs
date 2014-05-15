@@ -39,12 +39,14 @@ namespace Amazon.CloudFormation.Model
         private string stackName;
         private string templateBody;
         private string templateURL;
+        private bool? usePreviousTemplate;
         private string stackPolicyDuringUpdateBody;
         private string stackPolicyDuringUpdateURL;
         private List<Parameter> parameters = new List<Parameter>();
         private List<string> capabilities = new List<string>();
         private string stackPolicyBody;
         private string stackPolicyURL;
+        private List<string> notificationARNs = new List<string>();
 
 
         /// <summary>
@@ -117,6 +119,17 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetTemplateURL()
         {
             return this.templateURL != null;
+        }
+        public bool UsePreviousTemplate
+        {
+            get { return this.usePreviousTemplate ?? default(bool); }
+            set { this.usePreviousTemplate = value; }
+        }
+
+        // Check to see if UsePreviousTemplate property is set
+        internal bool IsSetUsePreviousTemplate()
+        {
+            return this.usePreviousTemplate.HasValue;
         }
 
         /// <summary>
@@ -268,6 +281,17 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetStackPolicyURL()
         {
             return this.stackPolicyURL != null;
+        }
+        public List<string> NotificationARNs
+        {
+            get { return this.notificationARNs; }
+            set { this.notificationARNs = value; }
+        }
+
+        // Check to see if NotificationARNs property is set
+        internal bool IsSetNotificationARNs()
+        {
+            return this.notificationARNs.Count > 0;
         }
 
     }

@@ -49,6 +49,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                             
                         continue;
                     }
+                    if (context.TestExpression("UsePreviousValue", targetDepth))
+                    {
+                        parameter.UsePreviousValue = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

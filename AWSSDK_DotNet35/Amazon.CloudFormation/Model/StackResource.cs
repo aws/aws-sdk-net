@@ -23,7 +23,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// <para>The StackResource data type.</para>
     /// </summary>
-    public class StackResource
+    public partial class StackResource
     {
         
         private string stackName;

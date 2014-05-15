@@ -76,14 +76,14 @@ namespace Amazon.Runtime.Internal.Util
         }
         private void ConfigsChanged(object sender, PropertyChangedEventArgs e)
         {
-            if (e != null && string.Equals(e.PropertyName, "Logging", StringComparison.Ordinal))
+            if (e != null && string.Equals(e.PropertyName, AWSConfigs.LoggingDestinationProperty, StringComparison.Ordinal))
             {
                 ConfigureLoggers();
             }
         }
         private void ConfigureLoggers()
         {
-            LoggingOptions logging = AWSConfigs.Logging;
+            LoggingOptions logging = AWSConfigs.LoggingConfig.LogTo;
             foreach (InternalLogger il in loggers)
             {
                 if (il is InternalLog4netLogger)

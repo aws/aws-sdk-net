@@ -303,8 +303,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
         public AsyncSearch<T> ScanAsync<T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig = null)
         {
-            Search scan = ConvertScan<T>(conditions, operationConfig);
-            return FromSearchAsync<T>(scan);
+            var scan = ConvertScan<T>(conditions, operationConfig);
+            return FromSearchAsync<T>(scan.Search);
         }
 
         /// <summary>
@@ -319,8 +319,8 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             if (scanConfig == null) throw new ArgumentNullException("scanConfig");
 
-            Search search = ConvertFromScan<T>(scanConfig, operationConfig);
-            return FromSearchAsync<T>(search);
+            var search = ConvertFromScan<T>(scanConfig, operationConfig);
+            return FromSearchAsync<T>(search.Search);
         }
 
         #endregion
@@ -337,8 +337,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
         public AsyncSearch<T> QueryAsync<T>(object hashKeyValue, DynamoDBOperationConfig operationConfig = null)
         {
-            Search query = ConvertQueryByValue<T>(hashKeyValue, null, operationConfig);
-            return FromSearchAsync<T>(query);
+            var query = ConvertQueryByValue<T>(hashKeyValue, null, operationConfig);
+            return FromSearchAsync<T>(query.Search);
         }
 
         /// <summary>
@@ -360,8 +360,8 @@ namespace Amazon.DynamoDBv2.DataModel
             if (values == null)
                 throw new ArgumentNullException("values");
 
-            Search query = ConvertQueryByValue<T>(hashKeyValue, op, values, operationConfig);
-            return FromSearchAsync<T>(query);
+            var query = ConvertQueryByValue<T>(hashKeyValue, op, values, operationConfig);
+            return FromSearchAsync<T>(query.Search);
         }
 
         /// <summary>
@@ -376,8 +376,8 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             if (queryConfig == null) throw new ArgumentNullException("queryConfig");
 
-            Search search = ConvertFromQuery<T>(queryConfig, operationConfig);
-            return FromSearchAsync<T>(search);
+            var search = ConvertFromQuery<T>(queryConfig, operationConfig);
+            return FromSearchAsync<T>(search.Search);
         }
 
         #endregion

@@ -96,10 +96,7 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Constructs AmazonSimpleNotificationServiceClient with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonSimpleNotificationServiceClient Configuration object. If the config object's
-        /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
-        /// is stored as a clear-text string. Please use this option only
-        /// if the application environment doesn't allow the use of SecureStrings.
+        /// AmazonSimpleNotificationServiceClient Configuration object.
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
@@ -134,10 +131,7 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Constructs AmazonSimpleNotificationServiceClient with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonSimpleNotificationServiceClient Configuration object. If the config object's
-        /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
-        /// is stored as a clear-text string. Please use this option only
-        /// if the application environment doesn't allow the use of SecureStrings.
+        /// AmazonSimpleNotificationServiceClient Configuration object.
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>

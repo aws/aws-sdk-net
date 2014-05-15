@@ -24,7 +24,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Returns information about the  ValidateTemplate response and response metadata.
     /// </summary>
-    public class ValidateTemplateResponse : ValidateTemplateResult
+    public partial class ValidateTemplateResponse : ValidateTemplateResult
     {
         /// <summary>
         /// Gets and sets the ValidateTemplateResult property.

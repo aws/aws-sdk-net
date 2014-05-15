@@ -116,7 +116,7 @@ namespace Amazon.Runtime.Internal.Util
                     }
 
                     // If log4net logging is enabled, we attempt to activate log4net by calling XmlConfigurator.Configure()
-                    if ((AWSConfigs.Logging & LoggingOptions.Log4Net) == LoggingOptions.Log4Net)
+                    if ((AWSConfigs.LoggingConfig.LogTo & LoggingOptions.Log4Net) == LoggingOptions.Log4Net)
                     {
                         ITypeInfo xmlConfiguratorType = TypeFactory.GetTypeInfo(Type.GetType("log4net.Config.XmlConfigurator, log4net"));
                         if (xmlConfiguratorType != null)

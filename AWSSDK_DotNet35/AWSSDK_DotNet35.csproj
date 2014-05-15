@@ -824,6 +824,7 @@
     <Compile Include="Amazon.CloudFormation\AmazonCloudFormationClient.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.CloudFormation\AmazonCloudFormationClient.Extensions.cs" />
     <Compile Include="Amazon.CloudFormation\AmazonCloudFormationConfig.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -1072,6 +1073,7 @@
     <Compile Include="Amazon.CloudFormation\Model\UpdateStackRequest.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.CloudFormation\Model\UpdateStackRequest.Extensions.cs" />
     <Compile Include="Amazon.CloudFormation\Model\UpdateStackResponse.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -10148,6 +10150,7 @@
     <Compile Include="Amazon.Runtime\Internal\Auth\QueryStringSigner.cs" />
     <Compile Include="Amazon.Runtime\Internal\Auth\S3Signer.cs" />
     <Compile Include="Amazon.Runtime\Internal\Auth\SignatureException.cs" />
+    <Compile Include="Amazon.Runtime\Internal\AutoConstructedTypes.cs" />
     <Compile Include="Amazon.Runtime\Internal\DefaultRequest.cs" />
     <Compile Include="Amazon.Runtime\Internal\ErrorResponse.cs">
       <SubType>Code</SubType>
@@ -11216,6 +11219,7 @@
     <Compile Include="Amazon.StorageGateway\Model\VolumeRecoveryPointInfo.cs" />
     <Compile Include="Amazon.StorageGateway\Model\VTLDevice.cs" />
     <Compile Include="Amazon.StorageGateway\ServiceEnumerations.cs" />
+    <Compile Include="Amazon.Util\AWSConfigs.Models.bcl.cs" />
     <Compile Include="Amazon.Util\AWSSDKUtils.bcl.cs" />
     <Compile Include="Amazon.Util\CryptoUtil.cs" />
     <Compile Include="Amazon.Util\CryptoUtil.bcl.cs" />
@@ -11913,6 +11917,11 @@
     <Compile Include="Amazon.StorageGateway\Util\AmazonStorageGatewayUtil.cs" />
     <Compile Include="Amazon.Util\PaginatedResource.cs" />
     <Compile Include="Amazon.Util\PaginatedResourceFactory.cs" />
+    <Compile Include="Amazon.Util\ProfileManager.cs" />
+    <Compile Include="Amazon.Runtime\Internal\Settings\PersistenceManager.cs" />
+    <Compile Include="Amazon.Runtime\Internal\Settings\SettingsCollection.cs" />
+    <Compile Include="Amazon.Runtime\Internal\Settings\SettingsConstants.cs" />
+    <Compile Include="Amazon.Runtime\Internal\Settings\UserCrypto.cs" />
     <Compile Include="Amazon.Util\TypeWrapper.bcl.cs" />
     <Compile Include="Amazon.Util\TypeWrapper.cs" />
     <Compile Include="AWSClientFactory.cs">
@@ -11922,6 +11931,8 @@
     </Compile>
     <Compile Include="AWSConfigs.bcl.cs" />
     <Compile Include="AWSConfigs.cs" />
+    <Compile Include="AWSSection.cs" />
+    <Compile Include="Amazon.Util\AWSConfigs.Models.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Amazon.Util\AWSSDKUtils.cs" />

@@ -53,7 +53,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// </summary>
         public S3Signer()
         {
-            _useSigV4 = AWSConfigs.S3UseSignatureVersion4;
+            _useSigV4 = AWSConfigs.S3Config.UseSignatureVersion4;
         }
 
         /// <summary>

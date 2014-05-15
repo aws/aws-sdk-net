@@ -47,13 +47,21 @@ namespace Amazon.ElasticLoadBalancing
         {
             base.ProcessRequestHandlers(request);
 
-            SetLoadBalancerPoliciesOfListenerRequest setRequest = request.OriginalRequest as SetLoadBalancerPoliciesOfListenerRequest;
-            if (setRequest != null)
+            var originalRequest = request.OriginalRequest;
+            bool shouldSetPolicyNames =
+                originalRequest is SetLoadBalancerPoliciesOfListenerRequest ||
+                originalRequest is SetLoadBalancerPoliciesForBackendServerRequest;
+            if (shouldSetPolicyNames)
             {
-                if (request.Parameters.Where(x => x.Key.StartsWith("PolicyNames", StringComparison.Ordinal)).ToList().Count == 0)
-                {
-                    request.Parameters.Add("PolicyNames", "");
-                }
+                SetPolicyNames(request);
+            }
+        }
+
+        private static void SetPolicyNames(IRequest request)
+        {
+            if (request.Parameters.Where(x => x.Key.StartsWith("PolicyNames", StringComparison.Ordinal)).ToList().Count == 0)
+            {
+                request.Parameters.Add("PolicyNames", "");
             }
         }
     }

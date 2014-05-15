@@ -263,7 +263,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>Empty strongly-typed BatchWrite object</returns>
         public BatchWrite<T> CreateBatchWrite<T>(DynamoDBOperationConfig operationConfig = null)
         {
-            DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.config);
+            DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.Config);
             return new BatchWrite<T>(this, config);
         }
 
@@ -320,7 +320,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>Lazy-loaded collection of results.</returns>
         public IEnumerable<T> Scan<T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig)
         {
-            Search scan = ConvertScan<T>(conditions, operationConfig);
+            var scan = ConvertScan<T>(conditions, operationConfig);
             return FromSearch<T>(scan);
         }
 
@@ -336,7 +336,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             if (scanConfig == null) throw new ArgumentNullException("scanConfig");
 
-            Search search = ConvertFromScan<T>(scanConfig, operationConfig);
+            var search = ConvertFromScan<T>(scanConfig, operationConfig);
             return FromSearch<T>(search);
         }
 
@@ -353,7 +353,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>Lazy-loaded collection of results.</returns>
         public IEnumerable<T> Query<T>(object hashKeyValue)
         {
-            Search query = ConvertQueryByValue<T>(hashKeyValue, null, null);
+            var query = ConvertQueryByValue<T>(hashKeyValue, null, null);
             return FromSearch<T>(query);
         }
 
@@ -367,7 +367,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>Lazy-loaded collection of results.</returns>
         public IEnumerable<T> Query<T>(object hashKeyValue, DynamoDBOperationConfig operationConfig)
         {
-            Search query = ConvertQueryByValue<T>(hashKeyValue, null, operationConfig);
+            var query = ConvertQueryByValue<T>(hashKeyValue, null, operationConfig);
             return FromSearch<T>(query);
         }
 
@@ -411,7 +411,7 @@ namespace Amazon.DynamoDBv2.DataModel
             if (values == null)
                 throw new ArgumentNullException("values");
 
-            Search query = ConvertQueryByValue<T>(hashKeyValue, op, values, operationConfig);
+            var query = ConvertQueryByValue<T>(hashKeyValue, op, values, operationConfig);
             return FromSearch<T>(query);
         }
 
@@ -439,7 +439,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             if (queryConfig == null) throw new ArgumentNullException("queryConfig");
 
-            Search search = ConvertFromQuery<T>(queryConfig, operationConfig);
+            var search = ConvertFromQuery<T>(queryConfig, operationConfig);
             return FromSearch<T>(search);
         }
 
@@ -454,11 +454,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>Table object</returns>
         public Table GetTargetTable<T>(DynamoDBOperationConfig operationConfig = null)
         {
-            Type type = typeof(T);
-            ItemStorageConfig storageConfig = ItemStorageConfigCache.GetConfig(type);
-            Table table = GetTargetTable(storageConfig, new DynamoDBFlatConfig(operationConfig, this.config));
-            Table copy = table.Copy(Table.DynamoDBConsumer.DocumentModel);
-            return table;
+            return GetTargetTableInternal<T>(operationConfig);
         }
 
         #endregion

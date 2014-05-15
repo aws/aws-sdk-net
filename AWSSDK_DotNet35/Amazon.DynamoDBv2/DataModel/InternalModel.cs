@@ -15,11 +15,14 @@
 
 using System;
 using System.Collections;
-using System.Collections.ObjectModel;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Collections.Specialized;
-using System.Text;
+using System.Globalization;
+using System.Linq;
 using System.Reflection;
+using System.Text;
+
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime;
@@ -31,7 +34,7 @@ namespace Amazon.DynamoDBv2.DataModel
     internal class PropertyStorage
     {
         // local property name
-        public string PropertyName { get; set; }
+        public string PropertyName { get; private set; }
         // DynamoDB attribute name
         public string AttributeName { get; set; }
 
@@ -39,29 +42,115 @@ namespace Amazon.DynamoDBv2.DataModel
         public MemberInfo Member { get; private set; }
         // Type of the property
         public Type MemberType { get; private set; }
+        // Converter type, if one is present
+        public Type ConverterType { get; set; }
         // Converter, if one is present
-        public IPropertyConverter Converter { get; set; }
+        public IPropertyConverter Converter { get; private set; }
 
         // flags
         public bool IsHashKey { get; set; }
         public bool IsRangeKey { get; set; }
+        public bool IsKey { get { return IsHashKey || IsRangeKey; } }
         public bool IsVersion { get; set; }
         public bool IsLSIRangeKey { get; set; }
         public bool IsGSIHashKey { get; set; }
         public bool IsGSIRangeKey { get; set; }
         public bool IsGSIKey { get { return IsGSIHashKey || IsGSIRangeKey; } }
+        public bool IsIgnored { get; set; }
 
-        // corresponding IndexName, if applicable
-        public List<string> Indexes { get; set; }
+        // corresponding IndexNames, if applicable
+        public List<string> IndexNames { get; set; }
 
-        public PropertyStorage(MemberInfo member, Type memberType)
+        public void AddIndex(DynamoDBGlobalSecondaryIndexHashKeyAttribute gsiHashKey)
         {
-            Indexes = new List<string>();
+            AddIndex(new GSI(true, gsiHashKey.AttributeName, gsiHashKey.IndexNames));
+        }
+        public void AddIndex(DynamoDBGlobalSecondaryIndexRangeKeyAttribute gsiRangeKey)
+        {
+            AddIndex(new GSI(false, gsiRangeKey.AttributeName, gsiRangeKey.IndexNames));
+        }
+        public void AddIndex(DynamoDBLocalSecondaryIndexRangeKeyAttribute lsiRangeKey)
+        {
+            AddIndex(new LSI(lsiRangeKey.AttributeName, lsiRangeKey.IndexNames));
+        }
+        public void AddGsiIndex(bool isHashKey, string attributeName, params string[] indexNames)
+        {
+            AddIndex(new GSI(isHashKey, attributeName, indexNames));
+        }
+        public void AddLsiIndex(string attributeName, params string[] indexNames)
+        {
+            AddIndex(new LSI(attributeName, indexNames));
+        }
+        public void AddIndex(Index index)
+        {
+            Indexes.Add(index);
+        }
+
+        public List<Index> Indexes { get; private set; }
+
+        public abstract class Index
+        {
+            public List<string> IndexNames { get; private set; }
+            public string AttributeName { get; private set; }
+
+            public Index(string attributeName, params string[] indexNames)
+            {
+                IndexNames = new List<string>(indexNames);
+                AttributeName = attributeName;
+            }
+        }
+        public class LSI : Index
+        {
+            public LSI(string attributeName, params string[] indexNames)
+                : base(attributeName, indexNames) { }
+        }
+        public class GSI : Index
+        {
+            public bool IsHashKey { get; private set; }
+
+            public GSI(bool isHashKey, string attributeName, params string[] indexNames)
+                : base(attributeName, indexNames)
+            {
+                IsHashKey = isHashKey;
+            }
+        }
+
+        /// <summary>
+        /// Validates configurations and sets required fields
+        /// </summary>
+        public void Validate()
+        {
+            if (IsVersion)
+                Utils.ValidateVersionType(MemberType);    // no conversion is possible, so type must be a nullable primitive
+
+            if (IsHashKey && IsRangeKey)
+                throw new InvalidOperationException("Property " + PropertyName + " cannot be both hash and range key");
+
+            if (IsKey || IsGSIKey)
+                if (Converter == null && !Utils.IsPrimitive(MemberType))
+                    throw new InvalidOperationException("Key " + PropertyName + " must be of primitive type");
+
+            foreach (var index in Indexes)
+                IndexNames.AddRange(index.IndexNames);
+
+            if (ConverterType != null)
+            {
+                if (!Utils.CanInstantiate(ConverterType) || !Utils.ImplementsInterface(ConverterType, typeof(IPropertyConverter)))
+                    throw new InvalidOperationException("Converter for " + PropertyName + " must be instantiable with no parameters and must implement IPropertyConverter");
+
+                this.Converter = Utils.Instantiate(ConverterType) as IPropertyConverter;
+            }
+        }
+
+        public PropertyStorage(MemberInfo member)
+        {
+            IndexNames = new List<string>();
+            Indexes = new List<Index>();
             Member = member;
-            MemberType = memberType;
+            MemberType = Utils.GetType(member);
+            PropertyName = member.Name;
         }
     }
-
 
     internal class ItemStorage
     {
@@ -113,23 +202,29 @@ namespace Amazon.DynamoDBv2.DataModel
 
     internal class ItemStorageConfig
     {
+        // normalized PropertyStorage objects
+        public List<PropertyStorage> Properties { get; private set; }
+
         // table
         public string TableName { get; set; }
         public bool LowerCamelCaseProperties { get; set; }
 
         // keys
-        public List<string> HashKeyPropertyNames { get; set; }
-        public List<string> RangeKeyPropertyNames { get; set; }
+        public List<string> HashKeyPropertyNames { get; private set; }
+        public List<string> RangeKeyPropertyNames { get; private set; }
 
         // properties to get
-        public List<string> AttributesToGet { get; set; }
+        public List<string> AttributesToGet { get; private set; }
 
         // version
-        public string VersionPropertyName { get; set; }
+        public string VersionPropertyName { get; private set; }
         public bool HasVersion { get { return !string.IsNullOrEmpty(VersionPropertyName); } }
 
         // target type
-        public Type TargetType { get; set; }
+        public ITypeInfo TargetTypeInfo { get; private set; }
+
+        // target type members
+        public Dictionary<string, MemberInfo> TargetTypeMembers { get; private set; }
 
         // attribute-to-index mapping
         public Dictionary<string, List<string>> AttributeToIndexesNameMapping { get; set; }
@@ -146,10 +241,37 @@ namespace Amazon.DynamoDBv2.DataModel
         public PropertyStorage GetPropertyStorage(string propertyName)
         {
             PropertyStorage storage;
-            if (PropertyToPropertyStorageMapping.TryGetValue(propertyName, out storage))
+            if (TryGetPropertyStorage(propertyName, out storage))
                 return storage;
             throw new InvalidOperationException("Unable to find storage information for property [" + propertyName + "]");
         }
+        public bool TryGetPropertyStorage(string propertyName, out PropertyStorage storage)
+        {
+            return (PropertyToPropertyStorageMapping.TryGetValue(propertyName, out storage));
+        }
+        //public void RemovePropertyStorage(string propertyName)
+        //{
+        //    PropertyStorage storage;
+        //    if (!TryGetPropertyStorage(propertyName, out storage))
+        //        return;
+
+        //    string attributeName = storage.AttributeName;
+
+        //    // Remove all references
+        //    if (storage.IsHashKey)
+        //        HashKeyPropertyNames.Remove(propertyName);
+        //    if (storage.IsRangeKey)
+        //        RangeKeyPropertyNames.Remove(propertyName);
+        //    if (storage.IsVersion)
+        //        VersionPropertyName = null;
+        //    if (storage.IsGSIHashKey)
+        //        IndexNameToGSIMapping
+
+        //    AttributesToGet.Remove(attributeName);
+
+        //    PropertyToPropertyStorageMapping.Remove(propertyName);
+        //}
+
         public GSIConfig GetGSIConfig(string indexName)
         {
             GSIConfig gsiConfig;
@@ -205,7 +327,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             get { return PropertyToPropertyStorageMapping.Values; }
         }
-        public void AddPropertyStorage(PropertyStorage value)
+        private void AddPropertyStorage(PropertyStorage value)
         {
             string propertyName = value.PropertyName;
             string attributeName = value.AttributeName;
@@ -221,7 +343,7 @@ namespace Amazon.DynamoDBv2.DataModel
                     indexes = new List<string>();
                     AttributeToIndexesNameMapping[attributeName] = indexes;
                 }
-                foreach (var index in value.Indexes)
+                foreach (var index in value.IndexNames)
                 {
                     if (!indexes.Contains(index))
                         indexes.Add(index);
@@ -234,15 +356,140 @@ namespace Amazon.DynamoDBv2.DataModel
             if (value.IsVersion)
             {
                 if (!string.IsNullOrEmpty(VersionPropertyName))
-                    throw new InvalidOperationException("Multiple version attributes defined");
+                    throw new InvalidOperationException("Multiple version properties defined: " + VersionPropertyName + " and " + propertyName);
                 VersionPropertyName = propertyName;
+            }
+        }
+        public bool FindPropertyByPropertyName(string propertyName, out PropertyStorage propertyStorage)
+        {
+            return FindSingleProperty(
+                p => string.Equals(p.PropertyName, propertyName, StringComparison.Ordinal),
+                "Multiple properties configured for property " + propertyName,
+                out propertyStorage);
+        }
+        public bool FindSinglePropertyByAttributeName(string attributeName, out PropertyStorage propertyStorage)
+        {
+            return FindSingleProperty(
+                p => string.Equals(p.AttributeName, attributeName, StringComparison.Ordinal),
+                "Multiple properties configured for attribute " + attributeName,
+                out propertyStorage);
+        }
+        private bool FindSingleProperty(Func<PropertyStorage, bool> match, string errorMessage, out PropertyStorage propertyStorage)
+        {
+            var properties = Properties.Where(match).ToList();
+
+            if (properties.Count == 0)
+            {
+                propertyStorage = null;
+                return false;
+            }
+            if (properties.Count == 1)
+            {
+                propertyStorage = properties[0];
+                return true;
+            }
+
+            throw new InvalidOperationException(errorMessage);
+        }
+
+
+        public static bool IsValidMemberInfo(MemberInfo member)
+        {
+            // filter out non-fields and non-properties
+            if (!(member is FieldInfo || member is PropertyInfo))
+                return false;
+
+            // filter out properties that aren't both read and write
+            if (!Utils.IsReadWrite(member))
+                return false;
+
+            return true;
+        }
+
+        private static Dictionary<string, MemberInfo> GetMembersDictionary(ITypeInfo typeInfo)
+        {
+            Dictionary<string, MemberInfo> dictionary = new Dictionary<string, MemberInfo>(StringComparer.Ordinal);
+
+            var members = typeInfo
+                .GetMembers()
+                .Where(IsValidMemberInfo)
+                .ToList();
+            foreach (var member in members)
+            {
+                AWSSDKUtils.AddToDictionary(dictionary, member.Name, member);
+            }
+
+            return dictionary;
+        }
+
+        public void Denormalize()
+        {
+            // analyze all PropertyStorage configs and denormalize data into other properties
+            // all data must exist in PropertyStorage objects prior to denormalization
+
+            foreach (var property in Properties)
+            {
+                // only add non-ignored properties
+                if (property.IsIgnored) continue;
+
+                property.Validate();
+                AddPropertyStorage(property);
+
+                string propertyName = property.PropertyName;
+
+                foreach (var index in property.Indexes)
+                {
+                    var gsi = index as PropertyStorage.GSI;
+                    if (gsi != null)
+                        AddGSIConfigs(gsi.IndexNames, propertyName, gsi.IsHashKey);
+
+                    var lsi = index as PropertyStorage.LSI;
+                    if (lsi != null)
+                        AddLSIConfigs(lsi.IndexNames, propertyName);
+                }
+            }
+
+            if (this.HashKeyPropertyNames.Count == 0)
+                throw new InvalidOperationException("No hash key configured for type " + TargetTypeInfo.FullName);
+        }
+
+        private void AddLSIConfigs(List<string> lsiIndexNames, string propertyName)
+        {
+            foreach (var index in lsiIndexNames)
+            {
+                List<string> properties;
+                if (!this.IndexNameToLSIRangePropertiesMapping.TryGetValue(index, out properties))
+                {
+                    properties = new List<string>();
+                    this.IndexNameToLSIRangePropertiesMapping[index] = properties;
+                }
+                if (!properties.Contains(propertyName, StringComparer.Ordinal))
+                    properties.Add(propertyName);
+            }
+        }
+
+        private void AddGSIConfigs(List<string> gsiIndexNames, string propertyName, bool isHashKey)
+        {
+            foreach (var index in gsiIndexNames)
+            {
+                GSIConfig gsiConfig = this.GetGSIConfig(index);
+                if (gsiConfig == null)
+                {
+                    gsiConfig = new GSIConfig(index);
+                    this.IndexNameToGSIMapping[index] = gsiConfig;
+                }
+                if (isHashKey)
+                    gsiConfig.HashKeyPropertyName = propertyName;
+                else
+                    gsiConfig.RangeKeyPropertyName = propertyName;
             }
         }
 
         // constructor
-        public ItemStorageConfig(Type targetType)
+        public ItemStorageConfig(ITypeInfo targetTypeInfo)
         {
-            TargetType = targetType;
+            TargetTypeInfo = targetTypeInfo;
+            Properties = new List<PropertyStorage>();
             PropertyToPropertyStorageMapping = new Dictionary<string, PropertyStorage>(StringComparer.Ordinal);
             AttributeToIndexesNameMapping = new Dictionary<string, List<string>>(StringComparer.Ordinal);
             IndexNameToLSIRangePropertiesMapping = new Dictionary<string, List<string>>(StringComparer.Ordinal);
@@ -250,28 +497,62 @@ namespace Amazon.DynamoDBv2.DataModel
             AttributesToGet = new List<string>();
             HashKeyPropertyNames = new List<string>();
             RangeKeyPropertyNames = new List<string>();
+            TargetTypeMembers = GetMembersDictionary(targetTypeInfo);
         }
     }
 
 
-    internal static class ItemStorageConfigCache
+    internal class ItemStorageConfigCache
     {
-        private static Dictionary<Type, ItemStorageConfig> Cache = new Dictionary<Type, ItemStorageConfig>();
+        // Cache of ItemStorageConfig objects per table and the
+        // base, table-less ItemStorageConfig
+        private class ConfigTableCache
+        {
+            public Dictionary<string, ItemStorageConfig> Cache { get; private set; }
+            private ItemStorageConfig BaseTypeConfig;
 
-        public static ItemStorageConfig GetConfig<T>()
+            public ConfigTableCache(ItemStorageConfig baseTypeConfig)
+            {
+                BaseTypeConfig = baseTypeConfig;
+                BaseTableName = BaseTypeConfig.TableName;
+                Cache = new Dictionary<string, ItemStorageConfig>(StringComparer.Ordinal);
+            }
+            public string BaseTableName { get; private set; }
+        }
+
+        private Dictionary<Type, ConfigTableCache> Cache;
+        private DynamoDBContext Context;
+
+        public ItemStorageConfigCache(DynamoDBContext context)
+        {
+            Cache = new Dictionary<Type, ConfigTableCache>();
+            Context = context;
+        }
+
+        public ItemStorageConfig GetConfig<T>(DynamoDBFlatConfig flatConfig)
         {
             Type type = typeof(T);
-            return GetConfig(type);
+            return GetConfig(type, flatConfig);
         }
-        public static ItemStorageConfig GetConfig(Type type)
+        public ItemStorageConfig GetConfig(Type type, DynamoDBFlatConfig flatConfig)
         {
             lock (Cache)
             {
-                ItemStorageConfig config;
-                if (!Cache.TryGetValue(type, out config))
+                ConfigTableCache tableCache;
+                if (!Cache.TryGetValue(type, out tableCache))
                 {
-                    config = CreateStorageConfig(type);
-                    Cache[type] = config;
+                    var baseStorageConfig = CreateStorageConfig(type, null);
+                    tableCache = new ConfigTableCache(baseStorageConfig);
+                    Cache[type] = tableCache;
+                }
+
+                string actualTableName = DynamoDBContext.GetTableName(tableCache.BaseTableName, flatConfig);
+
+                ItemStorageConfig config;
+                if (!tableCache.Cache.TryGetValue(actualTableName, out config))
+                {
+                    config = CreateStorageConfig(type, actualTableName);
+                    tableCache.Cache[actualTableName] = config;
                 }
                 return config;
             }
@@ -281,105 +562,93 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             return (config.LowerCamelCaseProperties ? Utils.ToLowerCamelCase(value) : value);
         }
-        private static void AddGSIConfigs(ItemStorageConfig config, string[] gsiIndexNames, string propertyName, bool isHashKey)
+        internal ItemStorageConfig CreateStorageConfig(Type baseType, string actualTableName)
         {
-            foreach (var index in gsiIndexNames)
+            if (baseType == null) throw new ArgumentNullException("baseType");
+            ITypeInfo typeInfo = TypeFactory.GetTypeInfo(baseType);
+            ItemStorageConfig config = new ItemStorageConfig(typeInfo);
+
+            PopulateConfigFromType(config, typeInfo);
+            PopulateConfigFromMappings(config, AWSConfigs.DynamoDBConfig.Context.TypeMappings);
+
+            // populate config from table definition only if actual table name is known
+            if (!string.IsNullOrEmpty(actualTableName))
             {
-                GSIConfig gsiConfig = config.GetGSIConfig(index);
-                if (gsiConfig == null)
-                {
-                    gsiConfig = new GSIConfig(index);
-                    config.IndexNameToGSIMapping[index] = gsiConfig;
-                }
-                if (isHashKey)
-                    gsiConfig.HashKeyPropertyName = propertyName;
-                else
-                    gsiConfig.RangeKeyPropertyName = propertyName;
+                Table table = Context.GetTargetTable(actualTableName);
+                PopulateConfigFromTable(config, table);
+
+                config.Denormalize();
             }
+
+            return config;
         }
-        internal static ItemStorageConfig CreateStorageConfig(Type type)
+
+        private static void PopulateConfigFromType(ItemStorageConfig config, ITypeInfo typeInfo)
         {
-            if (type == null) throw new ArgumentNullException("type");
-            var typeWrapper = TypeFactory.GetTypeInfo(type);
-            ItemStorageConfig config = new ItemStorageConfig(type);
-
-            DynamoDBTableAttribute tableAttribute = Utils.GetTableAttribute(type);
-            if (tableAttribute == null || string.IsNullOrEmpty(tableAttribute.TableName)) throw new InvalidOperationException("No DynamoDBTableAttribute on type");
-
-            if (string.IsNullOrEmpty(tableAttribute.TableName)) throw new InvalidOperationException("DynamoDBTableAttribute.Table is empty or null");
-            config.TableName = tableAttribute.TableName;
-            config.LowerCamelCaseProperties = tableAttribute.LowerCamelCaseProperties;
-
-            foreach (var member in typeWrapper.GetMembers())
+            DynamoDBTableAttribute tableAttribute = Utils.GetTableAttribute(typeInfo);
+            if (tableAttribute == null)
             {
-                // filter out non-fields and non-properties
-                if (!(member is FieldInfo || member is PropertyInfo)) continue;
+                config.TableName = typeInfo.Name;
+            }
+            else
+            {
+                if (string.IsNullOrEmpty(tableAttribute.TableName)) throw new InvalidOperationException("DynamoDBTableAttribute.Table is empty or null");
+                config.TableName = tableAttribute.TableName;
+                config.LowerCamelCaseProperties = tableAttribute.LowerCamelCaseProperties;
+            }
 
-                // filter out properties that aren't both read and write
-                if (!Utils.IsReadWrite(member)) continue;
+            string tableAlias;
+            if (AWSConfigs.DynamoDBConfig.Context.TableAliases.TryGetValue(config.TableName, out tableAlias))
+                config.TableName = tableAlias;
+
+            foreach (var member in typeInfo.GetMembers())
+            {
+                if (!ItemStorageConfig.IsValidMemberInfo(member))
+                    continue;
 
                 // prepare basic info
-                Type memberType = Utils.GetType(member);
-                string attributeName = GetAccurateCase(config, member.Name);
-                string propertyName = member.Name;
-                PropertyStorage propertyStorage = new PropertyStorage(member, memberType);
+                PropertyStorage propertyStorage = new PropertyStorage(member);
+                propertyStorage.AttributeName = GetAccurateCase(config, member.Name);
 
                 // run through all DDB attributes
-                bool ignorePresent = false;
-                var allAttributes = Utils.GetAttributes(member);
+                List<DynamoDBAttribute> allAttributes = Utils.GetAttributes(member);
                 foreach (var attribute in allAttributes)
                 {
                     // filter out ignored properties
                     if (attribute is DynamoDBIgnoreAttribute)
-                        ignorePresent |= true;
-
-                    // if ignore attribute is present, ignore other attributes
-                    if (ignorePresent) continue;
+                        propertyStorage.IsIgnored = true;
 
                     if (attribute is DynamoDBVersionAttribute)
-                    {
-                        Utils.ValidateVersionType(memberType);    // no conversion is possible, so type must be a nullable primitive
-
                         propertyStorage.IsVersion = true;
-                    }
 
                     DynamoDBPropertyAttribute propertyAttribute = attribute as DynamoDBPropertyAttribute;
                     if (propertyAttribute != null)
                     {
                         if (!string.IsNullOrEmpty(propertyAttribute.AttributeName))
-                            attributeName = GetAccurateCase(config, propertyAttribute.AttributeName);
+                            propertyStorage.AttributeName = GetAccurateCase(config, propertyAttribute.AttributeName);
+
+                        if (propertyAttribute.Converter != null)
+                            propertyStorage.ConverterType = propertyAttribute.Converter;
 
                         if (propertyAttribute is DynamoDBHashKeyAttribute)
                         {
-                            if (propertyAttribute.Converter == null && !Utils.IsPrimitive(memberType))
-                                throw new InvalidOperationException("Hash key " + propertyName + " must be of primitive type");
-
                             var gsiHashAttribute = propertyAttribute as DynamoDBGlobalSecondaryIndexHashKeyAttribute;
                             if (gsiHashAttribute != null)
                             {
                                 propertyStorage.IsGSIHashKey = true;
-                                if (gsiHashAttribute.IndexNames == null || gsiHashAttribute.IndexNames.Length == 0)
-                                    throw new InvalidOperationException("Global Secondary Index must not be null or empty");
-                                propertyStorage.Indexes.AddRange(gsiHashAttribute.IndexNames);
-                                AddGSIConfigs(config, gsiHashAttribute.IndexNames, propertyName, true);
+                                propertyStorage.AddIndex(gsiHashAttribute);
                             }
                             else
                                 propertyStorage.IsHashKey = true;
                         }
                         if (propertyAttribute is DynamoDBRangeKeyAttribute)
                         {
-                            if (propertyAttribute.Converter == null && !Utils.IsPrimitive(memberType))
-                                throw new InvalidOperationException("Range key " + propertyName + " must be of primitive type");
-
                             var gsiRangeAttribute = propertyAttribute as DynamoDBGlobalSecondaryIndexRangeKeyAttribute;
                             if (gsiRangeAttribute != null)
                             {
                                 propertyStorage.IsGSIRangeKey = true;
-                                if (gsiRangeAttribute.IndexNames == null || gsiRangeAttribute.IndexNames.Length == 0)
-                                    throw new InvalidOperationException("Global Secondary Index must not be null or empty");
-                                propertyStorage.Indexes.AddRange(gsiRangeAttribute.IndexNames);
-                                AddGSIConfigs(config, gsiRangeAttribute.IndexNames, propertyName, false);
-                            }
+                                propertyStorage.AddIndex(gsiRangeAttribute);
+                           }
                             else
                                 propertyStorage.IsRangeKey = true;
                         }
@@ -387,46 +656,147 @@ namespace Amazon.DynamoDBv2.DataModel
                         DynamoDBLocalSecondaryIndexRangeKeyAttribute lsiRangeKeyAttribute = propertyAttribute as DynamoDBLocalSecondaryIndexRangeKeyAttribute;
                         if (lsiRangeKeyAttribute != null)
                         {
-                            if (lsiRangeKeyAttribute.IndexNames == null || lsiRangeKeyAttribute.IndexNames.Length == 0)
-                                throw new InvalidOperationException("Local Secondary Index must not be null or empty");
-                            propertyStorage.Indexes.AddRange(lsiRangeKeyAttribute.IndexNames);
                             propertyStorage.IsLSIRangeKey = true;
-
-                            foreach (var index in lsiRangeKeyAttribute.IndexNames)
-                            {
-                                List<string> properties;
-                                if (!config.IndexNameToLSIRangePropertiesMapping.TryGetValue(index, out properties))
-                                {
-                                    properties = new List<string>();
-                                    config.IndexNameToLSIRangePropertiesMapping[index] = properties;
-                                }
-                                properties.Add(propertyName);
-                            }
-                        }
-
-                        if (propertyAttribute.Converter != null)
-                        {
-                            if (!Utils.CanInstantiate(propertyAttribute.Converter) || !Utils.ImplementsInterface(propertyAttribute.Converter, typeof(IPropertyConverter)))
-                                throw new InvalidOperationException("Converter for " + propertyName + " must be instantiable with no parameters and must implement IPropertyConverter");
-
-                            propertyStorage.Converter = Utils.Instantiate(propertyAttribute.Converter) as IPropertyConverter;
+                            propertyStorage.AddIndex(lsiRangeKeyAttribute);
                         }
                     }
                 }
 
-                propertyStorage.PropertyName = propertyName;
-                propertyStorage.AttributeName = attributeName;
+                config.Properties.Add(propertyStorage);
+            }
+        }
 
-                // only add property storage if no ignore attribute was present
-                if (!ignorePresent)
-                    config.AddPropertyStorage(propertyStorage);
+        private static void PopulateConfigFromTable(ItemStorageConfig config, Table table)
+        {
+            PropertyStorage property;
+
+            // keys
+            foreach(var key in table.Keys)
+            {
+                var attributeName = key.Key;
+                var keyDescription = key.Value;
+
+                if (GetExistingProperty(config, attributeName, out property))
+                {
+                    // validate against table
+                    if (property.IsKey)
+                        ValidateProperty(property.IsHashKey == keyDescription.IsHash,
+                        property.PropertyName, "Property key definition must match table key definition");
+                }
+
+                // populate property
+                if (keyDescription.IsHash)
+                    property.IsHashKey = true;
+                else
+                    property.IsRangeKey = true;
             }
 
-            if (config.HashKeyPropertyNames.Count == 0)
-                throw new InvalidOperationException("No hash key configured for type " + type.FullName);
+            foreach (var kvp in table.GlobalSecondaryIndexes)
+            {
+                string indexName = kvp.Key;
+                var gsi = kvp.Value;
 
-            return config;
+                foreach (var element in gsi.KeySchema)
+                {
+                    string attributeName = element.AttributeName;
+                    bool isHashKey = element.KeyType == KeyType.HASH;
+
+                    GetExistingProperty(config, attributeName, out property);
+                    property.AddGsiIndex(isHashKey, attributeName, indexName);
+                }
+            }
+
+            foreach (var kvp in table.LocalSecondaryIndexes)
+            {
+                string indexName = kvp.Key;
+                var lsi = kvp.Value;
+
+                foreach (var element in lsi.KeySchema)
+                {
+                    string attributeName = element.AttributeName;
+                    bool isHashKey = element.KeyType == KeyType.HASH;
+
+                    // only add for range keys
+                    if (!isHashKey)
+                    {
+                        GetExistingProperty(config, attributeName, out property);
+                        property.AddLsiIndex(attributeName, indexName);
+                    }
+                }
+            }
+
+        }
+
+        private static void PopulateConfigFromMappings(ItemStorageConfig config, Dictionary<Type, TypeMapping> typeMappings)
+        {
+            var baseType = config.TargetTypeInfo.BaseType;
+            TypeMapping typeMapping;
+            if (typeMappings.TryGetValue(baseType, out typeMapping))
+            {
+                config.TableName = typeMapping.TargetTable;
+
+                foreach (var kvp in typeMapping.PropertyConfigs)
+                {
+                    PropertyConfig propertyConfig = kvp.Value;
+                    string propertyName = propertyConfig.Name;
+
+                    PropertyStorage propertyStorage;
+                    if (!config.FindPropertyByPropertyName(propertyName, out propertyStorage))
+                        throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
+                            "No matching property {0} on type {1}", propertyName, baseType.FullName));
+
+                    if (!string.IsNullOrEmpty( propertyConfig.Attribute))
+                        propertyStorage.AttributeName = propertyConfig.Attribute;
+                    if (propertyConfig.Converter != null)
+                        propertyStorage.ConverterType = propertyConfig.Converter;
+                    propertyStorage.IsIgnored = propertyConfig.Ignore;
+                    propertyStorage.IsVersion = propertyConfig.Version;
+                }
+            }
+        }
+
+        // Finds an existing PropertyStorage for a property by its attributeName,
+        // or creates a new PropertyStorage and adds it to the config.
+        // Returns true if PropertyStorage existed, false if new one had to be created.
+        private static bool GetExistingProperty(ItemStorageConfig config, string attributeName, out PropertyStorage property)
+        {
+            bool exists = config.FindSinglePropertyByAttributeName(attributeName, out property);
+            if (exists)
+                return true;
+            else
+            {
+                // property storage doesn't exist yet, create and populate
+
+                MemberInfo member;
+                Validate(config.TargetTypeMembers.TryGetValue(attributeName, out member),
+                    "Unable to locate property for key attribute {0}", attributeName);
+
+                property = new PropertyStorage(member);
+                property.AttributeName = attributeName;
+                config.Properties.Add(property);
+
+                return false;
+            }
+        }
+
+        private static void Validate(bool value, string messageFormat, params object[] args)
+        {
+            if (!value)
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.AppendFormat(CultureInfo.InvariantCulture, messageFormat, args);
+                throw new InvalidOperationException(sb.ToString());
+            }
+        }
+        private static void ValidateProperty(bool value, string propertyName, string messageFormat, params object[] args)
+        {
+            if (!value)
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.AppendFormat(CultureInfo.InvariantCulture, "Error with property [{0}]: ", propertyName);
+                sb.AppendFormat(CultureInfo.InvariantCulture, messageFormat, args);
+                throw new InvalidOperationException(sb.ToString());
+            }
         }
     }
-
 }

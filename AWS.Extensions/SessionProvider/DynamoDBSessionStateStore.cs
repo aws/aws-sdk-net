@@ -46,8 +46,8 @@ namespace Amazon.SessionProvider
     ///   &lt;providers&gt;
     ///     &lt;add name="DynamoDBSessionStoreProvider" 
     ///          type="Amazon.SessionProvider.DynamoDBSessionStateStore"
-    ///          AWSAccessKey="YOUR_ACCESS_KEY"
-    ///          AWSSecretKey="YOUR_SECRET_KEY"
+    ///          AWSProfileName="AWS Default"
+    ///          AWSProfilesLocation=".aws/credentials"
     ///          Region="us-east-1"
     ///          Table="ASP.NET_SessionState"
     ///          /&gt;
@@ -68,12 +68,12 @@ namespace Amazon.SessionProvider
     ///         <term>Use</term>
     ///     </listheader>
     ///     <item>
-    ///         <term>AWSAccessKey</term>
-    ///         <description>Access key used. This can be set at either the provider or in the appSettings.</description>
+    ///         <term>AWSProfileName</term>
+    ///         <description>Profile used. This can be set at either the provider or in the appSettings.</description>
     ///     </item>
     ///     <item>
-    ///         <term>AWSSecretKey</term>
-    ///         <description>Secret key used. This can be set at either the provider or in the appSettings.</description>
+    ///         <term>AWSProfilesLocation</term>
+    ///         <description>Location of the credentials file. This can be set at either the provider or in the appSettings.</description>
     ///     </item>
     ///     <item>
     ///         <term>Region</term>
@@ -123,6 +123,8 @@ namespace Amazon.SessionProvider
         // Possible config names set in the web.config.
         public const string CONFIG_ACCESSKEY = "AWSAccessKey";
         public const string CONFIG_SECRETKEY = "AWSSecretKey";
+        public const string CONFIG_PROFILENAME = "AWSProfileName";
+        public const string CONFIG_PROFILESLOCATION = "AWSProfilesLocation";
         public const string CONFIG_APPLICATION = "Application";
         public const string CONFIG_TABLE = "Table";
         public const string CONFIG_REGION = "Region";
@@ -149,6 +151,8 @@ namespace Amazon.SessionProvider
         // Fields that come from the web.config
         string _accessKey;
         string _secretKey;
+        string _profileName;
+        string _profilesLocation;
         string _tableName = DEFAULT_TABLENAME;
         string _regionName;
         string _application = "";
@@ -212,9 +216,23 @@ namespace Amazon.SessionProvider
 
 
             var region = RegionEndpoint.GetBySystemName(this._regionName);
+
+            AWSCredentials credentials = null;
             if (!string.IsNullOrEmpty(this._accessKey))
             {
-                this._ddbClient = new AmazonDynamoDBClient(this._accessKey, this._secretKey, region);
+                credentials = new BasicAWSCredentials(this._accessKey, this._secretKey);
+            }
+            else if (!string.IsNullOrEmpty(this._profileName))
+            {
+                if (string.IsNullOrEmpty(this._profilesLocation))
+                    credentials = new StoredProfileAWSCredentials(this._profileName);
+                else
+                    credentials = new StoredProfileAWSCredentials(this._profileName, this._profilesLocation);
+            }
+
+            if (credentials != null)
+            {
+                this._ddbClient = new AmazonDynamoDBClient(credentials, region);
             }
             else
             {
@@ -249,6 +267,8 @@ namespace Amazon.SessionProvider
         {
             this._accessKey = config[CONFIG_ACCESSKEY];
             this._secretKey = config[CONFIG_SECRETKEY];
+            this._profileName= config[CONFIG_PROFILENAME];
+            this._profilesLocation = config[CONFIG_PROFILESLOCATION];
             this._regionName = config[CONFIG_REGION];
 
             if (string.IsNullOrEmpty(this._regionName))

@@ -53,7 +53,7 @@ namespace Amazon.DynamoDBv2.DataModel
     {
         public DynamoDBContextConfig()
         {
-            TableNamePrefix = AWSConfigs.DynamoDBContextTableNamePrefix;
+            TableNamePrefix = AWSConfigs.DynamoDBConfig.Context.TableNamePrefix;
         }
 
         /// <summary>
@@ -245,7 +245,7 @@ namespace Amazon.DynamoDBv2.DataModel
     }
 
 
-    internal class DynamoDBFlatConfig : DynamoDBOperationConfig
+    internal class DynamoDBFlatConfig
     {
         public static string DefaultIndexName = string.Empty;
 
@@ -258,7 +258,7 @@ namespace Amazon.DynamoDBv2.DataModel
             IgnoreNullValues = null,
             BackwardQuery = null,
             IndexName = null,
-            ConditionalOperator = ConditionalOperatorValues.And
+            ConditionalOperator = ConditionalOperatorValues.And,
         };
         private static DynamoDBContextConfig _emptyContextConfig = new DynamoDBContextConfig
         {
@@ -299,5 +299,73 @@ namespace Amazon.DynamoDBv2.DataModel
             QueryFilter = queryFilter;
             ConditionalOperator = conditionalOperator;
         }
+
+        /// <summary>
+        /// Property that directs DynamoDBContext to use consistent reads.
+        /// If property is not set, behavior defaults to non-consistent reads.
+        /// </summary>
+        public bool? ConsistentRead { get; set; }
+
+        /// <summary>
+        /// Property that directs DynamoDBContext to skip version checks
+        /// when saving or deleting an object with a version attribute.
+        /// If property is not set, version checks are performed.
+        /// </summary>
+        public bool? SkipVersionCheck { get; set; }
+
+        /// <summary>
+        /// Property that directs DynamoDBContext to prefix all table names
+        /// with a specific string.
+        /// If property is null or empty, no prefix is used and default
+        /// table names are used.
+        /// </summary>
+        public string TableNamePrefix { get; set; }
+
+        /// <summary>
+        /// Property that directs DynamoDBContext to ignore null values
+        /// on attributes during a Save operation.
+        /// If the property is false (or not set), null values will be
+        /// interpreted as directives to delete the specific attribute.
+        /// </summary>
+        public bool? IgnoreNullValues { get; set; }
+
+        /// <summary>
+        /// Property that indicates the table to save an object to overriding the DynamoDBTable attribute 
+        /// declared for the type.
+        /// </summary>
+        public string OverrideTableName { get; set; }
+
+        /// <summary>
+        /// Property that indicates a query should traverse the index backward.
+        /// If the property is false (or not set), traversal shall be forward.
+        /// </summary>
+        public bool? BackwardQuery { get; set; }
+
+        /// <summary>
+        /// Property indicating the name of the index to query against.
+        /// This value is optional if the index name can be inferred from the query call.
+        /// </summary>
+        public string IndexName { get; set; }
+
+        /// <summary>
+        /// A logical operator to apply to the filter conditions:
+        /// AND - If all of the conditions evaluate to true, then the entire filter evaluates to true.
+        /// OR - If at least one of the conditions evaluate to true, then the entire filter evaluates to true.
+        /// 
+        /// Default value is AND.
+        /// </summary>
+        public ConditionalOperatorValues ConditionalOperator { get; set; }
+
+        /// <summary>
+        /// Query filter for the Query operation operation. Evaluates the query results and returns only
+        /// the matching values. If you specify more than one condition, then by default all of the
+        /// conditions must evaluate to true. To match only some conditions, set ConditionalOperator to Or.
+        /// Note: Conditions must be against non-key properties.
+        /// </summary>
+        public List<ScanCondition> QueryFilter { get; set; }
+
+        // Checks if the IndexName is set on the config
+        internal bool IsIndexOperation { get { return !string.IsNullOrEmpty(IndexName); } }
+
     }
 }

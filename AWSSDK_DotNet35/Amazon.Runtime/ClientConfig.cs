@@ -56,7 +56,7 @@ namespace Amazon.Runtime
         private long progressUpdateInterval = AWSSDKUtils.DefaultProgressUpdateInterval;
         private bool resignRetries = false;
         private ICredentials proxyCredentials;
-        private bool logMetrics = AWSConfigs.LogMetrics;
+        private bool logMetrics = AWSConfigs.LoggingConfig.LogMetrics;
         private bool disableLogging = false;
         private TimeSpan? timeout = null;
 
@@ -304,7 +304,16 @@ namespace Amazon.Runtime
         /// </summary>
         public ICredentials ProxyCredentials
         {
-            get { return this.proxyCredentials; }
+            get 
+            {
+                if(this.proxyCredentials == null &&
+                    (!string.IsNullOrEmpty(AWSConfigs.ProxyConfig.Username) ||
+                    !string.IsNullOrEmpty(AWSConfigs.ProxyConfig.Password)))
+                {
+                    return new NetworkCredential(AWSConfigs.ProxyConfig.Username, AWSConfigs.ProxyConfig.Password ?? string.Empty);
+                }
+                return this.proxyCredentials; 
+            }
             set { this.proxyCredentials = value; }
         }
 

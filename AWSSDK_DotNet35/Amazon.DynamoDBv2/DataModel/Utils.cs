@@ -75,18 +75,18 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region Attribute methods
 
-        public static DynamoDBTableAttribute GetTableAttribute(Type type)
+        public static DynamoDBTableAttribute GetTableAttribute(ITypeInfo targetTypeInfo)
         {
-            DynamoDBTableAttribute tableAttribute = GetAttribute(type) as DynamoDBTableAttribute;
+            DynamoDBTableAttribute tableAttribute = GetAttribute(targetTypeInfo) as DynamoDBTableAttribute;
             if (tableAttribute == null)
                 return null;
             return tableAttribute;
         }
 
-        public static DynamoDBAttribute GetAttribute(Type targetType)
+        public static DynamoDBAttribute GetAttribute(ITypeInfo targetTypeInfo)
         {
-            if (targetType == null) throw new ArgumentNullException("targetType");
-            object[] attributes = TypeFactory.GetTypeInfo(targetType).GetCustomAttributes(TypeFactory.GetTypeInfo(typeof(DynamoDBAttribute)), true);
+            if (targetTypeInfo == null) throw new ArgumentNullException("targetTypeInfo");
+            object[] attributes = targetTypeInfo.GetCustomAttributes(TypeFactory.GetTypeInfo(typeof(DynamoDBAttribute)), true);
             return GetSingleDDBAttribute(attributes);
         }
         public static DynamoDBAttribute GetAttribute(MemberInfo targetMemberInfo)
@@ -94,7 +94,7 @@ namespace Amazon.DynamoDBv2.DataModel
             object[] attributes = GetAttributeObjects(targetMemberInfo);
             return GetSingleDDBAttribute(attributes);
         }
-        public static DynamoDBAttribute[] GetAttributes(MemberInfo targetMemberInfo)
+        public static List<DynamoDBAttribute> GetAttributes(MemberInfo targetMemberInfo)
         {
             object[] attObjects = GetAttributeObjects(targetMemberInfo) ?? new object[0];
             var attributes = new List<DynamoDBAttribute>();
@@ -104,7 +104,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 if (attribute != null)
                     attributes.Add(attribute);
             }
-            return attributes.ToArray();
+            return attributes;
         }
 
         private static DynamoDBAttribute GetSingleDDBAttribute(object[] attributes)

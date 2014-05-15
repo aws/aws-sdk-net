@@ -45,6 +45,15 @@ namespace Amazon
             return value;
         }
 
+        internal static T GetSection<T>(string sectionName)
+            where T : class, new()
+        {
+            object section = ConfigurationManager.GetSection(sectionName);
+            if (section == null)
+                return new T();
+            return section as T;
+        }
+
         private static Dictionary<string, List<TraceListener>> _traceListeners
             = new Dictionary<string, List<TraceListener>>(StringComparer.OrdinalIgnoreCase);
 

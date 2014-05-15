@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -107,8 +107,7 @@ namespace Amazon.Glacier.Transfer
         /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
         /// &lt;configuration&gt;
         ///     &lt;appSettings&gt;
-        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
-        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
         ///     &lt;/appSettings&gt;
         /// &lt;/configuration&gt;
         /// </code>

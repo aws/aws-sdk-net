@@ -24,7 +24,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Returns information about the  CreateStack response and response metadata.
     /// </summary>
-    public class CreateStackResponse : CreateStackResult
+    public partial class CreateStackResponse : CreateStackResult
     {
         /// <summary>
         /// Gets and sets the CreateStackResult property.

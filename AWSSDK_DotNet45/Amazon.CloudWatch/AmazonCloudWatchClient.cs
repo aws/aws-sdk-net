@@ -98,8 +98,7 @@ namespace Amazon.CloudWatch
         /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
         /// &lt;configuration&gt;
         ///     &lt;appSettings&gt;
-        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
-        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
         ///     &lt;/appSettings&gt;
         /// &lt;/configuration&gt;
         /// </code>
@@ -117,8 +116,7 @@ namespace Amazon.CloudWatch
         /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
         /// &lt;configuration&gt;
         ///     &lt;appSettings&gt;
-        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
-        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
         ///     &lt;/appSettings&gt;
         /// &lt;/configuration&gt;
         /// </code>
@@ -137,8 +135,7 @@ namespace Amazon.CloudWatch
         /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
         /// &lt;configuration&gt;
         ///     &lt;appSettings&gt;
-        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
-        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
         ///     &lt;/appSettings&gt;
         /// &lt;/configuration&gt;
         /// </code>

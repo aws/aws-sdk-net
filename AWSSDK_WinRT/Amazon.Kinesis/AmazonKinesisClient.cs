@@ -91,10 +91,7 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Constructs AmazonKinesisClient with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonKinesisClient Configuration object. If the config object's
-        /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
-        /// is stored as a clear-text string. Please use this option only
-        /// if the application environment doesn't allow the use of SecureStrings.
+        /// AmazonKinesisClient Configuration object.
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
@@ -129,10 +126,7 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Constructs AmazonKinesisClient with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonKinesisClient Configuration object. If the config object's
-        /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
-        /// is stored as a clear-text string. Please use this option only
-        /// if the application environment doesn't allow the use of SecureStrings.
+        /// AmazonKinesisClient Configuration object.
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>

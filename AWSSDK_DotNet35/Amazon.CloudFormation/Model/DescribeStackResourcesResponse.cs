@@ -24,7 +24,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Returns information about the  DescribeStackResources response and response metadata.
     /// </summary>
-    public class DescribeStackResourcesResponse : DescribeStackResourcesResult
+    public partial class DescribeStackResourcesResponse : DescribeStackResourcesResult
     {
         /// <summary>
         /// Gets and sets the DescribeStackResourcesResult property.

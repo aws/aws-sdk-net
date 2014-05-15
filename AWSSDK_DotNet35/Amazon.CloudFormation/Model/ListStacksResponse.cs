@@ -24,7 +24,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Returns information about the  ListStacks response and response metadata.
     /// </summary>
-    public class ListStacksResponse : ListStacksResult
+    public partial class ListStacksResponse : ListStacksResult
     {
         /// <summary>
         /// Gets and sets the ListStacksResult property.

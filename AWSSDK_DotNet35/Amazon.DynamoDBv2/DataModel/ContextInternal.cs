@@ -94,8 +94,9 @@ namespace Amazon.DynamoDBv2.DataModel
         internal Table GetTargetTableInternal<T>(DynamoDBOperationConfig operationConfig)
         {
             Type type = typeof(T);
-            ItemStorageConfig storageConfig = ItemStorageConfigCache.GetConfig(type);
-            Table table = GetTargetTable(storageConfig, new DynamoDBFlatConfig(operationConfig, this.config));
+            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
+            ItemStorageConfig storageConfig = StorageConfigCache.GetConfig(type, flatConfig);
+            Table table = GetTargetTable(storageConfig, flatConfig);
             Table copy = table.Copy(Table.DynamoDBConsumer.DocumentModel);
             return table;
         }
@@ -105,10 +106,18 @@ namespace Amazon.DynamoDBv2.DataModel
             if (flatConfig == null)
                 throw new ArgumentNullException("flatConfig");
 
-            string tableName = GetTableName(storageConfig, flatConfig);
+            string tableName = GetTableName(storageConfig.TableName, flatConfig);
             Table table = GetTable(tableName);
 
             ValidateConfigAgainstTable(storageConfig, table);
+            return table;
+        }
+
+        internal Table GetTargetTable(string baseTableName)
+        {
+            var flatConfig = new DynamoDBFlatConfig(null, this.Config);
+            string actualTableName = GetTableName(baseTableName, flatConfig);
+            var table = GetTable(actualTableName);
             return table;
         }
 
@@ -126,12 +135,12 @@ namespace Amazon.DynamoDBv2.DataModel
             return table;
         }
 
-        private static string GetTableName(ItemStorageConfig storageConfig, DynamoDBFlatConfig flatConfig)
+        internal static string GetTableName(string baseTableName, DynamoDBFlatConfig flatConfig)
         {
             if (flatConfig == null)
                 throw new ArgumentNullException("flatConfig");
 
-            string tableName = storageConfig.TableName;
+            string tableName = baseTableName;
 
             if (!string.IsNullOrEmpty(flatConfig.OverrideTableName))
                 tableName = flatConfig.OverrideTableName;
@@ -152,14 +161,14 @@ namespace Amazon.DynamoDBv2.DataModel
             if (attributes.Count != properties.Count)
                 throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, 
                     "Number of {0} keys on table {1} does not match number of hash keys on type {2}",
-                    keyType, table.TableName, config.TargetType.FullName));
+                    keyType, table.TableName, config.TargetTypeInfo.FullName));
             foreach (string hashProperty in properties)
             {
                 PropertyStorage property = config.GetPropertyStorage(hashProperty);
                 if (!attributes.Contains(property.AttributeName))
                     throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, 
                         "Key property {0} on type {1} does not correspond to a {2} key on table {3}",
-                        hashProperty, config.TargetType.FullName, keyType, table.TableName));
+                        hashProperty, config.TargetTypeInfo.FullName, keyType, table.TableName));
             }
         }
 
@@ -235,15 +244,16 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         // Serializing an object into a DynamoDB document
-        private static ItemStorage ObjectToItemStorage<T>(T toStore, bool keysOnly, bool ignoreNullValues)
+        private ItemStorage ObjectToItemStorage<T>(T toStore, bool keysOnly, DynamoDBFlatConfig flatConfig)
         {
             if (toStore == null) return null;
 
             Type objectType = typeof(T);
-            ItemStorageConfig config = ItemStorageConfigCache.GetConfig(objectType);
+
+            ItemStorageConfig config = StorageConfigCache.GetConfig(objectType, flatConfig);
             if (config == null) return null;
 
-            ItemStorage storage = ObjectToItemStorage<T>(toStore, keysOnly, ignoreNullValues, config);
+            ItemStorage storage = ObjectToItemStorage<T>(toStore, keysOnly, flatConfig.IgnoreNullValues.Value, config);
             return storage;
         }
         internal static ItemStorage ObjectToItemStorage<T>(T toStore, bool keysOnly, bool ignoreNullValues, ItemStorageConfig config)
@@ -652,7 +662,7 @@ namespace Amazon.DynamoDBv2.DataModel
                     object[] conditionValues = condition.Values;
                     PropertyStorage conditionProperty = storageConfig.GetPropertyStorage(condition.PropertyName);
                     if (conditionProperty.IsLSIRangeKey || conditionProperty.IsGSIKey)
-                        indexNames.AddRange(conditionProperty.Indexes);
+                        indexNames.AddRange(conditionProperty.IndexNames);
                     if (conditionProperty.IsRangeKey)
                         indexNames.Add(NO_INDEX);
                     List<AttributeValue> attributeValues = ConvertConditionValues(conditionValues, conditionProperty);
@@ -723,18 +733,16 @@ namespace Amazon.DynamoDBv2.DataModel
             return null;
         }
 
-        private List<QueryCondition> CreateQueryConditions(DynamoDBOperationConfig config, QueryOperator op, IEnumerable<object> values, ItemStorageConfig storageConfig)
+        private static List<QueryCondition> CreateQueryConditions(DynamoDBFlatConfig flatConfig, QueryOperator op, IEnumerable<object> values, ItemStorageConfig storageConfig)
         {
             string rangeKeyPropertyName;
 
-            var flatConfig = new DynamoDBFlatConfig(config, this.config);
             string indexName = flatConfig.IndexName;
             if (string.IsNullOrEmpty(indexName))
                 rangeKeyPropertyName = storageConfig.RangeKeyPropertyNames.FirstOrDefault();
             else
-            {
                 rangeKeyPropertyName = storageConfig.GetRangeKeyByIndex(indexName);
-            }
+
             List<QueryCondition> conditions = new List<QueryCondition>
             {
                 new QueryCondition(rangeKeyPropertyName, op, values.ToArray())
@@ -810,17 +818,29 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         // Searching
-        private IEnumerable<T> FromSearch<T>(Search search)
+        internal class ContextSearch
         {
-            if (search == null) throw new ArgumentNullException("search");
+            public DynamoDBFlatConfig FlatConfig { get; set; }
+            public Search Search { get; set; }
+
+            public ContextSearch(Search search, DynamoDBFlatConfig flatConfig)
+            {
+                Search = search;
+                FlatConfig = flatConfig;
+            }
+        }
+
+        private IEnumerable<T> FromSearch<T>(ContextSearch cs)
+        {
+            if (cs == null) throw new ArgumentNullException("cs");
 
             // Configure search to not collect results
-            search.CollectResults = false;
+            cs.Search.CollectResults = false;
 
-            ItemStorageConfig storageConfig = ItemStorageConfigCache.GetConfig<T>();
-            while (!search.IsDone)
+            ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(cs.FlatConfig);
+            while (!cs.Search.IsDone)
             {
-                List<Document> set = search.GetNextSetHelper(false);
+                List<Document> set = cs.Search.GetNextSetHelper(false);
                 foreach (var document in set)
                 {
                     ItemStorage storage = new ItemStorage(storageConfig);
@@ -831,19 +851,19 @@ namespace Amazon.DynamoDBv2.DataModel
             }
 
             // Reset search to allow retrieving items more than once
-            search.Reset();
+            cs.Search.Reset();
         }
 
         #endregion
 
         #region Scan/Query
 
-        private Search ConvertScan<T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig)
+        private ContextSearch ConvertScan<T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig)
         {
-            ItemStorageConfig storageConfig = ItemStorageConfigCache.GetConfig<T>();
+            DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.Config);
+            ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(config);
             ScanFilter filter = ComposeScanFilter(conditions, storageConfig);
 
-            DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.config);
             Table table = GetTargetTable(storageConfig, config);
             var scanConfig = new ScanOperationConfig
             {
@@ -853,42 +873,45 @@ namespace Amazon.DynamoDBv2.DataModel
                 ConditionalOperator = config.ConditionalOperator
             };
             Search scan = table.Scan(scanConfig);
-            return scan;
+            return new ContextSearch(scan, config);
         }
 
-        private Search ConvertFromScan<T>(ScanOperationConfig scanConfig, DynamoDBOperationConfig operationConfig)
+        private ContextSearch ConvertFromScan<T>(ScanOperationConfig scanConfig, DynamoDBOperationConfig operationConfig)
         {
+            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, Config);
             Table table = GetTargetTableInternal<T>(operationConfig);
             Search search = table.Scan(scanConfig);
-            return search;
+            return new ContextSearch(search, flatConfig);
         }
 
-        private Search ConvertFromQuery<T>(QueryOperationConfig queryConfig, DynamoDBOperationConfig operationConfig)
+        private ContextSearch ConvertFromQuery<T>(QueryOperationConfig queryConfig, DynamoDBOperationConfig operationConfig)
         {
+            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, Config);
             Table table = GetTargetTableInternal<T>(operationConfig);
             Search search = table.Query(queryConfig);
-            return search;
+            return new ContextSearch(search, flatConfig);
         }
 
-        private Search ConvertQueryByValue<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig)
+        private ContextSearch ConvertQueryByValue<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig)
         {
-            ItemStorageConfig storageConfig = ItemStorageConfigCache.GetConfig<T>();
-            List<QueryCondition> conditions = CreateQueryConditions(operationConfig, op, values, storageConfig);
-            Search query = ConvertQueryByValue<T>(hashKeyValue, conditions, operationConfig, storageConfig);
+            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, Config);
+            ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
+            List<QueryCondition> conditions = CreateQueryConditions(flatConfig, op, values, storageConfig);
+            ContextSearch query = ConvertQueryByValue<T>(hashKeyValue, conditions, operationConfig, storageConfig);
             return query;
         }
 
-        private Search ConvertQueryByValue<T>(object hashKeyValue, IEnumerable<QueryCondition> conditions, DynamoDBOperationConfig operationConfig, ItemStorageConfig storageConfig = null)
+        private ContextSearch ConvertQueryByValue<T>(object hashKeyValue, IEnumerable<QueryCondition> conditions, DynamoDBOperationConfig operationConfig, ItemStorageConfig storageConfig = null)
         {
+            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, Config);
             if (storageConfig == null)
-                storageConfig = ItemStorageConfigCache.GetConfig<T>();
+                storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
 
             List<string> indexNames;
-            DynamoDBFlatConfig currentConfig = new DynamoDBFlatConfig(operationConfig, this.config);
-            QueryFilter filter = ComposeQueryFilter(currentConfig, hashKeyValue, conditions,  storageConfig, out indexNames);
-            return ConvertQueryHelper<T>(currentConfig, storageConfig, filter, indexNames);
+            QueryFilter filter = ComposeQueryFilter(flatConfig, hashKeyValue, conditions, storageConfig, out indexNames);
+            return ConvertQueryHelper<T>(flatConfig, storageConfig, filter, indexNames);
         }
-        private Search ConvertQueryHelper<T>(DynamoDBFlatConfig currentConfig, ItemStorageConfig storageConfig, QueryFilter filter, List<string> indexNames)
+        private ContextSearch ConvertQueryHelper<T>(DynamoDBFlatConfig currentConfig, ItemStorageConfig storageConfig, QueryFilter filter, List<string> indexNames)
         {
             Table table = GetTargetTable(storageConfig, currentConfig);
             string indexName = GetQueryIndexName(currentConfig, indexNames);
@@ -912,7 +935,7 @@ namespace Amazon.DynamoDBv2.DataModel
             }
             Search query = table.Query(queryConfig);
 
-            return query;
+            return new ContextSearch(query, currentConfig);
         }
 
         private AsyncSearch<T> FromSearchAsync<T>(Search search)

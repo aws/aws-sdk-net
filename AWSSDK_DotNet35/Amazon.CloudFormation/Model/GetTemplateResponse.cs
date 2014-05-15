@@ -24,7 +24,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Returns information about the  GetTemplate response and response metadata.
     /// </summary>
-    public class GetTemplateResponse : GetTemplateResult
+    public partial class GetTemplateResponse : GetTemplateResult
     {
         /// <summary>
         /// Gets and sets the GetTemplateResult property.

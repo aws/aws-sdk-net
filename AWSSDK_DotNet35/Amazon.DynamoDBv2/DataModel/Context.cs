@@ -34,8 +34,9 @@ namespace Amazon.DynamoDBv2.DataModel
         private bool ownClient;
         private IAmazonDynamoDB client;
         private Dictionary<string, Table> tablesMap;
-        private DynamoDBContextConfig config;
         private readonly object tablesMapLock = new object();
+        internal DynamoDBContextConfig Config { get; private set; }
+        internal ItemStorageConfigCache StorageConfigCache { get; private set; }
 
         #endregion
 
@@ -100,7 +101,8 @@ namespace Amazon.DynamoDBv2.DataModel
             this.client = client;
             this.tablesMap = new Dictionary<string, Table>();
             this.ownClient = ownClient;
-            this.config = config ?? new DynamoDBContextConfig();
+            this.Config = config ?? new DynamoDBContextConfig();
+            this.StorageConfigCache = new ItemStorageConfigCache(this);
         }
 
         #endregion
@@ -154,8 +156,8 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             if (value == null) return;
 
-            DynamoDBFlatConfig currentConfig = new DynamoDBFlatConfig(operationConfig, this.config);
-            ItemStorage storage = ObjectToItemStorage<T>(value, false, currentConfig.IgnoreNullValues.Value);
+            DynamoDBFlatConfig currentConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
+            ItemStorage storage = ObjectToItemStorage<T>(value, false, currentConfig);
             if (storage == null) return;
 
             Table table = GetTargetTable(storage.Config, currentConfig);
@@ -188,7 +190,8 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             if (value == null) return null;
 
-            ItemStorage storage = ObjectToItemStorage<T>(value, false, false);
+            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(null, Config);
+            ItemStorage storage = ObjectToItemStorage<T>(value, false, flatConfig);
             if (storage == null) return null;
 
             return storage.Document;
@@ -200,26 +203,27 @@ namespace Amazon.DynamoDBv2.DataModel
 
         private T LoadHelper<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, bool isAsync)
         {
-            ItemStorageConfig storageConfig = ItemStorageConfigCache.GetConfig<T>();
+            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
+            ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
             Key key = MakeKey(hashKey, rangeKey, storageConfig);
-            return LoadHelper<T>(key, operationConfig, storageConfig, isAsync);
+            return LoadHelper<T>(key, flatConfig, storageConfig, isAsync);
         }
         private T LoadHelper<T>(T keyObject, DynamoDBOperationConfig operationConfig, bool isAsync)
         {
-            ItemStorageConfig storageConfig = ItemStorageConfigCache.GetConfig<T>();
+            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
+            ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
             Key key = MakeKey<T>(keyObject, storageConfig);
-            return LoadHelper<T>(key, operationConfig, storageConfig, isAsync);
+            return LoadHelper<T>(key, flatConfig, storageConfig, isAsync);
         }
-        private T LoadHelper<T>(Key key, DynamoDBOperationConfig operationConfig, ItemStorageConfig storageConfig, bool isAsync)
+        private T LoadHelper<T>(Key key, DynamoDBFlatConfig flatConfig, ItemStorageConfig storageConfig, bool isAsync)
         {
-            DynamoDBFlatConfig currentConfig = new DynamoDBFlatConfig(operationConfig, this.config);
             GetItemOperationConfig getConfig = new GetItemOperationConfig
             {
-                ConsistentRead = currentConfig.ConsistentRead.Value,
+                ConsistentRead = flatConfig.ConsistentRead.Value,
                 AttributesToGet = storageConfig.AttributesToGet
             };
 
-            Table table = GetTargetTable(storageConfig, currentConfig);
+            Table table = GetTargetTable(storageConfig, flatConfig);
             ItemStorage storage = new ItemStorage(storageConfig);
             storage.Document = table.GetItemHelper(key, getConfig, isAsync);
 
@@ -237,7 +241,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </returns>
         public T FromDocument<T>(Document document)
         {
-            ItemStorageConfig storageConfig = ItemStorageConfigCache.GetConfig<T>();
+            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(null, Config);
+            ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
             ItemStorage storage = new ItemStorage(storageConfig);
             storage.Document = document;
             T instance = DocumentToObject<T>(storage);
@@ -267,8 +272,8 @@ namespace Amazon.DynamoDBv2.DataModel
 
         private void DeleteHelper<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, bool isAsync)
         {
-            DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.config);
-            ItemStorageConfig storageConfig = ItemStorageConfigCache.GetConfig<T>();
+            DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.Config);
+            ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(config);
             Key key = MakeKey(hashKey, rangeKey, storageConfig);
 
             Table table = GetTargetTable(storageConfig, config);
@@ -279,10 +284,11 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             if (value == null) throw new ArgumentNullException("value");
 
-            ItemStorage storage = ObjectToItemStorage<T>(value, true, true);
+            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
+            flatConfig.IgnoreNullValues = true;
+            ItemStorage storage = ObjectToItemStorage<T>(value, true, flatConfig);
             if (storage == null) return;
 
-            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.config);
             Table table = GetTargetTable(storage.Config, flatConfig);
             if (flatConfig.SkipVersionCheck.Value || !storage.Config.HasVersion)
             {

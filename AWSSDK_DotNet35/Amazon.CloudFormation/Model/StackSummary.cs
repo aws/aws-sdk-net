@@ -23,7 +23,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// <para>The StackSummary Data Type</para>
     /// </summary>
-    public class StackSummary
+    public partial class StackSummary
     {
         
         private string stackId;

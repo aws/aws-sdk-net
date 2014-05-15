@@ -93,10 +93,7 @@ namespace Amazon.ImportExport
 
         /// <summary>
         /// Constructs AmazonImportExportClient with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonImportExportClient Configuration object. If the config object's
-        /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
-        /// is stored as a clear-text string. Please use this option only
-        /// if the application environment doesn't allow the use of SecureStrings.
+        /// AmazonImportExportClient Configuration object.
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
@@ -131,10 +128,7 @@ namespace Amazon.ImportExport
 
         /// <summary>
         /// Constructs AmazonImportExportClient with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonImportExportClient Configuration object. If the config object's
-        /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
-        /// is stored as a clear-text string. Please use this option only
-        /// if the application environment doesn't allow the use of SecureStrings.
+        /// AmazonImportExportClient Configuration object.
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>

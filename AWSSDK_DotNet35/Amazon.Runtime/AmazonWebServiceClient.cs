@@ -291,7 +291,7 @@ namespace Amazon.Runtime
                             var httpResponseData = new HttpWebRequestResponseData(httpResponse);
                             context = unmarshaller.CreateContext(httpResponseData, 
                                 this.SupportResponseLogging && 
-                                (Config.LogResponse || Config.ReadEntireResponse || AWSConfigs.ResponseLogging != ResponseLoggingOption.Never),
+                                (Config.LogResponse || Config.ReadEntireResponse || AWSConfigs.LoggingConfig.LogResponses != ResponseLoggingOption.Never),
                                 httpResponseData.OpenResponse(),
                                 asyncResult.Metrics);
                             
@@ -331,7 +331,7 @@ namespace Amazon.Runtime
                         var httpResponseData = new HttpWebRequestResponseData(exceptionHttpResponse);
                         UnmarshallerContext errorContext = unmarshaller.CreateContext(
                             httpResponseData, 
-                            Config.LogResponse || Config.ReadEntireResponse || AWSConfigs.ResponseLogging != ResponseLoggingOption.Never, 
+                            Config.LogResponse || Config.ReadEntireResponse || AWSConfigs.LoggingConfig.LogResponses != ResponseLoggingOption.Never, 
                             httpResponseData.OpenResponse(),
                             asyncResult.Metrics);
 
@@ -382,7 +382,7 @@ namespace Amazon.Runtime
             }
             catch (Exception e)
             {
-                if (context != null && AWSConfigs.ResponseLogging == ResponseLoggingOption.OnError)
+                if (context != null && AWSConfigs.LoggingConfig.LogResponses == ResponseLoggingOption.OnError)
                     this.logger.Error(e, "Received response: [{0}]", context.ResponseBody);
 
                 asyncResult.RequestState.WebRequest.Abort();
@@ -502,12 +502,12 @@ namespace Amazon.Runtime
                     var unmarshaller = asyncResult.Unmarshaller;
                     var httpResponseData = new HttpWebRequestResponseData(httpErrorResponse);
                     UnmarshallerContext errorContext = unmarshaller.CreateContext(httpResponseData,
-                        Config.LogResponse || Config.ReadEntireResponse || AWSConfigs.ResponseLogging != ResponseLoggingOption.Never,
+                        Config.LogResponse || Config.ReadEntireResponse || AWSConfigs.LoggingConfig.LogResponses != ResponseLoggingOption.Never,
                         httpResponseData.OpenResponse(),
                         asyncResult.Metrics);
 
                     errorResponseException = unmarshaller.UnmarshallException(errorContext, we, statusCode);
-                    if (Config.LogResponse || AWSConfigs.ResponseLogging != ResponseLoggingOption.Never)
+                    if (Config.LogResponse || AWSConfigs.LoggingConfig.LogResponses != ResponseLoggingOption.Never)
                     {
                         this.logger.Error(errorResponseException, "Received error response: [{0}]", errorContext.ResponseBody);
                     }
@@ -582,7 +582,7 @@ namespace Amazon.Runtime
                 request.ServicePoint.ConnectionLimit = this.Config.ConnectionLimit;
                 request.ServicePoint.UseNagleAlgorithm = this.Config.UseNagleAlgorithm;
                 request.ServicePoint.MaxIdleTime = this.Config.MaxIdleTime;
-                if (this.Config.ProxyHost != null && this.Config.ProxyPort != 0)
+                if (!string.IsNullOrEmpty(this.Config.ProxyHost) && this.Config.ProxyPort > 0)
                 {
                     WebProxy proxy = new WebProxy(this.Config.ProxyHost, this.Config.ProxyPort);
                     asyncResult.Metrics.AddProperty(Metric.ProxyHost, this.Config.ProxyHost);

@@ -69,8 +69,8 @@ namespace Amazon.TraceListener
     ///   &lt;trace&gt;
     ///     &lt;listeners&gt;
     ///       &lt;add name=&quot;dynamo&quot; type=&quot;Amazon.Logging.DynamoDBTraceListener, AWS.Extensions&quot;
-    ///             AWSAccessKey=&quot;YOUR_ACCESS_KEY&quot;
-    ///             AWSSecretKey=&quot;YOUR_SECRET_KEY&quot;
+    ///             AWSProfileName="AWS Default"
+    ///             AWSProfilesLocation=".aws/credentials"
     ///             Region=&quot;us-west-2&quot;
     ///             Table=&quot;Logs&quot;
     ///             CreateIfNotExist=&quot;true&quot;
@@ -183,10 +183,21 @@ namespace Amazon.TraceListener
                             DisableLogging = true
                         };
 
+                        AWSCredentials credentials = null;
                         if (!string.IsNullOrEmpty(Configuration.AWSAccessKey) && !string.IsNullOrEmpty(Configuration.AWSSecretKey))
-                            _client = new AmazonDynamoDBClient(Configuration.AWSAccessKey, Configuration.AWSSecretKey, config);
+                            credentials = new BasicAWSCredentials(Configuration.AWSAccessKey, Configuration.AWSSecretKey);
+                        else if (!string.IsNullOrEmpty(Configuration.AWSProfileName))
+                        {
+                            if (string.IsNullOrEmpty(Configuration.AWSProfilesLocation))
+                                credentials = new StoredProfileAWSCredentials(Configuration.AWSProfileName);
+                            else
+                                credentials = new StoredProfileAWSCredentials(Configuration.AWSProfileName, Configuration.AWSProfilesLocation);
+                        }
                         else if (Configuration.AWSCredentials != null)
-                            _client = new AmazonDynamoDBClient(Configuration.AWSCredentials, config);
+                            credentials = Configuration.AWSCredentials;
+
+                        if (credentials != null)
+                            _client = new AmazonDynamoDBClient(credentials, config);
                         else
                             _client = new AmazonDynamoDBClient(config);
                     }
@@ -289,6 +300,8 @@ namespace Amazon.TraceListener
 
         private const string CONFIG_ACCESSKEY = "AWSAccessKey";
         private const string CONFIG_SECRETKEY = "AWSSecretKey";
+        private const string CONFIG_PROFILENAME = "AWSProfileName";
+        private const string CONFIG_PROFILESLOCATION = "AWSProfilesLocation";
         private const string CONFIG_REGION = "Region";
         private const string CONFIG_TABLE = "Table";
         private const string CONFIG_CREATE_TABLE_IF_NOT_EXIST = "CreateIfNotExist";
@@ -350,6 +363,21 @@ namespace Amazon.TraceListener
             string logFileName = string.Format(logFileNameFormat, DateTime.Now.ToFileTime());
             string logFilePath = Path.Combine(LogFileDirectory, logFileName);
             return logFilePath;
+        }
+
+        // Disposes of and nulls out the writer
+        private void DisposeWriter()
+        {
+            if (writer != null)
+            {
+                try
+                {
+                    writer.Flush();
+                    writer.Close();
+                }
+                catch { }
+                writer = null;
+            }
         }
 
         // Create logs table and return Table object. Table won't be active yet.
@@ -727,16 +755,7 @@ namespace Amazon.TraceListener
             lock (generalLock)
             {
                 _currentLogFile = GetNewLogFilePath();
-                if (writer != null)
-                {
-                    try
-                    {
-                        writer.Flush();
-                        writer.Close();
-                    }
-                    catch { }
-                    writer = null;
-                }
+                DisposeWriter();
             }
 
             // Push log files to DynamoDB, then empty/delete them.
@@ -754,6 +773,7 @@ namespace Amazon.TraceListener
                 }
             }
         }
+
         public override void Close()
         {
             Flush();
@@ -778,6 +798,7 @@ namespace Amazon.TraceListener
                 if (disposing)
                 {
                     Flush();
+                    DisposeWriter();
                 }
                 IsEnabled = false;
                 disposed = true;
@@ -816,6 +837,8 @@ namespace Amazon.TraceListener
             {
                 AWSAccessKey = GetAttribute(CONFIG_ACCESSKEY),
                 AWSSecretKey = GetAttribute(CONFIG_SECRETKEY),
+                AWSProfileName = GetAttribute(CONFIG_PROFILENAME),
+                AWSProfilesLocation = GetAttribute(CONFIG_PROFILESLOCATION),
                 Region = RegionEndpoint.GetBySystemName(GetAttribute(CONFIG_REGION, defaultConfigs.Region.SystemName)),
                 TableName = GetAttribute(CONFIG_TABLE, defaultConfigs.TableName),
                 ReadUnits = GetAttributeAsInt(CONFIG_READ_UNITS, defaultConfigs.ReadUnits),
@@ -929,6 +952,18 @@ namespace Amazon.TraceListener
             /// Config key: AWSSecretKey
             /// </summary>
             public string AWSSecretKey { get; set; }
+
+            /// <summary>
+            /// Profile to use.
+            /// Config key: AWSProfileName
+            /// </summary>
+            public string AWSProfileName { get; set; }
+
+            /// <summary>
+            /// Location of credentials file.
+            /// Config key: AWSProfilesLocation
+            /// </summary>
+            public string AWSProfilesLocation { get; set; }
 
             /// <summary>
             /// Credentials to use.
