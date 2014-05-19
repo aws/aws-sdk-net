@@ -54,6 +54,7 @@ namespace Amazon.S3.Transfer.Internal
         {
             PutObjectRequest putRequest = new PutObjectRequest()
             {
+                Headers = this._fileTransporterRequest.Headers,
                 BucketName = this._fileTransporterRequest.BucketName,
                 Key = this._fileTransporterRequest.Key,
                 CannedACL = this._fileTransporterRequest.CannedACL,
@@ -62,7 +63,6 @@ namespace Amazon.S3.Transfer.Internal
                 AutoCloseStream = this._fileTransporterRequest.AutoCloseStream,
                 AutoResetStreamPosition = this._fileTransporterRequest.AutoResetStreamPosition,
                 ServerSideEncryptionMethod = this._fileTransporterRequest.ServerSideEncryptionMethod,
-                Headers = this._fileTransporterRequest.Headers,
                 Metadata = this._fileTransporterRequest.Metadata,
 #if (BCL && !BCL45)
                 Timeout = ClientConfig.GetTimeoutValue(this._config.DefaultTimeout, this._fileTransporterRequest.Timeout)
