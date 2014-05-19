@@ -113,15 +113,7 @@ namespace Amazon.DynamoDBv2.DataModel
             return table;
         }
 
-        internal Table GetTargetTable(string baseTableName)
-        {
-            var flatConfig = new DynamoDBFlatConfig(null, this.Config);
-            string actualTableName = GetTableName(baseTableName, flatConfig);
-            var table = GetTable(actualTableName);
-            return table;
-        }
-
-        private Table GetTable(string tableName)
+        internal Table GetTable(string tableName)
         {
             Table table;
             lock (tablesMapLock)

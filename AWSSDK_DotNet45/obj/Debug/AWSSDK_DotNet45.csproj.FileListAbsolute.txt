@@ -1,0 +1,5 @@
+C:\Users\jhunt\Documents\GitHub\aws-sdk-net\AWSSDK_DotNet45\bin\Debug\AWSSDK.XML
+C:\Users\jhunt\Documents\GitHub\aws-sdk-net\AWSSDK_DotNet45\bin\Debug\AWSSDK.dll
+C:\Users\jhunt\Documents\GitHub\aws-sdk-net\AWSSDK_DotNet45\bin\Debug\AWSSDK.pdb
+C:\Users\jhunt\Documents\GitHub\aws-sdk-net\AWSSDK_DotNet45\obj\Debug\AWSSDK.dll
+C:\Users\jhunt\Documents\GitHub\aws-sdk-net\AWSSDK_DotNet45\obj\Debug\AWSSDK.pdb
