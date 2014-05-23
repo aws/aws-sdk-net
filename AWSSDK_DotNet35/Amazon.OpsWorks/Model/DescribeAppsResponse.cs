@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeApps response and response metadata.
+    /// Configuration for accessing Amazon DescribeApps service
     /// </summary>
     public partial class DescribeAppsResponse : DescribeAppsResult
     {
         /// <summary>
         /// Gets and sets the DescribeAppsResult property.
-        /// Contains the response to a DescribeApps request.
+        /// Represents the output of a DescribeApps operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeAppsResult class are now available on the DescribeAppsResponse class. You should use the properties on DescribeAppsResponse instead of accessing them through DescribeAppsResult.")]
         public DescribeAppsResult DescribeAppsResult
@@ -40,4 +36,3 @@ namespace Amazon.OpsWorks.Model
         }
     }
 }
-    

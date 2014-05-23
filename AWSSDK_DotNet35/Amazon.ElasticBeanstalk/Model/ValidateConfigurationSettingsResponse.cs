@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// Returns information about the  ValidateConfigurationSettings response and response metadata.
+    /// Configuration for accessing Amazon ValidateConfigurationSettings service
     /// </summary>
-    public class ValidateConfigurationSettingsResponse : ValidateConfigurationSettingsResult
+    public partial class ValidateConfigurationSettingsResponse : ValidateConfigurationSettingsResult
     {
         /// <summary>
         /// Gets and sets the ValidateConfigurationSettingsResult property.
-        /// Provides a list of validation messages.
+        /// Represents the output of a ValidateConfigurationSettings operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ValidateConfigurationSettingsResult class are now available on the ValidateConfigurationSettingsResponse class. You should use the properties on ValidateConfigurationSettingsResponse instead of accessing them through ValidateConfigurationSettingsResult.")]
         public ValidateConfigurationSettingsResult ValidateConfigurationSettingsResult
@@ -40,4 +36,3 @@ namespace Amazon.ElasticBeanstalk.Model
         }
     }
 }
-    

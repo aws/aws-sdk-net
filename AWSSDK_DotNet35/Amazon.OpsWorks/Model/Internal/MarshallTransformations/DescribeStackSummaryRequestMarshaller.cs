@@ -29,44 +29,40 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Stack Summary Request Marshaller
+    /// DescribeStackSummary Request Marshaller
     /// </summary>       
-    internal class DescribeStackSummaryRequestMarshaller : IMarshaller<IRequest, DescribeStackSummaryRequest> 
+    public class DescribeStackSummaryRequestMarshaller : IMarshaller<IRequest, DescribeStackSummaryRequest> 
     {
-        
-
-        public IRequest Marshall(DescribeStackSummaryRequest describeStackSummaryRequest) 
+        public IRequest Marshall(DescribeStackSummaryRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(describeStackSummaryRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.DescribeStackSummary";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (describeStackSummaryRequest != null && describeStackSummaryRequest.IsSetStackId()) 
+                if(publicRequest.IsSetStackId())
                 {
                     writer.WritePropertyName("StackId");
-                    writer.Write(describeStackSummaryRequest.StackId);
+                    writer.Write(publicRequest.StackId);
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

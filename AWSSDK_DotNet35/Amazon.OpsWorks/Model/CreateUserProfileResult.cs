@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>CreateUserProfile</c> request.</para>
+    /// Contains the response to a <code>CreateUserProfile</code> request.
     /// </summary>
     public partial class CreateUserProfileResult : AmazonWebServiceResponse
     {
-        
-        private string iamUserArn;
+        private string _iamUserArn;
 
 
         /// <summary>
+        /// Gets and sets the property IamUserArn. 
+        /// <para>
         /// The user's IAM ARN.
-        ///  
+        /// </para>
         /// </summary>
         public string IamUserArn
         {
-            get { return this.iamUserArn; }
-            set { this.iamUserArn = value; }
+            get { return this._iamUserArn; }
+            set { this._iamUserArn = value; }
         }
 
         // Check to see if IamUserArn property is set
         internal bool IsSetIamUserArn()
         {
-            return this.iamUserArn != null;
+            return this._iamUserArn != null;
         }
+
     }
 }

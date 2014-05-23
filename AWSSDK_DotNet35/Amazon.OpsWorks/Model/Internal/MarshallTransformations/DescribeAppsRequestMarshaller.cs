@@ -29,58 +29,51 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Apps Request Marshaller
+    /// DescribeApps Request Marshaller
     /// </summary>       
-    internal class DescribeAppsRequestMarshaller : IMarshaller<IRequest, DescribeAppsRequest> 
+    public class DescribeAppsRequestMarshaller : IMarshaller<IRequest, DescribeAppsRequest> 
     {
-        
-
-        public IRequest Marshall(DescribeAppsRequest describeAppsRequest) 
+        public IRequest Marshall(DescribeAppsRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(describeAppsRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.DescribeApps";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (describeAppsRequest != null && describeAppsRequest.IsSetStackId()) 
+                if(publicRequest.IsSetAppIds())
                 {
-                    writer.WritePropertyName("StackId");
-                    writer.Write(describeAppsRequest.StackId);
-                }
-
-                if (describeAppsRequest != null && describeAppsRequest.AppIds != null && describeAppsRequest.AppIds.Count > 0) 
-                {
-                    List<string> appIdsList = describeAppsRequest.AppIds;
                     writer.WritePropertyName("AppIds");
                     writer.WriteArrayStart();
-
-                    foreach (string appIdsListValue in appIdsList) 
-                    { 
-                        writer.Write(StringUtils.FromString(appIdsListValue));
+                    foreach(var publicRequestAppIdsListValue in publicRequest.AppIds)
+                    {
+                        writer.Write(publicRequestAppIdsListValue);
                     }
-
                     writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetStackId())
+                {
+                    writer.WritePropertyName("StackId");
+                    writer.Write(publicRequest.StackId);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

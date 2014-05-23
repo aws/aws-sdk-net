@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,66 +25,61 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateApplication operation.
-    /// <para>Updates the specified application to have the specified properties. </para> <para><b>NOTE:</b> If a property (for example,
-    /// description) is not provided, the value remains unchanged. To clear these properties, specify an empty string. </para>
+    /// Updates the specified application to have the specified         properties.      
+    /// 
+    ///       <note>         If a property (for example, <code>description</code>) is not
+    /// provided, the         value         remains unchanged. To clear these properties,
+    /// specify an empty string.      </note>
     /// </summary>
     public partial class UpdateApplicationRequest : AmazonElasticBeanstalkRequest
     {
-        private string applicationName;
-        private string description;
+        private string _applicationName;
+        private string _description;
 
 
         /// <summary>
-        /// The name of the application to update. If no such application is found, <c>UpdateApplication</c> returns an <c>InvalidParameterValue</c>
-        /// error.
-        ///  
+        /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 100</description>
-        ///     </item>
-        /// </list>
+        ///          The name of the application to update. If no such application         is
+        /// found, <code>UpdateApplication</code> returns an         <code>InvalidParameterValue</code>
+        ///         error.      
         /// </para>
         /// </summary>
         public string ApplicationName
         {
-            get { return this.applicationName; }
-            set { this.applicationName = value; }
+            get { return this._applicationName; }
+            set { this._applicationName = value; }
         }
 
         // Check to see if ApplicationName property is set
         internal bool IsSetApplicationName()
         {
-            return this.applicationName != null;
+            return this._applicationName != null;
         }
 
+
         /// <summary>
-        /// A new description for the application. Default: If not specified, AWS Elastic Beanstalk does not update the description.
-        ///  
+        /// Gets and sets the property Description. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 200</description>
-        ///     </item>
-        /// </list>
+        ///          A new description for the application.          
+        /// </para>
+        ///       
+        /// <para>
+        /// Default:         If not specified, AWS Elastic Beanstalk         does not update the
+        /// description.      
         /// </para>
         /// </summary>
         public string Description
         {
-            get { return this.description; }
-            set { this.description = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
 
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;
+            return this._description != null;
         }
 
     }
 }
-    

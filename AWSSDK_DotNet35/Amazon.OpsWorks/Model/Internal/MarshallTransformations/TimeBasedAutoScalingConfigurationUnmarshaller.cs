@@ -12,60 +12,70 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.OpsWorks.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+using Amazon.OpsWorks.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for TimeBasedAutoScalingConfiguration Object
+    /// </summary>  
+    public class TimeBasedAutoScalingConfigurationUnmarshaller : IUnmarshaller<TimeBasedAutoScalingConfiguration, XmlUnmarshallerContext>, IUnmarshaller<TimeBasedAutoScalingConfiguration, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// TimeBasedAutoScalingConfigurationUnmarshaller
-      /// </summary>
-      internal class TimeBasedAutoScalingConfigurationUnmarshaller : IUnmarshaller<TimeBasedAutoScalingConfiguration, XmlUnmarshallerContext>, IUnmarshaller<TimeBasedAutoScalingConfiguration, JsonUnmarshallerContext>
-      {
         TimeBasedAutoScalingConfiguration IUnmarshaller<TimeBasedAutoScalingConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public TimeBasedAutoScalingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            TimeBasedAutoScalingConfiguration timeBasedAutoScalingConfiguration = new TimeBasedAutoScalingConfiguration();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            TimeBasedAutoScalingConfiguration unmarshalledObject = new TimeBasedAutoScalingConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("InstanceId", targetDepth))
-              {
-                timeBasedAutoScalingConfiguration.InstanceId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("AutoScalingSchedule", targetDepth))
-              {
-                timeBasedAutoScalingConfiguration.AutoScalingSchedule = WeeklyAutoScalingScheduleUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("AutoScalingSchedule", targetDepth))
+                {
+                    var unmarshaller = WeeklyAutoScalingScheduleUnmarshaller.Instance;
+                    unmarshalledObject.AutoScalingSchedule = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("InstanceId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return timeBasedAutoScalingConfiguration;
+            return unmarshalledObject;
         }
 
-        private static TimeBasedAutoScalingConfigurationUnmarshaller instance;
-        public static TimeBasedAutoScalingConfigurationUnmarshaller GetInstance()
+
+        private static TimeBasedAutoScalingConfigurationUnmarshaller _instance = new TimeBasedAutoScalingConfigurationUnmarshaller();        
+
+        public static TimeBasedAutoScalingConfigurationUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new TimeBasedAutoScalingConfigurationUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

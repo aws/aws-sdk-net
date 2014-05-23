@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,133 +18,137 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para>Describes the properties of an application.</para>
+    /// Describes the properties of an application.
     /// </summary>
-    public class ApplicationDescription
+    public partial class ApplicationDescription
     {
-        
-        private string applicationName;
-        private string description;
-        private DateTime? dateCreated;
-        private DateTime? dateUpdated;
-        private List<string> versions = new List<string>();
-        private List<string> configurationTemplates = new List<string>();
+        private string _applicationName;
+        private List<string> _configurationTemplates = new List<string>();
+        private DateTime? _dateCreated;
+        private DateTime? _dateUpdated;
+        private string _description;
+        private List<string> _versions = new List<string>();
+
 
         /// <summary>
-        /// The name of the application.
-        ///  
+        /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 100</description>
-        ///     </item>
-        /// </list>
+        /// The name of the application.
         /// </para>
         /// </summary>
         public string ApplicationName
         {
-            get { return this.applicationName; }
-            set { this.applicationName = value; }
+            get { return this._applicationName; }
+            set { this._applicationName = value; }
         }
 
         // Check to see if ApplicationName property is set
         internal bool IsSetApplicationName()
         {
-            return this.applicationName != null;
+            return this._applicationName != null;
         }
 
+
         /// <summary>
-        /// User-defined description of the application.
-        ///  
+        /// Gets and sets the property ConfigurationTemplates. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 200</description>
-        ///     </item>
-        /// </list>
+        ///          The names of the configuration templates associated with this         application.    
+        ///  
         /// </para>
-        /// </summary>
-        public string Description
-        {
-            get { return this.description; }
-            set { this.description = value; }
-        }
-
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
-        {
-            return this.description != null;
-        }
-
-        /// <summary>
-        /// The date when the application was created.
-        ///  
-        /// </summary>
-        public DateTime DateCreated
-        {
-            get { return this.dateCreated ?? default(DateTime); }
-            set { this.dateCreated = value; }
-        }
-
-        // Check to see if DateCreated property is set
-        internal bool IsSetDateCreated()
-        {
-            return this.dateCreated.HasValue;
-        }
-
-        /// <summary>
-        /// The date when the application was last modified.
-        ///  
-        /// </summary>
-        public DateTime DateUpdated
-        {
-            get { return this.dateUpdated ?? default(DateTime); }
-            set { this.dateUpdated = value; }
-        }
-
-        // Check to see if DateUpdated property is set
-        internal bool IsSetDateUpdated()
-        {
-            return this.dateUpdated.HasValue;
-        }
-
-        /// <summary>
-        /// The names of the versions for this application.
-        ///  
-        /// </summary>
-        public List<string> Versions
-        {
-            get { return this.versions; }
-            set { this.versions = value; }
-        }
-
-        // Check to see if Versions property is set
-        internal bool IsSetVersions()
-        {
-            return this.versions.Count > 0;
-        }
-
-        /// <summary>
-        /// The names of the configuration templates associated with this application.
-        ///  
         /// </summary>
         public List<string> ConfigurationTemplates
         {
-            get { return this.configurationTemplates; }
-            set { this.configurationTemplates = value; }
+            get { return this._configurationTemplates; }
+            set { this._configurationTemplates = value; }
         }
 
         // Check to see if ConfigurationTemplates property is set
         internal bool IsSetConfigurationTemplates()
         {
-            return this.configurationTemplates.Count > 0;
+            return this._configurationTemplates != null && this._configurationTemplates.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property DateCreated. 
+        /// <para>
+        /// The date when the application was created.
+        /// </para>
+        /// </summary>
+        public DateTime DateCreated
+        {
+            get { return this._dateCreated.GetValueOrDefault(); }
+            set { this._dateCreated = value; }
+        }
+
+        // Check to see if DateCreated property is set
+        internal bool IsSetDateCreated()
+        {
+            return this._dateCreated.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property DateUpdated. 
+        /// <para>
+        /// The date when the application was last modified.
+        /// </para>
+        /// </summary>
+        public DateTime DateUpdated
+        {
+            get { return this._dateUpdated.GetValueOrDefault(); }
+            set { this._dateUpdated = value; }
+        }
+
+        // Check to see if DateUpdated property is set
+        internal bool IsSetDateUpdated()
+        {
+            return this._dateUpdated.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// User-defined description of the application.
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Versions. 
+        /// <para>
+        /// The names of the versions for this application.
+        /// </para>
+        /// </summary>
+        public List<string> Versions
+        {
+            get { return this._versions; }
+            set { this._versions = value; }
+        }
+
+        // Check to see if Versions property is set
+        internal bool IsSetVersions()
+        {
+            return this._versions != null && this._versions.Count > 0; 
+        }
+
     }
 }

@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the  RegisterElasticIp response and response metadata.
+    /// Configuration for accessing Amazon RegisterElasticIp service
     /// </summary>
     public partial class RegisterElasticIpResponse : RegisterElasticIpResult
     {
         /// <summary>
         /// Gets and sets the RegisterElasticIpResult property.
-        /// Contains the response to a RegisterElasticIp request.
+        /// Represents the output of a RegisterElasticIp operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the RegisterElasticIpResult class are now available on the RegisterElasticIpResponse class. You should use the properties on RegisterElasticIpResponse instead of accessing them through RegisterElasticIpResult.")]
         public RegisterElasticIpResult RegisterElasticIpResult
@@ -40,4 +36,3 @@ namespace Amazon.OpsWorks.Model
         }
     }
 }
-    

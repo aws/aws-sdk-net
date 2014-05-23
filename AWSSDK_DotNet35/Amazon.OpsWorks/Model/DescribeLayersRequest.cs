@@ -25,50 +25,64 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLayers operation.
-    /// <para>Requests a description of one or more layers in a specified stack.</para> <para><b>NOTE:</b> You must specify at least one of the
-    /// parameters. </para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Show, Deploy, or Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+    /// Requests a description of one or more layers in a specified stack.
+    /// 
+    ///   <note>      
+    /// <para>
+    /// You must specify at least one of the parameters.
+    /// </para>
+    ///     </note>    
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+    /// or Manage permissions level for the stack, or an attached       policy that explicitly
+    /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
     public partial class DescribeLayersRequest : AmazonOpsWorksRequest
     {
-        private string stackId;
-        private List<string> layerIds = new List<string>();
+        private List<string> _layerIds = new List<string>();
+        private string _stackId;
 
 
         /// <summary>
-        /// The stack ID.
-        ///  
-        /// </summary>
-        public string StackId
-        {
-            get { return this.stackId; }
-            set { this.stackId = value; }
-        }
-
-        // Check to see if StackId property is set
-        internal bool IsSetStackId()
-        {
-            return this.stackId != null;
-        }
-
-        /// <summary>
-        /// An array of layer IDs that specify the layers to be described. If you omit this parameter, <c>DescribeLayers</c> returns a description of
-        /// every layer in the specified stack.
-        ///  
+        /// Gets and sets the property LayerIds. 
+        /// <para>
+        /// An array of layer IDs that specify the layers to be described. If you omit this parameter,
+        ///  <code>DescribeLayers</code> returns a description of every layer in the specified
+        /// stack.
+        /// </para>
         /// </summary>
         public List<string> LayerIds
         {
-            get { return this.layerIds; }
-            set { this.layerIds = value; }
+            get { return this._layerIds; }
+            set { this._layerIds = value; }
         }
 
         // Check to see if LayerIds property is set
         internal bool IsSetLayerIds()
         {
-            return this.layerIds.Count > 0;
+            return this._layerIds != null && this._layerIds.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property StackId. 
+        /// <para>
+        /// The stack ID.
+        /// </para>
+        /// </summary>
+        public string StackId
+        {
+            get { return this._stackId; }
+            set { this._stackId = value; }
+        }
+
+        // Check to see if StackId property is set
+        internal bool IsSetStackId()
+        {
+            return this._stackId != null;
         }
 
     }
 }
-    

@@ -17,33 +17,38 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>DescribeServiceErrors</c> request.</para>
+    /// Contains the response to a <code>DescribeServiceErrors</code> request.
     /// </summary>
     public partial class DescribeServiceErrorsResult : AmazonWebServiceResponse
     {
-        
-        private List<ServiceError> serviceErrors = new List<ServiceError>();
+        private List<ServiceError> _serviceErrors = new List<ServiceError>();
 
 
         /// <summary>
-        /// An array of <c>ServiceError</c> objects that describe the specified service errors.
-        ///  
+        /// Gets and sets the property ServiceErrors. 
+        /// <para>
+        /// An array of <code>ServiceError</code> objects that describe the specified service
+        /// errors.
+        /// </para>
         /// </summary>
         public List<ServiceError> ServiceErrors
         {
-            get { return this.serviceErrors; }
-            set { this.serviceErrors = value; }
+            get { return this._serviceErrors; }
+            set { this._serviceErrors = value; }
         }
 
         // Check to see if ServiceErrors property is set
         internal bool IsSetServiceErrors()
         {
-            return this.serviceErrors.Count > 0;
+            return this._serviceErrors != null && this._serviceErrors.Count > 0; 
         }
+
     }
 }

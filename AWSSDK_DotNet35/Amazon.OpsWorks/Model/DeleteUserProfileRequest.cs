@@ -25,31 +25,38 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteUserProfile operation.
-    /// <para>Deletes a user profile.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have an attached policy that
-    /// explicitly grants permissions. For more information on user permissions, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+    /// Deletes a user profile.
+    /// 
+    ///     
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have an attached
+    ///       policy that explicitly grants permissions. For more information on user permissions,
+    /// see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
     public partial class DeleteUserProfileRequest : AmazonOpsWorksRequest
     {
-        private string iamUserArn;
+        private string _iamUserArn;
 
 
         /// <summary>
+        /// Gets and sets the property IamUserArn. 
+        /// <para>
         /// The user's IAM ARN.
-        ///  
+        /// </para>
         /// </summary>
         public string IamUserArn
         {
-            get { return this.iamUserArn; }
-            set { this.iamUserArn = value; }
+            get { return this._iamUserArn; }
+            set { this._iamUserArn = value; }
         }
 
         // Check to see if IamUserArn property is set
         internal bool IsSetIamUserArn()
         {
-            return this.iamUserArn != null;
+            return this._iamUserArn != null;
         }
 
     }
 }
-    

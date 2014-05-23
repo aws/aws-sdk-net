@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>DescribeLayers</c> request.</para>
+    /// Contains the response to a <code>DescribeLayers</code> request.
     /// </summary>
     public partial class DescribeLayersResult : AmazonWebServiceResponse
     {
-        
-        private List<Layer> layers = new List<Layer>();
+        private List<Layer> _layers = new List<Layer>();
 
 
         /// <summary>
-        /// An array of <c>Layer</c> objects that describe the layers.
-        ///  
+        /// Gets and sets the property Layers. 
+        /// <para>
+        /// An array of <code>Layer</code> objects that describe the layers.
+        /// </para>
         /// </summary>
         public List<Layer> Layers
         {
-            get { return this.layers; }
-            set { this.layers = value; }
+            get { return this._layers; }
+            set { this._layers = value; }
         }
 
         // Check to see if Layers property is set
         internal bool IsSetLayers()
         {
-            return this.layers.Count > 0;
+            return this._layers != null && this._layers.Count > 0; 
         }
+
     }
 }

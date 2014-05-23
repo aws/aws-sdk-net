@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,83 +14,83 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticBeanstalk.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Configuration Template Request Marshaller
+    /// CreateConfigurationTemplate Request Marshaller
     /// </summary>       
     public class CreateConfigurationTemplateRequestMarshaller : IMarshaller<IRequest, CreateConfigurationTemplateRequest>
     {
-        public IRequest Marshall(CreateConfigurationTemplateRequest createConfigurationTemplateRequest)
+        public IRequest Marshall(CreateConfigurationTemplateRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(createConfigurationTemplateRequest, "AmazonElasticBeanstalk");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticBeanstalk");
             request.Parameters.Add("Action", "CreateConfigurationTemplate");
             request.Parameters.Add("Version", "2010-12-01");
-            if (createConfigurationTemplateRequest != null && createConfigurationTemplateRequest.IsSetApplicationName())
-            {
-                request.Parameters.Add("ApplicationName", StringUtils.FromString(createConfigurationTemplateRequest.ApplicationName));
-            }
-            if (createConfigurationTemplateRequest != null && createConfigurationTemplateRequest.IsSetTemplateName())
-            {
-                request.Parameters.Add("TemplateName", StringUtils.FromString(createConfigurationTemplateRequest.TemplateName));
-            }
-            if (createConfigurationTemplateRequest != null && createConfigurationTemplateRequest.IsSetSolutionStackName())
-            {
-                request.Parameters.Add("SolutionStackName", StringUtils.FromString(createConfigurationTemplateRequest.SolutionStackName));
-            }
-            if (createConfigurationTemplateRequest != null)
-            {
-                SourceConfiguration sourceConfiguration = createConfigurationTemplateRequest.SourceConfiguration;
-                if (sourceConfiguration != null && sourceConfiguration.IsSetApplicationName())
-                {
-                    request.Parameters.Add("SourceConfiguration.ApplicationName", StringUtils.FromString(sourceConfiguration.ApplicationName));
-                }
-                if (sourceConfiguration != null && sourceConfiguration.IsSetTemplateName())
-                {
-                    request.Parameters.Add("SourceConfiguration.TemplateName", StringUtils.FromString(sourceConfiguration.TemplateName));
-                }
-            }
-            if (createConfigurationTemplateRequest != null && createConfigurationTemplateRequest.IsSetEnvironmentId())
-            {
-                request.Parameters.Add("EnvironmentId", StringUtils.FromString(createConfigurationTemplateRequest.EnvironmentId));
-            }
-            if (createConfigurationTemplateRequest != null && createConfigurationTemplateRequest.IsSetDescription())
-            {
-                request.Parameters.Add("Description", StringUtils.FromString(createConfigurationTemplateRequest.Description));
-            }
 
-            if (createConfigurationTemplateRequest != null)
+            if(publicRequest != null)
             {
-                List<ConfigurationOptionSetting> optionSettingsList = createConfigurationTemplateRequest.OptionSettings;
-                int optionSettingsListIndex = 1;
-                foreach (ConfigurationOptionSetting optionSettingsListValue in optionSettingsList)
+                if(publicRequest.IsSetApplicationName())
                 {
-                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetNamespace())
+                    request.Parameters.Add("ApplicationName", StringUtils.FromString(publicRequest.ApplicationName));
+                }
+                if(publicRequest.IsSetDescription())
+                {
+                    request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
+                }
+                if(publicRequest.IsSetEnvironmentId())
+                {
+                    request.Parameters.Add("EnvironmentId", StringUtils.FromString(publicRequest.EnvironmentId));
+                }
+                if(publicRequest.IsSetOptionSettings())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.OptionSettings)
                     {
-                        request.Parameters.Add("OptionSettings.member." + optionSettingsListIndex + ".Namespace", StringUtils.FromString(optionSettingsListValue.Namespace));
+                        if(publicRequestlistValue.IsSetNamespace())
+                        {
+                            request.Parameters.Add("OptionSettings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Namespace", StringUtils.FromString(publicRequestlistValue.Namespace));
+                        }
+                        if(publicRequestlistValue.IsSetOptionName())
+                        {
+                            request.Parameters.Add("OptionSettings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionName", StringUtils.FromString(publicRequestlistValue.OptionName));
+                        }
+                        if(publicRequestlistValue.IsSetValue())
+                        {
+                            request.Parameters.Add("OptionSettings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                        }
+                        publicRequestlistValueIndex++;
                     }
-                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetOptionName())
+                }
+                if(publicRequest.IsSetSolutionStackName())
+                {
+                    request.Parameters.Add("SolutionStackName", StringUtils.FromString(publicRequest.SolutionStackName));
+                }
+                if(publicRequest.IsSetSourceConfiguration())
+                {
+                    if(publicRequest.SourceConfiguration.IsSetApplicationName())
                     {
-                        request.Parameters.Add("OptionSettings.member." + optionSettingsListIndex + ".OptionName", StringUtils.FromString(optionSettingsListValue.OptionName));
+                        request.Parameters.Add("SourceConfiguration" + "." + "ApplicationName", StringUtils.FromString(publicRequest.SourceConfiguration.ApplicationName));
                     }
-                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetValue())
+                    if(publicRequest.SourceConfiguration.IsSetTemplateName())
                     {
-                        request.Parameters.Add("OptionSettings.member." + optionSettingsListIndex + ".Value", StringUtils.FromString(optionSettingsListValue.Value));
+                        request.Parameters.Add("SourceConfiguration" + "." + "TemplateName", StringUtils.FromString(publicRequest.SourceConfiguration.TemplateName));
                     }
-
-                    optionSettingsListIndex++;
+                }
+                if(publicRequest.IsSetTemplateName())
+                {
+                    request.Parameters.Add("TemplateName", StringUtils.FromString(publicRequest.TemplateName));
                 }
             }
-
             return request;
         }
     }

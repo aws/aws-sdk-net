@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the UpdateStack response metadata.
-    /// The UpdateStack operation has a void result type.
+    /// Configuration for accessing Amazon UpdateStack service
     /// </summary>
-    public partial class UpdateStackResponse : AmazonWebServiceResponse
+    public partial class UpdateStackResponse : UpdateStackResult
     {
+        /// <summary>
+        /// Gets and sets the UpdateStackResult property.
+        /// Represents the output of a UpdateStack operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the UpdateStackResult class are now available on the UpdateStackResponse class. You should use the properties on UpdateStackResponse instead of accessing them through UpdateStackResult.")]
+        public UpdateStackResult UpdateStackResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,56 +25,55 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteApplication operation.
-    /// <para> Deletes the specified application along with all associated versions and configurations. The application versions will not be deleted
-    /// from your Amazon S3 bucket. </para> <para><b>NOTE:</b>You cannot delete an application that has a running environment. </para>
+    /// Deletes the specified application along with all         associated versions
+    /// and         configurations. The application versions will not be deleted from your
+    /// Amazon S3 bucket.      
+    /// 
+    ///       <note>You cannot delete an application that has a running environment.     
+    /// </note>
     /// </summary>
     public partial class DeleteApplicationRequest : AmazonElasticBeanstalkRequest
     {
-        private string applicationName;
-        private bool? terminateEnvByForce;
+        private string _applicationName;
+        private bool? _terminateEnvByForce;
 
 
         /// <summary>
-        /// The name of the application to delete.
-        ///  
+        /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 100</description>
-        ///     </item>
-        /// </list>
+        /// The name of the application to delete.
         /// </para>
         /// </summary>
         public string ApplicationName
         {
-            get { return this.applicationName; }
-            set { this.applicationName = value; }
+            get { return this._applicationName; }
+            set { this._applicationName = value; }
         }
 
         // Check to see if ApplicationName property is set
         internal bool IsSetApplicationName()
         {
-            return this.applicationName != null;
+            return this._applicationName != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property TerminateEnvByForce. 
+        /// <para>
         /// When set to true, running environments will be terminated before deleting the application.
-        ///  
+        /// </para>
         /// </summary>
         public bool TerminateEnvByForce
         {
-            get { return this.terminateEnvByForce ?? default(bool); }
-            set { this.terminateEnvByForce = value; }
+            get { return this._terminateEnvByForce.GetValueOrDefault(); }
+            set { this._terminateEnvByForce = value; }
         }
 
         // Check to see if TerminateEnvByForce property is set
         internal bool IsSetTerminateEnvByForce()
         {
-            return this.terminateEnvByForce.HasValue;
+            return this._terminateEnvByForce.HasValue; 
         }
 
     }
 }
-    

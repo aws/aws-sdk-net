@@ -29,44 +29,40 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Unassign Volume Request Marshaller
+    /// UnassignVolume Request Marshaller
     /// </summary>       
-    internal class UnassignVolumeRequestMarshaller : IMarshaller<IRequest, UnassignVolumeRequest> 
+    public class UnassignVolumeRequestMarshaller : IMarshaller<IRequest, UnassignVolumeRequest> 
     {
-        
-
-        public IRequest Marshall(UnassignVolumeRequest unassignVolumeRequest) 
+        public IRequest Marshall(UnassignVolumeRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(unassignVolumeRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.UnassignVolume";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (unassignVolumeRequest != null && unassignVolumeRequest.IsSetVolumeId()) 
+                if(publicRequest.IsSetVolumeId())
                 {
                     writer.WritePropertyName("VolumeId");
-                    writer.Write(unassignVolumeRequest.VolumeId);
+                    writer.Write(publicRequest.VolumeId);
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

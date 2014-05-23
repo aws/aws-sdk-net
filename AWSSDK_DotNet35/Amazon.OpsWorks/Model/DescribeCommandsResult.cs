@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>DescribeCommands</c> request.</para>
+    /// Contains the response to a <code>DescribeCommands</code> request.
     /// </summary>
     public partial class DescribeCommandsResult : AmazonWebServiceResponse
     {
-        
-        private List<Command> commands = new List<Command>();
+        private List<Command> _commands = new List<Command>();
 
 
         /// <summary>
-        /// An array of <c>Command</c> objects that describe each of the specified commands.
-        ///  
+        /// Gets and sets the property Commands. 
+        /// <para>
+        /// An array of <code>Command</code> objects that describe each of the specified commands.
+        /// </para>
         /// </summary>
         public List<Command> Commands
         {
-            get { return this.commands; }
-            set { this.commands = value; }
+            get { return this._commands; }
+            set { this._commands = value; }
         }
 
         // Check to see if Commands property is set
         internal bool IsSetCommands()
         {
-            return this.commands.Count > 0;
+            return this._commands != null && this._commands.Count > 0; 
         }
+
     }
 }

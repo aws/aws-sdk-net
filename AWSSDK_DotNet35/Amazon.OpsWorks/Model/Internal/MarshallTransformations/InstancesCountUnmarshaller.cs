@@ -12,132 +12,142 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.OpsWorks.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+using Amazon.OpsWorks.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for InstancesCount Object
+    /// </summary>  
+    public class InstancesCountUnmarshaller : IUnmarshaller<InstancesCount, XmlUnmarshallerContext>, IUnmarshaller<InstancesCount, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// InstancesCountUnmarshaller
-      /// </summary>
-      internal class InstancesCountUnmarshaller : IUnmarshaller<InstancesCount, XmlUnmarshallerContext>, IUnmarshaller<InstancesCount, JsonUnmarshallerContext>
-      {
         InstancesCount IUnmarshaller<InstancesCount, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public InstancesCount Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            InstancesCount instancesCount = new InstancesCount();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            InstancesCount unmarshalledObject = new InstancesCount();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("Booting", targetDepth))
-              {
-                instancesCount.Booting = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("ConnectionLost", targetDepth))
-              {
-                instancesCount.ConnectionLost = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Online", targetDepth))
-              {
-                instancesCount.Online = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Pending", targetDepth))
-              {
-                instancesCount.Pending = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Rebooting", targetDepth))
-              {
-                instancesCount.Rebooting = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Requested", targetDepth))
-              {
-                instancesCount.Requested = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("RunningSetup", targetDepth))
-              {
-                instancesCount.RunningSetup = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("SetupFailed", targetDepth))
-              {
-                instancesCount.SetupFailed = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("ShuttingDown", targetDepth))
-              {
-                instancesCount.ShuttingDown = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("StartFailed", targetDepth))
-              {
-                instancesCount.StartFailed = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Stopped", targetDepth))
-              {
-                instancesCount.Stopped = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Stopping", targetDepth))
-              {
-                instancesCount.Stopping = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Terminated", targetDepth))
-              {
-                instancesCount.Terminated = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Terminating", targetDepth))
-              {
-                instancesCount.Terminating = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("Booting", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Booting = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ConnectionLost", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ConnectionLost = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Online", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Online = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Pending", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Pending = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Rebooting", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Rebooting = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Requested", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Requested = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RunningSetup", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.RunningSetup = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SetupFailed", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.SetupFailed = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ShuttingDown", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ShuttingDown = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StartFailed", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.StartFailed = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Stopped", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Stopped = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Stopping", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Stopping = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Terminated", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Terminated = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Terminating", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Terminating = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return instancesCount;
+            return unmarshalledObject;
         }
 
-        private static InstancesCountUnmarshaller instance;
-        public static InstancesCountUnmarshaller GetInstance()
+
+        private static InstancesCountUnmarshaller _instance = new InstancesCountUnmarshaller();        
+
+        public static InstancesCountUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new InstancesCountUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

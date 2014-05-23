@@ -29,53 +29,45 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Time Based Auto Scaling Request Marshaller
+    /// DescribeTimeBasedAutoScaling Request Marshaller
     /// </summary>       
-    internal class DescribeTimeBasedAutoScalingRequestMarshaller : IMarshaller<IRequest, DescribeTimeBasedAutoScalingRequest> 
+    public class DescribeTimeBasedAutoScalingRequestMarshaller : IMarshaller<IRequest, DescribeTimeBasedAutoScalingRequest> 
     {
-        
-
-        public IRequest Marshall(DescribeTimeBasedAutoScalingRequest describeTimeBasedAutoScalingRequest) 
+        public IRequest Marshall(DescribeTimeBasedAutoScalingRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(describeTimeBasedAutoScalingRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.DescribeTimeBasedAutoScaling";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-
-                if (describeTimeBasedAutoScalingRequest != null && describeTimeBasedAutoScalingRequest.InstanceIds != null && describeTimeBasedAutoScalingRequest.InstanceIds.Count > 0) 
+                if(publicRequest.IsSetInstanceIds())
                 {
-                    List<string> instanceIdsList = describeTimeBasedAutoScalingRequest.InstanceIds;
                     writer.WritePropertyName("InstanceIds");
                     writer.WriteArrayStart();
-
-                    foreach (string instanceIdsListValue in instanceIdsList) 
-                    { 
-                        writer.Write(StringUtils.FromString(instanceIdsListValue));
+                    foreach(var publicRequestInstanceIdsListValue in publicRequest.InstanceIds)
+                    {
+                        writer.Write(publicRequestInstanceIdsListValue);
                     }
-
                     writer.WriteArrayEnd();
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

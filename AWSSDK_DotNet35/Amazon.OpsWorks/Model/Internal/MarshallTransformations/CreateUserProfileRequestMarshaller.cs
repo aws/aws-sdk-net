@@ -29,59 +29,58 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create User Profile Request Marshaller
+    /// CreateUserProfile Request Marshaller
     /// </summary>       
-    internal class CreateUserProfileRequestMarshaller : IMarshaller<IRequest, CreateUserProfileRequest> 
+    public class CreateUserProfileRequestMarshaller : IMarshaller<IRequest, CreateUserProfileRequest> 
     {
-        
-
-        public IRequest Marshall(CreateUserProfileRequest createUserProfileRequest) 
+        public IRequest Marshall(CreateUserProfileRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(createUserProfileRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.CreateUserProfile";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (createUserProfileRequest != null && createUserProfileRequest.IsSetIamUserArn()) 
-                {
-                    writer.WritePropertyName("IamUserArn");
-                    writer.Write(createUserProfileRequest.IamUserArn);
-                }
-                if (createUserProfileRequest != null && createUserProfileRequest.IsSetSshUsername()) 
-                {
-                    writer.WritePropertyName("SshUsername");
-                    writer.Write(createUserProfileRequest.SshUsername);
-                }
-                if (createUserProfileRequest != null && createUserProfileRequest.IsSetSshPublicKey()) 
-                {
-                    writer.WritePropertyName("SshPublicKey");
-                    writer.Write(createUserProfileRequest.SshPublicKey);
-                }
-                if (createUserProfileRequest != null && createUserProfileRequest.IsSetAllowSelfManagement()) 
+                if(publicRequest.IsSetAllowSelfManagement())
                 {
                     writer.WritePropertyName("AllowSelfManagement");
-                    writer.Write(createUserProfileRequest.AllowSelfManagement);
+                    writer.Write(publicRequest.AllowSelfManagement);
                 }
 
+                if(publicRequest.IsSetIamUserArn())
+                {
+                    writer.WritePropertyName("IamUserArn");
+                    writer.Write(publicRequest.IamUserArn);
+                }
+
+                if(publicRequest.IsSetSshPublicKey())
+                {
+                    writer.WritePropertyName("SshPublicKey");
+                    writer.Write(publicRequest.SshPublicKey);
+                }
+
+                if(publicRequest.IsSetSshUsername())
+                {
+                    writer.WritePropertyName("SshUsername");
+                    writer.Write(publicRequest.SshUsername);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

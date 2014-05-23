@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the UpdateLayer response metadata.
-    /// The UpdateLayer operation has a void result type.
+    /// Configuration for accessing Amazon UpdateLayer service
     /// </summary>
-    public partial class UpdateLayerResponse : AmazonWebServiceResponse
+    public partial class UpdateLayerResponse : UpdateLayerResult
     {
+        /// <summary>
+        /// Gets and sets the UpdateLayerResult property.
+        /// Represents the output of a UpdateLayer operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the UpdateLayerResult class are now available on the UpdateLayerResponse class. You should use the properties on UpdateLayerResponse instead of accessing them through UpdateLayerResult.")]
+        public UpdateLayerResult UpdateLayerResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

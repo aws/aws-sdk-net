@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the DeregisterElasticIp response metadata.
-    /// The DeregisterElasticIp operation has a void result type.
+    /// Configuration for accessing Amazon DeregisterElasticIp service
     /// </summary>
-    public partial class DeregisterElasticIpResponse : AmazonWebServiceResponse
+    public partial class DeregisterElasticIpResponse : DeregisterElasticIpResult
     {
+        /// <summary>
+        /// Gets and sets the DeregisterElasticIpResult property.
+        /// Represents the output of a DeregisterElasticIp operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DeregisterElasticIpResult class are now available on the DeregisterElasticIpResponse class. You should use the properties on DeregisterElasticIpResponse instead of accessing them through DeregisterElasticIpResult.")]
+        public DeregisterElasticIpResult DeregisterElasticIpResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

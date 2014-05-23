@@ -18,65 +18,77 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Describes an app's SSL configuration.</para>
+    /// Describes an app's SSL configuration.
     /// </summary>
     public partial class SslConfiguration
     {
-        
-        private string certificate;
-        private string privateKey;
-        private string chain;
+        private string _certificate;
+        private string _chain;
+        private string _privateKey;
 
 
         /// <summary>
+        /// Gets and sets the property Certificate. 
+        /// <para>
         /// The contents of the certificate's domain.crt file.
-        ///  
+        /// </para>
         /// </summary>
         public string Certificate
         {
-            get { return this.certificate; }
-            set { this.certificate = value; }
+            get { return this._certificate; }
+            set { this._certificate = value; }
         }
 
         // Check to see if Certificate property is set
         internal bool IsSetCertificate()
         {
-            return this.certificate != null;
+            return this._certificate != null;
         }
+
 
         /// <summary>
-        /// The private key; the contents of the certificate's domain.kex file.
-        ///  
-        /// </summary>
-        public string PrivateKey
-        {
-            get { return this.privateKey; }
-            set { this.privateKey = value; }
-        }
-
-        // Check to see if PrivateKey property is set
-        internal bool IsSetPrivateKey()
-        {
-            return this.privateKey != null;
-        }
-
-        /// <summary>
-        /// Optional. Can be used to specify an intermediate certificate authority key or client authentication.
-        ///  
+        /// Gets and sets the property Chain. 
+        /// <para>
+        /// Optional. Can be used to specify an intermediate certificate authority key or client
+        /// authentication.
+        /// </para>
         /// </summary>
         public string Chain
         {
-            get { return this.chain; }
-            set { this.chain = value; }
+            get { return this._chain; }
+            set { this._chain = value; }
         }
 
         // Check to see if Chain property is set
         internal bool IsSetChain()
         {
-            return this.chain != null;
+            return this._chain != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property PrivateKey. 
+        /// <para>
+        /// The private key; the contents of the certificate's domain.kex file.
+        /// </para>
+        /// </summary>
+        public string PrivateKey
+        {
+            get { return this._privateKey; }
+            set { this._privateKey = value; }
+        }
+
+        // Check to see if PrivateKey property is set
+        internal bool IsSetPrivateKey()
+        {
+            return this._privateKey != null;
+        }
+
     }
 }

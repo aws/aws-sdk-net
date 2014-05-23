@@ -29,68 +29,63 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Volumes Request Marshaller
+    /// DescribeVolumes Request Marshaller
     /// </summary>       
-    internal class DescribeVolumesRequestMarshaller : IMarshaller<IRequest, DescribeVolumesRequest> 
+    public class DescribeVolumesRequestMarshaller : IMarshaller<IRequest, DescribeVolumesRequest> 
     {
-        
-
-        public IRequest Marshall(DescribeVolumesRequest describeVolumesRequest) 
+        public IRequest Marshall(DescribeVolumesRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(describeVolumesRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.DescribeVolumes";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (describeVolumesRequest != null && describeVolumesRequest.IsSetInstanceId()) 
+                if(publicRequest.IsSetInstanceId())
                 {
                     writer.WritePropertyName("InstanceId");
-                    writer.Write(describeVolumesRequest.InstanceId);
+                    writer.Write(publicRequest.InstanceId);
                 }
-                if (describeVolumesRequest != null && describeVolumesRequest.IsSetStackId()) 
-                {
-                    writer.WritePropertyName("StackId");
-                    writer.Write(describeVolumesRequest.StackId);
-                }
-                if (describeVolumesRequest != null && describeVolumesRequest.IsSetRaidArrayId()) 
+
+                if(publicRequest.IsSetRaidArrayId())
                 {
                     writer.WritePropertyName("RaidArrayId");
-                    writer.Write(describeVolumesRequest.RaidArrayId);
+                    writer.Write(publicRequest.RaidArrayId);
                 }
 
-                if (describeVolumesRequest != null && describeVolumesRequest.VolumeIds != null && describeVolumesRequest.VolumeIds.Count > 0) 
+                if(publicRequest.IsSetStackId())
                 {
-                    List<string> volumeIdsList = describeVolumesRequest.VolumeIds;
+                    writer.WritePropertyName("StackId");
+                    writer.Write(publicRequest.StackId);
+                }
+
+                if(publicRequest.IsSetVolumeIds())
+                {
                     writer.WritePropertyName("VolumeIds");
                     writer.WriteArrayStart();
-
-                    foreach (string volumeIdsListValue in volumeIdsList) 
-                    { 
-                        writer.Write(StringUtils.FromString(volumeIdsListValue));
+                    foreach(var publicRequestVolumeIdsListValue in publicRequest.VolumeIds)
+                    {
+                        writer.Write(publicRequestVolumeIdsListValue);
                     }
-
                     writer.WriteArrayEnd();
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

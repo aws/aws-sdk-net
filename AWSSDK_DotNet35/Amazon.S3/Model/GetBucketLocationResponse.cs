@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Returns information about the  GetBucketLocation response and response metadata.
+    /// Returns information about the GetBucketLocation response and response metadata.
     /// </summary>
     public class GetBucketLocationResponse : AmazonWebServiceResponse
     {
@@ -30,6 +30,8 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// Gets and sets the Location property.
+        /// If the the bucket is located in us-east-1 S3Region.US will be return which has a 
+        /// value of empty string.
         /// </summary>
         public S3Region Location
         {

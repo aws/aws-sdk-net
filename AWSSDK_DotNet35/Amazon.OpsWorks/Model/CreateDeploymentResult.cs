@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>CreateDeployment</c> request.</para>
+    /// Contains the response to a <code>CreateDeployment</code> request.
     /// </summary>
     public partial class CreateDeploymentResult : AmazonWebServiceResponse
     {
-        
-        private string deploymentId;
+        private string _deploymentId;
 
 
         /// <summary>
+        /// Gets and sets the property DeploymentId. 
+        /// <para>
         /// The deployment ID, which can be used with other requests to identify the deployment.
-        ///  
+        /// </para>
         /// </summary>
         public string DeploymentId
         {
-            get { return this.deploymentId; }
-            set { this.deploymentId = value; }
+            get { return this._deploymentId; }
+            set { this._deploymentId = value; }
         }
 
         // Check to see if DeploymentId property is set
         internal bool IsSetDeploymentId()
         {
-            return this.deploymentId != null;
+            return this._deploymentId != null;
         }
+
     }
 }

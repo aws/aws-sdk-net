@@ -59,17 +59,62 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteStartElement("Rule", "");
                                 if (lifecycleConfigurationLifecycleConfigurationrulesListValue != null)
                                 {
-                                    var expirationExpiration = lifecycleConfigurationLifecycleConfigurationrulesListValue.Expiration;
-                                    if (expirationExpiration != null)
+                                    var expiration = lifecycleConfigurationLifecycleConfigurationrulesListValue.Expiration;
+                                    if (expiration != null)
                                     {
                                         xmlWriter.WriteStartElement("Expiration", "");
-                                        if (expirationExpiration.IsSetDate())
+                                        if (expiration.IsSetDate())
                                         {
-                                            xmlWriter.WriteElementString("Date", "", S3Transforms.ToXmlStringValue(expirationExpiration.Date));
+                                            xmlWriter.WriteElementString("Date", "", S3Transforms.ToXmlStringValue(expiration.Date));
                                         }
-                                        if (expirationExpiration.IsSetDays())
+                                        if (expiration.IsSetDays())
                                         {
-                                            xmlWriter.WriteElementString("Days", "", S3Transforms.ToXmlStringValue(expirationExpiration.Days));
+                                            xmlWriter.WriteElementString("Days", "", S3Transforms.ToXmlStringValue(expiration.Days));
+                                        }
+                                        xmlWriter.WriteEndElement();
+                                    }
+
+                                    var transition = lifecycleConfigurationLifecycleConfigurationrulesListValue.Transition;
+                                    if (transition != null)
+                                    {
+                                        xmlWriter.WriteStartElement("Transition", "");
+                                        if (transition.IsSetDate())
+                                        {
+                                            xmlWriter.WriteElementString("Date", "", S3Transforms.ToXmlStringValue(transition.Date));
+                                        }
+                                        if (transition.IsSetDays())
+                                        {
+                                            xmlWriter.WriteElementString("Days", "", S3Transforms.ToXmlStringValue(transition.Days));
+                                        }
+                                        if (transition.IsSetStorageClass())
+                                        {
+                                            xmlWriter.WriteElementString("StorageClass", "", S3Transforms.ToXmlStringValue(transition.StorageClass));
+                                        }
+                                        xmlWriter.WriteEndElement();
+                                    }
+
+                                    var noncurrentVersionExpiration = lifecycleConfigurationLifecycleConfigurationrulesListValue.NoncurrentVersionExpiration;
+                                    if (noncurrentVersionExpiration != null)
+                                    {
+                                        xmlWriter.WriteStartElement("NoncurrentVersionExpiration", "");
+                                        if (noncurrentVersionExpiration.IsSetNoncurrentDays())
+                                        {
+                                            xmlWriter.WriteElementString("NoncurrentDays", "", S3Transforms.ToXmlStringValue(noncurrentVersionExpiration.NoncurrentDays));
+                                        }
+                                        xmlWriter.WriteEndElement();
+                                    }
+
+                                    var noncurrentVersionTransition = lifecycleConfigurationLifecycleConfigurationrulesListValue.NoncurrentVersionTransition;
+                                    if (noncurrentVersionTransition != null)
+                                    {
+                                        xmlWriter.WriteStartElement("NoncurrentVersionTransition", "");
+                                        if (noncurrentVersionTransition.IsSetNoncurrentDays())
+                                        {
+                                            xmlWriter.WriteElementString("NoncurrentDays", "", S3Transforms.ToXmlStringValue(noncurrentVersionTransition.NoncurrentDays));
+                                        }
+                                        if (noncurrentVersionTransition.IsSetStorageClass())
+                                        {
+                                            xmlWriter.WriteElementString("StorageClass", "", S3Transforms.ToXmlStringValue(noncurrentVersionTransition.StorageClass));
                                         }
                                         xmlWriter.WriteEndElement();
                                     }
@@ -89,27 +134,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                 else
                                 {
                                     xmlWriter.WriteElementString("Status", "", "Disabled");
-                                }
-                                if (lifecycleConfigurationLifecycleConfigurationrulesListValue != null)
-                                {
-                                    var transitionTransition = lifecycleConfigurationLifecycleConfigurationrulesListValue.Transition;
-                                    if (transitionTransition != null)
-                                    {
-                                        xmlWriter.WriteStartElement("Transition", "");
-                                        if (transitionTransition.IsSetDate())
-                                        {
-                                            xmlWriter.WriteElementString("Date", "", S3Transforms.ToXmlStringValue(transitionTransition.Date));
-                                        }
-                                        if (transitionTransition.IsSetDays())
-                                        {
-                                            xmlWriter.WriteElementString("Days", "", S3Transforms.ToXmlStringValue(transitionTransition.Days));
-                                        }
-                                        if (transitionTransition.IsSetStorageClass())
-                                        {
-                                            xmlWriter.WriteElementString("StorageClass", "", S3Transforms.ToXmlStringValue(transitionTransition.StorageClass));
-                                        }
-                                        xmlWriter.WriteEndElement();
-                                    }
                                 }
                                 xmlWriter.WriteEndElement();
                             }

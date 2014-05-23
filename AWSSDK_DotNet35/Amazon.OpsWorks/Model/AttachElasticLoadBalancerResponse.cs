@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the AttachElasticLoadBalancer response metadata.
-    /// The AttachElasticLoadBalancer operation has a void result type.
+    /// Configuration for accessing Amazon AttachElasticLoadBalancer service
     /// </summary>
-    public partial class AttachElasticLoadBalancerResponse : AmazonWebServiceResponse
+    public partial class AttachElasticLoadBalancerResponse : AttachElasticLoadBalancerResult
     {
+        /// <summary>
+        /// Gets and sets the AttachElasticLoadBalancerResult property.
+        /// Represents the output of a AttachElasticLoadBalancer operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the AttachElasticLoadBalancerResult class are now available on the AttachElasticLoadBalancerResponse class. You should use the properties on AttachElasticLoadBalancerResponse instead of accessing them through AttachElasticLoadBalancerResult.")]
+        public AttachElasticLoadBalancerResult AttachElasticLoadBalancerResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

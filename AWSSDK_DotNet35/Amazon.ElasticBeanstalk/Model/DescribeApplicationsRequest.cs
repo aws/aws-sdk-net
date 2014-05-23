@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,29 +25,31 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeApplications operation.
-    /// <para>Returns the descriptions of existing applications.</para>
+    /// Returns the descriptions of existing applications.
     /// </summary>
     public partial class DescribeApplicationsRequest : AmazonElasticBeanstalkRequest
     {
-        private List<string> applicationNames = new List<string>();
+        private List<string> _applicationNames = new List<string>();
 
 
         /// <summary>
-        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include those with the specified names.
-        ///  
+        /// Gets and sets the property ApplicationNames. 
+        /// <para>
+        ///          If specified, AWS Elastic Beanstalk         restricts the returned descriptions
+        /// to         only include those with the         specified names.      
+        /// </para>
         /// </summary>
         public List<string> ApplicationNames
         {
-            get { return this.applicationNames; }
-            set { this.applicationNames = value; }
+            get { return this._applicationNames; }
+            set { this._applicationNames = value; }
         }
 
         // Check to see if ApplicationNames property is set
         internal bool IsSetApplicationNames()
         {
-            return this.applicationNames.Count > 0;
+            return this._applicationNames != null && this._applicationNames.Count > 0; 
         }
 
     }
 }
-    

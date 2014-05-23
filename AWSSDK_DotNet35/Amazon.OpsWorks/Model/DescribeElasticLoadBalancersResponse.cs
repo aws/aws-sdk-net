@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeElasticLoadBalancers response and response metadata.
+    /// Configuration for accessing Amazon DescribeElasticLoadBalancers service
     /// </summary>
     public partial class DescribeElasticLoadBalancersResponse : DescribeElasticLoadBalancersResult
     {
         /// <summary>
         /// Gets and sets the DescribeElasticLoadBalancersResult property.
-        /// Contains the response to a DescribeElasticLoadBalancers request.
+        /// Represents the output of a DescribeElasticLoadBalancers operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeElasticLoadBalancersResult class are now available on the DescribeElasticLoadBalancersResponse class. You should use the properties on DescribeElasticLoadBalancersResponse instead of accessing them through DescribeElasticLoadBalancersResult.")]
         public DescribeElasticLoadBalancersResult DescribeElasticLoadBalancersResult
@@ -40,4 +36,3 @@ namespace Amazon.OpsWorks.Model
         }
     }
 }
-    

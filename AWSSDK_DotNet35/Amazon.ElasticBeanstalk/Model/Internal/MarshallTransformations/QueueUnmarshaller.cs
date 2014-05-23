@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,69 +12,75 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticBeanstalk.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Queue Unmarshaller
-     /// </summary>
-    internal class QueueUnmarshaller : IUnmarshaller<Queue, XmlUnmarshallerContext>, IUnmarshaller<Queue, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Queue Object
+    /// </summary>  
+    public class QueueUnmarshaller : IUnmarshaller<Queue, XmlUnmarshallerContext>, IUnmarshaller<Queue, JsonUnmarshallerContext>
     {
-        public Queue Unmarshall(XmlUnmarshallerContext context) 
+        public Queue Unmarshall(XmlUnmarshallerContext context)
         {
-            Queue queue = new Queue();
+            Queue unmarshalledObject = new Queue();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("Name", targetDepth))
                     {
-                        queue.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("URL", targetDepth))
                     {
-                        queue.URL = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.URL = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return queue;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return queue;
+            return unmarshalledObject;
         }
 
-        public Queue Unmarshall(JsonUnmarshallerContext context) 
+        public Queue Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static QueueUnmarshaller instance;
 
-        public static QueueUnmarshaller GetInstance() 
+        private static QueueUnmarshaller _instance = new QueueUnmarshaller();        
+
+        public static QueueUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new QueueUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

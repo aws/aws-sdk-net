@@ -29,58 +29,51 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Raid Arrays Request Marshaller
+    /// DescribeRaidArrays Request Marshaller
     /// </summary>       
-    internal class DescribeRaidArraysRequestMarshaller : IMarshaller<IRequest, DescribeRaidArraysRequest> 
+    public class DescribeRaidArraysRequestMarshaller : IMarshaller<IRequest, DescribeRaidArraysRequest> 
     {
-        
-
-        public IRequest Marshall(DescribeRaidArraysRequest describeRaidArraysRequest) 
+        public IRequest Marshall(DescribeRaidArraysRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(describeRaidArraysRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.DescribeRaidArrays";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (describeRaidArraysRequest != null && describeRaidArraysRequest.IsSetInstanceId()) 
+                if(publicRequest.IsSetInstanceId())
                 {
                     writer.WritePropertyName("InstanceId");
-                    writer.Write(describeRaidArraysRequest.InstanceId);
+                    writer.Write(publicRequest.InstanceId);
                 }
 
-                if (describeRaidArraysRequest != null && describeRaidArraysRequest.RaidArrayIds != null && describeRaidArraysRequest.RaidArrayIds.Count > 0) 
+                if(publicRequest.IsSetRaidArrayIds())
                 {
-                    List<string> raidArrayIdsList = describeRaidArraysRequest.RaidArrayIds;
                     writer.WritePropertyName("RaidArrayIds");
                     writer.WriteArrayStart();
-
-                    foreach (string raidArrayIdsListValue in raidArrayIdsList) 
-                    { 
-                        writer.Write(StringUtils.FromString(raidArrayIdsListValue));
+                    foreach(var publicRequestRaidArrayIdsListValue in publicRequest.RaidArrayIds)
+                    {
+                        writer.Write(publicRequestRaidArrayIdsListValue);
                     }
-
                     writer.WriteArrayEnd();
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

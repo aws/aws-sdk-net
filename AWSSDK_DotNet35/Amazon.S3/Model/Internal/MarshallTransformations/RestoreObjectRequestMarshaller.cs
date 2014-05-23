@@ -40,6 +40,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                                 S3Transforms.ToStringValue(restoreObjectRequest.Key));
 
             request.Parameters.Add("restore", null);
+            if (restoreObjectRequest.IsSetVersionId())
+                request.Parameters.Add("versionId", S3Transforms.ToStringValue(restoreObjectRequest.VersionId));
 
             request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
             request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
@@ -47,12 +49,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             var stringWriter = new StringWriter(System.Globalization.CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = Encoding.UTF8, OmitXmlDeclaration = true }))
             {
-                if (restoreObjectRequest.IsSetDays())
-                {
                     xmlWriter.WriteStartElement("RestoreRequest", "");
                     xmlWriter.WriteElementString("Days", "", S3Transforms.ToXmlStringValue(restoreObjectRequest.Days));
                     xmlWriter.WriteEndElement();
-                }
             }
 
             try

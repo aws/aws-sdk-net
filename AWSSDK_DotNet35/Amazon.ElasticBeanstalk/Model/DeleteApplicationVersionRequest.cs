@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,84 +25,82 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteApplicationVersion operation.
-    /// <para> Deletes the specified version from the specified application. </para> <para><b>NOTE:</b>You cannot delete an application version that
-    /// is associated with a running environment.</para>
+    /// Deletes the specified version from the specified         application.   
+    ///   
+    /// 
+    ///       <note>You cannot delete an application version that is associated with a   
+    ///      running environment.</note>
     /// </summary>
     public partial class DeleteApplicationVersionRequest : AmazonElasticBeanstalkRequest
     {
-        private string applicationName;
-        private string versionLabel;
-        private bool? deleteSourceBundle;
+        private string _applicationName;
+        private bool? _deleteSourceBundle;
+        private string _versionLabel;
 
 
         /// <summary>
-        /// The name of the application to delete releases from.
-        ///  
+        /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 100</description>
-        ///     </item>
-        /// </list>
+        /// The name of the application to delete releases from.
         /// </para>
         /// </summary>
         public string ApplicationName
         {
-            get { return this.applicationName; }
-            set { this.applicationName = value; }
+            get { return this._applicationName; }
+            set { this._applicationName = value; }
         }
 
         // Check to see if ApplicationName property is set
         internal bool IsSetApplicationName()
         {
-            return this.applicationName != null;
+            return this._applicationName != null;
         }
 
+
         /// <summary>
-        /// The label of the version to delete.
-        ///  
+        /// Gets and sets the property DeleteSourceBundle. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 100</description>
-        ///     </item>
-        /// </list>
+        /// Indicates whether to delete the associated source bundle from Amazon S3:      
         /// </para>
-        /// </summary>
-        public string VersionLabel
-        {
-            get { return this.versionLabel; }
-            set { this.versionLabel = value; }
-        }
-
-        // Check to see if VersionLabel property is set
-        internal bool IsSetVersionLabel()
-        {
-            return this.versionLabel != null;
-        }
-
-        /// <summary>
-        /// Indicates whether to delete the associated source bundle from Amazon S3: <ul> <li> <c>true</c>: An attempt is made to delete the associated
-        /// Amazon S3 source bundle specified at time of creation. </li> <li> <c>false</c>: No action is taken on the Amazon S3 source bundle specified
-        /// at time of creation. </li> </ul> Valid Values: <c>true</c> | <c>false</c>
-        ///  
+        ///       <ul>         <li>            <code>true</code>: An attempt is made to delete
+        /// the            associated Amazon S3 source bundle specified at time of creation. 
+        ///        </li>         <li>            <code>false</code>: No action is taken on the
+        /// Amazon S3 source bundle specified at            time of creation.         </li>  
+        ///    </ul>      
+        /// <para>
+        ///          Valid Values: <code>true</code> | <code>false</code>      
+        /// </para>
         /// </summary>
         public bool DeleteSourceBundle
         {
-            get { return this.deleteSourceBundle ?? default(bool); }
-            set { this.deleteSourceBundle = value; }
+            get { return this._deleteSourceBundle.GetValueOrDefault(); }
+            set { this._deleteSourceBundle = value; }
         }
 
         // Check to see if DeleteSourceBundle property is set
         internal bool IsSetDeleteSourceBundle()
         {
-            return this.deleteSourceBundle.HasValue;
+            return this._deleteSourceBundle.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property VersionLabel. 
+        /// <para>
+        ///          The label of the version to delete.      
+        /// </para>
+        /// </summary>
+        public string VersionLabel
+        {
+            get { return this._versionLabel; }
+            set { this._versionLabel = value; }
+        }
+
+        // Check to see if VersionLabel property is set
+        internal bool IsSetVersionLabel()
+        {
+            return this._versionLabel != null;
         }
 
     }
 }
-    

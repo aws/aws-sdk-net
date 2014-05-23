@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the DeleteStack response metadata.
-    /// The DeleteStack operation has a void result type.
+    /// Configuration for accessing Amazon DeleteStack service
     /// </summary>
-    public partial class DeleteStackResponse : AmazonWebServiceResponse
+    public partial class DeleteStackResponse : DeleteStackResult
     {
+        /// <summary>
+        /// Gets and sets the DeleteStackResult property.
+        /// Represents the output of a DeleteStack operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DeleteStackResult class are now available on the DeleteStackResponse class. You should use the properties on DeleteStackResponse instead of accessing them through DeleteStackResult.")]
+        public DeleteStackResult DeleteStackResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

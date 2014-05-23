@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>DescribeUserProfiles</c> request.</para>
+    /// Contains the response to a <code>DescribeUserProfiles</code> request.
     /// </summary>
     public partial class DescribeUserProfilesResult : AmazonWebServiceResponse
     {
-        
-        private List<UserProfile> userProfiles = new List<UserProfile>();
+        private List<UserProfile> _userProfiles = new List<UserProfile>();
 
 
         /// <summary>
-        /// A <c>Users</c> object that describes the specified users.
-        ///  
+        /// Gets and sets the property UserProfiles. 
+        /// <para>
+        /// A <code>Users</code> object that describes the specified users.
+        /// </para>
         /// </summary>
         public List<UserProfile> UserProfiles
         {
-            get { return this.userProfiles; }
-            set { this.userProfiles = value; }
+            get { return this._userProfiles; }
+            set { this._userProfiles = value; }
         }
 
         // Check to see if UserProfiles property is set
         internal bool IsSetUserProfiles()
         {
-            return this.userProfiles.Count > 0;
+            return this._userProfiles != null && this._userProfiles.Count > 0; 
         }
+
     }
 }

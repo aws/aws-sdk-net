@@ -2275,6 +2275,8 @@ namespace Amazon.EC2
         /// 
         /// <param name="deleteVpcPeeringConnectionRequest">Container for the necessary parameters to execute the DeleteVpcPeeringConnection service
         /// method on AmazonEC2.</param>
+        /// 
+        /// <returns>The response from the DeleteVpcPeeringConnection service method, as returned by AmazonEC2.</returns>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -4686,6 +4688,8 @@ namespace Amazon.EC2
         /// 
         /// <param name="rejectVpcPeeringConnectionRequest">Container for the necessary parameters to execute the RejectVpcPeeringConnection service
         /// method on AmazonEC2.</param>
+        /// 
+        /// <returns>The response from the RejectVpcPeeringConnection service method, as returned by AmazonEC2.</returns>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>

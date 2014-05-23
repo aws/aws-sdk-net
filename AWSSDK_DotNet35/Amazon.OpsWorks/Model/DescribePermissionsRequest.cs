@@ -25,50 +25,59 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribePermissions operation.
-    /// <para>Describes the permissions for a specified stack.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have
-    /// a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user
-    /// permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a>
-    /// .</para>
+    /// Describes the permissions for a specified stack.
+    /// 
+    ///     
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+    /// level for the stack, or an attached       policy that explicitly grants permissions.
+    /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
     public partial class DescribePermissionsRequest : AmazonOpsWorksRequest
     {
-        private string iamUserArn;
-        private string stackId;
+        private string _iamUserArn;
+        private string _stackId;
 
 
         /// <summary>
-        /// The user's IAM ARN. For more information about IAM ARNs, see <a
-        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
-        ///  
+        /// Gets and sets the property IamUserArn. 
+        /// <para>
+        /// The user's IAM ARN. For more information about IAM ARNs, see  <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+        /// Identifiers</a>.
+        /// </para>
         /// </summary>
         public string IamUserArn
         {
-            get { return this.iamUserArn; }
-            set { this.iamUserArn = value; }
+            get { return this._iamUserArn; }
+            set { this._iamUserArn = value; }
         }
 
         // Check to see if IamUserArn property is set
         internal bool IsSetIamUserArn()
         {
-            return this.iamUserArn != null;
+            return this._iamUserArn != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property StackId. 
+        /// <para>
         /// The stack ID.
-        ///  
+        /// </para>
         /// </summary>
         public string StackId
         {
-            get { return this.stackId; }
-            set { this.stackId = value; }
+            get { return this._stackId; }
+            set { this._stackId = value; }
         }
 
         // Check to see if StackId property is set
         internal bool IsSetStackId()
         {
-            return this.stackId != null;
+            return this._stackId != null;
         }
 
     }
 }
-    

@@ -21,7 +21,7 @@ using System.Text;
 namespace Amazon.S3.Encryption
 {
     /// <summary>
-    /// Encryption Instructions store the encryption crdentials
+    /// Encryption Instructions store the encryption credentials
     /// </summary>
     public class EncryptionInstructions
     {

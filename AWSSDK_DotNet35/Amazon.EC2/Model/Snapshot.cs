@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
         private int? volumeSize;
         private string ownerAlias;
         private List<Tag> tags = new List<Tag>();
+        private bool? encrypted;
 
 
         /// <summary>
@@ -205,6 +206,17 @@ namespace Amazon.EC2.Model
         internal bool IsSetTags()
         {
             return this.tags.Count > 0;
+        }
+        public bool Encrypted
+        {
+            get { return this.encrypted ?? default(bool); }
+            set { this.encrypted = value; }
+        }
+
+        // Check to see if Encrypted property is set
+        internal bool IsSetEncrypted()
+        {
+            return this.encrypted.HasValue;
         }
     }
 }

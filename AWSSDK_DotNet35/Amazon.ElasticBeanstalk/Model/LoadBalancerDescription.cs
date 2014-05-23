@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,64 +18,76 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para>Describes the details of a LoadBalancer.</para>
+    /// Describes the details of a LoadBalancer.
     /// </summary>
-    public class LoadBalancerDescription
+    public partial class LoadBalancerDescription
     {
-        
-        private string loadBalancerName;
-        private string domain;
-        private List<Listener> listeners = new List<Listener>();
+        private string _domain;
+        private List<Listener> _listeners = new List<Listener>();
+        private string _loadBalancerName;
+
 
         /// <summary>
-        /// The name of the LoadBalancer.
-        ///  
-        /// </summary>
-        public string LoadBalancerName
-        {
-            get { return this.loadBalancerName; }
-            set { this.loadBalancerName = value; }
-        }
-
-        // Check to see if LoadBalancerName property is set
-        internal bool IsSetLoadBalancerName()
-        {
-            return this.loadBalancerName != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Domain. 
+        /// <para>
         /// The domain name of the LoadBalancer.
-        ///  
+        /// </para>
         /// </summary>
         public string Domain
         {
-            get { return this.domain; }
-            set { this.domain = value; }
+            get { return this._domain; }
+            set { this._domain = value; }
         }
 
         // Check to see if Domain property is set
         internal bool IsSetDomain()
         {
-            return this.domain != null;
+            return this._domain != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property Listeners. 
+        /// <para>
         /// A list of Listeners used by the LoadBalancer.
-        ///  
+        /// </para>
         /// </summary>
         public List<Listener> Listeners
         {
-            get { return this.listeners; }
-            set { this.listeners = value; }
+            get { return this._listeners; }
+            set { this._listeners = value; }
         }
 
         // Check to see if Listeners property is set
         internal bool IsSetListeners()
         {
-            return this.listeners.Count > 0;
+            return this._listeners != null && this._listeners.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property LoadBalancerName. 
+        /// <para>
+        /// The name of the LoadBalancer.
+        /// </para>
+        /// </summary>
+        public string LoadBalancerName
+        {
+            get { return this._loadBalancerName; }
+            set { this._loadBalancerName = value; }
+        }
+
+        // Check to see if LoadBalancerName property is set
+        internal bool IsSetLoadBalancerName()
+        {
+            return this._loadBalancerName != null;
+        }
+
     }
 }

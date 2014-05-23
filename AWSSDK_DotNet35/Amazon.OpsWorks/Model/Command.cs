@@ -18,186 +18,223 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Describes a command.</para>
+    /// Describes a command.
     /// </summary>
     public partial class Command
     {
-        
-        private string commandId;
-        private string instanceId;
-        private string deploymentId;
-        private string createdAt;
-        private string acknowledgedAt;
-        private string completedAt;
-        private string status;
-        private int? exitCode;
-        private string logUrl;
-        private string type;
+        private string _acknowledgedAt;
+        private string _commandId;
+        private string _completedAt;
+        private string _createdAt;
+        private string _deploymentId;
+        private int? _exitCode;
+        private string _instanceId;
+        private string _logUrl;
+        private string _status;
+        private string _type;
 
 
         /// <summary>
-        /// The command ID.
-        ///  
-        /// </summary>
-        public string CommandId
-        {
-            get { return this.commandId; }
-            set { this.commandId = value; }
-        }
-
-        // Check to see if CommandId property is set
-        internal bool IsSetCommandId()
-        {
-            return this.commandId != null;
-        }
-
-        /// <summary>
-        /// The ID of the instance where the command was executed.
-        ///  
-        /// </summary>
-        public string InstanceId
-        {
-            get { return this.instanceId; }
-            set { this.instanceId = value; }
-        }
-
-        // Check to see if InstanceId property is set
-        internal bool IsSetInstanceId()
-        {
-            return this.instanceId != null;
-        }
-
-        /// <summary>
-        /// The command deployment ID.
-        ///  
-        /// </summary>
-        public string DeploymentId
-        {
-            get { return this.deploymentId; }
-            set { this.deploymentId = value; }
-        }
-
-        // Check to see if DeploymentId property is set
-        internal bool IsSetDeploymentId()
-        {
-            return this.deploymentId != null;
-        }
-
-        /// <summary>
-        /// Date and time when the command was run.
-        ///  
-        /// </summary>
-        public string CreatedAt
-        {
-            get { return this.createdAt; }
-            set { this.createdAt = value; }
-        }
-
-        // Check to see if CreatedAt property is set
-        internal bool IsSetCreatedAt()
-        {
-            return this.createdAt != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property AcknowledgedAt. 
+        /// <para>
         /// Date and time when the command was acknowledged.
-        ///  
+        /// </para>
         /// </summary>
         public string AcknowledgedAt
         {
-            get { return this.acknowledgedAt; }
-            set { this.acknowledgedAt = value; }
+            get { return this._acknowledgedAt; }
+            set { this._acknowledgedAt = value; }
         }
 
         // Check to see if AcknowledgedAt property is set
         internal bool IsSetAcknowledgedAt()
         {
-            return this.acknowledgedAt != null;
+            return this._acknowledgedAt != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property CommandId. 
+        /// <para>
+        /// The command ID.
+        /// </para>
+        /// </summary>
+        public string CommandId
+        {
+            get { return this._commandId; }
+            set { this._commandId = value; }
+        }
+
+        // Check to see if CommandId property is set
+        internal bool IsSetCommandId()
+        {
+            return this._commandId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property CompletedAt. 
+        /// <para>
         /// Date when the command completed.
-        ///  
+        /// </para>
         /// </summary>
         public string CompletedAt
         {
-            get { return this.completedAt; }
-            set { this.completedAt = value; }
+            get { return this._completedAt; }
+            set { this._completedAt = value; }
         }
 
         // Check to see if CompletedAt property is set
         internal bool IsSetCompletedAt()
         {
-            return this.completedAt != null;
+            return this._completedAt != null;
         }
 
+
         /// <summary>
-        /// The command status: <ul> <li>failed</li> <li>successful</li> <li>skipped</li> <li>pending</li> </ul>
-        ///  
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// Date and time when the command was run.
+        /// </para>
         /// </summary>
-        public string Status
+        public string CreatedAt
         {
-            get { return this.status; }
-            set { this.status = value; }
+            get { return this._createdAt; }
+            set { this._createdAt = value; }
         }
 
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
         {
-            return this.status != null;
+            return this._createdAt != null;
         }
+
 
         /// <summary>
+        /// Gets and sets the property DeploymentId. 
+        /// <para>
+        /// The command deployment ID.
+        /// </para>
+        /// </summary>
+        public string DeploymentId
+        {
+            get { return this._deploymentId; }
+            set { this._deploymentId = value; }
+        }
+
+        // Check to see if DeploymentId property is set
+        internal bool IsSetDeploymentId()
+        {
+            return this._deploymentId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ExitCode. 
+        /// <para>
         /// The command exit code.
-        ///  
+        /// </para>
         /// </summary>
         public int ExitCode
         {
-            get { return this.exitCode ?? default(int); }
-            set { this.exitCode = value; }
+            get { return this._exitCode.GetValueOrDefault(); }
+            set { this._exitCode = value; }
         }
 
         // Check to see if ExitCode property is set
         internal bool IsSetExitCode()
         {
-            return this.exitCode.HasValue;
+            return this._exitCode.HasValue; 
         }
 
+
         /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The ID of the instance where the command was executed.
+        /// </para>
+        /// </summary>
+        public string InstanceId
+        {
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
+        }
+
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
+        {
+            return this._instanceId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property LogUrl. 
+        /// <para>
         /// The URL of the command log.
-        ///  
+        /// </para>
         /// </summary>
         public string LogUrl
         {
-            get { return this.logUrl; }
-            set { this.logUrl = value; }
+            get { return this._logUrl; }
+            set { this._logUrl = value; }
         }
 
         // Check to see if LogUrl property is set
         internal bool IsSetLogUrl()
         {
-            return this.logUrl != null;
+            return this._logUrl != null;
         }
 
+
         /// <summary>
-        /// The command type: <ul> <li><c>deploy</c></li> <li><c>rollback</c></li> <li><c>start</c></li> <li><c>stop</c></li> <li><c>restart</c></li>
-        /// <li><c>undeploy</c></li> <li><c>update_dependencies</c></li> <li><c>install_dependencies</c></li> <li><c>update_custom_cookbooks</c></li>
-        /// <li><c>execute_recipes</c></li> </ul>
-        ///  
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The command status:
+        /// </para>
+        ///   <ul>  <li>failed</li>  <li>successful</li>  <li>skipped</li>  <li>pending</li> 
+        /// </ul>
+        /// </summary>
+        public string Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The command type:
+        /// </para>
+        ///   <ul>  <li><code>deploy</code></li>  <li><code>rollback</code></li>  <li><code>start</code></li>
+        ///  <li><code>stop</code></li>  <li><code>restart</code></li>  <li><code>undeploy</code></li>
+        ///  <li><code>update_dependencies</code></li>  <li><code>install_dependencies</code></li>
+        ///  <li><code>update_custom_cookbooks</code></li>  <li><code>execute_recipes</code></li>
+        ///  </ul>
         /// </summary>
         public string Type
         {
-            get { return this.type; }
-            set { this.type = value; }
+            get { return this._type; }
+            set { this._type = value; }
         }
 
         // Check to see if Type property is set
         internal bool IsSetType()
         {
-            return this.type != null;
+            return this._type != null;
         }
+
     }
 }

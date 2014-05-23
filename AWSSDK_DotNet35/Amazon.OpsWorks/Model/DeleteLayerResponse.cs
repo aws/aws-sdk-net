@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the DeleteLayer response metadata.
-    /// The DeleteLayer operation has a void result type.
+    /// Configuration for accessing Amazon DeleteLayer service
     /// </summary>
-    public partial class DeleteLayerResponse : AmazonWebServiceResponse
+    public partial class DeleteLayerResponse : DeleteLayerResult
     {
+        /// <summary>
+        /// Gets and sets the DeleteLayerResult property.
+        /// Represents the output of a DeleteLayer operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DeleteLayerResult class are now available on the DeleteLayerResponse class. You should use the properties on DeleteLayerResponse instead of accessing them through DeleteLayerResult.")]
+        public DeleteLayerResult DeleteLayerResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

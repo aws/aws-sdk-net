@@ -21,6 +21,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 using System.Reflection;
 using System.Net;
 using Amazon.Util;
@@ -50,6 +51,60 @@ namespace Amazon.EC2
 
             this.BeforeRequestEvent += BeforeRequestEvents;
             this.AfterResponseEvent += AfterResponseEvents;
+        }
+
+        protected override void ProcessPreRequestHandlers(AmazonWebServiceRequest request)
+        {
+            base.ProcessPreRequestHandlers(request);
+
+            var requestCopySnapshot = request as CopySnapshotRequest;
+            if(requestCopySnapshot != null)
+            {
+                if(string.IsNullOrEmpty(requestCopySnapshot.DestinationRegion))
+                {
+                    requestCopySnapshot.DestinationRegion = AWS4Signer.DetermineSigningRegion(this.Config, "ec2");
+                }
+                if(string.IsNullOrEmpty(requestCopySnapshot.SourceRegion))
+                {
+                    throw new AmazonEC2Exception("SourceRegion is required to perform the copy snapshot.");
+                }
+
+
+                var endpoint = RegionEndpoint.GetBySystemName(requestCopySnapshot.SourceRegion);
+                if(endpoint == null)
+                {
+                    throw new AmazonEC2Exception(string.Format(CultureInfo.InvariantCulture, "No endpoint for region {0}.", requestCopySnapshot.SourceRegion));
+                }
+
+                // Make sure the presigned URL is currently null so we don't attempt to generate
+                // a presigned URL with a presigned URL.
+                requestCopySnapshot.PresignedUrl = null;
+
+                // Marshall this request but switch to the source region and make it a GET request.
+                CopySnapshotRequestMarshaller marshaller = new CopySnapshotRequestMarshaller();
+                var irequest = marshaller.Marshall(requestCopySnapshot);
+                irequest.UseQueryString = true;
+                irequest.HttpMethod = "GET";
+                irequest.Parameters.Add("X-Amz-Expires", AWS4PreSignedUrlSigner.MaxAWS4PreSignedUrlExpiry.ToString(CultureInfo.InvariantCulture));
+                irequest.Endpoint = new Uri("https://" +  endpoint.GetEndpointForService(this.Config.RegionEndpointServiceName).Hostname);
+
+                // Create presigned URL.
+                var metrics = new RequestMetrics();
+                var immutableCredentials = Credentials.GetCredentials();
+                                
+                var signingResult = AWS4PreSignedUrlSigner.SignRequest(irequest,
+                                                           this.Config,
+                                                           metrics,
+                                                           immutableCredentials.AccessKey,
+                                                           immutableCredentials.SecretKey,
+                                                           "ec2",
+                                                           requestCopySnapshot.SourceRegion);
+
+                var authorization = "&" + signingResult.ForQueryParameters;                
+                Uri url = ComposeUrl(irequest, irequest.Endpoint);
+
+                requestCopySnapshot.PresignedUrl = url.AbsoluteUri + authorization;
+            }
         }
 
         #endregion

@@ -12,15 +12,17 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+
 using System;
 
 using Amazon.Runtime;
 
+
 namespace Amazon.OpsWorks
 {
-
     /// <summary>
-    /// Configuration for accessing AWS OpsWorks service
+    /// Configuration for accessing Amazon OpsWorks service
     /// </summary>
     public partial class AmazonOpsWorksConfig : ClientConfig
     {
@@ -39,9 +41,7 @@ namespace Amazon.OpsWorks
         {
             get
             {
-                
                 return "opsworks";
-                    
             }
         }
 
@@ -57,5 +57,3 @@ namespace Amazon.OpsWorks
         }
     }
 }
-
-    

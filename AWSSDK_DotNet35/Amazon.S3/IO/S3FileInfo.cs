@@ -84,7 +84,7 @@ namespace Amazon.S3.IO
             {
                 int index = key.LastIndexOf('\\');
                 string directoryName = null;
-                if (index < -1)
+                if (index >= 0)
                     directoryName = key.Substring(0, index);
                 return new S3DirectoryInfo(s3Client, bucket, directoryName);
             }

@@ -18,10 +18,9 @@ using Amazon.Runtime;
 namespace Amazon.OpsWorks
 {
     /// <summary>
-    /// Base class for AmazonOpsWorks operation requests.
+    /// Base class for OpsWorks operation requests.
     /// </summary>
     public partial class AmazonOpsWorksRequest : AmazonWebServiceRequest
     {
     }
 }
-    

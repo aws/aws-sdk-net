@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the StartInstance response metadata.
-    /// The StartInstance operation has a void result type.
+    /// Configuration for accessing Amazon StartInstance service
     /// </summary>
-    public partial class StartInstanceResponse : AmazonWebServiceResponse
+    public partial class StartInstanceResponse : StartInstanceResult
     {
+        /// <summary>
+        /// Gets and sets the StartInstanceResult property.
+        /// Represents the output of a StartInstance operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the StartInstanceResult class are now available on the StartInstanceResponse class. You should use the properties on StartInstanceResponse instead of accessing them through StartInstanceResult.")]
+        public StartInstanceResult StartInstanceResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

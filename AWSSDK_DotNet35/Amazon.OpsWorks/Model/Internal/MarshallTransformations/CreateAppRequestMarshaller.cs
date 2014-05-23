@@ -29,167 +29,193 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create App Request Marshaller
+    /// CreateApp Request Marshaller
     /// </summary>       
-    internal class CreateAppRequestMarshaller : IMarshaller<IRequest, CreateAppRequest> 
+    public class CreateAppRequestMarshaller : IMarshaller<IRequest, CreateAppRequest> 
     {
-        
-
-        public IRequest Marshall(CreateAppRequest createAppRequest) 
+        public IRequest Marshall(CreateAppRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(createAppRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.CreateApp";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (createAppRequest != null && createAppRequest.IsSetStackId()) 
+                if(publicRequest.IsSetAppSource())
                 {
-                    writer.WritePropertyName("StackId");
-                    writer.Write(createAppRequest.StackId);
-                }
-                if (createAppRequest != null && createAppRequest.IsSetShortname()) 
-                {
-                    writer.WritePropertyName("Shortname");
-                    writer.Write(createAppRequest.Shortname);
-                }
-                if (createAppRequest != null && createAppRequest.IsSetName()) 
-                {
-                    writer.WritePropertyName("Name");
-                    writer.Write(createAppRequest.Name);
-                }
-                if (createAppRequest != null && createAppRequest.IsSetDescription()) 
-                {
-                    writer.WritePropertyName("Description");
-                    writer.Write(createAppRequest.Description);
-                }
-                if (createAppRequest != null && createAppRequest.IsSetType()) 
-                {
-                    writer.WritePropertyName("Type");
-                    writer.Write(createAppRequest.Type);
+                    writer.WritePropertyName("AppSource");
+                    writer.WriteObjectStart();
+                    if(publicRequest.AppSource.IsSetPassword())
+                    {
+                        writer.WritePropertyName("Password");
+                        writer.Write(publicRequest.AppSource.Password);
+                    }
+
+                    if(publicRequest.AppSource.IsSetRevision())
+                    {
+                        writer.WritePropertyName("Revision");
+                        writer.Write(publicRequest.AppSource.Revision);
+                    }
+
+                    if(publicRequest.AppSource.IsSetSshKey())
+                    {
+                        writer.WritePropertyName("SshKey");
+                        writer.Write(publicRequest.AppSource.SshKey);
+                    }
+
+                    if(publicRequest.AppSource.IsSetType())
+                    {
+                        writer.WritePropertyName("Type");
+                        writer.Write(publicRequest.AppSource.Type);
+                    }
+
+                    if(publicRequest.AppSource.IsSetUrl())
+                    {
+                        writer.WritePropertyName("Url");
+                        writer.Write(publicRequest.AppSource.Url);
+                    }
+
+                    if(publicRequest.AppSource.IsSetUsername())
+                    {
+                        writer.WritePropertyName("Username");
+                        writer.Write(publicRequest.AppSource.Username);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if (createAppRequest != null) 
+                if(publicRequest.IsSetAttributes())
                 {
-                    Source appSource = createAppRequest.AppSource;
-                    if (appSource != null)
+                    writer.WritePropertyName("Attributes");
+                    writer.WriteObjectStart();
+                    foreach (var publicRequestAttributesKvp in publicRequest.Attributes)
                     {
-                        writer.WritePropertyName("AppSource");
+                        writer.WritePropertyName(publicRequestAttributesKvp.Key);
+                        var publicRequestAttributesValue = publicRequestAttributesKvp.Value;
+
+                        writer.Write(publicRequestAttributesValue);
+                    }
+                    writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetDataSources())
+                {
+                    writer.WritePropertyName("DataSources");
+                    writer.WriteArrayStart();
+                    foreach(var publicRequestDataSourcesListValue in publicRequest.DataSources)
+                    {
                         writer.WriteObjectStart();
-                        if (appSource != null && appSource.IsSetType()) 
+                        if(publicRequestDataSourcesListValue.IsSetArn())
+                        {
+                            writer.WritePropertyName("Arn");
+                            writer.Write(publicRequestDataSourcesListValue.Arn);
+                        }
+
+                        if(publicRequestDataSourcesListValue.IsSetDatabaseName())
+                        {
+                            writer.WritePropertyName("DatabaseName");
+                            writer.Write(publicRequestDataSourcesListValue.DatabaseName);
+                        }
+
+                        if(publicRequestDataSourcesListValue.IsSetType())
                         {
                             writer.WritePropertyName("Type");
-                            writer.Write(appSource.Type);
+                            writer.Write(publicRequestDataSourcesListValue.Type);
                         }
-                        if (appSource != null && appSource.IsSetUrl()) 
-                        {
-                            writer.WritePropertyName("Url");
-                            writer.Write(appSource.Url);
-                        }
-                        if (appSource != null && appSource.IsSetUsername()) 
-                        {
-                            writer.WritePropertyName("Username");
-                            writer.Write(appSource.Username);
-                        }
-                        if (appSource != null && appSource.IsSetPassword()) 
-                        {
-                            writer.WritePropertyName("Password");
-                            writer.Write(appSource.Password);
-                        }
-                        if (appSource != null && appSource.IsSetSshKey()) 
-                        {
-                            writer.WritePropertyName("SshKey");
-                            writer.Write(appSource.SshKey);
-                        }
-                        if (appSource != null && appSource.IsSetRevision()) 
-                        {
-                            writer.WritePropertyName("Revision");
-                            writer.Write(appSource.Revision);
-                        }
+
                         writer.WriteObjectEnd();
                     }
-                }
-
-                if (createAppRequest != null && createAppRequest.Domains != null && createAppRequest.Domains.Count > 0) 
-                {
-                    List<string> domainsList = createAppRequest.Domains;
-                    writer.WritePropertyName("Domains");
-                    writer.WriteArrayStart();
-
-                    foreach (string domainsListValue in domainsList) 
-                    { 
-                        writer.Write(StringUtils.FromString(domainsListValue));
-                    }
-
                     writer.WriteArrayEnd();
                 }
-                if (createAppRequest != null && createAppRequest.IsSetEnableSsl()) 
+
+                if(publicRequest.IsSetDescription())
+                {
+                    writer.WritePropertyName("Description");
+                    writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetDomains())
+                {
+                    writer.WritePropertyName("Domains");
+                    writer.WriteArrayStart();
+                    foreach(var publicRequestDomainsListValue in publicRequest.Domains)
+                    {
+                        writer.Write(publicRequestDomainsListValue);
+                    }
+                    writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetEnableSsl())
                 {
                     writer.WritePropertyName("EnableSsl");
-                    writer.Write(createAppRequest.EnableSsl);
+                    writer.Write(publicRequest.EnableSsl);
                 }
 
-                if (createAppRequest != null) 
+                if(publicRequest.IsSetName())
                 {
-                    SslConfiguration sslConfiguration = createAppRequest.SslConfiguration;
-                    if (sslConfiguration != null)
-                    {
-                        writer.WritePropertyName("SslConfiguration");
-                        writer.WriteObjectStart();
-                        if (sslConfiguration != null && sslConfiguration.IsSetCertificate()) 
-                        {
-                            writer.WritePropertyName("Certificate");
-                            writer.Write(sslConfiguration.Certificate);
-                        }
-                        if (sslConfiguration != null && sslConfiguration.IsSetPrivateKey()) 
-                        {
-                            writer.WritePropertyName("PrivateKey");
-                            writer.Write(sslConfiguration.PrivateKey);
-                        }
-                        if (sslConfiguration != null && sslConfiguration.IsSetChain()) 
-                        {
-                            writer.WritePropertyName("Chain");
-                            writer.Write(sslConfiguration.Chain);
-                        }
-                        writer.WriteObjectEnd();
-                    }
+                    writer.WritePropertyName("Name");
+                    writer.Write(publicRequest.Name);
                 }
-                if (createAppRequest != null) 
+
+                if(publicRequest.IsSetShortname())
                 {
-                    if (createAppRequest.Attributes != null && createAppRequest.Attributes.Count > 0)
-                    {
-                        writer.WritePropertyName("Attributes");
-                        writer.WriteObjectStart();
-                        foreach (string createAppRequestAttributesKey in createAppRequest.Attributes.Keys)
-                        {
-                            string attributesListValue;
-                            bool attributesListValueHasValue = createAppRequest.Attributes.TryGetValue(createAppRequestAttributesKey, out attributesListValue);
-                            writer.WritePropertyName(createAppRequestAttributesKey);
-
-                        writer.Write(attributesListValue);
-                        }
-                        writer.WriteObjectEnd();
-                    }
+                    writer.WritePropertyName("Shortname");
+                    writer.Write(publicRequest.Shortname);
                 }
 
+                if(publicRequest.IsSetSslConfiguration())
+                {
+                    writer.WritePropertyName("SslConfiguration");
+                    writer.WriteObjectStart();
+                    if(publicRequest.SslConfiguration.IsSetCertificate())
+                    {
+                        writer.WritePropertyName("Certificate");
+                        writer.Write(publicRequest.SslConfiguration.Certificate);
+                    }
+
+                    if(publicRequest.SslConfiguration.IsSetChain())
+                    {
+                        writer.WritePropertyName("Chain");
+                        writer.Write(publicRequest.SslConfiguration.Chain);
+                    }
+
+                    if(publicRequest.SslConfiguration.IsSetPrivateKey())
+                    {
+                        writer.WritePropertyName("PrivateKey");
+                        writer.Write(publicRequest.SslConfiguration.PrivateKey);
+                    }
+
+                    writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetStackId())
+                {
+                    writer.WritePropertyName("StackId");
+                    writer.Write(publicRequest.StackId);
+                }
+
+                if(publicRequest.IsSetType())
+                {
+                    writer.WritePropertyName("Type");
+                    writer.Write(publicRequest.Type);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

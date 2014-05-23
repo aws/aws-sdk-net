@@ -29,44 +29,40 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Update My User Profile Request Marshaller
+    /// UpdateMyUserProfile Request Marshaller
     /// </summary>       
-    internal class UpdateMyUserProfileRequestMarshaller : IMarshaller<IRequest, UpdateMyUserProfileRequest> 
+    public class UpdateMyUserProfileRequestMarshaller : IMarshaller<IRequest, UpdateMyUserProfileRequest> 
     {
-        
-
-        public IRequest Marshall(UpdateMyUserProfileRequest updateMyUserProfileRequest) 
+        public IRequest Marshall(UpdateMyUserProfileRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(updateMyUserProfileRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.UpdateMyUserProfile";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (updateMyUserProfileRequest != null && updateMyUserProfileRequest.IsSetSshPublicKey()) 
+                if(publicRequest.IsSetSshPublicKey())
                 {
                     writer.WritePropertyName("SshPublicKey");
-                    writer.Write(updateMyUserProfileRequest.SshPublicKey);
+                    writer.Write(publicRequest.SshPublicKey);
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

@@ -67,6 +67,18 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                             
                         continue;
                     }
+                    if (context.TestExpression("NoncurrentVersionTransition", targetDepth))
+                    {
+                        rulesItem.NoncurrentVersionTransition = LifecycleRuleNoncurrentVersionTransitionUnmarshaller.GetInstance().Unmarshall(context);
+
+                        continue;
+                    }
+                    if (context.TestExpression("NoncurrentVersionExpiration", targetDepth))
+                    {
+                        rulesItem.NoncurrentVersionExpiration = LifecycleRuleNoncurrentVersionExpirationUnmarshaller.GetInstance().Unmarshall(context);
+
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

@@ -29,44 +29,40 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Stop Instance Request Marshaller
+    /// StopInstance Request Marshaller
     /// </summary>       
-    internal class StopInstanceRequestMarshaller : IMarshaller<IRequest, StopInstanceRequest> 
+    public class StopInstanceRequestMarshaller : IMarshaller<IRequest, StopInstanceRequest> 
     {
-        
-
-        public IRequest Marshall(StopInstanceRequest stopInstanceRequest) 
+        public IRequest Marshall(StopInstanceRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(stopInstanceRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.StopInstance";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (stopInstanceRequest != null && stopInstanceRequest.IsSetInstanceId()) 
+                if(publicRequest.IsSetInstanceId())
                 {
                     writer.WritePropertyName("InstanceId");
-                    writer.Write(stopInstanceRequest.InstanceId);
+                    writer.Write(publicRequest.InstanceId);
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

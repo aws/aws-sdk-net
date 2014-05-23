@@ -29,44 +29,40 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Deregister Volume Request Marshaller
+    /// DeregisterVolume Request Marshaller
     /// </summary>       
-    internal class DeregisterVolumeRequestMarshaller : IMarshaller<IRequest, DeregisterVolumeRequest> 
+    public class DeregisterVolumeRequestMarshaller : IMarshaller<IRequest, DeregisterVolumeRequest> 
     {
-        
-
-        public IRequest Marshall(DeregisterVolumeRequest deregisterVolumeRequest) 
+        public IRequest Marshall(DeregisterVolumeRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(deregisterVolumeRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.DeregisterVolume";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (deregisterVolumeRequest != null && deregisterVolumeRequest.IsSetVolumeId()) 
+                if(publicRequest.IsSetVolumeId())
                 {
                     writer.WritePropertyName("VolumeId");
-                    writer.Write(deregisterVolumeRequest.VolumeId);
+                    writer.Write(publicRequest.VolumeId);
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

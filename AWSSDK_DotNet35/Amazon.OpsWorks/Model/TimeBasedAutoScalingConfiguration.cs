@@ -18,48 +18,56 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Describes an instance's time-based auto scaling configuration.</para>
+    /// Describes an instance's time-based auto scaling configuration.
     /// </summary>
     public partial class TimeBasedAutoScalingConfiguration
     {
-        
-        private string instanceId;
-        private WeeklyAutoScalingSchedule autoScalingSchedule;
+        private WeeklyAutoScalingSchedule _autoScalingSchedule;
+        private string _instanceId;
 
 
         /// <summary>
-        /// The instance ID.
-        ///  
-        /// </summary>
-        public string InstanceId
-        {
-            get { return this.instanceId; }
-            set { this.instanceId = value; }
-        }
-
-        // Check to see if InstanceId property is set
-        internal bool IsSetInstanceId()
-        {
-            return this.instanceId != null;
-        }
-
-        /// <summary>
-        /// A <c>WeeklyAutoScalingSchedule</c> object with the instance schedule.
-        ///  
+        /// Gets and sets the property AutoScalingSchedule. 
+        /// <para>
+        /// A <code>WeeklyAutoScalingSchedule</code> object with the instance schedule.
+        /// </para>
         /// </summary>
         public WeeklyAutoScalingSchedule AutoScalingSchedule
         {
-            get { return this.autoScalingSchedule; }
-            set { this.autoScalingSchedule = value; }
+            get { return this._autoScalingSchedule; }
+            set { this._autoScalingSchedule = value; }
         }
 
         // Check to see if AutoScalingSchedule property is set
         internal bool IsSetAutoScalingSchedule()
         {
-            return this.autoScalingSchedule != null;
+            return this._autoScalingSchedule != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The instance ID.
+        /// </para>
+        /// </summary>
+        public string InstanceId
+        {
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
+        }
+
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
+        {
+            return this._instanceId != null;
+        }
+
     }
 }

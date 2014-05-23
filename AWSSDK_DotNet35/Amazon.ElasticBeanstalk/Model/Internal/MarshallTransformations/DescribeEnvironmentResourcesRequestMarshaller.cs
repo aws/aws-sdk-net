@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,36 +14,40 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticBeanstalk.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Environment Resources Request Marshaller
+    /// DescribeEnvironmentResources Request Marshaller
     /// </summary>       
     public class DescribeEnvironmentResourcesRequestMarshaller : IMarshaller<IRequest, DescribeEnvironmentResourcesRequest>
     {
-        public IRequest Marshall(DescribeEnvironmentResourcesRequest describeEnvironmentResourcesRequest)
+        public IRequest Marshall(DescribeEnvironmentResourcesRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describeEnvironmentResourcesRequest, "AmazonElasticBeanstalk");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticBeanstalk");
             request.Parameters.Add("Action", "DescribeEnvironmentResources");
             request.Parameters.Add("Version", "2010-12-01");
-            if (describeEnvironmentResourcesRequest != null && describeEnvironmentResourcesRequest.IsSetEnvironmentId())
-            {
-                request.Parameters.Add("EnvironmentId", StringUtils.FromString(describeEnvironmentResourcesRequest.EnvironmentId));
-            }
-            if (describeEnvironmentResourcesRequest != null && describeEnvironmentResourcesRequest.IsSetEnvironmentName())
-            {
-                request.Parameters.Add("EnvironmentName", StringUtils.FromString(describeEnvironmentResourcesRequest.EnvironmentName));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetEnvironmentId())
+                {
+                    request.Parameters.Add("EnvironmentId", StringUtils.FromString(publicRequest.EnvironmentId));
+                }
+                if(publicRequest.IsSetEnvironmentName())
+                {
+                    request.Parameters.Add("EnvironmentName", StringUtils.FromString(publicRequest.EnvironmentName));
+                }
+            }
             return request;
         }
     }

@@ -12,178 +12,184 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.OpsWorks.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+using Amazon.OpsWorks.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for Stack Object
+    /// </summary>  
+    public class StackUnmarshaller : IUnmarshaller<Stack, XmlUnmarshallerContext>, IUnmarshaller<Stack, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// StackUnmarshaller
-      /// </summary>
-      internal class StackUnmarshaller : IUnmarshaller<Stack, XmlUnmarshallerContext>, IUnmarshaller<Stack, JsonUnmarshallerContext>
-      {
         Stack IUnmarshaller<Stack, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Stack Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            Stack stack = new Stack();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            Stack unmarshalledObject = new Stack();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("StackId", targetDepth))
-              {
-                stack.StackId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Name", targetDepth))
-              {
-                stack.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Arn", targetDepth))
-              {
-                stack.Arn = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Region", targetDepth))
-              {
-                stack.Region = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("VpcId", targetDepth))
-              {
-                stack.VpcId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Attributes", targetDepth))
-              {
-                
-                var unmarshaller =  new DictionaryUnmarshaller<String,String,StringUnmarshaller,StringUnmarshaller>(
-                    StringUnmarshaller.GetInstance(),StringUnmarshaller.GetInstance());               
-                stack.Attributes = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
-              if (context.TestExpression("ServiceRoleArn", targetDepth))
-              {
-                stack.ServiceRoleArn = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("DefaultInstanceProfileArn", targetDepth))
-              {
-                stack.DefaultInstanceProfileArn = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("DefaultOs", targetDepth))
-              {
-                stack.DefaultOs = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("HostnameTheme", targetDepth))
-              {
-                stack.HostnameTheme = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("DefaultAvailabilityZone", targetDepth))
-              {
-                stack.DefaultAvailabilityZone = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("DefaultSubnetId", targetDepth))
-              {
-                stack.DefaultSubnetId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("CustomJson", targetDepth))
-              {
-                stack.CustomJson = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("ConfigurationManager", targetDepth))
-              {
-                stack.ConfigurationManager = StackConfigurationManagerUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("ChefConfiguration", targetDepth))
-              {
-                stack.ChefConfiguration = ChefConfigurationUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("UseCustomCookbooks", targetDepth))
-              {
-                stack.UseCustomCookbooks = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("UseOpsworksSecurityGroups", targetDepth))
-              {
-                stack.UseOpsworksSecurityGroups = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("CustomCookbooksSource", targetDepth))
-              {
-                stack.CustomCookbooksSource = SourceUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("DefaultSshKeyName", targetDepth))
-              {
-                stack.DefaultSshKeyName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("CreatedAt", targetDepth))
-              {
-                stack.CreatedAt = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("DefaultRootDeviceType", targetDepth))
-              {
-                stack.DefaultRootDeviceType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("Arn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Attributes", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Attributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ChefConfiguration", targetDepth))
+                {
+                    var unmarshaller = ChefConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ChefConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ConfigurationManager", targetDepth))
+                {
+                    var unmarshaller = StackConfigurationManagerUnmarshaller.Instance;
+                    unmarshalledObject.ConfigurationManager = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CreatedAt", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CustomCookbooksSource", targetDepth))
+                {
+                    var unmarshaller = SourceUnmarshaller.Instance;
+                    unmarshalledObject.CustomCookbooksSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CustomJson", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CustomJson = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DefaultAvailabilityZone", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DefaultAvailabilityZone = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DefaultInstanceProfileArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DefaultInstanceProfileArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DefaultOs", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DefaultOs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DefaultRootDeviceType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DefaultRootDeviceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DefaultSshKeyName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DefaultSshKeyName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DefaultSubnetId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DefaultSubnetId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HostnameTheme", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HostnameTheme = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Region", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Region = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ServiceRoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ServiceRoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StackId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StackId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UseCustomCookbooks", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.UseCustomCookbooks = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UseOpsworksSecurityGroups", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.UseOpsworksSecurityGroups = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VpcId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return stack;
+            return unmarshalledObject;
         }
 
-        private static StackUnmarshaller instance;
-        public static StackUnmarshaller GetInstance()
+
+        private static StackUnmarshaller _instance = new StackUnmarshaller();        
+
+        public static StackUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new StackUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

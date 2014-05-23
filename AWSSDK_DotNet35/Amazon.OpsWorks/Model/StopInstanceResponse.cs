@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the StopInstance response metadata.
-    /// The StopInstance operation has a void result type.
+    /// Configuration for accessing Amazon StopInstance service
     /// </summary>
-    public partial class StopInstanceResponse : AmazonWebServiceResponse
+    public partial class StopInstanceResponse : StopInstanceResult
     {
+        /// <summary>
+        /// Gets and sets the StopInstanceResult property.
+        /// Represents the output of a StopInstance operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the StopInstanceResult class are now available on the StopInstanceResponse class. You should use the properties on StopInstanceResponse instead of accessing them through StopInstanceResult.")]
+        public StopInstanceResult StopInstanceResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,32 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para>The results from a request to change the configuration settings of an environment.</para>
+    /// The results from a request to change the configuration settings of an         environment.
     /// </summary>
     public partial class DescribeConfigurationSettingsResult : AmazonWebServiceResponse
     {
-        
-        private List<ConfigurationSettingsDescription> configurationSettings = new List<ConfigurationSettingsDescription>();
+        private List<ConfigurationSettingsDescription> _configurationSettings = new List<ConfigurationSettingsDescription>();
+
 
         /// <summary>
-        /// A list of <a>ConfigurationSettingsDescription</a>.
-        ///  
+        /// Gets and sets the property ConfigurationSettings. 
+        /// <para>
+        ///          A list of         <a>ConfigurationSettingsDescription</a>.      
+        /// </para>
         /// </summary>
         public List<ConfigurationSettingsDescription> ConfigurationSettings
         {
-            get { return this.configurationSettings; }
-            set { this.configurationSettings = value; }
+            get { return this._configurationSettings; }
+            set { this._configurationSettings = value; }
         }
 
         // Check to see if ConfigurationSettings property is set
         internal bool IsSetConfigurationSettings()
         {
-            return this.configurationSettings.Count > 0;
+            return this._configurationSettings != null && this._configurationSettings.Count > 0; 
         }
+
     }
 }

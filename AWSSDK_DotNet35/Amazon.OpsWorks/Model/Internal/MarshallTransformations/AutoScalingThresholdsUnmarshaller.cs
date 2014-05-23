@@ -12,84 +12,94 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.OpsWorks.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+using Amazon.OpsWorks.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for AutoScalingThresholds Object
+    /// </summary>  
+    public class AutoScalingThresholdsUnmarshaller : IUnmarshaller<AutoScalingThresholds, XmlUnmarshallerContext>, IUnmarshaller<AutoScalingThresholds, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// AutoScalingThresholdsUnmarshaller
-      /// </summary>
-      internal class AutoScalingThresholdsUnmarshaller : IUnmarshaller<AutoScalingThresholds, XmlUnmarshallerContext>, IUnmarshaller<AutoScalingThresholds, JsonUnmarshallerContext>
-      {
         AutoScalingThresholds IUnmarshaller<AutoScalingThresholds, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public AutoScalingThresholds Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            AutoScalingThresholds autoScalingThresholds = new AutoScalingThresholds();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            AutoScalingThresholds unmarshalledObject = new AutoScalingThresholds();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("InstanceCount", targetDepth))
-              {
-                autoScalingThresholds.InstanceCount = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("ThresholdsWaitTime", targetDepth))
-              {
-                autoScalingThresholds.ThresholdsWaitTime = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("IgnoreMetricsTime", targetDepth))
-              {
-                autoScalingThresholds.IgnoreMetricsTime = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("CpuThreshold", targetDepth))
-              {
-                autoScalingThresholds.CpuThreshold = DoubleUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("MemoryThreshold", targetDepth))
-              {
-                autoScalingThresholds.MemoryThreshold = DoubleUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("LoadThreshold", targetDepth))
-              {
-                autoScalingThresholds.LoadThreshold = DoubleUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("CpuThreshold", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.CpuThreshold = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IgnoreMetricsTime", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.IgnoreMetricsTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("InstanceCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.InstanceCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LoadThreshold", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.LoadThreshold = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MemoryThreshold", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.MemoryThreshold = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ThresholdsWaitTime", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ThresholdsWaitTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return autoScalingThresholds;
+            return unmarshalledObject;
         }
 
-        private static AutoScalingThresholdsUnmarshaller instance;
-        public static AutoScalingThresholdsUnmarshaller GetInstance()
+
+        private static AutoScalingThresholdsUnmarshaller _instance = new AutoScalingThresholdsUnmarshaller();        
+
+        public static AutoScalingThresholdsUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new AutoScalingThresholdsUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

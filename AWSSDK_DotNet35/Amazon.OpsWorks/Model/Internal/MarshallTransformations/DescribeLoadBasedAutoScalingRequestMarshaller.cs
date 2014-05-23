@@ -29,53 +29,45 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Load Based Auto Scaling Request Marshaller
+    /// DescribeLoadBasedAutoScaling Request Marshaller
     /// </summary>       
-    internal class DescribeLoadBasedAutoScalingRequestMarshaller : IMarshaller<IRequest, DescribeLoadBasedAutoScalingRequest> 
+    public class DescribeLoadBasedAutoScalingRequestMarshaller : IMarshaller<IRequest, DescribeLoadBasedAutoScalingRequest> 
     {
-        
-
-        public IRequest Marshall(DescribeLoadBasedAutoScalingRequest describeLoadBasedAutoScalingRequest) 
+        public IRequest Marshall(DescribeLoadBasedAutoScalingRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(describeLoadBasedAutoScalingRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.DescribeLoadBasedAutoScaling";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-
-                if (describeLoadBasedAutoScalingRequest != null && describeLoadBasedAutoScalingRequest.LayerIds != null && describeLoadBasedAutoScalingRequest.LayerIds.Count > 0) 
+                if(publicRequest.IsSetLayerIds())
                 {
-                    List<string> layerIdsList = describeLoadBasedAutoScalingRequest.LayerIds;
                     writer.WritePropertyName("LayerIds");
                     writer.WriteArrayStart();
-
-                    foreach (string layerIdsListValue in layerIdsList) 
-                    { 
-                        writer.Write(StringUtils.FromString(layerIdsListValue));
+                    foreach(var publicRequestLayerIdsListValue in publicRequest.LayerIds)
+                    {
+                        writer.Write(publicRequestLayerIdsListValue);
                     }
-
                     writer.WriteArrayEnd();
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

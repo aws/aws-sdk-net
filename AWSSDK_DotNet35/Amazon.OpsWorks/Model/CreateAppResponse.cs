@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the  CreateApp response and response metadata.
+    /// Configuration for accessing Amazon CreateApp service
     /// </summary>
     public partial class CreateAppResponse : CreateAppResult
     {
         /// <summary>
         /// Gets and sets the CreateAppResult property.
-        /// Contains the response to a CreateApp request.
+        /// Represents the output of a CreateApp operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateAppResult class are now available on the CreateAppResponse class. You should use the properties on CreateAppResponse instead of accessing them through CreateAppResult.")]
         public CreateAppResult CreateAppResult
@@ -40,4 +36,3 @@ namespace Amazon.OpsWorks.Model
         }
     }
 }
-    

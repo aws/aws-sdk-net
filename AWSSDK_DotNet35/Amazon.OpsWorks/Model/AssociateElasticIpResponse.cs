@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the AssociateElasticIp response metadata.
-    /// The AssociateElasticIp operation has a void result type.
+    /// Configuration for accessing Amazon AssociateElasticIp service
     /// </summary>
-    public partial class AssociateElasticIpResponse : AmazonWebServiceResponse
+    public partial class AssociateElasticIpResponse : AssociateElasticIpResult
     {
+        /// <summary>
+        /// Gets and sets the AssociateElasticIpResult property.
+        /// Represents the output of a AssociateElasticIp operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the AssociateElasticIpResult class are now available on the AssociateElasticIpResponse class. You should use the properties on AssociateElasticIpResponse instead of accessing them through AssociateElasticIpResult.")]
+        public AssociateElasticIpResult AssociateElasticIpResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

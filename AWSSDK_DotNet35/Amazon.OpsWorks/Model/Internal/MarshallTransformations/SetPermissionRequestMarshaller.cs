@@ -29,64 +29,64 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Set Permission Request Marshaller
+    /// SetPermission Request Marshaller
     /// </summary>       
-    internal class SetPermissionRequestMarshaller : IMarshaller<IRequest, SetPermissionRequest> 
+    public class SetPermissionRequestMarshaller : IMarshaller<IRequest, SetPermissionRequest> 
     {
-        
-
-        public IRequest Marshall(SetPermissionRequest setPermissionRequest) 
+        public IRequest Marshall(SetPermissionRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(setPermissionRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.SetPermission";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (setPermissionRequest != null && setPermissionRequest.IsSetStackId()) 
-                {
-                    writer.WritePropertyName("StackId");
-                    writer.Write(setPermissionRequest.StackId);
-                }
-                if (setPermissionRequest != null && setPermissionRequest.IsSetIamUserArn()) 
-                {
-                    writer.WritePropertyName("IamUserArn");
-                    writer.Write(setPermissionRequest.IamUserArn);
-                }
-                if (setPermissionRequest != null && setPermissionRequest.IsSetAllowSsh()) 
+                if(publicRequest.IsSetAllowSsh())
                 {
                     writer.WritePropertyName("AllowSsh");
-                    writer.Write(setPermissionRequest.AllowSsh);
-                }
-                if (setPermissionRequest != null && setPermissionRequest.IsSetAllowSudo()) 
-                {
-                    writer.WritePropertyName("AllowSudo");
-                    writer.Write(setPermissionRequest.AllowSudo);
-                }
-                if (setPermissionRequest != null && setPermissionRequest.IsSetLevel()) 
-                {
-                    writer.WritePropertyName("Level");
-                    writer.Write(setPermissionRequest.Level);
+                    writer.Write(publicRequest.AllowSsh);
                 }
 
+                if(publicRequest.IsSetAllowSudo())
+                {
+                    writer.WritePropertyName("AllowSudo");
+                    writer.Write(publicRequest.AllowSudo);
+                }
+
+                if(publicRequest.IsSetIamUserArn())
+                {
+                    writer.WritePropertyName("IamUserArn");
+                    writer.Write(publicRequest.IamUserArn);
+                }
+
+                if(publicRequest.IsSetLevel())
+                {
+                    writer.WritePropertyName("Level");
+                    writer.Write(publicRequest.Level);
+                }
+
+                if(publicRequest.IsSetStackId())
+                {
+                    writer.WritePropertyName("StackId");
+                    writer.Write(publicRequest.StackId);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

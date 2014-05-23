@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the  CloneStack response and response metadata.
+    /// Configuration for accessing Amazon CloneStack service
     /// </summary>
     public partial class CloneStackResponse : CloneStackResult
     {
         /// <summary>
         /// Gets and sets the CloneStackResult property.
-        /// Contains the response to a CloneStack request.
+        /// Represents the output of a CloneStack operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CloneStackResult class are now available on the CloneStackResponse class. You should use the properties on CloneStackResponse instead of accessing them through CloneStackResult.")]
         public CloneStackResult CloneStackResult
@@ -40,4 +36,3 @@ namespace Amazon.OpsWorks.Model
         }
     }
 }
-    

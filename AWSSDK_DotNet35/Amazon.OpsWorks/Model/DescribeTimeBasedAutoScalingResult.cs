@@ -17,33 +17,38 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>DescribeTimeBasedAutoScaling</c> request.</para>
+    /// Contains the response to a <code>DescribeTimeBasedAutoScaling</code> request.
     /// </summary>
     public partial class DescribeTimeBasedAutoScalingResult : AmazonWebServiceResponse
     {
-        
-        private List<TimeBasedAutoScalingConfiguration> timeBasedAutoScalingConfigurations = new List<TimeBasedAutoScalingConfiguration>();
+        private List<TimeBasedAutoScalingConfiguration> _timeBasedAutoScalingConfigurations = new List<TimeBasedAutoScalingConfiguration>();
 
 
         /// <summary>
-        /// An array of <c>TimeBasedAutoScalingConfiguration</c> objects that describe the configuration for the specified instances.
-        ///  
+        /// Gets and sets the property TimeBasedAutoScalingConfigurations. 
+        /// <para>
+        /// An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the
+        /// configuration for the specified instances.
+        /// </para>
         /// </summary>
         public List<TimeBasedAutoScalingConfiguration> TimeBasedAutoScalingConfigurations
         {
-            get { return this.timeBasedAutoScalingConfigurations; }
-            set { this.timeBasedAutoScalingConfigurations = value; }
+            get { return this._timeBasedAutoScalingConfigurations; }
+            set { this._timeBasedAutoScalingConfigurations = value; }
         }
 
         // Check to see if TimeBasedAutoScalingConfigurations property is set
         internal bool IsSetTimeBasedAutoScalingConfigurations()
         {
-            return this.timeBasedAutoScalingConfigurations.Count > 0;
+            return this._timeBasedAutoScalingConfigurations != null && this._timeBasedAutoScalingConfigurations.Count > 0; 
         }
+
     }
 }

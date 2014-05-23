@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,133 +25,137 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateConfigurationTemplate operation.
-    /// <para> Updates the specified configuration template to have the specified properties or configuration option values. </para>
-    /// <para><b>NOTE:</b> If a property (for example, ApplicationName) is not provided, its value remains unchanged. To clear such properties,
-    /// specify an empty string. </para> <para>Related Topics</para>
-    /// <ul>
-    /// <li> DescribeConfigurationOptions </li>
+    /// Updates the specified configuration template to have the specified      
+    ///   properties or configuration option values.      
     /// 
-    /// </ul>
+    ///       <note>         If a property (for example,         <code>ApplicationName</code>)
+    /// is not provided, its         value remains unchanged. To clear such         properties,
+    /// specify an empty string.      </note>      
+    /// <para>
+    /// Related Topics
+    /// </para>
+    ///       <ul>         <li>            <a>DescribeConfigurationOptions</a>         </li>
+    ///      </ul>
     /// </summary>
     public partial class UpdateConfigurationTemplateRequest : AmazonElasticBeanstalkRequest
     {
-        private string applicationName;
-        private string templateName;
-        private string description;
-        private List<ConfigurationOptionSetting> optionSettings = new List<ConfigurationOptionSetting>();
-        private List<OptionSpecification> optionsToRemove = new List<OptionSpecification>();
+        private string _applicationName;
+        private string _description;
+        private List<ConfigurationOptionSetting> _optionSettings = new List<ConfigurationOptionSetting>();
+        private List<OptionSpecification> _optionsToRemove = new List<OptionSpecification>();
+        private string _templateName;
 
 
         /// <summary>
-        /// The name of the application associated with the configuration template to update. If no application is found with this name,
-        /// <c>UpdateConfigurationTemplate</c> returns an <c>InvalidParameterValue</c> error.
-        ///  
+        /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 100</description>
-        ///     </item>
-        /// </list>
+        /// The name of the application associated with the configuration template         to
+        /// update.
+        /// </para>
+        ///       
+        /// <para>
+        ///          If no application is found with this name, <code>UpdateConfigurationTemplate</code>
+        /// returns an         <code>InvalidParameterValue</code>         error.      
         /// </para>
         /// </summary>
         public string ApplicationName
         {
-            get { return this.applicationName; }
-            set { this.applicationName = value; }
+            get { return this._applicationName; }
+            set { this._applicationName = value; }
         }
 
         // Check to see if ApplicationName property is set
         internal bool IsSetApplicationName()
         {
-            return this.applicationName != null;
+            return this._applicationName != null;
         }
 
+
         /// <summary>
-        /// The name of the configuration template to update. If no configuration template is found with this name, <c>UpdateConfigurationTemplate</c>
-        /// returns an <c>InvalidParameterValue</c> error.
-        ///  
+        /// Gets and sets the property Description. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 100</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string TemplateName
-        {
-            get { return this.templateName; }
-            set { this.templateName = value; }
-        }
-
-        // Check to see if TemplateName property is set
-        internal bool IsSetTemplateName()
-        {
-            return this.templateName != null;
-        }
-
-        /// <summary>
         /// A new description for the configuration.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 200</description>
-        ///     </item>
-        /// </list>
         /// </para>
         /// </summary>
         public string Description
         {
-            get { return this.description; }
-            set { this.description = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
 
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;
+            return this._description != null;
         }
 
+
         /// <summary>
-        /// A list of configuration option settings to update with the new specified option value.
-        ///  
+        /// Gets and sets the property OptionSettings. 
+        /// <para>
+        ///          A list of configuration option settings to update with the new specified
+        ///         option value.        
+        /// </para>
         /// </summary>
         public List<ConfigurationOptionSetting> OptionSettings
         {
-            get { return this.optionSettings; }
-            set { this.optionSettings = value; }
+            get { return this._optionSettings; }
+            set { this._optionSettings = value; }
         }
 
         // Check to see if OptionSettings property is set
         internal bool IsSetOptionSettings()
         {
-            return this.optionSettings.Count > 0;
+            return this._optionSettings != null && this._optionSettings.Count > 0; 
         }
 
+
         /// <summary>
-        /// A list of configuration options to remove from the configuration set. Constraint: You can remove only <c>UserDefined</c> configuration
-        /// options.
-        ///  
+        /// Gets and sets the property OptionsToRemove. 
+        /// <para>
+        ///          A list of configuration options to remove from the configuration set.        
+        /// </para>
+        ///       
+        /// <para>
+        ///          Constraint: You can remove only <code>UserDefined</code>         configuration
+        /// options.      
+        /// </para>
         /// </summary>
         public List<OptionSpecification> OptionsToRemove
         {
-            get { return this.optionsToRemove; }
-            set { this.optionsToRemove = value; }
+            get { return this._optionsToRemove; }
+            set { this._optionsToRemove = value; }
         }
 
         // Check to see if OptionsToRemove property is set
         internal bool IsSetOptionsToRemove()
         {
-            return this.optionsToRemove.Count > 0;
+            return this._optionsToRemove != null && this._optionsToRemove.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property TemplateName. 
+        /// <para>
+        /// The name of the configuration template to update.
+        /// </para>
+        ///       
+        /// <para>
+        ///          If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code>
+        /// returns an         <code>InvalidParameterValue</code>         error.      
+        /// </para>
+        /// </summary>
+        public string TemplateName
+        {
+            get { return this._templateName; }
+            set { this._templateName = value; }
+        }
+
+        // Check to see if TemplateName property is set
+        internal bool IsSetTemplateName()
+        {
+            return this._templateName != null;
         }
 
     }
 }
-    

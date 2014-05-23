@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,56 +14,59 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticBeanstalk.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Application Version Request Marshaller
+    /// CreateApplicationVersion Request Marshaller
     /// </summary>       
     public class CreateApplicationVersionRequestMarshaller : IMarshaller<IRequest, CreateApplicationVersionRequest>
     {
-        public IRequest Marshall(CreateApplicationVersionRequest createApplicationVersionRequest)
+        public IRequest Marshall(CreateApplicationVersionRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(createApplicationVersionRequest, "AmazonElasticBeanstalk");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticBeanstalk");
             request.Parameters.Add("Action", "CreateApplicationVersion");
             request.Parameters.Add("Version", "2010-12-01");
-            if (createApplicationVersionRequest != null && createApplicationVersionRequest.IsSetApplicationName())
-            {
-                request.Parameters.Add("ApplicationName", StringUtils.FromString(createApplicationVersionRequest.ApplicationName));
-            }
-            if (createApplicationVersionRequest != null && createApplicationVersionRequest.IsSetVersionLabel())
-            {
-                request.Parameters.Add("VersionLabel", StringUtils.FromString(createApplicationVersionRequest.VersionLabel));
-            }
-            if (createApplicationVersionRequest != null && createApplicationVersionRequest.IsSetDescription())
-            {
-                request.Parameters.Add("Description", StringUtils.FromString(createApplicationVersionRequest.Description));
-            }
-            if (createApplicationVersionRequest != null)
-            {
-                S3Location sourceBundle = createApplicationVersionRequest.SourceBundle;
-                if (sourceBundle != null && sourceBundle.IsSetS3Bucket())
-                {
-                    request.Parameters.Add("SourceBundle.S3Bucket", StringUtils.FromString(sourceBundle.S3Bucket));
-                }
-                if (sourceBundle != null && sourceBundle.IsSetS3Key())
-                {
-                    request.Parameters.Add("SourceBundle.S3Key", StringUtils.FromString(sourceBundle.S3Key));
-                }
-            }
-            if (createApplicationVersionRequest != null && createApplicationVersionRequest.IsSetAutoCreateApplication())
-            {
-                request.Parameters.Add("AutoCreateApplication", StringUtils.FromBool(createApplicationVersionRequest.AutoCreateApplication));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetApplicationName())
+                {
+                    request.Parameters.Add("ApplicationName", StringUtils.FromString(publicRequest.ApplicationName));
+                }
+                if(publicRequest.IsSetAutoCreateApplication())
+                {
+                    request.Parameters.Add("AutoCreateApplication", StringUtils.FromBool(publicRequest.AutoCreateApplication));
+                }
+                if(publicRequest.IsSetDescription())
+                {
+                    request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
+                }
+                if(publicRequest.IsSetSourceBundle())
+                {
+                    if(publicRequest.SourceBundle.IsSetS3Bucket())
+                    {
+                        request.Parameters.Add("SourceBundle" + "." + "S3Bucket", StringUtils.FromString(publicRequest.SourceBundle.S3Bucket));
+                    }
+                    if(publicRequest.SourceBundle.IsSetS3Key())
+                    {
+                        request.Parameters.Add("SourceBundle" + "." + "S3Key", StringUtils.FromString(publicRequest.SourceBundle.S3Key));
+                    }
+                }
+                if(publicRequest.IsSetVersionLabel())
+                {
+                    request.Parameters.Add("VersionLabel", StringUtils.FromString(publicRequest.VersionLabel));
+                }
+            }
             return request;
         }
     }

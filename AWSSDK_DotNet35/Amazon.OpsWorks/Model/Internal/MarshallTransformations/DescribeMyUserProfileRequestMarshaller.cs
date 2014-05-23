@@ -29,29 +29,24 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe My User Profile Request Marshaller
+    /// DescribeMyUserProfile Request Marshaller
     /// </summary>       
-    internal class DescribeMyUserProfileRequestMarshaller : IMarshaller<IRequest, DescribeMyUserProfileRequest> 
+    public class DescribeMyUserProfileRequestMarshaller : IMarshaller<IRequest, DescribeMyUserProfileRequest> 
     {
-        
-
-        public IRequest Marshall(DescribeMyUserProfileRequest describeMyUserProfileRequest) 
+        public IRequest Marshall(DescribeMyUserProfileRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(describeMyUserProfileRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.DescribeMyUserProfile";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-        
-            request.UseQueryString = true;
-        
 
             return request;
         }
+
+
     }
 }

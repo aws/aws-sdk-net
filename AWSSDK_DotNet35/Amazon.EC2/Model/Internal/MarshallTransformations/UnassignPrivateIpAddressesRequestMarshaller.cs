@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(unassignPrivateIpAddressesRequest, "AmazonEC2");
             request.Parameters.Add("Action", "UnassignPrivateIpAddresses");
-            request.Parameters.Add("Version", "2014-02-01");
+            request.Parameters.Add("Version", "2014-05-01");
             if (unassignPrivateIpAddressesRequest != null && unassignPrivateIpAddressesRequest.IsSetNetworkInterfaceId())
             {
                 request.Parameters.Add("NetworkInterfaceId", StringUtils.FromString(unassignPrivateIpAddressesRequest.NetworkInterfaceId));

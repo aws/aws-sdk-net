@@ -12,118 +12,100 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.OpsWorks.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+using Amazon.OpsWorks.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for WeeklyAutoScalingSchedule Object
+    /// </summary>  
+    public class WeeklyAutoScalingScheduleUnmarshaller : IUnmarshaller<WeeklyAutoScalingSchedule, XmlUnmarshallerContext>, IUnmarshaller<WeeklyAutoScalingSchedule, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// WeeklyAutoScalingScheduleUnmarshaller
-      /// </summary>
-      internal class WeeklyAutoScalingScheduleUnmarshaller : IUnmarshaller<WeeklyAutoScalingSchedule, XmlUnmarshallerContext>, IUnmarshaller<WeeklyAutoScalingSchedule, JsonUnmarshallerContext>
-      {
         WeeklyAutoScalingSchedule IUnmarshaller<WeeklyAutoScalingSchedule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public WeeklyAutoScalingSchedule Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            WeeklyAutoScalingSchedule weeklyAutoScalingSchedule = new WeeklyAutoScalingSchedule();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            WeeklyAutoScalingSchedule unmarshalledObject = new WeeklyAutoScalingSchedule();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("Monday", targetDepth))
-              {
-                
-                var unmarshaller =  new DictionaryUnmarshaller<String,String,StringUnmarshaller,StringUnmarshaller>(
-                    StringUnmarshaller.GetInstance(),StringUnmarshaller.GetInstance());               
-                weeklyAutoScalingSchedule.Monday = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
-              if (context.TestExpression("Tuesday", targetDepth))
-              {
-                
-                var unmarshaller =  new DictionaryUnmarshaller<String,String,StringUnmarshaller,StringUnmarshaller>(
-                    StringUnmarshaller.GetInstance(),StringUnmarshaller.GetInstance());               
-                weeklyAutoScalingSchedule.Tuesday = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
-              if (context.TestExpression("Wednesday", targetDepth))
-              {
-                
-                var unmarshaller =  new DictionaryUnmarshaller<String,String,StringUnmarshaller,StringUnmarshaller>(
-                    StringUnmarshaller.GetInstance(),StringUnmarshaller.GetInstance());               
-                weeklyAutoScalingSchedule.Wednesday = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
-              if (context.TestExpression("Thursday", targetDepth))
-              {
-                
-                var unmarshaller =  new DictionaryUnmarshaller<String,String,StringUnmarshaller,StringUnmarshaller>(
-                    StringUnmarshaller.GetInstance(),StringUnmarshaller.GetInstance());               
-                weeklyAutoScalingSchedule.Thursday = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
-              if (context.TestExpression("Friday", targetDepth))
-              {
-                
-                var unmarshaller =  new DictionaryUnmarshaller<String,String,StringUnmarshaller,StringUnmarshaller>(
-                    StringUnmarshaller.GetInstance(),StringUnmarshaller.GetInstance());               
-                weeklyAutoScalingSchedule.Friday = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
-              if (context.TestExpression("Saturday", targetDepth))
-              {
-                
-                var unmarshaller =  new DictionaryUnmarshaller<String,String,StringUnmarshaller,StringUnmarshaller>(
-                    StringUnmarshaller.GetInstance(),StringUnmarshaller.GetInstance());               
-                weeklyAutoScalingSchedule.Saturday = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
-              if (context.TestExpression("Sunday", targetDepth))
-              {
-                
-                var unmarshaller =  new DictionaryUnmarshaller<String,String,StringUnmarshaller,StringUnmarshaller>(
-                    StringUnmarshaller.GetInstance(),StringUnmarshaller.GetInstance());               
-                weeklyAutoScalingSchedule.Sunday = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
+                if (context.TestExpression("Friday", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Friday = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Monday", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Monday = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Saturday", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Saturday = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Sunday", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Sunday = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Thursday", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Thursday = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Tuesday", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Tuesday = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Wednesday", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Wednesday = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return weeklyAutoScalingSchedule;
+            return unmarshalledObject;
         }
 
-        private static WeeklyAutoScalingScheduleUnmarshaller instance;
-        public static WeeklyAutoScalingScheduleUnmarshaller GetInstance()
+
+        private static WeeklyAutoScalingScheduleUnmarshaller _instance = new WeeklyAutoScalingScheduleUnmarshaller();        
+
+        public static WeeklyAutoScalingScheduleUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new WeeklyAutoScalingScheduleUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

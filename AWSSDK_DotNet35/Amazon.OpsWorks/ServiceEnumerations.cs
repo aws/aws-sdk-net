@@ -12,35 +12,32 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 using System;
 
 using Amazon.Runtime;
 
-
 namespace Amazon.OpsWorks
 {
 
-
-    /// <summary>App Attributes Keys
+    /// <summary>
+    /// Constants used for properties of type AppAttributesKeys.
     /// </summary>
     public class AppAttributesKeys : ConstantClass
     {
 
-
-       /// <summary>Constant AutoBundleOnDeploy for AppAttributesKeys
-       /// </summary>
+        /// <summary>
+        /// Constant AutoBundleOnDeploy for AppAttributesKeys
+        /// </summary>
         public static readonly AppAttributesKeys AutoBundleOnDeploy = new AppAttributesKeys("AutoBundleOnDeploy");
-    
-
-       /// <summary>Constant DocumentRoot for AppAttributesKeys
-       /// </summary>
+        /// <summary>
+        /// Constant DocumentRoot for AppAttributesKeys
+        /// </summary>
         public static readonly AppAttributesKeys DocumentRoot = new AppAttributesKeys("DocumentRoot");
-    
-
-       /// <summary>Constant RailsEnv for AppAttributesKeys
-       /// </summary>
+        /// <summary>
+        /// Constant RailsEnv for AppAttributesKeys
+        /// </summary>
         public static readonly AppAttributesKeys RailsEnv = new AppAttributesKeys("RailsEnv");
-    
 
         /// <summary>
         /// Default Constructor
@@ -65,38 +62,34 @@ namespace Amazon.OpsWorks
             return FindValue(value);
         }
     }
-    
 
-    /// <summary>App Type
+
+    /// <summary>
+    /// Constants used for properties of type AppType.
     /// </summary>
     public class AppType : ConstantClass
     {
 
-
-       /// <summary>Constant Nodejs for AppType
-       /// </summary>
+        /// <summary>
+        /// Constant Nodejs for AppType
+        /// </summary>
         public static readonly AppType Nodejs = new AppType("nodejs");
-    
-
-       /// <summary>Constant Other for AppType
-       /// </summary>
+        /// <summary>
+        /// Constant Other for AppType
+        /// </summary>
         public static readonly AppType Other = new AppType("other");
-    
-
-       /// <summary>Constant Php for AppType
-       /// </summary>
+        /// <summary>
+        /// Constant Php for AppType
+        /// </summary>
         public static readonly AppType Php = new AppType("php");
-    
-
-       /// <summary>Constant Rails for AppType
-       /// </summary>
+        /// <summary>
+        /// Constant Rails for AppType
+        /// </summary>
         public static readonly AppType Rails = new AppType("rails");
-    
-
-       /// <summary>Constant Static for AppType
-       /// </summary>
+        /// <summary>
+        /// Constant Static for AppType
+        /// </summary>
         public static readonly AppType Static = new AppType("static");
-    
 
         /// <summary>
         /// Default Constructor
@@ -121,23 +114,22 @@ namespace Amazon.OpsWorks
             return FindValue(value);
         }
     }
-    
 
-    /// <summary>Architecture
+
+    /// <summary>
+    /// Constants used for properties of type Architecture.
     /// </summary>
     public class Architecture : ConstantClass
     {
 
-
-       /// <summary>Constant I386 for Architecture
-       /// </summary>
+        /// <summary>
+        /// Constant I386 for Architecture
+        /// </summary>
         public static readonly Architecture I386 = new Architecture("i386");
-    
-
-       /// <summary>Constant X86_64 for Architecture
-       /// </summary>
+        /// <summary>
+        /// Constant X86_64 for Architecture
+        /// </summary>
         public static readonly Architecture X86_64 = new Architecture("x86_64");
-    
 
         /// <summary>
         /// Default Constructor
@@ -162,23 +154,22 @@ namespace Amazon.OpsWorks
             return FindValue(value);
         }
     }
-    
 
-    /// <summary>Auto Scaling Type
+
+    /// <summary>
+    /// Constants used for properties of type AutoScalingType.
     /// </summary>
     public class AutoScalingType : ConstantClass
     {
 
-
-       /// <summary>Constant Load for AutoScalingType
-       /// </summary>
+        /// <summary>
+        /// Constant Load for AutoScalingType
+        /// </summary>
         public static readonly AutoScalingType Load = new AutoScalingType("load");
-    
-
-       /// <summary>Constant Timer for AutoScalingType
-       /// </summary>
+        /// <summary>
+        /// Constant Timer for AutoScalingType
+        /// </summary>
         public static readonly AutoScalingType Timer = new AutoScalingType("timer");
-    
 
         /// <summary>
         /// Default Constructor
@@ -203,63 +194,54 @@ namespace Amazon.OpsWorks
             return FindValue(value);
         }
     }
-    
 
-    /// <summary>Deployment Command Name
+
+    /// <summary>
+    /// Constants used for properties of type DeploymentCommandName.
     /// </summary>
     public class DeploymentCommandName : ConstantClass
     {
 
-
-       /// <summary>Constant Deploy for DeploymentCommandName
-       /// </summary>
+        /// <summary>
+        /// Constant Deploy for DeploymentCommandName
+        /// </summary>
         public static readonly DeploymentCommandName Deploy = new DeploymentCommandName("deploy");
-    
-
-       /// <summary>Constant Execute_recipes for DeploymentCommandName
-       /// </summary>
+        /// <summary>
+        /// Constant Execute_recipes for DeploymentCommandName
+        /// </summary>
         public static readonly DeploymentCommandName Execute_recipes = new DeploymentCommandName("execute_recipes");
-    
-
-       /// <summary>Constant Install_dependencies for DeploymentCommandName
-       /// </summary>
+        /// <summary>
+        /// Constant Install_dependencies for DeploymentCommandName
+        /// </summary>
         public static readonly DeploymentCommandName Install_dependencies = new DeploymentCommandName("install_dependencies");
-    
-
-       /// <summary>Constant Restart for DeploymentCommandName
-       /// </summary>
+        /// <summary>
+        /// Constant Restart for DeploymentCommandName
+        /// </summary>
         public static readonly DeploymentCommandName Restart = new DeploymentCommandName("restart");
-    
-
-       /// <summary>Constant Rollback for DeploymentCommandName
-       /// </summary>
+        /// <summary>
+        /// Constant Rollback for DeploymentCommandName
+        /// </summary>
         public static readonly DeploymentCommandName Rollback = new DeploymentCommandName("rollback");
-    
-
-       /// <summary>Constant Start for DeploymentCommandName
-       /// </summary>
+        /// <summary>
+        /// Constant Start for DeploymentCommandName
+        /// </summary>
         public static readonly DeploymentCommandName Start = new DeploymentCommandName("start");
-    
-
-       /// <summary>Constant Stop for DeploymentCommandName
-       /// </summary>
+        /// <summary>
+        /// Constant Stop for DeploymentCommandName
+        /// </summary>
         public static readonly DeploymentCommandName Stop = new DeploymentCommandName("stop");
-    
-
-       /// <summary>Constant Undeploy for DeploymentCommandName
-       /// </summary>
+        /// <summary>
+        /// Constant Undeploy for DeploymentCommandName
+        /// </summary>
         public static readonly DeploymentCommandName Undeploy = new DeploymentCommandName("undeploy");
-    
-
-       /// <summary>Constant Update_custom_cookbooks for DeploymentCommandName
-       /// </summary>
+        /// <summary>
+        /// Constant Update_custom_cookbooks for DeploymentCommandName
+        /// </summary>
         public static readonly DeploymentCommandName Update_custom_cookbooks = new DeploymentCommandName("update_custom_cookbooks");
-    
-
-       /// <summary>Constant Update_dependencies for DeploymentCommandName
-       /// </summary>
+        /// <summary>
+        /// Constant Update_dependencies for DeploymentCommandName
+        /// </summary>
         public static readonly DeploymentCommandName Update_dependencies = new DeploymentCommandName("update_dependencies");
-    
 
         /// <summary>
         /// Default Constructor
@@ -284,133 +266,110 @@ namespace Amazon.OpsWorks
             return FindValue(value);
         }
     }
-    
 
-    /// <summary>Layer Attributes Keys
+
+    /// <summary>
+    /// Constants used for properties of type LayerAttributesKeys.
     /// </summary>
     public class LayerAttributesKeys : ConstantClass
     {
 
-
-       /// <summary>Constant BundlerVersion for LayerAttributesKeys
-       /// </summary>
+        /// <summary>
+        /// Constant BundlerVersion for LayerAttributesKeys
+        /// </summary>
         public static readonly LayerAttributesKeys BundlerVersion = new LayerAttributesKeys("BundlerVersion");
-    
-
-       /// <summary>Constant EnableHaproxyStats for LayerAttributesKeys
-       /// </summary>
+        /// <summary>
+        /// Constant EnableHaproxyStats for LayerAttributesKeys
+        /// </summary>
         public static readonly LayerAttributesKeys EnableHaproxyStats = new LayerAttributesKeys("EnableHaproxyStats");
-    
-
-       /// <summary>Constant GangliaPassword for LayerAttributesKeys
-       /// </summary>
+        /// <summary>
+        /// Constant GangliaPassword for LayerAttributesKeys
+        /// </summary>
         public static readonly LayerAttributesKeys GangliaPassword = new LayerAttributesKeys("GangliaPassword");
-    
-
-       /// <summary>Constant GangliaUrl for LayerAttributesKeys
-       /// </summary>
+        /// <summary>
+        /// Constant GangliaUrl for LayerAttributesKeys
+        /// </summary>
         public static readonly LayerAttributesKeys GangliaUrl = new LayerAttributesKeys("GangliaUrl");
-    
-
-       /// <summary>Constant GangliaUser for LayerAttributesKeys
-       /// </summary>
+        /// <summary>
+        /// Constant GangliaUser for LayerAttributesKeys
+        /// </summary>
         public static readonly LayerAttributesKeys GangliaUser = new LayerAttributesKeys("GangliaUser");
-    
-
-       /// <summary>Constant HaproxyHealthCheckMethod for LayerAttributesKeys
-       /// </summary>
+        /// <summary>
+        /// Constant HaproxyHealthCheckMethod for LayerAttributesKeys
+        /// </summary>
         public static readonly LayerAttributesKeys HaproxyHealthCheckMethod = new LayerAttributesKeys("HaproxyHealthCheckMethod");
-    
-
-       /// <summary>Constant HaproxyHealthCheckUrl for LayerAttributesKeys
-       /// </summary>
+        /// <summary>
+        /// Constant HaproxyHealthCheckUrl for LayerAttributesKeys
+        /// </summary>
         public static readonly LayerAttributesKeys HaproxyHealthCheckUrl = new LayerAttributesKeys("HaproxyHealthCheckUrl");
-    
-
-       /// <summary>Constant HaproxyStatsPassword for LayerAttributesKeys
-       /// </summary>
+        /// <summary>
+        /// Constant HaproxyStatsPassword for LayerAttributesKeys
+        /// </summary>
         public static readonly LayerAttributesKeys HaproxyStatsPassword = new LayerAttributesKeys("HaproxyStatsPassword");
-    
-
-       /// <summary>Constant HaproxyStatsUrl for LayerAttributesKeys
-       /// </summary>
+        /// <summary>
+        /// Constant HaproxyStatsUrl for LayerAttributesKeys
+        /// </summary>
         public static readonly LayerAttributesKeys HaproxyStatsUrl = new LayerAttributesKeys("HaproxyStatsUrl");
-    
-
-       /// <summary>Constant HaproxyStatsUser for LayerAttributesKeys
-       /// </summary>
+        /// <summary>
+        /// Constant HaproxyStatsUser for LayerAttributesKeys
+        /// </summary>
         public static readonly LayerAttributesKeys HaproxyStatsUser = new LayerAttributesKeys("HaproxyStatsUser");
-    
-
-       /// <summary>Constant JavaAppServer for LayerAttributesKeys
-       /// </summary>
+        /// <summary>
+        /// Constant JavaAppServer for LayerAttributesKeys
+        /// </summary>
         public static readonly LayerAttributesKeys JavaAppServer = new LayerAttributesKeys("JavaAppServer");
-    
-
-       /// <summary>Constant JavaAppServerVersion for LayerAttributesKeys
-       /// </summary>
+        /// <summary>
+        /// Constant JavaAppServerVersion for LayerAttributesKeys
+        /// </summary>
         public static readonly LayerAttributesKeys JavaAppServerVersion = new LayerAttributesKeys("JavaAppServerVersion");
-    
-
-       /// <summary>Constant Jvm for LayerAttributesKeys
-       /// </summary>
+        /// <summary>
+        /// Constant Jvm for LayerAttributesKeys
+        /// </summary>
         public static readonly LayerAttributesKeys Jvm = new LayerAttributesKeys("Jvm");
-    
-
-       /// <summary>Constant JvmOptions for LayerAttributesKeys
-       /// </summary>
+        /// <summary>
+        /// Constant JvmOptions for LayerAttributesKeys
+        /// </summary>
         public static readonly LayerAttributesKeys JvmOptions = new LayerAttributesKeys("JvmOptions");
-    
-
-       /// <summary>Constant JvmVersion for LayerAttributesKeys
-       /// </summary>
+        /// <summary>
+        /// Constant JvmVersion for LayerAttributesKeys
+        /// </summary>
         public static readonly LayerAttributesKeys JvmVersion = new LayerAttributesKeys("JvmVersion");
-    
-
-       /// <summary>Constant ManageBundler for LayerAttributesKeys
-       /// </summary>
+        /// <summary>
+        /// Constant ManageBundler for LayerAttributesKeys
+        /// </summary>
         public static readonly LayerAttributesKeys ManageBundler = new LayerAttributesKeys("ManageBundler");
-    
-
-       /// <summary>Constant MemcachedMemory for LayerAttributesKeys
-       /// </summary>
+        /// <summary>
+        /// Constant MemcachedMemory for LayerAttributesKeys
+        /// </summary>
         public static readonly LayerAttributesKeys MemcachedMemory = new LayerAttributesKeys("MemcachedMemory");
-    
-
-       /// <summary>Constant MysqlRootPassword for LayerAttributesKeys
-       /// </summary>
+        /// <summary>
+        /// Constant MysqlRootPassword for LayerAttributesKeys
+        /// </summary>
         public static readonly LayerAttributesKeys MysqlRootPassword = new LayerAttributesKeys("MysqlRootPassword");
-    
-
-       /// <summary>Constant MysqlRootPasswordUbiquitous for LayerAttributesKeys
-       /// </summary>
+        /// <summary>
+        /// Constant MysqlRootPasswordUbiquitous for LayerAttributesKeys
+        /// </summary>
         public static readonly LayerAttributesKeys MysqlRootPasswordUbiquitous = new LayerAttributesKeys("MysqlRootPasswordUbiquitous");
-    
-
-       /// <summary>Constant NodejsVersion for LayerAttributesKeys
-       /// </summary>
+        /// <summary>
+        /// Constant NodejsVersion for LayerAttributesKeys
+        /// </summary>
         public static readonly LayerAttributesKeys NodejsVersion = new LayerAttributesKeys("NodejsVersion");
-    
-
-       /// <summary>Constant PassengerVersion for LayerAttributesKeys
-       /// </summary>
+        /// <summary>
+        /// Constant PassengerVersion for LayerAttributesKeys
+        /// </summary>
         public static readonly LayerAttributesKeys PassengerVersion = new LayerAttributesKeys("PassengerVersion");
-    
-
-       /// <summary>Constant RailsStack for LayerAttributesKeys
-       /// </summary>
+        /// <summary>
+        /// Constant RailsStack for LayerAttributesKeys
+        /// </summary>
         public static readonly LayerAttributesKeys RailsStack = new LayerAttributesKeys("RailsStack");
-    
-
-       /// <summary>Constant RubyVersion for LayerAttributesKeys
-       /// </summary>
-        public static readonly LayerAttributesKeys RubyVersion = new LayerAttributesKeys("RubyVersion");
-    
-
-       /// <summary>Constant RubygemsVersion for LayerAttributesKeys
-       /// </summary>
+        /// <summary>
+        /// Constant RubygemsVersion for LayerAttributesKeys
+        /// </summary>
         public static readonly LayerAttributesKeys RubygemsVersion = new LayerAttributesKeys("RubygemsVersion");
-    
+        /// <summary>
+        /// Constant RubyVersion for LayerAttributesKeys
+        /// </summary>
+        public static readonly LayerAttributesKeys RubyVersion = new LayerAttributesKeys("RubyVersion");
 
         /// <summary>
         /// Default Constructor
@@ -435,58 +394,50 @@ namespace Amazon.OpsWorks
             return FindValue(value);
         }
     }
-    
 
-    /// <summary>Layer Type
+
+    /// <summary>
+    /// Constants used for properties of type LayerType.
     /// </summary>
     public class LayerType : ConstantClass
     {
 
-
-       /// <summary>Constant Custom for LayerType
-       /// </summary>
+        /// <summary>
+        /// Constant Custom for LayerType
+        /// </summary>
         public static readonly LayerType Custom = new LayerType("custom");
-    
-
-       /// <summary>Constant DbMaster for LayerType
-       /// </summary>
+        /// <summary>
+        /// Constant DbMaster for LayerType
+        /// </summary>
         public static readonly LayerType DbMaster = new LayerType("db-master");
-    
-
-       /// <summary>Constant Lb for LayerType
-       /// </summary>
+        /// <summary>
+        /// Constant Lb for LayerType
+        /// </summary>
         public static readonly LayerType Lb = new LayerType("lb");
-    
-
-       /// <summary>Constant Memcached for LayerType
-       /// </summary>
+        /// <summary>
+        /// Constant Memcached for LayerType
+        /// </summary>
         public static readonly LayerType Memcached = new LayerType("memcached");
-    
-
-       /// <summary>Constant MonitoringMaster for LayerType
-       /// </summary>
+        /// <summary>
+        /// Constant MonitoringMaster for LayerType
+        /// </summary>
         public static readonly LayerType MonitoringMaster = new LayerType("monitoring-master");
-    
-
-       /// <summary>Constant NodejsApp for LayerType
-       /// </summary>
+        /// <summary>
+        /// Constant NodejsApp for LayerType
+        /// </summary>
         public static readonly LayerType NodejsApp = new LayerType("nodejs-app");
-    
-
-       /// <summary>Constant PhpApp for LayerType
-       /// </summary>
+        /// <summary>
+        /// Constant PhpApp for LayerType
+        /// </summary>
         public static readonly LayerType PhpApp = new LayerType("php-app");
-    
-
-       /// <summary>Constant RailsApp for LayerType
-       /// </summary>
+        /// <summary>
+        /// Constant RailsApp for LayerType
+        /// </summary>
         public static readonly LayerType RailsApp = new LayerType("rails-app");
-    
-
-       /// <summary>Constant Web for LayerType
-       /// </summary>
+        /// <summary>
+        /// Constant Web for LayerType
+        /// </summary>
         public static readonly LayerType Web = new LayerType("web");
-    
 
         /// <summary>
         /// Default Constructor
@@ -511,23 +462,22 @@ namespace Amazon.OpsWorks
             return FindValue(value);
         }
     }
-    
 
-    /// <summary>Root Device Type
+
+    /// <summary>
+    /// Constants used for properties of type RootDeviceType.
     /// </summary>
     public class RootDeviceType : ConstantClass
     {
 
-
-       /// <summary>Constant Ebs for RootDeviceType
-       /// </summary>
+        /// <summary>
+        /// Constant Ebs for RootDeviceType
+        /// </summary>
         public static readonly RootDeviceType Ebs = new RootDeviceType("ebs");
-    
-
-       /// <summary>Constant InstanceStore for RootDeviceType
-       /// </summary>
+        /// <summary>
+        /// Constant InstanceStore for RootDeviceType
+        /// </summary>
         public static readonly RootDeviceType InstanceStore = new RootDeviceType("instance-store");
-    
 
         /// <summary>
         /// Default Constructor
@@ -552,33 +502,30 @@ namespace Amazon.OpsWorks
             return FindValue(value);
         }
     }
-    
 
-    /// <summary>Source Type
+
+    /// <summary>
+    /// Constants used for properties of type SourceType.
     /// </summary>
     public class SourceType : ConstantClass
     {
 
-
-       /// <summary>Constant Archive for SourceType
-       /// </summary>
+        /// <summary>
+        /// Constant Archive for SourceType
+        /// </summary>
         public static readonly SourceType Archive = new SourceType("archive");
-    
-
-       /// <summary>Constant Git for SourceType
-       /// </summary>
+        /// <summary>
+        /// Constant Git for SourceType
+        /// </summary>
         public static readonly SourceType Git = new SourceType("git");
-    
-
-       /// <summary>Constant S3 for SourceType
-       /// </summary>
+        /// <summary>
+        /// Constant S3 for SourceType
+        /// </summary>
         public static readonly SourceType S3 = new SourceType("s3");
-    
-
-       /// <summary>Constant Svn for SourceType
-       /// </summary>
+        /// <summary>
+        /// Constant Svn for SourceType
+        /// </summary>
         public static readonly SourceType Svn = new SourceType("svn");
-    
 
         /// <summary>
         /// Default Constructor
@@ -603,18 +550,18 @@ namespace Amazon.OpsWorks
             return FindValue(value);
         }
     }
-    
 
-    /// <summary>Stack Attributes Keys
+
+    /// <summary>
+    /// Constants used for properties of type StackAttributesKeys.
     /// </summary>
     public class StackAttributesKeys : ConstantClass
     {
 
-
-       /// <summary>Constant Color for StackAttributesKeys
-       /// </summary>
+        /// <summary>
+        /// Constant Color for StackAttributesKeys
+        /// </summary>
         public static readonly StackAttributesKeys Color = new StackAttributesKeys("Color");
-    
 
         /// <summary>
         /// Default Constructor
@@ -639,7 +586,5 @@ namespace Amazon.OpsWorks
             return FindValue(value);
         }
     }
-    
 
 }
-        

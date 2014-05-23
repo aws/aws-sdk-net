@@ -12,98 +12,88 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.OpsWorks.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+using Amazon.OpsWorks.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for Recipes Object
+    /// </summary>  
+    public class RecipesUnmarshaller : IUnmarshaller<Recipes, XmlUnmarshallerContext>, IUnmarshaller<Recipes, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// RecipesUnmarshaller
-      /// </summary>
-      internal class RecipesUnmarshaller : IUnmarshaller<Recipes, XmlUnmarshallerContext>, IUnmarshaller<Recipes, JsonUnmarshallerContext>
-      {
         Recipes IUnmarshaller<Recipes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Recipes Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            Recipes recipes = new Recipes();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            Recipes unmarshalledObject = new Recipes();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("Setup", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<String,StringUnmarshaller>(
-                    StringUnmarshaller.GetInstance());                  
-                recipes.Setup = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
-              if (context.TestExpression("Configure", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<String,StringUnmarshaller>(
-                    StringUnmarshaller.GetInstance());                  
-                recipes.Configure = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
-              if (context.TestExpression("Deploy", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<String,StringUnmarshaller>(
-                    StringUnmarshaller.GetInstance());                  
-                recipes.Deploy = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
-              if (context.TestExpression("Undeploy", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<String,StringUnmarshaller>(
-                    StringUnmarshaller.GetInstance());                  
-                recipes.Undeploy = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
-              if (context.TestExpression("Shutdown", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<String,StringUnmarshaller>(
-                    StringUnmarshaller.GetInstance());                  
-                recipes.Shutdown = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
+                if (context.TestExpression("Configure", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Configure = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Deploy", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Deploy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Setup", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Setup = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Shutdown", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Shutdown = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Undeploy", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Undeploy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return recipes;
+            return unmarshalledObject;
         }
 
-        private static RecipesUnmarshaller instance;
-        public static RecipesUnmarshaller GetInstance()
+
+        private static RecipesUnmarshaller _instance = new RecipesUnmarshaller();        
+
+        public static RecipesUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new RecipesUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

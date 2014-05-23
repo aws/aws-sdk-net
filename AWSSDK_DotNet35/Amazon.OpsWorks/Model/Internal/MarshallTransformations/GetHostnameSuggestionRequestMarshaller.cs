@@ -29,44 +29,40 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Get Hostname Suggestion Request Marshaller
+    /// GetHostnameSuggestion Request Marshaller
     /// </summary>       
-    internal class GetHostnameSuggestionRequestMarshaller : IMarshaller<IRequest, GetHostnameSuggestionRequest> 
+    public class GetHostnameSuggestionRequestMarshaller : IMarshaller<IRequest, GetHostnameSuggestionRequest> 
     {
-        
-
-        public IRequest Marshall(GetHostnameSuggestionRequest getHostnameSuggestionRequest) 
+        public IRequest Marshall(GetHostnameSuggestionRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(getHostnameSuggestionRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.GetHostnameSuggestion";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (getHostnameSuggestionRequest != null && getHostnameSuggestionRequest.IsSetLayerId()) 
+                if(publicRequest.IsSetLayerId())
                 {
                     writer.WritePropertyName("LayerId");
-                    writer.Write(getHostnameSuggestionRequest.LayerId);
+                    writer.Write(publicRequest.LayerId);
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

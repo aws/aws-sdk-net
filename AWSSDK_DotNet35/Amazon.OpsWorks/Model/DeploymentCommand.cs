@@ -18,68 +18,84 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Used to specify a deployment operation.</para>
+    /// Used to specify a deployment operation.
     /// </summary>
     public partial class DeploymentCommand
     {
-        
-        private DeploymentCommandName name;
-        private Dictionary<string,List<string>> args = new Dictionary<string,List<string>>();
+        private Dictionary<string, List<string>> _args = new Dictionary<string, List<string>>();
+        private DeploymentCommandName _name;
 
 
         /// <summary>
-        /// Specifies the operation. You can specify only one command. For stacks, the following commands are available: <ul>
-        /// <li><c>execute_recipes</c>: Execute one or more recipes. To specify the recipes, set an <c>Args</c> parameter named <c>recipes</c> to the
-        /// list of recipes to be executed. For example, to execute <c>phpapp::appsetup</c>, set <c>Args</c> to
-        /// <c>{"recipes":["phpapp::appsetup"]}</c>.</li> <li><c>install_dependencies</c>: Install the stack's dependencies.</li>
-        /// <li><c>update_custom_cookbooks</c>: Update the stack's custom cookbooks.</li> <li><c>update_dependencies</c>: Update the stack's
-        /// dependencies.</li> </ul> For apps, the following commands are available: <ul> <li><c>deploy</c>: Deploy an app. Rails apps have an optional
-        /// <c>Args</c> parameter named <c>migrate</c>. Set <c>Args</c> to {"migrate":["true"]} to migrate the database. The default setting is
-        /// {"migrate":["false"]}.</li> <li><c>rollback</c> Roll the app back to the previous version. When you update an app, AWS OpsWorks stores the
-        /// previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</li>
-        /// <li><c>start</c>: Start the app's web or application server.</li> <li><c>stop</c>: Stop the app's web or application server.</li>
-        /// <li><c>restart</c>: Restart the app's web or application server.</li> <li><c>undeploy</c>: Undeploy the app.</li> </ul>
-        ///  
+        /// Gets and sets the property Args. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>install_dependencies, update_dependencies, update_custom_cookbooks, execute_recipes, deploy, rollback, start, stop, restart, undeploy</description>
-        ///     </item>
-        /// </list>
+        /// The arguments of those commands that take arguments.    It should be set to a JSON
+        /// object with the following format:
+        /// </para>
+        ///     
+        /// <para>
+        /// <code>{"arg_name":["value1", "value2", ...]}</code>
         /// </para>
         /// </summary>
-        public DeploymentCommandName Name
+        public Dictionary<string, List<string>> Args
         {
-            get { return this.name; }
-            set { this.name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this.name != null;
-        }
-
-        /// <summary>
-        /// The arguments of those commands that take arguments. It should be set to a JSON object with the following format: <c>{"arg_name":["value1",
-        /// "value2", ...]}</c>
-        ///  
-        /// </summary>
-        public Dictionary<string,List<string>> Args
-        {
-            get { return this.args; }
-            set { this.args = value; }
+            get { return this._args; }
+            set { this._args = value; }
         }
 
         // Check to see if Args property is set
         internal bool IsSetArgs()
         {
-            return this.args != null;
+            return this._args != null && this._args.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// Specifies the operation. You can specify only one command.
+        /// </para>
+        ///   
+        /// <para>
+        /// For stacks, the following commands are available:
+        /// </para>
+        ///   <ul>    <li><code>execute_recipes</code>: Execute one or more recipes. To specify
+        /// the recipes, set an <code>Args</code> parameter named      <code>recipes</code> to
+        /// the list of recipes to be executed. For example, to      execute <code>phpapp::appsetup</code>,
+        /// set <code>Args</code> to <code>{"recipes":["phpapp::appsetup"]}</code>.</li>    <li><code>install_dependencies</code>:
+        /// Install the stack's dependencies.</li>    <li><code>update_custom_cookbooks</code>:
+        /// Update the stack's custom cookbooks.</li>    <li><code>update_dependencies</code>:
+        /// Update the stack's dependencies.</li>  </ul>  
+        /// <para>
+        /// For apps, the following commands are available:
+        /// </para>
+        ///   <ul>  <li><code>deploy</code>: Deploy an app. Rails apps have an optional <code>Args</code>
+        /// parameter named <code>migrate</code>.    Set <code>Args</code> to {"migrate":["true"]}
+        /// to migrate the database. The default setting is {"migrate":["false"]}.</li>  <li><code>rollback</code>
+        /// Roll the app back to the previous version. When you update an app, AWS OpsWorks stores
+        /// the previous version,            up to a maximum of five versions. You can use this
+        /// command to roll an app back as many as four versions.</li>  <li><code>start</code>:
+        /// Start the app's web or application server.</li>  <li><code>stop</code>: Stop the app's
+        /// web or application server.</li>  <li><code>restart</code>: Restart the app's web or
+        /// application server.</li>  <li><code>undeploy</code>: Undeploy the app.</li>  </ul>
+        /// </summary>
+        public DeploymentCommandName Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
     }
 }

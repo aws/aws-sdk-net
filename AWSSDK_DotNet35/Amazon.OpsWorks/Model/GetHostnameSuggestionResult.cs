@@ -17,50 +17,57 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>GetHostnameSuggestion</c> request.</para>
+    /// Contains the response to a <code>GetHostnameSuggestion</code> request.
     /// </summary>
     public partial class GetHostnameSuggestionResult : AmazonWebServiceResponse
     {
-        
-        private string layerId;
-        private string hostname;
+        private string _hostname;
+        private string _layerId;
 
 
         /// <summary>
-        /// The layer ID.
-        ///  
-        /// </summary>
-        public string LayerId
-        {
-            get { return this.layerId; }
-            set { this.layerId = value; }
-        }
-
-        // Check to see if LayerId property is set
-        internal bool IsSetLayerId()
-        {
-            return this.layerId != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Hostname. 
+        /// <para>
         /// The generated host name.
-        ///  
+        /// </para>
         /// </summary>
         public string Hostname
         {
-            get { return this.hostname; }
-            set { this.hostname = value; }
+            get { return this._hostname; }
+            set { this._hostname = value; }
         }
 
         // Check to see if Hostname property is set
         internal bool IsSetHostname()
         {
-            return this.hostname != null;
+            return this._hostname != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property LayerId. 
+        /// <para>
+        /// The layer ID.
+        /// </para>
+        /// </summary>
+        public string LayerId
+        {
+            get { return this._layerId; }
+            set { this._layerId = value; }
+        }
+
+        // Check to see if LayerId property is set
+        internal bool IsSetLayerId()
+        {
+            return this._layerId != null;
+        }
+
     }
 }

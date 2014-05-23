@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the  RegisterVolume response and response metadata.
+    /// Configuration for accessing Amazon RegisterVolume service
     /// </summary>
     public partial class RegisterVolumeResponse : RegisterVolumeResult
     {
         /// <summary>
         /// Gets and sets the RegisterVolumeResult property.
-        /// Contains the response to a RegisterVolume request.
+        /// Represents the output of a RegisterVolume operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the RegisterVolumeResult class are now available on the RegisterVolumeResponse class. You should use the properties on RegisterVolumeResponse instead of accessing them through RegisterVolumeResult.")]
         public RegisterVolumeResult RegisterVolumeResult
@@ -40,4 +36,3 @@ namespace Amazon.OpsWorks.Model
         }
     }
 }
-    

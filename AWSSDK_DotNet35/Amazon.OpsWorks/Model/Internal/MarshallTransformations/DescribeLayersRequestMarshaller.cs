@@ -29,58 +29,51 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Layers Request Marshaller
+    /// DescribeLayers Request Marshaller
     /// </summary>       
-    internal class DescribeLayersRequestMarshaller : IMarshaller<IRequest, DescribeLayersRequest> 
+    public class DescribeLayersRequestMarshaller : IMarshaller<IRequest, DescribeLayersRequest> 
     {
-        
-
-        public IRequest Marshall(DescribeLayersRequest describeLayersRequest) 
+        public IRequest Marshall(DescribeLayersRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(describeLayersRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.DescribeLayers";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (describeLayersRequest != null && describeLayersRequest.IsSetStackId()) 
+                if(publicRequest.IsSetLayerIds())
                 {
-                    writer.WritePropertyName("StackId");
-                    writer.Write(describeLayersRequest.StackId);
-                }
-
-                if (describeLayersRequest != null && describeLayersRequest.LayerIds != null && describeLayersRequest.LayerIds.Count > 0) 
-                {
-                    List<string> layerIdsList = describeLayersRequest.LayerIds;
                     writer.WritePropertyName("LayerIds");
                     writer.WriteArrayStart();
-
-                    foreach (string layerIdsListValue in layerIdsList) 
-                    { 
-                        writer.Write(StringUtils.FromString(layerIdsListValue));
+                    foreach(var publicRequestLayerIdsListValue in publicRequest.LayerIds)
+                    {
+                        writer.Write(publicRequestLayerIdsListValue);
                     }
-
                     writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetStackId())
+                {
+                    writer.WritePropertyName("StackId");
+                    writer.Write(publicRequest.StackId);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

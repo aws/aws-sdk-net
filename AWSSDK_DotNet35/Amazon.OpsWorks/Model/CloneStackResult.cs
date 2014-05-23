@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>CloneStack</c> request.</para>
+    /// Contains the response to a <code>CloneStack</code> request.
     /// </summary>
     public partial class CloneStackResult : AmazonWebServiceResponse
     {
-        
-        private string stackId;
+        private string _stackId;
 
 
         /// <summary>
+        /// Gets and sets the property StackId. 
+        /// <para>
         /// The cloned stack ID.
-        ///  
+        /// </para>
         /// </summary>
         public string StackId
         {
-            get { return this.stackId; }
-            set { this.stackId = value; }
+            get { return this._stackId; }
+            set { this._stackId = value; }
         }
 
         // Check to see if StackId property is set
         internal bool IsSetStackId()
         {
-            return this.stackId != null;
+            return this._stackId != null;
         }
+
     }
 }

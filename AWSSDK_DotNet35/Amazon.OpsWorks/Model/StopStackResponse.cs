@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the StopStack response metadata.
-    /// The StopStack operation has a void result type.
+    /// Configuration for accessing Amazon StopStack service
     /// </summary>
-    public partial class StopStackResponse : AmazonWebServiceResponse
+    public partial class StopStackResponse : StopStackResult
     {
+        /// <summary>
+        /// Gets and sets the StopStackResult property.
+        /// Represents the output of a StopStack operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the StopStackResult class are now available on the StopStackResponse class. You should use the properties on StopStackResponse instead of accessing them through StopStackResult.")]
+        public StopStackResult StopStackResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

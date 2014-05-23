@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(runInstancesRequest, "AmazonEC2");
             request.Parameters.Add("Action", "RunInstances");
-            request.Parameters.Add("Version", "2014-02-01");
+            request.Parameters.Add("Version", "2014-05-01");
             if (runInstancesRequest != null && runInstancesRequest.IsSetImageId())
             {
                 request.Parameters.Add("ImageId", StringUtils.FromString(runInstancesRequest.ImageId));
@@ -143,6 +143,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Iops", StringUtils.FromInt(ebs.Iops));
                         }
+                        if (ebs != null && ebs.IsSetEncrypted())
+                        {
+                            request.Parameters.Add("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Encrypted", StringUtils.FromBool(ebs.Encrypted));
+                        }
                     }
                     if (blockDeviceMappingsListValue != null && blockDeviceMappingsListValue.IsSetNoDevice())
                     {
@@ -167,14 +171,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             if (runInstancesRequest != null && runInstancesRequest.IsSetInstanceInitiatedShutdownBehavior())
             {
                 request.Parameters.Add("InstanceInitiatedShutdownBehavior", StringUtils.FromString(runInstancesRequest.InstanceInitiatedShutdownBehavior));
-            }
-            if (runInstancesRequest != null)
-            {
-                InstanceLicenseSpecification license = runInstancesRequest.License;
-                if (license != null && license.IsSetPool())
-                {
-                    request.Parameters.Add("License.Pool", StringUtils.FromString(license.Pool));
-                }
             }
             if (runInstancesRequest != null && runInstancesRequest.IsSetPrivateIpAddress())
             {

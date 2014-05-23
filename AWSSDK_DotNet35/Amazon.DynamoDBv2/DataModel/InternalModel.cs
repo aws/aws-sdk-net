@@ -574,7 +574,7 @@ namespace Amazon.DynamoDBv2.DataModel
             // populate config from table definition only if actual table name is known
             if (!string.IsNullOrEmpty(actualTableName))
             {
-                Table table = Context.GetTargetTable(actualTableName);
+                Table table = Context.GetTable(actualTableName);
                 PopulateConfigFromTable(config, table);
 
                 config.Denormalize();

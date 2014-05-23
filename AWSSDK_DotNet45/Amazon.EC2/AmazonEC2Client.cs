@@ -260,6 +260,19 @@ namespace Amazon.EC2
         }
  
         /// <summary>
+        /// <para>Accept a VPC peering connection request. To accept a request, the VPC peering connection must be in the <c>pending-acceptance</c>
+        /// state, and you must be the owner of the peer VPC. Use the <c>DescribeVpcPeeringConnections</c> request to view your outstanding VPC peering
+        /// connection requests.</para>
+        /// </summary>
+        /// 
+        /// 
+        /// <returns>The response from the AcceptVpcPeeringConnection service method, as returned by AmazonEC2.</returns>
+		public AcceptVpcPeeringConnectionResponse AcceptVpcPeeringConnection()
+        {
+            return this.AcceptVpcPeeringConnection(new AcceptVpcPeeringConnectionRequest());
+        }
+ 
+        /// <summary>
         /// <para>Acquires an Elastic IP address.</para> <para>An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. For more
         /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP Addresses</a> in the
         /// <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
@@ -1976,6 +1989,21 @@ namespace Amazon.EC2
         /// CIDR blocks results in the VPC peering connection having a status of <c>failed</c> .</para>
         /// </summary>
         /// 
+        /// 
+        /// <returns>The response from the CreateVpcPeeringConnection service method, as returned by AmazonEC2.</returns>
+		public CreateVpcPeeringConnectionResponse CreateVpcPeeringConnection()
+        {
+            return this.CreateVpcPeeringConnection(new CreateVpcPeeringConnectionRequest());
+        }
+ 
+        /// <summary>
+        /// <para>Requests a VPC peering connection between two VPCs: a requester VPC that you own and a peer VPC with which to create the connection.
+        /// The peer VPC can belong to another AWS account. The requester VPC and peer VPC cannot have overlapping CIDR blocks.</para> <para>The owner
+        /// of the peer VPC must accept the the peering request to activate the peering connection. The VPC peering connection request expires after 7
+        /// days, after which it cannot be accepted or rejected.</para> <para>A <c>CreateVpcPeeringConnection</c> request between VPCs with overlapping
+        /// CIDR blocks results in the VPC peering connection having a status of <c>failed</c> .</para>
+        /// </summary>
+        /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateVpcPeeringConnection service
         /// method on AmazonEC2.</param>
         /// 
@@ -2796,6 +2824,8 @@ namespace Amazon.EC2
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpcPeeringConnection service
         /// method on AmazonEC2.</param>
+        /// 
+        /// <returns>The response from the DeleteVpcPeeringConnection service method, as returned by AmazonEC2.</returns>
 		public DeleteVpcPeeringConnectionResponse DeleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest request)
         {
             var task = DeleteVpcPeeringConnectionAsync(request);
@@ -2825,6 +2855,19 @@ namespace Amazon.EC2
             var marshaller = new DeleteVpcPeeringConnectionRequestMarshaller();
             var unmarshaller = DeleteVpcPeeringConnectionResponseUnmarshaller.GetInstance();
             return Invoke<IRequest, DeleteVpcPeeringConnectionRequest, DeleteVpcPeeringConnectionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+        }
+ 
+        /// <summary>
+        /// <para>Deletes a VPC peering connection. Either the owner of the requester VPC or the owner of the peer VPC can delete the VPC peering
+        /// connection if it's in the <c>active</c> state. The owner of the requester VPC can delete a VPC peering connection in the
+        /// <c>pending-acceptance</c> state.</para>
+        /// </summary>
+        /// 
+        /// 
+        /// <returns>The response from the DeleteVpcPeeringConnection service method, as returned by AmazonEC2.</returns>
+		public DeleteVpcPeeringConnectionResponse DeleteVpcPeeringConnection()
+        {
+            return this.DeleteVpcPeeringConnection(new DeleteVpcPeeringConnectionRequest());
         }
  
         /// <summary>
@@ -3540,6 +3583,21 @@ namespace Amazon.EC2
         /// hour.</para>
         /// </summary>
         /// 
+        /// 
+        /// <returns>The response from the DescribeInstances service method, as returned by AmazonEC2.</returns>
+		public DescribeInstancesResponse DescribeInstances()
+        {
+            return this.DescribeInstances(new DescribeInstancesRequest());
+        }
+ 
+        /// <summary>
+        /// <para>Describes one or more of your instances.</para> <para>If you specify one or more instance IDs, Amazon EC2 returns information for
+        /// those instances. If you do not specify instance IDs, Amazon EC2 returns information for all relevant instances. If you specify an instance
+        /// ID that is not valid, an error is returned. If you specify an instance that you do not own, it is not included in the returned
+        /// results.</para> <para>Recently terminated instances might appear in the returned results. This interval is usually less than one
+        /// hour.</para>
+        /// </summary>
+        /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstances service method on
         /// AmazonEC2.</param>
         /// 
@@ -3573,21 +3631,6 @@ namespace Amazon.EC2
             var marshaller = new DescribeInstancesRequestMarshaller();
             var unmarshaller = DescribeInstancesResponseUnmarshaller.GetInstance();
             return Invoke<IRequest, DescribeInstancesRequest, DescribeInstancesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
-        }
- 
-        /// <summary>
-        /// <para>Describes one or more of your instances.</para> <para>If you specify one or more instance IDs, Amazon EC2 returns information for
-        /// those instances. If you do not specify instance IDs, Amazon EC2 returns information for all relevant instances. If you specify an instance
-        /// ID that is not valid, an error is returned. If you specify an instance that you do not own, it is not included in the returned
-        /// results.</para> <para>Recently terminated instances might appear in the returned results. This interval is usually less than one
-        /// hour.</para>
-        /// </summary>
-        /// 
-        /// 
-        /// <returns>The response from the DescribeInstances service method, as returned by AmazonEC2.</returns>
-		public DescribeInstancesResponse DescribeInstances()
-        {
-            return this.DescribeInstances(new DescribeInstancesRequest());
         }
  
         /// <summary>
@@ -3712,17 +3755,6 @@ namespace Amazon.EC2
         /// <para>Describes one or more of your Internet gateways.</para>
         /// </summary>
         /// 
-        /// 
-        /// <returns>The response from the DescribeInternetGateways service method, as returned by AmazonEC2.</returns>
-		public DescribeInternetGatewaysResponse DescribeInternetGateways()
-        {
-            return this.DescribeInternetGateways(new DescribeInternetGatewaysRequest());
-        }
- 
-        /// <summary>
-        /// <para>Describes one or more of your Internet gateways.</para>
-        /// </summary>
-        /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeInternetGateways service method
         /// on AmazonEC2.</param>
         /// 
@@ -3756,6 +3788,17 @@ namespace Amazon.EC2
             var marshaller = new DescribeInternetGatewaysRequestMarshaller();
             var unmarshaller = DescribeInternetGatewaysResponseUnmarshaller.GetInstance();
             return Invoke<IRequest, DescribeInternetGatewaysRequest, DescribeInternetGatewaysResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+        }
+ 
+        /// <summary>
+        /// <para>Describes one or more of your Internet gateways.</para>
+        /// </summary>
+        /// 
+        /// 
+        /// <returns>The response from the DescribeInternetGateways service method, as returned by AmazonEC2.</returns>
+		public DescribeInternetGatewaysResponse DescribeInternetGateways()
+        {
+            return this.DescribeInternetGateways(new DescribeInternetGatewaysRequest());
         }
  
         /// <summary>
@@ -6209,6 +6252,8 @@ namespace Amazon.EC2
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RejectVpcPeeringConnection service
         /// method on AmazonEC2.</param>
+        /// 
+        /// <returns>The response from the RejectVpcPeeringConnection service method, as returned by AmazonEC2.</returns>
 		public RejectVpcPeeringConnectionResponse RejectVpcPeeringConnection(RejectVpcPeeringConnectionRequest request)
         {
             var task = RejectVpcPeeringConnectionAsync(request);
@@ -6238,6 +6283,18 @@ namespace Amazon.EC2
             var marshaller = new RejectVpcPeeringConnectionRequestMarshaller();
             var unmarshaller = RejectVpcPeeringConnectionResponseUnmarshaller.GetInstance();
             return Invoke<IRequest, RejectVpcPeeringConnectionRequest, RejectVpcPeeringConnectionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
+        }
+ 
+        /// <summary>
+        /// <para>Rejects a VPC peering connection request. The VPC peering connection must be in the <c>pending-acceptance</c> state. Use the
+        /// <c>DescribeVpcPeeringConnections</c> request to view your outstanding VPC peering connection requests.</para>
+        /// </summary>
+        /// 
+        /// 
+        /// <returns>The response from the RejectVpcPeeringConnection service method, as returned by AmazonEC2.</returns>
+		public RejectVpcPeeringConnectionResponse RejectVpcPeeringConnection()
+        {
+            return this.RejectVpcPeeringConnection(new RejectVpcPeeringConnectionRequest());
         }
  
         /// <summary>

@@ -12,64 +12,70 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.OpsWorks.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+using Amazon.OpsWorks.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for DeploymentCommand Object
+    /// </summary>  
+    public class DeploymentCommandUnmarshaller : IUnmarshaller<DeploymentCommand, XmlUnmarshallerContext>, IUnmarshaller<DeploymentCommand, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// DeploymentCommandUnmarshaller
-      /// </summary>
-      internal class DeploymentCommandUnmarshaller : IUnmarshaller<DeploymentCommand, XmlUnmarshallerContext>, IUnmarshaller<DeploymentCommand, JsonUnmarshallerContext>
-      {
         DeploymentCommand IUnmarshaller<DeploymentCommand, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public DeploymentCommand Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            DeploymentCommand deploymentCommand = new DeploymentCommand();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            DeploymentCommand unmarshalledObject = new DeploymentCommand();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("Name", targetDepth))
-              {
-                deploymentCommand.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Args", targetDepth))
-              {
-                
-                var unmarshaller =  new DictionaryUnmarshaller<String,List<string>,StringUnmarshaller,ListUnmarshaller<string, StringUnmarshaller>>(
-                    StringUnmarshaller.GetInstance(),new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.GetInstance()));               
-                deploymentCommand.Args = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
+                if (context.TestExpression("Args", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, List<string>, StringUnmarshaller, ListUnmarshaller<string, StringUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
+                    unmarshalledObject.Args = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return deploymentCommand;
+            return unmarshalledObject;
         }
 
-        private static DeploymentCommandUnmarshaller instance;
-        public static DeploymentCommandUnmarshaller GetInstance()
+
+        private static DeploymentCommandUnmarshaller _instance = new DeploymentCommandUnmarshaller();        
+
+        public static DeploymentCommandUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new DeploymentCommandUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

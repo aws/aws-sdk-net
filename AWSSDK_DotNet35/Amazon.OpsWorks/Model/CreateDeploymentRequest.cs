@@ -25,128 +25,160 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDeployment operation.
-    /// <para>Deploys a stack or app.</para>
-    /// <ul>
-    /// <li>App deployment generates a <c>deploy</c> event, which runs the associated recipes and passes them a JSON stack configuration object
-    /// that includes information about the app. </li>
-    /// <li>Stack deployment runs the <c>deploy</c> recipes but does not raise an event.</li>
+    /// Deploys a stack or app.
     /// 
-    /// </ul>
-    /// <para>For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html" >Deploying
-    /// Apps</a> and <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html" >Run Stack Commands</a> .</para>
-    /// <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Deploy or Manage permissions level for the stack, or an
-    /// attached policy that explicitly grants permissions. For more information on user permissions, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+    ///   <ul>  <li>App deployment generates a <code>deploy</code> event, which runs the associated
+    /// recipes and passes them a JSON stack configuration object            that includes
+    /// information about the app. </li>  <li>Stack deployment runs the <code>deploy</code>
+    /// recipes but does not raise an event.</li>  </ul>  
+    /// <para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html">Deploying
+    /// Apps</a>         and <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html">Run
+    /// Stack Commands</a>.
+    /// </para>
+    ///     
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Deploy or
+    /// Manage permissions level for the stack, or an attached       policy that explicitly
+    /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
     public partial class CreateDeploymentRequest : AmazonOpsWorksRequest
     {
-        private string stackId;
-        private string appId;
-        private List<string> instanceIds = new List<string>();
-        private DeploymentCommand command;
-        private string comment;
-        private string customJson;
+        private string _appId;
+        private DeploymentCommand _command;
+        private string _comment;
+        private string _customJson;
+        private List<string> _instanceIds = new List<string>();
+        private string _stackId;
 
 
         /// <summary>
-        /// The stack ID.
-        ///  
-        /// </summary>
-        public string StackId
-        {
-            get { return this.stackId; }
-            set { this.stackId = value; }
-        }
-
-        // Check to see if StackId property is set
-        internal bool IsSetStackId()
-        {
-            return this.stackId != null;
-        }
-
-        /// <summary>
-        /// The app ID. This parameter is required for app deployments, but not for other deployment commands.
-        ///  
+        /// Gets and sets the property AppId. 
+        /// <para>
+        /// The app ID. This parameter is required for app deployments, but not for other deployment
+        /// commands.
+        /// </para>
         /// </summary>
         public string AppId
         {
-            get { return this.appId; }
-            set { this.appId = value; }
+            get { return this._appId; }
+            set { this._appId = value; }
         }
 
         // Check to see if AppId property is set
         internal bool IsSetAppId()
         {
-            return this.appId != null;
+            return this._appId != null;
         }
+
 
         /// <summary>
-        /// The instance IDs for the deployment targets.
-        ///  
-        /// </summary>
-        public List<string> InstanceIds
-        {
-            get { return this.instanceIds; }
-            set { this.instanceIds = value; }
-        }
-
-        // Check to see if InstanceIds property is set
-        internal bool IsSetInstanceIds()
-        {
-            return this.instanceIds.Count > 0;
-        }
-
-        /// <summary>
-        /// A <c>DeploymentCommand</c> object that specifies the deployment command and any associated arguments.
-        ///  
+        /// Gets and sets the property Command. 
+        /// <para>
+        /// A <code>DeploymentCommand</code> object that specifies the deployment command and
+        /// any associated arguments.
+        /// </para>
         /// </summary>
         public DeploymentCommand Command
         {
-            get { return this.command; }
-            set { this.command = value; }
+            get { return this._command; }
+            set { this._command = value; }
         }
 
         // Check to see if Command property is set
         internal bool IsSetCommand()
         {
-            return this.command != null;
+            return this._command != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property Comment. 
+        /// <para>
         /// A user-defined comment.
-        ///  
+        /// </para>
         /// </summary>
         public string Comment
         {
-            get { return this.comment; }
-            set { this.comment = value; }
+            get { return this._comment; }
+            set { this._comment = value; }
         }
 
         // Check to see if Comment property is set
         internal bool IsSetComment()
         {
-            return this.comment != null;
+            return this._comment != null;
         }
 
+
         /// <summary>
-        /// A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The
-        /// string should be in the following format and must escape characters such as '"'.: <c>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</c>
-        /// For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom
-        /// JSON to Modify the Stack Configuration JSON</a>.
-        ///  
+        /// Gets and sets the property CustomJson. 
+        /// <para>
+        /// A string that contains user-defined, custom JSON. It is used to override the corresponding
+        /// default stack configuration JSON values. The string should be in the following format
+        /// and must escape characters such as '"'.:
+        /// </para>
+        ///     
+        /// <para>
+        /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
+        /// </para>
+        ///   
+        /// <para>
+        /// For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+        /// Custom JSON to Modify the Stack Configuration JSON</a>.
+        /// </para>
         /// </summary>
         public string CustomJson
         {
-            get { return this.customJson; }
-            set { this.customJson = value; }
+            get { return this._customJson; }
+            set { this._customJson = value; }
         }
 
         // Check to see if CustomJson property is set
         internal bool IsSetCustomJson()
         {
-            return this.customJson != null;
+            return this._customJson != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property InstanceIds. 
+        /// <para>
+        /// The instance IDs for the deployment targets.
+        /// </para>
+        /// </summary>
+        public List<string> InstanceIds
+        {
+            get { return this._instanceIds; }
+            set { this._instanceIds = value; }
+        }
+
+        // Check to see if InstanceIds property is set
+        internal bool IsSetInstanceIds()
+        {
+            return this._instanceIds != null && this._instanceIds.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property StackId. 
+        /// <para>
+        /// The stack ID.
+        /// </para>
+        /// </summary>
+        public string StackId
+        {
+            get { return this._stackId; }
+            set { this._stackId = value; }
+        }
+
+        // Check to see if StackId property is set
+        internal bool IsSetStackId()
+        {
+            return this._stackId != null;
         }
 
     }
 }
-    

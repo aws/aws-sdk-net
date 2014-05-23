@@ -18,99 +18,117 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Describes an Elastic IP address.</para>
+    /// Describes an Elastic IP address.
     /// </summary>
     public partial class ElasticIp
     {
-        
-        private string ip;
-        private string name;
-        private string domain;
-        private string region;
-        private string instanceId;
+        private string _domain;
+        private string _instanceId;
+        private string _ip;
+        private string _name;
+        private string _region;
 
 
         /// <summary>
-        /// The IP address.
-        ///  
-        /// </summary>
-        public string Ip
-        {
-            get { return this.ip; }
-            set { this.ip = value; }
-        }
-
-        // Check to see if Ip property is set
-        internal bool IsSetIp()
-        {
-            return this.ip != null;
-        }
-
-        /// <summary>
-        /// The name.
-        ///  
-        /// </summary>
-        public string Name
-        {
-            get { return this.name; }
-            set { this.name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this.name != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Domain. 
+        /// <para>
         /// The domain.
-        ///  
+        /// </para>
         /// </summary>
         public string Domain
         {
-            get { return this.domain; }
-            set { this.domain = value; }
+            get { return this._domain; }
+            set { this._domain = value; }
         }
 
         // Check to see if Domain property is set
         internal bool IsSetDomain()
         {
-            return this.domain != null;
+            return this._domain != null;
         }
+
 
         /// <summary>
-        /// The AWS region. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
-        ///  
-        /// </summary>
-        public string Region
-        {
-            get { return this.region; }
-            set { this.region = value; }
-        }
-
-        // Check to see if Region property is set
-        internal bool IsSetRegion()
-        {
-            return this.region != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
         /// The ID of the instance that the address is attached to.
-        ///  
+        /// </para>
         /// </summary>
         public string InstanceId
         {
-            get { return this.instanceId; }
-            set { this.instanceId = value; }
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
         }
 
         // Check to see if InstanceId property is set
         internal bool IsSetInstanceId()
         {
-            return this.instanceId != null;
+            return this._instanceId != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Ip. 
+        /// <para>
+        /// The IP address.
+        /// </para>
+        /// </summary>
+        public string Ip
+        {
+            get { return this._ip; }
+            set { this._ip = value; }
+        }
+
+        // Check to see if Ip property is set
+        internal bool IsSetIp()
+        {
+            return this._ip != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Region. 
+        /// <para>
+        /// The AWS region. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
+        /// and Endpoints</a>.
+        /// </para>
+        /// </summary>
+        public string Region
+        {
+            get { return this._region; }
+            set { this._region = value; }
+        }
+
+        // Check to see if Region property is set
+        internal bool IsSetRegion()
+        {
+            return this._region != null;
+        }
+
     }
 }

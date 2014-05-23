@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the DetachElasticLoadBalancer response metadata.
-    /// The DetachElasticLoadBalancer operation has a void result type.
+    /// Configuration for accessing Amazon DetachElasticLoadBalancer service
     /// </summary>
-    public partial class DetachElasticLoadBalancerResponse : AmazonWebServiceResponse
+    public partial class DetachElasticLoadBalancerResponse : DetachElasticLoadBalancerResult
     {
+        /// <summary>
+        /// Gets and sets the DetachElasticLoadBalancerResult property.
+        /// Represents the output of a DetachElasticLoadBalancer operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DetachElasticLoadBalancerResult class are now available on the DetachElasticLoadBalancerResponse class. You should use the properties on DetachElasticLoadBalancerResponse instead of accessing them through DetachElasticLoadBalancerResult.")]
+        public DetachElasticLoadBalancerResult DetachElasticLoadBalancerResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

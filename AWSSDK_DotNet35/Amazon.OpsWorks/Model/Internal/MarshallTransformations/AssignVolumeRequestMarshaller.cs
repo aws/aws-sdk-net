@@ -29,49 +29,46 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Assign Volume Request Marshaller
+    /// AssignVolume Request Marshaller
     /// </summary>       
-    internal class AssignVolumeRequestMarshaller : IMarshaller<IRequest, AssignVolumeRequest> 
+    public class AssignVolumeRequestMarshaller : IMarshaller<IRequest, AssignVolumeRequest> 
     {
-        
-
-        public IRequest Marshall(AssignVolumeRequest assignVolumeRequest) 
+        public IRequest Marshall(AssignVolumeRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(assignVolumeRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.AssignVolume";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (assignVolumeRequest != null && assignVolumeRequest.IsSetVolumeId()) 
-                {
-                    writer.WritePropertyName("VolumeId");
-                    writer.Write(assignVolumeRequest.VolumeId);
-                }
-                if (assignVolumeRequest != null && assignVolumeRequest.IsSetInstanceId()) 
+                if(publicRequest.IsSetInstanceId())
                 {
                     writer.WritePropertyName("InstanceId");
-                    writer.Write(assignVolumeRequest.InstanceId);
+                    writer.Write(publicRequest.InstanceId);
                 }
 
+                if(publicRequest.IsSetVolumeId())
+                {
+                    writer.WritePropertyName("VolumeId");
+                    writer.Write(publicRequest.VolumeId);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

@@ -403,6 +403,54 @@ namespace Amazon.Runtime
     }
 
     /// <summary>
+    /// Uses aws credentials stored in environment variables to construct the credentials object.
+    /// AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY are used for the access key id and secret key. If the variable AWS_SESSION_TOKEN exists
+    /// then it will be used to create temporary session credentials.
+    /// </summary>
+    public class EnvironmentVariablesAWSCredentials : AWSCredentials
+    {
+        private const string ENVIRONMENT_VARIABLE_ACCESSKEY = "AWS_ACCESS_KEY_ID";
+        private const string ENVIRONMENT_VARIABLE_SECRETKEY = "AWS_SECRET_ACCESS_KEY";
+        private const string ENVIRONMENT_VARIABLE_SESSION_TOKEN = "AWS_SESSION_TOKEN";
+
+        private static readonly Logger LOGGER = Logger.GetLogger(typeof(AWSCredentials));
+        private ImmutableCredentials _wrappedCredentials;
+
+        #region Public constructors
+
+        /// <summary>
+        /// Constructs an instance of EnvironmentVariablesAWSCredentials. If no credentials are found in the environment variables 
+        /// then an InvalidOperationException.
+        /// </summary>
+        public EnvironmentVariablesAWSCredentials()
+        {
+            string accessKeyId = Environment.GetEnvironmentVariable(ENVIRONMENT_VARIABLE_ACCESSKEY);
+            string secretKey = Environment.GetEnvironmentVariable(ENVIRONMENT_VARIABLE_SECRETKEY);
+            if (string.IsNullOrEmpty(accessKeyId) || string.IsNullOrEmpty(secretKey))
+            {
+                throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
+                    "The environment variables {0} and {1} were not set with AWS credentials.", ENVIRONMENT_VARIABLE_ACCESSKEY, ENVIRONMENT_VARIABLE_SECRETKEY));
+            }
+
+            string sessionToken = Environment.GetEnvironmentVariable(ENVIRONMENT_VARIABLE_SESSION_TOKEN);
+
+            this._wrappedCredentials = new ImmutableCredentials(accessKeyId, secretKey, sessionToken);
+            LOGGER.InfoFormat("Credentials found using environment variables.");
+        }
+
+        #endregion
+
+        /// <summary>
+        /// Returns an instance of ImmutableCredentials for this instance
+        /// </summary>
+        /// <returns></returns>
+        public override ImmutableCredentials GetCredentials()
+        {
+            return this._wrappedCredentials.Copy();
+        }
+    }
+
+    /// <summary>
     /// Credentials that are retrieved from ConfigurationManager.AppSettings
     /// </summary>
     public class EnvironmentAWSCredentials : AWSCredentials
@@ -951,38 +999,43 @@ namespace Amazon.Runtime
         public static List<CredentialsGenerator> CredentialsGenerators { get; set; }
         public static void Reset()
         {
+            cachedCredentials = null;
             CredentialsGenerators = new List<CredentialsGenerator>
             {
 #if BCL
                 () => new EnvironmentAWSCredentials(),
                 () => new StoredProfileAWSCredentials(),
+                () => new EnvironmentVariablesAWSCredentials(),
 #endif
                 () => new InstanceProfileAWSCredentials()
             };
         }
 
+        private static AWSCredentials cachedCredentials;
         internal static AWSCredentials GetCredentials()
         {
-            AWSCredentials credentials = null;
+            if (cachedCredentials != null)
+                return cachedCredentials;
+
             List<Exception> errors = new List<Exception>();
 
             foreach (CredentialsGenerator generator in CredentialsGenerators)
             {
                 try
                 {
-                    credentials = generator();
+                    cachedCredentials = generator();
                 }
                 catch (Exception e)
                 {
-                    credentials = null;
+                    cachedCredentials = null;
                     errors.Add(e);
                 }
 
-                if (credentials != null)
-                    return credentials;
+                if (cachedCredentials != null)
+                    break;
             }
 
-            if (credentials == null)
+            if (cachedCredentials == null)
             {
                 using (StringWriter writer = new StringWriter(CultureInfo.InvariantCulture))
                 {
@@ -1000,7 +1053,7 @@ namespace Amazon.Runtime
                 }
             }
 
-            return credentials;
+            return cachedCredentials;
         }
     }
 }

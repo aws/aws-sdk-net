@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>DescribeDeployments</c> request.</para>
+    /// Contains the response to a <code>DescribeDeployments</code> request.
     /// </summary>
     public partial class DescribeDeploymentsResult : AmazonWebServiceResponse
     {
-        
-        private List<Deployment> deployments = new List<Deployment>();
+        private List<Deployment> _deployments = new List<Deployment>();
 
 
         /// <summary>
-        /// An array of <c>Deployment</c> objects that describe the deployments.
-        ///  
+        /// Gets and sets the property Deployments. 
+        /// <para>
+        /// An array of <code>Deployment</code> objects that describe the deployments.
+        /// </para>
         /// </summary>
         public List<Deployment> Deployments
         {
-            get { return this.deployments; }
-            set { this.deployments = value; }
+            get { return this._deployments; }
+            set { this._deployments = value; }
         }
 
         // Check to see if Deployments property is set
         internal bool IsSetDeployments()
         {
-            return this.deployments.Count > 0;
+            return this._deployments != null && this._deployments.Count > 0; 
         }
+
     }
 }

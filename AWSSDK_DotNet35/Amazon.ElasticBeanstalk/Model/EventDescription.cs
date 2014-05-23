@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,194 +18,176 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para>Describes an event.</para>
+    /// Describes an event.
     /// </summary>
-    public class EventDescription
+    public partial class EventDescription
     {
-        
-        private DateTime? eventDate;
-        private string message;
-        private string applicationName;
-        private string versionLabel;
-        private string templateName;
-        private string environmentName;
-        private string requestId;
-        private EventSeverity severity;
+        private string _applicationName;
+        private string _environmentName;
+        private DateTime? _eventDate;
+        private string _message;
+        private string _requestId;
+        private EventSeverity _severity;
+        private string _templateName;
+        private string _versionLabel;
+
 
         /// <summary>
-        /// The date when the event occurred.
-        ///  
-        /// </summary>
-        public DateTime EventDate
-        {
-            get { return this.eventDate ?? default(DateTime); }
-            set { this.eventDate = value; }
-        }
-
-        // Check to see if EventDate property is set
-        internal bool IsSetEventDate()
-        {
-            return this.eventDate.HasValue;
-        }
-
-        /// <summary>
-        /// The event message.
-        ///  
-        /// </summary>
-        public string Message
-        {
-            get { return this.message; }
-            set { this.message = value; }
-        }
-
-        // Check to see if Message property is set
-        internal bool IsSetMessage()
-        {
-            return this.message != null;
-        }
-
-        /// <summary>
-        /// The application associated with the event.
-        ///  
+        /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 100</description>
-        ///     </item>
-        /// </list>
+        /// The application associated with the event.
         /// </para>
         /// </summary>
         public string ApplicationName
         {
-            get { return this.applicationName; }
-            set { this.applicationName = value; }
+            get { return this._applicationName; }
+            set { this._applicationName = value; }
         }
 
         // Check to see if ApplicationName property is set
         internal bool IsSetApplicationName()
         {
-            return this.applicationName != null;
+            return this._applicationName != null;
         }
 
+
         /// <summary>
-        /// The release label for the application version associated with this event.
-        ///  
+        /// Gets and sets the property EnvironmentName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 100</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string VersionLabel
-        {
-            get { return this.versionLabel; }
-            set { this.versionLabel = value; }
-        }
-
-        // Check to see if VersionLabel property is set
-        internal bool IsSetVersionLabel()
-        {
-            return this.versionLabel != null;
-        }
-
-        /// <summary>
-        /// The name of the configuration associated with this event.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 100</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string TemplateName
-        {
-            get { return this.templateName; }
-            set { this.templateName = value; }
-        }
-
-        // Check to see if TemplateName property is set
-        internal bool IsSetTemplateName()
-        {
-            return this.templateName != null;
-        }
-
-        /// <summary>
         /// The name of the environment associated with this event.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>4 - 23</description>
-        ///     </item>
-        /// </list>
         /// </para>
         /// </summary>
         public string EnvironmentName
         {
-            get { return this.environmentName; }
-            set { this.environmentName = value; }
+            get { return this._environmentName; }
+            set { this._environmentName = value; }
         }
 
         // Check to see if EnvironmentName property is set
         internal bool IsSetEnvironmentName()
         {
-            return this.environmentName != null;
+            return this._environmentName != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property EventDate. 
+        /// <para>
+        /// The date when the event occurred.
+        /// </para>
+        /// </summary>
+        public DateTime EventDate
+        {
+            get { return this._eventDate.GetValueOrDefault(); }
+            set { this._eventDate = value; }
+        }
+
+        // Check to see if EventDate property is set
+        internal bool IsSetEventDate()
+        {
+            return this._eventDate.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Message. 
+        /// <para>
+        /// The event message.
+        /// </para>
+        /// </summary>
+        public string Message
+        {
+            get { return this._message; }
+            set { this._message = value; }
+        }
+
+        // Check to see if Message property is set
+        internal bool IsSetMessage()
+        {
+            return this._message != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property RequestId. 
+        /// <para>
         /// The web service request ID for the activity of this event.
-        ///  
+        /// </para>
         /// </summary>
         public string RequestId
         {
-            get { return this.requestId; }
-            set { this.requestId = value; }
+            get { return this._requestId; }
+            set { this._requestId = value; }
         }
 
         // Check to see if RequestId property is set
         internal bool IsSetRequestId()
         {
-            return this.requestId != null;
+            return this._requestId != null;
         }
 
+
         /// <summary>
-        /// The severity level of this event.
-        ///  
+        /// Gets and sets the property Severity. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>TRACE, DEBUG, INFO, WARN, ERROR, FATAL</description>
-        ///     </item>
-        /// </list>
+        /// The severity level of this event. 
         /// </para>
         /// </summary>
         public EventSeverity Severity
         {
-            get { return this.severity; }
-            set { this.severity = value; }
+            get { return this._severity; }
+            set { this._severity = value; }
         }
 
         // Check to see if Severity property is set
         internal bool IsSetSeverity()
         {
-            return this.severity != null;
+            return this._severity != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property TemplateName. 
+        /// <para>
+        /// The name of the configuration associated with this event.
+        /// </para>
+        /// </summary>
+        public string TemplateName
+        {
+            get { return this._templateName; }
+            set { this._templateName = value; }
+        }
+
+        // Check to see if TemplateName property is set
+        internal bool IsSetTemplateName()
+        {
+            return this._templateName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property VersionLabel. 
+        /// <para>
+        /// The release label for the application version associated with this         event.
+        /// </para>
+        /// </summary>
+        public string VersionLabel
+        {
+            get { return this._versionLabel; }
+            set { this._versionLabel = value; }
+        }
+
+        // Check to see if VersionLabel property is set
+        internal bool IsSetVersionLabel()
+        {
+            return this._versionLabel != null;
+        }
+
     }
 }

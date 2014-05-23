@@ -12,60 +12,70 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.OpsWorks.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+using Amazon.OpsWorks.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for ChefConfiguration Object
+    /// </summary>  
+    public class ChefConfigurationUnmarshaller : IUnmarshaller<ChefConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ChefConfiguration, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// ChefConfigurationUnmarshaller
-      /// </summary>
-      internal class ChefConfigurationUnmarshaller : IUnmarshaller<ChefConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ChefConfiguration, JsonUnmarshallerContext>
-      {
         ChefConfiguration IUnmarshaller<ChefConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public ChefConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            ChefConfiguration chefConfiguration = new ChefConfiguration();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            ChefConfiguration unmarshalledObject = new ChefConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("ManageBerkshelf", targetDepth))
-              {
-                chefConfiguration.ManageBerkshelf = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("BerkshelfVersion", targetDepth))
-              {
-                chefConfiguration.BerkshelfVersion = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("BerkshelfVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BerkshelfVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ManageBerkshelf", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ManageBerkshelf = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return chefConfiguration;
+            return unmarshalledObject;
         }
 
-        private static ChefConfigurationUnmarshaller instance;
-        public static ChefConfigurationUnmarshaller GetInstance()
+
+        private static ChefConfigurationUnmarshaller _instance = new ChefConfigurationUnmarshaller();        
+
+        public static ChefConfigurationUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new ChefConfigurationUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

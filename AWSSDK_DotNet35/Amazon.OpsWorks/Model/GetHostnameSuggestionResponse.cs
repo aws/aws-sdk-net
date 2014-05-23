@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the  GetHostnameSuggestion response and response metadata.
+    /// Configuration for accessing Amazon GetHostnameSuggestion service
     /// </summary>
     public partial class GetHostnameSuggestionResponse : GetHostnameSuggestionResult
     {
         /// <summary>
         /// Gets and sets the GetHostnameSuggestionResult property.
-        /// Contains the response to a GetHostnameSuggestion request.
+        /// Represents the output of a GetHostnameSuggestion operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the GetHostnameSuggestionResult class are now available on the GetHostnameSuggestionResponse class. You should use the properties on GetHostnameSuggestionResponse instead of accessing them through GetHostnameSuggestionResult.")]
         public GetHostnameSuggestionResult GetHostnameSuggestionResult
@@ -40,4 +36,3 @@ namespace Amazon.OpsWorks.Model
         }
     }
 }
-    

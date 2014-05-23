@@ -69,6 +69,16 @@ namespace Amazon.EC2
         /// 
         /// <returns>Returns a AcceptVpcPeeringConnectionResult from AmazonEC2.</returns>
         AcceptVpcPeeringConnectionResponse EndAcceptVpcPeeringConnection(IAsyncResult asyncResult);
+
+        /// <summary>
+        /// <para>Accept a VPC peering connection request. To accept a request, the VPC peering connection must be in the <c>pending-acceptance</c>
+        /// state, and you must be the owner of the peer VPC. Use the <c>DescribeVpcPeeringConnections</c> request to view your outstanding VPC peering
+        /// connection requests.</para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the AcceptVpcPeeringConnection service method, as returned by AmazonEC2.</returns>
+        /// 
+        AcceptVpcPeeringConnectionResponse AcceptVpcPeeringConnection();
         
         #endregion
         
@@ -1894,6 +1904,18 @@ namespace Amazon.EC2
         /// 
         /// <returns>Returns a CreateVpcPeeringConnectionResult from AmazonEC2.</returns>
         CreateVpcPeeringConnectionResponse EndCreateVpcPeeringConnection(IAsyncResult asyncResult);
+
+        /// <summary>
+        /// <para>Requests a VPC peering connection between two VPCs: a requester VPC that you own and a peer VPC with which to create the connection.
+        /// The peer VPC can belong to another AWS account. The requester VPC and peer VPC cannot have overlapping CIDR blocks.</para> <para>The owner
+        /// of the peer VPC must accept the the peering request to activate the peering connection. The VPC peering connection request expires after 7
+        /// days, after which it cannot be accepted or rejected.</para> <para>A <c>CreateVpcPeeringConnection</c> request between VPCs with overlapping
+        /// CIDR blocks results in the VPC peering connection having a status of <c>failed</c> .</para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the CreateVpcPeeringConnection service method, as returned by AmazonEC2.</returns>
+        /// 
+        CreateVpcPeeringConnectionResponse CreateVpcPeeringConnection();
         
         #endregion
         
@@ -2652,6 +2674,8 @@ namespace Amazon.EC2
         /// <param name="deleteVpcPeeringConnectionRequest">Container for the necessary parameters to execute the DeleteVpcPeeringConnection service
         ///          method on AmazonEC2.</param>
         /// 
+        /// <returns>The response from the DeleteVpcPeeringConnection service method, as returned by AmazonEC2.</returns>
+        /// 
         DeleteVpcPeeringConnectionResponse DeleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest deleteVpcPeeringConnectionRequest);
 
         /// <summary>
@@ -2664,6 +2688,9 @@ namespace Amazon.EC2
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndDeleteVpcPeeringConnection operation.</returns>
         IAsyncResult BeginDeleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest deleteVpcPeeringConnectionRequest, AsyncCallback callback, object state);
 
         /// <summary>
@@ -2672,7 +2699,19 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVpcPeeringConnection.</param>
+        /// 
+        /// <returns>Returns a DeleteVpcPeeringConnectionResult from AmazonEC2.</returns>
         DeleteVpcPeeringConnectionResponse EndDeleteVpcPeeringConnection(IAsyncResult asyncResult);
+
+        /// <summary>
+        /// <para>Deletes a VPC peering connection. Either the owner of the requester VPC or the owner of the peer VPC can delete the VPC peering
+        /// connection if it's in the <c>active</c> state. The owner of the requester VPC can delete a VPC peering connection in the
+        /// <c>pending-acceptance</c> state.</para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the DeleteVpcPeeringConnection service method, as returned by AmazonEC2.</returns>
+        /// 
+        DeleteVpcPeeringConnectionResponse DeleteVpcPeeringConnection();
         
         #endregion
         
@@ -6106,6 +6145,8 @@ namespace Amazon.EC2
         /// <param name="rejectVpcPeeringConnectionRequest">Container for the necessary parameters to execute the RejectVpcPeeringConnection service
         ///          method on AmazonEC2.</param>
         /// 
+        /// <returns>The response from the RejectVpcPeeringConnection service method, as returned by AmazonEC2.</returns>
+        /// 
         RejectVpcPeeringConnectionResponse RejectVpcPeeringConnection(RejectVpcPeeringConnectionRequest rejectVpcPeeringConnectionRequest);
 
         /// <summary>
@@ -6118,6 +6159,9 @@ namespace Amazon.EC2
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndRejectVpcPeeringConnection operation.</returns>
         IAsyncResult BeginRejectVpcPeeringConnection(RejectVpcPeeringConnectionRequest rejectVpcPeeringConnectionRequest, AsyncCallback callback, object state);
 
         /// <summary>
@@ -6126,7 +6170,18 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRejectVpcPeeringConnection.</param>
+        /// 
+        /// <returns>Returns a RejectVpcPeeringConnectionResult from AmazonEC2.</returns>
         RejectVpcPeeringConnectionResponse EndRejectVpcPeeringConnection(IAsyncResult asyncResult);
+
+        /// <summary>
+        /// <para>Rejects a VPC peering connection request. The VPC peering connection must be in the <c>pending-acceptance</c> state. Use the
+        /// <c>DescribeVpcPeeringConnections</c> request to view your outstanding VPC peering connection requests.</para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the RejectVpcPeeringConnection service method, as returned by AmazonEC2.</returns>
+        /// 
+        RejectVpcPeeringConnectionResponse RejectVpcPeeringConnection();
         
         #endregion
         

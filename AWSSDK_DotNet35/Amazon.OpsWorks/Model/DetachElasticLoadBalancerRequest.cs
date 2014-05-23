@@ -25,49 +25,58 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DetachElasticLoadBalancer operation.
-    /// <para>Detaches a specified Elastic Load Balancing instance from its layer.</para> <para> <b>Required Permissions</b> : To use this action,
-    /// an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing
-    /// User Permissions</a> .</para>
+    /// Detaches a specified Elastic Load Balancing instance from its layer.
+    /// 
+    ///     
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+    /// level for the stack, or an attached       policy that explicitly grants permissions.
+    /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
     public partial class DetachElasticLoadBalancerRequest : AmazonOpsWorksRequest
     {
-        private string elasticLoadBalancerName;
-        private string layerId;
+        private string _elasticLoadBalancerName;
+        private string _layerId;
 
 
         /// <summary>
+        /// Gets and sets the property ElasticLoadBalancerName. 
+        /// <para>
         /// The Elastic Load Balancing instance's name.
-        ///  
+        /// </para>
         /// </summary>
         public string ElasticLoadBalancerName
         {
-            get { return this.elasticLoadBalancerName; }
-            set { this.elasticLoadBalancerName = value; }
+            get { return this._elasticLoadBalancerName; }
+            set { this._elasticLoadBalancerName = value; }
         }
 
         // Check to see if ElasticLoadBalancerName property is set
         internal bool IsSetElasticLoadBalancerName()
         {
-            return this.elasticLoadBalancerName != null;
+            return this._elasticLoadBalancerName != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property LayerId. 
+        /// <para>
         /// The ID of the layer that the Elastic Load Balancing instance is attached to.
-        ///  
+        /// </para>
         /// </summary>
         public string LayerId
         {
-            get { return this.layerId; }
-            set { this.layerId = value; }
+            get { return this._layerId; }
+            set { this._layerId = value; }
         }
 
         // Check to see if LayerId property is set
         internal bool IsSetLayerId()
         {
-            return this.layerId != null;
+            return this._layerId != null;
         }
 
     }
 }
-    

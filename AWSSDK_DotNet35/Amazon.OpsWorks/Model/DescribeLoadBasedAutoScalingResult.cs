@@ -17,33 +17,38 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>DescribeLoadBasedAutoScaling</c> request.</para>
+    /// Contains the response to a <code>DescribeLoadBasedAutoScaling</code> request.
     /// </summary>
     public partial class DescribeLoadBasedAutoScalingResult : AmazonWebServiceResponse
     {
-        
-        private List<LoadBasedAutoScalingConfiguration> loadBasedAutoScalingConfigurations = new List<LoadBasedAutoScalingConfiguration>();
+        private List<LoadBasedAutoScalingConfiguration> _loadBasedAutoScalingConfigurations = new List<LoadBasedAutoScalingConfiguration>();
 
 
         /// <summary>
-        /// An array of <c>LoadBasedAutoScalingConfiguration</c> objects that describe each layer's configuration.
-        ///  
+        /// Gets and sets the property LoadBasedAutoScalingConfigurations. 
+        /// <para>
+        /// An array of <code>LoadBasedAutoScalingConfiguration</code> objects that describe each
+        /// layer's configuration.
+        /// </para>
         /// </summary>
         public List<LoadBasedAutoScalingConfiguration> LoadBasedAutoScalingConfigurations
         {
-            get { return this.loadBasedAutoScalingConfigurations; }
-            set { this.loadBasedAutoScalingConfigurations = value; }
+            get { return this._loadBasedAutoScalingConfigurations; }
+            set { this._loadBasedAutoScalingConfigurations = value; }
         }
 
         // Check to see if LoadBasedAutoScalingConfigurations property is set
         internal bool IsSetLoadBasedAutoScalingConfigurations()
         {
-            return this.loadBasedAutoScalingConfigurations.Count > 0;
+            return this._loadBasedAutoScalingConfigurations != null && this._loadBasedAutoScalingConfigurations.Count > 0; 
         }
+
     }
 }

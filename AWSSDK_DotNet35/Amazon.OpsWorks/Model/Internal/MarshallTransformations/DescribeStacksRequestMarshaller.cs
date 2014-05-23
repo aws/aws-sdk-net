@@ -29,53 +29,45 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Stacks Request Marshaller
+    /// DescribeStacks Request Marshaller
     /// </summary>       
-    internal class DescribeStacksRequestMarshaller : IMarshaller<IRequest, DescribeStacksRequest> 
+    public class DescribeStacksRequestMarshaller : IMarshaller<IRequest, DescribeStacksRequest> 
     {
-        
-
-        public IRequest Marshall(DescribeStacksRequest describeStacksRequest) 
+        public IRequest Marshall(DescribeStacksRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(describeStacksRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.DescribeStacks";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-
-                if (describeStacksRequest != null && describeStacksRequest.StackIds != null && describeStacksRequest.StackIds.Count > 0) 
+                if(publicRequest.IsSetStackIds())
                 {
-                    List<string> stackIdsList = describeStacksRequest.StackIds;
                     writer.WritePropertyName("StackIds");
                     writer.WriteArrayStart();
-
-                    foreach (string stackIdsListValue in stackIdsList) 
-                    { 
-                        writer.Write(StringUtils.FromString(stackIdsListValue));
+                    foreach(var publicRequestStackIdsListValue in publicRequest.StackIds)
+                    {
+                        writer.Write(publicRequestStackIdsListValue);
                     }
-
                     writer.WriteArrayEnd();
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

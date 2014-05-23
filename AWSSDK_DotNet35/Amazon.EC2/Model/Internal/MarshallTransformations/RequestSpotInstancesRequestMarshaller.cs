@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(requestSpotInstancesRequest, "AmazonEC2");
             request.Parameters.Add("Action", "RequestSpotInstances");
-            request.Parameters.Add("Version", "2014-02-01");
+            request.Parameters.Add("Version", "2014-05-01");
             if (requestSpotInstancesRequest != null && requestSpotInstancesRequest.IsSetSpotPrice())
             {
                 request.Parameters.Add("SpotPrice", StringUtils.FromString(requestSpotInstancesRequest.SpotPrice));
@@ -173,6 +173,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             if (ebs != null && ebs.IsSetIops())
                             {
                                 request.Parameters.Add("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Iops", StringUtils.FromInt(ebs.Iops));
+                            }
+                            if (ebs != null && ebs.IsSetEncrypted())
+                            {
+                                request.Parameters.Add("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Encrypted", StringUtils.FromBool(ebs.Encrypted));
                             }
                         }
                         if (blockDeviceMappingsListValue != null && blockDeviceMappingsListValue.IsSetNoDevice())

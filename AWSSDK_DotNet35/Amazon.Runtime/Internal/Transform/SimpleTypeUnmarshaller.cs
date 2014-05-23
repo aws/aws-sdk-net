@@ -46,15 +46,22 @@ namespace Amazon.Runtime.Internal.Transform
     /// Unmarshaller for int fields
     /// </summary>
     public class IntUnmarshaller : IUnmarshaller<int, XmlUnmarshallerContext>, IUnmarshaller<int, JsonUnmarshallerContext>
-    {
-        private static IntUnmarshaller instance;
+    {        
         private IntUnmarshaller() { }
+
+        private static IntUnmarshaller _instance = new IntUnmarshaller();
+
+        public static IntUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
         public static IntUnmarshaller GetInstance()
         {
-            if (null == instance)
-                instance = new IntUnmarshaller();
-            return instance;
+            return IntUnmarshaller.Instance;
         }
 
         public int Unmarshall(XmlUnmarshallerContext context)
@@ -71,15 +78,22 @@ namespace Amazon.Runtime.Internal.Transform
     /// Unmarshaller for long fields
     /// </summary>
     public class LongUnmarshaller : IUnmarshaller<long, XmlUnmarshallerContext>, IUnmarshaller<long, JsonUnmarshallerContext>
-    {
-        private static LongUnmarshaller instance;
+    {        
         private LongUnmarshaller() { }
+
+        private static LongUnmarshaller _instance = new LongUnmarshaller();
+
+        public static LongUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
         public static LongUnmarshaller GetInstance()
         {
-            if (null == instance)
-                instance = new LongUnmarshaller();
-            return instance;
+            return LongUnmarshaller.Instance;
         }
 
         public long Unmarshall(XmlUnmarshallerContext context)
@@ -96,15 +110,22 @@ namespace Amazon.Runtime.Internal.Transform
     /// Unmarshaller for float fields
     /// </summary>
     public class FloatUnmarshaller : IUnmarshaller<float, XmlUnmarshallerContext>, IUnmarshaller<float, JsonUnmarshallerContext>
-    {
-        private static FloatUnmarshaller instance;
+    {        
         private FloatUnmarshaller() { }
+
+        private static FloatUnmarshaller _instance = new FloatUnmarshaller();
+
+        public static FloatUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
         public static FloatUnmarshaller GetInstance()
         {
-            if (null == instance)
-                instance = new FloatUnmarshaller();
-            return instance;
+            return FloatUnmarshaller.Instance;
         }
 
         public float Unmarshall(XmlUnmarshallerContext context)
@@ -121,15 +142,23 @@ namespace Amazon.Runtime.Internal.Transform
     /// Unmarshaller for double fields
     /// </summary>
     public class DoubleUnmarshaller : IUnmarshaller<double, XmlUnmarshallerContext>, IUnmarshaller<double, JsonUnmarshallerContext>
-    {
-        private static DoubleUnmarshaller instance;
+    {        
         private DoubleUnmarshaller() { }
+
+        private static DoubleUnmarshaller _instance = new DoubleUnmarshaller();
+
+        public static DoubleUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
 
         public static DoubleUnmarshaller GetInstance()
         {
-            if (null == instance)
-                instance = new DoubleUnmarshaller();
-            return instance;
+            return DoubleUnmarshaller.Instance;
         }
 
         public double Unmarshall(XmlUnmarshallerContext context)
@@ -146,15 +175,22 @@ namespace Amazon.Runtime.Internal.Transform
     /// Unmarshaller for bool fields
     /// </summary>
     public class BoolUnmarshaller : IUnmarshaller<bool, XmlUnmarshallerContext>, IUnmarshaller<bool, JsonUnmarshallerContext>
-    {
-        private static BoolUnmarshaller instance;
+    {        
         private BoolUnmarshaller() { }
+
+        private static BoolUnmarshaller _instance = new BoolUnmarshaller();
+
+        public static BoolUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
         public static BoolUnmarshaller GetInstance()
         {
-            if (null == instance)
-                instance = new BoolUnmarshaller();
-            return instance;
+            return BoolUnmarshaller.Instance;
         }
 
         public bool Unmarshall(XmlUnmarshallerContext context)
@@ -171,15 +207,22 @@ namespace Amazon.Runtime.Internal.Transform
     /// Unmarshaller for string fields
     /// </summary>
     public class StringUnmarshaller : IUnmarshaller<string, XmlUnmarshallerContext>, IUnmarshaller<string, JsonUnmarshallerContext>
-    {
-        private static StringUnmarshaller instance;
+    {        
         private StringUnmarshaller() { }
+
+        private static StringUnmarshaller _instance = new StringUnmarshaller();
+
+        public static StringUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
         public static StringUnmarshaller GetInstance()
         {
-            if (null == instance)
-                instance = new StringUnmarshaller();
-            return instance;
+            return StringUnmarshaller.Instance;
         }
 
         public string Unmarshall(XmlUnmarshallerContext context)
@@ -196,15 +239,22 @@ namespace Amazon.Runtime.Internal.Transform
     /// Unmarshaller for byte fields
     /// </summary>
     public class ByteUnmarshaller : IUnmarshaller<byte, XmlUnmarshallerContext>, IUnmarshaller<byte, JsonUnmarshallerContext>
-    {
-        private static ByteUnmarshaller instance;
+    {        
         private ByteUnmarshaller() { }
+
+        private static ByteUnmarshaller _instance = new ByteUnmarshaller();
+
+        public static ByteUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
         public static ByteUnmarshaller GetInstance()
         {
-            if (null == instance)
-                instance = new ByteUnmarshaller();
-            return instance;
+            return ByteUnmarshaller.Instance;
         }
 
         public byte Unmarshall(XmlUnmarshallerContext context)
@@ -221,15 +271,22 @@ namespace Amazon.Runtime.Internal.Transform
     /// Unmarshaller for DateTime fields
     /// </summary>
     public class DateTimeUnmarshaller : IUnmarshaller<DateTime, XmlUnmarshallerContext>, IUnmarshaller<DateTime, JsonUnmarshallerContext>
-    {
-        private static DateTimeUnmarshaller instance;
+    {        
         private DateTimeUnmarshaller() { }
+
+        private static DateTimeUnmarshaller _instance = new DateTimeUnmarshaller();
+
+        public static DateTimeUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
         public static DateTimeUnmarshaller GetInstance()
         {
-            if (null == instance)
-                instance = new DateTimeUnmarshaller();
-            return instance;
+            return DateTimeUnmarshaller.Instance;
         }
 
         public DateTime Unmarshall(XmlUnmarshallerContext context)
@@ -262,15 +319,22 @@ namespace Amazon.Runtime.Internal.Transform
     /// Unmarshaller for MemoryStream fields
     /// </summary>
     public class MemoryStreamUnmarshaller : IUnmarshaller<MemoryStream, XmlUnmarshallerContext>, IUnmarshaller<MemoryStream, JsonUnmarshallerContext>
-    {
-        private static MemoryStreamUnmarshaller instance;
+    {        
         private MemoryStreamUnmarshaller() { }
+
+        private static MemoryStreamUnmarshaller _instance = new MemoryStreamUnmarshaller();
+
+        public static MemoryStreamUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
         public static MemoryStreamUnmarshaller GetInstance()
         {
-            if (null == instance)
-                instance = new MemoryStreamUnmarshaller();
-            return instance;
+            return MemoryStreamUnmarshaller.Instance;
         }
 
         public MemoryStream Unmarshall(XmlUnmarshallerContext context)
@@ -279,6 +343,7 @@ namespace Amazon.Runtime.Internal.Transform
             MemoryStream stream = new MemoryStream(bytes);
             return stream;
         }
+
         public MemoryStream Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -292,15 +357,22 @@ namespace Amazon.Runtime.Internal.Transform
     /// Unmarshaller for ResponseMetadata
     /// </summary>
     public class ResponseMetadataUnmarshaller : IUnmarshaller<ResponseMetadata, XmlUnmarshallerContext>, IUnmarshaller<ResponseMetadata, JsonUnmarshallerContext>
-    {
-        private static ResponseMetadataUnmarshaller instance;
+    {        
         private ResponseMetadataUnmarshaller() { }
+
+        private static ResponseMetadataUnmarshaller _instance = new ResponseMetadataUnmarshaller();
+
+        public static ResponseMetadataUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
         public static ResponseMetadataUnmarshaller GetInstance()
         {
-            if (null == instance)
-                instance = new ResponseMetadataUnmarshaller();
-            return instance;
+            return ResponseMetadataUnmarshaller.Instance;
         }
 
         public ResponseMetadata Unmarshall(XmlUnmarshallerContext context)
@@ -406,9 +478,24 @@ namespace Amazon.Runtime.Internal.Transform
             this.iUnmarshaller = iUnmarshaller;
         }
 
-        List<I> IUnmarshaller<List<I>, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        public List<I> Unmarshall(XmlUnmarshallerContext context)
         {
-            throw new NotImplementedException();
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+
+            var list = new List<I>();
+            while (context.Read())
+            {
+                if (context.IsStartElement)
+                {
+                    if (context.TestExpression("member", targetDepth))
+                    {
+                        var item = iUnmarshaller.Unmarshall(context);
+                        list.Add(item);
+                    }
+                }
+            }
+            return list;
         }
         public List<I> Unmarshall(JsonUnmarshallerContext context)
         {
@@ -465,5 +552,9 @@ namespace Amazon.Runtime.Internal.Transform
         {
             dict.Add(item.Key, item.Value);
         }
+        //public static void Add<T>(this List<T> list, List<T> items)
+        //{
+        //    list.AddRange(items);
+        //}
     }
 }

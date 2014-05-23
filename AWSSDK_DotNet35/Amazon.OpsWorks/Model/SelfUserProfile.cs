@@ -18,82 +18,96 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Describes a user's SSH information.</para>
+    /// Describes a user's SSH information.
     /// </summary>
     public partial class SelfUserProfile
     {
-        
-        private string iamUserArn;
-        private string name;
-        private string sshUsername;
-        private string sshPublicKey;
+        private string _iamUserArn;
+        private string _name;
+        private string _sshPublicKey;
+        private string _sshUsername;
 
 
         /// <summary>
+        /// Gets and sets the property IamUserArn. 
+        /// <para>
         /// The user's IAM ARN.
-        ///  
+        /// </para>
         /// </summary>
         public string IamUserArn
         {
-            get { return this.iamUserArn; }
-            set { this.iamUserArn = value; }
+            get { return this._iamUserArn; }
+            set { this._iamUserArn = value; }
         }
 
         // Check to see if IamUserArn property is set
         internal bool IsSetIamUserArn()
         {
-            return this.iamUserArn != null;
+            return this._iamUserArn != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
         /// The user's name.
-        ///  
+        /// </para>
         /// </summary>
         public string Name
         {
-            get { return this.name; }
-            set { this.name = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;
+            return this._name != null;
         }
+
 
         /// <summary>
-        /// The user's SSH user name.
-        ///  
-        /// </summary>
-        public string SshUsername
-        {
-            get { return this.sshUsername; }
-            set { this.sshUsername = value; }
-        }
-
-        // Check to see if SshUsername property is set
-        internal bool IsSetSshUsername()
-        {
-            return this.sshUsername != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property SshPublicKey. 
+        /// <para>
         /// The user's SSH public key.
-        ///  
+        /// </para>
         /// </summary>
         public string SshPublicKey
         {
-            get { return this.sshPublicKey; }
-            set { this.sshPublicKey = value; }
+            get { return this._sshPublicKey; }
+            set { this._sshPublicKey = value; }
         }
 
         // Check to see if SshPublicKey property is set
         internal bool IsSetSshPublicKey()
         {
-            return this.sshPublicKey != null;
+            return this._sshPublicKey != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property SshUsername. 
+        /// <para>
+        /// The user's SSH user name.
+        /// </para>
+        /// </summary>
+        public string SshUsername
+        {
+            get { return this._sshUsername; }
+            set { this._sshUsername = value; }
+        }
+
+        // Check to see if SshUsername property is set
+        internal bool IsSetSshUsername()
+        {
+            return this._sshUsername != null;
+        }
+
     }
 }

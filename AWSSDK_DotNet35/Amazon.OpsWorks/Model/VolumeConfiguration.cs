@@ -18,116 +18,136 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Describes an Amazon EBS volume configuration.</para>
+    /// Describes an Amazon EBS volume configuration.
     /// </summary>
     public partial class VolumeConfiguration
     {
-        
-        private string mountPoint;
-        private int? raidLevel;
-        private int? numberOfDisks;
-        private int? size;
-        private string volumeType;
-        private int? iops;
+        private int? _iops;
+        private string _mountPoint;
+        private int? _numberOfDisks;
+        private int? _raidLevel;
+        private int? _size;
+        private string _volumeType;
 
 
         /// <summary>
-        /// The volume mount point. For example "/dev/sdh".
-        ///  
-        /// </summary>
-        public string MountPoint
-        {
-            get { return this.mountPoint; }
-            set { this.mountPoint = value; }
-        }
-
-        // Check to see if MountPoint property is set
-        internal bool IsSetMountPoint()
-        {
-            return this.mountPoint != null;
-        }
-
-        /// <summary>
-        /// The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.
-        ///  
-        /// </summary>
-        public int RaidLevel
-        {
-            get { return this.raidLevel ?? default(int); }
-            set { this.raidLevel = value; }
-        }
-
-        // Check to see if RaidLevel property is set
-        internal bool IsSetRaidLevel()
-        {
-            return this.raidLevel.HasValue;
-        }
-
-        /// <summary>
-        /// The number of disks in the volume.
-        ///  
-        /// </summary>
-        public int NumberOfDisks
-        {
-            get { return this.numberOfDisks ?? default(int); }
-            set { this.numberOfDisks = value; }
-        }
-
-        // Check to see if NumberOfDisks property is set
-        internal bool IsSetNumberOfDisks()
-        {
-            return this.numberOfDisks.HasValue;
-        }
-
-        /// <summary>
-        /// The volume size.
-        ///  
-        /// </summary>
-        public int Size
-        {
-            get { return this.size ?? default(int); }
-            set { this.size = value; }
-        }
-
-        // Check to see if Size property is set
-        internal bool IsSetSize()
-        {
-            return this.size.HasValue;
-        }
-
-        /// <summary>
-        /// The volume type, standard or PIOPS.
-        ///  
-        /// </summary>
-        public string VolumeType
-        {
-            get { return this.volumeType; }
-            set { this.volumeType = value; }
-        }
-
-        // Check to see if VolumeType property is set
-        internal bool IsSetVolumeType()
-        {
-            return this.volumeType != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Iops. 
+        /// <para>
         /// For PIOPS volumes, the IOPS per disk.
-        ///  
+        /// </para>
         /// </summary>
         public int Iops
         {
-            get { return this.iops ?? default(int); }
-            set { this.iops = value; }
+            get { return this._iops.GetValueOrDefault(); }
+            set { this._iops = value; }
         }
 
         // Check to see if Iops property is set
         internal bool IsSetIops()
         {
-            return this.iops.HasValue;
+            return this._iops.HasValue; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property MountPoint. 
+        /// <para>
+        /// The volume mount point. For example "/dev/sdh".
+        /// </para>
+        /// </summary>
+        public string MountPoint
+        {
+            get { return this._mountPoint; }
+            set { this._mountPoint = value; }
+        }
+
+        // Check to see if MountPoint property is set
+        internal bool IsSetMountPoint()
+        {
+            return this._mountPoint != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property NumberOfDisks. 
+        /// <para>
+        /// The number of disks in the volume.
+        /// </para>
+        /// </summary>
+        public int NumberOfDisks
+        {
+            get { return this._numberOfDisks.GetValueOrDefault(); }
+            set { this._numberOfDisks = value; }
+        }
+
+        // Check to see if NumberOfDisks property is set
+        internal bool IsSetNumberOfDisks()
+        {
+            return this._numberOfDisks.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property RaidLevel. 
+        /// <para>
+        /// The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.
+        /// </para>
+        /// </summary>
+        public int RaidLevel
+        {
+            get { return this._raidLevel.GetValueOrDefault(); }
+            set { this._raidLevel = value; }
+        }
+
+        // Check to see if RaidLevel property is set
+        internal bool IsSetRaidLevel()
+        {
+            return this._raidLevel.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Size. 
+        /// <para>
+        /// The volume size.
+        /// </para>
+        /// </summary>
+        public int Size
+        {
+            get { return this._size.GetValueOrDefault(); }
+            set { this._size = value; }
+        }
+
+        // Check to see if Size property is set
+        internal bool IsSetSize()
+        {
+            return this._size.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property VolumeType. 
+        /// <para>
+        /// The volume type, standard or PIOPS.
+        /// </para>
+        /// </summary>
+        public string VolumeType
+        {
+            get { return this._volumeType; }
+            set { this._volumeType = value; }
+        }
+
+        // Check to see if VolumeType property is set
+        internal bool IsSetVolumeType()
+        {
+            return this._volumeType != null;
+        }
+
     }
 }

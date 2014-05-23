@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the SetPermission response metadata.
-    /// The SetPermission operation has a void result type.
+    /// Configuration for accessing Amazon SetPermission service
     /// </summary>
-    public partial class SetPermissionResponse : AmazonWebServiceResponse
+    public partial class SetPermissionResponse : SetPermissionResult
     {
+        /// <summary>
+        /// Gets and sets the SetPermissionResult property.
+        /// Represents the output of a SetPermission operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the SetPermissionResult class are now available on the SetPermissionResponse class. You should use the properties on SetPermissionResponse instead of accessing them through SetPermissionResult.")]
+        public SetPermissionResult SetPermissionResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    
