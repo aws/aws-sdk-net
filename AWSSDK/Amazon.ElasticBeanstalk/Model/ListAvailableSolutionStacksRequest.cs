@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,11 +25,10 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAvailableSolutionStacks operation.
-    /// <para> Returns a list of the available solution stack names. </para>
+    /// Returns a list of the available solution stack names.
     /// </summary>
-    /// <seealso cref="Amazon.ElasticBeanstalk.AmazonElasticBeanstalk.ListAvailableSolutionStacks"/>
-    public class ListAvailableSolutionStacksRequest : AmazonWebServiceRequest
+    public partial class ListAvailableSolutionStacksRequest : AmazonWebServiceRequest
     {
+
     }
 }
-    

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,21 +12,29 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticBeanstalk.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   EnvironmentInfoDescription Unmarshaller
-     /// </summary>
-    internal class EnvironmentInfoDescriptionUnmarshaller : IUnmarshaller<EnvironmentInfoDescription, XmlUnmarshallerContext>, IUnmarshaller<EnvironmentInfoDescription, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for EnvironmentInfoDescription Object
+    /// </summary>  
+    public class EnvironmentInfoDescriptionUnmarshaller : IUnmarshaller<EnvironmentInfoDescription, XmlUnmarshallerContext>, IUnmarshaller<EnvironmentInfoDescription, JsonUnmarshallerContext>
     {
-        public EnvironmentInfoDescription Unmarshall(XmlUnmarshallerContext context) 
+        public EnvironmentInfoDescription Unmarshall(XmlUnmarshallerContext context)
         {
-            EnvironmentInfoDescription environmentInfoDescription = new EnvironmentInfoDescription();
+            EnvironmentInfoDescription unmarshalledObject = new EnvironmentInfoDescription();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,57 +44,56 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("InfoType", targetDepth))
-                    {
-                        environmentInfoDescription.InfoType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
                     if (context.TestExpression("Ec2InstanceId", targetDepth))
                     {
-                        environmentInfoDescription.Ec2InstanceId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Ec2InstanceId = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
-                    if (context.TestExpression("SampleTimestamp", targetDepth))
+                    }
+                    if (context.TestExpression("InfoType", targetDepth))
                     {
-                        environmentInfoDescription.SampleTimestamp = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.InfoType = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
                     if (context.TestExpression("Message", targetDepth))
                     {
-                        environmentInfoDescription.Message = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Message = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SampleTimestamp", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.GetInstance();
+                        unmarshalledObject.SampleTimestamp = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return environmentInfoDescription;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return environmentInfoDescription;
+            return unmarshalledObject;
         }
 
-        public EnvironmentInfoDescription Unmarshall(JsonUnmarshallerContext context) 
+        public EnvironmentInfoDescription Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static EnvironmentInfoDescriptionUnmarshaller instance;
-
-        public static EnvironmentInfoDescriptionUnmarshaller GetInstance() 
+        public static EnvironmentInfoDescriptionUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new EnvironmentInfoDescriptionUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new EnvironmentInfoDescriptionUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

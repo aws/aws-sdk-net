@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,82 +14,80 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticBeanstalk.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Update Configuration Template Request Marshaller
+    /// UpdateConfigurationTemplate Request Marshaller
     /// </summary>       
     public class UpdateConfigurationTemplateRequestMarshaller : IMarshaller<IRequest, UpdateConfigurationTemplateRequest>
     {
-        public IRequest Marshall(UpdateConfigurationTemplateRequest updateConfigurationTemplateRequest)
+        public IRequest Marshall(UpdateConfigurationTemplateRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(updateConfigurationTemplateRequest, "AmazonElasticBeanstalk");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticBeanstalk");
             request.Parameters.Add("Action", "UpdateConfigurationTemplate");
             request.Parameters.Add("Version", "2010-12-01");
-            if (updateConfigurationTemplateRequest != null && updateConfigurationTemplateRequest.IsSetApplicationName())
-            {
-                request.Parameters.Add("ApplicationName", StringUtils.FromString(updateConfigurationTemplateRequest.ApplicationName));
-            }
-            if (updateConfigurationTemplateRequest != null && updateConfigurationTemplateRequest.IsSetTemplateName())
-            {
-                request.Parameters.Add("TemplateName", StringUtils.FromString(updateConfigurationTemplateRequest.TemplateName));
-            }
-            if (updateConfigurationTemplateRequest != null && updateConfigurationTemplateRequest.IsSetDescription())
-            {
-                request.Parameters.Add("Description", StringUtils.FromString(updateConfigurationTemplateRequest.Description));
-            }
 
-            if (updateConfigurationTemplateRequest != null)
+            if(publicRequest != null)
             {
-                List<ConfigurationOptionSetting> optionSettingsList = updateConfigurationTemplateRequest.OptionSettings;
-                int optionSettingsListIndex = 1;
-                foreach (ConfigurationOptionSetting optionSettingsListValue in optionSettingsList)
+                if(publicRequest.IsSetApplicationName())
                 {
-                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetNamespace())
+                    request.Parameters.Add("ApplicationName", StringUtils.FromString(publicRequest.ApplicationName));
+                }
+                if(publicRequest.IsSetDescription())
+                {
+                    request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
+                }
+                if(publicRequest.IsSetOptionSettings())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.OptionSettings)
                     {
-                        request.Parameters.Add("OptionSettings.member." + optionSettingsListIndex + ".Namespace", StringUtils.FromString(optionSettingsListValue.Namespace));
+                        if(publicRequestlistValue.IsSetNamespace())
+                        {
+                            request.Parameters.Add("OptionSettings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Namespace", StringUtils.FromString(publicRequestlistValue.Namespace));
+                        }
+                        if(publicRequestlistValue.IsSetOptionName())
+                        {
+                            request.Parameters.Add("OptionSettings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionName", StringUtils.FromString(publicRequestlistValue.OptionName));
+                        }
+                        if(publicRequestlistValue.IsSetValue())
+                        {
+                            request.Parameters.Add("OptionSettings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                        }
+                        publicRequestlistValueIndex++;
                     }
-                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetOptionName())
+                }
+                if(publicRequest.IsSetOptionsToRemove())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.OptionsToRemove)
                     {
-                        request.Parameters.Add("OptionSettings.member." + optionSettingsListIndex + ".OptionName", StringUtils.FromString(optionSettingsListValue.OptionName));
+                        if(publicRequestlistValue.IsSetNamespace())
+                        {
+                            request.Parameters.Add("OptionsToRemove" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Namespace", StringUtils.FromString(publicRequestlistValue.Namespace));
+                        }
+                        if(publicRequestlistValue.IsSetOptionName())
+                        {
+                            request.Parameters.Add("OptionsToRemove" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionName", StringUtils.FromString(publicRequestlistValue.OptionName));
+                        }
+                        publicRequestlistValueIndex++;
                     }
-                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetValue())
-                    {
-                        request.Parameters.Add("OptionSettings.member." + optionSettingsListIndex + ".Value", StringUtils.FromString(optionSettingsListValue.Value));
-                    }
-
-                    optionSettingsListIndex++;
+                }
+                if(publicRequest.IsSetTemplateName())
+                {
+                    request.Parameters.Add("TemplateName", StringUtils.FromString(publicRequest.TemplateName));
                 }
             }
-
-            if (updateConfigurationTemplateRequest != null)
-            {
-                List<OptionSpecification> optionsToRemoveList = updateConfigurationTemplateRequest.OptionsToRemove;
-                int optionsToRemoveListIndex = 1;
-                foreach (OptionSpecification optionsToRemoveListValue in optionsToRemoveList)
-                {
-                    if (optionsToRemoveListValue != null && optionsToRemoveListValue.IsSetNamespace())
-                    {
-                        request.Parameters.Add("OptionsToRemove.member." + optionsToRemoveListIndex + ".Namespace", StringUtils.FromString(optionsToRemoveListValue.Namespace));
-                    }
-                    if (optionsToRemoveListValue != null && optionsToRemoveListValue.IsSetOptionName())
-                    {
-                        request.Parameters.Add("OptionsToRemove.member." + optionsToRemoveListIndex + ".OptionName", StringUtils.FromString(optionsToRemoveListValue.OptionName));
-                    }
-
-                    optionsToRemoveListIndex++;
-                }
-            }
-
             return request;
         }
     }

@@ -18,38 +18,44 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Describes how many instances a stack has for each status.</para>
+    /// Describes how many instances a stack has for each status.
     /// </summary>
     public partial class InstancesCount
     {
-        
-        private int? booting;
-        private int? connectionLost;
-        private int? online;
-        private int? pending;
-        private int? rebooting;
-        private int? requested;
-        private int? runningSetup;
-        private int? setupFailed;
-        private int? shuttingDown;
-        private int? startFailed;
-        private int? stopped;
-        private int? stopping;
-        private int? terminated;
-        private int? terminating;
+        private int? _booting;
+        private int? _connectionLost;
+        private int? _online;
+        private int? _pending;
+        private int? _rebooting;
+        private int? _requested;
+        private int? _runningSetup;
+        private int? _setupFailed;
+        private int? _shuttingDown;
+        private int? _startFailed;
+        private int? _stopped;
+        private int? _stopping;
+        private int? _terminated;
+        private int? _terminating;
+
 
         /// <summary>
-        /// The number of instances with <c>booting</c> status.
-        ///  
+        /// Gets and sets the property Booting. 
+        /// <para>
+        /// The number of instances with <code>booting</code> status.
+        /// </para>
         /// </summary>
         public int Booting
         {
-            get { return this.booting ?? default(int); }
-            set { this.booting = value; }
+            get { return this._booting.GetValueOrDefault(); }
+            set { this._booting = value; }
         }
+
 
         /// <summary>
         /// Sets the Booting property
@@ -59,26 +65,29 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstancesCount WithBooting(int booting)
         {
-            this.booting = booting;
+            this._booting = booting;
             return this;
         }
-            
 
         // Check to see if Booting property is set
         internal bool IsSetBooting()
         {
-            return this.booting.HasValue;
+            return this._booting.HasValue; 
         }
 
+
         /// <summary>
-        /// The number of instances with <c>connection_lost</c> status.
-        ///  
+        /// Gets and sets the property ConnectionLost. 
+        /// <para>
+        /// The number of instances with <code>connection_lost</code> status.
+        /// </para>
         /// </summary>
         public int ConnectionLost
         {
-            get { return this.connectionLost ?? default(int); }
-            set { this.connectionLost = value; }
+            get { return this._connectionLost.GetValueOrDefault(); }
+            set { this._connectionLost = value; }
         }
+
 
         /// <summary>
         /// Sets the ConnectionLost property
@@ -88,26 +97,29 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstancesCount WithConnectionLost(int connectionLost)
         {
-            this.connectionLost = connectionLost;
+            this._connectionLost = connectionLost;
             return this;
         }
-            
 
         // Check to see if ConnectionLost property is set
         internal bool IsSetConnectionLost()
         {
-            return this.connectionLost.HasValue;
+            return this._connectionLost.HasValue; 
         }
 
+
         /// <summary>
-        /// The number of instances with <c>online</c> status.
-        ///  
+        /// Gets and sets the property Online. 
+        /// <para>
+        /// The number of instances with <code>online</code> status.
+        /// </para>
         /// </summary>
         public int Online
         {
-            get { return this.online ?? default(int); }
-            set { this.online = value; }
+            get { return this._online.GetValueOrDefault(); }
+            set { this._online = value; }
         }
+
 
         /// <summary>
         /// Sets the Online property
@@ -117,26 +129,29 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstancesCount WithOnline(int online)
         {
-            this.online = online;
+            this._online = online;
             return this;
         }
-            
 
         // Check to see if Online property is set
         internal bool IsSetOnline()
         {
-            return this.online.HasValue;
+            return this._online.HasValue; 
         }
 
+
         /// <summary>
-        /// The number of instances with <c>pending</c> status.
-        ///  
+        /// Gets and sets the property Pending. 
+        /// <para>
+        /// The number of instances with <code>pending</code> status.
+        /// </para>
         /// </summary>
         public int Pending
         {
-            get { return this.pending ?? default(int); }
-            set { this.pending = value; }
+            get { return this._pending.GetValueOrDefault(); }
+            set { this._pending = value; }
         }
+
 
         /// <summary>
         /// Sets the Pending property
@@ -146,26 +161,29 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstancesCount WithPending(int pending)
         {
-            this.pending = pending;
+            this._pending = pending;
             return this;
         }
-            
 
         // Check to see if Pending property is set
         internal bool IsSetPending()
         {
-            return this.pending.HasValue;
+            return this._pending.HasValue; 
         }
 
+
         /// <summary>
-        /// The number of instances with <c>rebooting</c> status.
-        ///  
+        /// Gets and sets the property Rebooting. 
+        /// <para>
+        /// The number of instances with <code>rebooting</code> status.
+        /// </para>
         /// </summary>
         public int Rebooting
         {
-            get { return this.rebooting ?? default(int); }
-            set { this.rebooting = value; }
+            get { return this._rebooting.GetValueOrDefault(); }
+            set { this._rebooting = value; }
         }
+
 
         /// <summary>
         /// Sets the Rebooting property
@@ -175,26 +193,29 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstancesCount WithRebooting(int rebooting)
         {
-            this.rebooting = rebooting;
+            this._rebooting = rebooting;
             return this;
         }
-            
 
         // Check to see if Rebooting property is set
         internal bool IsSetRebooting()
         {
-            return this.rebooting.HasValue;
+            return this._rebooting.HasValue; 
         }
 
+
         /// <summary>
-        /// The number of instances with <c>requested</c> status.
-        ///  
+        /// Gets and sets the property Requested. 
+        /// <para>
+        /// The number of instances with <code>requested</code> status.
+        /// </para>
         /// </summary>
         public int Requested
         {
-            get { return this.requested ?? default(int); }
-            set { this.requested = value; }
+            get { return this._requested.GetValueOrDefault(); }
+            set { this._requested = value; }
         }
+
 
         /// <summary>
         /// Sets the Requested property
@@ -204,26 +225,29 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstancesCount WithRequested(int requested)
         {
-            this.requested = requested;
+            this._requested = requested;
             return this;
         }
-            
 
         // Check to see if Requested property is set
         internal bool IsSetRequested()
         {
-            return this.requested.HasValue;
+            return this._requested.HasValue; 
         }
 
+
         /// <summary>
-        /// The number of instances with <c>running_setup</c> status.
-        ///  
+        /// Gets and sets the property RunningSetup. 
+        /// <para>
+        /// The number of instances with <code>running_setup</code> status.
+        /// </para>
         /// </summary>
         public int RunningSetup
         {
-            get { return this.runningSetup ?? default(int); }
-            set { this.runningSetup = value; }
+            get { return this._runningSetup.GetValueOrDefault(); }
+            set { this._runningSetup = value; }
         }
+
 
         /// <summary>
         /// Sets the RunningSetup property
@@ -233,26 +257,29 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstancesCount WithRunningSetup(int runningSetup)
         {
-            this.runningSetup = runningSetup;
+            this._runningSetup = runningSetup;
             return this;
         }
-            
 
         // Check to see if RunningSetup property is set
         internal bool IsSetRunningSetup()
         {
-            return this.runningSetup.HasValue;
+            return this._runningSetup.HasValue; 
         }
 
+
         /// <summary>
-        /// The number of instances with <c>setup_failed</c> status.
-        ///  
+        /// Gets and sets the property SetupFailed. 
+        /// <para>
+        /// The number of instances with <code>setup_failed</code> status.
+        /// </para>
         /// </summary>
         public int SetupFailed
         {
-            get { return this.setupFailed ?? default(int); }
-            set { this.setupFailed = value; }
+            get { return this._setupFailed.GetValueOrDefault(); }
+            set { this._setupFailed = value; }
         }
+
 
         /// <summary>
         /// Sets the SetupFailed property
@@ -262,26 +289,29 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstancesCount WithSetupFailed(int setupFailed)
         {
-            this.setupFailed = setupFailed;
+            this._setupFailed = setupFailed;
             return this;
         }
-            
 
         // Check to see if SetupFailed property is set
         internal bool IsSetSetupFailed()
         {
-            return this.setupFailed.HasValue;
+            return this._setupFailed.HasValue; 
         }
 
+
         /// <summary>
-        /// The number of instances with <c>shutting_down</c> status.
-        ///  
+        /// Gets and sets the property ShuttingDown. 
+        /// <para>
+        /// The number of instances with <code>shutting_down</code> status.
+        /// </para>
         /// </summary>
         public int ShuttingDown
         {
-            get { return this.shuttingDown ?? default(int); }
-            set { this.shuttingDown = value; }
+            get { return this._shuttingDown.GetValueOrDefault(); }
+            set { this._shuttingDown = value; }
         }
+
 
         /// <summary>
         /// Sets the ShuttingDown property
@@ -291,26 +321,29 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstancesCount WithShuttingDown(int shuttingDown)
         {
-            this.shuttingDown = shuttingDown;
+            this._shuttingDown = shuttingDown;
             return this;
         }
-            
 
         // Check to see if ShuttingDown property is set
         internal bool IsSetShuttingDown()
         {
-            return this.shuttingDown.HasValue;
+            return this._shuttingDown.HasValue; 
         }
 
+
         /// <summary>
-        /// The number of instances with <c>start_failed</c> status.
-        ///  
+        /// Gets and sets the property StartFailed. 
+        /// <para>
+        /// The number of instances with <code>start_failed</code> status.
+        /// </para>
         /// </summary>
         public int StartFailed
         {
-            get { return this.startFailed ?? default(int); }
-            set { this.startFailed = value; }
+            get { return this._startFailed.GetValueOrDefault(); }
+            set { this._startFailed = value; }
         }
+
 
         /// <summary>
         /// Sets the StartFailed property
@@ -320,26 +353,29 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstancesCount WithStartFailed(int startFailed)
         {
-            this.startFailed = startFailed;
+            this._startFailed = startFailed;
             return this;
         }
-            
 
         // Check to see if StartFailed property is set
         internal bool IsSetStartFailed()
         {
-            return this.startFailed.HasValue;
+            return this._startFailed.HasValue; 
         }
 
+
         /// <summary>
-        /// The number of instances with <c>stopped</c> status.
-        ///  
+        /// Gets and sets the property Stopped. 
+        /// <para>
+        /// The number of instances with <code>stopped</code> status.
+        /// </para>
         /// </summary>
         public int Stopped
         {
-            get { return this.stopped ?? default(int); }
-            set { this.stopped = value; }
+            get { return this._stopped.GetValueOrDefault(); }
+            set { this._stopped = value; }
         }
+
 
         /// <summary>
         /// Sets the Stopped property
@@ -349,26 +385,29 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstancesCount WithStopped(int stopped)
         {
-            this.stopped = stopped;
+            this._stopped = stopped;
             return this;
         }
-            
 
         // Check to see if Stopped property is set
         internal bool IsSetStopped()
         {
-            return this.stopped.HasValue;
+            return this._stopped.HasValue; 
         }
 
+
         /// <summary>
-        /// The number of instances with <c>stopping</c> status.
-        ///  
+        /// Gets and sets the property Stopping. 
+        /// <para>
+        /// The number of instances with <code>stopping</code> status.
+        /// </para>
         /// </summary>
         public int Stopping
         {
-            get { return this.stopping ?? default(int); }
-            set { this.stopping = value; }
+            get { return this._stopping.GetValueOrDefault(); }
+            set { this._stopping = value; }
         }
+
 
         /// <summary>
         /// Sets the Stopping property
@@ -378,26 +417,29 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstancesCount WithStopping(int stopping)
         {
-            this.stopping = stopping;
+            this._stopping = stopping;
             return this;
         }
-            
 
         // Check to see if Stopping property is set
         internal bool IsSetStopping()
         {
-            return this.stopping.HasValue;
+            return this._stopping.HasValue; 
         }
 
+
         /// <summary>
-        /// The number of instances with <c>terminated</c> status.
-        ///  
+        /// Gets and sets the property Terminated. 
+        /// <para>
+        /// The number of instances with <code>terminated</code> status.
+        /// </para>
         /// </summary>
         public int Terminated
         {
-            get { return this.terminated ?? default(int); }
-            set { this.terminated = value; }
+            get { return this._terminated.GetValueOrDefault(); }
+            set { this._terminated = value; }
         }
+
 
         /// <summary>
         /// Sets the Terminated property
@@ -407,26 +449,29 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstancesCount WithTerminated(int terminated)
         {
-            this.terminated = terminated;
+            this._terminated = terminated;
             return this;
         }
-            
 
         // Check to see if Terminated property is set
         internal bool IsSetTerminated()
         {
-            return this.terminated.HasValue;
+            return this._terminated.HasValue; 
         }
 
+
         /// <summary>
-        /// The number of instances with <c>terminating</c> status.
-        ///  
+        /// Gets and sets the property Terminating. 
+        /// <para>
+        /// The number of instances with <code>terminating</code> status.
+        /// </para>
         /// </summary>
         public int Terminating
         {
-            get { return this.terminating ?? default(int); }
-            set { this.terminating = value; }
+            get { return this._terminating.GetValueOrDefault(); }
+            set { this._terminating = value; }
         }
+
 
         /// <summary>
         /// Sets the Terminating property
@@ -436,15 +481,15 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstancesCount WithTerminating(int terminating)
         {
-            this.terminating = terminating;
+            this._terminating = terminating;
             return this;
         }
-            
 
         // Check to see if Terminating property is set
         internal bool IsSetTerminating()
         {
-            return this.terminating.HasValue;
+            return this._terminating.HasValue; 
         }
+
     }
 }

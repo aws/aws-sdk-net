@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,61 +18,65 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para>The results from a request to change the configuration settings of an environment.</para>
+    /// The results from a request to change the configuration settings of an         environment.
     /// </summary>
     public partial class DescribeConfigurationSettingsResult
     {
-        
-        private List<ConfigurationSettingsDescription> configurationSettings = new List<ConfigurationSettingsDescription>();
+        private List<ConfigurationSettingsDescription> _configurationSettings = new List<ConfigurationSettingsDescription>();
+
 
         /// <summary>
-        /// A list of <a>ConfigurationSettingsDescription</a>.
-        ///  
+        /// Gets and sets the property ConfigurationSettings. 
+        /// <para>
+        ///          A list of         <a>ConfigurationSettingsDescription</a>.      
+        /// </para>
         /// </summary>
         public List<ConfigurationSettingsDescription> ConfigurationSettings
         {
-            get { return this.configurationSettings; }
-            set { this.configurationSettings = value; }
+            get { return this._configurationSettings; }
+            set { this._configurationSettings = value; }
         }
+
         /// <summary>
-        /// Adds elements to the ConfigurationSettings collection
+        /// Sets the ConfigurationSettings property
         /// </summary>
         /// <param name="configurationSettings">The values to add to the ConfigurationSettings collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeConfigurationSettingsResult WithConfigurationSettings(params ConfigurationSettingsDescription[] configurationSettings)
         {
-            foreach (ConfigurationSettingsDescription element in configurationSettings)
+            foreach (var element in configurationSettings)
             {
-                this.configurationSettings.Add(element);
+                this._configurationSettings.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the ConfigurationSettings collection
+        /// Sets the ConfigurationSettings property
         /// </summary>
         /// <param name="configurationSettings">The values to add to the ConfigurationSettings collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeConfigurationSettingsResult WithConfigurationSettings(IEnumerable<ConfigurationSettingsDescription> configurationSettings)
         {
-            foreach (ConfigurationSettingsDescription element in configurationSettings)
+            foreach (var element in configurationSettings)
             {
-                this.configurationSettings.Add(element);
+                this._configurationSettings.Add(element);
             }
-
             return this;
         }
-
         // Check to see if ConfigurationSettings property is set
         internal bool IsSetConfigurationSettings()
         {
-            return this.configurationSettings.Count > 0;
+            return this._configurationSettings != null && this._configurationSettings.Count > 0; 
         }
+
     }
 }

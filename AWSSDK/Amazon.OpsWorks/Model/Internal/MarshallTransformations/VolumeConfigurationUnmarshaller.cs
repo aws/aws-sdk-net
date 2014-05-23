@@ -12,93 +12,97 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using Amazon.OpsWorks.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+using Amazon.OpsWorks.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for VolumeConfiguration Object
+    /// </summary>  
+    public class VolumeConfigurationUnmarshaller : IUnmarshaller<VolumeConfiguration, XmlUnmarshallerContext>, IUnmarshaller<VolumeConfiguration, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// VolumeConfigurationUnmarshaller
-      /// </summary>
-      internal class VolumeConfigurationUnmarshaller : IUnmarshaller<VolumeConfiguration, XmlUnmarshallerContext>, IUnmarshaller<VolumeConfiguration, JsonUnmarshallerContext>
-      {
         VolumeConfiguration IUnmarshaller<VolumeConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public VolumeConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
                 return null;
-            VolumeConfiguration volumeConfiguration = new VolumeConfiguration();
-          
+            
+            var unmarshalledObject = new VolumeConfiguration();
+                    
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+
             while (context.Read())
             {
                 if ((context.IsKey) && (context.CurrentDepth == targetDepth))
                 {
-                context.Read();
-                context.Read();
-              
-              if (context.TestExpression("MountPoint", targetDepth))
-              {
-                volumeConfiguration.MountPoint = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("RaidLevel", targetDepth))
-              {
-                volumeConfiguration.RaidLevel = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("NumberOfDisks", targetDepth))
-              {
-                volumeConfiguration.NumberOfDisks = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Size", targetDepth))
-              {
-                volumeConfiguration.Size = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("VolumeType", targetDepth))
-              {
-                volumeConfiguration.VolumeType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Iops", targetDepth))
-              {
-                volumeConfiguration.Iops = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                    context.Read();
+                    context.Read();
+                    if (context.TestExpression("Iops", targetDepth))
+                    {
+                        unmarshalledObject.Iops = IntUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MountPoint", targetDepth))
+                    {
+                        unmarshalledObject.MountPoint = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("NumberOfDisks", targetDepth))
+                    {
+                        unmarshalledObject.NumberOfDisks = IntUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("RaidLevel", targetDepth))
+                    {
+                        unmarshalledObject.RaidLevel = IntUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Size", targetDepth))
+                    {
+                        unmarshalledObject.Size = IntUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("VolumeType", targetDepth))
+                    {
+                        unmarshalledObject.VolumeType = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {
-                    return volumeConfiguration;
+                    return unmarshalledObject;
                 }
-            }
-          
-
-            return volumeConfiguration;
+            }          
+            return unmarshalledObject;
         }
+
 
         private static VolumeConfigurationUnmarshaller instance;
         public static VolumeConfigurationUnmarshaller GetInstance()
         {
             if (instance == null)
+            {
                 instance = new VolumeConfigurationUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-  

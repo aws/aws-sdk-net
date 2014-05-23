@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeElasticLoadBalancersResult response and response metadata.
+    /// Returns information about the DescribeElasticLoadBalancersResult response and response metadata.
     /// </summary>
     public class DescribeElasticLoadBalancersResponse : AmazonWebServiceResponse
     {
-        private DescribeElasticLoadBalancersResult describeElasticLoadBalancersResult;
+        private DescribeElasticLoadBalancersResult _describeElasticLoadBalancersResult;
 
         /// <summary>
         /// Gets and sets the DescribeElasticLoadBalancersResult property.
-        /// Contains the response to a DescribeElasticLoadBalancers request.
+        /// Represents the output of a DescribeElasticLoadBalancers operation.
         /// </summary>
         public DescribeElasticLoadBalancersResult DescribeElasticLoadBalancersResult
         {
             get
             {
-                if(this.describeElasticLoadBalancersResult == null)
+                if(this._describeElasticLoadBalancersResult == null)
                 {
-                    this.describeElasticLoadBalancersResult = new DescribeElasticLoadBalancersResult();
+                    this._describeElasticLoadBalancersResult = new DescribeElasticLoadBalancersResult();
                 }
-
-                return this.describeElasticLoadBalancersResult;
+                return this._describeElasticLoadBalancersResult;
             }
-            set { this.describeElasticLoadBalancersResult = value; }
+            set { this._describeElasticLoadBalancersResult = value; }
         }
     }
 }
-    

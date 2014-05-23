@@ -18,61 +18,66 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>DescribeLoadBasedAutoScaling</c> request.</para>
+    /// Contains the response to a <code>DescribeLoadBasedAutoScaling</code> request.
     /// </summary>
     public partial class DescribeLoadBasedAutoScalingResult
     {
-        
-        private List<LoadBasedAutoScalingConfiguration> loadBasedAutoScalingConfigurations = new List<LoadBasedAutoScalingConfiguration>();
+        private List<LoadBasedAutoScalingConfiguration> _loadBasedAutoScalingConfigurations = new List<LoadBasedAutoScalingConfiguration>();
+
 
         /// <summary>
-        /// An array of <c>LoadBasedAutoScalingConfiguration</c> objects that describe each layer's configuration.
-        ///  
+        /// Gets and sets the property LoadBasedAutoScalingConfigurations. 
+        /// <para>
+        /// An array of <code>LoadBasedAutoScalingConfiguration</code> objects that describe each
+        /// layer's configuration.
+        /// </para>
         /// </summary>
         public List<LoadBasedAutoScalingConfiguration> LoadBasedAutoScalingConfigurations
         {
-            get { return this.loadBasedAutoScalingConfigurations; }
-            set { this.loadBasedAutoScalingConfigurations = value; }
+            get { return this._loadBasedAutoScalingConfigurations; }
+            set { this._loadBasedAutoScalingConfigurations = value; }
         }
+
         /// <summary>
-        /// Adds elements to the LoadBasedAutoScalingConfigurations collection
+        /// Sets the LoadBasedAutoScalingConfigurations property
         /// </summary>
         /// <param name="loadBasedAutoScalingConfigurations">The values to add to the LoadBasedAutoScalingConfigurations collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeLoadBasedAutoScalingResult WithLoadBasedAutoScalingConfigurations(params LoadBasedAutoScalingConfiguration[] loadBasedAutoScalingConfigurations)
         {
-            foreach (LoadBasedAutoScalingConfiguration element in loadBasedAutoScalingConfigurations)
+            foreach (var element in loadBasedAutoScalingConfigurations)
             {
-                this.loadBasedAutoScalingConfigurations.Add(element);
+                this._loadBasedAutoScalingConfigurations.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the LoadBasedAutoScalingConfigurations collection
+        /// Sets the LoadBasedAutoScalingConfigurations property
         /// </summary>
         /// <param name="loadBasedAutoScalingConfigurations">The values to add to the LoadBasedAutoScalingConfigurations collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeLoadBasedAutoScalingResult WithLoadBasedAutoScalingConfigurations(IEnumerable<LoadBasedAutoScalingConfiguration> loadBasedAutoScalingConfigurations)
         {
-            foreach (LoadBasedAutoScalingConfiguration element in loadBasedAutoScalingConfigurations)
+            foreach (var element in loadBasedAutoScalingConfigurations)
             {
-                this.loadBasedAutoScalingConfigurations.Add(element);
+                this._loadBasedAutoScalingConfigurations.Add(element);
             }
-
             return this;
         }
-
         // Check to see if LoadBasedAutoScalingConfigurations property is set
         internal bool IsSetLoadBasedAutoScalingConfigurations()
         {
-            return this.loadBasedAutoScalingConfigurations.Count > 0;
+            return this._loadBasedAutoScalingConfigurations != null && this._loadBasedAutoScalingConfigurations.Count > 0; 
         }
+
     }
 }

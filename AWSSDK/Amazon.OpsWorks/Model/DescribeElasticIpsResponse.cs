@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeElasticIpsResult response and response metadata.
+    /// Returns information about the DescribeElasticIpsResult response and response metadata.
     /// </summary>
     public class DescribeElasticIpsResponse : AmazonWebServiceResponse
     {
-        private DescribeElasticIpsResult describeElasticIpsResult;
+        private DescribeElasticIpsResult _describeElasticIpsResult;
 
         /// <summary>
         /// Gets and sets the DescribeElasticIpsResult property.
-        /// Contains the response to a DescribeElasticIps request.
+        /// Represents the output of a DescribeElasticIps operation.
         /// </summary>
         public DescribeElasticIpsResult DescribeElasticIpsResult
         {
             get
             {
-                if(this.describeElasticIpsResult == null)
+                if(this._describeElasticIpsResult == null)
                 {
-                    this.describeElasticIpsResult = new DescribeElasticIpsResult();
+                    this._describeElasticIpsResult = new DescribeElasticIpsResult();
                 }
-
-                return this.describeElasticIpsResult;
+                return this._describeElasticIpsResult;
             }
-            set { this.describeElasticIpsResult = value; }
+            set { this._describeElasticIpsResult = value; }
         }
     }
 }
-    

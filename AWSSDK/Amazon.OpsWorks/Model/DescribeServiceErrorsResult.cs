@@ -18,61 +18,66 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>DescribeServiceErrors</c> request.</para>
+    /// Contains the response to a <code>DescribeServiceErrors</code> request.
     /// </summary>
     public partial class DescribeServiceErrorsResult
     {
-        
-        private List<ServiceError> serviceErrors = new List<ServiceError>();
+        private List<ServiceError> _serviceErrors = new List<ServiceError>();
+
 
         /// <summary>
-        /// An array of <c>ServiceError</c> objects that describe the specified service errors.
-        ///  
+        /// Gets and sets the property ServiceErrors. 
+        /// <para>
+        /// An array of <code>ServiceError</code> objects that describe the specified service
+        /// errors.
+        /// </para>
         /// </summary>
         public List<ServiceError> ServiceErrors
         {
-            get { return this.serviceErrors; }
-            set { this.serviceErrors = value; }
+            get { return this._serviceErrors; }
+            set { this._serviceErrors = value; }
         }
+
         /// <summary>
-        /// Adds elements to the ServiceErrors collection
+        /// Sets the ServiceErrors property
         /// </summary>
         /// <param name="serviceErrors">The values to add to the ServiceErrors collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeServiceErrorsResult WithServiceErrors(params ServiceError[] serviceErrors)
         {
-            foreach (ServiceError element in serviceErrors)
+            foreach (var element in serviceErrors)
             {
-                this.serviceErrors.Add(element);
+                this._serviceErrors.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the ServiceErrors collection
+        /// Sets the ServiceErrors property
         /// </summary>
         /// <param name="serviceErrors">The values to add to the ServiceErrors collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeServiceErrorsResult WithServiceErrors(IEnumerable<ServiceError> serviceErrors)
         {
-            foreach (ServiceError element in serviceErrors)
+            foreach (var element in serviceErrors)
             {
-                this.serviceErrors.Add(element);
+                this._serviceErrors.Add(element);
             }
-
             return this;
         }
-
         // Check to see if ServiceErrors property is set
         internal bool IsSetServiceErrors()
         {
-            return this.serviceErrors.Count > 0;
+            return this._serviceErrors != null && this._serviceErrors.Count > 0; 
         }
+
     }
 }

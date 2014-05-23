@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the  RegisterElasticIpResult response and response metadata.
+    /// Returns information about the RegisterElasticIpResult response and response metadata.
     /// </summary>
     public class RegisterElasticIpResponse : AmazonWebServiceResponse
     {
-        private RegisterElasticIpResult registerElasticIpResult;
+        private RegisterElasticIpResult _registerElasticIpResult;
 
         /// <summary>
         /// Gets and sets the RegisterElasticIpResult property.
-        /// Contains the response to a RegisterElasticIp request.
+        /// Represents the output of a RegisterElasticIp operation.
         /// </summary>
         public RegisterElasticIpResult RegisterElasticIpResult
         {
             get
             {
-                if(this.registerElasticIpResult == null)
+                if(this._registerElasticIpResult == null)
                 {
-                    this.registerElasticIpResult = new RegisterElasticIpResult();
+                    this._registerElasticIpResult = new RegisterElasticIpResult();
                 }
-
-                return this.registerElasticIpResult;
+                return this._registerElasticIpResult;
             }
-            set { this.registerElasticIpResult = value; }
+            set { this._registerElasticIpResult = value; }
         }
     }
 }
-    

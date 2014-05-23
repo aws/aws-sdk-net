@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.OpsWorks.Model
 {
     ///<summary>
-    /// AmazonOpsWorks exception
+    /// OpsWorks exception
     /// </summary>
     public class ValidationException : AmazonOpsWorksException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.OpsWorks.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal ValidationException(string message) 
+        public ValidationException(string message) 
             : base(message) {}
           
-        internal ValidationException(string message, Exception innerException) 
+        public ValidationException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal ValidationException(Exception innerException) 
+        public ValidationException(Exception innerException) 
             : base(innerException) {}
             
-        internal ValidationException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ValidationException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal ValidationException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ValidationException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

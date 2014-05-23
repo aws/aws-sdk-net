@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,99 +18,38 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para>Describes an event.</para>
+    /// Describes an event.
     /// </summary>
     public partial class EventDescription
     {
-        
-        private DateTime? eventDate;
-        private string message;
-        private string applicationName;
-        private string versionLabel;
-        private string templateName;
-        private string environmentName;
-        private string requestId;
-        private string severity;
+        private string _applicationName;
+        private string _environmentName;
+        private DateTime? _eventDate;
+        private string _message;
+        private string _requestId;
+        private string _severity;
+        private string _templateName;
+        private string _versionLabel;
+
 
         /// <summary>
-        /// The date when the event occurred.
-        ///  
-        /// </summary>
-        public DateTime EventDate
-        {
-            get { return this.eventDate ?? default(DateTime); }
-            set { this.eventDate = value; }
-        }
-
-        /// <summary>
-        /// Sets the EventDate property
-        /// </summary>
-        /// <param name="eventDate">The value to set for the EventDate property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public EventDescription WithEventDate(DateTime eventDate)
-        {
-            this.eventDate = eventDate;
-            return this;
-        }
-            
-
-        // Check to see if EventDate property is set
-        internal bool IsSetEventDate()
-        {
-            return this.eventDate.HasValue;
-        }
-
-        /// <summary>
-        /// The event message.
-        ///  
-        /// </summary>
-        public string Message
-        {
-            get { return this.message; }
-            set { this.message = value; }
-        }
-
-        /// <summary>
-        /// Sets the Message property
-        /// </summary>
-        /// <param name="message">The value to set for the Message property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public EventDescription WithMessage(string message)
-        {
-            this.message = message;
-            return this;
-        }
-            
-
-        // Check to see if Message property is set
-        internal bool IsSetMessage()
-        {
-            return this.message != null;
-        }
-
-        /// <summary>
-        /// The application associated with the event.
-        ///  
+        /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 100</description>
-        ///     </item>
-        /// </list>
+        /// The application associated with the event.
         /// </para>
         /// </summary>
         public string ApplicationName
         {
-            get { return this.applicationName; }
-            set { this.applicationName = value; }
+            get { return this._applicationName; }
+            set { this._applicationName = value; }
         }
+
 
         /// <summary>
         /// Sets the ApplicationName property
@@ -120,111 +59,29 @@ namespace Amazon.ElasticBeanstalk.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventDescription WithApplicationName(string applicationName)
         {
-            this.applicationName = applicationName;
+            this._applicationName = applicationName;
             return this;
         }
-            
 
         // Check to see if ApplicationName property is set
         internal bool IsSetApplicationName()
         {
-            return this.applicationName != null;
+            return this._applicationName != null;
         }
 
+
         /// <summary>
-        /// The release label for the application version associated with this event.
-        ///  
+        /// Gets and sets the property EnvironmentName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 100</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string VersionLabel
-        {
-            get { return this.versionLabel; }
-            set { this.versionLabel = value; }
-        }
-
-        /// <summary>
-        /// Sets the VersionLabel property
-        /// </summary>
-        /// <param name="versionLabel">The value to set for the VersionLabel property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public EventDescription WithVersionLabel(string versionLabel)
-        {
-            this.versionLabel = versionLabel;
-            return this;
-        }
-            
-
-        // Check to see if VersionLabel property is set
-        internal bool IsSetVersionLabel()
-        {
-            return this.versionLabel != null;
-        }
-
-        /// <summary>
-        /// The name of the configuration associated with this event.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 100</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string TemplateName
-        {
-            get { return this.templateName; }
-            set { this.templateName = value; }
-        }
-
-        /// <summary>
-        /// Sets the TemplateName property
-        /// </summary>
-        /// <param name="templateName">The value to set for the TemplateName property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public EventDescription WithTemplateName(string templateName)
-        {
-            this.templateName = templateName;
-            return this;
-        }
-            
-
-        // Check to see if TemplateName property is set
-        internal bool IsSetTemplateName()
-        {
-            return this.templateName != null;
-        }
-
-        /// <summary>
         /// The name of the environment associated with this event.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>4 - 23</description>
-        ///     </item>
-        /// </list>
         /// </para>
         /// </summary>
         public string EnvironmentName
         {
-            get { return this.environmentName; }
-            set { this.environmentName = value; }
+            get { return this._environmentName; }
+            set { this._environmentName = value; }
         }
+
 
         /// <summary>
         /// Sets the EnvironmentName property
@@ -234,26 +91,93 @@ namespace Amazon.ElasticBeanstalk.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventDescription WithEnvironmentName(string environmentName)
         {
-            this.environmentName = environmentName;
+            this._environmentName = environmentName;
             return this;
         }
-            
 
         // Check to see if EnvironmentName property is set
         internal bool IsSetEnvironmentName()
         {
-            return this.environmentName != null;
+            return this._environmentName != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property EventDate. 
+        /// <para>
+        /// The date when the event occurred.
+        /// </para>
+        /// </summary>
+        public DateTime EventDate
+        {
+            get { return this._eventDate.GetValueOrDefault(); }
+            set { this._eventDate = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the EventDate property
+        /// </summary>
+        /// <param name="eventDate">The value to set for the EventDate property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public EventDescription WithEventDate(DateTime eventDate)
+        {
+            this._eventDate = eventDate;
+            return this;
+        }
+
+        // Check to see if EventDate property is set
+        internal bool IsSetEventDate()
+        {
+            return this._eventDate.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Message. 
+        /// <para>
+        /// The event message.
+        /// </para>
+        /// </summary>
+        public string Message
+        {
+            get { return this._message; }
+            set { this._message = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the Message property
+        /// </summary>
+        /// <param name="message">The value to set for the Message property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public EventDescription WithMessage(string message)
+        {
+            this._message = message;
+            return this;
+        }
+
+        // Check to see if Message property is set
+        internal bool IsSetMessage()
+        {
+            return this._message != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property RequestId. 
+        /// <para>
         /// The web service request ID for the activity of this event.
-        ///  
+        /// </para>
         /// </summary>
         public string RequestId
         {
-            get { return this.requestId; }
-            set { this.requestId = value; }
+            get { return this._requestId; }
+            set { this._requestId = value; }
         }
+
 
         /// <summary>
         /// Sets the RequestId property
@@ -263,35 +187,29 @@ namespace Amazon.ElasticBeanstalk.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventDescription WithRequestId(string requestId)
         {
-            this.requestId = requestId;
+            this._requestId = requestId;
             return this;
         }
-            
 
         // Check to see if RequestId property is set
         internal bool IsSetRequestId()
         {
-            return this.requestId != null;
+            return this._requestId != null;
         }
 
+
         /// <summary>
-        /// The severity level of this event.
-        ///  
+        /// Gets and sets the property Severity. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>TRACE, DEBUG, INFO, WARN, ERROR, FATAL</description>
-        ///     </item>
-        /// </list>
+        /// The severity level of this event. 
         /// </para>
         /// </summary>
         public string Severity
         {
-            get { return this.severity; }
-            set { this.severity = value; }
+            get { return this._severity; }
+            set { this._severity = value; }
         }
+
 
         /// <summary>
         /// Sets the Severity property
@@ -301,15 +219,79 @@ namespace Amazon.ElasticBeanstalk.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventDescription WithSeverity(string severity)
         {
-            this.severity = severity;
+            this._severity = severity;
             return this;
         }
-            
 
         // Check to see if Severity property is set
         internal bool IsSetSeverity()
         {
-            return this.severity != null;
+            return this._severity != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property TemplateName. 
+        /// <para>
+        /// The name of the configuration associated with this event.
+        /// </para>
+        /// </summary>
+        public string TemplateName
+        {
+            get { return this._templateName; }
+            set { this._templateName = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the TemplateName property
+        /// </summary>
+        /// <param name="templateName">The value to set for the TemplateName property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public EventDescription WithTemplateName(string templateName)
+        {
+            this._templateName = templateName;
+            return this;
+        }
+
+        // Check to see if TemplateName property is set
+        internal bool IsSetTemplateName()
+        {
+            return this._templateName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property VersionLabel. 
+        /// <para>
+        /// The release label for the application version associated with this         event.
+        /// </para>
+        /// </summary>
+        public string VersionLabel
+        {
+            get { return this._versionLabel; }
+            set { this._versionLabel = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the VersionLabel property
+        /// </summary>
+        /// <param name="versionLabel">The value to set for the VersionLabel property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public EventDescription WithVersionLabel(string versionLabel)
+        {
+            this._versionLabel = versionLabel;
+            return this;
+        }
+
+        // Check to see if VersionLabel property is set
+        internal bool IsSetVersionLabel()
+        {
+            return this._versionLabel != null;
+        }
+
     }
 }

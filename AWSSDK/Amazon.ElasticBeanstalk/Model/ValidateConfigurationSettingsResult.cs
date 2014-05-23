@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,61 +18,65 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para>Provides a list of validation messages.</para>
+    /// Provides a list of validation messages.
     /// </summary>
     public partial class ValidateConfigurationSettingsResult
     {
-        
-        private List<ValidationMessage> messages = new List<ValidationMessage>();
+        private List<ValidationMessage> _messages = new List<ValidationMessage>();
+
 
         /// <summary>
-        /// A list of <a>ValidationMessage</a>.
-        ///  
+        /// Gets and sets the property Messages. 
+        /// <para>
+        ///          A list of         <a>ValidationMessage</a>.      
+        /// </para>
         /// </summary>
         public List<ValidationMessage> Messages
         {
-            get { return this.messages; }
-            set { this.messages = value; }
+            get { return this._messages; }
+            set { this._messages = value; }
         }
+
         /// <summary>
-        /// Adds elements to the Messages collection
+        /// Sets the Messages property
         /// </summary>
         /// <param name="messages">The values to add to the Messages collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ValidateConfigurationSettingsResult WithMessages(params ValidationMessage[] messages)
         {
-            foreach (ValidationMessage element in messages)
+            foreach (var element in messages)
             {
-                this.messages.Add(element);
+                this._messages.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the Messages collection
+        /// Sets the Messages property
         /// </summary>
         /// <param name="messages">The values to add to the Messages collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ValidateConfigurationSettingsResult WithMessages(IEnumerable<ValidationMessage> messages)
         {
-            foreach (ValidationMessage element in messages)
+            foreach (var element in messages)
             {
-                this.messages.Add(element);
+                this._messages.Add(element);
             }
-
             return this;
         }
-
         // Check to see if Messages property is set
         internal bool IsSetMessages()
         {
-            return this.messages.Count > 0;
+            return this._messages != null && this._messages.Count > 0; 
         }
+
     }
 }

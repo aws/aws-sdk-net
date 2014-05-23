@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
@@ -28,70 +29,46 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Register Volume Request Marshaller
+    /// RegisterVolume Request Marshaller
     /// </summary>       
-    internal class RegisterVolumeRequestMarshaller : IMarshaller<IRequest, RegisterVolumeRequest> 
+    public class RegisterVolumeRequestMarshaller : IMarshaller<IRequest, RegisterVolumeRequest> 
     {
-        
-
-        public IRequest Marshall(RegisterVolumeRequest registerVolumeRequest) 
+        public IRequest Marshall(RegisterVolumeRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(registerVolumeRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.RegisterVolume";
             request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
 
-            
-              
-            string uriResourcePath = ""; 
-            
-            if (uriResourcePath.Contains("?")) 
-            {
-                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
-                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
-        
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                }
-            }
-            
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
-            using (StringWriter stringWriter = new StringWriter())
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (registerVolumeRequest != null && registerVolumeRequest.IsSetEc2VolumeId()) 
+                if(publicRequest != null && publicRequest.IsSetEc2VolumeId())
                 {
                     writer.WritePropertyName("Ec2VolumeId");
-                    writer.Write(registerVolumeRequest.Ec2VolumeId);
-                }
-                if (registerVolumeRequest != null && registerVolumeRequest.IsSetStackId()) 
-                {
-                    writer.WritePropertyName("StackId");
-                    writer.Write(registerVolumeRequest.StackId);
+                    writer.Write(publicRequest.Ec2VolumeId);
                 }
 
+                if(publicRequest != null && publicRequest.IsSetStackId())
+                {
+                    writer.WritePropertyName("StackId");
+                    writer.Write(publicRequest.StackId);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
 
             return request;
         }
+
+
     }
 }

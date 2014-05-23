@@ -34,6 +34,7 @@ namespace Amazon.S3.Model
         string bucketName;
         string key;
         int? days;
+        private string versionId;
 
         #endregion
 
@@ -139,6 +140,45 @@ namespace Amazon.S3.Model
         }
 
         #endregion
+
+        #region VersionId
+
+        /// <summary>
+        /// Gets and sets the VersionId property.
+        /// VersionId used to reference a specific version of the object.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "VersionId")]
+        public string VersionId
+        {
+            get { return this.versionId; }
+            set { this.versionId = value; }
+        }
+
+        /// <summary>
+        /// Sets the VersionId property for this request.
+        /// This is the S3 VersionId for the specific version of the S3 Object you
+        /// want to restore.
+        /// </summary>
+        /// <param name="versionId">The value that VersionId is set to</param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public RestoreObjectRequest WithVersionId(string versionId)
+        {
+            this.versionId = versionId;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if VersionId property is set.
+        /// </summary>
+        /// <returns>true if VersionId property is set.</returns>
+        internal bool IsSetVersionId()
+        {
+            return !System.String.IsNullOrEmpty(this.versionId);
+        }
+
+        #endregion
+
 
         internal string ContentXML
         {

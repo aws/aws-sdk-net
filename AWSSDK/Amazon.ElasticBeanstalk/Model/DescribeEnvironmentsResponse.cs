@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeEnvironmentsResult response and response metadata.
+    /// Returns information about the DescribeEnvironmentsResult response and response metadata.
     /// </summary>
     public class DescribeEnvironmentsResponse : AmazonWebServiceResponse
     {
-        private DescribeEnvironmentsResult describeEnvironmentsResult;
+        private DescribeEnvironmentsResult _describeEnvironmentsResult;
 
         /// <summary>
         /// Gets and sets the DescribeEnvironmentsResult property.
-        /// Result message containing a list of environment descriptions.
+        /// Represents the output of a DescribeEnvironments operation.
         /// </summary>
         public DescribeEnvironmentsResult DescribeEnvironmentsResult
         {
-            get 
+            get
             {
-                if(this.describeEnvironmentsResult == null)
+                if(this._describeEnvironmentsResult == null)
                 {
-                    this.describeEnvironmentsResult = new DescribeEnvironmentsResult();
+                    this._describeEnvironmentsResult = new DescribeEnvironmentsResult();
                 }
-
-                return this.describeEnvironmentsResult; 
+                return this._describeEnvironmentsResult;
             }
-            set { this.describeEnvironmentsResult = value; }
+            set { this._describeEnvironmentsResult = value; }
         }
     }
 }
-    

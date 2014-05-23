@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,61 +18,65 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para>Result message wrapping a list of application version descriptions.</para>
+    /// Result message wrapping a list of application version descriptions.
     /// </summary>
     public partial class DescribeApplicationVersionsResult
     {
-        
-        private List<ApplicationVersionDescription> applicationVersions = new List<ApplicationVersionDescription>();
+        private List<ApplicationVersionDescription> _applicationVersions = new List<ApplicationVersionDescription>();
+
 
         /// <summary>
-        /// A list of <a>ApplicationVersionDescription</a> .
-        ///  
+        /// Gets and sets the property ApplicationVersions. 
+        /// <para>
+        ///          A list of         <a>ApplicationVersionDescription</a>         .      
+        /// </para>
         /// </summary>
         public List<ApplicationVersionDescription> ApplicationVersions
         {
-            get { return this.applicationVersions; }
-            set { this.applicationVersions = value; }
+            get { return this._applicationVersions; }
+            set { this._applicationVersions = value; }
         }
+
         /// <summary>
-        /// Adds elements to the ApplicationVersions collection
+        /// Sets the ApplicationVersions property
         /// </summary>
         /// <param name="applicationVersions">The values to add to the ApplicationVersions collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeApplicationVersionsResult WithApplicationVersions(params ApplicationVersionDescription[] applicationVersions)
         {
-            foreach (ApplicationVersionDescription element in applicationVersions)
+            foreach (var element in applicationVersions)
             {
-                this.applicationVersions.Add(element);
+                this._applicationVersions.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the ApplicationVersions collection
+        /// Sets the ApplicationVersions property
         /// </summary>
         /// <param name="applicationVersions">The values to add to the ApplicationVersions collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeApplicationVersionsResult WithApplicationVersions(IEnumerable<ApplicationVersionDescription> applicationVersions)
         {
-            foreach (ApplicationVersionDescription element in applicationVersions)
+            foreach (var element in applicationVersions)
             {
-                this.applicationVersions.Add(element);
+                this._applicationVersions.Add(element);
             }
-
             return this;
         }
-
         // Check to see if ApplicationVersions property is set
         internal bool IsSetApplicationVersions()
         {
-            return this.applicationVersions.Count > 0;
+            return this._applicationVersions != null && this._applicationVersions.Count > 0; 
         }
+
     }
 }

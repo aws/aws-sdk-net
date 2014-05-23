@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the  CloneStackResult response and response metadata.
+    /// Returns information about the CloneStackResult response and response metadata.
     /// </summary>
     public class CloneStackResponse : AmazonWebServiceResponse
     {
-        private CloneStackResult cloneStackResult;
+        private CloneStackResult _cloneStackResult;
 
         /// <summary>
         /// Gets and sets the CloneStackResult property.
-        /// Contains the response to a CloneStack request.
+        /// Represents the output of a CloneStack operation.
         /// </summary>
         public CloneStackResult CloneStackResult
         {
             get
             {
-                if(this.cloneStackResult == null)
+                if(this._cloneStackResult == null)
                 {
-                    this.cloneStackResult = new CloneStackResult();
+                    this._cloneStackResult = new CloneStackResult();
                 }
-
-                return this.cloneStackResult;
+                return this._cloneStackResult;
             }
-            set { this.cloneStackResult = value; }
+            set { this._cloneStackResult = value; }
         }
     }
 }
-    

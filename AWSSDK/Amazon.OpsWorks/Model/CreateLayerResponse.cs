@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the  CreateLayerResult response and response metadata.
+    /// Returns information about the CreateLayerResult response and response metadata.
     /// </summary>
     public class CreateLayerResponse : AmazonWebServiceResponse
     {
-        private CreateLayerResult createLayerResult;
+        private CreateLayerResult _createLayerResult;
 
         /// <summary>
         /// Gets and sets the CreateLayerResult property.
-        /// Contains the response to a CreateLayer request.
+        /// Represents the output of a CreateLayer operation.
         /// </summary>
         public CreateLayerResult CreateLayerResult
         {
             get
             {
-                if(this.createLayerResult == null)
+                if(this._createLayerResult == null)
                 {
-                    this.createLayerResult = new CreateLayerResult();
+                    this._createLayerResult = new CreateLayerResult();
                 }
-
-                return this.createLayerResult;
+                return this._createLayerResult;
             }
-            set { this.createLayerResult = value; }
+            set { this._createLayerResult = value; }
         }
     }
 }
-    

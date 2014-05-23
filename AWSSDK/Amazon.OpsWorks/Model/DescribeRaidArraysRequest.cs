@@ -25,27 +25,39 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeRaidArrays operation.
-    /// <para>Describe an instance's RAID arrays.</para> <para><b>NOTE:</b> You must specify at least one of the parameters. </para> <para>
-    /// <b>Required Permissions</b> : To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an
-    /// attached policy that explicitly grants permissions. For more information on user permissions, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+    /// Describe an instance's RAID arrays.
+    /// 
+    ///   <note>      
+    /// <para>
+    /// You must specify at least one of the parameters.
+    /// </para>
+    ///     </note>    
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+    /// or Manage       permissions level for the stack, or an attached policy that explicitly
+    /// grants permissions.       For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeRaidArrays"/>
-    public class DescribeRaidArraysRequest : AmazonWebServiceRequest
+    public partial class DescribeRaidArraysRequest : AmazonWebServiceRequest
     {
-        private string instanceId;
-        private List<string> raidArrayIds = new List<string>();
+        private string _instanceId;
+        private List<string> _raidArrayIds = new List<string>();
+
 
         /// <summary>
-        /// The instance ID. If you use this parameter, <c>DescribeRaidArrays</c> returns descriptions of the RAID arrays associated with the specified
-        /// instance.
-        ///  
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns
+        ///         descriptions of the RAID arrays associated with the specified instance. 
+        /// </para>
         /// </summary>
         public string InstanceId
         {
-            get { return this.instanceId; }
-            set { this.instanceId = value; }
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
         }
+
 
         /// <summary>
         /// Sets the InstanceId property
@@ -55,64 +67,65 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeRaidArraysRequest WithInstanceId(string instanceId)
         {
-            this.instanceId = instanceId;
+            this._instanceId = instanceId;
             return this;
         }
-            
 
         // Check to see if InstanceId property is set
         internal bool IsSetInstanceId()
         {
-            return this.instanceId != null;
+            return this._instanceId != null;
         }
 
+
         /// <summary>
-        /// An array of RAID array IDs. If you use this parameter, <c>DescribeRaidArrays</c> returns descriptions of the specified arrays. Otherwise, it
-        /// returns a description of every array.
-        ///  
+        /// Gets and sets the property RaidArrayIds. 
+        /// <para>
+        /// An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code>
+        /// returns         descriptions of the specified arrays. Otherwise, it returns a description
+        /// of every array.
+        /// </para>
         /// </summary>
         public List<string> RaidArrayIds
         {
-            get { return this.raidArrayIds; }
-            set { this.raidArrayIds = value; }
+            get { return this._raidArrayIds; }
+            set { this._raidArrayIds = value; }
         }
+
         /// <summary>
-        /// Adds elements to the RaidArrayIds collection
+        /// Sets the RaidArrayIds property
         /// </summary>
         /// <param name="raidArrayIds">The values to add to the RaidArrayIds collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeRaidArraysRequest WithRaidArrayIds(params string[] raidArrayIds)
         {
-            foreach (string element in raidArrayIds)
+            foreach (var element in raidArrayIds)
             {
-                this.raidArrayIds.Add(element);
+                this._raidArrayIds.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the RaidArrayIds collection
+        /// Sets the RaidArrayIds property
         /// </summary>
         /// <param name="raidArrayIds">The values to add to the RaidArrayIds collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeRaidArraysRequest WithRaidArrayIds(IEnumerable<string> raidArrayIds)
         {
-            foreach (string element in raidArrayIds)
+            foreach (var element in raidArrayIds)
             {
-                this.raidArrayIds.Add(element);
+                this._raidArrayIds.Add(element);
             }
-
             return this;
         }
-
         // Check to see if RaidArrayIds property is set
         internal bool IsSetRaidArrayIds()
         {
-            return this.raidArrayIds.Count > 0;
+            return this._raidArrayIds != null && this._raidArrayIds.Count > 0; 
         }
+
     }
 }
-    

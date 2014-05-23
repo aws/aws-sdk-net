@@ -12,117 +12,117 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using Amazon.OpsWorks.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+using Amazon.OpsWorks.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for Command Object
+    /// </summary>  
+    public class CommandUnmarshaller : IUnmarshaller<Command, XmlUnmarshallerContext>, IUnmarshaller<Command, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// CommandUnmarshaller
-      /// </summary>
-      internal class CommandUnmarshaller : IUnmarshaller<Command, XmlUnmarshallerContext>, IUnmarshaller<Command, JsonUnmarshallerContext>
-      {
         Command IUnmarshaller<Command, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Command Unmarshall(JsonUnmarshallerContext context)
         {
             if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
                 return null;
-            Command command = new Command();
-          
+            
+            var unmarshalledObject = new Command();
+                    
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+
             while (context.Read())
             {
                 if ((context.IsKey) && (context.CurrentDepth == targetDepth))
                 {
-                context.Read();
-                context.Read();
-              
-              if (context.TestExpression("CommandId", targetDepth))
-              {
-                command.CommandId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("InstanceId", targetDepth))
-              {
-                command.InstanceId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("DeploymentId", targetDepth))
-              {
-                command.DeploymentId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("CreatedAt", targetDepth))
-              {
-                command.CreatedAt = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("AcknowledgedAt", targetDepth))
-              {
-                command.AcknowledgedAt = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("CompletedAt", targetDepth))
-              {
-                command.CompletedAt = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Status", targetDepth))
-              {
-                command.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("ExitCode", targetDepth))
-              {
-                command.ExitCode = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("LogUrl", targetDepth))
-              {
-                command.LogUrl = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Type", targetDepth))
-              {
-                command.Type = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                    context.Read();
+                    context.Read();
+                    if (context.TestExpression("AcknowledgedAt", targetDepth))
+                    {
+                        unmarshalledObject.AcknowledgedAt = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("CommandId", targetDepth))
+                    {
+                        unmarshalledObject.CommandId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("CompletedAt", targetDepth))
+                    {
+                        unmarshalledObject.CompletedAt = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("CreatedAt", targetDepth))
+                    {
+                        unmarshalledObject.CreatedAt = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("DeploymentId", targetDepth))
+                    {
+                        unmarshalledObject.DeploymentId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ExitCode", targetDepth))
+                    {
+                        unmarshalledObject.ExitCode = IntUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("InstanceId", targetDepth))
+                    {
+                        unmarshalledObject.InstanceId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("LogUrl", targetDepth))
+                    {
+                        unmarshalledObject.LogUrl = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Status", targetDepth))
+                    {
+                        unmarshalledObject.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Type", targetDepth))
+                    {
+                        unmarshalledObject.Type = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {
-                    return command;
+                    return unmarshalledObject;
                 }
-            }
-          
-
-            return command;
+            }          
+            return unmarshalledObject;
         }
+
 
         private static CommandUnmarshaller instance;
         public static CommandUnmarshaller GetInstance()
         {
             if (instance == null)
+            {
                 instance = new CommandUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-  

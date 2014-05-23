@@ -25,62 +25,71 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLoadBasedAutoScaling operation.
-    /// <para>Describes load-based auto scaling configurations for specified layers.</para> <para><b>NOTE:</b> You must specify at least one of the
-    /// parameters. </para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Show, Deploy, or Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+    /// Describes load-based auto scaling configurations for specified layers.
+    /// 
+    ///   <note>      
+    /// <para>
+    /// You must specify at least one of the parameters.
+    /// </para>
+    ///     </note>    
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+    /// or Manage permissions level for the stack, or an attached       policy that explicitly
+    /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeLoadBasedAutoScaling"/>
-    public class DescribeLoadBasedAutoScalingRequest : AmazonWebServiceRequest
+    public partial class DescribeLoadBasedAutoScalingRequest : AmazonWebServiceRequest
     {
-        private List<string> layerIds = new List<string>();
+        private List<string> _layerIds = new List<string>();
+
 
         /// <summary>
+        /// Gets and sets the property LayerIds. 
+        /// <para>
         /// An array of layer IDs.
-        ///  
+        /// </para>
         /// </summary>
         public List<string> LayerIds
         {
-            get { return this.layerIds; }
-            set { this.layerIds = value; }
+            get { return this._layerIds; }
+            set { this._layerIds = value; }
         }
+
         /// <summary>
-        /// Adds elements to the LayerIds collection
+        /// Sets the LayerIds property
         /// </summary>
         /// <param name="layerIds">The values to add to the LayerIds collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeLoadBasedAutoScalingRequest WithLayerIds(params string[] layerIds)
         {
-            foreach (string element in layerIds)
+            foreach (var element in layerIds)
             {
-                this.layerIds.Add(element);
+                this._layerIds.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the LayerIds collection
+        /// Sets the LayerIds property
         /// </summary>
         /// <param name="layerIds">The values to add to the LayerIds collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeLoadBasedAutoScalingRequest WithLayerIds(IEnumerable<string> layerIds)
         {
-            foreach (string element in layerIds)
+            foreach (var element in layerIds)
             {
-                this.layerIds.Add(element);
+                this._layerIds.Add(element);
             }
-
             return this;
         }
-
         // Check to see if LayerIds property is set
         internal bool IsSetLayerIds()
         {
-            return this.layerIds.Count > 0;
+            return this._layerIds != null && this._layerIds.Count > 0; 
         }
+
     }
 }
-    

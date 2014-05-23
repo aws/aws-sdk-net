@@ -25,24 +25,33 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateMyUserProfile operation.
-    /// <para>Updates a user's SSH public key.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have self-management
-    /// enabled or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+    /// Updates a user's SSH public key.
+    /// 
+    ///     
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have self-management
+    /// enabled or an attached       policy that explicitly grants permissions. For more information
+    /// on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.UpdateMyUserProfile"/>
-    public class UpdateMyUserProfileRequest : AmazonWebServiceRequest
+    public partial class UpdateMyUserProfileRequest : AmazonWebServiceRequest
     {
-        private string sshPublicKey;
+        private string _sshPublicKey;
+
 
         /// <summary>
+        /// Gets and sets the property SshPublicKey. 
+        /// <para>
         /// The user's SSH public key.
-        ///  
+        /// </para>
         /// </summary>
         public string SshPublicKey
         {
-            get { return this.sshPublicKey; }
-            set { this.sshPublicKey = value; }
+            get { return this._sshPublicKey; }
+            set { this._sshPublicKey = value; }
         }
+
 
         /// <summary>
         /// Sets the SshPublicKey property
@@ -52,16 +61,15 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateMyUserProfileRequest WithSshPublicKey(string sshPublicKey)
         {
-            this.sshPublicKey = sshPublicKey;
+            this._sshPublicKey = sshPublicKey;
             return this;
         }
-            
 
         // Check to see if SshPublicKey property is set
         internal bool IsSetSshPublicKey()
         {
-            return this.sshPublicKey != null;
+            return this._sshPublicKey != null;
         }
+
     }
 }
-    

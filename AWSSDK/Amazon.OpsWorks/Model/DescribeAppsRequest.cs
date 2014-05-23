@@ -25,26 +25,89 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeApps operation.
-    /// <para>Requests a description of a specified set of apps.</para> <para><b>NOTE:</b> You must specify at least one of the parameters. </para>
-    /// <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or
-    /// an attached policy that explicitly grants permissions. For more information on user permissions, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+    /// Requests a description of a specified set of apps.
+    /// 
+    ///   <note>      
+    /// <para>
+    /// You must specify at least one of the parameters.
+    /// </para>
+    ///     </note>    
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+    /// or Manage permissions level for the stack, or an attached       policy that explicitly
+    /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeApps"/>
-    public class DescribeAppsRequest : AmazonWebServiceRequest
+    public partial class DescribeAppsRequest : AmazonWebServiceRequest
     {
-        private string stackId;
-        private List<string> appIds = new List<string>();
+        private List<string> _appIds = new List<string>();
+        private string _stackId;
+
 
         /// <summary>
-        /// The app stack ID. If you use this parameter, <c>DescribeApps</c> returns a description of the apps in the specified stack.
-        ///  
+        /// Gets and sets the property AppIds. 
+        /// <para>
+        /// An array of app IDs for the apps to be described. If you use this parameter, <code>DescribeApps</code>
+        /// returns a description of the         specified apps.  Otherwise, it returns a description
+        /// of every app.
+        /// </para>
+        /// </summary>
+        public List<string> AppIds
+        {
+            get { return this._appIds; }
+            set { this._appIds = value; }
+        }
+
+        /// <summary>
+        /// Sets the AppIds property
+        /// </summary>
+        /// <param name="appIds">The values to add to the AppIds collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeAppsRequest WithAppIds(params string[] appIds)
+        {
+            foreach (var element in appIds)
+            {
+                this._appIds.Add(element);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the AppIds property
+        /// </summary>
+        /// <param name="appIds">The values to add to the AppIds collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeAppsRequest WithAppIds(IEnumerable<string> appIds)
+        {
+            foreach (var element in appIds)
+            {
+                this._appIds.Add(element);
+            }
+            return this;
+        }
+        // Check to see if AppIds property is set
+        internal bool IsSetAppIds()
+        {
+            return this._appIds != null && this._appIds.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property StackId. 
+        /// <para>
+        /// The app stack ID. If you use this parameter, <code>DescribeApps</code> returns a description
+        /// of the         apps in the specified stack.
+        /// </para>
         /// </summary>
         public string StackId
         {
-            get { return this.stackId; }
-            set { this.stackId = value; }
+            get { return this._stackId; }
+            set { this._stackId = value; }
         }
+
 
         /// <summary>
         /// Sets the StackId property
@@ -54,64 +117,15 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAppsRequest WithStackId(string stackId)
         {
-            this.stackId = stackId;
+            this._stackId = stackId;
             return this;
         }
-            
 
         // Check to see if StackId property is set
         internal bool IsSetStackId()
         {
-            return this.stackId != null;
+            return this._stackId != null;
         }
 
-        /// <summary>
-        /// An array of app IDs for the apps to be described. If you use this parameter, <c>DescribeApps</c> returns a description of the specified
-        /// apps. Otherwise, it returns a description of every app.
-        ///  
-        /// </summary>
-        public List<string> AppIds
-        {
-            get { return this.appIds; }
-            set { this.appIds = value; }
-        }
-        /// <summary>
-        /// Adds elements to the AppIds collection
-        /// </summary>
-        /// <param name="appIds">The values to add to the AppIds collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribeAppsRequest WithAppIds(params string[] appIds)
-        {
-            foreach (string element in appIds)
-            {
-                this.appIds.Add(element);
-            }
-
-            return this;
-        }
-
-        /// <summary>
-        /// Adds elements to the AppIds collection
-        /// </summary>
-        /// <param name="appIds">The values to add to the AppIds collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribeAppsRequest WithAppIds(IEnumerable<string> appIds)
-        {
-            foreach (string element in appIds)
-            {
-                this.appIds.Add(element);
-            }
-
-            return this;
-        }
-
-        // Check to see if AppIds property is set
-        internal bool IsSetAppIds()
-        {
-            return this.appIds.Count > 0;
-        }
     }
 }
-    

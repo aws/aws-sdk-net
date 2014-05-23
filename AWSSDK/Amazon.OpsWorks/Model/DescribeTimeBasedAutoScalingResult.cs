@@ -18,61 +18,66 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>DescribeTimeBasedAutoScaling</c> request.</para>
+    /// Contains the response to a <code>DescribeTimeBasedAutoScaling</code> request.
     /// </summary>
     public partial class DescribeTimeBasedAutoScalingResult
     {
-        
-        private List<TimeBasedAutoScalingConfiguration> timeBasedAutoScalingConfigurations = new List<TimeBasedAutoScalingConfiguration>();
+        private List<TimeBasedAutoScalingConfiguration> _timeBasedAutoScalingConfigurations = new List<TimeBasedAutoScalingConfiguration>();
+
 
         /// <summary>
-        /// An array of <c>TimeBasedAutoScalingConfiguration</c> objects that describe the configuration for the specified instances.
-        ///  
+        /// Gets and sets the property TimeBasedAutoScalingConfigurations. 
+        /// <para>
+        /// An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the
+        /// configuration for the specified instances.
+        /// </para>
         /// </summary>
         public List<TimeBasedAutoScalingConfiguration> TimeBasedAutoScalingConfigurations
         {
-            get { return this.timeBasedAutoScalingConfigurations; }
-            set { this.timeBasedAutoScalingConfigurations = value; }
+            get { return this._timeBasedAutoScalingConfigurations; }
+            set { this._timeBasedAutoScalingConfigurations = value; }
         }
+
         /// <summary>
-        /// Adds elements to the TimeBasedAutoScalingConfigurations collection
+        /// Sets the TimeBasedAutoScalingConfigurations property
         /// </summary>
         /// <param name="timeBasedAutoScalingConfigurations">The values to add to the TimeBasedAutoScalingConfigurations collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeTimeBasedAutoScalingResult WithTimeBasedAutoScalingConfigurations(params TimeBasedAutoScalingConfiguration[] timeBasedAutoScalingConfigurations)
         {
-            foreach (TimeBasedAutoScalingConfiguration element in timeBasedAutoScalingConfigurations)
+            foreach (var element in timeBasedAutoScalingConfigurations)
             {
-                this.timeBasedAutoScalingConfigurations.Add(element);
+                this._timeBasedAutoScalingConfigurations.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the TimeBasedAutoScalingConfigurations collection
+        /// Sets the TimeBasedAutoScalingConfigurations property
         /// </summary>
         /// <param name="timeBasedAutoScalingConfigurations">The values to add to the TimeBasedAutoScalingConfigurations collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeTimeBasedAutoScalingResult WithTimeBasedAutoScalingConfigurations(IEnumerable<TimeBasedAutoScalingConfiguration> timeBasedAutoScalingConfigurations)
         {
-            foreach (TimeBasedAutoScalingConfiguration element in timeBasedAutoScalingConfigurations)
+            foreach (var element in timeBasedAutoScalingConfigurations)
             {
-                this.timeBasedAutoScalingConfigurations.Add(element);
+                this._timeBasedAutoScalingConfigurations.Add(element);
             }
-
             return this;
         }
-
         // Check to see if TimeBasedAutoScalingConfigurations property is set
         internal bool IsSetTimeBasedAutoScalingConfigurations()
         {
-            return this.timeBasedAutoScalingConfigurations.Count > 0;
+            return this._timeBasedAutoScalingConfigurations != null && this._timeBasedAutoScalingConfigurations.Count > 0; 
         }
+
     }
 }

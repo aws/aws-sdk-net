@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,63 +12,68 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticBeanstalk.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   DescribeEnvironmentsResult Unmarshaller
-     /// </summary>
-    internal class DescribeEnvironmentsResultUnmarshaller : IUnmarshaller<DescribeEnvironmentsResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeEnvironmentsResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for DescribeEnvironments Object
+    /// </summary>  
+    public class DescribeEnvironmentsResultUnmarshaller : IUnmarshaller<DescribeEnvironmentsResult, XmlUnmarshallerContext>
     {
         public DescribeEnvironmentsResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            DescribeEnvironmentsResult describeEnvironmentsResult = new DescribeEnvironmentsResult();
+            DescribeEnvironmentsResult result = new DescribeEnvironmentsResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
+
                     if (context.TestExpression("Environments/member", targetDepth))
                     {
-                        describeEnvironmentsResult.Environments.Add(EnvironmentDescriptionUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = EnvironmentDescriptionUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        result.Environments.Add(item);
                         continue;
                     }
-                }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return describeEnvironmentsResult;
+                    return result;
                 }
             }
-                        
 
-
-            return describeEnvironmentsResult;
+            return result;
         }
 
-        public DescribeEnvironmentsResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static DescribeEnvironmentsResultUnmarshaller instance;
-
-        public static DescribeEnvironmentsResultUnmarshaller GetInstance() 
+        public static DescribeEnvironmentsResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new DescribeEnvironmentsResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new DescribeEnvironmentsResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

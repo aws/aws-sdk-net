@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
@@ -28,75 +29,52 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Instance Request Marshaller
+    /// DeleteInstance Request Marshaller
     /// </summary>       
-    internal class DeleteInstanceRequestMarshaller : IMarshaller<IRequest, DeleteInstanceRequest> 
+    public class DeleteInstanceRequestMarshaller : IMarshaller<IRequest, DeleteInstanceRequest> 
     {
-        
-
-        public IRequest Marshall(DeleteInstanceRequest deleteInstanceRequest) 
+        public IRequest Marshall(DeleteInstanceRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(deleteInstanceRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.DeleteInstance";
             request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
 
-            
-              
-            string uriResourcePath = ""; 
-            
-            if (uriResourcePath.Contains("?")) 
-            {
-                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
-                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
-        
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                }
-            }
-            
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
-            using (StringWriter stringWriter = new StringWriter())
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (deleteInstanceRequest != null && deleteInstanceRequest.IsSetInstanceId()) 
-                {
-                    writer.WritePropertyName("InstanceId");
-                    writer.Write(deleteInstanceRequest.InstanceId);
-                }
-                if (deleteInstanceRequest != null && deleteInstanceRequest.IsSetDeleteElasticIp()) 
+                if(publicRequest != null && publicRequest.IsSetDeleteElasticIp())
                 {
                     writer.WritePropertyName("DeleteElasticIp");
-                    writer.Write(deleteInstanceRequest.DeleteElasticIp);
-                }
-                if (deleteInstanceRequest != null && deleteInstanceRequest.IsSetDeleteVolumes()) 
-                {
-                    writer.WritePropertyName("DeleteVolumes");
-                    writer.Write(deleteInstanceRequest.DeleteVolumes);
+                    writer.Write(publicRequest.DeleteElasticIp);
                 }
 
+                if(publicRequest != null && publicRequest.IsSetDeleteVolumes())
+                {
+                    writer.WritePropertyName("DeleteVolumes");
+                    writer.Write(publicRequest.DeleteVolumes);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetInstanceId())
+                {
+                    writer.WritePropertyName("InstanceId");
+                    writer.Write(publicRequest.InstanceId);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
 
             return request;
         }
+
+
     }
 }

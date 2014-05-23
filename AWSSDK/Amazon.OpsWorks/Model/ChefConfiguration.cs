@@ -18,55 +18,32 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Describes the Chef configuration.</para>
+    /// Describes the Chef configuration.
     /// </summary>
     public partial class ChefConfiguration
     {
-        
-        private bool? manageBerkshelf;
-        private string berkshelfVersion;
+        private string _berkshelfVersion;
+        private bool? _manageBerkshelf;
+
 
         /// <summary>
-        /// Whether to enable Berkshelf.
-        ///  
-        /// </summary>
-        public bool ManageBerkshelf
-        {
-            get { return this.manageBerkshelf ?? default(bool); }
-            set { this.manageBerkshelf = value; }
-        }
-
-        /// <summary>
-        /// Sets the ManageBerkshelf property
-        /// </summary>
-        /// <param name="manageBerkshelf">The value to set for the ManageBerkshelf property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ChefConfiguration WithManageBerkshelf(bool manageBerkshelf)
-        {
-            this.manageBerkshelf = manageBerkshelf;
-            return this;
-        }
-            
-
-        // Check to see if ManageBerkshelf property is set
-        internal bool IsSetManageBerkshelf()
-        {
-            return this.manageBerkshelf.HasValue;
-        }
-
-        /// <summary>
+        /// Gets and sets the property BerkshelfVersion. 
+        /// <para>
         /// The Berkshelf version.
-        ///  
+        /// </para>
         /// </summary>
         public string BerkshelfVersion
         {
-            get { return this.berkshelfVersion; }
-            set { this.berkshelfVersion = value; }
+            get { return this._berkshelfVersion; }
+            set { this._berkshelfVersion = value; }
         }
+
 
         /// <summary>
         /// Sets the BerkshelfVersion property
@@ -76,15 +53,47 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ChefConfiguration WithBerkshelfVersion(string berkshelfVersion)
         {
-            this.berkshelfVersion = berkshelfVersion;
+            this._berkshelfVersion = berkshelfVersion;
             return this;
         }
-            
 
         // Check to see if BerkshelfVersion property is set
         internal bool IsSetBerkshelfVersion()
         {
-            return this.berkshelfVersion != null;
+            return this._berkshelfVersion != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property ManageBerkshelf. 
+        /// <para>
+        /// Whether to enable Berkshelf.
+        /// </para>
+        /// </summary>
+        public bool ManageBerkshelf
+        {
+            get { return this._manageBerkshelf.GetValueOrDefault(); }
+            set { this._manageBerkshelf = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the ManageBerkshelf property
+        /// </summary>
+        /// <param name="manageBerkshelf">The value to set for the ManageBerkshelf property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ChefConfiguration WithManageBerkshelf(bool manageBerkshelf)
+        {
+            this._manageBerkshelf = manageBerkshelf;
+            return this;
+        }
+
+        // Check to see if ManageBerkshelf property is set
+        internal bool IsSetManageBerkshelf()
+        {
+            return this._manageBerkshelf.HasValue; 
+        }
+
     }
 }

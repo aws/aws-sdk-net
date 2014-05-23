@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
@@ -28,70 +29,46 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Detach Elastic Load Balancer Request Marshaller
+    /// DetachElasticLoadBalancer Request Marshaller
     /// </summary>       
-    internal class DetachElasticLoadBalancerRequestMarshaller : IMarshaller<IRequest, DetachElasticLoadBalancerRequest> 
+    public class DetachElasticLoadBalancerRequestMarshaller : IMarshaller<IRequest, DetachElasticLoadBalancerRequest> 
     {
-        
-
-        public IRequest Marshall(DetachElasticLoadBalancerRequest detachElasticLoadBalancerRequest) 
+        public IRequest Marshall(DetachElasticLoadBalancerRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(detachElasticLoadBalancerRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.DetachElasticLoadBalancer";
             request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
 
-            
-              
-            string uriResourcePath = ""; 
-            
-            if (uriResourcePath.Contains("?")) 
-            {
-                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
-                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
-        
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                }
-            }
-            
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
-            using (StringWriter stringWriter = new StringWriter())
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (detachElasticLoadBalancerRequest != null && detachElasticLoadBalancerRequest.IsSetElasticLoadBalancerName()) 
+                if(publicRequest != null && publicRequest.IsSetElasticLoadBalancerName())
                 {
                     writer.WritePropertyName("ElasticLoadBalancerName");
-                    writer.Write(detachElasticLoadBalancerRequest.ElasticLoadBalancerName);
-                }
-                if (detachElasticLoadBalancerRequest != null && detachElasticLoadBalancerRequest.IsSetLayerId()) 
-                {
-                    writer.WritePropertyName("LayerId");
-                    writer.Write(detachElasticLoadBalancerRequest.LayerId);
+                    writer.Write(publicRequest.ElasticLoadBalancerName);
                 }
 
+                if(publicRequest != null && publicRequest.IsSetLayerId())
+                {
+                    writer.WritePropertyName("LayerId");
+                    writer.Write(publicRequest.LayerId);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
 
             return request;
         }
+
+
     }
 }

@@ -18,25 +18,31 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>DescribeStackSummary</c> request.</para>
+    /// Contains the response to a <code>DescribeStackSummary</code> request.
     /// </summary>
     public partial class DescribeStackSummaryResult
     {
-        
-        private StackSummary stackSummary;
+        private StackSummary _stackSummary;
+
 
         /// <summary>
-        /// A <c>StackSummary</c> object that contains the results.
-        ///  
+        /// Gets and sets the property StackSummary. 
+        /// <para>
+        /// A <code>StackSummary</code> object that contains the results.
+        /// </para>
         /// </summary>
         public StackSummary StackSummary
         {
-            get { return this.stackSummary; }
-            set { this.stackSummary = value; }
+            get { return this._stackSummary; }
+            set { this._stackSummary = value; }
         }
+
 
         /// <summary>
         /// Sets the StackSummary property
@@ -46,15 +52,15 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeStackSummaryResult WithStackSummary(StackSummary stackSummary)
         {
-            this.stackSummary = stackSummary;
+            this._stackSummary = stackSummary;
             return this;
         }
-            
 
         // Check to see if StackSummary property is set
         internal bool IsSetStackSummary()
         {
-            return this.stackSummary != null;
+            return this._stackSummary != null;
         }
+
     }
 }

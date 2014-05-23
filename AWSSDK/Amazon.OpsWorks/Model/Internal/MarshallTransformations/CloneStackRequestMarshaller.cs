@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
@@ -28,254 +29,236 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Clone Stack Request Marshaller
+    /// CloneStack Request Marshaller
     /// </summary>       
-    internal class CloneStackRequestMarshaller : IMarshaller<IRequest, CloneStackRequest> 
+    public class CloneStackRequestMarshaller : IMarshaller<IRequest, CloneStackRequest> 
     {
-        
-
-        public IRequest Marshall(CloneStackRequest cloneStackRequest) 
+        public IRequest Marshall(CloneStackRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(cloneStackRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.CloneStack";
             request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
 
-            
-              
-            string uriResourcePath = ""; 
-            
-            if (uriResourcePath.Contains("?")) 
-            {
-                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
-                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
-        
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                }
-            }
-            
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
-            using (StringWriter stringWriter = new StringWriter())
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (cloneStackRequest != null && cloneStackRequest.IsSetSourceStackId()) 
+                if(publicRequest != null && publicRequest.IsSetAttributes() && publicRequest.Attributes.Count > 0)
                 {
-                    writer.WritePropertyName("SourceStackId");
-                    writer.Write(cloneStackRequest.SourceStackId);
-                }
-                if (cloneStackRequest != null && cloneStackRequest.IsSetName()) 
-                {
-                    writer.WritePropertyName("Name");
-                    writer.Write(cloneStackRequest.Name);
-                }
-                if (cloneStackRequest != null && cloneStackRequest.IsSetRegion()) 
-                {
-                    writer.WritePropertyName("Region");
-                    writer.Write(cloneStackRequest.Region);
-                }
-                if (cloneStackRequest != null && cloneStackRequest.IsSetVpcId()) 
-                {
-                    writer.WritePropertyName("VpcId");
-                    writer.Write(cloneStackRequest.VpcId);
-                }
-                if (cloneStackRequest != null) 
-                {
-                    if (cloneStackRequest.Attributes != null && cloneStackRequest.Attributes.Count > 0)
+                    writer.WritePropertyName("Attributes");
+                    writer.WriteObjectStart();
+                    foreach (var publicRequestAttributesKvp in publicRequest.Attributes)
                     {
-                        writer.WritePropertyName("Attributes");
-                        writer.WriteObjectStart();
-                        foreach (string cloneStackRequestAttributesKey in cloneStackRequest.Attributes.Keys)
-                        {
-                            string attributesListValue;
-                            bool attributesListValueHasValue = cloneStackRequest.Attributes.TryGetValue(cloneStackRequestAttributesKey, out attributesListValue);
-                            writer.WritePropertyName(cloneStackRequestAttributesKey);
+                        writer.WritePropertyName(publicRequestAttributesKvp.Key);
+                        var publicRequestAttributesValue = publicRequestAttributesKvp.Value;
 
-                        writer.Write(attributesListValue);
-                        }
-                        writer.WriteObjectEnd();
+                        writer.Write(publicRequestAttributesValue);
                     }
-                }
-                if (cloneStackRequest != null && cloneStackRequest.IsSetServiceRoleArn()) 
-                {
-                    writer.WritePropertyName("ServiceRoleArn");
-                    writer.Write(cloneStackRequest.ServiceRoleArn);
-                }
-                if (cloneStackRequest != null && cloneStackRequest.IsSetDefaultInstanceProfileArn()) 
-                {
-                    writer.WritePropertyName("DefaultInstanceProfileArn");
-                    writer.Write(cloneStackRequest.DefaultInstanceProfileArn);
-                }
-                if (cloneStackRequest != null && cloneStackRequest.IsSetDefaultOs()) 
-                {
-                    writer.WritePropertyName("DefaultOs");
-                    writer.Write(cloneStackRequest.DefaultOs);
-                }
-                if (cloneStackRequest != null && cloneStackRequest.IsSetHostnameTheme()) 
-                {
-                    writer.WritePropertyName("HostnameTheme");
-                    writer.Write(cloneStackRequest.HostnameTheme);
-                }
-                if (cloneStackRequest != null && cloneStackRequest.IsSetDefaultAvailabilityZone()) 
-                {
-                    writer.WritePropertyName("DefaultAvailabilityZone");
-                    writer.Write(cloneStackRequest.DefaultAvailabilityZone);
-                }
-                if (cloneStackRequest != null && cloneStackRequest.IsSetDefaultSubnetId()) 
-                {
-                    writer.WritePropertyName("DefaultSubnetId");
-                    writer.Write(cloneStackRequest.DefaultSubnetId);
-                }
-                if (cloneStackRequest != null && cloneStackRequest.IsSetCustomJson()) 
-                {
-                    writer.WritePropertyName("CustomJson");
-                    writer.Write(cloneStackRequest.CustomJson);
+                    writer.WriteObjectEnd();
                 }
 
-                if (cloneStackRequest != null) 
+                if(publicRequest != null && publicRequest.IsSetChefConfiguration())
                 {
-                    StackConfigurationManager configurationManager = cloneStackRequest.ConfigurationManager;
-                    if (configurationManager != null)
+                    writer.WritePropertyName("ChefConfiguration");
+                    writer.WriteObjectStart();
+                    if(publicRequest.ChefConfiguration != null && publicRequest.ChefConfiguration.IsSetBerkshelfVersion())
                     {
-                        writer.WritePropertyName("ConfigurationManager");
-                        writer.WriteObjectStart();
-                        if (configurationManager != null && configurationManager.IsSetName()) 
-                        {
-                            writer.WritePropertyName("Name");
-                            writer.Write(configurationManager.Name);
-                        }
-                        if (configurationManager != null && configurationManager.IsSetVersion()) 
-                        {
-                            writer.WritePropertyName("Version");
-                            writer.Write(configurationManager.Version);
-                        }
-                        writer.WriteObjectEnd();
+                        writer.WritePropertyName("BerkshelfVersion");
+                        writer.Write(publicRequest.ChefConfiguration.BerkshelfVersion);
                     }
-                }
 
-                if (cloneStackRequest != null) 
-                {
-                    ChefConfiguration chefConfiguration = cloneStackRequest.ChefConfiguration;
-                    if (chefConfiguration != null)
+                    if(publicRequest.ChefConfiguration != null && publicRequest.ChefConfiguration.IsSetManageBerkshelf())
                     {
-                        writer.WritePropertyName("ChefConfiguration");
-                        writer.WriteObjectStart();
-                        if (chefConfiguration != null && chefConfiguration.IsSetManageBerkshelf()) 
-                        {
-                            writer.WritePropertyName("ManageBerkshelf");
-                            writer.Write(chefConfiguration.ManageBerkshelf);
-                        }
-                        if (chefConfiguration != null && chefConfiguration.IsSetBerkshelfVersion()) 
-                        {
-                            writer.WritePropertyName("BerkshelfVersion");
-                            writer.Write(chefConfiguration.BerkshelfVersion);
-                        }
-                        writer.WriteObjectEnd();
+                        writer.WritePropertyName("ManageBerkshelf");
+                        writer.Write(publicRequest.ChefConfiguration.ManageBerkshelf);
                     }
-                }
-                if (cloneStackRequest != null && cloneStackRequest.IsSetUseCustomCookbooks()) 
-                {
-                    writer.WritePropertyName("UseCustomCookbooks");
-                    writer.Write(cloneStackRequest.UseCustomCookbooks);
-                }
-                if (cloneStackRequest != null && cloneStackRequest.IsSetUseOpsworksSecurityGroups()) 
-                {
-                    writer.WritePropertyName("UseOpsworksSecurityGroups");
-                    writer.Write(cloneStackRequest.UseOpsworksSecurityGroups);
+
+                    writer.WriteObjectEnd();
                 }
 
-                if (cloneStackRequest != null) 
+                if(publicRequest != null && publicRequest.IsSetCloneAppIds() && publicRequest.CloneAppIds.Count > 0)
                 {
-                    Source customCookbooksSource = cloneStackRequest.CustomCookbooksSource;
-                    if (customCookbooksSource != null)
-                    {
-                        writer.WritePropertyName("CustomCookbooksSource");
-                        writer.WriteObjectStart();
-                        if (customCookbooksSource != null && customCookbooksSource.IsSetType()) 
-                        {
-                            writer.WritePropertyName("Type");
-                            writer.Write(customCookbooksSource.Type);
-                        }
-                        if (customCookbooksSource != null && customCookbooksSource.IsSetUrl()) 
-                        {
-                            writer.WritePropertyName("Url");
-                            writer.Write(customCookbooksSource.Url);
-                        }
-                        if (customCookbooksSource != null && customCookbooksSource.IsSetUsername()) 
-                        {
-                            writer.WritePropertyName("Username");
-                            writer.Write(customCookbooksSource.Username);
-                        }
-                        if (customCookbooksSource != null && customCookbooksSource.IsSetPassword()) 
-                        {
-                            writer.WritePropertyName("Password");
-                            writer.Write(customCookbooksSource.Password);
-                        }
-                        if (customCookbooksSource != null && customCookbooksSource.IsSetSshKey()) 
-                        {
-                            writer.WritePropertyName("SshKey");
-                            writer.Write(customCookbooksSource.SshKey);
-                        }
-                        if (customCookbooksSource != null && customCookbooksSource.IsSetRevision()) 
-                        {
-                            writer.WritePropertyName("Revision");
-                            writer.Write(customCookbooksSource.Revision);
-                        }
-                        writer.WriteObjectEnd();
-                    }
-                }
-                if (cloneStackRequest != null && cloneStackRequest.IsSetDefaultSshKeyName()) 
-                {
-                    writer.WritePropertyName("DefaultSshKeyName");
-                    writer.Write(cloneStackRequest.DefaultSshKeyName);
-                }
-                if (cloneStackRequest != null && cloneStackRequest.IsSetClonePermissions()) 
-                {
-                    writer.WritePropertyName("ClonePermissions");
-                    writer.Write(cloneStackRequest.ClonePermissions);
-                }
-
-                if (cloneStackRequest != null && cloneStackRequest.CloneAppIds != null && cloneStackRequest.CloneAppIds.Count > 0) 
-                {
-                    List<string> cloneAppIdsList = cloneStackRequest.CloneAppIds;
                     writer.WritePropertyName("CloneAppIds");
                     writer.WriteArrayStart();
-
-                    foreach (string cloneAppIdsListValue in cloneAppIdsList) 
-                    { 
-                        writer.Write(StringUtils.FromString(cloneAppIdsListValue));
+                    foreach(var publicRequestCloneAppIdsListValue in publicRequest.CloneAppIds)
+                    {
+                        writer.Write(publicRequestCloneAppIdsListValue);
                     }
-
                     writer.WriteArrayEnd();
                 }
-                if (cloneStackRequest != null && cloneStackRequest.IsSetDefaultRootDeviceType()) 
+
+                if(publicRequest != null && publicRequest.IsSetClonePermissions())
                 {
-                    writer.WritePropertyName("DefaultRootDeviceType");
-                    writer.Write(cloneStackRequest.DefaultRootDeviceType);
+                    writer.WritePropertyName("ClonePermissions");
+                    writer.Write(publicRequest.ClonePermissions);
                 }
 
+                if(publicRequest != null && publicRequest.IsSetConfigurationManager())
+                {
+                    writer.WritePropertyName("ConfigurationManager");
+                    writer.WriteObjectStart();
+                    if(publicRequest.ConfigurationManager != null && publicRequest.ConfigurationManager.IsSetName())
+                    {
+                        writer.WritePropertyName("Name");
+                        writer.Write(publicRequest.ConfigurationManager.Name);
+                    }
+
+                    if(publicRequest.ConfigurationManager != null && publicRequest.ConfigurationManager.IsSetVersion())
+                    {
+                        writer.WritePropertyName("Version");
+                        writer.Write(publicRequest.ConfigurationManager.Version);
+                    }
+
+                    writer.WriteObjectEnd();
+                }
+
+                if(publicRequest != null && publicRequest.IsSetCustomCookbooksSource())
+                {
+                    writer.WritePropertyName("CustomCookbooksSource");
+                    writer.WriteObjectStart();
+                    if(publicRequest.CustomCookbooksSource != null && publicRequest.CustomCookbooksSource.IsSetPassword())
+                    {
+                        writer.WritePropertyName("Password");
+                        writer.Write(publicRequest.CustomCookbooksSource.Password);
+                    }
+
+                    if(publicRequest.CustomCookbooksSource != null && publicRequest.CustomCookbooksSource.IsSetRevision())
+                    {
+                        writer.WritePropertyName("Revision");
+                        writer.Write(publicRequest.CustomCookbooksSource.Revision);
+                    }
+
+                    if(publicRequest.CustomCookbooksSource != null && publicRequest.CustomCookbooksSource.IsSetSshKey())
+                    {
+                        writer.WritePropertyName("SshKey");
+                        writer.Write(publicRequest.CustomCookbooksSource.SshKey);
+                    }
+
+                    if(publicRequest.CustomCookbooksSource != null && publicRequest.CustomCookbooksSource.IsSetType())
+                    {
+                        writer.WritePropertyName("Type");
+                        writer.Write(publicRequest.CustomCookbooksSource.Type);
+                    }
+
+                    if(publicRequest.CustomCookbooksSource != null && publicRequest.CustomCookbooksSource.IsSetUrl())
+                    {
+                        writer.WritePropertyName("Url");
+                        writer.Write(publicRequest.CustomCookbooksSource.Url);
+                    }
+
+                    if(publicRequest.CustomCookbooksSource != null && publicRequest.CustomCookbooksSource.IsSetUsername())
+                    {
+                        writer.WritePropertyName("Username");
+                        writer.Write(publicRequest.CustomCookbooksSource.Username);
+                    }
+
+                    writer.WriteObjectEnd();
+                }
+
+                if(publicRequest != null && publicRequest.IsSetCustomJson())
+                {
+                    writer.WritePropertyName("CustomJson");
+                    writer.Write(publicRequest.CustomJson);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetDefaultAvailabilityZone())
+                {
+                    writer.WritePropertyName("DefaultAvailabilityZone");
+                    writer.Write(publicRequest.DefaultAvailabilityZone);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetDefaultInstanceProfileArn())
+                {
+                    writer.WritePropertyName("DefaultInstanceProfileArn");
+                    writer.Write(publicRequest.DefaultInstanceProfileArn);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetDefaultOs())
+                {
+                    writer.WritePropertyName("DefaultOs");
+                    writer.Write(publicRequest.DefaultOs);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetDefaultRootDeviceType())
+                {
+                    writer.WritePropertyName("DefaultRootDeviceType");
+                    writer.Write(publicRequest.DefaultRootDeviceType);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetDefaultSshKeyName())
+                {
+                    writer.WritePropertyName("DefaultSshKeyName");
+                    writer.Write(publicRequest.DefaultSshKeyName);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetDefaultSubnetId())
+                {
+                    writer.WritePropertyName("DefaultSubnetId");
+                    writer.Write(publicRequest.DefaultSubnetId);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetHostnameTheme())
+                {
+                    writer.WritePropertyName("HostnameTheme");
+                    writer.Write(publicRequest.HostnameTheme);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetName())
+                {
+                    writer.WritePropertyName("Name");
+                    writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetRegion())
+                {
+                    writer.WritePropertyName("Region");
+                    writer.Write(publicRequest.Region);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetServiceRoleArn())
+                {
+                    writer.WritePropertyName("ServiceRoleArn");
+                    writer.Write(publicRequest.ServiceRoleArn);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetSourceStackId())
+                {
+                    writer.WritePropertyName("SourceStackId");
+                    writer.Write(publicRequest.SourceStackId);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetUseCustomCookbooks())
+                {
+                    writer.WritePropertyName("UseCustomCookbooks");
+                    writer.Write(publicRequest.UseCustomCookbooks);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetUseOpsworksSecurityGroups())
+                {
+                    writer.WritePropertyName("UseOpsworksSecurityGroups");
+                    writer.Write(publicRequest.UseOpsworksSecurityGroups);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetVpcId())
+                {
+                    writer.WritePropertyName("VpcId");
+                    writer.Write(publicRequest.VpcId);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
 
             return request;
         }
+
+
     }
 }

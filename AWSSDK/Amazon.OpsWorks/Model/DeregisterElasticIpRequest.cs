@@ -25,26 +25,35 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DeregisterElasticIp operation.
-    /// <para>Deregisters a specified Elastic IP address. The address can then be registered by another stack. For more information, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html" >Resource Management</a> .</para> <para> <b>Required
-    /// Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly
-    /// grants permissions. For more information on user permissions, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+    /// Deregisters a specified Elastic IP address. The address can then be registered by
+    /// another stack.  For more information, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
+    /// Management</a>.
+    /// 
+    ///     
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+    /// level for the stack, or an attached       policy that explicitly grants permissions.
+    /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DeregisterElasticIp"/>
-    public class DeregisterElasticIpRequest : AmazonWebServiceRequest
+    public partial class DeregisterElasticIpRequest : AmazonWebServiceRequest
     {
-        private string elasticIp;
+        private string _elasticIp;
+
 
         /// <summary>
+        /// Gets and sets the property ElasticIp. 
+        /// <para>
         /// The Elastic IP address.
-        ///  
+        /// </para>
         /// </summary>
         public string ElasticIp
         {
-            get { return this.elasticIp; }
-            set { this.elasticIp = value; }
+            get { return this._elasticIp; }
+            set { this._elasticIp = value; }
         }
+
 
         /// <summary>
         /// Sets the ElasticIp property
@@ -54,16 +63,15 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeregisterElasticIpRequest WithElasticIp(string elasticIp)
         {
-            this.elasticIp = elasticIp;
+            this._elasticIp = elasticIp;
             return this;
         }
-            
 
         // Check to see if ElasticIp property is set
         internal bool IsSetElasticIp()
         {
-            return this.elasticIp != null;
+            return this._elasticIp != null;
         }
+
     }
 }
-    

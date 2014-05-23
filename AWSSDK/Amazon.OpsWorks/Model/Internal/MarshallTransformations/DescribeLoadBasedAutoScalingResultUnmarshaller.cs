@@ -12,81 +12,86 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using Amazon.OpsWorks.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+using Amazon.OpsWorks.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for DescribeLoadBasedAutoScaling Object
+    /// </summary>  
+    public class DescribeLoadBasedAutoScalingResultUnmarshaller : IUnmarshaller<DescribeLoadBasedAutoScalingResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeLoadBasedAutoScalingResult, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// DescribeLoadBasedAutoScalingResultUnmarshaller
-      /// </summary>
-      internal class DescribeLoadBasedAutoScalingResultUnmarshaller : IUnmarshaller<DescribeLoadBasedAutoScalingResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeLoadBasedAutoScalingResult, JsonUnmarshallerContext>
-      {
         DescribeLoadBasedAutoScalingResult IUnmarshaller<DescribeLoadBasedAutoScalingResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public DescribeLoadBasedAutoScalingResult Unmarshall(JsonUnmarshallerContext context)
         {
             if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
                 return null;
-            DescribeLoadBasedAutoScalingResult describeLoadBasedAutoScalingResult = new DescribeLoadBasedAutoScalingResult();
-          describeLoadBasedAutoScalingResult.LoadBasedAutoScalingConfigurations = null;
-                        
+            
+            var unmarshalledObject = new DescribeLoadBasedAutoScalingResult();
+            unmarshalledObject.LoadBasedAutoScalingConfigurations = null;
+                    
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+
             while (context.Read())
             {
                 if ((context.IsKey) && (context.CurrentDepth == targetDepth))
                 {
-                context.Read();
-                context.Read();
-              
-              if (context.TestExpression("LoadBasedAutoScalingConfigurations", targetDepth))
-              {
-                describeLoadBasedAutoScalingResult.LoadBasedAutoScalingConfigurations = new List<LoadBasedAutoScalingConfiguration>();   
-                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
-                {
-                  continue;
-                }              
-
-                  LoadBasedAutoScalingConfigurationUnmarshaller unmarshaller = LoadBasedAutoScalingConfigurationUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
-                  {
-                     describeLoadBasedAutoScalingResult.LoadBasedAutoScalingConfigurations.Add(unmarshaller.Unmarshall(context));
-                  }
-                  else if (context.IsEndArray)
-                  {
-                    break;
-                  }
-                }
-                continue;
-              }
-  
+                    context.Read();
+                    context.Read();
+                    if (context.TestExpression("LoadBasedAutoScalingConfigurations", targetDepth))
+                    {
+                        unmarshalledObject.LoadBasedAutoScalingConfigurations = new List<LoadBasedAutoScalingConfiguration>();
+                        var unmarshaller = LoadBasedAutoScalingConfigurationUnmarshaller.GetInstance();
+                        while (context.Read())
+                        {
+                          if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                          {
+                             unmarshalledObject.LoadBasedAutoScalingConfigurations.Add(unmarshaller.Unmarshall(context));
+                          }
+                          else if (context.IsEndArray)
+                          {
+                            break;
+                          }
+                        }
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {
-                    return describeLoadBasedAutoScalingResult;
+                    return unmarshalledObject;
                 }
-            }
-          
-
-            return describeLoadBasedAutoScalingResult;
+            }   
+                           
+            return unmarshalledObject;
         }
+
 
         private static DescribeLoadBasedAutoScalingResultUnmarshaller instance;
         public static DescribeLoadBasedAutoScalingResultUnmarshaller GetInstance()
         {
             if (instance == null)
+            {
                 instance = new DescribeLoadBasedAutoScalingResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-  

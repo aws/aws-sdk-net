@@ -18,87 +18,35 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Describes an Elastic IP address.</para>
+    /// Describes an Elastic IP address.
     /// </summary>
     public partial class ElasticIp
     {
-        
-        private string ip;
-        private string name;
-        private string domain;
-        private string region;
-        private string instanceId;
+        private string _domain;
+        private string _instanceId;
+        private string _ip;
+        private string _name;
+        private string _region;
+
 
         /// <summary>
-        /// The IP address.
-        ///  
-        /// </summary>
-        public string Ip
-        {
-            get { return this.ip; }
-            set { this.ip = value; }
-        }
-
-        /// <summary>
-        /// Sets the Ip property
-        /// </summary>
-        /// <param name="ip">The value to set for the Ip property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ElasticIp WithIp(string ip)
-        {
-            this.ip = ip;
-            return this;
-        }
-            
-
-        // Check to see if Ip property is set
-        internal bool IsSetIp()
-        {
-            return this.ip != null;
-        }
-
-        /// <summary>
-        /// The name.
-        ///  
-        /// </summary>
-        public string Name
-        {
-            get { return this.name; }
-            set { this.name = value; }
-        }
-
-        /// <summary>
-        /// Sets the Name property
-        /// </summary>
-        /// <param name="name">The value to set for the Name property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ElasticIp WithName(string name)
-        {
-            this.name = name;
-            return this;
-        }
-            
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this.name != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Domain. 
+        /// <para>
         /// The domain.
-        ///  
+        /// </para>
         /// </summary>
         public string Domain
         {
-            get { return this.domain; }
-            set { this.domain = value; }
+            get { return this._domain; }
+            set { this._domain = value; }
         }
+
 
         /// <summary>
         /// Sets the Domain property
@@ -108,55 +56,29 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ElasticIp WithDomain(string domain)
         {
-            this.domain = domain;
+            this._domain = domain;
             return this;
         }
-            
 
         // Check to see if Domain property is set
         internal bool IsSetDomain()
         {
-            return this.domain != null;
+            return this._domain != null;
         }
+
 
         /// <summary>
-        /// The AWS region. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
-        ///  
-        /// </summary>
-        public string Region
-        {
-            get { return this.region; }
-            set { this.region = value; }
-        }
-
-        /// <summary>
-        /// Sets the Region property
-        /// </summary>
-        /// <param name="region">The value to set for the Region property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ElasticIp WithRegion(string region)
-        {
-            this.region = region;
-            return this;
-        }
-            
-
-        // Check to see if Region property is set
-        internal bool IsSetRegion()
-        {
-            return this.region != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
         /// The ID of the instance that the address is attached to.
-        ///  
+        /// </para>
         /// </summary>
         public string InstanceId
         {
-            get { return this.instanceId; }
-            set { this.instanceId = value; }
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
         }
+
 
         /// <summary>
         /// Sets the InstanceId property
@@ -166,15 +88,112 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ElasticIp WithInstanceId(string instanceId)
         {
-            this.instanceId = instanceId;
+            this._instanceId = instanceId;
             return this;
         }
-            
 
         // Check to see if InstanceId property is set
         internal bool IsSetInstanceId()
         {
-            return this.instanceId != null;
+            return this._instanceId != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Ip. 
+        /// <para>
+        /// The IP address.
+        /// </para>
+        /// </summary>
+        public string Ip
+        {
+            get { return this._ip; }
+            set { this._ip = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the Ip property
+        /// </summary>
+        /// <param name="ip">The value to set for the Ip property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ElasticIp WithIp(string ip)
+        {
+            this._ip = ip;
+            return this;
+        }
+
+        // Check to see if Ip property is set
+        internal bool IsSetIp()
+        {
+            return this._ip != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the Name property
+        /// </summary>
+        /// <param name="name">The value to set for the Name property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ElasticIp WithName(string name)
+        {
+            this._name = name;
+            return this;
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Region. 
+        /// <para>
+        /// The AWS region. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
+        /// and Endpoints</a>.
+        /// </para>
+        /// </summary>
+        public string Region
+        {
+            get { return this._region; }
+            set { this._region = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the Region property
+        /// </summary>
+        /// <param name="region">The value to set for the Region property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ElasticIp WithRegion(string region)
+        {
+            this._region = region;
+            return this;
+        }
+
+        // Check to see if Region property is set
+        internal bool IsSetRegion()
+        {
+            return this._region != null;
+        }
+
     }
 }

@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeInstancesResult response and response metadata.
+    /// Returns information about the DescribeInstancesResult response and response metadata.
     /// </summary>
     public class DescribeInstancesResponse : AmazonWebServiceResponse
     {
-        private DescribeInstancesResult describeInstancesResult;
+        private DescribeInstancesResult _describeInstancesResult;
 
         /// <summary>
         /// Gets and sets the DescribeInstancesResult property.
-        /// Contains the response to a DescribeInstances request.
+        /// Represents the output of a DescribeInstances operation.
         /// </summary>
         public DescribeInstancesResult DescribeInstancesResult
         {
             get
             {
-                if(this.describeInstancesResult == null)
+                if(this._describeInstancesResult == null)
                 {
-                    this.describeInstancesResult = new DescribeInstancesResult();
+                    this._describeInstancesResult = new DescribeInstancesResult();
                 }
-
-                return this.describeInstancesResult;
+                return this._describeInstancesResult;
             }
-            set { this.describeInstancesResult = value; }
+            set { this._describeInstancesResult = value; }
         }
     }
 }
-    

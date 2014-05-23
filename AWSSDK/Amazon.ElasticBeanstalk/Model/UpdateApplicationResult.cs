@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,25 +18,32 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para>Result message containing a single description of an application.</para>
+    /// Result message containing a single description of an application.
     /// </summary>
     public partial class UpdateApplicationResult
     {
-        
-        private ApplicationDescription application;
+        private ApplicationDescription _application;
+
 
         /// <summary>
-        /// The <a>ApplicationDescription</a> of the application.
-        ///  
+        /// Gets and sets the property Application. 
+        /// <para>
+        ///          The         <a>ApplicationDescription</a>         of the application.   
+        ///   
+        /// </para>
         /// </summary>
         public ApplicationDescription Application
         {
-            get { return this.application; }
-            set { this.application = value; }
+            get { return this._application; }
+            set { this._application = value; }
         }
+
 
         /// <summary>
         /// Sets the Application property
@@ -46,15 +53,15 @@ namespace Amazon.ElasticBeanstalk.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateApplicationResult WithApplication(ApplicationDescription application)
         {
-            this.application = application;
+            this._application = application;
             return this;
         }
-            
 
         // Check to see if Application property is set
         internal bool IsSetApplication()
         {
-            return this.application != null;
+            return this._application != null;
         }
+
     }
 }

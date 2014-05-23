@@ -18,61 +18,65 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>DescribeDeployments</c> request.</para>
+    /// Contains the response to a <code>DescribeDeployments</code> request.
     /// </summary>
     public partial class DescribeDeploymentsResult
     {
-        
-        private List<Deployment> deployments = new List<Deployment>();
+        private List<Deployment> _deployments = new List<Deployment>();
+
 
         /// <summary>
-        /// An array of <c>Deployment</c> objects that describe the deployments.
-        ///  
+        /// Gets and sets the property Deployments. 
+        /// <para>
+        /// An array of <code>Deployment</code> objects that describe the deployments.
+        /// </para>
         /// </summary>
         public List<Deployment> Deployments
         {
-            get { return this.deployments; }
-            set { this.deployments = value; }
+            get { return this._deployments; }
+            set { this._deployments = value; }
         }
+
         /// <summary>
-        /// Adds elements to the Deployments collection
+        /// Sets the Deployments property
         /// </summary>
         /// <param name="deployments">The values to add to the Deployments collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDeploymentsResult WithDeployments(params Deployment[] deployments)
         {
-            foreach (Deployment element in deployments)
+            foreach (var element in deployments)
             {
-                this.deployments.Add(element);
+                this._deployments.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the Deployments collection
+        /// Sets the Deployments property
         /// </summary>
         /// <param name="deployments">The values to add to the Deployments collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDeploymentsResult WithDeployments(IEnumerable<Deployment> deployments)
         {
-            foreach (Deployment element in deployments)
+            foreach (var element in deployments)
             {
-                this.deployments.Add(element);
+                this._deployments.Add(element);
             }
-
             return this;
         }
-
         // Check to see if Deployments property is set
         internal bool IsSetDeployments()
         {
-            return this.deployments.Count > 0;
+            return this._deployments != null && this._deployments.Count > 0; 
         }
+
     }
 }

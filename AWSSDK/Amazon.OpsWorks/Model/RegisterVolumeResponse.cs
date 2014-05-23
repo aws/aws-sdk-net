@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the  RegisterVolumeResult response and response metadata.
+    /// Returns information about the RegisterVolumeResult response and response metadata.
     /// </summary>
     public class RegisterVolumeResponse : AmazonWebServiceResponse
     {
-        private RegisterVolumeResult registerVolumeResult;
+        private RegisterVolumeResult _registerVolumeResult;
 
         /// <summary>
         /// Gets and sets the RegisterVolumeResult property.
-        /// Contains the response to a RegisterVolume request.
+        /// Represents the output of a RegisterVolume operation.
         /// </summary>
         public RegisterVolumeResult RegisterVolumeResult
         {
             get
             {
-                if(this.registerVolumeResult == null)
+                if(this._registerVolumeResult == null)
                 {
-                    this.registerVolumeResult = new RegisterVolumeResult();
+                    this._registerVolumeResult = new RegisterVolumeResult();
                 }
-
-                return this.registerVolumeResult;
+                return this._registerVolumeResult;
             }
-            set { this.registerVolumeResult = value; }
+            set { this._registerVolumeResult = value; }
         }
     }
 }
-    

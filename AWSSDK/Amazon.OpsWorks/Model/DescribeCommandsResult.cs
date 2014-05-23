@@ -18,61 +18,65 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>DescribeCommands</c> request.</para>
+    /// Contains the response to a <code>DescribeCommands</code> request.
     /// </summary>
     public partial class DescribeCommandsResult
     {
-        
-        private List<Command> commands = new List<Command>();
+        private List<Command> _commands = new List<Command>();
+
 
         /// <summary>
-        /// An array of <c>Command</c> objects that describe each of the specified commands.
-        ///  
+        /// Gets and sets the property Commands. 
+        /// <para>
+        /// An array of <code>Command</code> objects that describe each of the specified commands.
+        /// </para>
         /// </summary>
         public List<Command> Commands
         {
-            get { return this.commands; }
-            set { this.commands = value; }
+            get { return this._commands; }
+            set { this._commands = value; }
         }
+
         /// <summary>
-        /// Adds elements to the Commands collection
+        /// Sets the Commands property
         /// </summary>
         /// <param name="commands">The values to add to the Commands collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCommandsResult WithCommands(params Command[] commands)
         {
-            foreach (Command element in commands)
+            foreach (var element in commands)
             {
-                this.commands.Add(element);
+                this._commands.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the Commands collection
+        /// Sets the Commands property
         /// </summary>
         /// <param name="commands">The values to add to the Commands collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCommandsResult WithCommands(IEnumerable<Command> commands)
         {
-            foreach (Command element in commands)
+            foreach (var element in commands)
             {
-                this.commands.Add(element);
+                this._commands.Add(element);
             }
-
             return this;
         }
-
         // Check to see if Commands property is set
         internal bool IsSetCommands()
         {
-            return this.commands.Count > 0;
+            return this._commands != null && this._commands.Count > 0; 
         }
+
     }
 }

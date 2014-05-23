@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
@@ -28,84 +29,57 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Service Errors Request Marshaller
+    /// DescribeServiceErrors Request Marshaller
     /// </summary>       
-    internal class DescribeServiceErrorsRequestMarshaller : IMarshaller<IRequest, DescribeServiceErrorsRequest> 
+    public class DescribeServiceErrorsRequestMarshaller : IMarshaller<IRequest, DescribeServiceErrorsRequest> 
     {
-        
-
-        public IRequest Marshall(DescribeServiceErrorsRequest describeServiceErrorsRequest) 
+        public IRequest Marshall(DescribeServiceErrorsRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(describeServiceErrorsRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.DescribeServiceErrors";
             request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
 
-            
-              
-            string uriResourcePath = ""; 
-            
-            if (uriResourcePath.Contains("?")) 
-            {
-                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
-                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
-        
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                }
-            }
-            
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
-            using (StringWriter stringWriter = new StringWriter())
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (describeServiceErrorsRequest != null && describeServiceErrorsRequest.IsSetStackId()) 
-                {
-                    writer.WritePropertyName("StackId");
-                    writer.Write(describeServiceErrorsRequest.StackId);
-                }
-                if (describeServiceErrorsRequest != null && describeServiceErrorsRequest.IsSetInstanceId()) 
+                if(publicRequest != null && publicRequest.IsSetInstanceId())
                 {
                     writer.WritePropertyName("InstanceId");
-                    writer.Write(describeServiceErrorsRequest.InstanceId);
+                    writer.Write(publicRequest.InstanceId);
                 }
 
-                if (describeServiceErrorsRequest != null && describeServiceErrorsRequest.ServiceErrorIds != null && describeServiceErrorsRequest.ServiceErrorIds.Count > 0) 
+                if(publicRequest != null && publicRequest.IsSetServiceErrorIds() && publicRequest.ServiceErrorIds.Count > 0)
                 {
-                    List<string> serviceErrorIdsList = describeServiceErrorsRequest.ServiceErrorIds;
                     writer.WritePropertyName("ServiceErrorIds");
                     writer.WriteArrayStart();
-
-                    foreach (string serviceErrorIdsListValue in serviceErrorIdsList) 
-                    { 
-                        writer.Write(StringUtils.FromString(serviceErrorIdsListValue));
+                    foreach(var publicRequestServiceErrorIdsListValue in publicRequest.ServiceErrorIds)
+                    {
+                        writer.Write(publicRequestServiceErrorIdsListValue);
                     }
-
                     writer.WriteArrayEnd();
                 }
 
+                if(publicRequest != null && publicRequest.IsSetStackId())
+                {
+                    writer.WritePropertyName("StackId");
+                    writer.Write(publicRequest.StackId);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
 
             return request;
         }
+
+
     }
 }

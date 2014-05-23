@@ -25,26 +25,34 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the StartInstance operation.
-    /// <para>Starts a specified instance. For more information, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html" >Starting, Stopping, and Rebooting Instances</a>
-    /// .</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an
-    /// attached policy that explicitly grants permissions. For more information on user permissions, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+    /// Starts a specified instance. For more information, see  <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting,
+    /// Stopping,            and Rebooting Instances</a>.
+    /// 
+    ///     
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+    /// level for the stack, or an attached       policy that explicitly grants permissions.
+    /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.StartInstance"/>
-    public class StartInstanceRequest : AmazonWebServiceRequest
+    public partial class StartInstanceRequest : AmazonWebServiceRequest
     {
-        private string instanceId;
+        private string _instanceId;
+
 
         /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
         /// The instance ID.
-        ///  
+        /// </para>
         /// </summary>
         public string InstanceId
         {
-            get { return this.instanceId; }
-            set { this.instanceId = value; }
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
         }
+
 
         /// <summary>
         /// Sets the InstanceId property
@@ -54,16 +62,15 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StartInstanceRequest WithInstanceId(string instanceId)
         {
-            this.instanceId = instanceId;
+            this._instanceId = instanceId;
             return this;
         }
-            
 
         // Check to see if InstanceId property is set
         internal bool IsSetInstanceId()
         {
-            return this.instanceId != null;
+            return this._instanceId != null;
         }
+
     }
 }
-    

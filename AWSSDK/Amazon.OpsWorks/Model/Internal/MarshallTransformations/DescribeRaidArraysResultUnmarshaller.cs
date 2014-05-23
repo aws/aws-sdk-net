@@ -12,81 +12,86 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using Amazon.OpsWorks.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+using Amazon.OpsWorks.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for DescribeRaidArrays Object
+    /// </summary>  
+    public class DescribeRaidArraysResultUnmarshaller : IUnmarshaller<DescribeRaidArraysResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeRaidArraysResult, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// DescribeRaidArraysResultUnmarshaller
-      /// </summary>
-      internal class DescribeRaidArraysResultUnmarshaller : IUnmarshaller<DescribeRaidArraysResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeRaidArraysResult, JsonUnmarshallerContext>
-      {
         DescribeRaidArraysResult IUnmarshaller<DescribeRaidArraysResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public DescribeRaidArraysResult Unmarshall(JsonUnmarshallerContext context)
         {
             if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
                 return null;
-            DescribeRaidArraysResult describeRaidArraysResult = new DescribeRaidArraysResult();
-          describeRaidArraysResult.RaidArrays = null;
-                        
+            
+            var unmarshalledObject = new DescribeRaidArraysResult();
+            unmarshalledObject.RaidArrays = null;
+                    
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+
             while (context.Read())
             {
                 if ((context.IsKey) && (context.CurrentDepth == targetDepth))
                 {
-                context.Read();
-                context.Read();
-              
-              if (context.TestExpression("RaidArrays", targetDepth))
-              {
-                describeRaidArraysResult.RaidArrays = new List<RaidArray>();   
-                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
-                {
-                  continue;
-                }              
-
-                  RaidArrayUnmarshaller unmarshaller = RaidArrayUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
-                  {
-                     describeRaidArraysResult.RaidArrays.Add(unmarshaller.Unmarshall(context));
-                  }
-                  else if (context.IsEndArray)
-                  {
-                    break;
-                  }
-                }
-                continue;
-              }
-  
+                    context.Read();
+                    context.Read();
+                    if (context.TestExpression("RaidArrays", targetDepth))
+                    {
+                        unmarshalledObject.RaidArrays = new List<RaidArray>();
+                        var unmarshaller = RaidArrayUnmarshaller.GetInstance();
+                        while (context.Read())
+                        {
+                          if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                          {
+                             unmarshalledObject.RaidArrays.Add(unmarshaller.Unmarshall(context));
+                          }
+                          else if (context.IsEndArray)
+                          {
+                            break;
+                          }
+                        }
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {
-                    return describeRaidArraysResult;
+                    return unmarshalledObject;
                 }
-            }
-          
-
-            return describeRaidArraysResult;
+            }   
+                           
+            return unmarshalledObject;
         }
+
 
         private static DescribeRaidArraysResultUnmarshaller instance;
         public static DescribeRaidArraysResultUnmarshaller GetInstance()
         {
             if (instance == null)
+            {
                 instance = new DescribeRaidArraysResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-  

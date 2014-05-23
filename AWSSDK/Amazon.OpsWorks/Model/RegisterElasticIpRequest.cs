@@ -25,28 +25,38 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterElasticIp operation.
-    /// <para>Registers an Elastic IP address with a specified stack. An address can be registered with only one stack at a time. If the address is
-    /// already registered, you must first deregister it by calling DeregisterElasticIp. For more information, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html" >Resource Management</a> .</para> <para> <b>Required
-    /// Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly
-    /// grants permissions. For more information on user permissions, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+    /// Registers an Elastic IP address with a specified stack. An address can be    registered
+    /// with only one stack at a time. If the address is already registered, you must first
+    /// deregister it      by calling <a>DeregisterElasticIp</a>. For more information, see
+    ///      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
+    /// Management</a>.
+    /// 
+    ///     
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+    /// level for the stack, or an attached       policy that explicitly grants permissions.
+    /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.RegisterElasticIp"/>
-    public class RegisterElasticIpRequest : AmazonWebServiceRequest
+    public partial class RegisterElasticIpRequest : AmazonWebServiceRequest
     {
-        private string elasticIp;
-        private string stackId;
+        private string _elasticIp;
+        private string _stackId;
+
 
         /// <summary>
+        /// Gets and sets the property ElasticIp. 
+        /// <para>
         /// The Elastic IP address.
-        ///  
+        /// </para>
         /// </summary>
         public string ElasticIp
         {
-            get { return this.elasticIp; }
-            set { this.elasticIp = value; }
+            get { return this._elasticIp; }
+            set { this._elasticIp = value; }
         }
+
 
         /// <summary>
         /// Sets the ElasticIp property
@@ -56,26 +66,29 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RegisterElasticIpRequest WithElasticIp(string elasticIp)
         {
-            this.elasticIp = elasticIp;
+            this._elasticIp = elasticIp;
             return this;
         }
-            
 
         // Check to see if ElasticIp property is set
         internal bool IsSetElasticIp()
         {
-            return this.elasticIp != null;
+            return this._elasticIp != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property StackId. 
+        /// <para>
         /// The stack ID.
-        ///  
+        /// </para>
         /// </summary>
         public string StackId
         {
-            get { return this.stackId; }
-            set { this.stackId = value; }
+            get { return this._stackId; }
+            set { this._stackId = value; }
         }
+
 
         /// <summary>
         /// Sets the StackId property
@@ -85,16 +98,15 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RegisterElasticIpRequest WithStackId(string stackId)
         {
-            this.stackId = stackId;
+            this._stackId = stackId;
             return this;
         }
-            
 
         // Check to see if StackId property is set
         internal bool IsSetStackId()
         {
-            return this.stackId != null;
+            return this._stackId != null;
         }
+
     }
 }
-    

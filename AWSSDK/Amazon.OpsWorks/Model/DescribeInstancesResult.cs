@@ -18,61 +18,65 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>DescribeInstances</c> request.</para>
+    /// Contains the response to a <code>DescribeInstances</code> request.
     /// </summary>
     public partial class DescribeInstancesResult
     {
-        
-        private List<Instance> instances = new List<Instance>();
+        private List<Instance> _instances = new List<Instance>();
+
 
         /// <summary>
-        /// An array of <c>Instance</c> objects that describe the instances.
-        ///  
+        /// Gets and sets the property Instances. 
+        /// <para>
+        /// An array of <code>Instance</code> objects that describe the instances.
+        /// </para>
         /// </summary>
         public List<Instance> Instances
         {
-            get { return this.instances; }
-            set { this.instances = value; }
+            get { return this._instances; }
+            set { this._instances = value; }
         }
+
         /// <summary>
-        /// Adds elements to the Instances collection
+        /// Sets the Instances property
         /// </summary>
         /// <param name="instances">The values to add to the Instances collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeInstancesResult WithInstances(params Instance[] instances)
         {
-            foreach (Instance element in instances)
+            foreach (var element in instances)
             {
-                this.instances.Add(element);
+                this._instances.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the Instances collection
+        /// Sets the Instances property
         /// </summary>
         /// <param name="instances">The values to add to the Instances collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeInstancesResult WithInstances(IEnumerable<Instance> instances)
         {
-            foreach (Instance element in instances)
+            foreach (var element in instances)
             {
-                this.instances.Add(element);
+                this._instances.Add(element);
             }
-
             return this;
         }
-
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this.instances.Count > 0;
+            return this._instances != null && this._instances.Count > 0; 
         }
+
     }
 }

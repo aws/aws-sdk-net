@@ -25,26 +25,35 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteStack operation.
-    /// <para>Deletes a specified stack. You must first delete all instances, layers, and apps. For more information, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html" >Shut Down a Stack</a> .</para> <para> <b>Required
-    /// Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly
-    /// grants permissions. For more information on user permissions, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+    /// Deletes a specified stack. You must first delete all instances, layers, and apps.
+    ///         For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html">Shut
+    /// Down a Stack</a>.
+    /// 
+    ///      
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+    /// level for the stack, or an attached       policy that explicitly grants permissions.
+    /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DeleteStack"/>
-    public class DeleteStackRequest : AmazonWebServiceRequest
+    public partial class DeleteStackRequest : AmazonWebServiceRequest
     {
-        private string stackId;
+        private string _stackId;
+
 
         /// <summary>
+        /// Gets and sets the property StackId. 
+        /// <para>
         /// The stack ID.
-        ///  
+        /// </para>
         /// </summary>
         public string StackId
         {
-            get { return this.stackId; }
-            set { this.stackId = value; }
+            get { return this._stackId; }
+            set { this._stackId = value; }
         }
+
 
         /// <summary>
         /// Sets the StackId property
@@ -54,16 +63,15 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteStackRequest WithStackId(string stackId)
         {
-            this.stackId = stackId;
+            this._stackId = stackId;
             return this;
         }
-            
 
         // Check to see if StackId property is set
         internal bool IsSetStackId()
         {
-            return this.stackId != null;
+            return this._stackId != null;
         }
+
     }
 }
-    

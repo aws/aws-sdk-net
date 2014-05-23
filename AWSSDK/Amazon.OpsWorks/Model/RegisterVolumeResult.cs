@@ -18,25 +18,31 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>RegisterVolume</c> request.</para>
+    /// Contains the response to a <code>RegisterVolume</code> request.
     /// </summary>
     public partial class RegisterVolumeResult
     {
-        
-        private string volumeId;
+        private string _volumeId;
+
 
         /// <summary>
+        /// Gets and sets the property VolumeId. 
+        /// <para>
         /// The volume ID.
-        ///  
+        /// </para>
         /// </summary>
         public string VolumeId
         {
-            get { return this.volumeId; }
-            set { this.volumeId = value; }
+            get { return this._volumeId; }
+            set { this._volumeId = value; }
         }
+
 
         /// <summary>
         /// Sets the VolumeId property
@@ -46,15 +52,15 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RegisterVolumeResult WithVolumeId(string volumeId)
         {
-            this.volumeId = volumeId;
+            this._volumeId = volumeId;
             return this;
         }
-            
 
         // Check to see if VolumeId property is set
         internal bool IsSetVolumeId()
         {
-            return this.volumeId != null;
+            return this._volumeId != null;
         }
+
     }
 }

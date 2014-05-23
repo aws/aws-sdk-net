@@ -18,25 +18,31 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>RegisterElasticIp</c> request.</para>
+    /// Contains the response to a <code>RegisterElasticIp</code> request.
     /// </summary>
     public partial class RegisterElasticIpResult
     {
-        
-        private string elasticIp;
+        private string _elasticIp;
+
 
         /// <summary>
+        /// Gets and sets the property ElasticIp. 
+        /// <para>
         /// The Elastic IP address.
-        ///  
+        /// </para>
         /// </summary>
         public string ElasticIp
         {
-            get { return this.elasticIp; }
-            set { this.elasticIp = value; }
+            get { return this._elasticIp; }
+            set { this._elasticIp = value; }
         }
+
 
         /// <summary>
         /// Sets the ElasticIp property
@@ -46,15 +52,15 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RegisterElasticIpResult WithElasticIp(string elasticIp)
         {
-            this.elasticIp = elasticIp;
+            this._elasticIp = elasticIp;
             return this;
         }
-            
 
         // Check to see if ElasticIp property is set
         internal bool IsSetElasticIp()
         {
-            return this.elasticIp != null;
+            return this._elasticIp != null;
         }
+
     }
 }

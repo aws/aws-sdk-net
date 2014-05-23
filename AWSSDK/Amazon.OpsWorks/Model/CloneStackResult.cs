@@ -18,25 +18,31 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>CloneStack</c> request.</para>
+    /// Contains the response to a <code>CloneStack</code> request.
     /// </summary>
     public partial class CloneStackResult
     {
-        
-        private string stackId;
+        private string _stackId;
+
 
         /// <summary>
+        /// Gets and sets the property StackId. 
+        /// <para>
         /// The cloned stack ID.
-        ///  
+        /// </para>
         /// </summary>
         public string StackId
         {
-            get { return this.stackId; }
-            set { this.stackId = value; }
+            get { return this._stackId; }
+            set { this._stackId = value; }
         }
+
 
         /// <summary>
         /// Sets the StackId property
@@ -46,15 +52,15 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloneStackResult WithStackId(string stackId)
         {
-            this.stackId = stackId;
+            this._stackId = stackId;
             return this;
         }
-            
 
         // Check to see if StackId property is set
         internal bool IsSetStackId()
         {
-            return this.stackId != null;
+            return this._stackId != null;
         }
+
     }
 }

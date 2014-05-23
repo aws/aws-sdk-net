@@ -25,97 +25,47 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateStack operation.
-    /// <para>Updates a specified stack.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+    /// Updates a specified stack.
+    /// 
+    ///     
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+    /// level for the stack, or an attached       policy that explicitly grants permissions.
+    /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.UpdateStack"/>
-    public class UpdateStackRequest : AmazonWebServiceRequest
+    public partial class UpdateStackRequest : AmazonWebServiceRequest
     {
-        private string stackId;
-        private string name;
-        private Dictionary<string,string> attributes = new Dictionary<string,string>();
-        private string serviceRoleArn;
-        private string defaultInstanceProfileArn;
-        private string defaultOs;
-        private string hostnameTheme;
-        private string defaultAvailabilityZone;
-        private string defaultSubnetId;
-        private string customJson;
-        private StackConfigurationManager configurationManager;
-        private ChefConfiguration chefConfiguration;
-        private bool? useCustomCookbooks;
-        private Source customCookbooksSource;
-        private string defaultSshKeyName;
-        private string defaultRootDeviceType;
-        private bool? useOpsworksSecurityGroups;
+        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private ChefConfiguration _chefConfiguration;
+        private StackConfigurationManager _configurationManager;
+        private Source _customCookbooksSource;
+        private string _customJson;
+        private string _defaultAvailabilityZone;
+        private string _defaultInstanceProfileArn;
+        private string _defaultOs;
+        private string _defaultRootDeviceType;
+        private string _defaultSshKeyName;
+        private string _defaultSubnetId;
+        private string _hostnameTheme;
+        private string _name;
+        private string _serviceRoleArn;
+        private string _stackId;
+        private bool? _useCustomCookbooks;
+        private bool? _useOpsworksSecurityGroups;
+
 
         /// <summary>
-        /// The stack ID.
-        ///  
-        /// </summary>
-        public string StackId
-        {
-            get { return this.stackId; }
-            set { this.stackId = value; }
-        }
-
-        /// <summary>
-        /// Sets the StackId property
-        /// </summary>
-        /// <param name="stackId">The value to set for the StackId property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public UpdateStackRequest WithStackId(string stackId)
-        {
-            this.stackId = stackId;
-            return this;
-        }
-            
-
-        // Check to see if StackId property is set
-        internal bool IsSetStackId()
-        {
-            return this.stackId != null;
-        }
-
-        /// <summary>
-        /// The stack's new name.
-        ///  
-        /// </summary>
-        public string Name
-        {
-            get { return this.name; }
-            set { this.name = value; }
-        }
-
-        /// <summary>
-        /// Sets the Name property
-        /// </summary>
-        /// <param name="name">The value to set for the Name property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public UpdateStackRequest WithName(string name)
-        {
-            this.name = name;
-            return this;
-        }
-            
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this.name != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Attributes. 
+        /// <para>
         /// One or more user-defined key/value pairs to be added to the stack attributes.
-        ///  
+        /// </para>
         /// </summary>
-        public Dictionary<string,string> Attributes
+        public Dictionary<string, string> Attributes
         {
-            get { return this.attributes; }
-            set { this.attributes = value; }
+            get { return this._attributes; }
+            set { this._attributes = value; }
         }
 
         /// <summary>
@@ -130,276 +80,29 @@ namespace Amazon.OpsWorks.Model
             {
                 this.Attributes[pair.Key] = pair.Value;
             }
-
             return this;
         }
-
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this.attributes != null;
+            return this._attributes != null && this._attributes.Count > 0; 
         }
+
 
         /// <summary>
-        /// The stack AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks to work with AWS resources on your behalf. You must set
-        /// this parameter to the Amazon Resource Name (ARN) for an existing IAM role. For more information about IAM ARNs, see <a
-        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>. <note> You must set this parameter to a
-        /// valid service role ARN or the action will fail; there is no default value. You can specify the stack's current service role ARN, if you
-        /// prefer, but you must do so explicitly. </note>
-        ///  
-        /// </summary>
-        public string ServiceRoleArn
-        {
-            get { return this.serviceRoleArn; }
-            set { this.serviceRoleArn = value; }
-        }
-
-        /// <summary>
-        /// Sets the ServiceRoleArn property
-        /// </summary>
-        /// <param name="serviceRoleArn">The value to set for the ServiceRoleArn property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public UpdateStackRequest WithServiceRoleArn(string serviceRoleArn)
-        {
-            this.serviceRoleArn = serviceRoleArn;
-            return this;
-        }
-            
-
-        // Check to see if ServiceRoleArn property is set
-        internal bool IsSetServiceRoleArn()
-        {
-            return this.serviceRoleArn != null;
-        }
-
-        /// <summary>
-        /// The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a
-        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
-        ///  
-        /// </summary>
-        public string DefaultInstanceProfileArn
-        {
-            get { return this.defaultInstanceProfileArn; }
-            set { this.defaultInstanceProfileArn = value; }
-        }
-
-        /// <summary>
-        /// Sets the DefaultInstanceProfileArn property
-        /// </summary>
-        /// <param name="defaultInstanceProfileArn">The value to set for the DefaultInstanceProfileArn property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public UpdateStackRequest WithDefaultInstanceProfileArn(string defaultInstanceProfileArn)
-        {
-            this.defaultInstanceProfileArn = defaultInstanceProfileArn;
-            return this;
-        }
-            
-
-        // Check to see if DefaultInstanceProfileArn property is set
-        internal bool IsSetDefaultInstanceProfileArn()
-        {
-            return this.defaultInstanceProfileArn != null;
-        }
-
-        /// <summary>
-        /// The stack's default operating system, which must be set to <c>Amazon Linux</c> or <c>Ubuntu 12.04 LTS</c>. The default option is <c>Amazon
-        /// Linux</c>.
-        ///  
-        /// </summary>
-        public string DefaultOs
-        {
-            get { return this.defaultOs; }
-            set { this.defaultOs = value; }
-        }
-
-        /// <summary>
-        /// Sets the DefaultOs property
-        /// </summary>
-        /// <param name="defaultOs">The value to set for the DefaultOs property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public UpdateStackRequest WithDefaultOs(string defaultOs)
-        {
-            this.defaultOs = defaultOs;
-            return this;
-        }
-            
-
-        // Check to see if DefaultOs property is set
-        internal bool IsSetDefaultOs()
-        {
-            return this.defaultOs != null;
-        }
-
-        /// <summary>
-        /// The stack's new host name theme, with spaces are replaced by underscores. The theme is used to generate host names for the stack's
-        /// instances. By default, <c>HostnameTheme</c> is set to <c>Layer_Dependent</c>, which creates host names by appending integers to the layer's
-        /// short name. The other themes are: <ul> <li><c>Baked_Goods</c></li> <li><c>Clouds</c></li> <li><c>European_Cities</c></li>
-        /// <li><c>Fruits</c></li> <li><c>Greek_Deities</c></li> <li><c>Legendary_Creatures_from_Japan</c></li> <li><c>Planets_and_Moons</c></li>
-        /// <li><c>Roman_Deities</c></li> <li><c>Scottish_Islands</c></li> <li><c>US_Cities</c></li> <li><c>Wild_Cats</c></li> </ul> To obtain a
-        /// generated host name, call <c>GetHostNameSuggestion</c>, which returns a host name based on the current theme.
-        ///  
-        /// </summary>
-        public string HostnameTheme
-        {
-            get { return this.hostnameTheme; }
-            set { this.hostnameTheme = value; }
-        }
-
-        /// <summary>
-        /// Sets the HostnameTheme property
-        /// </summary>
-        /// <param name="hostnameTheme">The value to set for the HostnameTheme property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public UpdateStackRequest WithHostnameTheme(string hostnameTheme)
-        {
-            this.hostnameTheme = hostnameTheme;
-            return this;
-        }
-            
-
-        // Check to see if HostnameTheme property is set
-        internal bool IsSetHostnameTheme()
-        {
-            return this.hostnameTheme != null;
-        }
-
-        /// <summary>
-        /// The stack's default Availability Zone, which must be in the specified region. For more information, see <a
-        /// href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for
-        /// <c>DefaultSubnetId</c>, the subnet must be in the same zone. For more information, see <a>CreateStack</a>.
-        ///  
-        /// </summary>
-        public string DefaultAvailabilityZone
-        {
-            get { return this.defaultAvailabilityZone; }
-            set { this.defaultAvailabilityZone = value; }
-        }
-
-        /// <summary>
-        /// Sets the DefaultAvailabilityZone property
-        /// </summary>
-        /// <param name="defaultAvailabilityZone">The value to set for the DefaultAvailabilityZone property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public UpdateStackRequest WithDefaultAvailabilityZone(string defaultAvailabilityZone)
-        {
-            this.defaultAvailabilityZone = defaultAvailabilityZone;
-            return this;
-        }
-            
-
-        // Check to see if DefaultAvailabilityZone property is set
-        internal bool IsSetDefaultAvailabilityZone()
-        {
-            return this.defaultAvailabilityZone != null;
-        }
-
-        /// <summary>
-        /// The stack's default subnet ID. All instances will be launched into this subnet unless you specify otherwise when you create the instance. If
-        /// you also specify a value for <c>DefaultAvailabilityZone</c>, the subnet must be in that zone. For more information, see <a>CreateStack</a>.
-        ///  
-        /// </summary>
-        public string DefaultSubnetId
-        {
-            get { return this.defaultSubnetId; }
-            set { this.defaultSubnetId = value; }
-        }
-
-        /// <summary>
-        /// Sets the DefaultSubnetId property
-        /// </summary>
-        /// <param name="defaultSubnetId">The value to set for the DefaultSubnetId property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public UpdateStackRequest WithDefaultSubnetId(string defaultSubnetId)
-        {
-            this.defaultSubnetId = defaultSubnetId;
-            return this;
-        }
-            
-
-        // Check to see if DefaultSubnetId property is set
-        internal bool IsSetDefaultSubnetId()
-        {
-            return this.defaultSubnetId != null;
-        }
-
-        /// <summary>
-        /// A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The
-        /// string should be in the following format and must escape characters such as '"'.: <c>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</c>
-        /// For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom
-        /// JSON to Modify the Stack Configuration JSON</a>.
-        ///  
-        /// </summary>
-        public string CustomJson
-        {
-            get { return this.customJson; }
-            set { this.customJson = value; }
-        }
-
-        /// <summary>
-        /// Sets the CustomJson property
-        /// </summary>
-        /// <param name="customJson">The value to set for the CustomJson property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public UpdateStackRequest WithCustomJson(string customJson)
-        {
-            this.customJson = customJson;
-            return this;
-        }
-            
-
-        // Check to see if CustomJson property is set
-        internal bool IsSetCustomJson()
-        {
-            return this.customJson != null;
-        }
-
-        /// <summary>
-        /// The configuration manager. When you clone a stack we recommend that you use the configuration manager to specify the Chef version, 0.9,
-        /// 11.4, or 11.10. The default value is currently 11.4.
-        ///  
-        /// </summary>
-        public StackConfigurationManager ConfigurationManager
-        {
-            get { return this.configurationManager; }
-            set { this.configurationManager = value; }
-        }
-
-        /// <summary>
-        /// Sets the ConfigurationManager property
-        /// </summary>
-        /// <param name="configurationManager">The value to set for the ConfigurationManager property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public UpdateStackRequest WithConfigurationManager(StackConfigurationManager configurationManager)
-        {
-            this.configurationManager = configurationManager;
-            return this;
-        }
-            
-
-        // Check to see if ConfigurationManager property is set
-        internal bool IsSetConfigurationManager()
-        {
-            return this.configurationManager != null;
-        }
-
-        /// <summary>
-        /// A <c>ChefConfiguration</c> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more
-        /// information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.
-        ///  
+        /// Gets and sets the property ChefConfiguration. 
+        /// <para>
+        /// A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf
+        /// and the Berkshelf version on Chef 11.10 stacks.    For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
+        /// a New Stack</a>.
+        /// </para>
         /// </summary>
         public ChefConfiguration ChefConfiguration
         {
-            get { return this.chefConfiguration; }
-            set { this.chefConfiguration = value; }
+            get { return this._chefConfiguration; }
+            set { this._chefConfiguration = value; }
         }
+
 
         /// <summary>
         /// Sets the ChefConfiguration property
@@ -409,57 +112,60 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateStackRequest WithChefConfiguration(ChefConfiguration chefConfiguration)
         {
-            this.chefConfiguration = chefConfiguration;
+            this._chefConfiguration = chefConfiguration;
             return this;
         }
-            
 
         // Check to see if ChefConfiguration property is set
         internal bool IsSetChefConfiguration()
         {
-            return this.chefConfiguration != null;
+            return this._chefConfiguration != null;
         }
 
+
         /// <summary>
-        /// Whether the stack uses custom cookbooks.
-        ///  
+        /// Gets and sets the property ConfigurationManager. 
+        /// <para>
+        /// The configuration manager. When you clone a stack we recommend that you use the configuration
+        /// manager to         specify the Chef version, 0.9, 11.4, or 11.10. The default value
+        /// is currently 11.4.
+        /// </para>
         /// </summary>
-        public bool UseCustomCookbooks
+        public StackConfigurationManager ConfigurationManager
         {
-            get { return this.useCustomCookbooks ?? default(bool); }
-            set { this.useCustomCookbooks = value; }
+            get { return this._configurationManager; }
+            set { this._configurationManager = value; }
         }
 
+
         /// <summary>
-        /// Sets the UseCustomCookbooks property
+        /// Sets the ConfigurationManager property
         /// </summary>
-        /// <param name="useCustomCookbooks">The value to set for the UseCustomCookbooks property </param>
+        /// <param name="configurationManager">The value to set for the ConfigurationManager property </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public UpdateStackRequest WithUseCustomCookbooks(bool useCustomCookbooks)
+        public UpdateStackRequest WithConfigurationManager(StackConfigurationManager configurationManager)
         {
-            this.useCustomCookbooks = useCustomCookbooks;
+            this._configurationManager = configurationManager;
             return this;
         }
-            
 
-        // Check to see if UseCustomCookbooks property is set
-        internal bool IsSetUseCustomCookbooks()
+        // Check to see if ConfigurationManager property is set
+        internal bool IsSetConfigurationManager()
         {
-            return this.useCustomCookbooks.HasValue;
+            return this._configurationManager != null;
         }
 
+
         /// <summary>
-        /// Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a
-        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating Apps</a> or <a
-        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom Recipes and Cookbooks</a>.
-        ///  
+        /// Gets and sets the property CustomCookbooksSource.
         /// </summary>
         public Source CustomCookbooksSource
         {
-            get { return this.customCookbooksSource; }
-            set { this.customCookbooksSource = value; }
+            get { return this._customCookbooksSource; }
+            set { this._customCookbooksSource = value; }
         }
+
 
         /// <summary>
         /// Sets the CustomCookbooksSource property
@@ -469,66 +175,179 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateStackRequest WithCustomCookbooksSource(Source customCookbooksSource)
         {
-            this.customCookbooksSource = customCookbooksSource;
+            this._customCookbooksSource = customCookbooksSource;
             return this;
         }
-            
 
         // Check to see if CustomCookbooksSource property is set
         internal bool IsSetCustomCookbooksSource()
         {
-            return this.customCookbooksSource != null;
+            return this._customCookbooksSource != null;
         }
 
+
         /// <summary>
-        /// A default SSH key for the stack instances. You can override this value when you create or update an instance.
-        ///  
+        /// Gets and sets the property CustomJson. 
+        /// <para>
+        /// A string that contains user-defined, custom JSON. It is used to override the corresponding
+        /// default stack configuration JSON values. The string should be in the following format
+        /// and must escape characters such as '"'.:
+        /// </para>
+        ///     
+        /// <para>
+        /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
+        /// </para>
+        ///   
+        /// <para>
+        /// For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+        /// Custom JSON to Modify the Stack Configuration JSON</a>.
+        /// </para>
         /// </summary>
-        public string DefaultSshKeyName
+        public string CustomJson
         {
-            get { return this.defaultSshKeyName; }
-            set { this.defaultSshKeyName = value; }
+            get { return this._customJson; }
+            set { this._customJson = value; }
         }
 
+
         /// <summary>
-        /// Sets the DefaultSshKeyName property
+        /// Sets the CustomJson property
         /// </summary>
-        /// <param name="defaultSshKeyName">The value to set for the DefaultSshKeyName property </param>
+        /// <param name="customJson">The value to set for the CustomJson property </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public UpdateStackRequest WithDefaultSshKeyName(string defaultSshKeyName)
+        public UpdateStackRequest WithCustomJson(string customJson)
         {
-            this.defaultSshKeyName = defaultSshKeyName;
+            this._customJson = customJson;
             return this;
         }
-            
 
-        // Check to see if DefaultSshKeyName property is set
-        internal bool IsSetDefaultSshKeyName()
+        // Check to see if CustomJson property is set
+        internal bool IsSetCustomJson()
         {
-            return this.defaultSshKeyName != null;
+            return this._customJson != null;
         }
 
+
         /// <summary>
-        /// The default root device type. This value is used by default for all instances in the stack, but you can override it when you create an
-        /// instance. For more information, see <a
-        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.
-        ///  
+        /// Gets and sets the property DefaultAvailabilityZone. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>ebs, instance-store</description>
-        ///     </item>
-        /// </list>
+        /// The stack's default Availability Zone, which must be in the specified region. For
+        /// more information, see  <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
+        /// and Endpoints</a>.         If you also specify a value for <code>DefaultSubnetId</code>,
+        /// the subnet must be in the same zone.         For more information, see <a>CreateStack</a>.
+        ///  
+        /// </para>
+        /// </summary>
+        public string DefaultAvailabilityZone
+        {
+            get { return this._defaultAvailabilityZone; }
+            set { this._defaultAvailabilityZone = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the DefaultAvailabilityZone property
+        /// </summary>
+        /// <param name="defaultAvailabilityZone">The value to set for the DefaultAvailabilityZone property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public UpdateStackRequest WithDefaultAvailabilityZone(string defaultAvailabilityZone)
+        {
+            this._defaultAvailabilityZone = defaultAvailabilityZone;
+            return this;
+        }
+
+        // Check to see if DefaultAvailabilityZone property is set
+        internal bool IsSetDefaultAvailabilityZone()
+        {
+            return this._defaultAvailabilityZone != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property DefaultInstanceProfileArn. 
+        /// <para>
+        /// The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances.
+        /// For more information about IAM ARNs, see  <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+        /// Identifiers</a>.
+        /// </para>
+        /// </summary>
+        public string DefaultInstanceProfileArn
+        {
+            get { return this._defaultInstanceProfileArn; }
+            set { this._defaultInstanceProfileArn = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the DefaultInstanceProfileArn property
+        /// </summary>
+        /// <param name="defaultInstanceProfileArn">The value to set for the DefaultInstanceProfileArn property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public UpdateStackRequest WithDefaultInstanceProfileArn(string defaultInstanceProfileArn)
+        {
+            this._defaultInstanceProfileArn = defaultInstanceProfileArn;
+            return this;
+        }
+
+        // Check to see if DefaultInstanceProfileArn property is set
+        internal bool IsSetDefaultInstanceProfileArn()
+        {
+            return this._defaultInstanceProfileArn != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property DefaultOs. 
+        /// <para>
+        /// The stack's default operating system, which must be set to <code>Amazon Linux</code>
+        /// or <code>Ubuntu 12.04 LTS</code>.         The default option is <code>Amazon Linux</code>.
+        ///  
+        /// </para>
+        /// </summary>
+        public string DefaultOs
+        {
+            get { return this._defaultOs; }
+            set { this._defaultOs = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the DefaultOs property
+        /// </summary>
+        /// <param name="defaultOs">The value to set for the DefaultOs property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public UpdateStackRequest WithDefaultOs(string defaultOs)
+        {
+            this._defaultOs = defaultOs;
+            return this;
+        }
+
+        // Check to see if DefaultOs property is set
+        internal bool IsSetDefaultOs()
+        {
+            return this._defaultOs != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property DefaultRootDeviceType. 
+        /// <para>
+        /// The default root device type. This value is used by default for all instances in the
+        /// stack,         but you can override it when you create an instance.         For more
+        /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+        /// for the Root Device</a>.
         /// </para>
         /// </summary>
         public string DefaultRootDeviceType
         {
-            get { return this.defaultRootDeviceType; }
-            set { this.defaultRootDeviceType = value; }
+            get { return this._defaultRootDeviceType; }
+            set { this._defaultRootDeviceType = value; }
         }
+
 
         /// <summary>
         /// Sets the DefaultRootDeviceType property
@@ -538,34 +357,299 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateStackRequest WithDefaultRootDeviceType(string defaultRootDeviceType)
         {
-            this.defaultRootDeviceType = defaultRootDeviceType;
+            this._defaultRootDeviceType = defaultRootDeviceType;
             return this;
         }
-            
 
         // Check to see if DefaultRootDeviceType property is set
         internal bool IsSetDefaultRootDeviceType()
         {
-            return this.defaultRootDeviceType != null;
+            return this._defaultRootDeviceType != null;
         }
 
+
         /// <summary>
-        /// Whether to associate the AWS OpsWorks built-in security groups with the stack's layers. AWS OpsWorks provides a standard set of built-in
-        /// security groups, one for each layer, which are associated with layers by default. <c>UseOpsworksSecurityGroups</c> allows you to instead
-        /// provide your own custom security groups. <c>UseOpsworksSecurityGroups</c> has the following settings: <ul> <li>True - AWS OpsWorks
-        /// automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security
-        /// groups with a layer after you create it but you cannot delete the built-in security group. </li> <li>False - AWS OpsWorks does not associate
-        /// built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that
-        /// you create. However, you can still manually associate a built-in security group with a layer on creation; custom security groups are
-        /// required only for those layers that need custom settings. </li> </ul> For more information, see <a
-        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.
-        ///  
+        /// Gets and sets the property DefaultSshKeyName. 
+        /// <para>
+        /// A default SSH key for the stack instances. You can override this value when you create
+        /// or update an instance.
+        /// </para>
+        /// </summary>
+        public string DefaultSshKeyName
+        {
+            get { return this._defaultSshKeyName; }
+            set { this._defaultSshKeyName = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the DefaultSshKeyName property
+        /// </summary>
+        /// <param name="defaultSshKeyName">The value to set for the DefaultSshKeyName property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public UpdateStackRequest WithDefaultSshKeyName(string defaultSshKeyName)
+        {
+            this._defaultSshKeyName = defaultSshKeyName;
+            return this;
+        }
+
+        // Check to see if DefaultSshKeyName property is set
+        internal bool IsSetDefaultSshKeyName()
+        {
+            return this._defaultSshKeyName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property DefaultSubnetId. 
+        /// <para>
+        /// The stack's default subnet ID.         All instances will be launched into this subnet
+        /// unless you specify otherwise when you create the instance.         If you also specify
+        /// a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone.
+        ///         For more information, see <a>CreateStack</a>.  
+        /// </para>
+        /// </summary>
+        public string DefaultSubnetId
+        {
+            get { return this._defaultSubnetId; }
+            set { this._defaultSubnetId = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the DefaultSubnetId property
+        /// </summary>
+        /// <param name="defaultSubnetId">The value to set for the DefaultSubnetId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public UpdateStackRequest WithDefaultSubnetId(string defaultSubnetId)
+        {
+            this._defaultSubnetId = defaultSubnetId;
+            return this;
+        }
+
+        // Check to see if DefaultSubnetId property is set
+        internal bool IsSetDefaultSubnetId()
+        {
+            return this._defaultSubnetId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property HostnameTheme. 
+        /// <para>
+        /// The stack's new host name theme, with spaces are replaced by underscores. The theme
+        /// is used to      generate host names for the stack's instances. By default, <code>HostnameTheme</code>
+        /// is set      to <code>Layer_Dependent</code>, which creates host names by appending
+        /// integers to the layer's      short name. The other themes are:
+        /// </para>
+        ///   <ul>  <li><code>Baked_Goods</code></li>  <li><code>Clouds</code></li>  <li><code>European_Cities</code></li>
+        ///  <li><code>Fruits</code></li>  <li><code>Greek_Deities</code></li>  <li><code>Legendary_Creatures_from_Japan</code></li>
+        ///  <li><code>Planets_and_Moons</code></li>  <li><code>Roman_Deities</code></li>  <li><code>Scottish_Islands</code></li>
+        ///  <li><code>US_Cities</code></li>  <li><code>Wild_Cats</code></li>  </ul>  
+        /// <para>
+        /// To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns
+        /// a host name based on the current theme.
+        /// </para>
+        /// </summary>
+        public string HostnameTheme
+        {
+            get { return this._hostnameTheme; }
+            set { this._hostnameTheme = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the HostnameTheme property
+        /// </summary>
+        /// <param name="hostnameTheme">The value to set for the HostnameTheme property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public UpdateStackRequest WithHostnameTheme(string hostnameTheme)
+        {
+            this._hostnameTheme = hostnameTheme;
+            return this;
+        }
+
+        // Check to see if HostnameTheme property is set
+        internal bool IsSetHostnameTheme()
+        {
+            return this._hostnameTheme != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The stack's new name.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the Name property
+        /// </summary>
+        /// <param name="name">The value to set for the Name property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public UpdateStackRequest WithName(string name)
+        {
+            this._name = name;
+            return this;
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ServiceRoleArn. 
+        /// <para>
+        /// The stack AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks
+        /// to work with AWS resources on your behalf.         You must set this parameter to
+        /// the Amazon Resource Name (ARN) for an existing IAM role. For more information about
+        /// IAM ARNs, see  <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+        /// Identifiers</a>.
+        /// </para>
+        ///      <note>      
+        /// <para>
+        /// You must set this parameter to a valid service role ARN or the action will fail; there
+        /// is        no default value. You can specify the stack's current service role ARN,
+        /// if you prefer, but        you must do so explicitly.
+        /// </para>
+        ///     </note>
+        /// </summary>
+        public string ServiceRoleArn
+        {
+            get { return this._serviceRoleArn; }
+            set { this._serviceRoleArn = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the ServiceRoleArn property
+        /// </summary>
+        /// <param name="serviceRoleArn">The value to set for the ServiceRoleArn property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public UpdateStackRequest WithServiceRoleArn(string serviceRoleArn)
+        {
+            this._serviceRoleArn = serviceRoleArn;
+            return this;
+        }
+
+        // Check to see if ServiceRoleArn property is set
+        internal bool IsSetServiceRoleArn()
+        {
+            return this._serviceRoleArn != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property StackId. 
+        /// <para>
+        /// The stack ID.
+        /// </para>
+        /// </summary>
+        public string StackId
+        {
+            get { return this._stackId; }
+            set { this._stackId = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the StackId property
+        /// </summary>
+        /// <param name="stackId">The value to set for the StackId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public UpdateStackRequest WithStackId(string stackId)
+        {
+            this._stackId = stackId;
+            return this;
+        }
+
+        // Check to see if StackId property is set
+        internal bool IsSetStackId()
+        {
+            return this._stackId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property UseCustomCookbooks. 
+        /// <para>
+        /// Whether the stack uses custom cookbooks.
+        /// </para>
+        /// </summary>
+        public bool UseCustomCookbooks
+        {
+            get { return this._useCustomCookbooks.GetValueOrDefault(); }
+            set { this._useCustomCookbooks = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the UseCustomCookbooks property
+        /// </summary>
+        /// <param name="useCustomCookbooks">The value to set for the UseCustomCookbooks property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public UpdateStackRequest WithUseCustomCookbooks(bool useCustomCookbooks)
+        {
+            this._useCustomCookbooks = useCustomCookbooks;
+            return this;
+        }
+
+        // Check to see if UseCustomCookbooks property is set
+        internal bool IsSetUseCustomCookbooks()
+        {
+            return this._useCustomCookbooks.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property UseOpsworksSecurityGroups. 
+        /// <para>
+        /// Whether to associate the AWS OpsWorks built-in security groups with the stack's layers.
+        /// </para>
+        ///     
+        /// <para>
+        /// AWS OpsWorks provides a standard set of built-in security groups, one for each layer,
+        /// which are associated with layers by default.      <code>UseOpsworksSecurityGroups</code>
+        /// allows you to instead provide your own custom security groups.      <code>UseOpsworksSecurityGroups</code>
+        /// has the following settings:    
+        /// </para>
+        ///     <ul>      <li>True - AWS OpsWorks automatically associates the appropriate built-in
+        /// security group with each layer (default setting).        You can associate additional
+        /// security groups with a layer after you create it but you cannot delete the built-in
+        /// security group.      </li>      <li>False - AWS OpsWorks does not associate built-in
+        /// security groups with layers.        You must create appropriate EC2 security groups
+        /// and associate a security group with each layer that you create.        However, you
+        /// can still manually associate a built-in security group with a layer on creation; custom
+        /// security        groups are required only for those layers that need custom settings.
+        ///      </li>    </ul>    
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
+        /// a New Stack</a>.
+        /// </para>
         /// </summary>
         public bool UseOpsworksSecurityGroups
         {
-            get { return this.useOpsworksSecurityGroups ?? default(bool); }
-            set { this.useOpsworksSecurityGroups = value; }
+            get { return this._useOpsworksSecurityGroups.GetValueOrDefault(); }
+            set { this._useOpsworksSecurityGroups = value; }
         }
+
 
         /// <summary>
         /// Sets the UseOpsworksSecurityGroups property
@@ -575,16 +659,15 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateStackRequest WithUseOpsworksSecurityGroups(bool useOpsworksSecurityGroups)
         {
-            this.useOpsworksSecurityGroups = useOpsworksSecurityGroups;
+            this._useOpsworksSecurityGroups = useOpsworksSecurityGroups;
             return this;
         }
-            
 
         // Check to see if UseOpsworksSecurityGroups property is set
         internal bool IsSetUseOpsworksSecurityGroups()
         {
-            return this.useOpsworksSecurityGroups.HasValue;
+            return this._useOpsworksSecurityGroups.HasValue; 
         }
+
     }
 }
-    

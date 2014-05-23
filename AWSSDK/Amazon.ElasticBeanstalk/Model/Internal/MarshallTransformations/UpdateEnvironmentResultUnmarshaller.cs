@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,147 +12,151 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticBeanstalk.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   UpdateEnvironmentResult Unmarshaller
-     /// </summary>
-    internal class UpdateEnvironmentResultUnmarshaller : IUnmarshaller<UpdateEnvironmentResult, XmlUnmarshallerContext>, IUnmarshaller<UpdateEnvironmentResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for UpdateEnvironment Object
+    /// </summary>  
+    public class UpdateEnvironmentResultUnmarshaller : IUnmarshaller<UpdateEnvironmentResult, XmlUnmarshallerContext>
     {
         public UpdateEnvironmentResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            UpdateEnvironmentResult updateEnvironmentResult = new UpdateEnvironmentResult();
+            UpdateEnvironmentResult result = new UpdateEnvironmentResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("EnvironmentName", targetDepth))
-                    {
-                        updateEnvironmentResult.EnvironmentName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("EnvironmentId", targetDepth))
-                    {
-                        updateEnvironmentResult.EnvironmentId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
+
                     if (context.TestExpression("ApplicationName", targetDepth))
                     {
-                        updateEnvironmentResult.ApplicationName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("VersionLabel", targetDepth))
-                    {
-                        updateEnvironmentResult.VersionLabel = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("SolutionStackName", targetDepth))
-                    {
-                        updateEnvironmentResult.SolutionStackName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("TemplateName", targetDepth))
-                    {
-                        updateEnvironmentResult.TemplateName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("Description", targetDepth))
-                    {
-                        updateEnvironmentResult.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("EndpointURL", targetDepth))
-                    {
-                        updateEnvironmentResult.EndpointURL = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("CNAME", targetDepth))
-                    {
-                        updateEnvironmentResult.CNAME = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("DateCreated", targetDepth))
-                    {
-                        updateEnvironmentResult.DateCreated = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("DateUpdated", targetDepth))
-                    {
-                        updateEnvironmentResult.DateUpdated = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("Status", targetDepth))
-                    {
-                        updateEnvironmentResult.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("Health", targetDepth))
-                    {
-                        updateEnvironmentResult.Health = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("Resources", targetDepth))
-                    {
-                        updateEnvironmentResult.Resources = EnvironmentResourcesDescriptionUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("Tier", targetDepth))
-                    {
-                        updateEnvironmentResult.Tier = EnvironmentTierUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.ApplicationName = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
+                    if (context.TestExpression("CNAME", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.CNAME = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("DateCreated", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.GetInstance();
+                        result.DateCreated = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("DateUpdated", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.GetInstance();
+                        result.DateUpdated = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Description", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.Description = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("EndpointURL", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.EndpointURL = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("EnvironmentId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.EnvironmentId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("EnvironmentName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.EnvironmentName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Health", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.Health = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Resources", targetDepth))
+                    {
+                        var unmarshaller = EnvironmentResourcesDescriptionUnmarshaller.GetInstance();
+                        result.Resources = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SolutionStackName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.SolutionStackName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Status", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.Status = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TemplateName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.TemplateName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Tier", targetDepth))
+                    {
+                        var unmarshaller = EnvironmentTierUnmarshaller.GetInstance();
+                        result.Tier = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("VersionLabel", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.VersionLabel = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return updateEnvironmentResult;
+                    return result;
                 }
             }
-                        
 
-
-            return updateEnvironmentResult;
+            return result;
         }
 
-        public UpdateEnvironmentResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static UpdateEnvironmentResultUnmarshaller instance;
-
-        public static UpdateEnvironmentResultUnmarshaller GetInstance() 
+        public static UpdateEnvironmentResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new UpdateEnvironmentResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new UpdateEnvironmentResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

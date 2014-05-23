@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeTimeBasedAutoScalingResult response and response metadata.
+    /// Returns information about the DescribeTimeBasedAutoScalingResult response and response metadata.
     /// </summary>
     public class DescribeTimeBasedAutoScalingResponse : AmazonWebServiceResponse
     {
-        private DescribeTimeBasedAutoScalingResult describeTimeBasedAutoScalingResult;
+        private DescribeTimeBasedAutoScalingResult _describeTimeBasedAutoScalingResult;
 
         /// <summary>
         /// Gets and sets the DescribeTimeBasedAutoScalingResult property.
-        /// Contains the response to a DescribeTimeBasedAutoScaling request.
+        /// Represents the output of a DescribeTimeBasedAutoScaling operation.
         /// </summary>
         public DescribeTimeBasedAutoScalingResult DescribeTimeBasedAutoScalingResult
         {
             get
             {
-                if(this.describeTimeBasedAutoScalingResult == null)
+                if(this._describeTimeBasedAutoScalingResult == null)
                 {
-                    this.describeTimeBasedAutoScalingResult = new DescribeTimeBasedAutoScalingResult();
+                    this._describeTimeBasedAutoScalingResult = new DescribeTimeBasedAutoScalingResult();
                 }
-
-                return this.describeTimeBasedAutoScalingResult;
+                return this._describeTimeBasedAutoScalingResult;
             }
-            set { this.describeTimeBasedAutoScalingResult = value; }
+            set { this._describeTimeBasedAutoScalingResult = value; }
         }
     }
 }
-    

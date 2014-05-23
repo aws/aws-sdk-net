@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// Returns information about the  RetrieveEnvironmentInfoResult response and response metadata.
+    /// Returns information about the RetrieveEnvironmentInfoResult response and response metadata.
     /// </summary>
     public class RetrieveEnvironmentInfoResponse : AmazonWebServiceResponse
     {
-        private RetrieveEnvironmentInfoResult retrieveEnvironmentInfoResult;
+        private RetrieveEnvironmentInfoResult _retrieveEnvironmentInfoResult;
 
         /// <summary>
         /// Gets and sets the RetrieveEnvironmentInfoResult property.
-        /// Result message containing a description of the requested environment info.
+        /// Represents the output of a RetrieveEnvironmentInfo operation.
         /// </summary>
         public RetrieveEnvironmentInfoResult RetrieveEnvironmentInfoResult
         {
-            get 
+            get
             {
-                if(this.retrieveEnvironmentInfoResult == null)
+                if(this._retrieveEnvironmentInfoResult == null)
                 {
-                    this.retrieveEnvironmentInfoResult = new RetrieveEnvironmentInfoResult();
+                    this._retrieveEnvironmentInfoResult = new RetrieveEnvironmentInfoResult();
                 }
-
-                return this.retrieveEnvironmentInfoResult; 
+                return this._retrieveEnvironmentInfoResult;
             }
-            set { this.retrieveEnvironmentInfoResult = value; }
+            set { this._retrieveEnvironmentInfoResult = value; }
         }
     }
 }
-    

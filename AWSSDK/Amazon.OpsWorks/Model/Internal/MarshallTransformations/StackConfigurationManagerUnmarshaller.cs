@@ -12,69 +12,77 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using Amazon.OpsWorks.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+using Amazon.OpsWorks.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for StackConfigurationManager Object
+    /// </summary>  
+    public class StackConfigurationManagerUnmarshaller : IUnmarshaller<StackConfigurationManager, XmlUnmarshallerContext>, IUnmarshaller<StackConfigurationManager, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// StackConfigurationManagerUnmarshaller
-      /// </summary>
-      internal class StackConfigurationManagerUnmarshaller : IUnmarshaller<StackConfigurationManager, XmlUnmarshallerContext>, IUnmarshaller<StackConfigurationManager, JsonUnmarshallerContext>
-      {
         StackConfigurationManager IUnmarshaller<StackConfigurationManager, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public StackConfigurationManager Unmarshall(JsonUnmarshallerContext context)
         {
             if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
                 return null;
-            StackConfigurationManager stackConfigurationManager = new StackConfigurationManager();
-          
+            
+            var unmarshalledObject = new StackConfigurationManager();
+                    
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+
             while (context.Read())
             {
                 if ((context.IsKey) && (context.CurrentDepth == targetDepth))
                 {
-                context.Read();
-                context.Read();
-              
-              if (context.TestExpression("Name", targetDepth))
-              {
-                stackConfigurationManager.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Version", targetDepth))
-              {
-                stackConfigurationManager.Version = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                    context.Read();
+                    context.Read();
+                    if (context.TestExpression("Name", targetDepth))
+                    {
+                        unmarshalledObject.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Version", targetDepth))
+                    {
+                        unmarshalledObject.Version = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {
-                    return stackConfigurationManager;
+                    return unmarshalledObject;
                 }
-            }
-          
-
-            return stackConfigurationManager;
+            }          
+            return unmarshalledObject;
         }
+
 
         private static StackConfigurationManagerUnmarshaller instance;
         public static StackConfigurationManagerUnmarshaller GetInstance()
         {
             if (instance == null)
+            {
                 instance = new StackConfigurationManagerUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-  

@@ -18,25 +18,31 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>CreateUserProfile</c> request.</para>
+    /// Contains the response to a <code>CreateUserProfile</code> request.
     /// </summary>
     public partial class CreateUserProfileResult
     {
-        
-        private string iamUserArn;
+        private string _iamUserArn;
+
 
         /// <summary>
+        /// Gets and sets the property IamUserArn. 
+        /// <para>
         /// The user's IAM ARN.
-        ///  
+        /// </para>
         /// </summary>
         public string IamUserArn
         {
-            get { return this.iamUserArn; }
-            set { this.iamUserArn = value; }
+            get { return this._iamUserArn; }
+            set { this._iamUserArn = value; }
         }
+
 
         /// <summary>
         /// Sets the IamUserArn property
@@ -46,15 +52,15 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateUserProfileResult WithIamUserArn(string iamUserArn)
         {
-            this.iamUserArn = iamUserArn;
+            this._iamUserArn = iamUserArn;
             return this;
         }
-            
 
         // Check to see if IamUserArn property is set
         internal bool IsSetIamUserArn()
         {
-            return this.iamUserArn != null;
+            return this._iamUserArn != null;
         }
+
     }
 }

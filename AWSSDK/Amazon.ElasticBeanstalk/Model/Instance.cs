@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,25 +18,31 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para>The description of an Amazon EC2 instance.</para>
+    /// The description of an Amazon EC2 instance.
     /// </summary>
     public partial class Instance
     {
-        
-        private string id;
+        private string _id;
+
 
         /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
         /// The ID of the Amazon EC2 instance.
-        ///  
+        /// </para>
         /// </summary>
         public string Id
         {
-            get { return this.id; }
-            set { this.id = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
+
 
         /// <summary>
         /// Sets the Id property
@@ -46,15 +52,15 @@ namespace Amazon.ElasticBeanstalk.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Instance WithId(string id)
         {
-            this.id = id;
+            this._id = id;
             return this;
         }
-            
 
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;
+            return this._id != null;
         }
+
     }
 }

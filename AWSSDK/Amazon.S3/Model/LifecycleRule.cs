@@ -34,11 +34,13 @@ namespace Amazon.S3.Model
         private LifecycleRuleExpiration expiration;
         private LifecycleRuleStatus status;
         private LifecycleTransition transition;
+        private LifecycleRuleNoncurrentVersionTransition noncurrentVersionTransition;
+        private LifecycleRuleNoncurrentVersionExpiration noncurrentVersionExpiration;
 
         /// <summary>
         /// Unique identifier for the rule.
         /// </summary>
-        [XmlElement(ElementName="ID")]
+        [XmlElement(ElementName = "ID")]
         public string Id
         {
             get { return this.id; }
@@ -81,6 +83,37 @@ namespace Amazon.S3.Model
             get { return this.transition; }
             set { this.transition = value; }
     }
+
+        /// <summary>
+        /// Defines the length of time, in days, before noncurrent versions expire.
+        /// </summary>
+        public LifecycleRuleNoncurrentVersionExpiration NoncurrentVersionExpiration
+        {
+            get { return this.noncurrentVersionExpiration; }
+            set { this.noncurrentVersionExpiration = value; }
+        }
+
+        // Check to see if Expiration property is set
+        internal bool IsSetNoncurrentVersionExpiration()
+        {
+            return this.noncurrentVersionExpiration != null;
+        }
+
+        /// <summary>
+        /// The transition rule that describes when noncurrent versions transition to
+        /// the Glacier storage class.
+        /// </summary>
+        public LifecycleRuleNoncurrentVersionTransition NoncurrentVersionTransition
+        {
+            get { return this.noncurrentVersionTransition; }
+            set { this.noncurrentVersionTransition = value; }
+        }
+
+        // Check to see if Transition property is set
+        internal bool IsSetNoncurrentVersionTransition()
+        {
+            return this.noncurrentVersionTransition != null;
+        }
     }
 
     /// <summary>

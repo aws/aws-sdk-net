@@ -12,267 +12,243 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using Amazon.OpsWorks.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+using Amazon.OpsWorks.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for Instance Object
+    /// </summary>  
+    public class InstanceUnmarshaller : IUnmarshaller<Instance, XmlUnmarshallerContext>, IUnmarshaller<Instance, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// InstanceUnmarshaller
-      /// </summary>
-      internal class InstanceUnmarshaller : IUnmarshaller<Instance, XmlUnmarshallerContext>, IUnmarshaller<Instance, JsonUnmarshallerContext>
-      {
         Instance IUnmarshaller<Instance, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Instance Unmarshall(JsonUnmarshallerContext context)
         {
             if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
                 return null;
-            Instance instance = new Instance();
-          instance.LayerIds = null;
-                        instance.SecurityGroupIds = null;
-                        
+            
+            var unmarshalledObject = new Instance();
+            unmarshalledObject.LayerIds = null;
+            unmarshalledObject.SecurityGroupIds = null;
+                    
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+
             while (context.Read())
             {
                 if ((context.IsKey) && (context.CurrentDepth == targetDepth))
                 {
-                context.Read();
-                context.Read();
-              
-              if (context.TestExpression("InstanceId", targetDepth))
-              {
-                instance.InstanceId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Ec2InstanceId", targetDepth))
-              {
-                instance.Ec2InstanceId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Hostname", targetDepth))
-              {
-                instance.Hostname = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("StackId", targetDepth))
-              {
-                instance.StackId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("LayerIds", targetDepth))
-              {
-                instance.LayerIds = new List<String>();   
-                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
-                {
-                  continue;
-                }              
-
-                  StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
-                  {
-                     instance.LayerIds.Add(unmarshaller.Unmarshall(context));
-                  }
-                  else if (context.IsEndArray)
-                  {
-                    break;
-                  }
-                }
-                continue;
-              }
-  
-              if (context.TestExpression("SecurityGroupIds", targetDepth))
-              {
-                instance.SecurityGroupIds = new List<String>();   
-                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
-                {
-                  continue;
-                }              
-
-                  StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
-                  {
-                     instance.SecurityGroupIds.Add(unmarshaller.Unmarshall(context));
-                  }
-                  else if (context.IsEndArray)
-                  {
-                    break;
-                  }
-                }
-                continue;
-              }
-  
-              if (context.TestExpression("InstanceType", targetDepth))
-              {
-                instance.InstanceType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("InstanceProfileArn", targetDepth))
-              {
-                instance.InstanceProfileArn = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Status", targetDepth))
-              {
-                instance.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Os", targetDepth))
-              {
-                instance.Os = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("AmiId", targetDepth))
-              {
-                instance.AmiId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("AvailabilityZone", targetDepth))
-              {
-                instance.AvailabilityZone = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("SubnetId", targetDepth))
-              {
-                instance.SubnetId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("PublicDns", targetDepth))
-              {
-                instance.PublicDns = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("PrivateDns", targetDepth))
-              {
-                instance.PrivateDns = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("PublicIp", targetDepth))
-              {
-                instance.PublicIp = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("PrivateIp", targetDepth))
-              {
-                instance.PrivateIp = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("ElasticIp", targetDepth))
-              {
-                instance.ElasticIp = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("AutoScalingType", targetDepth))
-              {
-                instance.AutoScalingType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("SshKeyName", targetDepth))
-              {
-                instance.SshKeyName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("SshHostRsaKeyFingerprint", targetDepth))
-              {
-                instance.SshHostRsaKeyFingerprint = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("SshHostDsaKeyFingerprint", targetDepth))
-              {
-                instance.SshHostDsaKeyFingerprint = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("CreatedAt", targetDepth))
-              {
-                instance.CreatedAt = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("LastServiceErrorId", targetDepth))
-              {
-                instance.LastServiceErrorId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Architecture", targetDepth))
-              {
-                instance.Architecture = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("RootDeviceType", targetDepth))
-              {
-                instance.RootDeviceType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("RootDeviceVolumeId", targetDepth))
-              {
-                instance.RootDeviceVolumeId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("InstallUpdatesOnBoot", targetDepth))
-              {
-                instance.InstallUpdatesOnBoot = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("EbsOptimized", targetDepth))
-              {
-                instance.EbsOptimized = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                    context.Read();
+                    context.Read();
+                    if (context.TestExpression("AmiId", targetDepth))
+                    {
+                        unmarshalledObject.AmiId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Architecture", targetDepth))
+                    {
+                        unmarshalledObject.Architecture = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("AutoScalingType", targetDepth))
+                    {
+                        unmarshalledObject.AutoScalingType = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("AvailabilityZone", targetDepth))
+                    {
+                        unmarshalledObject.AvailabilityZone = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("CreatedAt", targetDepth))
+                    {
+                        unmarshalledObject.CreatedAt = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("EbsOptimized", targetDepth))
+                    {
+                        unmarshalledObject.EbsOptimized = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Ec2InstanceId", targetDepth))
+                    {
+                        unmarshalledObject.Ec2InstanceId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ElasticIp", targetDepth))
+                    {
+                        unmarshalledObject.ElasticIp = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Hostname", targetDepth))
+                    {
+                        unmarshalledObject.Hostname = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("InstallUpdatesOnBoot", targetDepth))
+                    {
+                        unmarshalledObject.InstallUpdatesOnBoot = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("InstanceId", targetDepth))
+                    {
+                        unmarshalledObject.InstanceId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("InstanceProfileArn", targetDepth))
+                    {
+                        unmarshalledObject.InstanceProfileArn = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("InstanceType", targetDepth))
+                    {
+                        unmarshalledObject.InstanceType = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("LastServiceErrorId", targetDepth))
+                    {
+                        unmarshalledObject.LastServiceErrorId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("LayerIds", targetDepth))
+                    {
+                        unmarshalledObject.LayerIds = new List<string>();
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        while (context.Read())
+                        {
+                          if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                          {
+                             unmarshalledObject.LayerIds.Add(unmarshaller.Unmarshall(context));
+                          }
+                          else if (context.IsEndArray)
+                          {
+                            break;
+                          }
+                        }
+                        continue;
+                    }
+                    if (context.TestExpression("Os", targetDepth))
+                    {
+                        unmarshalledObject.Os = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PrivateDns", targetDepth))
+                    {
+                        unmarshalledObject.PrivateDns = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PrivateIp", targetDepth))
+                    {
+                        unmarshalledObject.PrivateIp = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PublicDns", targetDepth))
+                    {
+                        unmarshalledObject.PublicDns = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PublicIp", targetDepth))
+                    {
+                        unmarshalledObject.PublicIp = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("RootDeviceType", targetDepth))
+                    {
+                        unmarshalledObject.RootDeviceType = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("RootDeviceVolumeId", targetDepth))
+                    {
+                        unmarshalledObject.RootDeviceVolumeId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SecurityGroupIds", targetDepth))
+                    {
+                        unmarshalledObject.SecurityGroupIds = new List<string>();
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        while (context.Read())
+                        {
+                          if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                          {
+                             unmarshalledObject.SecurityGroupIds.Add(unmarshaller.Unmarshall(context));
+                          }
+                          else if (context.IsEndArray)
+                          {
+                            break;
+                          }
+                        }
+                        continue;
+                    }
+                    if (context.TestExpression("SshHostDsaKeyFingerprint", targetDepth))
+                    {
+                        unmarshalledObject.SshHostDsaKeyFingerprint = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SshHostRsaKeyFingerprint", targetDepth))
+                    {
+                        unmarshalledObject.SshHostRsaKeyFingerprint = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SshKeyName", targetDepth))
+                    {
+                        unmarshalledObject.SshKeyName = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StackId", targetDepth))
+                    {
+                        unmarshalledObject.StackId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Status", targetDepth))
+                    {
+                        unmarshalledObject.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SubnetId", targetDepth))
+                    {
+                        unmarshalledObject.SubnetId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("VirtualizationType", targetDepth))
+                    {
+                        unmarshalledObject.VirtualizationType = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {
-                    return instance;
+                    return unmarshalledObject;
                 }
-            }
-          
-
-            return instance;
+            }          
+            return unmarshalledObject;
         }
+
 
         private static InstanceUnmarshaller instance;
         public static InstanceUnmarshaller GetInstance()
         {
             if (instance == null)
+            {
                 instance = new InstanceUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-  

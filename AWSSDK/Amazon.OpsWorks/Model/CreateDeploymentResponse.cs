@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the  CreateDeploymentResult response and response metadata.
+    /// Returns information about the CreateDeploymentResult response and response metadata.
     /// </summary>
     public class CreateDeploymentResponse : AmazonWebServiceResponse
     {
-        private CreateDeploymentResult createDeploymentResult;
+        private CreateDeploymentResult _createDeploymentResult;
 
         /// <summary>
         /// Gets and sets the CreateDeploymentResult property.
-        /// Contains the response to a CreateDeployment request.
+        /// Represents the output of a CreateDeployment operation.
         /// </summary>
         public CreateDeploymentResult CreateDeploymentResult
         {
             get
             {
-                if(this.createDeploymentResult == null)
+                if(this._createDeploymentResult == null)
                 {
-                    this.createDeploymentResult = new CreateDeploymentResult();
+                    this._createDeploymentResult = new CreateDeploymentResult();
                 }
-
-                return this.createDeploymentResult;
+                return this._createDeploymentResult;
             }
-            set { this.createDeploymentResult = value; }
+            set { this._createDeploymentResult = value; }
         }
     }
 }
-    

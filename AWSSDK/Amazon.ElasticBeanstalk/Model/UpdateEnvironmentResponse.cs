@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// Returns information about the  UpdateEnvironmentResult response and response metadata.
+    /// Returns information about the UpdateEnvironmentResult response and response metadata.
     /// </summary>
     public class UpdateEnvironmentResponse : AmazonWebServiceResponse
     {
-        private UpdateEnvironmentResult updateEnvironmentResult;
+        private UpdateEnvironmentResult _updateEnvironmentResult;
 
         /// <summary>
         /// Gets and sets the UpdateEnvironmentResult property.
-        /// Describes the properties of an environment.
+        /// Represents the output of a UpdateEnvironment operation.
         /// </summary>
         public UpdateEnvironmentResult UpdateEnvironmentResult
         {
-            get 
+            get
             {
-                if(this.updateEnvironmentResult == null)
+                if(this._updateEnvironmentResult == null)
                 {
-                    this.updateEnvironmentResult = new UpdateEnvironmentResult();
+                    this._updateEnvironmentResult = new UpdateEnvironmentResult();
                 }
-
-                return this.updateEnvironmentResult; 
+                return this._updateEnvironmentResult;
             }
-            set { this.updateEnvironmentResult = value; }
+            set { this._updateEnvironmentResult = value; }
         }
     }
 }
-    

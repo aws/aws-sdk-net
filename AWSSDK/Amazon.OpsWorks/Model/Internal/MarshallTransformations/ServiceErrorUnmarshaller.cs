@@ -12,93 +12,97 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using Amazon.OpsWorks.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+using Amazon.OpsWorks.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for ServiceError Object
+    /// </summary>  
+    public class ServiceErrorUnmarshaller : IUnmarshaller<ServiceError, XmlUnmarshallerContext>, IUnmarshaller<ServiceError, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// ServiceErrorUnmarshaller
-      /// </summary>
-      internal class ServiceErrorUnmarshaller : IUnmarshaller<ServiceError, XmlUnmarshallerContext>, IUnmarshaller<ServiceError, JsonUnmarshallerContext>
-      {
         ServiceError IUnmarshaller<ServiceError, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public ServiceError Unmarshall(JsonUnmarshallerContext context)
         {
             if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
                 return null;
-            ServiceError serviceError = new ServiceError();
-          
+            
+            var unmarshalledObject = new ServiceError();
+                    
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+
             while (context.Read())
             {
                 if ((context.IsKey) && (context.CurrentDepth == targetDepth))
                 {
-                context.Read();
-                context.Read();
-              
-              if (context.TestExpression("ServiceErrorId", targetDepth))
-              {
-                serviceError.ServiceErrorId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("StackId", targetDepth))
-              {
-                serviceError.StackId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("InstanceId", targetDepth))
-              {
-                serviceError.InstanceId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Type", targetDepth))
-              {
-                serviceError.Type = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Message", targetDepth))
-              {
-                serviceError.Message = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("CreatedAt", targetDepth))
-              {
-                serviceError.CreatedAt = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                    context.Read();
+                    context.Read();
+                    if (context.TestExpression("CreatedAt", targetDepth))
+                    {
+                        unmarshalledObject.CreatedAt = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("InstanceId", targetDepth))
+                    {
+                        unmarshalledObject.InstanceId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Message", targetDepth))
+                    {
+                        unmarshalledObject.Message = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ServiceErrorId", targetDepth))
+                    {
+                        unmarshalledObject.ServiceErrorId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StackId", targetDepth))
+                    {
+                        unmarshalledObject.StackId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Type", targetDepth))
+                    {
+                        unmarshalledObject.Type = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {
-                    return serviceError;
+                    return unmarshalledObject;
                 }
-            }
-          
-
-            return serviceError;
+            }          
+            return unmarshalledObject;
         }
+
 
         private static ServiceErrorUnmarshaller instance;
         public static ServiceErrorUnmarshaller GetInstance()
         {
             if (instance == null)
+            {
                 instance = new ServiceErrorUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-  

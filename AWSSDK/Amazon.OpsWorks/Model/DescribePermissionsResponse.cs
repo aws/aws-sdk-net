@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the  DescribePermissionsResult response and response metadata.
+    /// Returns information about the DescribePermissionsResult response and response metadata.
     /// </summary>
     public class DescribePermissionsResponse : AmazonWebServiceResponse
     {
-        private DescribePermissionsResult describePermissionsResult;
+        private DescribePermissionsResult _describePermissionsResult;
 
         /// <summary>
         /// Gets and sets the DescribePermissionsResult property.
-        /// Contains the response to a DescribePermissions request.
+        /// Represents the output of a DescribePermissions operation.
         /// </summary>
         public DescribePermissionsResult DescribePermissionsResult
         {
             get
             {
-                if(this.describePermissionsResult == null)
+                if(this._describePermissionsResult == null)
                 {
-                    this.describePermissionsResult = new DescribePermissionsResult();
+                    this._describePermissionsResult = new DescribePermissionsResult();
                 }
-
-                return this.describePermissionsResult;
+                return this._describePermissionsResult;
             }
-            set { this.describePermissionsResult = value; }
+            set { this._describePermissionsResult = value; }
         }
     }
 }
-    

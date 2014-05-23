@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,61 +18,66 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para>Result message containing a list of application descriptions.</para>
+    /// Result message containing a list of application descriptions.
     /// </summary>
     public partial class DescribeApplicationsResult
     {
-        
-        private List<ApplicationDescription> applications = new List<ApplicationDescription>();
+        private List<ApplicationDescription> _applications = new List<ApplicationDescription>();
+
 
         /// <summary>
-        /// This parameter contains a list of <a>ApplicationDescription</a>.
-        ///  
+        /// Gets and sets the property Applications. 
+        /// <para>
+        ///          This parameter contains a list of         <a>ApplicationDescription</a>.
+        ///      
+        /// </para>
         /// </summary>
         public List<ApplicationDescription> Applications
         {
-            get { return this.applications; }
-            set { this.applications = value; }
+            get { return this._applications; }
+            set { this._applications = value; }
         }
+
         /// <summary>
-        /// Adds elements to the Applications collection
+        /// Sets the Applications property
         /// </summary>
         /// <param name="applications">The values to add to the Applications collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeApplicationsResult WithApplications(params ApplicationDescription[] applications)
         {
-            foreach (ApplicationDescription element in applications)
+            foreach (var element in applications)
             {
-                this.applications.Add(element);
+                this._applications.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the Applications collection
+        /// Sets the Applications property
         /// </summary>
         /// <param name="applications">The values to add to the Applications collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeApplicationsResult WithApplications(IEnumerable<ApplicationDescription> applications)
         {
-            foreach (ApplicationDescription element in applications)
+            foreach (var element in applications)
             {
-                this.applications.Add(element);
+                this._applications.Add(element);
             }
-
             return this;
         }
-
         // Check to see if Applications property is set
         internal bool IsSetApplications()
         {
-            return this.applications.Count > 0;
+            return this._applications != null && this._applications.Count > 0; 
         }
+
     }
 }

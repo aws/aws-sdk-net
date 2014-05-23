@@ -18,167 +18,56 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Describes a time-based instance's auto scaling schedule. The schedule consists of a set of key-value pairs.</para>
-    /// <ul>
-    /// <li>The key is the time period (a UTC hour) and must be an integer from 0 - 23.</li>
-    /// <li>The value indicates whether the instance should be online or offline for the specified period, and must be set to "on" or "off"</li>
+    /// Describes a time-based instance's auto scaling schedule. The schedule consists of
+    /// a set of key-value pairs.
     /// 
-    /// </ul>
-    /// <para>The default setting for all time periods is off, so you use the following parameters primarily to specify the online periods. You
-    /// don't have to explicitly specify offline periods unless you want to change an online period to an offline period. </para> <para>The
-    /// following example specifies that the instance should be online for four hours, from UTC 1200 - 1600. It will be off for the remainder of the
-    /// day.</para> <para> <c> { "12":"on", "13":"on", "14":"on", "15":"on" } </c> </para>
+    ///   <ul>  <li>The key is the time period (a UTC hour) and must be an integer from 0
+    /// - 23.</li>  <li>The value indicates whether the instance should be online or offline
+    /// for the specified            period, and must be set to "on" or "off"</li>  </ul>
+    ///  
+    /// <para>
+    /// The default setting for all time periods is off, so you use the following parameters
+    /// primarily         to specify the online periods. You don't have to explicitly specify
+    /// offline periods unless you want to change         an online period to an offline period.
+    ///   
+    /// </para>
+    ///   
+    /// <para>
+    /// The following example specifies that the instance should be online for four hours,
+    /// from UTC 1200 - 1600. It will be         off for the remainder of the day.
+    /// </para>
+    ///     
+    /// <para>
+    /// <code> { "12":"on", "13":"on", "14":"on", "15":"on" } </code>
+    /// </para>
     /// </summary>
     public partial class WeeklyAutoScalingSchedule
     {
-        
-        private Dictionary<string,string> monday = new Dictionary<string,string>();
-        private Dictionary<string,string> tuesday = new Dictionary<string,string>();
-        private Dictionary<string,string> wednesday = new Dictionary<string,string>();
-        private Dictionary<string,string> thursday = new Dictionary<string,string>();
-        private Dictionary<string,string> friday = new Dictionary<string,string>();
-        private Dictionary<string,string> saturday = new Dictionary<string,string>();
-        private Dictionary<string,string> sunday = new Dictionary<string,string>();
+        private Dictionary<string, string> _friday = new Dictionary<string, string>();
+        private Dictionary<string, string> _monday = new Dictionary<string, string>();
+        private Dictionary<string, string> _saturday = new Dictionary<string, string>();
+        private Dictionary<string, string> _sunday = new Dictionary<string, string>();
+        private Dictionary<string, string> _thursday = new Dictionary<string, string>();
+        private Dictionary<string, string> _tuesday = new Dictionary<string, string>();
+        private Dictionary<string, string> _wednesday = new Dictionary<string, string>();
+
 
         /// <summary>
-        /// The schedule for Monday.
-        ///  
-        /// </summary>
-        public Dictionary<string,string> Monday
-        {
-            get { return this.monday; }
-            set { this.monday = value; }
-        }
-
-        /// <summary>
-        /// Adds the KeyValuePairs to the Monday dictionary.
-        /// </summary>
-        /// <param name="pairs">The pairs to be added to the Monday dictionary.</param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public WeeklyAutoScalingSchedule WithMonday(params KeyValuePair<string, string>[] pairs)
-        {
-            foreach (KeyValuePair<string, string> pair in pairs)
-            {
-                this.Monday[pair.Key] = pair.Value;
-            }
-
-            return this;
-        }
-
-        // Check to see if Monday property is set
-        internal bool IsSetMonday()
-        {
-            return this.monday != null;
-        }
-
-        /// <summary>
-        /// The schedule for Tuesday.
-        ///  
-        /// </summary>
-        public Dictionary<string,string> Tuesday
-        {
-            get { return this.tuesday; }
-            set { this.tuesday = value; }
-        }
-
-        /// <summary>
-        /// Adds the KeyValuePairs to the Tuesday dictionary.
-        /// </summary>
-        /// <param name="pairs">The pairs to be added to the Tuesday dictionary.</param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public WeeklyAutoScalingSchedule WithTuesday(params KeyValuePair<string, string>[] pairs)
-        {
-            foreach (KeyValuePair<string, string> pair in pairs)
-            {
-                this.Tuesday[pair.Key] = pair.Value;
-            }
-
-            return this;
-        }
-
-        // Check to see if Tuesday property is set
-        internal bool IsSetTuesday()
-        {
-            return this.tuesday != null;
-        }
-
-        /// <summary>
-        /// The schedule for Wednesday.
-        ///  
-        /// </summary>
-        public Dictionary<string,string> Wednesday
-        {
-            get { return this.wednesday; }
-            set { this.wednesday = value; }
-        }
-
-        /// <summary>
-        /// Adds the KeyValuePairs to the Wednesday dictionary.
-        /// </summary>
-        /// <param name="pairs">The pairs to be added to the Wednesday dictionary.</param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public WeeklyAutoScalingSchedule WithWednesday(params KeyValuePair<string, string>[] pairs)
-        {
-            foreach (KeyValuePair<string, string> pair in pairs)
-            {
-                this.Wednesday[pair.Key] = pair.Value;
-            }
-
-            return this;
-        }
-
-        // Check to see if Wednesday property is set
-        internal bool IsSetWednesday()
-        {
-            return this.wednesday != null;
-        }
-
-        /// <summary>
-        /// The schedule for Thursday.
-        ///  
-        /// </summary>
-        public Dictionary<string,string> Thursday
-        {
-            get { return this.thursday; }
-            set { this.thursday = value; }
-        }
-
-        /// <summary>
-        /// Adds the KeyValuePairs to the Thursday dictionary.
-        /// </summary>
-        /// <param name="pairs">The pairs to be added to the Thursday dictionary.</param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public WeeklyAutoScalingSchedule WithThursday(params KeyValuePair<string, string>[] pairs)
-        {
-            foreach (KeyValuePair<string, string> pair in pairs)
-            {
-                this.Thursday[pair.Key] = pair.Value;
-            }
-
-            return this;
-        }
-
-        // Check to see if Thursday property is set
-        internal bool IsSetThursday()
-        {
-            return this.thursday != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Friday. 
+        /// <para>
         /// The schedule for Friday.
-        ///  
+        /// </para>
         /// </summary>
-        public Dictionary<string,string> Friday
+        public Dictionary<string, string> Friday
         {
-            get { return this.friday; }
-            set { this.friday = value; }
+            get { return this._friday; }
+            set { this._friday = value; }
         }
 
         /// <summary>
@@ -193,24 +82,58 @@ namespace Amazon.OpsWorks.Model
             {
                 this.Friday[pair.Key] = pair.Value;
             }
-
             return this;
         }
-
         // Check to see if Friday property is set
         internal bool IsSetFriday()
         {
-            return this.friday != null;
+            return this._friday != null && this._friday.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Monday. 
+        /// <para>
+        /// The schedule for Monday.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Monday
+        {
+            get { return this._monday; }
+            set { this._monday = value; }
         }
 
         /// <summary>
-        /// The schedule for Saturday.
-        ///  
+        /// Adds the KeyValuePairs to the Monday dictionary.
         /// </summary>
-        public Dictionary<string,string> Saturday
+        /// <param name="pairs">The pairs to be added to the Monday dictionary.</param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public WeeklyAutoScalingSchedule WithMonday(params KeyValuePair<string, string>[] pairs)
         {
-            get { return this.saturday; }
-            set { this.saturday = value; }
+            foreach (KeyValuePair<string, string> pair in pairs)
+            {
+                this.Monday[pair.Key] = pair.Value;
+            }
+            return this;
+        }
+        // Check to see if Monday property is set
+        internal bool IsSetMonday()
+        {
+            return this._monday != null && this._monday.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Saturday. 
+        /// <para>
+        /// The schedule for Saturday.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Saturday
+        {
+            get { return this._saturday; }
+            set { this._saturday = value; }
         }
 
         /// <summary>
@@ -225,24 +148,25 @@ namespace Amazon.OpsWorks.Model
             {
                 this.Saturday[pair.Key] = pair.Value;
             }
-
             return this;
         }
-
         // Check to see if Saturday property is set
         internal bool IsSetSaturday()
         {
-            return this.saturday != null;
+            return this._saturday != null && this._saturday.Count > 0; 
         }
 
+
         /// <summary>
+        /// Gets and sets the property Sunday. 
+        /// <para>
         /// The schedule for Sunday.
-        ///  
+        /// </para>
         /// </summary>
-        public Dictionary<string,string> Sunday
+        public Dictionary<string, string> Sunday
         {
-            get { return this.sunday; }
-            set { this.sunday = value; }
+            get { return this._sunday; }
+            set { this._sunday = value; }
         }
 
         /// <summary>
@@ -257,14 +181,112 @@ namespace Amazon.OpsWorks.Model
             {
                 this.Sunday[pair.Key] = pair.Value;
             }
-
             return this;
         }
-
         // Check to see if Sunday property is set
         internal bool IsSetSunday()
         {
-            return this.sunday != null;
+            return this._sunday != null && this._sunday.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Thursday. 
+        /// <para>
+        /// The schedule for Thursday.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Thursday
+        {
+            get { return this._thursday; }
+            set { this._thursday = value; }
+        }
+
+        /// <summary>
+        /// Adds the KeyValuePairs to the Thursday dictionary.
+        /// </summary>
+        /// <param name="pairs">The pairs to be added to the Thursday dictionary.</param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public WeeklyAutoScalingSchedule WithThursday(params KeyValuePair<string, string>[] pairs)
+        {
+            foreach (KeyValuePair<string, string> pair in pairs)
+            {
+                this.Thursday[pair.Key] = pair.Value;
+            }
+            return this;
+        }
+        // Check to see if Thursday property is set
+        internal bool IsSetThursday()
+        {
+            return this._thursday != null && this._thursday.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Tuesday. 
+        /// <para>
+        /// The schedule for Tuesday.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tuesday
+        {
+            get { return this._tuesday; }
+            set { this._tuesday = value; }
+        }
+
+        /// <summary>
+        /// Adds the KeyValuePairs to the Tuesday dictionary.
+        /// </summary>
+        /// <param name="pairs">The pairs to be added to the Tuesday dictionary.</param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public WeeklyAutoScalingSchedule WithTuesday(params KeyValuePair<string, string>[] pairs)
+        {
+            foreach (KeyValuePair<string, string> pair in pairs)
+            {
+                this.Tuesday[pair.Key] = pair.Value;
+            }
+            return this;
+        }
+        // Check to see if Tuesday property is set
+        internal bool IsSetTuesday()
+        {
+            return this._tuesday != null && this._tuesday.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Wednesday. 
+        /// <para>
+        /// The schedule for Wednesday.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Wednesday
+        {
+            get { return this._wednesday; }
+            set { this._wednesday = value; }
+        }
+
+        /// <summary>
+        /// Adds the KeyValuePairs to the Wednesday dictionary.
+        /// </summary>
+        /// <param name="pairs">The pairs to be added to the Wednesday dictionary.</param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public WeeklyAutoScalingSchedule WithWednesday(params KeyValuePair<string, string>[] pairs)
+        {
+            foreach (KeyValuePair<string, string> pair in pairs)
+            {
+                this.Wednesday[pair.Key] = pair.Value;
+            }
+            return this;
+        }
+        // Check to see if Wednesday property is set
+        internal bool IsSetWednesday()
+        {
+            return this._wednesday != null && this._wednesday.Count > 0; 
+        }
+
     }
 }

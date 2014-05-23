@@ -18,25 +18,31 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>CreateInstance</c> request.</para>
+    /// Contains the response to a <code>CreateInstance</code> request.
     /// </summary>
     public partial class CreateInstanceResult
     {
-        
-        private string instanceId;
+        private string _instanceId;
+
 
         /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
         /// The instance ID.
-        ///  
+        /// </para>
         /// </summary>
         public string InstanceId
         {
-            get { return this.instanceId; }
-            set { this.instanceId = value; }
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
         }
+
 
         /// <summary>
         /// Sets the InstanceId property
@@ -46,15 +52,15 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateInstanceResult WithInstanceId(string instanceId)
         {
-            this.instanceId = instanceId;
+            this._instanceId = instanceId;
             return this;
         }
-            
 
         // Check to see if InstanceId property is set
         internal bool IsSetInstanceId()
         {
-            return this.instanceId != null;
+            return this._instanceId != null;
         }
+
     }
 }

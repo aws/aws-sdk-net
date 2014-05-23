@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
@@ -28,195 +29,145 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Set Time Based Auto Scaling Request Marshaller
+    /// SetTimeBasedAutoScaling Request Marshaller
     /// </summary>       
-    internal class SetTimeBasedAutoScalingRequestMarshaller : IMarshaller<IRequest, SetTimeBasedAutoScalingRequest> 
+    public class SetTimeBasedAutoScalingRequestMarshaller : IMarshaller<IRequest, SetTimeBasedAutoScalingRequest> 
     {
-        
-
-        public IRequest Marshall(SetTimeBasedAutoScalingRequest setTimeBasedAutoScalingRequest) 
+        public IRequest Marshall(SetTimeBasedAutoScalingRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(setTimeBasedAutoScalingRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.SetTimeBasedAutoScaling";
             request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
 
-            
-              
-            string uriResourcePath = ""; 
-            
-            if (uriResourcePath.Contains("?")) 
-            {
-                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
-                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
-        
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                }
-            }
-            
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
-            using (StringWriter stringWriter = new StringWriter())
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (setTimeBasedAutoScalingRequest != null && setTimeBasedAutoScalingRequest.IsSetInstanceId()) 
+                if(publicRequest != null && publicRequest.IsSetAutoScalingSchedule())
                 {
-                    writer.WritePropertyName("InstanceId");
-                    writer.Write(setTimeBasedAutoScalingRequest.InstanceId);
-                }
-
-                if (setTimeBasedAutoScalingRequest != null) 
-                {
-                    WeeklyAutoScalingSchedule autoScalingSchedule = setTimeBasedAutoScalingRequest.AutoScalingSchedule;
-                    if (autoScalingSchedule != null)
+                    writer.WritePropertyName("AutoScalingSchedule");
+                    writer.WriteObjectStart();
+                    if(publicRequest.AutoScalingSchedule != null && publicRequest.AutoScalingSchedule.IsSetFriday() && publicRequest.AutoScalingSchedule.Friday.Count > 0)
                     {
-                        writer.WritePropertyName("AutoScalingSchedule");
+                        writer.WritePropertyName("Friday");
                         writer.WriteObjectStart();
-                        if (autoScalingSchedule != null) 
+                        foreach (var publicRequestAutoScalingScheduleFridayKvp in publicRequest.AutoScalingSchedule.Friday)
                         {
-                            if (autoScalingSchedule.Monday != null && autoScalingSchedule.Monday.Count > 0)
-                            {
-                                writer.WritePropertyName("Monday");
-                                writer.WriteObjectStart();
-                                foreach (string autoScalingScheduleMondayKey in autoScalingSchedule.Monday.Keys)
-                                {
-                                    string mondayListValue;
-                                    bool mondayListValueHasValue = autoScalingSchedule.Monday.TryGetValue(autoScalingScheduleMondayKey, out mondayListValue);
-                                    writer.WritePropertyName(autoScalingScheduleMondayKey);
+                            writer.WritePropertyName(publicRequestAutoScalingScheduleFridayKvp.Key);
+                            var publicRequestAutoScalingScheduleFridayValue = publicRequestAutoScalingScheduleFridayKvp.Value;
 
-                                writer.Write(mondayListValue);
-                                }
-                                writer.WriteObjectEnd();
-                            }
-                        }
-                        if (autoScalingSchedule != null) 
-                        {
-                            if (autoScalingSchedule.Tuesday != null && autoScalingSchedule.Tuesday.Count > 0)
-                            {
-                                writer.WritePropertyName("Tuesday");
-                                writer.WriteObjectStart();
-                                foreach (string autoScalingScheduleTuesdayKey in autoScalingSchedule.Tuesday.Keys)
-                                {
-                                    string tuesdayListValue;
-                                    bool tuesdayListValueHasValue = autoScalingSchedule.Tuesday.TryGetValue(autoScalingScheduleTuesdayKey, out tuesdayListValue);
-                                    writer.WritePropertyName(autoScalingScheduleTuesdayKey);
-
-                                writer.Write(tuesdayListValue);
-                                }
-                                writer.WriteObjectEnd();
-                            }
-                        }
-                        if (autoScalingSchedule != null) 
-                        {
-                            if (autoScalingSchedule.Wednesday != null && autoScalingSchedule.Wednesday.Count > 0)
-                            {
-                                writer.WritePropertyName("Wednesday");
-                                writer.WriteObjectStart();
-                                foreach (string autoScalingScheduleWednesdayKey in autoScalingSchedule.Wednesday.Keys)
-                                {
-                                    string wednesdayListValue;
-                                    bool wednesdayListValueHasValue = autoScalingSchedule.Wednesday.TryGetValue(autoScalingScheduleWednesdayKey, out wednesdayListValue);
-                                    writer.WritePropertyName(autoScalingScheduleWednesdayKey);
-
-                                writer.Write(wednesdayListValue);
-                                }
-                                writer.WriteObjectEnd();
-                            }
-                        }
-                        if (autoScalingSchedule != null) 
-                        {
-                            if (autoScalingSchedule.Thursday != null && autoScalingSchedule.Thursday.Count > 0)
-                            {
-                                writer.WritePropertyName("Thursday");
-                                writer.WriteObjectStart();
-                                foreach (string autoScalingScheduleThursdayKey in autoScalingSchedule.Thursday.Keys)
-                                {
-                                    string thursdayListValue;
-                                    bool thursdayListValueHasValue = autoScalingSchedule.Thursday.TryGetValue(autoScalingScheduleThursdayKey, out thursdayListValue);
-                                    writer.WritePropertyName(autoScalingScheduleThursdayKey);
-
-                                writer.Write(thursdayListValue);
-                                }
-                                writer.WriteObjectEnd();
-                            }
-                        }
-                        if (autoScalingSchedule != null) 
-                        {
-                            if (autoScalingSchedule.Friday != null && autoScalingSchedule.Friday.Count > 0)
-                            {
-                                writer.WritePropertyName("Friday");
-                                writer.WriteObjectStart();
-                                foreach (string autoScalingScheduleFridayKey in autoScalingSchedule.Friday.Keys)
-                                {
-                                    string fridayListValue;
-                                    bool fridayListValueHasValue = autoScalingSchedule.Friday.TryGetValue(autoScalingScheduleFridayKey, out fridayListValue);
-                                    writer.WritePropertyName(autoScalingScheduleFridayKey);
-
-                                writer.Write(fridayListValue);
-                                }
-                                writer.WriteObjectEnd();
-                            }
-                        }
-                        if (autoScalingSchedule != null) 
-                        {
-                            if (autoScalingSchedule.Saturday != null && autoScalingSchedule.Saturday.Count > 0)
-                            {
-                                writer.WritePropertyName("Saturday");
-                                writer.WriteObjectStart();
-                                foreach (string autoScalingScheduleSaturdayKey in autoScalingSchedule.Saturday.Keys)
-                                {
-                                    string saturdayListValue;
-                                    bool saturdayListValueHasValue = autoScalingSchedule.Saturday.TryGetValue(autoScalingScheduleSaturdayKey, out saturdayListValue);
-                                    writer.WritePropertyName(autoScalingScheduleSaturdayKey);
-
-                                writer.Write(saturdayListValue);
-                                }
-                                writer.WriteObjectEnd();
-                            }
-                        }
-                        if (autoScalingSchedule != null) 
-                        {
-                            if (autoScalingSchedule.Sunday != null && autoScalingSchedule.Sunday.Count > 0)
-                            {
-                                writer.WritePropertyName("Sunday");
-                                writer.WriteObjectStart();
-                                foreach (string autoScalingScheduleSundayKey in autoScalingSchedule.Sunday.Keys)
-                                {
-                                    string sundayListValue;
-                                    bool sundayListValueHasValue = autoScalingSchedule.Sunday.TryGetValue(autoScalingScheduleSundayKey, out sundayListValue);
-                                    writer.WritePropertyName(autoScalingScheduleSundayKey);
-
-                                writer.Write(sundayListValue);
-                                }
-                                writer.WriteObjectEnd();
-                            }
+                            writer.Write(publicRequestAutoScalingScheduleFridayValue);
                         }
                         writer.WriteObjectEnd();
                     }
+
+                    if(publicRequest.AutoScalingSchedule != null && publicRequest.AutoScalingSchedule.IsSetMonday() && publicRequest.AutoScalingSchedule.Monday.Count > 0)
+                    {
+                        writer.WritePropertyName("Monday");
+                        writer.WriteObjectStart();
+                        foreach (var publicRequestAutoScalingScheduleMondayKvp in publicRequest.AutoScalingSchedule.Monday)
+                        {
+                            writer.WritePropertyName(publicRequestAutoScalingScheduleMondayKvp.Key);
+                            var publicRequestAutoScalingScheduleMondayValue = publicRequestAutoScalingScheduleMondayKvp.Value;
+
+                            writer.Write(publicRequestAutoScalingScheduleMondayValue);
+                        }
+                        writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.AutoScalingSchedule != null && publicRequest.AutoScalingSchedule.IsSetSaturday() && publicRequest.AutoScalingSchedule.Saturday.Count > 0)
+                    {
+                        writer.WritePropertyName("Saturday");
+                        writer.WriteObjectStart();
+                        foreach (var publicRequestAutoScalingScheduleSaturdayKvp in publicRequest.AutoScalingSchedule.Saturday)
+                        {
+                            writer.WritePropertyName(publicRequestAutoScalingScheduleSaturdayKvp.Key);
+                            var publicRequestAutoScalingScheduleSaturdayValue = publicRequestAutoScalingScheduleSaturdayKvp.Value;
+
+                            writer.Write(publicRequestAutoScalingScheduleSaturdayValue);
+                        }
+                        writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.AutoScalingSchedule != null && publicRequest.AutoScalingSchedule.IsSetSunday() && publicRequest.AutoScalingSchedule.Sunday.Count > 0)
+                    {
+                        writer.WritePropertyName("Sunday");
+                        writer.WriteObjectStart();
+                        foreach (var publicRequestAutoScalingScheduleSundayKvp in publicRequest.AutoScalingSchedule.Sunday)
+                        {
+                            writer.WritePropertyName(publicRequestAutoScalingScheduleSundayKvp.Key);
+                            var publicRequestAutoScalingScheduleSundayValue = publicRequestAutoScalingScheduleSundayKvp.Value;
+
+                            writer.Write(publicRequestAutoScalingScheduleSundayValue);
+                        }
+                        writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.AutoScalingSchedule != null && publicRequest.AutoScalingSchedule.IsSetThursday() && publicRequest.AutoScalingSchedule.Thursday.Count > 0)
+                    {
+                        writer.WritePropertyName("Thursday");
+                        writer.WriteObjectStart();
+                        foreach (var publicRequestAutoScalingScheduleThursdayKvp in publicRequest.AutoScalingSchedule.Thursday)
+                        {
+                            writer.WritePropertyName(publicRequestAutoScalingScheduleThursdayKvp.Key);
+                            var publicRequestAutoScalingScheduleThursdayValue = publicRequestAutoScalingScheduleThursdayKvp.Value;
+
+                            writer.Write(publicRequestAutoScalingScheduleThursdayValue);
+                        }
+                        writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.AutoScalingSchedule != null && publicRequest.AutoScalingSchedule.IsSetTuesday() && publicRequest.AutoScalingSchedule.Tuesday.Count > 0)
+                    {
+                        writer.WritePropertyName("Tuesday");
+                        writer.WriteObjectStart();
+                        foreach (var publicRequestAutoScalingScheduleTuesdayKvp in publicRequest.AutoScalingSchedule.Tuesday)
+                        {
+                            writer.WritePropertyName(publicRequestAutoScalingScheduleTuesdayKvp.Key);
+                            var publicRequestAutoScalingScheduleTuesdayValue = publicRequestAutoScalingScheduleTuesdayKvp.Value;
+
+                            writer.Write(publicRequestAutoScalingScheduleTuesdayValue);
+                        }
+                        writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.AutoScalingSchedule != null && publicRequest.AutoScalingSchedule.IsSetWednesday() && publicRequest.AutoScalingSchedule.Wednesday.Count > 0)
+                    {
+                        writer.WritePropertyName("Wednesday");
+                        writer.WriteObjectStart();
+                        foreach (var publicRequestAutoScalingScheduleWednesdayKvp in publicRequest.AutoScalingSchedule.Wednesday)
+                        {
+                            writer.WritePropertyName(publicRequestAutoScalingScheduleWednesdayKvp.Key);
+                            var publicRequestAutoScalingScheduleWednesdayValue = publicRequestAutoScalingScheduleWednesdayKvp.Value;
+
+                            writer.Write(publicRequestAutoScalingScheduleWednesdayValue);
+                        }
+                        writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
+                if(publicRequest != null && publicRequest.IsSetInstanceId())
+                {
+                    writer.WritePropertyName("InstanceId");
+                    writer.Write(publicRequest.InstanceId);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
 
             return request;
         }
+
+
     }
 }

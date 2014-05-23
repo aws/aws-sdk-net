@@ -21,6 +21,7 @@
  */
 
 using System;
+using System.Globalization;
 using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
@@ -130,9 +131,20 @@ namespace Amazon.S3.Model
                                 else
                                     writer.WriteElementString("Days", rule.Transition.Days.ToString());
 
-                                writer.WriteElementString("StorageClass", rule.Transition.StorageClass.ToString().ToUpper());
+                                writer.WriteElementString("StorageClass", rule.Transition.StorageClass.ToString().ToUpper(CultureInfo.InvariantCulture));
                                 writer.WriteEndElement();
                             }
+
+                            if (rule.NoncurrentVersionTransition != null)
+                            {
+                                writer.WriteStartElement("NoncurrentVersionTransition");
+
+                                writer.WriteElementString("NoncurrentDays", rule.NoncurrentVersionTransition.NoncurrentDays.ToString());
+
+                                writer.WriteElementString("StorageClass", rule.NoncurrentVersionTransition.StorageClass.ToString().ToUpper(CultureInfo.InvariantCulture));
+                                writer.WriteEndElement();
+                            }
+
 
                             if (rule.Expiration != null)
                             {
@@ -142,6 +154,13 @@ namespace Amazon.S3.Model
                                 else
                             writer.WriteElementString("Days", rule.Expiration.Days.ToString());
                             writer.WriteEndElement();
+                            }
+
+                            if (rule.NoncurrentVersionExpiration != null)
+                            {
+                                writer.WriteStartElement("NoncurrentVersionExpiration");
+                                writer.WriteElementString("NoncurrentDays", rule.NoncurrentVersionExpiration.NoncurrentDays.ToString());
+                                writer.WriteEndElement();
                             }
 
                             writer.WriteEndElement();

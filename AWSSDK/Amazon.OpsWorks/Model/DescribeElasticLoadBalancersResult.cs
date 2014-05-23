@@ -18,61 +18,66 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>DescribeElasticLoadBalancers</c> request.</para>
+    /// Contains the response to a <code>DescribeElasticLoadBalancers</code> request.
     /// </summary>
     public partial class DescribeElasticLoadBalancersResult
     {
-        
-        private List<ElasticLoadBalancer> elasticLoadBalancers = new List<ElasticLoadBalancer>();
+        private List<ElasticLoadBalancer> _elasticLoadBalancers = new List<ElasticLoadBalancer>();
+
 
         /// <summary>
-        /// A list of <c>ElasticLoadBalancer</c> objects that describe the specified Elastic Load Balancing instances.
-        ///  
+        /// Gets and sets the property ElasticLoadBalancers. 
+        /// <para>
+        /// A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic
+        /// Load Balancing instances.
+        /// </para>
         /// </summary>
         public List<ElasticLoadBalancer> ElasticLoadBalancers
         {
-            get { return this.elasticLoadBalancers; }
-            set { this.elasticLoadBalancers = value; }
+            get { return this._elasticLoadBalancers; }
+            set { this._elasticLoadBalancers = value; }
         }
+
         /// <summary>
-        /// Adds elements to the ElasticLoadBalancers collection
+        /// Sets the ElasticLoadBalancers property
         /// </summary>
         /// <param name="elasticLoadBalancers">The values to add to the ElasticLoadBalancers collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeElasticLoadBalancersResult WithElasticLoadBalancers(params ElasticLoadBalancer[] elasticLoadBalancers)
         {
-            foreach (ElasticLoadBalancer element in elasticLoadBalancers)
+            foreach (var element in elasticLoadBalancers)
             {
-                this.elasticLoadBalancers.Add(element);
+                this._elasticLoadBalancers.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the ElasticLoadBalancers collection
+        /// Sets the ElasticLoadBalancers property
         /// </summary>
         /// <param name="elasticLoadBalancers">The values to add to the ElasticLoadBalancers collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeElasticLoadBalancersResult WithElasticLoadBalancers(IEnumerable<ElasticLoadBalancer> elasticLoadBalancers)
         {
-            foreach (ElasticLoadBalancer element in elasticLoadBalancers)
+            foreach (var element in elasticLoadBalancers)
             {
-                this.elasticLoadBalancers.Add(element);
+                this._elasticLoadBalancers.Add(element);
             }
-
             return this;
         }
-
         // Check to see if ElasticLoadBalancers property is set
         internal bool IsSetElasticLoadBalancers()
         {
-            return this.elasticLoadBalancers.Count > 0;
+            return this._elasticLoadBalancers != null && this._elasticLoadBalancers.Count > 0; 
         }
+
     }
 }

@@ -12,69 +12,78 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using Amazon.OpsWorks.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+using Amazon.OpsWorks.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for GetHostnameSuggestion Object
+    /// </summary>  
+    public class GetHostnameSuggestionResultUnmarshaller : IUnmarshaller<GetHostnameSuggestionResult, XmlUnmarshallerContext>, IUnmarshaller<GetHostnameSuggestionResult, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// GetHostnameSuggestionResultUnmarshaller
-      /// </summary>
-      internal class GetHostnameSuggestionResultUnmarshaller : IUnmarshaller<GetHostnameSuggestionResult, XmlUnmarshallerContext>, IUnmarshaller<GetHostnameSuggestionResult, JsonUnmarshallerContext>
-      {
         GetHostnameSuggestionResult IUnmarshaller<GetHostnameSuggestionResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public GetHostnameSuggestionResult Unmarshall(JsonUnmarshallerContext context)
         {
             if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
                 return null;
-            GetHostnameSuggestionResult getHostnameSuggestionResult = new GetHostnameSuggestionResult();
-          
+            
+            var unmarshalledObject = new GetHostnameSuggestionResult();
+                    
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+
             while (context.Read())
             {
                 if ((context.IsKey) && (context.CurrentDepth == targetDepth))
                 {
-                context.Read();
-                context.Read();
-              
-              if (context.TestExpression("LayerId", targetDepth))
-              {
-                getHostnameSuggestionResult.LayerId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Hostname", targetDepth))
-              {
-                getHostnameSuggestionResult.Hostname = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                    context.Read();
+                    context.Read();
+                    if (context.TestExpression("Hostname", targetDepth))
+                    {
+                        unmarshalledObject.Hostname = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("LayerId", targetDepth))
+                    {
+                        unmarshalledObject.LayerId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {
-                    return getHostnameSuggestionResult;
+                    return unmarshalledObject;
                 }
-            }
-          
-
-            return getHostnameSuggestionResult;
+            }   
+                           
+            return unmarshalledObject;
         }
+
 
         private static GetHostnameSuggestionResultUnmarshaller instance;
         public static GetHostnameSuggestionResultUnmarshaller GetInstance()
         {
             if (instance == null)
+            {
                 instance = new GetHostnameSuggestionResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-  

@@ -12,62 +12,58 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Net;
-    using Amazon.OpsWorks.Model;
-    using Amazon.Runtime;
-    using Amazon.Runtime.Internal;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+using Amazon.OpsWorks.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for GetHostnameSuggestion operation
+    /// </summary>  
+    public class GetHostnameSuggestionResponseUnmarshaller : JsonResponseUnmarshaller
     {
-      /// <summary>
-      /// Response Unmarshaller for GetHostnameSuggestion operation
-      /// </summary>
-      internal class GetHostnameSuggestionResponseUnmarshaller : JsonResponseUnmarshaller
-      {
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-          GetHostnameSuggestionResponse response = new GetHostnameSuggestionResponse();
-          
-          context.Read();
-      
-          response.GetHostnameSuggestionResult = GetHostnameSuggestionResultUnmarshaller.GetInstance().Unmarshall(context);
-          
-          return response;
+            var response = new GetHostnameSuggestionResponse();
+            context.Read();
+            response.GetHostnameSuggestionResult = GetHostnameSuggestionResultUnmarshaller.GetInstance().Unmarshall(context);
+            return response;
         }
-        
+
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-          ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-          
-          if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-          {
-            ResourceNotFoundException ex = new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            
-            return ex;
-          }
-  
-          if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
-          {
-            ValidationException ex = new ValidationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            
-            return ex;
-          }
-  
-          return new AmazonOpsWorksException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+            {
+                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
+            {
+                return new ValidationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            return new AmazonOpsWorksException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
         private static GetHostnameSuggestionResponseUnmarshaller instance;
         public static GetHostnameSuggestionResponseUnmarshaller GetInstance()
         {
-          if (instance == null)
-          {
-            instance = new GetHostnameSuggestionResponseUnmarshaller();
-          }
-          return instance;
+            if (instance == null)
+            {
+                instance = new GetHostnameSuggestionResponseUnmarshaller();
+            }
+            return instance;
         }
-  
-      }
+
     }
-  
+}

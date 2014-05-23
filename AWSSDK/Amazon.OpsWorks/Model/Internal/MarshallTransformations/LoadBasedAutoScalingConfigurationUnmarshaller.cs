@@ -12,81 +12,87 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using Amazon.OpsWorks.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+using Amazon.OpsWorks.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for LoadBasedAutoScalingConfiguration Object
+    /// </summary>  
+    public class LoadBasedAutoScalingConfigurationUnmarshaller : IUnmarshaller<LoadBasedAutoScalingConfiguration, XmlUnmarshallerContext>, IUnmarshaller<LoadBasedAutoScalingConfiguration, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// LoadBasedAutoScalingConfigurationUnmarshaller
-      /// </summary>
-      internal class LoadBasedAutoScalingConfigurationUnmarshaller : IUnmarshaller<LoadBasedAutoScalingConfiguration, XmlUnmarshallerContext>, IUnmarshaller<LoadBasedAutoScalingConfiguration, JsonUnmarshallerContext>
-      {
         LoadBasedAutoScalingConfiguration IUnmarshaller<LoadBasedAutoScalingConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public LoadBasedAutoScalingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
                 return null;
-            LoadBasedAutoScalingConfiguration loadBasedAutoScalingConfiguration = new LoadBasedAutoScalingConfiguration();
-          
+            
+            var unmarshalledObject = new LoadBasedAutoScalingConfiguration();
+                    
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+
             while (context.Read())
             {
                 if ((context.IsKey) && (context.CurrentDepth == targetDepth))
                 {
-                context.Read();
-                context.Read();
-              
-              if (context.TestExpression("LayerId", targetDepth))
-              {
-                loadBasedAutoScalingConfiguration.LayerId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Enable", targetDepth))
-              {
-                loadBasedAutoScalingConfiguration.Enable = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("UpScaling", targetDepth))
-              {
-                loadBasedAutoScalingConfiguration.UpScaling = AutoScalingThresholdsUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("DownScaling", targetDepth))
-              {
-                loadBasedAutoScalingConfiguration.DownScaling = AutoScalingThresholdsUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                    context.Read();
+                    context.Read();
+                    if (context.TestExpression("DownScaling", targetDepth))
+                    {
+                        unmarshalledObject.DownScaling = AutoScalingThresholdsUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Enable", targetDepth))
+                    {
+                        unmarshalledObject.Enable = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("LayerId", targetDepth))
+                    {
+                        unmarshalledObject.LayerId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("UpScaling", targetDepth))
+                    {
+                        unmarshalledObject.UpScaling = AutoScalingThresholdsUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {
-                    return loadBasedAutoScalingConfiguration;
+                    return unmarshalledObject;
                 }
-            }
-          
-
-            return loadBasedAutoScalingConfiguration;
+            }          
+            return unmarshalledObject;
         }
+
 
         private static LoadBasedAutoScalingConfigurationUnmarshaller instance;
         public static LoadBasedAutoScalingConfigurationUnmarshaller GetInstance()
         {
             if (instance == null)
+            {
                 instance = new LoadBasedAutoScalingConfigurationUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-  

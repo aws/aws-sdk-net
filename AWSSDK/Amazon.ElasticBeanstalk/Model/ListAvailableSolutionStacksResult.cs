@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,109 +18,115 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para>A list of available AWS Elastic Beanstalk solution stacks. </para>
+    /// A         list of available AWS Elastic Beanstalk         solution stacks.
     /// </summary>
     public partial class ListAvailableSolutionStacksResult
     {
-        
-        private List<string> solutionStacks = new List<string>();
-        private List<SolutionStackDescription> solutionStackDetails = new List<SolutionStackDescription>();
+        private List<SolutionStackDescription> _solutionStackDetails = new List<SolutionStackDescription>();
+        private List<string> _solutionStacks = new List<string>();
+
 
         /// <summary>
-        /// A list of available solution stacks.
-        ///  
-        /// </summary>
-        public List<string> SolutionStacks
-        {
-            get { return this.solutionStacks; }
-            set { this.solutionStacks = value; }
-        }
-        /// <summary>
-        /// Adds elements to the SolutionStacks collection
-        /// </summary>
-        /// <param name="solutionStacks">The values to add to the SolutionStacks collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ListAvailableSolutionStacksResult WithSolutionStacks(params string[] solutionStacks)
-        {
-            foreach (string element in solutionStacks)
-            {
-                this.solutionStacks.Add(element);
-            }
-
-            return this;
-        }
-
-        /// <summary>
-        /// Adds elements to the SolutionStacks collection
-        /// </summary>
-        /// <param name="solutionStacks">The values to add to the SolutionStacks collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ListAvailableSolutionStacksResult WithSolutionStacks(IEnumerable<string> solutionStacks)
-        {
-            foreach (string element in solutionStacks)
-            {
-                this.solutionStacks.Add(element);
-            }
-
-            return this;
-        }
-
-        // Check to see if SolutionStacks property is set
-        internal bool IsSetSolutionStacks()
-        {
-            return this.solutionStacks.Count > 0;
-        }
-
-        /// <summary>
-        /// A list of available solution stacks and their <a>SolutionStackDescription</a>.
-        ///  
+        /// Gets and sets the property SolutionStackDetails. 
+        /// <para>
+        ///          A list of available solution stacks and their <a>SolutionStackDescription</a>.
+        ///      
+        /// </para>
         /// </summary>
         public List<SolutionStackDescription> SolutionStackDetails
         {
-            get { return this.solutionStackDetails; }
-            set { this.solutionStackDetails = value; }
+            get { return this._solutionStackDetails; }
+            set { this._solutionStackDetails = value; }
         }
+
         /// <summary>
-        /// Adds elements to the SolutionStackDetails collection
+        /// Sets the SolutionStackDetails property
         /// </summary>
         /// <param name="solutionStackDetails">The values to add to the SolutionStackDetails collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListAvailableSolutionStacksResult WithSolutionStackDetails(params SolutionStackDescription[] solutionStackDetails)
         {
-            foreach (SolutionStackDescription element in solutionStackDetails)
+            foreach (var element in solutionStackDetails)
             {
-                this.solutionStackDetails.Add(element);
+                this._solutionStackDetails.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the SolutionStackDetails collection
+        /// Sets the SolutionStackDetails property
         /// </summary>
         /// <param name="solutionStackDetails">The values to add to the SolutionStackDetails collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListAvailableSolutionStacksResult WithSolutionStackDetails(IEnumerable<SolutionStackDescription> solutionStackDetails)
         {
-            foreach (SolutionStackDescription element in solutionStackDetails)
+            foreach (var element in solutionStackDetails)
             {
-                this.solutionStackDetails.Add(element);
+                this._solutionStackDetails.Add(element);
             }
-
             return this;
         }
-
         // Check to see if SolutionStackDetails property is set
         internal bool IsSetSolutionStackDetails()
         {
-            return this.solutionStackDetails.Count > 0;
+            return this._solutionStackDetails != null && this._solutionStackDetails.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property SolutionStacks. 
+        /// <para>
+        ///          A list of available solution stacks.        
+        /// </para>
+        /// </summary>
+        public List<string> SolutionStacks
+        {
+            get { return this._solutionStacks; }
+            set { this._solutionStacks = value; }
+        }
+
+        /// <summary>
+        /// Sets the SolutionStacks property
+        /// </summary>
+        /// <param name="solutionStacks">The values to add to the SolutionStacks collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ListAvailableSolutionStacksResult WithSolutionStacks(params string[] solutionStacks)
+        {
+            foreach (var element in solutionStacks)
+            {
+                this._solutionStacks.Add(element);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the SolutionStacks property
+        /// </summary>
+        /// <param name="solutionStacks">The values to add to the SolutionStacks collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ListAvailableSolutionStacksResult WithSolutionStacks(IEnumerable<string> solutionStacks)
+        {
+            foreach (var element in solutionStacks)
+            {
+                this._solutionStacks.Add(element);
+            }
+            return this;
+        }
+        // Check to see if SolutionStacks property is set
+        internal bool IsSetSolutionStacks()
+        {
+            return this._solutionStacks != null && this._solutionStacks.Count > 0; 
+        }
+
     }
 }

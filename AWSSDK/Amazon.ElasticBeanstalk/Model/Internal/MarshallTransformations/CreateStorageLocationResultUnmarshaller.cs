@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,63 +12,67 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticBeanstalk.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   CreateStorageLocationResult Unmarshaller
-     /// </summary>
-    internal class CreateStorageLocationResultUnmarshaller : IUnmarshaller<CreateStorageLocationResult, XmlUnmarshallerContext>, IUnmarshaller<CreateStorageLocationResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for CreateStorageLocation Object
+    /// </summary>  
+    public class CreateStorageLocationResultUnmarshaller : IUnmarshaller<CreateStorageLocationResult, XmlUnmarshallerContext>
     {
         public CreateStorageLocationResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            CreateStorageLocationResult createStorageLocationResult = new CreateStorageLocationResult();
+            CreateStorageLocationResult result = new CreateStorageLocationResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
+
                     if (context.TestExpression("S3Bucket", targetDepth))
                     {
-                        createStorageLocationResult.S3Bucket = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.S3Bucket = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return createStorageLocationResult;
+                    return result;
                 }
             }
-                        
 
-
-            return createStorageLocationResult;
+            return result;
         }
 
-        public CreateStorageLocationResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static CreateStorageLocationResultUnmarshaller instance;
-
-        public static CreateStorageLocationResultUnmarshaller GetInstance() 
+        public static CreateStorageLocationResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new CreateStorageLocationResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new CreateStorageLocationResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

@@ -18,61 +18,65 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>DescribeApps</c> request.</para>
+    /// Contains the response to a <code>DescribeApps</code> request.
     /// </summary>
     public partial class DescribeAppsResult
     {
-        
-        private List<App> apps = new List<App>();
+        private List<App> _apps = new List<App>();
+
 
         /// <summary>
-        /// An array of <c>App</c> objects that describe the specified apps.
-        ///  
+        /// Gets and sets the property Apps. 
+        /// <para>
+        /// An array of <code>App</code> objects that describe the specified apps. 
+        /// </para>
         /// </summary>
         public List<App> Apps
         {
-            get { return this.apps; }
-            set { this.apps = value; }
+            get { return this._apps; }
+            set { this._apps = value; }
         }
+
         /// <summary>
-        /// Adds elements to the Apps collection
+        /// Sets the Apps property
         /// </summary>
         /// <param name="apps">The values to add to the Apps collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAppsResult WithApps(params App[] apps)
         {
-            foreach (App element in apps)
+            foreach (var element in apps)
             {
-                this.apps.Add(element);
+                this._apps.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the Apps collection
+        /// Sets the Apps property
         /// </summary>
         /// <param name="apps">The values to add to the Apps collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAppsResult WithApps(IEnumerable<App> apps)
         {
-            foreach (App element in apps)
+            foreach (var element in apps)
             {
-                this.apps.Add(element);
+                this._apps.Add(element);
             }
-
             return this;
         }
-
         // Check to see if Apps property is set
         internal bool IsSetApps()
         {
-            return this.apps.Count > 0;
+            return this._apps != null && this._apps.Count > 0; 
         }
+
     }
 }

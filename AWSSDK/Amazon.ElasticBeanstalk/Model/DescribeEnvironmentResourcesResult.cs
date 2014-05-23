@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,25 +18,31 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para>Result message containing a list of environment resource descriptions. </para>
+    /// Result message containing a list of environment resource         descriptions.
     /// </summary>
     public partial class DescribeEnvironmentResourcesResult
     {
-        
-        private EnvironmentResourceDescription environmentResources;
+        private EnvironmentResourceDescription _environmentResources;
+
 
         /// <summary>
-        /// A list of <a>EnvironmentResourceDescription</a>.
-        ///  
+        /// Gets and sets the property EnvironmentResources. 
+        /// <para>
+        ///          A list of         <a>EnvironmentResourceDescription</a>.      
+        /// </para>
         /// </summary>
         public EnvironmentResourceDescription EnvironmentResources
         {
-            get { return this.environmentResources; }
-            set { this.environmentResources = value; }
+            get { return this._environmentResources; }
+            set { this._environmentResources = value; }
         }
+
 
         /// <summary>
         /// Sets the EnvironmentResources property
@@ -46,15 +52,15 @@ namespace Amazon.ElasticBeanstalk.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEnvironmentResourcesResult WithEnvironmentResources(EnvironmentResourceDescription environmentResources)
         {
-            this.environmentResources = environmentResources;
+            this._environmentResources = environmentResources;
             return this;
         }
-            
 
         // Check to see if EnvironmentResources property is set
         internal bool IsSetEnvironmentResources()
         {
-            return this.environmentResources != null;
+            return this._environmentResources != null;
         }
+
     }
 }

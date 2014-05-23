@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the  GetHostnameSuggestionResult response and response metadata.
+    /// Returns information about the GetHostnameSuggestionResult response and response metadata.
     /// </summary>
     public class GetHostnameSuggestionResponse : AmazonWebServiceResponse
     {
-        private GetHostnameSuggestionResult getHostnameSuggestionResult;
+        private GetHostnameSuggestionResult _getHostnameSuggestionResult;
 
         /// <summary>
         /// Gets and sets the GetHostnameSuggestionResult property.
-        /// Contains the response to a GetHostnameSuggestion request.
+        /// Represents the output of a GetHostnameSuggestion operation.
         /// </summary>
         public GetHostnameSuggestionResult GetHostnameSuggestionResult
         {
             get
             {
-                if(this.getHostnameSuggestionResult == null)
+                if(this._getHostnameSuggestionResult == null)
                 {
-                    this.getHostnameSuggestionResult = new GetHostnameSuggestionResult();
+                    this._getHostnameSuggestionResult = new GetHostnameSuggestionResult();
                 }
-
-                return this.getHostnameSuggestionResult;
+                return this._getHostnameSuggestionResult;
             }
-            set { this.getHostnameSuggestionResult = value; }
+            set { this._getHostnameSuggestionResult = value; }
         }
     }
 }
-    

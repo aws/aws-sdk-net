@@ -25,58 +25,36 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeServiceErrors operation.
-    /// <para>Describes AWS OpsWorks service errors.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Show,
-    /// Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user
-    /// permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a>
-    /// .</para>
+    /// Describes AWS OpsWorks service errors.
+    /// 
+    ///     
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+    /// or Manage       permissions level for the stack, or an attached policy that explicitly
+    /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeServiceErrors"/>
-    public class DescribeServiceErrorsRequest : AmazonWebServiceRequest
+    public partial class DescribeServiceErrorsRequest : AmazonWebServiceRequest
     {
-        private string stackId;
-        private string instanceId;
-        private List<string> serviceErrorIds = new List<string>();
+        private string _instanceId;
+        private List<string> _serviceErrorIds = new List<string>();
+        private string _stackId;
+
 
         /// <summary>
-        /// The stack ID. If you use this parameter, <c>DescribeServiceErrors</c> returns descriptions of the errors associated with the specified
-        /// stack.
-        ///  
-        /// </summary>
-        public string StackId
-        {
-            get { return this.stackId; }
-            set { this.stackId = value; }
-        }
-
-        /// <summary>
-        /// Sets the StackId property
-        /// </summary>
-        /// <param name="stackId">The value to set for the StackId property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribeServiceErrorsRequest WithStackId(string stackId)
-        {
-            this.stackId = stackId;
-            return this;
-        }
-            
-
-        // Check to see if StackId property is set
-        internal bool IsSetStackId()
-        {
-            return this.stackId != null;
-        }
-
-        /// <summary>
-        /// The instance ID. If you use this parameter, <c>DescribeServiceErrors</c> returns descriptions of the errors associated with the specified
-        /// instance.
-        ///  
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns
+        ///         descriptions of the errors associated with the specified instance.
+        /// </para>
         /// </summary>
         public string InstanceId
         {
-            get { return this.instanceId; }
-            set { this.instanceId = value; }
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
         }
+
 
         /// <summary>
         /// Sets the InstanceId property
@@ -86,64 +64,98 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeServiceErrorsRequest WithInstanceId(string instanceId)
         {
-            this.instanceId = instanceId;
+            this._instanceId = instanceId;
             return this;
         }
-            
 
         // Check to see if InstanceId property is set
         internal bool IsSetInstanceId()
         {
-            return this.instanceId != null;
+            return this._instanceId != null;
         }
 
+
         /// <summary>
-        /// An array of service error IDs. If you use this parameter, <c>DescribeServiceErrors</c> returns descriptions of the specified errors.
-        /// Otherwise, it returns a description of every error.
-        ///  
+        /// Gets and sets the property ServiceErrorIds. 
+        /// <para>
+        /// An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code>
+        /// returns         descriptions of the specified errors. Otherwise, it returns a description
+        /// of every error.
+        /// </para>
         /// </summary>
         public List<string> ServiceErrorIds
         {
-            get { return this.serviceErrorIds; }
-            set { this.serviceErrorIds = value; }
+            get { return this._serviceErrorIds; }
+            set { this._serviceErrorIds = value; }
         }
+
         /// <summary>
-        /// Adds elements to the ServiceErrorIds collection
+        /// Sets the ServiceErrorIds property
         /// </summary>
         /// <param name="serviceErrorIds">The values to add to the ServiceErrorIds collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeServiceErrorsRequest WithServiceErrorIds(params string[] serviceErrorIds)
         {
-            foreach (string element in serviceErrorIds)
+            foreach (var element in serviceErrorIds)
             {
-                this.serviceErrorIds.Add(element);
+                this._serviceErrorIds.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the ServiceErrorIds collection
+        /// Sets the ServiceErrorIds property
         /// </summary>
         /// <param name="serviceErrorIds">The values to add to the ServiceErrorIds collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeServiceErrorsRequest WithServiceErrorIds(IEnumerable<string> serviceErrorIds)
         {
-            foreach (string element in serviceErrorIds)
+            foreach (var element in serviceErrorIds)
             {
-                this.serviceErrorIds.Add(element);
+                this._serviceErrorIds.Add(element);
             }
-
             return this;
         }
-
         // Check to see if ServiceErrorIds property is set
         internal bool IsSetServiceErrorIds()
         {
-            return this.serviceErrorIds.Count > 0;
+            return this._serviceErrorIds != null && this._serviceErrorIds.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property StackId. 
+        /// <para>
+        /// The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns
+        ///         descriptions of the errors associated with the specified stack.
+        /// </para>
+        /// </summary>
+        public string StackId
+        {
+            get { return this._stackId; }
+            set { this._stackId = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the StackId property
+        /// </summary>
+        /// <param name="stackId">The value to set for the StackId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeServiceErrorsRequest WithStackId(string stackId)
+        {
+            this._stackId = stackId;
+            return this;
+        }
+
+        // Check to see if StackId property is set
+        internal bool IsSetStackId()
+        {
+            return this._stackId != null;
+        }
+
     }
 }
-    

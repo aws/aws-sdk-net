@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,33 +25,37 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateApplication operation.
-    /// <para> Creates an application that has one configuration template named <c>default</c> and no application versions. </para>
+    /// Creates an application that has one configuration         template named
+    ///         <code>default</code>         and no application versions.      
+    /// 
+    ///       The         &lt;code&gt;default&lt;/code&gt;         configuration template
+    /// is for a 32-bit version of the         Amazon Linux         operating system running
+    /// the Tomcat 6 application container.
     /// </summary>
-    /// <seealso cref="Amazon.ElasticBeanstalk.AmazonElasticBeanstalk.CreateApplication"/>
-    public class CreateApplicationRequest : AmazonWebServiceRequest
+    public partial class CreateApplicationRequest : AmazonWebServiceRequest
     {
-        private string applicationName;
-        private string description;
+        private string _applicationName;
+        private string _description;
+
 
         /// <summary>
-        /// The name of the application. Constraint: This name must be unique within your account. If the specified name already exists, the action
-        /// returns an <c>InvalidParameterValue</c> error.
-        ///  
+        /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 100</description>
-        ///     </item>
-        /// </list>
+        /// The name of the application.
+        /// </para>
+        ///       
+        /// <para>
+        ///          Constraint: This name must be unique within your account.         If the
+        ///         specified name already exists, the action returns an         <code>InvalidParameterValue</code>
+        ///         error.      
         /// </para>
         /// </summary>
         public string ApplicationName
         {
-            get { return this.applicationName; }
-            set { this.applicationName = value; }
+            get { return this._applicationName; }
+            set { this._applicationName = value; }
         }
+
 
         /// <summary>
         /// Sets the ApplicationName property
@@ -61,35 +65,29 @@ namespace Amazon.ElasticBeanstalk.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateApplicationRequest WithApplicationName(string applicationName)
         {
-            this.applicationName = applicationName;
+            this._applicationName = applicationName;
             return this;
         }
-            
 
         // Check to see if ApplicationName property is set
         internal bool IsSetApplicationName()
         {
-            return this.applicationName != null;
+            return this._applicationName != null;
         }
 
+
         /// <summary>
-        /// Describes the application.
-        ///  
+        /// Gets and sets the property Description. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 200</description>
-        ///     </item>
-        /// </list>
+        /// Describes the application.
         /// </para>
         /// </summary>
         public string Description
         {
-            get { return this.description; }
-            set { this.description = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
+
 
         /// <summary>
         /// Sets the Description property
@@ -99,16 +97,15 @@ namespace Amazon.ElasticBeanstalk.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateApplicationRequest WithDescription(string description)
         {
-            this.description = description;
+            this._description = description;
             return this;
         }
-            
 
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;
+            return this._description != null;
         }
+
     }
 }
-    

@@ -12,63 +12,73 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using Amazon.OpsWorks.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+using Amazon.OpsWorks.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for CloneStack Object
+    /// </summary>  
+    public class CloneStackResultUnmarshaller : IUnmarshaller<CloneStackResult, XmlUnmarshallerContext>, IUnmarshaller<CloneStackResult, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// CloneStackResultUnmarshaller
-      /// </summary>
-      internal class CloneStackResultUnmarshaller : IUnmarshaller<CloneStackResult, XmlUnmarshallerContext>, IUnmarshaller<CloneStackResult, JsonUnmarshallerContext>
-      {
         CloneStackResult IUnmarshaller<CloneStackResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public CloneStackResult Unmarshall(JsonUnmarshallerContext context)
         {
             if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
                 return null;
-            CloneStackResult cloneStackResult = new CloneStackResult();
-          
+            
+            var unmarshalledObject = new CloneStackResult();
+                    
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+
             while (context.Read())
             {
                 if ((context.IsKey) && (context.CurrentDepth == targetDepth))
                 {
-                context.Read();
-                context.Read();
-              
-              if (context.TestExpression("StackId", targetDepth))
-              {
-                cloneStackResult.StackId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                    context.Read();
+                    context.Read();
+                    if (context.TestExpression("StackId", targetDepth))
+                    {
+                        unmarshalledObject.StackId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {
-                    return cloneStackResult;
+                    return unmarshalledObject;
                 }
-            }
-          
-
-            return cloneStackResult;
+            }   
+                           
+            return unmarshalledObject;
         }
+
 
         private static CloneStackResultUnmarshaller instance;
         public static CloneStackResultUnmarshaller GetInstance()
         {
             if (instance == null)
+            {
                 instance = new CloneStackResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-  

@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeLoadBasedAutoScalingResult response and response metadata.
+    /// Returns information about the DescribeLoadBasedAutoScalingResult response and response metadata.
     /// </summary>
     public class DescribeLoadBasedAutoScalingResponse : AmazonWebServiceResponse
     {
-        private DescribeLoadBasedAutoScalingResult describeLoadBasedAutoScalingResult;
+        private DescribeLoadBasedAutoScalingResult _describeLoadBasedAutoScalingResult;
 
         /// <summary>
         /// Gets and sets the DescribeLoadBasedAutoScalingResult property.
-        /// Contains the response to a DescribeLoadBasedAutoScaling request.
+        /// Represents the output of a DescribeLoadBasedAutoScaling operation.
         /// </summary>
         public DescribeLoadBasedAutoScalingResult DescribeLoadBasedAutoScalingResult
         {
             get
             {
-                if(this.describeLoadBasedAutoScalingResult == null)
+                if(this._describeLoadBasedAutoScalingResult == null)
                 {
-                    this.describeLoadBasedAutoScalingResult = new DescribeLoadBasedAutoScalingResult();
+                    this._describeLoadBasedAutoScalingResult = new DescribeLoadBasedAutoScalingResult();
                 }
-
-                return this.describeLoadBasedAutoScalingResult;
+                return this._describeLoadBasedAutoScalingResult;
             }
-            set { this.describeLoadBasedAutoScalingResult = value; }
+            set { this._describeLoadBasedAutoScalingResult = value; }
         }
     }
 }
-    

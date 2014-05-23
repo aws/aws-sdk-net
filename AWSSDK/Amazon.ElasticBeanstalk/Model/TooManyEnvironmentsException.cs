@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.ElasticBeanstalk.Model
 {
     ///<summary>
-    /// AmazonElasticBeanstalk exception
+    /// ElasticBeanstalk exception
     /// </summary>
     public class TooManyEnvironmentsException : AmazonElasticBeanstalkException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal TooManyEnvironmentsException(string message) 
+        public TooManyEnvironmentsException(string message) 
             : base(message) {}
           
-        internal TooManyEnvironmentsException(string message, Exception innerException) 
+        public TooManyEnvironmentsException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal TooManyEnvironmentsException(Exception innerException) 
+        public TooManyEnvironmentsException(Exception innerException) 
             : base(innerException) {}
             
-        internal TooManyEnvironmentsException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public TooManyEnvironmentsException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal TooManyEnvironmentsException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public TooManyEnvironmentsException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

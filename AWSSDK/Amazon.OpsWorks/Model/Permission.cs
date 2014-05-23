@@ -18,88 +18,35 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Describes stack or user permissions.</para>
+    /// Describes stack or user permissions.
     /// </summary>
     public partial class Permission
     {
-        
-        private string stackId;
-        private string iamUserArn;
-        private bool? allowSsh;
-        private bool? allowSudo;
-        private string level;
+        private bool? _allowSsh;
+        private bool? _allowSudo;
+        private string _iamUserArn;
+        private string _level;
+        private string _stackId;
+
 
         /// <summary>
-        /// A stack ID.
-        ///  
-        /// </summary>
-        public string StackId
-        {
-            get { return this.stackId; }
-            set { this.stackId = value; }
-        }
-
-        /// <summary>
-        /// Sets the StackId property
-        /// </summary>
-        /// <param name="stackId">The value to set for the StackId property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public Permission WithStackId(string stackId)
-        {
-            this.stackId = stackId;
-            return this;
-        }
-            
-
-        // Check to see if StackId property is set
-        internal bool IsSetStackId()
-        {
-            return this.stackId != null;
-        }
-
-        /// <summary>
-        /// The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more information about IAM ARNs, see <a
-        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
-        ///  
-        /// </summary>
-        public string IamUserArn
-        {
-            get { return this.iamUserArn; }
-            set { this.iamUserArn = value; }
-        }
-
-        /// <summary>
-        /// Sets the IamUserArn property
-        /// </summary>
-        /// <param name="iamUserArn">The value to set for the IamUserArn property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public Permission WithIamUserArn(string iamUserArn)
-        {
-            this.iamUserArn = iamUserArn;
-            return this;
-        }
-            
-
-        // Check to see if IamUserArn property is set
-        internal bool IsSetIamUserArn()
-        {
-            return this.iamUserArn != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property AllowSsh. 
+        /// <para>
         /// Whether the user can use SSH.
-        ///  
+        /// </para>
         /// </summary>
         public bool AllowSsh
         {
-            get { return this.allowSsh ?? default(bool); }
-            set { this.allowSsh = value; }
+            get { return this._allowSsh.GetValueOrDefault(); }
+            set { this._allowSsh = value; }
         }
+
 
         /// <summary>
         /// Sets the AllowSsh property
@@ -109,26 +56,29 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Permission WithAllowSsh(bool allowSsh)
         {
-            this.allowSsh = allowSsh;
+            this._allowSsh = allowSsh;
             return this;
         }
-            
 
         // Check to see if AllowSsh property is set
         internal bool IsSetAllowSsh()
         {
-            return this.allowSsh.HasValue;
+            return this._allowSsh.HasValue; 
         }
 
+
         /// <summary>
+        /// Gets and sets the property AllowSudo. 
+        /// <para>
         /// Whether the user can use <b>sudo</b>.
-        ///  
+        /// </para>
         /// </summary>
         public bool AllowSudo
         {
-            get { return this.allowSudo ?? default(bool); }
-            set { this.allowSudo = value; }
+            get { return this._allowSudo.GetValueOrDefault(); }
+            set { this._allowSudo = value; }
         }
+
 
         /// <summary>
         /// Sets the AllowSudo property
@@ -138,28 +88,69 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Permission WithAllowSudo(bool allowSudo)
         {
-            this.allowSudo = allowSudo;
+            this._allowSudo = allowSudo;
             return this;
         }
-            
 
         // Check to see if AllowSudo property is set
         internal bool IsSetAllowSudo()
         {
-            return this.allowSudo.HasValue;
+            return this._allowSudo.HasValue; 
         }
 
+
         /// <summary>
-        /// The user's permission level, which must be the following: <ul> <li><c>deny</c></li> <li><c>show</c></li> <li><c>deploy</c></li>
-        /// <li><c>manage</c></li> <li><c>iam_only</c></li> </ul> For more information on the permissions associated with these levels, see <a
-        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>
-        ///  
+        /// Gets and sets the property IamUserArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role.
+        /// For more information about IAM ARNs, see  <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+        /// Identifiers</a>.
+        /// </para>
+        /// </summary>
+        public string IamUserArn
+        {
+            get { return this._iamUserArn; }
+            set { this._iamUserArn = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the IamUserArn property
+        /// </summary>
+        /// <param name="iamUserArn">The value to set for the IamUserArn property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Permission WithIamUserArn(string iamUserArn)
+        {
+            this._iamUserArn = iamUserArn;
+            return this;
+        }
+
+        // Check to see if IamUserArn property is set
+        internal bool IsSetIamUserArn()
+        {
+            return this._iamUserArn != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Level. 
+        /// <para>
+        /// The user's permission level, which must be the following:
+        /// </para>
+        ///   <ul>    <li><code>deny</code></li>    <li><code>show</code></li>    <li><code>deploy</code></li>
+        ///    <li><code>manage</code></li>    <li><code>iam_only</code></li>  </ul>  
+        /// <para>
+        /// For more information on the permissions associated with these levels, see    <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// User Permissions</a>
+        /// </para>
         /// </summary>
         public string Level
         {
-            get { return this.level; }
-            set { this.level = value; }
+            get { return this._level; }
+            set { this._level = value; }
         }
+
 
         /// <summary>
         /// Sets the Level property
@@ -169,15 +160,47 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Permission WithLevel(string level)
         {
-            this.level = level;
+            this._level = level;
             return this;
         }
-            
 
         // Check to see if Level property is set
         internal bool IsSetLevel()
         {
-            return this.level != null;
+            return this._level != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property StackId. 
+        /// <para>
+        /// A stack ID.
+        /// </para>
+        /// </summary>
+        public string StackId
+        {
+            get { return this._stackId; }
+            set { this._stackId = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the StackId property
+        /// </summary>
+        /// <param name="stackId">The value to set for the StackId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Permission WithStackId(string stackId)
+        {
+            this._stackId = stackId;
+            return this;
+        }
+
+        // Check to see if StackId property is set
+        internal bool IsSetStackId()
+        {
+            return this._stackId != null;
+        }
+
     }
 }

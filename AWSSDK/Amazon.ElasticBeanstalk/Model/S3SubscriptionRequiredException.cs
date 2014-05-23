@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.ElasticBeanstalk.Model
 {
     ///<summary>
-    /// AmazonElasticBeanstalk exception
+    /// ElasticBeanstalk exception
     /// </summary>
     public class S3SubscriptionRequiredException : AmazonElasticBeanstalkException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal S3SubscriptionRequiredException(string message) 
+        public S3SubscriptionRequiredException(string message) 
             : base(message) {}
           
-        internal S3SubscriptionRequiredException(string message, Exception innerException) 
+        public S3SubscriptionRequiredException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal S3SubscriptionRequiredException(Exception innerException) 
+        public S3SubscriptionRequiredException(Exception innerException) 
             : base(innerException) {}
             
-        internal S3SubscriptionRequiredException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public S3SubscriptionRequiredException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal S3SubscriptionRequiredException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public S3SubscriptionRequiredException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

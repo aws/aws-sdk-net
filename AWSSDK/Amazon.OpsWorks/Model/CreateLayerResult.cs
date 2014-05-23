@@ -18,25 +18,31 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>CreateLayer</c> request.</para>
+    /// Contains the response to a <code>CreateLayer</code> request.
     /// </summary>
     public partial class CreateLayerResult
     {
-        
-        private string layerId;
+        private string _layerId;
+
 
         /// <summary>
+        /// Gets and sets the property LayerId. 
+        /// <para>
         /// The layer ID.
-        ///  
+        /// </para>
         /// </summary>
         public string LayerId
         {
-            get { return this.layerId; }
-            set { this.layerId = value; }
+            get { return this._layerId; }
+            set { this._layerId = value; }
         }
+
 
         /// <summary>
         /// Sets the LayerId property
@@ -46,15 +52,15 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateLayerResult WithLayerId(string layerId)
         {
-            this.layerId = layerId;
+            this._layerId = layerId;
             return this;
         }
-            
 
         // Check to see if LayerId property is set
         internal bool IsSetLayerId()
         {
-            return this.layerId != null;
+            return this._layerId != null;
         }
+
     }
 }

@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
@@ -28,131 +29,101 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Deployment Request Marshaller
+    /// CreateDeployment Request Marshaller
     /// </summary>       
-    internal class CreateDeploymentRequestMarshaller : IMarshaller<IRequest, CreateDeploymentRequest> 
+    public class CreateDeploymentRequestMarshaller : IMarshaller<IRequest, CreateDeploymentRequest> 
     {
-        
-
-        public IRequest Marshall(CreateDeploymentRequest createDeploymentRequest) 
+        public IRequest Marshall(CreateDeploymentRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(createDeploymentRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.CreateDeployment";
             request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
 
-            
-              
-            string uriResourcePath = ""; 
-            
-            if (uriResourcePath.Contains("?")) 
-            {
-                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
-                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
-        
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                }
-            }
-            
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
-            using (StringWriter stringWriter = new StringWriter())
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (createDeploymentRequest != null && createDeploymentRequest.IsSetStackId()) 
-                {
-                    writer.WritePropertyName("StackId");
-                    writer.Write(createDeploymentRequest.StackId);
-                }
-                if (createDeploymentRequest != null && createDeploymentRequest.IsSetAppId()) 
+                if(publicRequest != null && publicRequest.IsSetAppId())
                 {
                     writer.WritePropertyName("AppId");
-                    writer.Write(createDeploymentRequest.AppId);
+                    writer.Write(publicRequest.AppId);
                 }
 
-                if (createDeploymentRequest != null && createDeploymentRequest.InstanceIds != null && createDeploymentRequest.InstanceIds.Count > 0) 
+                if(publicRequest != null && publicRequest.IsSetCommand())
                 {
-                    List<string> instanceIdsList = createDeploymentRequest.InstanceIds;
-                    writer.WritePropertyName("InstanceIds");
-                    writer.WriteArrayStart();
-
-                    foreach (string instanceIdsListValue in instanceIdsList) 
-                    { 
-                        writer.Write(StringUtils.FromString(instanceIdsListValue));
-                    }
-
-                    writer.WriteArrayEnd();
-                }
-
-                if (createDeploymentRequest != null) 
-                {
-                    DeploymentCommand command = createDeploymentRequest.Command;
-                    if (command != null)
+                    writer.WritePropertyName("Command");
+                    writer.WriteObjectStart();
+                    if(publicRequest.Command != null && publicRequest.Command.IsSetArgs() && publicRequest.Command.Args.Count > 0)
                     {
-                        writer.WritePropertyName("Command");
+                        writer.WritePropertyName("Args");
                         writer.WriteObjectStart();
-                        if (command != null && command.IsSetName()) 
+                        foreach (var publicRequestCommandArgsKvp in publicRequest.Command.Args)
                         {
-                            writer.WritePropertyName("Name");
-                            writer.Write(command.Name);
-                        }
-                        if (command != null) 
-                        {
-                            if (command.Args != null && command.Args.Count > 0)
-                            {
-                                writer.WritePropertyName("Args");
-                                writer.WriteObjectStart();
-                                foreach (var commandArg in command.Args)
-                                {
-                                    writer.WritePropertyName(commandArg.Key);
+                            writer.WritePropertyName(publicRequestCommandArgsKvp.Key);
+                            var publicRequestCommandArgsValue = publicRequestCommandArgsKvp.Value;
 
-                                    var commandArgValue = commandArg.Value;
-                                    writer.WriteArrayStart();
-                                    foreach (var listValue in commandArgValue)
-                                    {
-                                        writer.Write(listValue);
-                                    }
-                                    writer.WriteArrayEnd();
-                                }
-                                writer.WriteObjectEnd();
+                            writer.WriteArrayStart();
+                            foreach(var publicRequestCommandArgsValueListValue in publicRequestCommandArgsValue)
+                            {
+                                writer.Write(publicRequestCommandArgsValueListValue);
                             }
+                            writer.WriteArrayEnd();
                         }
                         writer.WriteObjectEnd();
                     }
-                }
-                if (createDeploymentRequest != null && createDeploymentRequest.IsSetComment()) 
-                {
-                    writer.WritePropertyName("Comment");
-                    writer.Write(createDeploymentRequest.Comment);
-                }
-                if (createDeploymentRequest != null && createDeploymentRequest.IsSetCustomJson()) 
-                {
-                    writer.WritePropertyName("CustomJson");
-                    writer.Write(createDeploymentRequest.CustomJson);
+
+                    if(publicRequest.Command != null && publicRequest.Command.IsSetName())
+                    {
+                        writer.WritePropertyName("Name");
+                        writer.Write(publicRequest.Command.Name);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
+                if(publicRequest != null && publicRequest.IsSetComment())
+                {
+                    writer.WritePropertyName("Comment");
+                    writer.Write(publicRequest.Comment);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetCustomJson())
+                {
+                    writer.WritePropertyName("CustomJson");
+                    writer.Write(publicRequest.CustomJson);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetInstanceIds() && publicRequest.InstanceIds.Count > 0)
+                {
+                    writer.WritePropertyName("InstanceIds");
+                    writer.WriteArrayStart();
+                    foreach(var publicRequestInstanceIdsListValue in publicRequest.InstanceIds)
+                    {
+                        writer.Write(publicRequestInstanceIdsListValue);
+                    }
+                    writer.WriteArrayEnd();
+                }
+
+                if(publicRequest != null && publicRequest.IsSetStackId())
+                {
+                    writer.WritePropertyName("StackId");
+                    writer.Write(publicRequest.StackId);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
 
             return request;
         }
+
+
     }
 }

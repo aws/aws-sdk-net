@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,25 +25,34 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the RebuildEnvironment operation.
-    /// <para> Deletes and recreates all of the AWS resources (for example: the Auto Scaling group, load balancer, etc.) for a specified environment
-    /// and forces a restart. </para>
+    /// Deletes and recreates all of the AWS resources (for example: the Auto Scaling
+    /// group, load         balancer, etc.)         for a specified environment and forces
+    /// a restart.
     /// </summary>
-    /// <seealso cref="Amazon.ElasticBeanstalk.AmazonElasticBeanstalk.RebuildEnvironment"/>
-    public class RebuildEnvironmentRequest : AmazonWebServiceRequest
+    public partial class RebuildEnvironmentRequest : AmazonWebServiceRequest
     {
-        private string environmentId;
-        private string environmentName;
+        private string _environmentId;
+        private string _environmentName;
+
 
         /// <summary>
-        /// The ID of the environment to rebuild. Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either,
-        /// AWS Elastic Beanstalk returns <c>MissingRequiredParameter</c> error.
-        ///  
+        /// Gets and sets the property EnvironmentId. 
+        /// <para>
+        ///          The ID of the environment to rebuild.      
+        /// </para>
+        ///        
+        /// <para>
+        ///          Condition: You must specify either this or an EnvironmentName, or both. 
+        ///          If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+        /// error.        
+        /// </para>
         /// </summary>
         public string EnvironmentId
         {
-            get { return this.environmentId; }
-            set { this.environmentId = value; }
+            get { return this._environmentId; }
+            set { this._environmentId = value; }
         }
+
 
         /// <summary>
         /// Sets the EnvironmentId property
@@ -53,36 +62,35 @@ namespace Amazon.ElasticBeanstalk.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RebuildEnvironmentRequest WithEnvironmentId(string environmentId)
         {
-            this.environmentId = environmentId;
+            this._environmentId = environmentId;
             return this;
         }
-            
 
         // Check to see if EnvironmentId property is set
         internal bool IsSetEnvironmentId()
         {
-            return this.environmentId != null;       
+            return this._environmentId != null;
         }
 
+
         /// <summary>
-        /// The name of the environment to rebuild. Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either,
-        /// AWS Elastic Beanstalk returns <c>MissingRequiredParameter</c> error.
-        ///  
+        /// Gets and sets the property EnvironmentName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>4 - 23</description>
-        ///     </item>
-        /// </list>
+        ///          The name of the environment to rebuild.        
+        /// </para>
+        ///          
+        /// <para>
+        ///          Condition: You must specify either this or an EnvironmentId, or both.   
+        ///        If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+        /// error.        
         /// </para>
         /// </summary>
         public string EnvironmentName
         {
-            get { return this.environmentName; }
-            set { this.environmentName = value; }
+            get { return this._environmentName; }
+            set { this._environmentName = value; }
         }
+
 
         /// <summary>
         /// Sets the EnvironmentName property
@@ -92,16 +100,15 @@ namespace Amazon.ElasticBeanstalk.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RebuildEnvironmentRequest WithEnvironmentName(string environmentName)
         {
-            this.environmentName = environmentName;
+            this._environmentName = environmentName;
             return this;
         }
-            
 
         // Check to see if EnvironmentName property is set
         internal bool IsSetEnvironmentName()
         {
-            return this.environmentName != null;       
+            return this._environmentName != null;
         }
+
     }
 }
-    

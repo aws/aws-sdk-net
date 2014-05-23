@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,33 +25,28 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeApplicationVersions operation.
-    /// <para>Returns descriptions for existing application versions.</para>
+    /// Returns descriptions for existing application versions.
     /// </summary>
-    /// <seealso cref="Amazon.ElasticBeanstalk.AmazonElasticBeanstalk.DescribeApplicationVersions"/>
-    public class DescribeApplicationVersionsRequest : AmazonWebServiceRequest
+    public partial class DescribeApplicationVersionsRequest : AmazonWebServiceRequest
     {
-        private string applicationName;
-        private List<string> versionLabels = new List<string>();
+        private string _applicationName;
+        private List<string> _versionLabels = new List<string>();
+
 
         /// <summary>
-        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include ones that are associated with the specified
-        /// application.
-        ///  
+        /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 100</description>
-        ///     </item>
-        /// </list>
+        ///          If specified, AWS Elastic Beanstalk         restricts the returned descriptions
+        /// to         only include ones that are         associated with the specified application.
+        ///      
         /// </para>
         /// </summary>
         public string ApplicationName
         {
-            get { return this.applicationName; }
-            set { this.applicationName = value; }
+            get { return this._applicationName; }
+            set { this._applicationName = value; }
         }
+
 
         /// <summary>
         /// Sets the ApplicationName property
@@ -61,63 +56,64 @@ namespace Amazon.ElasticBeanstalk.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeApplicationVersionsRequest WithApplicationName(string applicationName)
         {
-            this.applicationName = applicationName;
+            this._applicationName = applicationName;
             return this;
         }
-            
 
         // Check to see if ApplicationName property is set
         internal bool IsSetApplicationName()
         {
-            return this.applicationName != null;       
+            return this._applicationName != null;
         }
 
+
         /// <summary>
-        /// If specified, restricts the returned descriptions to only include ones that have the specified version labels.
-        ///  
+        /// Gets and sets the property VersionLabels. 
+        /// <para>
+        ///          If specified, restricts the returned descriptions to only include ones  
+        ///       that have the specified version labels.      
+        /// </para>
         /// </summary>
         public List<string> VersionLabels
         {
-            get { return this.versionLabels; }
-            set { this.versionLabels = value; }
+            get { return this._versionLabels; }
+            set { this._versionLabels = value; }
         }
+
         /// <summary>
-        /// Adds elements to the VersionLabels collection
+        /// Sets the VersionLabels property
         /// </summary>
         /// <param name="versionLabels">The values to add to the VersionLabels collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeApplicationVersionsRequest WithVersionLabels(params string[] versionLabels)
         {
-            foreach (string element in versionLabels)
+            foreach (var element in versionLabels)
             {
-                this.versionLabels.Add(element);
+                this._versionLabels.Add(element);
             }
-
             return this;
         }
-        
+
         /// <summary>
-        /// Adds elements to the VersionLabels collection
+        /// Sets the VersionLabels property
         /// </summary>
         /// <param name="versionLabels">The values to add to the VersionLabels collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeApplicationVersionsRequest WithVersionLabels(IEnumerable<string> versionLabels)
         {
-            foreach (string element in versionLabels)
+            foreach (var element in versionLabels)
             {
-                this.versionLabels.Add(element);
+                this._versionLabels.Add(element);
             }
-
             return this;
         }
-
         // Check to see if VersionLabels property is set
         internal bool IsSetVersionLabels()
         {
-            return this.versionLabels.Count > 0;       
+            return this._versionLabels != null && this._versionLabels.Count > 0; 
         }
+
     }
 }
-    

@@ -25,62 +25,71 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTimeBasedAutoScaling operation.
-    /// <para>Describes time-based auto scaling configurations for specified instances.</para> <para><b>NOTE:</b> You must specify at least one of
-    /// the parameters. </para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Show, Deploy, or Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+    /// Describes time-based auto scaling configurations for specified instances.
+    /// 
+    ///   <note>      
+    /// <para>
+    /// You must specify at least one of the parameters.
+    /// </para>
+    ///     </note>    
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+    /// or Manage       permissions level for the stack, or an attached policy that explicitly
+    /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeTimeBasedAutoScaling"/>
-    public class DescribeTimeBasedAutoScalingRequest : AmazonWebServiceRequest
+    public partial class DescribeTimeBasedAutoScalingRequest : AmazonWebServiceRequest
     {
-        private List<string> instanceIds = new List<string>();
+        private List<string> _instanceIds = new List<string>();
+
 
         /// <summary>
+        /// Gets and sets the property InstanceIds. 
+        /// <para>
         /// An array of instance IDs.
-        ///  
+        /// </para>
         /// </summary>
         public List<string> InstanceIds
         {
-            get { return this.instanceIds; }
-            set { this.instanceIds = value; }
+            get { return this._instanceIds; }
+            set { this._instanceIds = value; }
         }
+
         /// <summary>
-        /// Adds elements to the InstanceIds collection
+        /// Sets the InstanceIds property
         /// </summary>
         /// <param name="instanceIds">The values to add to the InstanceIds collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeTimeBasedAutoScalingRequest WithInstanceIds(params string[] instanceIds)
         {
-            foreach (string element in instanceIds)
+            foreach (var element in instanceIds)
             {
-                this.instanceIds.Add(element);
+                this._instanceIds.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the InstanceIds collection
+        /// Sets the InstanceIds property
         /// </summary>
         /// <param name="instanceIds">The values to add to the InstanceIds collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeTimeBasedAutoScalingRequest WithInstanceIds(IEnumerable<string> instanceIds)
         {
-            foreach (string element in instanceIds)
+            foreach (var element in instanceIds)
             {
-                this.instanceIds.Add(element);
+                this._instanceIds.Add(element);
             }
-
             return this;
         }
-
         // Check to see if InstanceIds property is set
         internal bool IsSetInstanceIds()
         {
-            return this.instanceIds.Count > 0;
+            return this._instanceIds != null && this._instanceIds.Count > 0; 
         }
+
     }
 }
-    

@@ -12,69 +12,77 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using Amazon.OpsWorks.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+using Amazon.OpsWorks.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for ChefConfiguration Object
+    /// </summary>  
+    public class ChefConfigurationUnmarshaller : IUnmarshaller<ChefConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ChefConfiguration, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// ChefConfigurationUnmarshaller
-      /// </summary>
-      internal class ChefConfigurationUnmarshaller : IUnmarshaller<ChefConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ChefConfiguration, JsonUnmarshallerContext>
-      {
         ChefConfiguration IUnmarshaller<ChefConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public ChefConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
                 return null;
-            ChefConfiguration chefConfiguration = new ChefConfiguration();
-          
+            
+            var unmarshalledObject = new ChefConfiguration();
+                    
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+
             while (context.Read())
             {
                 if ((context.IsKey) && (context.CurrentDepth == targetDepth))
                 {
-                context.Read();
-                context.Read();
-              
-              if (context.TestExpression("ManageBerkshelf", targetDepth))
-              {
-                chefConfiguration.ManageBerkshelf = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("BerkshelfVersion", targetDepth))
-              {
-                chefConfiguration.BerkshelfVersion = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                    context.Read();
+                    context.Read();
+                    if (context.TestExpression("BerkshelfVersion", targetDepth))
+                    {
+                        unmarshalledObject.BerkshelfVersion = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ManageBerkshelf", targetDepth))
+                    {
+                        unmarshalledObject.ManageBerkshelf = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {
-                    return chefConfiguration;
+                    return unmarshalledObject;
                 }
-            }
-          
-
-            return chefConfiguration;
+            }          
+            return unmarshalledObject;
         }
+
 
         private static ChefConfigurationUnmarshaller instance;
         public static ChefConfigurationUnmarshaller GetInstance()
         {
             if (instance == null)
+            {
                 instance = new ChefConfigurationUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-  

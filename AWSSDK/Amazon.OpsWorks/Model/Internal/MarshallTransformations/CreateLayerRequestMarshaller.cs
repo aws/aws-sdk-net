@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
@@ -28,280 +29,240 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Layer Request Marshaller
+    /// CreateLayer Request Marshaller
     /// </summary>       
-    internal class CreateLayerRequestMarshaller : IMarshaller<IRequest, CreateLayerRequest> 
+    public class CreateLayerRequestMarshaller : IMarshaller<IRequest, CreateLayerRequest> 
     {
-        
-
-        public IRequest Marshall(CreateLayerRequest createLayerRequest) 
+        public IRequest Marshall(CreateLayerRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(createLayerRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.CreateLayer";
             request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
 
-            
-              
-            string uriResourcePath = ""; 
-            
-            if (uriResourcePath.Contains("?")) 
-            {
-                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
-                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
-        
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                }
-            }
-            
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
-            using (StringWriter stringWriter = new StringWriter())
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (createLayerRequest != null && createLayerRequest.IsSetStackId()) 
+                if(publicRequest != null && publicRequest.IsSetAttributes() && publicRequest.Attributes.Count > 0)
                 {
-                    writer.WritePropertyName("StackId");
-                    writer.Write(createLayerRequest.StackId);
-                }
-                if (createLayerRequest != null && createLayerRequest.IsSetType()) 
-                {
-                    writer.WritePropertyName("Type");
-                    writer.Write(createLayerRequest.Type);
-                }
-                if (createLayerRequest != null && createLayerRequest.IsSetName()) 
-                {
-                    writer.WritePropertyName("Name");
-                    writer.Write(createLayerRequest.Name);
-                }
-                if (createLayerRequest != null && createLayerRequest.IsSetShortname()) 
-                {
-                    writer.WritePropertyName("Shortname");
-                    writer.Write(createLayerRequest.Shortname);
-                }
-                if (createLayerRequest != null) 
-                {
-                    if (createLayerRequest.Attributes != null && createLayerRequest.Attributes.Count > 0)
+                    writer.WritePropertyName("Attributes");
+                    writer.WriteObjectStart();
+                    foreach (var publicRequestAttributesKvp in publicRequest.Attributes)
                     {
-                        writer.WritePropertyName("Attributes");
-                        writer.WriteObjectStart();
-                        foreach (string createLayerRequestAttributesKey in createLayerRequest.Attributes.Keys)
-                        {
-                            string attributesListValue;
-                            bool attributesListValueHasValue = createLayerRequest.Attributes.TryGetValue(createLayerRequestAttributesKey, out attributesListValue);
-                            writer.WritePropertyName(createLayerRequestAttributesKey);
+                        writer.WritePropertyName(publicRequestAttributesKvp.Key);
+                        var publicRequestAttributesValue = publicRequestAttributesKvp.Value;
 
-                        writer.Write(attributesListValue);
-                        }
-                        writer.WriteObjectEnd();
+                        writer.Write(publicRequestAttributesValue);
                     }
-                }
-                if (createLayerRequest != null && createLayerRequest.IsSetCustomInstanceProfileArn()) 
-                {
-                    writer.WritePropertyName("CustomInstanceProfileArn");
-                    writer.Write(createLayerRequest.CustomInstanceProfileArn);
+                    writer.WriteObjectEnd();
                 }
 
-                if (createLayerRequest != null && createLayerRequest.CustomSecurityGroupIds != null && createLayerRequest.CustomSecurityGroupIds.Count > 0) 
-                {
-                    List<string> customSecurityGroupIdsList = createLayerRequest.CustomSecurityGroupIds;
-                    writer.WritePropertyName("CustomSecurityGroupIds");
-                    writer.WriteArrayStart();
-
-                    foreach (string customSecurityGroupIdsListValue in customSecurityGroupIdsList) 
-                    { 
-                        writer.Write(StringUtils.FromString(customSecurityGroupIdsListValue));
-                    }
-
-                    writer.WriteArrayEnd();
-                }
-
-                if (createLayerRequest != null && createLayerRequest.Packages != null && createLayerRequest.Packages.Count > 0) 
-                {
-                    List<string> packagesList = createLayerRequest.Packages;
-                    writer.WritePropertyName("Packages");
-                    writer.WriteArrayStart();
-
-                    foreach (string packagesListValue in packagesList) 
-                    { 
-                        writer.Write(StringUtils.FromString(packagesListValue));
-                    }
-
-                    writer.WriteArrayEnd();
-                }
-
-                if (createLayerRequest != null && createLayerRequest.VolumeConfigurations != null && createLayerRequest.VolumeConfigurations.Count > 0)
-                {
-                    List<VolumeConfiguration> volumeConfigurationsList = createLayerRequest.VolumeConfigurations;
-                    writer.WritePropertyName("VolumeConfigurations");
-                    writer.WriteArrayStart();
-
-                    foreach (VolumeConfiguration volumeConfigurationsListValue in volumeConfigurationsList) 
-                    {
-                        writer.WriteObjectStart();
-                        if (volumeConfigurationsListValue != null && volumeConfigurationsListValue.IsSetMountPoint()) 
-                        {
-                            writer.WritePropertyName("MountPoint");
-                            writer.Write(volumeConfigurationsListValue.MountPoint);
-                        }
-                        if (volumeConfigurationsListValue != null && volumeConfigurationsListValue.IsSetRaidLevel()) 
-                        {
-                            writer.WritePropertyName("RaidLevel");
-                            writer.Write(volumeConfigurationsListValue.RaidLevel);
-                        }
-                        if (volumeConfigurationsListValue != null && volumeConfigurationsListValue.IsSetNumberOfDisks()) 
-                        {
-                            writer.WritePropertyName("NumberOfDisks");
-                            writer.Write(volumeConfigurationsListValue.NumberOfDisks);
-                        }
-                        if (volumeConfigurationsListValue != null && volumeConfigurationsListValue.IsSetSize()) 
-                        {
-                            writer.WritePropertyName("Size");
-                            writer.Write(volumeConfigurationsListValue.Size);
-                        }
-                        if (volumeConfigurationsListValue != null && volumeConfigurationsListValue.IsSetVolumeType()) 
-                        {
-                            writer.WritePropertyName("VolumeType");
-                            writer.Write(volumeConfigurationsListValue.VolumeType);
-                        }
-                        if (volumeConfigurationsListValue != null && volumeConfigurationsListValue.IsSetIops()) 
-                        {
-                            writer.WritePropertyName("Iops");
-                            writer.Write(volumeConfigurationsListValue.Iops);
-                        }
-                        writer.WriteObjectEnd();
-                    }
-                    writer.WriteArrayEnd();
-                }
-                if (createLayerRequest != null && createLayerRequest.IsSetEnableAutoHealing()) 
-                {
-                    writer.WritePropertyName("EnableAutoHealing");
-                    writer.Write(createLayerRequest.EnableAutoHealing);
-                }
-                if (createLayerRequest != null && createLayerRequest.IsSetAutoAssignElasticIps()) 
+                if(publicRequest != null && publicRequest.IsSetAutoAssignElasticIps())
                 {
                     writer.WritePropertyName("AutoAssignElasticIps");
-                    writer.Write(createLayerRequest.AutoAssignElasticIps);
+                    writer.Write(publicRequest.AutoAssignElasticIps);
                 }
-                if (createLayerRequest != null && createLayerRequest.IsSetAutoAssignPublicIps()) 
+
+                if(publicRequest != null && publicRequest.IsSetAutoAssignPublicIps())
                 {
                     writer.WritePropertyName("AutoAssignPublicIps");
-                    writer.Write(createLayerRequest.AutoAssignPublicIps);
+                    writer.Write(publicRequest.AutoAssignPublicIps);
                 }
 
-                if (createLayerRequest != null) 
+                if(publicRequest != null && publicRequest.IsSetCustomInstanceProfileArn())
                 {
-                    Recipes customRecipes = createLayerRequest.CustomRecipes;
-                    if (customRecipes != null)
-                    {
-                        writer.WritePropertyName("CustomRecipes");
-                        writer.WriteObjectStart();
-
-                        if (customRecipes != null && customRecipes.Setup != null && customRecipes.Setup.Count > 0) 
-                        {
-                            List<string> setupList = customRecipes.Setup;
-                            writer.WritePropertyName("Setup");
-                            writer.WriteArrayStart();
-
-                            foreach (string setupListValue in setupList) 
-                            { 
-                                writer.Write(StringUtils.FromString(setupListValue));
-                            }
-
-                            writer.WriteArrayEnd();
-                        }
-
-                        if (customRecipes != null && customRecipes.Configure != null && customRecipes.Configure.Count > 0) 
-                        {
-                            List<string> configureList = customRecipes.Configure;
-                            writer.WritePropertyName("Configure");
-                            writer.WriteArrayStart();
-
-                            foreach (string configureListValue in configureList) 
-                            { 
-                                writer.Write(StringUtils.FromString(configureListValue));
-                            }
-
-                            writer.WriteArrayEnd();
-                        }
-
-                        if (customRecipes != null && customRecipes.Deploy != null && customRecipes.Deploy.Count > 0) 
-                        {
-                            List<string> deployList = customRecipes.Deploy;
-                            writer.WritePropertyName("Deploy");
-                            writer.WriteArrayStart();
-
-                            foreach (string deployListValue in deployList) 
-                            { 
-                                writer.Write(StringUtils.FromString(deployListValue));
-                            }
-
-                            writer.WriteArrayEnd();
-                        }
-
-                        if (customRecipes != null && customRecipes.Undeploy != null && customRecipes.Undeploy.Count > 0) 
-                        {
-                            List<string> undeployList = customRecipes.Undeploy;
-                            writer.WritePropertyName("Undeploy");
-                            writer.WriteArrayStart();
-
-                            foreach (string undeployListValue in undeployList) 
-                            { 
-                                writer.Write(StringUtils.FromString(undeployListValue));
-                            }
-
-                            writer.WriteArrayEnd();
-                        }
-
-                        if (customRecipes != null && customRecipes.Shutdown != null && customRecipes.Shutdown.Count > 0) 
-                        {
-                            List<string> shutdownList = customRecipes.Shutdown;
-                            writer.WritePropertyName("Shutdown");
-                            writer.WriteArrayStart();
-
-                            foreach (string shutdownListValue in shutdownList) 
-                            { 
-                                writer.Write(StringUtils.FromString(shutdownListValue));
-                            }
-
-                            writer.WriteArrayEnd();
-                        }
-                        writer.WriteObjectEnd();
-                    }
+                    writer.WritePropertyName("CustomInstanceProfileArn");
+                    writer.Write(publicRequest.CustomInstanceProfileArn);
                 }
-                if (createLayerRequest != null && createLayerRequest.IsSetInstallUpdatesOnBoot()) 
+
+                if(publicRequest != null && publicRequest.IsSetCustomRecipes())
+                {
+                    writer.WritePropertyName("CustomRecipes");
+                    writer.WriteObjectStart();
+                    if(publicRequest.CustomRecipes != null && publicRequest.CustomRecipes.IsSetConfigure() && publicRequest.CustomRecipes.Configure.Count > 0)
+                    {
+                        writer.WritePropertyName("Configure");
+                        writer.WriteArrayStart();
+                        foreach(var publicRequestCustomRecipesConfigureListValue in publicRequest.CustomRecipes.Configure)
+                        {
+                            writer.Write(publicRequestCustomRecipesConfigureListValue);
+                        }
+                        writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.CustomRecipes != null && publicRequest.CustomRecipes.IsSetDeploy() && publicRequest.CustomRecipes.Deploy.Count > 0)
+                    {
+                        writer.WritePropertyName("Deploy");
+                        writer.WriteArrayStart();
+                        foreach(var publicRequestCustomRecipesDeployListValue in publicRequest.CustomRecipes.Deploy)
+                        {
+                            writer.Write(publicRequestCustomRecipesDeployListValue);
+                        }
+                        writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.CustomRecipes != null && publicRequest.CustomRecipes.IsSetSetup() && publicRequest.CustomRecipes.Setup.Count > 0)
+                    {
+                        writer.WritePropertyName("Setup");
+                        writer.WriteArrayStart();
+                        foreach(var publicRequestCustomRecipesSetupListValue in publicRequest.CustomRecipes.Setup)
+                        {
+                            writer.Write(publicRequestCustomRecipesSetupListValue);
+                        }
+                        writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.CustomRecipes != null && publicRequest.CustomRecipes.IsSetShutdown() && publicRequest.CustomRecipes.Shutdown.Count > 0)
+                    {
+                        writer.WritePropertyName("Shutdown");
+                        writer.WriteArrayStart();
+                        foreach(var publicRequestCustomRecipesShutdownListValue in publicRequest.CustomRecipes.Shutdown)
+                        {
+                            writer.Write(publicRequestCustomRecipesShutdownListValue);
+                        }
+                        writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.CustomRecipes != null && publicRequest.CustomRecipes.IsSetUndeploy() && publicRequest.CustomRecipes.Undeploy.Count > 0)
+                    {
+                        writer.WritePropertyName("Undeploy");
+                        writer.WriteArrayStart();
+                        foreach(var publicRequestCustomRecipesUndeployListValue in publicRequest.CustomRecipes.Undeploy)
+                        {
+                            writer.Write(publicRequestCustomRecipesUndeployListValue);
+                        }
+                        writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
+                }
+
+                if(publicRequest != null && publicRequest.IsSetCustomSecurityGroupIds() && publicRequest.CustomSecurityGroupIds.Count > 0)
+                {
+                    writer.WritePropertyName("CustomSecurityGroupIds");
+                    writer.WriteArrayStart();
+                    foreach(var publicRequestCustomSecurityGroupIdsListValue in publicRequest.CustomSecurityGroupIds)
+                    {
+                        writer.Write(publicRequestCustomSecurityGroupIdsListValue);
+                    }
+                    writer.WriteArrayEnd();
+                }
+
+                if(publicRequest != null && publicRequest.IsSetEnableAutoHealing())
+                {
+                    writer.WritePropertyName("EnableAutoHealing");
+                    writer.Write(publicRequest.EnableAutoHealing);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetInstallUpdatesOnBoot())
                 {
                     writer.WritePropertyName("InstallUpdatesOnBoot");
-                    writer.Write(createLayerRequest.InstallUpdatesOnBoot);
-                }
-                if (createLayerRequest != null && createLayerRequest.IsSetUseEbsOptimizedInstances()) 
-                {
-                    writer.WritePropertyName("UseEbsOptimizedInstances");
-                    writer.Write(createLayerRequest.UseEbsOptimizedInstances);
+                    writer.Write(publicRequest.InstallUpdatesOnBoot);
                 }
 
+                if(publicRequest != null && publicRequest.IsSetName())
+                {
+                    writer.WritePropertyName("Name");
+                    writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetPackages() && publicRequest.Packages.Count > 0)
+                {
+                    writer.WritePropertyName("Packages");
+                    writer.WriteArrayStart();
+                    foreach(var publicRequestPackagesListValue in publicRequest.Packages)
+                    {
+                        writer.Write(publicRequestPackagesListValue);
+                    }
+                    writer.WriteArrayEnd();
+                }
+
+                if(publicRequest != null && publicRequest.IsSetShortname())
+                {
+                    writer.WritePropertyName("Shortname");
+                    writer.Write(publicRequest.Shortname);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetStackId())
+                {
+                    writer.WritePropertyName("StackId");
+                    writer.Write(publicRequest.StackId);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetType())
+                {
+                    writer.WritePropertyName("Type");
+                    writer.Write(publicRequest.Type);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetUseEbsOptimizedInstances())
+                {
+                    writer.WritePropertyName("UseEbsOptimizedInstances");
+                    writer.Write(publicRequest.UseEbsOptimizedInstances);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetVolumeConfigurations() && publicRequest.VolumeConfigurations.Count > 0)
+                {
+                    writer.WritePropertyName("VolumeConfigurations");
+                    writer.WriteArrayStart();
+                    foreach(var publicRequestVolumeConfigurationsListValue in publicRequest.VolumeConfigurations)
+                    {
+                        writer.WriteObjectStart();
+                        if(publicRequestVolumeConfigurationsListValue != null && publicRequestVolumeConfigurationsListValue.IsSetIops())
+                        {
+                            writer.WritePropertyName("Iops");
+                            writer.Write(publicRequestVolumeConfigurationsListValue.Iops);
+                        }
+
+                        if(publicRequestVolumeConfigurationsListValue != null && publicRequestVolumeConfigurationsListValue.IsSetMountPoint())
+                        {
+                            writer.WritePropertyName("MountPoint");
+                            writer.Write(publicRequestVolumeConfigurationsListValue.MountPoint);
+                        }
+
+                        if(publicRequestVolumeConfigurationsListValue != null && publicRequestVolumeConfigurationsListValue.IsSetNumberOfDisks())
+                        {
+                            writer.WritePropertyName("NumberOfDisks");
+                            writer.Write(publicRequestVolumeConfigurationsListValue.NumberOfDisks);
+                        }
+
+                        if(publicRequestVolumeConfigurationsListValue != null && publicRequestVolumeConfigurationsListValue.IsSetRaidLevel())
+                        {
+                            writer.WritePropertyName("RaidLevel");
+                            writer.Write(publicRequestVolumeConfigurationsListValue.RaidLevel);
+                        }
+
+                        if(publicRequestVolumeConfigurationsListValue != null && publicRequestVolumeConfigurationsListValue.IsSetSize())
+                        {
+                            writer.WritePropertyName("Size");
+                            writer.Write(publicRequestVolumeConfigurationsListValue.Size);
+                        }
+
+                        if(publicRequestVolumeConfigurationsListValue != null && publicRequestVolumeConfigurationsListValue.IsSetVolumeType())
+                        {
+                            writer.WritePropertyName("VolumeType");
+                            writer.Write(publicRequestVolumeConfigurationsListValue.VolumeType);
+                        }
+
+                        writer.WriteObjectEnd();
+                    }
+                    writer.WriteArrayEnd();
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
 
             return request;
         }
+
+
     }
 }

@@ -12,135 +12,132 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using Amazon.OpsWorks.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+using Amazon.OpsWorks.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for Volume Object
+    /// </summary>  
+    public class VolumeUnmarshaller : IUnmarshaller<Volume, XmlUnmarshallerContext>, IUnmarshaller<Volume, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// VolumeUnmarshaller
-      /// </summary>
-      internal class VolumeUnmarshaller : IUnmarshaller<Volume, XmlUnmarshallerContext>, IUnmarshaller<Volume, JsonUnmarshallerContext>
-      {
         Volume IUnmarshaller<Volume, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Volume Unmarshall(JsonUnmarshallerContext context)
         {
             if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
                 return null;
-            Volume volume = new Volume();
-          
+            
+            var unmarshalledObject = new Volume();
+                    
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+
             while (context.Read())
             {
                 if ((context.IsKey) && (context.CurrentDepth == targetDepth))
                 {
-                context.Read();
-                context.Read();
-              
-              if (context.TestExpression("VolumeId", targetDepth))
-              {
-                volume.VolumeId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Ec2VolumeId", targetDepth))
-              {
-                volume.Ec2VolumeId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Name", targetDepth))
-              {
-                volume.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("RaidArrayId", targetDepth))
-              {
-                volume.RaidArrayId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("InstanceId", targetDepth))
-              {
-                volume.InstanceId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Status", targetDepth))
-              {
-                volume.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Size", targetDepth))
-              {
-                volume.Size = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Device", targetDepth))
-              {
-                volume.Device = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("MountPoint", targetDepth))
-              {
-                volume.MountPoint = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Region", targetDepth))
-              {
-                volume.Region = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("AvailabilityZone", targetDepth))
-              {
-                volume.AvailabilityZone = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("VolumeType", targetDepth))
-              {
-                volume.VolumeType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Iops", targetDepth))
-              {
-                volume.Iops = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                    context.Read();
+                    context.Read();
+                    if (context.TestExpression("AvailabilityZone", targetDepth))
+                    {
+                        unmarshalledObject.AvailabilityZone = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Device", targetDepth))
+                    {
+                        unmarshalledObject.Device = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Ec2VolumeId", targetDepth))
+                    {
+                        unmarshalledObject.Ec2VolumeId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("InstanceId", targetDepth))
+                    {
+                        unmarshalledObject.InstanceId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Iops", targetDepth))
+                    {
+                        unmarshalledObject.Iops = IntUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MountPoint", targetDepth))
+                    {
+                        unmarshalledObject.MountPoint = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Name", targetDepth))
+                    {
+                        unmarshalledObject.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("RaidArrayId", targetDepth))
+                    {
+                        unmarshalledObject.RaidArrayId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Region", targetDepth))
+                    {
+                        unmarshalledObject.Region = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Size", targetDepth))
+                    {
+                        unmarshalledObject.Size = IntUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Status", targetDepth))
+                    {
+                        unmarshalledObject.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("VolumeId", targetDepth))
+                    {
+                        unmarshalledObject.VolumeId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("VolumeType", targetDepth))
+                    {
+                        unmarshalledObject.VolumeType = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {
-                    return volume;
+                    return unmarshalledObject;
                 }
-            }
-          
-
-            return volume;
+            }          
+            return unmarshalledObject;
         }
+
 
         private static VolumeUnmarshaller instance;
         public static VolumeUnmarshaller GetInstance()
         {
             if (instance == null)
+            {
                 instance = new VolumeUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-  

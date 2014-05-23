@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,69 +12,73 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticBeanstalk.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   CheckDNSAvailabilityResult Unmarshaller
-     /// </summary>
-    internal class CheckDNSAvailabilityResultUnmarshaller : IUnmarshaller<CheckDNSAvailabilityResult, XmlUnmarshallerContext>, IUnmarshaller<CheckDNSAvailabilityResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for CheckDNSAvailability Object
+    /// </summary>  
+    public class CheckDNSAvailabilityResultUnmarshaller : IUnmarshaller<CheckDNSAvailabilityResult, XmlUnmarshallerContext>
     {
         public CheckDNSAvailabilityResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            CheckDNSAvailabilityResult checkDNSAvailabilityResult = new CheckDNSAvailabilityResult();
+            CheckDNSAvailabilityResult result = new CheckDNSAvailabilityResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
+
                     if (context.TestExpression("Available", targetDepth))
                     {
-                        checkDNSAvailabilityResult.Available = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("FullyQualifiedCNAME", targetDepth))
-                    {
-                        checkDNSAvailabilityResult.FullyQualifiedCNAME = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.GetInstance();
+                        result.Available = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
+                    if (context.TestExpression("FullyQualifiedCNAME", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.FullyQualifiedCNAME = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return checkDNSAvailabilityResult;
+                    return result;
                 }
             }
-                        
 
-
-            return checkDNSAvailabilityResult;
+            return result;
         }
 
-        public CheckDNSAvailabilityResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static CheckDNSAvailabilityResultUnmarshaller instance;
-
-        public static CheckDNSAvailabilityResultUnmarshaller GetInstance() 
+        public static CheckDNSAvailabilityResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new CheckDNSAvailabilityResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new CheckDNSAvailabilityResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

@@ -18,65 +18,71 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>DescribePermissions</c> request.</para>
+    /// Contains the response to a <code>DescribePermissions</code> request.
     /// </summary>
     public partial class DescribePermissionsResult
     {
-        
-        private List<Permission> permissions = new List<Permission>();
+        private List<Permission> _permissions = new List<Permission>();
+
 
         /// <summary>
-        /// An array of <c>Permission</c> objects that describe the stack permissions. <ul> <li>If the request object contains only a stack ID, the
-        /// array contains a <c>Permission</c> object with permissions for each of the stack IAM ARNs.</li> <li>If the request object contains only an
-        /// IAM ARN, the array contains a <c>Permission</c> object with permissions for each of the user's stack IDs.</li> <li>If the request contains a
-        /// stack ID and an IAM ARN, the array contains a single <c>Permission</c> object with permissions for the specified stack and IAM ARN.</li>
-        /// </ul>
-        ///  
+        /// Gets and sets the property Permissions. 
+        /// <para>
+        /// An array of <code>Permission</code> objects that describe the stack permissions.
+        /// </para>
+        ///   <ul>  <li>If the request object contains only a stack ID, the array contains a 
+        /// <code>Permission</code> object with permissions for each of the stack IAM ARNs.</li>
+        ///  <li>If the request object contains only an IAM ARN, the array contains a  <code>Permission</code>
+        /// object with permissions for each of the user's stack IDs.</li>  <li>If the request
+        /// contains a stack ID and an IAM ARN, the array contains a single  <code>Permission</code>
+        /// object with permissions for the specified stack and IAM ARN.</li>  </ul>
         /// </summary>
         public List<Permission> Permissions
         {
-            get { return this.permissions; }
-            set { this.permissions = value; }
+            get { return this._permissions; }
+            set { this._permissions = value; }
         }
+
         /// <summary>
-        /// Adds elements to the Permissions collection
+        /// Sets the Permissions property
         /// </summary>
         /// <param name="permissions">The values to add to the Permissions collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribePermissionsResult WithPermissions(params Permission[] permissions)
         {
-            foreach (Permission element in permissions)
+            foreach (var element in permissions)
             {
-                this.permissions.Add(element);
+                this._permissions.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the Permissions collection
+        /// Sets the Permissions property
         /// </summary>
         /// <param name="permissions">The values to add to the Permissions collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribePermissionsResult WithPermissions(IEnumerable<Permission> permissions)
         {
-            foreach (Permission element in permissions)
+            foreach (var element in permissions)
             {
-                this.permissions.Add(element);
+                this._permissions.Add(element);
             }
-
             return this;
         }
-
         // Check to see if Permissions property is set
         internal bool IsSetPermissions()
         {
-            return this.permissions.Count > 0;
+            return this._permissions != null && this._permissions.Count > 0; 
         }
+
     }
 }

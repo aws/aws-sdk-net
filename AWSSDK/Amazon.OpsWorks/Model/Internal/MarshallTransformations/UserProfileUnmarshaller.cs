@@ -12,87 +12,92 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using Amazon.OpsWorks.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+using Amazon.OpsWorks.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for UserProfile Object
+    /// </summary>  
+    public class UserProfileUnmarshaller : IUnmarshaller<UserProfile, XmlUnmarshallerContext>, IUnmarshaller<UserProfile, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// UserProfileUnmarshaller
-      /// </summary>
-      internal class UserProfileUnmarshaller : IUnmarshaller<UserProfile, XmlUnmarshallerContext>, IUnmarshaller<UserProfile, JsonUnmarshallerContext>
-      {
         UserProfile IUnmarshaller<UserProfile, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public UserProfile Unmarshall(JsonUnmarshallerContext context)
         {
             if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
                 return null;
-            UserProfile userProfile = new UserProfile();
-          
+            
+            var unmarshalledObject = new UserProfile();
+                    
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+
             while (context.Read())
             {
                 if ((context.IsKey) && (context.CurrentDepth == targetDepth))
                 {
-                context.Read();
-                context.Read();
-              
-              if (context.TestExpression("IamUserArn", targetDepth))
-              {
-                userProfile.IamUserArn = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Name", targetDepth))
-              {
-                userProfile.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("SshUsername", targetDepth))
-              {
-                userProfile.SshUsername = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("SshPublicKey", targetDepth))
-              {
-                userProfile.SshPublicKey = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("AllowSelfManagement", targetDepth))
-              {
-                userProfile.AllowSelfManagement = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                    context.Read();
+                    context.Read();
+                    if (context.TestExpression("AllowSelfManagement", targetDepth))
+                    {
+                        unmarshalledObject.AllowSelfManagement = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("IamUserArn", targetDepth))
+                    {
+                        unmarshalledObject.IamUserArn = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Name", targetDepth))
+                    {
+                        unmarshalledObject.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SshPublicKey", targetDepth))
+                    {
+                        unmarshalledObject.SshPublicKey = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SshUsername", targetDepth))
+                    {
+                        unmarshalledObject.SshUsername = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {
-                    return userProfile;
+                    return unmarshalledObject;
                 }
-            }
-          
-
-            return userProfile;
+            }          
+            return unmarshalledObject;
         }
+
 
         private static UserProfileUnmarshaller instance;
         public static UserProfileUnmarshaller GetInstance()
         {
             if (instance == null)
+            {
                 instance = new UserProfileUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-  

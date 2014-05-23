@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,55 +18,33 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para> A regular expression representing a restriction on a string configuration option value. </para>
+    /// A regular expression representing a restriction on a string configuration
+    ///         option value.
     /// </summary>
     public partial class OptionRestrictionRegex
     {
-        
-        private string pattern;
-        private string label;
+        private string _label;
+        private string _pattern;
+
 
         /// <summary>
-        /// The regular expression pattern that a string configuration option value with this restriction must match.
-        ///  
-        /// </summary>
-        public string Pattern
-        {
-            get { return this.pattern; }
-            set { this.pattern = value; }
-        }
-
-        /// <summary>
-        /// Sets the Pattern property
-        /// </summary>
-        /// <param name="pattern">The value to set for the Pattern property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public OptionRestrictionRegex WithPattern(string pattern)
-        {
-            this.pattern = pattern;
-            return this;
-        }
-            
-
-        // Check to see if Pattern property is set
-        internal bool IsSetPattern()
-        {
-            return this.pattern != null;
-        }
-
-        /// <summary>
-        /// A unique name representing this regular expression.
-        ///  
+        /// Gets and sets the property Label. 
+        /// <para>
+        ///          A unique name representing this regular expression.        
+        /// </para>
         /// </summary>
         public string Label
         {
-            get { return this.label; }
-            set { this.label = value; }
+            get { return this._label; }
+            set { this._label = value; }
         }
+
 
         /// <summary>
         /// Sets the Label property
@@ -76,15 +54,48 @@ namespace Amazon.ElasticBeanstalk.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionRestrictionRegex WithLabel(string label)
         {
-            this.label = label;
+            this._label = label;
             return this;
         }
-            
 
         // Check to see if Label property is set
         internal bool IsSetLabel()
         {
-            return this.label != null;
+            return this._label != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Pattern. 
+        /// <para>
+        ///          The regular expression pattern that a string configuration option value with
+        ///         this restriction must match.        
+        /// </para>
+        /// </summary>
+        public string Pattern
+        {
+            get { return this._pattern; }
+            set { this._pattern = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the Pattern property
+        /// </summary>
+        /// <param name="pattern">The value to set for the Pattern property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public OptionRestrictionRegex WithPattern(string pattern)
+        {
+            this._pattern = pattern;
+            return this;
+        }
+
+        // Check to see if Pattern property is set
+        internal bool IsSetPattern()
+        {
+            return this._pattern != null;
+        }
+
     }
 }

@@ -25,86 +25,37 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateVolume operation.
-    /// <para>Updates an Amazon EBS volume's name or mount point. For more information, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html" >Resource Management</a> .</para> <para> <b>Required
-    /// Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly
-    /// grants permissions. For more information on user permissions, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+    /// Updates an Amazon EBS volume's name or mount point. For more information, see    
+    ///  <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
+    /// Management</a>.
+    /// 
+    ///     
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+    /// level for the stack, or an attached       policy that explicitly grants permissions.
+    /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.UpdateVolume"/>
-    public class UpdateVolumeRequest : AmazonWebServiceRequest
+    public partial class UpdateVolumeRequest : AmazonWebServiceRequest
     {
-        private string volumeId;
-        private string name;
-        private string mountPoint;
+        private string _mountPoint;
+        private string _name;
+        private string _volumeId;
+
 
         /// <summary>
-        /// The volume ID.
-        ///  
-        /// </summary>
-        public string VolumeId
-        {
-            get { return this.volumeId; }
-            set { this.volumeId = value; }
-        }
-
-        /// <summary>
-        /// Sets the VolumeId property
-        /// </summary>
-        /// <param name="volumeId">The value to set for the VolumeId property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public UpdateVolumeRequest WithVolumeId(string volumeId)
-        {
-            this.volumeId = volumeId;
-            return this;
-        }
-            
-
-        // Check to see if VolumeId property is set
-        internal bool IsSetVolumeId()
-        {
-            return this.volumeId != null;
-        }
-
-        /// <summary>
-        /// The new name.
-        ///  
-        /// </summary>
-        public string Name
-        {
-            get { return this.name; }
-            set { this.name = value; }
-        }
-
-        /// <summary>
-        /// Sets the Name property
-        /// </summary>
-        /// <param name="name">The value to set for the Name property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public UpdateVolumeRequest WithName(string name)
-        {
-            this.name = name;
-            return this;
-        }
-            
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this.name != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property MountPoint. 
+        /// <para>
         /// The new mount point.
-        ///  
+        /// </para>
         /// </summary>
         public string MountPoint
         {
-            get { return this.mountPoint; }
-            set { this.mountPoint = value; }
+            get { return this._mountPoint; }
+            set { this._mountPoint = value; }
         }
+
 
         /// <summary>
         /// Sets the MountPoint property
@@ -114,16 +65,79 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateVolumeRequest WithMountPoint(string mountPoint)
         {
-            this.mountPoint = mountPoint;
+            this._mountPoint = mountPoint;
             return this;
         }
-            
 
         // Check to see if MountPoint property is set
         internal bool IsSetMountPoint()
         {
-            return this.mountPoint != null;
+            return this._mountPoint != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The new name.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the Name property
+        /// </summary>
+        /// <param name="name">The value to set for the Name property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public UpdateVolumeRequest WithName(string name)
+        {
+            this._name = name;
+            return this;
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property VolumeId. 
+        /// <para>
+        /// The volume ID.
+        /// </para>
+        /// </summary>
+        public string VolumeId
+        {
+            get { return this._volumeId; }
+            set { this._volumeId = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the VolumeId property
+        /// </summary>
+        /// <param name="volumeId">The value to set for the VolumeId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public UpdateVolumeRequest WithVolumeId(string volumeId)
+        {
+            this._volumeId = volumeId;
+            return this;
+        }
+
+        // Check to see if VolumeId property is set
+        internal bool IsSetVolumeId()
+        {
+            return this._volumeId != null;
+        }
+
     }
 }
-    

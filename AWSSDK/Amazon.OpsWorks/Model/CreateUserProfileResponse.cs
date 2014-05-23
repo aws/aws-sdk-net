@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the  CreateUserProfileResult response and response metadata.
+    /// Returns information about the CreateUserProfileResult response and response metadata.
     /// </summary>
     public class CreateUserProfileResponse : AmazonWebServiceResponse
     {
-        private CreateUserProfileResult createUserProfileResult;
+        private CreateUserProfileResult _createUserProfileResult;
 
         /// <summary>
         /// Gets and sets the CreateUserProfileResult property.
-        /// Contains the response to a CreateUserProfile request.
+        /// Represents the output of a CreateUserProfile operation.
         /// </summary>
         public CreateUserProfileResult CreateUserProfileResult
         {
             get
             {
-                if(this.createUserProfileResult == null)
+                if(this._createUserProfileResult == null)
                 {
-                    this.createUserProfileResult = new CreateUserProfileResult();
+                    this._createUserProfileResult = new CreateUserProfileResult();
                 }
-
-                return this.createUserProfileResult;
+                return this._createUserProfileResult;
             }
-            set { this.createUserProfileResult = value; }
+            set { this._createUserProfileResult = value; }
         }
     }
 }
-    

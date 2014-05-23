@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,45 +25,43 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateConfigurationTemplate operation.
-    /// <para>Creates a configuration template. Templates are associated with a specific application and are used to deploy different versions of
-    /// the application with the same configuration settings.</para> <para>Related Topics</para>
-    /// <ul>
-    /// <li> DescribeConfigurationOptions </li>
-    /// <li> DescribeConfigurationSettings </li>
-    /// <li> ListAvailableSolutionStacks </li>
+    /// Creates a configuration template. Templates are associated with a         specific
+    /// application         and are used to deploy different versions of the         application
+    /// with         the same configuration settings.
     /// 
-    /// </ul>
+    ///       
+    /// <para>
+    /// Related Topics
+    /// </para>
+    ///       <ul>         <li>            <a>DescribeConfigurationOptions</a>         </li>
+    ///         <li>            <a>DescribeConfigurationSettings</a>         </li>       
+    ///  <li>            <a>ListAvailableSolutionStacks</a>         </li>      </ul>
     /// </summary>
-    /// <seealso cref="Amazon.ElasticBeanstalk.AmazonElasticBeanstalk.CreateConfigurationTemplate"/>
-    public class CreateConfigurationTemplateRequest : AmazonWebServiceRequest
+    public partial class CreateConfigurationTemplateRequest : AmazonWebServiceRequest
     {
-        private string applicationName;
-        private string templateName;
-        private string solutionStackName;
-        private SourceConfiguration sourceConfiguration;
-        private string environmentId;
-        private string description;
-        private List<ConfigurationOptionSetting> optionSettings = new List<ConfigurationOptionSetting>();
+        private string _applicationName;
+        private string _description;
+        private string _environmentId;
+        private List<ConfigurationOptionSetting> _optionSettings = new List<ConfigurationOptionSetting>();
+        private string _solutionStackName;
+        private SourceConfiguration _sourceConfiguration;
+        private string _templateName;
+
 
         /// <summary>
-        /// The name of the application to associate with this configuration template. If no application is found with this name, AWS Elastic Beanstalk
-        /// returns an <c>InvalidParameterValue</c> error.
-        ///  
+        /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 100</description>
-        ///     </item>
-        /// </list>
+        ///          The name of the application to associate with this         configuration
+        ///         template. If no application is found with this name, AWS Elastic Beanstalk
+        /// returns an         <code>InvalidParameterValue</code>         error.      
         /// </para>
         /// </summary>
         public string ApplicationName
         {
-            get { return this.applicationName; }
-            set { this.applicationName = value; }
+            get { return this._applicationName; }
+            set { this._applicationName = value; }
         }
+
 
         /// <summary>
         /// Sets the ApplicationName property
@@ -73,179 +71,29 @@ namespace Amazon.ElasticBeanstalk.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateConfigurationTemplateRequest WithApplicationName(string applicationName)
         {
-            this.applicationName = applicationName;
+            this._applicationName = applicationName;
             return this;
         }
-            
 
         // Check to see if ApplicationName property is set
         internal bool IsSetApplicationName()
         {
-            return this.applicationName != null;
+            return this._applicationName != null;
         }
 
+
         /// <summary>
-        /// The name of the configuration template. Constraint: This name must be unique per application. Default: If a configuration template already
-        /// exists with this name, AWS Elastic Beanstalk returns an <c>InvalidParameterValue</c> error.
-        ///  
+        /// Gets and sets the property Description. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 100</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string TemplateName
-        {
-            get { return this.templateName; }
-            set { this.templateName = value; }
-        }
-
-        /// <summary>
-        /// Sets the TemplateName property
-        /// </summary>
-        /// <param name="templateName">The value to set for the TemplateName property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public CreateConfigurationTemplateRequest WithTemplateName(string templateName)
-        {
-            this.templateName = templateName;
-            return this;
-        }
-            
-
-        // Check to see if TemplateName property is set
-        internal bool IsSetTemplateName()
-        {
-            return this.templateName != null;
-        }
-
-        /// <summary>
-        /// The name of the solution stack used by this configuration. The solution stack specifies the operating system, architecture, and application
-        /// server for a configuration template. It determines the set of configuration options as well as the possible and default values. Use
-        /// <a>ListAvailableSolutionStacks</a> to obtain a list of available solution stacks. A solution stack name or a source configuration parameter
-        /// must be specified, otherwise AWS Elastic Beanstalk returns an <c>InvalidParameterValue</c> error. If a solution stack name is not specified
-        /// and the source configuration parameter is specified, AWS Elastic Beanstalk uses the same solution stack as the source configuration
-        /// template.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 100</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string SolutionStackName
-        {
-            get { return this.solutionStackName; }
-            set { this.solutionStackName = value; }
-        }
-
-        /// <summary>
-        /// Sets the SolutionStackName property
-        /// </summary>
-        /// <param name="solutionStackName">The value to set for the SolutionStackName property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public CreateConfigurationTemplateRequest WithSolutionStackName(string solutionStackName)
-        {
-            this.solutionStackName = solutionStackName;
-            return this;
-        }
-            
-
-        // Check to see if SolutionStackName property is set
-        internal bool IsSetSolutionStackName()
-        {
-            return this.solutionStackName != null;
-        }
-
-        /// <summary>
-        /// If specified, AWS Elastic Beanstalk uses the configuration values from the specified configuration template to create a new configuration.
-        /// Values specified in the <c>OptionSettings</c> parameter of this call overrides any values obtained from the <c>SourceConfiguration</c>. If
-        /// no configuration template is found, returns an <c>InvalidParameterValue</c> error. Constraint: If both the solution stack name parameter and
-        /// the source configuration parameters are specified, the solution stack of the source configuration template must match the specified solution
-        /// stack name or else AWS Elastic Beanstalk returns an <c>InvalidParameterCombination</c> error.
-        ///  
-        /// </summary>
-        public SourceConfiguration SourceConfiguration
-        {
-            get { return this.sourceConfiguration; }
-            set { this.sourceConfiguration = value; }
-        }
-
-        /// <summary>
-        /// Sets the SourceConfiguration property
-        /// </summary>
-        /// <param name="sourceConfiguration">The value to set for the SourceConfiguration property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public CreateConfigurationTemplateRequest WithSourceConfiguration(SourceConfiguration sourceConfiguration)
-        {
-            this.sourceConfiguration = sourceConfiguration;
-            return this;
-        }
-            
-
-        // Check to see if SourceConfiguration property is set
-        internal bool IsSetSourceConfiguration()
-        {
-            return this.sourceConfiguration != null;
-        }
-
-        /// <summary>
-        /// The ID of the environment used with this configuration template.
-        ///  
-        /// </summary>
-        public string EnvironmentId
-        {
-            get { return this.environmentId; }
-            set { this.environmentId = value; }
-        }
-
-        /// <summary>
-        /// Sets the EnvironmentId property
-        /// </summary>
-        /// <param name="environmentId">The value to set for the EnvironmentId property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public CreateConfigurationTemplateRequest WithEnvironmentId(string environmentId)
-        {
-            this.environmentId = environmentId;
-            return this;
-        }
-            
-
-        // Check to see if EnvironmentId property is set
-        internal bool IsSetEnvironmentId()
-        {
-            return this.environmentId != null;
-        }
-
-        /// <summary>
         /// Describes this configuration.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 200</description>
-        ///     </item>
-        /// </list>
         /// </para>
         /// </summary>
         public string Description
         {
-            get { return this.description; }
-            set { this.description = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
+
 
         /// <summary>
         /// Sets the Description property
@@ -255,64 +103,244 @@ namespace Amazon.ElasticBeanstalk.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateConfigurationTemplateRequest WithDescription(string description)
         {
-            this.description = description;
+            this._description = description;
             return this;
         }
-            
 
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;
+            return this._description != null;
         }
 
+
         /// <summary>
-        /// If specified, AWS Elastic Beanstalk sets the specified configuration option to the requested value. The new value overrides the value
-        /// obtained from the solution stack or the source configuration template.
-        ///  
+        /// Gets and sets the property EnvironmentId. 
+        /// <para>
+        ///          The ID of the environment used with this configuration template.      
+        /// </para>
+        /// </summary>
+        public string EnvironmentId
+        {
+            get { return this._environmentId; }
+            set { this._environmentId = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the EnvironmentId property
+        /// </summary>
+        /// <param name="environmentId">The value to set for the EnvironmentId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateConfigurationTemplateRequest WithEnvironmentId(string environmentId)
+        {
+            this._environmentId = environmentId;
+            return this;
+        }
+
+        // Check to see if EnvironmentId property is set
+        internal bool IsSetEnvironmentId()
+        {
+            return this._environmentId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property OptionSettings. 
+        /// <para>
+        ///          If specified, AWS Elastic Beanstalk         sets the specified configuration
+        /// option to the requested value.         The new value overrides the value obtained
+        /// from the solution stack         or the source configuration template.      
+        /// </para>
         /// </summary>
         public List<ConfigurationOptionSetting> OptionSettings
         {
-            get { return this.optionSettings; }
-            set { this.optionSettings = value; }
+            get { return this._optionSettings; }
+            set { this._optionSettings = value; }
         }
+
         /// <summary>
-        /// Adds elements to the OptionSettings collection
+        /// Sets the OptionSettings property
         /// </summary>
         /// <param name="optionSettings">The values to add to the OptionSettings collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateConfigurationTemplateRequest WithOptionSettings(params ConfigurationOptionSetting[] optionSettings)
         {
-            foreach (ConfigurationOptionSetting element in optionSettings)
+            foreach (var element in optionSettings)
             {
-                this.optionSettings.Add(element);
+                this._optionSettings.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the OptionSettings collection
+        /// Sets the OptionSettings property
         /// </summary>
         /// <param name="optionSettings">The values to add to the OptionSettings collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateConfigurationTemplateRequest WithOptionSettings(IEnumerable<ConfigurationOptionSetting> optionSettings)
         {
-            foreach (ConfigurationOptionSetting element in optionSettings)
+            foreach (var element in optionSettings)
             {
-                this.optionSettings.Add(element);
+                this._optionSettings.Add(element);
             }
-
             return this;
         }
-
         // Check to see if OptionSettings property is set
         internal bool IsSetOptionSettings()
         {
-            return this.optionSettings.Count > 0;
+            return this._optionSettings != null && this._optionSettings.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property SolutionStackName. 
+        /// <para>
+        /// The name of the solution stack used by this configuration. The solution         stack
+        /// specifies the operating system, architecture, and         application         server
+        /// for a configuration template. It determines the set         of         configuration
+        /// options as well as the possible and default values.      
+        /// </para>
+        ///       
+        /// <para>
+        ///          Use         <a>ListAvailableSolutionStacks</a>         to obtain a list of
+        /// available solution stacks.      
+        /// </para>
+        ///       
+        /// <para>
+        ///                  A solution stack name or a source configuration parameter must be specified,
+        /// otherwise AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
+        ///       
+        /// </para>
+        ///       
+        /// <para>
+        ///                  If a solution stack name is not specified and the source configuration parameter
+        /// is specified, AWS Elastic Beanstalk uses the same solution stack as the source configuration
+        /// template.      
+        /// </para>
+        /// </summary>
+        public string SolutionStackName
+        {
+            get { return this._solutionStackName; }
+            set { this._solutionStackName = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the SolutionStackName property
+        /// </summary>
+        /// <param name="solutionStackName">The value to set for the SolutionStackName property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateConfigurationTemplateRequest WithSolutionStackName(string solutionStackName)
+        {
+            this._solutionStackName = solutionStackName;
+            return this;
+        }
+
+        // Check to see if SolutionStackName property is set
+        internal bool IsSetSolutionStackName()
+        {
+            return this._solutionStackName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SourceConfiguration. 
+        /// <para>
+        ///          If specified, AWS Elastic Beanstalk         uses the configuration values
+        /// from the         specified configuration template         to create a new configuration.
+        ///      
+        /// </para>
+        ///       
+        /// <para>
+        ///          Values specified in the         <code>OptionSettings</code>         parameter
+        /// of this call overrides any values obtained         from the         <code>SourceConfiguration</code>.
+        ///      
+        /// </para>
+        ///       
+        /// <para>
+        ///          If no configuration template is found, returns an         <code>InvalidParameterValue</code>
+        ///         error.      
+        /// </para>
+        ///       
+        /// <para>
+        ///          Constraint: If both the solution stack name parameter and the source    
+        ///     configuration parameters are specified,         the solution stack of the source
+        ///         configuration template must match the         specified solution stack name
+        /// or         else AWS Elastic Beanstalk         returns an         <code>InvalidParameterCombination</code>
+        ///         error.      
+        /// </para>
+        /// </summary>
+        public SourceConfiguration SourceConfiguration
+        {
+            get { return this._sourceConfiguration; }
+            set { this._sourceConfiguration = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the SourceConfiguration property
+        /// </summary>
+        /// <param name="sourceConfiguration">The value to set for the SourceConfiguration property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateConfigurationTemplateRequest WithSourceConfiguration(SourceConfiguration sourceConfiguration)
+        {
+            this._sourceConfiguration = sourceConfiguration;
+            return this;
+        }
+
+        // Check to see if SourceConfiguration property is set
+        internal bool IsSetSourceConfiguration()
+        {
+            return this._sourceConfiguration != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property TemplateName. 
+        /// <para>
+        /// The name of the configuration template.
+        /// </para>
+        ///       
+        /// <para>
+        /// Constraint: This name must be unique per         application. 
+        /// </para>
+        ///       
+        /// <para>
+        /// Default:         If a configuration template         already exists with this name,
+        /// AWS Elastic Beanstalk         returns an         <code>InvalidParameterValue</code>
+        ///         error.      
+        /// </para>
+        /// </summary>
+        public string TemplateName
+        {
+            get { return this._templateName; }
+            set { this._templateName = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the TemplateName property
+        /// </summary>
+        /// <param name="templateName">The value to set for the TemplateName property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateConfigurationTemplateRequest WithTemplateName(string templateName)
+        {
+            this._templateName = templateName;
+            return this;
+        }
+
+        // Check to see if TemplateName property is set
+        internal bool IsSetTemplateName()
+        {
+            return this._templateName != null;
+        }
+
     }
 }
-    

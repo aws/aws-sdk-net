@@ -25,29 +25,42 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the AttachElasticLoadBalancer operation.
-    /// <para>Attaches an Elastic Load Balancing load balancer to a specified layer. For more information, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/load-balancer-elb.html" >Elastic Load Balancing</a> .</para> <para><b>NOTE:</b>
-    /// You must create the Elastic Load Balancing instance separately, by using the Elastic Load Balancing console, API, or CLI. For more
-    /// information, see Elastic Load Balancing Developer Guide. </para> <para> <b>Required Permissions</b> : To use this action, an IAM user must
-    /// have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user
-    /// permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a>
-    /// .</para>
+    /// Attaches an Elastic Load Balancing load balancer to a specified layer. For more information,
+    /// see     <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/load-balancer-elb.html">Elastic
+    /// Load Balancing</a>.
+    /// 
+    ///   <note>      
+    /// <para>
+    /// You must create the Elastic Load Balancing instance separately, by using the Elastic
+    /// Load Balancing console, API, or CLI. For        more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/Welcome.html">
+    ///          Elastic Load Balancing Developer Guide</a>.
+    /// </para>
+    ///     </note>    
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+    /// level for the stack, or an attached       policy that explicitly grants permissions.
+    /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.AttachElasticLoadBalancer"/>
-    public class AttachElasticLoadBalancerRequest : AmazonWebServiceRequest
+    public partial class AttachElasticLoadBalancerRequest : AmazonWebServiceRequest
     {
-        private string elasticLoadBalancerName;
-        private string layerId;
+        private string _elasticLoadBalancerName;
+        private string _layerId;
+
 
         /// <summary>
+        /// Gets and sets the property ElasticLoadBalancerName. 
+        /// <para>
         /// The Elastic Load Balancing instance's name.
-        ///  
+        /// </para>
         /// </summary>
         public string ElasticLoadBalancerName
         {
-            get { return this.elasticLoadBalancerName; }
-            set { this.elasticLoadBalancerName = value; }
+            get { return this._elasticLoadBalancerName; }
+            set { this._elasticLoadBalancerName = value; }
         }
+
 
         /// <summary>
         /// Sets the ElasticLoadBalancerName property
@@ -57,26 +70,29 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AttachElasticLoadBalancerRequest WithElasticLoadBalancerName(string elasticLoadBalancerName)
         {
-            this.elasticLoadBalancerName = elasticLoadBalancerName;
+            this._elasticLoadBalancerName = elasticLoadBalancerName;
             return this;
         }
-            
 
         // Check to see if ElasticLoadBalancerName property is set
         internal bool IsSetElasticLoadBalancerName()
         {
-            return this.elasticLoadBalancerName != null;
+            return this._elasticLoadBalancerName != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property LayerId. 
+        /// <para>
         /// The ID of the layer that the Elastic Load Balancing instance is to be attached to.
-        ///  
+        /// </para>
         /// </summary>
         public string LayerId
         {
-            get { return this.layerId; }
-            set { this.layerId = value; }
+            get { return this._layerId; }
+            set { this._layerId = value; }
         }
+
 
         /// <summary>
         /// Sets the LayerId property
@@ -86,16 +102,15 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AttachElasticLoadBalancerRequest WithLayerId(string layerId)
         {
-            this.layerId = layerId;
+            this._layerId = layerId;
             return this;
         }
-            
 
         // Check to see if LayerId property is set
         internal bool IsSetLayerId()
         {
-            return this.layerId != null;
+            return this._layerId != null;
         }
+
     }
 }
-    

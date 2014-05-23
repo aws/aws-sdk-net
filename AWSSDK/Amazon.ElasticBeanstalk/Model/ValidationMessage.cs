@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,28 +18,34 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para> An error or warning for a desired configuration option value. </para>
+    /// An error or warning for a desired configuration option value.
     /// </summary>
     public partial class ValidationMessage
     {
-        
-        private string message;
-        private string severity;
-        private string namespaceValue;
-        private string optionName;
+        private string _message;
+        private string _namespace;
+        private string _optionName;
+        private string _severity;
+
 
         /// <summary>
-        /// A message describing the error or warning.
-        ///  
+        /// Gets and sets the property Message. 
+        /// <para>
+        ///          A message describing the error or warning.        
+        /// </para>
         /// </summary>
         public string Message
         {
-            get { return this.message; }
-            set { this.message = value; }
+            get { return this._message; }
+            set { this._message = value; }
         }
+
 
         /// <summary>
         /// Sets the Message property
@@ -49,96 +55,61 @@ namespace Amazon.ElasticBeanstalk.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ValidationMessage WithMessage(string message)
         {
-            this.message = message;
+            this._message = message;
             return this;
         }
-            
 
         // Check to see if Message property is set
         internal bool IsSetMessage()
         {
-            return this.message != null;
+            return this._message != null;
         }
 
+
         /// <summary>
-        /// An indication of the severity of this message: <enumValues> <value name="error"> error: This message indicates that this is not a valid
-        /// setting for an option. </value> <value name="warning"> warning: This message is providing information you should take into account. </value>
-        /// </enumValues> <ul> <li> error: This message indicates that this is not a valid setting for an option. </li> <li> warning: This message is
-        /// providing information you should take into account. </li> </ul>
-        ///  
+        /// Gets and sets the property Namespace. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>error, warning</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string Severity
-        {
-            get { return this.severity; }
-            set { this.severity = value; }
-        }
-
-        /// <summary>
-        /// Sets the Severity property
-        /// </summary>
-        /// <param name="severity">The value to set for the Severity property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ValidationMessage WithSeverity(string severity)
-        {
-            this.severity = severity;
-            return this;
-        }
-            
-
-        // Check to see if Severity property is set
-        internal bool IsSetSeverity()
-        {
-            return this.severity != null;
-        }
-
-        /// <summary>
         /// 
-        ///  
+        /// </para>
         /// </summary>
         public string Namespace
         {
-            get { return this.namespaceValue; }
-            set { this.namespaceValue = value; }
+            get { return this._namespace; }
+            set { this._namespace = value; }
         }
+
 
         /// <summary>
         /// Sets the Namespace property
         /// </summary>
-        /// <param name="namespaceValue">The value to set for the Namespace property </param>
+        /// <param name="ns">The value to set for the Namespace property </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ValidationMessage WithNamespace(string namespaceValue)
+        public ValidationMessage WithNamespace(string ns)
         {
-            this.namespaceValue = namespaceValue;
+            this._namespace = ns;
             return this;
         }
-            
 
         // Check to see if Namespace property is set
         internal bool IsSetNamespace()
         {
-            return this.namespaceValue != null;
+            return this._namespace != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property OptionName. 
+        /// <para>
         /// 
-        ///  
+        /// </para>
         /// </summary>
         public string OptionName
         {
-            get { return this.optionName; }
-            set { this.optionName = value; }
+            get { return this._optionName; }
+            set { this._optionName = value; }
         }
+
 
         /// <summary>
         /// Sets the OptionName property
@@ -148,15 +119,61 @@ namespace Amazon.ElasticBeanstalk.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ValidationMessage WithOptionName(string optionName)
         {
-            this.optionName = optionName;
+            this._optionName = optionName;
             return this;
         }
-            
 
         // Check to see if OptionName property is set
         internal bool IsSetOptionName()
         {
-            return this.optionName != null;
+            return this._optionName != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Severity. 
+        /// <para>
+        ///          An indication of the severity of this message:        
+        /// </para>
+        ///       <enumValues>         <value name="error">            
+        /// <para>
+        ///                error: This message indicates that this is not a valid setting for
+        /// an option.            
+        /// </para>
+        ///          </value>         <value name="warning">            
+        /// <para>
+        ///                warning: This message is providing information you should take into
+        ///               account.                
+        /// </para>
+        ///          </value>      </enumValues>      <ul>         <li>            error: This
+        /// message indicates that this is not a valid setting for an option.         </li>  
+        ///       <li>            warning: This message is providing information you should take
+        /// into            account.            </li>      </ul>
+        /// </summary>
+        public string Severity
+        {
+            get { return this._severity; }
+            set { this._severity = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the Severity property
+        /// </summary>
+        /// <param name="severity">The value to set for the Severity property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ValidationMessage WithSeverity(string severity)
+        {
+            this._severity = severity;
+            return this;
+        }
+
+        // Check to see if Severity property is set
+        internal bool IsSetSeverity()
+        {
+            return this._severity != null;
+        }
+
     }
 }

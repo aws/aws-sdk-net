@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,21 +12,29 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticBeanstalk.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   OptionRestrictionRegex Unmarshaller
-     /// </summary>
-    internal class OptionRestrictionRegexUnmarshaller : IUnmarshaller<OptionRestrictionRegex, XmlUnmarshallerContext>, IUnmarshaller<OptionRestrictionRegex, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for OptionRestrictionRegex Object
+    /// </summary>  
+    public class OptionRestrictionRegexUnmarshaller : IUnmarshaller<OptionRestrictionRegex, XmlUnmarshallerContext>, IUnmarshaller<OptionRestrictionRegex, JsonUnmarshallerContext>
     {
-        public OptionRestrictionRegex Unmarshall(XmlUnmarshallerContext context) 
+        public OptionRestrictionRegex Unmarshall(XmlUnmarshallerContext context)
         {
-            OptionRestrictionRegex optionRestrictionRegex = new OptionRestrictionRegex();
+            OptionRestrictionRegex unmarshalledObject = new OptionRestrictionRegex();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,45 +44,44 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("Pattern", targetDepth))
-                    {
-                        optionRestrictionRegex.Pattern = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
                     if (context.TestExpression("Label", targetDepth))
                     {
-                        optionRestrictionRegex.Label = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Label = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Pattern", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Pattern = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return optionRestrictionRegex;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return optionRestrictionRegex;
+            return unmarshalledObject;
         }
 
-        public OptionRestrictionRegex Unmarshall(JsonUnmarshallerContext context) 
+        public OptionRestrictionRegex Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static OptionRestrictionRegexUnmarshaller instance;
-
-        public static OptionRestrictionRegexUnmarshaller GetInstance() 
+        public static OptionRestrictionRegexUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new OptionRestrictionRegexUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new OptionRestrictionRegexUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

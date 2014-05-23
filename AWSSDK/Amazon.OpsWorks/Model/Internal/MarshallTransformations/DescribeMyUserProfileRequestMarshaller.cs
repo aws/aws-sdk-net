@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
@@ -28,50 +29,24 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe My User Profile Request Marshaller
+    /// DescribeMyUserProfile Request Marshaller
     /// </summary>       
-    internal class DescribeMyUserProfileRequestMarshaller : IMarshaller<IRequest, DescribeMyUserProfileRequest> 
+    public class DescribeMyUserProfileRequestMarshaller : IMarshaller<IRequest, DescribeMyUserProfileRequest> 
     {
-        
-
-        public IRequest Marshall(DescribeMyUserProfileRequest describeMyUserProfileRequest) 
+        public IRequest Marshall(DescribeMyUserProfileRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(describeMyUserProfileRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.DescribeMyUserProfile";
             request.Headers["X-Amz-Target"] = target;
+
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.HttpMethod = "POST";
 
-            
-              
-            string uriResourcePath = ""; 
-            
-            if (uriResourcePath.Contains("?")) 
-            {
-                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
-                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
-        
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                }
-            }
-            
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-        
-            request.UseQueryString = true;
-        
-
             return request;
         }
+
+
     }
 }

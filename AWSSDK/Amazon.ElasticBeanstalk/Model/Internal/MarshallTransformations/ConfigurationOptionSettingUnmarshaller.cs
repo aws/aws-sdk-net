@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,21 +12,29 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticBeanstalk.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ConfigurationOptionSetting Unmarshaller
-     /// </summary>
-    internal class ConfigurationOptionSettingUnmarshaller : IUnmarshaller<ConfigurationOptionSetting, XmlUnmarshallerContext>, IUnmarshaller<ConfigurationOptionSetting, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ConfigurationOptionSetting Object
+    /// </summary>  
+    public class ConfigurationOptionSettingUnmarshaller : IUnmarshaller<ConfigurationOptionSetting, XmlUnmarshallerContext>, IUnmarshaller<ConfigurationOptionSetting, JsonUnmarshallerContext>
     {
-        public ConfigurationOptionSetting Unmarshall(XmlUnmarshallerContext context) 
+        public ConfigurationOptionSetting Unmarshall(XmlUnmarshallerContext context)
         {
-            ConfigurationOptionSetting configurationOptionSetting = new ConfigurationOptionSetting();
+            ConfigurationOptionSetting unmarshalledObject = new ConfigurationOptionSetting();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,51 +44,50 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
                     if (context.TestExpression("Namespace", targetDepth))
                     {
-                        configurationOptionSetting.Namespace = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Namespace = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
                     if (context.TestExpression("OptionName", targetDepth))
                     {
-                        configurationOptionSetting.OptionName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.OptionName = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
                     if (context.TestExpression("Value", targetDepth))
                     {
-                        configurationOptionSetting.Value = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return configurationOptionSetting;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return configurationOptionSetting;
+            return unmarshalledObject;
         }
 
-        public ConfigurationOptionSetting Unmarshall(JsonUnmarshallerContext context) 
+        public ConfigurationOptionSetting Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static ConfigurationOptionSettingUnmarshaller instance;
-
-        public static ConfigurationOptionSettingUnmarshaller GetInstance() 
+        public static ConfigurationOptionSettingUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new ConfigurationOptionSettingUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new ConfigurationOptionSettingUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

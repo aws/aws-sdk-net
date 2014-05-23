@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
@@ -28,139 +29,129 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Instance Request Marshaller
+    /// CreateInstance Request Marshaller
     /// </summary>       
-    internal class CreateInstanceRequestMarshaller : IMarshaller<IRequest, CreateInstanceRequest> 
+    public class CreateInstanceRequestMarshaller : IMarshaller<IRequest, CreateInstanceRequest> 
     {
-        
-
-        public IRequest Marshall(CreateInstanceRequest createInstanceRequest) 
+        public IRequest Marshall(CreateInstanceRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(createInstanceRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.CreateInstance";
             request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
 
-            
-              
-            string uriResourcePath = ""; 
-            
-            if (uriResourcePath.Contains("?")) 
-            {
-                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
-                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
-        
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                }
-            }
-            
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
-            using (StringWriter stringWriter = new StringWriter())
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (createInstanceRequest != null && createInstanceRequest.IsSetStackId()) 
-                {
-                    writer.WritePropertyName("StackId");
-                    writer.Write(createInstanceRequest.StackId);
-                }
-
-                if (createInstanceRequest != null && createInstanceRequest.LayerIds != null && createInstanceRequest.LayerIds.Count > 0) 
-                {
-                    List<string> layerIdsList = createInstanceRequest.LayerIds;
-                    writer.WritePropertyName("LayerIds");
-                    writer.WriteArrayStart();
-
-                    foreach (string layerIdsListValue in layerIdsList) 
-                    { 
-                        writer.Write(StringUtils.FromString(layerIdsListValue));
-                    }
-
-                    writer.WriteArrayEnd();
-                }
-                if (createInstanceRequest != null && createInstanceRequest.IsSetInstanceType()) 
-                {
-                    writer.WritePropertyName("InstanceType");
-                    writer.Write(createInstanceRequest.InstanceType);
-                }
-                if (createInstanceRequest != null && createInstanceRequest.IsSetAutoScalingType()) 
-                {
-                    writer.WritePropertyName("AutoScalingType");
-                    writer.Write(createInstanceRequest.AutoScalingType);
-                }
-                if (createInstanceRequest != null && createInstanceRequest.IsSetHostname()) 
-                {
-                    writer.WritePropertyName("Hostname");
-                    writer.Write(createInstanceRequest.Hostname);
-                }
-                if (createInstanceRequest != null && createInstanceRequest.IsSetOs()) 
-                {
-                    writer.WritePropertyName("Os");
-                    writer.Write(createInstanceRequest.Os);
-                }
-                if (createInstanceRequest != null && createInstanceRequest.IsSetAmiId()) 
+                if(publicRequest != null && publicRequest.IsSetAmiId())
                 {
                     writer.WritePropertyName("AmiId");
-                    writer.Write(createInstanceRequest.AmiId);
-                }
-                if (createInstanceRequest != null && createInstanceRequest.IsSetSshKeyName()) 
-                {
-                    writer.WritePropertyName("SshKeyName");
-                    writer.Write(createInstanceRequest.SshKeyName);
-                }
-                if (createInstanceRequest != null && createInstanceRequest.IsSetAvailabilityZone()) 
-                {
-                    writer.WritePropertyName("AvailabilityZone");
-                    writer.Write(createInstanceRequest.AvailabilityZone);
-                }
-                if (createInstanceRequest != null && createInstanceRequest.IsSetSubnetId()) 
-                {
-                    writer.WritePropertyName("SubnetId");
-                    writer.Write(createInstanceRequest.SubnetId);
-                }
-                if (createInstanceRequest != null && createInstanceRequest.IsSetArchitecture()) 
-                {
-                    writer.WritePropertyName("Architecture");
-                    writer.Write(createInstanceRequest.Architecture);
-                }
-                if (createInstanceRequest != null && createInstanceRequest.IsSetRootDeviceType()) 
-                {
-                    writer.WritePropertyName("RootDeviceType");
-                    writer.Write(createInstanceRequest.RootDeviceType);
-                }
-                if (createInstanceRequest != null && createInstanceRequest.IsSetInstallUpdatesOnBoot()) 
-                {
-                    writer.WritePropertyName("InstallUpdatesOnBoot");
-                    writer.Write(createInstanceRequest.InstallUpdatesOnBoot);
-                }
-                if (createInstanceRequest != null && createInstanceRequest.IsSetEbsOptimized()) 
-                {
-                    writer.WritePropertyName("EbsOptimized");
-                    writer.Write(createInstanceRequest.EbsOptimized);
+                    writer.Write(publicRequest.AmiId);
                 }
 
+                if(publicRequest != null && publicRequest.IsSetArchitecture())
+                {
+                    writer.WritePropertyName("Architecture");
+                    writer.Write(publicRequest.Architecture);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetAutoScalingType())
+                {
+                    writer.WritePropertyName("AutoScalingType");
+                    writer.Write(publicRequest.AutoScalingType);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetAvailabilityZone())
+                {
+                    writer.WritePropertyName("AvailabilityZone");
+                    writer.Write(publicRequest.AvailabilityZone);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetEbsOptimized())
+                {
+                    writer.WritePropertyName("EbsOptimized");
+                    writer.Write(publicRequest.EbsOptimized);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetHostname())
+                {
+                    writer.WritePropertyName("Hostname");
+                    writer.Write(publicRequest.Hostname);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetInstallUpdatesOnBoot())
+                {
+                    writer.WritePropertyName("InstallUpdatesOnBoot");
+                    writer.Write(publicRequest.InstallUpdatesOnBoot);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetInstanceType())
+                {
+                    writer.WritePropertyName("InstanceType");
+                    writer.Write(publicRequest.InstanceType);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetLayerIds() && publicRequest.LayerIds.Count > 0)
+                {
+                    writer.WritePropertyName("LayerIds");
+                    writer.WriteArrayStart();
+                    foreach(var publicRequestLayerIdsListValue in publicRequest.LayerIds)
+                    {
+                        writer.Write(publicRequestLayerIdsListValue);
+                    }
+                    writer.WriteArrayEnd();
+                }
+
+                if(publicRequest != null && publicRequest.IsSetOs())
+                {
+                    writer.WritePropertyName("Os");
+                    writer.Write(publicRequest.Os);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetRootDeviceType())
+                {
+                    writer.WritePropertyName("RootDeviceType");
+                    writer.Write(publicRequest.RootDeviceType);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetSshKeyName())
+                {
+                    writer.WritePropertyName("SshKeyName");
+                    writer.Write(publicRequest.SshKeyName);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetStackId())
+                {
+                    writer.WritePropertyName("StackId");
+                    writer.Write(publicRequest.StackId);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetSubnetId())
+                {
+                    writer.WritePropertyName("SubnetId");
+                    writer.Write(publicRequest.SubnetId);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetVirtualizationType())
+                {
+                    writer.WritePropertyName("VirtualizationType");
+                    writer.Write(publicRequest.VirtualizationType);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
 
             return request;
         }
+
+
     }
 }

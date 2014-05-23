@@ -25,63 +25,68 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeStacks operation.
-    /// <para>Requests a description of one or more stacks.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a
-    /// Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on
-    /// user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User
-    /// Permissions</a> .</para>
+    /// Requests a description of one or more stacks.
+    /// 
+    ///     
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+    /// or Manage       permissions level for the stack, or an attached policy that explicitly
+    /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeStacks"/>
-    public class DescribeStacksRequest : AmazonWebServiceRequest
+    public partial class DescribeStacksRequest : AmazonWebServiceRequest
     {
-        private List<string> stackIds = new List<string>();
+        private List<string> _stackIds = new List<string>();
+
 
         /// <summary>
-        /// An array of stack IDs that specify the stacks to be described. If you omit this parameter, <c>DescribeStacks</c> returns a description of
-        /// every stack.
-        ///  
+        /// Gets and sets the property StackIds. 
+        /// <para>
+        /// An array of stack IDs that specify the stacks to be described. If you omit this parameter,
+        ///  <code>DescribeStacks</code> returns a description of every stack.
+        /// </para>
         /// </summary>
         public List<string> StackIds
         {
-            get { return this.stackIds; }
-            set { this.stackIds = value; }
+            get { return this._stackIds; }
+            set { this._stackIds = value; }
         }
+
         /// <summary>
-        /// Adds elements to the StackIds collection
+        /// Sets the StackIds property
         /// </summary>
         /// <param name="stackIds">The values to add to the StackIds collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeStacksRequest WithStackIds(params string[] stackIds)
         {
-            foreach (string element in stackIds)
+            foreach (var element in stackIds)
             {
-                this.stackIds.Add(element);
+                this._stackIds.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the StackIds collection
+        /// Sets the StackIds property
         /// </summary>
         /// <param name="stackIds">The values to add to the StackIds collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeStacksRequest WithStackIds(IEnumerable<string> stackIds)
         {
-            foreach (string element in stackIds)
+            foreach (var element in stackIds)
             {
-                this.stackIds.Add(element);
+                this._stackIds.Add(element);
             }
-
             return this;
         }
-
         // Check to see if StackIds property is set
         internal bool IsSetStackIds()
         {
-            return this.stackIds.Count > 0;
+            return this._stackIds != null && this._stackIds.Count > 0; 
         }
+
     }
 }
-    

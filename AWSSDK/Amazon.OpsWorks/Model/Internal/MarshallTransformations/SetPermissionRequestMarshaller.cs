@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
@@ -28,85 +29,64 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Set Permission Request Marshaller
+    /// SetPermission Request Marshaller
     /// </summary>       
-    internal class SetPermissionRequestMarshaller : IMarshaller<IRequest, SetPermissionRequest> 
+    public class SetPermissionRequestMarshaller : IMarshaller<IRequest, SetPermissionRequest> 
     {
-        
-
-        public IRequest Marshall(SetPermissionRequest setPermissionRequest) 
+        public IRequest Marshall(SetPermissionRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(setPermissionRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.SetPermission";
             request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
 
-            
-              
-            string uriResourcePath = ""; 
-            
-            if (uriResourcePath.Contains("?")) 
-            {
-                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
-                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
-        
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                }
-            }
-            
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
-            using (StringWriter stringWriter = new StringWriter())
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (setPermissionRequest != null && setPermissionRequest.IsSetStackId()) 
-                {
-                    writer.WritePropertyName("StackId");
-                    writer.Write(setPermissionRequest.StackId);
-                }
-                if (setPermissionRequest != null && setPermissionRequest.IsSetIamUserArn()) 
-                {
-                    writer.WritePropertyName("IamUserArn");
-                    writer.Write(setPermissionRequest.IamUserArn);
-                }
-                if (setPermissionRequest != null && setPermissionRequest.IsSetAllowSsh()) 
+                if(publicRequest != null && publicRequest.IsSetAllowSsh())
                 {
                     writer.WritePropertyName("AllowSsh");
-                    writer.Write(setPermissionRequest.AllowSsh);
-                }
-                if (setPermissionRequest != null && setPermissionRequest.IsSetAllowSudo()) 
-                {
-                    writer.WritePropertyName("AllowSudo");
-                    writer.Write(setPermissionRequest.AllowSudo);
-                }
-                if (setPermissionRequest != null && setPermissionRequest.IsSetLevel()) 
-                {
-                    writer.WritePropertyName("Level");
-                    writer.Write(setPermissionRequest.Level);
+                    writer.Write(publicRequest.AllowSsh);
                 }
 
+                if(publicRequest != null && publicRequest.IsSetAllowSudo())
+                {
+                    writer.WritePropertyName("AllowSudo");
+                    writer.Write(publicRequest.AllowSudo);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetIamUserArn())
+                {
+                    writer.WritePropertyName("IamUserArn");
+                    writer.Write(publicRequest.IamUserArn);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetLevel())
+                {
+                    writer.WritePropertyName("Level");
+                    writer.Write(publicRequest.Level);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetStackId())
+                {
+                    writer.WritePropertyName("StackId");
+                    writer.Write(publicRequest.StackId);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
 
             return request;
         }
+
+
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// Returns information about the  UpdateApplicationResult response and response metadata.
+    /// Returns information about the UpdateApplicationResult response and response metadata.
     /// </summary>
     public class UpdateApplicationResponse : AmazonWebServiceResponse
     {
-        private UpdateApplicationResult updateApplicationResult;
+        private UpdateApplicationResult _updateApplicationResult;
 
         /// <summary>
         /// Gets and sets the UpdateApplicationResult property.
-        /// Result message containing a single description of an application.
+        /// Represents the output of a UpdateApplication operation.
         /// </summary>
         public UpdateApplicationResult UpdateApplicationResult
         {
-            get 
+            get
             {
-                if(this.updateApplicationResult == null)
+                if(this._updateApplicationResult == null)
                 {
-                    this.updateApplicationResult = new UpdateApplicationResult();
+                    this._updateApplicationResult = new UpdateApplicationResult();
                 }
-
-                return this.updateApplicationResult; 
+                return this._updateApplicationResult;
             }
-            set { this.updateApplicationResult = value; }
+            set { this._updateApplicationResult = value; }
         }
     }
 }
-    

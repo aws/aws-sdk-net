@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,63 +12,68 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticBeanstalk.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ValidateConfigurationSettingsResult Unmarshaller
-     /// </summary>
-    internal class ValidateConfigurationSettingsResultUnmarshaller : IUnmarshaller<ValidateConfigurationSettingsResult, XmlUnmarshallerContext>, IUnmarshaller<ValidateConfigurationSettingsResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ValidateConfigurationSettings Object
+    /// </summary>  
+    public class ValidateConfigurationSettingsResultUnmarshaller : IUnmarshaller<ValidateConfigurationSettingsResult, XmlUnmarshallerContext>
     {
         public ValidateConfigurationSettingsResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            ValidateConfigurationSettingsResult validateConfigurationSettingsResult = new ValidateConfigurationSettingsResult();
+            ValidateConfigurationSettingsResult result = new ValidateConfigurationSettingsResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
+
                     if (context.TestExpression("Messages/member", targetDepth))
                     {
-                        validateConfigurationSettingsResult.Messages.Add(ValidationMessageUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = ValidationMessageUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        result.Messages.Add(item);
                         continue;
                     }
-                }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return validateConfigurationSettingsResult;
+                    return result;
                 }
             }
-                        
 
-
-            return validateConfigurationSettingsResult;
+            return result;
         }
 
-        public ValidateConfigurationSettingsResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static ValidateConfigurationSettingsResultUnmarshaller instance;
-
-        public static ValidateConfigurationSettingsResultUnmarshaller GetInstance() 
+        public static ValidateConfigurationSettingsResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new ValidateConfigurationSettingsResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new ValidateConfigurationSettingsResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

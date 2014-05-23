@@ -12,81 +12,86 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using Amazon.OpsWorks.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+using Amazon.OpsWorks.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for DescribeStacks Object
+    /// </summary>  
+    public class DescribeStacksResultUnmarshaller : IUnmarshaller<DescribeStacksResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeStacksResult, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// DescribeStacksResultUnmarshaller
-      /// </summary>
-      internal class DescribeStacksResultUnmarshaller : IUnmarshaller<DescribeStacksResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeStacksResult, JsonUnmarshallerContext>
-      {
         DescribeStacksResult IUnmarshaller<DescribeStacksResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public DescribeStacksResult Unmarshall(JsonUnmarshallerContext context)
         {
             if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
                 return null;
-            DescribeStacksResult describeStacksResult = new DescribeStacksResult();
-          describeStacksResult.Stacks = null;
-                        
+            
+            var unmarshalledObject = new DescribeStacksResult();
+            unmarshalledObject.Stacks = null;
+                    
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+
             while (context.Read())
             {
                 if ((context.IsKey) && (context.CurrentDepth == targetDepth))
                 {
-                context.Read();
-                context.Read();
-              
-              if (context.TestExpression("Stacks", targetDepth))
-              {
-                describeStacksResult.Stacks = new List<Stack>();   
-                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
-                {
-                  continue;
-                }              
-
-                  StackUnmarshaller unmarshaller = StackUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
-                  {
-                     describeStacksResult.Stacks.Add(unmarshaller.Unmarshall(context));
-                  }
-                  else if (context.IsEndArray)
-                  {
-                    break;
-                  }
-                }
-                continue;
-              }
-  
+                    context.Read();
+                    context.Read();
+                    if (context.TestExpression("Stacks", targetDepth))
+                    {
+                        unmarshalledObject.Stacks = new List<Stack>();
+                        var unmarshaller = StackUnmarshaller.GetInstance();
+                        while (context.Read())
+                        {
+                          if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                          {
+                             unmarshalledObject.Stacks.Add(unmarshaller.Unmarshall(context));
+                          }
+                          else if (context.IsEndArray)
+                          {
+                            break;
+                          }
+                        }
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {
-                    return describeStacksResult;
+                    return unmarshalledObject;
                 }
-            }
-          
-
-            return describeStacksResult;
+            }   
+                           
+            return unmarshalledObject;
         }
+
 
         private static DescribeStacksResultUnmarshaller instance;
         public static DescribeStacksResultUnmarshaller GetInstance()
         {
             if (instance == null)
+            {
                 instance = new DescribeStacksResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-  

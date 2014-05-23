@@ -12,81 +12,86 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using Amazon.OpsWorks.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+using Amazon.OpsWorks.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for DescribeElasticIps Object
+    /// </summary>  
+    public class DescribeElasticIpsResultUnmarshaller : IUnmarshaller<DescribeElasticIpsResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeElasticIpsResult, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// DescribeElasticIpsResultUnmarshaller
-      /// </summary>
-      internal class DescribeElasticIpsResultUnmarshaller : IUnmarshaller<DescribeElasticIpsResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeElasticIpsResult, JsonUnmarshallerContext>
-      {
         DescribeElasticIpsResult IUnmarshaller<DescribeElasticIpsResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public DescribeElasticIpsResult Unmarshall(JsonUnmarshallerContext context)
         {
             if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
                 return null;
-            DescribeElasticIpsResult describeElasticIpsResult = new DescribeElasticIpsResult();
-          describeElasticIpsResult.ElasticIps = null;
-                        
+            
+            var unmarshalledObject = new DescribeElasticIpsResult();
+            unmarshalledObject.ElasticIps = null;
+                    
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+
             while (context.Read())
             {
                 if ((context.IsKey) && (context.CurrentDepth == targetDepth))
                 {
-                context.Read();
-                context.Read();
-              
-              if (context.TestExpression("ElasticIps", targetDepth))
-              {
-                describeElasticIpsResult.ElasticIps = new List<ElasticIp>();   
-                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
-                {
-                  continue;
-                }              
-
-                  ElasticIpUnmarshaller unmarshaller = ElasticIpUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
-                  {
-                     describeElasticIpsResult.ElasticIps.Add(unmarshaller.Unmarshall(context));
-                  }
-                  else if (context.IsEndArray)
-                  {
-                    break;
-                  }
-                }
-                continue;
-              }
-  
+                    context.Read();
+                    context.Read();
+                    if (context.TestExpression("ElasticIps", targetDepth))
+                    {
+                        unmarshalledObject.ElasticIps = new List<ElasticIp>();
+                        var unmarshaller = ElasticIpUnmarshaller.GetInstance();
+                        while (context.Read())
+                        {
+                          if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                          {
+                             unmarshalledObject.ElasticIps.Add(unmarshaller.Unmarshall(context));
+                          }
+                          else if (context.IsEndArray)
+                          {
+                            break;
+                          }
+                        }
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {
-                    return describeElasticIpsResult;
+                    return unmarshalledObject;
                 }
-            }
-          
-
-            return describeElasticIpsResult;
+            }   
+                           
+            return unmarshalledObject;
         }
+
 
         private static DescribeElasticIpsResultUnmarshaller instance;
         public static DescribeElasticIpsResultUnmarshaller GetInstance()
         {
             if (instance == null)
+            {
                 instance = new DescribeElasticIpsResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-  

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeConfigurationOptionsResult response and response metadata.
+    /// Returns information about the DescribeConfigurationOptionsResult response and response metadata.
     /// </summary>
     public class DescribeConfigurationOptionsResponse : AmazonWebServiceResponse
     {
-        private DescribeConfigurationOptionsResult describeConfigurationOptionsResult;
+        private DescribeConfigurationOptionsResult _describeConfigurationOptionsResult;
 
         /// <summary>
         /// Gets and sets the DescribeConfigurationOptionsResult property.
-        /// Describes the settings for a specified configuration set.
+        /// Represents the output of a DescribeConfigurationOptions operation.
         /// </summary>
         public DescribeConfigurationOptionsResult DescribeConfigurationOptionsResult
         {
-            get 
+            get
             {
-                if(this.describeConfigurationOptionsResult == null)
+                if(this._describeConfigurationOptionsResult == null)
                 {
-                    this.describeConfigurationOptionsResult = new DescribeConfigurationOptionsResult();
+                    this._describeConfigurationOptionsResult = new DescribeConfigurationOptionsResult();
                 }
-
-                return this.describeConfigurationOptionsResult; 
+                return this._describeConfigurationOptionsResult;
             }
-            set { this.describeConfigurationOptionsResult = value; }
+            set { this._describeConfigurationOptionsResult = value; }
         }
     }
 }
-    

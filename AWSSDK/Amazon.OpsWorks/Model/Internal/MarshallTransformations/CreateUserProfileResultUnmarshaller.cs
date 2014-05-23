@@ -12,63 +12,73 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using Amazon.OpsWorks.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+using Amazon.OpsWorks.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for CreateUserProfile Object
+    /// </summary>  
+    public class CreateUserProfileResultUnmarshaller : IUnmarshaller<CreateUserProfileResult, XmlUnmarshallerContext>, IUnmarshaller<CreateUserProfileResult, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// CreateUserProfileResultUnmarshaller
-      /// </summary>
-      internal class CreateUserProfileResultUnmarshaller : IUnmarshaller<CreateUserProfileResult, XmlUnmarshallerContext>, IUnmarshaller<CreateUserProfileResult, JsonUnmarshallerContext>
-      {
         CreateUserProfileResult IUnmarshaller<CreateUserProfileResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public CreateUserProfileResult Unmarshall(JsonUnmarshallerContext context)
         {
             if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
                 return null;
-            CreateUserProfileResult createUserProfileResult = new CreateUserProfileResult();
-          
+            
+            var unmarshalledObject = new CreateUserProfileResult();
+                    
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+
             while (context.Read())
             {
                 if ((context.IsKey) && (context.CurrentDepth == targetDepth))
                 {
-                context.Read();
-                context.Read();
-              
-              if (context.TestExpression("IamUserArn", targetDepth))
-              {
-                createUserProfileResult.IamUserArn = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                    context.Read();
+                    context.Read();
+                    if (context.TestExpression("IamUserArn", targetDepth))
+                    {
+                        unmarshalledObject.IamUserArn = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {
-                    return createUserProfileResult;
+                    return unmarshalledObject;
                 }
-            }
-          
-
-            return createUserProfileResult;
+            }   
+                           
+            return unmarshalledObject;
         }
+
 
         private static CreateUserProfileResultUnmarshaller instance;
         public static CreateUserProfileResultUnmarshaller GetInstance()
         {
             if (instance == null)
+            {
                 instance = new CreateUserProfileResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-  

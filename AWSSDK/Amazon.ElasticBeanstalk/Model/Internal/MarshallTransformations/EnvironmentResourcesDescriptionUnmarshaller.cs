@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,21 +12,29 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticBeanstalk.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   EnvironmentResourcesDescription Unmarshaller
-     /// </summary>
-    internal class EnvironmentResourcesDescriptionUnmarshaller : IUnmarshaller<EnvironmentResourcesDescription, XmlUnmarshallerContext>, IUnmarshaller<EnvironmentResourcesDescription, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for EnvironmentResourcesDescription Object
+    /// </summary>  
+    public class EnvironmentResourcesDescriptionUnmarshaller : IUnmarshaller<EnvironmentResourcesDescription, XmlUnmarshallerContext>, IUnmarshaller<EnvironmentResourcesDescription, JsonUnmarshallerContext>
     {
-        public EnvironmentResourcesDescription Unmarshall(XmlUnmarshallerContext context) 
+        public EnvironmentResourcesDescription Unmarshall(XmlUnmarshallerContext context)
         {
-            EnvironmentResourcesDescription environmentResourcesDescription = new EnvironmentResourcesDescription();
+            EnvironmentResourcesDescription unmarshalledObject = new EnvironmentResourcesDescription();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,39 +44,38 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
                     if (context.TestExpression("LoadBalancer", targetDepth))
                     {
-                        environmentResourcesDescription.LoadBalancer = LoadBalancerDescriptionUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = LoadBalancerDescriptionUnmarshaller.GetInstance();
+                        unmarshalledObject.LoadBalancer = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return environmentResourcesDescription;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return environmentResourcesDescription;
+            return unmarshalledObject;
         }
 
-        public EnvironmentResourcesDescription Unmarshall(JsonUnmarshallerContext context) 
+        public EnvironmentResourcesDescription Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static EnvironmentResourcesDescriptionUnmarshaller instance;
-
-        public static EnvironmentResourcesDescriptionUnmarshaller GetInstance() 
+        public static EnvironmentResourcesDescriptionUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new EnvironmentResourcesDescriptionUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new EnvironmentResourcesDescriptionUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

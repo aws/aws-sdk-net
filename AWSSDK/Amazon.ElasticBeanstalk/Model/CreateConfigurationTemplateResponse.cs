@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// Returns information about the  CreateConfigurationTemplateResult response and response metadata.
+    /// Returns information about the CreateConfigurationTemplateResult response and response metadata.
     /// </summary>
     public class CreateConfigurationTemplateResponse : AmazonWebServiceResponse
     {
-        private CreateConfigurationTemplateResult createConfigurationTemplateResult;
+        private CreateConfigurationTemplateResult _createConfigurationTemplateResult;
 
         /// <summary>
         /// Gets and sets the CreateConfigurationTemplateResult property.
-        /// Describes the settings for a configuration set.
+        /// Represents the output of a CreateConfigurationTemplate operation.
         /// </summary>
         public CreateConfigurationTemplateResult CreateConfigurationTemplateResult
         {
-            get 
+            get
             {
-                if(this.createConfigurationTemplateResult == null)
+                if(this._createConfigurationTemplateResult == null)
                 {
-                    this.createConfigurationTemplateResult = new CreateConfigurationTemplateResult();
+                    this._createConfigurationTemplateResult = new CreateConfigurationTemplateResult();
                 }
-
-                return this.createConfigurationTemplateResult; 
+                return this._createConfigurationTemplateResult;
             }
-            set { this.createConfigurationTemplateResult = value; }
+            set { this._createConfigurationTemplateResult = value; }
         }
     }
 }
-    

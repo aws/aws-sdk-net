@@ -25,58 +25,40 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDeployments operation.
-    /// <para>Requests a description of a specified set of deployments.</para> <para><b>NOTE:</b> You must specify at least one of the parameters.
-    /// </para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the
-    /// stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+    /// Requests a description of a specified set of deployments.
+    /// 
+    ///   <note>      
+    /// <para>
+    /// You must specify at least one of the parameters.
+    /// </para>
+    ///     </note>    
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+    /// or Manage permissions level for the stack, or an attached       policy that explicitly
+    /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeDeployments"/>
-    public class DescribeDeploymentsRequest : AmazonWebServiceRequest
+    public partial class DescribeDeploymentsRequest : AmazonWebServiceRequest
     {
-        private string stackId;
-        private string appId;
-        private List<string> deploymentIds = new List<string>();
+        private string _appId;
+        private List<string> _deploymentIds = new List<string>();
+        private string _stackId;
+
 
         /// <summary>
-        /// The stack ID. If you include this parameter, <c>DescribeDeployments</c> returns a description of the commands associated with the specified
-        /// stack.
-        ///  
-        /// </summary>
-        public string StackId
-        {
-            get { return this.stackId; }
-            set { this.stackId = value; }
-        }
-
-        /// <summary>
-        /// Sets the StackId property
-        /// </summary>
-        /// <param name="stackId">The value to set for the StackId property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribeDeploymentsRequest WithStackId(string stackId)
-        {
-            this.stackId = stackId;
-            return this;
-        }
-            
-
-        // Check to see if StackId property is set
-        internal bool IsSetStackId()
-        {
-            return this.stackId != null;
-        }
-
-        /// <summary>
-        /// The app ID. If you include this parameter, <c>DescribeDeployments</c> returns a description of the commands associated with the specified
-        /// app.
-        ///  
+        /// Gets and sets the property AppId. 
+        /// <para>
+        /// The app ID. If you include this parameter, <code>DescribeDeployments</code> returns
+        /// a description of the commands         associated with the specified app.
+        /// </para>
         /// </summary>
         public string AppId
         {
-            get { return this.appId; }
-            set { this.appId = value; }
+            get { return this._appId; }
+            set { this._appId = value; }
         }
+
 
         /// <summary>
         /// Sets the AppId property
@@ -86,64 +68,98 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDeploymentsRequest WithAppId(string appId)
         {
-            this.appId = appId;
+            this._appId = appId;
             return this;
         }
-            
 
         // Check to see if AppId property is set
         internal bool IsSetAppId()
         {
-            return this.appId != null;
+            return this._appId != null;
         }
 
+
         /// <summary>
-        /// An array of deployment IDs to be described. If you include this parameter, <c>DescribeDeployments</c> returns a description of the specified
-        /// deployments. Otherwise, it returns a description of every deployment.
-        ///  
+        /// Gets and sets the property DeploymentIds. 
+        /// <para>
+        /// An array of deployment IDs to be described. If you include this parameter, <code>DescribeDeployments</code>
+        /// returns a description of the         specified deployments. Otherwise, it returns
+        /// a description of every deployment.
+        /// </para>
         /// </summary>
         public List<string> DeploymentIds
         {
-            get { return this.deploymentIds; }
-            set { this.deploymentIds = value; }
+            get { return this._deploymentIds; }
+            set { this._deploymentIds = value; }
         }
+
         /// <summary>
-        /// Adds elements to the DeploymentIds collection
+        /// Sets the DeploymentIds property
         /// </summary>
         /// <param name="deploymentIds">The values to add to the DeploymentIds collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDeploymentsRequest WithDeploymentIds(params string[] deploymentIds)
         {
-            foreach (string element in deploymentIds)
+            foreach (var element in deploymentIds)
             {
-                this.deploymentIds.Add(element);
+                this._deploymentIds.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the DeploymentIds collection
+        /// Sets the DeploymentIds property
         /// </summary>
         /// <param name="deploymentIds">The values to add to the DeploymentIds collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDeploymentsRequest WithDeploymentIds(IEnumerable<string> deploymentIds)
         {
-            foreach (string element in deploymentIds)
+            foreach (var element in deploymentIds)
             {
-                this.deploymentIds.Add(element);
+                this._deploymentIds.Add(element);
             }
-
             return this;
         }
-
         // Check to see if DeploymentIds property is set
         internal bool IsSetDeploymentIds()
         {
-            return this.deploymentIds.Count > 0;
+            return this._deploymentIds != null && this._deploymentIds.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property StackId. 
+        /// <para>
+        /// The stack ID. If you include this parameter, <code>DescribeDeployments</code> returns
+        /// a description of the commands         associated with the specified stack.
+        /// </para>
+        /// </summary>
+        public string StackId
+        {
+            get { return this._stackId; }
+            set { this._stackId = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the StackId property
+        /// </summary>
+        /// <param name="stackId">The value to set for the StackId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeDeploymentsRequest WithStackId(string stackId)
+        {
+            this._stackId = stackId;
+            return this;
+        }
+
+        // Check to see if StackId property is set
+        internal bool IsSetStackId()
+        {
+            return this._stackId != null;
+        }
+
     }
 }
-    

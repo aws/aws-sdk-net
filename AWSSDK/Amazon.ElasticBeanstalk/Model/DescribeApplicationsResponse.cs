@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeApplicationsResult response and response metadata.
+    /// Returns information about the DescribeApplicationsResult response and response metadata.
     /// </summary>
     public class DescribeApplicationsResponse : AmazonWebServiceResponse
     {
-        private DescribeApplicationsResult describeApplicationsResult;
+        private DescribeApplicationsResult _describeApplicationsResult;
 
         /// <summary>
         /// Gets and sets the DescribeApplicationsResult property.
-        /// Result message containing a list of application descriptions.
+        /// Represents the output of a DescribeApplications operation.
         /// </summary>
         public DescribeApplicationsResult DescribeApplicationsResult
         {
-            get 
+            get
             {
-                if(this.describeApplicationsResult == null)
+                if(this._describeApplicationsResult == null)
                 {
-                    this.describeApplicationsResult = new DescribeApplicationsResult();
+                    this._describeApplicationsResult = new DescribeApplicationsResult();
                 }
-
-                return this.describeApplicationsResult; 
+                return this._describeApplicationsResult;
             }
-            set { this.describeApplicationsResult = value; }
+            set { this._describeApplicationsResult = value; }
         }
     }
 }
-    

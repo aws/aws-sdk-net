@@ -25,25 +25,34 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeStackSummary operation.
-    /// <para>Describes the number of layers and apps in a specified stack, and the number of instances in each state, such as <c>running_setup</c>
-    /// or <c>online</c> .</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Show, Deploy, or Manage
-    /// permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+    /// Describes the number of layers and apps in a specified stack, and the number of instances
+    /// in      each state, such as <code>running_setup</code> or <code>online</code>.
+    /// 
+    ///      
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+    /// or Manage       permissions level for the stack, or an attached policy that explicitly
+    /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeStackSummary"/>
-    public class DescribeStackSummaryRequest : AmazonWebServiceRequest
+    public partial class DescribeStackSummaryRequest : AmazonWebServiceRequest
     {
-        private string stackId;
+        private string _stackId;
+
 
         /// <summary>
+        /// Gets and sets the property StackId. 
+        /// <para>
         /// The stack ID.
-        ///  
+        /// </para>
         /// </summary>
         public string StackId
         {
-            get { return this.stackId; }
-            set { this.stackId = value; }
+            get { return this._stackId; }
+            set { this._stackId = value; }
         }
+
 
         /// <summary>
         /// Sets the StackId property
@@ -53,16 +62,15 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeStackSummaryRequest WithStackId(string stackId)
         {
-            this.stackId = stackId;
+            this._stackId = stackId;
             return this;
         }
-            
 
         // Check to see if StackId property is set
         internal bool IsSetStackId()
         {
-            return this.stackId != null;
+            return this._stackId != null;
         }
+
     }
 }
-    

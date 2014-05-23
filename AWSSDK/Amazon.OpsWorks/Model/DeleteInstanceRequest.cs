@@ -25,57 +25,37 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteInstance operation.
-    /// <para>Deletes a specified instance. You must stop an instance before you can delete it. For more information, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-delete.html" >Deleting Instances</a> .</para> <para> <b>Required
-    /// Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly
-    /// grants permissions. For more information on user permissions, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+    /// Deletes a specified instance. You must stop an instance before you can delete it.
+    /// For more information, see  <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-delete.html">Deleting
+    /// Instances</a>.
+    /// 
+    ///     
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+    /// level for the stack, or an attached       policy that explicitly grants permissions.
+    /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DeleteInstance"/>
-    public class DeleteInstanceRequest : AmazonWebServiceRequest
+    public partial class DeleteInstanceRequest : AmazonWebServiceRequest
     {
-        private string instanceId;
-        private bool? deleteElasticIp;
-        private bool? deleteVolumes;
+        private bool? _deleteElasticIp;
+        private bool? _deleteVolumes;
+        private string _instanceId;
+
 
         /// <summary>
-        /// The instance ID.
-        ///  
-        /// </summary>
-        public string InstanceId
-        {
-            get { return this.instanceId; }
-            set { this.instanceId = value; }
-        }
-
-        /// <summary>
-        /// Sets the InstanceId property
-        /// </summary>
-        /// <param name="instanceId">The value to set for the InstanceId property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DeleteInstanceRequest WithInstanceId(string instanceId)
-        {
-            this.instanceId = instanceId;
-            return this;
-        }
-            
-
-        // Check to see if InstanceId property is set
-        internal bool IsSetInstanceId()
-        {
-            return this.instanceId != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property DeleteElasticIp. 
+        /// <para>
         /// Whether to delete the instance Elastic IP address.
-        ///  
+        /// </para>
         /// </summary>
         public bool DeleteElasticIp
         {
-            get { return this.deleteElasticIp ?? default(bool); }
-            set { this.deleteElasticIp = value; }
+            get { return this._deleteElasticIp.GetValueOrDefault(); }
+            set { this._deleteElasticIp = value; }
         }
+
 
         /// <summary>
         /// Sets the DeleteElasticIp property
@@ -85,26 +65,29 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteInstanceRequest WithDeleteElasticIp(bool deleteElasticIp)
         {
-            this.deleteElasticIp = deleteElasticIp;
+            this._deleteElasticIp = deleteElasticIp;
             return this;
         }
-            
 
         // Check to see if DeleteElasticIp property is set
         internal bool IsSetDeleteElasticIp()
         {
-            return this.deleteElasticIp.HasValue;
+            return this._deleteElasticIp.HasValue; 
         }
 
+
         /// <summary>
+        /// Gets and sets the property DeleteVolumes. 
+        /// <para>
         /// Whether to delete the instance's Amazon EBS volumes.
-        ///  
+        /// </para>
         /// </summary>
         public bool DeleteVolumes
         {
-            get { return this.deleteVolumes ?? default(bool); }
-            set { this.deleteVolumes = value; }
+            get { return this._deleteVolumes.GetValueOrDefault(); }
+            set { this._deleteVolumes = value; }
         }
+
 
         /// <summary>
         /// Sets the DeleteVolumes property
@@ -114,16 +97,47 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteInstanceRequest WithDeleteVolumes(bool deleteVolumes)
         {
-            this.deleteVolumes = deleteVolumes;
+            this._deleteVolumes = deleteVolumes;
             return this;
         }
-            
 
         // Check to see if DeleteVolumes property is set
         internal bool IsSetDeleteVolumes()
         {
-            return this.deleteVolumes.HasValue;
+            return this._deleteVolumes.HasValue; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The instance ID.
+        /// </para>
+        /// </summary>
+        public string InstanceId
+        {
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the InstanceId property
+        /// </summary>
+        /// <param name="instanceId">The value to set for the InstanceId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DeleteInstanceRequest WithInstanceId(string instanceId)
+        {
+            this._instanceId = instanceId;
+            return this;
+        }
+
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
+        {
+            return this._instanceId != null;
+        }
+
     }
 }
-    

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,80 +18,39 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para> Describes the settings for a configuration set. </para>
+    /// Describes the settings for a configuration set.
     /// </summary>
     public partial class ConfigurationSettingsDescription
     {
-        
-        private string solutionStackName;
-        private string applicationName;
-        private string templateName;
-        private string description;
-        private string environmentName;
-        private string deploymentStatus;
-        private DateTime? dateCreated;
-        private DateTime? dateUpdated;
-        private List<ConfigurationOptionSetting> optionSettings = new List<ConfigurationOptionSetting>();
+        private string _applicationName;
+        private DateTime? _dateCreated;
+        private DateTime? _dateUpdated;
+        private string _deploymentStatus;
+        private string _description;
+        private string _environmentName;
+        private List<ConfigurationOptionSetting> _optionSettings = new List<ConfigurationOptionSetting>();
+        private string _solutionStackName;
+        private string _templateName;
+
 
         /// <summary>
-        /// The name of the solution stack this configuration set uses.
-        ///  
+        /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 100</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string SolutionStackName
-        {
-            get { return this.solutionStackName; }
-            set { this.solutionStackName = value; }
-        }
-
-        /// <summary>
-        /// Sets the SolutionStackName property
-        /// </summary>
-        /// <param name="solutionStackName">The value to set for the SolutionStackName property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ConfigurationSettingsDescription WithSolutionStackName(string solutionStackName)
-        {
-            this.solutionStackName = solutionStackName;
-            return this;
-        }
-            
-
-        // Check to see if SolutionStackName property is set
-        internal bool IsSetSolutionStackName()
-        {
-            return this.solutionStackName != null;
-        }
-
-        /// <summary>
-        /// The name of the application associated with this configuration set.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 100</description>
-        ///     </item>
-        /// </list>
+        ///          The name of the application associated with this configuration set.        
         /// </para>
         /// </summary>
         public string ApplicationName
         {
-            get { return this.applicationName; }
-            set { this.applicationName = value; }
+            get { return this._applicationName; }
+            set { this._applicationName = value; }
         }
+
 
         /// <summary>
         /// Sets the ApplicationName property
@@ -101,186 +60,29 @@ namespace Amazon.ElasticBeanstalk.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConfigurationSettingsDescription WithApplicationName(string applicationName)
         {
-            this.applicationName = applicationName;
+            this._applicationName = applicationName;
             return this;
         }
-            
 
         // Check to see if ApplicationName property is set
         internal bool IsSetApplicationName()
         {
-            return this.applicationName != null;
+            return this._applicationName != null;
         }
 
+
         /// <summary>
-        /// If not <c>null</c>, the name of the configuration template for this configuration set.
-        ///  
+        /// Gets and sets the property DateCreated. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 100</description>
-        ///     </item>
-        /// </list>
+        ///          The date (in UTC time) when this configuration set was created.        
         /// </para>
-        /// </summary>
-        public string TemplateName
-        {
-            get { return this.templateName; }
-            set { this.templateName = value; }
-        }
-
-        /// <summary>
-        /// Sets the TemplateName property
-        /// </summary>
-        /// <param name="templateName">The value to set for the TemplateName property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ConfigurationSettingsDescription WithTemplateName(string templateName)
-        {
-            this.templateName = templateName;
-            return this;
-        }
-            
-
-        // Check to see if TemplateName property is set
-        internal bool IsSetTemplateName()
-        {
-            return this.templateName != null;
-        }
-
-        /// <summary>
-        /// Describes this configuration set.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 200</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string Description
-        {
-            get { return this.description; }
-            set { this.description = value; }
-        }
-
-        /// <summary>
-        /// Sets the Description property
-        /// </summary>
-        /// <param name="description">The value to set for the Description property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ConfigurationSettingsDescription WithDescription(string description)
-        {
-            this.description = description;
-            return this;
-        }
-            
-
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
-        {
-            return this.description != null;
-        }
-
-        /// <summary>
-        /// If not <c>null</c>, the name of the environment for this configuration set.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>4 - 23</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string EnvironmentName
-        {
-            get { return this.environmentName; }
-            set { this.environmentName = value; }
-        }
-
-        /// <summary>
-        /// Sets the EnvironmentName property
-        /// </summary>
-        /// <param name="environmentName">The value to set for the EnvironmentName property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ConfigurationSettingsDescription WithEnvironmentName(string environmentName)
-        {
-            this.environmentName = environmentName;
-            return this;
-        }
-            
-
-        // Check to see if EnvironmentName property is set
-        internal bool IsSetEnvironmentName()
-        {
-            return this.environmentName != null;
-        }
-
-        /// <summary>
-        /// If this configuration set is associated with an environment, the <c>DeploymentStatus</c> parameter indicates the deployment status of this
-        /// configuration set: <enumValues> <value name="null"> <c>null</c>: This configuration is not associated with a running environment. </value>
-        /// <value name="pending"> <c>pending</c>: This is a draft configuration that is not deployed to the associated environment but is in the
-        /// process of deploying. </value> <value name="deployed"> <c>deployed</c>: This is the configuration that is currently deployed to the
-        /// associated running environment. </value> <value name="failed"> <c>failed</c>: This is a draft configuration, that failed to successfully
-        /// deploy. </value> </enumValues> <ul> <li> <c>null</c>: This configuration is not associated with a running environment. </li> <li>
-        /// <c>pending</c>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying. </li>
-        /// <li> <c>deployed</c>: This is the configuration that is currently deployed to the associated running environment. </li> <li> <c>failed</c>:
-        /// This is a draft configuration that failed to successfully deploy. </li> </ul>
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>deployed, pending, failed</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string DeploymentStatus
-        {
-            get { return this.deploymentStatus; }
-            set { this.deploymentStatus = value; }
-        }
-
-        /// <summary>
-        /// Sets the DeploymentStatus property
-        /// </summary>
-        /// <param name="deploymentStatus">The value to set for the DeploymentStatus property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ConfigurationSettingsDescription WithDeploymentStatus(string deploymentStatus)
-        {
-            this.deploymentStatus = deploymentStatus;
-            return this;
-        }
-            
-
-        // Check to see if DeploymentStatus property is set
-        internal bool IsSetDeploymentStatus()
-        {
-            return this.deploymentStatus != null;
-        }
-
-        /// <summary>
-        /// The date (in UTC time) when this configuration set was created.
-        ///  
         /// </summary>
         public DateTime DateCreated
         {
-            get { return this.dateCreated ?? default(DateTime); }
-            set { this.dateCreated = value; }
+            get { return this._dateCreated.GetValueOrDefault(); }
+            set { this._dateCreated = value; }
         }
+
 
         /// <summary>
         /// Sets the DateCreated property
@@ -290,26 +92,29 @@ namespace Amazon.ElasticBeanstalk.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConfigurationSettingsDescription WithDateCreated(DateTime dateCreated)
         {
-            this.dateCreated = dateCreated;
+            this._dateCreated = dateCreated;
             return this;
         }
-            
 
         // Check to see if DateCreated property is set
         internal bool IsSetDateCreated()
         {
-            return this.dateCreated.HasValue;
+            return this._dateCreated.HasValue; 
         }
 
+
         /// <summary>
-        /// The date (in UTC time) when this configuration set was last modified.
-        ///  
+        /// Gets and sets the property DateUpdated. 
+        /// <para>
+        ///          The date (in UTC time) when this configuration set was last modified.        
+        /// </para>
         /// </summary>
         public DateTime DateUpdated
         {
-            get { return this.dateUpdated ?? default(DateTime); }
-            set { this.dateUpdated = value; }
+            get { return this._dateUpdated.GetValueOrDefault(); }
+            set { this._dateUpdated = value; }
         }
+
 
         /// <summary>
         /// Sets the DateUpdated property
@@ -319,62 +124,258 @@ namespace Amazon.ElasticBeanstalk.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConfigurationSettingsDescription WithDateUpdated(DateTime dateUpdated)
         {
-            this.dateUpdated = dateUpdated;
+            this._dateUpdated = dateUpdated;
             return this;
         }
-            
 
         // Check to see if DateUpdated property is set
         internal bool IsSetDateUpdated()
         {
-            return this.dateUpdated.HasValue;
+            return this._dateUpdated.HasValue; 
         }
 
+
         /// <summary>
-        /// A list of the configuration options and their values in this configuration set.
-        ///  
+        /// Gets and sets the property DeploymentStatus. 
+        /// <para>
+        ///          If this configuration set is associated with an environment, the        
+        ///  <code>DeploymentStatus</code> parameter indicates         the deployment status of
+        /// this configuration set:        
+        /// </para>
+        ///       <enumValues>         <value name="null">            
+        /// <para>
+        ///                <code>null</code>: This configuration is not associated with a running
+        ///               environment.            
+        /// </para>
+        ///          </value>         <value name="pending">            
+        /// <para>
+        ///                <code>pending</code>: This is a draft configuration that is not deployed
+        ///               to the               associated environment but is in the process of
+        /// deploying.            
+        /// </para>
+        ///          </value>         <value name="deployed">            
+        /// <para>
+        ///                <code>deployed</code>: This is the configuration that is currently
+        /// deployed               to the associated running environment.            
+        /// </para>
+        ///          </value>         <value name="failed">            
+        /// <para>
+        ///                <code>failed</code>: This is a draft configuration, that          
+        ///     failed to successfully deploy.            
+        /// </para>
+        ///          </value>      </enumValues>      <ul>         <li>            <code>null</code>:
+        /// This configuration is not associated with a running            environment.      
+        ///   </li>         <li>            <code>pending</code>: This is a draft configuration
+        /// that is not deployed            to the associated environment but is in the process
+        /// of deploying.         </li>         <li>            <code>deployed</code>: This is
+        /// the configuration that is currently deployed            to the associated running
+        /// environment.         </li>         <li>            <code>failed</code>: This is a
+        /// draft configuration that failed to            successfully deploy.         </li> 
+        ///     </ul>
+        /// </summary>
+        public string DeploymentStatus
+        {
+            get { return this._deploymentStatus; }
+            set { this._deploymentStatus = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the DeploymentStatus property
+        /// </summary>
+        /// <param name="deploymentStatus">The value to set for the DeploymentStatus property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ConfigurationSettingsDescription WithDeploymentStatus(string deploymentStatus)
+        {
+            this._deploymentStatus = deploymentStatus;
+            return this;
+        }
+
+        // Check to see if DeploymentStatus property is set
+        internal bool IsSetDeploymentStatus()
+        {
+            return this._deploymentStatus != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        ///          Describes this configuration set.        
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the Description property
+        /// </summary>
+        /// <param name="description">The value to set for the Description property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ConfigurationSettingsDescription WithDescription(string description)
+        {
+            this._description = description;
+            return this;
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property EnvironmentName. 
+        /// <para>
+        ///          If not         <code>null</code>, the name of the environment for this configuration
+        /// set.      
+        /// </para>
+        /// </summary>
+        public string EnvironmentName
+        {
+            get { return this._environmentName; }
+            set { this._environmentName = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the EnvironmentName property
+        /// </summary>
+        /// <param name="environmentName">The value to set for the EnvironmentName property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ConfigurationSettingsDescription WithEnvironmentName(string environmentName)
+        {
+            this._environmentName = environmentName;
+            return this;
+        }
+
+        // Check to see if EnvironmentName property is set
+        internal bool IsSetEnvironmentName()
+        {
+            return this._environmentName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property OptionSettings. 
+        /// <para>
+        ///          A list of the configuration options and their values in this configuration
+        ///         set.        
+        /// </para>
         /// </summary>
         public List<ConfigurationOptionSetting> OptionSettings
         {
-            get { return this.optionSettings; }
-            set { this.optionSettings = value; }
+            get { return this._optionSettings; }
+            set { this._optionSettings = value; }
         }
+
         /// <summary>
-        /// Adds elements to the OptionSettings collection
+        /// Sets the OptionSettings property
         /// </summary>
         /// <param name="optionSettings">The values to add to the OptionSettings collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConfigurationSettingsDescription WithOptionSettings(params ConfigurationOptionSetting[] optionSettings)
         {
-            foreach (ConfigurationOptionSetting element in optionSettings)
+            foreach (var element in optionSettings)
             {
-                this.optionSettings.Add(element);
+                this._optionSettings.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the OptionSettings collection
+        /// Sets the OptionSettings property
         /// </summary>
         /// <param name="optionSettings">The values to add to the OptionSettings collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConfigurationSettingsDescription WithOptionSettings(IEnumerable<ConfigurationOptionSetting> optionSettings)
         {
-            foreach (ConfigurationOptionSetting element in optionSettings)
+            foreach (var element in optionSettings)
             {
-                this.optionSettings.Add(element);
+                this._optionSettings.Add(element);
             }
-
             return this;
         }
-
         // Check to see if OptionSettings property is set
         internal bool IsSetOptionSettings()
         {
-            return this.optionSettings.Count > 0;
+            return this._optionSettings != null && this._optionSettings.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property SolutionStackName. 
+        /// <para>
+        ///          The name of the solution stack this configuration set uses.        
+        /// </para>
+        /// </summary>
+        public string SolutionStackName
+        {
+            get { return this._solutionStackName; }
+            set { this._solutionStackName = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the SolutionStackName property
+        /// </summary>
+        /// <param name="solutionStackName">The value to set for the SolutionStackName property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ConfigurationSettingsDescription WithSolutionStackName(string solutionStackName)
+        {
+            this._solutionStackName = solutionStackName;
+            return this;
+        }
+
+        // Check to see if SolutionStackName property is set
+        internal bool IsSetSolutionStackName()
+        {
+            return this._solutionStackName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property TemplateName. 
+        /// <para>
+        ///          If not         <code>null</code>, the name of the configuration template
+        /// for this configuration set.      
+        /// </para>
+        /// </summary>
+        public string TemplateName
+        {
+            get { return this._templateName; }
+            set { this._templateName = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the TemplateName property
+        /// </summary>
+        /// <param name="templateName">The value to set for the TemplateName property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ConfigurationSettingsDescription WithTemplateName(string templateName)
+        {
+            this._templateName = templateName;
+            return this;
+        }
+
+        // Check to see if TemplateName property is set
+        internal bool IsSetTemplateName()
+        {
+            return this._templateName != null;
+        }
+
     }
 }

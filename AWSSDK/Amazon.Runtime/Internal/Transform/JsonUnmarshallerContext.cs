@@ -69,7 +69,7 @@ namespace Amazon.Runtime.Internal.Transform
             this.httpStatusCode = httpStatusCode;
 
             long contentLength;
-            if (long.TryParse(headers["Content-Length"], out contentLength))
+            if (long.TryParse(this.headers["Content-Length"], out contentLength))
             {
                 base.SetupCRCStream(headers, responseStream, contentLength);
             }

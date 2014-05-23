@@ -18,25 +18,31 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>CreateApp</c> request.</para>
+    /// Contains the response to a <code>CreateApp</code> request.
     /// </summary>
     public partial class CreateAppResult
     {
-        
-        private string appId;
+        private string _appId;
+
 
         /// <summary>
+        /// Gets and sets the property AppId. 
+        /// <para>
         /// The app ID.
-        ///  
+        /// </para>
         /// </summary>
         public string AppId
         {
-            get { return this.appId; }
-            set { this.appId = value; }
+            get { return this._appId; }
+            set { this._appId = value; }
         }
+
 
         /// <summary>
         /// Sets the AppId property
@@ -46,15 +52,15 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateAppResult WithAppId(string appId)
         {
-            this.appId = appId;
+            this._appId = appId;
             return this;
         }
-            
 
         // Check to see if AppId property is set
         internal bool IsSetAppId()
         {
-            return this.appId != null;
+            return this._appId != null;
         }
+
     }
 }

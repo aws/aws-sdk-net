@@ -12,21 +12,16 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the StartStack response metadata.
-    /// The StartStack operation has a void result type.
+    /// Returns information about the StartStackResult response and response metadata.
     /// </summary>
     public class StartStackResponse : AmazonWebServiceResponse
     {
     }
 }
-    

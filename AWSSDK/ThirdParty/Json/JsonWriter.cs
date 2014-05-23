@@ -332,7 +332,8 @@ namespace ThirdParty.Json.LitJson
             DoValidation (Condition.Value);
             PutNewline ();
 
-            string str = Convert.ToString (number, number_format);
+            // Modified to support roundtripping of double.MaxValue
+            string str = number.ToString("R", CultureInfo.InvariantCulture);
             Put (str);
 
             if (str.IndexOf ('.') == -1 &&

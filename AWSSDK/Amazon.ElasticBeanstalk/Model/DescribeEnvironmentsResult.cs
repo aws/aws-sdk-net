@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,61 +18,65 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para>Result message containing a list of environment descriptions.</para>
+    /// Result message containing a list of environment descriptions.
     /// </summary>
     public partial class DescribeEnvironmentsResult
     {
-        
-        private List<EnvironmentDescription> environments = new List<EnvironmentDescription>();
+        private List<EnvironmentDescription> _environments = new List<EnvironmentDescription>();
+
 
         /// <summary>
-        /// Returns an <a>EnvironmentDescription</a> list.
-        ///  
+        /// Gets and sets the property Environments. 
+        /// <para>
+        ///          Returns an <a>EnvironmentDescription</a> list.      
+        /// </para>
         /// </summary>
         public List<EnvironmentDescription> Environments
         {
-            get { return this.environments; }
-            set { this.environments = value; }
+            get { return this._environments; }
+            set { this._environments = value; }
         }
+
         /// <summary>
-        /// Adds elements to the Environments collection
+        /// Sets the Environments property
         /// </summary>
         /// <param name="environments">The values to add to the Environments collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEnvironmentsResult WithEnvironments(params EnvironmentDescription[] environments)
         {
-            foreach (EnvironmentDescription element in environments)
+            foreach (var element in environments)
             {
-                this.environments.Add(element);
+                this._environments.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the Environments collection
+        /// Sets the Environments property
         /// </summary>
         /// <param name="environments">The values to add to the Environments collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEnvironmentsResult WithEnvironments(IEnumerable<EnvironmentDescription> environments)
         {
-            foreach (EnvironmentDescription element in environments)
+            foreach (var element in environments)
             {
-                this.environments.Add(element);
+                this._environments.Add(element);
             }
-
             return this;
         }
-
         // Check to see if Environments property is set
         internal bool IsSetEnvironments()
         {
-            return this.environments.Count > 0;
+            return this._environments != null && this._environments.Count > 0; 
         }
+
     }
 }

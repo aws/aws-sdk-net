@@ -25,26 +25,35 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the UnassignVolume operation.
-    /// <para>Unassigns an assigned Amazon EBS volume. The volume remains registered with the stack. For more information, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html" >Resource Management</a> .</para> <para> <b>Required
-    /// Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly
-    /// grants permissions. For more information on user permissions, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+    /// Unassigns an assigned Amazon EBS volume. The volume remains registered with the stack.
+    /// For more information, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
+    /// Management</a>.
+    /// 
+    ///     
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+    /// level for the stack, or an attached       policy that explicitly grants permissions.
+    /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.UnassignVolume"/>
-    public class UnassignVolumeRequest : AmazonWebServiceRequest
+    public partial class UnassignVolumeRequest : AmazonWebServiceRequest
     {
-        private string volumeId;
+        private string _volumeId;
+
 
         /// <summary>
+        /// Gets and sets the property VolumeId. 
+        /// <para>
         /// The volume ID.
-        ///  
+        /// </para>
         /// </summary>
         public string VolumeId
         {
-            get { return this.volumeId; }
-            set { this.volumeId = value; }
+            get { return this._volumeId; }
+            set { this._volumeId = value; }
         }
+
 
         /// <summary>
         /// Sets the VolumeId property
@@ -54,16 +63,15 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UnassignVolumeRequest WithVolumeId(string volumeId)
         {
-            this.volumeId = volumeId;
+            this._volumeId = volumeId;
             return this;
         }
-            
 
         // Check to see if VolumeId property is set
         internal bool IsSetVolumeId()
         {
-            return this.volumeId != null;
+            return this._volumeId != null;
         }
+
     }
 }
-    

@@ -12,63 +12,73 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using Amazon.OpsWorks.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+using Amazon.OpsWorks.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for CreateInstance Object
+    /// </summary>  
+    public class CreateInstanceResultUnmarshaller : IUnmarshaller<CreateInstanceResult, XmlUnmarshallerContext>, IUnmarshaller<CreateInstanceResult, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// CreateInstanceResultUnmarshaller
-      /// </summary>
-      internal class CreateInstanceResultUnmarshaller : IUnmarshaller<CreateInstanceResult, XmlUnmarshallerContext>, IUnmarshaller<CreateInstanceResult, JsonUnmarshallerContext>
-      {
         CreateInstanceResult IUnmarshaller<CreateInstanceResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public CreateInstanceResult Unmarshall(JsonUnmarshallerContext context)
         {
             if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
                 return null;
-            CreateInstanceResult createInstanceResult = new CreateInstanceResult();
-          
+            
+            var unmarshalledObject = new CreateInstanceResult();
+                    
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+
             while (context.Read())
             {
                 if ((context.IsKey) && (context.CurrentDepth == targetDepth))
                 {
-                context.Read();
-                context.Read();
-              
-              if (context.TestExpression("InstanceId", targetDepth))
-              {
-                createInstanceResult.InstanceId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                    context.Read();
+                    context.Read();
+                    if (context.TestExpression("InstanceId", targetDepth))
+                    {
+                        unmarshalledObject.InstanceId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {
-                    return createInstanceResult;
+                    return unmarshalledObject;
                 }
-            }
-          
-
-            return createInstanceResult;
+            }   
+                           
+            return unmarshalledObject;
         }
+
 
         private static CreateInstanceResultUnmarshaller instance;
         public static CreateInstanceResultUnmarshaller GetInstance()
         {
             if (instance == null)
+            {
                 instance = new CreateInstanceResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-  

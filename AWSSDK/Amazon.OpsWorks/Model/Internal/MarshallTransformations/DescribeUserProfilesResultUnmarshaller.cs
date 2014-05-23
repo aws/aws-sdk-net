@@ -12,81 +12,86 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using Amazon.OpsWorks.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+using Amazon.OpsWorks.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for DescribeUserProfiles Object
+    /// </summary>  
+    public class DescribeUserProfilesResultUnmarshaller : IUnmarshaller<DescribeUserProfilesResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeUserProfilesResult, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// DescribeUserProfilesResultUnmarshaller
-      /// </summary>
-      internal class DescribeUserProfilesResultUnmarshaller : IUnmarshaller<DescribeUserProfilesResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeUserProfilesResult, JsonUnmarshallerContext>
-      {
         DescribeUserProfilesResult IUnmarshaller<DescribeUserProfilesResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public DescribeUserProfilesResult Unmarshall(JsonUnmarshallerContext context)
         {
             if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
                 return null;
-            DescribeUserProfilesResult describeUserProfilesResult = new DescribeUserProfilesResult();
-          describeUserProfilesResult.UserProfiles = null;
-                        
+            
+            var unmarshalledObject = new DescribeUserProfilesResult();
+            unmarshalledObject.UserProfiles = null;
+                    
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+
             while (context.Read())
             {
                 if ((context.IsKey) && (context.CurrentDepth == targetDepth))
                 {
-                context.Read();
-                context.Read();
-              
-              if (context.TestExpression("UserProfiles", targetDepth))
-              {
-                describeUserProfilesResult.UserProfiles = new List<UserProfile>();   
-                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
-                {
-                  continue;
-                }              
-
-                  UserProfileUnmarshaller unmarshaller = UserProfileUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
-                  {
-                     describeUserProfilesResult.UserProfiles.Add(unmarshaller.Unmarshall(context));
-                  }
-                  else if (context.IsEndArray)
-                  {
-                    break;
-                  }
-                }
-                continue;
-              }
-  
+                    context.Read();
+                    context.Read();
+                    if (context.TestExpression("UserProfiles", targetDepth))
+                    {
+                        unmarshalledObject.UserProfiles = new List<UserProfile>();
+                        var unmarshaller = UserProfileUnmarshaller.GetInstance();
+                        while (context.Read())
+                        {
+                          if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                          {
+                             unmarshalledObject.UserProfiles.Add(unmarshaller.Unmarshall(context));
+                          }
+                          else if (context.IsEndArray)
+                          {
+                            break;
+                          }
+                        }
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {
-                    return describeUserProfilesResult;
+                    return unmarshalledObject;
                 }
-            }
-          
-
-            return describeUserProfilesResult;
+            }   
+                           
+            return unmarshalledObject;
         }
+
 
         private static DescribeUserProfilesResultUnmarshaller instance;
         public static DescribeUserProfilesResultUnmarshaller GetInstance()
         {
             if (instance == null)
+            {
                 instance = new DescribeUserProfilesResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-  

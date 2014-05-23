@@ -5733,6 +5733,14 @@ namespace Amazon.S3
             parameters[S3QueryParameter.Key] = request.Key;
 
             string queryStr = "?restore";
+
+            // The queryStr needs to be changed from its default value only
+            // if a version-id is specified
+            if (request.IsSetVersionId())
+            {
+                queryStr = String.Concat(queryStr, "&versionId=", request.VersionId);
+            }
+
             parameters[S3QueryParameter.Query] = queryStr;
             parameters[S3QueryParameter.QueryToSign] = queryStr;
 

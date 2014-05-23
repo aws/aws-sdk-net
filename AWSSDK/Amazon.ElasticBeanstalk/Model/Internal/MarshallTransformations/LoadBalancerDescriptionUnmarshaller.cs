@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,21 +12,29 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticBeanstalk.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   LoadBalancerDescription Unmarshaller
-     /// </summary>
-    internal class LoadBalancerDescriptionUnmarshaller : IUnmarshaller<LoadBalancerDescription, XmlUnmarshallerContext>, IUnmarshaller<LoadBalancerDescription, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for LoadBalancerDescription Object
+    /// </summary>  
+    public class LoadBalancerDescriptionUnmarshaller : IUnmarshaller<LoadBalancerDescription, XmlUnmarshallerContext>, IUnmarshaller<LoadBalancerDescription, JsonUnmarshallerContext>
     {
-        public LoadBalancerDescription Unmarshall(XmlUnmarshallerContext context) 
+        public LoadBalancerDescription Unmarshall(XmlUnmarshallerContext context)
         {
-            LoadBalancerDescription loadBalancerDescription = new LoadBalancerDescription();
+            LoadBalancerDescription unmarshalledObject = new LoadBalancerDescription();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,51 +44,51 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("LoadBalancerName", targetDepth))
-                    {
-                        loadBalancerDescription.LoadBalancerName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
                     if (context.TestExpression("Domain", targetDepth))
                     {
-                        loadBalancerDescription.Domain = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Domain = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
                     if (context.TestExpression("Listeners/member", targetDepth))
                     {
-                        loadBalancerDescription.Listeners.Add(ListenerUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = ListenerUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Listeners.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("LoadBalancerName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.LoadBalancerName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return loadBalancerDescription;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return loadBalancerDescription;
+            return unmarshalledObject;
         }
 
-        public LoadBalancerDescription Unmarshall(JsonUnmarshallerContext context) 
+        public LoadBalancerDescription Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static LoadBalancerDescriptionUnmarshaller instance;
-
-        public static LoadBalancerDescriptionUnmarshaller GetInstance() 
+        public static LoadBalancerDescriptionUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new LoadBalancerDescriptionUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new LoadBalancerDescriptionUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

@@ -12,93 +12,97 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using Amazon.OpsWorks.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+using Amazon.OpsWorks.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for StackSummary Object
+    /// </summary>  
+    public class StackSummaryUnmarshaller : IUnmarshaller<StackSummary, XmlUnmarshallerContext>, IUnmarshaller<StackSummary, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// StackSummaryUnmarshaller
-      /// </summary>
-      internal class StackSummaryUnmarshaller : IUnmarshaller<StackSummary, XmlUnmarshallerContext>, IUnmarshaller<StackSummary, JsonUnmarshallerContext>
-      {
         StackSummary IUnmarshaller<StackSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public StackSummary Unmarshall(JsonUnmarshallerContext context)
         {
             if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
                 return null;
-            StackSummary stackSummary = new StackSummary();
-          
+            
+            var unmarshalledObject = new StackSummary();
+                    
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+
             while (context.Read())
             {
                 if ((context.IsKey) && (context.CurrentDepth == targetDepth))
                 {
-                context.Read();
-                context.Read();
-              
-              if (context.TestExpression("StackId", targetDepth))
-              {
-                stackSummary.StackId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Name", targetDepth))
-              {
-                stackSummary.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Arn", targetDepth))
-              {
-                stackSummary.Arn = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("LayersCount", targetDepth))
-              {
-                stackSummary.LayersCount = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("AppsCount", targetDepth))
-              {
-                stackSummary.AppsCount = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("InstancesCount", targetDepth))
-              {
-                stackSummary.InstancesCount = InstancesCountUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                    context.Read();
+                    context.Read();
+                    if (context.TestExpression("AppsCount", targetDepth))
+                    {
+                        unmarshalledObject.AppsCount = IntUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Arn", targetDepth))
+                    {
+                        unmarshalledObject.Arn = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("InstancesCount", targetDepth))
+                    {
+                        unmarshalledObject.InstancesCount = InstancesCountUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("LayersCount", targetDepth))
+                    {
+                        unmarshalledObject.LayersCount = IntUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Name", targetDepth))
+                    {
+                        unmarshalledObject.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StackId", targetDepth))
+                    {
+                        unmarshalledObject.StackId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {
-                    return stackSummary;
+                    return unmarshalledObject;
                 }
-            }
-          
-
-            return stackSummary;
+            }          
+            return unmarshalledObject;
         }
+
 
         private static StackSummaryUnmarshaller instance;
         public static StackSummaryUnmarshaller GetInstance()
         {
             if (instance == null)
+            {
                 instance = new StackSummaryUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-  

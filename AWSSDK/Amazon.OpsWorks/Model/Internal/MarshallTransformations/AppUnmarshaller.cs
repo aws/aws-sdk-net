@@ -12,166 +12,173 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using Amazon.OpsWorks.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+using Amazon.OpsWorks.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for App Object
+    /// </summary>  
+    public class AppUnmarshaller : IUnmarshaller<App, XmlUnmarshallerContext>, IUnmarshaller<App, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// AppUnmarshaller
-      /// </summary>
-      internal class AppUnmarshaller : IUnmarshaller<App, XmlUnmarshallerContext>, IUnmarshaller<App, JsonUnmarshallerContext>
-      {
         App IUnmarshaller<App, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public App Unmarshall(JsonUnmarshallerContext context)
         {
             if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
                 return null;
-            App app = new App();
-          app.Domains = null;
-                        app.Attributes = null;
-                        
+            
+            var unmarshalledObject = new App();
+            unmarshalledObject.Attributes = null;
+            unmarshalledObject.DataSources = null;
+            unmarshalledObject.Domains = null;
+                    
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+
             while (context.Read())
             {
                 if ((context.IsKey) && (context.CurrentDepth == targetDepth))
                 {
-                context.Read();
-                context.Read();
-              
-              if (context.TestExpression("AppId", targetDepth))
-              {
-                app.AppId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("StackId", targetDepth))
-              {
-                app.StackId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Shortname", targetDepth))
-              {
-                app.Shortname = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Name", targetDepth))
-              {
-                app.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Description", targetDepth))
-              {
-                app.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Type", targetDepth))
-              {
-                app.Type = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("AppSource", targetDepth))
-              {
-                app.AppSource = SourceUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Domains", targetDepth))
-              {
-                app.Domains = new List<String>();   
-                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
-                {
-                  continue;
-                }              
-
-                  StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
-                  {
-                     app.Domains.Add(unmarshaller.Unmarshall(context));
-                  }
-                  else if (context.IsEndArray)
-                  {
-                    break;
-                  }
-                }
-                continue;
-              }
-  
-              if (context.TestExpression("EnableSsl", targetDepth))
-              {
-                app.EnableSsl = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("SslConfiguration", targetDepth))
-              {
-                app.SslConfiguration = SslConfigurationUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Attributes", targetDepth))
-              {
-                app.Attributes = new Dictionary<String,String>();
-                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
-                {
-                  continue;
-                }              
-                KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller> unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
-                while (context.Read())
-                {
-                  if (((context.IsStartArray || context.IsStartElement || context.IsLeafValue) && (context.CurrentDepth == targetDepth)) ||
-                      ((context.IsKey) && (context.CurrentDepth == targetDepth+1)))
-                  {
-                    KeyValuePair<string, string> kvp = unmarshaller.Unmarshall(context);
-                    app.Attributes.Add(kvp.Key, kvp.Value);
-                  }
-                  else if (context.IsEndElement)
-                  {
-                    break;
-                  }
-                }
-                continue;
-              }
-  
-              if (context.TestExpression("CreatedAt", targetDepth))
-              {
-                app.CreatedAt = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                    context.Read();
+                    context.Read();
+                    if (context.TestExpression("AppId", targetDepth))
+                    {
+                        unmarshalledObject.AppId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("AppSource", targetDepth))
+                    {
+                        unmarshalledObject.AppSource = SourceUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Attributes", targetDepth))
+                    {
+                        unmarshalledObject.Attributes = new Dictionary<string, string>();
+                        var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
+                        while (context.Read())
+                        {
+                          if (((context.IsStartArray || context.IsStartElement || context.IsLeafValue) && (context.CurrentDepth == targetDepth)) ||
+                              ((context.IsKey) && (context.CurrentDepth == targetDepth+1)))
+                          {
+                            var kvp = unmarshaller.Unmarshall(context);
+                            unmarshalledObject.Attributes.Add(kvp.Key, kvp.Value);
+                          }
+                          else if (context.IsEndElement)
+                          {
+                            break;
+                          }
+                        }
+                        continue;
+                    }
+                    if (context.TestExpression("CreatedAt", targetDepth))
+                    {
+                        unmarshalledObject.CreatedAt = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("DataSources", targetDepth))
+                    {
+                        unmarshalledObject.DataSources = new List<DataSource>();
+                        var unmarshaller = DataSourceUnmarshaller.GetInstance();
+                        while (context.Read())
+                        {
+                          if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                          {
+                             unmarshalledObject.DataSources.Add(unmarshaller.Unmarshall(context));
+                          }
+                          else if (context.IsEndArray)
+                          {
+                            break;
+                          }
+                        }
+                        continue;
+                    }
+                    if (context.TestExpression("Description", targetDepth))
+                    {
+                        unmarshalledObject.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Domains", targetDepth))
+                    {
+                        unmarshalledObject.Domains = new List<string>();
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        while (context.Read())
+                        {
+                          if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                          {
+                             unmarshalledObject.Domains.Add(unmarshaller.Unmarshall(context));
+                          }
+                          else if (context.IsEndArray)
+                          {
+                            break;
+                          }
+                        }
+                        continue;
+                    }
+                    if (context.TestExpression("EnableSsl", targetDepth))
+                    {
+                        unmarshalledObject.EnableSsl = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Name", targetDepth))
+                    {
+                        unmarshalledObject.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Shortname", targetDepth))
+                    {
+                        unmarshalledObject.Shortname = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SslConfiguration", targetDepth))
+                    {
+                        unmarshalledObject.SslConfiguration = SslConfigurationUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StackId", targetDepth))
+                    {
+                        unmarshalledObject.StackId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Type", targetDepth))
+                    {
+                        unmarshalledObject.Type = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {
-                    return app;
+                    return unmarshalledObject;
                 }
-            }
-          
-
-            return app;
+            }          
+            return unmarshalledObject;
         }
+
 
         private static AppUnmarshaller instance;
         public static AppUnmarshaller GetInstance()
         {
             if (instance == null)
+            {
                 instance = new AppUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-  

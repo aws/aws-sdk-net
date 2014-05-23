@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,28 +18,48 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para>Indicates if the specified CNAME is available.</para>
+    /// Indicates if the specified CNAME is available.
     /// </summary>
     public partial class CheckDNSAvailabilityResult
     {
-        
-        private bool? available;
-        private string fullyQualifiedCNAME;
+        private bool? _available;
+        private string _fullyQualifiedCNAME;
+
 
         /// <summary>
-        /// Indicates if the specified CNAME is available: <enumValues> <value name="true"> <c>true</c> : The CNAME is available. </value> <value
-        /// name="false"> <c>true</c> : The CNAME is not available. </value> </enumValues> <ul> <li> <c>true</c> : The CNAME is available. </li> <li>
-        /// <c>false</c> : The CNAME is not available. </li> </ul>
-        ///  
+        /// Gets and sets the property Available. 
+        /// <para>
+        ///          Indicates if the specified CNAME is available:        
+        /// </para>
+        ///       <enumValues>         <value name="true">            
+        /// <para>
+        ///                <code>true</code>               : The CNAME is available.         
+        ///   
+        /// </para>
+        ///          </value>         <value name="false">            
+        /// <para>
+        ///                <code>true</code>               : The CNAME is not available.     
+        ///       
+        /// </para>
+        ///          </value>      </enumValues>      
+        /// <para>
+        ///          <ul>            <li>               <code>true</code>               : The
+        /// CNAME is available.            </li>            <li>               <code>false</code>
+        ///               : The CNAME is not available.            </li>         </ul>      
+        /// </para>
         /// </summary>
         public bool Available
         {
-            get { return this.available ?? default(bool); }
-            set { this.available = value; }
+            get { return this._available.GetValueOrDefault(); }
+            set { this._available = value; }
         }
+
 
         /// <summary>
         /// Sets the Available property
@@ -49,35 +69,30 @@ namespace Amazon.ElasticBeanstalk.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CheckDNSAvailabilityResult WithAvailable(bool available)
         {
-            this.available = available;
+            this._available = available;
             return this;
         }
-            
 
         // Check to see if Available property is set
         internal bool IsSetAvailable()
         {
-            return this.available.HasValue;
+            return this._available.HasValue; 
         }
 
+
         /// <summary>
-        /// The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called with the provided prefix.
-        ///  
+        /// Gets and sets the property FullyQualifiedCNAME. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        /// </list>
+        /// The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called     
+        ///    with the provided prefix.
         /// </para>
         /// </summary>
         public string FullyQualifiedCNAME
         {
-            get { return this.fullyQualifiedCNAME; }
-            set { this.fullyQualifiedCNAME = value; }
+            get { return this._fullyQualifiedCNAME; }
+            set { this._fullyQualifiedCNAME = value; }
         }
+
 
         /// <summary>
         /// Sets the FullyQualifiedCNAME property
@@ -87,15 +102,15 @@ namespace Amazon.ElasticBeanstalk.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CheckDNSAvailabilityResult WithFullyQualifiedCNAME(string fullyQualifiedCNAME)
         {
-            this.fullyQualifiedCNAME = fullyQualifiedCNAME;
+            this._fullyQualifiedCNAME = fullyQualifiedCNAME;
             return this;
         }
-            
 
         // Check to see if FullyQualifiedCNAME property is set
         internal bool IsSetFullyQualifiedCNAME()
         {
-            return this.fullyQualifiedCNAME != null;
+            return this._fullyQualifiedCNAME != null;
         }
+
     }
 }

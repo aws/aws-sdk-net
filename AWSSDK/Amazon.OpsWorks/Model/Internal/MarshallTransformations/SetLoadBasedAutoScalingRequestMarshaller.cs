@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
@@ -28,152 +29,132 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Set Load Based Auto Scaling Request Marshaller
+    /// SetLoadBasedAutoScaling Request Marshaller
     /// </summary>       
-    internal class SetLoadBasedAutoScalingRequestMarshaller : IMarshaller<IRequest, SetLoadBasedAutoScalingRequest> 
+    public class SetLoadBasedAutoScalingRequestMarshaller : IMarshaller<IRequest, SetLoadBasedAutoScalingRequest> 
     {
-        
-
-        public IRequest Marshall(SetLoadBasedAutoScalingRequest setLoadBasedAutoScalingRequest) 
+        public IRequest Marshall(SetLoadBasedAutoScalingRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(setLoadBasedAutoScalingRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.SetLoadBasedAutoScaling";
             request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
 
-            
-              
-            string uriResourcePath = ""; 
-            
-            if (uriResourcePath.Contains("?")) 
-            {
-                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
-                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
-        
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                }
-            }
-            
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
-            using (StringWriter stringWriter = new StringWriter())
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (setLoadBasedAutoScalingRequest != null && setLoadBasedAutoScalingRequest.IsSetLayerId()) 
+                if(publicRequest != null && publicRequest.IsSetDownScaling())
                 {
-                    writer.WritePropertyName("LayerId");
-                    writer.Write(setLoadBasedAutoScalingRequest.LayerId);
+                    writer.WritePropertyName("DownScaling");
+                    writer.WriteObjectStart();
+                    if(publicRequest.DownScaling != null && publicRequest.DownScaling.IsSetCpuThreshold())
+                    {
+                        writer.WritePropertyName("CpuThreshold");
+                        writer.Write(publicRequest.DownScaling.CpuThreshold);
+                    }
+
+                    if(publicRequest.DownScaling != null && publicRequest.DownScaling.IsSetIgnoreMetricsTime())
+                    {
+                        writer.WritePropertyName("IgnoreMetricsTime");
+                        writer.Write(publicRequest.DownScaling.IgnoreMetricsTime);
+                    }
+
+                    if(publicRequest.DownScaling != null && publicRequest.DownScaling.IsSetInstanceCount())
+                    {
+                        writer.WritePropertyName("InstanceCount");
+                        writer.Write(publicRequest.DownScaling.InstanceCount);
+                    }
+
+                    if(publicRequest.DownScaling != null && publicRequest.DownScaling.IsSetLoadThreshold())
+                    {
+                        writer.WritePropertyName("LoadThreshold");
+                        writer.Write(publicRequest.DownScaling.LoadThreshold);
+                    }
+
+                    if(publicRequest.DownScaling != null && publicRequest.DownScaling.IsSetMemoryThreshold())
+                    {
+                        writer.WritePropertyName("MemoryThreshold");
+                        writer.Write(publicRequest.DownScaling.MemoryThreshold);
+                    }
+
+                    if(publicRequest.DownScaling != null && publicRequest.DownScaling.IsSetThresholdsWaitTime())
+                    {
+                        writer.WritePropertyName("ThresholdsWaitTime");
+                        writer.Write(publicRequest.DownScaling.ThresholdsWaitTime);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
-                if (setLoadBasedAutoScalingRequest != null && setLoadBasedAutoScalingRequest.IsSetEnable()) 
+
+                if(publicRequest != null && publicRequest.IsSetEnable())
                 {
                     writer.WritePropertyName("Enable");
-                    writer.Write(setLoadBasedAutoScalingRequest.Enable);
+                    writer.Write(publicRequest.Enable);
                 }
 
-                if (setLoadBasedAutoScalingRequest != null) 
+                if(publicRequest != null && publicRequest.IsSetLayerId())
                 {
-                    AutoScalingThresholds upScaling = setLoadBasedAutoScalingRequest.UpScaling;
-                    if (upScaling != null)
-                    {
-                        writer.WritePropertyName("UpScaling");
-                        writer.WriteObjectStart();
-                        if (upScaling != null && upScaling.IsSetInstanceCount()) 
-                        {
-                            writer.WritePropertyName("InstanceCount");
-                            writer.Write(upScaling.InstanceCount);
-                        }
-                        if (upScaling != null && upScaling.IsSetThresholdsWaitTime()) 
-                        {
-                            writer.WritePropertyName("ThresholdsWaitTime");
-                            writer.Write(upScaling.ThresholdsWaitTime);
-                        }
-                        if (upScaling != null && upScaling.IsSetIgnoreMetricsTime()) 
-                        {
-                            writer.WritePropertyName("IgnoreMetricsTime");
-                            writer.Write(upScaling.IgnoreMetricsTime);
-                        }
-                        if (upScaling != null && upScaling.IsSetCpuThreshold()) 
-                        {
-                            writer.WritePropertyName("CpuThreshold");
-                            writer.Write(upScaling.CpuThreshold);
-                        }
-                        if (upScaling != null && upScaling.IsSetMemoryThreshold()) 
-                        {
-                            writer.WritePropertyName("MemoryThreshold");
-                            writer.Write(upScaling.MemoryThreshold);
-                        }
-                        if (upScaling != null && upScaling.IsSetLoadThreshold()) 
-                        {
-                            writer.WritePropertyName("LoadThreshold");
-                            writer.Write(upScaling.LoadThreshold);
-                        }
-                        writer.WriteObjectEnd();
-                    }
+                    writer.WritePropertyName("LayerId");
+                    writer.Write(publicRequest.LayerId);
                 }
 
-                if (setLoadBasedAutoScalingRequest != null) 
+                if(publicRequest != null && publicRequest.IsSetUpScaling())
                 {
-                    AutoScalingThresholds downScaling = setLoadBasedAutoScalingRequest.DownScaling;
-                    if (downScaling != null)
+                    writer.WritePropertyName("UpScaling");
+                    writer.WriteObjectStart();
+                    if(publicRequest.UpScaling != null && publicRequest.UpScaling.IsSetCpuThreshold())
                     {
-                        writer.WritePropertyName("DownScaling");
-                        writer.WriteObjectStart();
-                        if (downScaling != null && downScaling.IsSetInstanceCount()) 
-                        {
-                            writer.WritePropertyName("InstanceCount");
-                            writer.Write(downScaling.InstanceCount);
-                        }
-                        if (downScaling != null && downScaling.IsSetThresholdsWaitTime()) 
-                        {
-                            writer.WritePropertyName("ThresholdsWaitTime");
-                            writer.Write(downScaling.ThresholdsWaitTime);
-                        }
-                        if (downScaling != null && downScaling.IsSetIgnoreMetricsTime()) 
-                        {
-                            writer.WritePropertyName("IgnoreMetricsTime");
-                            writer.Write(downScaling.IgnoreMetricsTime);
-                        }
-                        if (downScaling != null && downScaling.IsSetCpuThreshold()) 
-                        {
-                            writer.WritePropertyName("CpuThreshold");
-                            writer.Write(downScaling.CpuThreshold);
-                        }
-                        if (downScaling != null && downScaling.IsSetMemoryThreshold()) 
-                        {
-                            writer.WritePropertyName("MemoryThreshold");
-                            writer.Write(downScaling.MemoryThreshold);
-                        }
-                        if (downScaling != null && downScaling.IsSetLoadThreshold()) 
-                        {
-                            writer.WritePropertyName("LoadThreshold");
-                            writer.Write(downScaling.LoadThreshold);
-                        }
-                        writer.WriteObjectEnd();
+                        writer.WritePropertyName("CpuThreshold");
+                        writer.Write(publicRequest.UpScaling.CpuThreshold);
                     }
+
+                    if(publicRequest.UpScaling != null && publicRequest.UpScaling.IsSetIgnoreMetricsTime())
+                    {
+                        writer.WritePropertyName("IgnoreMetricsTime");
+                        writer.Write(publicRequest.UpScaling.IgnoreMetricsTime);
+                    }
+
+                    if(publicRequest.UpScaling != null && publicRequest.UpScaling.IsSetInstanceCount())
+                    {
+                        writer.WritePropertyName("InstanceCount");
+                        writer.Write(publicRequest.UpScaling.InstanceCount);
+                    }
+
+                    if(publicRequest.UpScaling != null && publicRequest.UpScaling.IsSetLoadThreshold())
+                    {
+                        writer.WritePropertyName("LoadThreshold");
+                        writer.Write(publicRequest.UpScaling.LoadThreshold);
+                    }
+
+                    if(publicRequest.UpScaling != null && publicRequest.UpScaling.IsSetMemoryThreshold())
+                    {
+                        writer.WritePropertyName("MemoryThreshold");
+                        writer.Write(publicRequest.UpScaling.MemoryThreshold);
+                    }
+
+                    if(publicRequest.UpScaling != null && publicRequest.UpScaling.IsSetThresholdsWaitTime())
+                    {
+                        writer.WritePropertyName("ThresholdsWaitTime");
+                        writer.Write(publicRequest.UpScaling.ThresholdsWaitTime);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
 
             return request;
         }
+
+
     }
 }

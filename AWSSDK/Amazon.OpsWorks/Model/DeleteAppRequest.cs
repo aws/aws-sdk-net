@@ -25,24 +25,33 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteApp operation.
-    /// <para>Deletes a specified app.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+    /// Deletes a specified app.
+    /// 
+    ///     
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+    /// level for the stack, or an attached       policy that explicitly grants permissions.
+    /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DeleteApp"/>
-    public class DeleteAppRequest : AmazonWebServiceRequest
+    public partial class DeleteAppRequest : AmazonWebServiceRequest
     {
-        private string appId;
+        private string _appId;
+
 
         /// <summary>
+        /// Gets and sets the property AppId. 
+        /// <para>
         /// The app ID.
-        ///  
+        /// </para>
         /// </summary>
         public string AppId
         {
-            get { return this.appId; }
-            set { this.appId = value; }
+            get { return this._appId; }
+            set { this._appId = value; }
         }
+
 
         /// <summary>
         /// Sets the AppId property
@@ -52,16 +61,15 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteAppRequest WithAppId(string appId)
         {
-            this.appId = appId;
+            this._appId = appId;
             return this;
         }
-            
 
         // Check to see if AppId property is set
         internal bool IsSetAppId()
         {
-            return this.appId != null;
+            return this._appId != null;
         }
+
     }
 }
-    

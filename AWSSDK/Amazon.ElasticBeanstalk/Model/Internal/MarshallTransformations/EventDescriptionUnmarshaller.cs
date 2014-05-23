@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,21 +12,29 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticBeanstalk.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   EventDescription Unmarshaller
-     /// </summary>
-    internal class EventDescriptionUnmarshaller : IUnmarshaller<EventDescription, XmlUnmarshallerContext>, IUnmarshaller<EventDescription, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for EventDescription Object
+    /// </summary>  
+    public class EventDescriptionUnmarshaller : IUnmarshaller<EventDescription, XmlUnmarshallerContext>, IUnmarshaller<EventDescription, JsonUnmarshallerContext>
     {
-        public EventDescription Unmarshall(XmlUnmarshallerContext context) 
+        public EventDescription Unmarshall(XmlUnmarshallerContext context)
         {
-            EventDescription eventDescription = new EventDescription();
+            EventDescription unmarshalledObject = new EventDescription();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,81 +44,80 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("EventDate", targetDepth))
-                    {
-                        eventDescription.EventDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("Message", targetDepth))
-                    {
-                        eventDescription.Message = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
                     if (context.TestExpression("ApplicationName", targetDepth))
                     {
-                        eventDescription.ApplicationName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.ApplicationName = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
-                    if (context.TestExpression("VersionLabel", targetDepth))
-                    {
-                        eventDescription.VersionLabel = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("TemplateName", targetDepth))
-                    {
-                        eventDescription.TemplateName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                    }
                     if (context.TestExpression("EnvironmentName", targetDepth))
                     {
-                        eventDescription.EnvironmentName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.EnvironmentName = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
+                    if (context.TestExpression("EventDate", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.GetInstance();
+                        unmarshalledObject.EventDate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Message", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Message = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("RequestId", targetDepth))
                     {
-                        eventDescription.RequestId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.RequestId = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
                     if (context.TestExpression("Severity", targetDepth))
                     {
-                        eventDescription.Severity = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Severity = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TemplateName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.TemplateName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("VersionLabel", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.VersionLabel = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return eventDescription;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return eventDescription;
+            return unmarshalledObject;
         }
 
-        public EventDescription Unmarshall(JsonUnmarshallerContext context) 
+        public EventDescription Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static EventDescriptionUnmarshaller instance;
-
-        public static EventDescriptionUnmarshaller GetInstance() 
+        public static EventDescriptionUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new EventDescriptionUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new EventDescriptionUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

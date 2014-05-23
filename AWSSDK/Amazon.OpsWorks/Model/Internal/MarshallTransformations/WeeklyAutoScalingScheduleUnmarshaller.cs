@@ -12,232 +12,207 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using Amazon.OpsWorks.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+using Amazon.OpsWorks.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for WeeklyAutoScalingSchedule Object
+    /// </summary>  
+    public class WeeklyAutoScalingScheduleUnmarshaller : IUnmarshaller<WeeklyAutoScalingSchedule, XmlUnmarshallerContext>, IUnmarshaller<WeeklyAutoScalingSchedule, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// WeeklyAutoScalingScheduleUnmarshaller
-      /// </summary>
-      internal class WeeklyAutoScalingScheduleUnmarshaller : IUnmarshaller<WeeklyAutoScalingSchedule, XmlUnmarshallerContext>, IUnmarshaller<WeeklyAutoScalingSchedule, JsonUnmarshallerContext>
-      {
         WeeklyAutoScalingSchedule IUnmarshaller<WeeklyAutoScalingSchedule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public WeeklyAutoScalingSchedule Unmarshall(JsonUnmarshallerContext context)
         {
             if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
                 return null;
-            WeeklyAutoScalingSchedule weeklyAutoScalingSchedule = new WeeklyAutoScalingSchedule();
-          weeklyAutoScalingSchedule.Monday = null;
-                        weeklyAutoScalingSchedule.Tuesday = null;
-                        weeklyAutoScalingSchedule.Wednesday = null;
-                        weeklyAutoScalingSchedule.Thursday = null;
-                        weeklyAutoScalingSchedule.Friday = null;
-                        weeklyAutoScalingSchedule.Saturday = null;
-                        weeklyAutoScalingSchedule.Sunday = null;
-                        
+            
+            var unmarshalledObject = new WeeklyAutoScalingSchedule();
+            unmarshalledObject.Friday = null;
+            unmarshalledObject.Monday = null;
+            unmarshalledObject.Saturday = null;
+            unmarshalledObject.Sunday = null;
+            unmarshalledObject.Thursday = null;
+            unmarshalledObject.Tuesday = null;
+            unmarshalledObject.Wednesday = null;
+                    
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+
             while (context.Read())
             {
                 if ((context.IsKey) && (context.CurrentDepth == targetDepth))
                 {
-                context.Read();
-                context.Read();
-              
-              if (context.TestExpression("Monday", targetDepth))
-              {
-                weeklyAutoScalingSchedule.Monday = new Dictionary<String,String>();
-                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
-                {
-                  continue;
-                }              
-                KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller> unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
-                while (context.Read())
-                {
-                  if (((context.IsStartArray || context.IsStartElement || context.IsLeafValue) && (context.CurrentDepth == targetDepth)) ||
-                      ((context.IsKey) && (context.CurrentDepth == targetDepth+1)))
-                  {
-                    KeyValuePair<string, string> kvp = unmarshaller.Unmarshall(context);
-                    weeklyAutoScalingSchedule.Monday.Add(kvp.Key, kvp.Value);
-                  }
-                  else if (context.IsEndElement)
-                  {
-                    break;
-                  }
-                }
-                continue;
-              }
-  
-              if (context.TestExpression("Tuesday", targetDepth))
-              {
-                weeklyAutoScalingSchedule.Tuesday = new Dictionary<String,String>();
-                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
-                {
-                  continue;
-                }              
-                KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller> unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
-                while (context.Read())
-                {
-                  if (((context.IsStartArray || context.IsStartElement || context.IsLeafValue) && (context.CurrentDepth == targetDepth)) ||
-                      ((context.IsKey) && (context.CurrentDepth == targetDepth+1)))
-                  {
-                    KeyValuePair<string, string> kvp = unmarshaller.Unmarshall(context);
-                    weeklyAutoScalingSchedule.Tuesday.Add(kvp.Key, kvp.Value);
-                  }
-                  else if (context.IsEndElement)
-                  {
-                    break;
-                  }
-                }
-                continue;
-              }
-  
-              if (context.TestExpression("Wednesday", targetDepth))
-              {
-                weeklyAutoScalingSchedule.Wednesday = new Dictionary<String,String>();
-                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
-                {
-                  continue;
-                }              
-                KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller> unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
-                while (context.Read())
-                {
-                  if (((context.IsStartArray || context.IsStartElement || context.IsLeafValue) && (context.CurrentDepth == targetDepth)) ||
-                      ((context.IsKey) && (context.CurrentDepth == targetDepth+1)))
-                  {
-                    KeyValuePair<string, string> kvp = unmarshaller.Unmarshall(context);
-                    weeklyAutoScalingSchedule.Wednesday.Add(kvp.Key, kvp.Value);
-                  }
-                  else if (context.IsEndElement)
-                  {
-                    break;
-                  }
-                }
-                continue;
-              }
-  
-              if (context.TestExpression("Thursday", targetDepth))
-              {
-                weeklyAutoScalingSchedule.Thursday = new Dictionary<String,String>();
-                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
-                {
-                  continue;
-                }              
-                KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller> unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
-                while (context.Read())
-                {
-                  if (((context.IsStartArray || context.IsStartElement || context.IsLeafValue) && (context.CurrentDepth == targetDepth)) ||
-                      ((context.IsKey) && (context.CurrentDepth == targetDepth+1)))
-                  {
-                    KeyValuePair<string, string> kvp = unmarshaller.Unmarshall(context);
-                    weeklyAutoScalingSchedule.Thursday.Add(kvp.Key, kvp.Value);
-                  }
-                  else if (context.IsEndElement)
-                  {
-                    break;
-                  }
-                }
-                continue;
-              }
-  
-              if (context.TestExpression("Friday", targetDepth))
-              {
-                weeklyAutoScalingSchedule.Friday = new Dictionary<String,String>();
-                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
-                {
-                  continue;
-                }              
-                KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller> unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
-                while (context.Read())
-                {
-                  if (((context.IsStartArray || context.IsStartElement || context.IsLeafValue) && (context.CurrentDepth == targetDepth)) ||
-                      ((context.IsKey) && (context.CurrentDepth == targetDepth+1)))
-                  {
-                    KeyValuePair<string, string> kvp = unmarshaller.Unmarshall(context);
-                    weeklyAutoScalingSchedule.Friday.Add(kvp.Key, kvp.Value);
-                  }
-                  else if (context.IsEndElement)
-                  {
-                    break;
-                  }
-                }
-                continue;
-              }
-  
-              if (context.TestExpression("Saturday", targetDepth))
-              {
-                weeklyAutoScalingSchedule.Saturday = new Dictionary<String,String>();
-                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
-                {
-                  continue;
-                }              
-                KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller> unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
-                while (context.Read())
-                {
-                  if (((context.IsStartArray || context.IsStartElement || context.IsLeafValue) && (context.CurrentDepth == targetDepth)) ||
-                      ((context.IsKey) && (context.CurrentDepth == targetDepth+1)))
-                  {
-                    KeyValuePair<string, string> kvp = unmarshaller.Unmarshall(context);
-                    weeklyAutoScalingSchedule.Saturday.Add(kvp.Key, kvp.Value);
-                  }
-                  else if (context.IsEndElement)
-                  {
-                    break;
-                  }
-                }
-                continue;
-              }
-  
-              if (context.TestExpression("Sunday", targetDepth))
-              {
-                weeklyAutoScalingSchedule.Sunday = new Dictionary<String,String>();
-                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
-                {
-                  continue;
-                }              
-                KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller> unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
-                while (context.Read())
-                {
-                  if (((context.IsStartArray || context.IsStartElement || context.IsLeafValue) && (context.CurrentDepth == targetDepth)) ||
-                      ((context.IsKey) && (context.CurrentDepth == targetDepth+1)))
-                  {
-                    KeyValuePair<string, string> kvp = unmarshaller.Unmarshall(context);
-                    weeklyAutoScalingSchedule.Sunday.Add(kvp.Key, kvp.Value);
-                  }
-                  else if (context.IsEndElement)
-                  {
-                    break;
-                  }
-                }
-                continue;
-              }
-  
+                    context.Read();
+                    context.Read();
+                    if (context.TestExpression("Friday", targetDepth))
+                    {
+                        unmarshalledObject.Friday = new Dictionary<string, string>();
+                        var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
+                        while (context.Read())
+                        {
+                          if (((context.IsStartArray || context.IsStartElement || context.IsLeafValue) && (context.CurrentDepth == targetDepth)) ||
+                              ((context.IsKey) && (context.CurrentDepth == targetDepth+1)))
+                          {
+                            var kvp = unmarshaller.Unmarshall(context);
+                            unmarshalledObject.Friday.Add(kvp.Key, kvp.Value);
+                          }
+                          else if (context.IsEndElement)
+                          {
+                            break;
+                          }
+                        }
+                        continue;
+                    }
+                    if (context.TestExpression("Monday", targetDepth))
+                    {
+                        unmarshalledObject.Monday = new Dictionary<string, string>();
+                        var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
+                        while (context.Read())
+                        {
+                          if (((context.IsStartArray || context.IsStartElement || context.IsLeafValue) && (context.CurrentDepth == targetDepth)) ||
+                              ((context.IsKey) && (context.CurrentDepth == targetDepth+1)))
+                          {
+                            var kvp = unmarshaller.Unmarshall(context);
+                            unmarshalledObject.Monday.Add(kvp.Key, kvp.Value);
+                          }
+                          else if (context.IsEndElement)
+                          {
+                            break;
+                          }
+                        }
+                        continue;
+                    }
+                    if (context.TestExpression("Saturday", targetDepth))
+                    {
+                        unmarshalledObject.Saturday = new Dictionary<string, string>();
+                        var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
+                        while (context.Read())
+                        {
+                          if (((context.IsStartArray || context.IsStartElement || context.IsLeafValue) && (context.CurrentDepth == targetDepth)) ||
+                              ((context.IsKey) && (context.CurrentDepth == targetDepth+1)))
+                          {
+                            var kvp = unmarshaller.Unmarshall(context);
+                            unmarshalledObject.Saturday.Add(kvp.Key, kvp.Value);
+                          }
+                          else if (context.IsEndElement)
+                          {
+                            break;
+                          }
+                        }
+                        continue;
+                    }
+                    if (context.TestExpression("Sunday", targetDepth))
+                    {
+                        unmarshalledObject.Sunday = new Dictionary<string, string>();
+                        var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
+                        while (context.Read())
+                        {
+                          if (((context.IsStartArray || context.IsStartElement || context.IsLeafValue) && (context.CurrentDepth == targetDepth)) ||
+                              ((context.IsKey) && (context.CurrentDepth == targetDepth+1)))
+                          {
+                            var kvp = unmarshaller.Unmarshall(context);
+                            unmarshalledObject.Sunday.Add(kvp.Key, kvp.Value);
+                          }
+                          else if (context.IsEndElement)
+                          {
+                            break;
+                          }
+                        }
+                        continue;
+                    }
+                    if (context.TestExpression("Thursday", targetDepth))
+                    {
+                        unmarshalledObject.Thursday = new Dictionary<string, string>();
+                        var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
+                        while (context.Read())
+                        {
+                          if (((context.IsStartArray || context.IsStartElement || context.IsLeafValue) && (context.CurrentDepth == targetDepth)) ||
+                              ((context.IsKey) && (context.CurrentDepth == targetDepth+1)))
+                          {
+                            var kvp = unmarshaller.Unmarshall(context);
+                            unmarshalledObject.Thursday.Add(kvp.Key, kvp.Value);
+                          }
+                          else if (context.IsEndElement)
+                          {
+                            break;
+                          }
+                        }
+                        continue;
+                    }
+                    if (context.TestExpression("Tuesday", targetDepth))
+                    {
+                        unmarshalledObject.Tuesday = new Dictionary<string, string>();
+                        var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
+                        while (context.Read())
+                        {
+                          if (((context.IsStartArray || context.IsStartElement || context.IsLeafValue) && (context.CurrentDepth == targetDepth)) ||
+                              ((context.IsKey) && (context.CurrentDepth == targetDepth+1)))
+                          {
+                            var kvp = unmarshaller.Unmarshall(context);
+                            unmarshalledObject.Tuesday.Add(kvp.Key, kvp.Value);
+                          }
+                          else if (context.IsEndElement)
+                          {
+                            break;
+                          }
+                        }
+                        continue;
+                    }
+                    if (context.TestExpression("Wednesday", targetDepth))
+                    {
+                        unmarshalledObject.Wednesday = new Dictionary<string, string>();
+                        var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
+                        while (context.Read())
+                        {
+                          if (((context.IsStartArray || context.IsStartElement || context.IsLeafValue) && (context.CurrentDepth == targetDepth)) ||
+                              ((context.IsKey) && (context.CurrentDepth == targetDepth+1)))
+                          {
+                            var kvp = unmarshaller.Unmarshall(context);
+                            unmarshalledObject.Wednesday.Add(kvp.Key, kvp.Value);
+                          }
+                          else if (context.IsEndElement)
+                          {
+                            break;
+                          }
+                        }
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {
-                    return weeklyAutoScalingSchedule;
+                    return unmarshalledObject;
                 }
-            }
-          
-
-            return weeklyAutoScalingSchedule;
+            }          
+            return unmarshalledObject;
         }
+
 
         private static WeeklyAutoScalingScheduleUnmarshaller instance;
         public static WeeklyAutoScalingScheduleUnmarshaller GetInstance()
         {
             if (instance == null)
+            {
                 instance = new WeeklyAutoScalingScheduleUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-  

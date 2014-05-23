@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,55 +18,32 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para>Describes the properties of a Listener for the LoadBalancer.</para>
+    /// Describes the properties of a Listener for the LoadBalancer.
     /// </summary>
     public partial class Listener
     {
-        
-        private string protocol;
-        private int? port;
+        private int? _port;
+        private string _protocol;
+
 
         /// <summary>
-        /// The protocol that is used by the Listener.
-        ///  
-        /// </summary>
-        public string Protocol
-        {
-            get { return this.protocol; }
-            set { this.protocol = value; }
-        }
-
-        /// <summary>
-        /// Sets the Protocol property
-        /// </summary>
-        /// <param name="protocol">The value to set for the Protocol property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public Listener WithProtocol(string protocol)
-        {
-            this.protocol = protocol;
-            return this;
-        }
-            
-
-        // Check to see if Protocol property is set
-        internal bool IsSetProtocol()
-        {
-            return this.protocol != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Port. 
+        /// <para>
         /// The port that is used by the Listener.
-        ///  
+        /// </para>
         /// </summary>
         public int Port
         {
-            get { return this.port ?? default(int); }
-            set { this.port = value; }
+            get { return this._port.GetValueOrDefault(); }
+            set { this._port = value; }
         }
+
 
         /// <summary>
         /// Sets the Port property
@@ -76,15 +53,47 @@ namespace Amazon.ElasticBeanstalk.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Listener WithPort(int port)
         {
-            this.port = port;
+            this._port = port;
             return this;
         }
-            
 
         // Check to see if Port property is set
         internal bool IsSetPort()
         {
-            return this.port.HasValue;
+            return this._port.HasValue; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Protocol. 
+        /// <para>
+        /// The protocol that is used by the Listener.
+        /// </para>
+        /// </summary>
+        public string Protocol
+        {
+            get { return this._protocol; }
+            set { this._protocol = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the Protocol property
+        /// </summary>
+        /// <param name="protocol">The value to set for the Protocol property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Listener WithProtocol(string protocol)
+        {
+            this._protocol = protocol;
+            return this;
+        }
+
+        // Check to see if Protocol property is set
+        internal bool IsSetProtocol()
+        {
+            return this._protocol != null;
+        }
+
     }
 }

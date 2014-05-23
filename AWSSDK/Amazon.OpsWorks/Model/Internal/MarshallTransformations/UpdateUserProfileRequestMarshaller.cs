@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
@@ -28,80 +29,58 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Update User Profile Request Marshaller
+    /// UpdateUserProfile Request Marshaller
     /// </summary>       
-    internal class UpdateUserProfileRequestMarshaller : IMarshaller<IRequest, UpdateUserProfileRequest> 
+    public class UpdateUserProfileRequestMarshaller : IMarshaller<IRequest, UpdateUserProfileRequest> 
     {
-        
-
-        public IRequest Marshall(UpdateUserProfileRequest updateUserProfileRequest) 
+        public IRequest Marshall(UpdateUserProfileRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(updateUserProfileRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.UpdateUserProfile";
             request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
 
-            
-              
-            string uriResourcePath = ""; 
-            
-            if (uriResourcePath.Contains("?")) 
-            {
-                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
-                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
-        
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                }
-            }
-            
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
-            using (StringWriter stringWriter = new StringWriter())
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (updateUserProfileRequest != null && updateUserProfileRequest.IsSetIamUserArn()) 
-                {
-                    writer.WritePropertyName("IamUserArn");
-                    writer.Write(updateUserProfileRequest.IamUserArn);
-                }
-                if (updateUserProfileRequest != null && updateUserProfileRequest.IsSetSshUsername()) 
-                {
-                    writer.WritePropertyName("SshUsername");
-                    writer.Write(updateUserProfileRequest.SshUsername);
-                }
-                if (updateUserProfileRequest != null && updateUserProfileRequest.IsSetSshPublicKey()) 
-                {
-                    writer.WritePropertyName("SshPublicKey");
-                    writer.Write(updateUserProfileRequest.SshPublicKey);
-                }
-                if (updateUserProfileRequest != null && updateUserProfileRequest.IsSetAllowSelfManagement()) 
+                if(publicRequest != null && publicRequest.IsSetAllowSelfManagement())
                 {
                     writer.WritePropertyName("AllowSelfManagement");
-                    writer.Write(updateUserProfileRequest.AllowSelfManagement);
+                    writer.Write(publicRequest.AllowSelfManagement);
                 }
 
+                if(publicRequest != null && publicRequest.IsSetIamUserArn())
+                {
+                    writer.WritePropertyName("IamUserArn");
+                    writer.Write(publicRequest.IamUserArn);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetSshPublicKey())
+                {
+                    writer.WritePropertyName("SshPublicKey");
+                    writer.Write(publicRequest.SshPublicKey);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetSshUsername())
+                {
+                    writer.WritePropertyName("SshUsername");
+                    writer.Write(publicRequest.SshUsername);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
 
             return request;
         }
+
+
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,21 +12,29 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticBeanstalk.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ValidationMessage Unmarshaller
-     /// </summary>
-    internal class ValidationMessageUnmarshaller : IUnmarshaller<ValidationMessage, XmlUnmarshallerContext>, IUnmarshaller<ValidationMessage, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ValidationMessage Object
+    /// </summary>  
+    public class ValidationMessageUnmarshaller : IUnmarshaller<ValidationMessage, XmlUnmarshallerContext>, IUnmarshaller<ValidationMessage, JsonUnmarshallerContext>
     {
-        public ValidationMessage Unmarshall(XmlUnmarshallerContext context) 
+        public ValidationMessage Unmarshall(XmlUnmarshallerContext context)
         {
-            ValidationMessage validationMessage = new ValidationMessage();
+            ValidationMessage unmarshalledObject = new ValidationMessage();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,57 +44,56 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
                     if (context.TestExpression("Message", targetDepth))
                     {
-                        validationMessage.Message = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Message = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
-                    if (context.TestExpression("Severity", targetDepth))
-                    {
-                        validationMessage.Severity = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                    }
                     if (context.TestExpression("Namespace", targetDepth))
                     {
-                        validationMessage.Namespace = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Namespace = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
                     if (context.TestExpression("OptionName", targetDepth))
                     {
-                        validationMessage.OptionName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.OptionName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Severity", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Severity = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return validationMessage;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return validationMessage;
+            return unmarshalledObject;
         }
 
-        public ValidationMessage Unmarshall(JsonUnmarshallerContext context) 
+        public ValidationMessage Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static ValidationMessageUnmarshaller instance;
-
-        public static ValidationMessageUnmarshaller GetInstance() 
+        public static ValidationMessageUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new ValidationMessageUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new ValidationMessageUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

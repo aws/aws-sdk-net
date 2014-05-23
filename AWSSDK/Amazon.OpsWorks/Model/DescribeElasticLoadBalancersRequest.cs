@@ -25,26 +25,87 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeElasticLoadBalancers operation.
-    /// <para>Describes a stack's Elastic Load Balancing instances.</para> <para><b>NOTE:</b> You must specify at least one of the parameters.
-    /// </para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the
-    /// stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+    /// Describes a stack's Elastic Load Balancing instances.
+    /// 
+    ///   <note>      
+    /// <para>
+    /// You must specify at least one of the parameters.
+    /// </para>
+    ///     </note>    
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+    /// or Manage permissions level for the stack, or an attached       policy that explicitly
+    /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeElasticLoadBalancers"/>
-    public class DescribeElasticLoadBalancersRequest : AmazonWebServiceRequest
+    public partial class DescribeElasticLoadBalancersRequest : AmazonWebServiceRequest
     {
-        private string stackId;
-        private List<string> layerIds = new List<string>();
+        private List<string> _layerIds = new List<string>();
+        private string _stackId;
+
 
         /// <summary>
+        /// Gets and sets the property LayerIds. 
+        /// <para>
+        /// A list of layer IDs. The action describes the Elastic Load Balancing instances for
+        /// the specified layers.
+        /// </para>
+        /// </summary>
+        public List<string> LayerIds
+        {
+            get { return this._layerIds; }
+            set { this._layerIds = value; }
+        }
+
+        /// <summary>
+        /// Sets the LayerIds property
+        /// </summary>
+        /// <param name="layerIds">The values to add to the LayerIds collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeElasticLoadBalancersRequest WithLayerIds(params string[] layerIds)
+        {
+            foreach (var element in layerIds)
+            {
+                this._layerIds.Add(element);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the LayerIds property
+        /// </summary>
+        /// <param name="layerIds">The values to add to the LayerIds collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeElasticLoadBalancersRequest WithLayerIds(IEnumerable<string> layerIds)
+        {
+            foreach (var element in layerIds)
+            {
+                this._layerIds.Add(element);
+            }
+            return this;
+        }
+        // Check to see if LayerIds property is set
+        internal bool IsSetLayerIds()
+        {
+            return this._layerIds != null && this._layerIds.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property StackId. 
+        /// <para>
         /// A stack ID. The action describes the stack's Elastic Load Balancing instances.
-        ///  
+        /// </para>
         /// </summary>
         public string StackId
         {
-            get { return this.stackId; }
-            set { this.stackId = value; }
+            get { return this._stackId; }
+            set { this._stackId = value; }
         }
+
 
         /// <summary>
         /// Sets the StackId property
@@ -54,63 +115,15 @@ namespace Amazon.OpsWorks.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeElasticLoadBalancersRequest WithStackId(string stackId)
         {
-            this.stackId = stackId;
+            this._stackId = stackId;
             return this;
         }
-            
 
         // Check to see if StackId property is set
         internal bool IsSetStackId()
         {
-            return this.stackId != null;
+            return this._stackId != null;
         }
 
-        /// <summary>
-        /// A list of layer IDs. The action describes the Elastic Load Balancing instances for the specified layers.
-        ///  
-        /// </summary>
-        public List<string> LayerIds
-        {
-            get { return this.layerIds; }
-            set { this.layerIds = value; }
-        }
-        /// <summary>
-        /// Adds elements to the LayerIds collection
-        /// </summary>
-        /// <param name="layerIds">The values to add to the LayerIds collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribeElasticLoadBalancersRequest WithLayerIds(params string[] layerIds)
-        {
-            foreach (string element in layerIds)
-            {
-                this.layerIds.Add(element);
-            }
-
-            return this;
-        }
-
-        /// <summary>
-        /// Adds elements to the LayerIds collection
-        /// </summary>
-        /// <param name="layerIds">The values to add to the LayerIds collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribeElasticLoadBalancersRequest WithLayerIds(IEnumerable<string> layerIds)
-        {
-            foreach (string element in layerIds)
-            {
-                this.layerIds.Add(element);
-            }
-
-            return this;
-        }
-
-        // Check to see if LayerIds property is set
-        internal bool IsSetLayerIds()
-        {
-            return this.layerIds.Count > 0;
-        }
     }
 }
-    

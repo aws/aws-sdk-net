@@ -18,61 +18,65 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>DescribeElasticIps</c> request.</para>
+    /// Contains the response to a <code>DescribeElasticIps</code> request.
     /// </summary>
     public partial class DescribeElasticIpsResult
     {
-        
-        private List<ElasticIp> elasticIps = new List<ElasticIp>();
+        private List<ElasticIp> _elasticIps = new List<ElasticIp>();
+
 
         /// <summary>
-        /// An <c>ElasticIps</c> object that describes the specified Elastic IP addresses.
-        ///  
+        /// Gets and sets the property ElasticIps. 
+        /// <para>
+        /// An <code>ElasticIps</code> object that describes the specified Elastic IP addresses.
+        /// </para>
         /// </summary>
         public List<ElasticIp> ElasticIps
         {
-            get { return this.elasticIps; }
-            set { this.elasticIps = value; }
+            get { return this._elasticIps; }
+            set { this._elasticIps = value; }
         }
+
         /// <summary>
-        /// Adds elements to the ElasticIps collection
+        /// Sets the ElasticIps property
         /// </summary>
         /// <param name="elasticIps">The values to add to the ElasticIps collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeElasticIpsResult WithElasticIps(params ElasticIp[] elasticIps)
         {
-            foreach (ElasticIp element in elasticIps)
+            foreach (var element in elasticIps)
             {
-                this.elasticIps.Add(element);
+                this._elasticIps.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the ElasticIps collection
+        /// Sets the ElasticIps property
         /// </summary>
         /// <param name="elasticIps">The values to add to the ElasticIps collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeElasticIpsResult WithElasticIps(IEnumerable<ElasticIp> elasticIps)
         {
-            foreach (ElasticIp element in elasticIps)
+            foreach (var element in elasticIps)
             {
-                this.elasticIps.Add(element);
+                this._elasticIps.Add(element);
             }
-
             return this;
         }
-
         // Check to see if ElasticIps property is set
         internal bool IsSetElasticIps()
         {
-            return this.elasticIps.Count > 0;
+            return this._elasticIps != null && this._elasticIps.Count > 0; 
         }
+
     }
 }

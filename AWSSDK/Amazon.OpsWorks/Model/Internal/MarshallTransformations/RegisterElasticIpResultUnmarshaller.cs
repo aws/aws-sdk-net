@@ -12,63 +12,73 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using Amazon.OpsWorks.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+using Amazon.OpsWorks.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for RegisterElasticIp Object
+    /// </summary>  
+    public class RegisterElasticIpResultUnmarshaller : IUnmarshaller<RegisterElasticIpResult, XmlUnmarshallerContext>, IUnmarshaller<RegisterElasticIpResult, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// RegisterElasticIpResultUnmarshaller
-      /// </summary>
-      internal class RegisterElasticIpResultUnmarshaller : IUnmarshaller<RegisterElasticIpResult, XmlUnmarshallerContext>, IUnmarshaller<RegisterElasticIpResult, JsonUnmarshallerContext>
-      {
         RegisterElasticIpResult IUnmarshaller<RegisterElasticIpResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public RegisterElasticIpResult Unmarshall(JsonUnmarshallerContext context)
         {
             if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
                 return null;
-            RegisterElasticIpResult registerElasticIpResult = new RegisterElasticIpResult();
-          
+            
+            var unmarshalledObject = new RegisterElasticIpResult();
+                    
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+
             while (context.Read())
             {
                 if ((context.IsKey) && (context.CurrentDepth == targetDepth))
                 {
-                context.Read();
-                context.Read();
-              
-              if (context.TestExpression("ElasticIp", targetDepth))
-              {
-                registerElasticIpResult.ElasticIp = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                    context.Read();
+                    context.Read();
+                    if (context.TestExpression("ElasticIp", targetDepth))
+                    {
+                        unmarshalledObject.ElasticIp = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {
-                    return registerElasticIpResult;
+                    return unmarshalledObject;
                 }
-            }
-          
-
-            return registerElasticIpResult;
+            }   
+                           
+            return unmarshalledObject;
         }
+
 
         private static RegisterElasticIpResultUnmarshaller instance;
         public static RegisterElasticIpResultUnmarshaller GetInstance()
         {
             if (instance == null)
+            {
                 instance = new RegisterElasticIpResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-  

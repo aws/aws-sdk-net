@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,35 +18,80 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para>Describes the settings for a specified configuration set.</para>
+    /// Describes the settings for a specified configuration set.
     /// </summary>
     public partial class DescribeConfigurationOptionsResult
     {
-        
-        private string solutionStackName;
-        private List<ConfigurationOptionDescription> options = new List<ConfigurationOptionDescription>();
+        private List<ConfigurationOptionDescription> _options = new List<ConfigurationOptionDescription>();
+        private string _solutionStackName;
+
 
         /// <summary>
-        /// The name of the solution stack these configuration options belong to.
-        ///  
+        /// Gets and sets the property Options. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 100</description>
-        ///     </item>
-        /// </list>
+        ///          A list of         <a>ConfigurationOptionDescription</a>.      
+        /// </para>
+        /// </summary>
+        public List<ConfigurationOptionDescription> Options
+        {
+            get { return this._options; }
+            set { this._options = value; }
+        }
+
+        /// <summary>
+        /// Sets the Options property
+        /// </summary>
+        /// <param name="options">The values to add to the Options collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeConfigurationOptionsResult WithOptions(params ConfigurationOptionDescription[] options)
+        {
+            foreach (var element in options)
+            {
+                this._options.Add(element);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the Options property
+        /// </summary>
+        /// <param name="options">The values to add to the Options collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeConfigurationOptionsResult WithOptions(IEnumerable<ConfigurationOptionDescription> options)
+        {
+            foreach (var element in options)
+            {
+                this._options.Add(element);
+            }
+            return this;
+        }
+        // Check to see if Options property is set
+        internal bool IsSetOptions()
+        {
+            return this._options != null && this._options.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SolutionStackName. 
+        /// <para>
+        ///          The name of the solution stack these configuration options belong to.        
         /// </para>
         /// </summary>
         public string SolutionStackName
         {
-            get { return this.solutionStackName; }
-            set { this.solutionStackName = value; }
+            get { return this._solutionStackName; }
+            set { this._solutionStackName = value; }
         }
+
 
         /// <summary>
         /// Sets the SolutionStackName property
@@ -56,62 +101,15 @@ namespace Amazon.ElasticBeanstalk.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeConfigurationOptionsResult WithSolutionStackName(string solutionStackName)
         {
-            this.solutionStackName = solutionStackName;
+            this._solutionStackName = solutionStackName;
             return this;
         }
-            
 
         // Check to see if SolutionStackName property is set
         internal bool IsSetSolutionStackName()
         {
-            return this.solutionStackName != null;
+            return this._solutionStackName != null;
         }
 
-        /// <summary>
-        /// A list of <a>ConfigurationOptionDescription</a>.
-        ///  
-        /// </summary>
-        public List<ConfigurationOptionDescription> Options
-        {
-            get { return this.options; }
-            set { this.options = value; }
-        }
-        /// <summary>
-        /// Adds elements to the Options collection
-        /// </summary>
-        /// <param name="options">The values to add to the Options collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribeConfigurationOptionsResult WithOptions(params ConfigurationOptionDescription[] options)
-        {
-            foreach (ConfigurationOptionDescription element in options)
-            {
-                this.options.Add(element);
-            }
-
-            return this;
-        }
-
-        /// <summary>
-        /// Adds elements to the Options collection
-        /// </summary>
-        /// <param name="options">The values to add to the Options collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribeConfigurationOptionsResult WithOptions(IEnumerable<ConfigurationOptionDescription> options)
-        {
-            foreach (ConfigurationOptionDescription element in options)
-            {
-                this.options.Add(element);
-            }
-
-            return this;
-        }
-
-        // Check to see if Options property is set
-        internal bool IsSetOptions()
-        {
-            return this.options.Count > 0;
-        }
     }
 }

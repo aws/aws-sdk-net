@@ -12,262 +12,229 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using Amazon.OpsWorks.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+using Amazon.OpsWorks.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for Layer Object
+    /// </summary>  
+    public class LayerUnmarshaller : IUnmarshaller<Layer, XmlUnmarshallerContext>, IUnmarshaller<Layer, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// LayerUnmarshaller
-      /// </summary>
-      internal class LayerUnmarshaller : IUnmarshaller<Layer, XmlUnmarshallerContext>, IUnmarshaller<Layer, JsonUnmarshallerContext>
-      {
         Layer IUnmarshaller<Layer, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Layer Unmarshall(JsonUnmarshallerContext context)
         {
             if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
                 return null;
-            Layer layer = new Layer();
-          layer.Attributes = null;
-                        layer.CustomSecurityGroupIds = null;
-                        layer.DefaultSecurityGroupNames = null;
-                        layer.Packages = null;
-                        layer.VolumeConfigurations = null;
-                        
+            
+            var unmarshalledObject = new Layer();
+            unmarshalledObject.Attributes = null;
+            unmarshalledObject.CustomSecurityGroupIds = null;
+            unmarshalledObject.DefaultSecurityGroupNames = null;
+            unmarshalledObject.Packages = null;
+            unmarshalledObject.VolumeConfigurations = null;
+                    
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+
             while (context.Read())
             {
                 if ((context.IsKey) && (context.CurrentDepth == targetDepth))
                 {
-                context.Read();
-                context.Read();
-              
-              if (context.TestExpression("StackId", targetDepth))
-              {
-                layer.StackId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("LayerId", targetDepth))
-              {
-                layer.LayerId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Type", targetDepth))
-              {
-                layer.Type = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Name", targetDepth))
-              {
-                layer.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Shortname", targetDepth))
-              {
-                layer.Shortname = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Attributes", targetDepth))
-              {
-                layer.Attributes = new Dictionary<String,String>();
-                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
-                {
-                  continue;
-                }              
-                KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller> unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
-                while (context.Read())
-                {
-                  if (((context.IsStartArray || context.IsStartElement || context.IsLeafValue) && (context.CurrentDepth == targetDepth)) ||
-                      ((context.IsKey) && (context.CurrentDepth == targetDepth+1)))
-                  {
-                    KeyValuePair<string, string> kvp = unmarshaller.Unmarshall(context);
-                    layer.Attributes.Add(kvp.Key, kvp.Value);
-                  }
-                  else if (context.IsEndElement)
-                  {
-                    break;
-                  }
-                }
-                continue;
-              }
-  
-              if (context.TestExpression("CustomInstanceProfileArn", targetDepth))
-              {
-                layer.CustomInstanceProfileArn = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("CustomSecurityGroupIds", targetDepth))
-              {
-                layer.CustomSecurityGroupIds = new List<String>();   
-                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
-                {
-                  continue;
-                }              
-
-                  StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
-                  {
-                     layer.CustomSecurityGroupIds.Add(unmarshaller.Unmarshall(context));
-                  }
-                  else if (context.IsEndArray)
-                  {
-                    break;
-                  }
-                }
-                continue;
-              }
-  
-              if (context.TestExpression("DefaultSecurityGroupNames", targetDepth))
-              {
-                layer.DefaultSecurityGroupNames = new List<String>();   
-                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
-                {
-                  continue;
-                }              
-
-                  StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
-                  {
-                     layer.DefaultSecurityGroupNames.Add(unmarshaller.Unmarshall(context));
-                  }
-                  else if (context.IsEndArray)
-                  {
-                    break;
-                  }
-                }
-                continue;
-              }
-  
-              if (context.TestExpression("Packages", targetDepth))
-              {
-                layer.Packages = new List<String>();   
-                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
-                {
-                  continue;
-                }              
-
-                  StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
-                  {
-                     layer.Packages.Add(unmarshaller.Unmarshall(context));
-                  }
-                  else if (context.IsEndArray)
-                  {
-                    break;
-                  }
-                }
-                continue;
-              }
-  
-              if (context.TestExpression("VolumeConfigurations", targetDepth))
-              {
-                layer.VolumeConfigurations = new List<VolumeConfiguration>();   
-                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
-                {
-                  continue;
-                }              
-
-                  VolumeConfigurationUnmarshaller unmarshaller = VolumeConfigurationUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
-                  {
-                     layer.VolumeConfigurations.Add(unmarshaller.Unmarshall(context));
-                  }
-                  else if (context.IsEndArray)
-                  {
-                    break;
-                  }
-                }
-                continue;
-              }
-  
-              if (context.TestExpression("EnableAutoHealing", targetDepth))
-              {
-                layer.EnableAutoHealing = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("AutoAssignElasticIps", targetDepth))
-              {
-                layer.AutoAssignElasticIps = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("AutoAssignPublicIps", targetDepth))
-              {
-                layer.AutoAssignPublicIps = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("DefaultRecipes", targetDepth))
-              {
-                layer.DefaultRecipes = RecipesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("CustomRecipes", targetDepth))
-              {
-                layer.CustomRecipes = RecipesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("CreatedAt", targetDepth))
-              {
-                layer.CreatedAt = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("InstallUpdatesOnBoot", targetDepth))
-              {
-                layer.InstallUpdatesOnBoot = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("UseEbsOptimizedInstances", targetDepth))
-              {
-                layer.UseEbsOptimizedInstances = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                    context.Read();
+                    context.Read();
+                    if (context.TestExpression("Attributes", targetDepth))
+                    {
+                        unmarshalledObject.Attributes = new Dictionary<string, string>();
+                        var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
+                        while (context.Read())
+                        {
+                          if (((context.IsStartArray || context.IsStartElement || context.IsLeafValue) && (context.CurrentDepth == targetDepth)) ||
+                              ((context.IsKey) && (context.CurrentDepth == targetDepth+1)))
+                          {
+                            var kvp = unmarshaller.Unmarshall(context);
+                            unmarshalledObject.Attributes.Add(kvp.Key, kvp.Value);
+                          }
+                          else if (context.IsEndElement)
+                          {
+                            break;
+                          }
+                        }
+                        continue;
+                    }
+                    if (context.TestExpression("AutoAssignElasticIps", targetDepth))
+                    {
+                        unmarshalledObject.AutoAssignElasticIps = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("AutoAssignPublicIps", targetDepth))
+                    {
+                        unmarshalledObject.AutoAssignPublicIps = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("CreatedAt", targetDepth))
+                    {
+                        unmarshalledObject.CreatedAt = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("CustomInstanceProfileArn", targetDepth))
+                    {
+                        unmarshalledObject.CustomInstanceProfileArn = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("CustomRecipes", targetDepth))
+                    {
+                        unmarshalledObject.CustomRecipes = RecipesUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("CustomSecurityGroupIds", targetDepth))
+                    {
+                        unmarshalledObject.CustomSecurityGroupIds = new List<string>();
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        while (context.Read())
+                        {
+                          if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                          {
+                             unmarshalledObject.CustomSecurityGroupIds.Add(unmarshaller.Unmarshall(context));
+                          }
+                          else if (context.IsEndArray)
+                          {
+                            break;
+                          }
+                        }
+                        continue;
+                    }
+                    if (context.TestExpression("DefaultRecipes", targetDepth))
+                    {
+                        unmarshalledObject.DefaultRecipes = RecipesUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("DefaultSecurityGroupNames", targetDepth))
+                    {
+                        unmarshalledObject.DefaultSecurityGroupNames = new List<string>();
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        while (context.Read())
+                        {
+                          if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                          {
+                             unmarshalledObject.DefaultSecurityGroupNames.Add(unmarshaller.Unmarshall(context));
+                          }
+                          else if (context.IsEndArray)
+                          {
+                            break;
+                          }
+                        }
+                        continue;
+                    }
+                    if (context.TestExpression("EnableAutoHealing", targetDepth))
+                    {
+                        unmarshalledObject.EnableAutoHealing = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("InstallUpdatesOnBoot", targetDepth))
+                    {
+                        unmarshalledObject.InstallUpdatesOnBoot = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("LayerId", targetDepth))
+                    {
+                        unmarshalledObject.LayerId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Name", targetDepth))
+                    {
+                        unmarshalledObject.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Packages", targetDepth))
+                    {
+                        unmarshalledObject.Packages = new List<string>();
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        while (context.Read())
+                        {
+                          if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                          {
+                             unmarshalledObject.Packages.Add(unmarshaller.Unmarshall(context));
+                          }
+                          else if (context.IsEndArray)
+                          {
+                            break;
+                          }
+                        }
+                        continue;
+                    }
+                    if (context.TestExpression("Shortname", targetDepth))
+                    {
+                        unmarshalledObject.Shortname = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StackId", targetDepth))
+                    {
+                        unmarshalledObject.StackId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Type", targetDepth))
+                    {
+                        unmarshalledObject.Type = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("UseEbsOptimizedInstances", targetDepth))
+                    {
+                        unmarshalledObject.UseEbsOptimizedInstances = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("VolumeConfigurations", targetDepth))
+                    {
+                        unmarshalledObject.VolumeConfigurations = new List<VolumeConfiguration>();
+                        var unmarshaller = VolumeConfigurationUnmarshaller.GetInstance();
+                        while (context.Read())
+                        {
+                          if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                          {
+                             unmarshalledObject.VolumeConfigurations.Add(unmarshaller.Unmarshall(context));
+                          }
+                          else if (context.IsEndArray)
+                          {
+                            break;
+                          }
+                        }
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {
-                    return layer;
+                    return unmarshalledObject;
                 }
-            }
-          
-
-            return layer;
+            }          
+            return unmarshalledObject;
         }
+
 
         private static LayerUnmarshaller instance;
         public static LayerUnmarshaller GetInstance()
         {
             if (instance == null)
+            {
                 instance = new LayerUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-  

@@ -18,61 +18,65 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>DescribeStacks</c> request.</para>
+    /// Contains the response to a <code>DescribeStacks</code> request.
     /// </summary>
     public partial class DescribeStacksResult
     {
-        
-        private List<Stack> stacks = new List<Stack>();
+        private List<Stack> _stacks = new List<Stack>();
+
 
         /// <summary>
-        /// An array of <c>Stack</c> objects that describe the stacks.
-        ///  
+        /// Gets and sets the property Stacks. 
+        /// <para>
+        /// An array of <code>Stack</code> objects that describe the stacks.
+        /// </para>
         /// </summary>
         public List<Stack> Stacks
         {
-            get { return this.stacks; }
-            set { this.stacks = value; }
+            get { return this._stacks; }
+            set { this._stacks = value; }
         }
+
         /// <summary>
-        /// Adds elements to the Stacks collection
+        /// Sets the Stacks property
         /// </summary>
         /// <param name="stacks">The values to add to the Stacks collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeStacksResult WithStacks(params Stack[] stacks)
         {
-            foreach (Stack element in stacks)
+            foreach (var element in stacks)
             {
-                this.stacks.Add(element);
+                this._stacks.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the Stacks collection
+        /// Sets the Stacks property
         /// </summary>
         /// <param name="stacks">The values to add to the Stacks collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeStacksResult WithStacks(IEnumerable<Stack> stacks)
         {
-            foreach (Stack element in stacks)
+            foreach (var element in stacks)
             {
-                this.stacks.Add(element);
+                this._stacks.Add(element);
             }
-
             return this;
         }
-
         // Check to see if Stacks property is set
         internal bool IsSetStacks()
         {
-            return this.stacks.Count > 0;
+            return this._stacks != null && this._stacks.Count > 0; 
         }
+
     }
 }
