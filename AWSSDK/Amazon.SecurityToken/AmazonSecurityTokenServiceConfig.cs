@@ -12,15 +12,15 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 using System;
 
 using Amazon.Runtime;
 
 namespace Amazon.SecurityToken
 {
-
     /// <summary>
-    /// Configuration for accessing AWS Security Token Service service
+    /// Configuration for accessing Amazon SecurityTokenService service
     /// </summary>
     public class AmazonSecurityTokenServiceConfig : ClientConfig
     {
@@ -56,5 +56,3 @@ namespace Amazon.SecurityToken
         }
     }
 }
-
-    

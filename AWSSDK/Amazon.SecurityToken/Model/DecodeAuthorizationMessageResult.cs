@@ -18,26 +18,33 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// <para>A document that contains additional information about the authorization status of a request from an encoded message that is returned
-    /// in response to an AWS request. </para>
+    /// A document that contains additional information about the authorization status of
+    /// a request      from an encoded message that is returned in response to an AWS request.
     /// </summary>
     public partial class DecodeAuthorizationMessageResult
     {
-        
-        private string decodedMessage;
+        private string _decodedMessage;
+
 
         /// <summary>
-        /// An XML document that contains the decoded message. For more information, see <c>DecodeAuthorizationMessage</c>.
-        ///  
+        /// Gets and sets the property DecodedMessage. 
+        /// <para>
+        /// An XML document that contains the decoded message. For more information, see     
+        ///   <code>DecodeAuthorizationMessage</code>. 
+        /// </para>
         /// </summary>
         public string DecodedMessage
         {
-            get { return this.decodedMessage; }
-            set { this.decodedMessage = value; }
+            get { return this._decodedMessage; }
+            set { this._decodedMessage = value; }
         }
+
 
         /// <summary>
         /// Sets the DecodedMessage property
@@ -47,15 +54,15 @@ namespace Amazon.SecurityToken.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DecodeAuthorizationMessageResult WithDecodedMessage(string decodedMessage)
         {
-            this.decodedMessage = decodedMessage;
+            this._decodedMessage = decodedMessage;
             return this;
         }
-            
 
         // Check to see if DecodedMessage property is set
         internal bool IsSetDecodedMessage()
         {
-            return this.decodedMessage != null;
+            return this._decodedMessage != null;
         }
+
     }
 }

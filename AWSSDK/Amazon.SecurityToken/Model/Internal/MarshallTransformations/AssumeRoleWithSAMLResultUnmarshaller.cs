@@ -12,75 +12,109 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SecurityToken.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   AssumeRoleWithSAMLResult Unmarshaller
-     /// </summary>
-    internal class AssumeRoleWithSAMLResultUnmarshaller : IUnmarshaller<AssumeRoleWithSAMLResult, XmlUnmarshallerContext>, IUnmarshaller<AssumeRoleWithSAMLResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for AssumeRoleWithSAML Object
+    /// </summary>  
+    public class AssumeRoleWithSAMLResultUnmarshaller : IUnmarshaller<AssumeRoleWithSAMLResult, XmlUnmarshallerContext>
     {
         public AssumeRoleWithSAMLResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            AssumeRoleWithSAMLResult assumeRoleWithSAMLResult = new AssumeRoleWithSAMLResult();
+            AssumeRoleWithSAMLResult result = new AssumeRoleWithSAMLResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("Credentials", targetDepth))
-                    {
-                        assumeRoleWithSAMLResult.Credentials = CredentialsUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
+
                     if (context.TestExpression("AssumedRoleUser", targetDepth))
                     {
-                        assumeRoleWithSAMLResult.AssumedRoleUser = AssumedRoleUserUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("PackedPolicySize", targetDepth))
-                    {
-                        assumeRoleWithSAMLResult.PackedPolicySize = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = AssumedRoleUserUnmarshaller.GetInstance();
+                        result.AssumedRoleUser = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
+                    if (context.TestExpression("Audience", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.Audience = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Credentials", targetDepth))
+                    {
+                        var unmarshaller = CredentialsUnmarshaller.GetInstance();
+                        result.Credentials = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Issuer", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.Issuer = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("NameQualifier", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.NameQualifier = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PackedPolicySize", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.GetInstance();
+                        result.PackedPolicySize = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Subject", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.Subject = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SubjectType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.SubjectType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return assumeRoleWithSAMLResult;
+                    return result;
                 }
             }
-                        
 
-
-            return assumeRoleWithSAMLResult;
+            return result;
         }
 
-        public AssumeRoleWithSAMLResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static AssumeRoleWithSAMLResultUnmarshaller instance;
-
-        public static AssumeRoleWithSAMLResultUnmarshaller GetInstance() 
+        public static AssumeRoleWithSAMLResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new AssumeRoleWithSAMLResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new AssumeRoleWithSAMLResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

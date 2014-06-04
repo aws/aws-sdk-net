@@ -14,32 +14,36 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SecurityToken.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Decode Authorization Message Request Marshaller
+    /// DecodeAuthorizationMessage Request Marshaller
     /// </summary>       
     public class DecodeAuthorizationMessageRequestMarshaller : IMarshaller<IRequest, DecodeAuthorizationMessageRequest>
     {
-        public IRequest Marshall(DecodeAuthorizationMessageRequest decodeAuthorizationMessageRequest)
+        public IRequest Marshall(DecodeAuthorizationMessageRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(decodeAuthorizationMessageRequest, "AmazonSecurityTokenService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SecurityToken");
             request.Parameters.Add("Action", "DecodeAuthorizationMessage");
             request.Parameters.Add("Version", "2011-06-15");
-            if (decodeAuthorizationMessageRequest != null && decodeAuthorizationMessageRequest.IsSetEncodedMessage())
-            {
-                request.Parameters.Add("EncodedMessage", StringUtils.FromString(decodeAuthorizationMessageRequest.EncodedMessage));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetEncodedMessage())
+                {
+                    request.Parameters.Add("EncodedMessage", StringUtils.FromString(publicRequest.EncodedMessage));
+                }
+            }
             return request;
         }
     }

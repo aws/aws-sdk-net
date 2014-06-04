@@ -18,79 +18,34 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// <para>Identifiers for the federated user that is associated with the credentials.</para>
+    /// Identifiers for the federated user that is associated with the credentials.
     /// </summary>
     public partial class FederatedUser
     {
-        
-        private string federatedUserId;
-        private string arn;
+        private string _arn;
+        private string _federatedUserId;
+
 
         /// <summary>
-        /// The string that identifies the federated user associated with the credentials, similar to the unique ID of an IAM user.
-        ///  
+        /// Gets and sets the property Arn. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>2 - 96</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=,.@\:-]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string FederatedUserId
-        {
-            get { return this.federatedUserId; }
-            set { this.federatedUserId = value; }
-        }
-
-        /// <summary>
-        /// Sets the FederatedUserId property
-        /// </summary>
-        /// <param name="federatedUserId">The value to set for the FederatedUserId property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public FederatedUser WithFederatedUserId(string federatedUserId)
-        {
-            this.federatedUserId = federatedUserId;
-            return this;
-        }
-            
-
-        // Check to see if FederatedUserId property is set
-        internal bool IsSetFederatedUserId()
-        {
-            return this.federatedUserId != null;
-        }
-
-        /// <summary>
-        /// The ARN that specifies the federated user that is associated with the credentials. For more information about ARNs and how to use them in
-        /// policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html" target="_blank">Identifiers for IAM
-        /// Entities</a> in <i>Using IAM</i>.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>20 - 2048</description>
-        ///     </item>
-        /// </list>
+        /// The ARN that specifies the federated user that is associated with the credentials.
+        /// For more      information about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+        /// target="_blank">Identifiers for IAM Entities</a> in <i>Using IAM</i>. 
         /// </para>
         /// </summary>
         public string Arn
         {
-            get { return this.arn; }
-            set { this.arn = value; }
+            get { return this._arn; }
+            set { this._arn = value; }
         }
+
 
         /// <summary>
         /// Sets the Arn property
@@ -100,15 +55,48 @@ namespace Amazon.SecurityToken.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public FederatedUser WithArn(string arn)
         {
-            this.arn = arn;
+            this._arn = arn;
             return this;
         }
-            
 
         // Check to see if Arn property is set
         internal bool IsSetArn()
         {
-            return this.arn != null;
+            return this._arn != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property FederatedUserId. 
+        /// <para>
+        /// The string that identifies the federated user associated with the credentials, similar
+        /// to the      unique ID of an IAM user.
+        /// </para>
+        /// </summary>
+        public string FederatedUserId
+        {
+            get { return this._federatedUserId; }
+            set { this._federatedUserId = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the FederatedUserId property
+        /// </summary>
+        /// <param name="federatedUserId">The value to set for the FederatedUserId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public FederatedUser WithFederatedUserId(string federatedUserId)
+        {
+            this._federatedUserId = federatedUserId;
+            return this;
+        }
+
+        // Check to see if FederatedUserId property is set
+        internal bool IsSetFederatedUserId()
+        {
+            return this._federatedUserId != null;
+        }
+
     }
 }

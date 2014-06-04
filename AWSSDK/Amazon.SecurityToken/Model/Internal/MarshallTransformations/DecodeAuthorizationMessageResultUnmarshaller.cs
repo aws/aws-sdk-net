@@ -12,63 +12,67 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SecurityToken.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   DecodeAuthorizationMessageResult Unmarshaller
-     /// </summary>
-    internal class DecodeAuthorizationMessageResultUnmarshaller : IUnmarshaller<DecodeAuthorizationMessageResult, XmlUnmarshallerContext>, IUnmarshaller<DecodeAuthorizationMessageResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for DecodeAuthorizationMessage Object
+    /// </summary>  
+    public class DecodeAuthorizationMessageResultUnmarshaller : IUnmarshaller<DecodeAuthorizationMessageResult, XmlUnmarshallerContext>
     {
         public DecodeAuthorizationMessageResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            DecodeAuthorizationMessageResult decodeAuthorizationMessageResult = new DecodeAuthorizationMessageResult();
+            DecodeAuthorizationMessageResult result = new DecodeAuthorizationMessageResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
+
                     if (context.TestExpression("DecodedMessage", targetDepth))
                     {
-                        decodeAuthorizationMessageResult.DecodedMessage = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.DecodedMessage = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return decodeAuthorizationMessageResult;
+                    return result;
                 }
             }
-                        
 
-
-            return decodeAuthorizationMessageResult;
+            return result;
         }
 
-        public DecodeAuthorizationMessageResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static DecodeAuthorizationMessageResultUnmarshaller instance;
-
-        public static DecodeAuthorizationMessageResultUnmarshaller GetInstance() 
+        public static DecodeAuthorizationMessageResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new DecodeAuthorizationMessageResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new DecodeAuthorizationMessageResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

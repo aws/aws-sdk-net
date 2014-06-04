@@ -12,40 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// Returns information about the  AssumeRoleWithWebIdentityResult response and response metadata.
+    /// Returns information about the AssumeRoleWithWebIdentityResult response and response metadata.
     /// </summary>
     public class AssumeRoleWithWebIdentityResponse : AmazonWebServiceResponse
     {
-        private AssumeRoleWithWebIdentityResult assumeRoleWithWebIdentityResult;
+        private AssumeRoleWithWebIdentityResult _assumeRoleWithWebIdentityResult;
 
         /// <summary>
         /// Gets and sets the AssumeRoleWithWebIdentityResult property.
-        /// Contains the result of a successful call to the AssumeRoleWithWebIdentity action, including temporary AWS credentials that can be used to
-        /// make AWS requests.
+        /// Represents the output of a AssumeRoleWithWebIdentity operation.
         /// </summary>
         public AssumeRoleWithWebIdentityResult AssumeRoleWithWebIdentityResult
         {
             get
             {
-                if(this.assumeRoleWithWebIdentityResult == null)
+                if(this._assumeRoleWithWebIdentityResult == null)
                 {
-                    this.assumeRoleWithWebIdentityResult = new AssumeRoleWithWebIdentityResult();
+                    this._assumeRoleWithWebIdentityResult = new AssumeRoleWithWebIdentityResult();
                 }
-
-                return this.assumeRoleWithWebIdentityResult;
+                return this._assumeRoleWithWebIdentityResult;
             }
-            set { this.assumeRoleWithWebIdentityResult = value; }
+            set { this._assumeRoleWithWebIdentityResult = value; }
         }
     }
 }
-    

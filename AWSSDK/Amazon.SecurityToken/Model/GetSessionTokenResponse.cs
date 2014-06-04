@@ -12,40 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// Returns information about the  GetSessionTokenResult response and response metadata.
+    /// Returns information about the GetSessionTokenResult response and response metadata.
     /// </summary>
     public class GetSessionTokenResponse : AmazonWebServiceResponse
     {
-        private GetSessionTokenResult getSessionTokenResult;
+        private GetSessionTokenResult _getSessionTokenResult;
 
         /// <summary>
         /// Gets and sets the GetSessionTokenResult property.
-        /// Contains the result of a successful call to the GetSessionToken action, including temporary AWS credentials that can be used to make AWS
-        /// requests.
+        /// Represents the output of a GetSessionToken operation.
         /// </summary>
         public GetSessionTokenResult GetSessionTokenResult
         {
             get
             {
-                if(this.getSessionTokenResult == null)
+                if(this._getSessionTokenResult == null)
                 {
-                    this.getSessionTokenResult = new GetSessionTokenResult();
+                    this._getSessionTokenResult = new GetSessionTokenResult();
                 }
-
-                return this.getSessionTokenResult;
+                return this._getSessionTokenResult;
             }
-            set { this.getSessionTokenResult = value; }
+            set { this._getSessionTokenResult = value; }
         }
     }
 }
-    

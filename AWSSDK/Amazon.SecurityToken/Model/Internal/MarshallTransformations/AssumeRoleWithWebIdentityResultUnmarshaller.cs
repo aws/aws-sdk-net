@@ -12,81 +12,97 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SecurityToken.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   AssumeRoleWithWebIdentityResult Unmarshaller
-     /// </summary>
-    internal class AssumeRoleWithWebIdentityResultUnmarshaller : IUnmarshaller<AssumeRoleWithWebIdentityResult, XmlUnmarshallerContext>, IUnmarshaller<AssumeRoleWithWebIdentityResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for AssumeRoleWithWebIdentity Object
+    /// </summary>  
+    public class AssumeRoleWithWebIdentityResultUnmarshaller : IUnmarshaller<AssumeRoleWithWebIdentityResult, XmlUnmarshallerContext>
     {
         public AssumeRoleWithWebIdentityResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            AssumeRoleWithWebIdentityResult assumeRoleWithWebIdentityResult = new AssumeRoleWithWebIdentityResult();
+            AssumeRoleWithWebIdentityResult result = new AssumeRoleWithWebIdentityResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("Credentials", targetDepth))
-                    {
-                        assumeRoleWithWebIdentityResult.Credentials = CredentialsUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("SubjectFromWebIdentityToken", targetDepth))
-                    {
-                        assumeRoleWithWebIdentityResult.SubjectFromWebIdentityToken = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
+
                     if (context.TestExpression("AssumedRoleUser", targetDepth))
                     {
-                        assumeRoleWithWebIdentityResult.AssumedRoleUser = AssumedRoleUserUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("PackedPolicySize", targetDepth))
-                    {
-                        assumeRoleWithWebIdentityResult.PackedPolicySize = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = AssumedRoleUserUnmarshaller.GetInstance();
+                        result.AssumedRoleUser = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
+                    if (context.TestExpression("Audience", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.Audience = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Credentials", targetDepth))
+                    {
+                        var unmarshaller = CredentialsUnmarshaller.GetInstance();
+                        result.Credentials = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PackedPolicySize", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.GetInstance();
+                        result.PackedPolicySize = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Provider", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.Provider = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SubjectFromWebIdentityToken", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.SubjectFromWebIdentityToken = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return assumeRoleWithWebIdentityResult;
+                    return result;
                 }
             }
-                        
 
-
-            return assumeRoleWithWebIdentityResult;
+            return result;
         }
 
-        public AssumeRoleWithWebIdentityResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static AssumeRoleWithWebIdentityResultUnmarshaller instance;
-
-        public static AssumeRoleWithWebIdentityResultUnmarshaller GetInstance() 
+        public static AssumeRoleWithWebIdentityResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new AssumeRoleWithWebIdentityResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new AssumeRoleWithWebIdentityResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

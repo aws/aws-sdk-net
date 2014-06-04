@@ -13,28 +13,34 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SecurityToken.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for DecodeAuthorizationMessage operation
-    /// </summary>
-    internal class DecodeAuthorizationMessageResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for DecodeAuthorizationMessage operation
+    /// </summary>  
+    public class DecodeAuthorizationMessageResponseUnmarshaller : XmlResponseUnmarshaller
     {
-
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             DecodeAuthorizationMessageResponse response = new DecodeAuthorizationMessageResponse();
-            
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
             while (context.Read())
             {
-                if (context.IsStartElement)                
+                if (context.IsStartElement)
                 {
                     if(context.TestExpression("DecodeAuthorizationMessageResult", 2))
                     {
@@ -47,35 +53,30 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
                     }
                 }
             }
-                 
-                        
+
             return response;
         }
 
-        
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidAuthorizationMessageException"))
             {
                 return new InvalidAuthorizationMessageException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
             return new AmazonSecurityTokenServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static DecodeAuthorizationMessageResponseUnmarshaller instance;
 
+        private static DecodeAuthorizationMessageResponseUnmarshaller instance;
         public static DecodeAuthorizationMessageResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
+            if (instance == null)
             {
-               instance = new DecodeAuthorizationMessageResponseUnmarshaller();
+                instance = new DecodeAuthorizationMessageResponseUnmarshaller();
             }
             return instance;
         }
-    
+
     }
 }
-    

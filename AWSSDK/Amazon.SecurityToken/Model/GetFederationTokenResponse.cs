@@ -12,40 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// Returns information about the  GetFederationTokenResult response and response metadata.
+    /// Returns information about the GetFederationTokenResult response and response metadata.
     /// </summary>
     public class GetFederationTokenResponse : AmazonWebServiceResponse
     {
-        private GetFederationTokenResult getFederationTokenResult;
+        private GetFederationTokenResult _getFederationTokenResult;
 
         /// <summary>
         /// Gets and sets the GetFederationTokenResult property.
-        /// Contains the result of a successful call to the GetFederationToken action, including temporary AWS credentials that can be used to make AWS
-        /// requests.
+        /// Represents the output of a GetFederationToken operation.
         /// </summary>
         public GetFederationTokenResult GetFederationTokenResult
         {
             get
             {
-                if(this.getFederationTokenResult == null)
+                if(this._getFederationTokenResult == null)
                 {
-                    this.getFederationTokenResult = new GetFederationTokenResult();
+                    this._getFederationTokenResult = new GetFederationTokenResult();
                 }
-
-                return this.getFederationTokenResult;
+                return this._getFederationTokenResult;
             }
-            set { this.getFederationTokenResult = value; }
+            set { this._getFederationTokenResult = value; }
         }
     }
 }
-    

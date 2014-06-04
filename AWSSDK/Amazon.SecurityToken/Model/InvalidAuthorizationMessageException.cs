@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.SecurityToken.Model
 {
     ///<summary>
-    /// AmazonSecurityTokenService exception
+    /// SecurityTokenService exception
     /// </summary>
     public class InvalidAuthorizationMessageException : AmazonSecurityTokenServiceException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.SecurityToken.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal InvalidAuthorizationMessageException(string message) 
+        public InvalidAuthorizationMessageException(string message) 
             : base(message) {}
           
-        internal InvalidAuthorizationMessageException(string message, Exception innerException) 
+        public InvalidAuthorizationMessageException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal InvalidAuthorizationMessageException(Exception innerException) 
+        public InvalidAuthorizationMessageException(Exception innerException) 
             : base(innerException) {}
             
-        internal InvalidAuthorizationMessageException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidAuthorizationMessageException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal InvalidAuthorizationMessageException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidAuthorizationMessageException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

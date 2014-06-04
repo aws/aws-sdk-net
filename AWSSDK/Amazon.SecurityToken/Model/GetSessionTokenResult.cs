@@ -18,26 +18,32 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// <para> Contains the result of a successful call to the GetSessionToken action, including temporary AWS credentials that can be used to make
-    /// AWS requests. </para>
+    /// Contains the result of a successful call to the <a>GetSessionToken</a> action, including
+    ///      temporary AWS credentials that can be used to make AWS requests.
     /// </summary>
     public partial class GetSessionTokenResult
     {
-        
-        private Credentials credentials;
+        private Credentials _credentials;
+
 
         /// <summary>
-        /// The session credentials for API authentication.
-        ///  
+        /// Gets and sets the property Credentials. 
+        /// <para>
+        /// The session credentials for API authentication. 
+        /// </para>
         /// </summary>
         public Credentials Credentials
         {
-            get { return this.credentials; }
-            set { this.credentials = value; }
+            get { return this._credentials; }
+            set { this._credentials = value; }
         }
+
 
         /// <summary>
         /// Sets the Credentials property
@@ -47,15 +53,15 @@ namespace Amazon.SecurityToken.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetSessionTokenResult WithCredentials(Credentials credentials)
         {
-            this.credentials = credentials;
+            this._credentials = credentials;
             return this;
         }
-            
 
         // Check to see if Credentials property is set
         internal bool IsSetCredentials()
         {
-            return this.credentials != null;
+            return this._credentials != null;
         }
+
     }
 }

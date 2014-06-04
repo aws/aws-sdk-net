@@ -12,63 +12,67 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SecurityToken.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   GetSessionTokenResult Unmarshaller
-     /// </summary>
-    internal class GetSessionTokenResultUnmarshaller : IUnmarshaller<GetSessionTokenResult, XmlUnmarshallerContext>, IUnmarshaller<GetSessionTokenResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for GetSessionToken Object
+    /// </summary>  
+    public class GetSessionTokenResultUnmarshaller : IUnmarshaller<GetSessionTokenResult, XmlUnmarshallerContext>
     {
         public GetSessionTokenResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            GetSessionTokenResult getSessionTokenResult = new GetSessionTokenResult();
+            GetSessionTokenResult result = new GetSessionTokenResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
+
                     if (context.TestExpression("Credentials", targetDepth))
                     {
-                        getSessionTokenResult.Credentials = CredentialsUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = CredentialsUnmarshaller.GetInstance();
+                        result.Credentials = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return getSessionTokenResult;
+                    return result;
                 }
             }
-                        
 
-
-            return getSessionTokenResult;
+            return result;
         }
 
-        public GetSessionTokenResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static GetSessionTokenResultUnmarshaller instance;
-
-        public static GetSessionTokenResultUnmarshaller GetInstance() 
+        public static GetSessionTokenResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new GetSessionTokenResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new GetSessionTokenResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

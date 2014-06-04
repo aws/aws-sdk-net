@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.SecurityToken.Model
 {
     ///<summary>
-    /// AmazonSecurityTokenService exception
+    /// SecurityTokenService exception
     /// </summary>
     public class InvalidIdentityTokenException : AmazonSecurityTokenServiceException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.SecurityToken.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal InvalidIdentityTokenException(string message) 
+        public InvalidIdentityTokenException(string message) 
             : base(message) {}
           
-        internal InvalidIdentityTokenException(string message, Exception innerException) 
+        public InvalidIdentityTokenException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal InvalidIdentityTokenException(Exception innerException) 
+        public InvalidIdentityTokenException(Exception innerException) 
             : base(innerException) {}
             
-        internal InvalidIdentityTokenException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidIdentityTokenException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal InvalidIdentityTokenException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidIdentityTokenException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

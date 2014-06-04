@@ -12,40 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// Returns information about the  AssumeRoleResult response and response metadata.
+    /// Returns information about the AssumeRoleResult response and response metadata.
     /// </summary>
     public class AssumeRoleResponse : AmazonWebServiceResponse
     {
-        private AssumeRoleResult assumeRoleResult;
+        private AssumeRoleResult _assumeRoleResult;
 
         /// <summary>
         /// Gets and sets the AssumeRoleResult property.
-        /// Contains the result of a successful call to the AssumeRole action, including temporary AWS credentials that can be used to make AWS
-        /// requests.
+        /// Represents the output of a AssumeRole operation.
         /// </summary>
         public AssumeRoleResult AssumeRoleResult
         {
             get
             {
-                if(this.assumeRoleResult == null)
+                if(this._assumeRoleResult == null)
                 {
-                    this.assumeRoleResult = new AssumeRoleResult();
+                    this._assumeRoleResult = new AssumeRoleResult();
                 }
-
-                return this.assumeRoleResult;
+                return this._assumeRoleResult;
             }
-            set { this.assumeRoleResult = value; }
+            set { this._assumeRoleResult = value; }
         }
     }
 }
-    

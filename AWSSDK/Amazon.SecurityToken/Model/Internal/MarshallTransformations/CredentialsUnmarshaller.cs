@@ -12,21 +12,29 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SecurityToken.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Credentials Unmarshaller
-     /// </summary>
-    internal class CredentialsUnmarshaller : IUnmarshaller<Credentials, XmlUnmarshallerContext>, IUnmarshaller<Credentials, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Credentials Object
+    /// </summary>  
+    public class CredentialsUnmarshaller : IUnmarshaller<Credentials, XmlUnmarshallerContext>, IUnmarshaller<Credentials, JsonUnmarshallerContext>
     {
-        public Credentials Unmarshall(XmlUnmarshallerContext context) 
+        public Credentials Unmarshall(XmlUnmarshallerContext context)
         {
-            Credentials credentials = new Credentials();
+            Credentials unmarshalledObject = new Credentials();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,57 +44,56 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
                     if (context.TestExpression("AccessKeyId", targetDepth))
                     {
-                        credentials.AccessKeyId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.AccessKeyId = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
-                    if (context.TestExpression("SecretAccessKey", targetDepth))
-                    {
-                        credentials.SecretAccessKey = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("SessionToken", targetDepth))
-                    {
-                        credentials.SessionToken = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                    }
                     if (context.TestExpression("Expiration", targetDepth))
                     {
-                        credentials.Expiration = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.GetInstance();
+                        unmarshalledObject.Expiration = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SecretAccessKey", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.SecretAccessKey = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SessionToken", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.SessionToken = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return credentials;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return credentials;
+            return unmarshalledObject;
         }
 
-        public Credentials Unmarshall(JsonUnmarshallerContext context) 
+        public Credentials Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static CredentialsUnmarshaller instance;
-
-        public static CredentialsUnmarshaller GetInstance() 
+        public static CredentialsUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new CredentialsUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new CredentialsUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

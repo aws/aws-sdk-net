@@ -25,194 +25,129 @@ namespace Amazon.SecurityToken.Model
 {
     /// <summary>
     /// Container for the parameters to the AssumeRole operation.
-    /// <para>Returns a set of temporary security credentials (consisting of an access key ID, a secret access key, and a security token) that you
-    /// can use to access AWS resources that you might not normally have access to. Typically, you use <c>AssumeRole</c> for cross-account access or
-    /// federation. </para> <para> <b>Important:</b> You cannot call <c>AssumeRole</c> by using AWS account credentials; access will be denied. You
-    /// must use IAM user credentials or temporary security credentials to call <c>AssumeRole</c> .
-    /// </para> <para> For cross-account access, imagine that you own multiple accounts and need to access resources in each account. You could
-    /// create long-term credentials in each account to access those resources. However, managing all those credentials and remembering which one
-    /// can access which account can be time consuming. Instead, you can create one set of long-term credentials in one account and then use
-    /// temporary security credentials to access all the other accounts by assuming roles in those accounts. For more information about roles, see
-    /// <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html" >Roles</a> in <i>Using IAM</i> . </para> <para> For
-    /// federation, you can, for example, grant single sign-on access to the AWS Management Console. If you already have an identity and
-    /// authentication system in your corporate network, you don't have to recreate user identities in AWS in order to grant those user identities
-    /// access to AWS. Instead, after a user has been authenticated, you call <c>AssumeRole</c> (and specify the role with the appropriate
-    /// permissions) to get temporary security credentials for that user. With those temporary security credentials, you construct a sign-in URL
-    /// that users can use to access the console. For more information, see <a
-    /// href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSUseCases.html" >Scenarios for Granting Temporary Access</a> in <i>AWS Security Token
-    /// Service</i> . </para> <para> The temporary security credentials are valid for the duration that you specified when calling <c>AssumeRole</c>
-    /// , which can be from 900 seconds (15 minutes) to 3600 seconds (1 hour). The default is 1 hour. </para> <para>Optionally, you can pass an AWS
-    /// IAM access policy to this operation. The temporary security credentials that are returned by the operation have the permissions that are
-    /// associated with the access policy of the role that is being assumed, except for any permissions explicitly denied by the policy you pass.
-    /// This gives you a way to further restrict the permissions for the resulting temporary security credentials. These policies and any applicable
-    /// resource-based policies are evaluated when calls to AWS are made using the temporary security credentials. </para> <para> To assume a role,
-    /// your AWS account must be trusted by the role. The trust relationship is defined in the role's trust policy when the IAM role is created. You
-    /// must also have a policy that allows you to call <c>sts:AssumeRole</c> . </para> <para> <b>Using MFA with AssumeRole</b> </para> <para> You
-    /// can optionally include multi-factor authentication (MFA) information when you call <c>AssumeRole</c> . This is useful for cross-account
-    /// scenarios in which you want to make sure that the user who is assuming the role has been authenticated using an AWS MFA device. In that
-    /// scenario, the trust policy of the role being assumed includes a condition that tests for MFA authentication; if the caller does not include
-    /// valid MFA information, the request to assume the role is denied. The condition in a a trust policy that tests for MFA authentication might
-    /// look like the following example.</para> <para> <c>"Condition": {"Null": {"aws:MultiFactorAuthAge": false}}</c> </para> <para>For more
-    /// information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/MFAProtectedAPI.html" >Configuring MFA-Protected API Access</a> in
-    /// the <i>Using AWS IAM</i> guide. </para> <para>To use MFA with <c>AssumeRole</c> , you pass values for the <c>SerialNumber</c> and
-    /// <c>TokenCode</c> parameters. The <c>SerialNumber</c> value identifies the user's hardware or virtual MFA device. The <c>TokenCode</c> is the
-    /// temporary one-time password (TOTP) that the MFA devices produces. </para>
+    /// Returns a set of temporary security credentials (consisting of an access key ID, a
+    /// secret      access key, and a security token) that you can use to access AWS resources
+    /// that you might not      normally have access to. Typically, you use <code>AssumeRole</code>
+    /// for cross-account access      or federation. 
+    /// 
+    ///     
+    /// <para>
+    /// <b>Important:</b> You cannot call <code>AssumeRole</code> by using AWS account credentials;
+    ///      access will be denied. You must use IAM user credentials or temporary security
+    /// credentials      to call <code>AssumeRole</code>. 
+    /// </para>
+    ///     
+    /// <para>
+    /// For cross-account access, imagine that you own multiple accounts and need to access
+    /// resources      in each account. You could create long-term credentials in each account
+    /// to access those      resources. However, managing all those credentials and remembering
+    /// which one can access which      account can be time consuming. Instead, you can create
+    /// one set of long-term credentials in one      account and then use temporary security
+    /// credentials to access all the other accounts by      assuming roles in those accounts.
+    /// For more information about roles, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Roles</a>
+    /// in        <i>Using IAM</i>. 
+    /// </para>
+    ///     
+    /// <para>
+    /// For federation, you can, for example, grant single sign-on access to the AWS Management
+    ///      Console. If you already have an identity and authentication system in your corporate
+    /// network,      you don't have to recreate user identities in AWS in order to grant
+    /// those user identities      access to AWS. Instead, after a user has been authenticated,
+    /// you call <code>AssumeRole</code>      (and specify the role with the appropriate permissions)
+    /// to get temporary security credentials      for that user. With those temporary security
+    /// credentials, you construct a sign-in URL that      users can use to access the console.
+    /// For more information, see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSUseCases.html">Scenarios
+    /// for        Granting Temporary Access</a> in <i>Using Temporary Security Credentials</i>.
+    /// 
+    /// </para>
+    ///     
+    /// <para>
+    /// The temporary security credentials are valid for the duration that you specified when
+    /// calling        <code>AssumeRole</code>, which can be from 900 seconds (15 minutes)
+    /// to 3600 seconds (1      hour). The default is 1 hour. 
+    /// </para>
+    ///     
+    /// <para>
+    /// Optionally, you can pass an IAM access policy to this operation. If you choose not
+    /// to pass      a policy, the temporary security credentials that are returned by the
+    /// operation have the      permissions that are defined in the access policy of the role
+    /// that is being assumed. If you      pass a policy to this operation, the temporary
+    /// security credentials that are returned by the      operation have the permissions
+    /// that are allowed by both the access policy of the role that is      being assumed,
+    /// <i><b>and</b></i> the policy that you pass. This gives you a way to further      restrict
+    /// the permissions for the resulting temporary security credentials. You cannot use the
+    ///      passed policy to grant permissions that are in excess of those allowed by the
+    /// access policy of      the role that is being assumed. For more information, see <a
+    /// href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
+    /// for        AssumeRole</a> in <i>Using Temporary Security Credentials</i>.
+    /// </para>
+    ///     
+    /// <para>
+    /// To assume a role, your AWS account must be trusted by the role. The trust relationship
+    /// is      defined in the role's trust policy when the role is created. You must also
+    /// have a policy that      allows you to call <code>sts:AssumeRole</code>. 
+    /// </para>
+    ///     
+    /// <para>
+    ///       <b>Using MFA with AssumeRole</b>    
+    /// </para>
+    ///     
+    /// <para>
+    /// You can optionally include multi-factor authentication (MFA) information when you
+    /// call        <code>AssumeRole</code>. This is useful for cross-account scenarios in
+    /// which you want to      make sure that the user who is assuming the role has been authenticated
+    /// using an AWS MFA      device. In that scenario, the trust policy of the role being
+    /// assumed includes a condition that      tests for MFA authentication; if the caller
+    /// does not include valid MFA information, the      request to assume the role is denied.
+    /// The condition in a trust policy that tests for MFA      authentication might look
+    /// like the following example.
+    /// </para>
+    ///     
+    /// <para>
+    ///       <code>"Condition": {"Null": {"aws:MultiFactorAuthAge": false}}</code>    
+    /// </para>
+    ///     
+    /// <para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/MFAProtectedAPI.html">Configuring
+    ///        MFA-Protected API Access</a> in the <i>Using IAM</i> guide. 
+    /// </para>
+    ///     
+    /// <para>
+    /// To use MFA with <code>AssumeRole</code>, you pass values for the <code>SerialNumber</code>
+    ///      and <code>TokenCode</code> parameters. The <code>SerialNumber</code> value identifies
+    /// the      user's hardware or virtual MFA device. The <code>TokenCode</code> is the
+    /// time-based one-time      password (TOTP) that the MFA devices produces. 
+    /// </para>
+    ///     <member name="RoleArn" target="arnType"></member>    <member name="RoleSessionName"
+    /// target="userNameType"></member>    <member name="Policy" target="sessionPolicyDocumentType"></member>
+    ///    <member name="DurationSeconds" target="roleDurationSecondsType"></member>    <member
+    /// name="ExternalId" target="externalIdType"></member>
     /// </summary>
-    /// <seealso cref="Amazon.SecurityToken.AmazonSecurityTokenService.AssumeRole"/>
-    public class AssumeRoleRequest : AmazonWebServiceRequest
+    public partial class AssumeRoleRequest : AmazonWebServiceRequest
     {
-        private string roleArn;
-        private string roleSessionName;
-        private string policy;
-        private int? durationSeconds;
-        private string externalId;
-        private string serialNumber;
-        private string tokenCode;
+        private int? _durationSeconds;
+        private string _externalId;
+        private string _policy;
+        private string _roleArn;
+        private string _roleSessionName;
+        private string _serialNumber;
+        private string _tokenCode;
+
 
         /// <summary>
-        /// The Amazon Resource Name (ARN) of the role that the caller is assuming.
-        ///  
+        /// Gets and sets the property DurationSeconds. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>20 - 2048</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string RoleArn
-        {
-            get { return this.roleArn; }
-            set { this.roleArn = value; }
-        }
-
-        /// <summary>
-        /// Sets the RoleArn property
-        /// </summary>
-        /// <param name="roleArn">The value to set for the RoleArn property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public AssumeRoleRequest WithRoleArn(string roleArn)
-        {
-            this.roleArn = roleArn;
-            return this;
-        }
-            
-
-        // Check to see if RoleArn property is set
-        internal bool IsSetRoleArn()
-        {
-            return this.roleArn != null;
-        }
-
-        /// <summary>
-        /// An identifier for the assumed role session. The session name is included as part of the <c>AssumedRoleUser</c>.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>2 - 32</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=,.@-]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string RoleSessionName
-        {
-            get { return this.roleSessionName; }
-            set { this.roleSessionName = value; }
-        }
-
-        /// <summary>
-        /// Sets the RoleSessionName property
-        /// </summary>
-        /// <param name="roleSessionName">The value to set for the RoleSessionName property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public AssumeRoleRequest WithRoleSessionName(string roleSessionName)
-        {
-            this.roleSessionName = roleSessionName;
-            return this;
-        }
-            
-
-        // Check to see if RoleSessionName property is set
-        internal bool IsSetRoleSessionName()
-        {
-            return this.roleSessionName != null;
-        }
-
-        /// <summary>
-        /// An AWS IAM policy in JSON format. The temporary security credentials that are returned by the operation have the permissions that are
-        /// associated with the access policy of the role being assumed, except for any permissions explicitly denied by the policy you pass. This gives
-        /// you a way to further restrict the permissions for the resulting temporary security credentials. These policies and any applicable
-        /// resource-based policies are evaluated when calls to AWS are made using the temporary security credentials.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 2048</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0009\u000A\u000D\u0020-\u00FF]+</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string Policy
-        {
-            get { return this.policy; }
-            set { this.policy = value; }
-        }
-
-        /// <summary>
-        /// Sets the Policy property
-        /// </summary>
-        /// <param name="policy">The value to set for the Policy property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public AssumeRoleRequest WithPolicy(string policy)
-        {
-            this.policy = policy;
-            return this;
-        }
-            
-
-        // Check to see if Policy property is set
-        internal bool IsSetPolicy()
-        {
-            return this.policy != null;
-        }
-
-        /// <summary>
-        /// The duration, in seconds, of the role session. The value can range from 900 seconds (15 minutes) to 3600 seconds (1 hour). By default, the
-        /// value is set to 3600 seconds.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>900 - 3600</description>
-        ///     </item>
-        /// </list>
+        /// The duration, in seconds, of the role session. The value can range from 900 seconds
+        /// (15      minutes) to 3600 seconds (1 hour). By default, the value is set to 3600 seconds.
+        /// 
         /// </para>
         /// </summary>
         public int DurationSeconds
         {
-            get { return this.durationSeconds ?? default(int); }
-            set { this.durationSeconds = value; }
+            get { return this._durationSeconds.GetValueOrDefault(); }
+            set { this._durationSeconds = value; }
         }
+
 
         /// <summary>
         /// Sets the DurationSeconds property
@@ -222,44 +157,36 @@ namespace Amazon.SecurityToken.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssumeRoleRequest WithDurationSeconds(int durationSeconds)
         {
-            this.durationSeconds = durationSeconds;
+            this._durationSeconds = durationSeconds;
             return this;
         }
-            
 
         // Check to see if DurationSeconds property is set
         internal bool IsSetDurationSeconds()
         {
-            return this.durationSeconds.HasValue;
+            return this._durationSeconds.HasValue; 
         }
 
+
         /// <summary>
-        /// A unique identifier that is used by third parties to assume a role in their customers' accounts. For each role that the third party can
-        /// assume, they should instruct their customers to create a role with the external ID that the third party generated. Each time the third party
-        /// assumes the role, they must pass the customer's external ID. The external ID is useful in order to help third parties bind a role to the
-        /// customer who created it. For more information about the external ID, see <a
-        /// href="http://docs.aws.amazon.com/STS/latest/UsingSTS/sts-delegating-externalid.html" target="_blank">About the External ID</a> in <i>Using
-        /// Temporary Security Credentials</i>.
-        ///  
+        /// Gets and sets the property ExternalId. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>2 - 96</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=,.@:-]*</description>
-        ///     </item>
-        /// </list>
+        /// A unique identifier that is used by third parties to assume a role in their customers'
+        ///      accounts. For each role that the third party can assume, they should instruct
+        /// their customers      to create a role with the external ID that the third party generated.
+        /// Each time the third      party assumes the role, they must pass the customer's external
+        /// ID. The external ID is useful      in order to help third parties bind a role to the
+        /// customer who created it. For more      information about the external ID, see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/sts-delegating-externalid.html"
+        /// target="_blank">About the External ID</a> in <i>Using Temporary Security Credentials</i>.
+        /// 
         /// </para>
         /// </summary>
         public string ExternalId
         {
-            get { return this.externalId; }
-            set { this.externalId = value; }
+            get { return this._externalId; }
+            set { this._externalId = value; }
         }
+
 
         /// <summary>
         /// Sets the ExternalId property
@@ -269,42 +196,142 @@ namespace Amazon.SecurityToken.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssumeRoleRequest WithExternalId(string externalId)
         {
-            this.externalId = externalId;
+            this._externalId = externalId;
             return this;
         }
-            
 
         // Check to see if ExternalId property is set
         internal bool IsSetExternalId()
         {
-            return this.externalId != null;
+            return this._externalId != null;
         }
 
+
         /// <summary>
-        /// The identification number of the MFA device that is associated with the user who is making the <c>AssumeRole</c> call. Specify this value if
-        /// the trust policy of the role being assumed includes a condition that requires MFA authentication. The value is either the serial number for
-        /// a hardware device (such as <c>GAHT12345678</c>) or an Amazon Resource Name (ARN) for a virtual device (such as
-        /// <c>arn:aws:iam::123456789012:mfa/user</c>).
-        ///  
+        /// Gets and sets the property Policy. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>9 - 256</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=/:,.@-]*</description>
-        ///     </item>
-        /// </list>
+        /// An IAM policy in JSON format.
+        /// </para>
+        ///     
+        /// <para>
+        /// The policy parameter is optional. If you pass a policy, the temporary security credentials
+        ///      that are returned by the operation have the permissions that are allowed by both
+        /// the access      policy of the role that is being assumed, <i><b>and</b></i> the policy
+        /// that you pass. This      gives you a way to further restrict the permissions for the
+        /// resulting temporary security      credentials. You cannot use the passed policy to
+        /// grant permissions that are in excess of those      allowed by the access policy of
+        /// the role that is being assumed. For more information, see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
+        /// for        AssumeRole</a> in <i>Using Temporary Security Credentials</i>. 
+        /// </para>
+        /// </summary>
+        public string Policy
+        {
+            get { return this._policy; }
+            set { this._policy = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the Policy property
+        /// </summary>
+        /// <param name="policy">The value to set for the Policy property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public AssumeRoleRequest WithPolicy(string policy)
+        {
+            this._policy = policy;
+            return this;
+        }
+
+        // Check to see if Policy property is set
+        internal bool IsSetPolicy()
+        {
+            return this._policy != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the role that the caller is assuming.
+        /// </para>
+        /// </summary>
+        public string RoleArn
+        {
+            get { return this._roleArn; }
+            set { this._roleArn = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the RoleArn property
+        /// </summary>
+        /// <param name="roleArn">The value to set for the RoleArn property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public AssumeRoleRequest WithRoleArn(string roleArn)
+        {
+            this._roleArn = roleArn;
+            return this;
+        }
+
+        // Check to see if RoleArn property is set
+        internal bool IsSetRoleArn()
+        {
+            return this._roleArn != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property RoleSessionName. 
+        /// <para>
+        /// An identifier for the assumed role session. The session name is included as part of
+        /// the        <code>AssumedRoleUser</code>. 
+        /// </para>
+        /// </summary>
+        public string RoleSessionName
+        {
+            get { return this._roleSessionName; }
+            set { this._roleSessionName = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the RoleSessionName property
+        /// </summary>
+        /// <param name="roleSessionName">The value to set for the RoleSessionName property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public AssumeRoleRequest WithRoleSessionName(string roleSessionName)
+        {
+            this._roleSessionName = roleSessionName;
+            return this;
+        }
+
+        // Check to see if RoleSessionName property is set
+        internal bool IsSetRoleSessionName()
+        {
+            return this._roleSessionName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SerialNumber. 
+        /// <para>
+        /// The identification number of the MFA device that is associated with the user who is
+        /// making      the <code>AssumeRole</code> call. Specify this value if the trust policy
+        /// of the role being      assumed includes a condition that requires MFA authentication.
+        /// The value is either the serial      number for a hardware device (such as <code>GAHT12345678</code>)
+        /// or an Amazon Resource Name      (ARN) for a virtual device (such as <code>arn:aws:iam::123456789012:mfa/user</code>).
+        /// 
         /// </para>
         /// </summary>
         public string SerialNumber
         {
-            get { return this.serialNumber; }
-            set { this.serialNumber = value; }
+            get { return this._serialNumber; }
+            set { this._serialNumber = value; }
         }
+
 
         /// <summary>
         /// Sets the SerialNumber property
@@ -314,41 +341,33 @@ namespace Amazon.SecurityToken.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssumeRoleRequest WithSerialNumber(string serialNumber)
         {
-            this.serialNumber = serialNumber;
+            this._serialNumber = serialNumber;
             return this;
         }
-            
 
         // Check to see if SerialNumber property is set
         internal bool IsSetSerialNumber()
         {
-            return this.serialNumber != null;
+            return this._serialNumber != null;
         }
 
+
         /// <summary>
-        /// The value provided by the MFA device, if the trust policy of the role being assumed requires MFA (that is, if the policy includes a
-        /// condition that tests for MFA). If the role being assumed requires MFA and if the <c>TokenCode</c> value is missing or expired, the
-        /// <c>AssumeRole</c> call returns an "access denied" errror.
-        ///  
+        /// Gets and sets the property TokenCode. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>6 - 6</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\d]*</description>
-        ///     </item>
-        /// </list>
+        /// The value provided by the MFA device, if the trust policy of the role being assumed
+        /// requires      MFA (that is, if the policy includes a condition that tests for MFA).
+        /// If the role being      assumed requires MFA and if the <code>TokenCode</code> value
+        /// is missing or expired, the        <code>AssumeRole</code> call returns an "access
+        /// denied" error. 
         /// </para>
         /// </summary>
         public string TokenCode
         {
-            get { return this.tokenCode; }
-            set { this.tokenCode = value; }
+            get { return this._tokenCode; }
+            set { this._tokenCode = value; }
         }
+
 
         /// <summary>
         /// Sets the TokenCode property
@@ -358,16 +377,15 @@ namespace Amazon.SecurityToken.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssumeRoleRequest WithTokenCode(string tokenCode)
         {
-            this.tokenCode = tokenCode;
+            this._tokenCode = tokenCode;
             return this;
         }
-            
 
         // Check to see if TokenCode property is set
         internal bool IsSetTokenCode()
         {
-            return this.tokenCode != null;
+            return this._tokenCode != null;
         }
+
     }
 }
-    

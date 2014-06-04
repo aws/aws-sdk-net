@@ -45,6 +45,7 @@ namespace Amazon.EC2.Model
         private List<string> groupIdField;
         private List<ProductCode> productCodesField;
         private bool? ebsOptimizedField;
+        private string sriovNetSupportField;
 
         /// <summary>
         /// The ID of the instance.
@@ -536,6 +537,34 @@ namespace Amazon.EC2.Model
         public bool IsSetEbsOptimized()
         {
             return this.ebsOptimizedField.HasValue;
+        }
+
+        /// <summary>
+        /// Enhanced networking for the instance. A value of simple means that enhanced networking is enabled
+        /// </summary>
+        [XmlElementAttribute(ElementName = "SriovNetSupport")]
+        public string SriovNetSupport
+        {
+            get { return this.sriovNetSupportField; }
+            set { this.sriovNetSupportField = value; }
+        }
+
+        /// <summary>
+        /// Sets whether enhanced networking is enabled for the instance.
+        /// </summary>
+        /// <param name="sriovNetSupport">A value of 'simple' means that enhanced networking is enabled.</param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public InstanceAttribute WithSriovNetSupport(string sriovNetSupport)
+        {
+            this.sriovNetSupportField = sriovNetSupport;
+            return this;
+        }
+
+        // Check to see if SriovNetSupport property is set
+        internal bool IsSetSriovNetSupport()
+        {
+            return this.sriovNetSupportField != null;
         }
     }
 }

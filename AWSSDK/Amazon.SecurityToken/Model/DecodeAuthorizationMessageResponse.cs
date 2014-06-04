@@ -12,40 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// Returns information about the  DecodeAuthorizationMessageResult response and response metadata.
+    /// Returns information about the DecodeAuthorizationMessageResult response and response metadata.
     /// </summary>
     public class DecodeAuthorizationMessageResponse : AmazonWebServiceResponse
     {
-        private DecodeAuthorizationMessageResult decodeAuthorizationMessageResult;
+        private DecodeAuthorizationMessageResult _decodeAuthorizationMessageResult;
 
         /// <summary>
         /// Gets and sets the DecodeAuthorizationMessageResult property.
-        /// A document that contains additional information about the authorization status of a request from an encoded message that is returned in
-        /// response to an AWS request.
+        /// Represents the output of a DecodeAuthorizationMessage operation.
         /// </summary>
         public DecodeAuthorizationMessageResult DecodeAuthorizationMessageResult
         {
             get
             {
-                if(this.decodeAuthorizationMessageResult == null)
+                if(this._decodeAuthorizationMessageResult == null)
                 {
-                    this.decodeAuthorizationMessageResult = new DecodeAuthorizationMessageResult();
+                    this._decodeAuthorizationMessageResult = new DecodeAuthorizationMessageResult();
                 }
-
-                return this.decodeAuthorizationMessageResult;
+                return this._decodeAuthorizationMessageResult;
             }
-            set { this.decodeAuthorizationMessageResult = value; }
+            set { this._decodeAuthorizationMessageResult = value; }
         }
     }
 }
-    

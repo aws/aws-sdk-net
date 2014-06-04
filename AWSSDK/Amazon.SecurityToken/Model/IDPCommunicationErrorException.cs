@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.SecurityToken.Model
 {
     ///<summary>
-    /// AmazonSecurityTokenService exception
+    /// SecurityTokenService exception
     /// </summary>
     public class IDPCommunicationErrorException : AmazonSecurityTokenServiceException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.SecurityToken.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal IDPCommunicationErrorException(string message) 
+        public IDPCommunicationErrorException(string message) 
             : base(message) {}
           
-        internal IDPCommunicationErrorException(string message, Exception innerException) 
+        public IDPCommunicationErrorException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal IDPCommunicationErrorException(Exception innerException) 
+        public IDPCommunicationErrorException(Exception innerException) 
             : base(innerException) {}
             
-        internal IDPCommunicationErrorException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public IDPCommunicationErrorException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal IDPCommunicationErrorException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public IDPCommunicationErrorException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

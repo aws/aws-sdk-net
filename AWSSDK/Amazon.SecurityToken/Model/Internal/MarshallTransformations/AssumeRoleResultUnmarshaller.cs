@@ -12,75 +12,79 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SecurityToken.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   AssumeRoleResult Unmarshaller
-     /// </summary>
-    internal class AssumeRoleResultUnmarshaller : IUnmarshaller<AssumeRoleResult, XmlUnmarshallerContext>, IUnmarshaller<AssumeRoleResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for AssumeRole Object
+    /// </summary>  
+    public class AssumeRoleResultUnmarshaller : IUnmarshaller<AssumeRoleResult, XmlUnmarshallerContext>
     {
         public AssumeRoleResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            AssumeRoleResult assumeRoleResult = new AssumeRoleResult();
+            AssumeRoleResult result = new AssumeRoleResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("Credentials", targetDepth))
-                    {
-                        assumeRoleResult.Credentials = CredentialsUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
+
                     if (context.TestExpression("AssumedRoleUser", targetDepth))
                     {
-                        assumeRoleResult.AssumedRoleUser = AssumedRoleUserUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("PackedPolicySize", targetDepth))
-                    {
-                        assumeRoleResult.PackedPolicySize = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = AssumedRoleUserUnmarshaller.GetInstance();
+                        result.AssumedRoleUser = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
+                    if (context.TestExpression("Credentials", targetDepth))
+                    {
+                        var unmarshaller = CredentialsUnmarshaller.GetInstance();
+                        result.Credentials = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PackedPolicySize", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.GetInstance();
+                        result.PackedPolicySize = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return assumeRoleResult;
+                    return result;
                 }
             }
-                        
 
-
-            return assumeRoleResult;
+            return result;
         }
 
-        public AssumeRoleResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static AssumeRoleResultUnmarshaller instance;
-
-        public static AssumeRoleResultUnmarshaller GetInstance() 
+        public static AssumeRoleResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new AssumeRoleResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new AssumeRoleResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

@@ -12,21 +12,29 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SecurityToken.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   FederatedUser Unmarshaller
-     /// </summary>
-    internal class FederatedUserUnmarshaller : IUnmarshaller<FederatedUser, XmlUnmarshallerContext>, IUnmarshaller<FederatedUser, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for FederatedUser Object
+    /// </summary>  
+    public class FederatedUserUnmarshaller : IUnmarshaller<FederatedUser, XmlUnmarshallerContext>, IUnmarshaller<FederatedUser, JsonUnmarshallerContext>
     {
-        public FederatedUser Unmarshall(XmlUnmarshallerContext context) 
+        public FederatedUser Unmarshall(XmlUnmarshallerContext context)
         {
-            FederatedUser federatedUser = new FederatedUser();
+            FederatedUser unmarshalledObject = new FederatedUser();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,45 +44,44 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("FederatedUserId", targetDepth))
-                    {
-                        federatedUser.FederatedUserId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
                     if (context.TestExpression("Arn", targetDepth))
                     {
-                        federatedUser.Arn = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("FederatedUserId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.FederatedUserId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return federatedUser;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return federatedUser;
+            return unmarshalledObject;
         }
 
-        public FederatedUser Unmarshall(JsonUnmarshallerContext context) 
+        public FederatedUser Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static FederatedUserUnmarshaller instance;
-
-        public static FederatedUserUnmarshaller GetInstance() 
+        public static FederatedUserUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new FederatedUserUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new FederatedUserUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.SecurityToken.Model
 {
     ///<summary>
-    /// AmazonSecurityTokenService exception
+    /// SecurityTokenService exception
     /// </summary>
     public class ExpiredTokenException : AmazonSecurityTokenServiceException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.SecurityToken.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal ExpiredTokenException(string message) 
+        public ExpiredTokenException(string message) 
             : base(message) {}
           
-        internal ExpiredTokenException(string message, Exception innerException) 
+        public ExpiredTokenException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal ExpiredTokenException(Exception innerException) 
+        public ExpiredTokenException(Exception innerException) 
             : base(innerException) {}
             
-        internal ExpiredTokenException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ExpiredTokenException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal ExpiredTokenException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ExpiredTokenException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }
