@@ -17,80 +17,85 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// <para> Contains the result of a successful call to the AssumeRole action, including temporary AWS credentials that can be used to make AWS
-    /// requests. </para>
+    /// Contains the result of a successful call to the <a>AssumeRole</a> action, including
+    ///      temporary AWS credentials that can be used to make AWS requests.
     /// </summary>
     public partial class AssumeRoleResult : AmazonWebServiceResponse
     {
-        
-        private Credentials credentials;
-        private AssumedRoleUser assumedRoleUser;
-        private int? packedPolicySize;
+        private AssumedRoleUser _assumedRoleUser;
+        private Credentials _credentials;
+        private int? _packedPolicySize;
 
 
         /// <summary>
-        /// The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.
-        ///  
-        /// </summary>
-        public Credentials Credentials
-        {
-            get { return this.credentials; }
-            set { this.credentials = value; }
-        }
-
-        // Check to see if Credentials property is set
-        internal bool IsSetCredentials()
-        {
-            return this.credentials != null;
-        }
-
-        /// <summary>
-        /// The Amazon Resource Name (ARN) and the assumed role ID, which are identifiers that you can use to refer to the resulting temporary security
-        /// credentials. For example, you can reference these credentials as a principal in a resource-based policy by using the ARN or assumed role ID.
-        /// The ARN and ID include the <c>RoleSessionName</c> that you specified when you called <c>AssumeRole</c>.
-        ///  
+        /// Gets and sets the property AssumedRoleUser. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) and the assumed role ID, which are identifiers that
+        /// you can      use to refer to the resulting temporary security credentials. For example,
+        /// you can reference      these credentials as a principal in a resource-based policy
+        /// by using the ARN or assumed role      ID. The ARN and ID include the <code>RoleSessionName</code>
+        /// that you specified when you called        <code>AssumeRole</code>. 
+        /// </para>
         /// </summary>
         public AssumedRoleUser AssumedRoleUser
         {
-            get { return this.assumedRoleUser; }
-            set { this.assumedRoleUser = value; }
+            get { return this._assumedRoleUser; }
+            set { this._assumedRoleUser = value; }
         }
 
         // Check to see if AssumedRoleUser property is set
         internal bool IsSetAssumedRoleUser()
         {
-            return this.assumedRoleUser != null;
+            return this._assumedRoleUser != null;
         }
 
+
         /// <summary>
-        /// A percentage value that indicates the size of the policy in packed form. The service rejects any policy with a packed size greater than 100
-        /// percent, which means the policy exceeded the allowed space.
-        ///  
+        /// Gets and sets the property Credentials. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>0 - </description>
-        ///     </item>
-        /// </list>
+        /// The temporary security credentials, which include an access key ID, a secret access
+        /// key, and      a security (or session) token.
+        /// </para>
+        /// </summary>
+        public Credentials Credentials
+        {
+            get { return this._credentials; }
+            set { this._credentials = value; }
+        }
+
+        // Check to see if Credentials property is set
+        internal bool IsSetCredentials()
+        {
+            return this._credentials != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property PackedPolicySize. 
+        /// <para>
+        /// A percentage value that indicates the size of the policy in packed form. The service
+        /// rejects      any policy with a packed size greater than 100 percent, which means the
+        /// policy exceeded the      allowed space. 
         /// </para>
         /// </summary>
         public int PackedPolicySize
         {
-            get { return this.packedPolicySize ?? default(int); }
-            set { this.packedPolicySize = value; }
+            get { return this._packedPolicySize.GetValueOrDefault(); }
+            set { this._packedPolicySize = value; }
         }
 
         // Check to see if PackedPolicySize property is set
         internal bool IsSetPackedPolicySize()
         {
-            return this.packedPolicySize.HasValue;
+            return this._packedPolicySize.HasValue; 
         }
+
     }
 }

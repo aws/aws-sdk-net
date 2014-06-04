@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.SecurityToken.Model
 {
     ///<summary>
-    /// AmazonSecurityTokenService exception
+    /// SecurityTokenService exception
     /// </summary>
     public class PackedPolicyTooLargeException : AmazonSecurityTokenServiceException 
     {
@@ -45,6 +45,5 @@ namespace Amazon.SecurityToken.Model
         public PackedPolicyTooLargeException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
-        
     }
 }

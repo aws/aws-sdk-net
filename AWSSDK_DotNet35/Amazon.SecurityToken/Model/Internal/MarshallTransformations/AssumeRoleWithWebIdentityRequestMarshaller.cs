@@ -14,52 +14,56 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SecurityToken.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Assume Role With Web Identity Request Marshaller
+    /// AssumeRoleWithWebIdentity Request Marshaller
     /// </summary>       
     public class AssumeRoleWithWebIdentityRequestMarshaller : IMarshaller<IRequest, AssumeRoleWithWebIdentityRequest>
     {
-        public IRequest Marshall(AssumeRoleWithWebIdentityRequest assumeRoleWithWebIdentityRequest)
+        public IRequest Marshall(AssumeRoleWithWebIdentityRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(assumeRoleWithWebIdentityRequest, "AmazonSecurityTokenService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SecurityToken");
             request.Parameters.Add("Action", "AssumeRoleWithWebIdentity");
             request.Parameters.Add("Version", "2011-06-15");
-            if (assumeRoleWithWebIdentityRequest != null && assumeRoleWithWebIdentityRequest.IsSetRoleArn())
-            {
-                request.Parameters.Add("RoleArn", StringUtils.FromString(assumeRoleWithWebIdentityRequest.RoleArn));
-            }
-            if (assumeRoleWithWebIdentityRequest != null && assumeRoleWithWebIdentityRequest.IsSetRoleSessionName())
-            {
-                request.Parameters.Add("RoleSessionName", StringUtils.FromString(assumeRoleWithWebIdentityRequest.RoleSessionName));
-            }
-            if (assumeRoleWithWebIdentityRequest != null && assumeRoleWithWebIdentityRequest.IsSetWebIdentityToken())
-            {
-                request.Parameters.Add("WebIdentityToken", StringUtils.FromString(assumeRoleWithWebIdentityRequest.WebIdentityToken));
-            }
-            if (assumeRoleWithWebIdentityRequest != null && assumeRoleWithWebIdentityRequest.IsSetProviderId())
-            {
-                request.Parameters.Add("ProviderId", StringUtils.FromString(assumeRoleWithWebIdentityRequest.ProviderId));
-            }
-            if (assumeRoleWithWebIdentityRequest != null && assumeRoleWithWebIdentityRequest.IsSetPolicy())
-            {
-                request.Parameters.Add("Policy", StringUtils.FromString(assumeRoleWithWebIdentityRequest.Policy));
-            }
-            if (assumeRoleWithWebIdentityRequest != null && assumeRoleWithWebIdentityRequest.IsSetDurationSeconds())
-            {
-                request.Parameters.Add("DurationSeconds", StringUtils.FromInt(assumeRoleWithWebIdentityRequest.DurationSeconds));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetDurationSeconds())
+                {
+                    request.Parameters.Add("DurationSeconds", StringUtils.FromInt(publicRequest.DurationSeconds));
+                }
+                if(publicRequest.IsSetPolicy())
+                {
+                    request.Parameters.Add("Policy", StringUtils.FromString(publicRequest.Policy));
+                }
+                if(publicRequest.IsSetProviderId())
+                {
+                    request.Parameters.Add("ProviderId", StringUtils.FromString(publicRequest.ProviderId));
+                }
+                if(publicRequest.IsSetRoleArn())
+                {
+                    request.Parameters.Add("RoleArn", StringUtils.FromString(publicRequest.RoleArn));
+                }
+                if(publicRequest.IsSetRoleSessionName())
+                {
+                    request.Parameters.Add("RoleSessionName", StringUtils.FromString(publicRequest.RoleSessionName));
+                }
+                if(publicRequest.IsSetWebIdentityToken())
+                {
+                    request.Parameters.Add("WebIdentityToken", StringUtils.FromString(publicRequest.WebIdentityToken));
+                }
+            }
             return request;
         }
     }

@@ -12,24 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// Returns information about the  GetSessionToken response and response metadata.
+    /// Configuration for accessing Amazon GetSessionToken service
     /// </summary>
     public partial class GetSessionTokenResponse : GetSessionTokenResult
     {
         /// <summary>
         /// Gets and sets the GetSessionTokenResult property.
-        /// Contains the result of a successful call to the GetSessionToken action, including temporary AWS credentials that can be used to make AWS
-        /// requests.
+        /// Represents the output of a GetSessionToken operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the GetSessionTokenResult class are now available on the GetSessionTokenResponse class. You should use the properties on GetSessionTokenResponse instead of accessing them through GetSessionTokenResult.")]
         public GetSessionTokenResult GetSessionTokenResult
@@ -41,4 +36,3 @@ namespace Amazon.SecurityToken.Model
         }
     }
 }
-    

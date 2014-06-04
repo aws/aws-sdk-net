@@ -676,7 +676,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 var attributeName = key.Key;
                 var keyDescription = key.Value;
 
-                if (GetExistingProperty(config, attributeName, out property))
+                if (GetExistingProperty(config, attributeName, false, out property))
                 {
                     // validate against table
                     if (property.IsKey)
@@ -701,8 +701,11 @@ namespace Amazon.DynamoDBv2.DataModel
                     string attributeName = element.AttributeName;
                     bool isHashKey = element.KeyType == KeyType.HASH;
 
-                    GetExistingProperty(config, attributeName, out property);
-                    property.AddGsiIndex(isHashKey, attributeName, indexName);
+                    GetExistingProperty(config, attributeName, true, out property);
+                    if (property != null)
+                    {
+                        property.AddGsiIndex(isHashKey, attributeName, indexName);
+                    }
                 }
             }
 
@@ -719,8 +722,11 @@ namespace Amazon.DynamoDBv2.DataModel
                     // only add for range keys
                     if (!isHashKey)
                     {
-                        GetExistingProperty(config, attributeName, out property);
-                        property.AddLsiIndex(attributeName, indexName);
+                        GetExistingProperty(config, attributeName, true, out property);
+                        if (property != null)
+                        {
+                            property.AddLsiIndex(attributeName, indexName);
+                        }
                     }
                 }
             }
@@ -758,7 +764,7 @@ namespace Amazon.DynamoDBv2.DataModel
         // Finds an existing PropertyStorage for a property by its attributeName,
         // or creates a new PropertyStorage and adds it to the config.
         // Returns true if PropertyStorage existed, false if new one had to be created.
-        private static bool GetExistingProperty(ItemStorageConfig config, string attributeName, out PropertyStorage property)
+        private static bool GetExistingProperty(ItemStorageConfig config, string attributeName, bool optional, out PropertyStorage property)
         {
             bool exists = config.FindSinglePropertyByAttributeName(attributeName, out property);
             if (exists)
@@ -768,8 +774,12 @@ namespace Amazon.DynamoDBv2.DataModel
                 // property storage doesn't exist yet, create and populate
 
                 MemberInfo member;
-                Validate(config.TargetTypeMembers.TryGetValue(attributeName, out member),
+
+                Validate(config.TargetTypeMembers.TryGetValue(attributeName, out member) || optional,
                     "Unable to locate property for key attribute {0}", attributeName);
+
+                if (member == null)
+                    return false;
 
                 property = new PropertyStorage(member);
                 property.AttributeName = attributeName;

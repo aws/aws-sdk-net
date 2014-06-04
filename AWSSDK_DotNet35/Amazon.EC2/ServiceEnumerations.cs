@@ -1043,6 +1043,11 @@ namespace Amazon.EC2
         public static readonly InstanceAttributeName SourceDestCheck = new InstanceAttributeName("sourceDestCheck");
     
 
+       /// <summary>Constant SriovNetSupport for InstanceAttributeName
+       /// </summary>
+        public static readonly InstanceAttributeName SriovNetSupport = new InstanceAttributeName("sriovNetSupport");
+    
+
        /// <summary>Constant UserData for InstanceAttributeName
        /// </summary>
         public static readonly InstanceAttributeName UserData = new InstanceAttributeName("userData");

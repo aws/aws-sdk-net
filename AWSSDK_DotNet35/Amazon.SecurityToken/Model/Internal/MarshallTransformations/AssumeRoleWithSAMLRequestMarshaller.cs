@@ -14,48 +14,52 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SecurityToken.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Assume Role With S A M L Request Marshaller
+    /// AssumeRoleWithSAML Request Marshaller
     /// </summary>       
     public class AssumeRoleWithSAMLRequestMarshaller : IMarshaller<IRequest, AssumeRoleWithSAMLRequest>
     {
-        public IRequest Marshall(AssumeRoleWithSAMLRequest assumeRoleWithSAMLRequest)
+        public IRequest Marshall(AssumeRoleWithSAMLRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(assumeRoleWithSAMLRequest, "AmazonSecurityTokenService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SecurityToken");
             request.Parameters.Add("Action", "AssumeRoleWithSAML");
             request.Parameters.Add("Version", "2011-06-15");
-            if (assumeRoleWithSAMLRequest != null && assumeRoleWithSAMLRequest.IsSetRoleArn())
-            {
-                request.Parameters.Add("RoleArn", StringUtils.FromString(assumeRoleWithSAMLRequest.RoleArn));
-            }
-            if (assumeRoleWithSAMLRequest != null && assumeRoleWithSAMLRequest.IsSetPrincipalArn())
-            {
-                request.Parameters.Add("PrincipalArn", StringUtils.FromString(assumeRoleWithSAMLRequest.PrincipalArn));
-            }
-            if (assumeRoleWithSAMLRequest != null && assumeRoleWithSAMLRequest.IsSetSAMLAssertion())
-            {
-                request.Parameters.Add("SAMLAssertion", StringUtils.FromString(assumeRoleWithSAMLRequest.SAMLAssertion));
-            }
-            if (assumeRoleWithSAMLRequest != null && assumeRoleWithSAMLRequest.IsSetPolicy())
-            {
-                request.Parameters.Add("Policy", StringUtils.FromString(assumeRoleWithSAMLRequest.Policy));
-            }
-            if (assumeRoleWithSAMLRequest != null && assumeRoleWithSAMLRequest.IsSetDurationSeconds())
-            {
-                request.Parameters.Add("DurationSeconds", StringUtils.FromInt(assumeRoleWithSAMLRequest.DurationSeconds));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetDurationSeconds())
+                {
+                    request.Parameters.Add("DurationSeconds", StringUtils.FromInt(publicRequest.DurationSeconds));
+                }
+                if(publicRequest.IsSetPolicy())
+                {
+                    request.Parameters.Add("Policy", StringUtils.FromString(publicRequest.Policy));
+                }
+                if(publicRequest.IsSetPrincipalArn())
+                {
+                    request.Parameters.Add("PrincipalArn", StringUtils.FromString(publicRequest.PrincipalArn));
+                }
+                if(publicRequest.IsSetRoleArn())
+                {
+                    request.Parameters.Add("RoleArn", StringUtils.FromString(publicRequest.RoleArn));
+                }
+                if(publicRequest.IsSetSAMLAssertion())
+                {
+                    request.Parameters.Add("SAMLAssertion", StringUtils.FromString(publicRequest.SAMLAssertion));
+                }
+            }
             return request;
         }
     }

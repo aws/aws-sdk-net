@@ -12,24 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// Returns information about the  DecodeAuthorizationMessage response and response metadata.
+    /// Configuration for accessing Amazon DecodeAuthorizationMessage service
     /// </summary>
     public partial class DecodeAuthorizationMessageResponse : DecodeAuthorizationMessageResult
     {
         /// <summary>
         /// Gets and sets the DecodeAuthorizationMessageResult property.
-        /// A document that contains additional information about the authorization status of a request from an encoded message that is returned in
-        /// response to an AWS request.
+        /// Represents the output of a DecodeAuthorizationMessage operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DecodeAuthorizationMessageResult class are now available on the DecodeAuthorizationMessageResponse class. You should use the properties on DecodeAuthorizationMessageResponse instead of accessing them through DecodeAuthorizationMessageResult.")]
         public DecodeAuthorizationMessageResult DecodeAuthorizationMessageResult
@@ -41,4 +36,3 @@ namespace Amazon.SecurityToken.Model
         }
     }
 }
-    

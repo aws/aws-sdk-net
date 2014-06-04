@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SecurityToken.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Get Session Token Request Marshaller
+    /// GetSessionToken Request Marshaller
     /// </summary>       
     public class GetSessionTokenRequestMarshaller : IMarshaller<IRequest, GetSessionTokenRequest>
     {
-        public IRequest Marshall(GetSessionTokenRequest getSessionTokenRequest)
+        public IRequest Marshall(GetSessionTokenRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(getSessionTokenRequest, "AmazonSecurityTokenService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SecurityToken");
             request.Parameters.Add("Action", "GetSessionToken");
             request.Parameters.Add("Version", "2011-06-15");
-            if (getSessionTokenRequest != null && getSessionTokenRequest.IsSetDurationSeconds())
-            {
-                request.Parameters.Add("DurationSeconds", StringUtils.FromInt(getSessionTokenRequest.DurationSeconds));
-            }
-            if (getSessionTokenRequest != null && getSessionTokenRequest.IsSetSerialNumber())
-            {
-                request.Parameters.Add("SerialNumber", StringUtils.FromString(getSessionTokenRequest.SerialNumber));
-            }
-            if (getSessionTokenRequest != null && getSessionTokenRequest.IsSetTokenCode())
-            {
-                request.Parameters.Add("TokenCode", StringUtils.FromString(getSessionTokenRequest.TokenCode));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetDurationSeconds())
+                {
+                    request.Parameters.Add("DurationSeconds", StringUtils.FromInt(publicRequest.DurationSeconds));
+                }
+                if(publicRequest.IsSetSerialNumber())
+                {
+                    request.Parameters.Add("SerialNumber", StringUtils.FromString(publicRequest.SerialNumber));
+                }
+                if(publicRequest.IsSetTokenCode())
+                {
+                    request.Parameters.Add("TokenCode", StringUtils.FromString(publicRequest.TokenCode));
+                }
+            }
             return request;
         }
     }

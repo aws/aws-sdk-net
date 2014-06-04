@@ -12,69 +12,75 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SecurityToken.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   AssumedRoleUser Unmarshaller
-     /// </summary>
-    internal class AssumedRoleUserUnmarshaller : IUnmarshaller<AssumedRoleUser, XmlUnmarshallerContext>, IUnmarshaller<AssumedRoleUser, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for AssumedRoleUser Object
+    /// </summary>  
+    public class AssumedRoleUserUnmarshaller : IUnmarshaller<AssumedRoleUser, XmlUnmarshallerContext>, IUnmarshaller<AssumedRoleUser, JsonUnmarshallerContext>
     {
-        public AssumedRoleUser Unmarshall(XmlUnmarshallerContext context) 
+        public AssumedRoleUser Unmarshall(XmlUnmarshallerContext context)
         {
-            AssumedRoleUser assumedRoleUser = new AssumedRoleUser();
+            AssumedRoleUser unmarshalledObject = new AssumedRoleUser();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("AssumedRoleId", targetDepth))
-                    {
-                        assumedRoleUser.AssumedRoleId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("Arn", targetDepth))
                     {
-                        assumedRoleUser.Arn = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("AssumedRoleId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AssumedRoleId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return assumedRoleUser;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return assumedRoleUser;
+            return unmarshalledObject;
         }
 
-        public AssumedRoleUser Unmarshall(JsonUnmarshallerContext context) 
+        public AssumedRoleUser Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static AssumedRoleUserUnmarshaller instance;
 
-        public static AssumedRoleUserUnmarshaller GetInstance() 
+        private static AssumedRoleUserUnmarshaller _instance = new AssumedRoleUserUnmarshaller();        
+
+        public static AssumedRoleUserUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new AssumedRoleUserUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

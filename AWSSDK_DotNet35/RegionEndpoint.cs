@@ -40,7 +40,7 @@ namespace Amazon
     /// </summary>
     public class RegionEndpoint
     {
-        const string EMBEDDED_RESOURCE_OF_REGIONS_FILE = "AWSSDK.endpoints.xml";
+        const string REGIONS_FILE = "AWSSDK.endpoints.xml";
 
         const int MAX_DOWNLOAD_RETRIES = 3;
 
@@ -150,19 +150,25 @@ namespace Amazon
 
         static void LoadEndpointDefinitions()
         {
-            var configuredValue = AWSConfigs.EndpointDefinition;
-            if (string.IsNullOrEmpty(configuredValue))
+            var endpointsPath = AWSConfigs.EndpointDefinition;
+            if (string.IsNullOrEmpty(endpointsPath))
             {
+#if BCL
+                if (TryLoadEndpointDefinitionsFromAssemblyDir())
+                {
+                    return;
+                }
+#endif
                 LoadEndpointDefinitionsFromEmbeddedResource();
             }
-            else if (AWSConfigs.EndpointDefinition.StartsWith("http", StringComparison.OrdinalIgnoreCase))
+            else if (endpointsPath.StartsWith("http", StringComparison.OrdinalIgnoreCase))
             {
-                LoadEndpointDefinitionFromWeb(AWSConfigs.EndpointDefinition);
+                LoadEndpointDefinitionFromWeb(endpointsPath);
             }
 #if BCL
             else
             {
-                LoadEndpointDefinitionFromFilePath(AWSConfigs.EndpointDefinition);
+                LoadEndpointDefinitionFromFilePath(endpointsPath);
             }
 #endif
         }
@@ -170,13 +176,29 @@ namespace Amazon
         static void LoadEndpointDefinitionsFromEmbeddedResource()
         {
             Assembly assembly = Amazon.Util.TypeFactory.GetTypeInfo(typeof(RegionEndpoint)).Assembly;
-            using (StreamReader reader = new StreamReader(assembly.GetManifestResourceStream(EMBEDDED_RESOURCE_OF_REGIONS_FILE)))
+            using (StreamReader reader = new StreamReader(assembly.GetManifestResourceStream(REGIONS_FILE)))
             {
                 LoadEndpointDefinitions(reader);
             }
         }
 
 #if BCL
+        static bool TryLoadEndpointDefinitionsFromAssemblyDir()
+        {
+            var assembly = typeof(Amazon.RegionEndpoint).Assembly;
+            var codeBase = assembly.CodeBase;
+            var uri = new Uri(codeBase);
+            var dirPath = Path.GetDirectoryName(uri.LocalPath);
+            var dirInfo = new DirectoryInfo(dirPath);
+            var files = dirInfo.GetFiles(REGIONS_FILE, SearchOption.TopDirectoryOnly);
+            if (files.Length != 1)
+                return false;
+
+            var endpointsFile = files[0].FullName;
+            LoadEndpointDefinitionFromFilePath(endpointsFile);
+            return true;
+        }
+
         static void LoadEndpointDefinitionFromFilePath(string path)
         {
             if (!System.IO.File.Exists(path))

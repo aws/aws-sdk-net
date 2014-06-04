@@ -18,10 +18,9 @@ using Amazon.Runtime;
 namespace Amazon.SecurityToken
 {
     /// <summary>
-    /// Base class for AmazonSecurityTokenService operation requests.
+    /// Base class for SecurityTokenService operation requests.
     /// </summary>
     public partial class AmazonSecurityTokenServiceRequest : AmazonWebServiceRequest
     {
     }
 }
-    

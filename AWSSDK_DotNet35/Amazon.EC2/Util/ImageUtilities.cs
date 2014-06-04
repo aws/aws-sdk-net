@@ -36,6 +36,12 @@ namespace Amazon.EC2.Util
     /// </summary>
     public static class ImageUtilities
     {
+        public static readonly ImageDescriptor WINDOWS_2012R2_BASE = new ImageDescriptor("WINDOWS_2012R2_BASE");
+
+        public static readonly ImageDescriptor WINDOWS_2012R2_SQL_SERVER_EXPRESS_2014 = new ImageDescriptor("WINDOWS_2012R2_SQL_SERVER_EXPRESS_2014");
+        public static readonly ImageDescriptor WINDOWS_2012R2_SQL_SERVER_STANDARD_2014 = new ImageDescriptor("WINDOWS_2012R2_SQL_SERVER_STANDARD_2014");
+        public static readonly ImageDescriptor WINDOWS_2012R2_SQL_SERVER_WEB_2014 = new ImageDescriptor("WINDOWS_2012R2_SQL_SERVER_WEB_2014");
+
         public static readonly ImageDescriptor WINDOWS_2012_BASE = new ImageDescriptor("WINDOWS_2012_BASE");
 
         public static readonly ImageDescriptor WINDOWS_2012_SQL_SERVER_EXPRESS_2014 = new ImageDescriptor("WINDOWS_2012_SQL_SERVER_EXPRESS_2014");
@@ -116,6 +122,12 @@ namespace Amazon.EC2.Util
 
         private static readonly ImageDescriptor[] _WindowsDescriptors = new ImageDescriptor[]
         {
+            WINDOWS_2012R2_BASE,
+
+            WINDOWS_2012R2_SQL_SERVER_EXPRESS_2014,
+            WINDOWS_2012R2_SQL_SERVER_STANDARD_2014,
+            WINDOWS_2012R2_SQL_SERVER_WEB_2014,
+            
             WINDOWS_2012_BASE,
 
             WINDOWS_2012_SQL_SERVER_EXPRESS_2014,
