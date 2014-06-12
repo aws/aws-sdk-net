@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeClusterVersions response and response metadata.
+    /// Configuration for accessing Amazon DescribeClusterVersions service
     /// </summary>
     public partial class DescribeClusterVersionsResponse : DescribeClusterVersionsResult
     {
         /// <summary>
         /// Gets and sets the DescribeClusterVersionsResult property.
-        /// Contains the output from the DescribeClusterVersions action.
+        /// Represents the output of a DescribeClusterVersions operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeClusterVersionsResult class are now available on the DescribeClusterVersionsResponse class. You should use the properties on DescribeClusterVersionsResponse instead of accessing them through DescribeClusterVersionsResult.")]
         public DescribeClusterVersionsResult DescribeClusterVersionsResult
@@ -40,4 +36,3 @@ namespace Amazon.Redshift.Model
         }
     }
 }
-    

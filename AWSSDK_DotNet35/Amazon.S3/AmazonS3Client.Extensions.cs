@@ -147,13 +147,25 @@ namespace Amazon.S3
 
             request.HttpMethod = getPreSignedUrlRequest.Verb.ToString();
 
-            if (!string.IsNullOrEmpty(getPreSignedUrlRequest.ContentType))
-                request.Parameters[S3QueryParameter.ContentType.ToString()] = getPreSignedUrlRequest.ContentType;
+            var headers = getPreSignedUrlRequest.Headers;
+            foreach (var key in headers.Keys)
+                request.Headers[key] = headers[key];
+
+            AmazonS3Util.SetMetadataHeaders(request, getPreSignedUrlRequest.Metadata);
+
             if (!string.IsNullOrEmpty(token))
                 request.Headers[S3Constants.AmzSecurityTokenHeader] = token;
 
             if (getPreSignedUrlRequest.ServerSideEncryptionMethod != null && getPreSignedUrlRequest.ServerSideEncryptionMethod != ServerSideEncryptionMethod.None)
                 request.Headers.Add("x-amz-server-side-encryption", S3Transforms.ToStringValue(getPreSignedUrlRequest.ServerSideEncryptionMethod));
+
+            if (getPreSignedUrlRequest.IsSetServerSideEncryptionCustomerMethod())
+                request.Headers.Add("x-amz-server-side-encryption-customer-algorithm", getPreSignedUrlRequest.ServerSideEncryptionCustomerMethod);
+            if (getPreSignedUrlRequest.IsSetServerSideEncryptionCustomerProvidedKey())
+                request.Headers.Add("x-amz-server-side-encryption-customer-key", getPreSignedUrlRequest.ServerSideEncryptionCustomerProvidedKey);
+            if (getPreSignedUrlRequest.IsSetServerSideEncryptionCustomerMethod())
+                request.Headers.Add("x-amz-server-side-encryption-customer-key-MD5", getPreSignedUrlRequest.ServerSideEncryptionCustomerProvidedKeyMD5);
+
 
             var queryParameters = request.Parameters;
 
@@ -246,8 +258,10 @@ namespace Amazon.S3
 
                 // If ETag is present and is an MD5 hash (not a multi-part upload ETag), and no byte range is specified,
                 // wrap the response stream in an MD5Stream.
+                // If there is a customer encryption algorithm the etag is not and MD5.
                 if (!string.IsNullOrEmpty(getObjectResponse.ETag)
                     && !getObjectResponse.ETag.Contains("-")
+                    && string.IsNullOrEmpty(webResponseData.GetHeaderValue("x-amz-server-side-encryption-customer-algorithm"))
                     && getObjectRequest.ByteRange == null)
                 {
                     string etag = getObjectResponse.ETag.Trim(etagTrimChars);
@@ -274,7 +288,7 @@ namespace Amazon.S3
                 HashStream hashStream = putObjectRequest.InputStream as HashStream;
                 if (hashStream != null)
                 {
-                    if (putObjectResponse != null)
+                    if (putObjectResponse != null && string.IsNullOrEmpty(webResponseData.GetHeaderValue("x-amz-server-side-encryption-customer-algorithm")))
                     {
                         // Stream may not have been closed, so force calculation of hash
                         hashStream.CalculateHash();
@@ -308,7 +322,7 @@ namespace Amazon.S3
                 HashStream hashStream = uploadPartRequest.InputStream as HashStream;
                 if (hashStream != null)
                 {
-                    if (uploadPartResponse != null)
+                    if (uploadPartResponse != null && string.IsNullOrEmpty(webResponseData.GetHeaderValue("x-amz-server-side-encryption-customer-algorithm")))
                     {
                         // Stream may not have been closed, so force calculation of hash
                         hashStream.CalculateHash();

@@ -178,26 +178,6 @@ namespace Amazon.DynamoDBv2.DataModel
         // keys
         public string HashKeyPropertyName { get; set; }
         public string RangeKeyPropertyName { get; set; }
-
-        //public List<string> GetAttributesToGet(ItemStorageConfig storageConfig, Table table, List<string> attributesToGet)
-        //{
-        //    var gsi = table.GlobalSecondaryIndexes[this.IndexName];
-        //    var projection = gsi.Projection;
-        //    if (projection.ProjectionType == ProjectionType.INCLUDE)
-        //    {
-        //        attributesToGet = new List<string>();
-
-        //        // add keys
-        //        var gsiHashProperty = storageConfig.GetPropertyStorage(this.HashKeyPropertyName);
-        //        attributesToGet.Add(gsiHashProperty.AttributeName);
-        //        var gsiRangeProperty = storageConfig.GetPropertyStorage(this.RangeKeyPropertyName);
-        //        attributesToGet.Add(gsiRangeProperty.AttributeName);
-
-        //        // add non-keys
-        //        attributesToGet.AddRange(projection.NonKeyAttributes);
-        //    }
-        //    return attributesToGet;
-        //}
     }
 
     internal class ItemStorageConfig
@@ -676,13 +656,12 @@ namespace Amazon.DynamoDBv2.DataModel
                 var attributeName = key.Key;
                 var keyDescription = key.Value;
 
-                if (GetExistingProperty(config, attributeName, false, out property))
-                {
-                    // validate against table
-                    if (property.IsKey)
-                        ValidateProperty(property.IsHashKey == keyDescription.IsHash,
+                property = GetProperty(config, attributeName, false);
+
+                // validate against table
+                if (property.IsKey)
+                    ValidateProperty(property.IsHashKey == keyDescription.IsHash,
                         property.PropertyName, "Property key definition must match table key definition");
-                }
 
                 // populate property
                 if (keyDescription.IsHash)
@@ -701,7 +680,7 @@ namespace Amazon.DynamoDBv2.DataModel
                     string attributeName = element.AttributeName;
                     bool isHashKey = element.KeyType == KeyType.HASH;
 
-                    GetExistingProperty(config, attributeName, true, out property);
+                    property = GetProperty(config, attributeName, true);
                     if (property != null)
                     {
                         property.AddGsiIndex(isHashKey, attributeName, indexName);
@@ -722,7 +701,7 @@ namespace Amazon.DynamoDBv2.DataModel
                     // only add for range keys
                     if (!isHashKey)
                     {
-                        GetExistingProperty(config, attributeName, true, out property);
+                        property = GetProperty(config, attributeName, true);
                         if (property != null)
                         {
                             property.AddLsiIndex(attributeName, indexName);
@@ -763,30 +742,31 @@ namespace Amazon.DynamoDBv2.DataModel
 
         // Finds an existing PropertyStorage for a property by its attributeName,
         // or creates a new PropertyStorage and adds it to the config.
-        // Returns true if PropertyStorage existed, false if new one had to be created.
-        private static bool GetExistingProperty(ItemStorageConfig config, string attributeName, bool optional, out PropertyStorage property)
+        // If a property is non-optional and is not present on the type, throws an exception.
+        // If a property is optional and not present on the type, returns null.
+        private static PropertyStorage GetProperty(ItemStorageConfig config, string attributeName, bool optional)
         {
+            PropertyStorage property = null;
+
             bool exists = config.FindSinglePropertyByAttributeName(attributeName, out property);
-            if (exists)
-                return true;
-            else
+            if (!exists)
             {
                 // property storage doesn't exist yet, create and populate
-
                 MemberInfo member;
 
+                // for optional properties/attributes, a null MemberInfo is OK
                 Validate(config.TargetTypeMembers.TryGetValue(attributeName, out member) || optional,
                     "Unable to locate property for key attribute {0}", attributeName);
 
-                if (member == null)
-                    return false;
-
-                property = new PropertyStorage(member);
-                property.AttributeName = attributeName;
-                config.Properties.Add(property);
-
-                return false;
+                if (member != null)
+                {
+                    property = new PropertyStorage(member);
+                    property.AttributeName = attributeName;
+                    config.Properties.Add(property);
+                }
             }
+
+            return property;
         }
 
         private static void Validate(bool value, string messageFormat, params object[] args)

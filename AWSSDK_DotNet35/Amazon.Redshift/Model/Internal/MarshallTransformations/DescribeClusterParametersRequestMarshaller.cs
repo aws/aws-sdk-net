@@ -14,44 +14,48 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Cluster Parameters Request Marshaller
+    /// DescribeClusterParameters Request Marshaller
     /// </summary>       
     public class DescribeClusterParametersRequestMarshaller : IMarshaller<IRequest, DescribeClusterParametersRequest>
     {
-        public IRequest Marshall(DescribeClusterParametersRequest describeClusterParametersRequest)
+        public IRequest Marshall(DescribeClusterParametersRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describeClusterParametersRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "DescribeClusterParameters");
             request.Parameters.Add("Version", "2012-12-01");
-            if (describeClusterParametersRequest != null && describeClusterParametersRequest.IsSetParameterGroupName())
-            {
-                request.Parameters.Add("ParameterGroupName", StringUtils.FromString(describeClusterParametersRequest.ParameterGroupName));
-            }
-            if (describeClusterParametersRequest != null && describeClusterParametersRequest.IsSetSource())
-            {
-                request.Parameters.Add("Source", StringUtils.FromString(describeClusterParametersRequest.Source));
-            }
-            if (describeClusterParametersRequest != null && describeClusterParametersRequest.IsSetMaxRecords())
-            {
-                request.Parameters.Add("MaxRecords", StringUtils.FromInt(describeClusterParametersRequest.MaxRecords));
-            }
-            if (describeClusterParametersRequest != null && describeClusterParametersRequest.IsSetMarker())
-            {
-                request.Parameters.Add("Marker", StringUtils.FromString(describeClusterParametersRequest.Marker));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetMarker())
+                {
+                    request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
+                }
+                if(publicRequest.IsSetMaxRecords())
+                {
+                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
+                }
+                if(publicRequest.IsSetParameterGroupName())
+                {
+                    request.Parameters.Add("ParameterGroupName", StringUtils.FromString(publicRequest.ParameterGroupName));
+                }
+                if(publicRequest.IsSetSource())
+                {
+                    request.Parameters.Add("Source", StringUtils.FromString(publicRequest.Source));
+                }
+            }
             return request;
         }
     }

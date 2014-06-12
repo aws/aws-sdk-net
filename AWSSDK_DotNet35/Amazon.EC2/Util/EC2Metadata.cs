@@ -28,6 +28,7 @@ using System.Threading;
 using Amazon.Runtime;
 using ThirdParty.Json.LitJson;
 using System.Globalization;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.EC2.Util
 {
@@ -58,7 +59,7 @@ namespace Amazon.EC2.Util
         private static int
             DEFAULT_RETRIES = 3,
             MIN_PAUSE_MS = 250,
-            MAX_RETRIES = 10; 
+            MAX_RETRIES = 3; 
 
         private static Dictionary<string, string> _cache = new Dictionary<string, string>();
 
@@ -379,12 +380,8 @@ namespace Amazon.EC2.Util
             }
         }
 
-        private static int timeoutMilliseconds = (int)TimeSpan.FromSeconds(1).TotalMilliseconds;
         private static List<string> GetItems(string path, int tries, bool slurp)
         {
-            if (tries <= 0)
-                throw new InvalidOperationException("Unable to contact EC2 metadata service");
-
             var items = new List<string>();
 
             try
@@ -394,8 +391,9 @@ namespace Amazon.EC2.Util
                     request = WebRequest.Create(path) as HttpWebRequest;
                 else
                     request = WebRequest.Create(EC2_METADATA_ROOT + path) as HttpWebRequest;
-                request.Timeout = timeoutMilliseconds;
-               
+
+                request.Timeout = (int)TimeSpan.FromSeconds(5).TotalMilliseconds;
+
                 using (var response = request.GetResponse())
                 {
                     using (var stream = new StreamReader(response.GetResponseStream()))
@@ -421,6 +419,12 @@ namespace Amazon.EC2.Util
                 var response = wex.Response as HttpWebResponse;
                 if (response != null && response.StatusCode == HttpStatusCode.NotFound)
                     return null;
+
+                if (tries <= 1)
+                {
+                    Logger.GetLogger(typeof(Amazon.EC2.Util.EC2Metadata)).Error(wex, "Unable to contact EC2 Metadata service.");
+                    return null;
+                }
 
                 PauseExponentially(tries);
                 return GetItems(path, tries - 1, slurp);

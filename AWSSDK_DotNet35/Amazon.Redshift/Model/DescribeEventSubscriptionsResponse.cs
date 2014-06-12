@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeEventSubscriptions response and response metadata.
+    /// Configuration for accessing Amazon DescribeEventSubscriptions service
     /// </summary>
     public partial class DescribeEventSubscriptionsResponse : DescribeEventSubscriptionsResult
     {
         /// <summary>
         /// Gets and sets the DescribeEventSubscriptionsResult property.
-        /// 
+        /// Represents the output of a DescribeEventSubscriptions operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeEventSubscriptionsResult class are now available on the DescribeEventSubscriptionsResponse class. You should use the properties on DescribeEventSubscriptionsResponse instead of accessing them through DescribeEventSubscriptionsResult.")]
         public DescribeEventSubscriptionsResult DescribeEventSubscriptionsResult
@@ -40,4 +36,3 @@ namespace Amazon.Redshift.Model
         }
     }
 }
-    

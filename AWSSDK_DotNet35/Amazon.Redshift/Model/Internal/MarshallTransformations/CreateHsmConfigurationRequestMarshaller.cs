@@ -14,52 +14,56 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Hsm Configuration Request Marshaller
+    /// CreateHsmConfiguration Request Marshaller
     /// </summary>       
     public class CreateHsmConfigurationRequestMarshaller : IMarshaller<IRequest, CreateHsmConfigurationRequest>
     {
-        public IRequest Marshall(CreateHsmConfigurationRequest createHsmConfigurationRequest)
+        public IRequest Marshall(CreateHsmConfigurationRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(createHsmConfigurationRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "CreateHsmConfiguration");
             request.Parameters.Add("Version", "2012-12-01");
-            if (createHsmConfigurationRequest != null && createHsmConfigurationRequest.IsSetHsmConfigurationIdentifier())
-            {
-                request.Parameters.Add("HsmConfigurationIdentifier", StringUtils.FromString(createHsmConfigurationRequest.HsmConfigurationIdentifier));
-            }
-            if (createHsmConfigurationRequest != null && createHsmConfigurationRequest.IsSetDescription())
-            {
-                request.Parameters.Add("Description", StringUtils.FromString(createHsmConfigurationRequest.Description));
-            }
-            if (createHsmConfigurationRequest != null && createHsmConfigurationRequest.IsSetHsmIpAddress())
-            {
-                request.Parameters.Add("HsmIpAddress", StringUtils.FromString(createHsmConfigurationRequest.HsmIpAddress));
-            }
-            if (createHsmConfigurationRequest != null && createHsmConfigurationRequest.IsSetHsmPartitionName())
-            {
-                request.Parameters.Add("HsmPartitionName", StringUtils.FromString(createHsmConfigurationRequest.HsmPartitionName));
-            }
-            if (createHsmConfigurationRequest != null && createHsmConfigurationRequest.IsSetHsmPartitionPassword())
-            {
-                request.Parameters.Add("HsmPartitionPassword", StringUtils.FromString(createHsmConfigurationRequest.HsmPartitionPassword));
-            }
-            if (createHsmConfigurationRequest != null && createHsmConfigurationRequest.IsSetHsmServerPublicCertificate())
-            {
-                request.Parameters.Add("HsmServerPublicCertificate", StringUtils.FromString(createHsmConfigurationRequest.HsmServerPublicCertificate));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetDescription())
+                {
+                    request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
+                }
+                if(publicRequest.IsSetHsmConfigurationIdentifier())
+                {
+                    request.Parameters.Add("HsmConfigurationIdentifier", StringUtils.FromString(publicRequest.HsmConfigurationIdentifier));
+                }
+                if(publicRequest.IsSetHsmIpAddress())
+                {
+                    request.Parameters.Add("HsmIpAddress", StringUtils.FromString(publicRequest.HsmIpAddress));
+                }
+                if(publicRequest.IsSetHsmPartitionName())
+                {
+                    request.Parameters.Add("HsmPartitionName", StringUtils.FromString(publicRequest.HsmPartitionName));
+                }
+                if(publicRequest.IsSetHsmPartitionPassword())
+                {
+                    request.Parameters.Add("HsmPartitionPassword", StringUtils.FromString(publicRequest.HsmPartitionPassword));
+                }
+                if(publicRequest.IsSetHsmServerPublicCertificate())
+                {
+                    request.Parameters.Add("HsmServerPublicCertificate", StringUtils.FromString(publicRequest.HsmServerPublicCertificate));
+                }
+            }
             return request;
         }
     }

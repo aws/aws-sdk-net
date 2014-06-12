@@ -25,29 +25,30 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteHsmConfiguration operation.
-    /// <para>Deletes the specified Amazon Redshift HSM configuration.</para>
+    /// Deletes the specified Amazon Redshift HSM configuration.
     /// </summary>
     public partial class DeleteHsmConfigurationRequest : AmazonRedshiftRequest
     {
-        private string hsmConfigurationIdentifier;
+        private string _hsmConfigurationIdentifier;
 
 
         /// <summary>
+        /// Gets and sets the property HsmConfigurationIdentifier. 
+        /// <para>
         /// The identifier of the Amazon Redshift HSM configuration to be deleted.
-        ///  
+        /// </para>
         /// </summary>
         public string HsmConfigurationIdentifier
         {
-            get { return this.hsmConfigurationIdentifier; }
-            set { this.hsmConfigurationIdentifier = value; }
+            get { return this._hsmConfigurationIdentifier; }
+            set { this._hsmConfigurationIdentifier = value; }
         }
 
         // Check to see if HsmConfigurationIdentifier property is set
         internal bool IsSetHsmConfigurationIdentifier()
         {
-            return this.hsmConfigurationIdentifier != null;
+            return this._hsmConfigurationIdentifier != null;
         }
 
     }
 }
-    

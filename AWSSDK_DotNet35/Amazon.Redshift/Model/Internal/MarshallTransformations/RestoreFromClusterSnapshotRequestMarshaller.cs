@@ -14,76 +14,110 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Restore From Cluster Snapshot Request Marshaller
+    /// RestoreFromClusterSnapshot Request Marshaller
     /// </summary>       
     public class RestoreFromClusterSnapshotRequestMarshaller : IMarshaller<IRequest, RestoreFromClusterSnapshotRequest>
     {
-        public IRequest Marshall(RestoreFromClusterSnapshotRequest restoreFromClusterSnapshotRequest)
+        public IRequest Marshall(RestoreFromClusterSnapshotRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(restoreFromClusterSnapshotRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "RestoreFromClusterSnapshot");
             request.Parameters.Add("Version", "2012-12-01");
-            if (restoreFromClusterSnapshotRequest != null && restoreFromClusterSnapshotRequest.IsSetClusterIdentifier())
-            {
-                request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(restoreFromClusterSnapshotRequest.ClusterIdentifier));
-            }
-            if (restoreFromClusterSnapshotRequest != null && restoreFromClusterSnapshotRequest.IsSetSnapshotIdentifier())
-            {
-                request.Parameters.Add("SnapshotIdentifier", StringUtils.FromString(restoreFromClusterSnapshotRequest.SnapshotIdentifier));
-            }
-            if (restoreFromClusterSnapshotRequest != null && restoreFromClusterSnapshotRequest.IsSetSnapshotClusterIdentifier())
-            {
-                request.Parameters.Add("SnapshotClusterIdentifier", StringUtils.FromString(restoreFromClusterSnapshotRequest.SnapshotClusterIdentifier));
-            }
-            if (restoreFromClusterSnapshotRequest != null && restoreFromClusterSnapshotRequest.IsSetPort())
-            {
-                request.Parameters.Add("Port", StringUtils.FromInt(restoreFromClusterSnapshotRequest.Port));
-            }
-            if (restoreFromClusterSnapshotRequest != null && restoreFromClusterSnapshotRequest.IsSetAvailabilityZone())
-            {
-                request.Parameters.Add("AvailabilityZone", StringUtils.FromString(restoreFromClusterSnapshotRequest.AvailabilityZone));
-            }
-            if (restoreFromClusterSnapshotRequest != null && restoreFromClusterSnapshotRequest.IsSetAllowVersionUpgrade())
-            {
-                request.Parameters.Add("AllowVersionUpgrade", StringUtils.FromBool(restoreFromClusterSnapshotRequest.AllowVersionUpgrade));
-            }
-            if (restoreFromClusterSnapshotRequest != null && restoreFromClusterSnapshotRequest.IsSetClusterSubnetGroupName())
-            {
-                request.Parameters.Add("ClusterSubnetGroupName", StringUtils.FromString(restoreFromClusterSnapshotRequest.ClusterSubnetGroupName));
-            }
-            if (restoreFromClusterSnapshotRequest != null && restoreFromClusterSnapshotRequest.IsSetPubliclyAccessible())
-            {
-                request.Parameters.Add("PubliclyAccessible", StringUtils.FromBool(restoreFromClusterSnapshotRequest.PubliclyAccessible));
-            }
-            if (restoreFromClusterSnapshotRequest != null && restoreFromClusterSnapshotRequest.IsSetOwnerAccount())
-            {
-                request.Parameters.Add("OwnerAccount", StringUtils.FromString(restoreFromClusterSnapshotRequest.OwnerAccount));
-            }
-            if (restoreFromClusterSnapshotRequest != null && restoreFromClusterSnapshotRequest.IsSetHsmClientCertificateIdentifier())
-            {
-                request.Parameters.Add("HsmClientCertificateIdentifier", StringUtils.FromString(restoreFromClusterSnapshotRequest.HsmClientCertificateIdentifier));
-            }
-            if (restoreFromClusterSnapshotRequest != null && restoreFromClusterSnapshotRequest.IsSetHsmConfigurationIdentifier())
-            {
-                request.Parameters.Add("HsmConfigurationIdentifier", StringUtils.FromString(restoreFromClusterSnapshotRequest.HsmConfigurationIdentifier));
-            }
-            if (restoreFromClusterSnapshotRequest != null && restoreFromClusterSnapshotRequest.IsSetElasticIp())
-            {
-                request.Parameters.Add("ElasticIp", StringUtils.FromString(restoreFromClusterSnapshotRequest.ElasticIp));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAllowVersionUpgrade())
+                {
+                    request.Parameters.Add("AllowVersionUpgrade", StringUtils.FromBool(publicRequest.AllowVersionUpgrade));
+                }
+                if(publicRequest.IsSetAutomatedSnapshotRetentionPeriod())
+                {
+                    request.Parameters.Add("AutomatedSnapshotRetentionPeriod", StringUtils.FromInt(publicRequest.AutomatedSnapshotRetentionPeriod));
+                }
+                if(publicRequest.IsSetAvailabilityZone())
+                {
+                    request.Parameters.Add("AvailabilityZone", StringUtils.FromString(publicRequest.AvailabilityZone));
+                }
+                if(publicRequest.IsSetClusterIdentifier())
+                {
+                    request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(publicRequest.ClusterIdentifier));
+                }
+                if(publicRequest.IsSetClusterParameterGroupName())
+                {
+                    request.Parameters.Add("ClusterParameterGroupName", StringUtils.FromString(publicRequest.ClusterParameterGroupName));
+                }
+                if(publicRequest.IsSetClusterSecurityGroups())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.ClusterSecurityGroups)
+                    {
+                        request.Parameters.Add("ClusterSecurityGroups" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetClusterSubnetGroupName())
+                {
+                    request.Parameters.Add("ClusterSubnetGroupName", StringUtils.FromString(publicRequest.ClusterSubnetGroupName));
+                }
+                if(publicRequest.IsSetElasticIp())
+                {
+                    request.Parameters.Add("ElasticIp", StringUtils.FromString(publicRequest.ElasticIp));
+                }
+                if(publicRequest.IsSetHsmClientCertificateIdentifier())
+                {
+                    request.Parameters.Add("HsmClientCertificateIdentifier", StringUtils.FromString(publicRequest.HsmClientCertificateIdentifier));
+                }
+                if(publicRequest.IsSetHsmConfigurationIdentifier())
+                {
+                    request.Parameters.Add("HsmConfigurationIdentifier", StringUtils.FromString(publicRequest.HsmConfigurationIdentifier));
+                }
+                if(publicRequest.IsSetOwnerAccount())
+                {
+                    request.Parameters.Add("OwnerAccount", StringUtils.FromString(publicRequest.OwnerAccount));
+                }
+                if(publicRequest.IsSetPort())
+                {
+                    request.Parameters.Add("Port", StringUtils.FromInt(publicRequest.Port));
+                }
+                if(publicRequest.IsSetPreferredMaintenanceWindow())
+                {
+                    request.Parameters.Add("PreferredMaintenanceWindow", StringUtils.FromString(publicRequest.PreferredMaintenanceWindow));
+                }
+                if(publicRequest.IsSetPubliclyAccessible())
+                {
+                    request.Parameters.Add("PubliclyAccessible", StringUtils.FromBool(publicRequest.PubliclyAccessible));
+                }
+                if(publicRequest.IsSetSnapshotClusterIdentifier())
+                {
+                    request.Parameters.Add("SnapshotClusterIdentifier", StringUtils.FromString(publicRequest.SnapshotClusterIdentifier));
+                }
+                if(publicRequest.IsSetSnapshotIdentifier())
+                {
+                    request.Parameters.Add("SnapshotIdentifier", StringUtils.FromString(publicRequest.SnapshotIdentifier));
+                }
+                if(publicRequest.IsSetVpcSecurityGroupIds())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.VpcSecurityGroupIds)
+                    {
+                        request.Parameters.Add("VpcSecurityGroupIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+            }
             return request;
         }
     }

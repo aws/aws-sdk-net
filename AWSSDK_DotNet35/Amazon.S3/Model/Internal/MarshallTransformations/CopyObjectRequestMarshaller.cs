@@ -59,6 +59,26 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (copyObjectRequest.IsSetServerSideEncryptionMethod())
                 request.Headers.Add("x-amz-server-side-encryption", S3Transforms.ToStringValue(copyObjectRequest.ServerSideEncryptionMethod));
+            if (copyObjectRequest.IsSetServerSideEncryptionCustomerMethod())
+                request.Headers.Add("x-amz-server-side-encryption-customer-algorithm", copyObjectRequest.ServerSideEncryptionCustomerMethod);
+            if (copyObjectRequest.IsSetServerSideEncryptionCustomerProvidedKey())
+            {
+                request.Headers.Add("x-amz-server-side-encryption-customer-key", copyObjectRequest.ServerSideEncryptionCustomerProvidedKey);
+                if(copyObjectRequest.IsSetServerSideEncryptionCustomerProvidedKeyMD5())
+                    request.Headers.Add("x-amz-server-side-encryption-customer-key-MD5", copyObjectRequest.ServerSideEncryptionCustomerProvidedKeyMD5);
+                else
+                    request.Headers.Add("x-amz-server-side-encryption-customer-key-MD5", AmazonS3Util.ComputeEncodedMD5FromEncodedString(copyObjectRequest.ServerSideEncryptionCustomerProvidedKey));
+            }
+            if (copyObjectRequest.IsSetCopySourceServerSideEncryptionCustomerMethod())
+                request.Headers.Add("x-amz-copy-source-server-side-encryption-customer-algorithm", copyObjectRequest.CopySourceServerSideEncryptionCustomerMethod);
+            if (copyObjectRequest.IsSetCopySourceServerSideEncryptionCustomerProvidedKey())
+            {
+                request.Headers.Add("x-amz-copy-source-server-side-encryption-customer-key", copyObjectRequest.CopySourceServerSideEncryptionCustomerProvidedKey);
+                if (copyObjectRequest.IsSetCopySourceServerSideEncryptionCustomerProvidedKeyMD5())
+                    request.Headers.Add("x-amz-copy-source-server-side-encryption-customer-key-MD5", copyObjectRequest.CopySourceServerSideEncryptionCustomerProvidedKeyMD5);
+                else
+                    request.Headers.Add("x-amz-copy-source-server-side-encryption-customer-key-MD5", AmazonS3Util.ComputeEncodedMD5FromEncodedString(copyObjectRequest.CopySourceServerSideEncryptionCustomerProvidedKey));
+            }
 
             if (copyObjectRequest.IsSetStorageClass())
                 request.Headers.Add("x-amz-storage-class", S3Transforms.ToStringValue(copyObjectRequest.StorageClass));

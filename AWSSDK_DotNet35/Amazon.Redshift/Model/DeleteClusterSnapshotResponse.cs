@@ -12,24 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the DeleteClusterSnapshot response and response metadata.
+    /// Configuration for accessing Amazon DeleteClusterSnapshot service
     /// </summary>
     public partial class DeleteClusterSnapshotResponse : DeleteClusterSnapshotResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the DeleteClusterSnapshotResult property.
-        /// Contains the result of a successful invocation of the DeleteClusterSnapshot
-        /// action.
-        /// 
+        /// Represents the output of a DeleteClusterSnapshot operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DeleteClusterSnapshotResult class are now available on the DeleteClusterSnapshotResponse class. You should use the properties on DeleteClusterSnapshotResponse instead of accessing them through DeleteClusterSnapshotResult.")]
         public DeleteClusterSnapshotResult DeleteClusterSnapshotResult
         {
@@ -40,4 +36,3 @@ namespace Amazon.Redshift.Model
         }
     }
 }
-    

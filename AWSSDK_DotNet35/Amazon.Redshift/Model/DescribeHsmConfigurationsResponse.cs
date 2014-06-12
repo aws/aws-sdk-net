@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeHsmConfigurations response and response metadata.
+    /// Configuration for accessing Amazon DescribeHsmConfigurations service
     /// </summary>
     public partial class DescribeHsmConfigurationsResponse : DescribeHsmConfigurationsResult
     {
         /// <summary>
         /// Gets and sets the DescribeHsmConfigurationsResult property.
-        /// 
+        /// Represents the output of a DescribeHsmConfigurations operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeHsmConfigurationsResult class are now available on the DescribeHsmConfigurationsResponse class. You should use the properties on DescribeHsmConfigurationsResponse instead of accessing them through DescribeHsmConfigurationsResult.")]
         public DescribeHsmConfigurationsResult DescribeHsmConfigurationsResult
@@ -40,4 +36,3 @@ namespace Amazon.Redshift.Model
         }
     }
 }
-    

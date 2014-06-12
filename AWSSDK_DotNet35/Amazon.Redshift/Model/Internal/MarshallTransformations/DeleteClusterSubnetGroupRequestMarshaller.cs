@@ -14,32 +14,36 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Cluster Subnet Group Request Marshaller
+    /// DeleteClusterSubnetGroup Request Marshaller
     /// </summary>       
     public class DeleteClusterSubnetGroupRequestMarshaller : IMarshaller<IRequest, DeleteClusterSubnetGroupRequest>
     {
-        public IRequest Marshall(DeleteClusterSubnetGroupRequest deleteClusterSubnetGroupRequest)
+        public IRequest Marshall(DeleteClusterSubnetGroupRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(deleteClusterSubnetGroupRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "DeleteClusterSubnetGroup");
             request.Parameters.Add("Version", "2012-12-01");
-            if (deleteClusterSubnetGroupRequest != null && deleteClusterSubnetGroupRequest.IsSetClusterSubnetGroupName())
-            {
-                request.Parameters.Add("ClusterSubnetGroupName", StringUtils.FromString(deleteClusterSubnetGroupRequest.ClusterSubnetGroupName));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetClusterSubnetGroupName())
+                {
+                    request.Parameters.Add("ClusterSubnetGroupName", StringUtils.FromString(publicRequest.ClusterSubnetGroupName));
+                }
+            }
             return request;
         }
     }

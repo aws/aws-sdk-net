@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,64 +25,75 @@ namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
     /// Container for the parameters to the SetSubscriptionAttributes operation.
-    /// <para>The <c>SetSubscriptionAttributes</c> action allows a subscription owner to set an attribute of the topic to a new value.</para>
+    /// Allows a subscription owner to set an attribute of the topic to a new value.
     /// </summary>
     public partial class SetSubscriptionAttributesRequest : AmazonSimpleNotificationServiceRequest
     {
-        private string subscriptionArn;
-        private string attributeName;
-        private string attributeValue;
+        private string _attributeName;
+        private string _attributeValue;
+        private string _subscriptionArn;
 
 
         /// <summary>
-        /// The ARN of the subscription to modify.
-        ///  
-        /// </summary>
-        public string SubscriptionArn
-        {
-            get { return this.subscriptionArn; }
-            set { this.subscriptionArn = value; }
-        }
-
-        // Check to see if SubscriptionArn property is set
-        internal bool IsSetSubscriptionArn()
-        {
-            return this.subscriptionArn != null;
-        }
-
-        /// <summary>
-        /// The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable. Valid values: <c>DeliveryPolicy</c> |
-        /// <c>RawMessageDelivery</c>
-        ///  
+        /// Gets and sets the property AttributeName. 
+        /// <para>
+        /// The name of the attribute you want to set. Only a subset of the subscriptions attributes
+        /// are mutable.
+        /// </para>
+        ///     
+        /// <para>
+        /// Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
+        /// </para>
         /// </summary>
         public string AttributeName
         {
-            get { return this.attributeName; }
-            set { this.attributeName = value; }
+            get { return this._attributeName; }
+            set { this._attributeName = value; }
         }
 
         // Check to see if AttributeName property is set
         internal bool IsSetAttributeName()
         {
-            return this.attributeName != null;
+            return this._attributeName != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property AttributeValue. 
+        /// <para>
         /// The new value for the attribute in JSON format.
-        ///  
+        /// </para>
         /// </summary>
         public string AttributeValue
         {
-            get { return this.attributeValue; }
-            set { this.attributeValue = value; }
+            get { return this._attributeValue; }
+            set { this._attributeValue = value; }
         }
 
         // Check to see if AttributeValue property is set
         internal bool IsSetAttributeValue()
         {
-            return this.attributeValue != null;
+            return this._attributeValue != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SubscriptionArn. 
+        /// <para>
+        /// The ARN of the subscription to modify.
+        /// </para>
+        /// </summary>
+        public string SubscriptionArn
+        {
+            get { return this._subscriptionArn; }
+            set { this._subscriptionArn = value; }
+        }
+
+        // Check to see if SubscriptionArn property is set
+        internal bool IsSetSubscriptionArn()
+        {
+            return this._subscriptionArn != null;
         }
 
     }
 }
-    

@@ -14,56 +14,60 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Events Request Marshaller
+    /// DescribeEvents Request Marshaller
     /// </summary>       
     public class DescribeEventsRequestMarshaller : IMarshaller<IRequest, DescribeEventsRequest>
     {
-        public IRequest Marshall(DescribeEventsRequest describeEventsRequest)
+        public IRequest Marshall(DescribeEventsRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describeEventsRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "DescribeEvents");
             request.Parameters.Add("Version", "2012-12-01");
-            if (describeEventsRequest != null && describeEventsRequest.IsSetSourceIdentifier())
-            {
-                request.Parameters.Add("SourceIdentifier", StringUtils.FromString(describeEventsRequest.SourceIdentifier));
-            }
-            if (describeEventsRequest != null && describeEventsRequest.IsSetSourceType())
-            {
-                request.Parameters.Add("SourceType", StringUtils.FromString(describeEventsRequest.SourceType));
-            }
-            if (describeEventsRequest != null && describeEventsRequest.IsSetStartTime())
-            {
-                request.Parameters.Add("StartTime", StringUtils.FromDateTime(describeEventsRequest.StartTime));
-            }
-            if (describeEventsRequest != null && describeEventsRequest.IsSetEndTime())
-            {
-                request.Parameters.Add("EndTime", StringUtils.FromDateTime(describeEventsRequest.EndTime));
-            }
-            if (describeEventsRequest != null && describeEventsRequest.IsSetDuration())
-            {
-                request.Parameters.Add("Duration", StringUtils.FromInt(describeEventsRequest.Duration));
-            }
-            if (describeEventsRequest != null && describeEventsRequest.IsSetMaxRecords())
-            {
-                request.Parameters.Add("MaxRecords", StringUtils.FromInt(describeEventsRequest.MaxRecords));
-            }
-            if (describeEventsRequest != null && describeEventsRequest.IsSetMarker())
-            {
-                request.Parameters.Add("Marker", StringUtils.FromString(describeEventsRequest.Marker));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetDuration())
+                {
+                    request.Parameters.Add("Duration", StringUtils.FromInt(publicRequest.Duration));
+                }
+                if(publicRequest.IsSetEndTime())
+                {
+                    request.Parameters.Add("EndTime", StringUtils.FromDateTime(publicRequest.EndTime));
+                }
+                if(publicRequest.IsSetMarker())
+                {
+                    request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
+                }
+                if(publicRequest.IsSetMaxRecords())
+                {
+                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
+                }
+                if(publicRequest.IsSetSourceIdentifier())
+                {
+                    request.Parameters.Add("SourceIdentifier", StringUtils.FromString(publicRequest.SourceIdentifier));
+                }
+                if(publicRequest.IsSetSourceType())
+                {
+                    request.Parameters.Add("SourceType", StringUtils.FromString(publicRequest.SourceType));
+                }
+                if(publicRequest.IsSetStartTime())
+                {
+                    request.Parameters.Add("StartTime", StringUtils.FromDateTime(publicRequest.StartTime));
+                }
+            }
             return request;
         }
     }

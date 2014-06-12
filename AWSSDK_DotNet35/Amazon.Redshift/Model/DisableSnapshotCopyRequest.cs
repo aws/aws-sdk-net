@@ -25,30 +25,37 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableSnapshotCopy operation.
-    /// <para>Disables the automatic copying of snapshots from one region to another region for a specified cluster.</para>
+    /// Disables the automatic copying of snapshots from one region to another region for
+    /// a specified cluster.
     /// </summary>
     public partial class DisableSnapshotCopyRequest : AmazonRedshiftRequest
     {
-        private string clusterIdentifier;
+        private string _clusterIdentifier;
 
 
         /// <summary>
-        /// The unique identifier of the source cluster that you want to disable copying of snapshots to a destination region. Constraints: Must be the
-        /// valid name of an existing cluster that has cross-region snapshot copy enabled.
-        ///  
+        /// Gets and sets the property ClusterIdentifier. 
+        /// <para>
+        ///             The unique identifier of the source cluster that you want to disable copying
+        /// of snapshots to a destination region.        
+        /// </para>
+        ///         
+        /// <para>
+        ///             Constraints: Must be the valid name of an existing cluster that has cross-region
+        /// snapshot copy enabled.        
+        /// </para>
         /// </summary>
         public string ClusterIdentifier
         {
-            get { return this.clusterIdentifier; }
-            set { this.clusterIdentifier = value; }
+            get { return this._clusterIdentifier; }
+            set { this._clusterIdentifier = value; }
         }
 
         // Check to see if ClusterIdentifier property is set
         internal bool IsSetClusterIdentifier()
         {
-            return this.clusterIdentifier != null;
+            return this._clusterIdentifier != null;
         }
 
     }
 }
-    

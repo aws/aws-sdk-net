@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,24 +12,26 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+
 using System;
 
 using Amazon.Runtime;
 
+
 namespace Amazon.SimpleNotificationService
 {
-
     /// <summary>
-    /// Configuration for accessing Amazon Simple Notification Service service
+    /// Configuration for accessing Amazon SimpleNotificationService service
     /// </summary>
-    public class AmazonSimpleNotificationServiceConfig : ClientConfig
+    public partial class AmazonSimpleNotificationServiceConfig : ClientConfig
     {
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonSimpleNotificationServiceConfig()
         {
-            
+            this.AuthenticationServiceName = "sns";
         }
 
         /// <summary>
@@ -39,9 +41,7 @@ namespace Amazon.SimpleNotificationService
         {
             get
             {
-                
                 return "sns";
-                    
             }
         }
 
@@ -57,5 +57,3 @@ namespace Amazon.SimpleNotificationService
         }
     }
 }
-
-    

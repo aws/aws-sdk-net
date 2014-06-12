@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,70 +12,76 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SimpleNotificationService.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Endpoint Unmarshaller
-     /// </summary>
-    internal class EndpointUnmarshaller : IUnmarshaller<Endpoint, XmlUnmarshallerContext>, IUnmarshaller<Endpoint, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Endpoint Object
+    /// </summary>  
+    public class EndpointUnmarshaller : IUnmarshaller<Endpoint, XmlUnmarshallerContext>, IUnmarshaller<Endpoint, JsonUnmarshallerContext>
     {
-        public Endpoint Unmarshall(XmlUnmarshallerContext context) 
+        public Endpoint Unmarshall(XmlUnmarshallerContext context)
         {
-            Endpoint endpoint = new Endpoint();
+            Endpoint unmarshalledObject = new Endpoint();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("EndpointArn", targetDepth))
-                    {
-                        endpoint.EndpointArn = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("Attributes/entry", targetDepth))
                     {
-                        KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller> unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
-                        KeyValuePair<string, string> kvp = unmarshaller.Unmarshall(context);
-                        endpoint.Attributes.Add(kvp.Key, kvp.Value);
+                        var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Attributes.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("EndpointArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EndpointArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return endpoint;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return endpoint;
+            return unmarshalledObject;
         }
 
-        public Endpoint Unmarshall(JsonUnmarshallerContext context) 
+        public Endpoint Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static EndpointUnmarshaller instance;
 
-        public static EndpointUnmarshaller GetInstance() 
+        private static EndpointUnmarshaller _instance = new EndpointUnmarshaller();        
+
+        public static EndpointUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new EndpointUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

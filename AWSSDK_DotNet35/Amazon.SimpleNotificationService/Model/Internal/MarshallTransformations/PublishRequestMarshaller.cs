@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,15 +14,16 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SimpleNotificationService.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -30,32 +31,61 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
     /// </summary>       
     public class PublishRequestMarshaller : IMarshaller<IRequest, PublishRequest>
     {
-        public IRequest Marshall(PublishRequest publishRequest)
+        public IRequest Marshall(PublishRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(publishRequest, "AmazonSimpleNotificationService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleNotificationService");
             request.Parameters.Add("Action", "Publish");
             request.Parameters.Add("Version", "2010-03-31");
-            if (publishRequest != null && publishRequest.IsSetTopicArn())
-            {
-                request.Parameters.Add("TopicArn", StringUtils.FromString(publishRequest.TopicArn));
-            }
-            if (publishRequest != null && publishRequest.IsSetTargetArn())
-            {
-                request.Parameters.Add("TargetArn", StringUtils.FromString(publishRequest.TargetArn));
-            }
-            if (publishRequest != null && publishRequest.IsSetMessage())
-            {
-                request.Parameters.Add("Message", StringUtils.FromString(publishRequest.Message));
-            }
-            if (publishRequest != null && publishRequest.IsSetSubject())
-            {
-                request.Parameters.Add("Subject", StringUtils.FromString(publishRequest.Subject));
-            }
-            if (publishRequest != null && publishRequest.IsSetMessageStructure())
-            {
-                request.Parameters.Add("MessageStructure", StringUtils.FromString(publishRequest.MessageStructure));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetMessage())
+                {
+                    request.Parameters.Add("Message", StringUtils.FromString(publicRequest.Message));
+                }
+                if(publicRequest.IsSetMessageAttributes())
+                {
+                    int mapIndex = 1;
+                    foreach(var key in publicRequest.MessageAttributes.Keys)
+                    {
+                        MessageAttributeValue value;
+                        bool hasValue = publicRequest.MessageAttributes.TryGetValue(key, out value);
+                        request.Parameters.Add("MessageAttributes" + "." + "entry" + "." + mapIndex + "." + "Name", StringUtils.FromString(key));
+                        if (hasValue)
+                        {
+                            if(value.IsSetBinaryValue())
+                            {
+                                request.Parameters.Add("MessageAttributes" + "." + "entry" + "." + mapIndex + "." + "Value" + "." + "BinaryValue", StringUtils.FromMemoryStream(value.BinaryValue));
+                            }
+                            if(value.IsSetDataType())
+                            {
+                                request.Parameters.Add("MessageAttributes" + "." + "entry" + "." + mapIndex + "." + "Value" + "." + "DataType", StringUtils.FromString(value.DataType));
+                            }
+                            if(value.IsSetStringValue())
+                            {
+                                request.Parameters.Add("MessageAttributes" + "." + "entry" + "." + mapIndex + "." + "Value" + "." + "StringValue", StringUtils.FromString(value.StringValue));
+                            }
+                        }
+                        mapIndex++;
+                    }
+                }
+                if(publicRequest.IsSetMessageStructure())
+                {
+                    request.Parameters.Add("MessageStructure", StringUtils.FromString(publicRequest.MessageStructure));
+                }
+                if(publicRequest.IsSetSubject())
+                {
+                    request.Parameters.Add("Subject", StringUtils.FromString(publicRequest.Subject));
+                }
+                if(publicRequest.IsSetTargetArn())
+                {
+                    request.Parameters.Add("TargetArn", StringUtils.FromString(publicRequest.TargetArn));
+                }
+                if(publicRequest.IsSetTopicArn())
+                {
+                    request.Parameters.Add("TopicArn", StringUtils.FromString(publicRequest.TopicArn));
+                }
+            }
             return request;
         }
     }

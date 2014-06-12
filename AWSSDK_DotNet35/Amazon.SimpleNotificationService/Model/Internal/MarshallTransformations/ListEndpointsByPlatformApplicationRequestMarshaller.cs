@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,36 +14,40 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SimpleNotificationService.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// List Endpoints By Platform Application Request Marshaller
+    /// ListEndpointsByPlatformApplication Request Marshaller
     /// </summary>       
     public class ListEndpointsByPlatformApplicationRequestMarshaller : IMarshaller<IRequest, ListEndpointsByPlatformApplicationRequest>
     {
-        public IRequest Marshall(ListEndpointsByPlatformApplicationRequest listEndpointsByPlatformApplicationRequest)
+        public IRequest Marshall(ListEndpointsByPlatformApplicationRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(listEndpointsByPlatformApplicationRequest, "AmazonSimpleNotificationService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleNotificationService");
             request.Parameters.Add("Action", "ListEndpointsByPlatformApplication");
             request.Parameters.Add("Version", "2010-03-31");
-            if (listEndpointsByPlatformApplicationRequest != null && listEndpointsByPlatformApplicationRequest.IsSetPlatformApplicationArn())
-            {
-                request.Parameters.Add("PlatformApplicationArn", StringUtils.FromString(listEndpointsByPlatformApplicationRequest.PlatformApplicationArn));
-            }
-            if (listEndpointsByPlatformApplicationRequest != null && listEndpointsByPlatformApplicationRequest.IsSetNextToken())
-            {
-                request.Parameters.Add("NextToken", StringUtils.FromString(listEndpointsByPlatformApplicationRequest.NextToken));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetNextToken())
+                {
+                    request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+                }
+                if(publicRequest.IsSetPlatformApplicationArn())
+                {
+                    request.Parameters.Add("PlatformApplicationArn", StringUtils.FromString(publicRequest.PlatformApplicationArn));
+                }
+            }
             return request;
         }
     }

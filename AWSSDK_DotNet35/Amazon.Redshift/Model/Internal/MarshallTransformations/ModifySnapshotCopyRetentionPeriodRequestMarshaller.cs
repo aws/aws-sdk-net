@@ -14,36 +14,40 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Modify Snapshot Copy Retention Period Request Marshaller
+    /// ModifySnapshotCopyRetentionPeriod Request Marshaller
     /// </summary>       
     public class ModifySnapshotCopyRetentionPeriodRequestMarshaller : IMarshaller<IRequest, ModifySnapshotCopyRetentionPeriodRequest>
     {
-        public IRequest Marshall(ModifySnapshotCopyRetentionPeriodRequest modifySnapshotCopyRetentionPeriodRequest)
+        public IRequest Marshall(ModifySnapshotCopyRetentionPeriodRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(modifySnapshotCopyRetentionPeriodRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "ModifySnapshotCopyRetentionPeriod");
             request.Parameters.Add("Version", "2012-12-01");
-            if (modifySnapshotCopyRetentionPeriodRequest != null && modifySnapshotCopyRetentionPeriodRequest.IsSetClusterIdentifier())
-            {
-                request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(modifySnapshotCopyRetentionPeriodRequest.ClusterIdentifier));
-            }
-            if (modifySnapshotCopyRetentionPeriodRequest != null && modifySnapshotCopyRetentionPeriodRequest.IsSetRetentionPeriod())
-            {
-                request.Parameters.Add("RetentionPeriod", StringUtils.FromInt(modifySnapshotCopyRetentionPeriodRequest.RetentionPeriod));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetClusterIdentifier())
+                {
+                    request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(publicRequest.ClusterIdentifier));
+                }
+                if(publicRequest.IsSetRetentionPeriod())
+                {
+                    request.Parameters.Add("RetentionPeriod", StringUtils.FromInt(publicRequest.RetentionPeriod));
+                }
+            }
             return request;
         }
     }

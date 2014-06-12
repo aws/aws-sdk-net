@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the  EnableLogging response and response metadata.
+    /// Configuration for accessing Amazon EnableLogging service
     /// </summary>
     public partial class EnableLoggingResponse : EnableLoggingResult
     {
         /// <summary>
         /// Gets and sets the EnableLoggingResult property.
-        /// Describes the status of logging for a cluster.
+        /// Represents the output of a EnableLogging operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the EnableLoggingResult class are now available on the EnableLoggingResponse class. You should use the properties on EnableLoggingResponse instead of accessing them through EnableLoggingResult.")]
         public EnableLoggingResult EnableLoggingResult
@@ -40,4 +36,3 @@ namespace Amazon.Redshift.Model
         }
     }
 }
-    

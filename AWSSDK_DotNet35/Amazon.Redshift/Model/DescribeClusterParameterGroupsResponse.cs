@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeClusterParameterGroups response and response metadata.
+    /// Configuration for accessing Amazon DescribeClusterParameterGroups service
     /// </summary>
     public partial class DescribeClusterParameterGroupsResponse : DescribeClusterParameterGroupsResult
     {
         /// <summary>
         /// Gets and sets the DescribeClusterParameterGroupsResult property.
-        /// Contains the output from the DescribeClusterParameterGroups action.
+        /// Represents the output of a DescribeClusterParameterGroups operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeClusterParameterGroupsResult class are now available on the DescribeClusterParameterGroupsResponse class. You should use the properties on DescribeClusterParameterGroupsResponse instead of accessing them through DescribeClusterParameterGroupsResult.")]
         public DescribeClusterParameterGroupsResult DescribeClusterParameterGroupsResult
@@ -40,4 +36,3 @@ namespace Amazon.Redshift.Model
         }
     }
 }
-    

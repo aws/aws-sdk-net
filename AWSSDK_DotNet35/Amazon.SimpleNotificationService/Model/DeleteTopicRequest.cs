@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,48 +25,33 @@ namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteTopic operation.
-    /// <para>The <c>DeleteTopic</c> action deletes a topic and all its subscriptions. Deleting a topic might prevent some messages previously sent
-    /// to the topic from being delivered to subscribers. This action is idempotent, so deleting a topic that does not exist does not result in an
-    /// error.</para>
+    /// Deletes a topic and all its subscriptions. Deleting a topic might      prevent some
+    /// messages previously sent to the topic from being delivered to      subscribers. This
+    /// action is idempotent, so deleting a topic that does not      exist does not result
+    /// in an error.
     /// </summary>
     public partial class DeleteTopicRequest : AmazonSimpleNotificationServiceRequest
     {
-        private string topicArn;
+        private string _topicArn;
+
 
         /// <summary>
-        /// Default constructor for a new DeleteTopicRequest object.  Callers should use the
-        /// properties to initialize this object after creating it.
-        /// </summary>
-        public DeleteTopicRequest() {}
-    
-        /// <summary>
-        /// Constructs a new DeleteTopicRequest object.
-        /// Callers should use the properties initialize any additional object members.
-        /// </summary>
-        /// 
-        /// <param name="topicArn">The ARN of the topic you want to delete.</param>
-        public DeleteTopicRequest(string topicArn)
-        {
-            this.topicArn = topicArn;
-        }
-    
-
-        /// <summary>
+        /// Gets and sets the property TopicArn. 
+        /// <para>
         /// The ARN of the topic you want to delete.
-        ///  
+        /// </para>
         /// </summary>
         public string TopicArn
         {
-            get { return this.topicArn; }
-            set { this.topicArn = value; }
+            get { return this._topicArn; }
+            set { this._topicArn = value; }
         }
 
         // Check to see if TopicArn property is set
         internal bool IsSetTopicArn()
         {
-            return this.topicArn != null;
+            return this._topicArn != null;
         }
 
     }
 }
-    

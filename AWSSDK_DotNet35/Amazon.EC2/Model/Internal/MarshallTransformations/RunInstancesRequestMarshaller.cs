@@ -211,7 +211,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("NetworkInterface." + networkInterfacesListIndex + ".PrivateIpAddress", StringUtils.FromString(networkInterfacesListValue.PrivateIpAddress));
                     }
-                    if (networkInterfacesListValue != null)
+                    if (networkInterfacesListValue != null && networkInterfacesListValue.Groups != null)
                     {
                         List<string> groupsList = networkInterfacesListValue.Groups;
 

@@ -13,102 +13,104 @@
  * permissions and limitations under the License.
  */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for CreateHsmConfiguration operation
-    /// </summary>
-    internal class CreateHsmConfigurationResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for CreateHsmConfiguration operation
+    /// </summary>  
+    public class CreateHsmConfigurationResponseUnmarshaller : XmlResponseUnmarshaller
     {
-
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             CreateHsmConfigurationResponse response = new CreateHsmConfigurationResponse();
-            
-            while (context.Read())
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
-                
                 if (context.IsStartElement)
-                {
-                    
+                {                    
                     if(context.TestExpression("CreateHsmConfigurationResult", 2))
                     {
-                        UnmarshallResult(context,response);                    
+                        UnmarshallResult(context, response);                        
                         continue;
                     }
                     
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
                     }
                 }
-                
             }
-                
 
             return response;
         }
-        
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,CreateHsmConfigurationResponse response)
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, CreateHsmConfigurationResponse response)
         {
+            
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("HsmConfiguration", targetDepth))
+
+                    if ( context.TestExpression("HsmConfiguration", targetDepth))
                     {
-                        response.HsmConfiguration = HsmConfigurationUnmarshaller.GetInstance().Unmarshall(context);
+                        response.HsmConfiguration = HsmConfigurationUnmarshaller.Instance.Unmarshall(context);
                         continue;
                     }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return;
-                }
-            }
+                } 
+           }
+
+            return;
         }
-        
+
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
-            if (errorResponse.Code != null && errorResponse.Code.Equals("HsmConfigurationQuotaExceededFault"))
-            {
-                return new HsmConfigurationQuotaExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("HsmConfigurationAlreadyExistsFault"))
             {
                 return new HsmConfigurationAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("HsmConfigurationQuotaExceededFault"))
+            {
+                return new HsmConfigurationQuotaExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonRedshiftException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static CreateHsmConfigurationResponseUnmarshaller instance;
 
-        public static CreateHsmConfigurationResponseUnmarshaller GetInstance()
+        private static CreateHsmConfigurationResponseUnmarshaller _instance = new CreateHsmConfigurationResponseUnmarshaller();        
+
+        internal static CreateHsmConfigurationResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new CreateHsmConfigurationResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static CreateHsmConfigurationResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

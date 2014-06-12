@@ -14,75 +14,76 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Modify Cluster Parameter Group Request Marshaller
+    /// ModifyClusterParameterGroup Request Marshaller
     /// </summary>       
     public class ModifyClusterParameterGroupRequestMarshaller : IMarshaller<IRequest, ModifyClusterParameterGroupRequest>
     {
-        public IRequest Marshall(ModifyClusterParameterGroupRequest modifyClusterParameterGroupRequest)
+        public IRequest Marshall(ModifyClusterParameterGroupRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(modifyClusterParameterGroupRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "ModifyClusterParameterGroup");
             request.Parameters.Add("Version", "2012-12-01");
-            if (modifyClusterParameterGroupRequest != null && modifyClusterParameterGroupRequest.IsSetParameterGroupName())
-            {
-                request.Parameters.Add("ParameterGroupName", StringUtils.FromString(modifyClusterParameterGroupRequest.ParameterGroupName));
-            }
 
-            if (modifyClusterParameterGroupRequest != null)
+            if(publicRequest != null)
             {
-                List<Parameter> parametersList = modifyClusterParameterGroupRequest.Parameters;
-                int parametersListIndex = 1;
-                foreach (Parameter parametersListValue in parametersList)
+                if(publicRequest.IsSetParameterGroupName())
                 {
-                    if (parametersListValue != null && parametersListValue.IsSetParameterName())
+                    request.Parameters.Add("ParameterGroupName", StringUtils.FromString(publicRequest.ParameterGroupName));
+                }
+                if(publicRequest.IsSetParameters())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Parameters)
                     {
-                        request.Parameters.Add("Parameters.member." + parametersListIndex + ".ParameterName", StringUtils.FromString(parametersListValue.ParameterName));
+                        if(publicRequestlistValue.IsSetAllowedValues())
+                        {
+                            request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AllowedValues", StringUtils.FromString(publicRequestlistValue.AllowedValues));
+                        }
+                        if(publicRequestlistValue.IsSetDataType())
+                        {
+                            request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "DataType", StringUtils.FromString(publicRequestlistValue.DataType));
+                        }
+                        if(publicRequestlistValue.IsSetDescription())
+                        {
+                            request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValue.Description));
+                        }
+                        if(publicRequestlistValue.IsSetIsModifiable())
+                        {
+                            request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "IsModifiable", StringUtils.FromBool(publicRequestlistValue.IsModifiable));
+                        }
+                        if(publicRequestlistValue.IsSetMinimumEngineVersion())
+                        {
+                            request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MinimumEngineVersion", StringUtils.FromString(publicRequestlistValue.MinimumEngineVersion));
+                        }
+                        if(publicRequestlistValue.IsSetParameterName())
+                        {
+                            request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ParameterName", StringUtils.FromString(publicRequestlistValue.ParameterName));
+                        }
+                        if(publicRequestlistValue.IsSetParameterValue())
+                        {
+                            request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ParameterValue", StringUtils.FromString(publicRequestlistValue.ParameterValue));
+                        }
+                        if(publicRequestlistValue.IsSetSource())
+                        {
+                            request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Source", StringUtils.FromString(publicRequestlistValue.Source));
+                        }
+                        publicRequestlistValueIndex++;
                     }
-                    if (parametersListValue != null && parametersListValue.IsSetParameterValue())
-                    {
-                        request.Parameters.Add("Parameters.member." + parametersListIndex + ".ParameterValue", StringUtils.FromString(parametersListValue.ParameterValue));
-                    }
-                    if (parametersListValue != null && parametersListValue.IsSetDescription())
-                    {
-                        request.Parameters.Add("Parameters.member." + parametersListIndex + ".Description", StringUtils.FromString(parametersListValue.Description));
-                    }
-                    if (parametersListValue != null && parametersListValue.IsSetSource())
-                    {
-                        request.Parameters.Add("Parameters.member." + parametersListIndex + ".Source", StringUtils.FromString(parametersListValue.Source));
-                    }
-                    if (parametersListValue != null && parametersListValue.IsSetDataType())
-                    {
-                        request.Parameters.Add("Parameters.member." + parametersListIndex + ".DataType", StringUtils.FromString(parametersListValue.DataType));
-                    }
-                    if (parametersListValue != null && parametersListValue.IsSetAllowedValues())
-                    {
-                        request.Parameters.Add("Parameters.member." + parametersListIndex + ".AllowedValues", StringUtils.FromString(parametersListValue.AllowedValues));
-                    }
-                    if (parametersListValue != null && parametersListValue.IsSetIsModifiable())
-                    {
-                        request.Parameters.Add("Parameters.member." + parametersListIndex + ".IsModifiable", StringUtils.FromBool(parametersListValue.IsModifiable));
-                    }
-                    if (parametersListValue != null && parametersListValue.IsSetMinimumEngineVersion())
-                    {
-                        request.Parameters.Add("Parameters.member." + parametersListIndex + ".MinimumEngineVersion", StringUtils.FromString(parametersListValue.MinimumEngineVersion));
-                    }
-
-                    parametersListIndex++;
                 }
             }
-
             return request;
         }
     }

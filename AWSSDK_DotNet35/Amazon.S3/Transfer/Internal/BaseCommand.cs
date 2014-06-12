@@ -59,6 +59,10 @@ namespace Amazon.S3.Transfer.Internal
                 getRequest.UnmodifiedSinceDate = request.UnmodifiedSinceDate;
             }
 
+            getRequest.ServerSideEncryptionCustomerMethod = request.ServerSideEncryptionCustomerMethod;
+            getRequest.ServerSideEncryptionCustomerProvidedKey = request.ServerSideEncryptionCustomerProvidedKey;
+            getRequest.ServerSideEncryptionCustomerProvidedKeyMD5 = request.ServerSideEncryptionCustomerProvidedKeyMD5;
+
             return getRequest;
         }
 

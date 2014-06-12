@@ -12,24 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the  ModifyClusterParameterGroup response and response metadata.
+    /// Configuration for accessing Amazon ModifyClusterParameterGroup service
     /// </summary>
     public partial class ModifyClusterParameterGroupResponse : ModifyClusterParameterGroupResult
     {
         /// <summary>
         /// Gets and sets the ModifyClusterParameterGroupResult property.
-        /// Contains the output from the ModifyClusterParameterGroup and ResetClusterParameterGroup actions and indicate the parameter group involved
-        /// and the status of the operation on the parameter group.
+        /// Represents the output of a ModifyClusterParameterGroup operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ModifyClusterParameterGroupResult class are now available on the ModifyClusterParameterGroupResponse class. You should use the properties on ModifyClusterParameterGroupResponse instead of accessing them through ModifyClusterParameterGroupResult.")]
         public ModifyClusterParameterGroupResult ModifyClusterParameterGroupResult
@@ -41,4 +36,3 @@ namespace Amazon.Redshift.Model
         }
     }
 }
-    

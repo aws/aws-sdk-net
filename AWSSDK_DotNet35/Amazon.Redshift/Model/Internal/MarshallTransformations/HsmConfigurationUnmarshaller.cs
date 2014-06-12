@@ -12,84 +12,87 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   HsmConfiguration Unmarshaller
-     /// </summary>
-    internal class HsmConfigurationUnmarshaller : IUnmarshaller<HsmConfiguration, XmlUnmarshallerContext>, IUnmarshaller<HsmConfiguration, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for HsmConfiguration Object
+    /// </summary>  
+    public class HsmConfigurationUnmarshaller : IUnmarshaller<HsmConfiguration, XmlUnmarshallerContext>, IUnmarshaller<HsmConfiguration, JsonUnmarshallerContext>
     {
-        public HsmConfiguration Unmarshall(XmlUnmarshallerContext context) 
+        public HsmConfiguration Unmarshall(XmlUnmarshallerContext context)
         {
-            HsmConfiguration hsmConfiguration = new HsmConfiguration();
+            HsmConfiguration unmarshalledObject = new HsmConfiguration();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            if (context.IsStartOfDocument) 
-               targetDepth++;
-            
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("HsmConfigurationIdentifier", targetDepth))
-                    {
-                        hsmConfiguration.HsmConfigurationIdentifier = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("Description", targetDepth))
                     {
-                        hsmConfiguration.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("HsmConfigurationIdentifier", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.HsmConfigurationIdentifier = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("HsmIpAddress", targetDepth))
                     {
-                        hsmConfiguration.HsmIpAddress = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.HsmIpAddress = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("HsmPartitionName", targetDepth))
                     {
-                        hsmConfiguration.HsmPartitionName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.HsmPartitionName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return hsmConfiguration;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return hsmConfiguration;
+            return unmarshalledObject;
         }
 
-        public HsmConfiguration Unmarshall(JsonUnmarshallerContext context) 
+        public HsmConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static HsmConfigurationUnmarshaller instance;
 
-        public static HsmConfigurationUnmarshaller GetInstance() 
+        private static HsmConfigurationUnmarshaller _instance = new HsmConfigurationUnmarshaller();        
+
+        public static HsmConfigurationUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new HsmConfigurationUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

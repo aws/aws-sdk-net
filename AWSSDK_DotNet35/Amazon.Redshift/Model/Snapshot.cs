@@ -17,446 +17,537 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// <para>Describes a snapshot.</para>
+    /// Describes a snapshot.
     /// </summary>
-    public partial class Snapshot : AmazonWebServiceResponse
+    public partial class Snapshot
     {
-        
-        private string snapshotIdentifier;
-        private string clusterIdentifier;
-        private DateTime? snapshotCreateTime;
-        private string status;
-        private int? port;
-        private string availabilityZone;
-        private DateTime? clusterCreateTime;
-        private string masterUsername;
-        private string clusterVersion;
-        private string snapshotType;
-        private string nodeType;
-        private int? numberOfNodes;
-        private string dBName;
-        private string vpcId;
-        private bool? encrypted;
-        private bool? encryptedWithHSM;
-        private List<AccountWithRestoreAccess> accountsWithRestoreAccess = new List<AccountWithRestoreAccess>();
-        private string ownerAccount;
-        private double? totalBackupSizeInMegaBytes;
-        private double? actualIncrementalBackupSizeInMegaBytes;
-        private double? backupProgressInMegaBytes;
-        private double? currentBackupRateInMegaBytesPerSecond;
-        private long? estimatedSecondsToCompletion;
-        private long? elapsedTimeInSeconds;
-        private string sourceRegion;
+        private List<AccountWithRestoreAccess> _accountsWithRestoreAccess = new List<AccountWithRestoreAccess>();
+        private double? _actualIncrementalBackupSizeInMegaBytes;
+        private string _availabilityZone;
+        private double? _backupProgressInMegaBytes;
+        private DateTime? _clusterCreateTime;
+        private string _clusterIdentifier;
+        private string _clusterVersion;
+        private double? _currentBackupRateInMegaBytesPerSecond;
+        private string _dBName;
+        private long? _elapsedTimeInSeconds;
+        private bool? _encrypted;
+        private bool? _encryptedWithHSM;
+        private long? _estimatedSecondsToCompletion;
+        private string _masterUsername;
+        private string _nodeType;
+        private int? _numberOfNodes;
+        private string _ownerAccount;
+        private int? _port;
+        private DateTime? _snapshotCreateTime;
+        private string _snapshotIdentifier;
+        private string _snapshotType;
+        private string _sourceRegion;
+        private string _status;
+        private double? _totalBackupSizeInMegaBytes;
+        private string _vpcId;
 
 
         /// <summary>
-        /// The snapshot identifier that is provided in the request.
-        ///  
-        /// </summary>
-        public string SnapshotIdentifier
-        {
-            get { return this.snapshotIdentifier; }
-            set { this.snapshotIdentifier = value; }
-        }
-
-        // Check to see if SnapshotIdentifier property is set
-        internal bool IsSetSnapshotIdentifier()
-        {
-            return this.snapshotIdentifier != null;
-        }
-
-        /// <summary>
-        /// The identifier of the cluster for which the snapshot was taken.
-        ///  
-        /// </summary>
-        public string ClusterIdentifier
-        {
-            get { return this.clusterIdentifier; }
-            set { this.clusterIdentifier = value; }
-        }
-
-        // Check to see if ClusterIdentifier property is set
-        internal bool IsSetClusterIdentifier()
-        {
-            return this.clusterIdentifier != null;
-        }
-
-        /// <summary>
-        /// The time (UTC) when Amazon Redshift began the snapshot. A snapshot contains a copy of the cluster data as of this exact time.
-        ///  
-        /// </summary>
-        public DateTime SnapshotCreateTime
-        {
-            get { return this.snapshotCreateTime ?? default(DateTime); }
-            set { this.snapshotCreateTime = value; }
-        }
-
-        // Check to see if SnapshotCreateTime property is set
-        internal bool IsSetSnapshotCreateTime()
-        {
-            return this.snapshotCreateTime.HasValue;
-        }
-
-        /// <summary>
-        /// The snapshot status. The value of the status depends on the API operation used. <ul> <li><a>CreateClusterSnapshot</a> and
-        /// <a>CopyClusterSnapshot</a> returns status as "creating". </li> <li><a>DescribeClusterSnapshots</a> returns status as "creating",
-        /// "available", "final snapshot", or "failed".</li> <li><a>DeleteClusterSnapshot</a> returns status as "deleted".</li> </ul>
-        ///  
-        /// </summary>
-        public string Status
-        {
-            get { return this.status; }
-            set { this.status = value; }
-        }
-
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
-        {
-            return this.status != null;
-        }
-
-        /// <summary>
-        /// The port that the cluster is listening on.
-        ///  
-        /// </summary>
-        public int Port
-        {
-            get { return this.port ?? default(int); }
-            set { this.port = value; }
-        }
-
-        // Check to see if Port property is set
-        internal bool IsSetPort()
-        {
-            return this.port.HasValue;
-        }
-
-        /// <summary>
-        /// The Availability Zone in which the cluster was created.
-        ///  
-        /// </summary>
-        public string AvailabilityZone
-        {
-            get { return this.availabilityZone; }
-            set { this.availabilityZone = value; }
-        }
-
-        // Check to see if AvailabilityZone property is set
-        internal bool IsSetAvailabilityZone()
-        {
-            return this.availabilityZone != null;
-        }
-
-        /// <summary>
-        /// The time (UTC) when the cluster was originally created.
-        ///  
-        /// </summary>
-        public DateTime ClusterCreateTime
-        {
-            get { return this.clusterCreateTime ?? default(DateTime); }
-            set { this.clusterCreateTime = value; }
-        }
-
-        // Check to see if ClusterCreateTime property is set
-        internal bool IsSetClusterCreateTime()
-        {
-            return this.clusterCreateTime.HasValue;
-        }
-
-        /// <summary>
-        /// The master user name for the cluster.
-        ///  
-        /// </summary>
-        public string MasterUsername
-        {
-            get { return this.masterUsername; }
-            set { this.masterUsername = value; }
-        }
-
-        // Check to see if MasterUsername property is set
-        internal bool IsSetMasterUsername()
-        {
-            return this.masterUsername != null;
-        }
-
-        /// <summary>
-        /// The version ID of the Amazon Redshift engine that is running on the cluster.
-        ///  
-        /// </summary>
-        public string ClusterVersion
-        {
-            get { return this.clusterVersion; }
-            set { this.clusterVersion = value; }
-        }
-
-        // Check to see if ClusterVersion property is set
-        internal bool IsSetClusterVersion()
-        {
-            return this.clusterVersion != null;
-        }
-
-        /// <summary>
-        /// The snapshot type. Snapshots created using <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a> will be of type "manual".
-        ///  
-        /// </summary>
-        public string SnapshotType
-        {
-            get { return this.snapshotType; }
-            set { this.snapshotType = value; }
-        }
-
-        // Check to see if SnapshotType property is set
-        internal bool IsSetSnapshotType()
-        {
-            return this.snapshotType != null;
-        }
-
-        /// <summary>
-        /// The node type of the nodes in the cluster.
-        ///  
-        /// </summary>
-        public string NodeType
-        {
-            get { return this.nodeType; }
-            set { this.nodeType = value; }
-        }
-
-        // Check to see if NodeType property is set
-        internal bool IsSetNodeType()
-        {
-            return this.nodeType != null;
-        }
-
-        /// <summary>
-        /// The number of nodes in the cluster.
-        ///  
-        /// </summary>
-        public int NumberOfNodes
-        {
-            get { return this.numberOfNodes ?? default(int); }
-            set { this.numberOfNodes = value; }
-        }
-
-        // Check to see if NumberOfNodes property is set
-        internal bool IsSetNumberOfNodes()
-        {
-            return this.numberOfNodes.HasValue;
-        }
-
-        /// <summary>
-        /// The name of the database that was created when the cluster was created.
-        ///  
-        /// </summary>
-        public string DBName
-        {
-            get { return this.dBName; }
-            set { this.dBName = value; }
-        }
-
-        // Check to see if DBName property is set
-        internal bool IsSetDBName()
-        {
-            return this.dBName != null;
-        }
-
-        /// <summary>
-        /// The VPC identifier of the cluster if the snapshot is from a cluster in a VPC. Otherwise, this field is not in the output.
-        ///  
-        /// </summary>
-        public string VpcId
-        {
-            get { return this.vpcId; }
-            set { this.vpcId = value; }
-        }
-
-        // Check to see if VpcId property is set
-        internal bool IsSetVpcId()
-        {
-            return this.vpcId != null;
-        }
-
-        /// <summary>
-        /// If <c>true</c>, the data in the snapshot is encrypted at rest.
-        ///  
-        /// </summary>
-        public bool Encrypted
-        {
-            get { return this.encrypted ?? default(bool); }
-            set { this.encrypted = value; }
-        }
-
-        // Check to see if Encrypted property is set
-        internal bool IsSetEncrypted()
-        {
-            return this.encrypted.HasValue;
-        }
-
-        /// <summary>
-        /// A boolean that indicates whether the snapshot data is encrypted using the HSM keys of the source cluster. <c>true</c> indicates that the
-        /// data is encrypted using HSM keys.
-        ///  
-        /// </summary>
-        public bool EncryptedWithHSM
-        {
-            get { return this.encryptedWithHSM ?? default(bool); }
-            set { this.encryptedWithHSM = value; }
-        }
-
-        // Check to see if EncryptedWithHSM property is set
-        internal bool IsSetEncryptedWithHSM()
-        {
-            return this.encryptedWithHSM.HasValue;
-        }
-
-        /// <summary>
-        /// A list of the AWS customer accounts authorized to restore the snapshot. Returns <c>null</c> if no accounts are authorized. Visible only to
-        /// the snapshot owner.
-        ///  
+        /// Gets and sets the property AccountsWithRestoreAccess. 
+        /// <para>
+        ///             A list of the AWS customer accounts authorized to restore the snapshot.
+        /// Returns <code>null</code> if no accounts are authorized. Visible only to the snapshot
+        /// owner.        
+        /// </para>
         /// </summary>
         public List<AccountWithRestoreAccess> AccountsWithRestoreAccess
         {
-            get { return this.accountsWithRestoreAccess; }
-            set { this.accountsWithRestoreAccess = value; }
+            get { return this._accountsWithRestoreAccess; }
+            set { this._accountsWithRestoreAccess = value; }
         }
 
         // Check to see if AccountsWithRestoreAccess property is set
         internal bool IsSetAccountsWithRestoreAccess()
         {
-            return this.accountsWithRestoreAccess.Count > 0;
+            return this._accountsWithRestoreAccess != null && this._accountsWithRestoreAccess.Count > 0; 
         }
+
 
         /// <summary>
-        /// For manual snapshots, the AWS customer account used to create or copy the snapshot. For automatic snapshots, the owner of the cluster. The
-        /// owner can perform all snapshot actions, such as sharing a manual snapshot.
-        ///  
-        /// </summary>
-        public string OwnerAccount
-        {
-            get { return this.ownerAccount; }
-            set { this.ownerAccount = value; }
-        }
-
-        // Check to see if OwnerAccount property is set
-        internal bool IsSetOwnerAccount()
-        {
-            return this.ownerAccount != null;
-        }
-
-        /// <summary>
-        /// The size of the complete set of backup data that would be used to restore the cluster.
-        ///  
-        /// </summary>
-        public double TotalBackupSizeInMegaBytes
-        {
-            get { return this.totalBackupSizeInMegaBytes ?? default(double); }
-            set { this.totalBackupSizeInMegaBytes = value; }
-        }
-
-        // Check to see if TotalBackupSizeInMegaBytes property is set
-        internal bool IsSetTotalBackupSizeInMegaBytes()
-        {
-            return this.totalBackupSizeInMegaBytes.HasValue;
-        }
-
-        /// <summary>
-        /// The size of the incremental backup.
-        ///  
+        /// Gets and sets the property ActualIncrementalBackupSizeInMegaBytes. 
+        /// <para>
+        ///             The size of the incremental backup.        
+        /// </para>
         /// </summary>
         public double ActualIncrementalBackupSizeInMegaBytes
         {
-            get { return this.actualIncrementalBackupSizeInMegaBytes ?? default(double); }
-            set { this.actualIncrementalBackupSizeInMegaBytes = value; }
+            get { return this._actualIncrementalBackupSizeInMegaBytes.GetValueOrDefault(); }
+            set { this._actualIncrementalBackupSizeInMegaBytes = value; }
         }
 
         // Check to see if ActualIncrementalBackupSizeInMegaBytes property is set
         internal bool IsSetActualIncrementalBackupSizeInMegaBytes()
         {
-            return this.actualIncrementalBackupSizeInMegaBytes.HasValue;
+            return this._actualIncrementalBackupSizeInMegaBytes.HasValue; 
         }
 
+
         /// <summary>
-        /// The number of megabytes that have been transferred to the snapshot backup.
-        ///  
+        /// Gets and sets the property AvailabilityZone. 
+        /// <para>
+        ///             The Availability Zone in which the cluster was created.        
+        /// </para>
+        /// </summary>
+        public string AvailabilityZone
+        {
+            get { return this._availabilityZone; }
+            set { this._availabilityZone = value; }
+        }
+
+        // Check to see if AvailabilityZone property is set
+        internal bool IsSetAvailabilityZone()
+        {
+            return this._availabilityZone != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property BackupProgressInMegaBytes. 
+        /// <para>
+        ///             The number of megabytes that have been transferred to the snapshot backup.
+        ///        
+        /// </para>
         /// </summary>
         public double BackupProgressInMegaBytes
         {
-            get { return this.backupProgressInMegaBytes ?? default(double); }
-            set { this.backupProgressInMegaBytes = value; }
+            get { return this._backupProgressInMegaBytes.GetValueOrDefault(); }
+            set { this._backupProgressInMegaBytes = value; }
         }
 
         // Check to see if BackupProgressInMegaBytes property is set
         internal bool IsSetBackupProgressInMegaBytes()
         {
-            return this.backupProgressInMegaBytes.HasValue;
+            return this._backupProgressInMegaBytes.HasValue; 
         }
 
+
         /// <summary>
-        /// The number of megabytes per second being transferred to the snapshot backup. Returns <c>0</c> for a completed backup.
-        ///  
+        /// Gets and sets the property ClusterCreateTime. 
+        /// <para>
+        ///         The time (UTC) when the cluster was originally created.        
+        /// </para>
+        /// </summary>
+        public DateTime ClusterCreateTime
+        {
+            get { return this._clusterCreateTime.GetValueOrDefault(); }
+            set { this._clusterCreateTime = value; }
+        }
+
+        // Check to see if ClusterCreateTime property is set
+        internal bool IsSetClusterCreateTime()
+        {
+            return this._clusterCreateTime.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ClusterIdentifier. 
+        /// <para>
+        ///         The identifier of the cluster for which the snapshot was taken.        
+        /// </para>
+        /// </summary>
+        public string ClusterIdentifier
+        {
+            get { return this._clusterIdentifier; }
+            set { this._clusterIdentifier = value; }
+        }
+
+        // Check to see if ClusterIdentifier property is set
+        internal bool IsSetClusterIdentifier()
+        {
+            return this._clusterIdentifier != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ClusterVersion. 
+        /// <para>
+        ///         The version ID of the Amazon Redshift engine that is running on the cluster.
+        ///        
+        /// </para>
+        /// </summary>
+        public string ClusterVersion
+        {
+            get { return this._clusterVersion; }
+            set { this._clusterVersion = value; }
+        }
+
+        // Check to see if ClusterVersion property is set
+        internal bool IsSetClusterVersion()
+        {
+            return this._clusterVersion != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property CurrentBackupRateInMegaBytesPerSecond. 
+        /// <para>
+        ///             The number of megabytes per second being transferred to the snapshot backup.
+        /// Returns <code>0</code> for a completed backup.        
+        /// </para>
         /// </summary>
         public double CurrentBackupRateInMegaBytesPerSecond
         {
-            get { return this.currentBackupRateInMegaBytesPerSecond ?? default(double); }
-            set { this.currentBackupRateInMegaBytesPerSecond = value; }
+            get { return this._currentBackupRateInMegaBytesPerSecond.GetValueOrDefault(); }
+            set { this._currentBackupRateInMegaBytesPerSecond = value; }
         }
 
         // Check to see if CurrentBackupRateInMegaBytesPerSecond property is set
         internal bool IsSetCurrentBackupRateInMegaBytesPerSecond()
         {
-            return this.currentBackupRateInMegaBytesPerSecond.HasValue;
+            return this._currentBackupRateInMegaBytesPerSecond.HasValue; 
         }
 
+
         /// <summary>
-        /// The estimate of the time remaining before the snapshot backup will complete. Returns <c>0</c> for a completed backup.
-        ///  
+        /// Gets and sets the property DBName. 
+        /// <para>
+        /// The name of the database that was created when the cluster was created. 
+        /// </para>
         /// </summary>
-        public long EstimatedSecondsToCompletion
+        public string DBName
         {
-            get { return this.estimatedSecondsToCompletion ?? default(long); }
-            set { this.estimatedSecondsToCompletion = value; }
+            get { return this._dBName; }
+            set { this._dBName = value; }
         }
 
-        // Check to see if EstimatedSecondsToCompletion property is set
-        internal bool IsSetEstimatedSecondsToCompletion()
+        // Check to see if DBName property is set
+        internal bool IsSetDBName()
         {
-            return this.estimatedSecondsToCompletion.HasValue;
+            return this._dBName != null;
         }
+
 
         /// <summary>
-        /// The amount of time an in-progress snapshot backup has been running, or the amount of time it took a completed backup to finish.
-        ///  
+        /// Gets and sets the property ElapsedTimeInSeconds. 
+        /// <para>
+        ///             The amount of time an in-progress snapshot backup has been running, or
+        /// the amount of time it took a completed backup to finish.        
+        /// </para>
         /// </summary>
         public long ElapsedTimeInSeconds
         {
-            get { return this.elapsedTimeInSeconds ?? default(long); }
-            set { this.elapsedTimeInSeconds = value; }
+            get { return this._elapsedTimeInSeconds.GetValueOrDefault(); }
+            set { this._elapsedTimeInSeconds = value; }
         }
 
         // Check to see if ElapsedTimeInSeconds property is set
         internal bool IsSetElapsedTimeInSeconds()
         {
-            return this.elapsedTimeInSeconds.HasValue;
+            return this._elapsedTimeInSeconds.HasValue; 
         }
 
+
         /// <summary>
-        /// The source region from which the snapshot was copied.
-        ///  
+        /// Gets and sets the property Encrypted. 
+        /// <para>
+        /// If <code>true</code>, the data in the snapshot is encrypted at rest.
+        /// </para>
+        /// </summary>
+        public bool Encrypted
+        {
+            get { return this._encrypted.GetValueOrDefault(); }
+            set { this._encrypted = value; }
+        }
+
+        // Check to see if Encrypted property is set
+        internal bool IsSetEncrypted()
+        {
+            return this._encrypted.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property EncryptedWithHSM. 
+        /// <para>
+        /// A boolean that indicates whether the snapshot data is encrypted using the HSM keys
+        ///            of the source cluster. <code>true</code> indicates that the data is encrypted
+        /// using HSM keys.
+        /// </para>
+        /// </summary>
+        public bool EncryptedWithHSM
+        {
+            get { return this._encryptedWithHSM.GetValueOrDefault(); }
+            set { this._encryptedWithHSM = value; }
+        }
+
+        // Check to see if EncryptedWithHSM property is set
+        internal bool IsSetEncryptedWithHSM()
+        {
+            return this._encryptedWithHSM.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property EstimatedSecondsToCompletion. 
+        /// <para>
+        ///             The estimate of the time remaining before the snapshot backup will complete.
+        /// Returns <code>0</code> for a completed backup.         
+        /// </para>
+        /// </summary>
+        public long EstimatedSecondsToCompletion
+        {
+            get { return this._estimatedSecondsToCompletion.GetValueOrDefault(); }
+            set { this._estimatedSecondsToCompletion = value; }
+        }
+
+        // Check to see if EstimatedSecondsToCompletion property is set
+        internal bool IsSetEstimatedSecondsToCompletion()
+        {
+            return this._estimatedSecondsToCompletion.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property MasterUsername. 
+        /// <para>
+        ///         The master user name for the cluster.        
+        /// </para>
+        /// </summary>
+        public string MasterUsername
+        {
+            get { return this._masterUsername; }
+            set { this._masterUsername = value; }
+        }
+
+        // Check to see if MasterUsername property is set
+        internal bool IsSetMasterUsername()
+        {
+            return this._masterUsername != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property NodeType. 
+        /// <para>
+        /// The node type of the nodes in the cluster.
+        /// </para>
+        /// </summary>
+        public string NodeType
+        {
+            get { return this._nodeType; }
+            set { this._nodeType = value; }
+        }
+
+        // Check to see if NodeType property is set
+        internal bool IsSetNodeType()
+        {
+            return this._nodeType != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property NumberOfNodes. 
+        /// <para>
+        /// The number of nodes in the cluster.
+        /// </para>
+        /// </summary>
+        public int NumberOfNodes
+        {
+            get { return this._numberOfNodes.GetValueOrDefault(); }
+            set { this._numberOfNodes = value; }
+        }
+
+        // Check to see if NumberOfNodes property is set
+        internal bool IsSetNumberOfNodes()
+        {
+            return this._numberOfNodes.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property OwnerAccount. 
+        /// <para>
+        ///             For manual snapshots, the AWS customer account used to create or copy
+        /// the snapshot. For automatic snapshots, the owner of the cluster. The owner can perform
+        /// all snapshot actions, such as sharing a manual snapshot.        
+        /// </para>
+        /// </summary>
+        public string OwnerAccount
+        {
+            get { return this._ownerAccount; }
+            set { this._ownerAccount = value; }
+        }
+
+        // Check to see if OwnerAccount property is set
+        internal bool IsSetOwnerAccount()
+        {
+            return this._ownerAccount != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Port. 
+        /// <para>
+        ///         The port that the cluster is listening on.        
+        /// </para>
+        /// </summary>
+        public int Port
+        {
+            get { return this._port.GetValueOrDefault(); }
+            set { this._port = value; }
+        }
+
+        // Check to see if Port property is set
+        internal bool IsSetPort()
+        {
+            return this._port.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SnapshotCreateTime. 
+        /// <para>
+        ///             The time (UTC) when Amazon Redshift began the snapshot.             A
+        /// snapshot contains a copy of the cluster data as of this exact time.         
+        /// </para>
+        /// </summary>
+        public DateTime SnapshotCreateTime
+        {
+            get { return this._snapshotCreateTime.GetValueOrDefault(); }
+            set { this._snapshotCreateTime = value; }
+        }
+
+        // Check to see if SnapshotCreateTime property is set
+        internal bool IsSetSnapshotCreateTime()
+        {
+            return this._snapshotCreateTime.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SnapshotIdentifier. 
+        /// <para>
+        ///         The snapshot identifier that is provided in the request.        
+        /// </para>
+        /// </summary>
+        public string SnapshotIdentifier
+        {
+            get { return this._snapshotIdentifier; }
+            set { this._snapshotIdentifier = value; }
+        }
+
+        // Check to see if SnapshotIdentifier property is set
+        internal bool IsSetSnapshotIdentifier()
+        {
+            return this._snapshotIdentifier != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SnapshotType. 
+        /// <para>
+        ///             The snapshot type. Snapshots created using <a>CreateClusterSnapshot</a>
+        /// and <a>CopyClusterSnapshot</a> will be of type "manual".        
+        /// </para>
+        /// </summary>
+        public string SnapshotType
+        {
+            get { return this._snapshotType; }
+            set { this._snapshotType = value; }
+        }
+
+        // Check to see if SnapshotType property is set
+        internal bool IsSetSnapshotType()
+        {
+            return this._snapshotType != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SourceRegion. 
+        /// <para>
+        ///             The source region from which the snapshot was copied.        
+        /// </para>
         /// </summary>
         public string SourceRegion
         {
-            get { return this.sourceRegion; }
-            set { this.sourceRegion = value; }
+            get { return this._sourceRegion; }
+            set { this._sourceRegion = value; }
         }
 
         // Check to see if SourceRegion property is set
         internal bool IsSetSourceRegion()
         {
-            return this.sourceRegion != null;
+            return this._sourceRegion != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        ///         The snapshot status. The value of the status depends on the API operation
+        /// used.            <ul>                <li><a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a>
+        /// returns status as "creating". </li>                <li><a>DescribeClusterSnapshots</a>
+        /// returns status as                      "creating", "available", "final snapshot",
+        /// or "failed".</li>                <li><a>DeleteClusterSnapshot</a> returns status as
+        /// "deleted".</li>            </ul>        
+        /// </para>
+        /// </summary>
+        public string Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property TotalBackupSizeInMegaBytes. 
+        /// <para>
+        ///             The size of the complete set of backup data that would be used to restore
+        /// the cluster.        
+        /// </para>
+        /// </summary>
+        public double TotalBackupSizeInMegaBytes
+        {
+            get { return this._totalBackupSizeInMegaBytes.GetValueOrDefault(); }
+            set { this._totalBackupSizeInMegaBytes = value; }
+        }
+
+        // Check to see if TotalBackupSizeInMegaBytes property is set
+        internal bool IsSetTotalBackupSizeInMegaBytes()
+        {
+            return this._totalBackupSizeInMegaBytes.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property VpcId. 
+        /// <para>
+        /// The VPC identifier of the cluster if the snapshot is from a cluster in a VPC. Otherwise,
+        ///        this field is not in the output.
+        /// </para>
+        /// </summary>
+        public string VpcId
+        {
+            get { return this._vpcId; }
+            set { this._vpcId = value; }
+        }
+
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
+        {
+            return this._vpcId != null;
+        }
+
     }
 }

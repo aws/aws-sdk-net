@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the DeleteHsmConfiguration response metadata.
-    /// The DeleteHsmConfiguration operation has a void result type.
+    /// Configuration for accessing Amazon DeleteHsmConfiguration service
     /// </summary>
-    public partial class DeleteHsmConfigurationResponse : AmazonWebServiceResponse
+    public partial class DeleteHsmConfigurationResponse : DeleteHsmConfigurationResult
     {
+        /// <summary>
+        /// Gets and sets the DeleteHsmConfigurationResult property.
+        /// Represents the output of a DeleteHsmConfiguration operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DeleteHsmConfigurationResult class are now available on the DeleteHsmConfigurationResponse class. You should use the properties on DeleteHsmConfigurationResponse instead of accessing them through DeleteHsmConfigurationResult.")]
+        public DeleteHsmConfigurationResult DeleteHsmConfigurationResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

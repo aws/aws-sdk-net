@@ -14,32 +14,36 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Event Categories Request Marshaller
+    /// DescribeEventCategories Request Marshaller
     /// </summary>       
     public class DescribeEventCategoriesRequestMarshaller : IMarshaller<IRequest, DescribeEventCategoriesRequest>
     {
-        public IRequest Marshall(DescribeEventCategoriesRequest describeEventCategoriesRequest)
+        public IRequest Marshall(DescribeEventCategoriesRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describeEventCategoriesRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "DescribeEventCategories");
             request.Parameters.Add("Version", "2012-12-01");
-            if (describeEventCategoriesRequest != null && describeEventCategoriesRequest.IsSetSourceType())
-            {
-                request.Parameters.Add("SourceType", StringUtils.FromString(describeEventCategoriesRequest.SourceType));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetSourceType())
+                {
+                    request.Parameters.Add("SourceType", StringUtils.FromString(publicRequest.SourceType));
+                }
+            }
             return request;
         }
     }

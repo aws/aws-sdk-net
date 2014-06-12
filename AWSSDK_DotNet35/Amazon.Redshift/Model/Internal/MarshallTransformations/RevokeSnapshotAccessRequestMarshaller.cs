@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Revoke Snapshot Access Request Marshaller
+    /// RevokeSnapshotAccess Request Marshaller
     /// </summary>       
     public class RevokeSnapshotAccessRequestMarshaller : IMarshaller<IRequest, RevokeSnapshotAccessRequest>
     {
-        public IRequest Marshall(RevokeSnapshotAccessRequest revokeSnapshotAccessRequest)
+        public IRequest Marshall(RevokeSnapshotAccessRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(revokeSnapshotAccessRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "RevokeSnapshotAccess");
             request.Parameters.Add("Version", "2012-12-01");
-            if (revokeSnapshotAccessRequest != null && revokeSnapshotAccessRequest.IsSetSnapshotIdentifier())
-            {
-                request.Parameters.Add("SnapshotIdentifier", StringUtils.FromString(revokeSnapshotAccessRequest.SnapshotIdentifier));
-            }
-            if (revokeSnapshotAccessRequest != null && revokeSnapshotAccessRequest.IsSetSnapshotClusterIdentifier())
-            {
-                request.Parameters.Add("SnapshotClusterIdentifier", StringUtils.FromString(revokeSnapshotAccessRequest.SnapshotClusterIdentifier));
-            }
-            if (revokeSnapshotAccessRequest != null && revokeSnapshotAccessRequest.IsSetAccountWithRestoreAccess())
-            {
-                request.Parameters.Add("AccountWithRestoreAccess", StringUtils.FromString(revokeSnapshotAccessRequest.AccountWithRestoreAccess));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAccountWithRestoreAccess())
+                {
+                    request.Parameters.Add("AccountWithRestoreAccess", StringUtils.FromString(publicRequest.AccountWithRestoreAccess));
+                }
+                if(publicRequest.IsSetSnapshotClusterIdentifier())
+                {
+                    request.Parameters.Add("SnapshotClusterIdentifier", StringUtils.FromString(publicRequest.SnapshotClusterIdentifier));
+                }
+                if(publicRequest.IsSetSnapshotIdentifier())
+                {
+                    request.Parameters.Add("SnapshotIdentifier", StringUtils.FromString(publicRequest.SnapshotIdentifier));
+                }
+            }
             return request;
         }
     }

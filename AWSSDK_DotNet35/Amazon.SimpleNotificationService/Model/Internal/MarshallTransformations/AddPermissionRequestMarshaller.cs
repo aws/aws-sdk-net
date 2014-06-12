@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,58 +14,58 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SimpleNotificationService.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Add Permission Request Marshaller
+    /// AddPermission Request Marshaller
     /// </summary>       
     public class AddPermissionRequestMarshaller : IMarshaller<IRequest, AddPermissionRequest>
     {
-        public IRequest Marshall(AddPermissionRequest addPermissionRequest)
+        public IRequest Marshall(AddPermissionRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(addPermissionRequest, "AmazonSimpleNotificationService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleNotificationService");
             request.Parameters.Add("Action", "AddPermission");
             request.Parameters.Add("Version", "2010-03-31");
-            if (addPermissionRequest != null && addPermissionRequest.IsSetTopicArn())
-            {
-                request.Parameters.Add("TopicArn", StringUtils.FromString(addPermissionRequest.TopicArn));
-            }
-            if (addPermissionRequest != null && addPermissionRequest.IsSetLabel())
-            {
-                request.Parameters.Add("Label", StringUtils.FromString(addPermissionRequest.Label));
-            }
-            if (addPermissionRequest != null)
-            {
-                List<string> aWSAccountIdList = addPermissionRequest.AWSAccountId;
 
-                int aWSAccountIdListIndex = 1;
-                foreach (string aWSAccountIdListValue in aWSAccountIdList)
-                { 
-                    request.Parameters.Add("AWSAccountId.member." + aWSAccountIdListIndex, StringUtils.FromString(aWSAccountIdListValue));
-                    aWSAccountIdListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetActionName())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.ActionName)
+                    {
+                        request.Parameters.Add("ActionName" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetAWSAccountId())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.AWSAccountId)
+                    {
+                        request.Parameters.Add("AWSAccountId" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetLabel())
+                {
+                    request.Parameters.Add("Label", StringUtils.FromString(publicRequest.Label));
+                }
+                if(publicRequest.IsSetTopicArn())
+                {
+                    request.Parameters.Add("TopicArn", StringUtils.FromString(publicRequest.TopicArn));
                 }
             }
-            if (addPermissionRequest != null)
-            {
-                List<string> actionNameList = addPermissionRequest.ActionName;
-
-                int actionNameListIndex = 1;
-                foreach (string actionNameListValue in actionNameList)
-                { 
-                    request.Parameters.Add("ActionName.member." + actionNameListIndex, StringUtils.FromString(actionNameListValue));
-                    actionNameListIndex++;
-                }
-            }
-
             return request;
         }
     }

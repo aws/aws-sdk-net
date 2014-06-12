@@ -12,24 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the CreateEventSubscription response and response metadata.
+    /// Configuration for accessing Amazon CreateEventSubscription service
     /// </summary>
     public partial class CreateEventSubscriptionResponse : CreateEventSubscriptionResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the CreateEventSubscriptionResult property.
-        /// Contains the result of a successful invocation of the CreateEventSubscription
-        /// action.
-        /// 
+        /// Represents the output of a CreateEventSubscription operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateEventSubscriptionResult class are now available on the CreateEventSubscriptionResponse class. You should use the properties on CreateEventSubscriptionResponse instead of accessing them through CreateEventSubscriptionResult.")]
         public CreateEventSubscriptionResult CreateEventSubscriptionResult
         {
@@ -40,4 +36,3 @@ namespace Amazon.Redshift.Model
         }
     }
 }
-    

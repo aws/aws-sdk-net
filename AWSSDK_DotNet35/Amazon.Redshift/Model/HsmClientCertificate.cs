@@ -17,51 +17,60 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// <para>Returns information about an HSM client certificate. The certificate is stored in a secure Hardware Storage Module (HSM), and used by
-    /// the Amazon Redshift cluster to encrypt data files.</para>
+    /// Returns information about an HSM client certificate. The certificate is stored in
+    /// a secure            Hardware Storage Module (HSM), and used by the Amazon Redshift
+    /// cluster to            encrypt data files.
     /// </summary>
-    public partial class HsmClientCertificate : AmazonWebServiceResponse
+    public partial class HsmClientCertificate
     {
-        
-        private string hsmClientCertificateIdentifier;
-        private string hsmClientCertificatePublicKey;
+        private string _hsmClientCertificateIdentifier;
+        private string _hsmClientCertificatePublicKey;
 
 
         /// <summary>
+        /// Gets and sets the property HsmClientCertificateIdentifier. 
+        /// <para>
         /// The identifier of the HSM client certificate.
-        ///  
+        /// </para>
         /// </summary>
         public string HsmClientCertificateIdentifier
         {
-            get { return this.hsmClientCertificateIdentifier; }
-            set { this.hsmClientCertificateIdentifier = value; }
+            get { return this._hsmClientCertificateIdentifier; }
+            set { this._hsmClientCertificateIdentifier = value; }
         }
 
         // Check to see if HsmClientCertificateIdentifier property is set
         internal bool IsSetHsmClientCertificateIdentifier()
         {
-            return this.hsmClientCertificateIdentifier != null;
+            return this._hsmClientCertificateIdentifier != null;
         }
 
+
         /// <summary>
-        /// The public key that the Amazon Redshift cluster will use to connect to the HSM. You must register the public key in the HSM.
-        ///  
+        /// Gets and sets the property HsmClientCertificatePublicKey. 
+        /// <para>
+        /// The public key that the Amazon Redshift cluster will use to connect to the HSM.  
+        ///          You must register the public key in the HSM.
+        /// </para>
         /// </summary>
         public string HsmClientCertificatePublicKey
         {
-            get { return this.hsmClientCertificatePublicKey; }
-            set { this.hsmClientCertificatePublicKey = value; }
+            get { return this._hsmClientCertificatePublicKey; }
+            set { this._hsmClientCertificatePublicKey = value; }
         }
 
         // Check to see if HsmClientCertificatePublicKey property is set
         internal bool IsSetHsmClientCertificatePublicKey()
         {
-            return this.hsmClientCertificatePublicKey != null;
+            return this._hsmClientCertificatePublicKey != null;
         }
+
     }
 }

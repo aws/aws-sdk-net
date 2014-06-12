@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// <para>Response from CreatePlatformApplication action.</para>
+    /// Response from CreatePlatformApplication action.
     /// </summary>
     public partial class CreatePlatformApplicationResult : AmazonWebServiceResponse
     {
-        
-        private string platformApplicationArn;
+        private string _platformApplicationArn;
 
 
         /// <summary>
+        /// Gets and sets the property PlatformApplicationArn. 
+        /// <para>
         /// PlatformApplicationArn is returned.
-        ///  
+        /// </para>
         /// </summary>
         public string PlatformApplicationArn
         {
-            get { return this.platformApplicationArn; }
-            set { this.platformApplicationArn = value; }
+            get { return this._platformApplicationArn; }
+            set { this._platformApplicationArn = value; }
         }
 
         // Check to see if PlatformApplicationArn property is set
         internal bool IsSetPlatformApplicationArn()
         {
-            return this.platformApplicationArn != null;
+            return this._platformApplicationArn != null;
         }
+
     }
 }

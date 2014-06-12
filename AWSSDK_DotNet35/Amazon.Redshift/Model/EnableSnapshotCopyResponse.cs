@@ -12,24 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the EnableSnapshotCopy response and response metadata.
+    /// Configuration for accessing Amazon EnableSnapshotCopy service
     /// </summary>
     public partial class EnableSnapshotCopyResponse : EnableSnapshotCopyResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the EnableSnapshotCopyResult property.
-        /// Contains the result of a successful invocation of the EnableSnapshotCopy
-        /// action.
-        /// 
+        /// Represents the output of a EnableSnapshotCopy operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the EnableSnapshotCopyResult class are now available on the EnableSnapshotCopyResponse class. You should use the properties on EnableSnapshotCopyResponse instead of accessing them through EnableSnapshotCopyResult.")]
         public EnableSnapshotCopyResult EnableSnapshotCopyResult
         {
@@ -40,4 +36,3 @@ namespace Amazon.Redshift.Model
         }
     }
 }
-    

@@ -25,94 +25,135 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeClusterParameters operation.
-    /// <para> Returns a detailed list of parameters contained within the specified Amazon Redshift parameter group. For each parameter the response
-    /// includes information such as parameter name, description, data type, value, whether the parameter value is modifiable, and so on. </para>
-    /// <para>You can specify <i>source</i> filter to retrieve parameters of only specific type. For example, to retrieve parameters that were
-    /// modified by a user action such as from ModifyClusterParameterGroup, you can specify <i>source</i> equal to <i>user</i> .</para> <para> For
-    /// more information about managing parameter groups, go to <a
-    /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html" >Amazon Redshift Parameter Groups</a> in the
-    /// <i>Amazon Redshift Management Guide</i> .
+    /// Returns a detailed list of parameters contained within the specified Amazon
+    /// Redshift         parameter group. For each parameter the response includes information
+    ///         such as parameter name, description,         data type, value, whether the
+    /// parameter value is modifiable, and so on.        
+    /// 
+    ///         
+    /// <para>
+    /// You can specify <i>source</i> filter to retrieve parameters of only specific type.
+    ///            For example, to retrieve parameters that were modified by a user action
+    /// such as from             <a>ModifyClusterParameterGroup</a>, you can specify <i>source</i>
+    /// equal to <i>user</i>.
+    /// </para>
+    ///         
+    /// <para>
+    /// For more information about managing parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+    /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Management Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeClusterParametersRequest : AmazonRedshiftRequest
     {
-        private string parameterGroupName;
-        private string source;
-        private int? maxRecords;
-        private string marker;
+        private string _marker;
+        private int? _maxRecords;
+        private string _parameterGroupName;
+        private string _source;
 
 
         /// <summary>
-        /// The name of a cluster parameter group for which to return details.
-        ///  
-        /// </summary>
-        public string ParameterGroupName
-        {
-            get { return this.parameterGroupName; }
-            set { this.parameterGroupName = value; }
-        }
-
-        // Check to see if ParameterGroupName property is set
-        internal bool IsSetParameterGroupName()
-        {
-            return this.parameterGroupName != null;
-        }
-
-        /// <summary>
-        /// The parameter types to return. Specify <c>user</c> to show parameters that are different form the default. Similarly, specify
-        /// <c>engine-default</c> to show parameters that are the same as the default parameter group. Default: All parameter types returned. Valid
-        /// Values: <c>user</c> | <c>engine-default</c>
-        ///  
-        /// </summary>
-        public string Source
-        {
-            get { return this.source; }
-            set { this.source = value; }
-        }
-
-        // Check to see if Source property is set
-        internal bool IsSetSource()
-        {
-            return this.source != null;
-        }
-
-        /// <summary>
-        /// The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified
-        /// <c>MaxRecords</c> value, a value is returned in a <c>marker</c> field of the response. You can retrieve the next set of records by retrying
-        /// the command with the returned marker value. Default: <c>100</c> Constraints: minimum 20, maximum 100.
-        ///  
-        /// </summary>
-        public int MaxRecords
-        {
-            get { return this.maxRecords ?? default(int); }
-            set { this.maxRecords = value; }
-        }
-
-        // Check to see if MaxRecords property is set
-        internal bool IsSetMaxRecords()
-        {
-            return this.maxRecords.HasValue;
-        }
-
-        /// <summary>
-        /// An optional parameter that specifies the starting point to return a set of response records. When the results of a
-        /// <a>DescribeClusterParameters</a> request exceed the value specified in <c>MaxRecords</c>, AWS returns a value in the <c>Marker</c> field of
-        /// the response. You can retrieve the next set of response records by providing the returned marker value in the <c>Marker</c> parameter and
-        /// retrying the request.
-        ///  
+        /// Gets and sets the property Marker. 
+        /// <para>
+        ///             An optional parameter that specifies the starting point to return a set
+        /// of response records.             When the results of a <a>DescribeClusterParameters</a>
+        /// request exceed the value specified in <code>MaxRecords</code>,             AWS returns
+        /// a value in the <code>Marker</code> field of the response. You can retrieve the next
+        /// set of             response records by providing the returned marker value in the
+        /// <code>Marker</code> parameter and             retrying the request.        
+        /// </para>
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property MaxRecords. 
+        /// <para>
+        ///             The maximum number of response records to return in each call.       
+        ///      If the number of remaining response records exceeds the specified <code>MaxRecords</code>
+        /// value,             a value is returned in a <code>marker</code> field of the response.
+        ///             You can retrieve the next set of records by retrying the command with
+        /// the returned marker value.        
+        /// </para>
+        ///         
+        /// <para>
+        /// Default: <code>100</code>
+        /// </para>
+        ///         
+        /// <para>
+        /// Constraints: minimum 20, maximum 100.
+        /// </para>
+        /// </summary>
+        public int MaxRecords
+        {
+            get { return this._maxRecords.GetValueOrDefault(); }
+            set { this._maxRecords = value; }
+        }
+
+        // Check to see if MaxRecords property is set
+        internal bool IsSetMaxRecords()
+        {
+            return this._maxRecords.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ParameterGroupName. 
+        /// <para>
+        ///         The name of a cluster parameter group for which to return details.       
+        /// 
+        /// </para>
+        /// </summary>
+        public string ParameterGroupName
+        {
+            get { return this._parameterGroupName; }
+            set { this._parameterGroupName = value; }
+        }
+
+        // Check to see if ParameterGroupName property is set
+        internal bool IsSetParameterGroupName()
+        {
+            return this._parameterGroupName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Source. 
+        /// <para>
+        ///             The parameter types to return. Specify <code>user</code> to show parameters
+        /// that are different form the        default. Similarly, specify <code>engine-default</code>
+        /// to show parameters that are the same as the default            parameter group.  
+        ///      
+        /// </para>
+        ///         
+        /// <para>
+        /// Default: All parameter types returned.
+        /// </para>
+        ///                 
+        /// <para>
+        /// Valid Values: <code>user</code> | <code>engine-default</code>
+        /// </para>
+        /// </summary>
+        public string Source
+        {
+            get { return this._source; }
+            set { this._source = value; }
+        }
+
+        // Check to see if Source property is set
+        internal bool IsSetSource()
+        {
+            return this._source != null;
         }
 
     }
 }
-    

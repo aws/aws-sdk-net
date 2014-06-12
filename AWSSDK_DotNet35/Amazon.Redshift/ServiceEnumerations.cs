@@ -12,40 +12,36 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 using System;
 
 using Amazon.Runtime;
 
-
 namespace Amazon.Redshift
 {
 
-
-    /// <summary>Source Type
+    /// <summary>
+    /// Constants used for properties of type SourceType.
     /// </summary>
     public class SourceType : ConstantClass
     {
 
-
-       /// <summary>Constant Cluster for SourceType
-       /// </summary>
+        /// <summary>
+        /// Constant Cluster for SourceType
+        /// </summary>
         public static readonly SourceType Cluster = new SourceType("cluster");
-    
-
-       /// <summary>Constant ClusterParameterGroup for SourceType
-       /// </summary>
+        /// <summary>
+        /// Constant ClusterParameterGroup for SourceType
+        /// </summary>
         public static readonly SourceType ClusterParameterGroup = new SourceType("cluster-parameter-group");
-    
-
-       /// <summary>Constant ClusterSecurityGroup for SourceType
-       /// </summary>
+        /// <summary>
+        /// Constant ClusterSecurityGroup for SourceType
+        /// </summary>
         public static readonly SourceType ClusterSecurityGroup = new SourceType("cluster-security-group");
-    
-
-       /// <summary>Constant ClusterSnapshot for SourceType
-       /// </summary>
+        /// <summary>
+        /// Constant ClusterSnapshot for SourceType
+        /// </summary>
         public static readonly SourceType ClusterSnapshot = new SourceType("cluster-snapshot");
-    
 
         /// <summary>
         /// Default Constructor
@@ -70,7 +66,5 @@ namespace Amazon.Redshift
             return FindValue(value);
         }
     }
-    
 
 }
-        

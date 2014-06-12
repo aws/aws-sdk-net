@@ -63,6 +63,9 @@ namespace Amazon.S3.Transfer.Internal
                 AutoCloseStream = this._fileTransporterRequest.AutoCloseStream,
                 AutoResetStreamPosition = this._fileTransporterRequest.AutoResetStreamPosition,
                 ServerSideEncryptionMethod = this._fileTransporterRequest.ServerSideEncryptionMethod,
+                ServerSideEncryptionCustomerMethod = this._fileTransporterRequest.ServerSideEncryptionCustomerMethod,
+                ServerSideEncryptionCustomerProvidedKey = this._fileTransporterRequest.ServerSideEncryptionCustomerProvidedKey,
+                ServerSideEncryptionCustomerProvidedKeyMD5 = this._fileTransporterRequest.ServerSideEncryptionCustomerProvidedKeyMD5,
                 Metadata = this._fileTransporterRequest.Metadata,
 #if (BCL && !BCL45)
                 Timeout = ClientConfig.GetTimeoutValue(this._config.DefaultTimeout, this._fileTransporterRequest.Timeout)

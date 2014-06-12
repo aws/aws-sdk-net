@@ -14,32 +14,36 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Resize Request Marshaller
+    /// DescribeResize Request Marshaller
     /// </summary>       
     public class DescribeResizeRequestMarshaller : IMarshaller<IRequest, DescribeResizeRequest>
     {
-        public IRequest Marshall(DescribeResizeRequest describeResizeRequest)
+        public IRequest Marshall(DescribeResizeRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describeResizeRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "DescribeResize");
             request.Parameters.Add("Version", "2012-12-01");
-            if (describeResizeRequest != null && describeResizeRequest.IsSetClusterIdentifier())
-            {
-                request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(describeResizeRequest.ClusterIdentifier));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetClusterIdentifier())
+                {
+                    request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(publicRequest.ClusterIdentifier));
+                }
+            }
             return request;
         }
     }

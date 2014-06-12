@@ -18,82 +18,96 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// <para> Describes an orderable cluster option. </para>
+    /// Describes an orderable cluster option.
     /// </summary>
     public partial class OrderableClusterOption
     {
-        
-        private string clusterVersion;
-        private string clusterType;
-        private string nodeType;
-        private List<AvailabilityZone> availabilityZones = new List<AvailabilityZone>();
+        private List<AvailabilityZone> _availabilityZones = new List<AvailabilityZone>();
+        private string _clusterType;
+        private string _clusterVersion;
+        private string _nodeType;
 
 
         /// <summary>
-        /// The version of the orderable cluster.
-        ///  
-        /// </summary>
-        public string ClusterVersion
-        {
-            get { return this.clusterVersion; }
-            set { this.clusterVersion = value; }
-        }
-
-        // Check to see if ClusterVersion property is set
-        internal bool IsSetClusterVersion()
-        {
-            return this.clusterVersion != null;
-        }
-
-        /// <summary>
-        /// The cluster type, for example <c>multi-node</c>.
-        ///  
-        /// </summary>
-        public string ClusterType
-        {
-            get { return this.clusterType; }
-            set { this.clusterType = value; }
-        }
-
-        // Check to see if ClusterType property is set
-        internal bool IsSetClusterType()
-        {
-            return this.clusterType != null;
-        }
-
-        /// <summary>
-        /// The node type for the orderable cluster.
-        ///  
-        /// </summary>
-        public string NodeType
-        {
-            get { return this.nodeType; }
-            set { this.nodeType = value; }
-        }
-
-        // Check to see if NodeType property is set
-        internal bool IsSetNodeType()
-        {
-            return this.nodeType != null;
-        }
-
-        /// <summary>
-        /// A list of availability zones for the orderable cluster.
-        ///  
+        /// Gets and sets the property AvailabilityZones. 
+        /// <para>
+        ///             A list of availability zones for the orderable cluster.         
+        /// </para>
         /// </summary>
         public List<AvailabilityZone> AvailabilityZones
         {
-            get { return this.availabilityZones; }
-            set { this.availabilityZones = value; }
+            get { return this._availabilityZones; }
+            set { this._availabilityZones = value; }
         }
 
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this.availabilityZones.Count > 0;
+            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property ClusterType. 
+        /// <para>
+        ///             The cluster type, for example <code>multi-node</code>.        
+        /// </para>
+        /// </summary>
+        public string ClusterType
+        {
+            get { return this._clusterType; }
+            set { this._clusterType = value; }
+        }
+
+        // Check to see if ClusterType property is set
+        internal bool IsSetClusterType()
+        {
+            return this._clusterType != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ClusterVersion. 
+        /// <para>
+        ///             The version of the orderable cluster.        
+        /// </para>
+        /// </summary>
+        public string ClusterVersion
+        {
+            get { return this._clusterVersion; }
+            set { this._clusterVersion = value; }
+        }
+
+        // Check to see if ClusterVersion property is set
+        internal bool IsSetClusterVersion()
+        {
+            return this._clusterVersion != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property NodeType. 
+        /// <para>
+        ///             The node type for the orderable cluster.         
+        /// </para>
+        /// </summary>
+        public string NodeType
+        {
+            get { return this._nodeType; }
+            set { this._nodeType = value; }
+        }
+
+        // Check to see if NodeType property is set
+        internal bool IsSetNodeType()
+        {
+            return this._nodeType != null;
+        }
+
     }
 }

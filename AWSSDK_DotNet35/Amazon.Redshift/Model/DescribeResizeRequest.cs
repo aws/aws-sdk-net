@@ -25,33 +25,46 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeResize operation.
-    /// <para> Returns information about the last resize operation for the specified cluster. If no resize operation has ever been initiated for the
-    /// specified cluster, a <c>HTTP 404</c> error is returned. If a resize operation was initiated and completed, the status of the resize remains
-    /// as <c>SUCCEEDED</c> until the next resize. </para> <para> A resize operation can be requested using ModifyCluster and specifying a different
-    /// number or type of nodes for the cluster. </para>
+    /// Returns information about the last resize operation for the specified cluster.
+    ///         If no resize operation has ever been initiated for the specified cluster,
+    /// a <code>HTTP 404</code> error is returned.            If a resize operation was initiated
+    /// and completed, the status of the resize remains as <code>SUCCEEDED</code> until  
+    ///          the next resize.        
+    /// 
+    ///        
+    /// <para>
+    ///             A resize operation can be requested using         <a>ModifyCluster</a>
+    /// and specifying a different number or type of nodes for the cluster.        
+    /// </para>
     /// </summary>
     public partial class DescribeResizeRequest : AmazonRedshiftRequest
     {
-        private string clusterIdentifier;
+        private string _clusterIdentifier;
 
 
         /// <summary>
-        /// The unique identifier of a cluster whose resize progress you are requesting. This parameter isn't case-sensitive. By default, resize
-        /// operations for all clusters defined for an AWS account are returned.
-        ///  
+        /// Gets and sets the property ClusterIdentifier. 
+        /// <para>
+        ///             The unique identifier of a cluster whose resize progress you are requesting.
+        ///            This parameter isn't case-sensitive.        
+        /// </para>
+        ///                 
+        /// <para>
+        /// By default, resize operations for all clusters defined for an AWS account are returned.
+        ///        
+        /// </para>
         /// </summary>
         public string ClusterIdentifier
         {
-            get { return this.clusterIdentifier; }
-            set { this.clusterIdentifier = value; }
+            get { return this._clusterIdentifier; }
+            set { this._clusterIdentifier = value; }
         }
 
         // Check to see if ClusterIdentifier property is set
         internal bool IsSetClusterIdentifier()
         {
-            return this.clusterIdentifier != null;
+            return this._clusterIdentifier != null;
         }
 
     }
 }
-    

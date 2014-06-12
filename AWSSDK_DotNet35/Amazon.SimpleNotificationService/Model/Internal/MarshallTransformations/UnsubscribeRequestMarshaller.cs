@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,15 +14,16 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SimpleNotificationService.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -30,16 +31,19 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
     /// </summary>       
     public class UnsubscribeRequestMarshaller : IMarshaller<IRequest, UnsubscribeRequest>
     {
-        public IRequest Marshall(UnsubscribeRequest unsubscribeRequest)
+        public IRequest Marshall(UnsubscribeRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(unsubscribeRequest, "AmazonSimpleNotificationService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleNotificationService");
             request.Parameters.Add("Action", "Unsubscribe");
             request.Parameters.Add("Version", "2010-03-31");
-            if (unsubscribeRequest != null && unsubscribeRequest.IsSetSubscriptionArn())
-            {
-                request.Parameters.Add("SubscriptionArn", StringUtils.FromString(unsubscribeRequest.SubscriptionArn));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetSubscriptionArn())
+                {
+                    request.Parameters.Add("SubscriptionArn", StringUtils.FromString(publicRequest.SubscriptionArn));
+                }
+            }
             return request;
         }
     }

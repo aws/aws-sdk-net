@@ -16,27 +16,24 @@ using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// The results from the AuthorizeSnapshotAccess action.
+    /// Describes a snapshot.
     /// </summary>
     public partial class AuthorizeSnapshotAccessResult : AmazonWebServiceResponse
     {
-        private Snapshot snapshotValue;
+        private Snapshot _response;
 
-        /// <summary>
-        /// Gets and sets the AuthorizeSnapshotAccessResult property.
-        /// Contains the result of a successful invocation of the AuthorizeSnapshotAccess
-        /// action.
-        /// </summary>
         public Snapshot Snapshot
         {
-            get { return this.snapshotValue; }
-            set { this.snapshotValue = value; }
+            get { return this._response; }
+            set { this._response = value; }
         }
     }
 }
-    

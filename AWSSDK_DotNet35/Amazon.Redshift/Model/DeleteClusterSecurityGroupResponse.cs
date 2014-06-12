@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the DeleteClusterSecurityGroup response metadata.
-    /// The DeleteClusterSecurityGroup operation has a void result type.
+    /// Configuration for accessing Amazon DeleteClusterSecurityGroup service
     /// </summary>
-    public partial class DeleteClusterSecurityGroupResponse : AmazonWebServiceResponse
+    public partial class DeleteClusterSecurityGroupResponse : DeleteClusterSecurityGroupResult
     {
+        /// <summary>
+        /// Gets and sets the DeleteClusterSecurityGroupResult property.
+        /// Represents the output of a DeleteClusterSecurityGroup operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DeleteClusterSecurityGroupResult class are now available on the DeleteClusterSecurityGroupResponse class. You should use the properties on DeleteClusterSecurityGroupResponse instead of accessing them through DeleteClusterSecurityGroupResult.")]
+        public DeleteClusterSecurityGroupResult DeleteClusterSecurityGroupResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

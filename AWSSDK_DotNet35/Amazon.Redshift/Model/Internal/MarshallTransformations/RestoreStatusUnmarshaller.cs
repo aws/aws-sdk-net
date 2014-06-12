@@ -12,93 +12,99 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   RestoreStatus Unmarshaller
-     /// </summary>
-    internal class RestoreStatusUnmarshaller : IUnmarshaller<RestoreStatus, XmlUnmarshallerContext>, IUnmarshaller<RestoreStatus, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for RestoreStatus Object
+    /// </summary>  
+    public class RestoreStatusUnmarshaller : IUnmarshaller<RestoreStatus, XmlUnmarshallerContext>, IUnmarshaller<RestoreStatus, JsonUnmarshallerContext>
     {
-        public RestoreStatus Unmarshall(XmlUnmarshallerContext context) 
+        public RestoreStatus Unmarshall(XmlUnmarshallerContext context)
         {
-            RestoreStatus restoreStatus = new RestoreStatus();
+            RestoreStatus unmarshalledObject = new RestoreStatus();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Status", targetDepth))
-                    {
-                        restoreStatus.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("CurrentRestoreRateInMegaBytesPerSecond", targetDepth))
                     {
-                        restoreStatus.CurrentRestoreRateInMegaBytesPerSecond = DoubleUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("SnapshotSizeInMegaBytes", targetDepth))
-                    {
-                        restoreStatus.SnapshotSizeInMegaBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("ProgressInMegaBytes", targetDepth))
-                    {
-                        restoreStatus.ProgressInMegaBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        unmarshalledObject.CurrentRestoreRateInMegaBytesPerSecond = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ElapsedTimeInSeconds", targetDepth))
                     {
-                        restoreStatus.ElapsedTimeInSeconds = LongUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = LongUnmarshaller.Instance;
+                        unmarshalledObject.ElapsedTimeInSeconds = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("EstimatedTimeToCompletionInSeconds", targetDepth))
                     {
-                        restoreStatus.EstimatedTimeToCompletionInSeconds = LongUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = LongUnmarshaller.Instance;
+                        unmarshalledObject.EstimatedTimeToCompletionInSeconds = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ProgressInMegaBytes", targetDepth))
+                    {
+                        var unmarshaller = LongUnmarshaller.Instance;
+                        unmarshalledObject.ProgressInMegaBytes = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SnapshotSizeInMegaBytes", targetDepth))
+                    {
+                        var unmarshaller = LongUnmarshaller.Instance;
+                        unmarshalledObject.SnapshotSizeInMegaBytes = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Status", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return restoreStatus;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return restoreStatus;
+            return unmarshalledObject;
         }
 
-        public RestoreStatus Unmarshall(JsonUnmarshallerContext context) 
+        public RestoreStatus Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static RestoreStatusUnmarshaller instance;
 
-        public static RestoreStatusUnmarshaller GetInstance() 
+        private static RestoreStatusUnmarshaller _instance = new RestoreStatusUnmarshaller();        
+
+        public static RestoreStatusUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new RestoreStatusUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

@@ -12,24 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the CreateClusterSecurityGroup response and response metadata.
+    /// Configuration for accessing Amazon CreateClusterSecurityGroup service
     /// </summary>
     public partial class CreateClusterSecurityGroupResponse : CreateClusterSecurityGroupResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the CreateClusterSecurityGroupResult property.
-        /// Contains the result of a successful invocation of the CreateClusterSecurityGroup
-        /// action.
-        /// 
+        /// Represents the output of a CreateClusterSecurityGroup operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateClusterSecurityGroupResult class are now available on the CreateClusterSecurityGroupResponse class. You should use the properties on CreateClusterSecurityGroupResponse instead of accessing them through CreateClusterSecurityGroupResult.")]
         public CreateClusterSecurityGroupResult CreateClusterSecurityGroupResult
         {
@@ -40,4 +36,3 @@ namespace Amazon.Redshift.Model
         }
     }
 }
-    

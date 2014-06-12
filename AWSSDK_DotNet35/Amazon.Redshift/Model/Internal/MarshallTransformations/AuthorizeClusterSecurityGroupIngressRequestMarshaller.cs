@@ -14,44 +14,48 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Authorize Cluster Security Group Ingress Request Marshaller
+    /// AuthorizeClusterSecurityGroupIngress Request Marshaller
     /// </summary>       
     public class AuthorizeClusterSecurityGroupIngressRequestMarshaller : IMarshaller<IRequest, AuthorizeClusterSecurityGroupIngressRequest>
     {
-        public IRequest Marshall(AuthorizeClusterSecurityGroupIngressRequest authorizeClusterSecurityGroupIngressRequest)
+        public IRequest Marshall(AuthorizeClusterSecurityGroupIngressRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(authorizeClusterSecurityGroupIngressRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "AuthorizeClusterSecurityGroupIngress");
             request.Parameters.Add("Version", "2012-12-01");
-            if (authorizeClusterSecurityGroupIngressRequest != null && authorizeClusterSecurityGroupIngressRequest.IsSetClusterSecurityGroupName())
-            {
-                request.Parameters.Add("ClusterSecurityGroupName", StringUtils.FromString(authorizeClusterSecurityGroupIngressRequest.ClusterSecurityGroupName));
-            }
-            if (authorizeClusterSecurityGroupIngressRequest != null && authorizeClusterSecurityGroupIngressRequest.IsSetCIDRIP())
-            {
-                request.Parameters.Add("CIDRIP", StringUtils.FromString(authorizeClusterSecurityGroupIngressRequest.CIDRIP));
-            }
-            if (authorizeClusterSecurityGroupIngressRequest != null && authorizeClusterSecurityGroupIngressRequest.IsSetEC2SecurityGroupName())
-            {
-                request.Parameters.Add("EC2SecurityGroupName", StringUtils.FromString(authorizeClusterSecurityGroupIngressRequest.EC2SecurityGroupName));
-            }
-            if (authorizeClusterSecurityGroupIngressRequest != null && authorizeClusterSecurityGroupIngressRequest.IsSetEC2SecurityGroupOwnerId())
-            {
-                request.Parameters.Add("EC2SecurityGroupOwnerId", StringUtils.FromString(authorizeClusterSecurityGroupIngressRequest.EC2SecurityGroupOwnerId));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetCIDRIP())
+                {
+                    request.Parameters.Add("CIDRIP", StringUtils.FromString(publicRequest.CIDRIP));
+                }
+                if(publicRequest.IsSetClusterSecurityGroupName())
+                {
+                    request.Parameters.Add("ClusterSecurityGroupName", StringUtils.FromString(publicRequest.ClusterSecurityGroupName));
+                }
+                if(publicRequest.IsSetEC2SecurityGroupName())
+                {
+                    request.Parameters.Add("EC2SecurityGroupName", StringUtils.FromString(publicRequest.EC2SecurityGroupName));
+                }
+                if(publicRequest.IsSetEC2SecurityGroupOwnerId())
+                {
+                    request.Parameters.Add("EC2SecurityGroupOwnerId", StringUtils.FromString(publicRequest.EC2SecurityGroupOwnerId));
+                }
+            }
             return request;
         }
     }

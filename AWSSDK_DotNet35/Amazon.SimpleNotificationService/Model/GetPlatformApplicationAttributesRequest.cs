@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,32 +25,33 @@ namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetPlatformApplicationAttributes operation.
-    /// <para>The <c>GetPlatformApplicationAttributes</c> action retrieves the attributes of the platform application object for the supported push
-    /// notification services, such as APNS and GCM. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"
-    /// >Using Amazon SNS Mobile Push Notifications</a> .
-    /// </para>
+    /// Retrieves the attributes of the platform application object for the supported push
+    /// notification services,       such as APNS and GCM.      For more information, see
+    /// <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+    /// SNS Mobile Push Notifications</a>.
     /// </summary>
     public partial class GetPlatformApplicationAttributesRequest : AmazonSimpleNotificationServiceRequest
     {
-        private string platformApplicationArn;
+        private string _platformApplicationArn;
 
 
         /// <summary>
+        /// Gets and sets the property PlatformApplicationArn. 
+        /// <para>
         /// PlatformApplicationArn for GetPlatformApplicationAttributesInput.
-        ///  
+        /// </para>
         /// </summary>
         public string PlatformApplicationArn
         {
-            get { return this.platformApplicationArn; }
-            set { this.platformApplicationArn = value; }
+            get { return this._platformApplicationArn; }
+            set { this._platformApplicationArn = value; }
         }
 
         // Check to see if PlatformApplicationArn property is set
         internal bool IsSetPlatformApplicationArn()
         {
-            return this.platformApplicationArn != null;
+            return this._platformApplicationArn != null;
         }
 
     }
 }
-    

@@ -25,89 +25,123 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeClusterVersions operation.
-    /// <para> Returns descriptions of the available Amazon Redshift cluster versions. You can call this operation even before creating any
-    /// clusters to learn more about the Amazon Redshift versions. For more information about managing clusters, go to <a
-    /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html" >Amazon Redshift Clusters</a> in the <i>Amazon Redshift
-    /// Management Guide</i> </para>
+    /// Returns  descriptions of the available Amazon Redshift cluster versions. You can
+    /// call this     operation even before creating any clusters to learn more about the
+    /// Amazon Redshift versions.     For more information about managing clusters, go to
+    /// <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+    /// Redshift Clusters</a> in the <i>Amazon Redshift Management Guide</i>
     /// </summary>
     public partial class DescribeClusterVersionsRequest : AmazonRedshiftRequest
     {
-        private string clusterVersion;
-        private string clusterParameterGroupFamily;
-        private int? maxRecords;
-        private string marker;
+        private string _clusterParameterGroupFamily;
+        private string _clusterVersion;
+        private string _marker;
+        private int? _maxRecords;
 
 
         /// <summary>
-        /// The specific cluster version to return. Example: <c>1.0</c>
-        ///  
-        /// </summary>
-        public string ClusterVersion
-        {
-            get { return this.clusterVersion; }
-            set { this.clusterVersion = value; }
-        }
-
-        // Check to see if ClusterVersion property is set
-        internal bool IsSetClusterVersion()
-        {
-            return this.clusterVersion != null;
-        }
-
-        /// <summary>
-        /// The name of a specific cluster parameter group family to return details for. Constraints: <ul> <li>Must be 1 to 255 alphanumeric
-        /// characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
-        ///  
+        /// Gets and sets the property ClusterParameterGroupFamily. 
+        /// <para>
+        ///     The name of a specific cluster parameter group family to return details for. 
+        ///   
+        /// </para>
+        ///        
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///        <ul>           <li>Must be 1 to 255 alphanumeric characters</li>          
+        /// <li>First character must be a letter</li>           <li>Cannot end with a hyphen or
+        /// contain two consecutive hyphens</li>       </ul>
         /// </summary>
         public string ClusterParameterGroupFamily
         {
-            get { return this.clusterParameterGroupFamily; }
-            set { this.clusterParameterGroupFamily = value; }
+            get { return this._clusterParameterGroupFamily; }
+            set { this._clusterParameterGroupFamily = value; }
         }
 
         // Check to see if ClusterParameterGroupFamily property is set
         internal bool IsSetClusterParameterGroupFamily()
         {
-            return this.clusterParameterGroupFamily != null;
+            return this._clusterParameterGroupFamily != null;
         }
 
+
         /// <summary>
-        /// The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified
-        /// <c>MaxRecords</c> value, a value is returned in a <c>marker</c> field of the response. You can retrieve the next set of records by retrying
-        /// the command with the returned marker value. Default: <c>100</c> Constraints: minimum 20, maximum 100.
-        ///  
+        /// Gets and sets the property ClusterVersion. 
+        /// <para>
+        ///     The specific cluster version to return.    
+        /// </para>
+        ///        
+        /// <para>
+        /// Example: <code>1.0</code>
+        /// </para>
         /// </summary>
-        public int MaxRecords
+        public string ClusterVersion
         {
-            get { return this.maxRecords ?? default(int); }
-            set { this.maxRecords = value; }
+            get { return this._clusterVersion; }
+            set { this._clusterVersion = value; }
         }
 
-        // Check to see if MaxRecords property is set
-        internal bool IsSetMaxRecords()
+        // Check to see if ClusterVersion property is set
+        internal bool IsSetClusterVersion()
         {
-            return this.maxRecords.HasValue;
+            return this._clusterVersion != null;
         }
+
 
         /// <summary>
-        /// An optional parameter that specifies the starting point to return a set of response records. When the results of a
-        /// <a>DescribeClusterVersions</a> request exceed the value specified in <c>MaxRecords</c>, AWS returns a value in the <c>Marker</c> field of
-        /// the response. You can retrieve the next set of response records by providing the returned marker value in the <c>Marker</c> parameter and
-        /// retrying the request.
-        ///  
+        /// Gets and sets the property Marker. 
+        /// <para>
+        ///            An optional parameter that specifies the starting point to return a set
+        /// of response records.            When the results of a <a>DescribeClusterVersions</a>
+        /// request exceed the value specified in <code>MaxRecords</code>,            AWS returns
+        /// a value in the <code>Marker</code> field of the response. You can retrieve the next
+        /// set of            response records by providing the returned marker value in the <code>Marker</code>
+        /// parameter and            retrying the request.       
+        /// </para>
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property MaxRecords. 
+        /// <para>
+        ///            The maximum number of response records to return in each call.        
+        ///    If the number of remaining response records exceeds the specified <code>MaxRecords</code>
+        /// value,            a value is returned in a <code>marker</code> field of the response.
+        ///            You can retrieve the next set of records by retrying the command with the
+        /// returned marker value.       
+        /// </para>
+        ///        
+        /// <para>
+        /// Default: <code>100</code>
+        /// </para>
+        ///        
+        /// <para>
+        /// Constraints: minimum 20, maximum 100.
+        /// </para>
+        /// </summary>
+        public int MaxRecords
+        {
+            get { return this._maxRecords.GetValueOrDefault(); }
+            set { this._maxRecords = value; }
+        }
+
+        // Check to see if MaxRecords property is set
+        internal bool IsSetMaxRecords()
+        {
+            return this._maxRecords.HasValue; 
         }
 
     }
 }
-    

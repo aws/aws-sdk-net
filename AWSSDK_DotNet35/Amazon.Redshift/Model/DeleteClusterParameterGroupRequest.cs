@@ -25,31 +25,37 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteClusterParameterGroup operation.
-    /// <para> Deletes a specified Amazon Redshift parameter group. <para><b>NOTE:</b>You cannot delete a parameter group if it is associated with a
-    /// cluster.</para> </para>
+    /// Deletes a specified Amazon Redshift parameter group.             <note>You
+    /// cannot delete a parameter group if it is associated with a cluster.</note>
     /// </summary>
     public partial class DeleteClusterParameterGroupRequest : AmazonRedshiftRequest
     {
-        private string parameterGroupName;
+        private string _parameterGroupName;
 
 
         /// <summary>
-        /// The name of the parameter group to be deleted. Constraints: <ul> <li>Must be the name of an existing cluster parameter group.</li>
-        /// <li>Cannot delete a default cluster parameter group.</li> </ul>
-        ///  
+        /// Gets and sets the property ParameterGroupName. 
+        /// <para>
+        ///         The name of the parameter group to be deleted.        
+        /// </para>
+        ///         
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///         <ul>            <li>Must be the name of an existing cluster parameter group.</li>
+        ///            <li>Cannot delete a default cluster parameter group.</li>        </ul>
         /// </summary>
         public string ParameterGroupName
         {
-            get { return this.parameterGroupName; }
-            set { this.parameterGroupName = value; }
+            get { return this._parameterGroupName; }
+            set { this._parameterGroupName = value; }
         }
 
         // Check to see if ParameterGroupName property is set
         internal bool IsSetParameterGroupName()
         {
-            return this.parameterGroupName != null;
+            return this._parameterGroupName != null;
         }
 
     }
 }
-    

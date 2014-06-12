@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,32 +14,36 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SimpleNotificationService.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Get Topic Attributes Request Marshaller
+    /// GetTopicAttributes Request Marshaller
     /// </summary>       
     public class GetTopicAttributesRequestMarshaller : IMarshaller<IRequest, GetTopicAttributesRequest>
     {
-        public IRequest Marshall(GetTopicAttributesRequest getTopicAttributesRequest)
+        public IRequest Marshall(GetTopicAttributesRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(getTopicAttributesRequest, "AmazonSimpleNotificationService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleNotificationService");
             request.Parameters.Add("Action", "GetTopicAttributes");
             request.Parameters.Add("Version", "2010-03-31");
-            if (getTopicAttributesRequest != null && getTopicAttributesRequest.IsSetTopicArn())
-            {
-                request.Parameters.Add("TopicArn", StringUtils.FromString(getTopicAttributesRequest.TopicArn));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetTopicArn())
+                {
+                    request.Parameters.Add("TopicArn", StringUtils.FromString(publicRequest.TopicArn));
+                }
+            }
             return request;
         }
     }

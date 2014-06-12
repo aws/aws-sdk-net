@@ -14,70 +14,70 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Modify Event Subscription Request Marshaller
+    /// ModifyEventSubscription Request Marshaller
     /// </summary>       
     public class ModifyEventSubscriptionRequestMarshaller : IMarshaller<IRequest, ModifyEventSubscriptionRequest>
     {
-        public IRequest Marshall(ModifyEventSubscriptionRequest modifyEventSubscriptionRequest)
+        public IRequest Marshall(ModifyEventSubscriptionRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(modifyEventSubscriptionRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "ModifyEventSubscription");
             request.Parameters.Add("Version", "2012-12-01");
-            if (modifyEventSubscriptionRequest != null && modifyEventSubscriptionRequest.IsSetSubscriptionName())
-            {
-                request.Parameters.Add("SubscriptionName", StringUtils.FromString(modifyEventSubscriptionRequest.SubscriptionName));
-            }
-            if (modifyEventSubscriptionRequest != null && modifyEventSubscriptionRequest.IsSetSnsTopicArn())
-            {
-                request.Parameters.Add("SnsTopicArn", StringUtils.FromString(modifyEventSubscriptionRequest.SnsTopicArn));
-            }
-            if (modifyEventSubscriptionRequest != null && modifyEventSubscriptionRequest.IsSetSourceType())
-            {
-                request.Parameters.Add("SourceType", StringUtils.FromString(modifyEventSubscriptionRequest.SourceType));
-            }
-            if (modifyEventSubscriptionRequest != null)
-            {
-                List<string> sourceIdsList = modifyEventSubscriptionRequest.SourceIds;
 
-                int sourceIdsListIndex = 1;
-                foreach (string sourceIdsListValue in sourceIdsList)
-                { 
-                    request.Parameters.Add("SourceIds.member." + sourceIdsListIndex, StringUtils.FromString(sourceIdsListValue));
-                    sourceIdsListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetEnabled())
+                {
+                    request.Parameters.Add("Enabled", StringUtils.FromBool(publicRequest.Enabled));
+                }
+                if(publicRequest.IsSetEventCategories())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.EventCategories)
+                    {
+                        request.Parameters.Add("EventCategories" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetSeverity())
+                {
+                    request.Parameters.Add("Severity", StringUtils.FromString(publicRequest.Severity));
+                }
+                if(publicRequest.IsSetSnsTopicArn())
+                {
+                    request.Parameters.Add("SnsTopicArn", StringUtils.FromString(publicRequest.SnsTopicArn));
+                }
+                if(publicRequest.IsSetSourceIds())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.SourceIds)
+                    {
+                        request.Parameters.Add("SourceIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetSourceType())
+                {
+                    request.Parameters.Add("SourceType", StringUtils.FromString(publicRequest.SourceType));
+                }
+                if(publicRequest.IsSetSubscriptionName())
+                {
+                    request.Parameters.Add("SubscriptionName", StringUtils.FromString(publicRequest.SubscriptionName));
                 }
             }
-            if (modifyEventSubscriptionRequest != null)
-            {
-                List<string> eventCategoriesList = modifyEventSubscriptionRequest.EventCategories;
-
-                int eventCategoriesListIndex = 1;
-                foreach (string eventCategoriesListValue in eventCategoriesList)
-                { 
-                    request.Parameters.Add("EventCategories.member." + eventCategoriesListIndex, StringUtils.FromString(eventCategoriesListValue));
-                    eventCategoriesListIndex++;
-                }
-            }
-            if (modifyEventSubscriptionRequest != null && modifyEventSubscriptionRequest.IsSetSeverity())
-            {
-                request.Parameters.Add("Severity", StringUtils.FromString(modifyEventSubscriptionRequest.Severity));
-            }
-            if (modifyEventSubscriptionRequest != null && modifyEventSubscriptionRequest.IsSetEnabled())
-            {
-                request.Parameters.Add("Enabled", StringUtils.FromBool(modifyEventSubscriptionRequest.Enabled));
-            }
-
             return request;
         }
     }

@@ -12,24 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the CopyClusterSnapshot response and response metadata.
+    /// Configuration for accessing Amazon CopyClusterSnapshot service
     /// </summary>
     public partial class CopyClusterSnapshotResponse : CopyClusterSnapshotResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the CopyClusterSnapshotResult property.
-        /// Contains the result of a successful invocation of the CopyClusterSnapshot
-        /// action.
-        /// 
+        /// Represents the output of a CopyClusterSnapshot operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CopyClusterSnapshotResult class are now available on the CopyClusterSnapshotResponse class. You should use the properties on CopyClusterSnapshotResponse instead of accessing them through CopyClusterSnapshotResult.")]
         public CopyClusterSnapshotResult CopyClusterSnapshotResult
         {
@@ -40,4 +36,3 @@ namespace Amazon.Redshift.Model
         }
     }
 }
-    

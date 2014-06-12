@@ -12,24 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the RevokeSnapshotAccess response and response metadata.
+    /// Configuration for accessing Amazon RevokeSnapshotAccess service
     /// </summary>
     public partial class RevokeSnapshotAccessResponse : RevokeSnapshotAccessResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the RevokeSnapshotAccessResult property.
-        /// Contains the result of a successful invocation of the RevokeSnapshotAccess
-        /// action.
-        /// 
+        /// Represents the output of a RevokeSnapshotAccess operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the RevokeSnapshotAccessResult class are now available on the RevokeSnapshotAccessResponse class. You should use the properties on RevokeSnapshotAccessResponse instead of accessing them through RevokeSnapshotAccessResult.")]
         public RevokeSnapshotAccessResult RevokeSnapshotAccessResult
         {
@@ -40,4 +36,3 @@ namespace Amazon.Redshift.Model
         }
     }
 }
-    

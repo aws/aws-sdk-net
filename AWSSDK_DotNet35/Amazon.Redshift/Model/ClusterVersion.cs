@@ -18,65 +18,77 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// <para>Describes a cluster version, including the parameter group family and description of the version.</para>
+    /// Describes a cluster version, including the parameter group family and description
+    /// of        the version.
     /// </summary>
     public partial class ClusterVersion
     {
-        
-        private string version;
-        private string clusterParameterGroupFamily;
-        private string description;
+        private string _clusterParameterGroupFamily;
+        private string _description;
+        private string _clusterVersion;
 
 
         /// <summary>
-        /// The version number used by the cluster.
-        ///  
-        /// </summary>
-        public string Version
-        {
-            get { return this.version; }
-            set { this.version = value; }
-        }
-
-        // Check to see if Version property is set
-        internal bool IsSetVersion()
-        {
-            return this.version != null;
-        }
-
-        /// <summary>
-        /// The name of the cluster parameter group family for the cluster.
-        ///  
+        /// Gets and sets the property ClusterParameterGroupFamily. 
+        /// <para>
+        ///     The name of the cluster parameter group family for the cluster.    
+        /// </para>
         /// </summary>
         public string ClusterParameterGroupFamily
         {
-            get { return this.clusterParameterGroupFamily; }
-            set { this.clusterParameterGroupFamily = value; }
+            get { return this._clusterParameterGroupFamily; }
+            set { this._clusterParameterGroupFamily = value; }
         }
 
         // Check to see if ClusterParameterGroupFamily property is set
         internal bool IsSetClusterParameterGroupFamily()
         {
-            return this.clusterParameterGroupFamily != null;
+            return this._clusterParameterGroupFamily != null;
         }
 
+
         /// <summary>
-        /// The description of the cluster version.
-        ///  
+        /// Gets and sets the property Description. 
+        /// <para>
+        ///             The description of the cluster version.        
+        /// </para>
         /// </summary>
         public string Description
         {
-            get { return this.description; }
-            set { this.description = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
 
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;
+            return this._description != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Version. 
+        /// <para>
+        ///     The version number used by the cluster.    
+        /// </para>
+        /// </summary>
+        public string Version
+        {
+            get { return this._clusterVersion; }
+            set { this._clusterVersion = value; }
+        }
+
+        // Check to see if Version property is set
+        internal bool IsSetVersion()
+        {
+            return this._clusterVersion != null;
+        }
+
     }
 }

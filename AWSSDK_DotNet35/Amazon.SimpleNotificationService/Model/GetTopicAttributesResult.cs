@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,40 +17,48 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// <para>Response for GetTopicAttributes action.</para>
+    /// Response for GetTopicAttributes action.
     /// </summary>
     public partial class GetTopicAttributesResult : AmazonWebServiceResponse
     {
-        
-        private Dictionary<string,string> attributes = new Dictionary<string,string>();
+        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
 
 
         /// <summary>
-        /// A map of the topic's attributes. Attributes in this map include the following: <ul> <li><c>TopicArn</c> -- the topic's ARN</li>
-        /// <li><c>Owner</c> -- the AWS account ID of the topic's owner</li> <li><c>Policy</c> -- the JSON serialization of the topic's access control
-        /// policy</li> <li><c>DisplayName</c> -- the human-readable name used in the "From" field for notifications to email and email-json
-        /// endpoints</li> <li><c>SubscriptionsPending</c> -- the number of subscriptions pending confirmation on this topic</li>
-        /// <li><c>SubscriptionsConfirmed</c> -- the number of confirmed subscriptions on this topic</li> <li><c>SubscriptionsDeleted</c> -- the number
-        /// of deleted subscriptions on this topic</li> <li><c>DeliveryPolicy</c> -- the JSON serialization of the topic's delivery policy</li>
-        /// <li><c>EffectiveDeliveryPolicy</c> -- the JSON serialization of the effective delivery policy that takes into account system defaults</li>
-        /// </ul>
-        ///  
+        /// Gets and sets the property Attributes. 
+        /// <para>
+        /// A map of the topic's attributes. Attributes in this map include the following:
+        /// </para>
+        ///     <ul>      <li><code>TopicArn</code> -- the topic's ARN</li>      <li><code>Owner</code>
+        /// -- the AWS account ID of the topic's owner</li>      <li><code>Policy</code> -- the
+        /// JSON serialization of the topic's access control policy</li>      <li><code>DisplayName</code>
+        /// -- the human-readable name used in the "From" field for notifications to email and
+        /// email-json endpoints</li>      <li><code>SubscriptionsPending</code> -- the number
+        /// of subscriptions pending confirmation on this topic</li>      <li><code>SubscriptionsConfirmed</code>
+        /// -- the number of confirmed subscriptions on this topic</li>      <li><code>SubscriptionsDeleted</code>
+        /// -- the number of deleted subscriptions on this topic</li>      <li><code>DeliveryPolicy</code>
+        /// -- the JSON serialization of the topic's delivery policy</li>      <li><code>EffectiveDeliveryPolicy</code>
+        /// -- the JSON serialization of the effective delivery policy that takes into account
+        /// system defaults</li>          </ul>
         /// </summary>
-        public Dictionary<string,string> Attributes
+        public Dictionary<string, string> Attributes
         {
-            get { return this.attributes; }
-            set { this.attributes = value; }
+            get { return this._attributes; }
+            set { this._attributes = value; }
         }
 
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this.attributes != null;
+            return this._attributes != null && this._attributes.Count > 0; 
         }
+
     }
 }

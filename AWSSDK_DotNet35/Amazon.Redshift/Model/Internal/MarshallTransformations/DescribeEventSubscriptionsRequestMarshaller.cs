@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Event Subscriptions Request Marshaller
+    /// DescribeEventSubscriptions Request Marshaller
     /// </summary>       
     public class DescribeEventSubscriptionsRequestMarshaller : IMarshaller<IRequest, DescribeEventSubscriptionsRequest>
     {
-        public IRequest Marshall(DescribeEventSubscriptionsRequest describeEventSubscriptionsRequest)
+        public IRequest Marshall(DescribeEventSubscriptionsRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describeEventSubscriptionsRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "DescribeEventSubscriptions");
             request.Parameters.Add("Version", "2012-12-01");
-            if (describeEventSubscriptionsRequest != null && describeEventSubscriptionsRequest.IsSetSubscriptionName())
-            {
-                request.Parameters.Add("SubscriptionName", StringUtils.FromString(describeEventSubscriptionsRequest.SubscriptionName));
-            }
-            if (describeEventSubscriptionsRequest != null && describeEventSubscriptionsRequest.IsSetMaxRecords())
-            {
-                request.Parameters.Add("MaxRecords", StringUtils.FromInt(describeEventSubscriptionsRequest.MaxRecords));
-            }
-            if (describeEventSubscriptionsRequest != null && describeEventSubscriptionsRequest.IsSetMarker())
-            {
-                request.Parameters.Add("Marker", StringUtils.FromString(describeEventSubscriptionsRequest.Marker));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetMarker())
+                {
+                    request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
+                }
+                if(publicRequest.IsSetMaxRecords())
+                {
+                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
+                }
+                if(publicRequest.IsSetSubscriptionName())
+                {
+                    request.Parameters.Add("SubscriptionName", StringUtils.FromString(publicRequest.SubscriptionName));
+                }
+            }
             return request;
         }
     }

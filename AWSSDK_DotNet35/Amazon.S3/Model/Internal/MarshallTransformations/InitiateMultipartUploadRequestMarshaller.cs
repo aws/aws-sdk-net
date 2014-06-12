@@ -42,6 +42,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (initiateMultipartUploadRequest.IsSetServerSideEncryptionMethod())
                 request.Headers.Add("x-amz-server-side-encryption", S3Transforms.ToStringValue(initiateMultipartUploadRequest.ServerSideEncryptionMethod));
+            if (initiateMultipartUploadRequest.IsSetServerSideEncryptionCustomerMethod())
+                request.Headers.Add("x-amz-server-side-encryption-customer-algorithm", initiateMultipartUploadRequest.ServerSideEncryptionCustomerMethod);
+            if (initiateMultipartUploadRequest.IsSetServerSideEncryptionCustomerProvidedKey())
+            {
+                request.Headers.Add("x-amz-server-side-encryption-customer-key", initiateMultipartUploadRequest.ServerSideEncryptionCustomerProvidedKey);
+                if (initiateMultipartUploadRequest.IsSetServerSideEncryptionCustomerProvidedKeyMD5())
+                    request.Headers.Add("x-amz-server-side-encryption-customer-key-MD5", initiateMultipartUploadRequest.ServerSideEncryptionCustomerProvidedKeyMD5);
+                else
+                    request.Headers.Add("x-amz-server-side-encryption-customer-key-MD5", AmazonS3Util.ComputeEncodedMD5FromEncodedString(initiateMultipartUploadRequest.ServerSideEncryptionCustomerProvidedKey));
+            }
 
             if (initiateMultipartUploadRequest.IsSetStorageClass())
                 request.Headers.Add("x-amz-storage-class", S3Transforms.ToStringValue(initiateMultipartUploadRequest.StorageClass));

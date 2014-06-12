@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,32 +14,36 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SimpleNotificationService.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Topic Request Marshaller
+    /// CreateTopic Request Marshaller
     /// </summary>       
     public class CreateTopicRequestMarshaller : IMarshaller<IRequest, CreateTopicRequest>
     {
-        public IRequest Marshall(CreateTopicRequest createTopicRequest)
+        public IRequest Marshall(CreateTopicRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(createTopicRequest, "AmazonSimpleNotificationService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleNotificationService");
             request.Parameters.Add("Action", "CreateTopic");
             request.Parameters.Add("Version", "2010-03-31");
-            if (createTopicRequest != null && createTopicRequest.IsSetName())
-            {
-                request.Parameters.Add("Name", StringUtils.FromString(createTopicRequest.Name));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetName())
+                {
+                    request.Parameters.Add("Name", StringUtils.FromString(publicRequest.Name));
+                }
+            }
             return request;
         }
     }

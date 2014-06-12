@@ -42,11 +42,11 @@ namespace Amazon.SessionProvider
     /// <code>
     /// &lt;sessionState 
     ///   mode="Custom" 
-    ///   customProvider="DynamoDBSessionStoreProvider"gt;
+    ///   customProvider="DynamoDBSessionStoreProvider"&gt;
     ///   &lt;providers&gt;
     ///     &lt;add name="DynamoDBSessionStoreProvider" 
-    ///          type="Amazon.SessionProvider.DynamoDBSessionStateStore"
-    ///          AWSProfileName="AWS Default"
+    ///          type="Amazon.SessionProvider.DynamoDBSessionStateStore, AWS.SessionProvider"
+    ///          AWSProfileName="default"
     ///          AWSProfilesLocation=".aws/credentials"
     ///          Region="us-east-1"
     ///          Table="ASP.NET_SessionState"
@@ -77,7 +77,11 @@ namespace Amazon.SessionProvider
     ///     </item>
     ///     <item>
     ///         <term>Region</term>
-    ///         <description>Required string attribute. The region to use DynamoDB in. The default is us-east-1. Possible values are us-east-1, us-west-1, us-west-2, eu-west-1, ap-northeast-1, ap-southeast-1.</description>
+    ///         <description>Required string attribute. The region to use DynamoDB in. Possible values are us-east-1, us-west-1, us-west-2, eu-west-1, ap-northeast-1, ap-southeast-1.</description>
+    ///     </item>
+    ///     <item>
+    ///         <term>Service URL</term>
+    ///         <description>The URL of the DynamoDB endpoint. This can be used instead of region. This property is commonly used for connecting to DynamoDB Local (e.g. http://localhost:8000/)</description>
     ///     </item>
     ///     <item>
     ///         <term>Application</term>
@@ -128,6 +132,7 @@ namespace Amazon.SessionProvider
         public const string CONFIG_APPLICATION = "Application";
         public const string CONFIG_TABLE = "Table";
         public const string CONFIG_REGION = "Region";
+        public const string CONFIG_SERVICE_URL = "ServiceURL";
         public const string CONFIG_INITIAL_READ_UNITS = "ReadCapacityUnits";
         public const string CONFIG_INITIAL_WRITE_UNITS = "WriteCapacityUnits";
         public const string CONFIG_CREATE_TABLE_IF_NOT_EXIST = "CreateIfNotExist";
@@ -155,6 +160,7 @@ namespace Amazon.SessionProvider
         string _profilesLocation;
         string _tableName = DEFAULT_TABLENAME;
         string _regionName;
+        string _serviceURL;
         string _application = "";
         int _initialReadUnits = 10;
         int _initialWriteUnits = 5;
@@ -215,7 +221,9 @@ namespace Amazon.SessionProvider
             GetConfigSettings(config);
 
 
-            var region = RegionEndpoint.GetBySystemName(this._regionName);
+            RegionEndpoint region = null;
+            if(!string.IsNullOrEmpty(this._regionName))
+                region = RegionEndpoint.GetBySystemName(this._regionName);
 
             AWSCredentials credentials = null;
             if (!string.IsNullOrEmpty(this._accessKey))
@@ -230,13 +238,20 @@ namespace Amazon.SessionProvider
                     credentials = new StoredProfileAWSCredentials(this._profileName, this._profilesLocation);
             }
 
+            AmazonDynamoDBConfig ddbConfig = new AmazonDynamoDBConfig();
+
+            if (region != null)
+                ddbConfig.RegionEndpoint = region;
+            if (!string.IsNullOrEmpty(this._serviceURL))
+                ddbConfig.ServiceURL = this._serviceURL;
+
             if (credentials != null)
             {
-                this._ddbClient = new AmazonDynamoDBClient(credentials, region);
+                this._ddbClient = new AmazonDynamoDBClient(credentials, ddbConfig);
             }
             else
             {
-                this._ddbClient = new AmazonDynamoDBClient(region);
+                this._ddbClient = new AmazonDynamoDBClient(ddbConfig);
             }
 
             SetupTable();
@@ -270,11 +285,7 @@ namespace Amazon.SessionProvider
             this._profileName= config[CONFIG_PROFILENAME];
             this._profilesLocation = config[CONFIG_PROFILESLOCATION];
             this._regionName = config[CONFIG_REGION];
-
-            if (string.IsNullOrEmpty(this._regionName))
-            {
-                throw new AmazonDynamoDBException("No region found. Region is required to be specified in the web.config");
-            }
+            this._serviceURL = config[CONFIG_SERVICE_URL];
 
             if (!string.IsNullOrEmpty(config[CONFIG_TABLE]))
             {

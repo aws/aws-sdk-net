@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the  DisableLogging response and response metadata.
+    /// Configuration for accessing Amazon DisableLogging service
     /// </summary>
     public partial class DisableLoggingResponse : DisableLoggingResult
     {
         /// <summary>
         /// Gets and sets the DisableLoggingResult property.
-        /// Describes the status of logging for a cluster.
+        /// Represents the output of a DisableLogging operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DisableLoggingResult class are now available on the DisableLoggingResponse class. You should use the properties on DisableLoggingResponse instead of accessing them through DisableLoggingResult.")]
         public DisableLoggingResult DisableLoggingResult
@@ -40,4 +36,3 @@ namespace Amazon.Redshift.Model
         }
     }
 }
-    

@@ -12,69 +12,75 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ClusterSnapshotCopyStatus Unmarshaller
-     /// </summary>
-    internal class ClusterSnapshotCopyStatusUnmarshaller : IUnmarshaller<ClusterSnapshotCopyStatus, XmlUnmarshallerContext>, IUnmarshaller<ClusterSnapshotCopyStatus, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ClusterSnapshotCopyStatus Object
+    /// </summary>  
+    public class ClusterSnapshotCopyStatusUnmarshaller : IUnmarshaller<ClusterSnapshotCopyStatus, XmlUnmarshallerContext>, IUnmarshaller<ClusterSnapshotCopyStatus, JsonUnmarshallerContext>
     {
-        public ClusterSnapshotCopyStatus Unmarshall(XmlUnmarshallerContext context) 
+        public ClusterSnapshotCopyStatus Unmarshall(XmlUnmarshallerContext context)
         {
-            ClusterSnapshotCopyStatus clusterSnapshotCopyStatus = new ClusterSnapshotCopyStatus();
+            ClusterSnapshotCopyStatus unmarshalledObject = new ClusterSnapshotCopyStatus();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("DestinationRegion", targetDepth))
                     {
-                        clusterSnapshotCopyStatus.DestinationRegion = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DestinationRegion = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("RetentionPeriod", targetDepth))
                     {
-                        clusterSnapshotCopyStatus.RetentionPeriod = LongUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = LongUnmarshaller.Instance;
+                        unmarshalledObject.RetentionPeriod = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return clusterSnapshotCopyStatus;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return clusterSnapshotCopyStatus;
+            return unmarshalledObject;
         }
 
-        public ClusterSnapshotCopyStatus Unmarshall(JsonUnmarshallerContext context) 
+        public ClusterSnapshotCopyStatus Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static ClusterSnapshotCopyStatusUnmarshaller instance;
 
-        public static ClusterSnapshotCopyStatusUnmarshaller GetInstance() 
+        private static ClusterSnapshotCopyStatusUnmarshaller _instance = new ClusterSnapshotCopyStatusUnmarshaller();        
+
+        public static ClusterSnapshotCopyStatusUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new ClusterSnapshotCopyStatusUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

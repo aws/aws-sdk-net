@@ -14,36 +14,40 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Purchase Reserved Node Offering Request Marshaller
+    /// PurchaseReservedNodeOffering Request Marshaller
     /// </summary>       
     public class PurchaseReservedNodeOfferingRequestMarshaller : IMarshaller<IRequest, PurchaseReservedNodeOfferingRequest>
     {
-        public IRequest Marshall(PurchaseReservedNodeOfferingRequest purchaseReservedNodeOfferingRequest)
+        public IRequest Marshall(PurchaseReservedNodeOfferingRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(purchaseReservedNodeOfferingRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "PurchaseReservedNodeOffering");
             request.Parameters.Add("Version", "2012-12-01");
-            if (purchaseReservedNodeOfferingRequest != null && purchaseReservedNodeOfferingRequest.IsSetReservedNodeOfferingId())
-            {
-                request.Parameters.Add("ReservedNodeOfferingId", StringUtils.FromString(purchaseReservedNodeOfferingRequest.ReservedNodeOfferingId));
-            }
-            if (purchaseReservedNodeOfferingRequest != null && purchaseReservedNodeOfferingRequest.IsSetNodeCount())
-            {
-                request.Parameters.Add("NodeCount", StringUtils.FromInt(purchaseReservedNodeOfferingRequest.NodeCount));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetNodeCount())
+                {
+                    request.Parameters.Add("NodeCount", StringUtils.FromInt(publicRequest.NodeCount));
+                }
+                if(publicRequest.IsSetReservedNodeOfferingId())
+                {
+                    request.Parameters.Add("ReservedNodeOfferingId", StringUtils.FromString(publicRequest.ReservedNodeOfferingId));
+                }
+            }
             return request;
         }
     }

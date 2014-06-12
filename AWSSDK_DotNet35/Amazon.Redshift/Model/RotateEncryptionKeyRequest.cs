@@ -25,30 +25,36 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the RotateEncryptionKey operation.
-    /// <para> Rotates the encryption keys for a cluster. </para>
+    /// Rotates the encryption keys for a cluster.
     /// </summary>
     public partial class RotateEncryptionKeyRequest : AmazonRedshiftRequest
     {
-        private string clusterIdentifier;
+        private string _clusterIdentifier;
 
 
         /// <summary>
-        /// The unique identifier of the cluster that you want to rotate the encryption keys for. Constraints: Must be the name of valid cluster that
-        /// has encryption enabled.
-        ///  
+        /// Gets and sets the property ClusterIdentifier. 
+        /// <para>
+        ///             The unique identifier of the cluster that you want to rotate the encryption
+        /// keys for.        
+        /// </para>
+        ///         
+        /// <para>
+        ///             Constraints: Must be the name of valid cluster that has encryption enabled.
+        ///        
+        /// </para>
         /// </summary>
         public string ClusterIdentifier
         {
-            get { return this.clusterIdentifier; }
-            set { this.clusterIdentifier = value; }
+            get { return this._clusterIdentifier; }
+            set { this._clusterIdentifier = value; }
         }
 
         // Check to see if ClusterIdentifier property is set
         internal bool IsSetClusterIdentifier()
         {
-            return this.clusterIdentifier != null;
+            return this._clusterIdentifier != null;
         }
 
     }
 }
-    

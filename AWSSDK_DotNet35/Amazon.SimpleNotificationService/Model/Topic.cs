@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,37 +18,37 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// <para>A wrapper type for the topic's Amazon Resource Name (ARN). To retrieve a topic's attributes, use <c>GetTopicAttributes</c> .</para>
+    /// A wrapper type for the topic's Amazon Resource Name (ARN). To retrieve a topic's attributes,
+    /// use <code>GetTopicAttributes</code>.
     /// </summary>
-    public class Topic
+    public partial class Topic
     {
-        
-        private string topicArn;
+        private string _topicArn;
+
 
         /// <summary>
-        /// Default constructor for a new Topic object.  Callers should use the
-        /// properties to initialize this object after creating it.
-        /// </summary>
-        public Topic() {}
-    
-
-        /// <summary>
+        /// Gets and sets the property TopicArn. 
+        /// <para>
         /// The topic's ARN.
-        ///  
+        /// </para>
         /// </summary>
         public string TopicArn
         {
-            get { return this.topicArn; }
-            set { this.topicArn = value; }
+            get { return this._topicArn; }
+            set { this._topicArn = value; }
         }
 
         // Check to see if TopicArn property is set
         internal bool IsSetTopicArn()
         {
-            return this.topicArn != null;
+            return this._topicArn != null;
         }
+
     }
 }

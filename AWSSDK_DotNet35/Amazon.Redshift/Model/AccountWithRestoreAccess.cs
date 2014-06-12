@@ -18,31 +18,37 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// <para> Describes an AWS customer account authorized to restore a snapshot. </para>
+    /// Describes an AWS customer account authorized to restore a snapshot.
     /// </summary>
     public partial class AccountWithRestoreAccess
     {
-        
-        private string accountId;
+        private string _accountId;
 
 
         /// <summary>
-        /// The identifier of an AWS customer account authorized to restore a snapshot.
-        ///  
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        ///             The identifier of an AWS customer account authorized to restore a snapshot.
+        ///         
+        /// </para>
         /// </summary>
         public string AccountId
         {
-            get { return this.accountId; }
-            set { this.accountId = value; }
+            get { return this._accountId; }
+            set { this._accountId = value; }
         }
 
         // Check to see if AccountId property is set
         internal bool IsSetAccountId()
         {
-            return this.accountId != null;
+            return this._accountId != null;
         }
+
     }
 }

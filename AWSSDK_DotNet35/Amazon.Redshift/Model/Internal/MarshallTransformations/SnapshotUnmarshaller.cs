@@ -12,210 +12,214 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Snapshot Unmarshaller
-     /// </summary>
-    internal class SnapshotUnmarshaller : IUnmarshaller<Snapshot, XmlUnmarshallerContext>, IUnmarshaller<Snapshot, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Snapshot Object
+    /// </summary>  
+    public class SnapshotUnmarshaller : IUnmarshaller<Snapshot, XmlUnmarshallerContext>, IUnmarshaller<Snapshot, JsonUnmarshallerContext>
     {
-        public Snapshot Unmarshall(XmlUnmarshallerContext context) 
+        public Snapshot Unmarshall(XmlUnmarshallerContext context)
         {
-            Snapshot snapshot = new Snapshot();
+            Snapshot unmarshalledObject = new Snapshot();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            if (context.IsStartOfDocument) 
-               targetDepth++;
-            
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("SnapshotIdentifier", targetDepth))
-                    {
-                        snapshot.SnapshotIdentifier = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("ClusterIdentifier", targetDepth))
-                    {
-                        snapshot.ClusterIdentifier = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("SnapshotCreateTime", targetDepth))
-                    {
-                        snapshot.SnapshotCreateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Status", targetDepth))
-                    {
-                        snapshot.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Port", targetDepth))
-                    {
-                        snapshot.Port = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("AvailabilityZone", targetDepth))
-                    {
-                        snapshot.AvailabilityZone = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("ClusterCreateTime", targetDepth))
-                    {
-                        snapshot.ClusterCreateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("MasterUsername", targetDepth))
-                    {
-                        snapshot.MasterUsername = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("ClusterVersion", targetDepth))
-                    {
-                        snapshot.ClusterVersion = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("SnapshotType", targetDepth))
-                    {
-                        snapshot.SnapshotType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("NodeType", targetDepth))
-                    {
-                        snapshot.NodeType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("NumberOfNodes", targetDepth))
-                    {
-                        snapshot.NumberOfNodes = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("DBName", targetDepth))
-                    {
-                        snapshot.DBName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("VpcId", targetDepth))
-                    {
-                        snapshot.VpcId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Encrypted", targetDepth))
-                    {
-                        snapshot.Encrypted = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("EncryptedWithHSM", targetDepth))
-                    {
-                        snapshot.EncryptedWithHSM = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("AccountsWithRestoreAccess/AccountWithRestoreAccess", targetDepth))
                     {
-                        snapshot.AccountsWithRestoreAccess.Add(AccountWithRestoreAccessUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("OwnerAccount", targetDepth))
-                    {
-                        snapshot.OwnerAccount = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("TotalBackupSizeInMegaBytes", targetDepth))
-                    {
-                        snapshot.TotalBackupSizeInMegaBytes = DoubleUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = AccountWithRestoreAccessUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AccountsWithRestoreAccess.Add(item);
                         continue;
                     }
                     if (context.TestExpression("ActualIncrementalBackupSizeInMegaBytes", targetDepth))
                     {
-                        snapshot.ActualIncrementalBackupSizeInMegaBytes = DoubleUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        unmarshalledObject.ActualIncrementalBackupSizeInMegaBytes = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("AvailabilityZone", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("BackupProgressInMegaBytes", targetDepth))
                     {
-                        snapshot.BackupProgressInMegaBytes = DoubleUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        unmarshalledObject.BackupProgressInMegaBytes = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ClusterCreateTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.ClusterCreateTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ClusterIdentifier", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ClusterIdentifier = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ClusterVersion", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ClusterVersion = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("CurrentBackupRateInMegaBytesPerSecond", targetDepth))
                     {
-                        snapshot.CurrentBackupRateInMegaBytesPerSecond = DoubleUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        unmarshalledObject.CurrentBackupRateInMegaBytesPerSecond = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("EstimatedSecondsToCompletion", targetDepth))
+                    if (context.TestExpression("DBName", targetDepth))
                     {
-                        snapshot.EstimatedSecondsToCompletion = LongUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DBName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ElapsedTimeInSeconds", targetDepth))
                     {
-                        snapshot.ElapsedTimeInSeconds = LongUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = LongUnmarshaller.Instance;
+                        unmarshalledObject.ElapsedTimeInSeconds = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Encrypted", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.Encrypted = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("EncryptedWithHSM", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.EncryptedWithHSM = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("EstimatedSecondsToCompletion", targetDepth))
+                    {
+                        var unmarshaller = LongUnmarshaller.Instance;
+                        unmarshalledObject.EstimatedSecondsToCompletion = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MasterUsername", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.MasterUsername = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("NodeType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.NodeType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("NumberOfNodes", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.NumberOfNodes = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("OwnerAccount", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OwnerAccount = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Port", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.Port = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SnapshotCreateTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.SnapshotCreateTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SnapshotIdentifier", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SnapshotIdentifier = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SnapshotType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SnapshotType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SourceRegion", targetDepth))
                     {
-                        snapshot.SourceRegion = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SourceRegion = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Status", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TotalBackupSizeInMegaBytes", targetDepth))
+                    {
+                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        unmarshalledObject.TotalBackupSizeInMegaBytes = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("VpcId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return snapshot;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return snapshot;
+            return unmarshalledObject;
         }
 
-        public Snapshot Unmarshall(JsonUnmarshallerContext context) 
+        public Snapshot Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static SnapshotUnmarshaller instance;
 
-        public static SnapshotUnmarshaller GetInstance() 
+        private static SnapshotUnmarshaller _instance = new SnapshotUnmarshaller();        
+
+        public static SnapshotUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new SnapshotUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

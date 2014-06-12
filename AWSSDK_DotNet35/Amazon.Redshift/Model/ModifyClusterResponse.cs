@@ -12,24 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the ModifyCluster response and response metadata.
+    /// Configuration for accessing Amazon ModifyCluster service
     /// </summary>
     public partial class ModifyClusterResponse : ModifyClusterResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the ModifyClusterResult property.
-        /// Contains the result of a successful invocation of the ModifyCluster
-        /// action.
-        /// 
+        /// Represents the output of a ModifyCluster operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ModifyClusterResult class are now available on the ModifyClusterResponse class. You should use the properties on ModifyClusterResponse instead of accessing them through ModifyClusterResult.")]
         public ModifyClusterResult ModifyClusterResult
         {
@@ -40,4 +36,3 @@ namespace Amazon.Redshift.Model
         }
     }
 }
-    

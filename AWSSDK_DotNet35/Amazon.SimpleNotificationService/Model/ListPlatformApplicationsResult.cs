@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,50 +17,58 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// <para>Response for ListPlatformApplications action.</para>
+    /// Response for ListPlatformApplications action.
     /// </summary>
     public partial class ListPlatformApplicationsResult : AmazonWebServiceResponse
     {
-        
-        private List<PlatformApplication> platformApplications = new List<PlatformApplication>();
-        private string nextToken;
+        private string _nextToken;
+        private List<PlatformApplication> _platformApplications = new List<PlatformApplication>();
 
 
         /// <summary>
-        /// Platform applications returned when calling ListPlatformApplications action.
-        ///  
-        /// </summary>
-        public List<PlatformApplication> PlatformApplications
-        {
-            get { return this.platformApplications; }
-            set { this.platformApplications = value; }
-        }
-
-        // Check to see if PlatformApplications property is set
-        internal bool IsSetPlatformApplications()
-        {
-            return this.platformApplications.Count > 0;
-        }
-
-        /// <summary>
-        /// NextToken string is returned when calling ListPlatformApplications action if additional records are available after the first page results.
-        ///  
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// NextToken string is returned when calling ListPlatformApplications action if additional
+        /// records are available after the first page results.
+        /// </para>
         /// </summary>
         public string NextToken
         {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;
+            return this._nextToken != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property PlatformApplications. 
+        /// <para>
+        /// Platform applications returned when calling ListPlatformApplications action.
+        /// </para>
+        /// </summary>
+        public List<PlatformApplication> PlatformApplications
+        {
+            get { return this._platformApplications; }
+            set { this._platformApplications = value; }
+        }
+
+        // Check to see if PlatformApplications property is set
+        internal bool IsSetPlatformApplications()
+        {
+            return this._platformApplications != null && this._platformApplications.Count > 0; 
+        }
+
     }
 }

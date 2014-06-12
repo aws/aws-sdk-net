@@ -18,142 +18,160 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// <para> Describes an event. </para>
+    /// Describes an event.
     /// </summary>
     public partial class Event
     {
-        
-        private string sourceIdentifier;
-        private SourceType sourceType;
-        private string message;
-        private List<string> eventCategories = new List<string>();
-        private string severity;
-        private DateTime? date;
-        private string eventId;
+        private DateTime? _date;
+        private List<string> _eventCategories = new List<string>();
+        private string _eventId;
+        private string _message;
+        private string _severity;
+        private string _sourceIdentifier;
+        private SourceType _sourceType;
 
 
         /// <summary>
-        /// The identifier for the source of the event.
-        ///  
-        /// </summary>
-        public string SourceIdentifier
-        {
-            get { return this.sourceIdentifier; }
-            set { this.sourceIdentifier = value; }
-        }
-
-        // Check to see if SourceIdentifier property is set
-        internal bool IsSetSourceIdentifier()
-        {
-            return this.sourceIdentifier != null;
-        }
-
-        /// <summary>
-        /// The source type for this event.
-        ///  
+        /// Gets and sets the property Date. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot</description>
-        ///     </item>
-        /// </list>
+        ///         The date and time of the event.        
         /// </para>
-        /// </summary>
-        public SourceType SourceType
-        {
-            get { return this.sourceType; }
-            set { this.sourceType = value; }
-        }
-
-        // Check to see if SourceType property is set
-        internal bool IsSetSourceType()
-        {
-            return this.sourceType != null;
-        }
-
-        /// <summary>
-        /// The text of this event.
-        ///  
-        /// </summary>
-        public string Message
-        {
-            get { return this.message; }
-            set { this.message = value; }
-        }
-
-        // Check to see if Message property is set
-        internal bool IsSetMessage()
-        {
-            return this.message != null;
-        }
-
-        /// <summary>
-        /// A list of the event categories.
-        ///  
-        /// </summary>
-        public List<string> EventCategories
-        {
-            get { return this.eventCategories; }
-            set { this.eventCategories = value; }
-        }
-
-        // Check to see if EventCategories property is set
-        internal bool IsSetEventCategories()
-        {
-            return this.eventCategories.Count > 0;
-        }
-
-        /// <summary>
-        /// The severity of the event. Values: ERROR, INFO
-        ///  
-        /// </summary>
-        public string Severity
-        {
-            get { return this.severity; }
-            set { this.severity = value; }
-        }
-
-        // Check to see if Severity property is set
-        internal bool IsSetSeverity()
-        {
-            return this.severity != null;
-        }
-
-        /// <summary>
-        /// The date and time of the event.
-        ///  
         /// </summary>
         public DateTime Date
         {
-            get { return this.date ?? default(DateTime); }
-            set { this.date = value; }
+            get { return this._date.GetValueOrDefault(); }
+            set { this._date = value; }
         }
 
         // Check to see if Date property is set
         internal bool IsSetDate()
         {
-            return this.date.HasValue;
+            return this._date.HasValue; 
         }
 
+
         /// <summary>
-        /// The identifier of the event.
-        ///  
+        /// Gets and sets the property EventCategories. 
+        /// <para>
+        ///             A list of the event categories.        
+        /// </para>
+        /// </summary>
+        public List<string> EventCategories
+        {
+            get { return this._eventCategories; }
+            set { this._eventCategories = value; }
+        }
+
+        // Check to see if EventCategories property is set
+        internal bool IsSetEventCategories()
+        {
+            return this._eventCategories != null && this._eventCategories.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property EventId. 
+        /// <para>
+        ///             The identifier of the event.        
+        /// </para>
         /// </summary>
         public string EventId
         {
-            get { return this.eventId; }
-            set { this.eventId = value; }
+            get { return this._eventId; }
+            set { this._eventId = value; }
         }
 
         // Check to see if EventId property is set
         internal bool IsSetEventId()
         {
-            return this.eventId != null;
+            return this._eventId != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Message. 
+        /// <para>
+        ///         The text of this event.        
+        /// </para>
+        /// </summary>
+        public string Message
+        {
+            get { return this._message; }
+            set { this._message = value; }
+        }
+
+        // Check to see if Message property is set
+        internal bool IsSetMessage()
+        {
+            return this._message != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Severity. 
+        /// <para>
+        /// The severity of the event.
+        /// </para>
+        ///         
+        /// <para>
+        /// Values: ERROR, INFO
+        /// </para>
+        /// </summary>
+        public string Severity
+        {
+            get { return this._severity; }
+            set { this._severity = value; }
+        }
+
+        // Check to see if Severity property is set
+        internal bool IsSetSeverity()
+        {
+            return this._severity != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SourceIdentifier. 
+        /// <para>
+        ///         The identifier for the source of the event.        
+        /// </para>
+        /// </summary>
+        public string SourceIdentifier
+        {
+            get { return this._sourceIdentifier; }
+            set { this._sourceIdentifier = value; }
+        }
+
+        // Check to see if SourceIdentifier property is set
+        internal bool IsSetSourceIdentifier()
+        {
+            return this._sourceIdentifier != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SourceType. 
+        /// <para>
+        ///         The source type for this event.        
+        /// </para>
+        /// </summary>
+        public SourceType SourceType
+        {
+            get { return this._sourceType; }
+            set { this._sourceType = value; }
+        }
+
+        // Check to see if SourceType property is set
+        internal bool IsSetSourceType()
+        {
+            return this._sourceType != null;
+        }
+
     }
 }

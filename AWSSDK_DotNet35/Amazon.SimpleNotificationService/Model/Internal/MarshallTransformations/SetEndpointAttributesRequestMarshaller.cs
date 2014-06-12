@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,50 +14,51 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SimpleNotificationService.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Set Endpoint Attributes Request Marshaller
+    /// SetEndpointAttributes Request Marshaller
     /// </summary>       
     public class SetEndpointAttributesRequestMarshaller : IMarshaller<IRequest, SetEndpointAttributesRequest>
     {
-        public IRequest Marshall(SetEndpointAttributesRequest setEndpointAttributesRequest)
+        public IRequest Marshall(SetEndpointAttributesRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(setEndpointAttributesRequest, "AmazonSimpleNotificationService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleNotificationService");
             request.Parameters.Add("Action", "SetEndpointAttributes");
             request.Parameters.Add("Version", "2010-03-31");
-            if (setEndpointAttributesRequest != null && setEndpointAttributesRequest.IsSetEndpointArn())
+
+            if(publicRequest != null)
             {
-                request.Parameters.Add("EndpointArn", StringUtils.FromString(setEndpointAttributesRequest.EndpointArn));
-            }
-            if (setEndpointAttributesRequest != null)
-            {
-                if (setEndpointAttributesRequest.Attributes != null)
+                if(publicRequest.IsSetAttributes())
                 {
-                    int attributesListIndex = 1;
-                    foreach (string key in setEndpointAttributesRequest.Attributes.Keys)
+                    int mapIndex = 1;
+                    foreach(var key in publicRequest.Attributes.Keys)
                     {
-                        string value;
-                        bool hasValue = setEndpointAttributesRequest.Attributes.TryGetValue(key, out value);
-                                    request.Parameters.Add("Attributes.entry." + attributesListIndex + ".key", StringUtils.FromString(key));
-                        if (hasValue) 
+                        String value;
+                        bool hasValue = publicRequest.Attributes.TryGetValue(key, out value);
+                        request.Parameters.Add("Attributes" + "." + "entry" + "." + mapIndex + "." + "key", StringUtils.FromString(key));
+                        if (hasValue)
                         {
-                            request.Parameters.Add("Attributes.entry." + attributesListIndex + ".value", StringUtils.FromString(value));
+                            request.Parameters.Add("Attributes" + "." + "entry" + "." + mapIndex + "." + "value", StringUtils.FromString(value));
                         }
-                            ++attributesListIndex;
+                        mapIndex++;
                     }
                 }
+                if(publicRequest.IsSetEndpointArn())
+                {
+                    request.Parameters.Add("EndpointArn", StringUtils.FromString(publicRequest.EndpointArn));
+                }
             }
-
             return request;
         }
     }

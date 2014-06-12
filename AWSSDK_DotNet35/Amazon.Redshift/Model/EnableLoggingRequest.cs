@@ -25,66 +25,94 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableLogging operation.
-    /// <para>Starts logging information, such as queries and connection attempts, for the specified Amazon Redshift cluster.</para>
+    /// Starts logging information, such as queries and connection attempts,            for
+    /// the specified Amazon Redshift cluster.
     /// </summary>
     public partial class EnableLoggingRequest : AmazonRedshiftRequest
     {
-        private string clusterIdentifier;
-        private string bucketName;
-        private string s3KeyPrefix;
+        private string _bucketName;
+        private string _clusterIdentifier;
+        private string _s3KeyPrefix;
 
 
         /// <summary>
-        /// The identifier of the cluster on which logging is to be started. Example: <c>examplecluster</c>
-        ///  
-        /// </summary>
-        public string ClusterIdentifier
-        {
-            get { return this.clusterIdentifier; }
-            set { this.clusterIdentifier = value; }
-        }
-
-        // Check to see if ClusterIdentifier property is set
-        internal bool IsSetClusterIdentifier()
-        {
-            return this.clusterIdentifier != null;
-        }
-
-        /// <summary>
-        /// The name of an existing S3 bucket where the log files are to be stored. Constraints: <ul> <li>Must be in the same region as the cluster</li>
-        /// <li>The cluster must have read bucket and put object permissions</li> </ul>
-        ///  
+        /// Gets and sets the property BucketName. 
+        /// <para>
+        ///             The name of an existing S3 bucket where the log files are to be stored.
+        ///         
+        /// </para>
+        ///         
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///         <ul>            <li>Must be in the same region as the cluster</li>       
+        ///     <li>The cluster must have read bucket and put object permissions</li>        </ul>
         /// </summary>
         public string BucketName
         {
-            get { return this.bucketName; }
-            set { this.bucketName = value; }
+            get { return this._bucketName; }
+            set { this._bucketName = value; }
         }
 
         // Check to see if BucketName property is set
         internal bool IsSetBucketName()
         {
-            return this.bucketName != null;
+            return this._bucketName != null;
         }
 
+
         /// <summary>
-        /// The prefix applied to the log file names. Constraints: <ul> <li>Cannot exceed 512 characters</li> <li>Cannot contain spaces( ), double
-        /// quotes ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes for invalid characters are: <ul> <li>x00 to
-        /// x20</li> <li>x22</li> <li>x27</li> <li>x5c</li> <li>x7f or larger</li> </ul> </li> </ul>
-        ///  
+        /// Gets and sets the property ClusterIdentifier. 
+        /// <para>
+        ///             The identifier of the cluster on which logging is to be started.     
+        ///    
+        /// </para>
+        ///         
+        /// <para>
+        /// Example: <code>examplecluster</code>
+        /// </para>
+        /// </summary>
+        public string ClusterIdentifier
+        {
+            get { return this._clusterIdentifier; }
+            set { this._clusterIdentifier = value; }
+        }
+
+        // Check to see if ClusterIdentifier property is set
+        internal bool IsSetClusterIdentifier()
+        {
+            return this._clusterIdentifier != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property S3KeyPrefix. 
+        /// <para>
+        ///             The prefix applied to the log file names.         
+        /// </para>
+        ///         
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///         <ul>            <li>Cannot exceed 512 characters</li>            <li>Cannot
+        /// contain spaces( ), double quotes ("), single quotes ('),                a backslash
+        /// (\), or control characters. The hexadecimal codes for                invalid characters
+        /// are:                <ul>                    <li>x00 to x20</li>                  
+        ///  <li>x22</li>                    <li>x27</li>                    <li>x5c</li>    
+        ///                <li>x7f or larger</li>                </ul>            </li>      
+        ///  </ul>
         /// </summary>
         public string S3KeyPrefix
         {
-            get { return this.s3KeyPrefix; }
-            set { this.s3KeyPrefix = value; }
+            get { return this._s3KeyPrefix; }
+            set { this._s3KeyPrefix = value; }
         }
 
         // Check to see if S3KeyPrefix property is set
         internal bool IsSetS3KeyPrefix()
         {
-            return this.s3KeyPrefix != null;
+            return this._s3KeyPrefix != null;
         }
 
     }
 }
-    

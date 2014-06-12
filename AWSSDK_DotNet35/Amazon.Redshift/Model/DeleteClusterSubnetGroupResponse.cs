@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the DeleteClusterSubnetGroup response metadata.
-    /// The DeleteClusterSubnetGroup operation has a void result type.
+    /// Configuration for accessing Amazon DeleteClusterSubnetGroup service
     /// </summary>
-    public partial class DeleteClusterSubnetGroupResponse : AmazonWebServiceResponse
+    public partial class DeleteClusterSubnetGroupResponse : DeleteClusterSubnetGroupResult
     {
+        /// <summary>
+        /// Gets and sets the DeleteClusterSubnetGroupResult property.
+        /// Represents the output of a DeleteClusterSubnetGroup operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DeleteClusterSubnetGroupResult class are now available on the DeleteClusterSubnetGroupResponse class. You should use the properties on DeleteClusterSubnetGroupResponse instead of accessing them through DeleteClusterSubnetGroupResult.")]
+        public DeleteClusterSubnetGroupResult DeleteClusterSubnetGroupResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

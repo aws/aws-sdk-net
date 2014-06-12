@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Reserved Node Offerings Request Marshaller
+    /// DescribeReservedNodeOfferings Request Marshaller
     /// </summary>       
     public class DescribeReservedNodeOfferingsRequestMarshaller : IMarshaller<IRequest, DescribeReservedNodeOfferingsRequest>
     {
-        public IRequest Marshall(DescribeReservedNodeOfferingsRequest describeReservedNodeOfferingsRequest)
+        public IRequest Marshall(DescribeReservedNodeOfferingsRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describeReservedNodeOfferingsRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "DescribeReservedNodeOfferings");
             request.Parameters.Add("Version", "2012-12-01");
-            if (describeReservedNodeOfferingsRequest != null && describeReservedNodeOfferingsRequest.IsSetReservedNodeOfferingId())
-            {
-                request.Parameters.Add("ReservedNodeOfferingId", StringUtils.FromString(describeReservedNodeOfferingsRequest.ReservedNodeOfferingId));
-            }
-            if (describeReservedNodeOfferingsRequest != null && describeReservedNodeOfferingsRequest.IsSetMaxRecords())
-            {
-                request.Parameters.Add("MaxRecords", StringUtils.FromInt(describeReservedNodeOfferingsRequest.MaxRecords));
-            }
-            if (describeReservedNodeOfferingsRequest != null && describeReservedNodeOfferingsRequest.IsSetMarker())
-            {
-                request.Parameters.Add("Marker", StringUtils.FromString(describeReservedNodeOfferingsRequest.Marker));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetMarker())
+                {
+                    request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
+                }
+                if(publicRequest.IsSetMaxRecords())
+                {
+                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
+                }
+                if(publicRequest.IsSetReservedNodeOfferingId())
+                {
+                    request.Parameters.Add("ReservedNodeOfferingId", StringUtils.FromString(publicRequest.ReservedNodeOfferingId));
+                }
+            }
             return request;
         }
     }

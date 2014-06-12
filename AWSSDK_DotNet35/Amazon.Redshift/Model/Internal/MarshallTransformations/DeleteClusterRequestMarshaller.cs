@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Cluster Request Marshaller
+    /// DeleteCluster Request Marshaller
     /// </summary>       
     public class DeleteClusterRequestMarshaller : IMarshaller<IRequest, DeleteClusterRequest>
     {
-        public IRequest Marshall(DeleteClusterRequest deleteClusterRequest)
+        public IRequest Marshall(DeleteClusterRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(deleteClusterRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "DeleteCluster");
             request.Parameters.Add("Version", "2012-12-01");
-            if (deleteClusterRequest != null && deleteClusterRequest.IsSetClusterIdentifier())
-            {
-                request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(deleteClusterRequest.ClusterIdentifier));
-            }
-            if (deleteClusterRequest != null && deleteClusterRequest.IsSetSkipFinalClusterSnapshot())
-            {
-                request.Parameters.Add("SkipFinalClusterSnapshot", StringUtils.FromBool(deleteClusterRequest.SkipFinalClusterSnapshot));
-            }
-            if (deleteClusterRequest != null && deleteClusterRequest.IsSetFinalClusterSnapshotIdentifier())
-            {
-                request.Parameters.Add("FinalClusterSnapshotIdentifier", StringUtils.FromString(deleteClusterRequest.FinalClusterSnapshotIdentifier));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetClusterIdentifier())
+                {
+                    request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(publicRequest.ClusterIdentifier));
+                }
+                if(publicRequest.IsSetFinalClusterSnapshotIdentifier())
+                {
+                    request.Parameters.Add("FinalClusterSnapshotIdentifier", StringUtils.FromString(publicRequest.FinalClusterSnapshotIdentifier));
+                }
+                if(publicRequest.IsSetSkipFinalClusterSnapshot())
+                {
+                    request.Parameters.Add("SkipFinalClusterSnapshot", StringUtils.FromBool(publicRequest.SkipFinalClusterSnapshot));
+                }
+            }
             return request;
         }
     }

@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeReservedNodeOfferings response and response metadata.
+    /// Configuration for accessing Amazon DescribeReservedNodeOfferings service
     /// </summary>
     public partial class DescribeReservedNodeOfferingsResponse : DescribeReservedNodeOfferingsResult
     {
         /// <summary>
         /// Gets and sets the DescribeReservedNodeOfferingsResult property.
-        /// Contains the output from the DescribeReservedNodeOfferings action.
+        /// Represents the output of a DescribeReservedNodeOfferings operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeReservedNodeOfferingsResult class are now available on the DescribeReservedNodeOfferingsResponse class. You should use the properties on DescribeReservedNodeOfferingsResponse instead of accessing them through DescribeReservedNodeOfferingsResult.")]
         public DescribeReservedNodeOfferingsResult DescribeReservedNodeOfferingsResult
@@ -40,4 +36,3 @@ namespace Amazon.Redshift.Model
         }
     }
 }
-    

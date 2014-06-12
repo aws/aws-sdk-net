@@ -18,6 +18,9 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -25,60 +28,73 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class HsmStatus
     {
-        
-        private string hsmClientCertificateIdentifier;
-        private string hsmConfigurationIdentifier;
-        private string status;
+        private string _hsmClientCertificateIdentifier;
+        private string _hsmConfigurationIdentifier;
+        private string _status;
 
 
         /// <summary>
-        /// Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.
-        ///  
+        /// Gets and sets the property HsmClientCertificateIdentifier. 
+        /// <para>
+        /// Specifies the name of the HSM client certificate the Amazon Redshift cluster uses
+        /// to retrieve the data            encryption keys stored in an HSM.
+        /// </para>
         /// </summary>
         public string HsmClientCertificateIdentifier
         {
-            get { return this.hsmClientCertificateIdentifier; }
-            set { this.hsmClientCertificateIdentifier = value; }
+            get { return this._hsmClientCertificateIdentifier; }
+            set { this._hsmClientCertificateIdentifier = value; }
         }
 
         // Check to see if HsmClientCertificateIdentifier property is set
         internal bool IsSetHsmClientCertificateIdentifier()
         {
-            return this.hsmClientCertificateIdentifier != null;
+            return this._hsmClientCertificateIdentifier != null;
         }
 
+
         /// <summary>
-        /// Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in
-        /// an HSM.
-        ///  
+        /// Gets and sets the property HsmConfigurationIdentifier. 
+        /// <para>
+        /// Specifies the name of the HSM configuration that contains the information the Amazon
+        /// Redshift cluster            can use to retrieve and store keys in an HSM.
+        /// </para>
         /// </summary>
         public string HsmConfigurationIdentifier
         {
-            get { return this.hsmConfigurationIdentifier; }
-            set { this.hsmConfigurationIdentifier = value; }
+            get { return this._hsmConfigurationIdentifier; }
+            set { this._hsmConfigurationIdentifier = value; }
         }
 
         // Check to see if HsmConfigurationIdentifier property is set
         internal bool IsSetHsmConfigurationIdentifier()
         {
-            return this.hsmConfigurationIdentifier != null;
+            return this._hsmConfigurationIdentifier != null;
         }
 
+
         /// <summary>
-        /// Reports whether the Amazon Redshift cluster has finished applying any HSM settings changes specified in a modify cluster command. Values:
-        /// active, applying
-        ///  
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// Reports whether the Amazon Redshift cluster has finished applying any HSM settings
+        /// changes            specified in a modify cluster command.
+        /// </para>
+        ///         
+        /// <para>
+        /// Values: active, applying
+        /// </para>
         /// </summary>
         public string Status
         {
-            get { return this.status; }
-            set { this.status = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;
+            return this._status != null;
         }
+
     }
 }

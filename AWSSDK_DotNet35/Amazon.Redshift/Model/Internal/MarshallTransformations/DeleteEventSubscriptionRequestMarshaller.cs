@@ -14,32 +14,36 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Event Subscription Request Marshaller
+    /// DeleteEventSubscription Request Marshaller
     /// </summary>       
     public class DeleteEventSubscriptionRequestMarshaller : IMarshaller<IRequest, DeleteEventSubscriptionRequest>
     {
-        public IRequest Marshall(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest)
+        public IRequest Marshall(DeleteEventSubscriptionRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(deleteEventSubscriptionRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "DeleteEventSubscription");
             request.Parameters.Add("Version", "2012-12-01");
-            if (deleteEventSubscriptionRequest != null && deleteEventSubscriptionRequest.IsSetSubscriptionName())
-            {
-                request.Parameters.Add("SubscriptionName", StringUtils.FromString(deleteEventSubscriptionRequest.SubscriptionName));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetSubscriptionName())
+                {
+                    request.Parameters.Add("SubscriptionName", StringUtils.FromString(publicRequest.SubscriptionName));
+                }
+            }
             return request;
         }
     }

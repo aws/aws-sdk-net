@@ -47,6 +47,28 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (copyPartRequest.IsSetUnmodifiedSinceDate())
                 request.Headers.Add("x-amz-copy-source-if-unmodified-since", copyPartRequest.UnmodifiedSinceDate.ToUniversalTime().ToString(AWSSDKUtils.GMTDateFormat, CultureInfo.InvariantCulture));
 
+            if (copyPartRequest.IsSetServerSideEncryptionCustomerMethod())
+                request.Headers.Add("x-amz-server-side-encryption-customer-algorithm", copyPartRequest.ServerSideEncryptionCustomerMethod);
+            if (copyPartRequest.IsSetServerSideEncryptionCustomerProvidedKey())
+            {
+                request.Headers.Add("x-amz-server-side-encryption-customer-key", copyPartRequest.ServerSideEncryptionCustomerProvidedKey);
+                if (copyPartRequest.IsSetServerSideEncryptionCustomerProvidedKeyMD5())
+                    request.Headers.Add("x-amz-server-side-encryption-customer-key-MD5", copyPartRequest.ServerSideEncryptionCustomerProvidedKeyMD5);
+                else
+                    request.Headers.Add("x-amz-server-side-encryption-customer-key-MD5", AmazonS3Util.ComputeEncodedMD5FromEncodedString(copyPartRequest.ServerSideEncryptionCustomerProvidedKey));
+            }
+            if (copyPartRequest.IsSetCopySourceServerSideEncryptionCustomerMethod())
+                request.Headers.Add("x-amz-copy-source-server-side-encryption-customer-algorithm", copyPartRequest.CopySourceServerSideEncryptionCustomerMethod);
+            if (copyPartRequest.IsSetCopySourceServerSideEncryptionCustomerProvidedKey())
+            {
+                request.Headers.Add("x-amz-copy-source-server-side-encryption-customer-key", copyPartRequest.CopySourceServerSideEncryptionCustomerProvidedKey);
+                if (copyPartRequest.IsSetCopySourceServerSideEncryptionCustomerProvidedKeyMD5())
+                    request.Headers.Add("x-amz-copy-source-server-side-encryption-customer-key-MD5", copyPartRequest.CopySourceServerSideEncryptionCustomerProvidedKeyMD5);
+                else
+                    request.Headers.Add("x-amz-copy-source-server-side-encryption-customer-key-MD5", AmazonS3Util.ComputeEncodedMD5FromEncodedString(copyPartRequest.CopySourceServerSideEncryptionCustomerProvidedKey));
+            }
+
+
             request.Headers.Add("x-amz-copy-source-range", ConstructCopySourceRangeHeader(copyPartRequest.FirstByte, copyPartRequest.LastByte));
 
             var uriResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",

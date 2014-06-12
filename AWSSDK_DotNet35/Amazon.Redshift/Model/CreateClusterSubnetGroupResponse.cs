@@ -12,24 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the CreateClusterSubnetGroup response and response metadata.
+    /// Configuration for accessing Amazon CreateClusterSubnetGroup service
     /// </summary>
     public partial class CreateClusterSubnetGroupResponse : CreateClusterSubnetGroupResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the CreateClusterSubnetGroupResult property.
-        /// Contains the result of a successful invocation of the CreateClusterSubnetGroup
-        /// action.
-        /// 
+        /// Represents the output of a CreateClusterSubnetGroup operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateClusterSubnetGroupResult class are now available on the CreateClusterSubnetGroupResponse class. You should use the properties on CreateClusterSubnetGroupResponse instead of accessing them through CreateClusterSubnetGroupResult.")]
         public CreateClusterSubnetGroupResult CreateClusterSubnetGroupResult
         {
@@ -40,4 +36,3 @@ namespace Amazon.Redshift.Model
         }
     }
 }
-    

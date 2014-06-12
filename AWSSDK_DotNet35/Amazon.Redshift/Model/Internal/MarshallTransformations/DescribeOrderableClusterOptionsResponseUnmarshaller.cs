@@ -13,46 +13,52 @@
  * permissions and limitations under the License.
  */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for DescribeOrderableClusterOptions operation
-    /// </summary>
-    internal class DescribeOrderableClusterOptionsResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for DescribeOrderableClusterOptions operation
+    /// </summary>  
+    public class DescribeOrderableClusterOptionsResponseUnmarshaller : XmlResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
             DescribeOrderableClusterOptionsResponse response = new DescribeOrderableClusterOptionsResponse();
-            
-            while (context.Read())
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
                 if (context.IsStartElement)
                 {                    
                     if(context.TestExpression("DescribeOrderableClusterOptionsResult", 2))
                     {
-                        UnmarshallResult(context,response);                        
+                        UnmarshallResult(context, response);                        
                         continue;
                     }
                     
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
                     }
                 }
             }
-                 
-                        
+
             return response;
         }
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,DescribeOrderableClusterOptionsResponse response)
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, DescribeOrderableClusterOptionsResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -61,52 +67,50 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("OrderableClusterOptions/OrderableClusterOption", targetDepth))
-                    {
-                        response.OrderableClusterOptions.Add(OrderableClusterOptionUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    }
+
                     if (context.TestExpression("Marker", targetDepth))
                     {
-                        response.Marker = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.Marker = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return;
-                }
-            }
-                            
-
+                    if (context.TestExpression("OrderableClusterOptions/OrderableClusterOption", targetDepth))
+                    {
+                        var unmarshaller = OrderableClusterOptionUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.OrderableClusterOptions.Add(item);
+                        continue;
+                    }
+                } 
+           }
 
             return;
         }
-        
+
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             return new AmazonRedshiftException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static DescribeOrderableClusterOptionsResponseUnmarshaller instance;
 
-        public static DescribeOrderableClusterOptionsResponseUnmarshaller GetInstance()
+        private static DescribeOrderableClusterOptionsResponseUnmarshaller _instance = new DescribeOrderableClusterOptionsResponseUnmarshaller();        
+
+        internal static DescribeOrderableClusterOptionsResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new DescribeOrderableClusterOptionsResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static DescribeOrderableClusterOptionsResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

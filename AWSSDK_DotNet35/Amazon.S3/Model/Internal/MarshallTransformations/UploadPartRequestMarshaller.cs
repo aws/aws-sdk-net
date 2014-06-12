@@ -20,6 +20,7 @@ using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
+using Amazon.S3.Util;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -36,6 +37,17 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (uploadPartRequest.IsSetMD5Digest())
                 request.Headers["Content-MD5"] = uploadPartRequest.MD5Digest;
+
+            if (uploadPartRequest.IsSetServerSideEncryptionCustomerMethod())
+                request.Headers.Add("x-amz-server-side-encryption-customer-algorithm", uploadPartRequest.ServerSideEncryptionCustomerMethod);
+            if (uploadPartRequest.IsSetServerSideEncryptionCustomerProvidedKey())
+            {
+                request.Headers.Add("x-amz-server-side-encryption-customer-key", uploadPartRequest.ServerSideEncryptionCustomerProvidedKey);
+                if (uploadPartRequest.IsSetServerSideEncryptionCustomerProvidedKeyMD5())
+                    request.Headers.Add("x-amz-server-side-encryption-customer-key-MD5", uploadPartRequest.ServerSideEncryptionCustomerProvidedKeyMD5);
+                else
+                    request.Headers.Add("x-amz-server-side-encryption-customer-key-MD5", AmazonS3Util.ComputeEncodedMD5FromEncodedString(uploadPartRequest.ServerSideEncryptionCustomerProvidedKey));
+            }
 
             var uriResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
                                                 S3Transforms.ToStringValue(uploadPartRequest.BucketName),

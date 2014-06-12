@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeLoggingStatus response and response metadata.
+    /// Configuration for accessing Amazon DescribeLoggingStatus service
     /// </summary>
     public partial class DescribeLoggingStatusResponse : DescribeLoggingStatusResult
     {
         /// <summary>
         /// Gets and sets the DescribeLoggingStatusResult property.
-        /// Describes the status of logging for a cluster.
+        /// Represents the output of a DescribeLoggingStatus operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeLoggingStatusResult class are now available on the DescribeLoggingStatusResponse class. You should use the properties on DescribeLoggingStatusResponse instead of accessing them through DescribeLoggingStatusResult.")]
         public DescribeLoggingStatusResult DescribeLoggingStatusResult
@@ -40,4 +36,3 @@ namespace Amazon.Redshift.Model
         }
     }
 }
-    

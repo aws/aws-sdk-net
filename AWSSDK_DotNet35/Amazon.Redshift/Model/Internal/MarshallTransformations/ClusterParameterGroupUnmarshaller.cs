@@ -12,78 +12,81 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ClusterParameterGroup Unmarshaller
-     /// </summary>
-    internal class ClusterParameterGroupUnmarshaller : IUnmarshaller<ClusterParameterGroup, XmlUnmarshallerContext>, IUnmarshaller<ClusterParameterGroup, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ClusterParameterGroup Object
+    /// </summary>  
+    public class ClusterParameterGroupUnmarshaller : IUnmarshaller<ClusterParameterGroup, XmlUnmarshallerContext>, IUnmarshaller<ClusterParameterGroup, JsonUnmarshallerContext>
     {
-        public ClusterParameterGroup Unmarshall(XmlUnmarshallerContext context) 
+        public ClusterParameterGroup Unmarshall(XmlUnmarshallerContext context)
         {
-            ClusterParameterGroup clusterParameterGroup = new ClusterParameterGroup();
+            ClusterParameterGroup unmarshalledObject = new ClusterParameterGroup();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            if (context.IsStartOfDocument) 
-               targetDepth++;
-            
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("ParameterGroupName", targetDepth))
+                    if (context.TestExpression("Description", targetDepth))
                     {
-                        clusterParameterGroup.ParameterGroupName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ParameterGroupFamily", targetDepth))
                     {
-                        clusterParameterGroup.ParameterGroupFamily = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ParameterGroupFamily = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Description", targetDepth))
+                    if (context.TestExpression("ParameterGroupName", targetDepth))
                     {
-                        clusterParameterGroup.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ParameterGroupName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return clusterParameterGroup;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return clusterParameterGroup;
+            return unmarshalledObject;
         }
 
-        public ClusterParameterGroup Unmarshall(JsonUnmarshallerContext context) 
+        public ClusterParameterGroup Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static ClusterParameterGroupUnmarshaller instance;
 
-        public static ClusterParameterGroupUnmarshaller GetInstance() 
+        private static ClusterParameterGroupUnmarshaller _instance = new ClusterParameterGroupUnmarshaller();        
+
+        public static ClusterParameterGroupUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new ClusterParameterGroupUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

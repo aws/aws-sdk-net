@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,74 +25,83 @@ namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePlatformApplication operation.
-    /// <para>The <c>CreatePlatformApplication</c> action creates a platform application object for one of the supported push notification services,
-    /// such as APNS and GCM, to which devices and mobile apps may register. You must specify PlatformPrincipal and PlatformCredential attributes
-    /// when using the <c>CreatePlatformApplication</c> action. The PlatformPrincipal is received from the notification service. For
-    /// APNS/APNS_SANDBOX, PlatformPrincipal is "SSL certificate". For GCM, PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is
-    /// "client id". The PlatformCredential is also received from the notification service. For APNS/APNS_SANDBOX, PlatformCredential is "private
-    /// key". For GCM, PlatformCredential is "API key". For ADM, PlatformCredential is "client secret". The PlatformApplicationArn that is returned
-    /// when using <c>CreatePlatformApplication</c> is then used as an attribute for the <c>CreatePlatformEndpoint</c> action. For more information,
-    /// see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html" >Using Amazon SNS Mobile Push Notifications</a> .
-    /// </para>
+    /// Creates a platform application object for one of the supported push notification services,
+    ///       such as APNS and GCM, to which devices and mobile apps may register. You must
+    /// specify PlatformPrincipal and PlatformCredential attributes when using       the <code>CreatePlatformApplication</code>
+    /// action. The PlatformPrincipal is received from the notification service. For APNS/APNS_SANDBOX,
+    /// PlatformPrincipal is "SSL certificate".       For GCM, PlatformPrincipal is not applicable.
+    /// For ADM, PlatformPrincipal is "client id". The PlatformCredential is also received
+    /// from the notification service.       For APNS/APNS_SANDBOX, PlatformCredential is
+    /// "private key". For GCM, PlatformCredential is "API key". For ADM, PlatformCredential
+    /// is "client secret".            The PlatformApplicationArn that is returned when using
+    /// <code>CreatePlatformApplication</code> is then used as an attribute for the <code>CreatePlatformEndpoint</code>
+    /// action.      For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
+    /// Amazon SNS Mobile Push Notifications</a>.
     /// </summary>
     public partial class CreatePlatformApplicationRequest : AmazonSimpleNotificationServiceRequest
     {
-        private string name;
-        private string platform;
-        private Dictionary<string,string> attributes = new Dictionary<string,string>();
+        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private string _name;
+        private string _platform;
 
 
         /// <summary>
-        /// Application names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, hyphens, and periods, and must be
-        /// between 1 and 256 characters long.
-        ///  
+        /// Gets and sets the property Attributes. 
+        /// <para>
+        /// For a list of attributes, see <a href="http://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html">SetPlatformApplicationAttributes</a>
+        /// </para>
         /// </summary>
-        public string Name
+        public Dictionary<string, string> Attributes
         {
-            get { return this.name; }
-            set { this.name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this.name != null;
-        }
-
-        /// <summary>
-        /// The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push Notification Service), APNS_SANDBOX, and GCM (Google
-        /// Cloud Messaging).
-        ///  
-        /// </summary>
-        public string Platform
-        {
-            get { return this.platform; }
-            set { this.platform = value; }
-        }
-
-        // Check to see if Platform property is set
-        internal bool IsSetPlatform()
-        {
-            return this.platform != null;
-        }
-
-        /// <summary>
-        /// For a list of attributes, see <a
-        /// href="http://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html">SetPlatformApplicationAttributes</a>
-        ///  
-        /// </summary>
-        public Dictionary<string,string> Attributes
-        {
-            get { return this.attributes; }
-            set { this.attributes = value; }
+            get { return this._attributes; }
+            set { this._attributes = value; }
         }
 
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this.attributes != null;
+            return this._attributes != null && this._attributes.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// Application names must be made up of only uppercase and lowercase ASCII letters, numbers,
+        /// underscores, hyphens, and periods, and must be between 1 and 256 characters long.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Platform. 
+        /// <para>
+        /// The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple
+        /// Push Notification Service), APNS_SANDBOX, and GCM (Google Cloud Messaging).
+        /// </para>
+        /// </summary>
+        public string Platform
+        {
+            get { return this._platform; }
+            set { this._platform = value; }
+        }
+
+        // Check to see if Platform property is set
+        internal bool IsSetPlatform()
+        {
+            return this._platform != null;
         }
 
     }
 }
-    

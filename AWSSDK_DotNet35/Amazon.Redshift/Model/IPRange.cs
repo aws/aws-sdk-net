@@ -18,48 +18,57 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// <para> Describes an IP range used in a security group. </para>
+    /// Describes an IP range used in a security group.
     /// </summary>
     public partial class IPRange
     {
-        
-        private string status;
-        private string cIDRIP;
+        private string _cIDRIP;
+        private string _status;
 
 
         /// <summary>
-        /// The status of the IP range, for example, "authorized".
+        /// Gets and sets the property CIDRIP. 
+        /// <para>
+        ///             The IP range in Classless Inter-Domain Routing (CIDR) notation.      
         ///  
-        /// </summary>
-        public string Status
-        {
-            get { return this.status; }
-            set { this.status = value; }
-        }
-
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
-        {
-            return this.status != null;
-        }
-
-        /// <summary>
-        /// The IP range in Classless Inter-Domain Routing (CIDR) notation.
-        ///  
+        /// </para>
         /// </summary>
         public string CIDRIP
         {
-            get { return this.cIDRIP; }
-            set { this.cIDRIP = value; }
+            get { return this._cIDRIP; }
+            set { this._cIDRIP = value; }
         }
 
         // Check to see if CIDRIP property is set
         internal bool IsSetCIDRIP()
         {
-            return this.cIDRIP != null;
+            return this._cIDRIP != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        ///         The status of the IP range, for example, "authorized".        
+        /// </para>
+        /// </summary>
+        public string Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
     }
 }

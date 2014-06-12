@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Enable Logging Request Marshaller
+    /// EnableLogging Request Marshaller
     /// </summary>       
     public class EnableLoggingRequestMarshaller : IMarshaller<IRequest, EnableLoggingRequest>
     {
-        public IRequest Marshall(EnableLoggingRequest enableLoggingRequest)
+        public IRequest Marshall(EnableLoggingRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(enableLoggingRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "EnableLogging");
             request.Parameters.Add("Version", "2012-12-01");
-            if (enableLoggingRequest != null && enableLoggingRequest.IsSetClusterIdentifier())
-            {
-                request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(enableLoggingRequest.ClusterIdentifier));
-            }
-            if (enableLoggingRequest != null && enableLoggingRequest.IsSetBucketName())
-            {
-                request.Parameters.Add("BucketName", StringUtils.FromString(enableLoggingRequest.BucketName));
-            }
-            if (enableLoggingRequest != null && enableLoggingRequest.IsSetS3KeyPrefix())
-            {
-                request.Parameters.Add("S3KeyPrefix", StringUtils.FromString(enableLoggingRequest.S3KeyPrefix));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetBucketName())
+                {
+                    request.Parameters.Add("BucketName", StringUtils.FromString(publicRequest.BucketName));
+                }
+                if(publicRequest.IsSetClusterIdentifier())
+                {
+                    request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(publicRequest.ClusterIdentifier));
+                }
+                if(publicRequest.IsSetS3KeyPrefix())
+                {
+                    request.Parameters.Add("S3KeyPrefix", StringUtils.FromString(publicRequest.S3KeyPrefix));
+                }
+            }
             return request;
         }
     }

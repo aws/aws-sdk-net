@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,32 +25,32 @@ namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetEndpointAttributes operation.
-    /// <para>The <c>GetEndpointAttributes</c> retrieves the endpoint attributes for a device on one of the supported push notification services,
-    /// such as GCM and APNS. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html" >Using Amazon SNS
-    /// Mobile Push Notifications</a> .
-    /// </para>
+    /// Retrieves the endpoint attributes for a device on one of the supported push notification
+    /// services, such as GCM and APNS.       For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
+    /// Amazon SNS Mobile Push Notifications</a>.
     /// </summary>
     public partial class GetEndpointAttributesRequest : AmazonSimpleNotificationServiceRequest
     {
-        private string endpointArn;
+        private string _endpointArn;
 
 
         /// <summary>
+        /// Gets and sets the property EndpointArn. 
+        /// <para>
         /// EndpointArn for GetEndpointAttributes input.
-        ///  
+        /// </para>
         /// </summary>
         public string EndpointArn
         {
-            get { return this.endpointArn; }
-            set { this.endpointArn = value; }
+            get { return this._endpointArn; }
+            set { this._endpointArn = value; }
         }
 
         // Check to see if EndpointArn property is set
         internal bool IsSetEndpointArn()
         {
-            return this.endpointArn != null;
+            return this._endpointArn != null;
         }
 
     }
 }
-    

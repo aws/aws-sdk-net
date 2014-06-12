@@ -17,52 +17,63 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// <para> Contains the output from the DescribeOrderableClusterOptions action. </para>
+    /// Contains the output from the <a>DescribeOrderableClusterOptions</a> action.
     /// </summary>
     public partial class DescribeOrderableClusterOptionsResult : AmazonWebServiceResponse
     {
-        
-        private List<OrderableClusterOption> orderableClusterOptions = new List<OrderableClusterOption>();
-        private string marker;
+        private string _marker;
+        private List<OrderableClusterOption> _orderableClusterOptions = new List<OrderableClusterOption>();
 
 
         /// <summary>
-        /// An <a>OrderableClusterOption</a> structure containing information about orderable options for the Cluster.
-        ///  
-        /// </summary>
-        public List<OrderableClusterOption> OrderableClusterOptions
-        {
-            get { return this.orderableClusterOptions; }
-            set { this.orderableClusterOptions = value; }
-        }
-
-        // Check to see if OrderableClusterOptions property is set
-        internal bool IsSetOrderableClusterOptions()
-        {
-            return this.orderableClusterOptions.Count > 0;
-        }
-
-        /// <summary>
-        /// A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a
-        /// response, you can retrieve the next set of records by providing this returned marker value in the <c>Marker</c> parameter and retrying the
-        /// command. If the <c>Marker</c> field is empty, all response records have been retrieved for the request.
-        ///  
+        /// Gets and sets the property Marker. 
+        /// <para>
+        ///             A value that indicates the starting point for the next set of response
+        /// records in a subsequent request.             If a value is returned in a response,
+        /// you can retrieve the next set of records by providing this returned             marker
+        /// value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code>
+        /// field            is empty, all response records have been retrieved for the request.
+        ///        
+        /// </para>
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property OrderableClusterOptions. 
+        /// <para>
+        /// An <a>OrderableClusterOption</a> structure containing information about orderable
+        /// options for the Cluster.
+        /// </para>
+        /// </summary>
+        public List<OrderableClusterOption> OrderableClusterOptions
+        {
+            get { return this._orderableClusterOptions; }
+            set { this._orderableClusterOptions = value; }
+        }
+
+        // Check to see if OrderableClusterOptions property is set
+        internal bool IsSetOrderableClusterOptions()
+        {
+            return this._orderableClusterOptions != null && this._orderableClusterOptions.Count > 0; 
+        }
+
     }
 }

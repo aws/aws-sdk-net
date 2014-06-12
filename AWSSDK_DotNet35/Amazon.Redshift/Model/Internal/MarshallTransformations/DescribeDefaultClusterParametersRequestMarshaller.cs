@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Default Cluster Parameters Request Marshaller
+    /// DescribeDefaultClusterParameters Request Marshaller
     /// </summary>       
     public class DescribeDefaultClusterParametersRequestMarshaller : IMarshaller<IRequest, DescribeDefaultClusterParametersRequest>
     {
-        public IRequest Marshall(DescribeDefaultClusterParametersRequest describeDefaultClusterParametersRequest)
+        public IRequest Marshall(DescribeDefaultClusterParametersRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describeDefaultClusterParametersRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "DescribeDefaultClusterParameters");
             request.Parameters.Add("Version", "2012-12-01");
-            if (describeDefaultClusterParametersRequest != null && describeDefaultClusterParametersRequest.IsSetParameterGroupFamily())
-            {
-                request.Parameters.Add("ParameterGroupFamily", StringUtils.FromString(describeDefaultClusterParametersRequest.ParameterGroupFamily));
-            }
-            if (describeDefaultClusterParametersRequest != null && describeDefaultClusterParametersRequest.IsSetMaxRecords())
-            {
-                request.Parameters.Add("MaxRecords", StringUtils.FromInt(describeDefaultClusterParametersRequest.MaxRecords));
-            }
-            if (describeDefaultClusterParametersRequest != null && describeDefaultClusterParametersRequest.IsSetMarker())
-            {
-                request.Parameters.Add("Marker", StringUtils.FromString(describeDefaultClusterParametersRequest.Marker));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetMarker())
+                {
+                    request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
+                }
+                if(publicRequest.IsSetMaxRecords())
+                {
+                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
+                }
+                if(publicRequest.IsSetParameterGroupFamily())
+                {
+                    request.Parameters.Add("ParameterGroupFamily", StringUtils.FromString(publicRequest.ParameterGroupFamily));
+                }
+            }
             return request;
         }
     }

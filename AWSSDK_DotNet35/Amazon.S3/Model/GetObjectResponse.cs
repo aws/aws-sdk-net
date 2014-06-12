@@ -41,6 +41,7 @@ namespace Amazon.S3.Model
         private DateTime? expires;
         private string websiteRedirectLocation;
         private ServerSideEncryptionMethod serverSideEncryption;
+        private ServerSideEncryptionCustomerMethod serverSideEncryptionCustomerMethod;
         private HeadersCollection headersCollection = new HeadersCollection();
         private MetadataCollection metadataCollection = new MetadataCollection();
 
@@ -370,6 +371,22 @@ namespace Amazon.S3.Model
         internal void OnRaiseProgressEvent(string file, long incrementTransferred, long transferred, long total)
         {
             AWSSDKUtils.InvokeInBackground(WriteObjectProgressEvent, new WriteObjectProgressArgs(this.BucketName, this.Key, file, this.VersionId, incrementTransferred, transferred, total), this);
+        }
+
+        /// <summary>
+        /// The Server-side encryption algorithm to be used with the customer provided key.
+        ///  
+        /// </summary>
+        public ServerSideEncryptionCustomerMethod ServerSideEncryptionCustomerMethod
+        {
+            get
+            {
+                if (this.serverSideEncryptionCustomerMethod == null)
+                    return ServerSideEncryptionCustomerMethod.None;
+
+                return this.serverSideEncryptionCustomerMethod;
+            }
+            set { this.serverSideEncryptionCustomerMethod = value; }
         }
     }
 

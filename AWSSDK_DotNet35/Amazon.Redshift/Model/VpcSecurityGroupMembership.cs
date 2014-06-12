@@ -18,48 +18,50 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// <para>Describes the members of a VPC security group.</para>
+    /// Describes the members of a VPC security group.
     /// </summary>
     public partial class VpcSecurityGroupMembership
     {
-        
-        private string vpcSecurityGroupId;
-        private string status;
+        private string _status;
+        private string _vpcSecurityGroupId;
 
 
         /// <summary>
-        /// 
-        ///  
-        /// </summary>
-        public string VpcSecurityGroupId
-        {
-            get { return this.vpcSecurityGroupId; }
-            set { this.vpcSecurityGroupId = value; }
-        }
-
-        // Check to see if VpcSecurityGroupId property is set
-        internal bool IsSetVpcSecurityGroupId()
-        {
-            return this.vpcSecurityGroupId != null;
-        }
-
-        /// <summary>
-        /// 
-        ///  
+        /// Gets and sets the property Status.
         /// </summary>
         public string Status
         {
-            get { return this.status; }
-            set { this.status = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;
+            return this._status != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property VpcSecurityGroupId.
+        /// </summary>
+        public string VpcSecurityGroupId
+        {
+            get { return this._vpcSecurityGroupId; }
+            set { this._vpcSecurityGroupId = value; }
+        }
+
+        // Check to see if VpcSecurityGroupId property is set
+        internal bool IsSetVpcSecurityGroupId()
+        {
+            return this._vpcSecurityGroupId != null;
+        }
+
     }
 }
