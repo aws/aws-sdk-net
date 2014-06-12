@@ -25,86 +25,106 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeVolumes operation.
-    /// <para>Describes an instance's Amazon EBS volumes.</para> <para><b>NOTE:</b> You must specify at least one of the parameters. </para> <para>
-    /// <b>Required Permissions</b> : To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an
-    /// attached policy that explicitly grants permissions. For more information on user permissions, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+    /// Describes an instance's Amazon EBS volumes.
+    /// 
+    ///   <note>      
+    /// <para>
+    /// You must specify at least one of the parameters.
+    /// </para>
+    ///     </note>    
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+    /// or Manage permissions       level for the stack, or an attached policy that explicitly
+    /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
     public partial class DescribeVolumesRequest : AmazonOpsWorksRequest
     {
-        private string instanceId;
-        private string stackId;
-        private string raidArrayId;
-        private List<string> volumeIds = new List<string>();
+        private string _instanceId;
+        private string _raidArrayId;
+        private string _stackId;
+        private List<string> _volumeIds = new List<string>();
 
 
         /// <summary>
-        /// The instance ID. If you use this parameter, <c>DescribeVolumes</c> returns descriptions of the volumes associated with the specified
-        /// instance.
-        ///  
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The instance ID. If you use this parameter, <code>DescribeVolumes</code> returns 
+        ///        descriptions of the volumes associated with the specified instance.
+        /// </para>
         /// </summary>
         public string InstanceId
         {
-            get { return this.instanceId; }
-            set { this.instanceId = value; }
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
         }
 
         // Check to see if InstanceId property is set
         internal bool IsSetInstanceId()
         {
-            return this.instanceId != null;
+            return this._instanceId != null;
         }
+
 
         /// <summary>
-        /// A stack ID. The action describes the stack's registered Amazon EBS volumes.
-        ///  
-        /// </summary>
-        public string StackId
-        {
-            get { return this.stackId; }
-            set { this.stackId = value; }
-        }
-
-        // Check to see if StackId property is set
-        internal bool IsSetStackId()
-        {
-            return this.stackId != null;
-        }
-
-        /// <summary>
-        /// The RAID array ID. If you use this parameter, <c>DescribeVolumes</c> returns descriptions of the volumes associated with the specified RAID
-        /// array.
-        ///  
+        /// Gets and sets the property RaidArrayId. 
+        /// <para>
+        /// The RAID array ID.  If you use this parameter, <code>DescribeVolumes</code> returns
+        ///         descriptions of the volumes associated with the specified RAID array.
+        /// </para>
         /// </summary>
         public string RaidArrayId
         {
-            get { return this.raidArrayId; }
-            set { this.raidArrayId = value; }
+            get { return this._raidArrayId; }
+            set { this._raidArrayId = value; }
         }
 
         // Check to see if RaidArrayId property is set
         internal bool IsSetRaidArrayId()
         {
-            return this.raidArrayId != null;
+            return this._raidArrayId != null;
         }
 
+
         /// <summary>
-        /// Am array of volume IDs. If you use this parameter, <c>DescribeVolumes</c> returns descriptions of the specified volumes. Otherwise, it
-        /// returns a description of every volume.
-        ///  
+        /// Gets and sets the property StackId. 
+        /// <para>
+        /// A stack ID. The action describes the stack's registered Amazon EBS volumes.
+        /// </para>
+        /// </summary>
+        public string StackId
+        {
+            get { return this._stackId; }
+            set { this._stackId = value; }
+        }
+
+        // Check to see if StackId property is set
+        internal bool IsSetStackId()
+        {
+            return this._stackId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property VolumeIds. 
+        /// <para>
+        /// Am array of volume IDs. If you use this parameter, <code>DescribeVolumes</code> returns
+        ///         descriptions of the specified volumes. Otherwise, it returns a description
+        /// of every volume.
+        /// </para>
         /// </summary>
         public List<string> VolumeIds
         {
-            get { return this.volumeIds; }
-            set { this.volumeIds = value; }
+            get { return this._volumeIds; }
+            set { this._volumeIds = value; }
         }
 
         // Check to see if VolumeIds property is set
         internal bool IsSetVolumeIds()
         {
-            return this.volumeIds.Count > 0;
+            return this._volumeIds != null && this._volumeIds.Count > 0; 
         }
 
     }
 }
-    

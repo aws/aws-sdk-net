@@ -29,63 +29,57 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Commands Request Marshaller
+    /// DescribeCommands Request Marshaller
     /// </summary>       
-    internal class DescribeCommandsRequestMarshaller : IMarshaller<IRequest, DescribeCommandsRequest> 
+    public class DescribeCommandsRequestMarshaller : IMarshaller<IRequest, DescribeCommandsRequest> 
     {
-        
-
-        public IRequest Marshall(DescribeCommandsRequest describeCommandsRequest) 
+        public IRequest Marshall(DescribeCommandsRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(describeCommandsRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.DescribeCommands";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (describeCommandsRequest != null && describeCommandsRequest.IsSetDeploymentId()) 
+                if(publicRequest.IsSetCommandIds())
                 {
-                    writer.WritePropertyName("DeploymentId");
-                    writer.Write(describeCommandsRequest.DeploymentId);
-                }
-                if (describeCommandsRequest != null && describeCommandsRequest.IsSetInstanceId()) 
-                {
-                    writer.WritePropertyName("InstanceId");
-                    writer.Write(describeCommandsRequest.InstanceId);
-                }
-
-                if (describeCommandsRequest != null && describeCommandsRequest.CommandIds != null && describeCommandsRequest.CommandIds.Count > 0) 
-                {
-                    List<string> commandIdsList = describeCommandsRequest.CommandIds;
                     writer.WritePropertyName("CommandIds");
                     writer.WriteArrayStart();
-
-                    foreach (string commandIdsListValue in commandIdsList) 
-                    { 
-                        writer.Write(StringUtils.FromString(commandIdsListValue));
+                    foreach(var publicRequestCommandIdsListValue in publicRequest.CommandIds)
+                    {
+                        writer.Write(publicRequestCommandIdsListValue);
                     }
-
                     writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetDeploymentId())
+                {
+                    writer.WritePropertyName("DeploymentId");
+                    writer.Write(publicRequest.DeploymentId);
+                }
+
+                if(publicRequest.IsSetInstanceId())
+                {
+                    writer.WritePropertyName("InstanceId");
+                    writer.Write(publicRequest.InstanceId);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

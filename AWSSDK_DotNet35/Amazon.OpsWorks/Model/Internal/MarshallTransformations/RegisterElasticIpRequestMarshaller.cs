@@ -29,49 +29,46 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Register Elastic Ip Request Marshaller
+    /// RegisterElasticIp Request Marshaller
     /// </summary>       
-    internal class RegisterElasticIpRequestMarshaller : IMarshaller<IRequest, RegisterElasticIpRequest> 
+    public class RegisterElasticIpRequestMarshaller : IMarshaller<IRequest, RegisterElasticIpRequest> 
     {
-        
-
-        public IRequest Marshall(RegisterElasticIpRequest registerElasticIpRequest) 
+        public IRequest Marshall(RegisterElasticIpRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(registerElasticIpRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.RegisterElasticIp";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (registerElasticIpRequest != null && registerElasticIpRequest.IsSetElasticIp()) 
+                if(publicRequest.IsSetElasticIp())
                 {
                     writer.WritePropertyName("ElasticIp");
-                    writer.Write(registerElasticIpRequest.ElasticIp);
-                }
-                if (registerElasticIpRequest != null && registerElasticIpRequest.IsSetStackId()) 
-                {
-                    writer.WritePropertyName("StackId");
-                    writer.Write(registerElasticIpRequest.StackId);
+                    writer.Write(publicRequest.ElasticIp);
                 }
 
+                if(publicRequest.IsSetStackId())
+                {
+                    writer.WritePropertyName("StackId");
+                    writer.Write(publicRequest.StackId);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

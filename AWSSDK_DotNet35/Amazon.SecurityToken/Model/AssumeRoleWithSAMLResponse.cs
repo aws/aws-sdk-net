@@ -12,24 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// Returns information about the  AssumeRoleWithSAML response and response metadata.
+    /// Configuration for accessing Amazon AssumeRoleWithSAML service
     /// </summary>
     public partial class AssumeRoleWithSAMLResponse : AssumeRoleWithSAMLResult
     {
         /// <summary>
         /// Gets and sets the AssumeRoleWithSAMLResult property.
-        /// Contains the result of a successful call to the AssumeRoleWithSAML action, including temporary AWS credentials that can be used to make AWS
-        /// requests.
+        /// Represents the output of a AssumeRoleWithSAML operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the AssumeRoleWithSAMLResult class are now available on the AssumeRoleWithSAMLResponse class. You should use the properties on AssumeRoleWithSAMLResponse instead of accessing them through AssumeRoleWithSAMLResult.")]
         public AssumeRoleWithSAMLResult AssumeRoleWithSAMLResult
@@ -41,4 +36,3 @@ namespace Amazon.SecurityToken.Model
         }
     }
 }
-    

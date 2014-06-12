@@ -25,69 +25,86 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDeployments operation.
-    /// <para>Requests a description of a specified set of deployments.</para> <para><b>NOTE:</b> You must specify at least one of the parameters.
-    /// </para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the
-    /// stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+    /// Requests a description of a specified set of deployments.
+    /// 
+    ///   <note>      
+    /// <para>
+    /// You must specify at least one of the parameters.
+    /// </para>
+    ///     </note>    
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+    /// or Manage permissions level for the stack, or an attached       policy that explicitly
+    /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
     public partial class DescribeDeploymentsRequest : AmazonOpsWorksRequest
     {
-        private string stackId;
-        private string appId;
-        private List<string> deploymentIds = new List<string>();
+        private string _appId;
+        private List<string> _deploymentIds = new List<string>();
+        private string _stackId;
 
 
         /// <summary>
-        /// The stack ID. If you include this parameter, <c>DescribeDeployments</c> returns a description of the commands associated with the specified
-        /// stack.
-        ///  
-        /// </summary>
-        public string StackId
-        {
-            get { return this.stackId; }
-            set { this.stackId = value; }
-        }
-
-        // Check to see if StackId property is set
-        internal bool IsSetStackId()
-        {
-            return this.stackId != null;
-        }
-
-        /// <summary>
-        /// The app ID. If you include this parameter, <c>DescribeDeployments</c> returns a description of the commands associated with the specified
-        /// app.
-        ///  
+        /// Gets and sets the property AppId. 
+        /// <para>
+        /// The app ID. If you include this parameter, <code>DescribeDeployments</code> returns
+        /// a description of the commands         associated with the specified app.
+        /// </para>
         /// </summary>
         public string AppId
         {
-            get { return this.appId; }
-            set { this.appId = value; }
+            get { return this._appId; }
+            set { this._appId = value; }
         }
 
         // Check to see if AppId property is set
         internal bool IsSetAppId()
         {
-            return this.appId != null;
+            return this._appId != null;
         }
 
+
         /// <summary>
-        /// An array of deployment IDs to be described. If you include this parameter, <c>DescribeDeployments</c> returns a description of the specified
-        /// deployments. Otherwise, it returns a description of every deployment.
-        ///  
+        /// Gets and sets the property DeploymentIds. 
+        /// <para>
+        /// An array of deployment IDs to be described. If you include this parameter, <code>DescribeDeployments</code>
+        /// returns a description of the         specified deployments. Otherwise, it returns
+        /// a description of every deployment.
+        /// </para>
         /// </summary>
         public List<string> DeploymentIds
         {
-            get { return this.deploymentIds; }
-            set { this.deploymentIds = value; }
+            get { return this._deploymentIds; }
+            set { this._deploymentIds = value; }
         }
 
         // Check to see if DeploymentIds property is set
         internal bool IsSetDeploymentIds()
         {
-            return this.deploymentIds.Count > 0;
+            return this._deploymentIds != null && this._deploymentIds.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property StackId. 
+        /// <para>
+        /// The stack ID. If you include this parameter, <code>DescribeDeployments</code> returns
+        /// a description of the commands         associated with the specified stack.
+        /// </para>
+        /// </summary>
+        public string StackId
+        {
+            get { return this._stackId; }
+            set { this._stackId = value; }
+        }
+
+        // Check to see if StackId property is set
+        internal bool IsSetStackId()
+        {
+            return this._stackId != null;
         }
 
     }
 }
-    

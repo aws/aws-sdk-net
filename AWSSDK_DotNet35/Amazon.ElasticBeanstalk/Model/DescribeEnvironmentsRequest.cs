@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,134 +25,147 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEnvironments operation.
-    /// <para>Returns descriptions for existing environments.</para>
+    /// Returns descriptions for existing environments.
     /// </summary>
     public partial class DescribeEnvironmentsRequest : AmazonElasticBeanstalkRequest
     {
-        private string applicationName;
-        private string versionLabel;
-        private List<string> environmentIds = new List<string>();
-        private List<string> environmentNames = new List<string>();
-        private bool? includeDeleted;
-        private DateTime? includedDeletedBackTo;
+        private string _applicationName;
+        private List<string> _environmentIds = new List<string>();
+        private List<string> _environmentNames = new List<string>();
+        private DateTime? _includedDeletedBackTo;
+        private bool? _includeDeleted;
+        private string _versionLabel;
 
 
         /// <summary>
-        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application.
-        ///  
+        /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 100</description>
-        ///     </item>
-        /// </list>
+        ///          If specified, AWS Elastic Beanstalk         restricts the returned descriptions
+        /// to         include only those that are         associated with this application. 
+        ///     
         /// </para>
         /// </summary>
         public string ApplicationName
         {
-            get { return this.applicationName; }
-            set { this.applicationName = value; }
+            get { return this._applicationName; }
+            set { this._applicationName = value; }
         }
 
         // Check to see if ApplicationName property is set
         internal bool IsSetApplicationName()
         {
-            return this.applicationName != null;
+            return this._applicationName != null;
         }
 
+
         /// <summary>
-        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application
-        /// version.
-        ///  
+        /// Gets and sets the property EnvironmentIds. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 100</description>
-        ///     </item>
-        /// </list>
+        ///          If specified, AWS Elastic Beanstalk         restricts the returned descriptions
+        /// to         include only those that have the         specified IDs.      
         /// </para>
-        /// </summary>
-        public string VersionLabel
-        {
-            get { return this.versionLabel; }
-            set { this.versionLabel = value; }
-        }
-
-        // Check to see if VersionLabel property is set
-        internal bool IsSetVersionLabel()
-        {
-            return this.versionLabel != null;
-        }
-
-        /// <summary>
-        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified IDs.
-        ///  
         /// </summary>
         public List<string> EnvironmentIds
         {
-            get { return this.environmentIds; }
-            set { this.environmentIds = value; }
+            get { return this._environmentIds; }
+            set { this._environmentIds = value; }
         }
 
         // Check to see if EnvironmentIds property is set
         internal bool IsSetEnvironmentIds()
         {
-            return this.environmentIds.Count > 0;
+            return this._environmentIds != null && this._environmentIds.Count > 0; 
         }
 
+
         /// <summary>
-        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified names.
-        ///  
+        /// Gets and sets the property EnvironmentNames. 
+        /// <para>
+        ///          If specified, AWS Elastic Beanstalk         restricts the returned descriptions
+        /// to         include only those that have the         specified names.      
+        /// </para>
         /// </summary>
         public List<string> EnvironmentNames
         {
-            get { return this.environmentNames; }
-            set { this.environmentNames = value; }
+            get { return this._environmentNames; }
+            set { this._environmentNames = value; }
         }
 
         // Check to see if EnvironmentNames property is set
         internal bool IsSetEnvironmentNames()
         {
-            return this.environmentNames.Count > 0;
+            return this._environmentNames != null && this._environmentNames.Count > 0; 
         }
+
 
         /// <summary>
-        /// Indicates whether to include deleted environments: <c>true</c>: Environments that have been deleted after <c>IncludedDeletedBackTo</c> are
-        /// displayed. <c>false</c>: Do not include deleted environments.
-        ///  
-        /// </summary>
-        public bool IncludeDeleted
-        {
-            get { return this.includeDeleted ?? default(bool); }
-            set { this.includeDeleted = value; }
-        }
-
-        // Check to see if IncludeDeleted property is set
-        internal bool IsSetIncludeDeleted()
-        {
-            return this.includeDeleted.HasValue;
-        }
-
-        /// <summary>
-        /// If specified when <c>IncludeDeleted</c> is set to <c>true</c>, then environments deleted after this date are displayed.
-        ///  
+        /// Gets and sets the property IncludedDeletedBackTo. 
+        /// <para>
+        ///          If specified when         <code>IncludeDeleted</code>         is set to 
+        ///        <code>true</code>,         then environments deleted after this date are displayed.
+        ///      
+        /// </para>
         /// </summary>
         public DateTime IncludedDeletedBackTo
         {
-            get { return this.includedDeletedBackTo ?? default(DateTime); }
-            set { this.includedDeletedBackTo = value; }
+            get { return this._includedDeletedBackTo.GetValueOrDefault(); }
+            set { this._includedDeletedBackTo = value; }
         }
 
         // Check to see if IncludedDeletedBackTo property is set
         internal bool IsSetIncludedDeletedBackTo()
         {
-            return this.includedDeletedBackTo.HasValue;
+            return this._includedDeletedBackTo.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property IncludeDeleted. 
+        /// <para>
+        /// Indicates whether to include deleted environments:      
+        /// </para>
+        ///       
+        /// <para>
+        ///          <code>true</code>: Environments that have been deleted after         <code>IncludedDeletedBackTo</code>
+        ///         are displayed.      
+        /// </para>
+        ///       
+        /// <para>
+        ///          <code>false</code>: Do not include deleted environments.      
+        /// </para>
+        /// </summary>
+        public bool IncludeDeleted
+        {
+            get { return this._includeDeleted.GetValueOrDefault(); }
+            set { this._includeDeleted = value; }
+        }
+
+        // Check to see if IncludeDeleted property is set
+        internal bool IsSetIncludeDeleted()
+        {
+            return this._includeDeleted.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property VersionLabel. 
+        /// <para>
+        ///          If specified, AWS Elastic Beanstalk         restricts the returned descriptions
+        /// to         include only those that are         associated with this application version.
+        ///      
+        /// </para>
+        /// </summary>
+        public string VersionLabel
+        {
+            get { return this._versionLabel; }
+            set { this._versionLabel = value; }
+        }
+
+        // Check to see if VersionLabel property is set
+        internal bool IsSetVersionLabel()
+        {
+            return this._versionLabel != null;
         }
 
     }
 }
-    

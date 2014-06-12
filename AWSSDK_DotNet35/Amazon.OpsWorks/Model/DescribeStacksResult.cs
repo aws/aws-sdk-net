@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>DescribeStacks</c> request.</para>
+    /// Contains the response to a <code>DescribeStacks</code> request.
     /// </summary>
     public partial class DescribeStacksResult : AmazonWebServiceResponse
     {
-        
-        private List<Stack> stacks = new List<Stack>();
+        private List<Stack> _stacks = new List<Stack>();
 
 
         /// <summary>
-        /// An array of <c>Stack</c> objects that describe the stacks.
-        ///  
+        /// Gets and sets the property Stacks. 
+        /// <para>
+        /// An array of <code>Stack</code> objects that describe the stacks.
+        /// </para>
         /// </summary>
         public List<Stack> Stacks
         {
-            get { return this.stacks; }
-            set { this.stacks = value; }
+            get { return this._stacks; }
+            set { this._stacks = value; }
         }
 
         // Check to see if Stacks property is set
         internal bool IsSetStacks()
         {
-            return this.stacks.Count > 0;
+            return this._stacks != null && this._stacks.Count > 0; 
         }
+
     }
 }

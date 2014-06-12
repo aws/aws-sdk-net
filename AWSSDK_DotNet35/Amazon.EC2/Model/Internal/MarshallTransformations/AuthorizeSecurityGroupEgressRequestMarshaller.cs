@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(authorizeSecurityGroupEgressRequest, "AmazonEC2");
             request.Parameters.Add("Action", "AuthorizeSecurityGroupEgress");
-            request.Parameters.Add("Version", "2014-02-01");
+            request.Parameters.Add("Version", "2014-05-01");
             if (authorizeSecurityGroupEgressRequest != null && authorizeSecurityGroupEgressRequest.IsSetGroupId())
             {
                 request.Parameters.Add("GroupId", StringUtils.FromString(authorizeSecurityGroupEgressRequest.GroupId));

@@ -32,6 +32,7 @@ namespace Amazon.S3.Model
         private string bucketName;
         private string key;
         private int? days;
+        private string versionId;
 
         /// <summary>
         /// Gets and sets the BucketName property.
@@ -73,6 +74,22 @@ namespace Amazon.S3.Model
         internal bool IsSetDays()
         {
             return this.days.HasValue;
+        }
+
+        /// <summary>
+        /// VersionId used to reference a specific version of the object.
+        ///  
+        /// </summary>
+        public string VersionId
+        {
+            get { return this.versionId; }
+            set { this.versionId = value; }
+        }
+
+        // Check to see if VersionId property is set
+        internal bool IsSetVersionId()
+        {
+            return this.versionId != null;
         }
     }
 }

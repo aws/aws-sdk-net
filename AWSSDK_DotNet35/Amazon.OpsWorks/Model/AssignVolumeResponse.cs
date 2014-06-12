@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the AssignVolume response metadata.
-    /// The AssignVolume operation has a void result type.
+    /// Configuration for accessing Amazon AssignVolume service
     /// </summary>
-    public partial class AssignVolumeResponse : AmazonWebServiceResponse
+    public partial class AssignVolumeResponse : AssignVolumeResult
     {
+        /// <summary>
+        /// Gets and sets the AssignVolumeResult property.
+        /// Represents the output of a AssignVolume operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the AssignVolumeResult class are now available on the AssignVolumeResponse class. You should use the properties on AssignVolumeResponse instead of accessing them through AssignVolumeResult.")]
+        public AssignVolumeResult AssignVolumeResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

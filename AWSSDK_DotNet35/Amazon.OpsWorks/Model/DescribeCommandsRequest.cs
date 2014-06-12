@@ -25,69 +25,86 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCommands operation.
-    /// <para>Describes the results of specified commands.</para> <para><b>NOTE:</b> You must specify at least one of the parameters. </para> <para>
-    /// <b>Required Permissions</b> : To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an
-    /// attached policy that explicitly grants permissions. For more information on user permissions, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+    /// Describes the results of specified commands.
+    /// 
+    ///   <note>      
+    /// <para>
+    /// You must specify at least one of the parameters.
+    /// </para>
+    ///     </note>    
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+    /// or Manage permissions level for the stack, or an attached       policy that explicitly
+    /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
     public partial class DescribeCommandsRequest : AmazonOpsWorksRequest
     {
-        private string deploymentId;
-        private string instanceId;
-        private List<string> commandIds = new List<string>();
+        private List<string> _commandIds = new List<string>();
+        private string _deploymentId;
+        private string _instanceId;
 
 
         /// <summary>
-        /// The deployment ID. If you include this parameter, <c>DescribeCommands</c> returns a description of the commands associated with the
-        /// specified deployment.
-        ///  
-        /// </summary>
-        public string DeploymentId
-        {
-            get { return this.deploymentId; }
-            set { this.deploymentId = value; }
-        }
-
-        // Check to see if DeploymentId property is set
-        internal bool IsSetDeploymentId()
-        {
-            return this.deploymentId != null;
-        }
-
-        /// <summary>
-        /// The instance ID. If you include this parameter, <c>DescribeCommands</c> returns a description of the commands associated with the specified
-        /// instance.
-        ///  
-        /// </summary>
-        public string InstanceId
-        {
-            get { return this.instanceId; }
-            set { this.instanceId = value; }
-        }
-
-        // Check to see if InstanceId property is set
-        internal bool IsSetInstanceId()
-        {
-            return this.instanceId != null;
-        }
-
-        /// <summary>
-        /// An array of command IDs. If you include this parameter, <c>DescribeCommands</c> returns a description of the specified commands. Otherwise,
-        /// it returns a description of every command.
-        ///  
+        /// Gets and sets the property CommandIds. 
+        /// <para>
+        /// An array of command IDs. If you include this parameter, <code>DescribeCommands</code>
+        /// returns a description of the specified commands.         Otherwise, it returns a description
+        /// of every command.
+        /// </para>
         /// </summary>
         public List<string> CommandIds
         {
-            get { return this.commandIds; }
-            set { this.commandIds = value; }
+            get { return this._commandIds; }
+            set { this._commandIds = value; }
         }
 
         // Check to see if CommandIds property is set
         internal bool IsSetCommandIds()
         {
-            return this.commandIds.Count > 0;
+            return this._commandIds != null && this._commandIds.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property DeploymentId. 
+        /// <para>
+        /// The deployment ID. If you include this parameter, <code>DescribeCommands</code> returns
+        /// a description of the commands         associated with the specified deployment.
+        /// </para>
+        /// </summary>
+        public string DeploymentId
+        {
+            get { return this._deploymentId; }
+            set { this._deploymentId = value; }
+        }
+
+        // Check to see if DeploymentId property is set
+        internal bool IsSetDeploymentId()
+        {
+            return this._deploymentId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The instance ID. If you include this parameter, <code>DescribeCommands</code> returns
+        /// a description of the commands         associated with the specified instance.
+        /// </para>
+        /// </summary>
+        public string InstanceId
+        {
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
+        }
+
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
+        {
+            return this._instanceId != null;
         }
 
     }
 }
-    

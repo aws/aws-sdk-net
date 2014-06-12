@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>DescribeRaidArrays</c> request.</para>
+    /// Contains the response to a <code>DescribeRaidArrays</code> request.
     /// </summary>
     public partial class DescribeRaidArraysResult : AmazonWebServiceResponse
     {
-        
-        private List<RaidArray> raidArrays = new List<RaidArray>();
+        private List<RaidArray> _raidArrays = new List<RaidArray>();
 
 
         /// <summary>
-        /// A <c>RaidArrays</c> object that describes the specified RAID arrays.
-        ///  
+        /// Gets and sets the property RaidArrays. 
+        /// <para>
+        /// A <code>RaidArrays</code> object that describes the specified RAID arrays.
+        /// </para>
         /// </summary>
         public List<RaidArray> RaidArrays
         {
-            get { return this.raidArrays; }
-            set { this.raidArrays = value; }
+            get { return this._raidArrays; }
+            set { this._raidArrays = value; }
         }
 
         // Check to see if RaidArrays property is set
         internal bool IsSetRaidArrays()
         {
-            return this.raidArrays.Count > 0;
+            return this._raidArrays != null && this._raidArrays.Count > 0; 
         }
+
     }
 }

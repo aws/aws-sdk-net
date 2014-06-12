@@ -18,238 +18,278 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Describes an instance's Amazon EBS volume.</para>
+    /// Describes an instance's Amazon EBS volume.
     /// </summary>
     public partial class Volume
     {
-        
-        private string volumeId;
-        private string ec2VolumeId;
-        private string name;
-        private string raidArrayId;
-        private string instanceId;
-        private string status;
-        private int? size;
-        private string device;
-        private string mountPoint;
-        private string region;
-        private string availabilityZone;
-        private string volumeType;
-        private int? iops;
+        private string _availabilityZone;
+        private string _device;
+        private string _ec2VolumeId;
+        private string _instanceId;
+        private int? _iops;
+        private string _mountPoint;
+        private string _name;
+        private string _raidArrayId;
+        private string _region;
+        private int? _size;
+        private string _status;
+        private string _volumeId;
+        private string _volumeType;
 
 
         /// <summary>
-        /// The volume ID.
-        ///  
-        /// </summary>
-        public string VolumeId
-        {
-            get { return this.volumeId; }
-            set { this.volumeId = value; }
-        }
-
-        // Check to see if VolumeId property is set
-        internal bool IsSetVolumeId()
-        {
-            return this.volumeId != null;
-        }
-
-        /// <summary>
-        /// The Amazon EC2 volume ID.
-        ///  
-        /// </summary>
-        public string Ec2VolumeId
-        {
-            get { return this.ec2VolumeId; }
-            set { this.ec2VolumeId = value; }
-        }
-
-        // Check to see if Ec2VolumeId property is set
-        internal bool IsSetEc2VolumeId()
-        {
-            return this.ec2VolumeId != null;
-        }
-
-        /// <summary>
-        /// The volume name.
-        ///  
-        /// </summary>
-        public string Name
-        {
-            get { return this.name; }
-            set { this.name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this.name != null;
-        }
-
-        /// <summary>
-        /// The RAID array ID.
-        ///  
-        /// </summary>
-        public string RaidArrayId
-        {
-            get { return this.raidArrayId; }
-            set { this.raidArrayId = value; }
-        }
-
-        // Check to see if RaidArrayId property is set
-        internal bool IsSetRaidArrayId()
-        {
-            return this.raidArrayId != null;
-        }
-
-        /// <summary>
-        /// The instance ID.
-        ///  
-        /// </summary>
-        public string InstanceId
-        {
-            get { return this.instanceId; }
-            set { this.instanceId = value; }
-        }
-
-        // Check to see if InstanceId property is set
-        internal bool IsSetInstanceId()
-        {
-            return this.instanceId != null;
-        }
-
-        /// <summary>
-        /// The value returned by <a
-        /// href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.
-        ///  
-        /// </summary>
-        public string Status
-        {
-            get { return this.status; }
-            set { this.status = value; }
-        }
-
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
-        {
-            return this.status != null;
-        }
-
-        /// <summary>
-        /// The volume size.
-        ///  
-        /// </summary>
-        public int Size
-        {
-            get { return this.size ?? default(int); }
-            set { this.size = value; }
-        }
-
-        // Check to see if Size property is set
-        internal bool IsSetSize()
-        {
-            return this.size.HasValue;
-        }
-
-        /// <summary>
-        /// The device name.
-        ///  
-        /// </summary>
-        public string Device
-        {
-            get { return this.device; }
-            set { this.device = value; }
-        }
-
-        // Check to see if Device property is set
-        internal bool IsSetDevice()
-        {
-            return this.device != null;
-        }
-
-        /// <summary>
-        /// The volume mount point. For example "/dev/sdh".
-        ///  
-        /// </summary>
-        public string MountPoint
-        {
-            get { return this.mountPoint; }
-            set { this.mountPoint = value; }
-        }
-
-        // Check to see if MountPoint property is set
-        internal bool IsSetMountPoint()
-        {
-            return this.mountPoint != null;
-        }
-
-        /// <summary>
-        /// The AWS region. For more information about AWS regions, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-        /// Endpoints</a>.
-        ///  
-        /// </summary>
-        public string Region
-        {
-            get { return this.region; }
-            set { this.region = value; }
-        }
-
-        // Check to see if Region property is set
-        internal bool IsSetRegion()
-        {
-            return this.region != null;
-        }
-
-        /// <summary>
-        /// The volume Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-        /// Endpoints</a>.
-        ///  
+        /// Gets and sets the property AvailabilityZone. 
+        /// <para>
+        /// The volume Availability Zone. For more information, see  <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
+        /// and Endpoints</a>.
+        /// </para>
         /// </summary>
         public string AvailabilityZone
         {
-            get { return this.availabilityZone; }
-            set { this.availabilityZone = value; }
+            get { return this._availabilityZone; }
+            set { this._availabilityZone = value; }
         }
 
         // Check to see if AvailabilityZone property is set
         internal bool IsSetAvailabilityZone()
         {
-            return this.availabilityZone != null;
+            return this._availabilityZone != null;
         }
 
+
         /// <summary>
-        /// The volume type, standard or PIOPS.
-        ///  
+        /// Gets and sets the property Device. 
+        /// <para>
+        /// The device name.
+        /// </para>
         /// </summary>
-        public string VolumeType
+        public string Device
         {
-            get { return this.volumeType; }
-            set { this.volumeType = value; }
+            get { return this._device; }
+            set { this._device = value; }
         }
 
-        // Check to see if VolumeType property is set
-        internal bool IsSetVolumeType()
+        // Check to see if Device property is set
+        internal bool IsSetDevice()
         {
-            return this.volumeType != null;
+            return this._device != null;
         }
+
 
         /// <summary>
+        /// Gets and sets the property Ec2VolumeId. 
+        /// <para>
+        /// The Amazon EC2 volume ID.
+        /// </para>
+        /// </summary>
+        public string Ec2VolumeId
+        {
+            get { return this._ec2VolumeId; }
+            set { this._ec2VolumeId = value; }
+        }
+
+        // Check to see if Ec2VolumeId property is set
+        internal bool IsSetEc2VolumeId()
+        {
+            return this._ec2VolumeId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The instance ID.
+        /// </para>
+        /// </summary>
+        public string InstanceId
+        {
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
+        }
+
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
+        {
+            return this._instanceId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Iops. 
+        /// <para>
         /// For PIOPS volumes, the IOPS per disk.
-        ///  
+        /// </para>
         /// </summary>
         public int Iops
         {
-            get { return this.iops ?? default(int); }
-            set { this.iops = value; }
+            get { return this._iops.GetValueOrDefault(); }
+            set { this._iops = value; }
         }
 
         // Check to see if Iops property is set
         internal bool IsSetIops()
         {
-            return this.iops.HasValue;
+            return this._iops.HasValue; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property MountPoint. 
+        /// <para>
+        /// The volume mount point. For example "/dev/sdh".
+        /// </para>
+        /// </summary>
+        public string MountPoint
+        {
+            get { return this._mountPoint; }
+            set { this._mountPoint = value; }
+        }
+
+        // Check to see if MountPoint property is set
+        internal bool IsSetMountPoint()
+        {
+            return this._mountPoint != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The volume name.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property RaidArrayId. 
+        /// <para>
+        /// The RAID array ID.
+        /// </para>
+        /// </summary>
+        public string RaidArrayId
+        {
+            get { return this._raidArrayId; }
+            set { this._raidArrayId = value; }
+        }
+
+        // Check to see if RaidArrayId property is set
+        internal bool IsSetRaidArrayId()
+        {
+            return this._raidArrayId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Region. 
+        /// <para>
+        /// The AWS region. For more information about AWS regions, see  <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
+        /// and Endpoints</a>.
+        /// </para>
+        /// </summary>
+        public string Region
+        {
+            get { return this._region; }
+            set { this._region = value; }
+        }
+
+        // Check to see if Region property is set
+        internal bool IsSetRegion()
+        {
+            return this._region != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Size. 
+        /// <para>
+        /// The volume size.
+        /// </para>
+        /// </summary>
+        public int Size
+        {
+            get { return this._size.GetValueOrDefault(); }
+            set { this._size = value; }
+        }
+
+        // Check to see if Size property is set
+        internal bool IsSetSize()
+        {
+            return this._size.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The value returned by  <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.
+        /// </para>
+        /// </summary>
+        public string Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property VolumeId. 
+        /// <para>
+        /// The volume ID.
+        /// </para>
+        /// </summary>
+        public string VolumeId
+        {
+            get { return this._volumeId; }
+            set { this._volumeId = value; }
+        }
+
+        // Check to see if VolumeId property is set
+        internal bool IsSetVolumeId()
+        {
+            return this._volumeId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property VolumeType. 
+        /// <para>
+        /// The volume type, standard or PIOPS.
+        /// </para>
+        /// </summary>
+        public string VolumeType
+        {
+            get { return this._volumeType; }
+            set { this._volumeType = value; }
+        }
+
+        // Check to see if VolumeType property is set
+        internal bool IsSetVolumeType()
+        {
+            return this._volumeType != null;
+        }
+
     }
 }

@@ -29,44 +29,40 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Layer Request Marshaller
+    /// DeleteLayer Request Marshaller
     /// </summary>       
-    internal class DeleteLayerRequestMarshaller : IMarshaller<IRequest, DeleteLayerRequest> 
+    public class DeleteLayerRequestMarshaller : IMarshaller<IRequest, DeleteLayerRequest> 
     {
-        
-
-        public IRequest Marshall(DeleteLayerRequest deleteLayerRequest) 
+        public IRequest Marshall(DeleteLayerRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(deleteLayerRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.DeleteLayer";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (deleteLayerRequest != null && deleteLayerRequest.IsSetLayerId()) 
+                if(publicRequest.IsSetLayerId())
                 {
                     writer.WritePropertyName("LayerId");
-                    writer.Write(deleteLayerRequest.LayerId);
+                    writer.Write(publicRequest.LayerId);
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

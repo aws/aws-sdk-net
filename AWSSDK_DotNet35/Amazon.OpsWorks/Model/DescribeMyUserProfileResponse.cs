@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeMyUserProfile response and response metadata.
+    /// Configuration for accessing Amazon DescribeMyUserProfile service
     /// </summary>
     public partial class DescribeMyUserProfileResponse : DescribeMyUserProfileResult
     {
         /// <summary>
         /// Gets and sets the DescribeMyUserProfileResult property.
-        /// Contains the response to a DescribeMyUserProfile request.
+        /// Represents the output of a DescribeMyUserProfile operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeMyUserProfileResult class are now available on the DescribeMyUserProfileResponse class. You should use the properties on DescribeMyUserProfileResponse instead of accessing them through DescribeMyUserProfileResult.")]
         public DescribeMyUserProfileResult DescribeMyUserProfileResult
@@ -40,4 +36,3 @@ namespace Amazon.OpsWorks.Model
         }
     }
 }
-    

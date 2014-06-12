@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,35 +12,32 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 using System;
 
 using Amazon.Runtime;
 
-
 namespace Amazon.ElasticBeanstalk
 {
 
-
-    /// <summary>Configuration Deployment Status
+    /// <summary>
+    /// Constants used for properties of type ConfigurationDeploymentStatus.
     /// </summary>
     public class ConfigurationDeploymentStatus : ConstantClass
     {
 
-
-       /// <summary>Constant Deployed for ConfigurationDeploymentStatus
-       /// </summary>
+        /// <summary>
+        /// Constant Deployed for ConfigurationDeploymentStatus
+        /// </summary>
         public static readonly ConfigurationDeploymentStatus Deployed = new ConfigurationDeploymentStatus("deployed");
-    
-
-       /// <summary>Constant Failed for ConfigurationDeploymentStatus
-       /// </summary>
+        /// <summary>
+        /// Constant Failed for ConfigurationDeploymentStatus
+        /// </summary>
         public static readonly ConfigurationDeploymentStatus Failed = new ConfigurationDeploymentStatus("failed");
-    
-
-       /// <summary>Constant Pending for ConfigurationDeploymentStatus
-       /// </summary>
+        /// <summary>
+        /// Constant Pending for ConfigurationDeploymentStatus
+        /// </summary>
         public static readonly ConfigurationDeploymentStatus Pending = new ConfigurationDeploymentStatus("pending");
-    
 
         /// <summary>
         /// Default Constructor
@@ -65,23 +62,22 @@ namespace Amazon.ElasticBeanstalk
             return FindValue(value);
         }
     }
-    
 
-    /// <summary>Configuration Option Value Type
+
+    /// <summary>
+    /// Constants used for properties of type ConfigurationOptionValueType.
     /// </summary>
     public class ConfigurationOptionValueType : ConstantClass
     {
 
-
-       /// <summary>Constant List for ConfigurationOptionValueType
-       /// </summary>
+        /// <summary>
+        /// Constant List for ConfigurationOptionValueType
+        /// </summary>
         public static readonly ConfigurationOptionValueType List = new ConfigurationOptionValueType("List");
-    
-
-       /// <summary>Constant Scalar for ConfigurationOptionValueType
-       /// </summary>
+        /// <summary>
+        /// Constant Scalar for ConfigurationOptionValueType
+        /// </summary>
         public static readonly ConfigurationOptionValueType Scalar = new ConfigurationOptionValueType("Scalar");
-    
 
         /// <summary>
         /// Default Constructor
@@ -106,33 +102,30 @@ namespace Amazon.ElasticBeanstalk
             return FindValue(value);
         }
     }
-    
 
-    /// <summary>Environment Health
+
+    /// <summary>
+    /// Constants used for properties of type EnvironmentHealth.
     /// </summary>
     public class EnvironmentHealth : ConstantClass
     {
 
-
-       /// <summary>Constant Green for EnvironmentHealth
-       /// </summary>
+        /// <summary>
+        /// Constant Green for EnvironmentHealth
+        /// </summary>
         public static readonly EnvironmentHealth Green = new EnvironmentHealth("Green");
-    
-
-       /// <summary>Constant Grey for EnvironmentHealth
-       /// </summary>
+        /// <summary>
+        /// Constant Grey for EnvironmentHealth
+        /// </summary>
         public static readonly EnvironmentHealth Grey = new EnvironmentHealth("Grey");
-    
-
-       /// <summary>Constant Red for EnvironmentHealth
-       /// </summary>
+        /// <summary>
+        /// Constant Red for EnvironmentHealth
+        /// </summary>
         public static readonly EnvironmentHealth Red = new EnvironmentHealth("Red");
-    
-
-       /// <summary>Constant Yellow for EnvironmentHealth
-       /// </summary>
+        /// <summary>
+        /// Constant Yellow for EnvironmentHealth
+        /// </summary>
         public static readonly EnvironmentHealth Yellow = new EnvironmentHealth("Yellow");
-    
 
         /// <summary>
         /// Default Constructor
@@ -157,18 +150,18 @@ namespace Amazon.ElasticBeanstalk
             return FindValue(value);
         }
     }
-    
 
-    /// <summary>Environment Info Type
+
+    /// <summary>
+    /// Constants used for properties of type EnvironmentInfoType.
     /// </summary>
     public class EnvironmentInfoType : ConstantClass
     {
 
-
-       /// <summary>Constant Tail for EnvironmentInfoType
-       /// </summary>
+        /// <summary>
+        /// Constant Tail for EnvironmentInfoType
+        /// </summary>
         public static readonly EnvironmentInfoType Tail = new EnvironmentInfoType("tail");
-    
 
         /// <summary>
         /// Default Constructor
@@ -193,38 +186,34 @@ namespace Amazon.ElasticBeanstalk
             return FindValue(value);
         }
     }
-    
 
-    /// <summary>Environment Status
+
+    /// <summary>
+    /// Constants used for properties of type EnvironmentStatus.
     /// </summary>
     public class EnvironmentStatus : ConstantClass
     {
 
-
-       /// <summary>Constant Launching for EnvironmentStatus
-       /// </summary>
+        /// <summary>
+        /// Constant Launching for EnvironmentStatus
+        /// </summary>
         public static readonly EnvironmentStatus Launching = new EnvironmentStatus("Launching");
-    
-
-       /// <summary>Constant Ready for EnvironmentStatus
-       /// </summary>
+        /// <summary>
+        /// Constant Ready for EnvironmentStatus
+        /// </summary>
         public static readonly EnvironmentStatus Ready = new EnvironmentStatus("Ready");
-    
-
-       /// <summary>Constant Terminated for EnvironmentStatus
-       /// </summary>
+        /// <summary>
+        /// Constant Terminated for EnvironmentStatus
+        /// </summary>
         public static readonly EnvironmentStatus Terminated = new EnvironmentStatus("Terminated");
-    
-
-       /// <summary>Constant Terminating for EnvironmentStatus
-       /// </summary>
+        /// <summary>
+        /// Constant Terminating for EnvironmentStatus
+        /// </summary>
         public static readonly EnvironmentStatus Terminating = new EnvironmentStatus("Terminating");
-    
-
-       /// <summary>Constant Updating for EnvironmentStatus
-       /// </summary>
+        /// <summary>
+        /// Constant Updating for EnvironmentStatus
+        /// </summary>
         public static readonly EnvironmentStatus Updating = new EnvironmentStatus("Updating");
-    
 
         /// <summary>
         /// Default Constructor
@@ -249,43 +238,38 @@ namespace Amazon.ElasticBeanstalk
             return FindValue(value);
         }
     }
-    
 
-    /// <summary>Event Severity
+
+    /// <summary>
+    /// Constants used for properties of type EventSeverity.
     /// </summary>
     public class EventSeverity : ConstantClass
     {
 
-
-       /// <summary>Constant DEBUG for EventSeverity
-       /// </summary>
+        /// <summary>
+        /// Constant DEBUG for EventSeverity
+        /// </summary>
         public static readonly EventSeverity DEBUG = new EventSeverity("DEBUG");
-    
-
-       /// <summary>Constant ERROR for EventSeverity
-       /// </summary>
+        /// <summary>
+        /// Constant ERROR for EventSeverity
+        /// </summary>
         public static readonly EventSeverity ERROR = new EventSeverity("ERROR");
-    
-
-       /// <summary>Constant FATAL for EventSeverity
-       /// </summary>
+        /// <summary>
+        /// Constant FATAL for EventSeverity
+        /// </summary>
         public static readonly EventSeverity FATAL = new EventSeverity("FATAL");
-    
-
-       /// <summary>Constant INFO for EventSeverity
-       /// </summary>
+        /// <summary>
+        /// Constant INFO for EventSeverity
+        /// </summary>
         public static readonly EventSeverity INFO = new EventSeverity("INFO");
-    
-
-       /// <summary>Constant TRACE for EventSeverity
-       /// </summary>
+        /// <summary>
+        /// Constant TRACE for EventSeverity
+        /// </summary>
         public static readonly EventSeverity TRACE = new EventSeverity("TRACE");
-    
-
-       /// <summary>Constant WARN for EventSeverity
-       /// </summary>
+        /// <summary>
+        /// Constant WARN for EventSeverity
+        /// </summary>
         public static readonly EventSeverity WARN = new EventSeverity("WARN");
-    
 
         /// <summary>
         /// Default Constructor
@@ -310,23 +294,22 @@ namespace Amazon.ElasticBeanstalk
             return FindValue(value);
         }
     }
-    
 
-    /// <summary>Validation Severity
+
+    /// <summary>
+    /// Constants used for properties of type ValidationSeverity.
     /// </summary>
     public class ValidationSeverity : ConstantClass
     {
 
-
-       /// <summary>Constant Error for ValidationSeverity
-       /// </summary>
+        /// <summary>
+        /// Constant Error for ValidationSeverity
+        /// </summary>
         public static readonly ValidationSeverity Error = new ValidationSeverity("error");
-    
-
-       /// <summary>Constant Warning for ValidationSeverity
-       /// </summary>
+        /// <summary>
+        /// Constant Warning for ValidationSeverity
+        /// </summary>
         public static readonly ValidationSeverity Warning = new ValidationSeverity("warning");
-    
 
         /// <summary>
         /// Default Constructor
@@ -351,7 +334,5 @@ namespace Amazon.ElasticBeanstalk
             return FindValue(value);
         }
     }
-    
 
 }
-        

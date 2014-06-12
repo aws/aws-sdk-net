@@ -29,63 +29,57 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Elastic Ips Request Marshaller
+    /// DescribeElasticIps Request Marshaller
     /// </summary>       
-    internal class DescribeElasticIpsRequestMarshaller : IMarshaller<IRequest, DescribeElasticIpsRequest> 
+    public class DescribeElasticIpsRequestMarshaller : IMarshaller<IRequest, DescribeElasticIpsRequest> 
     {
-        
-
-        public IRequest Marshall(DescribeElasticIpsRequest describeElasticIpsRequest) 
+        public IRequest Marshall(DescribeElasticIpsRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(describeElasticIpsRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.DescribeElasticIps";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (describeElasticIpsRequest != null && describeElasticIpsRequest.IsSetInstanceId()) 
+                if(publicRequest.IsSetInstanceId())
                 {
                     writer.WritePropertyName("InstanceId");
-                    writer.Write(describeElasticIpsRequest.InstanceId);
-                }
-                if (describeElasticIpsRequest != null && describeElasticIpsRequest.IsSetStackId()) 
-                {
-                    writer.WritePropertyName("StackId");
-                    writer.Write(describeElasticIpsRequest.StackId);
+                    writer.Write(publicRequest.InstanceId);
                 }
 
-                if (describeElasticIpsRequest != null && describeElasticIpsRequest.Ips != null && describeElasticIpsRequest.Ips.Count > 0) 
+                if(publicRequest.IsSetIps())
                 {
-                    List<string> ipsList = describeElasticIpsRequest.Ips;
                     writer.WritePropertyName("Ips");
                     writer.WriteArrayStart();
-
-                    foreach (string ipsListValue in ipsList) 
-                    { 
-                        writer.Write(StringUtils.FromString(ipsListValue));
+                    foreach(var publicRequestIpsListValue in publicRequest.Ips)
+                    {
+                        writer.Write(publicRequestIpsListValue);
                     }
-
                     writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetStackId())
+                {
+                    writer.WritePropertyName("StackId");
+                    writer.Write(publicRequest.StackId);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

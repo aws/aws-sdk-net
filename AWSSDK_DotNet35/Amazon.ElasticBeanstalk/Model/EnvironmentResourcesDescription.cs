@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,30 +18,36 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para>Describes the AWS resources in use by this environment. This data is not live data.</para>
+    /// Describes the AWS resources in use by this environment. This data is not live data.
     /// </summary>
-    public class EnvironmentResourcesDescription
+    public partial class EnvironmentResourcesDescription
     {
-        
-        private LoadBalancerDescription loadBalancer;
+        private LoadBalancerDescription _loadBalancer;
+
 
         /// <summary>
+        /// Gets and sets the property LoadBalancer. 
+        /// <para>
         /// Describes the LoadBalancer.
-        ///  
+        /// </para>
         /// </summary>
         public LoadBalancerDescription LoadBalancer
         {
-            get { return this.loadBalancer; }
-            set { this.loadBalancer = value; }
+            get { return this._loadBalancer; }
+            set { this._loadBalancer = value; }
         }
 
         // Check to see if LoadBalancer property is set
         internal bool IsSetLoadBalancer()
         {
-            return this.loadBalancer != null;
+            return this._loadBalancer != null;
         }
+
     }
 }

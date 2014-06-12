@@ -29,58 +29,51 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Elastic Load Balancers Request Marshaller
+    /// DescribeElasticLoadBalancers Request Marshaller
     /// </summary>       
-    internal class DescribeElasticLoadBalancersRequestMarshaller : IMarshaller<IRequest, DescribeElasticLoadBalancersRequest> 
+    public class DescribeElasticLoadBalancersRequestMarshaller : IMarshaller<IRequest, DescribeElasticLoadBalancersRequest> 
     {
-        
-
-        public IRequest Marshall(DescribeElasticLoadBalancersRequest describeElasticLoadBalancersRequest) 
+        public IRequest Marshall(DescribeElasticLoadBalancersRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(describeElasticLoadBalancersRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.DescribeElasticLoadBalancers";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (describeElasticLoadBalancersRequest != null && describeElasticLoadBalancersRequest.IsSetStackId()) 
+                if(publicRequest.IsSetLayerIds())
                 {
-                    writer.WritePropertyName("StackId");
-                    writer.Write(describeElasticLoadBalancersRequest.StackId);
-                }
-
-                if (describeElasticLoadBalancersRequest != null && describeElasticLoadBalancersRequest.LayerIds != null && describeElasticLoadBalancersRequest.LayerIds.Count > 0) 
-                {
-                    List<string> layerIdsList = describeElasticLoadBalancersRequest.LayerIds;
                     writer.WritePropertyName("LayerIds");
                     writer.WriteArrayStart();
-
-                    foreach (string layerIdsListValue in layerIdsList) 
-                    { 
-                        writer.Write(StringUtils.FromString(layerIdsListValue));
+                    foreach(var publicRequestLayerIdsListValue in publicRequest.LayerIds)
+                    {
+                        writer.Write(publicRequestLayerIdsListValue);
                     }
-
                     writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetStackId())
+                {
+                    writer.WritePropertyName("StackId");
+                    writer.Write(publicRequest.StackId);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

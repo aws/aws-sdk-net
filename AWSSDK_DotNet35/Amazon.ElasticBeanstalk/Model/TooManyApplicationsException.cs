@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.ElasticBeanstalk.Model
 {
     ///<summary>
-    /// AmazonElasticBeanstalk exception
+    /// ElasticBeanstalk exception
     /// </summary>
     public class TooManyApplicationsException : AmazonElasticBeanstalkException 
     {
@@ -45,6 +45,5 @@ namespace Amazon.ElasticBeanstalk.Model
         public TooManyApplicationsException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
-        
     }
 }

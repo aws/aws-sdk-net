@@ -29,54 +29,52 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Instance Request Marshaller
+    /// DeleteInstance Request Marshaller
     /// </summary>       
-    internal class DeleteInstanceRequestMarshaller : IMarshaller<IRequest, DeleteInstanceRequest> 
+    public class DeleteInstanceRequestMarshaller : IMarshaller<IRequest, DeleteInstanceRequest> 
     {
-        
-
-        public IRequest Marshall(DeleteInstanceRequest deleteInstanceRequest) 
+        public IRequest Marshall(DeleteInstanceRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(deleteInstanceRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.DeleteInstance";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (deleteInstanceRequest != null && deleteInstanceRequest.IsSetInstanceId()) 
-                {
-                    writer.WritePropertyName("InstanceId");
-                    writer.Write(deleteInstanceRequest.InstanceId);
-                }
-                if (deleteInstanceRequest != null && deleteInstanceRequest.IsSetDeleteElasticIp()) 
+                if(publicRequest.IsSetDeleteElasticIp())
                 {
                     writer.WritePropertyName("DeleteElasticIp");
-                    writer.Write(deleteInstanceRequest.DeleteElasticIp);
-                }
-                if (deleteInstanceRequest != null && deleteInstanceRequest.IsSetDeleteVolumes()) 
-                {
-                    writer.WritePropertyName("DeleteVolumes");
-                    writer.Write(deleteInstanceRequest.DeleteVolumes);
+                    writer.Write(publicRequest.DeleteElasticIp);
                 }
 
+                if(publicRequest.IsSetDeleteVolumes())
+                {
+                    writer.WritePropertyName("DeleteVolumes");
+                    writer.Write(publicRequest.DeleteVolumes);
+                }
+
+                if(publicRequest.IsSetInstanceId())
+                {
+                    writer.WritePropertyName("InstanceId");
+                    writer.Write(publicRequest.InstanceId);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

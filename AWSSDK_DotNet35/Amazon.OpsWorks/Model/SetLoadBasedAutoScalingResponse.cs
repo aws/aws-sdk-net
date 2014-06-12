@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the SetLoadBasedAutoScaling response metadata.
-    /// The SetLoadBasedAutoScaling operation has a void result type.
+    /// Configuration for accessing Amazon SetLoadBasedAutoScaling service
     /// </summary>
-    public partial class SetLoadBasedAutoScalingResponse : AmazonWebServiceResponse
+    public partial class SetLoadBasedAutoScalingResponse : SetLoadBasedAutoScalingResult
     {
+        /// <summary>
+        /// Gets and sets the SetLoadBasedAutoScalingResult property.
+        /// Represents the output of a SetLoadBasedAutoScaling operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the SetLoadBasedAutoScalingResult class are now available on the SetLoadBasedAutoScalingResponse class. You should use the properties on SetLoadBasedAutoScalingResponse instead of accessing them through SetLoadBasedAutoScalingResult.")]
+        public SetLoadBasedAutoScalingResult SetLoadBasedAutoScalingResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

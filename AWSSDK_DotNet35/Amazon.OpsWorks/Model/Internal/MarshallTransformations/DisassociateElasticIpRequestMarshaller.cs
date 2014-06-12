@@ -29,44 +29,40 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Disassociate Elastic Ip Request Marshaller
+    /// DisassociateElasticIp Request Marshaller
     /// </summary>       
-    internal class DisassociateElasticIpRequestMarshaller : IMarshaller<IRequest, DisassociateElasticIpRequest> 
+    public class DisassociateElasticIpRequestMarshaller : IMarshaller<IRequest, DisassociateElasticIpRequest> 
     {
-        
-
-        public IRequest Marshall(DisassociateElasticIpRequest disassociateElasticIpRequest) 
+        public IRequest Marshall(DisassociateElasticIpRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(disassociateElasticIpRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.DisassociateElasticIp";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (disassociateElasticIpRequest != null && disassociateElasticIpRequest.IsSetElasticIp()) 
+                if(publicRequest.IsSetElasticIp())
                 {
                     writer.WritePropertyName("ElasticIp");
-                    writer.Write(disassociateElasticIpRequest.ElasticIp);
+                    writer.Write(publicRequest.ElasticIp);
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

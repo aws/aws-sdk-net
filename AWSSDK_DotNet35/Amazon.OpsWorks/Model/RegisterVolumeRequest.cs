@@ -25,51 +25,62 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterVolume operation.
-    /// <para>Registers an Amazon EBS volume with a specified stack. A volume can be registered with only one stack at a time. If the volume is
-    /// already registered, you must first deregister it by calling DeregisterVolume. For more information, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html" >Resource Management</a> .</para> <para> <b>Required
-    /// Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly
-    /// grants permissions. For more information on user permissions, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+    /// Registers an Amazon EBS volume with a specified stack. A volume can be    registered
+    /// with only one stack at a time. If the volume is already registered, you must first
+    /// deregister it      by calling <a>DeregisterVolume</a>. For more information, see 
+    ///     <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
+    /// Management</a>.
+    /// 
+    ///     
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+    /// level for the stack, or an attached       policy that explicitly grants permissions.
+    /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
     public partial class RegisterVolumeRequest : AmazonOpsWorksRequest
     {
-        private string ec2VolumeId;
-        private string stackId;
+        private string _ec2VolumeId;
+        private string _stackId;
 
 
         /// <summary>
+        /// Gets and sets the property Ec2VolumeId. 
+        /// <para>
         /// The Amazon EBS volume ID.
-        ///  
+        /// </para>
         /// </summary>
         public string Ec2VolumeId
         {
-            get { return this.ec2VolumeId; }
-            set { this.ec2VolumeId = value; }
+            get { return this._ec2VolumeId; }
+            set { this._ec2VolumeId = value; }
         }
 
         // Check to see if Ec2VolumeId property is set
         internal bool IsSetEc2VolumeId()
         {
-            return this.ec2VolumeId != null;
+            return this._ec2VolumeId != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property StackId. 
+        /// <para>
         /// The stack ID.
-        ///  
+        /// </para>
         /// </summary>
         public string StackId
         {
-            get { return this.stackId; }
-            set { this.stackId = value; }
+            get { return this._stackId; }
+            set { this._stackId = value; }
         }
 
         // Check to see if StackId property is set
         internal bool IsSetStackId()
         {
-            return this.stackId != null;
+            return this._stackId != null;
         }
 
     }
 }
-    

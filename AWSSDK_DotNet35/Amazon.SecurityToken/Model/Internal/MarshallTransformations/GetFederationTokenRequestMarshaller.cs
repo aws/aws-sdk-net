@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SecurityToken.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Get Federation Token Request Marshaller
+    /// GetFederationToken Request Marshaller
     /// </summary>       
     public class GetFederationTokenRequestMarshaller : IMarshaller<IRequest, GetFederationTokenRequest>
     {
-        public IRequest Marshall(GetFederationTokenRequest getFederationTokenRequest)
+        public IRequest Marshall(GetFederationTokenRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(getFederationTokenRequest, "AmazonSecurityTokenService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SecurityToken");
             request.Parameters.Add("Action", "GetFederationToken");
             request.Parameters.Add("Version", "2011-06-15");
-            if (getFederationTokenRequest != null && getFederationTokenRequest.IsSetName())
-            {
-                request.Parameters.Add("Name", StringUtils.FromString(getFederationTokenRequest.Name));
-            }
-            if (getFederationTokenRequest != null && getFederationTokenRequest.IsSetPolicy())
-            {
-                request.Parameters.Add("Policy", StringUtils.FromString(getFederationTokenRequest.Policy));
-            }
-            if (getFederationTokenRequest != null && getFederationTokenRequest.IsSetDurationSeconds())
-            {
-                request.Parameters.Add("DurationSeconds", StringUtils.FromInt(getFederationTokenRequest.DurationSeconds));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetDurationSeconds())
+                {
+                    request.Parameters.Add("DurationSeconds", StringUtils.FromInt(publicRequest.DurationSeconds));
+                }
+                if(publicRequest.IsSetName())
+                {
+                    request.Parameters.Add("Name", StringUtils.FromString(publicRequest.Name));
+                }
+                if(publicRequest.IsSetPolicy())
+                {
+                    request.Parameters.Add("Policy", StringUtils.FromString(publicRequest.Policy));
+                }
+            }
             return request;
         }
     }

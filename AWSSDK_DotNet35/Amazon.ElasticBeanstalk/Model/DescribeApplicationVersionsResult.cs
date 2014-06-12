@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,32 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para>Result message wrapping a list of application version descriptions.</para>
+    /// Result message wrapping a list of application version descriptions.
     /// </summary>
     public partial class DescribeApplicationVersionsResult : AmazonWebServiceResponse
     {
-        
-        private List<ApplicationVersionDescription> applicationVersions = new List<ApplicationVersionDescription>();
+        private List<ApplicationVersionDescription> _applicationVersions = new List<ApplicationVersionDescription>();
+
 
         /// <summary>
-        /// A list of <a>ApplicationVersionDescription</a> .
-        ///  
+        /// Gets and sets the property ApplicationVersions. 
+        /// <para>
+        ///          A list of         <a>ApplicationVersionDescription</a>         .      
+        /// </para>
         /// </summary>
         public List<ApplicationVersionDescription> ApplicationVersions
         {
-            get { return this.applicationVersions; }
-            set { this.applicationVersions = value; }
+            get { return this._applicationVersions; }
+            set { this._applicationVersions = value; }
         }
 
         // Check to see if ApplicationVersions property is set
         internal bool IsSetApplicationVersions()
         {
-            return this.applicationVersions.Count > 0;
+            return this._applicationVersions != null && this._applicationVersions.Count > 0; 
         }
+
     }
 }

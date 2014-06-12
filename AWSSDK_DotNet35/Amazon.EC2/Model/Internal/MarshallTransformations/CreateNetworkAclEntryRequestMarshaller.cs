@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(createNetworkAclEntryRequest, "AmazonEC2");
             request.Parameters.Add("Action", "CreateNetworkAclEntry");
-            request.Parameters.Add("Version", "2014-02-01");
+            request.Parameters.Add("Version", "2014-05-01");
             if (createNetworkAclEntryRequest != null && createNetworkAclEntryRequest.IsSetNetworkAclId())
             {
                 request.Parameters.Add("NetworkAclId", StringUtils.FromString(createNetworkAclEntryRequest.NetworkAclId));

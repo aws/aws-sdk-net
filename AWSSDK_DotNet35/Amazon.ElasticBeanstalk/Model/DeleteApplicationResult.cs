@@ -18,25 +18,13 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
-namespace Amazon.EC2.Model
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.ElasticBeanstalk.Model
 {
-    /// <summary>Instance License
-    /// </summary>
-    public class InstanceLicense
+    public partial class DeleteApplicationResult : AmazonWebServiceResponse
     {
-        
-        private string pool;
 
-        public string Pool
-        {
-            get { return this.pool; }
-            set { this.pool = value; }
-        }
-
-        // Check to see if Pool property is set
-        internal bool IsSetPool()
-        {
-            return this.pool != null;
-        }
     }
 }

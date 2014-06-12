@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,32 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para>Provides a list of validation messages.</para>
+    /// Provides a list of validation messages.
     /// </summary>
     public partial class ValidateConfigurationSettingsResult : AmazonWebServiceResponse
     {
-        
-        private List<ValidationMessage> messages = new List<ValidationMessage>();
+        private List<ValidationMessage> _messages = new List<ValidationMessage>();
+
 
         /// <summary>
-        /// A list of <a>ValidationMessage</a>.
-        ///  
+        /// Gets and sets the property Messages. 
+        /// <para>
+        ///          A list of         <a>ValidationMessage</a>.      
+        /// </para>
         /// </summary>
         public List<ValidationMessage> Messages
         {
-            get { return this.messages; }
-            set { this.messages = value; }
+            get { return this._messages; }
+            set { this._messages = value; }
         }
 
         // Check to see if Messages property is set
         internal bool IsSetMessages()
         {
-            return this.messages.Count > 0;
+            return this._messages != null && this._messages.Count > 0; 
         }
+
     }
 }

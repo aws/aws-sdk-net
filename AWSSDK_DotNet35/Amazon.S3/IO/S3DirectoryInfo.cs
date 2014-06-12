@@ -342,7 +342,8 @@ namespace Amazon.S3.IO
                     }
                     else
                     {
-                        ret = new S3DirectoryInfo(s3Client, bucket, key.Substring(0, secondlast));
+                        var bucketName = key.Substring(0, secondlast);
+                        ret = new S3DirectoryInfo(s3Client, bucket, bucketName);
                     }
                 }
                 if (ret == null)
@@ -1028,7 +1029,7 @@ namespace Amazon.S3.IO
         }
 
         /// <summary>
-        /// Moves the files from this directory to the target directory specified by the bucket and object key.
+        /// Moves the directory to the target directory specified by the bucket and object key.
         /// </summary>
         /// <param name="newBucket">The target bucket to move to.</param>
         /// <param name="newKey">The target object key which represents a directory in S3.</param>
@@ -1043,7 +1044,7 @@ namespace Amazon.S3.IO
         }
 
         /// <summary>
-        /// Moves the files from this directory to the target S3 directory.
+        /// Moves the directory to the target S3 directory.
         /// </summary>
         /// <param name="newLoc">The target directory to copy to.</param>
         /// <exception cref="T:System.ArgumentException"></exception>

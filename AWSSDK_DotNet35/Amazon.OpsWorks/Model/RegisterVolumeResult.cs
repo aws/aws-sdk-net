@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>RegisterVolume</c> request.</para>
+    /// Contains the response to a <code>RegisterVolume</code> request.
     /// </summary>
     public partial class RegisterVolumeResult : AmazonWebServiceResponse
     {
-        
-        private string volumeId;
+        private string _volumeId;
 
 
         /// <summary>
+        /// Gets and sets the property VolumeId. 
+        /// <para>
         /// The volume ID.
-        ///  
+        /// </para>
         /// </summary>
         public string VolumeId
         {
-            get { return this.volumeId; }
-            set { this.volumeId = value; }
+            get { return this._volumeId; }
+            set { this._volumeId = value; }
         }
 
         // Check to see if VolumeId property is set
         internal bool IsSetVolumeId()
         {
-            return this.volumeId != null;
+            return this._volumeId != null;
         }
+
     }
 }

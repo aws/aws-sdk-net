@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>DescribeInstances</c> request.</para>
+    /// Contains the response to a <code>DescribeInstances</code> request.
     /// </summary>
     public partial class DescribeInstancesResult : AmazonWebServiceResponse
     {
-        
-        private List<Instance> instances = new List<Instance>();
+        private List<Instance> _instances = new List<Instance>();
 
 
         /// <summary>
-        /// An array of <c>Instance</c> objects that describe the instances.
-        ///  
+        /// Gets and sets the property Instances. 
+        /// <para>
+        /// An array of <code>Instance</code> objects that describe the instances.
+        /// </para>
         /// </summary>
         public List<Instance> Instances
         {
-            get { return this.instances; }
-            set { this.instances = value; }
+            get { return this._instances; }
+            set { this._instances = value; }
         }
 
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this.instances.Count > 0;
+            return this._instances != null && this._instances.Count > 0; 
         }
+
     }
 }

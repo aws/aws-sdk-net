@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(deleteSnapshotRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DeleteSnapshot");
-            request.Parameters.Add("Version", "2014-02-01");
+            request.Parameters.Add("Version", "2014-05-01");
             if (deleteSnapshotRequest != null && deleteSnapshotRequest.IsSetSnapshotId())
             {
                 request.Parameters.Add("SnapshotId", StringUtils.FromString(deleteSnapshotRequest.SnapshotId));

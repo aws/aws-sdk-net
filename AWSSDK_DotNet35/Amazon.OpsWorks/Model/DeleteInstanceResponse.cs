@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the DeleteInstance response metadata.
-    /// The DeleteInstance operation has a void result type.
+    /// Configuration for accessing Amazon DeleteInstance service
     /// </summary>
-    public partial class DeleteInstanceResponse : AmazonWebServiceResponse
+    public partial class DeleteInstanceResponse : DeleteInstanceResult
     {
+        /// <summary>
+        /// Gets and sets the DeleteInstanceResult property.
+        /// Represents the output of a DeleteInstance operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DeleteInstanceResult class are now available on the DeleteInstanceResponse class. You should use the properties on DeleteInstanceResponse instead of accessing them through DeleteInstanceResult.")]
+        public DeleteInstanceResult DeleteInstanceResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

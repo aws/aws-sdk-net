@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,67 +25,60 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteEnvironmentConfiguration operation.
-    /// <para> Deletes the draft configuration associated with the running environment. </para> <para> Updating a running environment with any
-    /// configuration changes creates a draft configuration set. You can get the draft configuration using DescribeConfigurationSettings while the
-    /// update is in progress or if the update fails. The <c>DeploymentStatus</c> for the draft configuration indicates whether the deployment is in
-    /// process or has failed. The draft configuration remains in existence until it is deleted with this action. </para>
+    /// Deletes the draft configuration associated with the running environment.        
+    /// 
+    ///       
+    /// <para>
+    ///          Updating a running environment with any configuration changes creates a 
+    ///        draft configuration set. You can get the draft configuration using        
+    /// <a>DescribeConfigurationSettings</a> while the update is in progress          or if
+    /// the update fails. The <code>DeploymentStatus</code> for the draft          configuration
+    /// indicates whether the deployment is in process or has failed.         The draft configuration
+    /// remains in existence until it is deleted with this action.      
+    /// </para>
     /// </summary>
     public partial class DeleteEnvironmentConfigurationRequest : AmazonElasticBeanstalkRequest
     {
-        private string applicationName;
-        private string environmentName;
+        private string _applicationName;
+        private string _environmentName;
 
 
         /// <summary>
-        /// The name of the application the environment is associated with.
-        ///  
+        /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 100</description>
-        ///     </item>
-        /// </list>
+        ///          The name of the application the environment is associated with.        
         /// </para>
         /// </summary>
         public string ApplicationName
         {
-            get { return this.applicationName; }
-            set { this.applicationName = value; }
+            get { return this._applicationName; }
+            set { this._applicationName = value; }
         }
 
         // Check to see if ApplicationName property is set
         internal bool IsSetApplicationName()
         {
-            return this.applicationName != null;
+            return this._applicationName != null;
         }
 
+
         /// <summary>
-        /// The name of the environment to delete the draft configuration from.
-        ///  
+        /// Gets and sets the property EnvironmentName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>4 - 23</description>
-        ///     </item>
-        /// </list>
+        ///          The name of the environment to delete the draft configuration from.        
         /// </para>
         /// </summary>
         public string EnvironmentName
         {
-            get { return this.environmentName; }
-            set { this.environmentName = value; }
+            get { return this._environmentName; }
+            set { this._environmentName = value; }
         }
 
         // Check to see if EnvironmentName property is set
         internal bool IsSetEnvironmentName()
         {
-            return this.environmentName != null;
+            return this._environmentName != null;
         }
 
     }
 }
-    

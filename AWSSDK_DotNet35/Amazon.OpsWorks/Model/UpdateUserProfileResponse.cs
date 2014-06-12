@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the UpdateUserProfile response metadata.
-    /// The UpdateUserProfile operation has a void result type.
+    /// Configuration for accessing Amazon UpdateUserProfile service
     /// </summary>
-    public partial class UpdateUserProfileResponse : AmazonWebServiceResponse
+    public partial class UpdateUserProfileResponse : UpdateUserProfileResult
     {
+        /// <summary>
+        /// Gets and sets the UpdateUserProfileResult property.
+        /// Represents the output of a UpdateUserProfile operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the UpdateUserProfileResult class are now available on the UpdateUserProfileResponse class. You should use the properties on UpdateUserProfileResponse instead of accessing them through UpdateUserProfileResult.")]
+        public UpdateUserProfileResult UpdateUserProfileResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

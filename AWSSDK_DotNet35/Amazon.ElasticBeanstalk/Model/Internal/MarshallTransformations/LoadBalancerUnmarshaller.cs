@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,63 +12,69 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticBeanstalk.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   LoadBalancer Unmarshaller
-     /// </summary>
-    internal class LoadBalancerUnmarshaller : IUnmarshaller<LoadBalancer, XmlUnmarshallerContext>, IUnmarshaller<LoadBalancer, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for LoadBalancer Object
+    /// </summary>  
+    public class LoadBalancerUnmarshaller : IUnmarshaller<LoadBalancer, XmlUnmarshallerContext>, IUnmarshaller<LoadBalancer, JsonUnmarshallerContext>
     {
-        public LoadBalancer Unmarshall(XmlUnmarshallerContext context) 
+        public LoadBalancer Unmarshall(XmlUnmarshallerContext context)
         {
-            LoadBalancer loadBalancer = new LoadBalancer();
+            LoadBalancer unmarshalledObject = new LoadBalancer();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("Name", targetDepth))
                     {
-                        loadBalancer.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return loadBalancer;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return loadBalancer;
+            return unmarshalledObject;
         }
 
-        public LoadBalancer Unmarshall(JsonUnmarshallerContext context) 
+        public LoadBalancer Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static LoadBalancerUnmarshaller instance;
 
-        public static LoadBalancerUnmarshaller GetInstance() 
+        private static LoadBalancerUnmarshaller _instance = new LoadBalancerUnmarshaller();        
+
+        public static LoadBalancerUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new LoadBalancerUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

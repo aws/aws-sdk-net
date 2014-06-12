@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the  CreateUserProfile response and response metadata.
+    /// Configuration for accessing Amazon CreateUserProfile service
     /// </summary>
     public partial class CreateUserProfileResponse : CreateUserProfileResult
     {
         /// <summary>
         /// Gets and sets the CreateUserProfileResult property.
-        /// Contains the response to a CreateUserProfile request.
+        /// Represents the output of a CreateUserProfile operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateUserProfileResult class are now available on the CreateUserProfileResponse class. You should use the properties on CreateUserProfileResponse instead of accessing them through CreateUserProfileResult.")]
         public CreateUserProfileResult CreateUserProfileResult
@@ -40,4 +36,3 @@ namespace Amazon.OpsWorks.Model
         }
     }
 }
-    

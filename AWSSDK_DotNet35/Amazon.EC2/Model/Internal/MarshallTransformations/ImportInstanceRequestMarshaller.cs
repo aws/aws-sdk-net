@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(importInstanceRequest, "AmazonEC2");
             request.Parameters.Add("Action", "ImportInstance");
-            request.Parameters.Add("Version", "2014-02-01");
+            request.Parameters.Add("Version", "2014-05-01");
             if (importInstanceRequest != null && importInstanceRequest.IsSetDescription())
             {
                 request.Parameters.Add("Description", StringUtils.FromString(importInstanceRequest.Description));
@@ -87,7 +87,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if (launchSpecification != null && launchSpecification.IsSetMonitoring())
                 {
-                    request.Parameters.Add("LaunchSpecification.Monitoring.Enabled", StringUtils.FromBool(launchSpecification.Monitoring));
+                    request.Parameters.Add("LaunchSpecification.Monitoring", StringUtils.FromBool(launchSpecification.Monitoring));
                 }
                 if (launchSpecification != null && launchSpecification.IsSetSubnetId())
                 {

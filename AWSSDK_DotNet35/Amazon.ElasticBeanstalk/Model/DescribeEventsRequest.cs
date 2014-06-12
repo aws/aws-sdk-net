@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,254 +25,245 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEvents operation.
-    /// <para>Returns list of event descriptions matching criteria up to the last 6 weeks.</para> <para><b>NOTE:</b> This action returns the most
-    /// recent 1,000 events from the specified NextToken. </para>
+    /// Returns list of event descriptions matching criteria up to the last 6 weeks.
+    /// 
+    ///       <note>         This action returns the most recent 1,000 events from the specified
+    ///         <code>NextToken</code>.      </note>
     /// </summary>
     public partial class DescribeEventsRequest : AmazonElasticBeanstalkRequest
     {
-        private string applicationName;
-        private string versionLabel;
-        private string templateName;
-        private string environmentId;
-        private string environmentName;
-        private string requestId;
-        private EventSeverity severity;
-        private DateTime? startTime;
-        private DateTime? endTime;
-        private int? maxRecords;
-        private string nextToken;
+        private string _applicationName;
+        private DateTime? _endTime;
+        private string _environmentId;
+        private string _environmentName;
+        private int? _maxRecords;
+        private string _nextToken;
+        private string _requestId;
+        private EventSeverity _severity;
+        private DateTime? _startTime;
+        private string _templateName;
+        private string _versionLabel;
 
 
         /// <summary>
-        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those associated with this application.
-        ///  
+        /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 100</description>
-        ///     </item>
-        /// </list>
+        ///          If specified, AWS Elastic Beanstalk         restricts the returned descriptions
+        /// to         include only those associated         with this application.      
         /// </para>
         /// </summary>
         public string ApplicationName
         {
-            get { return this.applicationName; }
-            set { this.applicationName = value; }
+            get { return this._applicationName; }
+            set { this._applicationName = value; }
         }
 
         // Check to see if ApplicationName property is set
         internal bool IsSetApplicationName()
         {
-            return this.applicationName != null;
+            return this._applicationName != null;
         }
 
+
         /// <summary>
-        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this application version.
-        ///  
+        /// Gets and sets the property EndTime. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 100</description>
-        ///     </item>
-        /// </list>
+        ///          If specified, AWS Elastic Beanstalk         restricts the returned descriptions
+        /// to         those that occur up to, but not including, the         <code>EndTime</code>.
+        ///      
         /// </para>
-        /// </summary>
-        public string VersionLabel
-        {
-            get { return this.versionLabel; }
-            set { this.versionLabel = value; }
-        }
-
-        // Check to see if VersionLabel property is set
-        internal bool IsSetVersionLabel()
-        {
-            return this.versionLabel != null;
-        }
-
-        /// <summary>
-        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that are associated with this environment configuration.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 100</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string TemplateName
-        {
-            get { return this.templateName; }
-            set { this.templateName = value; }
-        }
-
-        // Check to see if TemplateName property is set
-        internal bool IsSetTemplateName()
-        {
-            return this.templateName != null;
-        }
-
-        /// <summary>
-        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this environment.
-        ///  
-        /// </summary>
-        public string EnvironmentId
-        {
-            get { return this.environmentId; }
-            set { this.environmentId = value; }
-        }
-
-        // Check to see if EnvironmentId property is set
-        internal bool IsSetEnvironmentId()
-        {
-            return this.environmentId != null;
-        }
-
-        /// <summary>
-        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this environment.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>4 - 23</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string EnvironmentName
-        {
-            get { return this.environmentName; }
-            set { this.environmentName = value; }
-        }
-
-        // Check to see if EnvironmentName property is set
-        internal bool IsSetEnvironmentName()
-        {
-            return this.environmentName != null;
-        }
-
-        /// <summary>
-        /// If specified, AWS Elastic Beanstalk restricts the described events to include only those associated with this request ID.
-        ///  
-        /// </summary>
-        public string RequestId
-        {
-            get { return this.requestId; }
-            set { this.requestId = value; }
-        }
-
-        // Check to see if RequestId property is set
-        internal bool IsSetRequestId()
-        {
-            return this.requestId != null;
-        }
-
-        /// <summary>
-        /// If specified, limits the events returned from this call to include only those with the specified severity or higher.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>TRACE, DEBUG, INFO, WARN, ERROR, FATAL</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public EventSeverity Severity
-        {
-            get { return this.severity; }
-            set { this.severity = value; }
-        }
-
-        // Check to see if Severity property is set
-        internal bool IsSetSeverity()
-        {
-            return this.severity != null;
-        }
-
-        /// <summary>
-        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that occur on or after this time.
-        ///  
-        /// </summary>
-        public DateTime StartTime
-        {
-            get { return this.startTime ?? default(DateTime); }
-            set { this.startTime = value; }
-        }
-
-        // Check to see if StartTime property is set
-        internal bool IsSetStartTime()
-        {
-            return this.startTime.HasValue;
-        }
-
-        /// <summary>
-        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that occur up to, but not including, the <c>EndTime</c>.
-        ///  
         /// </summary>
         public DateTime EndTime
         {
-            get { return this.endTime ?? default(DateTime); }
-            set { this.endTime = value; }
+            get { return this._endTime.GetValueOrDefault(); }
+            set { this._endTime = value; }
         }
 
         // Check to see if EndTime property is set
         internal bool IsSetEndTime()
         {
-            return this.endTime.HasValue;
+            return this._endTime.HasValue; 
         }
 
+
         /// <summary>
-        /// Specifies the maximum number of events that can be returned, beginning with the most recent event.
-        ///  
+        /// Gets and sets the property EnvironmentId. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>1 - 1000</description>
-        ///     </item>
-        /// </list>
+        ///          If specified, AWS Elastic Beanstalk         restricts the returned descriptions
+        /// to         those associated with this         environment.      
+        /// </para>
+        /// </summary>
+        public string EnvironmentId
+        {
+            get { return this._environmentId; }
+            set { this._environmentId = value; }
+        }
+
+        // Check to see if EnvironmentId property is set
+        internal bool IsSetEnvironmentId()
+        {
+            return this._environmentId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property EnvironmentName. 
+        /// <para>
+        ///          If specified, AWS Elastic Beanstalk         restricts the returned descriptions
+        /// to         those associated with this         environment.      
+        /// </para>
+        /// </summary>
+        public string EnvironmentName
+        {
+            get { return this._environmentName; }
+            set { this._environmentName = value; }
+        }
+
+        // Check to see if EnvironmentName property is set
+        internal bool IsSetEnvironmentName()
+        {
+            return this._environmentName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property MaxRecords. 
+        /// <para>
+        ///          Specifies the maximum number of events that can be returned, beginning with
+        /// the most recent event.        
         /// </para>
         /// </summary>
         public int MaxRecords
         {
-            get { return this.maxRecords ?? default(int); }
-            set { this.maxRecords = value; }
+            get { return this._maxRecords.GetValueOrDefault(); }
+            set { this._maxRecords = value; }
         }
 
         // Check to see if MaxRecords property is set
         internal bool IsSetMaxRecords()
         {
-            return this.maxRecords.HasValue;
+            return this._maxRecords.HasValue; 
         }
 
+
         /// <summary>
-        /// Pagination token. If specified, the events return the next batch of results.
-        ///  
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        ///          Pagination token. If specified, the events return the next batch of results.        
+        /// </para>
         /// </summary>
         public string NextToken
         {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;
+            return this._nextToken != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property RequestId. 
+        /// <para>
+        ///          If specified, AWS Elastic Beanstalk         restricts the described events
+        /// to include only those         associated with this request ID.      
+        /// </para>
+        /// </summary>
+        public string RequestId
+        {
+            get { return this._requestId; }
+            set { this._requestId = value; }
+        }
+
+        // Check to see if RequestId property is set
+        internal bool IsSetRequestId()
+        {
+            return this._requestId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Severity. 
+        /// <para>
+        ///          If specified, limits the events returned from this call to include only those
+        ///         with the         specified severity or higher.        
+        /// </para>
+        /// </summary>
+        public EventSeverity Severity
+        {
+            get { return this._severity; }
+            set { this._severity = value; }
+        }
+
+        // Check to see if Severity property is set
+        internal bool IsSetSeverity()
+        {
+            return this._severity != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        ///          If specified, AWS Elastic Beanstalk         restricts the returned descriptions
+        /// to         those that occur on or after this         time.      
+        /// </para>
+        /// </summary>
+        public DateTime StartTime
+        {
+            get { return this._startTime.GetValueOrDefault(); }
+            set { this._startTime = value; }
+        }
+
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
+        {
+            return this._startTime.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property TemplateName. 
+        /// <para>
+        ///          If specified, AWS Elastic Beanstalk         restricts the returned descriptions
+        /// to         those that are associated with         this environment         configuration.
+        ///      
+        /// </para>
+        /// </summary>
+        public string TemplateName
+        {
+            get { return this._templateName; }
+            set { this._templateName = value; }
+        }
+
+        // Check to see if TemplateName property is set
+        internal bool IsSetTemplateName()
+        {
+            return this._templateName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property VersionLabel. 
+        /// <para>
+        ///          If specified, AWS Elastic Beanstalk         restricts the returned descriptions
+        /// to         those associated with this         application version.      
+        /// </para>
+        /// </summary>
+        public string VersionLabel
+        {
+            get { return this._versionLabel; }
+            set { this._versionLabel = value; }
+        }
+
+        // Check to see if VersionLabel property is set
+        internal bool IsSetVersionLabel()
+        {
+            return this._versionLabel != null;
         }
 
     }
 }
-    

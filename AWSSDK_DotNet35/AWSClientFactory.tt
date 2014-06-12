@@ -39,7 +39,6 @@ var supportedServicesInterfaces = new List<string>();
 foreach (var subDirectory in Directory.GetDirectories(rootFolder))
 {
     var ns = subDirectory.Substring(subDirectory.LastIndexOf('\\') + 1);
-
     var files = Directory.GetFiles(subDirectory, "I" + ns.Replace(".", "") + ".cs");
 
 	// Some services have a postfix of "Service". If no interface found see if it is one of the 

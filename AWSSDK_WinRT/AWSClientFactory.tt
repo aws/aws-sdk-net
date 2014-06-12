@@ -30,7 +30,7 @@ using System;
 using Amazon.Runtime;
 
 <#
-foreach(var interfaceName in supportedServicesInterfaces)
+foreach(var interfaceName in supportedFactoryInterfaces)
 {
 #>
 using <#=interfaceName.Substring(0, interfaceName.LastIndexOf('.'))#>;
@@ -53,7 +53,7 @@ namespace Amazon
     public static class AWSClientFactory
     {
 <#
-foreach(var interfaceFullName in supportedServicesInterfaces)
+foreach(var interfaceFullName in supportedFactoryInterfaces)
 {
 	var interfaceName = interfaceFullName.Substring(interfaceFullName.LastIndexOf('.') + 1);
     var baseName = interfaceName.Substring(1);

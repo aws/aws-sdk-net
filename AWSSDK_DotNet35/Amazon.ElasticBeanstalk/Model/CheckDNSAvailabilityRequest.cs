@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,38 +25,30 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the CheckDNSAvailability operation.
-    /// <para> Checks if the specified CNAME is available. </para>
+    /// Checks if the specified CNAME is available.
     /// </summary>
     public partial class CheckDNSAvailabilityRequest : AmazonElasticBeanstalkRequest
     {
-        private string cNAMEPrefix;
+        private string _cNAMEPrefix;
 
 
         /// <summary>
-        /// The prefix used when this CNAME is reserved.
-        ///  
+        /// Gets and sets the property CNAMEPrefix. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>4 - 63</description>
-        ///     </item>
-        /// </list>
+        ///          The prefix used when this CNAME is reserved.        
         /// </para>
         /// </summary>
         public string CNAMEPrefix
         {
-            get { return this.cNAMEPrefix; }
-            set { this.cNAMEPrefix = value; }
+            get { return this._cNAMEPrefix; }
+            set { this._cNAMEPrefix = value; }
         }
 
         // Check to see if CNAMEPrefix property is set
         internal bool IsSetCNAMEPrefix()
         {
-            return this.cNAMEPrefix != null;
+            return this._cNAMEPrefix != null;
         }
 
     }
 }
-    

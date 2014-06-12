@@ -21,14 +21,27 @@ using System.Text;
 
 namespace Amazon.S3.Encryption
 {
+    /// <summary>
+    /// The "key encrypting key" materials used in encrypt/decryption. These
+    /// materials may be either an asymmetric key or a symmetric key but not
+    /// both.
+    /// </summary>
     public class EncryptionMaterials
     {
+        /// <summary>
+        /// Constructs a new EncryptionMaterials object, storing an asymmetric key.
+        /// </summary>
+        /// <param name="algorithm"></param>
         public EncryptionMaterials(AsymmetricAlgorithm algorithm)
         {
             AsymmetricProvider = algorithm;
             SymmetricProvider = null;
         }
 
+        /// <summary>
+        /// Constructs a new EncryptionMaterials object, storing a symmetric key.
+        /// </summary>
+        /// <param name="algorithm"></param>
         public EncryptionMaterials(SymmetricAlgorithm algorithm)
         {
             SymmetricProvider = algorithm;

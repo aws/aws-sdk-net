@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.OpsWorks.Model
 {
     ///<summary>
-    /// AmazonOpsWorks exception
+    /// OpsWorks exception
     /// </summary>
     public class ValidationException : AmazonOpsWorksException 
     {
@@ -45,6 +45,5 @@ namespace Amazon.OpsWorks.Model
         public ValidationException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
-        
     }
 }

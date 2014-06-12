@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(associateRouteTableRequest, "AmazonEC2");
             request.Parameters.Add("Action", "AssociateRouteTable");
-            request.Parameters.Add("Version", "2014-02-01");
+            request.Parameters.Add("Version", "2014-05-01");
             if (associateRouteTableRequest != null && associateRouteTableRequest.IsSetSubnetId())
             {
                 request.Parameters.Add("SubnetId", StringUtils.FromString(associateRouteTableRequest.SubnetId));

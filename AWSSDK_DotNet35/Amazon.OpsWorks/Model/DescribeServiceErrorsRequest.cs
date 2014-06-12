@@ -25,69 +25,82 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeServiceErrors operation.
-    /// <para>Describes AWS OpsWorks service errors.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Show,
-    /// Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user
-    /// permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a>
-    /// .</para>
+    /// Describes AWS OpsWorks service errors.
+    /// 
+    ///     
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+    /// or Manage       permissions level for the stack, or an attached policy that explicitly
+    /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
     public partial class DescribeServiceErrorsRequest : AmazonOpsWorksRequest
     {
-        private string stackId;
-        private string instanceId;
-        private List<string> serviceErrorIds = new List<string>();
+        private string _instanceId;
+        private List<string> _serviceErrorIds = new List<string>();
+        private string _stackId;
 
 
         /// <summary>
-        /// The stack ID. If you use this parameter, <c>DescribeServiceErrors</c> returns descriptions of the errors associated with the specified
-        /// stack.
-        ///  
-        /// </summary>
-        public string StackId
-        {
-            get { return this.stackId; }
-            set { this.stackId = value; }
-        }
-
-        // Check to see if StackId property is set
-        internal bool IsSetStackId()
-        {
-            return this.stackId != null;
-        }
-
-        /// <summary>
-        /// The instance ID. If you use this parameter, <c>DescribeServiceErrors</c> returns descriptions of the errors associated with the specified
-        /// instance.
-        ///  
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns
+        ///         descriptions of the errors associated with the specified instance.
+        /// </para>
         /// </summary>
         public string InstanceId
         {
-            get { return this.instanceId; }
-            set { this.instanceId = value; }
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
         }
 
         // Check to see if InstanceId property is set
         internal bool IsSetInstanceId()
         {
-            return this.instanceId != null;
+            return this._instanceId != null;
         }
 
+
         /// <summary>
-        /// An array of service error IDs. If you use this parameter, <c>DescribeServiceErrors</c> returns descriptions of the specified errors.
-        /// Otherwise, it returns a description of every error.
-        ///  
+        /// Gets and sets the property ServiceErrorIds. 
+        /// <para>
+        /// An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code>
+        /// returns         descriptions of the specified errors. Otherwise, it returns a description
+        /// of every error.
+        /// </para>
         /// </summary>
         public List<string> ServiceErrorIds
         {
-            get { return this.serviceErrorIds; }
-            set { this.serviceErrorIds = value; }
+            get { return this._serviceErrorIds; }
+            set { this._serviceErrorIds = value; }
         }
 
         // Check to see if ServiceErrorIds property is set
         internal bool IsSetServiceErrorIds()
         {
-            return this.serviceErrorIds.Count > 0;
+            return this._serviceErrorIds != null && this._serviceErrorIds.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property StackId. 
+        /// <para>
+        /// The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns
+        ///         descriptions of the errors associated with the specified stack.
+        /// </para>
+        /// </summary>
+        public string StackId
+        {
+            get { return this._stackId; }
+            set { this._stackId = value; }
+        }
+
+        // Check to see if StackId property is set
+        internal bool IsSetStackId()
+        {
+            return this._stackId != null;
         }
 
     }
 }
-    

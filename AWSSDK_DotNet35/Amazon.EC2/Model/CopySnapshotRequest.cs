@@ -35,6 +35,8 @@ namespace Amazon.EC2.Model
         private string sourceRegion;
         private string sourceSnapshotId;
         private string description;
+        private string destinationRegion;
+        private string presignedUrl;
 
 
         /// <summary>
@@ -83,6 +85,32 @@ namespace Amazon.EC2.Model
         internal bool IsSetDescription()
         {
             return this.description != null;
+        }
+
+        /// <summary>
+        /// The ID of the region that the snapshot will be copied to.
+        /// </summary>
+        public string DestinationRegion
+        {
+            get { return this.destinationRegion; }
+            set { this.destinationRegion = value; }
+        }
+
+        // Check to see if DestinationRegion property is set
+        internal bool IsSetDestinationRegion()
+        {
+            return this.destinationRegion != null;
+        }
+        internal string PresignedUrl
+        {
+            get { return this.presignedUrl; }
+            set { this.presignedUrl = value; }
+        }
+
+        // Check to see if PresignedUrl property is set
+        internal bool IsSetPresignedUrl()
+        {
+            return this.presignedUrl != null;
         }
 
     }

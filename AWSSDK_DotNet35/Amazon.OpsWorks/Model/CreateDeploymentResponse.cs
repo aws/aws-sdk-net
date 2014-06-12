@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the  CreateDeployment response and response metadata.
+    /// Configuration for accessing Amazon CreateDeployment service
     /// </summary>
     public partial class CreateDeploymentResponse : CreateDeploymentResult
     {
         /// <summary>
         /// Gets and sets the CreateDeploymentResult property.
-        /// Contains the response to a CreateDeployment request.
+        /// Represents the output of a CreateDeployment operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateDeploymentResult class are now available on the CreateDeploymentResponse class. You should use the properties on CreateDeploymentResponse instead of accessing them through CreateDeploymentResult.")]
         public CreateDeploymentResult CreateDeploymentResult
@@ -40,4 +36,3 @@ namespace Amazon.OpsWorks.Model
         }
     }
 }
-    

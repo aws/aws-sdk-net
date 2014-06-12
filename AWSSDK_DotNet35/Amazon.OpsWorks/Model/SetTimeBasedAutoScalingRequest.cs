@@ -25,50 +25,60 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the SetTimeBasedAutoScaling operation.
-    /// <para>Specify the time-based auto scaling configuration for a specified instance. For more information, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html" >Managing Load with Time-based and Load-based
-    /// Instances</a> .</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the
-    /// stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+    /// Specify the time-based auto scaling configuration for a specified instance. For more
+    /// information,         see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">Managing
+    /// Load            with Time-based and Load-based Instances</a>.
+    /// 
+    ///     
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+    /// level for the stack, or an attached       policy that explicitly grants permissions.
+    /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
     public partial class SetTimeBasedAutoScalingRequest : AmazonOpsWorksRequest
     {
-        private string instanceId;
-        private WeeklyAutoScalingSchedule autoScalingSchedule;
+        private WeeklyAutoScalingSchedule _autoScalingSchedule;
+        private string _instanceId;
 
 
         /// <summary>
-        /// The instance ID.
-        ///  
-        /// </summary>
-        public string InstanceId
-        {
-            get { return this.instanceId; }
-            set { this.instanceId = value; }
-        }
-
-        // Check to see if InstanceId property is set
-        internal bool IsSetInstanceId()
-        {
-            return this.instanceId != null;
-        }
-
-        /// <summary>
-        /// An <c>AutoScalingSchedule</c> with the instance schedule.
-        ///  
+        /// Gets and sets the property AutoScalingSchedule. 
+        /// <para>
+        /// An <code>AutoScalingSchedule</code> with the instance schedule.
+        /// </para>
         /// </summary>
         public WeeklyAutoScalingSchedule AutoScalingSchedule
         {
-            get { return this.autoScalingSchedule; }
-            set { this.autoScalingSchedule = value; }
+            get { return this._autoScalingSchedule; }
+            set { this._autoScalingSchedule = value; }
         }
 
         // Check to see if AutoScalingSchedule property is set
         internal bool IsSetAutoScalingSchedule()
         {
-            return this.autoScalingSchedule != null;
+            return this._autoScalingSchedule != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The instance ID.
+        /// </para>
+        /// </summary>
+        public string InstanceId
+        {
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
+        }
+
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
+        {
+            return this._instanceId != null;
         }
 
     }
 }
-    

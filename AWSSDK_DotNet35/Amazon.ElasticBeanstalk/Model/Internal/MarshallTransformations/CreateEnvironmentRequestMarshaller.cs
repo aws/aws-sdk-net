@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,114 +14,127 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticBeanstalk.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Environment Request Marshaller
+    /// CreateEnvironment Request Marshaller
     /// </summary>       
     public class CreateEnvironmentRequestMarshaller : IMarshaller<IRequest, CreateEnvironmentRequest>
     {
-        public IRequest Marshall(CreateEnvironmentRequest createEnvironmentRequest)
+        public IRequest Marshall(CreateEnvironmentRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(createEnvironmentRequest, "AmazonElasticBeanstalk");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticBeanstalk");
             request.Parameters.Add("Action", "CreateEnvironment");
             request.Parameters.Add("Version", "2010-12-01");
-            if (createEnvironmentRequest != null && createEnvironmentRequest.IsSetApplicationName())
-            {
-                request.Parameters.Add("ApplicationName", StringUtils.FromString(createEnvironmentRequest.ApplicationName));
-            }
-            if (createEnvironmentRequest != null && createEnvironmentRequest.IsSetEnvironmentName())
-            {
-                request.Parameters.Add("EnvironmentName", StringUtils.FromString(createEnvironmentRequest.EnvironmentName));
-            }
-            if (createEnvironmentRequest != null && createEnvironmentRequest.IsSetDescription())
-            {
-                request.Parameters.Add("Description", StringUtils.FromString(createEnvironmentRequest.Description));
-            }
-            if (createEnvironmentRequest != null && createEnvironmentRequest.IsSetCNAMEPrefix())
-            {
-                request.Parameters.Add("CNAMEPrefix", StringUtils.FromString(createEnvironmentRequest.CNAMEPrefix));
-            }
-            if (createEnvironmentRequest != null)
-            {
-                EnvironmentTier tier = createEnvironmentRequest.Tier;
-                if (tier != null && tier.IsSetName())
-                {
-                    request.Parameters.Add("Tier.Name", StringUtils.FromString(tier.Name));
-                }
-                if (tier != null && tier.IsSetType())
-                {
-                    request.Parameters.Add("Tier.Type", StringUtils.FromString(tier.Type));
-                }
-                if (tier != null && tier.IsSetVersion())
-                {
-                    request.Parameters.Add("Tier.Version", StringUtils.FromString(tier.Version));
-                }
-            }
-            if (createEnvironmentRequest != null && createEnvironmentRequest.IsSetVersionLabel())
-            {
-                request.Parameters.Add("VersionLabel", StringUtils.FromString(createEnvironmentRequest.VersionLabel));
-            }
-            if (createEnvironmentRequest != null && createEnvironmentRequest.IsSetTemplateName())
-            {
-                request.Parameters.Add("TemplateName", StringUtils.FromString(createEnvironmentRequest.TemplateName));
-            }
-            if (createEnvironmentRequest != null && createEnvironmentRequest.IsSetSolutionStackName())
-            {
-                request.Parameters.Add("SolutionStackName", StringUtils.FromString(createEnvironmentRequest.SolutionStackName));
-            }
 
-            if (createEnvironmentRequest != null)
+            if(publicRequest != null)
             {
-                List<ConfigurationOptionSetting> optionSettingsList = createEnvironmentRequest.OptionSettings;
-                int optionSettingsListIndex = 1;
-                foreach (ConfigurationOptionSetting optionSettingsListValue in optionSettingsList)
+                if(publicRequest.IsSetApplicationName())
                 {
-                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetNamespace())
+                    request.Parameters.Add("ApplicationName", StringUtils.FromString(publicRequest.ApplicationName));
+                }
+                if(publicRequest.IsSetCNAMEPrefix())
+                {
+                    request.Parameters.Add("CNAMEPrefix", StringUtils.FromString(publicRequest.CNAMEPrefix));
+                }
+                if(publicRequest.IsSetDescription())
+                {
+                    request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
+                }
+                if(publicRequest.IsSetEnvironmentName())
+                {
+                    request.Parameters.Add("EnvironmentName", StringUtils.FromString(publicRequest.EnvironmentName));
+                }
+                if(publicRequest.IsSetOptionSettings())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.OptionSettings)
                     {
-                        request.Parameters.Add("OptionSettings.member." + optionSettingsListIndex + ".Namespace", StringUtils.FromString(optionSettingsListValue.Namespace));
+                        if(publicRequestlistValue.IsSetNamespace())
+                        {
+                            request.Parameters.Add("OptionSettings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Namespace", StringUtils.FromString(publicRequestlistValue.Namespace));
+                        }
+                        if(publicRequestlistValue.IsSetOptionName())
+                        {
+                            request.Parameters.Add("OptionSettings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionName", StringUtils.FromString(publicRequestlistValue.OptionName));
+                        }
+                        if(publicRequestlistValue.IsSetValue())
+                        {
+                            request.Parameters.Add("OptionSettings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                        }
+                        publicRequestlistValueIndex++;
                     }
-                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetOptionName())
+                }
+                if(publicRequest.IsSetOptionsToRemove())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.OptionsToRemove)
                     {
-                        request.Parameters.Add("OptionSettings.member." + optionSettingsListIndex + ".OptionName", StringUtils.FromString(optionSettingsListValue.OptionName));
+                        if(publicRequestlistValue.IsSetNamespace())
+                        {
+                            request.Parameters.Add("OptionsToRemove" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Namespace", StringUtils.FromString(publicRequestlistValue.Namespace));
+                        }
+                        if(publicRequestlistValue.IsSetOptionName())
+                        {
+                            request.Parameters.Add("OptionsToRemove" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionName", StringUtils.FromString(publicRequestlistValue.OptionName));
+                        }
+                        publicRequestlistValueIndex++;
                     }
-                    if (optionSettingsListValue != null && optionSettingsListValue.IsSetValue())
+                }
+                if(publicRequest.IsSetSolutionStackName())
+                {
+                    request.Parameters.Add("SolutionStackName", StringUtils.FromString(publicRequest.SolutionStackName));
+                }
+                if(publicRequest.IsSetTags())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Tags)
                     {
-                        request.Parameters.Add("OptionSettings.member." + optionSettingsListIndex + ".Value", StringUtils.FromString(optionSettingsListValue.Value));
+                        if(publicRequestlistValue.IsSetKey())
+                        {
+                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
+                        }
+                        if(publicRequestlistValue.IsSetValue())
+                        {
+                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                        }
+                        publicRequestlistValueIndex++;
                     }
-
-                    optionSettingsListIndex++;
+                }
+                if(publicRequest.IsSetTemplateName())
+                {
+                    request.Parameters.Add("TemplateName", StringUtils.FromString(publicRequest.TemplateName));
+                }
+                if(publicRequest.IsSetTier())
+                {
+                    if(publicRequest.Tier.IsSetName())
+                    {
+                        request.Parameters.Add("Tier" + "." + "Name", StringUtils.FromString(publicRequest.Tier.Name));
+                    }
+                    if(publicRequest.Tier.IsSetType())
+                    {
+                        request.Parameters.Add("Tier" + "." + "Type", StringUtils.FromString(publicRequest.Tier.Type));
+                    }
+                    if(publicRequest.Tier.IsSetVersion())
+                    {
+                        request.Parameters.Add("Tier" + "." + "Version", StringUtils.FromString(publicRequest.Tier.Version));
+                    }
+                }
+                if(publicRequest.IsSetVersionLabel())
+                {
+                    request.Parameters.Add("VersionLabel", StringUtils.FromString(publicRequest.VersionLabel));
                 }
             }
-
-            if (createEnvironmentRequest != null)
-            {
-                List<OptionSpecification> optionsToRemoveList = createEnvironmentRequest.OptionsToRemove;
-                int optionsToRemoveListIndex = 1;
-                foreach (OptionSpecification optionsToRemoveListValue in optionsToRemoveList)
-                {
-                    if (optionsToRemoveListValue != null && optionsToRemoveListValue.IsSetNamespace())
-                    {
-                        request.Parameters.Add("OptionsToRemove.member." + optionsToRemoveListIndex + ".Namespace", StringUtils.FromString(optionsToRemoveListValue.Namespace));
-                    }
-                    if (optionsToRemoveListValue != null && optionsToRemoveListValue.IsSetOptionName())
-                    {
-                        request.Parameters.Add("OptionsToRemove.member." + optionsToRemoveListIndex + ".OptionName", StringUtils.FromString(optionsToRemoveListValue.OptionName));
-                    }
-
-                    optionsToRemoveListIndex++;
-                }
-            }
-
             return request;
         }
     }

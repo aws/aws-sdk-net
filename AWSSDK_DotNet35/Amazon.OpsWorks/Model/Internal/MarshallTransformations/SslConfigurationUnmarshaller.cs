@@ -12,66 +12,76 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.OpsWorks.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+using Amazon.OpsWorks.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for SslConfiguration Object
+    /// </summary>  
+    public class SslConfigurationUnmarshaller : IUnmarshaller<SslConfiguration, XmlUnmarshallerContext>, IUnmarshaller<SslConfiguration, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// SslConfigurationUnmarshaller
-      /// </summary>
-      internal class SslConfigurationUnmarshaller : IUnmarshaller<SslConfiguration, XmlUnmarshallerContext>, IUnmarshaller<SslConfiguration, JsonUnmarshallerContext>
-      {
         SslConfiguration IUnmarshaller<SslConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public SslConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            SslConfiguration sslConfiguration = new SslConfiguration();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            SslConfiguration unmarshalledObject = new SslConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("Certificate", targetDepth))
-              {
-                sslConfiguration.Certificate = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("PrivateKey", targetDepth))
-              {
-                sslConfiguration.PrivateKey = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Chain", targetDepth))
-              {
-                sslConfiguration.Chain = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("Certificate", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Certificate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Chain", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Chain = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PrivateKey", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PrivateKey = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return sslConfiguration;
+            return unmarshalledObject;
         }
 
-        private static SslConfigurationUnmarshaller instance;
-        public static SslConfigurationUnmarshaller GetInstance()
+
+        private static SslConfigurationUnmarshaller _instance = new SslConfigurationUnmarshaller();        
+
+        public static SslConfigurationUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new SslConfigurationUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

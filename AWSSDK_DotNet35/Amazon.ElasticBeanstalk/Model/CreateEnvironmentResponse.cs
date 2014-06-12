@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// Returns information about the  CreateEnvironment response and response metadata.
+    /// Configuration for accessing Amazon CreateEnvironment service
     /// </summary>
-    public class CreateEnvironmentResponse : CreateEnvironmentResult
+    public partial class CreateEnvironmentResponse : CreateEnvironmentResult
     {
         /// <summary>
         /// Gets and sets the CreateEnvironmentResult property.
-        /// Describes the properties of an environment.
+        /// Represents the output of a CreateEnvironment operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateEnvironmentResult class are now available on the CreateEnvironmentResponse class. You should use the properties on CreateEnvironmentResponse instead of accessing them through CreateEnvironmentResult.")]
         public CreateEnvironmentResult CreateEnvironmentResult
@@ -40,4 +36,3 @@ namespace Amazon.ElasticBeanstalk.Model
         }
     }
 }
-    

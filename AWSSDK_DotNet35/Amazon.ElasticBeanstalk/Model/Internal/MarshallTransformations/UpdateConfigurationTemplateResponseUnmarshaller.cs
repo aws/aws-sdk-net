@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,46 +13,52 @@
  * permissions and limitations under the License.
  */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.ElasticBeanstalk.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for UpdateConfigurationTemplate operation
-    /// </summary>
-    internal class UpdateConfigurationTemplateResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for UpdateConfigurationTemplate operation
+    /// </summary>  
+    public class UpdateConfigurationTemplateResponseUnmarshaller : XmlResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
             UpdateConfigurationTemplateResponse response = new UpdateConfigurationTemplateResponse();
-            
-            while (context.Read())
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
                 if (context.IsStartElement)
                 {                    
                     if(context.TestExpression("UpdateConfigurationTemplateResult", 2))
                     {
-                        UnmarshallResult(context,response);                        
+                        UnmarshallResult(context, response);                        
                         continue;
                     }
                     
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
                     }
                 }
             }
-                 
-                        
+
             return response;
         }
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,UpdateConfigurationTemplateResponse response)
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, UpdateConfigurationTemplateResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -61,99 +67,96 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("SolutionStackName", targetDepth))
-                    {
-                        response.SolutionStackName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
+
                     if (context.TestExpression("ApplicationName", targetDepth))
                     {
-                        response.ApplicationName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("TemplateName", targetDepth))
-                    {
-                        response.TemplateName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Description", targetDepth))
-                    {
-                        response.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("EnvironmentName", targetDepth))
-                    {
-                        response.EnvironmentName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("DeploymentStatus", targetDepth))
-                    {
-                        response.DeploymentStatus = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.ApplicationName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DateCreated", targetDepth))
                     {
-                        response.DateCreated = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        response.DateCreated = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DateUpdated", targetDepth))
                     {
-                        response.DateUpdated = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        response.DateUpdated = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("DeploymentStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.DeploymentStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Description", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.Description = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("EnvironmentName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.EnvironmentName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("OptionSettings/member", targetDepth))
                     {
-                        response.OptionSettings.Add(ConfigurationOptionSettingUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = ConfigurationOptionSettingUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.OptionSettings.Add(item);
                         continue;
                     }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return;
-                }
-            }
-                            
-
+                    if (context.TestExpression("SolutionStackName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.SolutionStackName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TemplateName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.TemplateName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                } 
+           }
 
             return;
         }
-        
+
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientPrivilegesException"))
             {
                 return new InsufficientPrivilegesException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
             return new AmazonElasticBeanstalkException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static UpdateConfigurationTemplateResponseUnmarshaller instance;
 
-        public static UpdateConfigurationTemplateResponseUnmarshaller GetInstance()
+        private static UpdateConfigurationTemplateResponseUnmarshaller _instance = new UpdateConfigurationTemplateResponseUnmarshaller();        
+
+        internal static UpdateConfigurationTemplateResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new UpdateConfigurationTemplateResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static UpdateConfigurationTemplateResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

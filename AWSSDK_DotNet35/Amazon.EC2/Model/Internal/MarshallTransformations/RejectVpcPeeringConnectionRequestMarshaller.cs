@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(rejectVpcPeeringConnectionRequest, "AmazonEC2");
             request.Parameters.Add("Action", "RejectVpcPeeringConnection");
-            request.Parameters.Add("Version", "2014-02-01");
+            request.Parameters.Add("Version", "2014-05-01");
             if (rejectVpcPeeringConnectionRequest != null && rejectVpcPeeringConnectionRequest.IsSetVpcPeeringConnectionId())
             {
                 request.Parameters.Add("VpcPeeringConnectionId", StringUtils.FromString(rejectVpcPeeringConnectionRequest.VpcPeeringConnectionId));

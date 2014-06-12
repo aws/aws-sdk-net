@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>RegisterElasticIp</c> request.</para>
+    /// Contains the response to a <code>RegisterElasticIp</code> request.
     /// </summary>
     public partial class RegisterElasticIpResult : AmazonWebServiceResponse
     {
-        
-        private string elasticIp;
+        private string _elasticIp;
 
 
         /// <summary>
+        /// Gets and sets the property ElasticIp. 
+        /// <para>
         /// The Elastic IP address.
-        ///  
+        /// </para>
         /// </summary>
         public string ElasticIp
         {
-            get { return this.elasticIp; }
-            set { this.elasticIp = value; }
+            get { return this._elasticIp; }
+            set { this._elasticIp = value; }
         }
 
         // Check to see if ElasticIp property is set
         internal bool IsSetElasticIp()
         {
-            return this.elasticIp != null;
+            return this._elasticIp != null;
         }
+
     }
 }

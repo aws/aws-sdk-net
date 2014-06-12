@@ -25,31 +25,38 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeUserProfiles operation.
-    /// <para>Describe specified users.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have an attached policy
-    /// that explicitly grants permissions. For more information on user permissions, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+    /// Describe specified users.
+    /// 
+    ///     
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have an attached
+    /// policy that explicitly grants permissions.      For more information on user permissions,
+    /// see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
     public partial class DescribeUserProfilesRequest : AmazonOpsWorksRequest
     {
-        private List<string> iamUserArns = new List<string>();
+        private List<string> _iamUserArns = new List<string>();
 
 
         /// <summary>
-        /// An array of IAM user ARNs that identify the users to be described.
-        ///  
+        /// Gets and sets the property IamUserArns. 
+        /// <para>
+        /// An array of IAM user ARNs that identify the users to be described. 
+        /// </para>
         /// </summary>
         public List<string> IamUserArns
         {
-            get { return this.iamUserArns; }
-            set { this.iamUserArns = value; }
+            get { return this._iamUserArns; }
+            set { this._iamUserArns = value; }
         }
 
         // Check to see if IamUserArns property is set
         internal bool IsSetIamUserArns()
         {
-            return this.iamUserArns.Count > 0;
+            return this._iamUserArns != null && this._iamUserArns.Count > 0; 
         }
 
     }
 }
-    

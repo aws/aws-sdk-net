@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,32 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para>Result message containing a list of environment descriptions.</para>
+    /// Result message containing a list of environment descriptions.
     /// </summary>
     public partial class DescribeEnvironmentsResult : AmazonWebServiceResponse
     {
-        
-        private List<EnvironmentDescription> environments = new List<EnvironmentDescription>();
+        private List<EnvironmentDescription> _environments = new List<EnvironmentDescription>();
+
 
         /// <summary>
-        /// Returns an <a>EnvironmentDescription</a> list.
-        ///  
+        /// Gets and sets the property Environments. 
+        /// <para>
+        ///          Returns an <a>EnvironmentDescription</a> list.      
+        /// </para>
         /// </summary>
         public List<EnvironmentDescription> Environments
         {
-            get { return this.environments; }
-            set { this.environments = value; }
+            get { return this._environments; }
+            set { this._environments = value; }
         }
 
         // Check to see if Environments property is set
         internal bool IsSetEnvironments()
         {
-            return this.environments.Count > 0;
+            return this._environments != null && this._environments.Count > 0; 
         }
+
     }
 }

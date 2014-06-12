@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the UnassignVolume response metadata.
-    /// The UnassignVolume operation has a void result type.
+    /// Configuration for accessing Amazon UnassignVolume service
     /// </summary>
-    public partial class UnassignVolumeResponse : AmazonWebServiceResponse
+    public partial class UnassignVolumeResponse : UnassignVolumeResult
     {
+        /// <summary>
+        /// Gets and sets the UnassignVolumeResult property.
+        /// Represents the output of a UnassignVolume operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the UnassignVolumeResult class are now available on the UnassignVolumeResponse class. You should use the properties on UnassignVolumeResponse instead of accessing them through UnassignVolumeResult.")]
+        public UnassignVolumeResult UnassignVolumeResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

@@ -18,84 +18,100 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Describes a layer's load-based auto scaling configuration.</para>
+    /// Describes a layer's load-based auto scaling configuration.
     /// </summary>
     public partial class LoadBasedAutoScalingConfiguration
     {
-        
-        private string layerId;
-        private bool? enable;
-        private AutoScalingThresholds upScaling;
-        private AutoScalingThresholds downScaling;
+        private AutoScalingThresholds _downScaling;
+        private bool? _enable;
+        private string _layerId;
+        private AutoScalingThresholds _upScaling;
 
 
         /// <summary>
-        /// The layer ID.
-        ///  
-        /// </summary>
-        public string LayerId
-        {
-            get { return this.layerId; }
-            set { this.layerId = value; }
-        }
-
-        // Check to see if LayerId property is set
-        internal bool IsSetLayerId()
-        {
-            return this.layerId != null;
-        }
-
-        /// <summary>
-        /// Whether load-based auto scaling is enabled for the layer.
-        ///  
-        /// </summary>
-        public bool Enable
-        {
-            get { return this.enable ?? default(bool); }
-            set { this.enable = value; }
-        }
-
-        // Check to see if Enable property is set
-        internal bool IsSetEnable()
-        {
-            return this.enable.HasValue;
-        }
-
-        /// <summary>
-        /// A <c>LoadBasedAutoscalingInstruction</c> object that describes the upscaling configuration, which defines how and when AWS OpsWorks
-        /// increases the number of instances.
-        ///  
-        /// </summary>
-        public AutoScalingThresholds UpScaling
-        {
-            get { return this.upScaling; }
-            set { this.upScaling = value; }
-        }
-
-        // Check to see if UpScaling property is set
-        internal bool IsSetUpScaling()
-        {
-            return this.upScaling != null;
-        }
-
-        /// <summary>
-        /// A <c>LoadBasedAutoscalingInstruction</c> object that describes the downscaling configuration, which defines how and when AWS OpsWorks
-        /// reduces the number of instances.
-        ///  
+        /// Gets and sets the property DownScaling. 
+        /// <para>
+        /// A <code>LoadBasedAutoscalingInstruction</code> object that describes the downscaling
+        /// configuration, which          defines how and when AWS OpsWorks reduces the number
+        /// of instances.
+        /// </para>
         /// </summary>
         public AutoScalingThresholds DownScaling
         {
-            get { return this.downScaling; }
-            set { this.downScaling = value; }
+            get { return this._downScaling; }
+            set { this._downScaling = value; }
         }
 
         // Check to see if DownScaling property is set
         internal bool IsSetDownScaling()
         {
-            return this.downScaling != null;
+            return this._downScaling != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Enable. 
+        /// <para>
+        /// Whether load-based auto scaling is enabled for the layer.
+        /// </para>
+        /// </summary>
+        public bool Enable
+        {
+            get { return this._enable.GetValueOrDefault(); }
+            set { this._enable = value; }
+        }
+
+        // Check to see if Enable property is set
+        internal bool IsSetEnable()
+        {
+            return this._enable.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property LayerId. 
+        /// <para>
+        /// The layer ID.
+        /// </para>
+        /// </summary>
+        public string LayerId
+        {
+            get { return this._layerId; }
+            set { this._layerId = value; }
+        }
+
+        // Check to see if LayerId property is set
+        internal bool IsSetLayerId()
+        {
+            return this._layerId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property UpScaling. 
+        /// <para>
+        /// A <code>LoadBasedAutoscalingInstruction</code> object that describes the upscaling
+        /// configuration, which          defines how and when AWS OpsWorks increases the number
+        /// of instances.
+        /// </para>
+        /// </summary>
+        public AutoScalingThresholds UpScaling
+        {
+            get { return this._upScaling; }
+            set { this._upScaling = value; }
+        }
+
+        // Check to see if UpScaling property is set
+        internal bool IsSetUpScaling()
+        {
+            return this._upScaling != null;
+        }
+
     }
 }

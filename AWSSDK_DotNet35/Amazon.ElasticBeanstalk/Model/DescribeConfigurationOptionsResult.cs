@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,58 +17,57 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para>Describes the settings for a specified configuration set.</para>
+    /// Describes the settings for a specified configuration set.
     /// </summary>
     public partial class DescribeConfigurationOptionsResult : AmazonWebServiceResponse
     {
-        
-        private string solutionStackName;
-        private List<ConfigurationOptionDescription> options = new List<ConfigurationOptionDescription>();
+        private List<ConfigurationOptionDescription> _options = new List<ConfigurationOptionDescription>();
+        private string _solutionStackName;
+
 
         /// <summary>
-        /// The name of the solution stack these configuration options belong to.
-        ///  
+        /// Gets and sets the property Options. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 100</description>
-        ///     </item>
-        /// </list>
+        ///          A list of         <a>ConfigurationOptionDescription</a>.      
         /// </para>
-        /// </summary>
-        public string SolutionStackName
-        {
-            get { return this.solutionStackName; }
-            set { this.solutionStackName = value; }
-        }
-
-        // Check to see if SolutionStackName property is set
-        internal bool IsSetSolutionStackName()
-        {
-            return this.solutionStackName != null;
-        }
-
-        /// <summary>
-        /// A list of <a>ConfigurationOptionDescription</a>.
-        ///  
         /// </summary>
         public List<ConfigurationOptionDescription> Options
         {
-            get { return this.options; }
-            set { this.options = value; }
+            get { return this._options; }
+            set { this._options = value; }
         }
 
         // Check to see if Options property is set
         internal bool IsSetOptions()
         {
-            return this.options.Count > 0;
+            return this._options != null && this._options.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property SolutionStackName. 
+        /// <para>
+        ///          The name of the solution stack these configuration options belong to.        
+        /// </para>
+        /// </summary>
+        public string SolutionStackName
+        {
+            get { return this._solutionStackName; }
+            set { this._solutionStackName = value; }
+        }
+
+        // Check to see if SolutionStackName property is set
+        internal bool IsSetSolutionStackName()
+        {
+            return this._solutionStackName != null;
+        }
+
     }
 }

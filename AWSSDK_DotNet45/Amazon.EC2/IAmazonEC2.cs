@@ -55,6 +55,16 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<AcceptVpcPeeringConnectionResponse> AcceptVpcPeeringConnectionAsync(AcceptVpcPeeringConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
  
+        /// <summary>
+        /// <para>Accept a VPC peering connection request. To accept a request, the VPC peering connection must be in the <c>pending-acceptance</c>
+        /// state, and you must be the owner of the peer VPC. Use the <c>DescribeVpcPeeringConnections</c> request to view your outstanding VPC peering
+        /// connection requests.</para>
+        /// </summary>
+        /// 
+        /// 
+        /// <returns>The response from the AcceptVpcPeeringConnection service method, as returned by AmazonEC2.</returns>
+		AcceptVpcPeeringConnectionResponse AcceptVpcPeeringConnection();
+ 
 
         /// <summary>
         /// <para>Acquires an Elastic IP address.</para> <para>An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. For more
@@ -1118,6 +1128,18 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<CreateVpcResponse> CreateVpcAsync(CreateVpcRequest request, CancellationToken cancellationToken = default(CancellationToken));
  
+        /// <summary>
+        /// <para>Requests a VPC peering connection between two VPCs: a requester VPC that you own and a peer VPC with which to create the connection.
+        /// The peer VPC can belong to another AWS account. The requester VPC and peer VPC cannot have overlapping CIDR blocks.</para> <para>The owner
+        /// of the peer VPC must accept the the peering request to activate the peering connection. The VPC peering connection request expires after 7
+        /// days, after which it cannot be accepted or rejected.</para> <para>A <c>CreateVpcPeeringConnection</c> request between VPCs with overlapping
+        /// CIDR blocks results in the VPC peering connection having a status of <c>failed</c> .</para>
+        /// </summary>
+        /// 
+        /// 
+        /// <returns>The response from the CreateVpcPeeringConnection service method, as returned by AmazonEC2.</returns>
+		CreateVpcPeeringConnectionResponse CreateVpcPeeringConnection();
+ 
 
         /// <summary>
         /// <para>Requests a VPC peering connection between two VPCs: a requester VPC that you own and a peer VPC with which to create the connection.
@@ -1608,6 +1630,8 @@ namespace Amazon.EC2
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpcPeeringConnection service
         /// method on AmazonEC2.</param>
+        /// 
+        /// <returns>The response from the DeleteVpcPeeringConnection service method, as returned by AmazonEC2.</returns>
 		DeleteVpcPeeringConnectionResponse DeleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest request);
 
         /// <summary>
@@ -1621,6 +1645,16 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<DeleteVpcPeeringConnectionResponse> DeleteVpcPeeringConnectionAsync(DeleteVpcPeeringConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
+        /// <para>Deletes a VPC peering connection. Either the owner of the requester VPC or the owner of the peer VPC can delete the VPC peering
+        /// connection if it's in the <c>active</c> state. The owner of the requester VPC can delete a VPC peering connection in the
+        /// <c>pending-acceptance</c> state.</para>
+        /// </summary>
+        /// 
+        /// 
+        /// <returns>The response from the DeleteVpcPeeringConnection service method, as returned by AmazonEC2.</returns>
+		DeleteVpcPeeringConnectionResponse DeleteVpcPeeringConnection();
  
 
         /// <summary>
@@ -2060,6 +2094,18 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<DescribeInstanceAttributeResponse> DescribeInstanceAttributeAsync(DescribeInstanceAttributeRequest request, CancellationToken cancellationToken = default(CancellationToken));
  
+        /// <summary>
+        /// <para>Describes one or more of your instances.</para> <para>If you specify one or more instance IDs, Amazon EC2 returns information for
+        /// those instances. If you do not specify instance IDs, Amazon EC2 returns information for all relevant instances. If you specify an instance
+        /// ID that is not valid, an error is returned. If you specify an instance that you do not own, it is not included in the returned
+        /// results.</para> <para>Recently terminated instances might appear in the returned results. This interval is usually less than one
+        /// hour.</para>
+        /// </summary>
+        /// 
+        /// 
+        /// <returns>The response from the DescribeInstances service method, as returned by AmazonEC2.</returns>
+		DescribeInstancesResponse DescribeInstances();
+ 
 
         /// <summary>
         /// <para>Describes one or more of your instances.</para> <para>If you specify one or more instance IDs, Amazon EC2 returns information for
@@ -2086,18 +2132,6 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<DescribeInstancesResponse> DescribeInstancesAsync(DescribeInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
-        /// <summary>
-        /// <para>Describes one or more of your instances.</para> <para>If you specify one or more instance IDs, Amazon EC2 returns information for
-        /// those instances. If you do not specify instance IDs, Amazon EC2 returns information for all relevant instances. If you specify an instance
-        /// ID that is not valid, an error is returned. If you specify an instance that you do not own, it is not included in the returned
-        /// results.</para> <para>Recently terminated instances might appear in the returned results. This interval is usually less than one
-        /// hour.</para>
-        /// </summary>
-        /// 
-        /// 
-        /// <returns>The response from the DescribeInstances service method, as returned by AmazonEC2.</returns>
-		DescribeInstancesResponse DescribeInstances();
  
 
         /// <summary>
@@ -2198,14 +2232,6 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeInstanceStatus service method, as returned by AmazonEC2.</returns>
 		DescribeInstanceStatusResponse DescribeInstanceStatus();
  
-        /// <summary>
-        /// <para>Describes one or more of your Internet gateways.</para>
-        /// </summary>
-        /// 
-        /// 
-        /// <returns>The response from the DescribeInternetGateways service method, as returned by AmazonEC2.</returns>
-		DescribeInternetGatewaysResponse DescribeInternetGateways();
- 
 
         /// <summary>
         /// <para>Describes one or more of your Internet gateways.</para>
@@ -2228,6 +2254,14 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<DescribeInternetGatewaysResponse> DescribeInternetGatewaysAsync(DescribeInternetGatewaysRequest request, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
+        /// <para>Describes one or more of your Internet gateways.</para>
+        /// </summary>
+        /// 
+        /// 
+        /// <returns>The response from the DescribeInternetGateways service method, as returned by AmazonEC2.</returns>
+		DescribeInternetGatewaysResponse DescribeInternetGateways();
  
 
         /// <summary>
@@ -3780,6 +3814,8 @@ namespace Amazon.EC2
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RejectVpcPeeringConnection service
         /// method on AmazonEC2.</param>
+        /// 
+        /// <returns>The response from the RejectVpcPeeringConnection service method, as returned by AmazonEC2.</returns>
 		RejectVpcPeeringConnectionResponse RejectVpcPeeringConnection(RejectVpcPeeringConnectionRequest request);
 
         /// <summary>
@@ -3793,6 +3829,15 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<RejectVpcPeeringConnectionResponse> RejectVpcPeeringConnectionAsync(RejectVpcPeeringConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
+        /// <para>Rejects a VPC peering connection request. The VPC peering connection must be in the <c>pending-acceptance</c> state. Use the
+        /// <c>DescribeVpcPeeringConnections</c> request to view your outstanding VPC peering connection requests.</para>
+        /// </summary>
+        /// 
+        /// 
+        /// <returns>The response from the RejectVpcPeeringConnection service method, as returned by AmazonEC2.</returns>
+		RejectVpcPeeringConnectionResponse RejectVpcPeeringConnection();
  
 
         /// <summary>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,49 +17,58 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para>A list of available AWS Elastic Beanstalk solution stacks. </para>
+    /// A         list of available AWS Elastic Beanstalk         solution stacks.
     /// </summary>
     public partial class ListAvailableSolutionStacksResult : AmazonWebServiceResponse
     {
-        
-        private List<string> solutionStacks = new List<string>();
-        private List<SolutionStackDescription> solutionStackDetails = new List<SolutionStackDescription>();
+        private List<SolutionStackDescription> _solutionStackDetails = new List<SolutionStackDescription>();
+        private List<string> _solutionStacks = new List<string>();
+
 
         /// <summary>
-        /// A list of available solution stacks.
-        ///  
-        /// </summary>
-        public List<string> SolutionStacks
-        {
-            get { return this.solutionStacks; }
-            set { this.solutionStacks = value; }
-        }
-
-        // Check to see if SolutionStacks property is set
-        internal bool IsSetSolutionStacks()
-        {
-            return this.solutionStacks.Count > 0;
-        }
-
-        /// <summary>
-        /// A list of available solution stacks and their <a>SolutionStackDescription</a>.
-        ///  
+        /// Gets and sets the property SolutionStackDetails. 
+        /// <para>
+        ///          A list of available solution stacks and their <a>SolutionStackDescription</a>.
+        ///      
+        /// </para>
         /// </summary>
         public List<SolutionStackDescription> SolutionStackDetails
         {
-            get { return this.solutionStackDetails; }
-            set { this.solutionStackDetails = value; }
+            get { return this._solutionStackDetails; }
+            set { this._solutionStackDetails = value; }
         }
 
         // Check to see if SolutionStackDetails property is set
         internal bool IsSetSolutionStackDetails()
         {
-            return this.solutionStackDetails.Count > 0;
+            return this._solutionStackDetails != null && this._solutionStackDetails.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property SolutionStacks. 
+        /// <para>
+        ///          A list of available solution stacks.        
+        /// </para>
+        /// </summary>
+        public List<string> SolutionStacks
+        {
+            get { return this._solutionStacks; }
+            set { this._solutionStacks = value; }
+        }
+
+        // Check to see if SolutionStacks property is set
+        internal bool IsSetSolutionStacks()
+        {
+            return this._solutionStacks != null && this._solutionStacks.Count > 0; 
+        }
+
     }
 }

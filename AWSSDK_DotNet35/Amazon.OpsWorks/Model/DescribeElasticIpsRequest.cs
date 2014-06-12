@@ -25,70 +25,88 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeElasticIps operation.
-    /// <para>Describes <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html" >Elastic IP addresses</a>
-    /// .</para> <para><b>NOTE:</b> You must specify at least one of the parameters. </para> <para> <b>Required Permissions</b> : To use this
-    /// action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants
-    /// permissions. For more information on user permissions, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+    /// Describes <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+    /// IP addresses</a>.
+    /// 
+    ///   <note>      
+    /// <para>
+    /// You must specify at least one of the parameters.
+    /// </para>
+    ///     </note>    
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+    /// or Manage permissions level for the stack, or an attached       policy that explicitly
+    /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
     public partial class DescribeElasticIpsRequest : AmazonOpsWorksRequest
     {
-        private string instanceId;
-        private string stackId;
-        private List<string> ips = new List<string>();
+        private string _instanceId;
+        private List<string> _ips = new List<string>();
+        private string _stackId;
 
 
         /// <summary>
-        /// The instance ID. If you include this parameter, <c>DescribeElasticIps</c> returns a description of the Elastic IP addresses associated with
-        /// the specified instance.
-        ///  
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The instance ID. If you include this parameter, <code>DescribeElasticIps</code> returns
+        /// a description of the         Elastic IP addresses associated with the specified instance.
+        /// </para>
         /// </summary>
         public string InstanceId
         {
-            get { return this.instanceId; }
-            set { this.instanceId = value; }
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
         }
 
         // Check to see if InstanceId property is set
         internal bool IsSetInstanceId()
         {
-            return this.instanceId != null;
+            return this._instanceId != null;
         }
+
 
         /// <summary>
-        /// A stack ID. If you include this parameter, <c>DescribeElasticIps</c> returns a description of the Elastic IP addresses that are registered
-        /// with the specified stack.
-        ///  
-        /// </summary>
-        public string StackId
-        {
-            get { return this.stackId; }
-            set { this.stackId = value; }
-        }
-
-        // Check to see if StackId property is set
-        internal bool IsSetStackId()
-        {
-            return this.stackId != null;
-        }
-
-        /// <summary>
-        /// An array of Elastic IP addresses to be described. If you include this parameter, <c>DescribeElasticIps</c> returns a description of the
-        /// specified Elastic IP addresses. Otherwise, it returns a description of every Elastic IP address.
-        ///  
+        /// Gets and sets the property Ips. 
+        /// <para>
+        /// An array of Elastic IP addresses to be described. If you include this parameter, <code>DescribeElasticIps</code>
+        /// returns a description of         the specified Elastic IP addresses. Otherwise, it
+        /// returns a description of every Elastic IP address.
+        /// </para>
         /// </summary>
         public List<string> Ips
         {
-            get { return this.ips; }
-            set { this.ips = value; }
+            get { return this._ips; }
+            set { this._ips = value; }
         }
 
         // Check to see if Ips property is set
         internal bool IsSetIps()
         {
-            return this.ips.Count > 0;
+            return this._ips != null && this._ips.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property StackId. 
+        /// <para>
+        /// A stack ID. If you include this parameter, <code>DescribeElasticIps</code> returns
+        /// a description of      the Elastic IP addresses that are registered with the specified
+        /// stack.
+        /// </para>
+        /// </summary>
+        public string StackId
+        {
+            get { return this._stackId; }
+            set { this._stackId = value; }
+        }
+
+        // Check to see if StackId property is set
+        internal bool IsSetStackId()
+        {
+            return this._stackId != null;
         }
 
     }
 }
-    

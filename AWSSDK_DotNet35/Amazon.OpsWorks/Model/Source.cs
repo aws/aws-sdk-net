@@ -18,131 +18,151 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html" >Creating Apps</a> or <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html" >Custom Recipes and Cookbooks</a> .</para>
+    /// Contains the information required to retrieve an app or cookbook from a repository.
+    /// For more information, see  <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
+    /// Apps</a> or  <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom
+    /// Recipes and Cookbooks</a>.
     /// </summary>
     public partial class Source
     {
-        
-        private SourceType type;
-        private string url;
-        private string username;
-        private string password;
-        private string sshKey;
-        private string revision;
+        private string _password;
+        private string _revision;
+        private string _sshKey;
+        private SourceType _type;
+        private string _url;
+        private string _username;
 
 
         /// <summary>
-        /// The repository type.
-        ///  
+        /// Gets and sets the property Password. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>git, svn, archive, s3</description>
-        ///     </item>
-        /// </list>
+        /// This parameter depends on the repository type. 
         /// </para>
-        /// </summary>
-        public SourceType Type
-        {
-            get { return this.type; }
-            set { this.type = value; }
-        }
-
-        // Check to see if Type property is set
-        internal bool IsSetType()
-        {
-            return this.type != null;
-        }
-
-        /// <summary>
-        /// The source URL.
-        ///  
-        /// </summary>
-        public string Url
-        {
-            get { return this.url; }
-            set { this.url = value; }
-        }
-
-        // Check to see if Url property is set
-        internal bool IsSetUrl()
-        {
-            return this.url != null;
-        }
-
-        /// <summary>
-        /// This parameter depends on the repository type. <ul> <li>For Amazon S3 bundles, set <c>Username</c> to the appropriate IAM access key
-        /// ID.</li> <li>For HTTP bundles, Git repositories, and Subversion repositories, set <c>Username</c> to the user name.</li> </ul>
-        ///  
-        /// </summary>
-        public string Username
-        {
-            get { return this.username; }
-            set { this.username = value; }
-        }
-
-        // Check to see if Username property is set
-        internal bool IsSetUsername()
-        {
-            return this.username != null;
-        }
-
-        /// <summary>
-        /// This parameter depends on the repository type. <ul> <li>For Amazon S3 bundles, set <c>Password</c> to the appropriate IAM secret access
-        /// key.</li> <li>For HTTP bundles, and Subversion repositories, set <c>Password</c> to the password.</li> </ul> For more information on how to
-        /// safely handle IAM credentials, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"/>.
-        ///  
+        ///   <ul>    <li>For Amazon S3 bundles, set <code>Password</code> to the appropriate
+        /// IAM secret access key.</li>    <li>For HTTP bundles and Subversion repositories, set
+        /// <code>Password</code> to the password.</li>  </ul>  
+        /// <para>
+        /// For more information on how to safely handle IAM credentials, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"></a>.
+        /// </para>
         /// </summary>
         public string Password
         {
-            get { return this.password; }
-            set { this.password = value; }
+            get { return this._password; }
+            set { this._password = value; }
         }
 
         // Check to see if Password property is set
         internal bool IsSetPassword()
         {
-            return this.password != null;
+            return this._password != null;
         }
+
 
         /// <summary>
-        /// The repository's SSH key.
-        ///  
-        /// </summary>
-        public string SshKey
-        {
-            get { return this.sshKey; }
-            set { this.sshKey = value; }
-        }
-
-        // Check to see if SshKey property is set
-        internal bool IsSetSshKey()
-        {
-            return this.sshKey != null;
-        }
-
-        /// <summary>
-        /// The application's version. AWS OpsWorks enables you to easily deploy new versions of an application. One of the simplest approaches is to
-        /// have branches or revisions in your repository that represent different versions that can potentially be deployed.
-        ///  
+        /// Gets and sets the property Revision. 
+        /// <para>
+        /// The application's version. AWS OpsWorks enables you to easily deploy new versions
+        /// of an application.         One of the simplest approaches is to have branches or revisions
+        /// in your repository that represent different         versions that can potentially
+        /// be deployed.
+        /// </para>
         /// </summary>
         public string Revision
         {
-            get { return this.revision; }
-            set { this.revision = value; }
+            get { return this._revision; }
+            set { this._revision = value; }
         }
 
         // Check to see if Revision property is set
         internal bool IsSetRevision()
         {
-            return this.revision != null;
+            return this._revision != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property SshKey. 
+        /// <para>
+        /// The repository's SSH key.
+        /// </para>
+        /// </summary>
+        public string SshKey
+        {
+            get { return this._sshKey; }
+            set { this._sshKey = value; }
+        }
+
+        // Check to see if SshKey property is set
+        internal bool IsSetSshKey()
+        {
+            return this._sshKey != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The repository type.
+        /// </para>
+        /// </summary>
+        public SourceType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Url. 
+        /// <para>
+        /// The source URL. 
+        /// </para>
+        /// </summary>
+        public string Url
+        {
+            get { return this._url; }
+            set { this._url = value; }
+        }
+
+        // Check to see if Url property is set
+        internal bool IsSetUrl()
+        {
+            return this._url != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Username. 
+        /// <para>
+        /// This parameter depends on the repository type. 
+        /// </para>
+        ///   <ul>  <li>For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM
+        /// access key ID.</li>  <li>For HTTP bundles, Git repositories, and Subversion repositories,
+        /// set <code>Username</code> to the user name.</li>  </ul>
+        /// </summary>
+        public string Username
+        {
+            get { return this._username; }
+            set { this._username = value; }
+        }
+
+        // Check to see if Username property is set
+        internal bool IsSetUsername()
+        {
+            return this._username != null;
+        }
+
     }
 }

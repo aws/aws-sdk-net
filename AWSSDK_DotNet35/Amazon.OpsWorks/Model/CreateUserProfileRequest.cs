@@ -25,85 +25,104 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateUserProfile operation.
-    /// <para>Creates a new user profile.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have an attached policy
-    /// that explicitly grants permissions. For more information on user permissions, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+    /// Creates a new user profile.
+    /// 
+    ///     
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have an attached
+    ///       policy that explicitly grants permissions. For more information on user permissions,
+    /// see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
     public partial class CreateUserProfileRequest : AmazonOpsWorksRequest
     {
-        private string iamUserArn;
-        private string sshUsername;
-        private string sshPublicKey;
-        private bool? allowSelfManagement;
+        private bool? _allowSelfManagement;
+        private string _iamUserArn;
+        private string _sshPublicKey;
+        private string _sshUsername;
 
 
         /// <summary>
-        /// The user's IAM ARN.
-        ///  
-        /// </summary>
-        public string IamUserArn
-        {
-            get { return this.iamUserArn; }
-            set { this.iamUserArn = value; }
-        }
-
-        // Check to see if IamUserArn property is set
-        internal bool IsSetIamUserArn()
-        {
-            return this.iamUserArn != null;
-        }
-
-        /// <summary>
-        /// The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name includes other punctuation
-        /// marks, AWS OpsWorks removes them. For example, <c>my.name</c> will be changed to <c>myname</c>. If you do not specify an SSH user name, AWS
-        /// OpsWorks generates one from the IAM user name.
-        ///  
-        /// </summary>
-        public string SshUsername
-        {
-            get { return this.sshUsername; }
-            set { this.sshUsername = value; }
-        }
-
-        // Check to see if SshUsername property is set
-        internal bool IsSetSshUsername()
-        {
-            return this.sshUsername != null;
-        }
-
-        /// <summary>
-        /// The user's public SSH key.
-        ///  
-        /// </summary>
-        public string SshPublicKey
-        {
-            get { return this.sshPublicKey; }
-            set { this.sshPublicKey = value; }
-        }
-
-        // Check to see if SshPublicKey property is set
-        internal bool IsSetSshPublicKey()
-        {
-            return this.sshPublicKey != null;
-        }
-
-        /// <summary>
-        /// Whether users can specify their own SSH public key through the My Settings page. For more information, see <a
-        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Setting an IAM User's Public SSH Key</a>.
-        ///  
+        /// Gets and sets the property AllowSelfManagement. 
+        /// <para>
+        /// Whether users can specify their own SSH public key through the My Settings page. For
+        /// more information, see    <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Setting
+        /// an IAM User's Public SSH Key</a>.
+        /// </para>
         /// </summary>
         public bool AllowSelfManagement
         {
-            get { return this.allowSelfManagement ?? default(bool); }
-            set { this.allowSelfManagement = value; }
+            get { return this._allowSelfManagement.GetValueOrDefault(); }
+            set { this._allowSelfManagement = value; }
         }
 
         // Check to see if AllowSelfManagement property is set
         internal bool IsSetAllowSelfManagement()
         {
-            return this.allowSelfManagement.HasValue;
+            return this._allowSelfManagement.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property IamUserArn. 
+        /// <para>
+        /// The user's IAM ARN.
+        /// </para>
+        /// </summary>
+        public string IamUserArn
+        {
+            get { return this._iamUserArn; }
+            set { this._iamUserArn = value; }
+        }
+
+        // Check to see if IamUserArn property is set
+        internal bool IsSetIamUserArn()
+        {
+            return this._iamUserArn != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SshPublicKey. 
+        /// <para>
+        /// The user's public SSH key.
+        /// </para>
+        /// </summary>
+        public string SshPublicKey
+        {
+            get { return this._sshPublicKey; }
+            set { this._sshPublicKey = value; }
+        }
+
+        // Check to see if SshPublicKey property is set
+        internal bool IsSetSshPublicKey()
+        {
+            return this._sshPublicKey != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SshUsername. 
+        /// <para>
+        /// The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and
+        /// '_'. If the specified name includes other punctuation    marks, AWS OpsWorks removes
+        /// them. For example, <code>my.name</code> will be changed to <code>myname</code>.  
+        ///  If you do not specify an SSH user name, AWS OpsWorks generates one from the IAM user
+        /// name.  
+        /// </para>
+        /// </summary>
+        public string SshUsername
+        {
+            get { return this._sshUsername; }
+            set { this._sshUsername = value; }
+        }
+
+        // Check to see if SshUsername property is set
+        internal bool IsSetSshUsername()
+        {
+            return this._sshUsername != null;
         }
 
     }
 }
-    

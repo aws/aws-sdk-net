@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// Returns information about the DeleteConfigurationTemplate response metadata.
-    /// The DeleteConfigurationTemplate operation has a void result type.
+    /// Configuration for accessing Amazon DeleteConfigurationTemplate service
     /// </summary>
-    public partial class DeleteConfigurationTemplateResponse : AmazonWebServiceResponse
+    public partial class DeleteConfigurationTemplateResponse : DeleteConfigurationTemplateResult
     {
+        /// <summary>
+        /// Gets and sets the DeleteConfigurationTemplateResult property.
+        /// Represents the output of a DeleteConfigurationTemplate operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DeleteConfigurationTemplateResult class are now available on the DeleteConfigurationTemplateResponse class. You should use the properties on DeleteConfigurationTemplateResponse instead of accessing them through DeleteConfigurationTemplateResult.")]
+        public DeleteConfigurationTemplateResult DeleteConfigurationTemplateResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

@@ -25,67 +25,86 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInstances operation.
-    /// <para>Requests a description of a set of instances.</para> <para><b>NOTE:</b> You must specify at least one of the parameters. </para>
-    /// <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or
-    /// an attached policy that explicitly grants permissions. For more information on user permissions, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+    /// Requests a description of a set of instances.
+    /// 
+    ///         <note>      
+    /// <para>
+    /// You must specify at least one of the parameters.
+    /// </para>
+    ///     </note>    
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+    /// or Manage permissions level for the stack, or an attached       policy that explicitly
+    /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
     public partial class DescribeInstancesRequest : AmazonOpsWorksRequest
     {
-        private string stackId;
-        private string layerId;
-        private List<string> instanceIds = new List<string>();
+        private List<string> _instanceIds = new List<string>();
+        private string _layerId;
+        private string _stackId;
 
 
         /// <summary>
-        /// A stack ID. If you use this parameter, <c>DescribeInstances</c> returns descriptions of the instances associated with the specified stack.
-        ///  
-        /// </summary>
-        public string StackId
-        {
-            get { return this.stackId; }
-            set { this.stackId = value; }
-        }
-
-        // Check to see if StackId property is set
-        internal bool IsSetStackId()
-        {
-            return this.stackId != null;
-        }
-
-        /// <summary>
-        /// A layer ID. If you use this parameter, <c>DescribeInstances</c> returns descriptions of the instances associated with the specified layer.
-        ///  
-        /// </summary>
-        public string LayerId
-        {
-            get { return this.layerId; }
-            set { this.layerId = value; }
-        }
-
-        // Check to see if LayerId property is set
-        internal bool IsSetLayerId()
-        {
-            return this.layerId != null;
-        }
-
-        /// <summary>
-        /// An array of instance IDs to be described. If you use this parameter, <c>DescribeInstances</c> returns a description of the specified
-        /// instances. Otherwise, it returns a description of every instance.
-        ///  
+        /// Gets and sets the property InstanceIds. 
+        /// <para>
+        /// An array of instance IDs to be described. If you use this parameter,   <code>DescribeInstances</code>
+        /// returns a description of the specified instances. Otherwise, it returns      a description
+        /// of every instance.
+        /// </para>
         /// </summary>
         public List<string> InstanceIds
         {
-            get { return this.instanceIds; }
-            set { this.instanceIds = value; }
+            get { return this._instanceIds; }
+            set { this._instanceIds = value; }
         }
 
         // Check to see if InstanceIds property is set
         internal bool IsSetInstanceIds()
         {
-            return this.instanceIds.Count > 0;
+            return this._instanceIds != null && this._instanceIds.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property LayerId. 
+        /// <para>
+        /// A layer ID. If you use this parameter, <code>DescribeInstances</code> returns    
+        ///     descriptions of the instances associated with the specified layer.
+        /// </para>
+        /// </summary>
+        public string LayerId
+        {
+            get { return this._layerId; }
+            set { this._layerId = value; }
+        }
+
+        // Check to see if LayerId property is set
+        internal bool IsSetLayerId()
+        {
+            return this._layerId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property StackId. 
+        /// <para>
+        /// A stack ID. If you use this parameter, <code>DescribeInstances</code> returns    
+        ///     descriptions of the instances associated with the specified stack.
+        /// </para>
+        /// </summary>
+        public string StackId
+        {
+            get { return this._stackId; }
+            set { this._stackId = value; }
+        }
+
+        // Check to see if StackId property is set
+        internal bool IsSetStackId()
+        {
+            return this._stackId != null;
         }
 
     }
 }
-    

@@ -14,56 +14,60 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SecurityToken.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Assume Role Request Marshaller
+    /// AssumeRole Request Marshaller
     /// </summary>       
     public class AssumeRoleRequestMarshaller : IMarshaller<IRequest, AssumeRoleRequest>
     {
-        public IRequest Marshall(AssumeRoleRequest assumeRoleRequest)
+        public IRequest Marshall(AssumeRoleRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(assumeRoleRequest, "AmazonSecurityTokenService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SecurityToken");
             request.Parameters.Add("Action", "AssumeRole");
             request.Parameters.Add("Version", "2011-06-15");
-            if (assumeRoleRequest != null && assumeRoleRequest.IsSetRoleArn())
-            {
-                request.Parameters.Add("RoleArn", StringUtils.FromString(assumeRoleRequest.RoleArn));
-            }
-            if (assumeRoleRequest != null && assumeRoleRequest.IsSetRoleSessionName())
-            {
-                request.Parameters.Add("RoleSessionName", StringUtils.FromString(assumeRoleRequest.RoleSessionName));
-            }
-            if (assumeRoleRequest != null && assumeRoleRequest.IsSetPolicy())
-            {
-                request.Parameters.Add("Policy", StringUtils.FromString(assumeRoleRequest.Policy));
-            }
-            if (assumeRoleRequest != null && assumeRoleRequest.IsSetDurationSeconds())
-            {
-                request.Parameters.Add("DurationSeconds", StringUtils.FromInt(assumeRoleRequest.DurationSeconds));
-            }
-            if (assumeRoleRequest != null && assumeRoleRequest.IsSetExternalId())
-            {
-                request.Parameters.Add("ExternalId", StringUtils.FromString(assumeRoleRequest.ExternalId));
-            }
-            if (assumeRoleRequest != null && assumeRoleRequest.IsSetSerialNumber())
-            {
-                request.Parameters.Add("SerialNumber", StringUtils.FromString(assumeRoleRequest.SerialNumber));
-            }
-            if (assumeRoleRequest != null && assumeRoleRequest.IsSetTokenCode())
-            {
-                request.Parameters.Add("TokenCode", StringUtils.FromString(assumeRoleRequest.TokenCode));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetDurationSeconds())
+                {
+                    request.Parameters.Add("DurationSeconds", StringUtils.FromInt(publicRequest.DurationSeconds));
+                }
+                if(publicRequest.IsSetExternalId())
+                {
+                    request.Parameters.Add("ExternalId", StringUtils.FromString(publicRequest.ExternalId));
+                }
+                if(publicRequest.IsSetPolicy())
+                {
+                    request.Parameters.Add("Policy", StringUtils.FromString(publicRequest.Policy));
+                }
+                if(publicRequest.IsSetRoleArn())
+                {
+                    request.Parameters.Add("RoleArn", StringUtils.FromString(publicRequest.RoleArn));
+                }
+                if(publicRequest.IsSetRoleSessionName())
+                {
+                    request.Parameters.Add("RoleSessionName", StringUtils.FromString(publicRequest.RoleSessionName));
+                }
+                if(publicRequest.IsSetSerialNumber())
+                {
+                    request.Parameters.Add("SerialNumber", StringUtils.FromString(publicRequest.SerialNumber));
+                }
+                if(publicRequest.IsSetTokenCode())
+                {
+                    request.Parameters.Add("TokenCode", StringUtils.FromString(publicRequest.TokenCode));
+                }
+            }
             return request;
         }
     }

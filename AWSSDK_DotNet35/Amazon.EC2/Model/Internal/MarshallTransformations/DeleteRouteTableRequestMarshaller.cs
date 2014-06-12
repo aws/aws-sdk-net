@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(deleteRouteTableRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DeleteRouteTable");
-            request.Parameters.Add("Version", "2014-02-01");
+            request.Parameters.Add("Version", "2014-05-01");
             if (deleteRouteTableRequest != null && deleteRouteTableRequest.IsSetRouteTableId())
             {
                 request.Parameters.Add("RouteTableId", StringUtils.FromString(deleteRouteTableRequest.RouteTableId));

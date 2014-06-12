@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the UpdateInstance response metadata.
-    /// The UpdateInstance operation has a void result type.
+    /// Configuration for accessing Amazon UpdateInstance service
     /// </summary>
-    public partial class UpdateInstanceResponse : AmazonWebServiceResponse
+    public partial class UpdateInstanceResponse : UpdateInstanceResult
     {
+        /// <summary>
+        /// Gets and sets the UpdateInstanceResult property.
+        /// Represents the output of a UpdateInstance operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the UpdateInstanceResult class are now available on the UpdateInstanceResponse class. You should use the properties on UpdateInstanceResponse instead of accessing them through UpdateInstanceResult.")]
+        public UpdateInstanceResult UpdateInstanceResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

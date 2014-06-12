@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
         private List<Tag> tags = new List<Tag>();
         private VolumeType volumeType;
         private int? iops;
+        private bool? encrypted;
 
 
         /// <summary>
@@ -214,6 +215,21 @@ namespace Amazon.EC2.Model
         internal bool IsSetIops()
         {
             return this.iops.HasValue;
+        }
+
+        /// <summary>
+        /// If true the volume is encrypted.
+        /// </summary>
+        public bool Encrypted
+        {
+            get { return this.encrypted ?? default(bool); }
+            set { this.encrypted = value; }
+        }
+
+        // Check to see if Encrypted property is set
+        internal bool IsSetEncrypted()
+        {
+            return this.encrypted.HasValue;
         }
     }
 }

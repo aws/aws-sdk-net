@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the DeregisterVolume response metadata.
-    /// The DeregisterVolume operation has a void result type.
+    /// Configuration for accessing Amazon DeregisterVolume service
     /// </summary>
-    public partial class DeregisterVolumeResponse : AmazonWebServiceResponse
+    public partial class DeregisterVolumeResponse : DeregisterVolumeResult
     {
+        /// <summary>
+        /// Gets and sets the DeregisterVolumeResult property.
+        /// Represents the output of a DeregisterVolume operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DeregisterVolumeResult class are now available on the DeregisterVolumeResponse class. You should use the properties on DeregisterVolumeResponse instead of accessing them through DeregisterVolumeResult.")]
+        public DeregisterVolumeResult DeregisterVolumeResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

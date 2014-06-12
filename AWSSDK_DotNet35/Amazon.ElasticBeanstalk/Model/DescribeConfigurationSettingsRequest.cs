@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,102 +25,101 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeConfigurationSettings operation.
-    /// <para> Returns a description of the settings for the specified configuration set, that is, either a configuration template or the
-    /// configuration set associated with a running environment. </para> <para> When describing the settings for the configuration set associated
-    /// with a running environment, it is possible to receive two sets of setting descriptions. One is the deployed configuration set, and the other
-    /// is a draft configuration of an environment that is either in the process of deployment or that failed to deploy. </para> <para>Related
-    /// Topics</para>
-    /// <ul>
-    /// <li> DeleteEnvironmentConfiguration </li>
+    /// Returns a description of the settings for the specified         configuration
+    /// set, that is, either a configuration template or the         configuration set associated
+    /// with a running environment.        
     /// 
-    /// </ul>
+    ///       
+    /// <para>
+    ///          When describing the settings for the configuration set associated with a
+    ///         running environment, it is possible to receive two sets of setting descriptions.
+    ///         One is the deployed configuration set, and the other is a draft configuration
+    ///         of an environment that is either in the process of deployment or that failed
+    /// to         deploy.         
+    /// </para>
+    ///       
+    /// <para>
+    /// Related Topics
+    /// </para>
+    ///       <ul>         <li>            <a>DeleteEnvironmentConfiguration</a>         </li>
+    ///      </ul>
     /// </summary>
     public partial class DescribeConfigurationSettingsRequest : AmazonElasticBeanstalkRequest
     {
-        private string applicationName;
-        private string templateName;
-        private string environmentName;
+        private string _applicationName;
+        private string _environmentName;
+        private string _templateName;
 
 
         /// <summary>
-        /// The application for the environment or configuration template.
-        ///  
+        /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 100</description>
-        ///     </item>
-        /// </list>
+        ///          The application for the environment or configuration template.        
         /// </para>
         /// </summary>
         public string ApplicationName
         {
-            get { return this.applicationName; }
-            set { this.applicationName = value; }
+            get { return this._applicationName; }
+            set { this._applicationName = value; }
         }
 
         // Check to see if ApplicationName property is set
         internal bool IsSetApplicationName()
         {
-            return this.applicationName != null;
+            return this._applicationName != null;
         }
 
+
         /// <summary>
-        /// The name of the configuration template to describe. Conditional: You must specify either this parameter or an EnvironmentName, but not both.
-        /// If you specify both, AWS Elastic Beanstalk returns an <c>InvalidParameterCombination</c> error. If you do not specify either, AWS Elastic
-        /// Beanstalk returns a <c>MissingRequiredParameter</c> error.
-        ///  
+        /// Gets and sets the property EnvironmentName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 100</description>
-        ///     </item>
-        /// </list>
+        ///          The name of the environment to describe.         
         /// </para>
-        /// </summary>
-        public string TemplateName
-        {
-            get { return this.templateName; }
-            set { this.templateName = value; }
-        }
-
-        // Check to see if TemplateName property is set
-        internal bool IsSetTemplateName()
-        {
-            return this.templateName != null;
-        }
-
-        /// <summary>
-        /// The name of the environment to describe. Condition: You must specify either this or a TemplateName, but not both. If you specify both, AWS
-        /// Elastic Beanstalk returns an <c>InvalidParameterCombination</c> error. If you do not specify either, AWS Elastic Beanstalk returns
-        /// <c>MissingRequiredParameter</c> error.
-        ///  
+        ///          
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>4 - 23</description>
-        ///     </item>
-        /// </list>
+        ///          Condition: You must specify either this or a TemplateName, but not both.
+        /// If you specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code>
+        /// error.          If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+        /// error.        
         /// </para>
         /// </summary>
         public string EnvironmentName
         {
-            get { return this.environmentName; }
-            set { this.environmentName = value; }
+            get { return this._environmentName; }
+            set { this._environmentName = value; }
         }
 
         // Check to see if EnvironmentName property is set
         internal bool IsSetEnvironmentName()
         {
-            return this.environmentName != null;
+            return this._environmentName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property TemplateName. 
+        /// <para>
+        ///          The name of the configuration template to describe.          
+        /// </para>
+        ///          
+        /// <para>
+        ///          Conditional: You must specify either this parameter or an EnvironmentName,
+        /// but not both. If you specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code>
+        /// error.          If you do not specify either, AWS Elastic Beanstalk returns a <code>MissingRequiredParameter</code>
+        /// error.        
+        /// </para>
+        /// </summary>
+        public string TemplateName
+        {
+            get { return this._templateName; }
+            set { this._templateName = value; }
+        }
+
+        // Check to see if TemplateName property is set
+        internal bool IsSetTemplateName()
+        {
+            return this._templateName != null;
         }
 
     }
 }
-    

@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the UpdateVolume response metadata.
-    /// The UpdateVolume operation has a void result type.
+    /// Configuration for accessing Amazon UpdateVolume service
     /// </summary>
-    public partial class UpdateVolumeResponse : AmazonWebServiceResponse
+    public partial class UpdateVolumeResponse : UpdateVolumeResult
     {
+        /// <summary>
+        /// Gets and sets the UpdateVolumeResult property.
+        /// Represents the output of a UpdateVolume operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the UpdateVolumeResult class are now available on the UpdateVolumeResponse class. You should use the properties on UpdateVolumeResponse instead of accessing them through UpdateVolumeResult.")]
+        public UpdateVolumeResult UpdateVolumeResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

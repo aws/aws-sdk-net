@@ -29,54 +29,52 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Update Volume Request Marshaller
+    /// UpdateVolume Request Marshaller
     /// </summary>       
-    internal class UpdateVolumeRequestMarshaller : IMarshaller<IRequest, UpdateVolumeRequest> 
+    public class UpdateVolumeRequestMarshaller : IMarshaller<IRequest, UpdateVolumeRequest> 
     {
-        
-
-        public IRequest Marshall(UpdateVolumeRequest updateVolumeRequest) 
+        public IRequest Marshall(UpdateVolumeRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(updateVolumeRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.UpdateVolume";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (updateVolumeRequest != null && updateVolumeRequest.IsSetVolumeId()) 
-                {
-                    writer.WritePropertyName("VolumeId");
-                    writer.Write(updateVolumeRequest.VolumeId);
-                }
-                if (updateVolumeRequest != null && updateVolumeRequest.IsSetName()) 
-                {
-                    writer.WritePropertyName("Name");
-                    writer.Write(updateVolumeRequest.Name);
-                }
-                if (updateVolumeRequest != null && updateVolumeRequest.IsSetMountPoint()) 
+                if(publicRequest.IsSetMountPoint())
                 {
                     writer.WritePropertyName("MountPoint");
-                    writer.Write(updateVolumeRequest.MountPoint);
+                    writer.Write(publicRequest.MountPoint);
                 }
 
+                if(publicRequest.IsSetName())
+                {
+                    writer.WritePropertyName("Name");
+                    writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetVolumeId())
+                {
+                    writer.WritePropertyName("VolumeId");
+                    writer.Write(publicRequest.VolumeId);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

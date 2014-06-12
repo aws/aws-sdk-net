@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>DescribeApps</c> request.</para>
+    /// Contains the response to a <code>DescribeApps</code> request.
     /// </summary>
     public partial class DescribeAppsResult : AmazonWebServiceResponse
     {
-        
-        private List<App> apps = new List<App>();
+        private List<App> _apps = new List<App>();
 
 
         /// <summary>
-        /// An array of <c>App</c> objects that describe the specified apps.
-        ///  
+        /// Gets and sets the property Apps. 
+        /// <para>
+        /// An array of <code>App</code> objects that describe the specified apps. 
+        /// </para>
         /// </summary>
         public List<App> Apps
         {
-            get { return this.apps; }
-            set { this.apps = value; }
+            get { return this._apps; }
+            set { this._apps = value; }
         }
 
         // Check to see if Apps property is set
         internal bool IsSetApps()
         {
-            return this.apps.Count > 0;
+            return this._apps != null && this._apps.Count > 0; 
         }
+
     }
 }

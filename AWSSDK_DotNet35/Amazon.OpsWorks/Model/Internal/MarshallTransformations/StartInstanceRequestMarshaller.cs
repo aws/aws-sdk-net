@@ -29,44 +29,40 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Start Instance Request Marshaller
+    /// StartInstance Request Marshaller
     /// </summary>       
-    internal class StartInstanceRequestMarshaller : IMarshaller<IRequest, StartInstanceRequest> 
+    public class StartInstanceRequestMarshaller : IMarshaller<IRequest, StartInstanceRequest> 
     {
-        
-
-        public IRequest Marshall(StartInstanceRequest startInstanceRequest) 
+        public IRequest Marshall(StartInstanceRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(startInstanceRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.StartInstance";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (startInstanceRequest != null && startInstanceRequest.IsSetInstanceId()) 
+                if(publicRequest.IsSetInstanceId())
                 {
                     writer.WritePropertyName("InstanceId");
-                    writer.Write(startInstanceRequest.InstanceId);
+                    writer.Write(publicRequest.InstanceId);
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

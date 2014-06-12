@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>DescribeMyUserProfile</c> request.</para>
+    /// Contains the response to a <code>DescribeMyUserProfile</code> request.
     /// </summary>
     public partial class DescribeMyUserProfileResult : AmazonWebServiceResponse
     {
-        
-        private SelfUserProfile userProfile;
+        private SelfUserProfile _userProfile;
 
 
         /// <summary>
-        /// A <c>UserProfile</c> object that describes the user's SSH information.
-        ///  
+        /// Gets and sets the property UserProfile. 
+        /// <para>
+        /// A <code>UserProfile</code> object that describes the user's SSH information.
+        /// </para>
         /// </summary>
         public SelfUserProfile UserProfile
         {
-            get { return this.userProfile; }
-            set { this.userProfile = value; }
+            get { return this._userProfile; }
+            set { this._userProfile = value; }
         }
 
         // Check to see if UserProfile property is set
         internal bool IsSetUserProfile()
         {
-            return this.userProfile != null;
+            return this._userProfile != null;
         }
+
     }
 }

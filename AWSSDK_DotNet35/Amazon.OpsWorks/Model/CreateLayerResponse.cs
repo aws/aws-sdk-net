@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the  CreateLayer response and response metadata.
+    /// Configuration for accessing Amazon CreateLayer service
     /// </summary>
     public partial class CreateLayerResponse : CreateLayerResult
     {
         /// <summary>
         /// Gets and sets the CreateLayerResult property.
-        /// Contains the response to a CreateLayer request.
+        /// Represents the output of a CreateLayer operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateLayerResult class are now available on the CreateLayerResponse class. You should use the properties on CreateLayerResponse instead of accessing them through CreateLayerResult.")]
         public CreateLayerResult CreateLayerResult
@@ -40,4 +36,3 @@ namespace Amazon.OpsWorks.Model
         }
     }
 }
-    

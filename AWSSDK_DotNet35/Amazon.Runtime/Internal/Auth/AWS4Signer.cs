@@ -800,6 +800,53 @@ namespace Amazon.Runtime.Internal.Auth
                                                  string awsAccessKeyId,
                                                  string awsSecretAccessKey)
         {
+            return SignRequest(request, clientConfig, metrics, awsAccessKeyId, awsSecretAccessKey, "s3", null);
+        }
+
+        /// <summary>
+        /// Calculates the AWS4 signature for a presigned url.
+        /// </summary>
+        /// <param name="request">
+        /// The request to compute the signature for. Additional headers mandated by the AWS4 protocol 
+        /// ('host' and 'x-amz-date') will be added to the request before signing. If the Expires parameter
+        /// is present, it is renamed to 'X-Amz-Expires' before signing.
+        /// </param>
+        /// <param name="clientConfig">
+        /// Adding supporting data for the service call required by the signer (notably authentication
+        /// region, endpoint and service name).
+        /// </param>
+        /// <param name="metrics">
+        /// Metrics for the request
+        /// </param>
+        /// <param name="awsAccessKeyId">
+        /// The AWS public key for the account making the service call.
+        /// </param>
+        /// <param name="awsSecretAccessKey">
+        /// The AWS secret key for the account making the call, in clear text
+        /// </param>
+        /// <param name="service">
+        /// The service to sign for
+        /// </param>
+        /// <param name="overrideSigningRegion">
+        /// The region to sign to, if null then the region the client is configured for will be used.
+        /// </param>
+        /// <exception cref="Amazon.Runtime.SignatureException">
+        /// If any problems are encountered while signing the request.
+        /// </exception>
+        /// <remarks>
+        /// Parameters passed as part of the resource path should be uri-encoded prior to
+        /// entry to the signer. Parameters passed in the request.Parameters collection should
+        /// be not be encoded; encoding will be done for these parameters as part of the 
+        /// construction of the canonical request.
+        /// </remarks>
+        public static AWS4SigningResult SignRequest(IRequest request,
+                                                 ClientConfig clientConfig,
+                                                 RequestMetrics metrics,
+                                                 string awsAccessKeyId,
+                                                 string awsSecretAccessKey,
+                                                 string service,
+                                                 string overrideSigningRegion)
+        {
             // clean up any prior signature in the headers if resigning
             request.Headers.Remove(AuthorizationHeader);
             if (!request.Headers.ContainsKey(HostHeader))
@@ -811,8 +858,7 @@ namespace Amazon.Runtime.Internal.Auth
             }
 
             var signedAt = DateTime.UtcNow;
-            const string service = "s3";
-            var region = DetermineSigningRegion(clientConfig, service);
+            var region = overrideSigningRegion == null ? DetermineSigningRegion(clientConfig, service) : overrideSigningRegion;
 
             // remove any hash supplied in headers in favor of the 'unsigned-payload' expected by AWS4
             if (request.Headers.ContainsKey(XAmzContentSha256))
@@ -843,7 +889,7 @@ namespace Amazon.Runtime.Internal.Auth
                                                        request.HttpMethod,
                                                        sortedHeaders,
                                                        canonicalQueryParams,
-                                                       UnsignedPayload);
+                                                       service == "s3" ? UnsignedPayload : EmptyBodySha256);
             if (metrics != null)
                 metrics.AddProperty(Metric.CanonicalRequest, canonicalRequest);
 

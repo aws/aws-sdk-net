@@ -29,44 +29,40 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Reboot Instance Request Marshaller
+    /// RebootInstance Request Marshaller
     /// </summary>       
-    internal class RebootInstanceRequestMarshaller : IMarshaller<IRequest, RebootInstanceRequest> 
+    public class RebootInstanceRequestMarshaller : IMarshaller<IRequest, RebootInstanceRequest> 
     {
-        
-
-        public IRequest Marshall(RebootInstanceRequest rebootInstanceRequest) 
+        public IRequest Marshall(RebootInstanceRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(rebootInstanceRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.RebootInstance";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (rebootInstanceRequest != null && rebootInstanceRequest.IsSetInstanceId()) 
+                if(publicRequest.IsSetInstanceId())
                 {
                     writer.WritePropertyName("InstanceId");
-                    writer.Write(rebootInstanceRequest.InstanceId);
+                    writer.Write(publicRequest.InstanceId);
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

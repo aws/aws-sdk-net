@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// Returns information about the SwapEnvironmentCNAMEs response metadata.
-    /// The SwapEnvironmentCNAMEs operation has a void result type.
+    /// Configuration for accessing Amazon SwapEnvironmentCNAMEs service
     /// </summary>
-    public partial class SwapEnvironmentCNAMEsResponse : AmazonWebServiceResponse
+    public partial class SwapEnvironmentCNAMEsResponse : SwapEnvironmentCNAMEsResult
     {
+        /// <summary>
+        /// Gets and sets the SwapEnvironmentCNAMEsResult property.
+        /// Represents the output of a SwapEnvironmentCNAMEs operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the SwapEnvironmentCNAMEsResult class are now available on the SwapEnvironmentCNAMEsResponse class. You should use the properties on SwapEnvironmentCNAMEsResponse instead of accessing them through SwapEnvironmentCNAMEsResult.")]
+        public SwapEnvironmentCNAMEsResult SwapEnvironmentCNAMEsResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

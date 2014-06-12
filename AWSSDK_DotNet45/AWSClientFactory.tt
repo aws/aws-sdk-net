@@ -30,7 +30,7 @@ using System;
 using Amazon.Runtime;
 
 <#
-foreach(var interfaceName in supportedServicesInterfaces)
+foreach(var interfaceName in supportedFactoryInterfaces)
 {
 	if(interfaceName.Equals("Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"))
 	  continue;
@@ -55,7 +55,7 @@ namespace Amazon
     public static class AWSClientFactory
     {
 <#
-foreach(var interfaceFullName in supportedServicesInterfaces)
+foreach(var interfaceFullName in supportedFactoryInterfaces)
 {
 	if(interfaceFullName.Equals("Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"))
 	  continue;

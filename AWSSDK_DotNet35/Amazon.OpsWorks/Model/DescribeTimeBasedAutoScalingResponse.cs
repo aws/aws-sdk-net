@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeTimeBasedAutoScaling response and response metadata.
+    /// Configuration for accessing Amazon DescribeTimeBasedAutoScaling service
     /// </summary>
     public partial class DescribeTimeBasedAutoScalingResponse : DescribeTimeBasedAutoScalingResult
     {
         /// <summary>
         /// Gets and sets the DescribeTimeBasedAutoScalingResult property.
-        /// Contains the response to a DescribeTimeBasedAutoScaling request.
+        /// Represents the output of a DescribeTimeBasedAutoScaling operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeTimeBasedAutoScalingResult class are now available on the DescribeTimeBasedAutoScalingResponse class. You should use the properties on DescribeTimeBasedAutoScalingResponse instead of accessing them through DescribeTimeBasedAutoScalingResult.")]
         public DescribeTimeBasedAutoScalingResult DescribeTimeBasedAutoScalingResult
@@ -40,4 +36,3 @@ namespace Amazon.OpsWorks.Model
         }
     }
 }
-    

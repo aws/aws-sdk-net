@@ -17,34 +17,39 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// <para>A document that contains additional information about the authorization status of a request from an encoded message that is returned
-    /// in response to an AWS request. </para>
+    /// A document that contains additional information about the authorization status of
+    /// a request      from an encoded message that is returned in response to an AWS request.
     /// </summary>
     public partial class DecodeAuthorizationMessageResult : AmazonWebServiceResponse
     {
-        
-        private string decodedMessage;
+        private string _decodedMessage;
 
 
         /// <summary>
-        /// An XML document that contains the decoded message. For more information, see <c>DecodeAuthorizationMessage</c>.
-        ///  
+        /// Gets and sets the property DecodedMessage. 
+        /// <para>
+        /// An XML document that contains the decoded message. For more information, see     
+        ///   <code>DecodeAuthorizationMessage</code>. 
+        /// </para>
         /// </summary>
         public string DecodedMessage
         {
-            get { return this.decodedMessage; }
-            set { this.decodedMessage = value; }
+            get { return this._decodedMessage; }
+            set { this._decodedMessage = value; }
         }
 
         // Check to see if DecodedMessage property is set
         internal bool IsSetDecodedMessage()
         {
-            return this.decodedMessage != null;
+            return this._decodedMessage != null;
         }
+
     }
 }

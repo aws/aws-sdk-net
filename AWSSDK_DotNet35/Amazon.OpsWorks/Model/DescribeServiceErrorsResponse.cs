@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeServiceErrors response and response metadata.
+    /// Configuration for accessing Amazon DescribeServiceErrors service
     /// </summary>
     public partial class DescribeServiceErrorsResponse : DescribeServiceErrorsResult
     {
         /// <summary>
         /// Gets and sets the DescribeServiceErrorsResult property.
-        /// Contains the response to a DescribeServiceErrors request.
+        /// Represents the output of a DescribeServiceErrors operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeServiceErrorsResult class are now available on the DescribeServiceErrorsResponse class. You should use the properties on DescribeServiceErrorsResponse instead of accessing them through DescribeServiceErrorsResult.")]
         public DescribeServiceErrorsResult DescribeServiceErrorsResult
@@ -40,4 +36,3 @@ namespace Amazon.OpsWorks.Model
         }
     }
 }
-    

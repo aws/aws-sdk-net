@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,69 +12,75 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticBeanstalk.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   S3Location Unmarshaller
-     /// </summary>
-    internal class S3LocationUnmarshaller : IUnmarshaller<S3Location, XmlUnmarshallerContext>, IUnmarshaller<S3Location, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for S3Location Object
+    /// </summary>  
+    public class S3LocationUnmarshaller : IUnmarshaller<S3Location, XmlUnmarshallerContext>, IUnmarshaller<S3Location, JsonUnmarshallerContext>
     {
-        public S3Location Unmarshall(XmlUnmarshallerContext context) 
+        public S3Location Unmarshall(XmlUnmarshallerContext context)
         {
-            S3Location s3Location = new S3Location();
+            S3Location unmarshalledObject = new S3Location();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("S3Bucket", targetDepth))
                     {
-                        s3Location.S3Bucket = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.S3Bucket = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("S3Key", targetDepth))
                     {
-                        s3Location.S3Key = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.S3Key = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return s3Location;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return s3Location;
+            return unmarshalledObject;
         }
 
-        public S3Location Unmarshall(JsonUnmarshallerContext context) 
+        public S3Location Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static S3LocationUnmarshaller instance;
 
-        public static S3LocationUnmarshaller GetInstance() 
+        private static S3LocationUnmarshaller _instance = new S3LocationUnmarshaller();        
+
+        public static S3LocationUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new S3LocationUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

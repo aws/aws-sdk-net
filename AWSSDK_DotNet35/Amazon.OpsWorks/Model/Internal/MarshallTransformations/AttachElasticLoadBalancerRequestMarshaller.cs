@@ -29,49 +29,46 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Attach Elastic Load Balancer Request Marshaller
+    /// AttachElasticLoadBalancer Request Marshaller
     /// </summary>       
-    internal class AttachElasticLoadBalancerRequestMarshaller : IMarshaller<IRequest, AttachElasticLoadBalancerRequest> 
+    public class AttachElasticLoadBalancerRequestMarshaller : IMarshaller<IRequest, AttachElasticLoadBalancerRequest> 
     {
-        
-
-        public IRequest Marshall(AttachElasticLoadBalancerRequest attachElasticLoadBalancerRequest) 
+        public IRequest Marshall(AttachElasticLoadBalancerRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(attachElasticLoadBalancerRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.AttachElasticLoadBalancer";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (attachElasticLoadBalancerRequest != null && attachElasticLoadBalancerRequest.IsSetElasticLoadBalancerName()) 
+                if(publicRequest.IsSetElasticLoadBalancerName())
                 {
                     writer.WritePropertyName("ElasticLoadBalancerName");
-                    writer.Write(attachElasticLoadBalancerRequest.ElasticLoadBalancerName);
-                }
-                if (attachElasticLoadBalancerRequest != null && attachElasticLoadBalancerRequest.IsSetLayerId()) 
-                {
-                    writer.WritePropertyName("LayerId");
-                    writer.Write(attachElasticLoadBalancerRequest.LayerId);
+                    writer.Write(publicRequest.ElasticLoadBalancerName);
                 }
 
+                if(publicRequest.IsSetLayerId())
+                {
+                    writer.WritePropertyName("LayerId");
+                    writer.Write(publicRequest.LayerId);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

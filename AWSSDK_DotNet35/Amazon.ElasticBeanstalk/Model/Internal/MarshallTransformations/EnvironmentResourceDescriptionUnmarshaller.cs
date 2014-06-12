@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,99 +12,111 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticBeanstalk.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   EnvironmentResourceDescription Unmarshaller
-     /// </summary>
-    internal class EnvironmentResourceDescriptionUnmarshaller : IUnmarshaller<EnvironmentResourceDescription, XmlUnmarshallerContext>, IUnmarshaller<EnvironmentResourceDescription, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for EnvironmentResourceDescription Object
+    /// </summary>  
+    public class EnvironmentResourceDescriptionUnmarshaller : IUnmarshaller<EnvironmentResourceDescription, XmlUnmarshallerContext>, IUnmarshaller<EnvironmentResourceDescription, JsonUnmarshallerContext>
     {
-        public EnvironmentResourceDescription Unmarshall(XmlUnmarshallerContext context) 
+        public EnvironmentResourceDescription Unmarshall(XmlUnmarshallerContext context)
         {
-            EnvironmentResourceDescription environmentResourceDescription = new EnvironmentResourceDescription();
+            EnvironmentResourceDescription unmarshalledObject = new EnvironmentResourceDescription();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("EnvironmentName", targetDepth))
-                    {
-                        environmentResourceDescription.EnvironmentName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("AutoScalingGroups/member", targetDepth))
                     {
-                        environmentResourceDescription.AutoScalingGroups.Add(AutoScalingGroupUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = AutoScalingGroupUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AutoScalingGroups.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("EnvironmentName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EnvironmentName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Instances/member", targetDepth))
                     {
-                        environmentResourceDescription.Instances.Add(InstanceUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = InstanceUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Instances.Add(item);
                         continue;
                     }
                     if (context.TestExpression("LaunchConfigurations/member", targetDepth))
                     {
-                        environmentResourceDescription.LaunchConfigurations.Add(LaunchConfigurationUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = LaunchConfigurationUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.LaunchConfigurations.Add(item);
                         continue;
                     }
                     if (context.TestExpression("LoadBalancers/member", targetDepth))
                     {
-                        environmentResourceDescription.LoadBalancers.Add(LoadBalancerUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Triggers/member", targetDepth))
-                    {
-                        environmentResourceDescription.Triggers.Add(TriggerUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = LoadBalancerUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.LoadBalancers.Add(item);
                         continue;
                     }
                     if (context.TestExpression("Queues/member", targetDepth))
                     {
-                        environmentResourceDescription.Queues.Add(QueueUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = QueueUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Queues.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("Triggers/member", targetDepth))
+                    {
+                        var unmarshaller = TriggerUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Triggers.Add(item);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return environmentResourceDescription;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return environmentResourceDescription;
+            return unmarshalledObject;
         }
 
-        public EnvironmentResourceDescription Unmarshall(JsonUnmarshallerContext context) 
+        public EnvironmentResourceDescription Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static EnvironmentResourceDescriptionUnmarshaller instance;
 
-        public static EnvironmentResourceDescriptionUnmarshaller GetInstance() 
+        private static EnvironmentResourceDescriptionUnmarshaller _instance = new EnvironmentResourceDescriptionUnmarshaller();        
+
+        public static EnvironmentResourceDescriptionUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new EnvironmentResourceDescriptionUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

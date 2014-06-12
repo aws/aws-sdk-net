@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the response to a <c>CreateApp</c> request.</para>
+    /// Contains the response to a <code>CreateApp</code> request.
     /// </summary>
     public partial class CreateAppResult : AmazonWebServiceResponse
     {
-        
-        private string appId;
+        private string _appId;
 
 
         /// <summary>
+        /// Gets and sets the property AppId. 
+        /// <para>
         /// The app ID.
-        ///  
+        /// </para>
         /// </summary>
         public string AppId
         {
-            get { return this.appId; }
-            set { this.appId = value; }
+            get { return this._appId; }
+            set { this._appId = value; }
         }
 
         // Check to see if AppId property is set
         internal bool IsSetAppId()
         {
-            return this.appId != null;
+            return this._appId != null;
         }
+
     }
 }

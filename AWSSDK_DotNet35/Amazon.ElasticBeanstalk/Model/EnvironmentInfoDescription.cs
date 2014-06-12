@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,90 +18,96 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para>The information retrieved from the Amazon EC2 instances.</para>
+    /// The information retrieved from the Amazon EC2 instances.
     /// </summary>
-    public class EnvironmentInfoDescription
+    public partial class EnvironmentInfoDescription
     {
-        
-        private EnvironmentInfoType infoType;
-        private string ec2InstanceId;
-        private DateTime? sampleTimestamp;
-        private string message;
+        private string _ec2InstanceId;
+        private EnvironmentInfoType _infoType;
+        private string _message;
+        private DateTime? _sampleTimestamp;
+
 
         /// <summary>
-        /// The type of information retrieved.
-        ///  
+        /// Gets and sets the property Ec2InstanceId. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>tail</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public EnvironmentInfoType InfoType
-        {
-            get { return this.infoType; }
-            set { this.infoType = value; }
-        }
-
-        // Check to see if InfoType property is set
-        internal bool IsSetInfoType()
-        {
-            return this.infoType != null;
-        }
-
-        /// <summary>
         /// The Amazon EC2 Instance ID for this information.
-        ///  
+        /// </para>
         /// </summary>
         public string Ec2InstanceId
         {
-            get { return this.ec2InstanceId; }
-            set { this.ec2InstanceId = value; }
+            get { return this._ec2InstanceId; }
+            set { this._ec2InstanceId = value; }
         }
 
         // Check to see if Ec2InstanceId property is set
         internal bool IsSetEc2InstanceId()
         {
-            return this.ec2InstanceId != null;
+            return this._ec2InstanceId != null;
         }
 
+
         /// <summary>
-        /// The time stamp when this information was retrieved.
-        ///  
+        /// Gets and sets the property InfoType. 
+        /// <para>
+        /// The type of information retrieved.
+        /// </para>
         /// </summary>
-        public DateTime SampleTimestamp
+        public EnvironmentInfoType InfoType
         {
-            get { return this.sampleTimestamp ?? default(DateTime); }
-            set { this.sampleTimestamp = value; }
+            get { return this._infoType; }
+            set { this._infoType = value; }
         }
 
-        // Check to see if SampleTimestamp property is set
-        internal bool IsSetSampleTimestamp()
+        // Check to see if InfoType property is set
+        internal bool IsSetInfoType()
         {
-            return this.sampleTimestamp.HasValue;
+            return this._infoType != null;
         }
+
 
         /// <summary>
+        /// Gets and sets the property Message. 
+        /// <para>
         /// The retrieved information.
-        ///  
+        /// </para>
         /// </summary>
         public string Message
         {
-            get { return this.message; }
-            set { this.message = value; }
+            get { return this._message; }
+            set { this._message = value; }
         }
 
         // Check to see if Message property is set
         internal bool IsSetMessage()
         {
-            return this.message != null;
+            return this._message != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property SampleTimestamp. 
+        /// <para>
+        /// The time stamp when this information was retrieved.
+        /// </para>
+        /// </summary>
+        public DateTime SampleTimestamp
+        {
+            get { return this._sampleTimestamp.GetValueOrDefault(); }
+            set { this._sampleTimestamp = value; }
+        }
+
+        // Check to see if SampleTimestamp property is set
+        internal bool IsSetSampleTimestamp()
+        {
+            return this._sampleTimestamp.HasValue; 
+        }
+
     }
 }

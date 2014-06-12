@@ -344,7 +344,7 @@ namespace Amazon.Glacier.Transfer
         #region Initiate Archive Retieval
         /// <summary>
         /// This method initiates an archive retieval job for the specified archive and returns back the job id.
-        /// Once the is complete
+        /// Once the job is complete
         /// </summary>
         /// <param name="vaultName">The name of the vault that contains the archive to initiate the job for.</param>
         /// <param name="archiveId">The archive id that the download job will retrieve.</param>
@@ -356,7 +356,7 @@ namespace Amazon.Glacier.Transfer
 
         /// <summary>
         /// This method initiates an archive retieval job for the specified archive and returns back the job id.
-        /// Once the is complete
+        /// Once the job is complete
         /// </summary>
         /// <param name="vaultName">The name of the vault that contains the archive to initiate the job for.</param>
         /// <param name="archiveId">The archive id that the download job will retrieve.</param>

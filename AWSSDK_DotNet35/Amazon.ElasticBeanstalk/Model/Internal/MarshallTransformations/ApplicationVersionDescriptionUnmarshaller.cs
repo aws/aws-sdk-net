@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,93 +12,99 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticBeanstalk.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ApplicationVersionDescription Unmarshaller
-     /// </summary>
-    internal class ApplicationVersionDescriptionUnmarshaller : IUnmarshaller<ApplicationVersionDescription, XmlUnmarshallerContext>, IUnmarshaller<ApplicationVersionDescription, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ApplicationVersionDescription Object
+    /// </summary>  
+    public class ApplicationVersionDescriptionUnmarshaller : IUnmarshaller<ApplicationVersionDescription, XmlUnmarshallerContext>, IUnmarshaller<ApplicationVersionDescription, JsonUnmarshallerContext>
     {
-        public ApplicationVersionDescription Unmarshall(XmlUnmarshallerContext context) 
+        public ApplicationVersionDescription Unmarshall(XmlUnmarshallerContext context)
         {
-            ApplicationVersionDescription applicationVersionDescription = new ApplicationVersionDescription();
+            ApplicationVersionDescription unmarshalledObject = new ApplicationVersionDescription();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("ApplicationName", targetDepth))
                     {
-                        applicationVersionDescription.ApplicationName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Description", targetDepth))
-                    {
-                        applicationVersionDescription.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("VersionLabel", targetDepth))
-                    {
-                        applicationVersionDescription.VersionLabel = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("SourceBundle", targetDepth))
-                    {
-                        applicationVersionDescription.SourceBundle = S3LocationUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ApplicationName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DateCreated", targetDepth))
                     {
-                        applicationVersionDescription.DateCreated = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.DateCreated = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DateUpdated", targetDepth))
                     {
-                        applicationVersionDescription.DateUpdated = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.DateUpdated = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Description", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SourceBundle", targetDepth))
+                    {
+                        var unmarshaller = S3LocationUnmarshaller.Instance;
+                        unmarshalledObject.SourceBundle = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("VersionLabel", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VersionLabel = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return applicationVersionDescription;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return applicationVersionDescription;
+            return unmarshalledObject;
         }
 
-        public ApplicationVersionDescription Unmarshall(JsonUnmarshallerContext context) 
+        public ApplicationVersionDescription Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static ApplicationVersionDescriptionUnmarshaller instance;
 
-        public static ApplicationVersionDescriptionUnmarshaller GetInstance() 
+        private static ApplicationVersionDescriptionUnmarshaller _instance = new ApplicationVersionDescriptionUnmarshaller();        
+
+        public static ApplicationVersionDescriptionUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new ApplicationVersionDescriptionUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

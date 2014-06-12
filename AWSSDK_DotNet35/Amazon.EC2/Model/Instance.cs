@@ -54,7 +54,6 @@ namespace Amazon.EC2.Model
         private VirtualizationType virtualizationType;
         private InstanceLifecycleType instanceLifecycle;
         private string spotInstanceRequestId;
-        private InstanceLicense license;
         private string clientToken;
         private List<Tag> tags = new List<Tag>();
         private List<GroupIdentifier> securityGroups = new List<GroupIdentifier>();
@@ -567,22 +566,6 @@ namespace Amazon.EC2.Model
         internal bool IsSetSpotInstanceRequestId()
         {
             return this.spotInstanceRequestId != null;
-        }
-
-        /// <summary>
-        /// 
-        ///  
-        /// </summary>
-        public InstanceLicense License
-        {
-            get { return this.license; }
-            set { this.license = value; }
-        }
-
-        // Check to see if License property is set
-        internal bool IsSetLicense()
-        {
-            return this.license != null;
         }
 
         /// <summary>

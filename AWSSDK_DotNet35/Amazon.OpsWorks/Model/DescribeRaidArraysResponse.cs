@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeRaidArrays response and response metadata.
+    /// Configuration for accessing Amazon DescribeRaidArrays service
     /// </summary>
     public partial class DescribeRaidArraysResponse : DescribeRaidArraysResult
     {
         /// <summary>
         /// Gets and sets the DescribeRaidArraysResult property.
-        /// Contains the response to a DescribeRaidArrays request.
+        /// Represents the output of a DescribeRaidArrays operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeRaidArraysResult class are now available on the DescribeRaidArraysResponse class. You should use the properties on DescribeRaidArraysResponse instead of accessing them through DescribeRaidArraysResult.")]
         public DescribeRaidArraysResult DescribeRaidArraysResult
@@ -40,4 +36,3 @@ namespace Amazon.OpsWorks.Model
         }
     }
 }
-    

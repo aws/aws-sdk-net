@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeElasticIps response and response metadata.
+    /// Configuration for accessing Amazon DescribeElasticIps service
     /// </summary>
     public partial class DescribeElasticIpsResponse : DescribeElasticIpsResult
     {
         /// <summary>
         /// Gets and sets the DescribeElasticIpsResult property.
-        /// Contains the response to a DescribeElasticIps request.
+        /// Represents the output of a DescribeElasticIps operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeElasticIpsResult class are now available on the DescribeElasticIpsResponse class. You should use the properties on DescribeElasticIpsResponse instead of accessing them through DescribeElasticIpsResult.")]
         public DescribeElasticIpsResult DescribeElasticIpsResult
@@ -40,4 +36,3 @@ namespace Amazon.OpsWorks.Model
         }
     }
 }
-    

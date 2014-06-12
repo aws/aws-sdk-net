@@ -25,176 +25,219 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateApp operation.
-    /// <para>Updates a specified app.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Deploy or Manage
-    /// permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+    /// Updates a specified app.
+    /// 
+    ///     
+    /// <para>
+    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Deploy or
+    /// Manage permissions level for the stack,      or an attached policy that explicitly
+    /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// User Permissions</a>.
+    /// </para>
     /// </summary>
     public partial class UpdateAppRequest : AmazonOpsWorksRequest
     {
-        private string appId;
-        private string name;
-        private string description;
-        private AppType type;
-        private Source appSource;
-        private List<string> domains = new List<string>();
-        private bool? enableSsl;
-        private SslConfiguration sslConfiguration;
-        private Dictionary<string,string> attributes = new Dictionary<string,string>();
+        private string _appId;
+        private Source _appSource;
+        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private List<DataSource> _dataSources = new List<DataSource>();
+        private string _description;
+        private List<string> _domains = new List<string>();
+        private bool? _enableSsl;
+        private string _name;
+        private SslConfiguration _sslConfiguration;
+        private AppType _type;
 
 
         /// <summary>
+        /// Gets and sets the property AppId. 
+        /// <para>
         /// The app ID.
-        ///  
+        /// </para>
         /// </summary>
         public string AppId
         {
-            get { return this.appId; }
-            set { this.appId = value; }
+            get { return this._appId; }
+            set { this._appId = value; }
         }
 
         // Check to see if AppId property is set
         internal bool IsSetAppId()
         {
-            return this.appId != null;
+            return this._appId != null;
         }
+
 
         /// <summary>
-        /// The app name.
-        ///  
-        /// </summary>
-        public string Name
-        {
-            get { return this.name; }
-            set { this.name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this.name != null;
-        }
-
-        /// <summary>
-        /// A description of the app.
-        ///  
-        /// </summary>
-        public string Description
-        {
-            get { return this.description; }
-            set { this.description = value; }
-        }
-
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
-        {
-            return this.description != null;
-        }
-
-        /// <summary>
-        /// The app type.
-        ///  
+        /// Gets and sets the property AppSource. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>rails, php, nodejs, static, other</description>
-        ///     </item>
-        /// </list>
+        /// A <code>Source</code> object that specifies the app repository.
         /// </para>
-        /// </summary>
-        public AppType Type
-        {
-            get { return this.type; }
-            set { this.type = value; }
-        }
-
-        // Check to see if Type property is set
-        internal bool IsSetType()
-        {
-            return this.type != null;
-        }
-
-        /// <summary>
-        /// A <c>Source</c> object that specifies the app repository.
-        ///  
         /// </summary>
         public Source AppSource
         {
-            get { return this.appSource; }
-            set { this.appSource = value; }
+            get { return this._appSource; }
+            set { this._appSource = value; }
         }
 
         // Check to see if AppSource property is set
         internal bool IsSetAppSource()
         {
-            return this.appSource != null;
+            return this._appSource != null;
         }
+
 
         /// <summary>
-        /// The app's virtual host settings, with multiple domains separated by commas. For example: <c>'www.example.com, example.com'</c>
-        ///  
-        /// </summary>
-        public List<string> Domains
-        {
-            get { return this.domains; }
-            set { this.domains = value; }
-        }
-
-        // Check to see if Domains property is set
-        internal bool IsSetDomains()
-        {
-            return this.domains.Count > 0;
-        }
-
-        /// <summary>
-        /// Whether SSL is enabled for the app.
-        ///  
-        /// </summary>
-        public bool EnableSsl
-        {
-            get { return this.enableSsl ?? default(bool); }
-            set { this.enableSsl = value; }
-        }
-
-        // Check to see if EnableSsl property is set
-        internal bool IsSetEnableSsl()
-        {
-            return this.enableSsl.HasValue;
-        }
-
-        /// <summary>
-        /// An <c>SslConfiguration</c> object with the SSL configuration.
-        ///  
-        /// </summary>
-        public SslConfiguration SslConfiguration
-        {
-            get { return this.sslConfiguration; }
-            set { this.sslConfiguration = value; }
-        }
-
-        // Check to see if SslConfiguration property is set
-        internal bool IsSetSslConfiguration()
-        {
-            return this.sslConfiguration != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Attributes. 
+        /// <para>
         /// One or more user-defined key/value pairs to be added to the stack attributes.
-        ///  
+        /// </para>
         /// </summary>
-        public Dictionary<string,string> Attributes
+        public Dictionary<string, string> Attributes
         {
-            get { return this.attributes; }
-            set { this.attributes = value; }
+            get { return this._attributes; }
+            set { this._attributes = value; }
         }
 
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this.attributes != null;
+            return this._attributes != null && this._attributes.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property DataSources. 
+        /// <para>
+        /// The app's data sources.
+        /// </para>
+        /// </summary>
+        public List<DataSource> DataSources
+        {
+            get { return this._dataSources; }
+            set { this._dataSources = value; }
+        }
+
+        // Check to see if DataSources property is set
+        internal bool IsSetDataSources()
+        {
+            return this._dataSources != null && this._dataSources.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description of the app.
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Domains. 
+        /// <para>
+        /// The app's virtual host settings, with multiple domains separated by commas. For example:
+        /// <code>'www.example.com, example.com'</code>
+        /// </para>
+        /// </summary>
+        public List<string> Domains
+        {
+            get { return this._domains; }
+            set { this._domains = value; }
+        }
+
+        // Check to see if Domains property is set
+        internal bool IsSetDomains()
+        {
+            return this._domains != null && this._domains.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property EnableSsl. 
+        /// <para>
+        /// Whether SSL is enabled for the app.
+        /// </para>
+        /// </summary>
+        public bool EnableSsl
+        {
+            get { return this._enableSsl.GetValueOrDefault(); }
+            set { this._enableSsl = value; }
+        }
+
+        // Check to see if EnableSsl property is set
+        internal bool IsSetEnableSsl()
+        {
+            return this._enableSsl.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The app name.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SslConfiguration. 
+        /// <para>
+        /// An <code>SslConfiguration</code> object with the SSL configuration.
+        /// </para>
+        /// </summary>
+        public SslConfiguration SslConfiguration
+        {
+            get { return this._sslConfiguration; }
+            set { this._sslConfiguration = value; }
+        }
+
+        // Check to see if SslConfiguration property is set
+        internal bool IsSetSslConfiguration()
+        {
+            return this._sslConfiguration != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The app type.
+        /// </para>
+        /// </summary>
+        public AppType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }
 }
-    

@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(allocateAddressRequest, "AmazonEC2");
             request.Parameters.Add("Action", "AllocateAddress");
-            request.Parameters.Add("Version", "2014-02-01");
+            request.Parameters.Add("Version", "2014-05-01");
             if (allocateAddressRequest != null && allocateAddressRequest.IsSetDomain())
             {
                 request.Parameters.Add("Domain", StringUtils.FromString(allocateAddressRequest.Domain));

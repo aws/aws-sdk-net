@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,66 +14,66 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticBeanstalk.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Environments Request Marshaller
+    /// DescribeEnvironments Request Marshaller
     /// </summary>       
     public class DescribeEnvironmentsRequestMarshaller : IMarshaller<IRequest, DescribeEnvironmentsRequest>
     {
-        public IRequest Marshall(DescribeEnvironmentsRequest describeEnvironmentsRequest)
+        public IRequest Marshall(DescribeEnvironmentsRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describeEnvironmentsRequest, "AmazonElasticBeanstalk");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticBeanstalk");
             request.Parameters.Add("Action", "DescribeEnvironments");
             request.Parameters.Add("Version", "2010-12-01");
-            if (describeEnvironmentsRequest != null && describeEnvironmentsRequest.IsSetApplicationName())
-            {
-                request.Parameters.Add("ApplicationName", StringUtils.FromString(describeEnvironmentsRequest.ApplicationName));
-            }
-            if (describeEnvironmentsRequest != null && describeEnvironmentsRequest.IsSetVersionLabel())
-            {
-                request.Parameters.Add("VersionLabel", StringUtils.FromString(describeEnvironmentsRequest.VersionLabel));
-            }
-            if (describeEnvironmentsRequest != null)
-            {
-                List<string> environmentIdsList = describeEnvironmentsRequest.EnvironmentIds;
 
-                int environmentIdsListIndex = 1;
-                foreach (string environmentIdsListValue in environmentIdsList)
-                { 
-                    request.Parameters.Add("EnvironmentIds.member." + environmentIdsListIndex, StringUtils.FromString(environmentIdsListValue));
-                    environmentIdsListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetApplicationName())
+                {
+                    request.Parameters.Add("ApplicationName", StringUtils.FromString(publicRequest.ApplicationName));
+                }
+                if(publicRequest.IsSetEnvironmentIds())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.EnvironmentIds)
+                    {
+                        request.Parameters.Add("EnvironmentIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetEnvironmentNames())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.EnvironmentNames)
+                    {
+                        request.Parameters.Add("EnvironmentNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetIncludedDeletedBackTo())
+                {
+                    request.Parameters.Add("IncludedDeletedBackTo", StringUtils.FromDateTime(publicRequest.IncludedDeletedBackTo));
+                }
+                if(publicRequest.IsSetIncludeDeleted())
+                {
+                    request.Parameters.Add("IncludeDeleted", StringUtils.FromBool(publicRequest.IncludeDeleted));
+                }
+                if(publicRequest.IsSetVersionLabel())
+                {
+                    request.Parameters.Add("VersionLabel", StringUtils.FromString(publicRequest.VersionLabel));
                 }
             }
-            if (describeEnvironmentsRequest != null)
-            {
-                List<string> environmentNamesList = describeEnvironmentsRequest.EnvironmentNames;
-
-                int environmentNamesListIndex = 1;
-                foreach (string environmentNamesListValue in environmentNamesList)
-                { 
-                    request.Parameters.Add("EnvironmentNames.member." + environmentNamesListIndex, StringUtils.FromString(environmentNamesListValue));
-                    environmentNamesListIndex++;
-                }
-            }
-            if (describeEnvironmentsRequest != null && describeEnvironmentsRequest.IsSetIncludeDeleted())
-            {
-                request.Parameters.Add("IncludeDeleted", StringUtils.FromBool(describeEnvironmentsRequest.IncludeDeleted));
-            }
-            if (describeEnvironmentsRequest != null && describeEnvironmentsRequest.IsSetIncludedDeletedBackTo())
-            {
-                request.Parameters.Add("IncludedDeletedBackTo", StringUtils.FromDateTime(describeEnvironmentsRequest.IncludedDeletedBackTo));
-            }
-
             return request;
         }
     }

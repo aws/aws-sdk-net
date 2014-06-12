@@ -29,44 +29,40 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Start Stack Request Marshaller
+    /// StartStack Request Marshaller
     /// </summary>       
-    internal class StartStackRequestMarshaller : IMarshaller<IRequest, StartStackRequest> 
+    public class StartStackRequestMarshaller : IMarshaller<IRequest, StartStackRequest> 
     {
-        
-
-        public IRequest Marshall(StartStackRequest startStackRequest) 
+        public IRequest Marshall(StartStackRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(startStackRequest, "AmazonOpsWorks");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
             string target = "OpsWorks_20130218.StartStack";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (startStackRequest != null && startStackRequest.IsSetStackId()) 
+                if(publicRequest.IsSetStackId())
                 {
                     writer.WritePropertyName("StackId");
-                    writer.Write(startStackRequest.StackId);
+                    writer.Write(publicRequest.StackId);
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Returns information about the  CreateInstance response and response metadata.
+    /// Configuration for accessing Amazon CreateInstance service
     /// </summary>
     public partial class CreateInstanceResponse : CreateInstanceResult
     {
         /// <summary>
         /// Gets and sets the CreateInstanceResult property.
-        /// Contains the response to a CreateInstance request.
+        /// Represents the output of a CreateInstance operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateInstanceResult class are now available on the CreateInstanceResponse class. You should use the properties on CreateInstanceResponse instead of accessing them through CreateInstanceResult.")]
         public CreateInstanceResult CreateInstanceResult
@@ -40,4 +36,3 @@ namespace Amazon.OpsWorks.Model
         }
     }
 }
-    

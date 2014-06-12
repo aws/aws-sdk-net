@@ -87,6 +87,9 @@ namespace Amazon.Runtime
 
         protected static T FindValue<T>(string value) where T : ConstantClass
         {
+            if (value == null)
+                return null;
+
             if (!staticFields.ContainsKey(typeof(T)))
                 LoadFields(typeof (T));
 

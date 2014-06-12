@@ -18,48 +18,57 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Describes the configuration manager.</para>
+    /// Describes the configuration manager.
     /// </summary>
     public partial class StackConfigurationManager
     {
-        
-        private string name;
-        private string version;
+        private string _name;
+        private string _version;
 
 
         /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
         /// The name. This parameter must be set to "Chef".
-        ///  
+        /// </para>
         /// </summary>
         public string Name
         {
-            get { return this.name; }
-            set { this.name = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;
+            return this._name != null;
         }
 
+
         /// <summary>
-        /// The Chef version. This parameter must be set to 0.9, 11.4, or 11.10. The default value is 11.4.
-        ///  
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// The Chef version. This parameter must be set to 0.9, 11.4, or 11.10. The default value
+        /// is 11.4.
+        /// </para>
         /// </summary>
         public string Version
         {
-            get { return this.version; }
-            set { this.version = value; }
+            get { return this._version; }
+            set { this._version = value; }
         }
 
         // Check to see if Version property is set
         internal bool IsSetVersion()
         {
-            return this.version != null;
+            return this._version != null;
         }
+
     }
 }

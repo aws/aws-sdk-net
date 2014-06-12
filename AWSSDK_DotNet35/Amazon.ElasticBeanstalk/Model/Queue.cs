@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,48 +18,56 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para>Describes a queue.</para>
+    /// Describes a queue.
     /// </summary>
-    public class Queue
+    public partial class Queue
     {
-        
-        private string name;
-        private string uRL;
+        private string _name;
+        private string _uRL;
 
 
         /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
         /// The name of the queue.
-        ///  
+        /// </para>
         /// </summary>
         public string Name
         {
-            get { return this.name; }
-            set { this.name = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;
+            return this._name != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property URL. 
+        /// <para>
         /// The URL of the queue.
-        ///  
+        /// </para>
         /// </summary>
         public string URL
         {
-            get { return this.uRL; }
-            set { this.uRL = value; }
+            get { return this._uRL; }
+            set { this._uRL = value; }
         }
 
         // Check to see if URL property is set
         internal bool IsSetURL()
         {
-            return this.uRL != null;
+            return this._uRL != null;
         }
+
     }
 }
