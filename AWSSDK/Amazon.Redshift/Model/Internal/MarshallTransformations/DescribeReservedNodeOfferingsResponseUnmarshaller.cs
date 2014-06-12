@@ -13,28 +13,34 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for DescribeReservedNodeOfferings operation
-    /// </summary>
-    internal class DescribeReservedNodeOfferingsResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for DescribeReservedNodeOfferings operation
+    /// </summary>  
+    public class DescribeReservedNodeOfferingsResponseUnmarshaller : XmlResponseUnmarshaller
     {
-
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             DescribeReservedNodeOfferingsResponse response = new DescribeReservedNodeOfferingsResponse();
-            
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
             while (context.Read())
             {
-                if (context.IsStartElement)                
+                if (context.IsStartElement)
                 {
                     if(context.TestExpression("DescribeReservedNodeOfferingsResult", 2))
                     {
@@ -47,35 +53,30 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     }
                 }
             }
-                 
-                        
+
             return response;
         }
 
-        
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             if (errorResponse.Code != null && errorResponse.Code.Equals("ReservedNodeOfferingNotFound"))
             {
                 return new ReservedNodeOfferingNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
             return new AmazonRedshiftException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static DescribeReservedNodeOfferingsResponseUnmarshaller instance;
 
+        private static DescribeReservedNodeOfferingsResponseUnmarshaller instance;
         public static DescribeReservedNodeOfferingsResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
+            if (instance == null)
             {
-               instance = new DescribeReservedNodeOfferingsResponseUnmarshaller();
+                instance = new DescribeReservedNodeOfferingsResponseUnmarshaller();
             }
             return instance;
         }
-    
+
     }
 }
-    

@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class NumberOfNodesPerClusterLimitExceededException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal NumberOfNodesPerClusterLimitExceededException(string message) 
+        public NumberOfNodesPerClusterLimitExceededException(string message) 
             : base(message) {}
           
-        internal NumberOfNodesPerClusterLimitExceededException(string message, Exception innerException) 
+        public NumberOfNodesPerClusterLimitExceededException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal NumberOfNodesPerClusterLimitExceededException(Exception innerException) 
+        public NumberOfNodesPerClusterLimitExceededException(Exception innerException) 
             : base(innerException) {}
             
-        internal NumberOfNodesPerClusterLimitExceededException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public NumberOfNodesPerClusterLimitExceededException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal NumberOfNodesPerClusterLimitExceededException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public NumberOfNodesPerClusterLimitExceededException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

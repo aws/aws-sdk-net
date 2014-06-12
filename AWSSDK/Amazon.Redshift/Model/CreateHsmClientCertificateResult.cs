@@ -16,27 +16,26 @@ using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
 
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// The results from the CreateHsmClientCertificate action.
+    /// Returns information about an HSM client certificate. The certificate is stored in
+    /// a secure            Hardware Storage Module (HSM), and used by the Amazon Redshift
+    /// cluster to            encrypt data files.
     /// </summary>
     public partial class CreateHsmClientCertificateResult
     {
-        private HsmClientCertificate hsmClientCertificateValue;
+        private HsmClientCertificate _response;
 
-        /// <summary>
-        /// Gets and sets the CreateHsmClientCertificateResult property.
-        /// Contains the result of a successful invocation of the CreateHsmClientCertificate
-        /// action.
-        /// </summary>
         public HsmClientCertificate HsmClientCertificate
         {
-            get { return this.hsmClientCertificateValue; }
-            set { this.hsmClientCertificateValue = value; }
+            get { return this._response; }
+            set { this._response = value; }
         }
     }
 }
-    

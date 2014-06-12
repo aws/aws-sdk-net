@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class InvalidHsmConfigurationStateException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal InvalidHsmConfigurationStateException(string message) 
+        public InvalidHsmConfigurationStateException(string message) 
             : base(message) {}
           
-        internal InvalidHsmConfigurationStateException(string message, Exception innerException) 
+        public InvalidHsmConfigurationStateException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal InvalidHsmConfigurationStateException(Exception innerException) 
+        public InvalidHsmConfigurationStateException(Exception innerException) 
             : base(innerException) {}
             
-        internal InvalidHsmConfigurationStateException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidHsmConfigurationStateException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal InvalidHsmConfigurationStateException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidHsmConfigurationStateException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

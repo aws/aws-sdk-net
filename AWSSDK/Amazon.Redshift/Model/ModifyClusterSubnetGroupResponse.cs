@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the ModifyClusterSubnetGroup response and response metadata.
+    /// Returns information about the ModifyClusterSubnetGroupResult response and response metadata.
     /// </summary>
     public class ModifyClusterSubnetGroupResponse : AmazonWebServiceResponse
     {
-        private ModifyClusterSubnetGroupResult modifyClusterSubnetGroupResult;
+        private ModifyClusterSubnetGroupResult _modifyClusterSubnetGroupResult;
 
-        /// 
+        /// <summary>
         /// Gets and sets the ModifyClusterSubnetGroupResult property.
-        /// Contains the result of a successful invocation of the ModifyClusterSubnetGroup
-        /// action.
-        /// 
+        /// Represents the output of a ModifyClusterSubnetGroup operation.
+        /// </summary>
         public ModifyClusterSubnetGroupResult ModifyClusterSubnetGroupResult
         {
             get
             {
-                if(this.modifyClusterSubnetGroupResult == null)
+                if(this._modifyClusterSubnetGroupResult == null)
                 {
-                    this.modifyClusterSubnetGroupResult = new ModifyClusterSubnetGroupResult();
+                    this._modifyClusterSubnetGroupResult = new ModifyClusterSubnetGroupResult();
                 }
-
-                return this.modifyClusterSubnetGroupResult;
+                return this._modifyClusterSubnetGroupResult;
             }
-            set { this.modifyClusterSubnetGroupResult = value; }
+            set { this._modifyClusterSubnetGroupResult = value; }
         }
     }
 }
-    

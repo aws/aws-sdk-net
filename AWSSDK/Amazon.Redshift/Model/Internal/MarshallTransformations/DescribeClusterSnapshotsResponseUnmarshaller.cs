@@ -13,28 +13,34 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for DescribeClusterSnapshots operation
-    /// </summary>
-    internal class DescribeClusterSnapshotsResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for DescribeClusterSnapshots operation
+    /// </summary>  
+    public class DescribeClusterSnapshotsResponseUnmarshaller : XmlResponseUnmarshaller
     {
-
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             DescribeClusterSnapshotsResponse response = new DescribeClusterSnapshotsResponse();
-            
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
             while (context.Read())
             {
-                if (context.IsStartElement)                
+                if (context.IsStartElement)
                 {
                     if(context.TestExpression("DescribeClusterSnapshotsResult", 2))
                     {
@@ -47,35 +53,30 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     }
                 }
             }
-                 
-                        
+
             return response;
         }
 
-        
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             if (errorResponse.Code != null && errorResponse.Code.Equals("ClusterSnapshotNotFound"))
             {
                 return new ClusterSnapshotNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
             return new AmazonRedshiftException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static DescribeClusterSnapshotsResponseUnmarshaller instance;
 
+        private static DescribeClusterSnapshotsResponseUnmarshaller instance;
         public static DescribeClusterSnapshotsResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
+            if (instance == null)
             {
-               instance = new DescribeClusterSnapshotsResponseUnmarshaller();
+                instance = new DescribeClusterSnapshotsResponseUnmarshaller();
             }
             return instance;
         }
-    
+
     }
 }
-    

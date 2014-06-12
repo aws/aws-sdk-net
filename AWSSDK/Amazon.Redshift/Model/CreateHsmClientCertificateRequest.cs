@@ -25,28 +25,37 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateHsmClientCertificate operation.
-    /// <para>Creates an HSM client certificate that an Amazon Redshift cluster will use to connect to the client's HSM in order to store and
-    /// retrieve the keys used to encrypt the cluster databases.</para> <para>The command returns a public key, which you must store in the HSM. In
-    /// addition to creating the HSM certificate, you must create an Amazon Redshift HSM configuration that provides a cluster the information
-    /// needed to store and use encryption keys in the HSM. For more information, go to <a
-    /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html" >Hardware Security Modules</a> in the Amazon Redshift
-    /// Management Guide.</para>
+    /// Creates an HSM client certificate that an Amazon Redshift cluster will use to connect
+    /// to the client's HSM            in order to store and retrieve the keys used to encrypt
+    /// the cluster databases.
+    /// 
+    ///         
+    /// <para>
+    /// The command returns a public key, which you must store in the HSM. In addition to
+    /// creating the HSM certificate,            you must create an Amazon Redshift HSM configuration
+    /// that provides a cluster the information needed to            store and use encryption
+    /// keys in the HSM. For more information, go to            <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware
+    /// Security Modules</a> in the Amazon Redshift Management Guide.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.Redshift.AmazonRedshift.CreateHsmClientCertificate"/>
-    public class CreateHsmClientCertificateRequest : AmazonWebServiceRequest
+    public partial class CreateHsmClientCertificateRequest : AmazonWebServiceRequest
     {
-        private string hsmClientCertificateIdentifier;
+        private string _hsmClientCertificateIdentifier;
+
 
         /// <summary>
-        /// The identifier to be assigned to the new HSM client certificate that the cluster will use to connect to the HSM to use the database
-        /// encryption keys.
-        ///  
+        /// Gets and sets the property HsmClientCertificateIdentifier. 
+        /// <para>
+        /// The identifier to be assigned to the new HSM client certificate that the cluster 
+        ///           will use to connect to the HSM to use the database encryption keys.
+        /// </para>
         /// </summary>
         public string HsmClientCertificateIdentifier
         {
-            get { return this.hsmClientCertificateIdentifier; }
-            set { this.hsmClientCertificateIdentifier = value; }
+            get { return this._hsmClientCertificateIdentifier; }
+            set { this._hsmClientCertificateIdentifier = value; }
         }
+
 
         /// <summary>
         /// Sets the HsmClientCertificateIdentifier property
@@ -56,16 +65,15 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateHsmClientCertificateRequest WithHsmClientCertificateIdentifier(string hsmClientCertificateIdentifier)
         {
-            this.hsmClientCertificateIdentifier = hsmClientCertificateIdentifier;
+            this._hsmClientCertificateIdentifier = hsmClientCertificateIdentifier;
             return this;
         }
-            
 
         // Check to see if HsmClientCertificateIdentifier property is set
         internal bool IsSetHsmClientCertificateIdentifier()
         {
-            return this.hsmClientCertificateIdentifier != null;
+            return this._hsmClientCertificateIdentifier != null;
         }
+
     }
 }
-    

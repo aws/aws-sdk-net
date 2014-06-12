@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the ModifyEventSubscription response and response metadata.
+    /// Returns information about the ModifyEventSubscriptionResult response and response metadata.
     /// </summary>
     public class ModifyEventSubscriptionResponse : AmazonWebServiceResponse
     {
-        private ModifyEventSubscriptionResult modifyEventSubscriptionResult;
+        private ModifyEventSubscriptionResult _modifyEventSubscriptionResult;
 
-        /// 
+        /// <summary>
         /// Gets and sets the ModifyEventSubscriptionResult property.
-        /// Contains the result of a successful invocation of the ModifyEventSubscription
-        /// action.
-        /// 
+        /// Represents the output of a ModifyEventSubscription operation.
+        /// </summary>
         public ModifyEventSubscriptionResult ModifyEventSubscriptionResult
         {
             get
             {
-                if(this.modifyEventSubscriptionResult == null)
+                if(this._modifyEventSubscriptionResult == null)
                 {
-                    this.modifyEventSubscriptionResult = new ModifyEventSubscriptionResult();
+                    this._modifyEventSubscriptionResult = new ModifyEventSubscriptionResult();
                 }
-
-                return this.modifyEventSubscriptionResult;
+                return this._modifyEventSubscriptionResult;
             }
-            set { this.modifyEventSubscriptionResult = value; }
+            set { this._modifyEventSubscriptionResult = value; }
         }
     }
 }
-    

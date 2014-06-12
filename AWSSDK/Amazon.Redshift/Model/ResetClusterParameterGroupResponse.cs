@@ -12,40 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the  ResetClusterParameterGroupResult response and response metadata.
+    /// Returns information about the ResetClusterParameterGroupResult response and response metadata.
     /// </summary>
     public class ResetClusterParameterGroupResponse : AmazonWebServiceResponse
     {
-        private ResetClusterParameterGroupResult resetClusterParameterGroupResult;
+        private ResetClusterParameterGroupResult _resetClusterParameterGroupResult;
 
         /// <summary>
         /// Gets and sets the ResetClusterParameterGroupResult property.
-        /// Contains the output from the ModifyClusterParameterGroup and ResetClusterParameterGroup actions and indicate the parameter group involved
-        /// and the status of the operation on the parameter group.
+        /// Represents the output of a ResetClusterParameterGroup operation.
         /// </summary>
         public ResetClusterParameterGroupResult ResetClusterParameterGroupResult
         {
             get
             {
-                if(this.resetClusterParameterGroupResult == null)
+                if(this._resetClusterParameterGroupResult == null)
                 {
-                    this.resetClusterParameterGroupResult = new ResetClusterParameterGroupResult();
+                    this._resetClusterParameterGroupResult = new ResetClusterParameterGroupResult();
                 }
-
-                return this.resetClusterParameterGroupResult;
+                return this._resetClusterParameterGroupResult;
             }
-            set { this.resetClusterParameterGroupResult = value; }
+            set { this._resetClusterParameterGroupResult = value; }
         }
     }
 }
-    

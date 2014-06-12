@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class ResizeNotFoundException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal ResizeNotFoundException(string message) 
+        public ResizeNotFoundException(string message) 
             : base(message) {}
           
-        internal ResizeNotFoundException(string message, Exception innerException) 
+        public ResizeNotFoundException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal ResizeNotFoundException(Exception innerException) 
+        public ResizeNotFoundException(Exception innerException) 
             : base(innerException) {}
             
-        internal ResizeNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ResizeNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal ResizeNotFoundException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ResizeNotFoundException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

@@ -12,21 +12,29 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ClusterVersion Unmarshaller
-     /// </summary>
-    internal class ClusterVersionUnmarshaller : IUnmarshaller<ClusterVersion, XmlUnmarshallerContext>, IUnmarshaller<ClusterVersion, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ClusterVersion Object
+    /// </summary>  
+    public class ClusterVersionUnmarshaller : IUnmarshaller<ClusterVersion, XmlUnmarshallerContext>, IUnmarshaller<ClusterVersion, JsonUnmarshallerContext>
     {
-        public ClusterVersion Unmarshall(XmlUnmarshallerContext context) 
+        public ClusterVersion Unmarshall(XmlUnmarshallerContext context)
         {
-            ClusterVersion clusterVersion = new ClusterVersion();
+            ClusterVersion unmarshalledObject = new ClusterVersion();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,51 +44,50 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("ClusterVersion", targetDepth))
-                    {
-                        clusterVersion.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
                     if (context.TestExpression("ClusterParameterGroupFamily", targetDepth))
                     {
-                        clusterVersion.ClusterParameterGroupFamily = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.ClusterParameterGroupFamily = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
                     if (context.TestExpression("Description", targetDepth))
                     {
-                        clusterVersion.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ClusterVersion", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return clusterVersion;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return clusterVersion;
+            return unmarshalledObject;
         }
 
-        public ClusterVersion Unmarshall(JsonUnmarshallerContext context) 
+        public ClusterVersion Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static ClusterVersionUnmarshaller instance;
-
-        public static ClusterVersionUnmarshaller GetInstance() 
+        public static ClusterVersionUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new ClusterVersionUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new ClusterVersionUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

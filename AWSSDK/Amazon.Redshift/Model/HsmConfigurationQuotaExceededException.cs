@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class HsmConfigurationQuotaExceededException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal HsmConfigurationQuotaExceededException(string message) 
+        public HsmConfigurationQuotaExceededException(string message) 
             : base(message) {}
           
-        internal HsmConfigurationQuotaExceededException(string message, Exception innerException) 
+        public HsmConfigurationQuotaExceededException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal HsmConfigurationQuotaExceededException(Exception innerException) 
+        public HsmConfigurationQuotaExceededException(Exception innerException) 
             : base(innerException) {}
             
-        internal HsmConfigurationQuotaExceededException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public HsmConfigurationQuotaExceededException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal HsmConfigurationQuotaExceededException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public HsmConfigurationQuotaExceededException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

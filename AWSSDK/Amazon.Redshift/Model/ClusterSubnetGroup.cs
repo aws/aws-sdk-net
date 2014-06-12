@@ -18,29 +18,35 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// <para>Describes a subnet group.</para>
+    /// Describes a subnet group.
     /// </summary>
     public partial class ClusterSubnetGroup
     {
-        
-        private string clusterSubnetGroupName;
-        private string description;
-        private string vpcId;
-        private string subnetGroupStatus;
-        private List<Subnet> subnets = new List<Subnet>();
+        private string _clusterSubnetGroupName;
+        private string _description;
+        private string _subnetGroupStatus;
+        private List<Subnet> _subnets = new List<Subnet>();
+        private string _vpcId;
+
 
         /// <summary>
-        /// The name of the cluster subnet group.
-        ///  
+        /// Gets and sets the property ClusterSubnetGroupName. 
+        /// <para>
+        ///         The name of the cluster subnet group.        
+        /// </para>
         /// </summary>
         public string ClusterSubnetGroupName
         {
-            get { return this.clusterSubnetGroupName; }
-            set { this.clusterSubnetGroupName = value; }
+            get { return this._clusterSubnetGroupName; }
+            set { this._clusterSubnetGroupName = value; }
         }
+
 
         /// <summary>
         /// Sets the ClusterSubnetGroupName property
@@ -50,26 +56,29 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ClusterSubnetGroup WithClusterSubnetGroupName(string clusterSubnetGroupName)
         {
-            this.clusterSubnetGroupName = clusterSubnetGroupName;
+            this._clusterSubnetGroupName = clusterSubnetGroupName;
             return this;
         }
-            
 
         // Check to see if ClusterSubnetGroupName property is set
         internal bool IsSetClusterSubnetGroupName()
         {
-            return this.clusterSubnetGroupName != null;
+            return this._clusterSubnetGroupName != null;
         }
 
+
         /// <summary>
-        /// The description of the cluster subnet group.
-        ///  
+        /// Gets and sets the property Description. 
+        /// <para>
+        ///         The description of the cluster subnet group.        
+        /// </para>
         /// </summary>
         public string Description
         {
-            get { return this.description; }
-            set { this.description = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
+
 
         /// <summary>
         /// Sets the Description property
@@ -79,55 +88,30 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ClusterSubnetGroup WithDescription(string description)
         {
-            this.description = description;
+            this._description = description;
             return this;
         }
-            
 
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;
+            return this._description != null;
         }
+
 
         /// <summary>
-        /// The VPC ID of the cluster subnet group.
-        ///  
-        /// </summary>
-        public string VpcId
-        {
-            get { return this.vpcId; }
-            set { this.vpcId = value; }
-        }
-
-        /// <summary>
-        /// Sets the VpcId property
-        /// </summary>
-        /// <param name="vpcId">The value to set for the VpcId property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ClusterSubnetGroup WithVpcId(string vpcId)
-        {
-            this.vpcId = vpcId;
-            return this;
-        }
-            
-
-        // Check to see if VpcId property is set
-        internal bool IsSetVpcId()
-        {
-            return this.vpcId != null;
-        }
-
-        /// <summary>
-        /// The status of the cluster subnet group. Possible values are <c>Complete</c>, <c>Incomplete</c> and <c>Invalid</c>.
-        ///  
+        /// Gets and sets the property SubnetGroupStatus. 
+        /// <para>
+        ///             The status of the cluster subnet group.  Possible values are <code>Complete</code>,
+        ///             <code>Incomplete</code> and <code>Invalid</code>.        
+        /// </para>
         /// </summary>
         public string SubnetGroupStatus
         {
-            get { return this.subnetGroupStatus; }
-            set { this.subnetGroupStatus = value; }
+            get { return this._subnetGroupStatus; }
+            set { this._subnetGroupStatus = value; }
         }
+
 
         /// <summary>
         /// Sets the SubnetGroupStatus property
@@ -137,62 +121,95 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ClusterSubnetGroup WithSubnetGroupStatus(string subnetGroupStatus)
         {
-            this.subnetGroupStatus = subnetGroupStatus;
+            this._subnetGroupStatus = subnetGroupStatus;
             return this;
         }
-            
 
         // Check to see if SubnetGroupStatus property is set
         internal bool IsSetSubnetGroupStatus()
         {
-            return this.subnetGroupStatus != null;
+            return this._subnetGroupStatus != null;
         }
 
+
         /// <summary>
-        /// A list of the VPC <a>Subnet</a> elements.
-        ///  
+        /// Gets and sets the property Subnets. 
+        /// <para>
+        ///         A list of the VPC <a>Subnet</a> elements.        
+        /// </para>
         /// </summary>
         public List<Subnet> Subnets
         {
-            get { return this.subnets; }
-            set { this.subnets = value; }
+            get { return this._subnets; }
+            set { this._subnets = value; }
         }
+
         /// <summary>
-        /// Adds elements to the Subnets collection
+        /// Sets the Subnets property
         /// </summary>
         /// <param name="subnets">The values to add to the Subnets collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ClusterSubnetGroup WithSubnets(params Subnet[] subnets)
         {
-            foreach (Subnet element in subnets)
+            foreach (var element in subnets)
             {
-                this.subnets.Add(element);
+                this._subnets.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the Subnets collection
+        /// Sets the Subnets property
         /// </summary>
         /// <param name="subnets">The values to add to the Subnets collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ClusterSubnetGroup WithSubnets(IEnumerable<Subnet> subnets)
         {
-            foreach (Subnet element in subnets)
+            foreach (var element in subnets)
             {
-                this.subnets.Add(element);
+                this._subnets.Add(element);
             }
-
             return this;
         }
-
         // Check to see if Subnets property is set
         internal bool IsSetSubnets()
         {
-            return this.subnets.Count > 0;
+            return this._subnets != null && this._subnets.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property VpcId. 
+        /// <para>
+        ///         The VPC ID of the cluster subnet group.        
+        /// </para>
+        /// </summary>
+        public string VpcId
+        {
+            get { return this._vpcId; }
+            set { this._vpcId = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the VpcId property
+        /// </summary>
+        /// <param name="vpcId">The value to set for the VpcId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ClusterSubnetGroup WithVpcId(string vpcId)
+        {
+            this._vpcId = vpcId;
+            return this;
+        }
+
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
+        {
+            return this._vpcId != null;
+        }
+
     }
 }

@@ -18,54 +18,34 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// <para>Describes a cluster version, including the parameter group family and description of the version.</para>
+    /// Describes a cluster version, including the parameter group family and description
+    /// of        the version.
     /// </summary>
     public partial class ClusterVersion
     {
-        
-        private string clusterVersion;
-        private string clusterParameterGroupFamily;
-        private string description;
+        private string _clusterParameterGroupFamily;
+        private string _description;
+        private string _clusterVersion;
+
 
         /// <summary>
-        /// The version number used by the cluster.
-        ///  
-        /// </summary>
-        public string Name
-        {
-            get { return this.clusterVersion; }
-            set { this.clusterVersion = value; }
-        }
-        /// <summary>
-        /// Sets the Name property
-        /// </summary>
-        /// <param name="name">The value to set for the Name property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ClusterVersion WithName(string name)
-        {
-            this.clusterVersion = name;
-            return this;
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this.clusterVersion != null;
-        }
-
-        /// <summary>
-        /// The name of the cluster parameter group family for the cluster.
-        ///  
+        /// Gets and sets the property ClusterParameterGroupFamily. 
+        /// <para>
+        ///     The name of the cluster parameter group family for the cluster.    
+        /// </para>
         /// </summary>
         public string ClusterParameterGroupFamily
         {
-            get { return this.clusterParameterGroupFamily; }
-            set { this.clusterParameterGroupFamily = value; }
+            get { return this._clusterParameterGroupFamily; }
+            set { this._clusterParameterGroupFamily = value; }
         }
+
 
         /// <summary>
         /// Sets the ClusterParameterGroupFamily property
@@ -75,26 +55,29 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ClusterVersion WithClusterParameterGroupFamily(string clusterParameterGroupFamily)
         {
-            this.clusterParameterGroupFamily = clusterParameterGroupFamily;
+            this._clusterParameterGroupFamily = clusterParameterGroupFamily;
             return this;
         }
-            
 
         // Check to see if ClusterParameterGroupFamily property is set
         internal bool IsSetClusterParameterGroupFamily()
         {
-            return this.clusterParameterGroupFamily != null;
+            return this._clusterParameterGroupFamily != null;
         }
 
+
         /// <summary>
-        /// The description of the cluster version.
-        ///  
+        /// Gets and sets the property Description. 
+        /// <para>
+        ///             The description of the cluster version.        
+        /// </para>
         /// </summary>
         public string Description
         {
-            get { return this.description; }
-            set { this.description = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
+
 
         /// <summary>
         /// Sets the Description property
@@ -104,15 +87,47 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ClusterVersion WithDescription(string description)
         {
-            this.description = description;
+            this._description = description;
             return this;
         }
-            
 
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;
+            return this._description != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        ///     The version number used by the cluster.    
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._clusterVersion; }
+            set { this._clusterVersion = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the Name property
+        /// </summary>
+        /// <param name="clusterVersion">The value to set for the Name property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ClusterVersion WithName(string clusterVersion)
+        {
+            this._clusterVersion = clusterVersion;
+            return this;
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._clusterVersion != null;
+        }
+
     }
 }

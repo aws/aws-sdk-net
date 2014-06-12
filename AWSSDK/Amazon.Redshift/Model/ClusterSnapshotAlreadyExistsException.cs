@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class ClusterSnapshotAlreadyExistsException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal ClusterSnapshotAlreadyExistsException(string message) 
+        public ClusterSnapshotAlreadyExistsException(string message) 
             : base(message) {}
           
-        internal ClusterSnapshotAlreadyExistsException(string message, Exception innerException) 
+        public ClusterSnapshotAlreadyExistsException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal ClusterSnapshotAlreadyExistsException(Exception innerException) 
+        public ClusterSnapshotAlreadyExistsException(Exception innerException) 
             : base(innerException) {}
             
-        internal ClusterSnapshotAlreadyExistsException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ClusterSnapshotAlreadyExistsException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal ClusterSnapshotAlreadyExistsException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ClusterSnapshotAlreadyExistsException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

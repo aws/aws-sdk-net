@@ -328,6 +328,14 @@ namespace Amazon.S3.Util
             return hash;
         }
 
+        internal static string ComputeEncodedMD5FromEncodedString(string base64EncodedString)
+        {
+            var unencodedValue = Convert.FromBase64String(base64EncodedString);
+            var valueMD5 = MD5.Create().ComputeHash(unencodedValue);
+            var encodedMD5 = Convert.ToBase64String(valueMD5);
+            return encodedMD5;
+        }
+
         /// <summary>
         /// Generates an MD5 Digest for the string-based content
         /// </summary>

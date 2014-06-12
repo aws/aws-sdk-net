@@ -14,47 +14,49 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Cluster Subnet Group Request Marshaller
+    /// CreateClusterSubnetGroup Request Marshaller
     /// </summary>       
     public class CreateClusterSubnetGroupRequestMarshaller : IMarshaller<IRequest, CreateClusterSubnetGroupRequest>
     {
-        public IRequest Marshall(CreateClusterSubnetGroupRequest createClusterSubnetGroupRequest)
+        public IRequest Marshall(CreateClusterSubnetGroupRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(createClusterSubnetGroupRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "CreateClusterSubnetGroup");
             request.Parameters.Add("Version", "2012-12-01");
-            if (createClusterSubnetGroupRequest != null && createClusterSubnetGroupRequest.IsSetClusterSubnetGroupName())
-            {
-                request.Parameters.Add("ClusterSubnetGroupName", StringUtils.FromString(createClusterSubnetGroupRequest.ClusterSubnetGroupName));
-            }
-            if (createClusterSubnetGroupRequest != null && createClusterSubnetGroupRequest.IsSetDescription())
-            {
-                request.Parameters.Add("Description", StringUtils.FromString(createClusterSubnetGroupRequest.Description));
-            }
-            if (createClusterSubnetGroupRequest != null)
-            {
-                List<string> subnetIdsList = createClusterSubnetGroupRequest.SubnetIds;
 
-                int subnetIdsListIndex = 1;
-                foreach (string subnetIdsListValue in subnetIdsList)
-                { 
-                    request.Parameters.Add("SubnetIds.member." + subnetIdsListIndex, StringUtils.FromString(subnetIdsListValue));
-                    subnetIdsListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetClusterSubnetGroupName())
+                {
+                    request.Parameters.Add("ClusterSubnetGroupName", StringUtils.FromString(publicRequest.ClusterSubnetGroupName));
+                }
+                if(publicRequest.IsSetDescription())
+                {
+                    request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
+                }
+                if(publicRequest.IsSetSubnetIds())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.SubnetIds)
+                    {
+                        request.Parameters.Add("SubnetIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
-
             return request;
         }
     }

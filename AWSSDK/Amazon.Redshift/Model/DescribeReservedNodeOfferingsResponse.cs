@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeReservedNodeOfferingsResult response and response metadata.
+    /// Returns information about the DescribeReservedNodeOfferingsResult response and response metadata.
     /// </summary>
     public class DescribeReservedNodeOfferingsResponse : AmazonWebServiceResponse
     {
-        private DescribeReservedNodeOfferingsResult describeReservedNodeOfferingsResult;
+        private DescribeReservedNodeOfferingsResult _describeReservedNodeOfferingsResult;
 
         /// <summary>
         /// Gets and sets the DescribeReservedNodeOfferingsResult property.
-        /// Contains the output from the DescribeReservedNodeOfferings action.
+        /// Represents the output of a DescribeReservedNodeOfferings operation.
         /// </summary>
         public DescribeReservedNodeOfferingsResult DescribeReservedNodeOfferingsResult
         {
             get
             {
-                if(this.describeReservedNodeOfferingsResult == null)
+                if(this._describeReservedNodeOfferingsResult == null)
                 {
-                    this.describeReservedNodeOfferingsResult = new DescribeReservedNodeOfferingsResult();
+                    this._describeReservedNodeOfferingsResult = new DescribeReservedNodeOfferingsResult();
                 }
-
-                return this.describeReservedNodeOfferingsResult;
+                return this._describeReservedNodeOfferingsResult;
             }
-            set { this.describeReservedNodeOfferingsResult = value; }
+            set { this._describeReservedNodeOfferingsResult = value; }
         }
     }
 }
-    

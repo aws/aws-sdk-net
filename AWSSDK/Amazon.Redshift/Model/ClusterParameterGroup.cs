@@ -18,85 +18,33 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// <para>Describes a parameter group.</para>
+    /// Describes a parameter group.
     /// </summary>
     public partial class ClusterParameterGroup
     {
-        
-        private string parameterGroupName;
-        private string parameterGroupFamily;
-        private string description;
+        private string _description;
+        private string _parameterGroupFamily;
+        private string _parameterGroupName;
+
 
         /// <summary>
-        /// The name of the cluster parameter group.
-        ///  
-        /// </summary>
-        public string ParameterGroupName
-        {
-            get { return this.parameterGroupName; }
-            set { this.parameterGroupName = value; }
-        }
-
-        /// <summary>
-        /// Sets the ParameterGroupName property
-        /// </summary>
-        /// <param name="parameterGroupName">The value to set for the ParameterGroupName property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ClusterParameterGroup WithParameterGroupName(string parameterGroupName)
-        {
-            this.parameterGroupName = parameterGroupName;
-            return this;
-        }
-            
-
-        // Check to see if ParameterGroupName property is set
-        internal bool IsSetParameterGroupName()
-        {
-            return this.parameterGroupName != null;
-        }
-
-        /// <summary>
-        /// The name of the cluster parameter group family that this cluster parameter group is compatible with.
-        ///  
-        /// </summary>
-        public string ParameterGroupFamily
-        {
-            get { return this.parameterGroupFamily; }
-            set { this.parameterGroupFamily = value; }
-        }
-
-        /// <summary>
-        /// Sets the ParameterGroupFamily property
-        /// </summary>
-        /// <param name="parameterGroupFamily">The value to set for the ParameterGroupFamily property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ClusterParameterGroup WithParameterGroupFamily(string parameterGroupFamily)
-        {
-            this.parameterGroupFamily = parameterGroupFamily;
-            return this;
-        }
-            
-
-        // Check to see if ParameterGroupFamily property is set
-        internal bool IsSetParameterGroupFamily()
-        {
-            return this.parameterGroupFamily != null;
-        }
-
-        /// <summary>
-        /// The description of the parameter group.
-        ///  
+        /// Gets and sets the property Description. 
+        /// <para>
+        ///         The description of the parameter group.        
+        /// </para>
         /// </summary>
         public string Description
         {
-            get { return this.description; }
-            set { this.description = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
+
 
         /// <summary>
         /// Sets the Description property
@@ -106,15 +54,80 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ClusterParameterGroup WithDescription(string description)
         {
-            this.description = description;
+            this._description = description;
             return this;
         }
-            
 
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;
+            return this._description != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property ParameterGroupFamily. 
+        /// <para>
+        ///         The name of the cluster parameter group family that        this cluster parameter
+        /// group is compatible with.        
+        /// </para>
+        /// </summary>
+        public string ParameterGroupFamily
+        {
+            get { return this._parameterGroupFamily; }
+            set { this._parameterGroupFamily = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the ParameterGroupFamily property
+        /// </summary>
+        /// <param name="parameterGroupFamily">The value to set for the ParameterGroupFamily property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ClusterParameterGroup WithParameterGroupFamily(string parameterGroupFamily)
+        {
+            this._parameterGroupFamily = parameterGroupFamily;
+            return this;
+        }
+
+        // Check to see if ParameterGroupFamily property is set
+        internal bool IsSetParameterGroupFamily()
+        {
+            return this._parameterGroupFamily != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ParameterGroupName. 
+        /// <para>
+        ///         The name of the cluster parameter group.        
+        /// </para>
+        /// </summary>
+        public string ParameterGroupName
+        {
+            get { return this._parameterGroupName; }
+            set { this._parameterGroupName = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the ParameterGroupName property
+        /// </summary>
+        /// <param name="parameterGroupName">The value to set for the ParameterGroupName property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ClusterParameterGroup WithParameterGroupName(string parameterGroupName)
+        {
+            this._parameterGroupName = parameterGroupName;
+            return this;
+        }
+
+        // Check to see if ParameterGroupName property is set
+        internal bool IsSetParameterGroupName()
+        {
+            return this._parameterGroupName != null;
+        }
+
     }
 }

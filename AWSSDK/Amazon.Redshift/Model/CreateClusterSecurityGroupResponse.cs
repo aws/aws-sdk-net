@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the CreateClusterSecurityGroup response and response metadata.
+    /// Returns information about the CreateClusterSecurityGroupResult response and response metadata.
     /// </summary>
     public class CreateClusterSecurityGroupResponse : AmazonWebServiceResponse
     {
-        private CreateClusterSecurityGroupResult createClusterSecurityGroupResult;
+        private CreateClusterSecurityGroupResult _createClusterSecurityGroupResult;
 
-        /// 
+        /// <summary>
         /// Gets and sets the CreateClusterSecurityGroupResult property.
-        /// Contains the result of a successful invocation of the CreateClusterSecurityGroup
-        /// action.
-        /// 
+        /// Represents the output of a CreateClusterSecurityGroup operation.
+        /// </summary>
         public CreateClusterSecurityGroupResult CreateClusterSecurityGroupResult
         {
             get
             {
-                if(this.createClusterSecurityGroupResult == null)
+                if(this._createClusterSecurityGroupResult == null)
                 {
-                    this.createClusterSecurityGroupResult = new CreateClusterSecurityGroupResult();
+                    this._createClusterSecurityGroupResult = new CreateClusterSecurityGroupResult();
                 }
-
-                return this.createClusterSecurityGroupResult;
+                return this._createClusterSecurityGroupResult;
             }
-            set { this.createClusterSecurityGroupResult = value; }
+            set { this._createClusterSecurityGroupResult = value; }
         }
     }
 }
-    

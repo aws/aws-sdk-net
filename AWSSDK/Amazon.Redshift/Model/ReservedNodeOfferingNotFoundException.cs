@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class ReservedNodeOfferingNotFoundException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal ReservedNodeOfferingNotFoundException(string message) 
+        public ReservedNodeOfferingNotFoundException(string message) 
             : base(message) {}
           
-        internal ReservedNodeOfferingNotFoundException(string message, Exception innerException) 
+        public ReservedNodeOfferingNotFoundException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal ReservedNodeOfferingNotFoundException(Exception innerException) 
+        public ReservedNodeOfferingNotFoundException(Exception innerException) 
             : base(innerException) {}
             
-        internal ReservedNodeOfferingNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ReservedNodeOfferingNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal ReservedNodeOfferingNotFoundException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ReservedNodeOfferingNotFoundException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

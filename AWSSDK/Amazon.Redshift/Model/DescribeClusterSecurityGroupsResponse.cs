@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeClusterSecurityGroupsResult response and response metadata.
+    /// Returns information about the DescribeClusterSecurityGroupsResult response and response metadata.
     /// </summary>
     public class DescribeClusterSecurityGroupsResponse : AmazonWebServiceResponse
     {
-        private DescribeClusterSecurityGroupsResult describeClusterSecurityGroupsResult;
+        private DescribeClusterSecurityGroupsResult _describeClusterSecurityGroupsResult;
 
         /// <summary>
         /// Gets and sets the DescribeClusterSecurityGroupsResult property.
-        /// Contains the output from the DescribeClusterSecurityGroups action.
+        /// Represents the output of a DescribeClusterSecurityGroups operation.
         /// </summary>
         public DescribeClusterSecurityGroupsResult DescribeClusterSecurityGroupsResult
         {
             get
             {
-                if(this.describeClusterSecurityGroupsResult == null)
+                if(this._describeClusterSecurityGroupsResult == null)
                 {
-                    this.describeClusterSecurityGroupsResult = new DescribeClusterSecurityGroupsResult();
+                    this._describeClusterSecurityGroupsResult = new DescribeClusterSecurityGroupsResult();
                 }
-
-                return this.describeClusterSecurityGroupsResult;
+                return this._describeClusterSecurityGroupsResult;
             }
-            set { this.describeClusterSecurityGroupsResult = value; }
+            set { this._describeClusterSecurityGroupsResult = value; }
         }
     }
 }
-    

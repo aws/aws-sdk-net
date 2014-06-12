@@ -13,81 +13,78 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for RevokeClusterSecurityGroupIngress operation
-    /// </summary>
-    internal class RevokeClusterSecurityGroupIngressResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for RevokeClusterSecurityGroupIngress operation
+    /// </summary>  
+    public class RevokeClusterSecurityGroupIngressResponseUnmarshaller : XmlResponseUnmarshaller
     {
-
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             RevokeClusterSecurityGroupIngressResponse response = new RevokeClusterSecurityGroupIngressResponse();
-            
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
             while (context.Read())
             {
                 if (context.IsStartElement)
                 {
-                    
                     if(context.TestExpression("RevokeClusterSecurityGroupIngressResult", 2))
                     {
                         response.RevokeClusterSecurityGroupIngressResult = RevokeClusterSecurityGroupIngressResultUnmarshaller.GetInstance().Unmarshall(context);
                         continue;
                     }
-                    
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
                         response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
                     }
                 }
             }
-                
 
             return response;
         }
-        
-        
+
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidClusterSecurityGroupState"))
-            {
-                return new InvalidClusterSecurityGroupStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("AuthorizationNotFound"))
             {
                 return new AuthorizationNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("ClusterSecurityGroupNotFound"))
             {
                 return new ClusterSecurityGroupNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidClusterSecurityGroupState"))
+            {
+                return new InvalidClusterSecurityGroupStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonRedshiftException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static RevokeClusterSecurityGroupIngressResponseUnmarshaller instance;
 
+        private static RevokeClusterSecurityGroupIngressResponseUnmarshaller instance;
         public static RevokeClusterSecurityGroupIngressResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
+            if (instance == null)
             {
-               instance = new RevokeClusterSecurityGroupIngressResponseUnmarshaller();
+                instance = new RevokeClusterSecurityGroupIngressResponseUnmarshaller();
             }
             return instance;
         }
-    
+
     }
 }
-    

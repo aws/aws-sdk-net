@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class InvalidClusterStateException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal InvalidClusterStateException(string message) 
+        public InvalidClusterStateException(string message) 
             : base(message) {}
           
-        internal InvalidClusterStateException(string message, Exception innerException) 
+        public InvalidClusterStateException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal InvalidClusterStateException(Exception innerException) 
+        public InvalidClusterStateException(Exception innerException) 
             : base(innerException) {}
             
-        internal InvalidClusterStateException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidClusterStateException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal InvalidClusterStateException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidClusterStateException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

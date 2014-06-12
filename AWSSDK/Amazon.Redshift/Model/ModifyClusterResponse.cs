@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the ModifyCluster response and response metadata.
+    /// Returns information about the ModifyClusterResult response and response metadata.
     /// </summary>
     public class ModifyClusterResponse : AmazonWebServiceResponse
     {
-        private ModifyClusterResult modifyClusterResult;
+        private ModifyClusterResult _modifyClusterResult;
 
-        /// 
+        /// <summary>
         /// Gets and sets the ModifyClusterResult property.
-        /// Contains the result of a successful invocation of the ModifyCluster
-        /// action.
-        /// 
+        /// Represents the output of a ModifyCluster operation.
+        /// </summary>
         public ModifyClusterResult ModifyClusterResult
         {
             get
             {
-                if(this.modifyClusterResult == null)
+                if(this._modifyClusterResult == null)
                 {
-                    this.modifyClusterResult = new ModifyClusterResult();
+                    this._modifyClusterResult = new ModifyClusterResult();
                 }
-
-                return this.modifyClusterResult;
+                return this._modifyClusterResult;
             }
-            set { this.modifyClusterResult = value; }
+            set { this._modifyClusterResult = value; }
         }
     }
 }
-    

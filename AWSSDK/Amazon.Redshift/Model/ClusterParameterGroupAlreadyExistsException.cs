@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class ClusterParameterGroupAlreadyExistsException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal ClusterParameterGroupAlreadyExistsException(string message) 
+        public ClusterParameterGroupAlreadyExistsException(string message) 
             : base(message) {}
           
-        internal ClusterParameterGroupAlreadyExistsException(string message, Exception innerException) 
+        public ClusterParameterGroupAlreadyExistsException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal ClusterParameterGroupAlreadyExistsException(Exception innerException) 
+        public ClusterParameterGroupAlreadyExistsException(Exception innerException) 
             : base(innerException) {}
             
-        internal ClusterParameterGroupAlreadyExistsException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ClusterParameterGroupAlreadyExistsException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal ClusterParameterGroupAlreadyExistsException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ClusterParameterGroupAlreadyExistsException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

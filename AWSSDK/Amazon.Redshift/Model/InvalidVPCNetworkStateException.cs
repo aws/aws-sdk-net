@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class InvalidVPCNetworkStateException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal InvalidVPCNetworkStateException(string message) 
+        public InvalidVPCNetworkStateException(string message) 
             : base(message) {}
           
-        internal InvalidVPCNetworkStateException(string message, Exception innerException) 
+        public InvalidVPCNetworkStateException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal InvalidVPCNetworkStateException(Exception innerException) 
+        public InvalidVPCNetworkStateException(Exception innerException) 
             : base(innerException) {}
             
-        internal InvalidVPCNetworkStateException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidVPCNetworkStateException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal InvalidVPCNetworkStateException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidVPCNetworkStateException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

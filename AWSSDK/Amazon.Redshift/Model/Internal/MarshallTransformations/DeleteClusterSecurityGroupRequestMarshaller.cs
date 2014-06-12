@@ -14,32 +14,36 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Cluster Security Group Request Marshaller
+    /// DeleteClusterSecurityGroup Request Marshaller
     /// </summary>       
     public class DeleteClusterSecurityGroupRequestMarshaller : IMarshaller<IRequest, DeleteClusterSecurityGroupRequest>
     {
-        public IRequest Marshall(DeleteClusterSecurityGroupRequest deleteClusterSecurityGroupRequest)
+        public IRequest Marshall(DeleteClusterSecurityGroupRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(deleteClusterSecurityGroupRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "DeleteClusterSecurityGroup");
             request.Parameters.Add("Version", "2012-12-01");
-            if (deleteClusterSecurityGroupRequest != null && deleteClusterSecurityGroupRequest.IsSetClusterSecurityGroupName())
-            {
-                request.Parameters.Add("ClusterSecurityGroupName", StringUtils.FromString(deleteClusterSecurityGroupRequest.ClusterSecurityGroupName));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetClusterSecurityGroupName())
+                {
+                    request.Parameters.Add("ClusterSecurityGroupName", StringUtils.FromString(publicRequest.ClusterSecurityGroupName));
+                }
+            }
             return request;
         }
     }

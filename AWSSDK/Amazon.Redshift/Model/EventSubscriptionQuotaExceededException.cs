@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class EventSubscriptionQuotaExceededException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal EventSubscriptionQuotaExceededException(string message) 
+        public EventSubscriptionQuotaExceededException(string message) 
             : base(message) {}
           
-        internal EventSubscriptionQuotaExceededException(string message, Exception innerException) 
+        public EventSubscriptionQuotaExceededException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal EventSubscriptionQuotaExceededException(Exception innerException) 
+        public EventSubscriptionQuotaExceededException(Exception innerException) 
             : base(innerException) {}
             
-        internal EventSubscriptionQuotaExceededException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public EventSubscriptionQuotaExceededException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal EventSubscriptionQuotaExceededException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public EventSubscriptionQuotaExceededException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

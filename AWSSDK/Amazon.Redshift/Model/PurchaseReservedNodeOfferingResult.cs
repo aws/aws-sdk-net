@@ -16,27 +16,24 @@ using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
 
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// The results from the PurchaseReservedNodeOffering action.
+    /// Describes a reserved node.
     /// </summary>
     public partial class PurchaseReservedNodeOfferingResult
     {
-        private ReservedNode reservedNodeValue;
+        private ReservedNode _response;
 
-        /// <summary>
-        /// Gets and sets the PurchaseReservedNodeOfferingResult property.
-        /// Contains the result of a successful invocation of the PurchaseReservedNodeOffering
-        /// action.
-        /// </summary>
         public ReservedNode ReservedNode
         {
-            get { return this.reservedNodeValue; }
-            set { this.reservedNodeValue = value; }
+            get { return this._response; }
+            set { this._response = value; }
         }
     }
 }
-    

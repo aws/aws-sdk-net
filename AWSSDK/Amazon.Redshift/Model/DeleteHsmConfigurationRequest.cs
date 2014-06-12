@@ -25,22 +25,25 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteHsmConfiguration operation.
-    /// <para>Deletes the specified Amazon Redshift HSM configuration.</para>
+    /// Deletes the specified Amazon Redshift HSM configuration.
     /// </summary>
-    /// <seealso cref="Amazon.Redshift.AmazonRedshift.DeleteHsmConfiguration"/>
-    public class DeleteHsmConfigurationRequest : AmazonWebServiceRequest
+    public partial class DeleteHsmConfigurationRequest : AmazonWebServiceRequest
     {
-        private string hsmConfigurationIdentifier;
+        private string _hsmConfigurationIdentifier;
+
 
         /// <summary>
+        /// Gets and sets the property HsmConfigurationIdentifier. 
+        /// <para>
         /// The identifier of the Amazon Redshift HSM configuration to be deleted.
-        ///  
+        /// </para>
         /// </summary>
         public string HsmConfigurationIdentifier
         {
-            get { return this.hsmConfigurationIdentifier; }
-            set { this.hsmConfigurationIdentifier = value; }
+            get { return this._hsmConfigurationIdentifier; }
+            set { this._hsmConfigurationIdentifier = value; }
         }
+
 
         /// <summary>
         /// Sets the HsmConfigurationIdentifier property
@@ -50,16 +53,15 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteHsmConfigurationRequest WithHsmConfigurationIdentifier(string hsmConfigurationIdentifier)
         {
-            this.hsmConfigurationIdentifier = hsmConfigurationIdentifier;
+            this._hsmConfigurationIdentifier = hsmConfigurationIdentifier;
             return this;
         }
-            
 
         // Check to see if HsmConfigurationIdentifier property is set
         internal bool IsSetHsmConfigurationIdentifier()
         {
-            return this.hsmConfigurationIdentifier != null;
+            return this._hsmConfigurationIdentifier != null;
         }
+
     }
 }
-    

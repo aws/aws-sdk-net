@@ -12,21 +12,29 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   EC2SecurityGroup Unmarshaller
-     /// </summary>
-    internal class EC2SecurityGroupUnmarshaller : IUnmarshaller<EC2SecurityGroup, XmlUnmarshallerContext>, IUnmarshaller<EC2SecurityGroup, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for EC2SecurityGroup Object
+    /// </summary>  
+    public class EC2SecurityGroupUnmarshaller : IUnmarshaller<EC2SecurityGroup, XmlUnmarshallerContext>, IUnmarshaller<EC2SecurityGroup, JsonUnmarshallerContext>
     {
-        public EC2SecurityGroup Unmarshall(XmlUnmarshallerContext context) 
+        public EC2SecurityGroup Unmarshall(XmlUnmarshallerContext context)
         {
-            EC2SecurityGroup eC2SecurityGroup = new EC2SecurityGroup();
+            EC2SecurityGroup unmarshalledObject = new EC2SecurityGroup();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,51 +44,50 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("Status", targetDepth))
-                    {
-                        eC2SecurityGroup.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
                     if (context.TestExpression("EC2SecurityGroupName", targetDepth))
                     {
-                        eC2SecurityGroup.EC2SecurityGroupName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.EC2SecurityGroupName = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
                     if (context.TestExpression("EC2SecurityGroupOwnerId", targetDepth))
                     {
-                        eC2SecurityGroup.EC2SecurityGroupOwnerId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.EC2SecurityGroupOwnerId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Status", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return eC2SecurityGroup;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return eC2SecurityGroup;
+            return unmarshalledObject;
         }
 
-        public EC2SecurityGroup Unmarshall(JsonUnmarshallerContext context) 
+        public EC2SecurityGroup Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static EC2SecurityGroupUnmarshaller instance;
-
-        public static EC2SecurityGroupUnmarshaller GetInstance() 
+        public static EC2SecurityGroupUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new EC2SecurityGroupUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new EC2SecurityGroupUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

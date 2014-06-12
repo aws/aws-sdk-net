@@ -12,21 +12,29 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   HsmStatus Unmarshaller
-     /// </summary>
-    internal class HsmStatusUnmarshaller : IUnmarshaller<HsmStatus, XmlUnmarshallerContext>, IUnmarshaller<HsmStatus, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for HsmStatus Object
+    /// </summary>  
+    public class HsmStatusUnmarshaller : IUnmarshaller<HsmStatus, XmlUnmarshallerContext>, IUnmarshaller<HsmStatus, JsonUnmarshallerContext>
     {
-        public HsmStatus Unmarshall(XmlUnmarshallerContext context) 
+        public HsmStatus Unmarshall(XmlUnmarshallerContext context)
         {
-            HsmStatus hsmStatus = new HsmStatus();
+            HsmStatus unmarshalledObject = new HsmStatus();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,51 +44,50 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
                     if (context.TestExpression("HsmClientCertificateIdentifier", targetDepth))
                     {
-                        hsmStatus.HsmClientCertificateIdentifier = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.HsmClientCertificateIdentifier = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
                     if (context.TestExpression("HsmConfigurationIdentifier", targetDepth))
                     {
-                        hsmStatus.HsmConfigurationIdentifier = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.HsmConfigurationIdentifier = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
                     if (context.TestExpression("Status", targetDepth))
                     {
-                        hsmStatus.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return hsmStatus;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return hsmStatus;
+            return unmarshalledObject;
         }
 
-        public HsmStatus Unmarshall(JsonUnmarshallerContext context) 
+        public HsmStatus Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static HsmStatusUnmarshaller instance;
-
-        public static HsmStatusUnmarshaller GetInstance() 
+        public static HsmStatusUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new HsmStatusUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new HsmStatusUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

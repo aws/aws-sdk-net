@@ -25,29 +25,46 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateClusterSecurityGroup operation.
-    /// <para> Creates a new Amazon Redshift security group. You use security groups to control access to non-VPC clusters. </para> <para> For
-    /// information about managing security groups, go to <a
-    /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html" >Amazon Redshift Cluster Security Groups</a> in the
-    /// <i>Amazon Redshift Management Guide</i> .
+    /// Creates a new Amazon Redshift security group. You use security       
+    ///      groups to control access to non-VPC clusters.         
+    /// 
+    ///         
+    /// <para>
+    ///             For information about managing security groups, go to<a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
+    /// Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Management Guide</i>.
+    ///        
     /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.Redshift.AmazonRedshift.CreateClusterSecurityGroup"/>
-    public class CreateClusterSecurityGroupRequest : AmazonWebServiceRequest
+    public partial class CreateClusterSecurityGroupRequest : AmazonWebServiceRequest
     {
-        private string clusterSecurityGroupName;
-        private string description;
+        private string _clusterSecurityGroupName;
+        private string _description;
+
 
         /// <summary>
-        /// The name for the security group. Amazon Redshift stores the value as a lowercase string. Constraints: <ul> <li>Must contain no more than 255
-        /// alphanumeric characters or hyphens.</li> <li>Must not be "Default".</li> <li>Must be unique for all security groups that are created by your
-        /// AWS account.</li> </ul> Example: <c>examplesecuritygroup</c>
-        ///  
+        /// Gets and sets the property ClusterSecurityGroupName. 
+        /// <para>
+        ///         The name for the security group.        Amazon Redshift stores the value as
+        /// a lowercase string.        
+        /// </para>
+        ///         
+        /// <para>
+        /// Constraints: 
+        /// </para>
+        ///         <ul>            <li>Must contain no more than 255 alphanumeric characters
+        /// or hyphens.</li>            <li>Must not be "Default".</li>            <li>Must be
+        /// unique for all security groups that are created by your AWS account.</li>        </ul>
+        ///                
+        /// <para>
+        /// Example: <code>examplesecuritygroup</code>
+        /// </para>
         /// </summary>
         public string ClusterSecurityGroupName
         {
-            get { return this.clusterSecurityGroupName; }
-            set { this.clusterSecurityGroupName = value; }
+            get { return this._clusterSecurityGroupName; }
+            set { this._clusterSecurityGroupName = value; }
         }
+
 
         /// <summary>
         /// Sets the ClusterSecurityGroupName property
@@ -57,26 +74,29 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterSecurityGroupRequest WithClusterSecurityGroupName(string clusterSecurityGroupName)
         {
-            this.clusterSecurityGroupName = clusterSecurityGroupName;
+            this._clusterSecurityGroupName = clusterSecurityGroupName;
             return this;
         }
-            
 
         // Check to see if ClusterSecurityGroupName property is set
         internal bool IsSetClusterSecurityGroupName()
         {
-            return this.clusterSecurityGroupName != null;
+            return this._clusterSecurityGroupName != null;
         }
 
+
         /// <summary>
-        /// A description for the security group.
-        ///  
+        /// Gets and sets the property Description. 
+        /// <para>
+        ///         A description for the security group.        
+        /// </para>
         /// </summary>
         public string Description
         {
-            get { return this.description; }
-            set { this.description = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
+
 
         /// <summary>
         /// Sets the Description property
@@ -86,16 +106,15 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterSecurityGroupRequest WithDescription(string description)
         {
-            this.description = description;
+            this._description = description;
             return this;
         }
-            
 
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;
+            return this._description != null;
         }
+
     }
 }
-    

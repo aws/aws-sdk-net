@@ -16,27 +16,24 @@ using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
 
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// The results from the RevokeClusterSecurityGroupIngress action.
+    /// Describes a security group.
     /// </summary>
     public partial class RevokeClusterSecurityGroupIngressResult
     {
-        private ClusterSecurityGroup clusterSecurityGroupValue;
+        private ClusterSecurityGroup _response;
 
-        /// <summary>
-        /// Gets and sets the RevokeClusterSecurityGroupIngressResult property.
-        /// Contains the result of a successful invocation of the RevokeClusterSecurityGroupIngress
-        /// action.
-        /// </summary>
         public ClusterSecurityGroup ClusterSecurityGroup
         {
-            get { return this.clusterSecurityGroupValue; }
-            set { this.clusterSecurityGroupValue = value; }
+            get { return this._response; }
+            set { this._response = value; }
         }
     }
 }
-    

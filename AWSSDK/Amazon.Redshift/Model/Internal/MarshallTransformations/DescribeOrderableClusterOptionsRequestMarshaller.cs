@@ -14,44 +14,48 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Orderable Cluster Options Request Marshaller
+    /// DescribeOrderableClusterOptions Request Marshaller
     /// </summary>       
     public class DescribeOrderableClusterOptionsRequestMarshaller : IMarshaller<IRequest, DescribeOrderableClusterOptionsRequest>
     {
-        public IRequest Marshall(DescribeOrderableClusterOptionsRequest describeOrderableClusterOptionsRequest)
+        public IRequest Marshall(DescribeOrderableClusterOptionsRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describeOrderableClusterOptionsRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "DescribeOrderableClusterOptions");
             request.Parameters.Add("Version", "2012-12-01");
-            if (describeOrderableClusterOptionsRequest != null && describeOrderableClusterOptionsRequest.IsSetClusterVersion())
-            {
-                request.Parameters.Add("ClusterVersion", StringUtils.FromString(describeOrderableClusterOptionsRequest.ClusterVersion));
-            }
-            if (describeOrderableClusterOptionsRequest != null && describeOrderableClusterOptionsRequest.IsSetNodeType())
-            {
-                request.Parameters.Add("NodeType", StringUtils.FromString(describeOrderableClusterOptionsRequest.NodeType));
-            }
-            if (describeOrderableClusterOptionsRequest != null && describeOrderableClusterOptionsRequest.IsSetMaxRecords())
-            {
-                request.Parameters.Add("MaxRecords", StringUtils.FromInt(describeOrderableClusterOptionsRequest.MaxRecords));
-            }
-            if (describeOrderableClusterOptionsRequest != null && describeOrderableClusterOptionsRequest.IsSetMarker())
-            {
-                request.Parameters.Add("Marker", StringUtils.FromString(describeOrderableClusterOptionsRequest.Marker));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetClusterVersion())
+                {
+                    request.Parameters.Add("ClusterVersion", StringUtils.FromString(publicRequest.ClusterVersion));
+                }
+                if(publicRequest.IsSetMarker())
+                {
+                    request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
+                }
+                if(publicRequest.IsSetMaxRecords())
+                {
+                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
+                }
+                if(publicRequest.IsSetNodeType())
+                {
+                    request.Parameters.Add("NodeType", StringUtils.FromString(publicRequest.NodeType));
+                }
+            }
             return request;
         }
     }

@@ -14,60 +14,64 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Cluster Snapshots Request Marshaller
+    /// DescribeClusterSnapshots Request Marshaller
     /// </summary>       
     public class DescribeClusterSnapshotsRequestMarshaller : IMarshaller<IRequest, DescribeClusterSnapshotsRequest>
     {
-        public IRequest Marshall(DescribeClusterSnapshotsRequest describeClusterSnapshotsRequest)
+        public IRequest Marshall(DescribeClusterSnapshotsRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describeClusterSnapshotsRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "DescribeClusterSnapshots");
             request.Parameters.Add("Version", "2012-12-01");
-            if (describeClusterSnapshotsRequest != null && describeClusterSnapshotsRequest.IsSetClusterIdentifier())
-            {
-                request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(describeClusterSnapshotsRequest.ClusterIdentifier));
-            }
-            if (describeClusterSnapshotsRequest != null && describeClusterSnapshotsRequest.IsSetSnapshotIdentifier())
-            {
-                request.Parameters.Add("SnapshotIdentifier", StringUtils.FromString(describeClusterSnapshotsRequest.SnapshotIdentifier));
-            }
-            if (describeClusterSnapshotsRequest != null && describeClusterSnapshotsRequest.IsSetSnapshotType())
-            {
-                request.Parameters.Add("SnapshotType", StringUtils.FromString(describeClusterSnapshotsRequest.SnapshotType));
-            }
-            if (describeClusterSnapshotsRequest != null && describeClusterSnapshotsRequest.IsSetStartTime())
-            {
-                request.Parameters.Add("StartTime", StringUtils.FromDateTime(describeClusterSnapshotsRequest.StartTime));
-            }
-            if (describeClusterSnapshotsRequest != null && describeClusterSnapshotsRequest.IsSetEndTime())
-            {
-                request.Parameters.Add("EndTime", StringUtils.FromDateTime(describeClusterSnapshotsRequest.EndTime));
-            }
-            if (describeClusterSnapshotsRequest != null && describeClusterSnapshotsRequest.IsSetMaxRecords())
-            {
-                request.Parameters.Add("MaxRecords", StringUtils.FromInt(describeClusterSnapshotsRequest.MaxRecords));
-            }
-            if (describeClusterSnapshotsRequest != null && describeClusterSnapshotsRequest.IsSetMarker())
-            {
-                request.Parameters.Add("Marker", StringUtils.FromString(describeClusterSnapshotsRequest.Marker));
-            }
-            if (describeClusterSnapshotsRequest != null && describeClusterSnapshotsRequest.IsSetOwnerAccount())
-            {
-                request.Parameters.Add("OwnerAccount", StringUtils.FromString(describeClusterSnapshotsRequest.OwnerAccount));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetClusterIdentifier())
+                {
+                    request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(publicRequest.ClusterIdentifier));
+                }
+                if(publicRequest.IsSetEndTime())
+                {
+                    request.Parameters.Add("EndTime", StringUtils.FromDateTime(publicRequest.EndTime));
+                }
+                if(publicRequest.IsSetMarker())
+                {
+                    request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
+                }
+                if(publicRequest.IsSetMaxRecords())
+                {
+                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
+                }
+                if(publicRequest.IsSetOwnerAccount())
+                {
+                    request.Parameters.Add("OwnerAccount", StringUtils.FromString(publicRequest.OwnerAccount));
+                }
+                if(publicRequest.IsSetSnapshotIdentifier())
+                {
+                    request.Parameters.Add("SnapshotIdentifier", StringUtils.FromString(publicRequest.SnapshotIdentifier));
+                }
+                if(publicRequest.IsSetSnapshotType())
+                {
+                    request.Parameters.Add("SnapshotType", StringUtils.FromString(publicRequest.SnapshotType));
+                }
+                if(publicRequest.IsSetStartTime())
+                {
+                    request.Parameters.Add("StartTime", StringUtils.FromDateTime(publicRequest.StartTime));
+                }
+            }
             return request;
         }
     }

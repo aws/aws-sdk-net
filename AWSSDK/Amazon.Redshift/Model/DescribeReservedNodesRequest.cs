@@ -25,87 +25,32 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeReservedNodes operation.
-    /// <para> Returns the descriptions of the reserved nodes. </para>
+    /// Returns the descriptions of the reserved nodes.
     /// </summary>
-    /// <seealso cref="Amazon.Redshift.AmazonRedshift.DescribeReservedNodes"/>
-    public class DescribeReservedNodesRequest : AmazonWebServiceRequest
+    public partial class DescribeReservedNodesRequest : AmazonWebServiceRequest
     {
-        private string reservedNodeId;
-        private int? maxRecords;
-        private string marker;
+        private string _marker;
+        private int? _maxRecords;
+        private string _reservedNodeId;
+
 
         /// <summary>
-        /// Identifier for the node reservation.
-        ///  
-        /// </summary>
-        public string ReservedNodeId
-        {
-            get { return this.reservedNodeId; }
-            set { this.reservedNodeId = value; }
-        }
-
-        /// <summary>
-        /// Sets the ReservedNodeId property
-        /// </summary>
-        /// <param name="reservedNodeId">The value to set for the ReservedNodeId property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribeReservedNodesRequest WithReservedNodeId(string reservedNodeId)
-        {
-            this.reservedNodeId = reservedNodeId;
-            return this;
-        }
-            
-
-        // Check to see if ReservedNodeId property is set
-        internal bool IsSetReservedNodeId()
-        {
-            return this.reservedNodeId != null;
-        }
-
-        /// <summary>
-        /// The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified
-        /// <c>MaxRecords</c> value, a value is returned in a <c>marker</c> field of the response. You can retrieve the next set of records by retrying
-        /// the command with the returned marker value. Default: <c>100</c> Constraints: minimum 20, maximum 100.
-        ///  
-        /// </summary>
-        public int MaxRecords
-        {
-            get { return this.maxRecords ?? default(int); }
-            set { this.maxRecords = value; }
-        }
-
-        /// <summary>
-        /// Sets the MaxRecords property
-        /// </summary>
-        /// <param name="maxRecords">The value to set for the MaxRecords property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribeReservedNodesRequest WithMaxRecords(int maxRecords)
-        {
-            this.maxRecords = maxRecords;
-            return this;
-        }
-            
-
-        // Check to see if MaxRecords property is set
-        internal bool IsSetMaxRecords()
-        {
-            return this.maxRecords.HasValue;
-        }
-
-        /// <summary>
-        /// An optional parameter that specifies the starting point to return a set of response records. When the results of a
-        /// <a>DescribeReservedNodes</a> request exceed the value specified in <c>MaxRecords</c>, AWS returns a value in the <c>Marker</c> field of the
-        /// response. You can retrieve the next set of response records by providing the returned marker value in the <c>Marker</c> parameter and
-        /// retrying the request.
-        ///  
+        /// Gets and sets the property Marker. 
+        /// <para>
+        ///            An optional parameter that specifies the starting point to return a set
+        /// of response records.            When the results of a <a>DescribeReservedNodes</a>
+        /// request exceed the value specified in <code>MaxRecords</code>,            AWS returns
+        /// a value in the <code>Marker</code> field of the response. You can retrieve the next
+        /// set of            response records by providing the returned marker value in the <code>Marker</code>
+        /// parameter and            retrying the request.       
+        /// </para>
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
+
 
         /// <summary>
         /// Sets the Marker property
@@ -115,16 +60,91 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedNodesRequest WithMarker(string marker)
         {
-            this.marker = marker;
+            this._marker = marker;
             return this;
         }
-            
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property MaxRecords. 
+        /// <para>
+        ///            The maximum number of response records to return in each call.        
+        ///    If the number of remaining response records exceeds the specified <code>MaxRecords</code>
+        /// value,            a value is returned in a <code>marker</code> field of the response.
+        ///            You can retrieve the next set of records by retrying the command with the
+        /// returned marker value.       
+        /// </para>
+        ///        
+        /// <para>
+        /// Default: <code>100</code>
+        /// </para>
+        ///        
+        /// <para>
+        /// Constraints: minimum 20, maximum 100.
+        /// </para>
+        /// </summary>
+        public int MaxRecords
+        {
+            get { return this._maxRecords.GetValueOrDefault(); }
+            set { this._maxRecords = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the MaxRecords property
+        /// </summary>
+        /// <param name="maxRecords">The value to set for the MaxRecords property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeReservedNodesRequest WithMaxRecords(int maxRecords)
+        {
+            this._maxRecords = maxRecords;
+            return this;
+        }
+
+        // Check to see if MaxRecords property is set
+        internal bool IsSetMaxRecords()
+        {
+            return this._maxRecords.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ReservedNodeId. 
+        /// <para>
+        /// Identifier for the node reservation.
+        /// </para>
+        /// </summary>
+        public string ReservedNodeId
+        {
+            get { return this._reservedNodeId; }
+            set { this._reservedNodeId = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the ReservedNodeId property
+        /// </summary>
+        /// <param name="reservedNodeId">The value to set for the ReservedNodeId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeReservedNodesRequest WithReservedNodeId(string reservedNodeId)
+        {
+            this._reservedNodeId = reservedNodeId;
+            return this;
+        }
+
+        // Check to see if ReservedNodeId property is set
+        internal bool IsSetReservedNodeId()
+        {
+            return this._reservedNodeId != null;
+        }
+
     }
 }
-    

@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeClusterSnapshotsResult response and response metadata.
+    /// Returns information about the DescribeClusterSnapshotsResult response and response metadata.
     /// </summary>
     public class DescribeClusterSnapshotsResponse : AmazonWebServiceResponse
     {
-        private DescribeClusterSnapshotsResult describeClusterSnapshotsResult;
+        private DescribeClusterSnapshotsResult _describeClusterSnapshotsResult;
 
         /// <summary>
         /// Gets and sets the DescribeClusterSnapshotsResult property.
-        /// Contains the output from the DescribeClusterSnapshots action.
+        /// Represents the output of a DescribeClusterSnapshots operation.
         /// </summary>
         public DescribeClusterSnapshotsResult DescribeClusterSnapshotsResult
         {
             get
             {
-                if(this.describeClusterSnapshotsResult == null)
+                if(this._describeClusterSnapshotsResult == null)
                 {
-                    this.describeClusterSnapshotsResult = new DescribeClusterSnapshotsResult();
+                    this._describeClusterSnapshotsResult = new DescribeClusterSnapshotsResult();
                 }
-
-                return this.describeClusterSnapshotsResult;
+                return this._describeClusterSnapshotsResult;
             }
-            set { this.describeClusterSnapshotsResult = value; }
+            set { this._describeClusterSnapshotsResult = value; }
         }
     }
 }
-    

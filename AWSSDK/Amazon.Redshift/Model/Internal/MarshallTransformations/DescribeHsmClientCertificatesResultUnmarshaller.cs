@@ -12,69 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   DescribeHsmClientCertificatesResult Unmarshaller
-     /// </summary>
-    internal class DescribeHsmClientCertificatesResultUnmarshaller : IUnmarshaller<DescribeHsmClientCertificatesResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeHsmClientCertificatesResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for DescribeHsmClientCertificates Object
+    /// </summary>  
+    public class DescribeHsmClientCertificatesResultUnmarshaller : IUnmarshaller<DescribeHsmClientCertificatesResult, XmlUnmarshallerContext>
     {
         public DescribeHsmClientCertificatesResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            DescribeHsmClientCertificatesResult describeHsmClientCertificatesResult = new DescribeHsmClientCertificatesResult();
+            DescribeHsmClientCertificatesResult result = new DescribeHsmClientCertificatesResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("Marker", targetDepth))
-                    {
-                        describeHsmClientCertificatesResult.Marker = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
+
                     if (context.TestExpression("HsmClientCertificates/HsmClientCertificate", targetDepth))
                     {
-                        describeHsmClientCertificatesResult.HsmClientCertificates.Add(HsmClientCertificateUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = HsmClientCertificateUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        result.HsmClientCertificates.Add(item);
                         continue;
                     }
-                }
+                    if (context.TestExpression("Marker", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.Marker = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return describeHsmClientCertificatesResult;
+                    return result;
                 }
             }
-                        
 
-
-            return describeHsmClientCertificatesResult;
+            return result;
         }
 
-        public DescribeHsmClientCertificatesResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static DescribeHsmClientCertificatesResultUnmarshaller instance;
-
-        public static DescribeHsmClientCertificatesResultUnmarshaller GetInstance() 
+        public static DescribeHsmClientCertificatesResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new DescribeHsmClientCertificatesResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new DescribeHsmClientCertificatesResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

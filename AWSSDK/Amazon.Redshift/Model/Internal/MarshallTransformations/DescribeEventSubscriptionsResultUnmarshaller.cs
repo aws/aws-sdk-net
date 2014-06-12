@@ -12,69 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   DescribeEventSubscriptionsResult Unmarshaller
-     /// </summary>
-    internal class DescribeEventSubscriptionsResultUnmarshaller : IUnmarshaller<DescribeEventSubscriptionsResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeEventSubscriptionsResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for DescribeEventSubscriptions Object
+    /// </summary>  
+    public class DescribeEventSubscriptionsResultUnmarshaller : IUnmarshaller<DescribeEventSubscriptionsResult, XmlUnmarshallerContext>
     {
         public DescribeEventSubscriptionsResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            DescribeEventSubscriptionsResult describeEventSubscriptionsResult = new DescribeEventSubscriptionsResult();
+            DescribeEventSubscriptionsResult result = new DescribeEventSubscriptionsResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("Marker", targetDepth))
-                    {
-                        describeEventSubscriptionsResult.Marker = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
+
                     if (context.TestExpression("EventSubscriptionsList/EventSubscription", targetDepth))
                     {
-                        describeEventSubscriptionsResult.EventSubscriptionsList.Add(EventSubscriptionUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = EventSubscriptionUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        result.EventSubscriptionsList.Add(item);
                         continue;
                     }
-                }
+                    if (context.TestExpression("Marker", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.Marker = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return describeEventSubscriptionsResult;
+                    return result;
                 }
             }
-                        
 
-
-            return describeEventSubscriptionsResult;
+            return result;
         }
 
-        public DescribeEventSubscriptionsResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static DescribeEventSubscriptionsResultUnmarshaller instance;
-
-        public static DescribeEventSubscriptionsResultUnmarshaller GetInstance() 
+        public static DescribeEventSubscriptionsResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new DescribeEventSubscriptionsResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new DescribeEventSubscriptionsResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

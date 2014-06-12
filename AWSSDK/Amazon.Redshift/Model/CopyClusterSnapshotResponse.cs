@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the CopyClusterSnapshot response and response metadata.
+    /// Returns information about the CopyClusterSnapshotResult response and response metadata.
     /// </summary>
     public class CopyClusterSnapshotResponse : AmazonWebServiceResponse
     {
-        private CopyClusterSnapshotResult copyClusterSnapshotResult;
+        private CopyClusterSnapshotResult _copyClusterSnapshotResult;
 
-        /// 
+        /// <summary>
         /// Gets and sets the CopyClusterSnapshotResult property.
-        /// Contains the result of a successful invocation of the CopyClusterSnapshot
-        /// action.
-        /// 
+        /// Represents the output of a CopyClusterSnapshot operation.
+        /// </summary>
         public CopyClusterSnapshotResult CopyClusterSnapshotResult
         {
             get
             {
-                if(this.copyClusterSnapshotResult == null)
+                if(this._copyClusterSnapshotResult == null)
                 {
-                    this.copyClusterSnapshotResult = new CopyClusterSnapshotResult();
+                    this._copyClusterSnapshotResult = new CopyClusterSnapshotResult();
                 }
-
-                return this.copyClusterSnapshotResult;
+                return this._copyClusterSnapshotResult;
             }
-            set { this.copyClusterSnapshotResult = value; }
+            set { this._copyClusterSnapshotResult = value; }
         }
     }
 }
-    

@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeClusterParameterGroupsResult response and response metadata.
+    /// Returns information about the DescribeClusterParameterGroupsResult response and response metadata.
     /// </summary>
     public class DescribeClusterParameterGroupsResponse : AmazonWebServiceResponse
     {
-        private DescribeClusterParameterGroupsResult describeClusterParameterGroupsResult;
+        private DescribeClusterParameterGroupsResult _describeClusterParameterGroupsResult;
 
         /// <summary>
         /// Gets and sets the DescribeClusterParameterGroupsResult property.
-        /// Contains the output from the DescribeClusterParameterGroups action.
+        /// Represents the output of a DescribeClusterParameterGroups operation.
         /// </summary>
         public DescribeClusterParameterGroupsResult DescribeClusterParameterGroupsResult
         {
             get
             {
-                if(this.describeClusterParameterGroupsResult == null)
+                if(this._describeClusterParameterGroupsResult == null)
                 {
-                    this.describeClusterParameterGroupsResult = new DescribeClusterParameterGroupsResult();
+                    this._describeClusterParameterGroupsResult = new DescribeClusterParameterGroupsResult();
                 }
-
-                return this.describeClusterParameterGroupsResult;
+                return this._describeClusterParameterGroupsResult;
             }
-            set { this.describeClusterParameterGroupsResult = value; }
+            set { this._describeClusterParameterGroupsResult = value; }
         }
     }
 }
-    

@@ -25,24 +25,32 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteClusterParameterGroup operation.
-    /// <para> Deletes a specified Amazon Redshift parameter group. <para><b>NOTE:</b>You cannot delete a parameter group if it is associated with a
-    /// cluster.</para> </para>
+    /// Deletes a specified Amazon Redshift parameter group.             <note>You
+    /// cannot delete a parameter group if it is associated with a cluster.</note>
     /// </summary>
-    /// <seealso cref="Amazon.Redshift.AmazonRedshift.DeleteClusterParameterGroup"/>
-    public class DeleteClusterParameterGroupRequest : AmazonWebServiceRequest
+    public partial class DeleteClusterParameterGroupRequest : AmazonWebServiceRequest
     {
-        private string parameterGroupName;
+        private string _parameterGroupName;
+
 
         /// <summary>
-        /// The name of the parameter group to be deleted. Constraints: <ul> <li>Must be the name of an existing cluster parameter group.</li>
-        /// <li>Cannot delete a default cluster parameter group.</li> </ul>
-        ///  
+        /// Gets and sets the property ParameterGroupName. 
+        /// <para>
+        ///         The name of the parameter group to be deleted.        
+        /// </para>
+        ///         
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///         <ul>            <li>Must be the name of an existing cluster parameter group.</li>
+        ///            <li>Cannot delete a default cluster parameter group.</li>        </ul>
         /// </summary>
         public string ParameterGroupName
         {
-            get { return this.parameterGroupName; }
-            set { this.parameterGroupName = value; }
+            get { return this._parameterGroupName; }
+            set { this._parameterGroupName = value; }
         }
+
 
         /// <summary>
         /// Sets the ParameterGroupName property
@@ -52,16 +60,15 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteClusterParameterGroupRequest WithParameterGroupName(string parameterGroupName)
         {
-            this.parameterGroupName = parameterGroupName;
+            this._parameterGroupName = parameterGroupName;
             return this;
         }
-            
 
         // Check to see if ParameterGroupName property is set
         internal bool IsSetParameterGroupName()
         {
-            return this.parameterGroupName != null;
+            return this._parameterGroupName != null;
         }
+
     }
 }
-    

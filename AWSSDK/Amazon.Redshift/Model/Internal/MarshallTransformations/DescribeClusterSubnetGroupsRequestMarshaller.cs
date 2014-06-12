@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Cluster Subnet Groups Request Marshaller
+    /// DescribeClusterSubnetGroups Request Marshaller
     /// </summary>       
     public class DescribeClusterSubnetGroupsRequestMarshaller : IMarshaller<IRequest, DescribeClusterSubnetGroupsRequest>
     {
-        public IRequest Marshall(DescribeClusterSubnetGroupsRequest describeClusterSubnetGroupsRequest)
+        public IRequest Marshall(DescribeClusterSubnetGroupsRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describeClusterSubnetGroupsRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "DescribeClusterSubnetGroups");
             request.Parameters.Add("Version", "2012-12-01");
-            if (describeClusterSubnetGroupsRequest != null && describeClusterSubnetGroupsRequest.IsSetClusterSubnetGroupName())
-            {
-                request.Parameters.Add("ClusterSubnetGroupName", StringUtils.FromString(describeClusterSubnetGroupsRequest.ClusterSubnetGroupName));
-            }
-            if (describeClusterSubnetGroupsRequest != null && describeClusterSubnetGroupsRequest.IsSetMaxRecords())
-            {
-                request.Parameters.Add("MaxRecords", StringUtils.FromInt(describeClusterSubnetGroupsRequest.MaxRecords));
-            }
-            if (describeClusterSubnetGroupsRequest != null && describeClusterSubnetGroupsRequest.IsSetMarker())
-            {
-                request.Parameters.Add("Marker", StringUtils.FromString(describeClusterSubnetGroupsRequest.Marker));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetClusterSubnetGroupName())
+                {
+                    request.Parameters.Add("ClusterSubnetGroupName", StringUtils.FromString(publicRequest.ClusterSubnetGroupName));
+                }
+                if(publicRequest.IsSetMarker())
+                {
+                    request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
+                }
+                if(publicRequest.IsSetMaxRecords())
+                {
+                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
+                }
+            }
             return request;
         }
     }

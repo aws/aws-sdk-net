@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class HsmConfigurationNotFoundException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal HsmConfigurationNotFoundException(string message) 
+        public HsmConfigurationNotFoundException(string message) 
             : base(message) {}
           
-        internal HsmConfigurationNotFoundException(string message, Exception innerException) 
+        public HsmConfigurationNotFoundException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal HsmConfigurationNotFoundException(Exception innerException) 
+        public HsmConfigurationNotFoundException(Exception innerException) 
             : base(innerException) {}
             
-        internal HsmConfigurationNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public HsmConfigurationNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal HsmConfigurationNotFoundException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public HsmConfigurationNotFoundException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

@@ -25,60 +25,41 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateHsmConfiguration operation.
-    /// <para>Creates an HSM configuration that contains the information required by an Amazon Redshift cluster to store and use database encryption
-    /// keys in a Hardware Security Module (HSM). After creating the HSM configuration, you can specify it as a parameter when creating a cluster.
-    /// The cluster will then store its encryption keys in the HSM.</para> <para>In addition to creating an HSM configuration, you must also create
-    /// an HSM client certificate. For more information, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html"
-    /// >Hardware Security Modules</a> in the Amazon Redshift Management Guide.</para>
+    /// Creates an HSM configuration that contains the information required by an Amazon Redshift
+    /// cluster            to store and use database encryption keys in a Hardware Security
+    /// Module (HSM). After            creating the HSM configuration, you can specify it
+    /// as a parameter when creating a cluster.            The cluster will then store its
+    /// encryption keys in the HSM.
+    /// 
+    ///         
+    /// <para>
+    /// In addition to creating an HSM configuration, you must also create an HSM client certificate.
+    ///            For more information, go to            <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware
+    /// Security Modules</a> in the Amazon Redshift Management Guide.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.Redshift.AmazonRedshift.CreateHsmConfiguration"/>
-    public class CreateHsmConfigurationRequest : AmazonWebServiceRequest
+    public partial class CreateHsmConfigurationRequest : AmazonWebServiceRequest
     {
-        private string hsmConfigurationIdentifier;
-        private string description;
-        private string hsmIpAddress;
-        private string hsmPartitionName;
-        private string hsmPartitionPassword;
-        private string hsmServerPublicCertificate;
+        private string _description;
+        private string _hsmConfigurationIdentifier;
+        private string _hsmIpAddress;
+        private string _hsmPartitionName;
+        private string _hsmPartitionPassword;
+        private string _hsmServerPublicCertificate;
+
 
         /// <summary>
-        /// The identifier to be assigned to the new Amazon Redshift HSM configuration.
-        ///  
-        /// </summary>
-        public string HsmConfigurationIdentifier
-        {
-            get { return this.hsmConfigurationIdentifier; }
-            set { this.hsmConfigurationIdentifier = value; }
-        }
-
-        /// <summary>
-        /// Sets the HsmConfigurationIdentifier property
-        /// </summary>
-        /// <param name="hsmConfigurationIdentifier">The value to set for the HsmConfigurationIdentifier property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public CreateHsmConfigurationRequest WithHsmConfigurationIdentifier(string hsmConfigurationIdentifier)
-        {
-            this.hsmConfigurationIdentifier = hsmConfigurationIdentifier;
-            return this;
-        }
-            
-
-        // Check to see if HsmConfigurationIdentifier property is set
-        internal bool IsSetHsmConfigurationIdentifier()
-        {
-            return this.hsmConfigurationIdentifier != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
         /// A text description of the HSM configuration to be created.
-        ///  
+        /// </para>
         /// </summary>
         public string Description
         {
-            get { return this.description; }
-            set { this.description = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
+
 
         /// <summary>
         /// Sets the Description property
@@ -88,26 +69,61 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateHsmConfigurationRequest WithDescription(string description)
         {
-            this.description = description;
+            this._description = description;
             return this;
         }
-            
 
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;
+            return this._description != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property HsmConfigurationIdentifier. 
+        /// <para>
+        /// The identifier to be assigned to the new Amazon Redshift HSM configuration.
+        /// </para>
+        /// </summary>
+        public string HsmConfigurationIdentifier
+        {
+            get { return this._hsmConfigurationIdentifier; }
+            set { this._hsmConfigurationIdentifier = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the HsmConfigurationIdentifier property
+        /// </summary>
+        /// <param name="hsmConfigurationIdentifier">The value to set for the HsmConfigurationIdentifier property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateHsmConfigurationRequest WithHsmConfigurationIdentifier(string hsmConfigurationIdentifier)
+        {
+            this._hsmConfigurationIdentifier = hsmConfigurationIdentifier;
+            return this;
+        }
+
+        // Check to see if HsmConfigurationIdentifier property is set
+        internal bool IsSetHsmConfigurationIdentifier()
+        {
+            return this._hsmConfigurationIdentifier != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property HsmIpAddress. 
+        /// <para>
         /// The IP address that the Amazon Redshift cluster must use to access the HSM.
-        ///  
+        /// </para>
         /// </summary>
         public string HsmIpAddress
         {
-            get { return this.hsmIpAddress; }
-            set { this.hsmIpAddress = value; }
+            get { return this._hsmIpAddress; }
+            set { this._hsmIpAddress = value; }
         }
+
 
         /// <summary>
         /// Sets the HsmIpAddress property
@@ -117,26 +133,30 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateHsmConfigurationRequest WithHsmIpAddress(string hsmIpAddress)
         {
-            this.hsmIpAddress = hsmIpAddress;
+            this._hsmIpAddress = hsmIpAddress;
             return this;
         }
-            
 
         // Check to see if HsmIpAddress property is set
         internal bool IsSetHsmIpAddress()
         {
-            return this.hsmIpAddress != null;
+            return this._hsmIpAddress != null;
         }
 
+
         /// <summary>
-        /// The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.
-        ///  
+        /// Gets and sets the property HsmPartitionName. 
+        /// <para>
+        /// The name of the partition in the HSM where the Amazon Redshift clusters will store
+        ///            their database encryption keys.
+        /// </para>
         /// </summary>
         public string HsmPartitionName
         {
-            get { return this.hsmPartitionName; }
-            set { this.hsmPartitionName = value; }
+            get { return this._hsmPartitionName; }
+            set { this._hsmPartitionName = value; }
         }
+
 
         /// <summary>
         /// Sets the HsmPartitionName property
@@ -146,26 +166,29 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateHsmConfigurationRequest WithHsmPartitionName(string hsmPartitionName)
         {
-            this.hsmPartitionName = hsmPartitionName;
+            this._hsmPartitionName = hsmPartitionName;
             return this;
         }
-            
 
         // Check to see if HsmPartitionName property is set
         internal bool IsSetHsmPartitionName()
         {
-            return this.hsmPartitionName != null;
+            return this._hsmPartitionName != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property HsmPartitionPassword. 
+        /// <para>
         /// The password required to access the HSM partition.
-        ///  
+        /// </para>
         /// </summary>
         public string HsmPartitionPassword
         {
-            get { return this.hsmPartitionPassword; }
-            set { this.hsmPartitionPassword = value; }
+            get { return this._hsmPartitionPassword; }
+            set { this._hsmPartitionPassword = value; }
         }
+
 
         /// <summary>
         /// Sets the HsmPartitionPassword property
@@ -175,26 +198,29 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateHsmConfigurationRequest WithHsmPartitionPassword(string hsmPartitionPassword)
         {
-            this.hsmPartitionPassword = hsmPartitionPassword;
+            this._hsmPartitionPassword = hsmPartitionPassword;
             return this;
         }
-            
 
         // Check to see if HsmPartitionPassword property is set
         internal bool IsSetHsmPartitionPassword()
         {
-            return this.hsmPartitionPassword != null;
+            return this._hsmPartitionPassword != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property HsmServerPublicCertificate. 
+        /// <para>
         /// The HSMs public certificate file. When using Cloud HSM, the file name is server.pem.
-        ///  
+        /// </para>
         /// </summary>
         public string HsmServerPublicCertificate
         {
-            get { return this.hsmServerPublicCertificate; }
-            set { this.hsmServerPublicCertificate = value; }
+            get { return this._hsmServerPublicCertificate; }
+            set { this._hsmServerPublicCertificate = value; }
         }
+
 
         /// <summary>
         /// Sets the HsmServerPublicCertificate property
@@ -204,16 +230,15 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateHsmConfigurationRequest WithHsmServerPublicCertificate(string hsmServerPublicCertificate)
         {
-            this.hsmServerPublicCertificate = hsmServerPublicCertificate;
+            this._hsmServerPublicCertificate = hsmServerPublicCertificate;
             return this;
         }
-            
 
         // Check to see if HsmServerPublicCertificate property is set
         internal bool IsSetHsmServerPublicCertificate()
         {
-            return this.hsmServerPublicCertificate != null;
+            return this._hsmServerPublicCertificate != null;
         }
+
     }
 }
-    

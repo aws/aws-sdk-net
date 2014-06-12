@@ -18,27 +18,34 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// <para> Contains the output from the ModifyClusterParameterGroup and ResetClusterParameterGroup actions and indicate the parameter group
-    /// involved and the status of the operation on the parameter group. </para>
+    /// Contains the output from the         <a>ModifyClusterParameterGroup</a> and <a>ResetClusterParameterGroup</a>
+    /// actions and            indicate the parameter group involved and the status of the
+    /// operation on the             parameter group.
     /// </summary>
     public partial class ModifyClusterParameterGroupResult
     {
-        
-        private string parameterGroupName;
-        private string parameterGroupStatus;
+        private string _parameterGroupName;
+        private string _parameterGroupStatus;
+
 
         /// <summary>
-        /// The name of the cluster parameter group.
-        ///  
+        /// Gets and sets the property ParameterGroupName. 
+        /// <para>
+        ///         The name of the cluster parameter group.        
+        /// </para>
         /// </summary>
         public string ParameterGroupName
         {
-            get { return this.parameterGroupName; }
-            set { this.parameterGroupName = value; }
+            get { return this._parameterGroupName; }
+            set { this._parameterGroupName = value; }
         }
+
 
         /// <summary>
         /// Sets the ParameterGroupName property
@@ -48,27 +55,31 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyClusterParameterGroupResult WithParameterGroupName(string parameterGroupName)
         {
-            this.parameterGroupName = parameterGroupName;
+            this._parameterGroupName = parameterGroupName;
             return this;
         }
-            
 
         // Check to see if ParameterGroupName property is set
         internal bool IsSetParameterGroupName()
         {
-            return this.parameterGroupName != null;
+            return this._parameterGroupName != null;
         }
 
+
         /// <summary>
-        /// The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending
-        /// a reboot of an associated cluster.
-        ///  
+        /// Gets and sets the property ParameterGroupStatus. 
+        /// <para>
+        ///         The status of the parameter group. For example, if you made        a change
+        /// to a parameter group name-value pair, then the change could be pending        a reboot
+        /// of an associated cluster.        
+        /// </para>
         /// </summary>
         public string ParameterGroupStatus
         {
-            get { return this.parameterGroupStatus; }
-            set { this.parameterGroupStatus = value; }
+            get { return this._parameterGroupStatus; }
+            set { this._parameterGroupStatus = value; }
         }
+
 
         /// <summary>
         /// Sets the ParameterGroupStatus property
@@ -78,15 +89,15 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyClusterParameterGroupResult WithParameterGroupStatus(string parameterGroupStatus)
         {
-            this.parameterGroupStatus = parameterGroupStatus;
+            this._parameterGroupStatus = parameterGroupStatus;
             return this;
         }
-            
 
         // Check to see if ParameterGroupStatus property is set
         internal bool IsSetParameterGroupStatus()
         {
-            return this.parameterGroupStatus != null;
+            return this._parameterGroupStatus != null;
         }
+
     }
 }

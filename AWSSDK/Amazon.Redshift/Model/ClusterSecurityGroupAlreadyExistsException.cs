@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class ClusterSecurityGroupAlreadyExistsException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal ClusterSecurityGroupAlreadyExistsException(string message) 
+        public ClusterSecurityGroupAlreadyExistsException(string message) 
             : base(message) {}
           
-        internal ClusterSecurityGroupAlreadyExistsException(string message, Exception innerException) 
+        public ClusterSecurityGroupAlreadyExistsException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal ClusterSecurityGroupAlreadyExistsException(Exception innerException) 
+        public ClusterSecurityGroupAlreadyExistsException(Exception innerException) 
             : base(innerException) {}
             
-        internal ClusterSecurityGroupAlreadyExistsException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ClusterSecurityGroupAlreadyExistsException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal ClusterSecurityGroupAlreadyExistsException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ClusterSecurityGroupAlreadyExistsException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

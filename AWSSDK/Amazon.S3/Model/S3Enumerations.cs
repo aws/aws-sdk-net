@@ -324,4 +324,13 @@ namespace Amazon.S3.Model
         Url
     }
 
+    /// <summary>
+    ///  A list of all server-side encryption methods for customer provided encryption keys.
+    /// </summary>
+    public enum ServerSideEncryptionCustomerMethod
+    {
+        None,
+        AES256
+    }
+
 }

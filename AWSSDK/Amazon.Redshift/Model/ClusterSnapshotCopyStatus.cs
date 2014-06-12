@@ -18,26 +18,34 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// <para> Returns the destination region and retention period that are configured for cross-region snapshot copy. </para>
+    /// Returns the destination region and retention period that are configured
+    /// for cross-region snapshot copy.
     /// </summary>
     public partial class ClusterSnapshotCopyStatus
     {
-        
-        private string destinationRegion;
-        private long? retentionPeriod;
+        private string _destinationRegion;
+        private long? _retentionPeriod;
+
 
         /// <summary>
-        /// The destination region that snapshots are automatically copied to when cross-region snapshot copy is enabled.
-        ///  
+        /// Gets and sets the property DestinationRegion. 
+        /// <para>
+        /// The destination region that snapshots are automatically copied to when cross-region
+        /// snapshot copy is enabled.
+        /// </para>
         /// </summary>
         public string DestinationRegion
         {
-            get { return this.destinationRegion; }
-            set { this.destinationRegion = value; }
+            get { return this._destinationRegion; }
+            set { this._destinationRegion = value; }
         }
+
 
         /// <summary>
         /// Sets the DestinationRegion property
@@ -47,26 +55,30 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ClusterSnapshotCopyStatus WithDestinationRegion(string destinationRegion)
         {
-            this.destinationRegion = destinationRegion;
+            this._destinationRegion = destinationRegion;
             return this;
         }
-            
 
         // Check to see if DestinationRegion property is set
         internal bool IsSetDestinationRegion()
         {
-            return this.destinationRegion != null;
+            return this._destinationRegion != null;
         }
 
+
         /// <summary>
-        /// The number of days that automated snapshots are retained in the destination region after they are copied from a source region.
-        ///  
+        /// Gets and sets the property RetentionPeriod. 
+        /// <para>
+        /// The number of days that automated snapshots are retained in the destination region
+        /// after they are copied from a source region.
+        /// </para>
         /// </summary>
         public long RetentionPeriod
         {
-            get { return this.retentionPeriod ?? default(long); }
-            set { this.retentionPeriod = value; }
+            get { return this._retentionPeriod.GetValueOrDefault(); }
+            set { this._retentionPeriod = value; }
         }
+
 
         /// <summary>
         /// Sets the RetentionPeriod property
@@ -76,15 +88,15 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ClusterSnapshotCopyStatus WithRetentionPeriod(long retentionPeriod)
         {
-            this.retentionPeriod = retentionPeriod;
+            this._retentionPeriod = retentionPeriod;
             return this;
         }
-            
 
         // Check to see if RetentionPeriod property is set
         internal bool IsSetRetentionPeriod()
         {
-            return this.retentionPeriod.HasValue;
+            return this._retentionPeriod.HasValue; 
         }
+
     }
 }

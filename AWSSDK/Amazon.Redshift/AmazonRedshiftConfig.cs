@@ -12,13 +12,13 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 using System;
 
 using Amazon.Runtime;
 
 namespace Amazon.Redshift
 {
-
     /// <summary>
     /// Configuration for accessing Amazon Redshift service
     /// </summary>
@@ -30,7 +30,7 @@ namespace Amazon.Redshift
         public AmazonRedshiftConfig()
         {
             this.ServiceURL = "https://redshift.us-east-1.amazonaws.com/";
-            
+            this.AuthenticationServiceName = "redshift";
         }
 
         /// <summary>
@@ -56,5 +56,3 @@ namespace Amazon.Redshift
         }
     }
 }
-
-    

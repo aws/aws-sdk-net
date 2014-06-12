@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the RebootCluster response and response metadata.
+    /// Returns information about the RebootClusterResult response and response metadata.
     /// </summary>
     public class RebootClusterResponse : AmazonWebServiceResponse
     {
-        private RebootClusterResult rebootClusterResult;
+        private RebootClusterResult _rebootClusterResult;
 
-        /// 
+        /// <summary>
         /// Gets and sets the RebootClusterResult property.
-        /// Contains the result of a successful invocation of the RebootCluster
-        /// action.
-        /// 
+        /// Represents the output of a RebootCluster operation.
+        /// </summary>
         public RebootClusterResult RebootClusterResult
         {
             get
             {
-                if(this.rebootClusterResult == null)
+                if(this._rebootClusterResult == null)
                 {
-                    this.rebootClusterResult = new RebootClusterResult();
+                    this._rebootClusterResult = new RebootClusterResult();
                 }
-
-                return this.rebootClusterResult;
+                return this._rebootClusterResult;
             }
-            set { this.rebootClusterResult = value; }
+            set { this._rebootClusterResult = value; }
         }
     }
 }
-    

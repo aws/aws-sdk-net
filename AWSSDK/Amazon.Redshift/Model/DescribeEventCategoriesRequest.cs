@@ -25,25 +25,34 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEventCategories operation.
-    /// <para>Displays a list of event categories for all event source types, or for a specified source type. For a list of the event categories and
-    /// source types, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-event-notifications.html" >Amazon Redshift Event
-    /// Notifications</a> .</para>
+    /// Displays a list of event categories for all event source types, or for a         
+    ///  specified source type. For a list of the event categories and source types,     
+    ///      go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-event-notifications.html">Amazon
+    /// Redshift Event Notifications</a>.
     /// </summary>
-    /// <seealso cref="Amazon.Redshift.AmazonRedshift.DescribeEventCategories"/>
-    public class DescribeEventCategoriesRequest : AmazonWebServiceRequest
+    public partial class DescribeEventCategoriesRequest : AmazonWebServiceRequest
     {
-        private string sourceType;
+        private string _sourceType;
+
 
         /// <summary>
-        /// The source type, such as cluster or parameter group, to which the described event categories apply. Valid values: cluster, snapshot,
-        /// parameter group, and security group.
-        ///  
+        /// Gets and sets the property SourceType. 
+        /// <para>
+        ///             The source type, such as cluster or parameter group, to which the described
+        ///            event categories apply.        
+        /// </para>
+        ///         
+        /// <para>
+        ///             Valid values: cluster, snapshot, parameter group, and security group.
+        ///        
+        /// </para>
         /// </summary>
         public string SourceType
         {
-            get { return this.sourceType; }
-            set { this.sourceType = value; }
+            get { return this._sourceType; }
+            set { this._sourceType = value; }
         }
+
 
         /// <summary>
         /// Sets the SourceType property
@@ -53,16 +62,15 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEventCategoriesRequest WithSourceType(string sourceType)
         {
-            this.sourceType = sourceType;
+            this._sourceType = sourceType;
             return this;
         }
-            
 
         // Check to see if SourceType property is set
         internal bool IsSetSourceType()
         {
-            return this.sourceType != null;
+            return this._sourceType != null;
         }
+
     }
 }
-    

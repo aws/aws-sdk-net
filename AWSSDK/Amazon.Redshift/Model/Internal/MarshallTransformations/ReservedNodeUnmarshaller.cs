@@ -12,132 +12,137 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ReservedNode Unmarshaller
-     /// </summary>
-    internal class ReservedNodeUnmarshaller : IUnmarshaller<ReservedNode, XmlUnmarshallerContext>, IUnmarshaller<ReservedNode, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ReservedNode Object
+    /// </summary>  
+    public class ReservedNodeUnmarshaller : IUnmarshaller<ReservedNode, XmlUnmarshallerContext>, IUnmarshaller<ReservedNode, JsonUnmarshallerContext>
     {
-        public ReservedNode Unmarshall(XmlUnmarshallerContext context) 
+        public ReservedNode Unmarshall(XmlUnmarshallerContext context)
         {
-            ReservedNode reservedNode = new ReservedNode();
+            ReservedNode unmarshalledObject = new ReservedNode();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            if (context.IsStartOfDocument) 
-               targetDepth++;
-            
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("ReservedNodeId", targetDepth))
-                    {
-                        reservedNode.ReservedNodeId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("ReservedNodeOfferingId", targetDepth))
-                    {
-                        reservedNode.ReservedNodeOfferingId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("NodeType", targetDepth))
-                    {
-                        reservedNode.NodeType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("StartTime", targetDepth))
-                    {
-                        reservedNode.StartTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("Duration", targetDepth))
-                    {
-                        reservedNode.Duration = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("FixedPrice", targetDepth))
-                    {
-                        reservedNode.FixedPrice = DoubleUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("UsagePrice", targetDepth))
-                    {
-                        reservedNode.UsagePrice = DoubleUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
                     if (context.TestExpression("CurrencyCode", targetDepth))
                     {
-                        reservedNode.CurrencyCode = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.CurrencyCode = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
+                    if (context.TestExpression("Duration", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.GetInstance();
+                        unmarshalledObject.Duration = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("FixedPrice", targetDepth))
+                    {
+                        var unmarshaller = DoubleUnmarshaller.GetInstance();
+                        unmarshalledObject.FixedPrice = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("NodeCount", targetDepth))
                     {
-                        reservedNode.NodeCount = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IntUnmarshaller.GetInstance();
+                        unmarshalledObject.NodeCount = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
-                    if (context.TestExpression("State", targetDepth))
+                    }
+                    if (context.TestExpression("NodeType", targetDepth))
                     {
-                        reservedNode.State = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.NodeType = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
                     if (context.TestExpression("OfferingType", targetDepth))
                     {
-                        reservedNode.OfferingType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.OfferingType = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
                     if (context.TestExpression("RecurringCharges/RecurringCharge", targetDepth))
                     {
-                        reservedNode.RecurringCharges.Add(RecurringChargeUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = RecurringChargeUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.RecurringCharges.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("ReservedNodeId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.ReservedNodeId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ReservedNodeOfferingId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.ReservedNodeOfferingId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StartTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.GetInstance();
+                        unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("State", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("UsagePrice", targetDepth))
+                    {
+                        var unmarshaller = DoubleUnmarshaller.GetInstance();
+                        unmarshalledObject.UsagePrice = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return reservedNode;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return reservedNode;
+            return unmarshalledObject;
         }
 
-        public ReservedNode Unmarshall(JsonUnmarshallerContext context) 
+        public ReservedNode Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static ReservedNodeUnmarshaller instance;
-
-        public static ReservedNodeUnmarshaller GetInstance() 
+        public static ReservedNodeUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new ReservedNodeUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new ReservedNodeUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

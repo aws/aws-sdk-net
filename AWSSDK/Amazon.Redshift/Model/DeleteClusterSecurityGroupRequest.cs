@@ -25,26 +25,32 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteClusterSecurityGroup operation.
-    /// <para> Deletes an Amazon Redshift security group. </para> <para><b>NOTE:</b>You cannot delete a security group that is associated with any
-    /// clusters. You cannot delete the default security group.</para> <para> For information about managing security groups, go to <a
-    /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html" >Amazon Redshift Cluster Security Groups</a> in the
-    /// <i>Amazon Redshift Management Guide</i> .
+    /// Deletes an Amazon Redshift security group.         
+    /// 
+    ///         <note>You cannot delete a security group that is associated with any clusters.
+    /// You cannot        delete the default security group.</note>        
+    /// <para>
+    /// For information about managing security groups, go to<a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
+    /// Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Management Guide</i>.
     /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.Redshift.AmazonRedshift.DeleteClusterSecurityGroup"/>
-    public class DeleteClusterSecurityGroupRequest : AmazonWebServiceRequest
+    public partial class DeleteClusterSecurityGroupRequest : AmazonWebServiceRequest
     {
-        private string clusterSecurityGroupName;
+        private string _clusterSecurityGroupName;
+
 
         /// <summary>
-        /// The name of the cluster security group to be deleted.
-        ///  
+        /// Gets and sets the property ClusterSecurityGroupName. 
+        /// <para>
+        ///         The name of the cluster security group to be deleted.        
+        /// </para>
         /// </summary>
         public string ClusterSecurityGroupName
         {
-            get { return this.clusterSecurityGroupName; }
-            set { this.clusterSecurityGroupName = value; }
+            get { return this._clusterSecurityGroupName; }
+            set { this._clusterSecurityGroupName = value; }
         }
+
 
         /// <summary>
         /// Sets the ClusterSecurityGroupName property
@@ -54,16 +60,15 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteClusterSecurityGroupRequest WithClusterSecurityGroupName(string clusterSecurityGroupName)
         {
-            this.clusterSecurityGroupName = clusterSecurityGroupName;
+            this._clusterSecurityGroupName = clusterSecurityGroupName;
             return this;
         }
-            
 
         // Check to see if ClusterSecurityGroupName property is set
         internal bool IsSetClusterSecurityGroupName()
         {
-            return this.clusterSecurityGroupName != null;
+            return this._clusterSecurityGroupName != null;
         }
+
     }
 }
-    

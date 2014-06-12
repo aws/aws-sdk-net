@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the DeleteClusterSnapshot response and response metadata.
+    /// Returns information about the DeleteClusterSnapshotResult response and response metadata.
     /// </summary>
     public class DeleteClusterSnapshotResponse : AmazonWebServiceResponse
     {
-        private DeleteClusterSnapshotResult deleteClusterSnapshotResult;
+        private DeleteClusterSnapshotResult _deleteClusterSnapshotResult;
 
-        /// 
+        /// <summary>
         /// Gets and sets the DeleteClusterSnapshotResult property.
-        /// Contains the result of a successful invocation of the DeleteClusterSnapshot
-        /// action.
-        /// 
+        /// Represents the output of a DeleteClusterSnapshot operation.
+        /// </summary>
         public DeleteClusterSnapshotResult DeleteClusterSnapshotResult
         {
             get
             {
-                if(this.deleteClusterSnapshotResult == null)
+                if(this._deleteClusterSnapshotResult == null)
                 {
-                    this.deleteClusterSnapshotResult = new DeleteClusterSnapshotResult();
+                    this._deleteClusterSnapshotResult = new DeleteClusterSnapshotResult();
                 }
-
-                return this.deleteClusterSnapshotResult;
+                return this._deleteClusterSnapshotResult;
             }
-            set { this.deleteClusterSnapshotResult = value; }
+            set { this._deleteClusterSnapshotResult = value; }
         }
     }
 }
-    

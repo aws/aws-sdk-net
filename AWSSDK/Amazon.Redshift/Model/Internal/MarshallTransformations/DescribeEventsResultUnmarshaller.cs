@@ -12,69 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   DescribeEventsResult Unmarshaller
-     /// </summary>
-    internal class DescribeEventsResultUnmarshaller : IUnmarshaller<DescribeEventsResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeEventsResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for DescribeEvents Object
+    /// </summary>  
+    public class DescribeEventsResultUnmarshaller : IUnmarshaller<DescribeEventsResult, XmlUnmarshallerContext>
     {
         public DescribeEventsResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            DescribeEventsResult describeEventsResult = new DescribeEventsResult();
+            DescribeEventsResult result = new DescribeEventsResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("Marker", targetDepth))
-                    {
-                        describeEventsResult.Marker = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
+
                     if (context.TestExpression("Events/Event", targetDepth))
                     {
-                        describeEventsResult.Events.Add(EventUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = EventUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        result.Events.Add(item);
                         continue;
                     }
-                }
+                    if (context.TestExpression("Marker", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.Marker = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return describeEventsResult;
+                    return result;
                 }
             }
-                        
 
-
-            return describeEventsResult;
+            return result;
         }
 
-        public DescribeEventsResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static DescribeEventsResultUnmarshaller instance;
-
-        public static DescribeEventsResultUnmarshaller GetInstance() 
+        public static DescribeEventsResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new DescribeEventsResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new DescribeEventsResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

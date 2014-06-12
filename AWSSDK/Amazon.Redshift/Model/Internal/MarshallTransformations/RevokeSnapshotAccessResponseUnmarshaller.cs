@@ -13,81 +13,78 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for RevokeSnapshotAccess operation
-    /// </summary>
-    internal class RevokeSnapshotAccessResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for RevokeSnapshotAccess operation
+    /// </summary>  
+    public class RevokeSnapshotAccessResponseUnmarshaller : XmlResponseUnmarshaller
     {
-
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             RevokeSnapshotAccessResponse response = new RevokeSnapshotAccessResponse();
-            
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
             while (context.Read())
             {
                 if (context.IsStartElement)
                 {
-                    
                     if(context.TestExpression("RevokeSnapshotAccessResult", 2))
                     {
                         response.RevokeSnapshotAccessResult = RevokeSnapshotAccessResultUnmarshaller.GetInstance().Unmarshall(context);
                         continue;
                     }
-                    
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
                         response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
                     }
                 }
             }
-                
 
             return response;
         }
-        
-        
+
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             if (errorResponse.Code != null && errorResponse.Code.Equals("AccessToSnapshotDenied"))
             {
                 return new AccessToSnapshotDeniedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ClusterSnapshotNotFound"))
-            {
-                return new ClusterSnapshotNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("AuthorizationNotFound"))
             {
                 return new AuthorizationNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ClusterSnapshotNotFound"))
+            {
+                return new ClusterSnapshotNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonRedshiftException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static RevokeSnapshotAccessResponseUnmarshaller instance;
 
+        private static RevokeSnapshotAccessResponseUnmarshaller instance;
         public static RevokeSnapshotAccessResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
+            if (instance == null)
             {
-               instance = new RevokeSnapshotAccessResponseUnmarshaller();
+                instance = new RevokeSnapshotAccessResponseUnmarshaller();
             }
             return instance;
         }
-    
+
     }
 }
-    

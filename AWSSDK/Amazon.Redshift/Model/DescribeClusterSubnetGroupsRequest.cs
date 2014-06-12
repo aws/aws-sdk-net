@@ -25,25 +25,29 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeClusterSubnetGroups operation.
-    /// <para> Returns one or more cluster subnet group objects, which contain metadata about your cluster subnet groups. By default, this
-    /// operation returns information about all cluster subnet groups that are defined in you AWS account. </para>
+    /// Returns one or more cluster subnet group objects, which contain metadata
+    /// about your            cluster subnet groups.  By default, this operation returns information
+    /// about            all cluster subnet groups that are defined in you AWS account.
     /// </summary>
-    /// <seealso cref="Amazon.Redshift.AmazonRedshift.DescribeClusterSubnetGroups"/>
-    public class DescribeClusterSubnetGroupsRequest : AmazonWebServiceRequest
+    public partial class DescribeClusterSubnetGroupsRequest : AmazonWebServiceRequest
     {
-        private string clusterSubnetGroupName;
-        private int? maxRecords;
-        private string marker;
+        private string _clusterSubnetGroupName;
+        private string _marker;
+        private int? _maxRecords;
+
 
         /// <summary>
-        /// The name of the cluster subnet group for which information is requested.
-        ///  
+        /// Gets and sets the property ClusterSubnetGroupName. 
+        /// <para>
+        /// The name of the cluster subnet group for which information is requested. 
+        /// </para>
         /// </summary>
         public string ClusterSubnetGroupName
         {
-            get { return this.clusterSubnetGroupName; }
-            set { this.clusterSubnetGroupName = value; }
+            get { return this._clusterSubnetGroupName; }
+            set { this._clusterSubnetGroupName = value; }
         }
+
 
         /// <summary>
         /// Sets the ClusterSubnetGroupName property
@@ -53,60 +57,34 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterSubnetGroupsRequest WithClusterSubnetGroupName(string clusterSubnetGroupName)
         {
-            this.clusterSubnetGroupName = clusterSubnetGroupName;
+            this._clusterSubnetGroupName = clusterSubnetGroupName;
             return this;
         }
-            
 
         // Check to see if ClusterSubnetGroupName property is set
         internal bool IsSetClusterSubnetGroupName()
         {
-            return this.clusterSubnetGroupName != null;
+            return this._clusterSubnetGroupName != null;
         }
+
 
         /// <summary>
-        /// The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified
-        /// <c>MaxRecords</c> value, a value is returned in a <c>marker</c> field of the response. You can retrieve the next set of records by retrying
-        /// the command with the returned marker value. Default: <c>100</c> Constraints: minimum 20, maximum 100.
-        ///  
-        /// </summary>
-        public int MaxRecords
-        {
-            get { return this.maxRecords ?? default(int); }
-            set { this.maxRecords = value; }
-        }
-
-        /// <summary>
-        /// Sets the MaxRecords property
-        /// </summary>
-        /// <param name="maxRecords">The value to set for the MaxRecords property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribeClusterSubnetGroupsRequest WithMaxRecords(int maxRecords)
-        {
-            this.maxRecords = maxRecords;
-            return this;
-        }
-            
-
-        // Check to see if MaxRecords property is set
-        internal bool IsSetMaxRecords()
-        {
-            return this.maxRecords.HasValue;
-        }
-
-        /// <summary>
-        /// An optional parameter that specifies the starting point to return a set of response records. When the results of a
-        /// <a>DescribeClusterSubnetGroups</a> request exceed the value specified in <c>MaxRecords</c>, AWS returns a value in the <c>Marker</c> field
-        /// of the response. You can retrieve the next set of response records by providing the returned marker value in the <c>Marker</c> parameter and
-        /// retrying the request.
-        ///  
+        /// Gets and sets the property Marker. 
+        /// <para>
+        ///             An optional parameter that specifies the starting point to return a set
+        /// of response records.             When the results of a <a>DescribeClusterSubnetGroups</a>
+        /// request exceed the value specified in <code>MaxRecords</code>,             AWS returns
+        /// a value in the <code>Marker</code> field of the response. You can retrieve the next
+        /// set of             response records by providing the returned marker value in the
+        /// <code>Marker</code> parameter and             retrying the request.        
+        /// </para>
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
+
 
         /// <summary>
         /// Sets the Marker property
@@ -116,16 +94,59 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterSubnetGroupsRequest WithMarker(string marker)
         {
-            this.marker = marker;
+            this._marker = marker;
             return this;
         }
-            
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property MaxRecords. 
+        /// <para>
+        ///             The maximum number of response records to return in each call.       
+        ///      If the number of remaining response records exceeds the specified <code>MaxRecords</code>
+        /// value,             a value is returned in a <code>marker</code> field of the response.
+        ///             You can retrieve the next set of records by retrying the command with
+        /// the returned marker value.        
+        /// </para>
+        ///         
+        /// <para>
+        /// Default: <code>100</code>
+        /// </para>
+        ///         
+        /// <para>
+        /// Constraints: minimum 20, maximum 100.
+        /// </para>
+        /// </summary>
+        public int MaxRecords
+        {
+            get { return this._maxRecords.GetValueOrDefault(); }
+            set { this._maxRecords = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the MaxRecords property
+        /// </summary>
+        /// <param name="maxRecords">The value to set for the MaxRecords property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeClusterSubnetGroupsRequest WithMaxRecords(int maxRecords)
+        {
+            this._maxRecords = maxRecords;
+            return this;
+        }
+
+        // Check to see if MaxRecords property is set
+        internal bool IsSetMaxRecords()
+        {
+            return this._maxRecords.HasValue; 
+        }
+
     }
 }
-    

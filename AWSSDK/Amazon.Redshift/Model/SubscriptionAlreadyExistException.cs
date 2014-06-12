@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class SubscriptionAlreadyExistException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal SubscriptionAlreadyExistException(string message) 
+        public SubscriptionAlreadyExistException(string message) 
             : base(message) {}
           
-        internal SubscriptionAlreadyExistException(string message, Exception innerException) 
+        public SubscriptionAlreadyExistException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal SubscriptionAlreadyExistException(Exception innerException) 
+        public SubscriptionAlreadyExistException(Exception innerException) 
             : base(innerException) {}
             
-        internal SubscriptionAlreadyExistException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public SubscriptionAlreadyExistException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal SubscriptionAlreadyExistException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public SubscriptionAlreadyExistException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

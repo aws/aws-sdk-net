@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class SnapshotCopyAlreadyEnabledException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal SnapshotCopyAlreadyEnabledException(string message) 
+        public SnapshotCopyAlreadyEnabledException(string message) 
             : base(message) {}
           
-        internal SnapshotCopyAlreadyEnabledException(string message, Exception innerException) 
+        public SnapshotCopyAlreadyEnabledException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal SnapshotCopyAlreadyEnabledException(Exception innerException) 
+        public SnapshotCopyAlreadyEnabledException(Exception innerException) 
             : base(innerException) {}
             
-        internal SnapshotCopyAlreadyEnabledException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public SnapshotCopyAlreadyEnabledException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal SnapshotCopyAlreadyEnabledException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public SnapshotCopyAlreadyEnabledException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

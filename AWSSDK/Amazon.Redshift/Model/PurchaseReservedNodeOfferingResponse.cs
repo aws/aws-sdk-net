@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the PurchaseReservedNodeOffering response and response metadata.
+    /// Returns information about the PurchaseReservedNodeOfferingResult response and response metadata.
     /// </summary>
     public class PurchaseReservedNodeOfferingResponse : AmazonWebServiceResponse
     {
-        private PurchaseReservedNodeOfferingResult purchaseReservedNodeOfferingResult;
+        private PurchaseReservedNodeOfferingResult _purchaseReservedNodeOfferingResult;
 
-        /// 
+        /// <summary>
         /// Gets and sets the PurchaseReservedNodeOfferingResult property.
-        /// Contains the result of a successful invocation of the PurchaseReservedNodeOffering
-        /// action.
-        /// 
+        /// Represents the output of a PurchaseReservedNodeOffering operation.
+        /// </summary>
         public PurchaseReservedNodeOfferingResult PurchaseReservedNodeOfferingResult
         {
             get
             {
-                if(this.purchaseReservedNodeOfferingResult == null)
+                if(this._purchaseReservedNodeOfferingResult == null)
                 {
-                    this.purchaseReservedNodeOfferingResult = new PurchaseReservedNodeOfferingResult();
+                    this._purchaseReservedNodeOfferingResult = new PurchaseReservedNodeOfferingResult();
                 }
-
-                return this.purchaseReservedNodeOfferingResult;
+                return this._purchaseReservedNodeOfferingResult;
             }
-            set { this.purchaseReservedNodeOfferingResult = value; }
+            set { this._purchaseReservedNodeOfferingResult = value; }
         }
     }
 }
-    

@@ -12,120 +12,126 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   EventSubscription Unmarshaller
-     /// </summary>
-    internal class EventSubscriptionUnmarshaller : IUnmarshaller<EventSubscription, XmlUnmarshallerContext>, IUnmarshaller<EventSubscription, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for EventSubscription Object
+    /// </summary>  
+    public class EventSubscriptionUnmarshaller : IUnmarshaller<EventSubscription, XmlUnmarshallerContext>, IUnmarshaller<EventSubscription, JsonUnmarshallerContext>
     {
-        public EventSubscription Unmarshall(XmlUnmarshallerContext context) 
+        public EventSubscription Unmarshall(XmlUnmarshallerContext context)
         {
-            EventSubscription eventSubscription = new EventSubscription();
+            EventSubscription unmarshalledObject = new EventSubscription();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            if (context.IsStartOfDocument) 
-               targetDepth++;
-            
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
                     if (context.TestExpression("CustomerAwsId", targetDepth))
                     {
-                        eventSubscription.CustomerAwsId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.CustomerAwsId = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
                     if (context.TestExpression("CustSubscriptionId", targetDepth))
                     {
-                        eventSubscription.CustSubscriptionId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.CustSubscriptionId = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
-                    if (context.TestExpression("SnsTopicArn", targetDepth))
-                    {
-                        eventSubscription.SnsTopicArn = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("Status", targetDepth))
-                    {
-                        eventSubscription.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("SubscriptionCreationTime", targetDepth))
-                    {
-                        eventSubscription.SubscriptionCreationTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("SourceType", targetDepth))
-                    {
-                        eventSubscription.SourceType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("SourceIdsList/SourceId", targetDepth))
-                    {
-                        eventSubscription.SourceIdsList.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("EventCategoriesList/EventCategory", targetDepth))
-                    {
-                        eventSubscription.EventCategoriesList.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("Severity", targetDepth))
-                    {
-                        eventSubscription.Severity = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                    }
                     if (context.TestExpression("Enabled", targetDepth))
                     {
-                        eventSubscription.Enabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.GetInstance();
+                        unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("EventCategoriesList/EventCategory", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.EventCategoriesList.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("Severity", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Severity = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SnsTopicArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.SnsTopicArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SourceIdsList/SourceId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SourceIdsList.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("SourceType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.SourceType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Status", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SubscriptionCreationTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.GetInstance();
+                        unmarshalledObject.SubscriptionCreationTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return eventSubscription;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return eventSubscription;
+            return unmarshalledObject;
         }
 
-        public EventSubscription Unmarshall(JsonUnmarshallerContext context) 
+        public EventSubscription Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static EventSubscriptionUnmarshaller instance;
-
-        public static EventSubscriptionUnmarshaller GetInstance() 
+        public static EventSubscriptionUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new EventSubscriptionUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new EventSubscriptionUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

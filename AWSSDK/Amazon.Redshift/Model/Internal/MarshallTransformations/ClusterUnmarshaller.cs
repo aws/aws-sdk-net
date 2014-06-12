@@ -12,234 +12,242 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Cluster Unmarshaller
-     /// </summary>
-    internal class ClusterUnmarshaller : IUnmarshaller<Cluster, XmlUnmarshallerContext>, IUnmarshaller<Cluster, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Cluster Object
+    /// </summary>  
+    public class ClusterUnmarshaller : IUnmarshaller<Cluster, XmlUnmarshallerContext>, IUnmarshaller<Cluster, JsonUnmarshallerContext>
     {
-        public Cluster Unmarshall(XmlUnmarshallerContext context) 
+        public Cluster Unmarshall(XmlUnmarshallerContext context)
         {
-            Cluster cluster = new Cluster();
+            Cluster unmarshalledObject = new Cluster();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            if (context.IsStartOfDocument) 
-               targetDepth++;
-            
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("ClusterIdentifier", targetDepth))
-                    {
-                        cluster.ClusterIdentifier = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("NodeType", targetDepth))
-                    {
-                        cluster.NodeType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("ClusterStatus", targetDepth))
-                    {
-                        cluster.ClusterStatus = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("ModifyStatus", targetDepth))
-                    {
-                        cluster.ModifyStatus = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("MasterUsername", targetDepth))
-                    {
-                        cluster.MasterUsername = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("DBName", targetDepth))
-                    {
-                        cluster.DBName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("Endpoint", targetDepth))
-                    {
-                        cluster.Endpoint = EndpointUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("ClusterCreateTime", targetDepth))
-                    {
-                        cluster.ClusterCreateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("AutomatedSnapshotRetentionPeriod", targetDepth))
-                    {
-                        cluster.AutomatedSnapshotRetentionPeriod = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("ClusterSecurityGroups/ClusterSecurityGroup", targetDepth))
-                    {
-                        cluster.ClusterSecurityGroups.Add(ClusterSecurityGroupMembershipUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("VpcSecurityGroups/VpcSecurityGroup", targetDepth))
-                    {
-                        cluster.VpcSecurityGroups.Add(VpcSecurityGroupMembershipUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("ClusterParameterGroups/ClusterParameterGroup", targetDepth))
-                    {
-                        cluster.ClusterParameterGroups.Add(ClusterParameterGroupStatusUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("ClusterSubnetGroupName", targetDepth))
-                    {
-                        cluster.ClusterSubnetGroupName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("VpcId", targetDepth))
-                    {
-                        cluster.VpcId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("AvailabilityZone", targetDepth))
-                    {
-                        cluster.AvailabilityZone = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("PreferredMaintenanceWindow", targetDepth))
-                    {
-                        cluster.PreferredMaintenanceWindow = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("PendingModifiedValues", targetDepth))
-                    {
-                        cluster.PendingModifiedValues = PendingModifiedValuesUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("ClusterVersion", targetDepth))
-                    {
-                        cluster.ClusterVersion = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
                     if (context.TestExpression("AllowVersionUpgrade", targetDepth))
                     {
-                        cluster.AllowVersionUpgrade = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.GetInstance();
+                        unmarshalledObject.AllowVersionUpgrade = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
-                    if (context.TestExpression("NumberOfNodes", targetDepth))
+                    }
+                    if (context.TestExpression("AutomatedSnapshotRetentionPeriod", targetDepth))
                     {
-                        cluster.NumberOfNodes = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IntUnmarshaller.GetInstance();
+                        unmarshalledObject.AutomatedSnapshotRetentionPeriod = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
-                    if (context.TestExpression("PubliclyAccessible", targetDepth))
+                    }
+                    if (context.TestExpression("AvailabilityZone", targetDepth))
                     {
-                        cluster.PubliclyAccessible = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
-                    if (context.TestExpression("Encrypted", targetDepth))
+                    }
+                    if (context.TestExpression("ClusterCreateTime", targetDepth))
                     {
-                        cluster.Encrypted = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.GetInstance();
+                        unmarshalledObject.ClusterCreateTime = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
-                    if (context.TestExpression("RestoreStatus", targetDepth))
+                    }
+                    if (context.TestExpression("ClusterIdentifier", targetDepth))
                     {
-                        cluster.RestoreStatus = RestoreStatusUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.ClusterIdentifier = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
-                    if (context.TestExpression("HsmStatus", targetDepth))
-                    {
-                        cluster.HsmStatus = HsmStatusUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("ClusterSnapshotCopyStatus", targetDepth))
-                    {
-                        cluster.ClusterSnapshotCopyStatus = ClusterSnapshotCopyStatusUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("ClusterPublicKey", targetDepth))
-                    {
-                        cluster.ClusterPublicKey = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                    }
                     if (context.TestExpression("ClusterNodes/member", targetDepth))
                     {
-                        cluster.ClusterNodes.Add(ClusterNodeUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = ClusterNodeUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ClusterNodes.Add(item);
                         continue;
-                    } 
-                    if (context.TestExpression("ElasticIpStatus", targetDepth))
+                    }
+                    if (context.TestExpression("ClusterParameterGroups/ClusterParameterGroup", targetDepth))
                     {
-                        cluster.ElasticIpStatus = ElasticIpStatusUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = ClusterParameterGroupStatusUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ClusterParameterGroups.Add(item);
                         continue;
-                    } 
+                    }
+                    if (context.TestExpression("ClusterPublicKey", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.ClusterPublicKey = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ClusterRevisionNumber", targetDepth))
                     {
-                        cluster.ClusterRevisionNumber = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.ClusterRevisionNumber = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ClusterSecurityGroups/ClusterSecurityGroup", targetDepth))
+                    {
+                        var unmarshaller = ClusterSecurityGroupMembershipUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ClusterSecurityGroups.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("ClusterSnapshotCopyStatus", targetDepth))
+                    {
+                        var unmarshaller = ClusterSnapshotCopyStatusUnmarshaller.GetInstance();
+                        unmarshalledObject.ClusterSnapshotCopyStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ClusterStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.ClusterStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ClusterSubnetGroupName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.ClusterSubnetGroupName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ClusterVersion", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.ClusterVersion = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("DBName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.DBName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ElasticIpStatus", targetDepth))
+                    {
+                        var unmarshaller = ElasticIpStatusUnmarshaller.GetInstance();
+                        unmarshalledObject.ElasticIpStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Encrypted", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.GetInstance();
+                        unmarshalledObject.Encrypted = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Endpoint", targetDepth))
+                    {
+                        var unmarshaller = EndpointUnmarshaller.GetInstance();
+                        unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("HsmStatus", targetDepth))
+                    {
+                        var unmarshaller = HsmStatusUnmarshaller.GetInstance();
+                        unmarshalledObject.HsmStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MasterUsername", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.MasterUsername = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ModifyStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.ModifyStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("NodeType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.NodeType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("NumberOfNodes", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.GetInstance();
+                        unmarshalledObject.NumberOfNodes = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PendingModifiedValues", targetDepth))
+                    {
+                        var unmarshaller = PendingModifiedValuesUnmarshaller.GetInstance();
+                        unmarshalledObject.PendingModifiedValues = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PreferredMaintenanceWindow", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.PreferredMaintenanceWindow = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PubliclyAccessible", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.GetInstance();
+                        unmarshalledObject.PubliclyAccessible = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("RestoreStatus", targetDepth))
+                    {
+                        var unmarshaller = RestoreStatusUnmarshaller.GetInstance();
+                        unmarshalledObject.RestoreStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("VpcId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("VpcSecurityGroups/VpcSecurityGroup", targetDepth))
+                    {
+                        var unmarshaller = VpcSecurityGroupMembershipUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.VpcSecurityGroups.Add(item);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return cluster;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return cluster;
+            return unmarshalledObject;
         }
 
-        public Cluster Unmarshall(JsonUnmarshallerContext context) 
+        public Cluster Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static ClusterUnmarshaller instance;
-
-        public static ClusterUnmarshaller GetInstance() 
+        public static ClusterUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new ClusterUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new ClusterUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

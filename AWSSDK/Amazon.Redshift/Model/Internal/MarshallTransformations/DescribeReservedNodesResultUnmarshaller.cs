@@ -12,69 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   DescribeReservedNodesResult Unmarshaller
-     /// </summary>
-    internal class DescribeReservedNodesResultUnmarshaller : IUnmarshaller<DescribeReservedNodesResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeReservedNodesResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for DescribeReservedNodes Object
+    /// </summary>  
+    public class DescribeReservedNodesResultUnmarshaller : IUnmarshaller<DescribeReservedNodesResult, XmlUnmarshallerContext>
     {
         public DescribeReservedNodesResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            DescribeReservedNodesResult describeReservedNodesResult = new DescribeReservedNodesResult();
+            DescribeReservedNodesResult result = new DescribeReservedNodesResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
+
                     if (context.TestExpression("Marker", targetDepth))
                     {
-                        describeReservedNodesResult.Marker = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("ReservedNodes/ReservedNode", targetDepth))
-                    {
-                        describeReservedNodesResult.ReservedNodes.Add(ReservedNodeUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.Marker = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
+                    if (context.TestExpression("ReservedNodes/ReservedNode", targetDepth))
+                    {
+                        var unmarshaller = ReservedNodeUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        result.ReservedNodes.Add(item);
+                        continue;
+                    }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return describeReservedNodesResult;
+                    return result;
                 }
             }
-                        
 
-
-            return describeReservedNodesResult;
+            return result;
         }
 
-        public DescribeReservedNodesResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static DescribeReservedNodesResultUnmarshaller instance;
-
-        public static DescribeReservedNodesResultUnmarshaller GetInstance() 
+        public static DescribeReservedNodesResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new DescribeReservedNodesResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new DescribeReservedNodesResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

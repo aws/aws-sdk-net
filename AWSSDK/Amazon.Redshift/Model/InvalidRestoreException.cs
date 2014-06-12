@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class InvalidRestoreException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal InvalidRestoreException(string message) 
+        public InvalidRestoreException(string message) 
             : base(message) {}
           
-        internal InvalidRestoreException(string message, Exception innerException) 
+        public InvalidRestoreException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal InvalidRestoreException(Exception innerException) 
+        public InvalidRestoreException(Exception innerException) 
             : base(innerException) {}
             
-        internal InvalidRestoreException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidRestoreException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal InvalidRestoreException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidRestoreException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

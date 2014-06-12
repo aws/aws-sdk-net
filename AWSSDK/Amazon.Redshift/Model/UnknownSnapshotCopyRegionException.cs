@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class UnknownSnapshotCopyRegionException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal UnknownSnapshotCopyRegionException(string message) 
+        public UnknownSnapshotCopyRegionException(string message) 
             : base(message) {}
           
-        internal UnknownSnapshotCopyRegionException(string message, Exception innerException) 
+        public UnknownSnapshotCopyRegionException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal UnknownSnapshotCopyRegionException(Exception innerException) 
+        public UnknownSnapshotCopyRegionException(Exception innerException) 
             : base(innerException) {}
             
-        internal UnknownSnapshotCopyRegionException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public UnknownSnapshotCopyRegionException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal UnknownSnapshotCopyRegionException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public UnknownSnapshotCopyRegionException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

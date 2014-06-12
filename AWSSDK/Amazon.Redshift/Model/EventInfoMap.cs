@@ -18,6 +18,9 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -25,97 +28,72 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class EventInfoMap
     {
-        
-        private string eventId;
-        private List<string> eventCategories = new List<string>();
-        private string eventDescription;
-        private string severity;
+        private List<string> _eventCategories = new List<string>();
+        private string _eventDescription;
+        private string _eventId;
+        private string _severity;
+
 
         /// <summary>
-        /// The identifier of an Amazon Redshift event.
-        ///  
-        /// </summary>
-        public string EventId
-        {
-            get { return this.eventId; }
-            set { this.eventId = value; }
-        }
-
-        /// <summary>
-        /// Sets the EventId property
-        /// </summary>
-        /// <param name="eventId">The value to set for the EventId property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public EventInfoMap WithEventId(string eventId)
-        {
-            this.eventId = eventId;
-            return this;
-        }
-            
-
-        // Check to see if EventId property is set
-        internal bool IsSetEventId()
-        {
-            return this.eventId != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property EventCategories. 
+        /// <para>
         /// The category of an Amazon Redshift event.
-        ///  
+        /// </para>
         /// </summary>
         public List<string> EventCategories
         {
-            get { return this.eventCategories; }
-            set { this.eventCategories = value; }
+            get { return this._eventCategories; }
+            set { this._eventCategories = value; }
         }
+
         /// <summary>
-        /// Adds elements to the EventCategories collection
+        /// Sets the EventCategories property
         /// </summary>
         /// <param name="eventCategories">The values to add to the EventCategories collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventInfoMap WithEventCategories(params string[] eventCategories)
         {
-            foreach (string element in eventCategories)
+            foreach (var element in eventCategories)
             {
-                this.eventCategories.Add(element);
+                this._eventCategories.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the EventCategories collection
+        /// Sets the EventCategories property
         /// </summary>
         /// <param name="eventCategories">The values to add to the EventCategories collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventInfoMap WithEventCategories(IEnumerable<string> eventCategories)
         {
-            foreach (string element in eventCategories)
+            foreach (var element in eventCategories)
             {
-                this.eventCategories.Add(element);
+                this._eventCategories.Add(element);
             }
-
             return this;
         }
-
         // Check to see if EventCategories property is set
         internal bool IsSetEventCategories()
         {
-            return this.eventCategories.Count > 0;
+            return this._eventCategories != null && this._eventCategories.Count > 0; 
         }
 
+
         /// <summary>
+        /// Gets and sets the property EventDescription. 
+        /// <para>
         /// The description of an Amazon Redshift event.
-        ///  
+        /// </para>
         /// </summary>
         public string EventDescription
         {
-            get { return this.eventDescription; }
-            set { this.eventDescription = value; }
+            get { return this._eventDescription; }
+            set { this._eventDescription = value; }
         }
+
 
         /// <summary>
         /// Sets the EventDescription property
@@ -125,26 +103,65 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventInfoMap WithEventDescription(string eventDescription)
         {
-            this.eventDescription = eventDescription;
+            this._eventDescription = eventDescription;
             return this;
         }
-            
 
         // Check to see if EventDescription property is set
         internal bool IsSetEventDescription()
         {
-            return this.eventDescription != null;
+            return this._eventDescription != null;
         }
 
+
         /// <summary>
-        /// The severity of the event. Values: ERROR, INFO
-        ///  
+        /// Gets and sets the property EventId. 
+        /// <para>
+        /// The identifier of an Amazon Redshift event.
+        /// </para>
+        /// </summary>
+        public string EventId
+        {
+            get { return this._eventId; }
+            set { this._eventId = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the EventId property
+        /// </summary>
+        /// <param name="eventId">The value to set for the EventId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public EventInfoMap WithEventId(string eventId)
+        {
+            this._eventId = eventId;
+            return this;
+        }
+
+        // Check to see if EventId property is set
+        internal bool IsSetEventId()
+        {
+            return this._eventId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Severity. 
+        /// <para>
+        /// The severity of the event.
+        /// </para>
+        ///         
+        /// <para>
+        /// Values: ERROR, INFO
+        /// </para>
         /// </summary>
         public string Severity
         {
-            get { return this.severity; }
-            set { this.severity = value; }
+            get { return this._severity; }
+            set { this._severity = value; }
         }
+
 
         /// <summary>
         /// Sets the Severity property
@@ -154,15 +171,15 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventInfoMap WithSeverity(string severity)
         {
-            this.severity = severity;
+            this._severity = severity;
             return this;
         }
-            
 
         // Check to see if Severity property is set
         internal bool IsSetSeverity()
         {
-            return this.severity != null;
+            return this._severity != null;
         }
+
     }
 }

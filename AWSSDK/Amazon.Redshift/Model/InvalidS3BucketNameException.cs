@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class InvalidS3BucketNameException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal InvalidS3BucketNameException(string message) 
+        public InvalidS3BucketNameException(string message) 
             : base(message) {}
           
-        internal InvalidS3BucketNameException(string message, Exception innerException) 
+        public InvalidS3BucketNameException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal InvalidS3BucketNameException(Exception innerException) 
+        public InvalidS3BucketNameException(Exception innerException) 
             : base(innerException) {}
             
-        internal InvalidS3BucketNameException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidS3BucketNameException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal InvalidS3BucketNameException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidS3BucketNameException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

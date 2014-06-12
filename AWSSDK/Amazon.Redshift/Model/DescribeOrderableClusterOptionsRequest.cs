@@ -25,31 +25,45 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeOrderableClusterOptions operation.
-    /// <para> Returns a list of orderable cluster options. Before you create a new cluster you can use this operation to find what options are
-    /// available, such as the EC2 Availability Zones (AZ) in the specific AWS region that you can specify, and the node types you can request. The
-    /// node types differ by available storage, memory, CPU and price. With the cost involved you might want to obtain a list of cluster options in
-    /// the specific region and specify values when creating a cluster. For more information about managing clusters, go to <a
-    /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html" >Amazon Redshift Clusters</a> in the <i>Amazon Redshift
-    /// Management Guide</i> </para>
+    /// Returns a list of orderable cluster options. Before you create a         new cluster
+    /// you can use this operation to find what options are         available, such as the
+    /// EC2 Availability Zones (AZ) in the specific         AWS region that you can specify,
+    ///         and the node types you can request. The node types differ by available   
+    ///      storage, memory, CPU and price. With the cost involved you might want to    
+    ///     obtain a list of cluster options in the specific region and specify values   
+    ///      when creating a cluster.         For more information about managing clusters,
+    /// go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+    /// Redshift Clusters</a> in the <i>Amazon Redshift Management Guide</i>
     /// </summary>
-    /// <seealso cref="Amazon.Redshift.AmazonRedshift.DescribeOrderableClusterOptions"/>
-    public class DescribeOrderableClusterOptionsRequest : AmazonWebServiceRequest
+    public partial class DescribeOrderableClusterOptionsRequest : AmazonWebServiceRequest
     {
-        private string clusterVersion;
-        private string nodeType;
-        private int? maxRecords;
-        private string marker;
+        private string _clusterVersion;
+        private string _marker;
+        private int? _maxRecords;
+        private string _nodeType;
+
 
         /// <summary>
-        /// The version filter value. Specify this parameter to show only the available offerings matching the specified version. Default: All versions.
+        /// Gets and sets the property ClusterVersion. 
+        /// <para>
+        ///  The version filter value. Specify this parameter to show only             the available
+        /// offerings matching the specified version. 
+        /// </para>
+        ///         
+        /// <para>
+        /// Default: All versions.
+        /// </para>
+        ///         
+        /// <para>
         /// Constraints: Must be one of the version returned from <a>DescribeClusterVersions</a>.
-        ///  
+        /// </para>
         /// </summary>
         public string ClusterVersion
         {
-            get { return this.clusterVersion; }
-            set { this.clusterVersion = value; }
+            get { return this._clusterVersion; }
+            set { this._clusterVersion = value; }
         }
+
 
         /// <summary>
         /// Sets the ClusterVersion property
@@ -59,89 +73,34 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeOrderableClusterOptionsRequest WithClusterVersion(string clusterVersion)
         {
-            this.clusterVersion = clusterVersion;
+            this._clusterVersion = clusterVersion;
             return this;
         }
-            
 
         // Check to see if ClusterVersion property is set
         internal bool IsSetClusterVersion()
         {
-            return this.clusterVersion != null;
+            return this._clusterVersion != null;
         }
+
 
         /// <summary>
-        /// The node type filter value. Specify this parameter to show only the available offerings matching the specified node type.
-        ///  
-        /// </summary>
-        public string NodeType
-        {
-            get { return this.nodeType; }
-            set { this.nodeType = value; }
-        }
-
-        /// <summary>
-        /// Sets the NodeType property
-        /// </summary>
-        /// <param name="nodeType">The value to set for the NodeType property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribeOrderableClusterOptionsRequest WithNodeType(string nodeType)
-        {
-            this.nodeType = nodeType;
-            return this;
-        }
-            
-
-        // Check to see if NodeType property is set
-        internal bool IsSetNodeType()
-        {
-            return this.nodeType != null;
-        }
-
-        /// <summary>
-        /// The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified
-        /// <c>MaxRecords</c> value, a value is returned in a <c>marker</c> field of the response. You can retrieve the next set of records by retrying
-        /// the command with the returned marker value. Default: <c>100</c> Constraints: minimum 20, maximum 100.
-        ///  
-        /// </summary>
-        public int MaxRecords
-        {
-            get { return this.maxRecords ?? default(int); }
-            set { this.maxRecords = value; }
-        }
-
-        /// <summary>
-        /// Sets the MaxRecords property
-        /// </summary>
-        /// <param name="maxRecords">The value to set for the MaxRecords property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribeOrderableClusterOptionsRequest WithMaxRecords(int maxRecords)
-        {
-            this.maxRecords = maxRecords;
-            return this;
-        }
-            
-
-        // Check to see if MaxRecords property is set
-        internal bool IsSetMaxRecords()
-        {
-            return this.maxRecords.HasValue;
-        }
-
-        /// <summary>
-        /// An optional parameter that specifies the starting point to return a set of response records. When the results of a
-        /// <a>DescribeOrderableClusterOptions</a> request exceed the value specified in <c>MaxRecords</c>, AWS returns a value in the <c>Marker</c>
-        /// field of the response. You can retrieve the next set of response records by providing the returned marker value in the <c>Marker</c>
-        /// parameter and retrying the request.
-        ///  
+        /// Gets and sets the property Marker. 
+        /// <para>
+        ///             An optional parameter that specifies the starting point to return a set
+        /// of response records.             When the results of a <a>DescribeOrderableClusterOptions</a>
+        /// request exceed the value specified in <code>MaxRecords</code>,             AWS returns
+        /// a value in the <code>Marker</code> field of the response. You can retrieve the next
+        /// set of             response records by providing the returned marker value in the
+        /// <code>Marker</code> parameter and             retrying the request.        
+        /// </para>
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
+
 
         /// <summary>
         /// Sets the Marker property
@@ -151,16 +110,92 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeOrderableClusterOptionsRequest WithMarker(string marker)
         {
-            this.marker = marker;
+            this._marker = marker;
             return this;
         }
-            
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property MaxRecords. 
+        /// <para>
+        ///             The maximum number of response records to return in each call.       
+        ///      If the number of remaining response records exceeds the specified <code>MaxRecords</code>
+        /// value,             a value is returned in a <code>marker</code> field of the response.
+        ///             You can retrieve the next set of records by retrying the command with
+        /// the returned marker value.        
+        /// </para>
+        ///         
+        /// <para>
+        /// Default: <code>100</code>
+        /// </para>
+        ///         
+        /// <para>
+        /// Constraints: minimum 20, maximum 100.
+        /// </para>
+        /// </summary>
+        public int MaxRecords
+        {
+            get { return this._maxRecords.GetValueOrDefault(); }
+            set { this._maxRecords = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the MaxRecords property
+        /// </summary>
+        /// <param name="maxRecords">The value to set for the MaxRecords property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeOrderableClusterOptionsRequest WithMaxRecords(int maxRecords)
+        {
+            this._maxRecords = maxRecords;
+            return this;
+        }
+
+        // Check to see if MaxRecords property is set
+        internal bool IsSetMaxRecords()
+        {
+            return this._maxRecords.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property NodeType. 
+        /// <para>
+        ///  The node type filter value. Specify this parameter to show only the available offerings
+        /// matching the specified node type. 
+        /// </para>
+        /// </summary>
+        public string NodeType
+        {
+            get { return this._nodeType; }
+            set { this._nodeType = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the NodeType property
+        /// </summary>
+        /// <param name="nodeType">The value to set for the NodeType property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeOrderableClusterOptionsRequest WithNodeType(string nodeType)
+        {
+            this._nodeType = nodeType;
+            return this;
+        }
+
+        // Check to see if NodeType property is set
+        internal bool IsSetNodeType()
+        {
+            return this._nodeType != null;
+        }
+
     }
 }
-    

@@ -13,86 +13,82 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for ModifySnapshotCopyRetentionPeriod operation
-    /// </summary>
-    internal class ModifySnapshotCopyRetentionPeriodResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for ModifySnapshotCopyRetentionPeriod operation
+    /// </summary>  
+    public class ModifySnapshotCopyRetentionPeriodResponseUnmarshaller : XmlResponseUnmarshaller
     {
-
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             ModifySnapshotCopyRetentionPeriodResponse response = new ModifySnapshotCopyRetentionPeriodResponse();
-            
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
             while (context.Read())
             {
                 if (context.IsStartElement)
                 {
-                    
                     if(context.TestExpression("ModifySnapshotCopyRetentionPeriodResult", 2))
                     {
                         response.ModifySnapshotCopyRetentionPeriodResult = ModifySnapshotCopyRetentionPeriodResultUnmarshaller.GetInstance().Unmarshall(context);
                         continue;
                     }
-                    
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
                         response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
                     }
                 }
             }
-                
 
             return response;
         }
-        
-        
+
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
-            if (errorResponse.Code != null && errorResponse.Code.Equals("SnapshotCopyDisabledFault"))
-            {
-                return new SnapshotCopyDisabledException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("UnauthorizedOperation"))
-            {
-                return new UnauthorizedOperationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidClusterState"))
-            {
-                return new InvalidClusterStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("ClusterNotFound"))
             {
                 return new ClusterNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidClusterState"))
+            {
+                return new InvalidClusterStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("SnapshotCopyDisabledFault"))
+            {
+                return new SnapshotCopyDisabledException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("UnauthorizedOperation"))
+            {
+                return new UnauthorizedOperationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonRedshiftException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static ModifySnapshotCopyRetentionPeriodResponseUnmarshaller instance;
 
+        private static ModifySnapshotCopyRetentionPeriodResponseUnmarshaller instance;
         public static ModifySnapshotCopyRetentionPeriodResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
+            if (instance == null)
             {
-               instance = new ModifySnapshotCopyRetentionPeriodResponseUnmarshaller();
+                instance = new ModifySnapshotCopyRetentionPeriodResponseUnmarshaller();
             }
             return instance;
         }
-    
+
     }
 }
-    

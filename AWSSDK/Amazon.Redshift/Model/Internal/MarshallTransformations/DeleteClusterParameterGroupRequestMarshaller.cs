@@ -14,32 +14,36 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Cluster Parameter Group Request Marshaller
+    /// DeleteClusterParameterGroup Request Marshaller
     /// </summary>       
     public class DeleteClusterParameterGroupRequestMarshaller : IMarshaller<IRequest, DeleteClusterParameterGroupRequest>
     {
-        public IRequest Marshall(DeleteClusterParameterGroupRequest deleteClusterParameterGroupRequest)
+        public IRequest Marshall(DeleteClusterParameterGroupRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(deleteClusterParameterGroupRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "DeleteClusterParameterGroup");
             request.Parameters.Add("Version", "2012-12-01");
-            if (deleteClusterParameterGroupRequest != null && deleteClusterParameterGroupRequest.IsSetParameterGroupName())
-            {
-                request.Parameters.Add("ParameterGroupName", StringUtils.FromString(deleteClusterParameterGroupRequest.ParameterGroupName));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetParameterGroupName())
+                {
+                    request.Parameters.Add("ParameterGroupName", StringUtils.FromString(publicRequest.ParameterGroupName));
+                }
+            }
             return request;
         }
     }

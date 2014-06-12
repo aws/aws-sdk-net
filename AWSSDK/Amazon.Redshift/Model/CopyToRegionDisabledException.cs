@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class CopyToRegionDisabledException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal CopyToRegionDisabledException(string message) 
+        public CopyToRegionDisabledException(string message) 
             : base(message) {}
           
-        internal CopyToRegionDisabledException(string message, Exception innerException) 
+        public CopyToRegionDisabledException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal CopyToRegionDisabledException(Exception innerException) 
+        public CopyToRegionDisabledException(Exception innerException) 
             : base(innerException) {}
             
-        internal CopyToRegionDisabledException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public CopyToRegionDisabledException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal CopyToRegionDisabledException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public CopyToRegionDisabledException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

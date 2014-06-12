@@ -18,25 +18,32 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// <para> Describes an AWS customer account authorized to restore a snapshot. </para>
+    /// Describes an AWS customer account authorized to restore a snapshot.
     /// </summary>
     public partial class AccountWithRestoreAccess
     {
-        
-        private string accountId;
+        private string _accountId;
+
 
         /// <summary>
-        /// The identifier of an AWS customer account authorized to restore a snapshot.
-        ///  
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        ///             The identifier of an AWS customer account authorized to restore a snapshot.
+        ///         
+        /// </para>
         /// </summary>
         public string AccountId
         {
-            get { return this.accountId; }
-            set { this.accountId = value; }
+            get { return this._accountId; }
+            set { this._accountId = value; }
         }
+
 
         /// <summary>
         /// Sets the AccountId property
@@ -46,15 +53,15 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AccountWithRestoreAccess WithAccountId(string accountId)
         {
-            this.accountId = accountId;
+            this._accountId = accountId;
             return this;
         }
-            
 
         // Check to see if AccountId property is set
         internal bool IsSetAccountId()
         {
-            return this.accountId != null;
+            return this._accountId != null;
         }
+
     }
 }

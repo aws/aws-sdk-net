@@ -43,6 +43,7 @@ namespace Amazon.SimpleNotificationService.Model
         private string messageField;
         private string messageStructureField;
         private string subjectField;
+        private Dictionary<string, MessageAttributeValue> messageAttributesField;
 
         /// <summary>
         /// The ARN of the topic you want to publish to.
@@ -225,6 +226,74 @@ namespace Amazon.SimpleNotificationService.Model
         public bool IsSetSubject()
         {
             return this.subjectField != null;
+        }
+
+
+        /// <summary>
+        /// Gets or sets the message attributes.
+        /// </summary>
+        /// <remarks>
+        /// <para>A map of message attributes.</para>
+        /// </remarks>
+        /// <value>The attributes.</value>
+        [XmlElementAttribute(ElementName = "MessageAttribute")]
+        public Dictionary<string, MessageAttributeValue> MessageAttributes
+        {
+            get
+            {
+                if (null == this.messageAttributesField)
+                    this.messageAttributesField = new Dictionary<string, MessageAttributeValue>();
+                return this.messageAttributesField;
+            }
+            set
+            {
+                this.messageAttributesField = value;
+            }
+        }
+
+        /// <summary>
+        /// Determines whether the target <see cref="P:MessageAttribute"/> is set in this request.
+        /// </summary>
+        /// <returns>
+        ///   <c>true</c> if any MessageAttribute are set; otherwise, <c>false</c>.
+        /// </returns>
+        public bool IsSetMessageAttributes()
+        {
+            return this.messageAttributesField != null;
+        }
+
+
+        /// <summary>
+        /// Modifies this request with the specified MessageAttributes.
+        /// </summary>
+        /// <param name="messageAttributes">The MessageAttributes.</param>
+        /// <returns>The current instance.</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public PublishRequest WithMessageAttribute(Dictionary<string, MessageAttributeValue> messageAttributes)
+        {
+            foreach (var item in messageAttributes)
+            {
+                MessageAttributes.Add(item.Key, item.Value);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Modifies this request to include the specified message attribute. If an attribute already exists,
+        /// its value will be replaced with the new value.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <param name="value">The value.</param>
+        /// <returns>The current instance.</returns>
+        /// <exception cref="System.ArgumentException">Invalid key; cannot be NULL or empty.</exception>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public PublishRequest WithAttribute(string key, MessageAttributeValue value)
+        {
+            if (String.IsNullOrEmpty(key))
+                throw new ArgumentException("Invalid key; cannot be NULL or empty.");
+
+            this.MessageAttributes[key] = value;
+            return this;
         }
 
     }

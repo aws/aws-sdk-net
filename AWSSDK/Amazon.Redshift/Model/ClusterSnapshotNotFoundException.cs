@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class ClusterSnapshotNotFoundException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal ClusterSnapshotNotFoundException(string message) 
+        public ClusterSnapshotNotFoundException(string message) 
             : base(message) {}
           
-        internal ClusterSnapshotNotFoundException(string message, Exception innerException) 
+        public ClusterSnapshotNotFoundException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal ClusterSnapshotNotFoundException(Exception innerException) 
+        public ClusterSnapshotNotFoundException(Exception innerException) 
             : base(innerException) {}
             
-        internal ClusterSnapshotNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ClusterSnapshotNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal ClusterSnapshotNotFoundException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ClusterSnapshotNotFoundException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

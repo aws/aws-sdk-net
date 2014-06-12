@@ -12,69 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   DescribeOrderableClusterOptionsResult Unmarshaller
-     /// </summary>
-    internal class DescribeOrderableClusterOptionsResultUnmarshaller : IUnmarshaller<DescribeOrderableClusterOptionsResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeOrderableClusterOptionsResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for DescribeOrderableClusterOptions Object
+    /// </summary>  
+    public class DescribeOrderableClusterOptionsResultUnmarshaller : IUnmarshaller<DescribeOrderableClusterOptionsResult, XmlUnmarshallerContext>
     {
         public DescribeOrderableClusterOptionsResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            DescribeOrderableClusterOptionsResult describeOrderableClusterOptionsResult = new DescribeOrderableClusterOptionsResult();
+            DescribeOrderableClusterOptionsResult result = new DescribeOrderableClusterOptionsResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("OrderableClusterOptions/OrderableClusterOption", targetDepth))
-                    {
-                        describeOrderableClusterOptionsResult.OrderableClusterOptions.Add(OrderableClusterOptionUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    } 
+                {
+
                     if (context.TestExpression("Marker", targetDepth))
                     {
-                        describeOrderableClusterOptionsResult.Marker = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.Marker = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
+                    if (context.TestExpression("OrderableClusterOptions/OrderableClusterOption", targetDepth))
+                    {
+                        var unmarshaller = OrderableClusterOptionUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        result.OrderableClusterOptions.Add(item);
+                        continue;
+                    }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return describeOrderableClusterOptionsResult;
+                    return result;
                 }
             }
-                        
 
-
-            return describeOrderableClusterOptionsResult;
+            return result;
         }
 
-        public DescribeOrderableClusterOptionsResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static DescribeOrderableClusterOptionsResultUnmarshaller instance;
-
-        public static DescribeOrderableClusterOptionsResultUnmarshaller GetInstance() 
+        public static DescribeOrderableClusterOptionsResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new DescribeOrderableClusterOptionsResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new DescribeOrderableClusterOptionsResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class ClusterSubnetQuotaExceededException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal ClusterSubnetQuotaExceededException(string message) 
+        public ClusterSubnetQuotaExceededException(string message) 
             : base(message) {}
           
-        internal ClusterSubnetQuotaExceededException(string message, Exception innerException) 
+        public ClusterSubnetQuotaExceededException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal ClusterSubnetQuotaExceededException(Exception innerException) 
+        public ClusterSubnetQuotaExceededException(Exception innerException) 
             : base(innerException) {}
             
-        internal ClusterSubnetQuotaExceededException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ClusterSubnetQuotaExceededException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal ClusterSubnetQuotaExceededException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ClusterSubnetQuotaExceededException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

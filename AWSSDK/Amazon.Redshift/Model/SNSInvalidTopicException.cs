@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class SNSInvalidTopicException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal SNSInvalidTopicException(string message) 
+        public SNSInvalidTopicException(string message) 
             : base(message) {}
           
-        internal SNSInvalidTopicException(string message, Exception innerException) 
+        public SNSInvalidTopicException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal SNSInvalidTopicException(Exception innerException) 
+        public SNSInvalidTopicException(Exception innerException) 
             : base(innerException) {}
             
-        internal SNSInvalidTopicException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public SNSInvalidTopicException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal SNSInvalidTopicException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public SNSInvalidTopicException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

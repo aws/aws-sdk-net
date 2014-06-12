@@ -12,40 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the  ModifyClusterParameterGroupResult response and response metadata.
+    /// Returns information about the ModifyClusterParameterGroupResult response and response metadata.
     /// </summary>
     public class ModifyClusterParameterGroupResponse : AmazonWebServiceResponse
     {
-        private ModifyClusterParameterGroupResult modifyClusterParameterGroupResult;
+        private ModifyClusterParameterGroupResult _modifyClusterParameterGroupResult;
 
         /// <summary>
         /// Gets and sets the ModifyClusterParameterGroupResult property.
-        /// Contains the output from the ModifyClusterParameterGroup and ResetClusterParameterGroup actions and indicate the parameter group involved
-        /// and the status of the operation on the parameter group.
+        /// Represents the output of a ModifyClusterParameterGroup operation.
         /// </summary>
         public ModifyClusterParameterGroupResult ModifyClusterParameterGroupResult
         {
             get
             {
-                if(this.modifyClusterParameterGroupResult == null)
+                if(this._modifyClusterParameterGroupResult == null)
                 {
-                    this.modifyClusterParameterGroupResult = new ModifyClusterParameterGroupResult();
+                    this._modifyClusterParameterGroupResult = new ModifyClusterParameterGroupResult();
                 }
-
-                return this.modifyClusterParameterGroupResult;
+                return this._modifyClusterParameterGroupResult;
             }
-            set { this.modifyClusterParameterGroupResult = value; }
+            set { this._modifyClusterParameterGroupResult = value; }
         }
     }
 }
-    

@@ -12,21 +12,29 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ClusterNode Unmarshaller
-     /// </summary>
-    internal class ClusterNodeUnmarshaller : IUnmarshaller<ClusterNode, XmlUnmarshallerContext>, IUnmarshaller<ClusterNode, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ClusterNode Object
+    /// </summary>  
+    public class ClusterNodeUnmarshaller : IUnmarshaller<ClusterNode, XmlUnmarshallerContext>, IUnmarshaller<ClusterNode, JsonUnmarshallerContext>
     {
-        public ClusterNode Unmarshall(XmlUnmarshallerContext context) 
+        public ClusterNode Unmarshall(XmlUnmarshallerContext context)
         {
-            ClusterNode clusterNode = new ClusterNode();
+            ClusterNode unmarshalledObject = new ClusterNode();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,51 +44,50 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
                     if (context.TestExpression("NodeRole", targetDepth))
                     {
-                        clusterNode.NodeRole = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.NodeRole = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
                     if (context.TestExpression("PrivateIPAddress", targetDepth))
                     {
-                        clusterNode.PrivateIPAddress = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.PrivateIPAddress = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
                     if (context.TestExpression("PublicIPAddress", targetDepth))
                     {
-                        clusterNode.PublicIPAddress = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.PublicIPAddress = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return clusterNode;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return clusterNode;
+            return unmarshalledObject;
         }
 
-        public ClusterNode Unmarshall(JsonUnmarshallerContext context) 
+        public ClusterNode Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static ClusterNodeUnmarshaller instance;
-
-        public static ClusterNodeUnmarshaller GetInstance() 
+        public static ClusterNodeUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new ClusterNodeUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new ClusterNodeUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

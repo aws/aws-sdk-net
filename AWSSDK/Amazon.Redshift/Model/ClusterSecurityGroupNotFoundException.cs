@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class ClusterSecurityGroupNotFoundException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal ClusterSecurityGroupNotFoundException(string message) 
+        public ClusterSecurityGroupNotFoundException(string message) 
             : base(message) {}
           
-        internal ClusterSecurityGroupNotFoundException(string message, Exception innerException) 
+        public ClusterSecurityGroupNotFoundException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal ClusterSecurityGroupNotFoundException(Exception innerException) 
+        public ClusterSecurityGroupNotFoundException(Exception innerException) 
             : base(innerException) {}
             
-        internal ClusterSecurityGroupNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ClusterSecurityGroupNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal ClusterSecurityGroupNotFoundException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ClusterSecurityGroupNotFoundException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

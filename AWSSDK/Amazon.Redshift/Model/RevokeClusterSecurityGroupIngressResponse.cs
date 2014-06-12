@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the RevokeClusterSecurityGroupIngress response and response metadata.
+    /// Returns information about the RevokeClusterSecurityGroupIngressResult response and response metadata.
     /// </summary>
     public class RevokeClusterSecurityGroupIngressResponse : AmazonWebServiceResponse
     {
-        private RevokeClusterSecurityGroupIngressResult revokeClusterSecurityGroupIngressResult;
+        private RevokeClusterSecurityGroupIngressResult _revokeClusterSecurityGroupIngressResult;
 
-        /// 
+        /// <summary>
         /// Gets and sets the RevokeClusterSecurityGroupIngressResult property.
-        /// Contains the result of a successful invocation of the RevokeClusterSecurityGroupIngress
-        /// action.
-        /// 
+        /// Represents the output of a RevokeClusterSecurityGroupIngress operation.
+        /// </summary>
         public RevokeClusterSecurityGroupIngressResult RevokeClusterSecurityGroupIngressResult
         {
             get
             {
-                if(this.revokeClusterSecurityGroupIngressResult == null)
+                if(this._revokeClusterSecurityGroupIngressResult == null)
                 {
-                    this.revokeClusterSecurityGroupIngressResult = new RevokeClusterSecurityGroupIngressResult();
+                    this._revokeClusterSecurityGroupIngressResult = new RevokeClusterSecurityGroupIngressResult();
                 }
-
-                return this.revokeClusterSecurityGroupIngressResult;
+                return this._revokeClusterSecurityGroupIngressResult;
             }
-            set { this.revokeClusterSecurityGroupIngressResult = value; }
+            set { this._revokeClusterSecurityGroupIngressResult = value; }
         }
     }
 }
-    

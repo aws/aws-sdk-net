@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class InvalidHsmClientCertificateStateException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal InvalidHsmClientCertificateStateException(string message) 
+        public InvalidHsmClientCertificateStateException(string message) 
             : base(message) {}
           
-        internal InvalidHsmClientCertificateStateException(string message, Exception innerException) 
+        public InvalidHsmClientCertificateStateException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal InvalidHsmClientCertificateStateException(Exception innerException) 
+        public InvalidHsmClientCertificateStateException(Exception innerException) 
             : base(innerException) {}
             
-        internal InvalidHsmClientCertificateStateException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidHsmClientCertificateStateException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal InvalidHsmClientCertificateStateException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidHsmClientCertificateStateException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

@@ -12,78 +12,83 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   DefaultClusterParameters Unmarshaller
-     /// </summary>
-    internal class DefaultClusterParametersUnmarshaller : IUnmarshaller<DefaultClusterParameters, XmlUnmarshallerContext>, IUnmarshaller<DefaultClusterParameters, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for DefaultClusterParameters Object
+    /// </summary>  
+    public class DefaultClusterParametersUnmarshaller : IUnmarshaller<DefaultClusterParameters, XmlUnmarshallerContext>, IUnmarshaller<DefaultClusterParameters, JsonUnmarshallerContext>
     {
-        public DefaultClusterParameters Unmarshall(XmlUnmarshallerContext context) 
+        public DefaultClusterParameters Unmarshall(XmlUnmarshallerContext context)
         {
-            DefaultClusterParameters defaultClusterParameters = new DefaultClusterParameters();
+            DefaultClusterParameters unmarshalledObject = new DefaultClusterParameters();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            if (context.IsStartOfDocument) 
-               targetDepth++;
-            
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("ParameterGroupFamily", targetDepth))
-                    {
-                        defaultClusterParameters.ParameterGroupFamily = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
                     if (context.TestExpression("Marker", targetDepth))
                     {
-                        defaultClusterParameters.Marker = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Marker = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
+                    if (context.TestExpression("ParameterGroupFamily", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.ParameterGroupFamily = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Parameters/Parameter", targetDepth))
                     {
-                        defaultClusterParameters.Parameters.Add(ParameterUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = ParameterUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Parameters.Add(item);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return defaultClusterParameters;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return defaultClusterParameters;
+            return unmarshalledObject;
         }
 
-        public DefaultClusterParameters Unmarshall(JsonUnmarshallerContext context) 
+        public DefaultClusterParameters Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static DefaultClusterParametersUnmarshaller instance;
-
-        public static DefaultClusterParametersUnmarshaller GetInstance() 
+        public static DefaultClusterParametersUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new DefaultClusterParametersUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new DefaultClusterParametersUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

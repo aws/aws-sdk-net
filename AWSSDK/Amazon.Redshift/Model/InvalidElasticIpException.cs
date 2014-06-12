@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class InvalidElasticIpException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal InvalidElasticIpException(string message) 
+        public InvalidElasticIpException(string message) 
             : base(message) {}
           
-        internal InvalidElasticIpException(string message, Exception innerException) 
+        public InvalidElasticIpException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal InvalidElasticIpException(Exception innerException) 
+        public InvalidElasticIpException(Exception innerException) 
             : base(innerException) {}
             
-        internal InvalidElasticIpException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidElasticIpException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal InvalidElasticIpException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidElasticIpException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

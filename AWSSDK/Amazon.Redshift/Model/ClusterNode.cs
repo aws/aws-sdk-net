@@ -18,27 +18,33 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// <para>The identifier of a node in a cluster. --> </para>
+    /// The identifier of a node in a cluster. --&gt;
     /// </summary>
     public partial class ClusterNode
     {
-        
-        private string nodeRole;
-        private string privateIPAddress;
-        private string publicIPAddress;
+        private string _nodeRole;
+        private string _privateIPAddress;
+        private string _publicIPAddress;
+
 
         /// <summary>
+        /// Gets and sets the property NodeRole. 
+        /// <para>
         /// Whether the node is a leader node or a compute node.
-        ///  
+        /// </para>
         /// </summary>
         public string NodeRole
         {
-            get { return this.nodeRole; }
-            set { this.nodeRole = value; }
+            get { return this._nodeRole; }
+            set { this._nodeRole = value; }
         }
+
 
         /// <summary>
         /// Sets the NodeRole property
@@ -48,26 +54,29 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ClusterNode WithNodeRole(string nodeRole)
         {
-            this.nodeRole = nodeRole;
+            this._nodeRole = nodeRole;
             return this;
         }
-            
 
         // Check to see if NodeRole property is set
         internal bool IsSetNodeRole()
         {
-            return this.nodeRole != null;
+            return this._nodeRole != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property PrivateIPAddress. 
+        /// <para>
         /// The private IP address of a node within a cluster.
-        ///  
+        /// </para>
         /// </summary>
         public string PrivateIPAddress
         {
-            get { return this.privateIPAddress; }
-            set { this.privateIPAddress = value; }
+            get { return this._privateIPAddress; }
+            set { this._privateIPAddress = value; }
         }
+
 
         /// <summary>
         /// Sets the PrivateIPAddress property
@@ -77,26 +86,29 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ClusterNode WithPrivateIPAddress(string privateIPAddress)
         {
-            this.privateIPAddress = privateIPAddress;
+            this._privateIPAddress = privateIPAddress;
             return this;
         }
-            
 
         // Check to see if PrivateIPAddress property is set
         internal bool IsSetPrivateIPAddress()
         {
-            return this.privateIPAddress != null;
+            return this._privateIPAddress != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property PublicIPAddress. 
+        /// <para>
         /// The public IP address of a node within a cluster.
-        ///  
+        /// </para>
         /// </summary>
         public string PublicIPAddress
         {
-            get { return this.publicIPAddress; }
-            set { this.publicIPAddress = value; }
+            get { return this._publicIPAddress; }
+            set { this._publicIPAddress = value; }
         }
+
 
         /// <summary>
         /// Sets the PublicIPAddress property
@@ -106,15 +118,15 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ClusterNode WithPublicIPAddress(string publicIPAddress)
         {
-            this.publicIPAddress = publicIPAddress;
+            this._publicIPAddress = publicIPAddress;
             return this;
         }
-            
 
         // Check to see if PublicIPAddress property is set
         internal bool IsSetPublicIPAddress()
         {
-            return this.publicIPAddress != null;
+            return this._publicIPAddress != null;
         }
+
     }
 }

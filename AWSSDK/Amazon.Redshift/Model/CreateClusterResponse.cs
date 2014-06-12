@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the CreateCluster response and response metadata.
+    /// Returns information about the CreateClusterResult response and response metadata.
     /// </summary>
     public class CreateClusterResponse : AmazonWebServiceResponse
     {
-        private CreateClusterResult createClusterResult;
+        private CreateClusterResult _createClusterResult;
 
-        /// 
+        /// <summary>
         /// Gets and sets the CreateClusterResult property.
-        /// Contains the result of a successful invocation of the CreateCluster
-        /// action.
-        /// 
+        /// Represents the output of a CreateCluster operation.
+        /// </summary>
         public CreateClusterResult CreateClusterResult
         {
             get
             {
-                if(this.createClusterResult == null)
+                if(this._createClusterResult == null)
                 {
-                    this.createClusterResult = new CreateClusterResult();
+                    this._createClusterResult = new CreateClusterResult();
                 }
-
-                return this.createClusterResult;
+                return this._createClusterResult;
             }
-            set { this.createClusterResult = value; }
+            set { this._createClusterResult = value; }
         }
     }
 }
-    

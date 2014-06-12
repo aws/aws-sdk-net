@@ -25,560 +25,64 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCluster operation.
-    /// <para> Creates a new cluster. To create the cluster in virtual private cloud (VPC), you must provide cluster subnet group name. If you don't
-    /// provide a cluster subnet group name or the cluster security group parameter, Amazon Redshift creates a non-VPC cluster, it associates the
-    /// default cluster security group with the cluster. For more information about managing clusters, go to <a
-    /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html" >Amazon Redshift Clusters</a> in the <i>Amazon Redshift
-    /// Management Guide</i> .
-    /// </para>
+    /// Creates a new cluster. To create the cluster in virtual private cloud
+    /// (VPC), you must provide cluster subnet group name. If             you don't provide
+    /// a cluster subnet group name or the cluster security group parameter, Amazon Redshift
+    ///             creates a non-VPC cluster, it associates the default cluster security
+    /// group with the cluster.            For more information about managing clusters, go
+    /// to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+    /// Redshift Clusters</a> in the <i>Amazon Redshift Management Guide</i>.
     /// </summary>
-    /// <seealso cref="Amazon.Redshift.AmazonRedshift.CreateCluster"/>
-    public class CreateClusterRequest : AmazonWebServiceRequest
+    public partial class CreateClusterRequest : AmazonWebServiceRequest
     {
-        private string dBName;
-        private string clusterIdentifier;
-        private string clusterType;
-        private string nodeType;
-        private string masterUsername;
-        private string masterUserPassword;
-        private List<string> clusterSecurityGroups = new List<string>();
-        private List<string> vpcSecurityGroupIds = new List<string>();
-        private string clusterSubnetGroupName;
-        private string availabilityZone;
-        private string preferredMaintenanceWindow;
-        private string clusterParameterGroupName;
-        private int? automatedSnapshotRetentionPeriod;
-        private int? port;
-        private string clusterVersion;
-        private bool? allowVersionUpgrade;
-        private int? numberOfNodes;
-        private bool? publiclyAccessible;
-        private bool? encrypted;
-        private string hsmClientCertificateIdentifier;
-        private string hsmConfigurationIdentifier;
-        private string elasticIp;
+        private bool? _allowVersionUpgrade;
+        private int? _automatedSnapshotRetentionPeriod;
+        private string _availabilityZone;
+        private string _clusterIdentifier;
+        private string _clusterParameterGroupName;
+        private List<string> _clusterSecurityGroups = new List<string>();
+        private string _clusterSubnetGroupName;
+        private string _clusterType;
+        private string _clusterVersion;
+        private string _dBName;
+        private string _elasticIp;
+        private bool? _encrypted;
+        private string _hsmClientCertificateIdentifier;
+        private string _hsmConfigurationIdentifier;
+        private string _masterUsername;
+        private string _masterUserPassword;
+        private string _nodeType;
+        private int? _numberOfNodes;
+        private int? _port;
+        private string _preferredMaintenanceWindow;
+        private bool? _publiclyAccessible;
+        private List<string> _vpcSecurityGroupIds = new List<string>();
+
 
         /// <summary>
-        /// The name of the first database to be created when the cluster is created. To create additional databases after the cluster is created,
-        /// connect to the cluster with a SQL client and use SQL commands to create a database. For more information, go to <a
-        /// href="http://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create a Database</a> in the Amazon Redshift Database
-        /// Developer Guide. Default: <c>dev</c> Constraints: <ul> <li>Must contain 1 to 64 alphanumeric characters.</li> <li>Must contain only
-        /// lowercase letters.</li> <li>Cannot be a word that is reserved by the service. A list of reserved words can be found in <a
-        /// href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.
-        /// </li> </ul>
-        ///  
-        /// </summary>
-        public string DBName
-        {
-            get { return this.dBName; }
-            set { this.dBName = value; }
-        }
-
-        /// <summary>
-        /// Sets the DBName property
-        /// </summary>
-        /// <param name="dBName">The value to set for the DBName property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public CreateClusterRequest WithDBName(string dBName)
-        {
-            this.dBName = dBName;
-            return this;
-        }
-            
-
-        // Check to see if DBName property is set
-        internal bool IsSetDBName()
-        {
-            return this.dBName != null;
-        }
-
-        /// <summary>
-        /// A unique identifier for the cluster. You use this identifier to refer to the cluster for any subsequent cluster operations such as deleting
-        /// or modifying. The identifier also appears in the Amazon Redshift console. Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric
-        /// characters or hyphens.</li> <li>Alphabetic characters must be lowercase.</li> <li>First character must be a letter.</li> <li>Cannot end with
-        /// a hyphen or contain two consecutive hyphens.</li> <li>Must be unique for all clusters within an AWS account.</li> </ul> Example:
-        /// <c>myexamplecluster</c>
-        ///  
-        /// </summary>
-        public string ClusterIdentifier
-        {
-            get { return this.clusterIdentifier; }
-            set { this.clusterIdentifier = value; }
-        }
-
-        /// <summary>
-        /// Sets the ClusterIdentifier property
-        /// </summary>
-        /// <param name="clusterIdentifier">The value to set for the ClusterIdentifier property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public CreateClusterRequest WithClusterIdentifier(string clusterIdentifier)
-        {
-            this.clusterIdentifier = clusterIdentifier;
-            return this;
-        }
-            
-
-        // Check to see if ClusterIdentifier property is set
-        internal bool IsSetClusterIdentifier()
-        {
-            return this.clusterIdentifier != null;
-        }
-
-        /// <summary>
-        /// The type of the cluster. When cluster type is specified as <ul> <li><c>single-node</c>, the <b>NumberOfNodes</b> parameter is not
-        /// required.</li> <li><c>multi-node</c>, the <b>NumberOfNodes</b> parameter is required.</li> </ul> Valid Values: <c>multi-node</c> |
-        /// <c>single-node</c> Default: <c>multi-node</c>
-        ///  
-        /// </summary>
-        public string ClusterType
-        {
-            get { return this.clusterType; }
-            set { this.clusterType = value; }
-        }
-
-        /// <summary>
-        /// Sets the ClusterType property
-        /// </summary>
-        /// <param name="clusterType">The value to set for the ClusterType property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public CreateClusterRequest WithClusterType(string clusterType)
-        {
-            this.clusterType = clusterType;
-            return this;
-        }
-            
-
-        // Check to see if ClusterType property is set
-        internal bool IsSetClusterType()
-        {
-            return this.clusterType != null;
-        }
-
-        /// <summary>
-        /// The node type to be provisioned for the cluster. For information about node types, go to <a
-        /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with Clusters</a> in the <i>Amazon
-        /// Redshift Management Guide</i>. Valid Values: <c>dw1.xlarge</c> | <c>dw1.8xlarge</c> | <c>dw2.large</c> | <c>dw2.8xlarge</c>.
-        ///  
-        /// </summary>
-        public string NodeType
-        {
-            get { return this.nodeType; }
-            set { this.nodeType = value; }
-        }
-
-        /// <summary>
-        /// Sets the NodeType property
-        /// </summary>
-        /// <param name="nodeType">The value to set for the NodeType property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public CreateClusterRequest WithNodeType(string nodeType)
-        {
-            this.nodeType = nodeType;
-            return this;
-        }
-            
-
-        // Check to see if NodeType property is set
-        internal bool IsSetNodeType()
-        {
-            return this.nodeType != null;
-        }
-
-        /// <summary>
-        /// The user name associated with the master user account for the cluster that is being created. Constraints: <ul> <li>Must be 1 - 128
-        /// alphanumeric characters.</li> <li>First character must be a letter.</li> <li>Cannot be a reserved word. A list of reserved words can be
-        /// found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database
-        /// Developer Guide. </li> </ul>
-        ///  
-        /// </summary>
-        public string MasterUsername
-        {
-            get { return this.masterUsername; }
-            set { this.masterUsername = value; }
-        }
-
-        /// <summary>
-        /// Sets the MasterUsername property
-        /// </summary>
-        /// <param name="masterUsername">The value to set for the MasterUsername property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public CreateClusterRequest WithMasterUsername(string masterUsername)
-        {
-            this.masterUsername = masterUsername;
-            return this;
-        }
-            
-
-        // Check to see if MasterUsername property is set
-        internal bool IsSetMasterUsername()
-        {
-            return this.masterUsername != null;
-        }
-
-        /// <summary>
-        /// The password associated with the master user account for the cluster that is being created. Constraints: <ul> <li>Must be between 8 and 64
-        /// characters in length.</li> <li>Must contain at least one uppercase letter.</li> <li>Must contain at least one lowercase letter.</li>
-        /// <li>Must contain one number.</li> <li>Can be any printable ASCII character (ASCII code 33 to 126) except ' (single quote), " (double quote),
-        /// \, /, @, or space.</li> </ul>
-        ///  
-        /// </summary>
-        public string MasterUserPassword
-        {
-            get { return this.masterUserPassword; }
-            set { this.masterUserPassword = value; }
-        }
-
-        /// <summary>
-        /// Sets the MasterUserPassword property
-        /// </summary>
-        /// <param name="masterUserPassword">The value to set for the MasterUserPassword property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public CreateClusterRequest WithMasterUserPassword(string masterUserPassword)
-        {
-            this.masterUserPassword = masterUserPassword;
-            return this;
-        }
-            
-
-        // Check to see if MasterUserPassword property is set
-        internal bool IsSetMasterUserPassword()
-        {
-            return this.masterUserPassword != null;
-        }
-
-        /// <summary>
-        /// A list of security groups to be associated with this cluster. Default: The default cluster security group for Amazon Redshift.
-        ///  
-        /// </summary>
-        public List<string> ClusterSecurityGroups
-        {
-            get { return this.clusterSecurityGroups; }
-            set { this.clusterSecurityGroups = value; }
-        }
-        /// <summary>
-        /// Adds elements to the ClusterSecurityGroups collection
-        /// </summary>
-        /// <param name="clusterSecurityGroups">The values to add to the ClusterSecurityGroups collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public CreateClusterRequest WithClusterSecurityGroups(params string[] clusterSecurityGroups)
-        {
-            foreach (string element in clusterSecurityGroups)
-            {
-                this.clusterSecurityGroups.Add(element);
-            }
-
-            return this;
-        }
-
-        /// <summary>
-        /// Adds elements to the ClusterSecurityGroups collection
-        /// </summary>
-        /// <param name="clusterSecurityGroups">The values to add to the ClusterSecurityGroups collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public CreateClusterRequest WithClusterSecurityGroups(IEnumerable<string> clusterSecurityGroups)
-        {
-            foreach (string element in clusterSecurityGroups)
-            {
-                this.clusterSecurityGroups.Add(element);
-            }
-
-            return this;
-        }
-
-        // Check to see if ClusterSecurityGroups property is set
-        internal bool IsSetClusterSecurityGroups()
-        {
-            return this.clusterSecurityGroups.Count > 0;
-        }
-
-        /// <summary>
-        /// A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster. Default: The default VPC security group is
-        /// associated with the cluster.
-        ///  
-        /// </summary>
-        public List<string> VpcSecurityGroupIds
-        {
-            get { return this.vpcSecurityGroupIds; }
-            set { this.vpcSecurityGroupIds = value; }
-        }
-        /// <summary>
-        /// Adds elements to the VpcSecurityGroupIds collection
-        /// </summary>
-        /// <param name="vpcSecurityGroupIds">The values to add to the VpcSecurityGroupIds collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public CreateClusterRequest WithVpcSecurityGroupIds(params string[] vpcSecurityGroupIds)
-        {
-            foreach (string element in vpcSecurityGroupIds)
-            {
-                this.vpcSecurityGroupIds.Add(element);
-            }
-
-            return this;
-        }
-
-        /// <summary>
-        /// Adds elements to the VpcSecurityGroupIds collection
-        /// </summary>
-        /// <param name="vpcSecurityGroupIds">The values to add to the VpcSecurityGroupIds collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public CreateClusterRequest WithVpcSecurityGroupIds(IEnumerable<string> vpcSecurityGroupIds)
-        {
-            foreach (string element in vpcSecurityGroupIds)
-            {
-                this.vpcSecurityGroupIds.Add(element);
-            }
-
-            return this;
-        }
-
-        // Check to see if VpcSecurityGroupIds property is set
-        internal bool IsSetVpcSecurityGroupIds()
-        {
-            return this.vpcSecurityGroupIds.Count > 0;
-        }
-
-        /// <summary>
-        /// The name of a cluster subnet group to be associated with this cluster. If this parameter is not provided the resulting cluster will be
-        /// deployed outside virtual private cloud (VPC).
-        ///  
-        /// </summary>
-        public string ClusterSubnetGroupName
-        {
-            get { return this.clusterSubnetGroupName; }
-            set { this.clusterSubnetGroupName = value; }
-        }
-
-        /// <summary>
-        /// Sets the ClusterSubnetGroupName property
-        /// </summary>
-        /// <param name="clusterSubnetGroupName">The value to set for the ClusterSubnetGroupName property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public CreateClusterRequest WithClusterSubnetGroupName(string clusterSubnetGroupName)
-        {
-            this.clusterSubnetGroupName = clusterSubnetGroupName;
-            return this;
-        }
-            
-
-        // Check to see if ClusterSubnetGroupName property is set
-        internal bool IsSetClusterSubnetGroupName()
-        {
-            return this.clusterSubnetGroupName != null;
-        }
-
-        /// <summary>
-        /// The EC2 Availability Zone (AZ) in which you want Amazon Redshift to provision the cluster. For example, if you have several EC2 instances
-        /// running in a specific Availability Zone, then you might want the cluster to be provisioned in the same zone in order to decrease network
-        /// latency. Default: A random, system-chosen Availability Zone in the region that is specified by the endpoint. Example: <c>us-east-1d</c>
-        /// Constraint: The specified Availability Zone must be in the same region as the current endpoint.
-        ///  
-        /// </summary>
-        public string AvailabilityZone
-        {
-            get { return this.availabilityZone; }
-            set { this.availabilityZone = value; }
-        }
-
-        /// <summary>
-        /// Sets the AvailabilityZone property
-        /// </summary>
-        /// <param name="availabilityZone">The value to set for the AvailabilityZone property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public CreateClusterRequest WithAvailabilityZone(string availabilityZone)
-        {
-            this.availabilityZone = availabilityZone;
-            return this;
-        }
-            
-
-        // Check to see if AvailabilityZone property is set
-        internal bool IsSetAvailabilityZone()
-        {
-            return this.availabilityZone != null;
-        }
-
-        /// <summary>
-        /// The weekly time range (in UTC) during which automated cluster maintenance can occur. Format: <c>ddd:hh24:mi-ddd:hh24:mi</c> Default: A
-        /// 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day of the week. The following list shows
-        /// the time blocks for each region from which the default maintenance windows are assigned. <ul> <li><b>US-East (Northern Virginia) Region:</b>
-        /// 03:00-11:00 UTC</li> <li><b>US-West (Oregon) Region</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland) Region</b> 22:00-06:00 UTC</li> <li><b>Asia
-        /// Pacific (Singapore) Region</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Sydney) Region</b> 12:00-20:00 UTC</li> <li><b>Asia Pacific (Tokyo)
-        /// Region</b> 17:00-03:00 UTC</li> </ul> Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun Constraints: Minimum 30-minute window.
-        ///  
-        /// </summary>
-        public string PreferredMaintenanceWindow
-        {
-            get { return this.preferredMaintenanceWindow; }
-            set { this.preferredMaintenanceWindow = value; }
-        }
-
-        /// <summary>
-        /// Sets the PreferredMaintenanceWindow property
-        /// </summary>
-        /// <param name="preferredMaintenanceWindow">The value to set for the PreferredMaintenanceWindow property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public CreateClusterRequest WithPreferredMaintenanceWindow(string preferredMaintenanceWindow)
-        {
-            this.preferredMaintenanceWindow = preferredMaintenanceWindow;
-            return this;
-        }
-            
-
-        // Check to see if PreferredMaintenanceWindow property is set
-        internal bool IsSetPreferredMaintenanceWindow()
-        {
-            return this.preferredMaintenanceWindow != null;
-        }
-
-        /// <summary>
-        /// The name of the parameter group to be associated with this cluster. Default: The default Amazon Redshift cluster parameter group. For
-        /// information about the default parameter group, go to <a
-        /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon Redshift Parameter Groups</a>
-        /// Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens.</li> <li>First character must be a letter.</li> <li>Cannot end
-        /// with a hyphen or contain two consecutive hyphens.</li> </ul>
-        ///  
-        /// </summary>
-        public string ClusterParameterGroupName
-        {
-            get { return this.clusterParameterGroupName; }
-            set { this.clusterParameterGroupName = value; }
-        }
-
-        /// <summary>
-        /// Sets the ClusterParameterGroupName property
-        /// </summary>
-        /// <param name="clusterParameterGroupName">The value to set for the ClusterParameterGroupName property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public CreateClusterRequest WithClusterParameterGroupName(string clusterParameterGroupName)
-        {
-            this.clusterParameterGroupName = clusterParameterGroupName;
-            return this;
-        }
-            
-
-        // Check to see if ClusterParameterGroupName property is set
-        internal bool IsSetClusterParameterGroupName()
-        {
-            return this.clusterParameterGroupName != null;
-        }
-
-        /// <summary>
-        /// The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots
-        /// are disabled, you can still create manual snapshots when you want with <a>CreateClusterSnapshot</a>. Default: <c>1</c> Constraints: Must be
-        /// a value from 0 to 35.
-        ///  
-        /// </summary>
-        public int AutomatedSnapshotRetentionPeriod
-        {
-            get { return this.automatedSnapshotRetentionPeriod ?? default(int); }
-            set { this.automatedSnapshotRetentionPeriod = value; }
-        }
-
-        /// <summary>
-        /// Sets the AutomatedSnapshotRetentionPeriod property
-        /// </summary>
-        /// <param name="automatedSnapshotRetentionPeriod">The value to set for the AutomatedSnapshotRetentionPeriod property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public CreateClusterRequest WithAutomatedSnapshotRetentionPeriod(int automatedSnapshotRetentionPeriod)
-        {
-            this.automatedSnapshotRetentionPeriod = automatedSnapshotRetentionPeriod;
-            return this;
-        }
-            
-
-        // Check to see if AutomatedSnapshotRetentionPeriod property is set
-        internal bool IsSetAutomatedSnapshotRetentionPeriod()
-        {
-            return this.automatedSnapshotRetentionPeriod.HasValue;
-        }
-
-        /// <summary>
-        /// The port number on which the cluster accepts incoming connections. The cluster is accessible only via the JDBC and ODBC connection strings.
-        /// Part of the connection string requires the port on which the cluster will listen for incoming connections. Default: <c>5439</c> Valid
-        /// Values: <c>1150-65535</c>
-        ///  
-        /// </summary>
-        public int Port
-        {
-            get { return this.port ?? default(int); }
-            set { this.port = value; }
-        }
-
-        /// <summary>
-        /// Sets the Port property
-        /// </summary>
-        /// <param name="port">The value to set for the Port property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public CreateClusterRequest WithPort(int port)
-        {
-            this.port = port;
-            return this;
-        }
-            
-
-        // Check to see if Port property is set
-        internal bool IsSetPort()
-        {
-            return this.port.HasValue;
-        }
-
-        /// <summary>
-        /// The version of the Amazon Redshift engine software that you want to deploy on the cluster. The version selected runs on all the nodes in the
-        /// cluster. Constraints: Only version 1.0 is currently available. Example: <c>1.0</c>
-        ///  
-        /// </summary>
-        public string ClusterVersion
-        {
-            get { return this.clusterVersion; }
-            set { this.clusterVersion = value; }
-        }
-
-        /// <summary>
-        /// Sets the ClusterVersion property
-        /// </summary>
-        /// <param name="clusterVersion">The value to set for the ClusterVersion property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public CreateClusterRequest WithClusterVersion(string clusterVersion)
-        {
-            this.clusterVersion = clusterVersion;
-            return this;
-        }
-            
-
-        // Check to see if ClusterVersion property is set
-        internal bool IsSetClusterVersion()
-        {
-            return this.clusterVersion != null;
-        }
-
-        /// <summary>
-        /// If <c>true</c>, upgrades can be applied during the maintenance window to the Amazon Redshift engine that is running on the cluster. When a
-        /// new version of the Amazon Redshift engine is released, you can request that the service automatically apply upgrades during the maintenance
-        /// window to the Amazon Redshift engine that is running on your cluster. Default: <c>true</c>
-        ///  
+        /// Gets and sets the property AllowVersionUpgrade. 
+        /// <para>
+        /// If <code>true</code>, upgrades can be applied during the maintenance window to the
+        ///             Amazon Redshift engine that is running on the cluster.
+        /// </para>
+        ///         
+        /// <para>
+        ///             When a new version of the Amazon Redshift engine is released,        
+        ///     you can request that the service automatically apply upgrades during the maintenance
+        ///            window to the Amazon Redshift engine             that is running on your
+        /// cluster.                     
+        /// </para>
+        ///         
+        /// <para>
+        /// Default: <code>true</code>
+        /// </para>
         /// </summary>
         public bool AllowVersionUpgrade
         {
-            get { return this.allowVersionUpgrade ?? default(bool); }
-            set { this.allowVersionUpgrade = value; }
+            get { return this._allowVersionUpgrade.GetValueOrDefault(); }
+            set { this._allowVersionUpgrade = value; }
         }
+
 
         /// <summary>
         /// Sets the AllowVersionUpgrade property
@@ -588,179 +92,453 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterRequest WithAllowVersionUpgrade(bool allowVersionUpgrade)
         {
-            this.allowVersionUpgrade = allowVersionUpgrade;
+            this._allowVersionUpgrade = allowVersionUpgrade;
             return this;
         }
-            
 
         // Check to see if AllowVersionUpgrade property is set
         internal bool IsSetAllowVersionUpgrade()
         {
-            return this.allowVersionUpgrade.HasValue;
+            return this._allowVersionUpgrade.HasValue; 
         }
 
+
         /// <summary>
-        /// The number of compute nodes in the cluster. This parameter is required when the <b>ClusterType</b> parameter is specified as
-        /// <c>multi-node</c>. For information about determining how many nodes you need, go to <a
-        /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with Clusters</a> in the <i>Amazon
-        /// Redshift Management Guide</i>. If you don't specify this parameter, you get a single-node cluster. When requesting a multi-node cluster, you
-        /// must specify the number of nodes that you want in the cluster. Default: <c>1</c> Constraints: Value must be at least 1 and no more than 100.
-        ///  
+        /// Gets and sets the property AutomatedSnapshotRetentionPeriod. 
+        /// <para>
+        ///             The number of days that automated snapshots are retained.            If
+        /// the value is 0, automated snapshots are disabled. Even if            automated snapshots
+        /// are disabled, you can still create            manual snapshots when you want with
+        /// <a>CreateClusterSnapshot</a>.        
+        /// </para>
+        ///         
+        /// <para>
+        ///             Default: <code>1</code>        
+        /// </para>
+        ///         
+        /// <para>
+        /// Constraints: Must be a value from 0 to 35.
+        /// </para>
         /// </summary>
-        public int NumberOfNodes
+        public int AutomatedSnapshotRetentionPeriod
         {
-            get { return this.numberOfNodes ?? default(int); }
-            set { this.numberOfNodes = value; }
+            get { return this._automatedSnapshotRetentionPeriod.GetValueOrDefault(); }
+            set { this._automatedSnapshotRetentionPeriod = value; }
         }
 
+
         /// <summary>
-        /// Sets the NumberOfNodes property
+        /// Sets the AutomatedSnapshotRetentionPeriod property
         /// </summary>
-        /// <param name="numberOfNodes">The value to set for the NumberOfNodes property </param>
+        /// <param name="automatedSnapshotRetentionPeriod">The value to set for the AutomatedSnapshotRetentionPeriod property </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public CreateClusterRequest WithNumberOfNodes(int numberOfNodes)
+        public CreateClusterRequest WithAutomatedSnapshotRetentionPeriod(int automatedSnapshotRetentionPeriod)
         {
-            this.numberOfNodes = numberOfNodes;
+            this._automatedSnapshotRetentionPeriod = automatedSnapshotRetentionPeriod;
             return this;
         }
-            
 
-        // Check to see if NumberOfNodes property is set
-        internal bool IsSetNumberOfNodes()
+        // Check to see if AutomatedSnapshotRetentionPeriod property is set
+        internal bool IsSetAutomatedSnapshotRetentionPeriod()
         {
-            return this.numberOfNodes.HasValue;
+            return this._automatedSnapshotRetentionPeriod.HasValue; 
         }
 
-        /// <summary>
-        /// If <c>true</c>, the cluster can be accessed from a public network.
-        ///  
-        /// </summary>
-        public bool PubliclyAccessible
-        {
-            get { return this.publiclyAccessible ?? default(bool); }
-            set { this.publiclyAccessible = value; }
-        }
 
         /// <summary>
-        /// Sets the PubliclyAccessible property
+        /// Gets and sets the property AvailabilityZone. 
+        /// <para>
+        ///             The EC2 Availability Zone (AZ) in which you want Amazon Redshift to provision
+        /// the cluster.             For example, if you have several         EC2 instances running
+        /// in a specific Availability Zone, then you might         want the cluster to be provisioned
+        /// in the same zone in order to decrease network latency.         
+        /// </para>
+        ///         
+        /// <para>
+        ///             Default: A random, system-chosen Availability Zone in the region that
+        /// is specified            by the endpoint.        
+        /// </para>
+        ///         
+        /// <para>
+        ///             Example: <code>us-east-1d</code>        
+        /// </para>
+        ///         
+        /// <para>
+        ///             Constraint: The specified Availability Zone must be in the same region
+        /// as the current endpoint.        
+        /// </para>
         /// </summary>
-        /// <param name="publiclyAccessible">The value to set for the PubliclyAccessible property </param>
+        public string AvailabilityZone
+        {
+            get { return this._availabilityZone; }
+            set { this._availabilityZone = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the AvailabilityZone property
+        /// </summary>
+        /// <param name="availabilityZone">The value to set for the AvailabilityZone property </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public CreateClusterRequest WithPubliclyAccessible(bool publiclyAccessible)
+        public CreateClusterRequest WithAvailabilityZone(string availabilityZone)
         {
-            this.publiclyAccessible = publiclyAccessible;
+            this._availabilityZone = availabilityZone;
             return this;
         }
-            
 
-        // Check to see if PubliclyAccessible property is set
-        internal bool IsSetPubliclyAccessible()
+        // Check to see if AvailabilityZone property is set
+        internal bool IsSetAvailabilityZone()
         {
-            return this.publiclyAccessible.HasValue;
+            return this._availabilityZone != null;
         }
 
-        /// <summary>
-        /// If <c>true</c>, the data in cluster is encrypted at rest. Default: false
-        ///  
-        /// </summary>
-        public bool Encrypted
-        {
-            get { return this.encrypted ?? default(bool); }
-            set { this.encrypted = value; }
-        }
 
         /// <summary>
-        /// Sets the Encrypted property
+        /// Gets and sets the property ClusterIdentifier. 
+        /// <para>
+        ///         A unique identifier for the cluster. You use this identifier to refer to the
+        ///         cluster for any subsequent cluster operations such as deleting or modifying.
+        ///         The identifier also appears in the Amazon Redshift console.        
+        /// </para>
+        ///         
+        /// <para>
+        /// Constraints:
+        /// </para>
+        /// <ul><li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li><li>Alphabetic
+        /// characters must be lowercase.</li><li>First character must be a letter.</li><li>Cannot
+        /// end with a hyphen or contain two consecutive hyphens.</li><li>Must be unique for all
+        /// clusters within an AWS account.</li></ul>        
+        /// <para>
+        /// Example: <code>myexamplecluster</code>
+        /// </para>
         /// </summary>
-        /// <param name="encrypted">The value to set for the Encrypted property </param>
+        public string ClusterIdentifier
+        {
+            get { return this._clusterIdentifier; }
+            set { this._clusterIdentifier = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the ClusterIdentifier property
+        /// </summary>
+        /// <param name="clusterIdentifier">The value to set for the ClusterIdentifier property </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public CreateClusterRequest WithEncrypted(bool encrypted)
+        public CreateClusterRequest WithClusterIdentifier(string clusterIdentifier)
         {
-            this.encrypted = encrypted;
+            this._clusterIdentifier = clusterIdentifier;
             return this;
         }
-            
 
-        // Check to see if Encrypted property is set
-        internal bool IsSetEncrypted()
+        // Check to see if ClusterIdentifier property is set
+        internal bool IsSetClusterIdentifier()
         {
-            return this.encrypted.HasValue;
+            return this._clusterIdentifier != null;
         }
 
-        /// <summary>
-        /// Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.
-        ///  
-        /// </summary>
-        public string HsmClientCertificateIdentifier
-        {
-            get { return this.hsmClientCertificateIdentifier; }
-            set { this.hsmClientCertificateIdentifier = value; }
-        }
 
         /// <summary>
-        /// Sets the HsmClientCertificateIdentifier property
+        /// Gets and sets the property ClusterParameterGroupName. 
+        /// <para>
+        ///         The name of the parameter group to be associated        with this cluster.
+        ///         
+        /// </para>
+        ///         
+        /// <para>
+        /// Default: The default Amazon Redshift             cluster parameter group. For information
+        /// about the default parameter group,            go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
+        /// with Amazon Redshift Parameter Groups</a>
+        /// </para>
+        ///         
+        /// <para>
+        ///             Constraints:        
+        /// </para>
+        ///         <ul>            <li>Must be 1 to 255 alphanumeric characters or hyphens.</li>
+        ///            <li>First character must be a letter.</li>            <li>Cannot end with
+        /// a hyphen or contain two consecutive hyphens.</li>        </ul>
         /// </summary>
-        /// <param name="hsmClientCertificateIdentifier">The value to set for the HsmClientCertificateIdentifier property </param>
+        public string ClusterParameterGroupName
+        {
+            get { return this._clusterParameterGroupName; }
+            set { this._clusterParameterGroupName = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the ClusterParameterGroupName property
+        /// </summary>
+        /// <param name="clusterParameterGroupName">The value to set for the ClusterParameterGroupName property </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public CreateClusterRequest WithHsmClientCertificateIdentifier(string hsmClientCertificateIdentifier)
+        public CreateClusterRequest WithClusterParameterGroupName(string clusterParameterGroupName)
         {
-            this.hsmClientCertificateIdentifier = hsmClientCertificateIdentifier;
+            this._clusterParameterGroupName = clusterParameterGroupName;
             return this;
         }
-            
 
-        // Check to see if HsmClientCertificateIdentifier property is set
-        internal bool IsSetHsmClientCertificateIdentifier()
+        // Check to see if ClusterParameterGroupName property is set
+        internal bool IsSetClusterParameterGroupName()
         {
-            return this.hsmClientCertificateIdentifier != null;
+            return this._clusterParameterGroupName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ClusterSecurityGroups. 
+        /// <para>
+        ///         A list of security groups to be associated        with this cluster.     
+        ///   
+        /// </para>
+        ///         
+        /// <para>
+        ///             Default: The default cluster security group for Amazon Redshift.     
+        ///    
+        /// </para>
+        /// </summary>
+        public List<string> ClusterSecurityGroups
+        {
+            get { return this._clusterSecurityGroups; }
+            set { this._clusterSecurityGroups = value; }
         }
 
         /// <summary>
-        /// Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in
-        /// an HSM.
-        ///  
+        /// Sets the ClusterSecurityGroups property
         /// </summary>
-        public string HsmConfigurationIdentifier
-        {
-            get { return this.hsmConfigurationIdentifier; }
-            set { this.hsmConfigurationIdentifier = value; }
-        }
-
-        /// <summary>
-        /// Sets the HsmConfigurationIdentifier property
-        /// </summary>
-        /// <param name="hsmConfigurationIdentifier">The value to set for the HsmConfigurationIdentifier property </param>
+        /// <param name="clusterSecurityGroups">The values to add to the ClusterSecurityGroups collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public CreateClusterRequest WithHsmConfigurationIdentifier(string hsmConfigurationIdentifier)
+        public CreateClusterRequest WithClusterSecurityGroups(params string[] clusterSecurityGroups)
         {
-            this.hsmConfigurationIdentifier = hsmConfigurationIdentifier;
+            foreach (var element in clusterSecurityGroups)
+            {
+                this._clusterSecurityGroups.Add(element);
+            }
             return this;
-        }
-            
-
-        // Check to see if HsmConfigurationIdentifier property is set
-        internal bool IsSetHsmConfigurationIdentifier()
-        {
-            return this.hsmConfigurationIdentifier != null;
         }
 
         /// <summary>
-        /// The Elastic IP (EIP) address for the cluster. Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an
-        /// Internet gateway. For more information about provisioning clusters in EC2-VPC, go to <a
-        /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your
-        /// Cluster</a> in the Amazon Redshift Management Guide.
-        ///  
+        /// Sets the ClusterSecurityGroups property
+        /// </summary>
+        /// <param name="clusterSecurityGroups">The values to add to the ClusterSecurityGroups collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateClusterRequest WithClusterSecurityGroups(IEnumerable<string> clusterSecurityGroups)
+        {
+            foreach (var element in clusterSecurityGroups)
+            {
+                this._clusterSecurityGroups.Add(element);
+            }
+            return this;
+        }
+        // Check to see if ClusterSecurityGroups property is set
+        internal bool IsSetClusterSecurityGroups()
+        {
+            return this._clusterSecurityGroups != null && this._clusterSecurityGroups.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ClusterSubnetGroupName. 
+        /// <para>
+        ///         The name of a cluster subnet group to be associated with this cluster.   
+        ///     
+        /// </para>
+        ///         
+        /// <para>
+        ///             If this parameter is not provided the resulting cluster will be deployed
+        ///            outside virtual private cloud (VPC).        
+        /// </para>
+        /// </summary>
+        public string ClusterSubnetGroupName
+        {
+            get { return this._clusterSubnetGroupName; }
+            set { this._clusterSubnetGroupName = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the ClusterSubnetGroupName property
+        /// </summary>
+        /// <param name="clusterSubnetGroupName">The value to set for the ClusterSubnetGroupName property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateClusterRequest WithClusterSubnetGroupName(string clusterSubnetGroupName)
+        {
+            this._clusterSubnetGroupName = clusterSubnetGroupName;
+            return this;
+        }
+
+        // Check to see if ClusterSubnetGroupName property is set
+        internal bool IsSetClusterSubnetGroupName()
+        {
+            return this._clusterSubnetGroupName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ClusterType. 
+        /// <para>
+        ///             The type of the cluster. When cluster type is specified as           
+        /// <ul>                <li><code>single-node</code>, the <b>NumberOfNodes</b> parameter
+        /// is not required.</li>                <li><code>multi-node</code>, the <b>NumberOfNodes</b>
+        /// parameter is required.</li>            </ul>        
+        /// </para>
+        ///         
+        /// <para>
+        ///             Valid Values: <code>multi-node</code> | <code>single-node</code>     
+        ///   
+        /// </para>
+        ///         
+        /// <para>
+        /// Default: <code>multi-node</code>
+        /// </para>
+        /// </summary>
+        public string ClusterType
+        {
+            get { return this._clusterType; }
+            set { this._clusterType = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the ClusterType property
+        /// </summary>
+        /// <param name="clusterType">The value to set for the ClusterType property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateClusterRequest WithClusterType(string clusterType)
+        {
+            this._clusterType = clusterType;
+            return this;
+        }
+
+        // Check to see if ClusterType property is set
+        internal bool IsSetClusterType()
+        {
+            return this._clusterType != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ClusterVersion. 
+        /// <para>
+        ///             The version of the Amazon Redshift engine software that you want to deploy
+        /// on the cluster.        
+        /// </para>
+        ///         
+        /// <para>
+        ///             The version selected             runs on all the nodes in the cluster.
+        ///        
+        /// </para>
+        ///         
+        /// <para>
+        /// Constraints: Only version 1.0 is currently available.
+        /// </para>
+        ///         
+        /// <para>
+        /// Example: <code>1.0</code>
+        /// </para>
+        /// </summary>
+        public string ClusterVersion
+        {
+            get { return this._clusterVersion; }
+            set { this._clusterVersion = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the ClusterVersion property
+        /// </summary>
+        /// <param name="clusterVersion">The value to set for the ClusterVersion property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateClusterRequest WithClusterVersion(string clusterVersion)
+        {
+            this._clusterVersion = clusterVersion;
+            return this;
+        }
+
+        // Check to see if ClusterVersion property is set
+        internal bool IsSetClusterVersion()
+        {
+            return this._clusterVersion != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property DBName. 
+        /// <para>
+        /// The name of the first database to be created when the cluster        is created. 
+        /// </para>
+        ///         
+        /// <para>
+        /// To create additional databases after the cluster is created, connect to the      
+        ///  cluster with a SQL client and use SQL commands to create a database.        For more
+        /// information, go to            <a href="http://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create
+        /// a Database</a> in the Amazon Redshift Database Developer Guide.         
+        /// </para>
+        ///         
+        /// <para>
+        /// Default: <code>dev</code>
+        /// </para>
+        ///         
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///         <ul>            <li>Must contain 1 to 64 alphanumeric characters.</li>   
+        ///         <li>Must contain only lowercase letters.</li>            <li>Cannot be a word
+        /// that is reserved by the service. A list of reserved words can be found           
+        ///     in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
+        /// Words</a> in the Amazon Redshift Database Developer Guide. </li>        </ul>
+        /// </summary>
+        public string DBName
+        {
+            get { return this._dBName; }
+            set { this._dBName = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the DBName property
+        /// </summary>
+        /// <param name="dBName">The value to set for the DBName property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateClusterRequest WithDBName(string dBName)
+        {
+            this._dBName = dBName;
+            return this;
+        }
+
+        // Check to see if DBName property is set
+        internal bool IsSetDBName()
+        {
+            return this._dBName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ElasticIp. 
+        /// <para>
+        /// The Elastic IP (EIP) address for the cluster.
+        /// </para>
+        ///         
+        /// <para>
+        /// Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through
+        /// an Internet gateway. For more information about provisioning clusters in EC2-VPC,
+        /// go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+        /// Platforms to Launch Your Cluster</a> in the Amazon Redshift Management Guide.
+        /// </para>
         /// </summary>
         public string ElasticIp
         {
-            get { return this.elasticIp; }
-            set { this.elasticIp = value; }
+            get { return this._elasticIp; }
+            set { this._elasticIp = value; }
         }
+
 
         /// <summary>
         /// Sets the ElasticIp property
@@ -770,16 +548,481 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterRequest WithElasticIp(string elasticIp)
         {
-            this.elasticIp = elasticIp;
+            this._elasticIp = elasticIp;
             return this;
         }
-            
 
         // Check to see if ElasticIp property is set
         internal bool IsSetElasticIp()
         {
-            return this.elasticIp != null;
+            return this._elasticIp != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Encrypted. 
+        /// <para>
+        /// If <code>true</code>, the data in the cluster is encrypted at rest. 
+        /// </para>
+        ///         
+        /// <para>
+        /// Default: false
+        /// </para>
+        /// </summary>
+        public bool Encrypted
+        {
+            get { return this._encrypted.GetValueOrDefault(); }
+            set { this._encrypted = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the Encrypted property
+        /// </summary>
+        /// <param name="encrypted">The value to set for the Encrypted property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateClusterRequest WithEncrypted(bool encrypted)
+        {
+            this._encrypted = encrypted;
+            return this;
+        }
+
+        // Check to see if Encrypted property is set
+        internal bool IsSetEncrypted()
+        {
+            return this._encrypted.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property HsmClientCertificateIdentifier. 
+        /// <para>
+        /// Specifies the name of the HSM client certificate the Amazon Redshift cluster uses
+        /// to retrieve the data            encryption keys stored in an HSM.
+        /// </para>
+        /// </summary>
+        public string HsmClientCertificateIdentifier
+        {
+            get { return this._hsmClientCertificateIdentifier; }
+            set { this._hsmClientCertificateIdentifier = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the HsmClientCertificateIdentifier property
+        /// </summary>
+        /// <param name="hsmClientCertificateIdentifier">The value to set for the HsmClientCertificateIdentifier property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateClusterRequest WithHsmClientCertificateIdentifier(string hsmClientCertificateIdentifier)
+        {
+            this._hsmClientCertificateIdentifier = hsmClientCertificateIdentifier;
+            return this;
+        }
+
+        // Check to see if HsmClientCertificateIdentifier property is set
+        internal bool IsSetHsmClientCertificateIdentifier()
+        {
+            return this._hsmClientCertificateIdentifier != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property HsmConfigurationIdentifier. 
+        /// <para>
+        /// Specifies the name of the HSM configuration that contains the information the Amazon
+        /// Redshift cluster            can use to retrieve and store keys in an HSM.
+        /// </para>
+        /// </summary>
+        public string HsmConfigurationIdentifier
+        {
+            get { return this._hsmConfigurationIdentifier; }
+            set { this._hsmConfigurationIdentifier = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the HsmConfigurationIdentifier property
+        /// </summary>
+        /// <param name="hsmConfigurationIdentifier">The value to set for the HsmConfigurationIdentifier property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateClusterRequest WithHsmConfigurationIdentifier(string hsmConfigurationIdentifier)
+        {
+            this._hsmConfigurationIdentifier = hsmConfigurationIdentifier;
+            return this;
+        }
+
+        // Check to see if HsmConfigurationIdentifier property is set
+        internal bool IsSetHsmConfigurationIdentifier()
+        {
+            return this._hsmConfigurationIdentifier != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property MasterUsername. 
+        /// <para>
+        ///         The user name associated with the master user account for the cluster that
+        /// is being created.        
+        /// </para>
+        ///         
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///         <ul>            <li>Must be 1 - 128 alphanumeric characters.</li>        
+        ///    <li>First character must be a letter.</li>            <li>Cannot be a reserved
+        /// word. A list of reserved words can be found                in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
+        /// Words</a> in the Amazon Redshift Database Developer Guide. </li>        </ul>
+        /// </summary>
+        public string MasterUsername
+        {
+            get { return this._masterUsername; }
+            set { this._masterUsername = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the MasterUsername property
+        /// </summary>
+        /// <param name="masterUsername">The value to set for the MasterUsername property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateClusterRequest WithMasterUsername(string masterUsername)
+        {
+            this._masterUsername = masterUsername;
+            return this;
+        }
+
+        // Check to see if MasterUsername property is set
+        internal bool IsSetMasterUsername()
+        {
+            return this._masterUsername != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property MasterUserPassword. 
+        /// <para>
+        ///         The password associated with the master user account for the cluster that
+        /// is being created.        
+        /// </para>
+        ///         
+        /// <para>
+        ///             Constraints:        
+        /// </para>
+        ///         <ul>            <li>Must be between 8 and 64 characters in length.</li>  
+        ///          <li>Must contain at least one uppercase letter.</li>            <li>Must
+        /// contain at least one lowercase letter.</li>            <li>Must contain one number.</li>
+        ///            <li>Can be any printable ASCII character (ASCII code 33 to 126) except
+        /// ' (single quote), " (double quote), \, /, @, or space.</li>        </ul>
+        /// </summary>
+        public string MasterUserPassword
+        {
+            get { return this._masterUserPassword; }
+            set { this._masterUserPassword = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the MasterUserPassword property
+        /// </summary>
+        /// <param name="masterUserPassword">The value to set for the MasterUserPassword property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateClusterRequest WithMasterUserPassword(string masterUserPassword)
+        {
+            this._masterUserPassword = masterUserPassword;
+            return this;
+        }
+
+        // Check to see if MasterUserPassword property is set
+        internal bool IsSetMasterUserPassword()
+        {
+            return this._masterUserPassword != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property NodeType. 
+        /// <para>
+        ///         The node type to be provisioned for the cluster.         For information about
+        /// node types, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
+        ///            Working with Clusters</a> in the <i>Amazon Redshift Management Guide</i>.
+        /// 
+        /// </para>
+        ///                 
+        /// <para>
+        ///             Valid Values: <code>dw1.xlarge</code> | <code>dw1.8xlarge</code> | <code>dw2.large</code>
+        /// | <code>dw2.8xlarge</code>.         
+        /// </para>
+        /// </summary>
+        public string NodeType
+        {
+            get { return this._nodeType; }
+            set { this._nodeType = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the NodeType property
+        /// </summary>
+        /// <param name="nodeType">The value to set for the NodeType property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateClusterRequest WithNodeType(string nodeType)
+        {
+            this._nodeType = nodeType;
+            return this;
+        }
+
+        // Check to see if NodeType property is set
+        internal bool IsSetNodeType()
+        {
+            return this._nodeType != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property NumberOfNodes. 
+        /// <para>
+        ///             The number of compute nodes in the cluster.             This parameter
+        /// is required when the <b>ClusterType</b> parameter is             specified as <code>multi-node</code>.
+        ///        
+        /// </para>
+        ///         
+        /// <para>
+        /// For information about determining how many nodes you need, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
+        ///            Working with Clusters</a> in the <i>Amazon Redshift Management Guide</i>.
+        /// 
+        /// </para>
+        ///               
+        /// <para>
+        /// If you don't specify this parameter, you get a single-node cluster. When        requesting
+        /// a multi-node cluster, you must specify the number of nodes that you want in the cluster.
+        /// </para>
+        ///         
+        /// <para>
+        /// Default: <code>1</code>
+        /// </para>
+        ///         
+        /// <para>
+        /// Constraints: Value must be at least 1 and no more than 100.
+        /// </para>
+        /// </summary>
+        public int NumberOfNodes
+        {
+            get { return this._numberOfNodes.GetValueOrDefault(); }
+            set { this._numberOfNodes = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the NumberOfNodes property
+        /// </summary>
+        /// <param name="numberOfNodes">The value to set for the NumberOfNodes property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateClusterRequest WithNumberOfNodes(int numberOfNodes)
+        {
+            this._numberOfNodes = numberOfNodes;
+            return this;
+        }
+
+        // Check to see if NumberOfNodes property is set
+        internal bool IsSetNumberOfNodes()
+        {
+            return this._numberOfNodes.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Port. 
+        /// <para>
+        ///         The port number on which the cluster accepts incoming connections.       
+        /// 
+        /// </para>
+        ///         
+        /// <para>
+        /// The cluster is accessible only via the JDBC and ODBC connection strings. Part of the
+        ///        connection string requires the port on which the cluster will listen for incoming
+        /// connections.
+        /// </para>
+        ///         
+        /// <para>
+        ///             Default: <code>5439</code>        
+        /// </para>
+        ///         
+        /// <para>
+        ///             Valid Values: <code>1150-65535</code>        
+        /// </para>
+        /// </summary>
+        public int Port
+        {
+            get { return this._port.GetValueOrDefault(); }
+            set { this._port = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the Port property
+        /// </summary>
+        /// <param name="port">The value to set for the Port property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateClusterRequest WithPort(int port)
+        {
+            this._port = port;
+            return this;
+        }
+
+        // Check to see if Port property is set
+        internal bool IsSetPort()
+        {
+            return this._port.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property PreferredMaintenanceWindow. 
+        /// <para>
+        ///         The weekly time range (in UTC) during which automated cluster maintenance
+        /// can occur.        
+        /// </para>
+        ///         
+        /// <para>
+        ///             Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>        
+        /// </para>
+        ///         
+        /// <para>
+        ///             Default: A 30-minute window selected at random from an            8-hour
+        /// block of time per region, occurring on a random day of the            week. The following
+        /// list shows the time blocks for each region             from which the default maintenance
+        /// windows are assigned.        
+        /// </para>
+        ///         <ul>            <li><b>US-East (Northern Virginia) Region:</b> 03:00-11:00
+        /// UTC</li>            <li><b>US-West (Oregon) Region</b> 06:00-14:00 UTC</li>      
+        ///      <li><b>EU (Ireland) Region</b> 22:00-06:00 UTC</li>            <li><b>Asia Pacific
+        /// (Singapore) Region</b> 14:00-22:00 UTC</li>            <li><b>Asia Pacific (Sydney)
+        /// Region</b> 12:00-20:00 UTC</li>            <li><b>Asia Pacific (Tokyo) Region</b>
+        /// 17:00-03:00 UTC</li>        </ul>        
+        /// <para>
+        /// Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
+        /// </para>
+        ///         
+        /// <para>
+        /// Constraints: Minimum 30-minute window.
+        /// </para>
+        /// </summary>
+        public string PreferredMaintenanceWindow
+        {
+            get { return this._preferredMaintenanceWindow; }
+            set { this._preferredMaintenanceWindow = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the PreferredMaintenanceWindow property
+        /// </summary>
+        /// <param name="preferredMaintenanceWindow">The value to set for the PreferredMaintenanceWindow property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateClusterRequest WithPreferredMaintenanceWindow(string preferredMaintenanceWindow)
+        {
+            this._preferredMaintenanceWindow = preferredMaintenanceWindow;
+            return this;
+        }
+
+        // Check to see if PreferredMaintenanceWindow property is set
+        internal bool IsSetPreferredMaintenanceWindow()
+        {
+            return this._preferredMaintenanceWindow != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property PubliclyAccessible. 
+        /// <para>
+        /// If <code>true</code>, the cluster can be accessed from a public network. 
+        /// </para>
+        /// </summary>
+        public bool PubliclyAccessible
+        {
+            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            set { this._publiclyAccessible = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the PubliclyAccessible property
+        /// </summary>
+        /// <param name="publiclyAccessible">The value to set for the PubliclyAccessible property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateClusterRequest WithPubliclyAccessible(bool publiclyAccessible)
+        {
+            this._publiclyAccessible = publiclyAccessible;
+            return this;
+        }
+
+        // Check to see if PubliclyAccessible property is set
+        internal bool IsSetPubliclyAccessible()
+        {
+            return this._publiclyAccessible.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property VpcSecurityGroupIds. 
+        /// <para>
+        /// A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster.
+        /// </para>
+        ///         
+        /// <para>
+        /// Default: The default VPC security group is associated with the cluster.
+        /// </para>
+        /// </summary>
+        public List<string> VpcSecurityGroupIds
+        {
+            get { return this._vpcSecurityGroupIds; }
+            set { this._vpcSecurityGroupIds = value; }
+        }
+
+        /// <summary>
+        /// Sets the VpcSecurityGroupIds property
+        /// </summary>
+        /// <param name="vpcSecurityGroupIds">The values to add to the VpcSecurityGroupIds collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateClusterRequest WithVpcSecurityGroupIds(params string[] vpcSecurityGroupIds)
+        {
+            foreach (var element in vpcSecurityGroupIds)
+            {
+                this._vpcSecurityGroupIds.Add(element);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the VpcSecurityGroupIds property
+        /// </summary>
+        /// <param name="vpcSecurityGroupIds">The values to add to the VpcSecurityGroupIds collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateClusterRequest WithVpcSecurityGroupIds(IEnumerable<string> vpcSecurityGroupIds)
+        {
+            foreach (var element in vpcSecurityGroupIds)
+            {
+                this._vpcSecurityGroupIds.Add(element);
+            }
+            return this;
+        }
+        // Check to see if VpcSecurityGroupIds property is set
+        internal bool IsSetVpcSecurityGroupIds()
+        {
+            return this._vpcSecurityGroupIds != null && this._vpcSecurityGroupIds.Count > 0; 
+        }
+
     }
 }
-    

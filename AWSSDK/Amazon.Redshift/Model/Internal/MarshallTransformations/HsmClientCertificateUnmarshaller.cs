@@ -12,72 +12,76 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   HsmClientCertificate Unmarshaller
-     /// </summary>
-    internal class HsmClientCertificateUnmarshaller : IUnmarshaller<HsmClientCertificate, XmlUnmarshallerContext>, IUnmarshaller<HsmClientCertificate, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for HsmClientCertificate Object
+    /// </summary>  
+    public class HsmClientCertificateUnmarshaller : IUnmarshaller<HsmClientCertificate, XmlUnmarshallerContext>, IUnmarshaller<HsmClientCertificate, JsonUnmarshallerContext>
     {
-        public HsmClientCertificate Unmarshall(XmlUnmarshallerContext context) 
+        public HsmClientCertificate Unmarshall(XmlUnmarshallerContext context)
         {
-            HsmClientCertificate hsmClientCertificate = new HsmClientCertificate();
+            HsmClientCertificate unmarshalledObject = new HsmClientCertificate();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            if (context.IsStartOfDocument) 
-               targetDepth++;
-            
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
                     if (context.TestExpression("HsmClientCertificateIdentifier", targetDepth))
                     {
-                        hsmClientCertificate.HsmClientCertificateIdentifier = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.HsmClientCertificateIdentifier = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
                     if (context.TestExpression("HsmClientCertificatePublicKey", targetDepth))
                     {
-                        hsmClientCertificate.HsmClientCertificatePublicKey = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.HsmClientCertificatePublicKey = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return hsmClientCertificate;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return hsmClientCertificate;
+            return unmarshalledObject;
         }
 
-        public HsmClientCertificate Unmarshall(JsonUnmarshallerContext context) 
+        public HsmClientCertificate Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static HsmClientCertificateUnmarshaller instance;
-
-        public static HsmClientCertificateUnmarshaller GetInstance() 
+        public static HsmClientCertificateUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new HsmClientCertificateUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new HsmClientCertificateUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

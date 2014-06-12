@@ -25,94 +25,45 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeReservedNodeOfferings operation.
-    /// <para> Returns a list of the available reserved node offerings by Amazon Redshift with their descriptions including the node type, the fixed
-    /// and recurring costs of reserving the node and duration the node will be reserved for you. These descriptions help you determine which
-    /// reserve node offering you want to purchase. You then use the unique offering ID in you call to PurchaseReservedNodeOffering to reserve one
-    /// or more nodes for your Amazon Redshift cluster. </para> <para> For more information about managing parameter groups, go to <a
-    /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html" >Purchasing Reserved Nodes</a> in the <i>Amazon
-    /// Redshift Management Guide</i> .
+    /// Returns a list of the            available reserved node offerings by
+    /// Amazon Redshift with their descriptions including             the node type, the fixed
+    /// and recurring costs of reserving the node and duration the node will             be
+    /// reserved for you. These descriptions help you             determine which reserve
+    /// node offering you want to purchase. You then use the unique offering ID          
+    ///   in you call to <a>PurchaseReservedNodeOffering</a> to reserve one or more nodes
+    /// for your             Amazon Redshift cluster.        
     /// 
+    ///         
+    /// <para>
+    ///             For more information about managing parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
+    /// Reserved Nodes</a> in the <i>Amazon Redshift Management Guide</i>.               
+    ///      
     /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.Redshift.AmazonRedshift.DescribeReservedNodeOfferings"/>
-    public class DescribeReservedNodeOfferingsRequest : AmazonWebServiceRequest
+    public partial class DescribeReservedNodeOfferingsRequest : AmazonWebServiceRequest
     {
-        private string reservedNodeOfferingId;
-        private int? maxRecords;
-        private string marker;
+        private string _marker;
+        private int? _maxRecords;
+        private string _reservedNodeOfferingId;
+
 
         /// <summary>
-        /// The unique identifier for the offering.
-        ///  
-        /// </summary>
-        public string ReservedNodeOfferingId
-        {
-            get { return this.reservedNodeOfferingId; }
-            set { this.reservedNodeOfferingId = value; }
-        }
-
-        /// <summary>
-        /// Sets the ReservedNodeOfferingId property
-        /// </summary>
-        /// <param name="reservedNodeOfferingId">The value to set for the ReservedNodeOfferingId property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribeReservedNodeOfferingsRequest WithReservedNodeOfferingId(string reservedNodeOfferingId)
-        {
-            this.reservedNodeOfferingId = reservedNodeOfferingId;
-            return this;
-        }
-            
-
-        // Check to see if ReservedNodeOfferingId property is set
-        internal bool IsSetReservedNodeOfferingId()
-        {
-            return this.reservedNodeOfferingId != null;
-        }
-
-        /// <summary>
-        /// The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified
-        /// <c>MaxRecords</c> value, a value is returned in a <c>marker</c> field of the response. You can retrieve the next set of records by retrying
-        /// the command with the returned marker value. Default: <c>100</c> Constraints: minimum 20, maximum 100.
-        ///  
-        /// </summary>
-        public int MaxRecords
-        {
-            get { return this.maxRecords ?? default(int); }
-            set { this.maxRecords = value; }
-        }
-
-        /// <summary>
-        /// Sets the MaxRecords property
-        /// </summary>
-        /// <param name="maxRecords">The value to set for the MaxRecords property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribeReservedNodeOfferingsRequest WithMaxRecords(int maxRecords)
-        {
-            this.maxRecords = maxRecords;
-            return this;
-        }
-            
-
-        // Check to see if MaxRecords property is set
-        internal bool IsSetMaxRecords()
-        {
-            return this.maxRecords.HasValue;
-        }
-
-        /// <summary>
-        /// An optional parameter that specifies the starting point to return a set of response records. When the results of a
-        /// <a>DescribeReservedNodeOfferings</a> request exceed the value specified in <c>MaxRecords</c>, AWS returns a value in the <c>Marker</c> field
-        /// of the response. You can retrieve the next set of response records by providing the returned marker value in the <c>Marker</c> parameter and
-        /// retrying the request.
-        ///  
+        /// Gets and sets the property Marker. 
+        /// <para>
+        ///            An optional parameter that specifies the starting point to return a set
+        /// of response records.            When the results of a <a>DescribeReservedNodeOfferings</a>
+        /// request exceed the value specified in <code>MaxRecords</code>,            AWS returns
+        /// a value in the <code>Marker</code> field of the response. You can retrieve the next
+        /// set of            response records by providing the returned marker value in the <code>Marker</code>
+        /// parameter and            retrying the request.       
+        /// </para>
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
+
 
         /// <summary>
         /// Sets the Marker property
@@ -122,16 +73,91 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedNodeOfferingsRequest WithMarker(string marker)
         {
-            this.marker = marker;
+            this._marker = marker;
             return this;
         }
-            
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property MaxRecords. 
+        /// <para>
+        ///            The maximum number of response records to return in each call.        
+        ///    If the number of remaining response records exceeds the specified <code>MaxRecords</code>
+        /// value,            a value is returned in a <code>marker</code> field of the response.
+        ///            You can retrieve the next set of records by retrying the command with the
+        /// returned marker value.       
+        /// </para>
+        ///        
+        /// <para>
+        /// Default: <code>100</code>
+        /// </para>
+        ///        
+        /// <para>
+        /// Constraints: minimum 20, maximum 100.
+        /// </para>
+        /// </summary>
+        public int MaxRecords
+        {
+            get { return this._maxRecords.GetValueOrDefault(); }
+            set { this._maxRecords = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the MaxRecords property
+        /// </summary>
+        /// <param name="maxRecords">The value to set for the MaxRecords property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeReservedNodeOfferingsRequest WithMaxRecords(int maxRecords)
+        {
+            this._maxRecords = maxRecords;
+            return this;
+        }
+
+        // Check to see if MaxRecords property is set
+        internal bool IsSetMaxRecords()
+        {
+            return this._maxRecords.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ReservedNodeOfferingId. 
+        /// <para>
+        /// The unique identifier for the offering.
+        /// </para>
+        /// </summary>
+        public string ReservedNodeOfferingId
+        {
+            get { return this._reservedNodeOfferingId; }
+            set { this._reservedNodeOfferingId = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the ReservedNodeOfferingId property
+        /// </summary>
+        /// <param name="reservedNodeOfferingId">The value to set for the ReservedNodeOfferingId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeReservedNodeOfferingsRequest WithReservedNodeOfferingId(string reservedNodeOfferingId)
+        {
+            this._reservedNodeOfferingId = reservedNodeOfferingId;
+            return this;
+        }
+
+        // Check to see if ReservedNodeOfferingId property is set
+        internal bool IsSetReservedNodeOfferingId()
+        {
+            return this._reservedNodeOfferingId != null;
+        }
+
     }
 }
-    

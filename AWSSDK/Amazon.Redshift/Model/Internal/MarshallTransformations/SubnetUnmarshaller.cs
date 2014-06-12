@@ -12,21 +12,29 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Subnet Unmarshaller
-     /// </summary>
-    internal class SubnetUnmarshaller : IUnmarshaller<Subnet, XmlUnmarshallerContext>, IUnmarshaller<Subnet, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Subnet Object
+    /// </summary>  
+    public class SubnetUnmarshaller : IUnmarshaller<Subnet, XmlUnmarshallerContext>, IUnmarshaller<Subnet, JsonUnmarshallerContext>
     {
-        public Subnet Unmarshall(XmlUnmarshallerContext context) 
+        public Subnet Unmarshall(XmlUnmarshallerContext context)
         {
-            Subnet subnet = new Subnet();
+            Subnet unmarshalledObject = new Subnet();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,51 +44,50 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("SubnetIdentifier", targetDepth))
-                    {
-                        subnet.SubnetIdentifier = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
                     if (context.TestExpression("SubnetAvailabilityZone", targetDepth))
                     {
-                        subnet.SubnetAvailabilityZone = AvailabilityZoneUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = AvailabilityZoneUnmarshaller.GetInstance();
+                        unmarshalledObject.SubnetAvailabilityZone = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
+                    if (context.TestExpression("SubnetIdentifier", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.SubnetIdentifier = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("SubnetStatus", targetDepth))
                     {
-                        subnet.SubnetStatus = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.SubnetStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return subnet;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return subnet;
+            return unmarshalledObject;
         }
 
-        public Subnet Unmarshall(JsonUnmarshallerContext context) 
+        public Subnet Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static SubnetUnmarshaller instance;
-
-        public static SubnetUnmarshaller GetInstance() 
+        public static SubnetUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new SubnetUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new SubnetUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

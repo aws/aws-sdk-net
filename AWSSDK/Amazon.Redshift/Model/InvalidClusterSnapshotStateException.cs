@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class InvalidClusterSnapshotStateException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal InvalidClusterSnapshotStateException(string message) 
+        public InvalidClusterSnapshotStateException(string message) 
             : base(message) {}
           
-        internal InvalidClusterSnapshotStateException(string message, Exception innerException) 
+        public InvalidClusterSnapshotStateException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal InvalidClusterSnapshotStateException(Exception innerException) 
+        public InvalidClusterSnapshotStateException(Exception innerException) 
             : base(innerException) {}
             
-        internal InvalidClusterSnapshotStateException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidClusterSnapshotStateException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal InvalidClusterSnapshotStateException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidClusterSnapshotStateException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

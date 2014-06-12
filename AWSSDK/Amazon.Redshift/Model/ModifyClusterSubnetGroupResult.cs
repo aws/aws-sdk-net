@@ -16,27 +16,24 @@ using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
 
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// The results from the ModifyClusterSubnetGroup action.
+    /// Describes a subnet group.
     /// </summary>
     public partial class ModifyClusterSubnetGroupResult
     {
-        private ClusterSubnetGroup clusterSubnetGroupValue;
+        private ClusterSubnetGroup _response;
 
-        /// <summary>
-        /// Gets and sets the ModifyClusterSubnetGroupResult property.
-        /// Contains the result of a successful invocation of the ModifyClusterSubnetGroup
-        /// action.
-        /// </summary>
         public ClusterSubnetGroup ClusterSubnetGroup
         {
-            get { return this.clusterSubnetGroupValue; }
-            set { this.clusterSubnetGroupValue = value; }
+            get { return this._response; }
+            set { this._response = value; }
         }
     }
 }
-    

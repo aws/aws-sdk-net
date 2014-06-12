@@ -13,76 +13,74 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for RotateEncryptionKey operation
-    /// </summary>
-    internal class RotateEncryptionKeyResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for RotateEncryptionKey operation
+    /// </summary>  
+    public class RotateEncryptionKeyResponseUnmarshaller : XmlResponseUnmarshaller
     {
-
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             RotateEncryptionKeyResponse response = new RotateEncryptionKeyResponse();
-            
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
             while (context.Read())
             {
                 if (context.IsStartElement)
                 {
-                    
                     if(context.TestExpression("RotateEncryptionKeyResult", 2))
                     {
                         response.RotateEncryptionKeyResult = RotateEncryptionKeyResultUnmarshaller.GetInstance().Unmarshall(context);
                         continue;
                     }
-                    
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
                         response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
                     }
                 }
             }
-                
 
             return response;
         }
-        
-        
+
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidClusterState"))
-            {
-                return new InvalidClusterStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("ClusterNotFound"))
             {
                 return new ClusterNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidClusterState"))
+            {
+                return new InvalidClusterStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonRedshiftException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static RotateEncryptionKeyResponseUnmarshaller instance;
 
+        private static RotateEncryptionKeyResponseUnmarshaller instance;
         public static RotateEncryptionKeyResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
+            if (instance == null)
             {
-               instance = new RotateEncryptionKeyResponseUnmarshaller();
+                instance = new RotateEncryptionKeyResponseUnmarshaller();
             }
             return instance;
         }
-    
+
     }
 }
-    

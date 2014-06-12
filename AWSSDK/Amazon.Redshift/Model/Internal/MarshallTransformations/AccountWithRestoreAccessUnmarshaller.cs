@@ -12,21 +12,29 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   AccountWithRestoreAccess Unmarshaller
-     /// </summary>
-    internal class AccountWithRestoreAccessUnmarshaller : IUnmarshaller<AccountWithRestoreAccess, XmlUnmarshallerContext>, IUnmarshaller<AccountWithRestoreAccess, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for AccountWithRestoreAccess Object
+    /// </summary>  
+    public class AccountWithRestoreAccessUnmarshaller : IUnmarshaller<AccountWithRestoreAccess, XmlUnmarshallerContext>, IUnmarshaller<AccountWithRestoreAccess, JsonUnmarshallerContext>
     {
-        public AccountWithRestoreAccess Unmarshall(XmlUnmarshallerContext context) 
+        public AccountWithRestoreAccess Unmarshall(XmlUnmarshallerContext context)
         {
-            AccountWithRestoreAccess accountWithRestoreAccess = new AccountWithRestoreAccess();
+            AccountWithRestoreAccess unmarshalledObject = new AccountWithRestoreAccess();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,39 +44,38 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
                     if (context.TestExpression("AccountId", targetDepth))
                     {
-                        accountWithRestoreAccess.AccountId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return accountWithRestoreAccess;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return accountWithRestoreAccess;
+            return unmarshalledObject;
         }
 
-        public AccountWithRestoreAccess Unmarshall(JsonUnmarshallerContext context) 
+        public AccountWithRestoreAccess Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static AccountWithRestoreAccessUnmarshaller instance;
-
-        public static AccountWithRestoreAccessUnmarshaller GetInstance() 
+        public static AccountWithRestoreAccessUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new AccountWithRestoreAccessUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new AccountWithRestoreAccessUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

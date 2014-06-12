@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the RestoreFromClusterSnapshot response and response metadata.
+    /// Returns information about the RestoreFromClusterSnapshotResult response and response metadata.
     /// </summary>
     public class RestoreFromClusterSnapshotResponse : AmazonWebServiceResponse
     {
-        private RestoreFromClusterSnapshotResult restoreFromClusterSnapshotResult;
+        private RestoreFromClusterSnapshotResult _restoreFromClusterSnapshotResult;
 
-        /// 
+        /// <summary>
         /// Gets and sets the RestoreFromClusterSnapshotResult property.
-        /// Contains the result of a successful invocation of the RestoreFromClusterSnapshot
-        /// action.
-        /// 
+        /// Represents the output of a RestoreFromClusterSnapshot operation.
+        /// </summary>
         public RestoreFromClusterSnapshotResult RestoreFromClusterSnapshotResult
         {
             get
             {
-                if(this.restoreFromClusterSnapshotResult == null)
+                if(this._restoreFromClusterSnapshotResult == null)
                 {
-                    this.restoreFromClusterSnapshotResult = new RestoreFromClusterSnapshotResult();
+                    this._restoreFromClusterSnapshotResult = new RestoreFromClusterSnapshotResult();
                 }
-
-                return this.restoreFromClusterSnapshotResult;
+                return this._restoreFromClusterSnapshotResult;
             }
-            set { this.restoreFromClusterSnapshotResult = value; }
+            set { this._restoreFromClusterSnapshotResult = value; }
         }
     }
 }
-    

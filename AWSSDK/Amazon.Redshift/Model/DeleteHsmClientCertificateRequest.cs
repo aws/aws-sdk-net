@@ -25,22 +25,25 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteHsmClientCertificate operation.
-    /// <para>Deletes the specified HSM client certificate.</para>
+    /// Deletes the specified HSM client certificate.
     /// </summary>
-    /// <seealso cref="Amazon.Redshift.AmazonRedshift.DeleteHsmClientCertificate"/>
-    public class DeleteHsmClientCertificateRequest : AmazonWebServiceRequest
+    public partial class DeleteHsmClientCertificateRequest : AmazonWebServiceRequest
     {
-        private string hsmClientCertificateIdentifier;
+        private string _hsmClientCertificateIdentifier;
+
 
         /// <summary>
+        /// Gets and sets the property HsmClientCertificateIdentifier. 
+        /// <para>
         /// The identifier of the HSM client certificate to be deleted.
-        ///  
+        /// </para>
         /// </summary>
         public string HsmClientCertificateIdentifier
         {
-            get { return this.hsmClientCertificateIdentifier; }
-            set { this.hsmClientCertificateIdentifier = value; }
+            get { return this._hsmClientCertificateIdentifier; }
+            set { this._hsmClientCertificateIdentifier = value; }
         }
+
 
         /// <summary>
         /// Sets the HsmClientCertificateIdentifier property
@@ -50,16 +53,15 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteHsmClientCertificateRequest WithHsmClientCertificateIdentifier(string hsmClientCertificateIdentifier)
         {
-            this.hsmClientCertificateIdentifier = hsmClientCertificateIdentifier;
+            this._hsmClientCertificateIdentifier = hsmClientCertificateIdentifier;
             return this;
         }
-            
 
         // Check to see if HsmClientCertificateIdentifier property is set
         internal bool IsSetHsmClientCertificateIdentifier()
         {
-            return this.hsmClientCertificateIdentifier != null;
+            return this._hsmClientCertificateIdentifier != null;
         }
+
     }
 }
-    

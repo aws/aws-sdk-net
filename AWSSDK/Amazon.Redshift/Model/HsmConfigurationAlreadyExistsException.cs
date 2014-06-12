@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class HsmConfigurationAlreadyExistsException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal HsmConfigurationAlreadyExistsException(string message) 
+        public HsmConfigurationAlreadyExistsException(string message) 
             : base(message) {}
           
-        internal HsmConfigurationAlreadyExistsException(string message, Exception innerException) 
+        public HsmConfigurationAlreadyExistsException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal HsmConfigurationAlreadyExistsException(Exception innerException) 
+        public HsmConfigurationAlreadyExistsException(Exception innerException) 
             : base(innerException) {}
             
-        internal HsmConfigurationAlreadyExistsException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public HsmConfigurationAlreadyExistsException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal HsmConfigurationAlreadyExistsException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public HsmConfigurationAlreadyExistsException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

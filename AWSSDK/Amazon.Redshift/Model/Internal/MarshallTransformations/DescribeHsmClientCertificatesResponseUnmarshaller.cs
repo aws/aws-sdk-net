@@ -13,28 +13,34 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for DescribeHsmClientCertificates operation
-    /// </summary>
-    internal class DescribeHsmClientCertificatesResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for DescribeHsmClientCertificates operation
+    /// </summary>  
+    public class DescribeHsmClientCertificatesResponseUnmarshaller : XmlResponseUnmarshaller
     {
-
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             DescribeHsmClientCertificatesResponse response = new DescribeHsmClientCertificatesResponse();
-            
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
             while (context.Read())
             {
-                if (context.IsStartElement)                
+                if (context.IsStartElement)
                 {
                     if(context.TestExpression("DescribeHsmClientCertificatesResult", 2))
                     {
@@ -47,35 +53,30 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     }
                 }
             }
-                 
-                        
+
             return response;
         }
 
-        
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             if (errorResponse.Code != null && errorResponse.Code.Equals("HsmClientCertificateNotFoundFault"))
             {
                 return new HsmClientCertificateNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
             return new AmazonRedshiftException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static DescribeHsmClientCertificatesResponseUnmarshaller instance;
 
+        private static DescribeHsmClientCertificatesResponseUnmarshaller instance;
         public static DescribeHsmClientCertificatesResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
+            if (instance == null)
             {
-               instance = new DescribeHsmClientCertificatesResponseUnmarshaller();
+                instance = new DescribeHsmClientCertificatesResponseUnmarshaller();
             }
             return instance;
         }
-    
+
     }
 }
-    

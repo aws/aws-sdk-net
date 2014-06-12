@@ -16,27 +16,24 @@ using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
 
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// The results from the CreateClusterParameterGroup action.
+    /// Describes a parameter group.
     /// </summary>
     public partial class CreateClusterParameterGroupResult
     {
-        private ClusterParameterGroup clusterParameterGroupValue;
+        private ClusterParameterGroup _response;
 
-        /// <summary>
-        /// Gets and sets the CreateClusterParameterGroupResult property.
-        /// Contains the result of a successful invocation of the CreateClusterParameterGroup
-        /// action.
-        /// </summary>
         public ClusterParameterGroup ClusterParameterGroup
         {
-            get { return this.clusterParameterGroupValue; }
-            set { this.clusterParameterGroupValue = value; }
+            get { return this._response; }
+            set { this._response = value; }
         }
     }
 }
-    

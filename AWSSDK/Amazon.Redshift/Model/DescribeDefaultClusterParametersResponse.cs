@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the DescribeDefaultClusterParameters response and response metadata.
+    /// Returns information about the DescribeDefaultClusterParametersResult response and response metadata.
     /// </summary>
     public class DescribeDefaultClusterParametersResponse : AmazonWebServiceResponse
     {
-        private DescribeDefaultClusterParametersResult describeDefaultClusterParametersResult;
+        private DescribeDefaultClusterParametersResult _describeDefaultClusterParametersResult;
 
-        /// 
+        /// <summary>
         /// Gets and sets the DescribeDefaultClusterParametersResult property.
-        /// Contains the result of a successful invocation of the DescribeDefaultClusterParameters
-        /// action.
-        /// 
+        /// Represents the output of a DescribeDefaultClusterParameters operation.
+        /// </summary>
         public DescribeDefaultClusterParametersResult DescribeDefaultClusterParametersResult
         {
             get
             {
-                if(this.describeDefaultClusterParametersResult == null)
+                if(this._describeDefaultClusterParametersResult == null)
                 {
-                    this.describeDefaultClusterParametersResult = new DescribeDefaultClusterParametersResult();
+                    this._describeDefaultClusterParametersResult = new DescribeDefaultClusterParametersResult();
                 }
-
-                return this.describeDefaultClusterParametersResult;
+                return this._describeDefaultClusterParametersResult;
             }
-            set { this.describeDefaultClusterParametersResult = value; }
+            set { this._describeDefaultClusterParametersResult = value; }
         }
     }
 }
-    

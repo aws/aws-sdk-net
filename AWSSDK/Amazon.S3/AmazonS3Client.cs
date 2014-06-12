@@ -4799,6 +4799,14 @@ namespace Amazon.S3
                 setIfUnmodifiedSinceHeader(webHeaders, request.UnmodifiedSinceDate);
             }
 
+            if (request.IsSetServerSideEncryptionCustomerMethod())
+                webHeaders["x-amz-server-side-encryption-customer-algorithm"] = request.ServerSideEncryptionCustomerMethod.ToString();
+            if (request.IsSetServerSideEncryptionCustomerProvidedKey())
+            {
+                webHeaders["x-amz-server-side-encryption-customer-key"] = request.ServerSideEncryptionCustomerProvidedKey;
+                webHeaders["x-amz-server-side-encryption-customer-key-MD5"] = AmazonS3Util.ComputeEncodedMD5FromEncodedString(request.ServerSideEncryptionCustomerProvidedKey);
+            }
+
             StringBuilder queryStr = new StringBuilder();
 
             addParameter(queryStr, "versionId", request.VersionId);
@@ -4863,6 +4871,15 @@ namespace Amazon.S3
             {
                 setIfUnmodifiedSinceHeader(webHeaders, request.UnmodifiedSinceDate);
             }
+
+            if (request.IsSetServerSideEncryptionCustomerMethod())
+                webHeaders["x-amz-server-side-encryption-customer-algorithm"] = request.ServerSideEncryptionCustomerMethod.ToString();
+            if (request.IsSetServerSideEncryptionCustomerProvidedKey())
+            {
+                webHeaders["x-amz-server-side-encryption-customer-key"] = request.ServerSideEncryptionCustomerProvidedKey;
+                webHeaders["x-amz-server-side-encryption-customer-key-MD5"] = AmazonS3Util.ComputeEncodedMD5FromEncodedString(request.ServerSideEncryptionCustomerProvidedKey);
+            }
+
             if (request.IsSetVersionId())
             {
                 string queryStr = String.Concat("?versionId=", request.VersionId);
@@ -5035,6 +5052,14 @@ namespace Amazon.S3
             if (request.IsSetWebsiteRedirectLocation())
             {
                 webHeaders[S3Constants.AmzWebsiteRedirectLocationHeader] = request.WebsiteRedirectLocation;
+            }
+
+            if (request.IsSetServerSideEncryptionCustomerMethod())
+                webHeaders["x-amz-server-side-encryption-customer-algorithm"] = request.ServerSideEncryptionCustomerMethod.ToString();
+            if (request.IsSetServerSideEncryptionCustomerProvidedKey())
+            {
+                webHeaders["x-amz-server-side-encryption-customer-key"] = request.ServerSideEncryptionCustomerProvidedKey;
+                webHeaders["x-amz-server-side-encryption-customer-key-MD5"] = AmazonS3Util.ComputeEncodedMD5FromEncodedString(request.ServerSideEncryptionCustomerProvidedKey);
             }
 
             // Finally, add the S3 specific parameters and headers
@@ -5307,6 +5332,21 @@ namespace Amazon.S3
                 webHeaders[S3Constants.AmzWebsiteRedirectLocationHeader] = request.WebsiteRedirectLocation;
             }
 
+            if (request.IsSetServerSideEncryptionCustomerMethod())
+                webHeaders["x-amz-server-side-encryption-customer-algorithm"] = request.ServerSideEncryptionCustomerMethod.ToString();
+            if (request.IsSetServerSideEncryptionCustomerProvidedKey())
+            {
+                webHeaders["x-amz-server-side-encryption-customer-key"] = request.ServerSideEncryptionCustomerProvidedKey;
+                webHeaders["x-amz-server-side-encryption-customer-key-MD5"] = AmazonS3Util.ComputeEncodedMD5FromEncodedString(request.ServerSideEncryptionCustomerProvidedKey);
+            }
+            if (request.IsSetCopySourceServerSideEncryptionCustomerMethod())
+                webHeaders["x-amz-copy-source-server-side-encryption-customer-algorithm"] = request.CopySourceServerSideEncryptionCustomerMethod.ToString();
+            if (request.IsSetCopySourceServerSideEncryptionCustomerProvidedKey())
+            {
+                webHeaders["x-amz-copy-source-server-side-encryption-customer-key"] = request.CopySourceServerSideEncryptionCustomerProvidedKey;
+                webHeaders["x-amz-copy-source-server-side-encryption-customer-key-MD5"] = AmazonS3Util.ComputeEncodedMD5FromEncodedString(request.CopySourceServerSideEncryptionCustomerProvidedKey);
+            }
+
             request.RequestDestinationBucket = request.DestinationBucket;
         }
 
@@ -5395,6 +5435,7 @@ namespace Amazon.S3
                 }
             }
 
+
             // 3. Custom ACLs
 
             ConvertPutWithACLRequest(request);
@@ -5410,6 +5451,14 @@ namespace Amazon.S3
             if (request.IsSetWebsiteRedirectLocation())
             {
                 webHeaders[S3Constants.AmzWebsiteRedirectLocationHeader] = request.WebsiteRedirectLocation;
+            }
+
+            if (request.IsSetServerSideEncryptionCustomerMethod())
+                webHeaders["x-amz-server-side-encryption-customer-algorithm"] = request.ServerSideEncryptionCustomerMethod.ToString();
+            if (request.IsSetServerSideEncryptionCustomerProvidedKey())
+            {
+                webHeaders["x-amz-server-side-encryption-customer-key"] = request.ServerSideEncryptionCustomerProvidedKey;
+                webHeaders["x-amz-server-side-encryption-customer-key-MD5"] = AmazonS3Util.ComputeEncodedMD5FromEncodedString(request.ServerSideEncryptionCustomerProvidedKey);
             }
 
             // Finally, add the S3 specific parameters and headers
@@ -5577,6 +5626,14 @@ namespace Amazon.S3
                 webHeaders[AWSSDKUtils.ContentMD5Header] = checksum;
             }
 
+            if (request.IsSetServerSideEncryptionCustomerMethod())
+                webHeaders["x-amz-server-side-encryption-customer-algorithm"] = request.ServerSideEncryptionCustomerMethod.ToString();
+            if (request.IsSetServerSideEncryptionCustomerProvidedKey())
+            {
+                webHeaders["x-amz-server-side-encryption-customer-key"] = request.ServerSideEncryptionCustomerProvidedKey;
+                webHeaders["x-amz-server-side-encryption-customer-key-MD5"] = AmazonS3Util.ComputeEncodedMD5FromEncodedString(request.ServerSideEncryptionCustomerProvidedKey);
+            }
+
             // InputStream is a PartStreamWrapper that will take care of computing the length for the part.
             parameters[S3QueryParameter.ContentLength] = request.InputStream.Length.ToString();
 
@@ -5628,6 +5685,21 @@ namespace Amazon.S3
             if (request.ServerSideEncryptionMethod != ServerSideEncryptionMethod.None)
             {
                 webHeaders[S3Constants.AmzServerSideEncryptionHeader] = request.ServerSideEncryptionMethod.ToString();
+            }
+
+            if (request.IsSetServerSideEncryptionCustomerMethod())
+                webHeaders["x-amz-server-side-encryption-customer-algorithm"] = request.ServerSideEncryptionCustomerMethod.ToString();
+            if (request.IsSetServerSideEncryptionCustomerProvidedKey())
+            {
+                webHeaders["x-amz-server-side-encryption-customer-key"] = request.ServerSideEncryptionCustomerProvidedKey;
+                webHeaders["x-amz-server-side-encryption-customer-key-MD5"] = AmazonS3Util.ComputeEncodedMD5FromEncodedString(request.ServerSideEncryptionCustomerProvidedKey);
+            }
+            if (request.IsSetCopySourceServerSideEncryptionCustomerMethod())
+                webHeaders["x-amz-copy-source-server-side-encryption-customer-algorithm"] = request.CopySourceServerSideEncryptionCustomerMethod.ToString();
+            if (request.IsSetCopySourceServerSideEncryptionCustomerProvidedKey())
+            {
+                webHeaders["x-amz-copy-source-server-side-encryption-customer-key"] = request.CopySourceServerSideEncryptionCustomerProvidedKey;
+                webHeaders["x-amz-copy-source-server-side-encryption-customer-key-MD5"] = AmazonS3Util.ComputeEncodedMD5FromEncodedString(request.CopySourceServerSideEncryptionCustomerProvidedKey);
             }
 
             // Finally, add the S3 specific parameters and headers

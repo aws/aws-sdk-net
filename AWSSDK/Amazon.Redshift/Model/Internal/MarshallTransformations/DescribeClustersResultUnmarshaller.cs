@@ -12,69 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   DescribeClustersResult Unmarshaller
-     /// </summary>
-    internal class DescribeClustersResultUnmarshaller : IUnmarshaller<DescribeClustersResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeClustersResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for DescribeClusters Object
+    /// </summary>  
+    public class DescribeClustersResultUnmarshaller : IUnmarshaller<DescribeClustersResult, XmlUnmarshallerContext>
     {
         public DescribeClustersResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            DescribeClustersResult describeClustersResult = new DescribeClustersResult();
+            DescribeClustersResult result = new DescribeClustersResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("Marker", targetDepth))
-                    {
-                        describeClustersResult.Marker = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
+
                     if (context.TestExpression("Clusters/Cluster", targetDepth))
                     {
-                        describeClustersResult.Clusters.Add(ClusterUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = ClusterUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        result.Clusters.Add(item);
                         continue;
                     }
-                }
+                    if (context.TestExpression("Marker", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.Marker = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return describeClustersResult;
+                    return result;
                 }
             }
-                        
 
-
-            return describeClustersResult;
+            return result;
         }
 
-        public DescribeClustersResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static DescribeClustersResultUnmarshaller instance;
-
-        public static DescribeClustersResultUnmarshaller GetInstance() 
+        public static DescribeClustersResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new DescribeClustersResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new DescribeClustersResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

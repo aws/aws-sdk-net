@@ -12,21 +12,29 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   IPRange Unmarshaller
-     /// </summary>
-    internal class IPRangeUnmarshaller : IUnmarshaller<IPRange, XmlUnmarshallerContext>, IUnmarshaller<IPRange, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for IPRange Object
+    /// </summary>  
+    public class IPRangeUnmarshaller : IUnmarshaller<IPRange, XmlUnmarshallerContext>, IUnmarshaller<IPRange, JsonUnmarshallerContext>
     {
-        public IPRange Unmarshall(XmlUnmarshallerContext context) 
+        public IPRange Unmarshall(XmlUnmarshallerContext context)
         {
-            IPRange iPRange = new IPRange();
+            IPRange unmarshalledObject = new IPRange();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,45 +44,44 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("Status", targetDepth))
-                    {
-                        iPRange.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
                     if (context.TestExpression("CIDRIP", targetDepth))
                     {
-                        iPRange.CIDRIP = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.CIDRIP = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Status", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return iPRange;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return iPRange;
+            return unmarshalledObject;
         }
 
-        public IPRange Unmarshall(JsonUnmarshallerContext context) 
+        public IPRange Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static IPRangeUnmarshaller instance;
-
-        public static IPRangeUnmarshaller GetInstance() 
+        public static IPRangeUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new IPRangeUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new IPRangeUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

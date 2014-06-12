@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeClusterVersionsResult response and response metadata.
+    /// Returns information about the DescribeClusterVersionsResult response and response metadata.
     /// </summary>
     public class DescribeClusterVersionsResponse : AmazonWebServiceResponse
     {
-        private DescribeClusterVersionsResult describeClusterVersionsResult;
+        private DescribeClusterVersionsResult _describeClusterVersionsResult;
 
         /// <summary>
         /// Gets and sets the DescribeClusterVersionsResult property.
-        /// Contains the output from the DescribeClusterVersions action.
+        /// Represents the output of a DescribeClusterVersions operation.
         /// </summary>
         public DescribeClusterVersionsResult DescribeClusterVersionsResult
         {
             get
             {
-                if(this.describeClusterVersionsResult == null)
+                if(this._describeClusterVersionsResult == null)
                 {
-                    this.describeClusterVersionsResult = new DescribeClusterVersionsResult();
+                    this._describeClusterVersionsResult = new DescribeClusterVersionsResult();
                 }
-
-                return this.describeClusterVersionsResult;
+                return this._describeClusterVersionsResult;
             }
-            set { this.describeClusterVersionsResult = value; }
+            set { this._describeClusterVersionsResult = value; }
         }
     }
 }
-    

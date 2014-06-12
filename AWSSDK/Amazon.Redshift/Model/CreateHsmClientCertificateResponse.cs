@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the CreateHsmClientCertificate response and response metadata.
+    /// Returns information about the CreateHsmClientCertificateResult response and response metadata.
     /// </summary>
     public class CreateHsmClientCertificateResponse : AmazonWebServiceResponse
     {
-        private CreateHsmClientCertificateResult createHsmClientCertificateResult;
+        private CreateHsmClientCertificateResult _createHsmClientCertificateResult;
 
-        /// 
+        /// <summary>
         /// Gets and sets the CreateHsmClientCertificateResult property.
-        /// Contains the result of a successful invocation of the CreateHsmClientCertificate
-        /// action.
-        /// 
+        /// Represents the output of a CreateHsmClientCertificate operation.
+        /// </summary>
         public CreateHsmClientCertificateResult CreateHsmClientCertificateResult
         {
             get
             {
-                if(this.createHsmClientCertificateResult == null)
+                if(this._createHsmClientCertificateResult == null)
                 {
-                    this.createHsmClientCertificateResult = new CreateHsmClientCertificateResult();
+                    this._createHsmClientCertificateResult = new CreateHsmClientCertificateResult();
                 }
-
-                return this.createHsmClientCertificateResult;
+                return this._createHsmClientCertificateResult;
             }
-            set { this.createHsmClientCertificateResult = value; }
+            set { this._createHsmClientCertificateResult = value; }
         }
     }
 }
-    

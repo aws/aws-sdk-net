@@ -12,21 +12,29 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ElasticIpStatus Unmarshaller
-     /// </summary>
-    internal class ElasticIpStatusUnmarshaller : IUnmarshaller<ElasticIpStatus, XmlUnmarshallerContext>, IUnmarshaller<ElasticIpStatus, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ElasticIpStatus Object
+    /// </summary>  
+    public class ElasticIpStatusUnmarshaller : IUnmarshaller<ElasticIpStatus, XmlUnmarshallerContext>, IUnmarshaller<ElasticIpStatus, JsonUnmarshallerContext>
     {
-        public ElasticIpStatus Unmarshall(XmlUnmarshallerContext context) 
+        public ElasticIpStatus Unmarshall(XmlUnmarshallerContext context)
         {
-            ElasticIpStatus elasticIpStatus = new ElasticIpStatus();
+            ElasticIpStatus unmarshalledObject = new ElasticIpStatus();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,45 +44,44 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
                     if (context.TestExpression("ElasticIp", targetDepth))
                     {
-                        elasticIpStatus.ElasticIp = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.ElasticIp = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
                     if (context.TestExpression("Status", targetDepth))
                     {
-                        elasticIpStatus.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return elasticIpStatus;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return elasticIpStatus;
+            return unmarshalledObject;
         }
 
-        public ElasticIpStatus Unmarshall(JsonUnmarshallerContext context) 
+        public ElasticIpStatus Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static ElasticIpStatusUnmarshaller instance;
-
-        public static ElasticIpStatusUnmarshaller GetInstance() 
+        public static ElasticIpStatusUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new ElasticIpStatusUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new ElasticIpStatusUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

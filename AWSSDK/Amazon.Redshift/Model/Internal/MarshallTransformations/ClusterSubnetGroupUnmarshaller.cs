@@ -12,90 +12,95 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ClusterSubnetGroup Unmarshaller
-     /// </summary>
-    internal class ClusterSubnetGroupUnmarshaller : IUnmarshaller<ClusterSubnetGroup, XmlUnmarshallerContext>, IUnmarshaller<ClusterSubnetGroup, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ClusterSubnetGroup Object
+    /// </summary>  
+    public class ClusterSubnetGroupUnmarshaller : IUnmarshaller<ClusterSubnetGroup, XmlUnmarshallerContext>, IUnmarshaller<ClusterSubnetGroup, JsonUnmarshallerContext>
     {
-        public ClusterSubnetGroup Unmarshall(XmlUnmarshallerContext context) 
+        public ClusterSubnetGroup Unmarshall(XmlUnmarshallerContext context)
         {
-            ClusterSubnetGroup clusterSubnetGroup = new ClusterSubnetGroup();
+            ClusterSubnetGroup unmarshalledObject = new ClusterSubnetGroup();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            if (context.IsStartOfDocument) 
-               targetDepth++;
-            
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
                     if (context.TestExpression("ClusterSubnetGroupName", targetDepth))
                     {
-                        clusterSubnetGroup.ClusterSubnetGroupName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.ClusterSubnetGroupName = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
                     if (context.TestExpression("Description", targetDepth))
                     {
-                        clusterSubnetGroup.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
-                    if (context.TestExpression("VpcId", targetDepth))
-                    {
-                        clusterSubnetGroup.VpcId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                    }
                     if (context.TestExpression("SubnetGroupStatus", targetDepth))
                     {
-                        clusterSubnetGroup.SubnetGroupStatus = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.SubnetGroupStatus = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
                     if (context.TestExpression("Subnets/Subnet", targetDepth))
                     {
-                        clusterSubnetGroup.Subnets.Add(SubnetUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = SubnetUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Subnets.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("VpcId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return clusterSubnetGroup;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return clusterSubnetGroup;
+            return unmarshalledObject;
         }
 
-        public ClusterSubnetGroup Unmarshall(JsonUnmarshallerContext context) 
+        public ClusterSubnetGroup Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static ClusterSubnetGroupUnmarshaller instance;
-
-        public static ClusterSubnetGroupUnmarshaller GetInstance() 
+        public static ClusterSubnetGroupUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new ClusterSubnetGroupUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new ClusterSubnetGroupUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

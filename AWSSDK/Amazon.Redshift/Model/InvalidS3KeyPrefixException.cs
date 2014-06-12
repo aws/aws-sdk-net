@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class InvalidS3KeyPrefixException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal InvalidS3KeyPrefixException(string message) 
+        public InvalidS3KeyPrefixException(string message) 
             : base(message) {}
           
-        internal InvalidS3KeyPrefixException(string message, Exception innerException) 
+        public InvalidS3KeyPrefixException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal InvalidS3KeyPrefixException(Exception innerException) 
+        public InvalidS3KeyPrefixException(Exception innerException) 
             : base(innerException) {}
             
-        internal InvalidS3KeyPrefixException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidS3KeyPrefixException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal InvalidS3KeyPrefixException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidS3KeyPrefixException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

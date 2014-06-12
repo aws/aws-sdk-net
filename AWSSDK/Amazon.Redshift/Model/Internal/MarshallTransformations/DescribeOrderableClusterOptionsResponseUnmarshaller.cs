@@ -13,28 +13,34 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for DescribeOrderableClusterOptions operation
-    /// </summary>
-    internal class DescribeOrderableClusterOptionsResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for DescribeOrderableClusterOptions operation
+    /// </summary>  
+    public class DescribeOrderableClusterOptionsResponseUnmarshaller : XmlResponseUnmarshaller
     {
-
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             DescribeOrderableClusterOptionsResponse response = new DescribeOrderableClusterOptionsResponse();
-            
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
             while (context.Read())
             {
-                if (context.IsStartElement)                
+                if (context.IsStartElement)
                 {
                     if(context.TestExpression("DescribeOrderableClusterOptionsResult", 2))
                     {
@@ -47,30 +53,26 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     }
                 }
             }
-                 
-                        
+
             return response;
         }
 
-        
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             return new AmazonRedshiftException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static DescribeOrderableClusterOptionsResponseUnmarshaller instance;
 
+        private static DescribeOrderableClusterOptionsResponseUnmarshaller instance;
         public static DescribeOrderableClusterOptionsResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
+            if (instance == null)
             {
-               instance = new DescribeOrderableClusterOptionsResponseUnmarshaller();
+                instance = new DescribeOrderableClusterOptionsResponseUnmarshaller();
             }
             return instance;
         }
-    
+
     }
 }
-    

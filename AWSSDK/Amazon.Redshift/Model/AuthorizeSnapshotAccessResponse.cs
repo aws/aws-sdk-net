@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the AuthorizeSnapshotAccess response and response metadata.
+    /// Returns information about the AuthorizeSnapshotAccessResult response and response metadata.
     /// </summary>
     public class AuthorizeSnapshotAccessResponse : AmazonWebServiceResponse
     {
-        private AuthorizeSnapshotAccessResult authorizeSnapshotAccessResult;
+        private AuthorizeSnapshotAccessResult _authorizeSnapshotAccessResult;
 
-        /// 
+        /// <summary>
         /// Gets and sets the AuthorizeSnapshotAccessResult property.
-        /// Contains the result of a successful invocation of the AuthorizeSnapshotAccess
-        /// action.
-        /// 
+        /// Represents the output of a AuthorizeSnapshotAccess operation.
+        /// </summary>
         public AuthorizeSnapshotAccessResult AuthorizeSnapshotAccessResult
         {
             get
             {
-                if(this.authorizeSnapshotAccessResult == null)
+                if(this._authorizeSnapshotAccessResult == null)
                 {
-                    this.authorizeSnapshotAccessResult = new AuthorizeSnapshotAccessResult();
+                    this._authorizeSnapshotAccessResult = new AuthorizeSnapshotAccessResult();
                 }
-
-                return this.authorizeSnapshotAccessResult;
+                return this._authorizeSnapshotAccessResult;
             }
-            set { this.authorizeSnapshotAccessResult = value; }
+            set { this._authorizeSnapshotAccessResult = value; }
         }
     }
 }
-    

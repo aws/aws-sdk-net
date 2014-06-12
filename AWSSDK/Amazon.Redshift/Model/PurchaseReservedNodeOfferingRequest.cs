@@ -25,58 +25,41 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the PurchaseReservedNodeOffering operation.
-    /// <para> Allows you to purchase reserved nodes. Amazon Redshift offers a predefined set of reserved node offerings. You can purchase one of
-    /// the offerings. You can call the DescribeReservedNodeOfferings API to obtain the available reserved node offerings. You can call this API by
-    /// providing a specific reserved node offering and the number of nodes you want to reserve. </para> <para> For more information about managing
-    /// parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html" >Purchasing Reserved
-    /// Nodes</a> in the <i>Amazon Redshift Management Guide</i> .
+    /// Allows you to purchase reserved nodes. Amazon Redshift offers a predefined
+    /// set of reserved node offerings.           You can purchase one of the offerings. You
+    /// can call the           <a>DescribeReservedNodeOfferings</a> API to obtain the available
+    /// reserved node offerings. You can call this            API by providing a specific
+    /// reserved node offering and the number of nodes you want to reserve.       
     /// 
+    ///        
+    /// <para>
+    ///            For more information about managing parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
+    /// Reserved Nodes</a> in the <i>Amazon Redshift Management Guide</i>.               
+    ///     
     /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.Redshift.AmazonRedshift.PurchaseReservedNodeOffering"/>
-    public class PurchaseReservedNodeOfferingRequest : AmazonWebServiceRequest
+    public partial class PurchaseReservedNodeOfferingRequest : AmazonWebServiceRequest
     {
-        private string reservedNodeOfferingId;
-        private int? nodeCount;
+        private int? _nodeCount;
+        private string _reservedNodeOfferingId;
+
 
         /// <summary>
-        /// The unique identifier of the reserved node offering you want to purchase.
-        ///  
-        /// </summary>
-        public string ReservedNodeOfferingId
-        {
-            get { return this.reservedNodeOfferingId; }
-            set { this.reservedNodeOfferingId = value; }
-        }
-
-        /// <summary>
-        /// Sets the ReservedNodeOfferingId property
-        /// </summary>
-        /// <param name="reservedNodeOfferingId">The value to set for the ReservedNodeOfferingId property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public PurchaseReservedNodeOfferingRequest WithReservedNodeOfferingId(string reservedNodeOfferingId)
-        {
-            this.reservedNodeOfferingId = reservedNodeOfferingId;
-            return this;
-        }
-            
-
-        // Check to see if ReservedNodeOfferingId property is set
-        internal bool IsSetReservedNodeOfferingId()
-        {
-            return this.reservedNodeOfferingId != null;
-        }
-
-        /// <summary>
-        /// The number of reserved nodes you want to purchase. Default: <c>1</c>
-        ///  
+        /// Gets and sets the property NodeCount. 
+        /// <para>
+        /// The number of reserved nodes you want to purchase.
+        /// </para>
+        ///        
+        /// <para>
+        /// Default: <code>1</code>
+        /// </para>
         /// </summary>
         public int NodeCount
         {
-            get { return this.nodeCount ?? default(int); }
-            set { this.nodeCount = value; }
+            get { return this._nodeCount.GetValueOrDefault(); }
+            set { this._nodeCount = value; }
         }
+
 
         /// <summary>
         /// Sets the NodeCount property
@@ -86,16 +69,47 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PurchaseReservedNodeOfferingRequest WithNodeCount(int nodeCount)
         {
-            this.nodeCount = nodeCount;
+            this._nodeCount = nodeCount;
             return this;
         }
-            
 
         // Check to see if NodeCount property is set
         internal bool IsSetNodeCount()
         {
-            return this.nodeCount.HasValue;
+            return this._nodeCount.HasValue; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property ReservedNodeOfferingId. 
+        /// <para>
+        /// The unique identifier of the reserved node offering you want to purchase.
+        /// </para>
+        /// </summary>
+        public string ReservedNodeOfferingId
+        {
+            get { return this._reservedNodeOfferingId; }
+            set { this._reservedNodeOfferingId = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the ReservedNodeOfferingId property
+        /// </summary>
+        /// <param name="reservedNodeOfferingId">The value to set for the ReservedNodeOfferingId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public PurchaseReservedNodeOfferingRequest WithReservedNodeOfferingId(string reservedNodeOfferingId)
+        {
+            this._reservedNodeOfferingId = reservedNodeOfferingId;
+            return this;
+        }
+
+        // Check to see if ReservedNodeOfferingId property is set
+        internal bool IsSetReservedNodeOfferingId()
+        {
+            return this._reservedNodeOfferingId != null;
+        }
+
     }
 }
-    

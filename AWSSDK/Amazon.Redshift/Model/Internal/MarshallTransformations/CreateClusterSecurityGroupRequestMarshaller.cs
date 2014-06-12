@@ -14,36 +14,40 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Cluster Security Group Request Marshaller
+    /// CreateClusterSecurityGroup Request Marshaller
     /// </summary>       
     public class CreateClusterSecurityGroupRequestMarshaller : IMarshaller<IRequest, CreateClusterSecurityGroupRequest>
     {
-        public IRequest Marshall(CreateClusterSecurityGroupRequest createClusterSecurityGroupRequest)
+        public IRequest Marshall(CreateClusterSecurityGroupRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(createClusterSecurityGroupRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "CreateClusterSecurityGroup");
             request.Parameters.Add("Version", "2012-12-01");
-            if (createClusterSecurityGroupRequest != null && createClusterSecurityGroupRequest.IsSetClusterSecurityGroupName())
-            {
-                request.Parameters.Add("ClusterSecurityGroupName", StringUtils.FromString(createClusterSecurityGroupRequest.ClusterSecurityGroupName));
-            }
-            if (createClusterSecurityGroupRequest != null && createClusterSecurityGroupRequest.IsSetDescription())
-            {
-                request.Parameters.Add("Description", StringUtils.FromString(createClusterSecurityGroupRequest.Description));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetClusterSecurityGroupName())
+                {
+                    request.Parameters.Add("ClusterSecurityGroupName", StringUtils.FromString(publicRequest.ClusterSecurityGroupName));
+                }
+                if(publicRequest.IsSetDescription())
+                {
+                    request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
+                }
+            }
             return request;
         }
     }

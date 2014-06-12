@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the AuthorizeClusterSecurityGroupIngress response and response metadata.
+    /// Returns information about the AuthorizeClusterSecurityGroupIngressResult response and response metadata.
     /// </summary>
     public class AuthorizeClusterSecurityGroupIngressResponse : AmazonWebServiceResponse
     {
-        private AuthorizeClusterSecurityGroupIngressResult authorizeClusterSecurityGroupIngressResult;
+        private AuthorizeClusterSecurityGroupIngressResult _authorizeClusterSecurityGroupIngressResult;
 
-        /// 
+        /// <summary>
         /// Gets and sets the AuthorizeClusterSecurityGroupIngressResult property.
-        /// Contains the result of a successful invocation of the AuthorizeClusterSecurityGroupIngress
-        /// action.
-        /// 
+        /// Represents the output of a AuthorizeClusterSecurityGroupIngress operation.
+        /// </summary>
         public AuthorizeClusterSecurityGroupIngressResult AuthorizeClusterSecurityGroupIngressResult
         {
             get
             {
-                if(this.authorizeClusterSecurityGroupIngressResult == null)
+                if(this._authorizeClusterSecurityGroupIngressResult == null)
                 {
-                    this.authorizeClusterSecurityGroupIngressResult = new AuthorizeClusterSecurityGroupIngressResult();
+                    this._authorizeClusterSecurityGroupIngressResult = new AuthorizeClusterSecurityGroupIngressResult();
                 }
-
-                return this.authorizeClusterSecurityGroupIngressResult;
+                return this._authorizeClusterSecurityGroupIngressResult;
             }
-            set { this.authorizeClusterSecurityGroupIngressResult = value; }
+            set { this._authorizeClusterSecurityGroupIngressResult = value; }
         }
     }
 }
-    

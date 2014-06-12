@@ -25,23 +25,32 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableSnapshotCopy operation.
-    /// <para>Disables the automatic copying of snapshots from one region to another region for a specified cluster.</para>
+    /// Disables the automatic copying of snapshots from one region to another region for
+    /// a specified cluster.
     /// </summary>
-    /// <seealso cref="Amazon.Redshift.AmazonRedshift.DisableSnapshotCopy"/>
-    public class DisableSnapshotCopyRequest : AmazonWebServiceRequest
+    public partial class DisableSnapshotCopyRequest : AmazonWebServiceRequest
     {
-        private string clusterIdentifier;
+        private string _clusterIdentifier;
+
 
         /// <summary>
-        /// The unique identifier of the source cluster that you want to disable copying of snapshots to a destination region. Constraints: Must be the
-        /// valid name of an existing cluster that has cross-region snapshot copy enabled.
-        ///  
+        /// Gets and sets the property ClusterIdentifier. 
+        /// <para>
+        ///             The unique identifier of the source cluster that you want to disable copying
+        /// of snapshots to a destination region.        
+        /// </para>
+        ///         
+        /// <para>
+        ///             Constraints: Must be the valid name of an existing cluster that has cross-region
+        /// snapshot copy enabled.        
+        /// </para>
         /// </summary>
         public string ClusterIdentifier
         {
-            get { return this.clusterIdentifier; }
-            set { this.clusterIdentifier = value; }
+            get { return this._clusterIdentifier; }
+            set { this._clusterIdentifier = value; }
         }
+
 
         /// <summary>
         /// Sets the ClusterIdentifier property
@@ -51,16 +60,15 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DisableSnapshotCopyRequest WithClusterIdentifier(string clusterIdentifier)
         {
-            this.clusterIdentifier = clusterIdentifier;
+            this._clusterIdentifier = clusterIdentifier;
             return this;
         }
-            
 
         // Check to see if ClusterIdentifier property is set
         internal bool IsSetClusterIdentifier()
         {
-            return this.clusterIdentifier != null;
+            return this._clusterIdentifier != null;
         }
+
     }
 }
-    

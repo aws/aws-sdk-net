@@ -12,69 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   DescribeClusterParametersResult Unmarshaller
-     /// </summary>
-    internal class DescribeClusterParametersResultUnmarshaller : IUnmarshaller<DescribeClusterParametersResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeClusterParametersResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for DescribeClusterParameters Object
+    /// </summary>  
+    public class DescribeClusterParametersResultUnmarshaller : IUnmarshaller<DescribeClusterParametersResult, XmlUnmarshallerContext>
     {
         public DescribeClusterParametersResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            DescribeClusterParametersResult describeClusterParametersResult = new DescribeClusterParametersResult();
+            DescribeClusterParametersResult result = new DescribeClusterParametersResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("Parameters/Parameter", targetDepth))
-                    {
-                        describeClusterParametersResult.Parameters.Add(ParameterUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    } 
+                {
+
                     if (context.TestExpression("Marker", targetDepth))
                     {
-                        describeClusterParametersResult.Marker = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.Marker = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
+                    if (context.TestExpression("Parameters/Parameter", targetDepth))
+                    {
+                        var unmarshaller = ParameterUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        result.Parameters.Add(item);
+                        continue;
+                    }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return describeClusterParametersResult;
+                    return result;
                 }
             }
-                        
 
-
-            return describeClusterParametersResult;
+            return result;
         }
 
-        public DescribeClusterParametersResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static DescribeClusterParametersResultUnmarshaller instance;
-
-        public static DescribeClusterParametersResultUnmarshaller GetInstance() 
+        public static DescribeClusterParametersResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new DescribeClusterParametersResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new DescribeClusterParametersResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

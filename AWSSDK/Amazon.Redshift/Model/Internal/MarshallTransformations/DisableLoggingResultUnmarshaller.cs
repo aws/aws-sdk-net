@@ -12,93 +12,97 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   DisableLoggingResult Unmarshaller
-     /// </summary>
-    internal class DisableLoggingResultUnmarshaller : IUnmarshaller<DisableLoggingResult, XmlUnmarshallerContext>, IUnmarshaller<DisableLoggingResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for DisableLogging Object
+    /// </summary>  
+    public class DisableLoggingResultUnmarshaller : IUnmarshaller<DisableLoggingResult, XmlUnmarshallerContext>
     {
         public DisableLoggingResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            DisableLoggingResult disableLoggingResult = new DisableLoggingResult();
+            DisableLoggingResult result = new DisableLoggingResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("LoggingEnabled", targetDepth))
-                    {
-                        disableLoggingResult.LoggingEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
+
                     if (context.TestExpression("BucketName", targetDepth))
                     {
-                        disableLoggingResult.BucketName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("S3KeyPrefix", targetDepth))
-                    {
-                        disableLoggingResult.S3KeyPrefix = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("LastSuccessfulDeliveryTime", targetDepth))
-                    {
-                        disableLoggingResult.LastSuccessfulDeliveryTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("LastFailureTime", targetDepth))
-                    {
-                        disableLoggingResult.LastFailureTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("LastFailureMessage", targetDepth))
-                    {
-                        disableLoggingResult.LastFailureMessage = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.BucketName = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
+                    if (context.TestExpression("LastFailureMessage", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.LastFailureMessage = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("LastFailureTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.GetInstance();
+                        result.LastFailureTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("LastSuccessfulDeliveryTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.GetInstance();
+                        result.LastSuccessfulDeliveryTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("LoggingEnabled", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.GetInstance();
+                        result.LoggingEnabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("S3KeyPrefix", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.S3KeyPrefix = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return disableLoggingResult;
+                    return result;
                 }
             }
-                        
 
-
-            return disableLoggingResult;
+            return result;
         }
 
-        public DisableLoggingResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static DisableLoggingResultUnmarshaller instance;
-
-        public static DisableLoggingResultUnmarshaller GetInstance() 
+        public static DisableLoggingResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new DisableLoggingResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new DisableLoggingResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

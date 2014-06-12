@@ -14,36 +14,40 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Cluster Snapshot Request Marshaller
+    /// CreateClusterSnapshot Request Marshaller
     /// </summary>       
     public class CreateClusterSnapshotRequestMarshaller : IMarshaller<IRequest, CreateClusterSnapshotRequest>
     {
-        public IRequest Marshall(CreateClusterSnapshotRequest createClusterSnapshotRequest)
+        public IRequest Marshall(CreateClusterSnapshotRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(createClusterSnapshotRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "CreateClusterSnapshot");
             request.Parameters.Add("Version", "2012-12-01");
-            if (createClusterSnapshotRequest != null && createClusterSnapshotRequest.IsSetSnapshotIdentifier())
-            {
-                request.Parameters.Add("SnapshotIdentifier", StringUtils.FromString(createClusterSnapshotRequest.SnapshotIdentifier));
-            }
-            if (createClusterSnapshotRequest != null && createClusterSnapshotRequest.IsSetClusterIdentifier())
-            {
-                request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(createClusterSnapshotRequest.ClusterIdentifier));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetClusterIdentifier())
+                {
+                    request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(publicRequest.ClusterIdentifier));
+                }
+                if(publicRequest.IsSetSnapshotIdentifier())
+                {
+                    request.Parameters.Add("SnapshotIdentifier", StringUtils.FromString(publicRequest.SnapshotIdentifier));
+                }
+            }
             return request;
         }
     }

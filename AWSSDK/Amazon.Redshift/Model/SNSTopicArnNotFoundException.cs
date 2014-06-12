@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class SNSTopicArnNotFoundException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal SNSTopicArnNotFoundException(string message) 
+        public SNSTopicArnNotFoundException(string message) 
             : base(message) {}
           
-        internal SNSTopicArnNotFoundException(string message, Exception innerException) 
+        public SNSTopicArnNotFoundException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal SNSTopicArnNotFoundException(Exception innerException) 
+        public SNSTopicArnNotFoundException(Exception innerException) 
             : base(innerException) {}
             
-        internal SNSTopicArnNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public SNSTopicArnNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal SNSTopicArnNotFoundException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public SNSTopicArnNotFoundException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

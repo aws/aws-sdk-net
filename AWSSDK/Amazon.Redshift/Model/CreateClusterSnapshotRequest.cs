@@ -25,57 +25,33 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateClusterSnapshot operation.
-    /// <para> Creates a manual snapshot of the specified cluster. The cluster must be in the "available" state. </para> <para> For more information
-    /// about working with snapshots, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html" >Amazon Redshift
-    /// Snapshots</a> in the <i>Amazon Redshift Management Guide</i> .
+    /// Creates a manual snapshot of the specified cluster.         The cluster must
+    /// be in the <code>available</code> state.        
+    /// 
+    ///         
+    /// <para>
+    /// For more information about working with snapshots, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
+    /// Redshift Snapshots</a> in the <i>Amazon Redshift Management Guide</i>.
     /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.Redshift.AmazonRedshift.CreateClusterSnapshot"/>
-    public class CreateClusterSnapshotRequest : AmazonWebServiceRequest
+    public partial class CreateClusterSnapshotRequest : AmazonWebServiceRequest
     {
-        private string snapshotIdentifier;
-        private string clusterIdentifier;
+        private string _clusterIdentifier;
+        private string _snapshotIdentifier;
+
 
         /// <summary>
-        /// A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the AWS account.
-        /// Constraints: <ul> <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First
-        /// character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> Example: <c>my-snapshot-id</c>
-        ///  
-        /// </summary>
-        public string SnapshotIdentifier
-        {
-            get { return this.snapshotIdentifier; }
-            set { this.snapshotIdentifier = value; }
-        }
-
-        /// <summary>
-        /// Sets the SnapshotIdentifier property
-        /// </summary>
-        /// <param name="snapshotIdentifier">The value to set for the SnapshotIdentifier property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public CreateClusterSnapshotRequest WithSnapshotIdentifier(string snapshotIdentifier)
-        {
-            this.snapshotIdentifier = snapshotIdentifier;
-            return this;
-        }
-            
-
-        // Check to see if SnapshotIdentifier property is set
-        internal bool IsSetSnapshotIdentifier()
-        {
-            return this.snapshotIdentifier != null;
-        }
-
-        /// <summary>
-        /// The cluster identifier for which you want a snapshot.
-        ///  
+        /// Gets and sets the property ClusterIdentifier. 
+        /// <para>
+        ///         The cluster identifier for which you want a snapshot.         
+        /// </para>
         /// </summary>
         public string ClusterIdentifier
         {
-            get { return this.clusterIdentifier; }
-            set { this.clusterIdentifier = value; }
+            get { return this._clusterIdentifier; }
+            set { this._clusterIdentifier = value; }
         }
+
 
         /// <summary>
         /// Sets the ClusterIdentifier property
@@ -85,16 +61,59 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterSnapshotRequest WithClusterIdentifier(string clusterIdentifier)
         {
-            this.clusterIdentifier = clusterIdentifier;
+            this._clusterIdentifier = clusterIdentifier;
             return this;
         }
-            
 
         // Check to see if ClusterIdentifier property is set
         internal bool IsSetClusterIdentifier()
         {
-            return this.clusterIdentifier != null;
+            return this._clusterIdentifier != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property SnapshotIdentifier. 
+        /// <para>
+        ///         A unique identifier for the snapshot that you are requesting. This identifier
+        /// must be unique for         all snapshots within         the AWS account.        
+        /// </para>
+        ///         
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///         <ul>            <li>Cannot be null, empty, or blank</li>            <li>Must
+        /// contain from 1 to 255 alphanumeric characters or hyphens</li>            <li>First
+        /// character must be a letter</li>            <li>Cannot end with a hyphen or contain
+        /// two consecutive hyphens</li>        </ul>        
+        /// <para>
+        /// Example: <code>my-snapshot-id</code>
+        /// </para>
+        /// </summary>
+        public string SnapshotIdentifier
+        {
+            get { return this._snapshotIdentifier; }
+            set { this._snapshotIdentifier = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the SnapshotIdentifier property
+        /// </summary>
+        /// <param name="snapshotIdentifier">The value to set for the SnapshotIdentifier property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateClusterSnapshotRequest WithSnapshotIdentifier(string snapshotIdentifier)
+        {
+            this._snapshotIdentifier = snapshotIdentifier;
+            return this;
+        }
+
+        // Check to see if SnapshotIdentifier property is set
+        internal bool IsSetSnapshotIdentifier()
+        {
+            return this._snapshotIdentifier != null;
+        }
+
     }
 }
-    

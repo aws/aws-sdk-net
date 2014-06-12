@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the RevokeSnapshotAccess response and response metadata.
+    /// Returns information about the RevokeSnapshotAccessResult response and response metadata.
     /// </summary>
     public class RevokeSnapshotAccessResponse : AmazonWebServiceResponse
     {
-        private RevokeSnapshotAccessResult revokeSnapshotAccessResult;
+        private RevokeSnapshotAccessResult _revokeSnapshotAccessResult;
 
-        /// 
+        /// <summary>
         /// Gets and sets the RevokeSnapshotAccessResult property.
-        /// Contains the result of a successful invocation of the RevokeSnapshotAccess
-        /// action.
-        /// 
+        /// Represents the output of a RevokeSnapshotAccess operation.
+        /// </summary>
         public RevokeSnapshotAccessResult RevokeSnapshotAccessResult
         {
             get
             {
-                if(this.revokeSnapshotAccessResult == null)
+                if(this._revokeSnapshotAccessResult == null)
                 {
-                    this.revokeSnapshotAccessResult = new RevokeSnapshotAccessResult();
+                    this._revokeSnapshotAccessResult = new RevokeSnapshotAccessResult();
                 }
-
-                return this.revokeSnapshotAccessResult;
+                return this._revokeSnapshotAccessResult;
             }
-            set { this.revokeSnapshotAccessResult = value; }
+            set { this._revokeSnapshotAccessResult = value; }
         }
     }
 }
-    

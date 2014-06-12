@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class AuthorizationNotFoundException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal AuthorizationNotFoundException(string message) 
+        public AuthorizationNotFoundException(string message) 
             : base(message) {}
           
-        internal AuthorizationNotFoundException(string message, Exception innerException) 
+        public AuthorizationNotFoundException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal AuthorizationNotFoundException(Exception innerException) 
+        public AuthorizationNotFoundException(Exception innerException) 
             : base(innerException) {}
             
-        internal AuthorizationNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public AuthorizationNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal AuthorizationNotFoundException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public AuthorizationNotFoundException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

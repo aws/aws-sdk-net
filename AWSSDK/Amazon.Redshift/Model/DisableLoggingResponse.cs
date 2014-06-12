@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the  DisableLoggingResult response and response metadata.
+    /// Returns information about the DisableLoggingResult response and response metadata.
     /// </summary>
     public class DisableLoggingResponse : AmazonWebServiceResponse
     {
-        private DisableLoggingResult disableLoggingResult;
+        private DisableLoggingResult _disableLoggingResult;
 
         /// <summary>
         /// Gets and sets the DisableLoggingResult property.
-        /// Describes the status of logging for a cluster.
+        /// Represents the output of a DisableLogging operation.
         /// </summary>
         public DisableLoggingResult DisableLoggingResult
         {
             get
             {
-                if(this.disableLoggingResult == null)
+                if(this._disableLoggingResult == null)
                 {
-                    this.disableLoggingResult = new DisableLoggingResult();
+                    this._disableLoggingResult = new DisableLoggingResult();
                 }
-
-                return this.disableLoggingResult;
+                return this._disableLoggingResult;
             }
-            set { this.disableLoggingResult = value; }
+            set { this._disableLoggingResult = value; }
         }
     }
 }
-    

@@ -12,84 +12,89 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   OrderableClusterOption Unmarshaller
-     /// </summary>
-    internal class OrderableClusterOptionUnmarshaller : IUnmarshaller<OrderableClusterOption, XmlUnmarshallerContext>, IUnmarshaller<OrderableClusterOption, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for OrderableClusterOption Object
+    /// </summary>  
+    public class OrderableClusterOptionUnmarshaller : IUnmarshaller<OrderableClusterOption, XmlUnmarshallerContext>, IUnmarshaller<OrderableClusterOption, JsonUnmarshallerContext>
     {
-        public OrderableClusterOption Unmarshall(XmlUnmarshallerContext context) 
+        public OrderableClusterOption Unmarshall(XmlUnmarshallerContext context)
         {
-            OrderableClusterOption orderableClusterOption = new OrderableClusterOption();
+            OrderableClusterOption unmarshalledObject = new OrderableClusterOption();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            if (context.IsStartOfDocument) 
-               targetDepth++;
-            
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("ClusterVersion", targetDepth))
-                    {
-                        orderableClusterOption.ClusterVersion = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("ClusterType", targetDepth))
-                    {
-                        orderableClusterOption.ClusterType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("NodeType", targetDepth))
-                    {
-                        orderableClusterOption.NodeType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
                     if (context.TestExpression("AvailabilityZones/AvailabilityZone", targetDepth))
                     {
-                        orderableClusterOption.AvailabilityZones.Add(AvailabilityZoneUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = AvailabilityZoneUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AvailabilityZones.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("ClusterType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.ClusterType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ClusterVersion", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.ClusterVersion = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("NodeType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.NodeType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return orderableClusterOption;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return orderableClusterOption;
+            return unmarshalledObject;
         }
 
-        public OrderableClusterOption Unmarshall(JsonUnmarshallerContext context) 
+        public OrderableClusterOption Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static OrderableClusterOptionUnmarshaller instance;
-
-        public static OrderableClusterOptionUnmarshaller GetInstance() 
+        public static OrderableClusterOptionUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new OrderableClusterOptionUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new OrderableClusterOptionUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

@@ -16,27 +16,26 @@ using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
 
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// The results from the CreateHsmConfiguration action.
+    /// Returns information about an HSM configuration, which is an object that describes
+    /// to Amazon Redshift            clusters the information they require to connect to
+    /// an HSM where they can store database            encryption keys.
     /// </summary>
     public partial class CreateHsmConfigurationResult
     {
-        private HsmConfiguration hsmConfigurationValue;
+        private HsmConfiguration _response;
 
-        /// <summary>
-        /// Gets and sets the CreateHsmConfigurationResult property.
-        /// Contains the result of a successful invocation of the CreateHsmConfiguration
-        /// action.
-        /// </summary>
         public HsmConfiguration HsmConfiguration
         {
-            get { return this.hsmConfigurationValue; }
-            set { this.hsmConfigurationValue = value; }
+            get { return this._response; }
+            set { this._response = value; }
         }
     }
 }
-    

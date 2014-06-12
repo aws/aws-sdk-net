@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class UnauthorizedOperationException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal UnauthorizedOperationException(string message) 
+        public UnauthorizedOperationException(string message) 
             : base(message) {}
           
-        internal UnauthorizedOperationException(string message, Exception innerException) 
+        public UnauthorizedOperationException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal UnauthorizedOperationException(Exception innerException) 
+        public UnauthorizedOperationException(Exception innerException) 
             : base(innerException) {}
             
-        internal UnauthorizedOperationException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public UnauthorizedOperationException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal UnauthorizedOperationException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public UnauthorizedOperationException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

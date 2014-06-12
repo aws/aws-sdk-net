@@ -49,6 +49,7 @@ namespace Amazon.S3.Model
         private string contentType;
         private string versionId;
         private ServerSideEncryptionMethod serverSideEncryptionMethod;
+        private ServerSideEncryptionCustomerMethod serverSideEncryptionCustomerMethod;
         private Expiration expiration;
         private string websiteRedirectLocation;
 
@@ -126,6 +127,27 @@ namespace Amazon.S3.Model
             get { return this.serverSideEncryptionMethod; }
             set { this.serverSideEncryptionMethod = value; }
         }
+
+        /// <summary>
+        /// The Server-side encryption algorithm to be used with the customer provided key.
+        ///  
+        /// </summary>
+        public ServerSideEncryptionCustomerMethod ServerSideEncryptionCustomerMethod
+        {
+            get
+            {
+                return this.serverSideEncryptionCustomerMethod;
+            }
+            set { this.serverSideEncryptionCustomerMethod = value; }
+        }
+
+
+        // Check to see if ServerSideEncryptionCustomerMethod property is set
+        internal bool IsSetServerSideEncryptionCustomerMethod()
+        {
+            return this.serverSideEncryptionCustomerMethod != ServerSideEncryptionCustomerMethod.None;
+        }
+
 
         /// <summary>
         /// Gets and sets the Expiration property.
@@ -215,6 +237,12 @@ namespace Amazon.S3.Model
                 if (!System.String.IsNullOrEmpty(hdr = value.Get(S3Constants.AmzServerSideEncryptionHeader)))
                 {
                     this.ServerSideEncryptionMethod = (ServerSideEncryptionMethod)Enum.Parse(typeof(ServerSideEncryptionMethod), hdr);
+                }
+
+                ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.None;
+                if (!System.String.IsNullOrEmpty(hdr = value.Get(S3Constants.AmzServerSideCustomerEncryptionMethodHeader)))
+                {
+                    this.ServerSideEncryptionCustomerMethod = (ServerSideEncryptionCustomerMethod)Enum.Parse(typeof(ServerSideEncryptionCustomerMethod), hdr);
                 }
 
                 if (string.IsNullOrEmpty(hdr = value.Get(S3Constants.AmzRestoreHeader)))

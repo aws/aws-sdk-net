@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Hsm Client Certificates Request Marshaller
+    /// DescribeHsmClientCertificates Request Marshaller
     /// </summary>       
     public class DescribeHsmClientCertificatesRequestMarshaller : IMarshaller<IRequest, DescribeHsmClientCertificatesRequest>
     {
-        public IRequest Marshall(DescribeHsmClientCertificatesRequest describeHsmClientCertificatesRequest)
+        public IRequest Marshall(DescribeHsmClientCertificatesRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describeHsmClientCertificatesRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "DescribeHsmClientCertificates");
             request.Parameters.Add("Version", "2012-12-01");
-            if (describeHsmClientCertificatesRequest != null && describeHsmClientCertificatesRequest.IsSetHsmClientCertificateIdentifier())
-            {
-                request.Parameters.Add("HsmClientCertificateIdentifier", StringUtils.FromString(describeHsmClientCertificatesRequest.HsmClientCertificateIdentifier));
-            }
-            if (describeHsmClientCertificatesRequest != null && describeHsmClientCertificatesRequest.IsSetMaxRecords())
-            {
-                request.Parameters.Add("MaxRecords", StringUtils.FromInt(describeHsmClientCertificatesRequest.MaxRecords));
-            }
-            if (describeHsmClientCertificatesRequest != null && describeHsmClientCertificatesRequest.IsSetMarker())
-            {
-                request.Parameters.Add("Marker", StringUtils.FromString(describeHsmClientCertificatesRequest.Marker));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetHsmClientCertificateIdentifier())
+                {
+                    request.Parameters.Add("HsmClientCertificateIdentifier", StringUtils.FromString(publicRequest.HsmClientCertificateIdentifier));
+                }
+                if(publicRequest.IsSetMarker())
+                {
+                    request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
+                }
+                if(publicRequest.IsSetMaxRecords())
+                {
+                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
+                }
+            }
             return request;
         }
     }

@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeHsmClientCertificatesResult response and response metadata.
+    /// Returns information about the DescribeHsmClientCertificatesResult response and response metadata.
     /// </summary>
     public class DescribeHsmClientCertificatesResponse : AmazonWebServiceResponse
     {
-        private DescribeHsmClientCertificatesResult describeHsmClientCertificatesResult;
+        private DescribeHsmClientCertificatesResult _describeHsmClientCertificatesResult;
 
         /// <summary>
         /// Gets and sets the DescribeHsmClientCertificatesResult property.
-        /// 
+        /// Represents the output of a DescribeHsmClientCertificates operation.
         /// </summary>
         public DescribeHsmClientCertificatesResult DescribeHsmClientCertificatesResult
         {
             get
             {
-                if(this.describeHsmClientCertificatesResult == null)
+                if(this._describeHsmClientCertificatesResult == null)
                 {
-                    this.describeHsmClientCertificatesResult = new DescribeHsmClientCertificatesResult();
+                    this._describeHsmClientCertificatesResult = new DescribeHsmClientCertificatesResult();
                 }
-
-                return this.describeHsmClientCertificatesResult;
+                return this._describeHsmClientCertificatesResult;
             }
-            set { this.describeHsmClientCertificatesResult = value; }
+            set { this._describeHsmClientCertificatesResult = value; }
         }
     }
 }
-    

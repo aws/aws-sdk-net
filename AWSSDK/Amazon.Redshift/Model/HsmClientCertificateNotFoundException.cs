@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class HsmClientCertificateNotFoundException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal HsmClientCertificateNotFoundException(string message) 
+        public HsmClientCertificateNotFoundException(string message) 
             : base(message) {}
           
-        internal HsmClientCertificateNotFoundException(string message, Exception innerException) 
+        public HsmClientCertificateNotFoundException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal HsmClientCertificateNotFoundException(Exception innerException) 
+        public HsmClientCertificateNotFoundException(Exception innerException) 
             : base(innerException) {}
             
-        internal HsmClientCertificateNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public HsmClientCertificateNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal HsmClientCertificateNotFoundException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public HsmClientCertificateNotFoundException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

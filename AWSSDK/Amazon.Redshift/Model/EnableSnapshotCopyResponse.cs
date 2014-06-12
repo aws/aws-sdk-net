@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the EnableSnapshotCopy response and response metadata.
+    /// Returns information about the EnableSnapshotCopyResult response and response metadata.
     /// </summary>
     public class EnableSnapshotCopyResponse : AmazonWebServiceResponse
     {
-        private EnableSnapshotCopyResult enableSnapshotCopyResult;
+        private EnableSnapshotCopyResult _enableSnapshotCopyResult;
 
-        /// 
+        /// <summary>
         /// Gets and sets the EnableSnapshotCopyResult property.
-        /// Contains the result of a successful invocation of the EnableSnapshotCopy
-        /// action.
-        /// 
+        /// Represents the output of a EnableSnapshotCopy operation.
+        /// </summary>
         public EnableSnapshotCopyResult EnableSnapshotCopyResult
         {
             get
             {
-                if(this.enableSnapshotCopyResult == null)
+                if(this._enableSnapshotCopyResult == null)
                 {
-                    this.enableSnapshotCopyResult = new EnableSnapshotCopyResult();
+                    this._enableSnapshotCopyResult = new EnableSnapshotCopyResult();
                 }
-
-                return this.enableSnapshotCopyResult;
+                return this._enableSnapshotCopyResult;
             }
-            set { this.enableSnapshotCopyResult = value; }
+            set { this._enableSnapshotCopyResult = value; }
         }
     }
 }
-    

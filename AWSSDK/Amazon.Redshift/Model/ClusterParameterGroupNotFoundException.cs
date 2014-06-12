@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class ClusterParameterGroupNotFoundException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal ClusterParameterGroupNotFoundException(string message) 
+        public ClusterParameterGroupNotFoundException(string message) 
             : base(message) {}
           
-        internal ClusterParameterGroupNotFoundException(string message, Exception innerException) 
+        public ClusterParameterGroupNotFoundException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal ClusterParameterGroupNotFoundException(Exception innerException) 
+        public ClusterParameterGroupNotFoundException(Exception innerException) 
             : base(innerException) {}
             
-        internal ClusterParameterGroupNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ClusterParameterGroupNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal ClusterParameterGroupNotFoundException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ClusterParameterGroupNotFoundException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

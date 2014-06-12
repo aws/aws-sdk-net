@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the ModifySnapshotCopyRetentionPeriod response and response metadata.
+    /// Returns information about the ModifySnapshotCopyRetentionPeriodResult response and response metadata.
     /// </summary>
     public class ModifySnapshotCopyRetentionPeriodResponse : AmazonWebServiceResponse
     {
-        private ModifySnapshotCopyRetentionPeriodResult modifySnapshotCopyRetentionPeriodResult;
+        private ModifySnapshotCopyRetentionPeriodResult _modifySnapshotCopyRetentionPeriodResult;
 
-        /// 
+        /// <summary>
         /// Gets and sets the ModifySnapshotCopyRetentionPeriodResult property.
-        /// Contains the result of a successful invocation of the ModifySnapshotCopyRetentionPeriod
-        /// action.
-        /// 
+        /// Represents the output of a ModifySnapshotCopyRetentionPeriod operation.
+        /// </summary>
         public ModifySnapshotCopyRetentionPeriodResult ModifySnapshotCopyRetentionPeriodResult
         {
             get
             {
-                if(this.modifySnapshotCopyRetentionPeriodResult == null)
+                if(this._modifySnapshotCopyRetentionPeriodResult == null)
                 {
-                    this.modifySnapshotCopyRetentionPeriodResult = new ModifySnapshotCopyRetentionPeriodResult();
+                    this._modifySnapshotCopyRetentionPeriodResult = new ModifySnapshotCopyRetentionPeriodResult();
                 }
-
-                return this.modifySnapshotCopyRetentionPeriodResult;
+                return this._modifySnapshotCopyRetentionPeriodResult;
             }
-            set { this.modifySnapshotCopyRetentionPeriodResult = value; }
+            set { this._modifySnapshotCopyRetentionPeriodResult = value; }
         }
     }
 }
-    

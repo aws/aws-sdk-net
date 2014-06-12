@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class SubscriptionSeverityNotFoundException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal SubscriptionSeverityNotFoundException(string message) 
+        public SubscriptionSeverityNotFoundException(string message) 
             : base(message) {}
           
-        internal SubscriptionSeverityNotFoundException(string message, Exception innerException) 
+        public SubscriptionSeverityNotFoundException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal SubscriptionSeverityNotFoundException(Exception innerException) 
+        public SubscriptionSeverityNotFoundException(Exception innerException) 
             : base(innerException) {}
             
-        internal SubscriptionSeverityNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public SubscriptionSeverityNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal SubscriptionSeverityNotFoundException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public SubscriptionSeverityNotFoundException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

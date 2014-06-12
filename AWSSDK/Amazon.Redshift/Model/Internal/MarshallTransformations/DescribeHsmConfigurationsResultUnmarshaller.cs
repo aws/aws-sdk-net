@@ -12,69 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   DescribeHsmConfigurationsResult Unmarshaller
-     /// </summary>
-    internal class DescribeHsmConfigurationsResultUnmarshaller : IUnmarshaller<DescribeHsmConfigurationsResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeHsmConfigurationsResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for DescribeHsmConfigurations Object
+    /// </summary>  
+    public class DescribeHsmConfigurationsResultUnmarshaller : IUnmarshaller<DescribeHsmConfigurationsResult, XmlUnmarshallerContext>
     {
         public DescribeHsmConfigurationsResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            DescribeHsmConfigurationsResult describeHsmConfigurationsResult = new DescribeHsmConfigurationsResult();
+            DescribeHsmConfigurationsResult result = new DescribeHsmConfigurationsResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("Marker", targetDepth))
-                    {
-                        describeHsmConfigurationsResult.Marker = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
+
                     if (context.TestExpression("HsmConfigurations/HsmConfiguration", targetDepth))
                     {
-                        describeHsmConfigurationsResult.HsmConfigurations.Add(HsmConfigurationUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = HsmConfigurationUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        result.HsmConfigurations.Add(item);
                         continue;
                     }
-                }
+                    if (context.TestExpression("Marker", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.Marker = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return describeHsmConfigurationsResult;
+                    return result;
                 }
             }
-                        
 
-
-            return describeHsmConfigurationsResult;
+            return result;
         }
 
-        public DescribeHsmConfigurationsResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static DescribeHsmConfigurationsResultUnmarshaller instance;
-
-        public static DescribeHsmConfigurationsResultUnmarshaller GetInstance() 
+        public static DescribeHsmConfigurationsResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new DescribeHsmConfigurationsResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new DescribeHsmConfigurationsResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

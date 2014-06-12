@@ -21,28 +21,28 @@ namespace Amazon.Redshift.Model
     ///<summary>
     /// Redshift exception
     /// </summary>
-    public class ClusterSubnetGroupQuotaExceededException : AmazonRedshiftException 
+    public class InvalidSubscriptionStateException : AmazonRedshiftException 
     {
         /// <summary>
-        /// Constructs a new ClusterSubnetGroupQuotaExceededException with the specified error
+        /// Constructs a new InvalidSubscriptionStateException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public ClusterSubnetGroupQuotaExceededException(string message) 
+        public InvalidSubscriptionStateException(string message) 
             : base(message) {}
           
-        public ClusterSubnetGroupQuotaExceededException(string message, Exception innerException) 
+        public InvalidSubscriptionStateException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        public ClusterSubnetGroupQuotaExceededException(Exception innerException) 
+        public InvalidSubscriptionStateException(Exception innerException) 
             : base(innerException) {}
             
-        public ClusterSubnetGroupQuotaExceededException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidSubscriptionStateException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        public ClusterSubnetGroupQuotaExceededException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidSubscriptionStateException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
     }
 }

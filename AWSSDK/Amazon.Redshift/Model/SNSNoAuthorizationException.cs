@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class SNSNoAuthorizationException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal SNSNoAuthorizationException(string message) 
+        public SNSNoAuthorizationException(string message) 
             : base(message) {}
           
-        internal SNSNoAuthorizationException(string message, Exception innerException) 
+        public SNSNoAuthorizationException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal SNSNoAuthorizationException(Exception innerException) 
+        public SNSNoAuthorizationException(Exception innerException) 
             : base(innerException) {}
             
-        internal SNSNoAuthorizationException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public SNSNoAuthorizationException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal SNSNoAuthorizationException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public SNSNoAuthorizationException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

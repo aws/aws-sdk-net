@@ -12,63 +12,68 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   DescribeEventCategoriesResult Unmarshaller
-     /// </summary>
-    internal class DescribeEventCategoriesResultUnmarshaller : IUnmarshaller<DescribeEventCategoriesResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeEventCategoriesResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for DescribeEventCategories Object
+    /// </summary>  
+    public class DescribeEventCategoriesResultUnmarshaller : IUnmarshaller<DescribeEventCategoriesResult, XmlUnmarshallerContext>
     {
         public DescribeEventCategoriesResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            DescribeEventCategoriesResult describeEventCategoriesResult = new DescribeEventCategoriesResult();
+            DescribeEventCategoriesResult result = new DescribeEventCategoriesResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
+
                     if (context.TestExpression("EventCategoriesMapList/EventCategoriesMap", targetDepth))
                     {
-                        describeEventCategoriesResult.EventCategoriesMapList.Add(EventCategoriesMapUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = EventCategoriesMapUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        result.EventCategoriesMapList.Add(item);
                         continue;
                     }
-                }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return describeEventCategoriesResult;
+                    return result;
                 }
             }
-                        
 
-
-            return describeEventCategoriesResult;
+            return result;
         }
 
-        public DescribeEventCategoriesResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static DescribeEventCategoriesResultUnmarshaller instance;
-
-        public static DescribeEventCategoriesResultUnmarshaller GetInstance() 
+        public static DescribeEventCategoriesResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new DescribeEventCategoriesResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new DescribeEventCategoriesResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

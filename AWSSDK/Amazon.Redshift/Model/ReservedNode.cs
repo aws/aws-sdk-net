@@ -18,239 +18,42 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// <para> Describes a reserved node. </para>
+    /// Describes a reserved node.
     /// </summary>
     public partial class ReservedNode
     {
-        
-        private string reservedNodeId;
-        private string reservedNodeOfferingId;
-        private string nodeType;
-        private DateTime? startTime;
-        private int? duration;
-        private double? fixedPrice;
-        private double? usagePrice;
-        private string currencyCode;
-        private int? nodeCount;
-        private string state;
-        private string offeringType;
-        private List<RecurringCharge> recurringCharges = new List<RecurringCharge>();
+        private string _currencyCode;
+        private int? _duration;
+        private double? _fixedPrice;
+        private int? _nodeCount;
+        private string _nodeType;
+        private string _offeringType;
+        private List<RecurringCharge> _recurringCharges = new List<RecurringCharge>();
+        private string _reservedNodeId;
+        private string _reservedNodeOfferingId;
+        private DateTime? _startTime;
+        private string _state;
+        private double? _usagePrice;
+
 
         /// <summary>
-        /// The unique identifier for the reservation.
-        ///  
-        /// </summary>
-        public string ReservedNodeId
-        {
-            get { return this.reservedNodeId; }
-            set { this.reservedNodeId = value; }
-        }
-
-        /// <summary>
-        /// Sets the ReservedNodeId property
-        /// </summary>
-        /// <param name="reservedNodeId">The value to set for the ReservedNodeId property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ReservedNode WithReservedNodeId(string reservedNodeId)
-        {
-            this.reservedNodeId = reservedNodeId;
-            return this;
-        }
-            
-
-        // Check to see if ReservedNodeId property is set
-        internal bool IsSetReservedNodeId()
-        {
-            return this.reservedNodeId != null;
-        }
-
-        /// <summary>
-        /// The identifier for the reserved node offering.
-        ///  
-        /// </summary>
-        public string ReservedNodeOfferingId
-        {
-            get { return this.reservedNodeOfferingId; }
-            set { this.reservedNodeOfferingId = value; }
-        }
-
-        /// <summary>
-        /// Sets the ReservedNodeOfferingId property
-        /// </summary>
-        /// <param name="reservedNodeOfferingId">The value to set for the ReservedNodeOfferingId property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ReservedNode WithReservedNodeOfferingId(string reservedNodeOfferingId)
-        {
-            this.reservedNodeOfferingId = reservedNodeOfferingId;
-            return this;
-        }
-            
-
-        // Check to see if ReservedNodeOfferingId property is set
-        internal bool IsSetReservedNodeOfferingId()
-        {
-            return this.reservedNodeOfferingId != null;
-        }
-
-        /// <summary>
-        /// The node type of the reserved node.
-        ///  
-        /// </summary>
-        public string NodeType
-        {
-            get { return this.nodeType; }
-            set { this.nodeType = value; }
-        }
-
-        /// <summary>
-        /// Sets the NodeType property
-        /// </summary>
-        /// <param name="nodeType">The value to set for the NodeType property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ReservedNode WithNodeType(string nodeType)
-        {
-            this.nodeType = nodeType;
-            return this;
-        }
-            
-
-        // Check to see if NodeType property is set
-        internal bool IsSetNodeType()
-        {
-            return this.nodeType != null;
-        }
-
-        /// <summary>
-        /// The time the reservation started. You purchase a reserved node offering for a duration. This is the start time of that duration.
-        ///  
-        /// </summary>
-        public DateTime StartTime
-        {
-            get { return this.startTime ?? default(DateTime); }
-            set { this.startTime = value; }
-        }
-
-        /// <summary>
-        /// Sets the StartTime property
-        /// </summary>
-        /// <param name="startTime">The value to set for the StartTime property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ReservedNode WithStartTime(DateTime startTime)
-        {
-            this.startTime = startTime;
-            return this;
-        }
-            
-
-        // Check to see if StartTime property is set
-        internal bool IsSetStartTime()
-        {
-            return this.startTime.HasValue;
-        }
-
-        /// <summary>
-        /// The duration of the node reservation in seconds.
-        ///  
-        /// </summary>
-        public int Duration
-        {
-            get { return this.duration ?? default(int); }
-            set { this.duration = value; }
-        }
-
-        /// <summary>
-        /// Sets the Duration property
-        /// </summary>
-        /// <param name="duration">The value to set for the Duration property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ReservedNode WithDuration(int duration)
-        {
-            this.duration = duration;
-            return this;
-        }
-            
-
-        // Check to see if Duration property is set
-        internal bool IsSetDuration()
-        {
-            return this.duration.HasValue;
-        }
-
-        /// <summary>
-        /// The fixed cost Amazon Redshift charged you for this reserved node.
-        ///  
-        /// </summary>
-        public double FixedPrice
-        {
-            get { return this.fixedPrice ?? default(double); }
-            set { this.fixedPrice = value; }
-        }
-
-        /// <summary>
-        /// Sets the FixedPrice property
-        /// </summary>
-        /// <param name="fixedPrice">The value to set for the FixedPrice property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ReservedNode WithFixedPrice(double fixedPrice)
-        {
-            this.fixedPrice = fixedPrice;
-            return this;
-        }
-            
-
-        // Check to see if FixedPrice property is set
-        internal bool IsSetFixedPrice()
-        {
-            return this.fixedPrice.HasValue;
-        }
-
-        /// <summary>
-        /// The hourly rate Amazon Redshift charge you for this reserved node.
-        ///  
-        /// </summary>
-        public double UsagePrice
-        {
-            get { return this.usagePrice ?? default(double); }
-            set { this.usagePrice = value; }
-        }
-
-        /// <summary>
-        /// Sets the UsagePrice property
-        /// </summary>
-        /// <param name="usagePrice">The value to set for the UsagePrice property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ReservedNode WithUsagePrice(double usagePrice)
-        {
-            this.usagePrice = usagePrice;
-            return this;
-        }
-            
-
-        // Check to see if UsagePrice property is set
-        internal bool IsSetUsagePrice()
-        {
-            return this.usagePrice.HasValue;
-        }
-
-        /// <summary>
+        /// Gets and sets the property CurrencyCode. 
+        /// <para>
         /// The currency code for the reserved cluster.
-        ///  
+        /// </para>
         /// </summary>
         public string CurrencyCode
         {
-            get { return this.currencyCode; }
-            set { this.currencyCode = value; }
+            get { return this._currencyCode; }
+            set { this._currencyCode = value; }
         }
+
 
         /// <summary>
         /// Sets the CurrencyCode property
@@ -260,26 +63,93 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedNode WithCurrencyCode(string currencyCode)
         {
-            this.currencyCode = currencyCode;
+            this._currencyCode = currencyCode;
             return this;
         }
-            
 
         // Check to see if CurrencyCode property is set
         internal bool IsSetCurrencyCode()
         {
-            return this.currencyCode != null;
+            return this._currencyCode != null;
         }
 
+
         /// <summary>
-        /// The number of reserved compute nodes.
-        ///  
+        /// Gets and sets the property Duration. 
+        /// <para>
+        ///     The duration of the node reservation in seconds.    
+        /// </para>
+        /// </summary>
+        public int Duration
+        {
+            get { return this._duration.GetValueOrDefault(); }
+            set { this._duration = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the Duration property
+        /// </summary>
+        /// <param name="duration">The value to set for the Duration property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ReservedNode WithDuration(int duration)
+        {
+            this._duration = duration;
+            return this;
+        }
+
+        // Check to see if Duration property is set
+        internal bool IsSetDuration()
+        {
+            return this._duration.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property FixedPrice. 
+        /// <para>
+        ///     The fixed cost Amazon Redshift charged you for this reserved node.    
+        /// </para>
+        /// </summary>
+        public double FixedPrice
+        {
+            get { return this._fixedPrice.GetValueOrDefault(); }
+            set { this._fixedPrice = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the FixedPrice property
+        /// </summary>
+        /// <param name="fixedPrice">The value to set for the FixedPrice property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ReservedNode WithFixedPrice(double fixedPrice)
+        {
+            this._fixedPrice = fixedPrice;
+            return this;
+        }
+
+        // Check to see if FixedPrice property is set
+        internal bool IsSetFixedPrice()
+        {
+            return this._fixedPrice.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property NodeCount. 
+        /// <para>
+        ///     The number of reserved compute nodes.    
+        /// </para>
         /// </summary>
         public int NodeCount
         {
-            get { return this.nodeCount ?? default(int); }
-            set { this.nodeCount = value; }
+            get { return this._nodeCount.GetValueOrDefault(); }
+            set { this._nodeCount = value; }
         }
+
 
         /// <summary>
         /// Sets the NodeCount property
@@ -289,57 +159,62 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedNode WithNodeCount(int nodeCount)
         {
-            this.nodeCount = nodeCount;
+            this._nodeCount = nodeCount;
             return this;
         }
-            
 
         // Check to see if NodeCount property is set
         internal bool IsSetNodeCount()
         {
-            return this.nodeCount.HasValue;
+            return this._nodeCount.HasValue; 
         }
 
+
         /// <summary>
-        /// The state of the reserved Compute Node. Possible Values: <ul> <li>pending-payment-This reserved node has recently been purchased, and the
-        /// sale has been approved, but payment has not yet been confirmed.</li> <li>active-This reserved node is owned by the caller and is available
-        /// for use.</li> <li>payment-failed-Payment failed for the purchase attempt.</li> </ul>
-        ///  
+        /// Gets and sets the property NodeType. 
+        /// <para>
+        ///     The node type of the reserved node.    
+        /// </para>
         /// </summary>
-        public string State
+        public string NodeType
         {
-            get { return this.state; }
-            set { this.state = value; }
+            get { return this._nodeType; }
+            set { this._nodeType = value; }
         }
 
+
         /// <summary>
-        /// Sets the State property
+        /// Sets the NodeType property
         /// </summary>
-        /// <param name="state">The value to set for the State property </param>
+        /// <param name="nodeType">The value to set for the NodeType property </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ReservedNode WithState(string state)
+        public ReservedNode WithNodeType(string nodeType)
         {
-            this.state = state;
+            this._nodeType = nodeType;
             return this;
         }
-            
 
-        // Check to see if State property is set
-        internal bool IsSetState()
+        // Check to see if NodeType property is set
+        internal bool IsSetNodeType()
         {
-            return this.state != null;
+            return this._nodeType != null;
         }
 
+
         /// <summary>
-        /// The anticipated utilization of the reserved node, as defined in the reserved node offering.
-        ///  
+        /// Gets and sets the property OfferingType. 
+        /// <para>
+        /// The anticipated utilization of the reserved node, as defined in the reserved node
+        /// offering.
+        /// </para>
         /// </summary>
         public string OfferingType
         {
-            get { return this.offeringType; }
-            set { this.offeringType = value; }
+            get { return this._offeringType; }
+            set { this._offeringType = value; }
         }
+
 
         /// <summary>
         /// Sets the OfferingType property
@@ -349,62 +224,233 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedNode WithOfferingType(string offeringType)
         {
-            this.offeringType = offeringType;
+            this._offeringType = offeringType;
             return this;
         }
-            
 
         // Check to see if OfferingType property is set
         internal bool IsSetOfferingType()
         {
-            return this.offeringType != null;
+            return this._offeringType != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property RecurringCharges. 
+        /// <para>
         /// The recurring charges for the reserved node.
-        ///  
+        /// </para>
         /// </summary>
         public List<RecurringCharge> RecurringCharges
         {
-            get { return this.recurringCharges; }
-            set { this.recurringCharges = value; }
+            get { return this._recurringCharges; }
+            set { this._recurringCharges = value; }
         }
+
         /// <summary>
-        /// Adds elements to the RecurringCharges collection
+        /// Sets the RecurringCharges property
         /// </summary>
         /// <param name="recurringCharges">The values to add to the RecurringCharges collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedNode WithRecurringCharges(params RecurringCharge[] recurringCharges)
         {
-            foreach (RecurringCharge element in recurringCharges)
+            foreach (var element in recurringCharges)
             {
-                this.recurringCharges.Add(element);
+                this._recurringCharges.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the RecurringCharges collection
+        /// Sets the RecurringCharges property
         /// </summary>
         /// <param name="recurringCharges">The values to add to the RecurringCharges collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedNode WithRecurringCharges(IEnumerable<RecurringCharge> recurringCharges)
         {
-            foreach (RecurringCharge element in recurringCharges)
+            foreach (var element in recurringCharges)
             {
-                this.recurringCharges.Add(element);
+                this._recurringCharges.Add(element);
             }
-
             return this;
         }
-
         // Check to see if RecurringCharges property is set
         internal bool IsSetRecurringCharges()
         {
-            return this.recurringCharges.Count > 0;
+            return this._recurringCharges != null && this._recurringCharges.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property ReservedNodeId. 
+        /// <para>
+        ///     The unique identifier for the reservation.    
+        /// </para>
+        /// </summary>
+        public string ReservedNodeId
+        {
+            get { return this._reservedNodeId; }
+            set { this._reservedNodeId = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the ReservedNodeId property
+        /// </summary>
+        /// <param name="reservedNodeId">The value to set for the ReservedNodeId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ReservedNode WithReservedNodeId(string reservedNodeId)
+        {
+            this._reservedNodeId = reservedNodeId;
+            return this;
+        }
+
+        // Check to see if ReservedNodeId property is set
+        internal bool IsSetReservedNodeId()
+        {
+            return this._reservedNodeId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ReservedNodeOfferingId. 
+        /// <para>
+        ///     The identifier for the reserved node offering.    
+        /// </para>
+        /// </summary>
+        public string ReservedNodeOfferingId
+        {
+            get { return this._reservedNodeOfferingId; }
+            set { this._reservedNodeOfferingId = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the ReservedNodeOfferingId property
+        /// </summary>
+        /// <param name="reservedNodeOfferingId">The value to set for the ReservedNodeOfferingId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ReservedNode WithReservedNodeOfferingId(string reservedNodeOfferingId)
+        {
+            this._reservedNodeOfferingId = reservedNodeOfferingId;
+            return this;
+        }
+
+        // Check to see if ReservedNodeOfferingId property is set
+        internal bool IsSetReservedNodeOfferingId()
+        {
+            return this._reservedNodeOfferingId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        ///     The time the reservation started. You purchase a reserved node offering for a
+        /// duration. This is the start     time of that duration.    
+        /// </para>
+        /// </summary>
+        public DateTime StartTime
+        {
+            get { return this._startTime.GetValueOrDefault(); }
+            set { this._startTime = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the StartTime property
+        /// </summary>
+        /// <param name="startTime">The value to set for the StartTime property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ReservedNode WithStartTime(DateTime startTime)
+        {
+            this._startTime = startTime;
+            return this;
+        }
+
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
+        {
+            return this._startTime.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        ///     The state of the reserved Compute Node.     
+        /// </para>
+        ///        
+        /// <para>
+        /// Possible Values:
+        /// </para>
+        ///        <ul>           <li>pending-payment-This reserved node has recently been purchased,
+        /// and the sale                has been approved, but payment has not yet been confirmed.</li>
+        ///           <li>active-This reserved node is owned by the caller and is available for
+        /// use.</li>           <li>payment-failed-Payment failed for the purchase attempt.</li>
+        ///       </ul>
+        /// </summary>
+        public string State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the State property
+        /// </summary>
+        /// <param name="state">The value to set for the State property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ReservedNode WithState(string state)
+        {
+            this._state = state;
+            return this;
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property UsagePrice. 
+        /// <para>
+        ///     The hourly rate Amazon Redshift charge you for this reserved node.    
+        /// </para>
+        /// </summary>
+        public double UsagePrice
+        {
+            get { return this._usagePrice.GetValueOrDefault(); }
+            set { this._usagePrice = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the UsagePrice property
+        /// </summary>
+        /// <param name="usagePrice">The value to set for the UsagePrice property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ReservedNode WithUsagePrice(double usagePrice)
+        {
+            this._usagePrice = usagePrice;
+            return this;
+        }
+
+        // Check to see if UsagePrice property is set
+        internal bool IsSetUsagePrice()
+        {
+            return this._usagePrice.HasValue; 
+        }
+
     }
 }

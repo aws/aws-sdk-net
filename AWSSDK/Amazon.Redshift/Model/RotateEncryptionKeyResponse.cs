@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the RotateEncryptionKey response and response metadata.
+    /// Returns information about the RotateEncryptionKeyResult response and response metadata.
     /// </summary>
     public class RotateEncryptionKeyResponse : AmazonWebServiceResponse
     {
-        private RotateEncryptionKeyResult rotateEncryptionKeyResult;
+        private RotateEncryptionKeyResult _rotateEncryptionKeyResult;
 
-        /// 
+        /// <summary>
         /// Gets and sets the RotateEncryptionKeyResult property.
-        /// Contains the result of a successful invocation of the RotateEncryptionKey
-        /// action.
-        /// 
+        /// Represents the output of a RotateEncryptionKey operation.
+        /// </summary>
         public RotateEncryptionKeyResult RotateEncryptionKeyResult
         {
             get
             {
-                if(this.rotateEncryptionKeyResult == null)
+                if(this._rotateEncryptionKeyResult == null)
                 {
-                    this.rotateEncryptionKeyResult = new RotateEncryptionKeyResult();
+                    this._rotateEncryptionKeyResult = new RotateEncryptionKeyResult();
                 }
-
-                return this.rotateEncryptionKeyResult;
+                return this._rotateEncryptionKeyResult;
             }
-            set { this.rotateEncryptionKeyResult = value; }
+            set { this._rotateEncryptionKeyResult = value; }
         }
     }
 }
-    

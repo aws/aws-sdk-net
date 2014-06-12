@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeLoggingStatusResult response and response metadata.
+    /// Returns information about the DescribeLoggingStatusResult response and response metadata.
     /// </summary>
     public class DescribeLoggingStatusResponse : AmazonWebServiceResponse
     {
-        private DescribeLoggingStatusResult describeLoggingStatusResult;
+        private DescribeLoggingStatusResult _describeLoggingStatusResult;
 
         /// <summary>
         /// Gets and sets the DescribeLoggingStatusResult property.
-        /// Describes the status of logging for a cluster.
+        /// Represents the output of a DescribeLoggingStatus operation.
         /// </summary>
         public DescribeLoggingStatusResult DescribeLoggingStatusResult
         {
             get
             {
-                if(this.describeLoggingStatusResult == null)
+                if(this._describeLoggingStatusResult == null)
                 {
-                    this.describeLoggingStatusResult = new DescribeLoggingStatusResult();
+                    this._describeLoggingStatusResult = new DescribeLoggingStatusResult();
                 }
-
-                return this.describeLoggingStatusResult;
+                return this._describeLoggingStatusResult;
             }
-            set { this.describeLoggingStatusResult = value; }
+            set { this._describeLoggingStatusResult = value; }
         }
     }
 }
-    

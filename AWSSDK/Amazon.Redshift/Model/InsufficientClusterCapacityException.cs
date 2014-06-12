@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.Redshift.Model
 {
     ///<summary>
-    /// AmazonRedshift exception
+    /// Redshift exception
     /// </summary>
     public class InsufficientClusterCapacityException : AmazonRedshiftException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal InsufficientClusterCapacityException(string message) 
+        public InsufficientClusterCapacityException(string message) 
             : base(message) {}
           
-        internal InsufficientClusterCapacityException(string message, Exception innerException) 
+        public InsufficientClusterCapacityException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal InsufficientClusterCapacityException(Exception innerException) 
+        public InsufficientClusterCapacityException(Exception innerException) 
             : base(innerException) {}
             
-        internal InsufficientClusterCapacityException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InsufficientClusterCapacityException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal InsufficientClusterCapacityException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InsufficientClusterCapacityException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

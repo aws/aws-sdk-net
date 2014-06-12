@@ -40,6 +40,7 @@ using Amazon.Runtime.Internal;
 
 using ErrorResponse = Amazon.SimpleNotificationService.Model.ErrorResponse;
 using Amazon.Runtime.Internal.Auth;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.SimpleNotificationService
 {
@@ -1232,6 +1233,36 @@ namespace Amazon.SimpleNotificationService
             if (request.IsSetTargetArn())
             {
                 parameters["TargetArn"] = request.TargetArn;
+            }
+            if (request.IsSetMessageAttributes())
+            {
+                int i = 1;
+
+                foreach (var kvp in request.MessageAttributes)
+                {
+                    string k = String.Format("MessageAttributes.entry.{0}.Name", i);
+                    parameters[k] = kvp.Key;
+
+                    if (kvp.Value != null)
+                    {
+                        string vDataType = String.Format("MessageAttributes.entry.{0}.Value.DataType", i);
+                        parameters[vDataType] = kvp.Value.DataType;
+
+                        if (kvp.Value.IsSetStringValue())
+                        {
+                            string vString = String.Format("MessageAttributes.entry.{0}.Value.StringValue", i);
+                            parameters[vString] = kvp.Value.StringValue;
+                        }
+
+                        if (kvp.Value.IsSetBinaryValue())
+                        {
+                            string vBinary = String.Format("MessageAttributes.entry.{0}.Value.BinaryValue", i);
+                            parameters[vBinary] = StringUtils.FromMemoryStream(kvp.Value.BinaryValue);
+                        }
+                    }
+                    
+                    ++i;
+                }
             }
 
             return parameters;

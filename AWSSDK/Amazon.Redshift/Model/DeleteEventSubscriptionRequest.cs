@@ -25,22 +25,25 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteEventSubscription operation.
-    /// <para> Deletes an Amazon Redshift event notification subscription. </para>
+    /// Deletes an Amazon Redshift event notification subscription.
     /// </summary>
-    /// <seealso cref="Amazon.Redshift.AmazonRedshift.DeleteEventSubscription"/>
-    public class DeleteEventSubscriptionRequest : AmazonWebServiceRequest
+    public partial class DeleteEventSubscriptionRequest : AmazonWebServiceRequest
     {
-        private string subscriptionName;
+        private string _subscriptionName;
+
 
         /// <summary>
+        /// Gets and sets the property SubscriptionName. 
+        /// <para>
         /// The name of the Amazon Redshift event notification subscription to be deleted.
-        ///  
+        /// </para>
         /// </summary>
         public string SubscriptionName
         {
-            get { return this.subscriptionName; }
-            set { this.subscriptionName = value; }
+            get { return this._subscriptionName; }
+            set { this._subscriptionName = value; }
         }
+
 
         /// <summary>
         /// Sets the SubscriptionName property
@@ -50,16 +53,15 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteEventSubscriptionRequest WithSubscriptionName(string subscriptionName)
         {
-            this.subscriptionName = subscriptionName;
+            this._subscriptionName = subscriptionName;
             return this;
         }
-            
 
         // Check to see if SubscriptionName property is set
         internal bool IsSetSubscriptionName()
         {
-            return this.subscriptionName != null;
+            return this._subscriptionName != null;
         }
+
     }
 }
-    

@@ -18,56 +18,33 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// <para>Describes an Amazon EC2 security group.</para>
+    /// Describes an Amazon EC2 security group.
     /// </summary>
     public partial class EC2SecurityGroup
     {
-        
-        private string status;
-        private string eC2SecurityGroupName;
-        private string eC2SecurityGroupOwnerId;
+        private string _eC2SecurityGroupName;
+        private string _eC2SecurityGroupOwnerId;
+        private string _status;
+
 
         /// <summary>
-        /// The status of the EC2 security group.
-        ///  
-        /// </summary>
-        public string Status
-        {
-            get { return this.status; }
-            set { this.status = value; }
-        }
-
-        /// <summary>
-        /// Sets the Status property
-        /// </summary>
-        /// <param name="status">The value to set for the Status property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public EC2SecurityGroup WithStatus(string status)
-        {
-            this.status = status;
-            return this;
-        }
-            
-
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
-        {
-            return this.status != null;
-        }
-
-        /// <summary>
-        /// The name of the EC2 Security Group.
-        ///  
+        /// Gets and sets the property EC2SecurityGroupName. 
+        /// <para>
+        ///         The name of the EC2 Security Group.        
+        /// </para>
         /// </summary>
         public string EC2SecurityGroupName
         {
-            get { return this.eC2SecurityGroupName; }
-            set { this.eC2SecurityGroupName = value; }
+            get { return this._eC2SecurityGroupName; }
+            set { this._eC2SecurityGroupName = value; }
         }
+
 
         /// <summary>
         /// Sets the EC2SecurityGroupName property
@@ -77,26 +54,30 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EC2SecurityGroup WithEC2SecurityGroupName(string eC2SecurityGroupName)
         {
-            this.eC2SecurityGroupName = eC2SecurityGroupName;
+            this._eC2SecurityGroupName = eC2SecurityGroupName;
             return this;
         }
-            
 
         // Check to see if EC2SecurityGroupName property is set
         internal bool IsSetEC2SecurityGroupName()
         {
-            return this.eC2SecurityGroupName != null;
+            return this._eC2SecurityGroupName != null;
         }
 
+
         /// <summary>
-        /// The AWS ID of the owner of the EC2 security group specified in the <c>EC2SecurityGroupName</c> field.
-        ///  
+        /// Gets and sets the property EC2SecurityGroupOwnerId. 
+        /// <para>
+        ///         The AWS ID of the owner of the EC2 security group        specified in the
+        /// <code>EC2SecurityGroupName</code> field.        
+        /// </para>
         /// </summary>
         public string EC2SecurityGroupOwnerId
         {
-            get { return this.eC2SecurityGroupOwnerId; }
-            set { this.eC2SecurityGroupOwnerId = value; }
+            get { return this._eC2SecurityGroupOwnerId; }
+            set { this._eC2SecurityGroupOwnerId = value; }
         }
+
 
         /// <summary>
         /// Sets the EC2SecurityGroupOwnerId property
@@ -106,15 +87,47 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EC2SecurityGroup WithEC2SecurityGroupOwnerId(string eC2SecurityGroupOwnerId)
         {
-            this.eC2SecurityGroupOwnerId = eC2SecurityGroupOwnerId;
+            this._eC2SecurityGroupOwnerId = eC2SecurityGroupOwnerId;
             return this;
         }
-            
 
         // Check to see if EC2SecurityGroupOwnerId property is set
         internal bool IsSetEC2SecurityGroupOwnerId()
         {
-            return this.eC2SecurityGroupOwnerId != null;
+            return this._eC2SecurityGroupOwnerId != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        ///         The status of the EC2 security group.        
+        /// </para>
+        /// </summary>
+        public string Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the Status property
+        /// </summary>
+        /// <param name="status">The value to set for the Status property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public EC2SecurityGroup WithStatus(string status)
+        {
+            this._status = status;
+            return this;
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
     }
 }

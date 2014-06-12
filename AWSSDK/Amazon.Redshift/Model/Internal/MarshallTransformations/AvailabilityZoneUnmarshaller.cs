@@ -12,66 +12,70 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   AvailabilityZone Unmarshaller
-     /// </summary>
-    internal class AvailabilityZoneUnmarshaller : IUnmarshaller<AvailabilityZone, XmlUnmarshallerContext>, IUnmarshaller<AvailabilityZone, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for AvailabilityZone Object
+    /// </summary>  
+    public class AvailabilityZoneUnmarshaller : IUnmarshaller<AvailabilityZone, XmlUnmarshallerContext>, IUnmarshaller<AvailabilityZone, JsonUnmarshallerContext>
     {
-        public AvailabilityZone Unmarshall(XmlUnmarshallerContext context) 
+        public AvailabilityZone Unmarshall(XmlUnmarshallerContext context)
         {
-            AvailabilityZone availabilityZone = new AvailabilityZone();
+            AvailabilityZone unmarshalledObject = new AvailabilityZone();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            if (context.IsStartOfDocument) 
-               targetDepth++;
-            
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
                     if (context.TestExpression("Name", targetDepth))
                     {
-                        availabilityZone.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return availabilityZone;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return availabilityZone;
+            return unmarshalledObject;
         }
 
-        public AvailabilityZone Unmarshall(JsonUnmarshallerContext context) 
+        public AvailabilityZone Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static AvailabilityZoneUnmarshaller instance;
-
-        public static AvailabilityZoneUnmarshaller GetInstance() 
+        public static AvailabilityZoneUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new AvailabilityZoneUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new AvailabilityZoneUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

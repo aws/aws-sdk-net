@@ -16,27 +16,24 @@ using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
 
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// The results from the ModifySnapshotCopyRetentionPeriod action.
+    /// Describes a cluster.
     /// </summary>
     public partial class ModifySnapshotCopyRetentionPeriodResult
     {
-        private Cluster clusterValue;
+        private Cluster _response;
 
-        /// <summary>
-        /// Gets and sets the ModifySnapshotCopyRetentionPeriodResult property.
-        /// Contains the result of a successful invocation of the ModifySnapshotCopyRetentionPeriod
-        /// action.
-        /// </summary>
         public Cluster Cluster
         {
-            get { return this.clusterValue; }
-            set { this.clusterValue = value; }
+            get { return this._response; }
+            set { this._response = value; }
         }
     }
 }
-    

@@ -12,57 +12,66 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-using Amazon.Runtime.Internal.Transform;    
-    
+using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Result Unmarshaller for CreateClusterSecurityGroup operation
-    /// </summary>
-    internal class CreateClusterSecurityGroupResultUnmarshaller : IUnmarshaller<CreateClusterSecurityGroupResult, XmlUnmarshallerContext> {
-
+    /// Response Unmarshaller for CreateClusterSecurityGroup Object
+    /// </summary>  
+    public class CreateClusterSecurityGroupResultUnmarshaller : IUnmarshaller<CreateClusterSecurityGroupResult, XmlUnmarshallerContext>
+    {
         public CreateClusterSecurityGroupResult Unmarshall(XmlUnmarshallerContext context) 
         {
             CreateClusterSecurityGroupResult result = new CreateClusterSecurityGroupResult();
-            
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("ClusterSecurityGroup", targetDepth))
+
+                    if ( context.TestExpression("ClusterSecurityGroup", targetDepth))
                     {
                         result.ClusterSecurityGroup = ClusterSecurityGroupUnmarshaller.GetInstance().Unmarshall(context);
                         continue;
                     }
-                }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
                     return result;
                 }
             }
-                       
-
 
             return result;
         }
-        
+
+
         private static CreateClusterSecurityGroupResultUnmarshaller instance;
-        
         public static CreateClusterSecurityGroupResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
+            if (instance == null)
             {
-               instance = new CreateClusterSecurityGroupResultUnmarshaller();
+                instance = new CreateClusterSecurityGroupResultUnmarshaller();
             }
             return instance;
-        }        
+        }
+
     }
-}    
-    
+}

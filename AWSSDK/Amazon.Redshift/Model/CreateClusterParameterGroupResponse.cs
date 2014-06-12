@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the CreateClusterParameterGroup response and response metadata.
+    /// Returns information about the CreateClusterParameterGroupResult response and response metadata.
     /// </summary>
     public class CreateClusterParameterGroupResponse : AmazonWebServiceResponse
     {
-        private CreateClusterParameterGroupResult createClusterParameterGroupResult;
+        private CreateClusterParameterGroupResult _createClusterParameterGroupResult;
 
-        /// 
+        /// <summary>
         /// Gets and sets the CreateClusterParameterGroupResult property.
-        /// Contains the result of a successful invocation of the CreateClusterParameterGroup
-        /// action.
-        /// 
+        /// Represents the output of a CreateClusterParameterGroup operation.
+        /// </summary>
         public CreateClusterParameterGroupResult CreateClusterParameterGroupResult
         {
             get
             {
-                if(this.createClusterParameterGroupResult == null)
+                if(this._createClusterParameterGroupResult == null)
                 {
-                    this.createClusterParameterGroupResult = new CreateClusterParameterGroupResult();
+                    this._createClusterParameterGroupResult = new CreateClusterParameterGroupResult();
                 }
-
-                return this.createClusterParameterGroupResult;
+                return this._createClusterParameterGroupResult;
             }
-            set { this.createClusterParameterGroupResult = value; }
+            set { this._createClusterParameterGroupResult = value; }
         }
     }
 }
-    

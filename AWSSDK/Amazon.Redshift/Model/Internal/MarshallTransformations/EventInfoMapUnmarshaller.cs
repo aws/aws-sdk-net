@@ -12,84 +12,89 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   EventInfoMap Unmarshaller
-     /// </summary>
-    internal class EventInfoMapUnmarshaller : IUnmarshaller<EventInfoMap, XmlUnmarshallerContext>, IUnmarshaller<EventInfoMap, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for EventInfoMap Object
+    /// </summary>  
+    public class EventInfoMapUnmarshaller : IUnmarshaller<EventInfoMap, XmlUnmarshallerContext>, IUnmarshaller<EventInfoMap, JsonUnmarshallerContext>
     {
-        public EventInfoMap Unmarshall(XmlUnmarshallerContext context) 
+        public EventInfoMap Unmarshall(XmlUnmarshallerContext context)
         {
-            EventInfoMap eventInfoMap = new EventInfoMap();
+            EventInfoMap unmarshalledObject = new EventInfoMap();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            if (context.IsStartOfDocument) 
-               targetDepth++;
-            
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("EventId", targetDepth))
-                    {
-                        eventInfoMap.EventId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
                     if (context.TestExpression("EventCategories/EventCategory", targetDepth))
                     {
-                        eventInfoMap.EventCategories.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.EventCategories.Add(item);
                         continue;
-                    } 
+                    }
                     if (context.TestExpression("EventDescription", targetDepth))
                     {
-                        eventInfoMap.EventDescription = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.EventDescription = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
+                    if (context.TestExpression("EventId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.EventId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Severity", targetDepth))
                     {
-                        eventInfoMap.Severity = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Severity = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return eventInfoMap;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return eventInfoMap;
+            return unmarshalledObject;
         }
 
-        public EventInfoMap Unmarshall(JsonUnmarshallerContext context) 
+        public EventInfoMap Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static EventInfoMapUnmarshaller instance;
-
-        public static EventInfoMapUnmarshaller GetInstance() 
+        public static EventInfoMapUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new EventInfoMapUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new EventInfoMapUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

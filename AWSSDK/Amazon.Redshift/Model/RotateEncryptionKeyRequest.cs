@@ -25,23 +25,31 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the RotateEncryptionKey operation.
-    /// <para> Rotates the encryption keys for a cluster. </para>
+    /// Rotates the encryption keys for a cluster.
     /// </summary>
-    /// <seealso cref="Amazon.Redshift.AmazonRedshift.RotateEncryptionKey"/>
-    public class RotateEncryptionKeyRequest : AmazonWebServiceRequest
+    public partial class RotateEncryptionKeyRequest : AmazonWebServiceRequest
     {
-        private string clusterIdentifier;
+        private string _clusterIdentifier;
+
 
         /// <summary>
-        /// The unique identifier of the cluster that you want to rotate the encryption keys for. Constraints: Must be the name of valid cluster that
-        /// has encryption enabled.
-        ///  
+        /// Gets and sets the property ClusterIdentifier. 
+        /// <para>
+        ///             The unique identifier of the cluster that you want to rotate the encryption
+        /// keys for.        
+        /// </para>
+        ///         
+        /// <para>
+        ///             Constraints: Must be the name of valid cluster that has encryption enabled.
+        ///        
+        /// </para>
         /// </summary>
         public string ClusterIdentifier
         {
-            get { return this.clusterIdentifier; }
-            set { this.clusterIdentifier = value; }
+            get { return this._clusterIdentifier; }
+            set { this._clusterIdentifier = value; }
         }
+
 
         /// <summary>
         /// Sets the ClusterIdentifier property
@@ -51,16 +59,15 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RotateEncryptionKeyRequest WithClusterIdentifier(string clusterIdentifier)
         {
-            this.clusterIdentifier = clusterIdentifier;
+            this._clusterIdentifier = clusterIdentifier;
             return this;
         }
-            
 
         // Check to see if ClusterIdentifier property is set
         internal bool IsSetClusterIdentifier()
         {
-            return this.clusterIdentifier != null;
+            return this._clusterIdentifier != null;
         }
+
     }
 }
-    

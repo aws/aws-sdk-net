@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the CreateClusterSubnetGroup response and response metadata.
+    /// Returns information about the CreateClusterSubnetGroupResult response and response metadata.
     /// </summary>
     public class CreateClusterSubnetGroupResponse : AmazonWebServiceResponse
     {
-        private CreateClusterSubnetGroupResult createClusterSubnetGroupResult;
+        private CreateClusterSubnetGroupResult _createClusterSubnetGroupResult;
 
-        /// 
+        /// <summary>
         /// Gets and sets the CreateClusterSubnetGroupResult property.
-        /// Contains the result of a successful invocation of the CreateClusterSubnetGroup
-        /// action.
-        /// 
+        /// Represents the output of a CreateClusterSubnetGroup operation.
+        /// </summary>
         public CreateClusterSubnetGroupResult CreateClusterSubnetGroupResult
         {
             get
             {
-                if(this.createClusterSubnetGroupResult == null)
+                if(this._createClusterSubnetGroupResult == null)
                 {
-                    this.createClusterSubnetGroupResult = new CreateClusterSubnetGroupResult();
+                    this._createClusterSubnetGroupResult = new CreateClusterSubnetGroupResult();
                 }
-
-                return this.createClusterSubnetGroupResult;
+                return this._createClusterSubnetGroupResult;
             }
-            set { this.createClusterSubnetGroupResult = value; }
+            set { this._createClusterSubnetGroupResult = value; }
         }
     }
 }
-    

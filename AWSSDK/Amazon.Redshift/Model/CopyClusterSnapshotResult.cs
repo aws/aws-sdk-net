@@ -16,27 +16,24 @@ using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
 
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// The results from the CopyClusterSnapshot action.
+    /// Describes a snapshot.
     /// </summary>
     public partial class CopyClusterSnapshotResult
     {
-        private Snapshot snapshotValue;
+        private Snapshot _response;
 
-        /// <summary>
-        /// Gets and sets the CopyClusterSnapshotResult property.
-        /// Contains the result of a successful invocation of the CopyClusterSnapshot
-        /// action.
-        /// </summary>
         public Snapshot Snapshot
         {
-            get { return this.snapshotValue; }
-            set { this.snapshotValue = value; }
+            get { return this._response; }
+            set { this._response = value; }
         }
     }
 }
-    

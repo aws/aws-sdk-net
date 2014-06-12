@@ -12,69 +12,74 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   DescribeReservedNodeOfferingsResult Unmarshaller
-     /// </summary>
-    internal class DescribeReservedNodeOfferingsResultUnmarshaller : IUnmarshaller<DescribeReservedNodeOfferingsResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeReservedNodeOfferingsResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for DescribeReservedNodeOfferings Object
+    /// </summary>  
+    public class DescribeReservedNodeOfferingsResultUnmarshaller : IUnmarshaller<DescribeReservedNodeOfferingsResult, XmlUnmarshallerContext>
     {
         public DescribeReservedNodeOfferingsResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            DescribeReservedNodeOfferingsResult describeReservedNodeOfferingsResult = new DescribeReservedNodeOfferingsResult();
+            DescribeReservedNodeOfferingsResult result = new DescribeReservedNodeOfferingsResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
+
                     if (context.TestExpression("Marker", targetDepth))
                     {
-                        describeReservedNodeOfferingsResult.Marker = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("ReservedNodeOfferings/ReservedNodeOffering", targetDepth))
-                    {
-                        describeReservedNodeOfferingsResult.ReservedNodeOfferings.Add(ReservedNodeOfferingUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.Marker = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
+                    if (context.TestExpression("ReservedNodeOfferings/ReservedNodeOffering", targetDepth))
+                    {
+                        var unmarshaller = ReservedNodeOfferingUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        result.ReservedNodeOfferings.Add(item);
+                        continue;
+                    }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return describeReservedNodeOfferingsResult;
+                    return result;
                 }
             }
-                        
 
-
-            return describeReservedNodeOfferingsResult;
+            return result;
         }
 
-        public DescribeReservedNodeOfferingsResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static DescribeReservedNodeOfferingsResultUnmarshaller instance;
-
-        public static DescribeReservedNodeOfferingsResultUnmarshaller GetInstance() 
+        public static DescribeReservedNodeOfferingsResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new DescribeReservedNodeOfferingsResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new DescribeReservedNodeOfferingsResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

@@ -18,56 +18,30 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// <para> Describes a subnet. </para>
+    /// Describes a subnet.
     /// </summary>
     public partial class Subnet
     {
-        
-        private string subnetIdentifier;
-        private AvailabilityZone subnetAvailabilityZone;
-        private string subnetStatus;
+        private AvailabilityZone _subnetAvailabilityZone;
+        private string _subnetIdentifier;
+        private string _subnetStatus;
+
 
         /// <summary>
-        /// The identifier of the subnet.
-        ///  
-        /// </summary>
-        public string SubnetIdentifier
-        {
-            get { return this.subnetIdentifier; }
-            set { this.subnetIdentifier = value; }
-        }
-
-        /// <summary>
-        /// Sets the SubnetIdentifier property
-        /// </summary>
-        /// <param name="subnetIdentifier">The value to set for the SubnetIdentifier property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public Subnet WithSubnetIdentifier(string subnetIdentifier)
-        {
-            this.subnetIdentifier = subnetIdentifier;
-            return this;
-        }
-            
-
-        // Check to see if SubnetIdentifier property is set
-        internal bool IsSetSubnetIdentifier()
-        {
-            return this.subnetIdentifier != null;
-        }
-
-        /// <summary>
-        /// Describes an availability zone.
-        ///  
+        /// Gets and sets the property SubnetAvailabilityZone.
         /// </summary>
         public AvailabilityZone SubnetAvailabilityZone
         {
-            get { return this.subnetAvailabilityZone; }
-            set { this.subnetAvailabilityZone = value; }
+            get { return this._subnetAvailabilityZone; }
+            set { this._subnetAvailabilityZone = value; }
         }
+
 
         /// <summary>
         /// Sets the SubnetAvailabilityZone property
@@ -77,26 +51,61 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Subnet WithSubnetAvailabilityZone(AvailabilityZone subnetAvailabilityZone)
         {
-            this.subnetAvailabilityZone = subnetAvailabilityZone;
+            this._subnetAvailabilityZone = subnetAvailabilityZone;
             return this;
         }
-            
 
         // Check to see if SubnetAvailabilityZone property is set
         internal bool IsSetSubnetAvailabilityZone()
         {
-            return this.subnetAvailabilityZone != null;
+            return this._subnetAvailabilityZone != null;
         }
 
+
         /// <summary>
-        /// The status of the subnet.
-        ///  
+        /// Gets and sets the property SubnetIdentifier. 
+        /// <para>
+        ///         The identifier of the subnet.        
+        /// </para>
+        /// </summary>
+        public string SubnetIdentifier
+        {
+            get { return this._subnetIdentifier; }
+            set { this._subnetIdentifier = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the SubnetIdentifier property
+        /// </summary>
+        /// <param name="subnetIdentifier">The value to set for the SubnetIdentifier property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Subnet WithSubnetIdentifier(string subnetIdentifier)
+        {
+            this._subnetIdentifier = subnetIdentifier;
+            return this;
+        }
+
+        // Check to see if SubnetIdentifier property is set
+        internal bool IsSetSubnetIdentifier()
+        {
+            return this._subnetIdentifier != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SubnetStatus. 
+        /// <para>
+        ///         The status of the subnet.        
+        /// </para>
         /// </summary>
         public string SubnetStatus
         {
-            get { return this.subnetStatus; }
-            set { this.subnetStatus = value; }
+            get { return this._subnetStatus; }
+            set { this._subnetStatus = value; }
         }
+
 
         /// <summary>
         /// Sets the SubnetStatus property
@@ -106,15 +115,15 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Subnet WithSubnetStatus(string subnetStatus)
         {
-            this.subnetStatus = subnetStatus;
+            this._subnetStatus = subnetStatus;
             return this;
         }
-            
 
         // Check to see if SubnetStatus property is set
         internal bool IsSetSubnetStatus()
         {
-            return this.subnetStatus != null;
+            return this._subnetStatus != null;
         }
+
     }
 }

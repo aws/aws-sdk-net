@@ -14,36 +14,40 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Cluster Snapshot Request Marshaller
+    /// DeleteClusterSnapshot Request Marshaller
     /// </summary>       
     public class DeleteClusterSnapshotRequestMarshaller : IMarshaller<IRequest, DeleteClusterSnapshotRequest>
     {
-        public IRequest Marshall(DeleteClusterSnapshotRequest deleteClusterSnapshotRequest)
+        public IRequest Marshall(DeleteClusterSnapshotRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(deleteClusterSnapshotRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "DeleteClusterSnapshot");
             request.Parameters.Add("Version", "2012-12-01");
-            if (deleteClusterSnapshotRequest != null && deleteClusterSnapshotRequest.IsSetSnapshotIdentifier())
-            {
-                request.Parameters.Add("SnapshotIdentifier", StringUtils.FromString(deleteClusterSnapshotRequest.SnapshotIdentifier));
-            }
-            if (deleteClusterSnapshotRequest != null && deleteClusterSnapshotRequest.IsSetSnapshotClusterIdentifier())
-            {
-                request.Parameters.Add("SnapshotClusterIdentifier", StringUtils.FromString(deleteClusterSnapshotRequest.SnapshotClusterIdentifier));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetSnapshotClusterIdentifier())
+                {
+                    request.Parameters.Add("SnapshotClusterIdentifier", StringUtils.FromString(publicRequest.SnapshotClusterIdentifier));
+                }
+                if(publicRequest.IsSetSnapshotIdentifier())
+                {
+                    request.Parameters.Add("SnapshotIdentifier", StringUtils.FromString(publicRequest.SnapshotIdentifier));
+                }
+            }
             return request;
         }
     }

@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeEventCategoriesResult response and response metadata.
+    /// Returns information about the DescribeEventCategoriesResult response and response metadata.
     /// </summary>
     public class DescribeEventCategoriesResponse : AmazonWebServiceResponse
     {
-        private DescribeEventCategoriesResult describeEventCategoriesResult;
+        private DescribeEventCategoriesResult _describeEventCategoriesResult;
 
         /// <summary>
         /// Gets and sets the DescribeEventCategoriesResult property.
-        /// 
+        /// Represents the output of a DescribeEventCategories operation.
         /// </summary>
         public DescribeEventCategoriesResult DescribeEventCategoriesResult
         {
             get
             {
-                if(this.describeEventCategoriesResult == null)
+                if(this._describeEventCategoriesResult == null)
                 {
-                    this.describeEventCategoriesResult = new DescribeEventCategoriesResult();
+                    this._describeEventCategoriesResult = new DescribeEventCategoriesResult();
                 }
-
-                return this.describeEventCategoriesResult;
+                return this._describeEventCategoriesResult;
             }
-            set { this.describeEventCategoriesResult = value; }
+            set { this._describeEventCategoriesResult = value; }
         }
     }
 }
-    

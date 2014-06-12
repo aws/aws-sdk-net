@@ -25,166 +25,41 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEvents operation.
-    /// <para> Returns events related to clusters, security groups, snapshots, and parameter groups for the past 14 days. Events specific to a
-    /// particular cluster, security group, snapshot or parameter group can be obtained by providing the name as a parameter. By default, the past
-    /// hour of events are returned. </para>
+    /// Returns events related to clusters, security groups, snapshots, and parameter
+    ///        groups for the past 14 days. Events specific to a particular cluster, security
+    /// group,        snapshot or parameter group can be obtained by providing the name as
+    /// a parameter.        By default, the past hour of events are returned.
     /// </summary>
-    /// <seealso cref="Amazon.Redshift.AmazonRedshift.DescribeEvents"/>
-    public class DescribeEventsRequest : AmazonWebServiceRequest
+    public partial class DescribeEventsRequest : AmazonWebServiceRequest
     {
-        private string sourceIdentifier;
-        private string sourceType;
-        private DateTime? startTime;
-        private DateTime? endTime;
-        private int? duration;
-        private int? maxRecords;
-        private string marker;
+        private int? _duration;
+        private DateTime? _endTime;
+        private string _marker;
+        private int? _maxRecords;
+        private string _sourceIdentifier;
+        private string _sourceType;
+        private DateTime? _startTime;
+
 
         /// <summary>
-        /// The identifier of the event source for which events will be returned. If this parameter is not specified, then all sources are included in
-        /// the response. Constraints: If <i>SourceIdentifier</i> is supplied, <i>SourceType</i> must also be provided. <ul> <li>Specify a cluster
-        /// identifier when <i>SourceType</i> is <c>cluster</c>.</li> <li>Specify a cluster security group name when <i>SourceType</i> is
-        /// <c>cluster-security-group</c>.</li> <li>Specify a cluster parameter group name when <i>SourceType</i> is
-        /// <c>cluster-parameter-group</c>.</li> <li>Specify a cluster snapshot identifier when <i>SourceType</i> is <c>cluster-snapshot</c>.</li> </ul>
-        ///  
-        /// </summary>
-        public string SourceIdentifier
-        {
-            get { return this.sourceIdentifier; }
-            set { this.sourceIdentifier = value; }
-        }
-
-        /// <summary>
-        /// Sets the SourceIdentifier property
-        /// </summary>
-        /// <param name="sourceIdentifier">The value to set for the SourceIdentifier property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribeEventsRequest WithSourceIdentifier(string sourceIdentifier)
-        {
-            this.sourceIdentifier = sourceIdentifier;
-            return this;
-        }
-            
-
-        // Check to see if SourceIdentifier property is set
-        internal bool IsSetSourceIdentifier()
-        {
-            return this.sourceIdentifier != null;
-        }
-
-        /// <summary>
-        /// The event source to retrieve events for. If no value is specified, all events are returned. Constraints: If <i>SourceType</i> is supplied,
-        /// <i>SourceIdentifier</i> must also be provided. <ul> <li>Specify <c>cluster</c> when <i>SourceIdentifier</i> is a cluster identifier.</li>
-        /// <li>Specify <c>cluster-security-group</c> when <i>SourceIdentifier</i> is a cluster security group name.</li> <li>Specify
-        /// <c>cluster-parameter-group</c> when <i>SourceIdentifier</i> is a cluster parameter group name.</li> <li>Specify <c>cluster-snapshot</c> when
-        /// <i>SourceIdentifier</i> is a cluster snapshot identifier.</li> </ul>
-        ///  
+        /// Gets and sets the property Duration. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot</description>
-        ///     </item>
-        /// </list>
+        ///             The number of minutes prior to the time of the request for which to retrieve
+        /// events.         For example, if the request is sent at 18:00 and you specify a duration
+        /// of 60,        then only events which have occurred after 17:00 will be returned. 
+        ///       
         /// </para>
-        /// </summary>
-        public string SourceType
-        {
-            get { return this.sourceType; }
-            set { this.sourceType = value; }
-        }
-
-        /// <summary>
-        /// Sets the SourceType property
-        /// </summary>
-        /// <param name="sourceType">The value to set for the SourceType property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribeEventsRequest WithSourceType(string sourceType)
-        {
-            this.sourceType = sourceType;
-            return this;
-        }
-            
-
-        // Check to see if SourceType property is set
-        internal bool IsSetSourceType()
-        {
-            return this.sourceType != null;
-        }
-
-        /// <summary>
-        /// The beginning of the time interval to retrieve events for, specified in ISO 8601 format. For more information about ISO 8601, go to the <a
-        /// href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> Example: <c>2009-07-08T18:00Z</c>
-        ///  
-        /// </summary>
-        public DateTime StartTime
-        {
-            get { return this.startTime ?? default(DateTime); }
-            set { this.startTime = value; }
-        }
-
-        /// <summary>
-        /// Sets the StartTime property
-        /// </summary>
-        /// <param name="startTime">The value to set for the StartTime property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribeEventsRequest WithStartTime(DateTime startTime)
-        {
-            this.startTime = startTime;
-            return this;
-        }
-            
-
-        // Check to see if StartTime property is set
-        internal bool IsSetStartTime()
-        {
-            return this.startTime.HasValue;
-        }
-
-        /// <summary>
-        /// The end of the time interval for which to retrieve events, specified in ISO 8601 format. For more information about ISO 8601, go to the <a
-        /// href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> Example: <c>2009-07-08T18:00Z</c>
-        ///  
-        /// </summary>
-        public DateTime EndTime
-        {
-            get { return this.endTime ?? default(DateTime); }
-            set { this.endTime = value; }
-        }
-
-        /// <summary>
-        /// Sets the EndTime property
-        /// </summary>
-        /// <param name="endTime">The value to set for the EndTime property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribeEventsRequest WithEndTime(DateTime endTime)
-        {
-            this.endTime = endTime;
-            return this;
-        }
-            
-
-        // Check to see if EndTime property is set
-        internal bool IsSetEndTime()
-        {
-            return this.endTime.HasValue;
-        }
-
-        /// <summary>
-        /// The number of minutes prior to the time of the request for which to retrieve events. For example, if the request is sent at 18:00 and you
-        /// specify a duration of 60, then only events which have occurred after 17:00 will be returned. Default: <c>60</c>
-        ///  
+        ///         
+        /// <para>
+        /// Default: <code>60</code>
+        /// </para>
         /// </summary>
         public int Duration
         {
-            get { return this.duration ?? default(int); }
-            set { this.duration = value; }
+            get { return this._duration.GetValueOrDefault(); }
+            set { this._duration = value; }
         }
+
 
         /// <summary>
         /// Sets the Duration property
@@ -194,59 +69,72 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEventsRequest WithDuration(int duration)
         {
-            this.duration = duration;
+            this._duration = duration;
             return this;
         }
-            
 
         // Check to see if Duration property is set
         internal bool IsSetDuration()
         {
-            return this.duration.HasValue;
+            return this._duration.HasValue; 
         }
 
+
         /// <summary>
-        /// The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified
-        /// <c>MaxRecords</c> value, a value is returned in a <c>marker</c> field of the response. You can retrieve the next set of records by retrying
-        /// the command with the returned marker value. Default: <c>100</c> Constraints: minimum 20, maximum 100.
-        ///  
+        /// Gets and sets the property EndTime. 
+        /// <para>
+        ///         The end of the time interval for which to retrieve events,        specified
+        /// in ISO 8601 format. For more information about ISO 8601,         go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601
+        /// Wikipedia page.</a>        
+        /// </para>
+        ///         
+        /// <para>
+        /// Example: <code>2009-07-08T18:00Z</code>
+        /// </para>
         /// </summary>
-        public int MaxRecords
+        public DateTime EndTime
         {
-            get { return this.maxRecords ?? default(int); }
-            set { this.maxRecords = value; }
+            get { return this._endTime.GetValueOrDefault(); }
+            set { this._endTime = value; }
         }
 
+
         /// <summary>
-        /// Sets the MaxRecords property
+        /// Sets the EndTime property
         /// </summary>
-        /// <param name="maxRecords">The value to set for the MaxRecords property </param>
+        /// <param name="endTime">The value to set for the EndTime property </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DescribeEventsRequest WithMaxRecords(int maxRecords)
+        public DescribeEventsRequest WithEndTime(DateTime endTime)
         {
-            this.maxRecords = maxRecords;
+            this._endTime = endTime;
             return this;
         }
-            
 
-        // Check to see if MaxRecords property is set
-        internal bool IsSetMaxRecords()
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
         {
-            return this.maxRecords.HasValue;
+            return this._endTime.HasValue; 
         }
 
+
         /// <summary>
-        /// An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeEvents</a>
-        /// request exceed the value specified in <c>MaxRecords</c>, AWS returns a value in the <c>Marker</c> field of the response. You can retrieve
-        /// the next set of response records by providing the returned marker value in the <c>Marker</c> parameter and retrying the request.
-        ///  
+        /// Gets and sets the property Marker. 
+        /// <para>
+        ///             An optional parameter that specifies the starting point to return a set
+        /// of response records.             When the results of a <a>DescribeEvents</a> request
+        /// exceed the value specified in <code>MaxRecords</code>,             AWS returns a value
+        /// in the <code>Marker</code> field of the response. You can retrieve the next set of
+        ///             response records by providing the returned marker value in the <code>Marker</code>
+        /// parameter and             retrying the request.        
+        /// </para>
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
+
 
         /// <summary>
         /// Sets the Marker property
@@ -256,16 +144,192 @@ namespace Amazon.Redshift.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEventsRequest WithMarker(string marker)
         {
-            this.marker = marker;
+            this._marker = marker;
             return this;
         }
-            
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property MaxRecords. 
+        /// <para>
+        ///             The maximum number of response records to return in each call.       
+        ///      If the number of remaining response records exceeds the specified <code>MaxRecords</code>
+        /// value,             a value is returned in a <code>marker</code> field of the response.
+        ///             You can retrieve the next set of records by retrying the command with
+        /// the returned marker value.        
+        /// </para>
+        ///         
+        /// <para>
+        /// Default: <code>100</code>
+        /// </para>
+        ///         
+        /// <para>
+        /// Constraints: minimum 20, maximum 100.
+        /// </para>
+        /// </summary>
+        public int MaxRecords
+        {
+            get { return this._maxRecords.GetValueOrDefault(); }
+            set { this._maxRecords = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the MaxRecords property
+        /// </summary>
+        /// <param name="maxRecords">The value to set for the MaxRecords property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeEventsRequest WithMaxRecords(int maxRecords)
+        {
+            this._maxRecords = maxRecords;
+            return this;
+        }
+
+        // Check to see if MaxRecords property is set
+        internal bool IsSetMaxRecords()
+        {
+            return this._maxRecords.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SourceIdentifier. 
+        /// <para>
+        ///         The identifier of the event source for which events        will be returned.
+        /// If this parameter is not specified,        then all sources are included in the response.
+        ///        
+        /// </para>
+        ///         
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///         
+        /// <para>
+        /// If <i>SourceIdentifier</i> is supplied, <i>SourceType</i> must also be provided.
+        /// </para>
+        ///         <ul>            <li>Specify a cluster identifier when <i>SourceType</i> is
+        /// <code>cluster</code>.</li>            <li>Specify a cluster security group name when
+        /// <i>SourceType</i> is <code>cluster-security-group</code>.</li>            <li>Specify
+        /// a cluster parameter group name when <i>SourceType</i> is <code>cluster-parameter-group</code>.</li>
+        ///            <li>Specify a cluster snapshot identifier when <i>SourceType</i> is <code>cluster-snapshot</code>.</li>
+        ///        </ul>
+        /// </summary>
+        public string SourceIdentifier
+        {
+            get { return this._sourceIdentifier; }
+            set { this._sourceIdentifier = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the SourceIdentifier property
+        /// </summary>
+        /// <param name="sourceIdentifier">The value to set for the SourceIdentifier property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeEventsRequest WithSourceIdentifier(string sourceIdentifier)
+        {
+            this._sourceIdentifier = sourceIdentifier;
+            return this;
+        }
+
+        // Check to see if SourceIdentifier property is set
+        internal bool IsSetSourceIdentifier()
+        {
+            return this._sourceIdentifier != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SourceType. 
+        /// <para>
+        ///         The event source to retrieve events for.        If no value is specified,
+        /// all events are returned.        
+        /// </para>
+        ///         
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///         
+        /// <para>
+        /// If <i>SourceType</i> is supplied, <i>SourceIdentifier</i> must also be provided.
+        /// </para>
+        ///         <ul>            <li>Specify <code>cluster</code> when <i>SourceIdentifier</i>
+        /// is a cluster identifier.</li>            <li>Specify <code>cluster-security-group</code>
+        /// when <i>SourceIdentifier</i> is a cluster security group name.</li>            <li>Specify
+        /// <code>cluster-parameter-group</code> when <i>SourceIdentifier</i> is a cluster parameter
+        /// group name.</li>            <li>Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i>
+        /// is a cluster snapshot identifier.</li>        </ul>
+        /// </summary>
+        public string SourceType
+        {
+            get { return this._sourceType; }
+            set { this._sourceType = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the SourceType property
+        /// </summary>
+        /// <param name="sourceType">The value to set for the SourceType property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeEventsRequest WithSourceType(string sourceType)
+        {
+            this._sourceType = sourceType;
+            return this;
+        }
+
+        // Check to see if SourceType property is set
+        internal bool IsSetSourceType()
+        {
+            return this._sourceType != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        ///         The beginning of the time interval to retrieve events for,        specified
+        /// in ISO 8601 format. For more information about ISO 8601,         go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601
+        /// Wikipedia page.</a>        
+        /// </para>
+        ///         
+        /// <para>
+        /// Example: <code>2009-07-08T18:00Z</code>
+        /// </para>
+        /// </summary>
+        public DateTime StartTime
+        {
+            get { return this._startTime.GetValueOrDefault(); }
+            set { this._startTime = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the StartTime property
+        /// </summary>
+        /// <param name="startTime">The value to set for the StartTime property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeEventsRequest WithStartTime(DateTime startTime)
+        {
+            this._startTime = startTime;
+            return this;
+        }
+
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
+        {
+            return this._startTime.HasValue; 
+        }
+
     }
 }
-    
