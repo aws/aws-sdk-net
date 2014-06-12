@@ -42,7 +42,7 @@ namespace Amazon.SessionProvider
     /// <code>
     /// &lt;sessionState 
     ///   mode="Custom" 
-    ///   customProvider="DynamoDBSessionStoreProvider"gt;
+    ///   customProvider="DynamoDBSessionStoreProvider"&gt;
     ///   &lt;providers&gt;
     ///     &lt;add name="DynamoDBSessionStoreProvider" 
     ///          type="Amazon.SessionProvider.DynamoDBSessionStateStore"
@@ -50,6 +50,7 @@ namespace Amazon.SessionProvider
     ///          AWSProfilesLocation=".aws/credentials"
     ///          Region="us-east-1"
     ///          Table="ASP.NET_SessionState"
+    ///          Shard="true"
     ///          /&gt;
     ///   &lt;/providers&gt;
     /// &lt;/sessionState&gt;
@@ -99,6 +100,10 @@ namespace Amazon.SessionProvider
     ///         <term>CreateIfNotExist</term>
     ///         <description>Optional boolean attribute. CreateIfNotExist controls whether the table will be auto created if it doesn't exist. Default is true.</description>
     ///     </item>
+    ///     <item>
+    ///         <term>Shard</term>
+    ///         <description>Optional boolean attribute. Shard controls whether the session will be auto-split into chunks less than 64K, allowing large sessions. Default is true.</description>
+    ///     </item>
     /// </list>
     /// </para>
     /// </summary>
@@ -107,6 +112,7 @@ namespace Amazon.SessionProvider
         private const string CURRENT_RECORD_FORMAT_VERSION = "1";
         private const int DESCRIBE_INTERVAL = 5000;
         private const string ACTIVE_STATUS = "Active";
+        private const int SHARD_SIZE = 1024 * 45; // Kilobytes... Base64 encoding inflates by ceiling(n/3)*4 so 45KBytes stays just below the 64K DynamoDB limit
 
         private static readonly GetItemOperationConfig CONSISTENT_READ_GET = new GetItemOperationConfig();
         private static readonly UpdateItemOperationConfig LOCK_UPDATE_CONFIG = new UpdateItemOperationConfig();
@@ -131,10 +137,15 @@ namespace Amazon.SessionProvider
         public const string CONFIG_INITIAL_READ_UNITS = "ReadCapacityUnits";
         public const string CONFIG_INITIAL_WRITE_UNITS = "WriteCapacityUnits";
         public const string CONFIG_CREATE_TABLE_IF_NOT_EXIST = "CreateIfNotExist";
+        public const string CONFIG_SHARD = "Shard";
 
         // This is not const because we will use whatever is the hash key defined for 
         // the table as long as it is a string.
         private static string ATTRIBUTE_SESSION_ID = "SessionId";
+
+        // This is not const because we will use whatever is the range key defined for 
+        // the table as long as it is a int.
+        private static string ATTRIBUTE_SEQUENCE_ID = "sid";
 
         // The attribute names stored for the session record.
         public const string ATTRIBUTE_CREATE_DATE = "CreateDate";
@@ -159,6 +170,7 @@ namespace Amazon.SessionProvider
         int _initialReadUnits = 10;
         int _initialWriteUnits = 5;
         bool _createIfNotExist = true;
+        bool _shard = true;
 
         IAmazonDynamoDB _ddbClient;
         Table _table;
@@ -214,7 +226,6 @@ namespace Amazon.SessionProvider
 
             GetConfigSettings(config);
 
-
             var region = RegionEndpoint.GetBySystemName(this._regionName);
 
             AWSCredentials credentials = null;
@@ -267,7 +278,7 @@ namespace Amazon.SessionProvider
         {
             this._accessKey = config[CONFIG_ACCESSKEY];
             this._secretKey = config[CONFIG_SECRETKEY];
-            this._profileName= config[CONFIG_PROFILENAME];
+            this._profileName = config[CONFIG_PROFILENAME];
             this._profilesLocation = config[CONFIG_PROFILESLOCATION];
             this._regionName = config[CONFIG_REGION];
 
@@ -289,6 +300,11 @@ namespace Amazon.SessionProvider
             if (!string.IsNullOrEmpty(config[CONFIG_CREATE_TABLE_IF_NOT_EXIST]))
             {
                 this._createIfNotExist = bool.Parse(config[CONFIG_CREATE_TABLE_IF_NOT_EXIST]);
+            }
+
+            if (!string.IsNullOrEmpty(config[CONFIG_SHARD]))
+            {
+                this._shard = bool.Parse(config[CONFIG_SHARD]);
             }
 
             if (!string.IsNullOrEmpty(config[CONFIG_INITIAL_READ_UNITS]))
@@ -400,19 +416,20 @@ namespace Amazon.SessionProvider
 
             DateTime newLockedDate = DateTime.Now;
 
+            Document doc = null;
 
-            Document session = null;
             if (lockRecord)
             {
                 Document lockDoc = new Document();
                 lockDoc[ATTRIBUTE_SESSION_ID] = GetHashKey(sessionId);
                 lockDoc[ATTRIBUTE_LOCK_ID] = lockId.ToString();
+                lockDoc[ATTRIBUTE_SEQUENCE_ID] = 0;
                 lockDoc[ATTRIBUTE_LOCKED] = true;
                 lockDoc[ATTRIBUTE_LOCK_DATE] = DateTime.Now;
 
                 try
                 {
-                    session = this._table.UpdateItem(lockDoc, LOCK_UPDATE_CONFIG);
+                    doc = this._table.UpdateItem(lockDoc, LOCK_UPDATE_CONFIG);
                     locked = false;
                 }
                 catch (ConditionalCheckFailedException)
@@ -422,19 +439,19 @@ namespace Amazon.SessionProvider
                 }
             }
 
-            if (session == null)
+            if (doc == null)
             {
-                session = this._table.GetItem(GetHashKey(sessionId), CONSISTENT_READ_GET);
-                if (session == null && lockRecord)
+                doc = this._table.GetItem(GetHashKey(sessionId), 0, CONSISTENT_READ_GET);
+                if (doc == null && lockRecord)
                 {
                     locked = true;
                 }
             }
 
-            string serializedItems = null;
-            if (session != null)
+            List<string> serializedItems = new List<string>();
+            if (doc != null)
             {
-                DateTime expire = (DateTime)session[ATTRIBUTE_EXPIRES];
+                DateTime expire = (DateTime)doc[ATTRIBUTE_EXPIRES];
 
                 if (expire < DateTime.Now)
                 {
@@ -445,23 +462,44 @@ namespace Amazon.SessionProvider
                 {
                     foundRecord = true;
 
-                    DynamoDBEntry entry;
-                    if (session.TryGetValue(ATTRIBUTE_SESSION_ITEMS, out entry))
+                    DynamoDBEntry rootEntry;
+                    if (doc.TryGetValue(ATTRIBUTE_SESSION_ITEMS, out rootEntry))
                     {
-                        serializedItems = (string)entry;
+                        serializedItems.Add((string)rootEntry);
                     }
 
-                    if (session.Contains(ATTRIBUTE_LOCK_ID))
-                        lockId = (string)session[ATTRIBUTE_LOCK_ID];
+                    if (doc.Contains(ATTRIBUTE_LOCK_ID))
+                        lockId = (string)doc[ATTRIBUTE_LOCK_ID];
 
 
-                    if (session.Contains(ATTRIBUTE_FLAGS))
-                        actionFlags = (SessionStateActions)((int)session[ATTRIBUTE_FLAGS]);
+                    if (doc.Contains(ATTRIBUTE_FLAGS))
+                        actionFlags = (SessionStateActions)((int)doc[ATTRIBUTE_FLAGS]);
 
-                    if (session[ATTRIBUTE_LOCK_DATE] != null)
+                    if (doc[ATTRIBUTE_LOCK_DATE] != null)
                     {
-                        DateTime lockDate = (DateTime)session[ATTRIBUTE_LOCK_DATE];
+                        DateTime lockDate = (DateTime)doc[ATTRIBUTE_LOCK_DATE];
                         lockAge = DateTime.Now.Subtract(lockDate);
+                    }
+
+                    if (_shard)
+                    {
+                        Search search = SearchShards(sessionId);
+
+                        do
+                        {
+                            List<Document> page = search.GetNextSet();
+                            foreach (var shard in page)
+                            {
+                                string hash = shard[ATTRIBUTE_SESSION_ID];
+                                int range = int.Parse(shard[ATTRIBUTE_SEQUENCE_ID]);
+                                var child = this._table.GetItem(hash, range, CONSISTENT_READ_GET);
+                                DynamoDBEntry childEntry;
+                                if (child.TryGetValue(ATTRIBUTE_SESSION_ITEMS, out childEntry))
+                                {
+                                    serializedItems.Add((string)childEntry);
+                                }
+                            }
+                        } while (!search.IsDone);
                     }
                 }
             }
@@ -493,7 +531,7 @@ namespace Amazon.SessionProvider
                 }
                 else
                 {
-                    item = deserialize(context, serializedItems, (int)this._timeout.TotalMinutes);
+                    item = deserialize(context, serializedItems.ToArray(), (int)this._timeout.TotalMinutes);
                 }
             }
 
@@ -514,35 +552,40 @@ namespace Amazon.SessionProvider
                                                          object lockId,
                                                          bool newItem)
         {
-            string serialized = serialize(item.Items as SessionStateItemCollection);
+            string[] serialized = serialize(item.Items as SessionStateItemCollection);
 
-            Document newValues = new Document();
-            newValues[ATTRIBUTE_SESSION_ID] = GetHashKey(sessionId);
-            newValues[ATTRIBUTE_LOCKED] = false;
-            newValues[ATTRIBUTE_LOCK_ID] = null;
-            newValues[ATTRIBUTE_LOCK_DATE] = DateTime.Now;
-            newValues[ATTRIBUTE_EXPIRES] = DateTime.Now.Add(this._timeout);
-            newValues[ATTRIBUTE_FLAGS] = 0;
-            newValues[ATTRIBUTE_SESSION_ITEMS] = serialized;
-            newValues[ATTRIBUTE_RECORD_FORMAT_VERSION] = CURRENT_RECORD_FORMAT_VERSION;
+            Document root = new Document();
+            root[ATTRIBUTE_SESSION_ID] = GetHashKey(sessionId);
+            root[ATTRIBUTE_LOCKED] = false;
+            root[ATTRIBUTE_LOCK_ID] = null;
+            root[ATTRIBUTE_LOCK_DATE] = DateTime.Now;
+            root[ATTRIBUTE_EXPIRES] = DateTime.Now.Add(this._timeout);
+            root[ATTRIBUTE_FLAGS] = 0;
+            root[ATTRIBUTE_SEQUENCE_ID] = 0;
+            root[ATTRIBUTE_RECORD_FORMAT_VERSION] = CURRENT_RECORD_FORMAT_VERSION;
 
-            if (newItem)
-            {
-                newValues[ATTRIBUTE_CREATE_DATE] = DateTime.Now;
-                this._table.PutItem(newValues);
-            }
-            else
+            if (!newItem)
             {
                 Document expected = new Document();
                 expected[ATTRIBUTE_LOCK_ID] = lockId.ToString();
 
-                // Not really any reason the condition should fail unless we get in some sort of weird
-                // app pool reset mode.
-                try
+                this._table.DeleteItem(GetHashKey(sessionId), 0, new DeleteItemOperationConfig() { Expected = expected });
+            }
+
+            root[ATTRIBUTE_CREATE_DATE] = DateTime.Now;
+            root[ATTRIBUTE_SESSION_ITEMS] = serialized.Length > 0 ? serialized[0] : null;
+            this._table.PutItem(root);
+
+            if (_shard)
+            {
+                Document shard = new Document();
+                shard[ATTRIBUTE_SESSION_ID] = root[ATTRIBUTE_SESSION_ID];
+                for (int sid = 1; sid < serialized.Length; sid++)
                 {
-                    this._table.UpdateItem(newValues, new UpdateItemOperationConfig() { Expected = expected });
+                    shard[ATTRIBUTE_SEQUENCE_ID] = sid;
+                    shard[ATTRIBUTE_SESSION_ITEMS] = serialized[sid];
+                    this._table.PutItem(shard);
                 }
-                catch (ConditionalCheckFailedException) { }
             }
         }
 
@@ -554,7 +597,7 @@ namespace Amazon.SessionProvider
         /// <param name="lockId">The lock identifier for the current request.</param>
         public override void ReleaseItemExclusive(HttpContext context, string sessionId, object lockId)
         {
-            Document doc = this._table.GetItem(GetHashKey(sessionId));
+            Document doc = this._table.GetItem(GetHashKey(sessionId), 0);
             doc[ATTRIBUTE_LOCKED] = false;
             doc[ATTRIBUTE_EXPIRES] = DateTime.Now.Add(this._timeout);
 
@@ -583,7 +626,7 @@ namespace Amazon.SessionProvider
             }
             else
             {
-                Document doc = this._table.GetItem(GetHashKey(sessionId), CONSISTENT_READ_GET);
+                Document doc = this._table.GetItem(GetHashKey(sessionId), 0, CONSISTENT_READ_GET);
                 if (doc.Contains(ATTRIBUTE_LOCK_ID))
                 {
                     string currentLockId = (string)doc[ATTRIBUTE_LOCK_ID];
@@ -610,6 +653,7 @@ namespace Amazon.SessionProvider
             session[ATTRIBUTE_EXPIRES] = DateTime.Now.Add(this._timeout);
             session[ATTRIBUTE_FLAGS] = 1;
             session[ATTRIBUTE_RECORD_FORMAT_VERSION] = CURRENT_RECORD_FORMAT_VERSION;
+            session[ATTRIBUTE_SEQUENCE_ID] = 0;
             this._table.PutItem(session);
         }
 
@@ -636,8 +680,10 @@ namespace Amazon.SessionProvider
         {
             Document doc = new Document();
             doc[ATTRIBUTE_SESSION_ID] = GetHashKey(sessionId);
+            doc[ATTRIBUTE_SEQUENCE_ID] = 0;
             doc[ATTRIBUTE_LOCKED] = false;
             doc[ATTRIBUTE_EXPIRES] = DateTime.Now.Add(this._timeout);
+
             this._table.UpdateItem(doc);
         }
 
@@ -663,12 +709,12 @@ namespace Amazon.SessionProvider
         {
             Table table = Table.LoadTable(dbClient, tableName, Table.DynamoDBConsumer.SessionStateProvider);
 
-
             ScanFilter filter = new ScanFilter();
             filter.AddCondition(ATTRIBUTE_EXPIRES, ScanOperator.LessThan, DateTime.Now);
+            filter.AddCondition(ATTRIBUTE_EXPIRES, ScanOperator.IsNull);
 
             ScanOperationConfig config = new ScanOperationConfig();
-            config.AttributesToGet = new List<string> { ATTRIBUTE_SESSION_ID };
+            config.AttributesToGet = new List<string> { ATTRIBUTE_SESSION_ID, ATTRIBUTE_SEQUENCE_ID };
             config.Select = SelectValues.SpecificAttributes;
             config.Filter = filter;
 
@@ -710,7 +756,6 @@ namespace Amazon.SessionProvider
         {
         }
 
-
         private Table CreateTable()
         {
             CreateTableRequest createRequest = new CreateTableRequest
@@ -721,6 +766,10 @@ namespace Amazon.SessionProvider
                     new KeySchemaElement
                     {
                         AttributeName = ATTRIBUTE_SESSION_ID, KeyType = "HASH"
+                    },
+                    new KeySchemaElement
+                    {
+                        AttributeName = ATTRIBUTE_SEQUENCE_ID, KeyType = "RANGE"
                     }
                 },
                 AttributeDefinitions = new List<AttributeDefinition>
@@ -728,6 +777,10 @@ namespace Amazon.SessionProvider
                     new AttributeDefinition
                     {
                         AttributeName = ATTRIBUTE_SESSION_ID, AttributeType = "S"
+                    },
+                    new AttributeDefinition
+                    {
+                        AttributeName = ATTRIBUTE_SEQUENCE_ID, AttributeType = "N"
                     }
                 },
                 ProvisionedThroughput = new ProvisionedThroughput
@@ -773,21 +826,50 @@ namespace Amazon.SessionProvider
             KeyDescription hashKeyDescription = this._table.Keys[hashKey];
             if (hashKeyDescription.Type != DynamoDBEntryType.String)
                 throw new AmazonDynamoDBException(string.Format("Table {0} cannot be used to store session data because hash key is not a string.", this._tableName));
+            ATTRIBUTE_SESSION_ID = hashKey;
 
-            if (this._table.RangeKeys.Count > 0)
+            if (!_shard && this._table.RangeKeys.Count > 0)
                 throw new AmazonDynamoDBException(string.Format("Table {0} cannot be used to store session data because it contains a range key in its schema.", this._tableName));
 
-            ATTRIBUTE_SESSION_ID = hashKey;
+            if (_shard && this._table.RangeKeys.Count != 1)
+                throw new AmazonDynamoDBException(string.Format("Table {0} cannot be used to store session data because it does not define a single range key", this._tableName));
+            if (_shard)
+            {
+                string rangeKey = this._table.RangeKeys[0];
+                KeyDescription rangeKeyDescription = this._table.Keys[rangeKey];
+                if (rangeKeyDescription.Type != DynamoDBEntryType.Numeric)
+                    throw new AmazonDynamoDBException(string.Format("Table {0} cannot be used to store session data because range key is not an int.", this._tableName));
+                ATTRIBUTE_SEQUENCE_ID = rangeKey;
+            }
         }
 
         private void deleteItem(string sessionId)
         {
+            DocumentBatchWrite batchWrite = this._table.CreateBatchWrite();
+
             Document doc = new Document();
             doc[ATTRIBUTE_SESSION_ID] = GetHashKey(sessionId);
-            this._table.DeleteItem(doc);
+            doc[ATTRIBUTE_SEQUENCE_ID] = 0;
+            batchWrite.AddItemToDelete(doc);
+
+            if (_shard)
+            {
+                Search search = SearchShards(sessionId);
+
+                do
+                {
+                    List<Document> page = search.GetNextSet();
+                    foreach (var shard in page)
+                    {
+                        batchWrite.AddItemToDelete(shard);
+                    }
+                } while (!search.IsDone);
+            }
+
+            batchWrite.Execute();
         }
 
-        private string serialize(SessionStateItemCollection items)
+        private string[] serialize(SessionStateItemCollection items)
         {
             MemoryStream ms = new MemoryStream();
             BinaryWriter writer = new BinaryWriter(ms);
@@ -797,17 +879,44 @@ namespace Amazon.SessionProvider
 
             writer.Close();
 
-            return Convert.ToBase64String(ms.ToArray());
+            byte[] raw = ms.ToArray();
+
+            ms.Close();
+
+            List<string> parts = new List<string>();
+            byte[] segment;
+
+            int scount = (raw.Length / SHARD_SIZE);
+            int tcount = raw.Length - (scount * SHARD_SIZE);
+
+            for (int pos = 0; pos < scount; pos++)
+            {
+                segment = new byte[SHARD_SIZE];
+                int startIndex = pos * SHARD_SIZE;
+                Buffer.BlockCopy(raw, pos * SHARD_SIZE, segment, 0, SHARD_SIZE);
+                parts.Add(Convert.ToBase64String(segment));
+            }
+            segment = new byte[tcount];
+            Buffer.BlockCopy(raw, scount * SHARD_SIZE, segment, 0, tcount);
+            parts.Add(Convert.ToBase64String(segment));
+
+            return parts.ToArray();
         }
 
-        private SessionStateStoreData deserialize(HttpContext context, string serializedItems, int timeout)
+        private SessionStateStoreData deserialize(HttpContext context, string[] serializedItems, int timeout)
         {
+
             SessionStateItemCollection sessionItems = new SessionStateItemCollection();
             if (serializedItems != null)
             {
-                MemoryStream ms =
-                  new MemoryStream(Convert.FromBase64String(serializedItems));
+                MemoryStream ms = new MemoryStream();
 
+                foreach (string s in serializedItems)
+                {
+                    byte[] segment = Convert.FromBase64String(s);
+                    ms.Write(segment, 0, segment.Length);
+                }
+                ms.Position = 0L; // reset stream to start for reading
                 if (ms.Length > 0)
                 {
                     BinaryReader reader = new BinaryReader(ms);
@@ -842,6 +951,22 @@ namespace Amazon.SessionProvider
                 string currentUserAgent = wsArgs.Headers[AWSSDKUtils.UserAgentHeader];
                 wsArgs.Headers[AWSSDKUtils.UserAgentHeader] = currentUserAgent + " SessionStateProvider";
             }
+        }
+
+        private Search SearchShards(string sessionId)
+        {
+            QueryFilter filter = new QueryFilter();
+            filter.AddCondition(ATTRIBUTE_SEQUENCE_ID, QueryOperator.GreaterThan, 0);
+            filter.AddCondition(ATTRIBUTE_SESSION_ID, QueryOperator.Equal, GetHashKey(sessionId));
+
+            QueryOperationConfig config = new QueryOperationConfig();
+            config.AttributesToGet = new List<string> { ATTRIBUTE_SESSION_ID, ATTRIBUTE_SEQUENCE_ID };
+            config.Select = SelectValues.SpecificAttributes;
+            config.Filter = filter;
+
+            Search search = this._table.Query(config);
+
+            return search;
         }
     }
 }
