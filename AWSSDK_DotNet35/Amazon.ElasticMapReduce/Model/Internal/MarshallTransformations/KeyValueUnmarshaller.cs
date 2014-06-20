@@ -12,60 +12,70 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.ElasticMapReduce.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+using Amazon.ElasticMapReduce.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for KeyValue Object
+    /// </summary>  
+    public class KeyValueUnmarshaller : IUnmarshaller<KeyValue, XmlUnmarshallerContext>, IUnmarshaller<KeyValue, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// KeyValueUnmarshaller
-      /// </summary>
-      internal class KeyValueUnmarshaller : IUnmarshaller<KeyValue, XmlUnmarshallerContext>, IUnmarshaller<KeyValue, JsonUnmarshallerContext>
-      {
         KeyValue IUnmarshaller<KeyValue, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public KeyValue Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            KeyValue keyValue = new KeyValue();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            KeyValue unmarshalledObject = new KeyValue();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("Key", targetDepth))
-              {
-                keyValue.Key = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Value", targetDepth))
-              {
-                keyValue.Value = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("Key", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Key = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Value", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return keyValue;
+            return unmarshalledObject;
         }
 
-        private static KeyValueUnmarshaller instance;
-        public static KeyValueUnmarshaller GetInstance()
+
+        private static KeyValueUnmarshaller _instance = new KeyValueUnmarshaller();        
+
+        public static KeyValueUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new KeyValueUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

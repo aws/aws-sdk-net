@@ -177,14 +177,15 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The volume type.
+        /// The volume type. This can be <c>gp2</c> for General Purpose (SSD) volumes, <c>io1</c> for Provisioned IOPS (SSD) volumes, or <c>standard</c>
+        /// for Magnetic volumes.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>standard, io1</description>
+        ///         <description>standard, io1, gp2</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -218,7 +219,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// If true the volume is encrypted.
+        /// Indicates whether the volume is encrypted.
+        ///  
         /// </summary>
         public bool Encrypted
         {

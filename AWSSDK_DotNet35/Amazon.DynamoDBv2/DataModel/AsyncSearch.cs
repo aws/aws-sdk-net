@@ -26,10 +26,11 @@ namespace Amazon.DynamoDBv2.DataModel
     {
         #region Constructor
 
-        internal AsyncSearch(DynamoDBContext source, Search documentSearch)
+        internal AsyncSearch(DynamoDBContext source, DynamoDBContext.ContextSearch contextSearch)
         {
             SourceContext = source;
-            DocumentSearch = documentSearch;
+            DocumentSearch = contextSearch.Search;
+            Config = contextSearch.FlatConfig;
         }
 
         #endregion
@@ -38,6 +39,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         private Search DocumentSearch { get; set; }
         private DynamoDBContext SourceContext { get; set; }
+        private DynamoDBFlatConfig Config { get; set; }
 
         #endregion
 

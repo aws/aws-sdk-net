@@ -207,6 +207,11 @@ namespace Amazon.EC2.Model
         {
             return this.tags.Count > 0;
         }
+
+        /// <summary>
+        /// Indicates whether the snapshot is encrypted.
+        ///  
+        /// </summary>
         public bool Encrypted
         {
             get { return this.encrypted ?? default(bool); }

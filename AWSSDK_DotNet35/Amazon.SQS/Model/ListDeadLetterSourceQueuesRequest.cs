@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,7 +24,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
+    /// Container for the parameters to the ListDeadLetterSourceQueues operation.
+    /// Returns a list of your queues that have the RedrivePolicy queue attribute configured
+    /// with a dead letter queue.
     /// 
+    ///             
+    /// <para>
+    /// For more information about using dead letter queues, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
+    /// Amazon SQS Dead Letter Queues</a>.
+    /// </para>
     /// </summary>
     public partial class ListDeadLetterSourceQueuesRequest : AmazonSQSRequest
     {

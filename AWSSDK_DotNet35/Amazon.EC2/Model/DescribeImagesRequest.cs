@@ -93,7 +93,7 @@ namespace Amazon.EC2.Model
         /// termination. </li> <li> <c>block-device-mapping.device-name</c> - The device name for the Amazon EBS volume (for example, <c>/dev/sdh</c>).
         /// </li> <li> <c>block-device-mapping.snapshot-id</c> - The ID of the snapshot used for the Amazon EBS volume. </li> <li>
         /// <c>block-device-mapping.volume-size</c> - The volume size of the Amazon EBS volume, in GiB. </li> <li>
-        /// <c>block-device-mapping.volume-type</c> - The volume type of the Amazon EBS volume (<c>standard</c> | <c>io1</c>). </li> <li>
+        /// <c>block-device-mapping.volume-type</c> - The volume type of the Amazon EBS volume (<c>gp2</c> | <c>standard</c> | <c>io1</c>). </li> <li>
         /// <c>description</c> - The description of the image (provided during image creation). </li> <li> <c>hypervisor</c> - The hypervisor type
         /// (<c>ovm</c> | <c>xen</c>). </li> <li> <c>image-id</c> - The ID of the image. </li> <li> <c>image-type</c> - The image type (<c>machine</c> |
         /// <c>kernel</c> | <c>ramdisk</c>). </li> <li> <c>is-public</c> - A Boolean that indicates whether the image is public. </li> <li>

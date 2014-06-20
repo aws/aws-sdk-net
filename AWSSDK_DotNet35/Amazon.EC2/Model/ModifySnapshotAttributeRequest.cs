@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// 
+        /// The snapshot attribute to modify.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -82,7 +82,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// 
+        /// The type of operation to perform to the attribute.
         ///  
         /// </summary>
         public string OperationType
@@ -98,7 +98,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// 
+        /// The account ID to modify for the snapshot.
         ///  
         /// </summary>
         public List<string> UserIds
@@ -114,7 +114,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// 
+        /// The group to modify for the snapshot.
         ///  
         /// </summary>
         public List<string> GroupNames
@@ -130,7 +130,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// 
+        /// A JSON representation of the snapshot attribute modification.
         ///  
         /// </summary>
         public CreateVolumePermissionModifications CreateVolumePermission

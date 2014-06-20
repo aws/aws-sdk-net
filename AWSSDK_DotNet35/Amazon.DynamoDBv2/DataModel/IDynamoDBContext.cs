@@ -37,6 +37,15 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>Document with attributes populated from object.</returns>
         Document ToDocument<T>(T value);
 
+        /// <summary>
+        /// Serializes an object to a Document.
+        /// </summary>
+        /// <typeparam name="T">Type to serialize as.</typeparam>
+        /// <param name="value">Object to serialize.</param>
+        /// <param name="operationConfig">Config object which can be used to override the table used.</param>
+        /// <returns>Document with attributes populated from object.</returns>
+        Document ToDocument<T>(T value, DynamoDBOperationConfig operationConfig);
+
         #endregion
 
         #region Load/deserialize
@@ -50,6 +59,39 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Object of type T, populated with properties from the document.
         /// </returns>
         T FromDocument<T>(Document document);
+
+        /// <summary>
+        /// Deserializes a document to an instance of type T.
+        /// </summary>
+        /// <typeparam name="T">Type to populate.</typeparam>
+        /// <param name="document">Document with properties to use.</param>
+        /// <param name="operationConfig">Config object which can be used to override the table used.</param>
+        /// <returns>
+        /// Object of type T, populated with properties from the document.
+        /// </returns>
+        T FromDocument<T>(Document document, DynamoDBOperationConfig operationConfig);
+
+
+        /// <summary>
+        /// Deserializes a collections of documents to a collection of instances of type T.
+        /// </summary>
+        /// <typeparam name="T">Type to populate.</typeparam>
+        /// <param name="documents">Documents to deserialize.</param>
+        /// <returns>
+        /// Collection of items of type T, each populated with properties from a corresponding document.
+        /// </returns>
+        IEnumerable<T> FromDocuments<T>(IEnumerable<Document> documents);
+
+        /// <summary>
+        /// Deserializes a collections of documents to a collection of instances of type T.
+        /// </summary>
+        /// <typeparam name="T">Type to populate.</typeparam>
+        /// <param name="documents">Documents to deserialize.</param>
+        /// <param name="operationConfig">Config object which can be used to override the table used.</param>
+        /// <returns>
+        /// Collection of items of type T, each populated with properties from a corresponding document.
+        /// </returns>
+        IEnumerable<T> FromDocuments<T>(IEnumerable<Document> documents, DynamoDBOperationConfig operationConfig);
 
         #endregion
 

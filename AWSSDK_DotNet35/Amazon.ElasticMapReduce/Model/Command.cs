@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,65 +18,76 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para>An entity describing an executable that runs on a cluster.</para>
+    /// An entity describing an executable that runs on a cluster.
     /// </summary>
-    public class Command
+    public partial class Command
     {
-        
-        private string name;
-        private string scriptPath;
-        private List<string> args = new List<string>();
+        private List<string> _args = new List<string>();
+        private string _name;
+        private string _scriptPath;
 
 
         /// <summary>
-        /// The name of the command.
-        ///  
-        /// </summary>
-        public string Name
-        {
-            get { return this.name; }
-            set { this.name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this.name != null;
-        }
-
-        /// <summary>
-        /// The Amazon S3 location of the command script.
-        ///  
-        /// </summary>
-        public string ScriptPath
-        {
-            get { return this.scriptPath; }
-            set { this.scriptPath = value; }
-        }
-
-        // Check to see if ScriptPath property is set
-        internal bool IsSetScriptPath()
-        {
-            return this.scriptPath != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Args. 
+        /// <para>
         /// Arguments for Amazon EMR to pass to the command for execution.
-        ///  
+        /// </para>
         /// </summary>
         public List<string> Args
         {
-            get { return this.args; }
-            set { this.args = value; }
+            get { return this._args; }
+            set { this._args = value; }
         }
 
         // Check to see if Args property is set
         internal bool IsSetArgs()
         {
-            return this.args.Count > 0;
+            return this._args != null && this._args.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the command.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ScriptPath. 
+        /// <para>
+        /// The Amazon S3 location of the command script.
+        /// </para>
+        /// </summary>
+        public string ScriptPath
+        {
+            get { return this._scriptPath; }
+            set { this._scriptPath = value; }
+        }
+
+        // Check to see if ScriptPath property is set
+        internal bool IsSetScriptPath()
+        {
+            return this._scriptPath != null;
+        }
+
     }
 }

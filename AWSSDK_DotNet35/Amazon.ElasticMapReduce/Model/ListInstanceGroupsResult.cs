@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,51 +17,57 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para>This input determines which instance groups to retrieve.</para>
+    /// This input determines which instance groups to retrieve.
     /// </summary>
     public partial class ListInstanceGroupsResult : AmazonWebServiceResponse
     {
-        
-        private List<InstanceGroup> instanceGroups = new List<InstanceGroup>();
-        private string marker;
+        private List<InstanceGroup> _instanceGroups = new List<InstanceGroup>();
+        private string _marker;
 
 
         /// <summary>
+        /// Gets and sets the property InstanceGroups. 
+        /// <para>
         /// The list of instance groups for the cluster and given filters.
-        ///  
+        /// </para>
         /// </summary>
         public List<InstanceGroup> InstanceGroups
         {
-            get { return this.instanceGroups; }
-            set { this.instanceGroups = value; }
+            get { return this._instanceGroups; }
+            set { this._instanceGroups = value; }
         }
 
         // Check to see if InstanceGroups property is set
         internal bool IsSetInstanceGroups()
         {
-            return this.instanceGroups.Count > 0;
+            return this._instanceGroups != null && this._instanceGroups.Count > 0; 
         }
 
+
         /// <summary>
-        /// The pagination token is a random string indicating whether there are more results to fetch. Use the pagination token in later API calls to
-        /// retrieve the next page of results. When the value is null, all results have been returned.
-        ///  
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// The pagination token that indicates the next set of results to retrieve.
+        /// </para>
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
         }
+
     }
 }

@@ -29,49 +29,46 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// List Instance Groups Request Marshaller
+    /// ListInstanceGroups Request Marshaller
     /// </summary>       
-    internal class ListInstanceGroupsRequestMarshaller : IMarshaller<IRequest, ListInstanceGroupsRequest> 
+    public class ListInstanceGroupsRequestMarshaller : IMarshaller<IRequest, ListInstanceGroupsRequest> 
     {
-        
-
-        public IRequest Marshall(ListInstanceGroupsRequest listInstanceGroupsRequest) 
+        public IRequest Marshall(ListInstanceGroupsRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(listInstanceGroupsRequest, "AmazonElasticMapReduce");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticMapReduce");
             string target = "ElasticMapReduce.ListInstanceGroups";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (listInstanceGroupsRequest != null && listInstanceGroupsRequest.IsSetClusterId()) 
+                if(publicRequest.IsSetClusterId())
                 {
                     writer.WritePropertyName("ClusterId");
-                    writer.Write(listInstanceGroupsRequest.ClusterId);
-                }
-                if (listInstanceGroupsRequest != null && listInstanceGroupsRequest.IsSetMarker()) 
-                {
-                    writer.WritePropertyName("Marker");
-                    writer.Write(listInstanceGroupsRequest.Marker);
+                    writer.Write(publicRequest.ClusterId);
                 }
 
+                if(publicRequest.IsSetMarker())
+                {
+                    writer.WritePropertyName("Marker");
+                    writer.Write(publicRequest.Marker);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

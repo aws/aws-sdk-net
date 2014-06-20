@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.ElasticMapReduce.Model
 {
     ///<summary>
-    /// AmazonElasticMapReduce exception
+    /// ElasticMapReduce exception
     /// </summary>
     public class InternalServerErrorException : AmazonElasticMapReduceException 
     {
@@ -45,6 +45,5 @@ namespace Amazon.ElasticMapReduce.Model
         public InternalServerErrorException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
-        
     }
 }

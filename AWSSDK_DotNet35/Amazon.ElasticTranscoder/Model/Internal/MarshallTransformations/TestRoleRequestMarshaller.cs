@@ -29,68 +29,61 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Test Role Request Marshaller
+    /// TestRole Request Marshaller
     /// </summary>       
-    internal class TestRoleRequestMarshaller : IMarshaller<IRequest, TestRoleRequest> 
+    public class TestRoleRequestMarshaller : IMarshaller<IRequest, TestRoleRequest> 
     {
-        
-
-        public IRequest Marshall(TestRoleRequest testRoleRequest) 
+        public IRequest Marshall(TestRoleRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(testRoleRequest, "AmazonElasticTranscoder");
-            string target = "EtsCustomerService.TestRole";
-            request.Headers["X-Amz-Target"] = target;
-            
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticTranscoder");
+            request.Headers["Content-Type"] = "application/x-amz-json-";
             request.HttpMethod = "POST";
-            string uriResourcePath = "2012-09-25/roleTests"; 
+
+            string uriResourcePath = "/2012-09-25/roleTests";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (testRoleRequest != null && testRoleRequest.IsSetRole()) 
-                {
-                    writer.WritePropertyName("Role");
-                    writer.Write(testRoleRequest.Role);
-                }
-                if (testRoleRequest != null && testRoleRequest.IsSetInputBucket()) 
+                if(publicRequest.IsSetInputBucket())
                 {
                     writer.WritePropertyName("InputBucket");
-                    writer.Write(testRoleRequest.InputBucket);
+                    writer.Write(publicRequest.InputBucket);
                 }
-                if (testRoleRequest != null && testRoleRequest.IsSetOutputBucket()) 
+
+                if(publicRequest.IsSetOutputBucket())
                 {
                     writer.WritePropertyName("OutputBucket");
-                    writer.Write(testRoleRequest.OutputBucket);
+                    writer.Write(publicRequest.OutputBucket);
                 }
 
-                if (testRoleRequest != null && testRoleRequest.Topics != null && testRoleRequest.Topics.Count > 0) 
+                if(publicRequest.IsSetRole())
                 {
-                    List<string> topicsList = testRoleRequest.Topics;
+                    writer.WritePropertyName("Role");
+                    writer.Write(publicRequest.Role);
+                }
+
+                if(publicRequest.IsSetTopics())
+                {
                     writer.WritePropertyName("Topics");
                     writer.WriteArrayStart();
-
-                    foreach (string topicsListValue in topicsList) 
-                    { 
-                        writer.Write(StringUtils.FromString(topicsListValue));
+                    foreach(var publicRequestTopicsListValue in publicRequest.Topics)
+                    {
+                        writer.Write(publicRequestTopicsListValue);
                     }
-
                     writer.WriteArrayEnd();
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

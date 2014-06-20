@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,277 +18,312 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// <para>The pipeline (queue) that is used to manage jobs.</para>
+    /// The pipeline (queue) that is used to manage jobs.
     /// </summary>
-    public class Pipeline
+    public partial class Pipeline
     {
-        
-        private string id;
-        private string arn;
-        private string name;
-        private string status;
-        private string inputBucket;
-        private string outputBucket;
-        private string role;
-        private Notifications notifications;
-        private PipelineOutputConfig contentConfig;
-        private PipelineOutputConfig thumbnailConfig;
+        private string _arn;
+        private PipelineOutputConfig _contentConfig;
+        private string _id;
+        private string _inputBucket;
+        private string _name;
+        private Notifications _notifications;
+        private string _outputBucket;
+        private string _role;
+        private string _status;
+        private PipelineOutputConfig _thumbnailConfig;
 
 
         /// <summary>
-        /// The identifier for the pipeline. You use this value to identify the pipeline in which you want to perform a variety of operations, such as
-        /// creating a job or a preset.
-        ///  
+        /// Gets and sets the property Arn. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>^\d{13}-\w{6}$</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string Id
-        {
-            get { return this.id; }
-            set { this.id = value; }
-        }
-
-        // Check to see if Id property is set
-        internal bool IsSetId()
-        {
-            return this.id != null;
-        }
-
-        /// <summary>
         /// The Amazon Resource Name (ARN) for the pipeline.
-        ///  
+        /// </para>
         /// </summary>
         public string Arn
         {
-            get { return this.arn; }
-            set { this.arn = value; }
+            get { return this._arn; }
+            set { this._arn = value; }
         }
 
         // Check to see if Arn property is set
         internal bool IsSetArn()
         {
-            return this.arn != null;
+            return this._arn != null;
         }
 
+
         /// <summary>
-        /// The name of the pipeline. We recommend that the name be unique within the AWS account, but uniqueness is not enforced. Constraints: Maximum
-        /// 40 characters
-        ///  
+        /// Gets and sets the property ContentConfig. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 40</description>
-        ///     </item>
-        /// </list>
+        /// Information about the Amazon S3 bucket in which you want Elastic Transcoder to save
+        ///            transcoded files and playlists. Either you specify both <code>ContentConfig</code>
+        /// and                <code>ThumbnailConfig</code>, or you specify <code>OutputBucket</code>.
         /// </para>
-        /// </summary>
-        public string Name
-        {
-            get { return this.name; }
-            set { this.name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this.name != null;
-        }
-
-        /// <summary>
-        /// The current status of the pipeline: <ul> <li><c>Active</c>: The pipeline is processing jobs.</li> <li><c>Paused</c>: The pipeline is not
-        /// currently processing jobs.</li> </ul>
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>(^Active$)|(^Paused$)</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string Status
-        {
-            get { return this.status; }
-            set { this.status = value; }
-        }
-
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
-        {
-            return this.status != null;
-        }
-
-        /// <summary>
-        /// The Amazon S3 bucket from which Elastic Transcoder gets media files for transcoding and the graphics files, if any, that you want to use for
-        /// watermarks.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>^(\w|\.|-){1,255}$</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string InputBucket
-        {
-            get { return this.inputBucket; }
-            set { this.inputBucket = value; }
-        }
-
-        // Check to see if InputBucket property is set
-        internal bool IsSetInputBucket()
-        {
-            return this.inputBucket != null;
-        }
-
-        /// <summary>
-        /// The Amazon S3 bucket in which you want Elastic Transcoder to save transcoded files, thumbnails, and playlists. Either you specify this
-        /// value, or you specify both <c>ContentConfig</c> and <c>ThumbnailConfig</c>.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>^(\w|\.|-){1,255}$</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string OutputBucket
-        {
-            get { return this.outputBucket; }
-            set { this.outputBucket = value; }
-        }
-
-        // Check to see if OutputBucket property is set
-        internal bool IsSetOutputBucket()
-        {
-            return this.outputBucket != null;
-        }
-
-        /// <summary>
-        /// The IAM Amazon Resource Name (ARN) for the role that Elastic Transcoder uses to transcode jobs for this pipeline.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>^arn:aws:iam::\w{12}:role/.+$</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string Role
-        {
-            get { return this.role; }
-            set { this.role = value; }
-        }
-
-        // Check to see if Role property is set
-        internal bool IsSetRole()
-        {
-            return this.role != null;
-        }
-
-        /// <summary>
-        /// The Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status. <important>To receive notifications,
-        /// you must also subscribe to the new topic in the Amazon SNS console.</important> <ul> <li><b>Progressing</b> (optional): The Amazon Simple
-        /// Notification Service (Amazon SNS) topic that you want to notify when Elastic Transcoder has started to process the job.</li>
-        /// <li><b>Completed</b> (optional): The Amazon SNS topic that you want to notify when Elastic Transcoder has finished processing the job.</li>
-        /// <li><b>Warning</b> (optional): The Amazon SNS topic that you want to notify when Elastic Transcoder encounters a warning condition.</li>
-        /// <li><b>Error</b> (optional): The Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition.</li> </ul>
-        ///  
-        /// </summary>
-        public Notifications Notifications
-        {
-            get { return this.notifications; }
-            set { this.notifications = value; }
-        }
-
-        // Check to see if Notifications property is set
-        internal bool IsSetNotifications()
-        {
-            return this.notifications != null;
-        }
-
-        /// <summary>
-        /// Information about the Amazon S3 bucket in which you want Elastic Transcoder to save transcoded files and playlists. Either you specify both
-        /// <c>ContentConfig</c> and <c>ThumbnailConfig</c>, or you specify <c>OutputBucket</c>. <ul> <li><b>Bucket</b>: The Amazon S3 bucket in which
-        /// you want Elastic Transcoder to save transcoded files and playlists.</li> <li><b>Permissions</b>: A list of the users and/or predefined
-        /// Amazon S3 groups you want to have access to transcoded files and playlists, and the type of access that you want them to have. <ul>
-        /// <li>GranteeType: The type of value that appears in the <c>Grantee</c> object: <ul> <li><c>Canonical</c>: Either the canonical user ID for an
-        /// AWS account or an origin access identity for an Amazon CloudFront distribution.</li> <li><c>Email</c>: The registered email address of an
-        /// AWS account.</li> <li><c>Group</c>: One of the following predefined Amazon S3 groups: <c>AllUsers</c>, <c>AuthenticatedUsers</c>, or
-        /// <c>LogDelivery</c>.</li> </ul> </li> <li><c>Grantee</c>: The AWS user or group that you want to have access to transcoded files and
-        /// playlists.</li> <li><c>Access</c>: The permission that you want to give to the AWS user that is listed in <c>Grantee</c>. Valid values
-        /// include: <ul> <li><c>READ</c>: The grantee can read the objects and metadata for objects that Elastic Transcoder adds to the Amazon S3
-        /// bucket.</li> <li><c>READ_ACP</c>: The grantee can read the object ACL for objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-        /// <li><c>WRITE_ACP</c>: The grantee can write the ACL for the objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-        /// <li><c>FULL_CONTROL</c>: The grantee has <c>READ</c>, <c>READ_ACP</c>, and <c>WRITE_ACP</c> permissions for the objects that Elastic
-        /// Transcoder adds to the Amazon S3 bucket.</li> </ul> </li> </ul> </li> <li><b>StorageClass</b>: The Amazon S3 storage class, Standard or
-        /// ReducedRedundancy, that you want Elastic Transcoder to assign to the video files and playlists that it stores in your Amazon S3 bucket.
-        /// </li> </ul>
-        ///  
+        ///         <ul>            <li><b>Bucket</b>: The Amazon S3 bucket in which you want
+        /// Elastic Transcoder to save                transcoded files and playlists.</li>   
+        ///         <li><b>Permissions</b>: A list of the users and/or predefined Amazon S3 groups
+        /// you want                to have access to transcoded files and playlists, and the
+        /// type of access that you                want them to have. <ul>                   
+        /// <li>GranteeType: The type of value that appears in the <code>Grantee</code>      
+        ///                  object: <ul>                            <li><code>Canonical</code>:
+        /// Either the canonical user ID for an AWS                                account or
+        /// an origin access identity for an Amazon CloudFront                               
+        /// distribution.</li>                            <li><code>Email</code>: The registered
+        /// email address of an AWS                                account.</li>             
+        ///               <li><code>Group</code>: One of the following predefined Amazon S3  
+        ///                              groups: <code>AllUsers</code>, <code>AuthenticatedUsers</code>,
+        /// or                                    <code>LogDelivery</code>.</li>             
+        ///           </ul>                    </li>                    <li><code>Grantee</code>:
+        /// The AWS user or group that you want to have access to                        transcoded
+        /// files and playlists.</li>                    <li><code>Access</code>: The permission
+        /// that you want to give to the AWS user                        that is listed in <code>Grantee</code>.
+        /// Valid values include: <ul>                            <li><code>READ</code>: The grantee
+        /// can read the objects and metadata for                                objects that
+        /// Elastic Transcoder adds to the Amazon S3 bucket.</li>                            <li><code>READ_ACP</code>:
+        /// The grantee can read the object ACL for                                objects that
+        /// Elastic Transcoder adds to the Amazon S3 bucket.</li>                            <li><code>WRITE_ACP</code>:
+        /// The grantee can write the ACL for the                                objects that
+        /// Elastic Transcoder adds to the Amazon S3 bucket.</li>                            <li><code>FULL_CONTROL</code>:
+        /// The grantee has <code>READ</code>,                                    <code>READ_ACP</code>,
+        /// and <code>WRITE_ACP</code> permissions                                for the objects
+        /// that Elastic Transcoder adds to the Amazon S3                                bucket.</li>
+        ///                        </ul>                    </li>                </ul>       
+        ///     </li>            <li><b>StorageClass</b>: The Amazon S3 storage class, Standard
+        /// or ReducedRedundancy,                that you want Elastic Transcoder to assign to
+        /// the video files and playlists that it                stores in your Amazon S3 bucket.
+        /// </li>        </ul>
         /// </summary>
         public PipelineOutputConfig ContentConfig
         {
-            get { return this.contentConfig; }
-            set { this.contentConfig = value; }
+            get { return this._contentConfig; }
+            set { this._contentConfig = value; }
         }
 
         // Check to see if ContentConfig property is set
         internal bool IsSetContentConfig()
         {
-            return this.contentConfig != null;
+            return this._contentConfig != null;
         }
 
+
         /// <summary>
-        /// Information about the Amazon S3 bucket in which you want Elastic Transcoder to save thumbnail files. Either you specify both
-        /// <c>ContentConfig</c> and <c>ThumbnailConfig</c>, or you specify <c>OutputBucket</c>. <ul> <li><c>Bucket</c>: The Amazon S3 bucket in which
-        /// you want Elastic Transcoder to save thumbnail files. </li> <li><c>Permissions</c>: A list of the users and/or predefined Amazon S3 groups
-        /// you want to have access to thumbnail files, and the type of access that you want them to have. <ul> <li>GranteeType: The type of value that
-        /// appears in the Grantee object: <ul> <li><c>Canonical</c>: Either the canonical user ID for an AWS account or an origin access identity for
-        /// an Amazon CloudFront distribution. <important>A canonical user ID is not the same as an AWS account number.</important></li>
-        /// <li><c>Email</c>: The registered email address of an AWS account.</li> <li><c>Group</c>: One of the following predefined Amazon S3 groups:
-        /// <c>AllUsers</c>, <c>AuthenticatedUsers</c>, or <c>LogDelivery</c>.</li> </ul> </li> <li><c>Grantee</c>: The AWS user or group that you want
-        /// to have access to thumbnail files.</li> <li>Access: The permission that you want to give to the AWS user that is listed in Grantee. Valid
-        /// values include: <ul> <li><c>READ</c>: The grantee can read the thumbnails and metadata for thumbnails that Elastic Transcoder adds to the
-        /// Amazon S3 bucket.</li> <li><c>READ_ACP</c>: The grantee can read the object ACL for thumbnails that Elastic Transcoder adds to the Amazon S3
-        /// bucket.</li> <li><c>WRITE_ACP</c>: The grantee can write the ACL for the thumbnails that Elastic Transcoder adds to the Amazon S3
-        /// bucket.</li> <li><c>FULL_CONTROL</c>: The grantee has READ, READ_ACP, and WRITE_ACP permissions for the thumbnails that Elastic Transcoder
-        /// adds to the Amazon S3 bucket.</li> </ul> </li> </ul> </li> <li><c>StorageClass</c>: The Amazon S3 storage class, <c>Standard</c> or
-        /// <c>ReducedRedundancy</c>, that you want Elastic Transcoder to assign to the thumbnails that it stores in your Amazon S3 bucket.</li> </ul>
-        ///  
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The identifier for the pipeline. You use this value to identify the pipeline in which
+        /// you            want to perform a variety of operations, such as creating a job or
+        /// a preset. 
+        /// </para>
+        /// </summary>
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property InputBucket. 
+        /// <para>
+        /// The Amazon S3 bucket from which Elastic Transcoder gets media files for transcoding
+        /// and the            graphics files, if any, that you want to use for watermarks.
+        /// </para>
+        /// </summary>
+        public string InputBucket
+        {
+            get { return this._inputBucket; }
+            set { this._inputBucket = value; }
+        }
+
+        // Check to see if InputBucket property is set
+        internal bool IsSetInputBucket()
+        {
+            return this._inputBucket != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the pipeline. We recommend that the name be unique within the AWS account,
+        ///            but uniqueness is not enforced.
+        /// </para>
+        ///         
+        /// <para>
+        /// Constraints: Maximum 40 characters
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Notifications. 
+        /// <para>
+        /// The Amazon Simple Notification Service (Amazon SNS) topic that you want to notify
+        /// to report job status.
+        /// </para>
+        ///         <important>To receive notifications, you must also subscribe to the new topic
+        /// in the Amazon SNS            console.</important>        <ul>            <li><b>Progressing</b>
+        /// (optional): The Amazon Simple Notification Service (Amazon SNS) topic that you want
+        /// to notify                when Elastic Transcoder has started to process the job.</li>
+        ///            <li><b>Completed</b> (optional): The Amazon SNS topic that you want to
+        /// notify when Elastic Transcoder has                finished processing the job.</li>
+        ///            <li><b>Warning</b> (optional): The Amazon SNS topic that you want to notify
+        /// when Elastic Transcoder                encounters a warning condition.</li>      
+        ///      <li><b>Error</b> (optional): The Amazon SNS topic that you want to notify when
+        /// Elastic Transcoder                encounters an error condition.</li>        </ul>
+        /// </summary>
+        public Notifications Notifications
+        {
+            get { return this._notifications; }
+            set { this._notifications = value; }
+        }
+
+        // Check to see if Notifications property is set
+        internal bool IsSetNotifications()
+        {
+            return this._notifications != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property OutputBucket. 
+        /// <para>
+        /// The Amazon S3 bucket in which you want Elastic Transcoder to save transcoded files,
+        ///            thumbnails, and playlists. Either you specify this value, or you specify
+        /// both                <code>ContentConfig</code> and <code>ThumbnailConfig</code>.
+        /// </para>
+        /// </summary>
+        public string OutputBucket
+        {
+            get { return this._outputBucket; }
+            set { this._outputBucket = value; }
+        }
+
+        // Check to see if OutputBucket property is set
+        internal bool IsSetOutputBucket()
+        {
+            return this._outputBucket != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Role. 
+        /// <para>
+        /// The IAM Amazon Resource Name (ARN) for the role that Elastic Transcoder uses to transcode
+        ///            jobs for this pipeline.
+        /// </para>
+        /// </summary>
+        public string Role
+        {
+            get { return this._role; }
+            set { this._role = value; }
+        }
+
+        // Check to see if Role property is set
+        internal bool IsSetRole()
+        {
+            return this._role != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The current status of the pipeline:
+        /// </para>
+        ///         <ul>            <li><code>Active</code>: The pipeline is processing jobs.</li>
+        ///            <li><code>Paused</code>: The pipeline is not currently processing jobs.</li>
+        ///        </ul>
+        /// </summary>
+        public string Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ThumbnailConfig. 
+        /// <para>
+        /// Information about the Amazon S3 bucket in which you want Elastic Transcoder to save
+        ///            thumbnail files. Either you specify both <code>ContentConfig</code> and
+        ///                <code>ThumbnailConfig</code>, or you specify <code>OutputBucket</code>.
+        /// </para>
+        ///         <ul>            <li><code>Bucket</code>: The Amazon S3 bucket in which you
+        /// want Elastic Transcoder to                save thumbnail files. </li>            <li><code>Permissions</code>:
+        /// A list of the users and/or predefined Amazon S3 groups you                want to
+        /// have access to thumbnail files, and the type of access that you want them to     
+        ///           have. <ul>                    <li>GranteeType: The type of value that appears
+        /// in the Grantee object: <ul>                            <li><code>Canonical</code>:
+        /// Either the canonical user ID for an AWS                                account or
+        /// an origin access identity for an Amazon CloudFront                               
+        /// distribution. <important>A canonical user ID is not the same as an               
+        ///                     AWS account number.</important></li>                         
+        ///   <li><code>Email</code>: The registered email address of an AWS                 
+        ///               account.</li>                            <li><code>Group</code>: One
+        /// of the following predefined Amazon S3                                groups: <code>AllUsers</code>,
+        /// <code>AuthenticatedUsers</code>, or                                    <code>LogDelivery</code>.</li>
+        ///                        </ul>                    </li>                    <li><code>Grantee</code>:
+        /// The AWS user or group that you want to have access to                        thumbnail
+        /// files.</li>                    <li>Access: The permission that you want to give to
+        /// the AWS user that is listed                        in Grantee. Valid values include:
+        /// <ul>                            <li><code>READ</code>: The grantee can read the thumbnails
+        /// and metadata                                for thumbnails that Elastic Transcoder
+        /// adds to the Amazon S3                                bucket.</li>                
+        ///            <li><code>READ_ACP</code>: The grantee can read the object ACL for    
+        ///                            thumbnails that Elastic Transcoder adds to the Amazon S3
+        ///                                bucket.</li>                            <li><code>WRITE_ACP</code>:
+        /// The grantee can write the ACL for the                                thumbnails that
+        /// Elastic Transcoder adds to the Amazon S3                                bucket.</li>
+        ///                            <li><code>FULL_CONTROL</code>: The grantee has READ, READ_ACP,
+        /// and                                WRITE_ACP permissions for the thumbnails that Elastic
+        /// Transcoder                                adds to the Amazon S3 bucket.</li>     
+        ///                   </ul>                    </li>                </ul>            </li>
+        ///            <li><code>StorageClass</code>: The Amazon S3 storage class, <code>Standard</code>
+        /// or                    <code>ReducedRedundancy</code>, that you want Elastic Transcoder
+        /// to assign to                the thumbnails that it stores in your Amazon S3 bucket.</li>
+        ///        </ul>
         /// </summary>
         public PipelineOutputConfig ThumbnailConfig
         {
-            get { return this.thumbnailConfig; }
-            set { this.thumbnailConfig = value; }
+            get { return this._thumbnailConfig; }
+            set { this._thumbnailConfig = value; }
         }
 
         // Check to see if ThumbnailConfig property is set
         internal bool IsSetThumbnailConfig()
         {
-            return this.thumbnailConfig != null;
+            return this._thumbnailConfig != null;
         }
+
     }
 }

@@ -29,53 +29,45 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Terminate Job Flows Request Marshaller
+    /// TerminateJobFlows Request Marshaller
     /// </summary>       
-    internal class TerminateJobFlowsRequestMarshaller : IMarshaller<IRequest, TerminateJobFlowsRequest> 
+    public class TerminateJobFlowsRequestMarshaller : IMarshaller<IRequest, TerminateJobFlowsRequest> 
     {
-        
-
-        public IRequest Marshall(TerminateJobFlowsRequest terminateJobFlowsRequest) 
+        public IRequest Marshall(TerminateJobFlowsRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(terminateJobFlowsRequest, "AmazonElasticMapReduce");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticMapReduce");
             string target = "ElasticMapReduce.TerminateJobFlows";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-
-                if (terminateJobFlowsRequest != null && terminateJobFlowsRequest.JobFlowIds != null && terminateJobFlowsRequest.JobFlowIds.Count > 0) 
+                if(publicRequest.IsSetJobFlowIds())
                 {
-                    List<string> jobFlowIdsList = terminateJobFlowsRequest.JobFlowIds;
                     writer.WritePropertyName("JobFlowIds");
                     writer.WriteArrayStart();
-
-                    foreach (string jobFlowIdsListValue in jobFlowIdsList) 
-                    { 
-                        writer.Write(StringUtils.FromString(jobFlowIdsListValue));
+                    foreach(var publicRequestJobFlowIdsListValue in publicRequest.JobFlowIds)
+                    {
+                        writer.Write(publicRequestJobFlowIdsListValue);
                     }
-
                     writer.WriteArrayEnd();
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

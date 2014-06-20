@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,39 +25,36 @@ namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePreset operation.
-    /// <para>The DeletePreset operation removes a preset that you've added in an AWS region.</para> <para><b>NOTE:</b> You can't delete the default
-    /// presets that are included with Elastic Transcoder. </para>
+    /// The DeletePreset operation removes a preset that you've added in an AWS region.
+    /// 
+    ///         <note>            
+    /// <para>
+    /// You can't delete the default presets that are included with Elastic Transcoder.
+    /// </para>
+    ///         </note>
     /// </summary>
     public partial class DeletePresetRequest : AmazonElasticTranscoderRequest
     {
-        private string id;
+        private string _id;
 
 
         /// <summary>
-        /// The identifier of the preset for which you want to get detailed information.
-        ///  
+        /// Gets and sets the property Id. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>^\d{13}-\w{6}$</description>
-        ///     </item>
-        /// </list>
+        /// The identifier of the preset for which you want to get detailed information.
         /// </para>
         /// </summary>
         public string Id
         {
-            get { return this.id; }
-            set { this.id = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;
+            return this._id != null;
         }
 
     }
 }
-    

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,17 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+
 using System;
 
 using Amazon.Runtime;
 
+
 namespace Amazon.ElasticTranscoder
 {
-
     /// <summary>
-    /// Configuration for accessing AWS Elastic Transcoder Service service
+    /// Configuration for accessing Amazon ElasticTranscoder service
     /// </summary>
-    public class AmazonElasticTranscoderConfig : ClientConfig
+    public partial class AmazonElasticTranscoderConfig : ClientConfig
     {
         /// <summary>
         /// Default constructor
@@ -39,9 +41,7 @@ namespace Amazon.ElasticTranscoder
         {
             get
             {
-                
                 return "elastictranscoder";
-                    
             }
         }
 
@@ -57,5 +57,3 @@ namespace Amazon.ElasticTranscoder
         }
     }
 }
-
-    

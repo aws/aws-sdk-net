@@ -29,58 +29,51 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Remove Tags Request Marshaller
+    /// RemoveTags Request Marshaller
     /// </summary>       
-    internal class RemoveTagsRequestMarshaller : IMarshaller<IRequest, RemoveTagsRequest> 
+    public class RemoveTagsRequestMarshaller : IMarshaller<IRequest, RemoveTagsRequest> 
     {
-        
-
-        public IRequest Marshall(RemoveTagsRequest removeTagsRequest) 
+        public IRequest Marshall(RemoveTagsRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(removeTagsRequest, "AmazonElasticMapReduce");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticMapReduce");
             string target = "ElasticMapReduce.RemoveTags";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (removeTagsRequest != null && removeTagsRequest.IsSetResourceId()) 
+                if(publicRequest.IsSetResourceId())
                 {
                     writer.WritePropertyName("ResourceId");
-                    writer.Write(removeTagsRequest.ResourceId);
+                    writer.Write(publicRequest.ResourceId);
                 }
 
-                if (removeTagsRequest != null && removeTagsRequest.TagKeys != null && removeTagsRequest.TagKeys.Count > 0) 
+                if(publicRequest.IsSetTagKeys())
                 {
-                    List<string> tagKeysList = removeTagsRequest.TagKeys;
                     writer.WritePropertyName("TagKeys");
                     writer.WriteArrayStart();
-
-                    foreach (string tagKeysListValue in tagKeysList) 
-                    { 
-                        writer.Write(StringUtils.FromString(tagKeysListValue));
+                    foreach(var publicRequestTagKeysListValue in publicRequest.TagKeys)
+                    {
+                        writer.Write(publicRequestTagKeysListValue);
                     }
-
                     writer.WriteArrayEnd();
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

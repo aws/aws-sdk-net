@@ -26,9 +26,11 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the CopySnapshot operation.
     /// <para>Copies a point-in-time snapshot of an Amazon EBS volume and stores it in Amazon S3. You can copy the snapshot within the same region
-    /// or from one region to another. You can use the snapshot to create Amazon EBS volumes or Amazon Machine Images (AMIs).</para> <para>For more
-    /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html" >Copying an Amazon EBS Snapshot</a> in
-    /// the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
+    /// or from one region to another. You can use the snapshot to create Amazon EBS volumes or Amazon Machine Images (AMIs). The snapshot is copied
+    /// to the regional endpoint that you send the HTTP request to.</para> <para>Copies of encrypted Amazon EBS snapshots remain encrypted. Copies
+    /// of unencrypted snapshots remain unencrypted.</para> <para>For more information, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html" >Copying an Amazon EBS Snapshot</a> in the <i>Amazon
+    /// Elastic Compute Cloud User Guide</i> .</para>
     /// </summary>
     public partial class CopySnapshotRequest : AmazonEC2Request
     {

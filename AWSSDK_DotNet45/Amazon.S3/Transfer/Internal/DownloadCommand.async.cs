@@ -13,11 +13,15 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Runtime;
 using Amazon.S3.Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Runtime.ExceptionServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -31,19 +35,67 @@ namespace Amazon.S3.Transfer.Internal
             ValidateRequest();
             GetObjectRequest getRequest = ConvertToGetObjectRequest(this._request);
 
-            using (var response = await this._s3Client.GetObjectAsync(getRequest, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false))
+            var maxRetries = ((AmazonS3Client)_s3Client).Config.MaxErrorRetry;
+            var retries = 0;
+            bool shouldRetry = false;
+            do
             {
-                response.WriteObjectProgressEvent += OnWriteObjectProgressEvent;
-                //response.WriteObjectProgressEvent += this._request.EventHandler;
+                shouldRetry = false;
+                using (var response = await this._s3Client.GetObjectAsync(getRequest, cancellationToken)
+                    .ConfigureAwait(continueOnCapturedContext: false))
+                {
+
+                    try
+                    {
+                        response.WriteObjectProgressEvent += OnWriteObjectProgressEvent;
 #if BCL45
-                await response.WriteResponseStreamToFileAsync(this._request.FilePath, false, cancellationToken).
-                    ConfigureAwait(continueOnCapturedContext: false);
+                        await response.WriteResponseStreamToFileAsync(this._request.FilePath, false, cancellationToken).
+                            ConfigureAwait(continueOnCapturedContext: false);
 #elif WIN_RT || WINDOWS_PHONE
-             await response.WriteResponseStreamToFileAsync(this._request.StorageFile, false, cancellationToken).
-                ConfigureAwait(continueOnCapturedContext: false);
+                         await response.WriteResponseStreamToFileAsync(this._request.StorageFile, false, cancellationToken).
+                            ConfigureAwait(continueOnCapturedContext: false);
 #endif
+                    }
+                    catch (Exception exception)
+                    {
+                        retries++;
+                        shouldRetry = HandleExceptionForHttpClient(exception, retries, maxRetries);
+                        if (!shouldRetry)
+                        {
+                            if (exception is IOException)                                
+                            {
+                                throw;
+                            }
+                            else if(exception.InnerException is IOException)
+                            {
+                                ExceptionDispatchInfo.Capture(exception.InnerException).Throw();
+                            }
+                            else
+                            {
+                                throw new AmazonServiceException(exception);
+                            }
+                        }
+                    }
+                }
+                WaitBeforeRetry(retries);
+            } while (shouldRetry);
+        }
+
+        private static bool HandleExceptionForHttpClient(Exception exception, int retries, int maxRetries)
+        {
+            var httpException = exception as HttpRequestException;
+            if (httpException != null)
+            {
+                if (httpException.InnerException is IOException ||
+                    httpException.InnerException is WebException)
+                {
+                    return HandleException(httpException.InnerException, retries, maxRetries);
+                }
+                else
+                    return false;
             }
+            else
+                return HandleException(exception, retries, maxRetries);
         }
     }
 }

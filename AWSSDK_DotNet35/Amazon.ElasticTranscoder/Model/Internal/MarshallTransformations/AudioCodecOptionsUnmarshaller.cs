@@ -12,54 +12,64 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.ElasticTranscoder.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
+using Amazon.ElasticTranscoder.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for AudioCodecOptions Object
+    /// </summary>  
+    public class AudioCodecOptionsUnmarshaller : IUnmarshaller<AudioCodecOptions, XmlUnmarshallerContext>, IUnmarshaller<AudioCodecOptions, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// AudioCodecOptionsUnmarshaller
-      /// </summary>
-      internal class AudioCodecOptionsUnmarshaller : IUnmarshaller<AudioCodecOptions, XmlUnmarshallerContext>, IUnmarshaller<AudioCodecOptions, JsonUnmarshallerContext>
-      {
         AudioCodecOptions IUnmarshaller<AudioCodecOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public AudioCodecOptions Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            AudioCodecOptions audioCodecOptions = new AudioCodecOptions();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            AudioCodecOptions unmarshalledObject = new AudioCodecOptions();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("Profile", targetDepth))
-              {
-                audioCodecOptions.Profile = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("Profile", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Profile = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return audioCodecOptions;
+            return unmarshalledObject;
         }
 
-        private static AudioCodecOptionsUnmarshaller instance;
-        public static AudioCodecOptionsUnmarshaller GetInstance()
+
+        private static AudioCodecOptionsUnmarshaller _instance = new AudioCodecOptionsUnmarshaller();        
+
+        public static AudioCodecOptionsUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new AudioCodecOptionsUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

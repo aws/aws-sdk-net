@@ -370,7 +370,7 @@ WebExceptionStatusesToRetryOn.Contains(we.Status)
                     .ConfigureAwait(continueOnCapturedContext: false);
                 context = state.Unmarshaller.CreateContext(responseData,
                     this.SupportResponseLogging &&
-                    (Config.LogResponse || Config.ReadEntireResponse || AWSConfigs.ResponseLogging != ResponseLoggingOption.Never),
+                    (Config.LogResponse || Config.ReadEntireResponse || AWSConfigs.LoggingConfig.LogResponses != ResponseLoggingOption.Never),
                     responseStream,
                     state.Metrics);
 
@@ -417,11 +417,11 @@ WebExceptionStatusesToRetryOn.Contains(we.Status)
                 var responseStream = await responseData.OpenResponseAsync()
                     .ConfigureAwait(continueOnCapturedContext: false);
                 errorContext = state.Unmarshaller.CreateContext(responseData,
-                    Config.LogResponse || Config.ReadEntireResponse || AWSConfigs.ResponseLogging != ResponseLoggingOption.Never,
+                    Config.LogResponse || Config.ReadEntireResponse || AWSConfigs.LoggingConfig.LogResponses != ResponseLoggingOption.Never,
                     responseStream,
                     state.Metrics);
                 errorResponseException = state.Unmarshaller.UnmarshallException(errorContext, null, statusCode);
-                if (Config.LogResponse || AWSConfigs.ResponseLogging != ResponseLoggingOption.Never)
+                if (Config.LogResponse || AWSConfigs.LoggingConfig.LogResponses != ResponseLoggingOption.Never)
                 {
                     this.logger.Error(errorResponseException, "Received error response: [{0}]", errorContext.ResponseBody);
                 }

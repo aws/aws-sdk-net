@@ -398,7 +398,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 throw new ArgumentNullException("conditions");
 
             var scan = ConvertScan<T>(conditions, operationConfig);
-            return FromSearchAsync<T>(scan.Search);
+            return FromSearchAsync<T>(scan);
         }
 
         /// <summary>
@@ -426,7 +426,7 @@ namespace Amazon.DynamoDBv2.DataModel
             if (scanConfig == null) throw new ArgumentNullException("scanConfig");
 
             var scan = ConvertFromScan<T>(scanConfig, operationConfig);
-            return FromSearchAsync<T>(scan.Search);
+            return FromSearchAsync<T>(scan);
         }
 
         #endregion
@@ -443,7 +443,7 @@ namespace Amazon.DynamoDBv2.DataModel
         public AsyncSearch<T> QueryAsync<T>(object hashKeyValue)
         {
             var query = ConvertQueryByValue<T>(hashKeyValue, null, null);
-            return FromSearchAsync<T>(query.Search);
+            return FromSearchAsync<T>(query);
         }
 
         /// <summary>
@@ -457,7 +457,7 @@ namespace Amazon.DynamoDBv2.DataModel
         public AsyncSearch<T> QueryAsync<T>(object hashKeyValue, DynamoDBOperationConfig operationConfig)
         {
             ContextSearch query = ConvertQueryByValue<T>(hashKeyValue, null, operationConfig);
-            return FromSearchAsync<T>(query.Search);
+            return FromSearchAsync<T>(query);
         }
 
         /// <summary>
@@ -501,7 +501,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 throw new ArgumentNullException("values");
 
             ContextSearch query = ConvertQueryByValue<T>(hashKeyValue, op, values, operationConfig);
-            return FromSearchAsync<T>(query.Search);
+            return FromSearchAsync<T>(query);
         }
 
         /// <summary>
@@ -529,7 +529,7 @@ namespace Amazon.DynamoDBv2.DataModel
             if (queryConfig == null) throw new ArgumentNullException("queryConfig");
 
             var query = ConvertFromQuery<T>(queryConfig, operationConfig);
-            return FromSearchAsync<T>(query.Search);
+            return FromSearchAsync<T>(query);
         }
 
         #endregion

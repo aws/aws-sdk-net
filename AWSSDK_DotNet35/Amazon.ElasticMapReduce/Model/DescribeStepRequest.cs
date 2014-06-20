@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,46 +25,50 @@ namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeStep operation.
-    /// <para>Provides more detail about the cluster step.</para>
+    /// Provides more detail about the cluster step.
     /// </summary>
     public partial class DescribeStepRequest : AmazonElasticMapReduceRequest
     {
-        private string clusterId;
-        private string stepId;
+        private string _clusterId;
+        private string _stepId;
 
 
         /// <summary>
+        /// Gets and sets the property ClusterId. 
+        /// <para>
         /// The identifier of the cluster with steps to describe.
-        ///  
+        /// </para>
         /// </summary>
         public string ClusterId
         {
-            get { return this.clusterId; }
-            set { this.clusterId = value; }
+            get { return this._clusterId; }
+            set { this._clusterId = value; }
         }
 
         // Check to see if ClusterId property is set
         internal bool IsSetClusterId()
         {
-            return this.clusterId != null;
+            return this._clusterId != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property StepId. 
+        /// <para>
         /// The identifier of the step to describe.
-        ///  
+        /// </para>
         /// </summary>
         public string StepId
         {
-            get { return this.stepId; }
-            set { this.stepId = value; }
+            get { return this._stepId; }
+            set { this._stepId = value; }
         }
 
         // Check to see if StepId property is set
         internal bool IsSetStepId()
         {
-            return this.stepId != null;
+            return this._stepId != null;
         }
 
     }
 }
-    

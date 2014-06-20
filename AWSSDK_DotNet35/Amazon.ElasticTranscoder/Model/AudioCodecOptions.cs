@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,45 +18,54 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// <para>Options associated with your audio codec.</para>
+    /// Options associated with your audio codec.
     /// </summary>
-    public class AudioCodecOptions
+    public partial class AudioCodecOptions
     {
-        
-        private string profile;
+        private string _profile;
 
 
         /// <summary>
-        /// If you specified <c>AAC</c> for <c>Audio:Codec</c>, choose the AAC profile for the output file. Elastic Transcoder supports the following
-        /// profiles: <ul> <li><c>auto</c>: If you specify <c>auto</c>, Elastic Transcoder will select the profile based on the bit rate selected for
-        /// the output file.</li> <li><c>AAC-LC</c>: The most common AAC profile. Use for bitrates larger than 64 kbps.</li> <li><c>HE-AAC</c>: Not
-        /// supported on some older players and devices. Use for bitrates between 40 and 80 kbps.</li> <li><c>HE-AACv2</c>: Not supported on some
-        /// players and devices. Use for bitrates less than 48 kbps.</li> </ul> <note>If you created any presets before AAC profiles were added, Elastic
-        /// Transcoder automatically updated your presets to use AAC-LC. You can change the value as required.</note>
-        ///  
+        /// Gets and sets the property Profile. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>(^auto$)|(^AAC-LC$)|(^HE-AAC$)|(^HE-AACv2$)</description>
-        ///     </item>
-        /// </list>
+        /// You can only choose an audio profile when you specify AAC for the value of Audio:Codec.
         /// </para>
+        ///         
+        /// <para>
+        /// Specify the AAC profile for the output file. Elastic Transcoder supports the following
+        /// profiles:
+        /// </para>
+        ///         <ul>            <li><code>auto</code>: If you specify <code>auto</code>, Elastic
+        /// Transcoder will select                the profile based on the bit rate selected for
+        /// the output file.</li>            <li><code>AAC-LC</code>: The most common AAC profile.
+        /// Use for bitrates larger than                64 kbps.</li>            <li><code>HE-AAC</code>:
+        /// Not supported on some older players and devices.                Use for bitrates between
+        /// 40 and 80 kbps.</li>            <li><code>HE-AACv2</code>: Not supported on some players
+        /// and devices.                Use for bitrates less than 48 kbps.</li>        </ul>
+        ///        <note>
+        /// <para>
+        /// If you created any presets before AAC profiles were added, Elastic Transcoder automatically
+        /// updated            your presets to use AAC-LC. You can change the value as required.
+        /// </para>
+        /// </note>
         /// </summary>
         public string Profile
         {
-            get { return this.profile; }
-            set { this.profile = value; }
+            get { return this._profile; }
+            set { this._profile = value; }
         }
 
         // Check to see if Profile property is set
         internal bool IsSetProfile()
         {
-            return this.profile != null;
+            return this._profile != null;
         }
+
     }
 }

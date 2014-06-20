@@ -29,68 +29,63 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// List Clusters Request Marshaller
+    /// ListClusters Request Marshaller
     /// </summary>       
-    internal class ListClustersRequestMarshaller : IMarshaller<IRequest, ListClustersRequest> 
+    public class ListClustersRequestMarshaller : IMarshaller<IRequest, ListClustersRequest> 
     {
-        
-
-        public IRequest Marshall(ListClustersRequest listClustersRequest) 
+        public IRequest Marshall(ListClustersRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(listClustersRequest, "AmazonElasticMapReduce");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticMapReduce");
             string target = "ElasticMapReduce.ListClusters";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (listClustersRequest != null && listClustersRequest.IsSetCreatedAfter()) 
+                if(publicRequest.IsSetClusterStates())
                 {
-                    writer.WritePropertyName("CreatedAfter");
-                    writer.Write(listClustersRequest.CreatedAfter);
-                }
-                if (listClustersRequest != null && listClustersRequest.IsSetCreatedBefore()) 
-                {
-                    writer.WritePropertyName("CreatedBefore");
-                    writer.Write(listClustersRequest.CreatedBefore);
-                }
-
-                if (listClustersRequest != null && listClustersRequest.ClusterStates != null && listClustersRequest.ClusterStates.Count > 0) 
-                {
-                    List<string> clusterStatesList = listClustersRequest.ClusterStates;
                     writer.WritePropertyName("ClusterStates");
                     writer.WriteArrayStart();
-
-                    foreach (string clusterStatesListValue in clusterStatesList) 
-                    { 
-                        writer.Write(StringUtils.FromString(clusterStatesListValue));
+                    foreach(var publicRequestClusterStatesListValue in publicRequest.ClusterStates)
+                    {
+                        writer.Write(publicRequestClusterStatesListValue);
                     }
-
                     writer.WriteArrayEnd();
                 }
-                if (listClustersRequest != null && listClustersRequest.IsSetMarker()) 
+
+                if(publicRequest.IsSetCreatedAfter())
                 {
-                    writer.WritePropertyName("Marker");
-                    writer.Write(listClustersRequest.Marker);
+                    writer.WritePropertyName("CreatedAfter");
+                    writer.Write(publicRequest.CreatedAfter);
                 }
 
+                if(publicRequest.IsSetCreatedBefore())
+                {
+                    writer.WritePropertyName("CreatedBefore");
+                    writer.Write(publicRequest.CreatedBefore);
+                }
+
+                if(publicRequest.IsSetMarker())
+                {
+                    writer.WritePropertyName("Marker");
+                    writer.Write(publicRequest.Marker);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

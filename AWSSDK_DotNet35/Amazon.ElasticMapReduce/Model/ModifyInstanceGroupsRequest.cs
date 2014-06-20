@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,30 +25,33 @@ namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyInstanceGroups operation.
-    /// <para>ModifyInstanceGroups modifies the number of nodes and configuration settings of an instance group. The input parameters include the
-    /// new target instance count for the group and the instance group ID. The call will either succeed or fail atomically.</para>
+    /// ModifyInstanceGroups modifies the number of nodes and configuration settings of an
+    /// instance         group. The input parameters include the new target instance count
+    /// for the group and the         instance group ID. The call will either succeed or fail
+    /// atomically.
     /// </summary>
     public partial class ModifyInstanceGroupsRequest : AmazonElasticMapReduceRequest
     {
-        private List<InstanceGroupModifyConfig> instanceGroups = new List<InstanceGroupModifyConfig>();
+        private List<InstanceGroupModifyConfig> _instanceGroups = new List<InstanceGroupModifyConfig>();
 
 
         /// <summary>
+        /// Gets and sets the property InstanceGroups. 
+        /// <para>
         /// Instance groups to change.
-        ///  
+        /// </para>
         /// </summary>
         public List<InstanceGroupModifyConfig> InstanceGroups
         {
-            get { return this.instanceGroups; }
-            set { this.instanceGroups = value; }
+            get { return this._instanceGroups; }
+            set { this._instanceGroups = value; }
         }
 
         // Check to see if InstanceGroups property is set
         internal bool IsSetInstanceGroups()
         {
-            return this.instanceGroups.Count > 0;
+            return this._instanceGroups != null && this._instanceGroups.Count > 0; 
         }
 
     }
 }
-    

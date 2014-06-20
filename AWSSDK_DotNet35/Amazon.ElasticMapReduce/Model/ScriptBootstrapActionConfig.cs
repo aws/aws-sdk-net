@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,61 +18,57 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para>Configuration of the script to run during a bootstrap action.</para>
+    /// Configuration of the script to run during a bootstrap action.
     /// </summary>
-    public class ScriptBootstrapActionConfig
+    public partial class ScriptBootstrapActionConfig
     {
-        
-        private string path;
-        private List<string> args = new List<string>();
+        private List<string> _args = new List<string>();
+        private string _path;
 
 
         /// <summary>
-        /// Location of the script to run during a bootstrap action. Can be either a location in Amazon S3 or on a local file system.
-        ///  
+        /// Gets and sets the property Args. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 10280</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string Path
-        {
-            get { return this.path; }
-            set { this.path = value; }
-        }
-
-        // Check to see if Path property is set
-        internal bool IsSetPath()
-        {
-            return this.path != null;
-        }
-
-        /// <summary>
         /// A list of command line arguments to pass to the bootstrap action script.
-        ///  
+        /// </para>
         /// </summary>
         public List<string> Args
         {
-            get { return this.args; }
-            set { this.args = value; }
+            get { return this._args; }
+            set { this._args = value; }
         }
 
         // Check to see if Args property is set
         internal bool IsSetArgs()
         {
-            return this.args.Count > 0;
+            return this._args != null && this._args.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Path. 
+        /// <para>
+        /// Location of the script to run during a bootstrap action. Can be either a location
+        /// in Amazon         S3 or on a local file system.
+        /// </para>
+        /// </summary>
+        public string Path
+        {
+            get { return this._path; }
+            set { this._path = value; }
+        }
+
+        // Check to see if Path property is set
+        internal bool IsSetPath()
+        {
+            return this._path != null;
+        }
+
     }
 }

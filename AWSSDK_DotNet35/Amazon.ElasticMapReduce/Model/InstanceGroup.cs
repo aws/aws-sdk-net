@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,199 +18,199 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para>This entity represents an instance group, which is a group of instances that have common purpose. For example, CORE instance group is
-    /// used for HDFS.</para>
+    /// This entity represents an instance group, which is a group of instances that have
+    /// common purpose. For example, CORE instance group is used for HDFS.
     /// </summary>
-    public class InstanceGroup
+    public partial class InstanceGroup
     {
-        
-        private string id;
-        private string name;
-        private MarketType market;
-        private InstanceGroupType instanceGroupType;
-        private string bidPrice;
-        private string instanceType;
-        private int? requestedInstanceCount;
-        private int? runningInstanceCount;
-        private InstanceGroupStatus status;
+        private string _bidPrice;
+        private string _id;
+        private InstanceGroupType _instanceGroupType;
+        private string _instanceType;
+        private MarketType _market;
+        private string _name;
+        private int? _requestedInstanceCount;
+        private int? _runningInstanceCount;
+        private InstanceGroupStatus _status;
 
 
         /// <summary>
-        /// The identifier of the instance group.
-        ///  
-        /// </summary>
-        public string Id
-        {
-            get { return this.id; }
-            set { this.id = value; }
-        }
-
-        // Check to see if Id property is set
-        internal bool IsSetId()
-        {
-            return this.id != null;
-        }
-
-        /// <summary>
-        /// The name of the instance group.
-        ///  
-        /// </summary>
-        public string Name
-        {
-            get { return this.name; }
-            set { this.name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this.name != null;
-        }
-
-        /// <summary>
-        /// The marketplace to provision instances for this group. Valid values are ON_DEMAND or SPOT.
-        ///  
+        /// Gets and sets the property BidPrice. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>ON_DEMAND, SPOT</description>
-        ///     </item>
-        /// </list>
+        /// The bid price for each EC2 instance in the         instance group when launching nodes
+        /// as Spot Instances, expressed in USD.
         /// </para>
-        /// </summary>
-        public MarketType Market
-        {
-            get { return this.market; }
-            set { this.market = value; }
-        }
-
-        // Check to see if Market property is set
-        internal bool IsSetMarket()
-        {
-            return this.market != null;
-        }
-
-        /// <summary>
-        /// The type of the instance group. Valid values are MASTER, CORE or TASK.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>MASTER, CORE, TASK</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public InstanceGroupType InstanceGroupType
-        {
-            get { return this.instanceGroupType; }
-            set { this.instanceGroupType = value; }
-        }
-
-        // Check to see if InstanceGroupType property is set
-        internal bool IsSetInstanceGroupType()
-        {
-            return this.instanceGroupType != null;
-        }
-
-        /// <summary>
-        /// The bid price for each EC2 instance in the instance group when launching nodes as Spot Instances, expressed in USD.
-        ///  
         /// </summary>
         public string BidPrice
         {
-            get { return this.bidPrice; }
-            set { this.bidPrice = value; }
+            get { return this._bidPrice; }
+            set { this._bidPrice = value; }
         }
 
         // Check to see if BidPrice property is set
         internal bool IsSetBidPrice()
         {
-            return this.bidPrice != null;
+            return this._bidPrice != null;
         }
 
+
         /// <summary>
-        /// The EC2 instance type for all instances in the instance group.
-        ///  
+        /// Gets and sets the property Id. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 256</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// The identifier of the instance group.
+        /// </para>
+        /// </summary>
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property InstanceGroupType. 
+        /// <para>
+        /// The type of the instance group. Valid values are MASTER, CORE or TASK.
+        /// </para>
+        /// </summary>
+        public InstanceGroupType InstanceGroupType
+        {
+            get { return this._instanceGroupType; }
+            set { this._instanceGroupType = value; }
+        }
+
+        // Check to see if InstanceGroupType property is set
+        internal bool IsSetInstanceGroupType()
+        {
+            return this._instanceGroupType != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property InstanceType. 
+        /// <para>
+        /// The EC2 instance type for all instances in the instance group. 
         /// </para>
         /// </summary>
         public string InstanceType
         {
-            get { return this.instanceType; }
-            set { this.instanceType = value; }
+            get { return this._instanceType; }
+            set { this._instanceType = value; }
         }
 
         // Check to see if InstanceType property is set
         internal bool IsSetInstanceType()
         {
-            return this.instanceType != null;
+            return this._instanceType != null;
         }
 
+
         /// <summary>
-        /// The target number of instances for the instance group.
-        ///  
+        /// Gets and sets the property Market. 
+        /// <para>
+        /// The marketplace to provision instances for this group. Valid values are ON_DEMAND
+        /// or SPOT.
+        /// </para>
+        /// </summary>
+        public MarketType Market
+        {
+            get { return this._market; }
+            set { this._market = value; }
+        }
+
+        // Check to see if Market property is set
+        internal bool IsSetMarket()
+        {
+            return this._market != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the instance group.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property RequestedInstanceCount. 
+        /// <para>
+        /// The target number of instances for the instance group. 
+        /// </para>
         /// </summary>
         public int RequestedInstanceCount
         {
-            get { return this.requestedInstanceCount ?? default(int); }
-            set { this.requestedInstanceCount = value; }
+            get { return this._requestedInstanceCount.GetValueOrDefault(); }
+            set { this._requestedInstanceCount = value; }
         }
 
         // Check to see if RequestedInstanceCount property is set
         internal bool IsSetRequestedInstanceCount()
         {
-            return this.requestedInstanceCount.HasValue;
+            return this._requestedInstanceCount.HasValue; 
         }
 
+
         /// <summary>
+        /// Gets and sets the property RunningInstanceCount. 
+        /// <para>
         /// The number of instances currently running in this instance group.
-        ///  
+        /// </para>
         /// </summary>
         public int RunningInstanceCount
         {
-            get { return this.runningInstanceCount ?? default(int); }
-            set { this.runningInstanceCount = value; }
+            get { return this._runningInstanceCount.GetValueOrDefault(); }
+            set { this._runningInstanceCount = value; }
         }
 
         // Check to see if RunningInstanceCount property is set
         internal bool IsSetRunningInstanceCount()
         {
-            return this.runningInstanceCount.HasValue;
+            return this._runningInstanceCount.HasValue; 
         }
 
+
         /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
         /// The current status of the instance group.
-        ///  
+        /// </para>
         /// </summary>
         public InstanceGroupStatus Status
         {
-            get { return this.status; }
-            set { this.status = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;
+            return this._status != null;
         }
+
     }
 }

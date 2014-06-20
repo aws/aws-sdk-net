@@ -19,7 +19,7 @@
 		//"Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk",		
 		"Amazon.ElastiCache.IAmazonElastiCache",		
 		"Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing",
-        "Amazon.ElasticMapReduce.IAmazonElasticMapReduce",
+        //"Amazon.ElasticMapReduce.IAmazonElasticMapReduce",
 		"Amazon.ElasticTranscoder.IAmazonElasticTranscoder",
 		"Amazon.Glacier.IAmazonGlacier",
 		"Amazon.IdentityManagement.IAmazonIdentityManagementService",
@@ -35,7 +35,7 @@
         "Amazon.SimpleEmail.IAmazonSimpleEmailService",
 		"Amazon.SimpleNotificationService.IAmazonSimpleNotificationService",
 		"Amazon.SimpleWorkflow.IAmazonSimpleWorkflow",
-		"Amazon.SQS.IAmazonSQS",
+		//"Amazon.SQS.IAmazonSQS",
 		"Amazon.StorageGateway.IAmazonStorageGateway",
 		"Amazon.AWSSupport.IAmazonAWSSupport"
 	};

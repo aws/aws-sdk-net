@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,62 +18,58 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para>The list of supported product configurations which allow user-supplied arguments. EMR accepts these arguments and forwards them to the
-    /// corresponding installation script as bootstrap action arguments. </para>
+    /// The list of supported product configurations which allow user-supplied arguments.
+    /// EMR accepts these arguments and forwards them to the corresponding installation script
+    /// as bootstrap action arguments.
     /// </summary>
-    public class SupportedProductConfig
+    public partial class SupportedProductConfig
     {
-        
-        private string name;
-        private List<string> args = new List<string>();
+        private List<string> _args = new List<string>();
+        private string _name;
 
 
         /// <summary>
-        /// The name of the product configuration.
-        ///  
+        /// Gets and sets the property Args. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 256</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string Name
-        {
-            get { return this.name; }
-            set { this.name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this.name != null;
-        }
-
-        /// <summary>
         /// The list of user-supplied arguments.
-        ///  
+        /// </para>
         /// </summary>
         public List<string> Args
         {
-            get { return this.args; }
-            set { this.args = value; }
+            get { return this._args; }
+            set { this._args = value; }
         }
 
         // Check to see if Args property is set
         internal bool IsSetArgs()
         {
-            return this.args.Count > 0;
+            return this._args != null && this._args.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the product configuration.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
     }
 }

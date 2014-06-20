@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -323,7 +323,7 @@ namespace Amazon.SQS
         IAsyncResult invokeAddPermission(AddPermissionRequest request, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new AddPermissionRequestMarshaller().Marshall(request);
-            var unmarshaller = AddPermissionResponseUnmarshaller.GetInstance();
+            var unmarshaller = AddPermissionResponseUnmarshaller.Instance;
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;
@@ -419,7 +419,7 @@ namespace Amazon.SQS
         IAsyncResult invokeChangeMessageVisibility(ChangeMessageVisibilityRequest request, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new ChangeMessageVisibilityRequestMarshaller().Marshall(request);
-            var unmarshaller = ChangeMessageVisibilityResponseUnmarshaller.GetInstance();
+            var unmarshaller = ChangeMessageVisibilityResponseUnmarshaller.Instance;
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;
@@ -507,7 +507,7 @@ namespace Amazon.SQS
         IAsyncResult invokeChangeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest request, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new ChangeMessageVisibilityBatchRequestMarshaller().Marshall(request);
-            var unmarshaller = ChangeMessageVisibilityBatchResponseUnmarshaller.GetInstance();
+            var unmarshaller = ChangeMessageVisibilityBatchResponseUnmarshaller.Instance;
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;
@@ -611,7 +611,7 @@ namespace Amazon.SQS
         IAsyncResult invokeCreateQueue(CreateQueueRequest request, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new CreateQueueRequestMarshaller().Marshall(request);
-            var unmarshaller = CreateQueueResponseUnmarshaller.GetInstance();
+            var unmarshaller = CreateQueueResponseUnmarshaller.Instance;
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;
@@ -700,7 +700,7 @@ namespace Amazon.SQS
         IAsyncResult invokeDeleteMessage(DeleteMessageRequest request, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new DeleteMessageRequestMarshaller().Marshall(request);
-            var unmarshaller = DeleteMessageResponseUnmarshaller.GetInstance();
+            var unmarshaller = DeleteMessageResponseUnmarshaller.Instance;
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;
@@ -790,7 +790,7 @@ namespace Amazon.SQS
         IAsyncResult invokeDeleteMessageBatch(DeleteMessageBatchRequest request, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new DeleteMessageBatchRequestMarshaller().Marshall(request);
-            var unmarshaller = DeleteMessageBatchResponseUnmarshaller.GetInstance();
+            var unmarshaller = DeleteMessageBatchResponseUnmarshaller.Instance;
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;
@@ -871,7 +871,7 @@ namespace Amazon.SQS
         IAsyncResult invokeDeleteQueue(DeleteQueueRequest request, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new DeleteQueueRequestMarshaller().Marshall(request);
-            var unmarshaller = DeleteQueueResponseUnmarshaller.GetInstance();
+            var unmarshaller = DeleteQueueResponseUnmarshaller.Instance;
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;
@@ -974,7 +974,7 @@ namespace Amazon.SQS
         IAsyncResult invokeGetQueueAttributes(GetQueueAttributesRequest request, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new GetQueueAttributesRequestMarshaller().Marshall(request);
-            var unmarshaller = GetQueueAttributesResponseUnmarshaller.GetInstance();
+            var unmarshaller = GetQueueAttributesResponseUnmarshaller.Instance;
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;
@@ -1045,7 +1045,7 @@ namespace Amazon.SQS
         IAsyncResult invokeGetQueueUrl(GetQueueUrlRequest request, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new GetQueueUrlRequestMarshaller().Marshall(request);
-            var unmarshaller = GetQueueUrlResponseUnmarshaller.GetInstance();
+            var unmarshaller = GetQueueUrlResponseUnmarshaller.Instance;
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;
@@ -1113,7 +1113,7 @@ namespace Amazon.SQS
         IAsyncResult invokeListDeadLetterSourceQueues(ListDeadLetterSourceQueuesRequest request, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new ListDeadLetterSourceQueuesRequestMarshaller().Marshall(request);
-            var unmarshaller = ListDeadLetterSourceQueuesResponseUnmarshaller.GetInstance();
+            var unmarshaller = ListDeadLetterSourceQueuesResponseUnmarshaller.Instance;
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;
@@ -1173,7 +1173,7 @@ namespace Amazon.SQS
         IAsyncResult invokeListQueues(ListQueuesRequest request, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new ListQueuesRequestMarshaller().Marshall(request);
-            var unmarshaller = ListQueuesResponseUnmarshaller.GetInstance();
+            var unmarshaller = ListQueuesResponseUnmarshaller.Instance;
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;
@@ -1302,7 +1302,7 @@ namespace Amazon.SQS
         IAsyncResult invokeReceiveMessage(ReceiveMessageRequest request, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new ReceiveMessageRequestMarshaller().Marshall(request);
-            var unmarshaller = ReceiveMessageResponseUnmarshaller.GetInstance();
+            var unmarshaller = ReceiveMessageResponseUnmarshaller.Instance;
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;
@@ -1361,7 +1361,7 @@ namespace Amazon.SQS
         IAsyncResult invokeRemovePermission(RemovePermissionRequest request, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new RemovePermissionRequestMarshaller().Marshall(request);
-            var unmarshaller = RemovePermissionResponseUnmarshaller.GetInstance();
+            var unmarshaller = RemovePermissionResponseUnmarshaller.Instance;
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;
@@ -1444,7 +1444,7 @@ namespace Amazon.SQS
         IAsyncResult invokeSendMessage(SendMessageRequest request, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new SendMessageRequestMarshaller().Marshall(request);
-            var unmarshaller = SendMessageResponseUnmarshaller.GetInstance();
+            var unmarshaller = SendMessageResponseUnmarshaller.Instance;
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;
@@ -1556,7 +1556,7 @@ namespace Amazon.SQS
         IAsyncResult invokeSendMessageBatch(SendMessageBatchRequest request, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new SendMessageBatchRequestMarshaller().Marshall(request);
-            var unmarshaller = SendMessageBatchResponseUnmarshaller.GetInstance();
+            var unmarshaller = SendMessageBatchResponseUnmarshaller.Instance;
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;
@@ -1624,7 +1624,7 @@ namespace Amazon.SQS
         IAsyncResult invokeSetQueueAttributes(SetQueueAttributesRequest request, AsyncCallback callback, object state, bool synchronized)
         {
             IRequest irequest = new SetQueueAttributesRequestMarshaller().Marshall(request);
-            var unmarshaller = SetQueueAttributesResponseUnmarshaller.GetInstance();
+            var unmarshaller = SetQueueAttributesResponseUnmarshaller.Instance;
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;

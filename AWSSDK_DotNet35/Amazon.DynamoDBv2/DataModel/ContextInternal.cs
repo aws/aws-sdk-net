@@ -852,20 +852,20 @@ namespace Amazon.DynamoDBv2.DataModel
 
         private ContextSearch ConvertScan<T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig)
         {
-            DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.Config);
-            ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(config);
+            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
+            ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
             ScanFilter filter = ComposeScanFilter(conditions, storageConfig);
 
-            Table table = GetTargetTable(storageConfig, config);
+            Table table = GetTargetTable(storageConfig, flatConfig);
             var scanConfig = new ScanOperationConfig
             {
                 AttributesToGet = storageConfig.AttributesToGet,
                 Select = SelectValues.SpecificAttributes,
                 Filter = filter,
-                ConditionalOperator = config.ConditionalOperator
+                ConditionalOperator = flatConfig.ConditionalOperator
             };
             Search scan = table.Scan(scanConfig);
-            return new ContextSearch(scan, config);
+            return new ContextSearch(scan, flatConfig);
         }
 
         private ContextSearch ConvertFromScan<T>(ScanOperationConfig scanConfig, DynamoDBOperationConfig operationConfig)
@@ -930,9 +930,9 @@ namespace Amazon.DynamoDBv2.DataModel
             return new ContextSearch(query, currentConfig);
         }
 
-        private AsyncSearch<T> FromSearchAsync<T>(Search search)
+        private AsyncSearch<T> FromSearchAsync<T>(ContextSearch contextSearch)
         {
-            return new AsyncSearch<T>(this, search);
+            return new AsyncSearch<T>(this, contextSearch);
         }
 
         #endregion

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,61 +18,56 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para>Configuration of a bootstrap action.</para>
+    /// Configuration of a bootstrap action.
     /// </summary>
-    public class BootstrapActionConfig
+    public partial class BootstrapActionConfig
     {
-        
-        private string name;
-        private ScriptBootstrapActionConfig scriptBootstrapAction;
+        private string _name;
+        private ScriptBootstrapActionConfig _scriptBootstrapAction;
 
 
         /// <summary>
-        /// The name of the bootstrap action.
-        ///  
+        /// Gets and sets the property Name. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 256</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// The name of the bootstrap action.
         /// </para>
         /// </summary>
         public string Name
         {
-            get { return this.name; }
-            set { this.name = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;
+            return this._name != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property ScriptBootstrapAction. 
+        /// <para>
         /// The script run by the bootstrap action.
-        ///  
+        /// </para>
         /// </summary>
         public ScriptBootstrapActionConfig ScriptBootstrapAction
         {
-            get { return this.scriptBootstrapAction; }
-            set { this.scriptBootstrapAction = value; }
+            get { return this._scriptBootstrapAction; }
+            set { this._scriptBootstrapAction = value; }
         }
 
         // Check to see if ScriptBootstrapAction property is set
         internal bool IsSetScriptBootstrapAction()
         {
-            return this.scriptBootstrapAction != null;
+            return this._scriptBootstrapAction != null;
         }
+
     }
 }

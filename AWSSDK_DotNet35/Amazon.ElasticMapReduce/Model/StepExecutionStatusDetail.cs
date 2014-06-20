@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,121 +18,116 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para>The execution state of a step.</para>
+    /// The execution state of a step.
     /// </summary>
-    public class StepExecutionStatusDetail
+    public partial class StepExecutionStatusDetail
     {
-        
-        private StepExecutionState state;
-        private DateTime? creationDateTime;
-        private DateTime? startDateTime;
-        private DateTime? endDateTime;
-        private string lastStateChangeReason;
+        private DateTime? _creationDateTime;
+        private DateTime? _endDateTime;
+        private string _lastStateChangeReason;
+        private DateTime? _startDateTime;
+        private StepExecutionState _state;
 
 
         /// <summary>
-        /// The state of the job flow step.
-        ///  
+        /// Gets and sets the property CreationDateTime. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>PENDING, RUNNING, CONTINUE, COMPLETED, CANCELLED, FAILED, INTERRUPTED</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public StepExecutionState State
-        {
-            get { return this.state; }
-            set { this.state = value; }
-        }
-
-        // Check to see if State property is set
-        internal bool IsSetState()
-        {
-            return this.state != null;
-        }
-
-        /// <summary>
         /// The creation date and time of the step.
-        ///  
+        /// </para>
         /// </summary>
         public DateTime CreationDateTime
         {
-            get { return this.creationDateTime ?? default(DateTime); }
-            set { this.creationDateTime = value; }
+            get { return this._creationDateTime.GetValueOrDefault(); }
+            set { this._creationDateTime = value; }
         }
 
         // Check to see if CreationDateTime property is set
         internal bool IsSetCreationDateTime()
         {
-            return this.creationDateTime.HasValue;
+            return this._creationDateTime.HasValue; 
         }
+
 
         /// <summary>
-        /// The start date and time of the step.
-        ///  
-        /// </summary>
-        public DateTime StartDateTime
-        {
-            get { return this.startDateTime ?? default(DateTime); }
-            set { this.startDateTime = value; }
-        }
-
-        // Check to see if StartDateTime property is set
-        internal bool IsSetStartDateTime()
-        {
-            return this.startDateTime.HasValue;
-        }
-
-        /// <summary>
+        /// Gets and sets the property EndDateTime. 
+        /// <para>
         /// The completion date and time of the step.
-        ///  
+        /// </para>
         /// </summary>
         public DateTime EndDateTime
         {
-            get { return this.endDateTime ?? default(DateTime); }
-            set { this.endDateTime = value; }
+            get { return this._endDateTime.GetValueOrDefault(); }
+            set { this._endDateTime = value; }
         }
 
         // Check to see if EndDateTime property is set
         internal bool IsSetEndDateTime()
         {
-            return this.endDateTime.HasValue;
+            return this._endDateTime.HasValue; 
         }
 
+
         /// <summary>
-        /// A description of the step's current state.
-        ///  
+        /// Gets and sets the property LastStateChangeReason. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 10280</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// A description of the step's current state.
         /// </para>
         /// </summary>
         public string LastStateChangeReason
         {
-            get { return this.lastStateChangeReason; }
-            set { this.lastStateChangeReason = value; }
+            get { return this._lastStateChangeReason; }
+            set { this._lastStateChangeReason = value; }
         }
 
         // Check to see if LastStateChangeReason property is set
         internal bool IsSetLastStateChangeReason()
         {
-            return this.lastStateChangeReason != null;
+            return this._lastStateChangeReason != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property StartDateTime. 
+        /// <para>
+        /// The start date and time of the step.
+        /// </para>
+        /// </summary>
+        public DateTime StartDateTime
+        {
+            get { return this._startDateTime.GetValueOrDefault(); }
+            set { this._startDateTime = value; }
+        }
+
+        // Check to see if StartDateTime property is set
+        internal bool IsSetStartDateTime()
+        {
+            return this._startDateTime.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The state of the job flow step.
+        /// </para>
+        /// </summary>
+        public StepExecutionState State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
+        }
+
     }
 }

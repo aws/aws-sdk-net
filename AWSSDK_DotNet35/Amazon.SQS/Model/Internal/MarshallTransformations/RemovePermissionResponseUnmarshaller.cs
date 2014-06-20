@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RemovePermission operation
     /// </summary>  
-    internal class RemovePermissionResponseUnmarshaller : XmlResponseUnmarshaller
+    public class RemovePermissionResponseUnmarshaller : XmlResponseUnmarshaller
     {
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
@@ -44,13 +44,13 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                 {                    
                     if(context.TestExpression("RemovePermissionResult", 2))
                     {
-                        UnmarshallResult(context,response);                        
+                        UnmarshallResult(context, response);                        
                         continue;
                     }
                     
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
                     }
                 }
             }
@@ -58,7 +58,8 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context,RemovePermissionResponse response)
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId="response")]
+        private static void UnmarshallResult(XmlUnmarshallerContext context, RemovePermissionResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -85,14 +86,18 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             return new AmazonSQSException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static RemovePermissionResponseUnmarshaller instance;
-        public static RemovePermissionResponseUnmarshaller GetInstance()
+        private static RemovePermissionResponseUnmarshaller _instance = new RemovePermissionResponseUnmarshaller();        
+
+        internal static RemovePermissionResponseUnmarshaller GetInstance()
         {
-            if (instance == null)
+            return _instance;
+        }
+        public static RemovePermissionResponseUnmarshaller Instance
+        {
+            get
             {
-                instance = new RemovePermissionResponseUnmarshaller();
+                return _instance;
             }
-            return instance;
         }
 
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GetQueueAttributes operation
     /// </summary>  
-    internal class GetQueueAttributesResponseUnmarshaller : XmlResponseUnmarshaller
+    public class GetQueueAttributesResponseUnmarshaller : XmlResponseUnmarshaller
     {
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
@@ -44,13 +44,13 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                 {                    
                     if(context.TestExpression("GetQueueAttributesResult", 2))
                     {
-                        UnmarshallResult(context,response);                        
+                        UnmarshallResult(context, response);                        
                         continue;
                     }
                     
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
                     }
                 }
             }
@@ -58,7 +58,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context,GetQueueAttributesResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, GetQueueAttributesResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -74,7 +74,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("Attribute", targetDepth))
                     {
-                        var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
+                        var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                         var item = unmarshaller.Unmarshall(context);
                         response.Attributes.Add(item);
                         continue;
@@ -96,14 +96,18 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             return new AmazonSQSException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static GetQueueAttributesResponseUnmarshaller instance;
-        public static GetQueueAttributesResponseUnmarshaller GetInstance()
+        private static GetQueueAttributesResponseUnmarshaller _instance = new GetQueueAttributesResponseUnmarshaller();        
+
+        internal static GetQueueAttributesResponseUnmarshaller GetInstance()
         {
-            if (instance == null)
+            return _instance;
+        }
+        public static GetQueueAttributesResponseUnmarshaller Instance
+        {
+            get
             {
-                instance = new GetQueueAttributesResponseUnmarshaller();
+                return _instance;
             }
-            return instance;
         }
 
     }

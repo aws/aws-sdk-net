@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,7 +24,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
+    /// Container for the parameters to the GetQueueUrl operation.
+    /// Returns the URL of an existing queue.       This action provides a simple way
+    /// to retrieve the URL of an Amazon SQS queue.    
     /// 
+    ///     
+    /// <para>
+    ///       To access a queue that belongs to another AWS account, use the <code>QueueOwnerAWSAccountId</code>
+    ///      parameter to specify the account ID of the queue's owner. The queue's owner must
+    /// grant you permission to       access the queue. For more information about shared
+    /// queue access, see <a>AddPermission</a> or go to      <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html">Shared
+    /// Queues</a>      in the <i>Amazon SQS Developer Guide</i>.    
+    /// </para>
     /// </summary>
     public partial class GetQueueUrlRequest : AmazonSQSRequest
     {

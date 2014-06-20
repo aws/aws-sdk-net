@@ -48,6 +48,11 @@ namespace Amazon.EC2.Model
         {
             return this.publicIp != null;
         }
+
+        /// <summary>
+        /// The public DNS name.
+        ///  
+        /// </summary>
         public string PublicDnsName
         {
             get { return this.publicDnsName; }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para>This output contains the description of the cluster step.</para>
+    /// This output contains the description of the cluster step.
     /// </summary>
     public partial class DescribeStepResult : AmazonWebServiceResponse
     {
-        
-        private Step step;
+        private Step _step;
 
 
         /// <summary>
+        /// Gets and sets the property Step. 
+        /// <para>
         /// The step details for the requested step identifier.
-        ///  
+        /// </para>
         /// </summary>
         public Step Step
         {
-            get { return this.step; }
-            set { this.step = value; }
+            get { return this._step; }
+            set { this._step = value; }
         }
 
         // Check to see if Step property is set
         internal bool IsSetStep()
         {
-            return this.step != null;
+            return this._step != null;
         }
+
     }
 }

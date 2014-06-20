@@ -59,7 +59,11 @@ namespace Amazon.EC2.Model
     /// <para>When your instance is retired, it will either be terminated (if its root device type is the instance-store) or stopped (if its root
     /// device type is an EBS volume). Instances stopped due to retirement will not be restarted, but you can do so manually. You can also avoid
     /// retirement of EBS-backed instances by manually restarting your instance when its event code is <c>instance-retirement</c> . This ensures
-    /// that your instance is started on a different underlying host.</para>
+    /// that your instance is started on a different underlying host.</para> <para>For more information about failed status checks, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html" >Troubleshooting Instances with Failed Status
+    /// Checks</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> . For more information about working with scheduled events, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#schedevents_actions" >Working with an
+    /// Instance That Has a Scheduled Event</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
     /// </summary>
     public partial class DescribeInstanceStatusRequest : AmazonEC2Request
     {

@@ -205,7 +205,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Set to <c>simple</c> to enable enhanced networking for the AMI and any instances that you launch from the AMI.
+        /// Set to <c>simple</c> to enable enhanced networking for the AMI and any instances that you launch from the AMI. There is no way to disable
+        /// enhanced networking at this time. This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances
+        /// launched from the AMI unreachable.
         ///  
         /// </summary>
         public string SriovNetSupport

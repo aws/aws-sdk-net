@@ -762,11 +762,13 @@ namespace Amazon.EC2
 
         /// <summary>
         /// <para>Attaches an Amazon EBS volume to a running or stopped instance and exposes it to the instance with the specified device name.</para>
-        /// <para>For a list of supported device names, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html"
-        /// >Attaching an Amazon EBS Volume to an Instance</a> . Any device names that aren't reserved for instance store volumes can be used for Amazon
-        /// EBS volumes. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html" >Amazon EC2
-        /// Instance Store</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para> <para>If a volume has an AWS Marketplace product
-        /// code:</para>
+        /// <para>Encrypted Amazon EBS volumes may only be attached to instances that support Amazon EBS encryption. For more information, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html" >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute
+        /// Cloud User Guide</i> .</para> <para>For a list of supported device names, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html" >Attaching an Amazon EBS Volume to an Instance</a> . Any
+        /// device names that aren't reserved for instance store volumes can be used for Amazon EBS volumes. For more information, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html" >Amazon EC2 Instance Store</a> in the <i>Amazon Elastic
+        /// Compute Cloud User Guide</i> .</para> <para>If a volume has an AWS Marketplace product code:</para>
         /// <ul>
         /// <li>The volume can only be attached as the root device of a stopped instance.</li>
         /// <li>You must be subscribed to the AWS Marketplace code that is on the volume.</li>
@@ -1494,9 +1496,10 @@ namespace Amazon.EC2
         #region CopyImage
 
         /// <summary>
-        /// <para>Initiates the copy of an AMI from the specified source region to the region in which the request was made.</para> <para>For more
-        /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html" >Copying AMIs</a> in the <i>Amazon Elastic
-        /// Compute Cloud User Guide</i> .</para>
+        /// <para>Initiates the copy of an AMI from the specified source region to the region in which the request was made. You specify the destination
+        /// region by using its endpoint when making the request. AMIs that use encrypted Amazon EBS snapshots cannot be copied with this method.</para>
+        /// <para>For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html" >Copying AMIs</a> in the
+        /// <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="copyImageRequest">Container for the necessary parameters to execute the CopyImage service method on AmazonEC2.</param>
@@ -1560,9 +1563,11 @@ namespace Amazon.EC2
 
         /// <summary>
         /// <para>Copies a point-in-time snapshot of an Amazon EBS volume and stores it in Amazon S3. You can copy the snapshot within the same region
-        /// or from one region to another. You can use the snapshot to create Amazon EBS volumes or Amazon Machine Images (AMIs).</para> <para>For more
-        /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html" >Copying an Amazon EBS Snapshot</a> in
-        /// the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
+        /// or from one region to another. You can use the snapshot to create Amazon EBS volumes or Amazon Machine Images (AMIs). The snapshot is copied
+        /// to the regional endpoint that you send the HTTP request to.</para> <para>Copies of encrypted Amazon EBS snapshots remain encrypted. Copies
+        /// of unencrypted snapshots remain unencrypted.</para> <para>For more information, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html" >Copying an Amazon EBS Snapshot</a> in the <i>Amazon
+        /// Elastic Compute Cloud User Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="copySnapshotRequest">Container for the necessary parameters to execute the CopySnapshot service method on AmazonEC2.</param>
@@ -1699,9 +1704,22 @@ namespace Amazon.EC2
         /// <summary>
         /// <para>Creates a set of DHCP options for your VPC. After creating the set, you must associate it with the VPC, causing all existing and new
         /// instances that you launch in the VPC to use this set of DHCP options. The following are the individual DHCP options you can specify. For
-        /// more information about the options, see <a href="http://www.ietf.org/rfc/rfc2132.txt" >RFC 2132</a> .</para> <para>For more information
-        /// about DHCP options, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html" >DHCP Options Sets</a> in the
-        /// <i>Amazon Virtual Private Cloud User Guide</i> .</para>
+        /// more information about the options, see <a href="http://www.ietf.org/rfc/rfc2132.txt" >RFC 2132</a> .</para>
+        /// <ul>
+        /// <li> <c>domain-name-servers</c> - The IP addresses of up to four domain name servers, or <c>AmazonProvidedDNS</c> . The default DHCP option
+        /// set specifies <c>AmazonProvidedDNS</c> . If specifying more than one domain name server, specify the IP addresses in a single parameter,
+        /// separated by commas.</li>
+        /// <li> <c>domain-name</c> - If you're using AmazonProvidedDNS in <c>us-east-1</c> ,
+        /// specify <c>ec2.internal</c> . If you're using AmazonProvidedDNS in another region, specify <c>region.compute.internal</c> (for
+        /// example, <c>ap-northeast-1.compute.internal</c> ). Otherwise, specify a domain name (for example, <c>MyCompany.com</c> ).</li>
+        /// <li> <c>ntp-servers</c> - The IP addresses of up to four Network Time Protocol (NTP) servers.</li>
+        /// <li> <c>netbios-name-servers</c> - The IP addresses of up to four NetBIOS name servers.</li>
+        /// <li> <c>netbios-node-type</c> - The NetBIOS node type (1, 2, 4, or 8). We recommend that you specify 2 (broadcast and multicast are not
+        /// currently supported). For more information about these node types, see <a href="http://www.ietf.org/rfc/rfc2132.txt" >RFC 2132</a> . </li>
+        /// 
+        /// </ul>
+        /// <para>For more information about DHCP options, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"
+        /// >DHCP Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="createDhcpOptionsRequest">Container for the necessary parameters to execute the CreateDhcpOptions service method on
@@ -2597,9 +2615,12 @@ namespace Amazon.EC2
         /// enough to take a snapshot, your snapshot should be complete. However, if you cannot pause all file writes to the volume, you should unmount
         /// the volume from within the instance, issue the snapshot command, and then remount the volume to ensure a consistent and complete snapshot.
         /// You may remount and use your volume while the snapshot status is <c>pending</c> .</para> <para>To create a snapshot for Amazon EBS volumes
-        /// that serve as root devices, you should stop the instance before taking the snapshot.</para> <para>For more information, see <a
-        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-snapshot.html" >Creating an Amazon EBS Snapshot</a> in the <i>Amazon
-        /// Elastic Compute Cloud User Guide</i> .</para>
+        /// that serve as root devices, you should stop the instance before taking the snapshot.</para> <para>Snapshots that are taken from encrypted
+        /// volumes are automatically encrypted. Volumes that are created from encrypted snapshots are also automatically encrypted. Your encrypted
+        /// volumes and any associated snapshots always remain protected.</para> <para>For more information, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html" >Amazon Elastic Block Store</a> and <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html" >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute
+        /// Cloud User Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="createSnapshotRequest">Container for the necessary parameters to execute the CreateSnapshot service method on
@@ -2860,8 +2881,12 @@ namespace Amazon.EC2
         #region CreateVolume
 
         /// <summary>
-        /// <para>Creates an Amazon EBS volume that can be attached to any instance in the same Availability Zone.</para> <para>Any AWS Marketplace
-        /// product codes from the snapshot are propagated to the volume.</para> <para>For more information, see <a
+        /// <para>Creates an Amazon EBS volume that can be attached to an instance in the same Availability Zone. The volume is created in the specified
+        /// region.</para> <para>You can create a new empty volume or restore a volume from an Amazon EBS snapshot. Any AWS Marketplace product codes
+        /// from the snapshot are propagated to the volume.</para> <para>You can create encrypted volumes with the <c>Encrypted</c> parameter. Encrypted
+        /// volumes may only be attached to instances that support Amazon EBS encryption. Volumes that are created from encrypted snapshots are also
+        /// automatically encrypted. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html" >Amazon
+        /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para> <para>For more information, see <a
         /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html" >Creating or Restoring an Amazon EBS Volume</a> in the
         /// <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
         /// </summary>
@@ -2997,9 +3022,9 @@ namespace Amazon.EC2
         /// <summary>
         /// <para>Requests a VPC peering connection between two VPCs: a requester VPC that you own and a peer VPC with which to create the connection.
         /// The peer VPC can belong to another AWS account. The requester VPC and peer VPC cannot have overlapping CIDR blocks.</para> <para>The owner
-        /// of the peer VPC must accept the the peering request to activate the peering connection. The VPC peering connection request expires after 7
-        /// days, after which it cannot be accepted or rejected.</para> <para>A <c>CreateVpcPeeringConnection</c> request between VPCs with overlapping
-        /// CIDR blocks results in the VPC peering connection having a status of <c>failed</c> .</para>
+        /// of the peer VPC must accept the peering request to activate the peering connection. The VPC peering connection request expires after 7 days,
+        /// after which it cannot be accepted or rejected.</para> <para>A <c>CreateVpcPeeringConnection</c> request between VPCs with overlapping CIDR
+        /// blocks results in the VPC peering connection having a status of <c>failed</c> .</para>
         /// </summary>
         /// 
         /// <param name="createVpcPeeringConnectionRequest">Container for the necessary parameters to execute the CreateVpcPeeringConnection service
@@ -4170,7 +4195,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// <para>Deletes the specified Amazon EBS volume. The volume must be in the <c>available</c> state (not attached to an instance).</para>
-        /// <para><b>NOTE:</b> The volume remains in the deleting state for several minutes. </para> <para>For more information, see <a
+        /// <para><b>NOTE:</b> The volume may remain in the deleting state for several minutes. </para> <para>For more information, see <a
         /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html" >Deleting an Amazon EBS Volume</a> in the <i>Amazon
         /// Elastic Compute Cloud User Guide</i> .</para>
         /// </summary>
@@ -4294,8 +4319,6 @@ namespace Amazon.EC2
         /// <param name="deleteVpcPeeringConnectionRequest">Container for the necessary parameters to execute the DeleteVpcPeeringConnection service
         ///          method on AmazonEC2.</param>
         /// 
-        /// <returns>The response from the DeleteVpcPeeringConnection service method, as returned by AmazonEC2.</returns>
-        /// 
         public DeleteVpcPeeringConnectionResponse DeleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest deleteVpcPeeringConnectionRequest)
         {
             IAsyncResult asyncResult = invokeDeleteVpcPeeringConnection(deleteVpcPeeringConnectionRequest, null, null, true);
@@ -4314,9 +4337,6 @@ namespace Amazon.EC2
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDeleteVpcPeeringConnection operation.</returns>
         public IAsyncResult BeginDeleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest deleteVpcPeeringConnectionRequest, AsyncCallback callback, object state)
         {
             return invokeDeleteVpcPeeringConnection(deleteVpcPeeringConnectionRequest, callback, state, false);
@@ -4330,8 +4350,6 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVpcPeeringConnection.</param>
-        /// 
-        /// <returns>Returns a DeleteVpcPeeringConnectionResult from AmazonEC2.</returns>
         public DeleteVpcPeeringConnectionResponse EndDeleteVpcPeeringConnection(IAsyncResult asyncResult)
         {
             return endOperation<DeleteVpcPeeringConnectionResponse>(asyncResult);
@@ -5490,7 +5508,11 @@ namespace Amazon.EC2
         /// <para>When your instance is retired, it will either be terminated (if its root device type is the instance-store) or stopped (if its root
         /// device type is an EBS volume). Instances stopped due to retirement will not be restarted, but you can do so manually. You can also avoid
         /// retirement of EBS-backed instances by manually restarting your instance when its event code is <c>instance-retirement</c> . This ensures
-        /// that your instance is started on a different underlying host.</para>
+        /// that your instance is started on a different underlying host.</para> <para>For more information about failed status checks, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html" >Troubleshooting Instances with Failed Status
+        /// Checks</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> . For more information about working with scheduled events, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#schedevents_actions" >Working with an
+        /// Instance That Has a Scheduled Event</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="describeInstanceStatusRequest">Container for the necessary parameters to execute the DescribeInstanceStatus service method on
@@ -5585,7 +5607,11 @@ namespace Amazon.EC2
         /// <para>When your instance is retired, it will either be terminated (if its root device type is the instance-store) or stopped (if its root
         /// device type is an EBS volume). Instances stopped due to retirement will not be restarted, but you can do so manually. You can also avoid
         /// retirement of EBS-backed instances by manually restarting your instance when its event code is <c>instance-retirement</c> . This ensures
-        /// that your instance is started on a different underlying host.</para>
+        /// that your instance is started on a different underlying host.</para> <para>For more information about failed status checks, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html" >Troubleshooting Instances with Failed Status
+        /// Checks</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> . For more information about working with scheduled events, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#schedevents_actions" >Working with an
+        /// Instance That Has a Scheduled Event</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeInstanceStatus service method, as returned by AmazonEC2.</returns>
@@ -8646,7 +8672,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// <para>Creates an import instance task using metadata from the specified disk image. After importing the image, you then upload it using the
-        /// ec2-upload-disk-image command in the EC2 command line tools. For more information, see Using the Command Line Tools to Import Your Virtual
+        /// ec2-import-volume command in the EC2 command line tools. For more information, see Using the Command Line Tools to Import Your Virtual
         /// Machine to Amazon EC2 in the Amazon Elastic Compute Cloud User Guide.</para>
         /// </summary>
         /// 
@@ -8779,7 +8805,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// <para>Creates an import volume task using metadata from the specified disk image. After importing the image, you then upload it using the
-        /// ec2-upload-disk-image command in the Amazon EC2 command-line interface (CLI) tools. For more information, see <a
+        /// ec2-import-volume command in the Amazon EC2 command-line interface (CLI) tools. For more information, see <a
         /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html" >Using the Command Line Tools to Import Your
         /// Virtual Machine to Amazon EC2</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
         /// </summary>
@@ -9406,7 +9432,9 @@ namespace Amazon.EC2
         /// <summary>
         /// <para>Requests a reboot of one or more instances. This operation is asynchronous; it only queues a request to reboot the specified
         /// instances. The operation succeeds if the instances are valid and belong to you. Requests to reboot terminated instances are ignored.</para>
-        /// <para>If a Linux/Unix instance does not cleanly shut down within four minutes, Amazon EC2 performs a hard reboot.</para>
+        /// <para>If a Linux/Unix instance does not cleanly shut down within four minutes, Amazon EC2 performs a hard reboot.</para> <para>For more
+        /// information about troubleshooting, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html" >Getting Console
+        /// Output and Rebooting Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="rebootInstancesRequest">Container for the necessary parameters to execute the RebootInstances service method on
@@ -9542,8 +9570,6 @@ namespace Amazon.EC2
         /// <param name="rejectVpcPeeringConnectionRequest">Container for the necessary parameters to execute the RejectVpcPeeringConnection service
         ///          method on AmazonEC2.</param>
         /// 
-        /// <returns>The response from the RejectVpcPeeringConnection service method, as returned by AmazonEC2.</returns>
-        /// 
         public RejectVpcPeeringConnectionResponse RejectVpcPeeringConnection(RejectVpcPeeringConnectionRequest rejectVpcPeeringConnectionRequest)
         {
             IAsyncResult asyncResult = invokeRejectVpcPeeringConnection(rejectVpcPeeringConnectionRequest, null, null, true);
@@ -9562,9 +9588,6 @@ namespace Amazon.EC2
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndRejectVpcPeeringConnection operation.</returns>
         public IAsyncResult BeginRejectVpcPeeringConnection(RejectVpcPeeringConnectionRequest rejectVpcPeeringConnectionRequest, AsyncCallback callback, object state)
         {
             return invokeRejectVpcPeeringConnection(rejectVpcPeeringConnectionRequest, callback, state, false);
@@ -9578,8 +9601,6 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRejectVpcPeeringConnection.</param>
-        /// 
-        /// <returns>Returns a RejectVpcPeeringConnectionResult from AmazonEC2.</returns>
         public RejectVpcPeeringConnectionResponse EndRejectVpcPeeringConnection(IAsyncResult asyncResult)
         {
             return endOperation<RejectVpcPeeringConnectionResponse>(asyncResult);
@@ -10435,7 +10456,10 @@ namespace Amazon.EC2
         /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para> <para>You can provide optional user data when launching an
         /// instance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html" >Instance
         /// Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para> <para>If any of the AMIs have a product code attached for which
-        /// the user has not subscribed, <c>RunInstances</c> fails.</para>
+        /// the user has not subscribed, <c>RunInstances</c> fails.</para> <para>For more information about troubleshooting, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html" >What To Do If An Instance Immediately
+        /// Terminates</a> , and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html" >Troubleshooting
+        /// Connecting to Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="runInstancesRequest">Container for the necessary parameters to execute the RunInstances service method on AmazonEC2.</param>
@@ -10582,7 +10606,9 @@ namespace Amazon.EC2
         /// the instance persist. When you terminate an instance, the root device and any other devices attached during the instance launch are
         /// automatically deleted. For more information about the differences between stopping and terminating instances, see <a
         /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html" >Instance Lifecycle</a> in the <i>Amazon Elastic
-        /// Compute Cloud User Guide</i> .</para>
+        /// Compute Cloud User Guide</i> .</para> <para>For more information about troubleshooting, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html" >Troubleshooting Stopping Your Instance</a>
+        /// in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="stopInstancesRequest">Container for the necessary parameters to execute the StopInstances service method on AmazonEC2.</param>
@@ -10653,7 +10679,9 @@ namespace Amazon.EC2
         /// attached to the instance persist. When you terminate an instance, the root device and any other devices attached during the instance launch
         /// are automatically deleted. For more information about the differences between stopping and terminating instances, see <a
         /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html" >Instance Lifecycle</a> in the <i>Amazon Elastic
-        /// Compute Cloud User Guide</i> .</para>
+        /// Compute Cloud User Guide</i> .</para> <para>For more information about troubleshooting, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html" >Troubleshooting Terminating Your
+        /// Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="terminateInstancesRequest">Container for the necessary parameters to execute the TerminateInstances service method on

@@ -12,146 +12,148 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.ElasticTranscoder.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
+using Amazon.ElasticTranscoder.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for VideoParameters Object
+    /// </summary>  
+    public class VideoParametersUnmarshaller : IUnmarshaller<VideoParameters, XmlUnmarshallerContext>, IUnmarshaller<VideoParameters, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// VideoParametersUnmarshaller
-      /// </summary>
-      internal class VideoParametersUnmarshaller : IUnmarshaller<VideoParameters, XmlUnmarshallerContext>, IUnmarshaller<VideoParameters, JsonUnmarshallerContext>
-      {
         VideoParameters IUnmarshaller<VideoParameters, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public VideoParameters Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            VideoParameters videoParameters = new VideoParameters();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            VideoParameters unmarshalledObject = new VideoParameters();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("Codec", targetDepth))
-              {
-                videoParameters.Codec = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("CodecOptions", targetDepth))
-              {
-                
-                var unmarshaller =  new DictionaryUnmarshaller<String,String,StringUnmarshaller,StringUnmarshaller>(
-                    StringUnmarshaller.GetInstance(),StringUnmarshaller.GetInstance());               
-                videoParameters.CodecOptions = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
-              if (context.TestExpression("KeyframesMaxDist", targetDepth))
-              {
-                videoParameters.KeyframesMaxDist = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("FixedGOP", targetDepth))
-              {
-                videoParameters.FixedGOP = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("BitRate", targetDepth))
-              {
-                videoParameters.BitRate = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("FrameRate", targetDepth))
-              {
-                videoParameters.FrameRate = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("MaxFrameRate", targetDepth))
-              {
-                videoParameters.MaxFrameRate = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Resolution", targetDepth))
-              {
-                videoParameters.Resolution = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("AspectRatio", targetDepth))
-              {
-                videoParameters.AspectRatio = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("MaxWidth", targetDepth))
-              {
-                videoParameters.MaxWidth = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("MaxHeight", targetDepth))
-              {
-                videoParameters.MaxHeight = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("DisplayAspectRatio", targetDepth))
-              {
-                videoParameters.DisplayAspectRatio = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("SizingPolicy", targetDepth))
-              {
-                videoParameters.SizingPolicy = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("PaddingPolicy", targetDepth))
-              {
-                videoParameters.PaddingPolicy = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Watermarks", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<PresetWatermark,PresetWatermarkUnmarshaller>(
-                    PresetWatermarkUnmarshaller.GetInstance());                  
-                videoParameters.Watermarks = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
+                if (context.TestExpression("AspectRatio", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AspectRatio = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("BitRate", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BitRate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Codec", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Codec = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CodecOptions", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.CodecOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DisplayAspectRatio", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DisplayAspectRatio = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FixedGOP", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FixedGOP = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FrameRate", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FrameRate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("KeyframesMaxDist", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KeyframesMaxDist = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MaxFrameRate", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MaxFrameRate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MaxHeight", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MaxHeight = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MaxWidth", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MaxWidth = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PaddingPolicy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PaddingPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Resolution", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Resolution = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SizingPolicy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SizingPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Watermarks", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<PresetWatermark, PresetWatermarkUnmarshaller>(PresetWatermarkUnmarshaller.Instance);
+                    unmarshalledObject.Watermarks = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return videoParameters;
+            return unmarshalledObject;
         }
 
-        private static VideoParametersUnmarshaller instance;
-        public static VideoParametersUnmarshaller GetInstance()
+
+        private static VideoParametersUnmarshaller _instance = new VideoParametersUnmarshaller();        
+
+        public static VideoParametersUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new VideoParametersUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

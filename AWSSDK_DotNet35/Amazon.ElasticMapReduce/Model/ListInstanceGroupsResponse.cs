@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// Returns information about the  ListInstanceGroups response and response metadata.
+    /// Configuration for accessing Amazon ListInstanceGroups service
     /// </summary>
-    public class ListInstanceGroupsResponse : ListInstanceGroupsResult
+    public partial class ListInstanceGroupsResponse : ListInstanceGroupsResult
     {
         /// <summary>
         /// Gets and sets the ListInstanceGroupsResult property.
-        /// This input determines which instance groups to retrieve.
+        /// Represents the output of a ListInstanceGroups operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ListInstanceGroupsResult class are now available on the ListInstanceGroupsResponse class. You should use the properties on ListInstanceGroupsResponse instead of accessing them through ListInstanceGroupsResult.")]
         public ListInstanceGroupsResult ListInstanceGroupsResult
@@ -40,4 +36,3 @@ namespace Amazon.ElasticMapReduce.Model
         }
     }
 }
-    

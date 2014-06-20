@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,83 +18,100 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para>A cluster step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute
-    /// and waits for the job to finish or fail. </para>
+    /// A cluster step consisting of a JAR file whose main function will be executed. The
+    /// main         function submits a job for Hadoop to execute and waits for the job to
+    /// finish or fail.
     /// </summary>
-    public class HadoopStepConfig
+    public partial class HadoopStepConfig
     {
-        
-        private string jar;
-        private Dictionary<string,string> properties = new Dictionary<string,string>();
-        private string mainClass;
-        private List<string> args = new List<string>();
+        private List<string> _args = new List<string>();
+        private string _jar;
+        private string _mainClass;
+        private Dictionary<string, string> _properties = new Dictionary<string, string>();
 
 
         /// <summary>
-        /// The path to the JAR file that runs during the step.
-        ///  
-        /// </summary>
-        public string Jar
-        {
-            get { return this.jar; }
-            set { this.jar = value; }
-        }
-
-        // Check to see if Jar property is set
-        internal bool IsSetJar()
-        {
-            return this.jar != null;
-        }
-
-        /// <summary>
-        /// The list of Java properties that are set when the step runs. You can use these properties to pass key value pairs to your main function.
-        ///  
-        /// </summary>
-        public Dictionary<string,string> Properties
-        {
-            get { return this.properties; }
-            set { this.properties = value; }
-        }
-
-        // Check to see if Properties property is set
-        internal bool IsSetProperties()
-        {
-            return this.properties != null;
-        }
-
-        /// <summary>
-        /// The name of the main class in the specified Java file. If not specified, the JAR file should specify a main class in its manifest file.
-        ///  
-        /// </summary>
-        public string MainClass
-        {
-            get { return this.mainClass; }
-            set { this.mainClass = value; }
-        }
-
-        // Check to see if MainClass property is set
-        internal bool IsSetMainClass()
-        {
-            return this.mainClass != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Args. 
+        /// <para>
         /// The list of command line arguments to pass to the JAR file's main function for execution.
-        ///  
+        /// </para>
         /// </summary>
         public List<string> Args
         {
-            get { return this.args; }
-            set { this.args = value; }
+            get { return this._args; }
+            set { this._args = value; }
         }
 
         // Check to see if Args property is set
         internal bool IsSetArgs()
         {
-            return this.args.Count > 0;
+            return this._args != null && this._args.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Jar. 
+        /// <para>
+        /// The path to the JAR file that runs during the step.
+        /// </para>
+        /// </summary>
+        public string Jar
+        {
+            get { return this._jar; }
+            set { this._jar = value; }
+        }
+
+        // Check to see if Jar property is set
+        internal bool IsSetJar()
+        {
+            return this._jar != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property MainClass. 
+        /// <para>
+        /// The name of the main class in the specified Java file. If not specified, the JAR file
+        ///         should specify a main class in its manifest file.
+        /// </para>
+        /// </summary>
+        public string MainClass
+        {
+            get { return this._mainClass; }
+            set { this._mainClass = value; }
+        }
+
+        // Check to see if MainClass property is set
+        internal bool IsSetMainClass()
+        {
+            return this._mainClass != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Properties. 
+        /// <para>
+        /// The list of Java properties that are set when the step runs. You can use these properties
+        /// to         pass key value pairs to your main function.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Properties
+        {
+            get { return this._properties; }
+            set { this._properties = value; }
+        }
+
+        // Check to see if Properties property is set
+        internal bool IsSetProperties()
+        {
+            return this._properties != null && this._properties.Count > 0; 
+        }
+
     }
 }

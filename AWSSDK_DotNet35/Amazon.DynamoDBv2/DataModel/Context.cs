@@ -188,9 +188,21 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>Document with attributes populated from object.</returns>
         public Document ToDocument<T>(T value)
         {
+            return ToDocument<T>(value, null);
+        }
+
+        /// <summary>
+        /// Serializes an object to a Document.
+        /// </summary>
+        /// <typeparam name="T">Type to serialize as.</typeparam>
+        /// <param name="value">Object to serialize.</param>
+        /// <param name="operationConfig">Config object which can be used to override the table used.</param>
+        /// <returns>Document with attributes populated from object.</returns>
+        public Document ToDocument<T>(T value, DynamoDBOperationConfig operationConfig)
+        {
             if (value == null) return null;
 
-            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(null, Config);
+            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, Config);
             ItemStorage storage = ObjectToItemStorage<T>(value, false, flatConfig);
             if (storage == null) return null;
 
@@ -241,13 +253,33 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </returns>
         public T FromDocument<T>(Document document)
         {
-            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(null, Config);
+            return FromDocument<T>(document, null);
+        }
+
+        /// <summary>
+        /// Deserializes a document to an instance of type T.
+        /// </summary>
+        /// <typeparam name="T">Type to populate.</typeparam>
+        /// <param name="document">Document with properties to use.</param>
+        /// <param name="operationConfig">Config object which can be used to override the table used.</param>
+        /// <returns>
+        /// Object of type T, populated with properties from the document.
+        /// </returns>
+        public T FromDocument<T>(Document document, DynamoDBOperationConfig operationConfig)
+        {
+            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, Config);
+            return FromDocumentHelper<T>(document, flatConfig);
+        }
+
+        internal T FromDocumentHelper<T>(Document document, DynamoDBFlatConfig flatConfig)
+        {
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
             ItemStorage storage = new ItemStorage(storageConfig);
             storage.Document = document;
             T instance = DocumentToObject<T>(storage);
             return instance;
         }
+
 
         /// <summary>
         /// Deserializes a collections of documents to a collection of instances of type T.
@@ -259,9 +291,32 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </returns>
         public IEnumerable<T> FromDocuments<T>(IEnumerable<Document> documents)
         {
+            return FromDocuments<T>(documents, null);
+        }
+
+        /// <summary>
+        /// Deserializes a collections of documents to a collection of instances of type T.
+        /// </summary>
+        /// <typeparam name="T">Type to populate.</typeparam>
+        /// <param name="documents">Documents to deserialize.</param>
+        /// <param name="operationConfig">Config object which can be used to override the table used.</param>
+        /// <returns>
+        /// Collection of items of type T, each populated with properties from a corresponding document.
+        /// </returns>
+        public IEnumerable<T> FromDocuments<T>(IEnumerable<Document> documents, DynamoDBOperationConfig operationConfig)
+        {
             foreach (var document in documents)
             {
-                T item = FromDocument<T>(document);
+                T item = FromDocument<T>(document, operationConfig);
+                yield return item;
+            }
+        }
+
+        internal IEnumerable<T> FromDocumentsHelper<T>(IEnumerable<Document> documents, DynamoDBFlatConfig flatConfig)
+        {
+            foreach (var document in documents)
+            {
+                T item = FromDocumentHelper<T>(document, flatConfig);
                 yield return item;
             }
         }

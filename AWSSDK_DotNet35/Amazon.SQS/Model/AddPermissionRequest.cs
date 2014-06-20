@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,7 +24,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
+    /// Container for the parameters to the AddPermission operation.
+    /// Adds a permission to a queue for a specific       <a href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a>.
+    ///      This allows for sharing access to the queue.
     /// 
+    ///     
+    /// <para>
+    /// When you create a queue, you have full control access rights for the queue.      Only
+    /// you (as owner of the queue) can grant or deny permissions to the queue.      For more
+    /// information about these permissions, see      <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html">Shared
+    ///      Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+    /// </para>
+    ///     <note>    
+    /// <para>
+    /// <code>AddPermission</code> writes an Amazon SQS-generated policy. If you want to 
+    ///     write your own policy, use <a>SetQueueAttributes</a> to upload your policy. For
+    /// more      information about writing your own policy, see      <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AccessPolicyLanguage.html">Using
+    ///      The Access Policy Language</a> in the <i>Amazon SQS Developer Guide</i>.
+    /// </para>
+    ///     </note>        <note>Some API actions take lists of parameters. These lists are
+    /// specified using the <code>param.n</code> notation. Values      of <code>n</code> are
+    /// integers starting from 1. For example, a parameter list with two elements looks like
+    /// this:     </note>    
+    /// <para>
+    /// <code>&amp;Attribute.1=this</code>
+    /// </para>
+    ///     
+    /// <para>
+    /// <code>&amp;Attribute.2=that</code>
+    /// </para>
     /// </summary>
     public partial class AddPermissionRequest : AmazonSQSRequest
     {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for BatchResultErrorEntry Object
     /// </summary>  
-    internal class BatchResultErrorEntryUnmarshaller : IUnmarshaller<BatchResultErrorEntry, XmlUnmarshallerContext>, IUnmarshaller<BatchResultErrorEntry, JsonUnmarshallerContext>
+    public class BatchResultErrorEntryUnmarshaller : IUnmarshaller<BatchResultErrorEntry, XmlUnmarshallerContext>, IUnmarshaller<BatchResultErrorEntry, JsonUnmarshallerContext>
     {
         public BatchResultErrorEntry Unmarshall(XmlUnmarshallerContext context)
         {
@@ -47,25 +47,25 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Code", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Code = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Id", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Message", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Message = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SenderFault", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.GetInstance();
+                        var unmarshaller = BoolUnmarshaller.Instance;
                         unmarshalledObject.SenderFault = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -85,15 +85,14 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         }
 
 
-        private static BatchResultErrorEntryUnmarshaller instance;
-        public static BatchResultErrorEntryUnmarshaller GetInstance()
-        {
-            if (instance == null)
-            {
-                instance = new BatchResultErrorEntryUnmarshaller();
-            }
-            return instance;
-        }
+        private static BatchResultErrorEntryUnmarshaller _instance = new BatchResultErrorEntryUnmarshaller();        
 
+        public static BatchResultErrorEntryUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
     }
 }

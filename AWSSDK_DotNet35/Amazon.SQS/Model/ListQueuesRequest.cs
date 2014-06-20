@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,7 +24,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// 
+    /// Container for the parameters to the ListQueues operation.
+    /// Returns a list of your queues. The maximum number of      queues that can be returned
+    /// is 1000. If you specify a value for the optional      <code>QueueNamePrefix</code>
+    /// parameter, only queues with a name beginning with the      specified value are returned.
     /// </summary>
     public partial class ListQueuesRequest : AmazonSQSRequest
     {

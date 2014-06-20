@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ChangeMessageVisibilityBatchResultEntry Object
     /// </summary>  
-    internal class ChangeMessageVisibilityBatchResultEntryUnmarshaller : IUnmarshaller<ChangeMessageVisibilityBatchResultEntry, XmlUnmarshallerContext>, IUnmarshaller<ChangeMessageVisibilityBatchResultEntry, JsonUnmarshallerContext>
+    public class ChangeMessageVisibilityBatchResultEntryUnmarshaller : IUnmarshaller<ChangeMessageVisibilityBatchResultEntry, XmlUnmarshallerContext>, IUnmarshaller<ChangeMessageVisibilityBatchResultEntry, JsonUnmarshallerContext>
     {
         public ChangeMessageVisibilityBatchResultEntry Unmarshall(XmlUnmarshallerContext context)
         {
@@ -47,7 +47,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Id", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -67,15 +67,14 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         }
 
 
-        private static ChangeMessageVisibilityBatchResultEntryUnmarshaller instance;
-        public static ChangeMessageVisibilityBatchResultEntryUnmarshaller GetInstance()
-        {
-            if (instance == null)
-            {
-                instance = new ChangeMessageVisibilityBatchResultEntryUnmarshaller();
-            }
-            return instance;
-        }
+        private static ChangeMessageVisibilityBatchResultEntryUnmarshaller _instance = new ChangeMessageVisibilityBatchResultEntryUnmarshaller();        
 
+        public static ChangeMessageVisibilityBatchResultEntryUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
     }
 }

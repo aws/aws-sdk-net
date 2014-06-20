@@ -33,9 +33,12 @@ namespace Amazon.EC2.Model
     /// enough to take a snapshot, your snapshot should be complete. However, if you cannot pause all file writes to the volume, you should unmount
     /// the volume from within the instance, issue the snapshot command, and then remount the volume to ensure a consistent and complete snapshot.
     /// You may remount and use your volume while the snapshot status is <c>pending</c> .</para> <para>To create a snapshot for Amazon EBS volumes
-    /// that serve as root devices, you should stop the instance before taking the snapshot.</para> <para>For more information, see <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-snapshot.html" >Creating an Amazon EBS Snapshot</a> in the <i>Amazon
-    /// Elastic Compute Cloud User Guide</i> .</para>
+    /// that serve as root devices, you should stop the instance before taking the snapshot.</para> <para>Snapshots that are taken from encrypted
+    /// volumes are automatically encrypted. Volumes that are created from encrypted snapshots are also automatically encrypted. Your encrypted
+    /// volumes and any associated snapshots always remain protected.</para> <para>For more information, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html" >Amazon Elastic Block Store</a> and <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html" >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute
+    /// Cloud User Guide</i> .</para>
     /// </summary>
     public partial class CreateSnapshotRequest : AmazonEC2Request
     {

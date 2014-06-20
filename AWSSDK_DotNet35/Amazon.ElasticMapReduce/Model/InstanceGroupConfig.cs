@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,173 +18,137 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para>Configuration defining a new instance group.</para>
+    /// Configuration defining a new instance group.
     /// </summary>
-    public class InstanceGroupConfig
+    public partial class InstanceGroupConfig
     {
-        
-        private string name;
-        private MarketType market;
-        private InstanceRoleType instanceRole;
-        private string bidPrice;
-        private string instanceType;
-        private int? instanceCount;
+        private string _bidPrice;
+        private int? _instanceCount;
+        private InstanceRoleType _instanceRole;
+        private string _instanceType;
+        private MarketType _market;
+        private string _name;
 
 
         /// <summary>
-        /// Friendly name given to the instance group.
-        ///  
+        /// Gets and sets the property BidPrice. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 256</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string Name
-        {
-            get { return this.name; }
-            set { this.name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this.name != null;
-        }
-
-        /// <summary>
-        /// Market type of the Amazon EC2 instances used to create a cluster node.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>ON_DEMAND, SPOT</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public MarketType Market
-        {
-            get { return this.market; }
-            set { this.market = value; }
-        }
-
-        // Check to see if Market property is set
-        internal bool IsSetMarket()
-        {
-            return this.market != null;
-        }
-
-        /// <summary>
-        /// The role of the instance group in the cluster.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>MASTER, CORE, TASK</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public InstanceRoleType InstanceRole
-        {
-            get { return this.instanceRole; }
-            set { this.instanceRole = value; }
-        }
-
-        // Check to see if InstanceRole property is set
-        internal bool IsSetInstanceRole()
-        {
-            return this.instanceRole != null;
-        }
-
-        /// <summary>
-        /// Bid price for each Amazon EC2 instance in the instance group when launching nodes as Spot Instances, expressed in USD.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 256</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// Bid price for each Amazon EC2 instance in the         instance group when launching
+        /// nodes as Spot Instances, expressed in USD.
         /// </para>
         /// </summary>
         public string BidPrice
         {
-            get { return this.bidPrice; }
-            set { this.bidPrice = value; }
+            get { return this._bidPrice; }
+            set { this._bidPrice = value; }
         }
 
         // Check to see if BidPrice property is set
         internal bool IsSetBidPrice()
         {
-            return this.bidPrice != null;
+            return this._bidPrice != null;
         }
 
+
         /// <summary>
-        /// The Amazon EC2 instance type for all instances in the instance group.
-        ///  
+        /// Gets and sets the property InstanceCount. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 256</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// Target number of instances for the instance group. 
         /// </para>
-        /// </summary>
-        public string InstanceType
-        {
-            get { return this.instanceType; }
-            set { this.instanceType = value; }
-        }
-
-        // Check to see if InstanceType property is set
-        internal bool IsSetInstanceType()
-        {
-            return this.instanceType != null;
-        }
-
-        /// <summary>
-        /// Target number of instances for the instance group.
-        ///  
         /// </summary>
         public int InstanceCount
         {
-            get { return this.instanceCount ?? default(int); }
-            set { this.instanceCount = value; }
+            get { return this._instanceCount.GetValueOrDefault(); }
+            set { this._instanceCount = value; }
         }
 
         // Check to see if InstanceCount property is set
         internal bool IsSetInstanceCount()
         {
-            return this.instanceCount.HasValue;
+            return this._instanceCount.HasValue; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property InstanceRole. 
+        /// <para>
+        /// The role of the instance group in the cluster.
+        /// </para>
+        /// </summary>
+        public InstanceRoleType InstanceRole
+        {
+            get { return this._instanceRole; }
+            set { this._instanceRole = value; }
+        }
+
+        // Check to see if InstanceRole property is set
+        internal bool IsSetInstanceRole()
+        {
+            return this._instanceRole != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property InstanceType. 
+        /// <para>
+        /// The Amazon EC2 instance type for all instances in the instance group. 
+        /// </para>
+        /// </summary>
+        public string InstanceType
+        {
+            get { return this._instanceType; }
+            set { this._instanceType = value; }
+        }
+
+        // Check to see if InstanceType property is set
+        internal bool IsSetInstanceType()
+        {
+            return this._instanceType != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Market. 
+        /// <para>
+        /// Market type of the Amazon EC2 instances used to create a cluster node. 
+        /// </para>
+        /// </summary>
+        public MarketType Market
+        {
+            get { return this._market; }
+            set { this._market = value; }
+        }
+
+        // Check to see if Market property is set
+        internal bool IsSetMarket()
+        {
+            return this._market != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// Friendly name given to the instance group.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
     }
 }

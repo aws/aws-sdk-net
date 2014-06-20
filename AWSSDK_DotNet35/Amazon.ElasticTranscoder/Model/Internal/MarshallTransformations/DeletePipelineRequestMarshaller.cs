@@ -29,31 +29,23 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Pipeline Request Marshaller
+    /// DeletePipeline Request Marshaller
     /// </summary>       
-    internal class DeletePipelineRequestMarshaller : IMarshaller<IRequest, DeletePipelineRequest> 
+    public class DeletePipelineRequestMarshaller : IMarshaller<IRequest, DeletePipelineRequest> 
     {
-        
-
-        public IRequest Marshall(DeletePipelineRequest deletePipelineRequest) 
+        public IRequest Marshall(DeletePipelineRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(deletePipelineRequest, "AmazonElasticTranscoder");
-            string target = "EtsCustomerService.DeletePipeline";
-            request.Headers["X-Amz-Target"] = target;
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticTranscoder");
             request.HttpMethod = "DELETE";
-            string uriResourcePath = "2012-09-25/pipelines/{Id}"; 
-            if(deletePipelineRequest.IsSetId())
-                uriResourcePath = uriResourcePath.Replace("{Id}", StringUtils.FromString(deletePipelineRequest.Id) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{Id}", "" ); 
+
+            string uriResourcePath = "/2012-09-25/pipelines/{Id}";
+            uriResourcePath = uriResourcePath.Replace("{Id}", publicRequest.IsSetId() ? StringUtils.FromString(publicRequest.Id) : string.Empty);
             request.ResourcePath = uriResourcePath;
-            
-        
             request.UseQueryString = true;
-        
 
             return request;
         }
+
+
     }
 }

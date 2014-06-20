@@ -109,6 +109,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             
                         continue;
                     }
+                    if (context.TestExpression("sourceDestCheck/value", targetDepth))
+                    {
+                        instanceAttribute.SourceDestCheck = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

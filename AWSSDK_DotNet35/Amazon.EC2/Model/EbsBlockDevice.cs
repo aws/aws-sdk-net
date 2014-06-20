@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para>Describe an Amazon EBS block device.</para>
+    /// <para>Describes an Amazon EBS block device.</para>
     /// </summary>
     public partial class EbsBlockDevice
     {
@@ -91,7 +91,7 @@ namespace Amazon.EC2.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>standard, io1</description>
+        ///         <description>standard, io1, gp2</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -110,7 +110,7 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// The number of I/O operations per second (IOPS) that the volume supports. Constraint: Range is 100 to 4000. Condition: Required when the
-        /// volume type is <c>io1</c>; not used with <c>standard</c> volumes.
+        /// volume type is <c>io1</c>; not used with <c>standard</c> or <c>gp2</c> volumes.
         ///  
         /// </summary>
         public int Iops
@@ -126,7 +126,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// If true the ebs device is encrypted.
+        /// Indicates whether the Amazon EBS volume is encrypted.
+        ///  
         /// </summary>
         public bool Encrypted
         {

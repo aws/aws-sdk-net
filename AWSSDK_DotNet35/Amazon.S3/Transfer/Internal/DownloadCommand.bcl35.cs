@@ -19,11 +19,10 @@
  *  API Version: 2006-03-01
  *
  */
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-using Amazon.S3;
+using System;
+using System.IO;
+using Amazon.Runtime;
 using Amazon.S3.Model;
 
 namespace Amazon.S3.Transfer.Internal
@@ -34,14 +33,39 @@ namespace Amazon.S3.Transfer.Internal
         {
             ValidateRequest();
             GetObjectRequest getRequest = ConvertToGetObjectRequest(this._request);
-            using (var response = this._s3Client.GetObject(getRequest))
-            {
-                response.WriteObjectProgressEvent += OnWriteObjectProgressEvent;
-                //response.WriteObjectProgressEvent += this._request.EventHandler;
-                response.WriteResponseStreamToFile(this._request.FilePath);
-            }
-        }
 
-        
+            var maxRetries = ((AmazonS3Client)_s3Client).Config.MaxErrorRetry;
+            var retries = 0;
+            bool shouldRetry = false;
+            do
+            {
+                shouldRetry = false;
+                using (var response = this._s3Client.GetObject(getRequest))
+                {
+                    try
+                    {
+                        response.WriteObjectProgressEvent += OnWriteObjectProgressEvent;
+                        response.WriteResponseStreamToFile(this._request.FilePath);
+                    }
+                    catch (Exception exception)
+                    {
+                        retries++;
+                        shouldRetry = HandleException(exception, retries, maxRetries);
+                        if (!shouldRetry)
+                        {
+                            if (exception is IOException)
+                            {
+                                throw;
+                            }
+                            else
+                            {
+                                throw new AmazonServiceException(exception);
+                            }
+                        }
+                    }
+                }
+                WaitBeforeRetry(retries);
+            } while (shouldRetry);
+        }        
     }
 }

@@ -12,110 +12,112 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.ElasticTranscoder.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
+using Amazon.ElasticTranscoder.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for Job Object
+    /// </summary>  
+    public class JobUnmarshaller : IUnmarshaller<Job, XmlUnmarshallerContext>, IUnmarshaller<Job, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// JobUnmarshaller
-      /// </summary>
-      internal class JobUnmarshaller : IUnmarshaller<Job, XmlUnmarshallerContext>, IUnmarshaller<Job, JsonUnmarshallerContext>
-      {
         Job IUnmarshaller<Job, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Job Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            Job job = new Job();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            Job unmarshalledObject = new Job();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("Id", targetDepth))
-              {
-                job.Id = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Arn", targetDepth))
-              {
-                job.Arn = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("PipelineId", targetDepth))
-              {
-                job.PipelineId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Input", targetDepth))
-              {
-                job.Input = JobInputUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Output", targetDepth))
-              {
-                job.Output = JobOutputUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Outputs", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<JobOutput,JobOutputUnmarshaller>(
-                    JobOutputUnmarshaller.GetInstance());                  
-                job.Outputs = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
-              if (context.TestExpression("OutputKeyPrefix", targetDepth))
-              {
-                job.OutputKeyPrefix = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Playlists", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<Playlist,PlaylistUnmarshaller>(
-                    PlaylistUnmarshaller.GetInstance());                  
-                job.Playlists = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
-              if (context.TestExpression("Status", targetDepth))
-              {
-                job.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("Arn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Id", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Input", targetDepth))
+                {
+                    var unmarshaller = JobInputUnmarshaller.Instance;
+                    unmarshalledObject.Input = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Output", targetDepth))
+                {
+                    var unmarshaller = JobOutputUnmarshaller.Instance;
+                    unmarshalledObject.Output = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OutputKeyPrefix", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OutputKeyPrefix = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Outputs", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<JobOutput, JobOutputUnmarshaller>(JobOutputUnmarshaller.Instance);
+                    unmarshalledObject.Outputs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PipelineId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PipelineId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Playlists", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Playlist, PlaylistUnmarshaller>(PlaylistUnmarshaller.Instance);
+                    unmarshalledObject.Playlists = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return job;
+            return unmarshalledObject;
         }
 
-        private static JobUnmarshaller instance;
-        public static JobUnmarshaller GetInstance()
+
+        private static JobUnmarshaller _instance = new JobUnmarshaller();        
+
+        public static JobUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new JobUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

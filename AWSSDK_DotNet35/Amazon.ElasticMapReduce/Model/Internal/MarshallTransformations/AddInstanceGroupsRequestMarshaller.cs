@@ -29,88 +29,88 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Add Instance Groups Request Marshaller
+    /// AddInstanceGroups Request Marshaller
     /// </summary>       
-    internal class AddInstanceGroupsRequestMarshaller : IMarshaller<IRequest, AddInstanceGroupsRequest> 
+    public class AddInstanceGroupsRequestMarshaller : IMarshaller<IRequest, AddInstanceGroupsRequest> 
     {
-        
-
-        public IRequest Marshall(AddInstanceGroupsRequest addInstanceGroupsRequest) 
+        public IRequest Marshall(AddInstanceGroupsRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(addInstanceGroupsRequest, "AmazonElasticMapReduce");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticMapReduce");
             string target = "ElasticMapReduce.AddInstanceGroups";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-
-                if (addInstanceGroupsRequest != null && addInstanceGroupsRequest.InstanceGroups != null && addInstanceGroupsRequest.InstanceGroups.Count > 0)
+                if(publicRequest.IsSetInstanceGroups())
                 {
-                    List<InstanceGroupConfig> instanceGroupsList = addInstanceGroupsRequest.InstanceGroups;
                     writer.WritePropertyName("InstanceGroups");
                     writer.WriteArrayStart();
-
-                    foreach (InstanceGroupConfig instanceGroupsListValue in instanceGroupsList) 
+                    foreach(var publicRequestInstanceGroupsListValue in publicRequest.InstanceGroups)
                     {
                         writer.WriteObjectStart();
-                        if (instanceGroupsListValue != null && instanceGroupsListValue.IsSetName()) 
-                        {
-                            writer.WritePropertyName("Name");
-                            writer.Write(instanceGroupsListValue.Name);
-                        }
-                        if (instanceGroupsListValue != null && instanceGroupsListValue.IsSetMarket()) 
-                        {
-                            writer.WritePropertyName("Market");
-                            writer.Write(instanceGroupsListValue.Market);
-                        }
-                        if (instanceGroupsListValue != null && instanceGroupsListValue.IsSetInstanceRole()) 
-                        {
-                            writer.WritePropertyName("InstanceRole");
-                            writer.Write(instanceGroupsListValue.InstanceRole);
-                        }
-                        if (instanceGroupsListValue != null && instanceGroupsListValue.IsSetBidPrice()) 
+                        if(publicRequestInstanceGroupsListValue.IsSetBidPrice())
                         {
                             writer.WritePropertyName("BidPrice");
-                            writer.Write(instanceGroupsListValue.BidPrice);
+                            writer.Write(publicRequestInstanceGroupsListValue.BidPrice);
                         }
-                        if (instanceGroupsListValue != null && instanceGroupsListValue.IsSetInstanceType()) 
-                        {
-                            writer.WritePropertyName("InstanceType");
-                            writer.Write(instanceGroupsListValue.InstanceType);
-                        }
-                        if (instanceGroupsListValue != null && instanceGroupsListValue.IsSetInstanceCount()) 
+
+                        if(publicRequestInstanceGroupsListValue.IsSetInstanceCount())
                         {
                             writer.WritePropertyName("InstanceCount");
-                            writer.Write(instanceGroupsListValue.InstanceCount);
+                            writer.Write(publicRequestInstanceGroupsListValue.InstanceCount);
                         }
+
+                        if(publicRequestInstanceGroupsListValue.IsSetInstanceRole())
+                        {
+                            writer.WritePropertyName("InstanceRole");
+                            writer.Write(publicRequestInstanceGroupsListValue.InstanceRole);
+                        }
+
+                        if(publicRequestInstanceGroupsListValue.IsSetInstanceType())
+                        {
+                            writer.WritePropertyName("InstanceType");
+                            writer.Write(publicRequestInstanceGroupsListValue.InstanceType);
+                        }
+
+                        if(publicRequestInstanceGroupsListValue.IsSetMarket())
+                        {
+                            writer.WritePropertyName("Market");
+                            writer.Write(publicRequestInstanceGroupsListValue.Market);
+                        }
+
+                        if(publicRequestInstanceGroupsListValue.IsSetName())
+                        {
+                            writer.WritePropertyName("Name");
+                            writer.Write(publicRequestInstanceGroupsListValue.Name);
+                        }
+
                         writer.WriteObjectEnd();
                     }
                     writer.WriteArrayEnd();
                 }
-                if (addInstanceGroupsRequest != null && addInstanceGroupsRequest.IsSetJobFlowId()) 
+
+                if(publicRequest.IsSetJobFlowId())
                 {
                     writer.WritePropertyName("JobFlowId");
-                    writer.Write(addInstanceGroupsRequest.JobFlowId);
+                    writer.Write(publicRequest.JobFlowId);
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

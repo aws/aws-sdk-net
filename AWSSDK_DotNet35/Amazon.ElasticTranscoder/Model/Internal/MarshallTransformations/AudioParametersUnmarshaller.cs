@@ -12,78 +12,88 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.ElasticTranscoder.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
+using Amazon.ElasticTranscoder.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for AudioParameters Object
+    /// </summary>  
+    public class AudioParametersUnmarshaller : IUnmarshaller<AudioParameters, XmlUnmarshallerContext>, IUnmarshaller<AudioParameters, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// AudioParametersUnmarshaller
-      /// </summary>
-      internal class AudioParametersUnmarshaller : IUnmarshaller<AudioParameters, XmlUnmarshallerContext>, IUnmarshaller<AudioParameters, JsonUnmarshallerContext>
-      {
         AudioParameters IUnmarshaller<AudioParameters, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public AudioParameters Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            AudioParameters audioParameters = new AudioParameters();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            AudioParameters unmarshalledObject = new AudioParameters();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("Codec", targetDepth))
-              {
-                audioParameters.Codec = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("SampleRate", targetDepth))
-              {
-                audioParameters.SampleRate = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("BitRate", targetDepth))
-              {
-                audioParameters.BitRate = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Channels", targetDepth))
-              {
-                audioParameters.Channels = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("CodecOptions", targetDepth))
-              {
-                audioParameters.CodecOptions = AudioCodecOptionsUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("BitRate", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BitRate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Channels", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Channels = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Codec", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Codec = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CodecOptions", targetDepth))
+                {
+                    var unmarshaller = AudioCodecOptionsUnmarshaller.Instance;
+                    unmarshalledObject.CodecOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SampleRate", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SampleRate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return audioParameters;
+            return unmarshalledObject;
         }
 
-        private static AudioParametersUnmarshaller instance;
-        public static AudioParametersUnmarshaller GetInstance()
+
+        private static AudioParametersUnmarshaller _instance = new AudioParametersUnmarshaller();        
+
+        public static AudioParametersUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new AudioParametersUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

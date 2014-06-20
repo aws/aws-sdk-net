@@ -29,31 +29,23 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Read Preset Request Marshaller
+    /// ReadPreset Request Marshaller
     /// </summary>       
-    internal class ReadPresetRequestMarshaller : IMarshaller<IRequest, ReadPresetRequest> 
+    public class ReadPresetRequestMarshaller : IMarshaller<IRequest, ReadPresetRequest> 
     {
-        
-
-        public IRequest Marshall(ReadPresetRequest readPresetRequest) 
+        public IRequest Marshall(ReadPresetRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(readPresetRequest, "AmazonElasticTranscoder");
-            string target = "EtsCustomerService.ReadPreset";
-            request.Headers["X-Amz-Target"] = target;
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticTranscoder");
             request.HttpMethod = "GET";
-            string uriResourcePath = "2012-09-25/presets/{Id}"; 
-            if(readPresetRequest.IsSetId())
-                uriResourcePath = uriResourcePath.Replace("{Id}", StringUtils.FromString(readPresetRequest.Id) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{Id}", "" ); 
+
+            string uriResourcePath = "/2012-09-25/presets/{Id}";
+            uriResourcePath = uriResourcePath.Replace("{Id}", publicRequest.IsSetId() ? StringUtils.FromString(publicRequest.Id) : string.Empty);
             request.ResourcePath = uriResourcePath;
-            
-        
             request.UseQueryString = true;
-        
 
             return request;
         }
+
+
     }
 }

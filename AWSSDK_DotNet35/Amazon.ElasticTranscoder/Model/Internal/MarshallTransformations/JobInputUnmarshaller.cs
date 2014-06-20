@@ -12,84 +12,94 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.ElasticTranscoder.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
+using Amazon.ElasticTranscoder.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for JobInput Object
+    /// </summary>  
+    public class JobInputUnmarshaller : IUnmarshaller<JobInput, XmlUnmarshallerContext>, IUnmarshaller<JobInput, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// JobInputUnmarshaller
-      /// </summary>
-      internal class JobInputUnmarshaller : IUnmarshaller<JobInput, XmlUnmarshallerContext>, IUnmarshaller<JobInput, JsonUnmarshallerContext>
-      {
         JobInput IUnmarshaller<JobInput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public JobInput Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            JobInput jobInput = new JobInput();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            JobInput unmarshalledObject = new JobInput();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("Key", targetDepth))
-              {
-                jobInput.Key = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("FrameRate", targetDepth))
-              {
-                jobInput.FrameRate = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Resolution", targetDepth))
-              {
-                jobInput.Resolution = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("AspectRatio", targetDepth))
-              {
-                jobInput.AspectRatio = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Interlaced", targetDepth))
-              {
-                jobInput.Interlaced = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Container", targetDepth))
-              {
-                jobInput.Container = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("AspectRatio", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AspectRatio = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Container", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Container = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FrameRate", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FrameRate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Interlaced", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Interlaced = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Key", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Key = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Resolution", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Resolution = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return jobInput;
+            return unmarshalledObject;
         }
 
-        private static JobInputUnmarshaller instance;
-        public static JobInputUnmarshaller GetInstance()
+
+        private static JobInputUnmarshaller _instance = new JobInputUnmarshaller();        
+
+        public static JobInputUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new JobInputUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

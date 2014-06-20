@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// Returns information about the  UpdatePipelineStatus response and response metadata.
+    /// Configuration for accessing Amazon UpdatePipelineStatus service
     /// </summary>
-    public class UpdatePipelineStatusResponse : UpdatePipelineStatusResult
+    public partial class UpdatePipelineStatusResponse : UpdatePipelineStatusResult
     {
         /// <summary>
         /// Gets and sets the UpdatePipelineStatusResult property.
-        /// When you update status for a pipeline, Elastic Transcoder returns the values that you specified in the request.
+        /// Represents the output of a UpdatePipelineStatus operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the UpdatePipelineStatusResult class are now available on the UpdatePipelineStatusResponse class. You should use the properties on UpdatePipelineStatusResponse instead of accessing them through UpdatePipelineStatusResult.")]
         public UpdatePipelineStatusResult UpdatePipelineStatusResult
@@ -40,4 +36,3 @@ namespace Amazon.ElasticTranscoder.Model
         }
     }
 }
-    

@@ -29,63 +29,57 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// List Steps Request Marshaller
+    /// ListSteps Request Marshaller
     /// </summary>       
-    internal class ListStepsRequestMarshaller : IMarshaller<IRequest, ListStepsRequest> 
+    public class ListStepsRequestMarshaller : IMarshaller<IRequest, ListStepsRequest> 
     {
-        
-
-        public IRequest Marshall(ListStepsRequest listStepsRequest) 
+        public IRequest Marshall(ListStepsRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(listStepsRequest, "AmazonElasticMapReduce");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticMapReduce");
             string target = "ElasticMapReduce.ListSteps";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (listStepsRequest != null && listStepsRequest.IsSetClusterId()) 
+                if(publicRequest.IsSetClusterId())
                 {
                     writer.WritePropertyName("ClusterId");
-                    writer.Write(listStepsRequest.ClusterId);
+                    writer.Write(publicRequest.ClusterId);
                 }
 
-                if (listStepsRequest != null && listStepsRequest.StepStates != null && listStepsRequest.StepStates.Count > 0) 
-                {
-                    List<string> stepStatesList = listStepsRequest.StepStates;
-                    writer.WritePropertyName("StepStates");
-                    writer.WriteArrayStart();
-
-                    foreach (string stepStatesListValue in stepStatesList) 
-                    { 
-                        writer.Write(StringUtils.FromString(stepStatesListValue));
-                    }
-
-                    writer.WriteArrayEnd();
-                }
-                if (listStepsRequest != null && listStepsRequest.IsSetMarker()) 
+                if(publicRequest.IsSetMarker())
                 {
                     writer.WritePropertyName("Marker");
-                    writer.Write(listStepsRequest.Marker);
+                    writer.Write(publicRequest.Marker);
                 }
 
+                if(publicRequest.IsSetStepStates())
+                {
+                    writer.WritePropertyName("StepStates");
+                    writer.WriteArrayStart();
+                    foreach(var publicRequestStepStatesListValue in publicRequest.StepStates)
+                    {
+                        writer.Write(publicRequestStepStatesListValue);
+                    }
+                    writer.WriteArrayEnd();
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

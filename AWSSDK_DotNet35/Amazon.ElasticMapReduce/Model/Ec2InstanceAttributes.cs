@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,86 +18,108 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para>Provides information about the EC2 instances in a cluster grouped by category. For example, EC2 Key Name, Subnet Id, Instance Profile,
-    /// and so on.</para>
+    /// Provides information about the EC2 instances in a cluster grouped by category. For
+    /// example, key name, subnet ID, IAM instance profile, and so on.
     /// </summary>
-    public class Ec2InstanceAttributes
+    public partial class Ec2InstanceAttributes
     {
-        
-        private string ec2KeyName;
-        private string ec2SubnetId;
-        private string ec2AvailabilityZone;
-        private string iamInstanceProfile;
+        private string _ec2AvailabilityZone;
+        private string _ec2KeyName;
+        private string _ec2SubnetId;
+        private string _iamInstanceProfile;
 
 
         /// <summary>
-        /// The name of the Amazon EC2 key pair to use when connecting with SSH into the master node as a user named "hadoop".
-        ///  
-        /// </summary>
-        public string Ec2KeyName
-        {
-            get { return this.ec2KeyName; }
-            set { this.ec2KeyName = value; }
-        }
-
-        // Check to see if Ec2KeyName property is set
-        internal bool IsSetEc2KeyName()
-        {
-            return this.ec2KeyName != null;
-        }
-
-        /// <summary>
-        /// To launch the job flow in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where you want the job flow to launch.
-        /// If you do not specify this value, the job flow is launched in the normal AWS cloud, outside of a VPC. Amazon VPC currently does not support
-        /// cluster compute quadruple extra large (cc1.4xlarge) instances. Thus, you cannot specify the cc1.4xlarge instance type for nodes of a job
-        /// flow launched in a VPC.
-        ///  
-        /// </summary>
-        public string Ec2SubnetId
-        {
-            get { return this.ec2SubnetId; }
-            set { this.ec2SubnetId = value; }
-        }
-
-        // Check to see if Ec2SubnetId property is set
-        internal bool IsSetEc2SubnetId()
-        {
-            return this.ec2SubnetId != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Ec2AvailabilityZone. 
+        /// <para>
         /// The Availability Zone in which the cluster will run.
-        ///  
+        /// </para>
         /// </summary>
         public string Ec2AvailabilityZone
         {
-            get { return this.ec2AvailabilityZone; }
-            set { this.ec2AvailabilityZone = value; }
+            get { return this._ec2AvailabilityZone; }
+            set { this._ec2AvailabilityZone = value; }
         }
 
         // Check to see if Ec2AvailabilityZone property is set
         internal bool IsSetEc2AvailabilityZone()
         {
-            return this.ec2AvailabilityZone != null;
+            return this._ec2AvailabilityZone != null;
         }
 
+
         /// <summary>
-        /// The IAM role that was specified when the job flow was launched. The EC2 instances of the job flow assume this role.
-        ///  
+        /// Gets and sets the property Ec2KeyName. 
+        /// <para>
+        /// The name of the Amazon EC2 key pair to use when connecting with SSH into the master
+        /// node as         a user named "hadoop".
+        /// </para>
+        /// </summary>
+        public string Ec2KeyName
+        {
+            get { return this._ec2KeyName; }
+            set { this._ec2KeyName = value; }
+        }
+
+        // Check to see if Ec2KeyName property is set
+        internal bool IsSetEc2KeyName()
+        {
+            return this._ec2KeyName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Ec2SubnetId. 
+        /// <para>
+        ///          To launch the job flow in Amazon VPC, set this parameter to the identifier
+        /// of the Amazon VPC subnet where          you want the job flow to launch. If you do
+        /// not specify this value, the job flow is launched in the normal AWS cloud, outside
+        /// of          a VPC.       
+        /// </para>
+        ///       
+        /// <para>
+        ///          Amazon VPC currently does not support cluster compute quadruple extra large
+        /// (cc1.4xlarge) instances.           Thus, you cannot specify the cc1.4xlarge instance
+        /// type for nodes of a job flow launched in a VPC.      
+        /// </para>
+        /// </summary>
+        public string Ec2SubnetId
+        {
+            get { return this._ec2SubnetId; }
+            set { this._ec2SubnetId = value; }
+        }
+
+        // Check to see if Ec2SubnetId property is set
+        internal bool IsSetEc2SubnetId()
+        {
+            return this._ec2SubnetId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property IamInstanceProfile. 
+        /// <para>
+        /// The IAM role that was specified when the job flow was launched. The EC2 instances
+        /// of the job flow assume this role.
+        /// </para>
         /// </summary>
         public string IamInstanceProfile
         {
-            get { return this.iamInstanceProfile; }
-            set { this.iamInstanceProfile = value; }
+            get { return this._iamInstanceProfile; }
+            set { this._iamInstanceProfile = value; }
         }
 
         // Check to see if IamInstanceProfile property is set
         internal bool IsSetIamInstanceProfile()
         {
-            return this.iamInstanceProfile != null;
+            return this._iamInstanceProfile != null;
         }
+
     }
 }

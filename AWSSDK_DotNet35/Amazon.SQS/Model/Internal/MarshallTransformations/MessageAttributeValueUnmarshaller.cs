@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for MessageAttributeValue Object
     /// </summary>  
-    internal class MessageAttributeValueUnmarshaller : IUnmarshaller<MessageAttributeValue, XmlUnmarshallerContext>, IUnmarshaller<MessageAttributeValue, JsonUnmarshallerContext>
+    public class MessageAttributeValueUnmarshaller : IUnmarshaller<MessageAttributeValue, XmlUnmarshallerContext>, IUnmarshaller<MessageAttributeValue, JsonUnmarshallerContext>
     {
         public MessageAttributeValue Unmarshall(XmlUnmarshallerContext context)
         {
@@ -47,33 +47,33 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("BinaryListValues/BinaryListValue", targetDepth))
                     {
-                        var unmarshaller = MemoryStreamUnmarshaller.GetInstance();
+                        var unmarshaller = MemoryStreamUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.BinaryListValues.Add(item);
                         continue;
                     }
                     if (context.TestExpression("BinaryValue", targetDepth))
                     {
-                        var unmarshaller = MemoryStreamUnmarshaller.GetInstance();
+                        var unmarshaller = MemoryStreamUnmarshaller.Instance;
                         unmarshalledObject.BinaryValue = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DataType", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.DataType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("StringListValues/StringListValue", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        var unmarshaller = StringUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.StringListValues.Add(item);
                         continue;
                     }
                     if (context.TestExpression("StringValue", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.StringValue = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -93,15 +93,14 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         }
 
 
-        private static MessageAttributeValueUnmarshaller instance;
-        public static MessageAttributeValueUnmarshaller GetInstance()
-        {
-            if (instance == null)
-            {
-                instance = new MessageAttributeValueUnmarshaller();
-            }
-            return instance;
-        }
+        private static MessageAttributeValueUnmarshaller _instance = new MessageAttributeValueUnmarshaller();        
 
+        public static MessageAttributeValueUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
     }
 }

@@ -12,70 +12,76 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.ElasticTranscoder.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
+using Amazon.ElasticTranscoder.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for PipelineOutputConfig Object
+    /// </summary>  
+    public class PipelineOutputConfigUnmarshaller : IUnmarshaller<PipelineOutputConfig, XmlUnmarshallerContext>, IUnmarshaller<PipelineOutputConfig, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// PipelineOutputConfigUnmarshaller
-      /// </summary>
-      internal class PipelineOutputConfigUnmarshaller : IUnmarshaller<PipelineOutputConfig, XmlUnmarshallerContext>, IUnmarshaller<PipelineOutputConfig, JsonUnmarshallerContext>
-      {
         PipelineOutputConfig IUnmarshaller<PipelineOutputConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public PipelineOutputConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            PipelineOutputConfig pipelineOutputConfig = new PipelineOutputConfig();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            PipelineOutputConfig unmarshalledObject = new PipelineOutputConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("Bucket", targetDepth))
-              {
-                pipelineOutputConfig.Bucket = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("StorageClass", targetDepth))
-              {
-                pipelineOutputConfig.StorageClass = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Permissions", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<Permission,PermissionUnmarshaller>(
-                    PermissionUnmarshaller.GetInstance());                  
-                pipelineOutputConfig.Permissions = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
+                if (context.TestExpression("Bucket", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Bucket = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Permissions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Permission, PermissionUnmarshaller>(PermissionUnmarshaller.Instance);
+                    unmarshalledObject.Permissions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StorageClass", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StorageClass = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return pipelineOutputConfig;
+            return unmarshalledObject;
         }
 
-        private static PipelineOutputConfigUnmarshaller instance;
-        public static PipelineOutputConfigUnmarshaller GetInstance()
+
+        private static PipelineOutputConfigUnmarshaller _instance = new PipelineOutputConfigUnmarshaller();        
+
+        public static PipelineOutputConfigUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new PipelineOutputConfigUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

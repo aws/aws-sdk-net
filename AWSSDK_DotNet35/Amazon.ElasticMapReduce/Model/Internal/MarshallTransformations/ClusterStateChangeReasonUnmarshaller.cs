@@ -12,60 +12,70 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.ElasticMapReduce.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+using Amazon.ElasticMapReduce.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for ClusterStateChangeReason Object
+    /// </summary>  
+    public class ClusterStateChangeReasonUnmarshaller : IUnmarshaller<ClusterStateChangeReason, XmlUnmarshallerContext>, IUnmarshaller<ClusterStateChangeReason, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// ClusterStateChangeReasonUnmarshaller
-      /// </summary>
-      internal class ClusterStateChangeReasonUnmarshaller : IUnmarshaller<ClusterStateChangeReason, XmlUnmarshallerContext>, IUnmarshaller<ClusterStateChangeReason, JsonUnmarshallerContext>
-      {
         ClusterStateChangeReason IUnmarshaller<ClusterStateChangeReason, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public ClusterStateChangeReason Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            ClusterStateChangeReason clusterStateChangeReason = new ClusterStateChangeReason();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            ClusterStateChangeReason unmarshalledObject = new ClusterStateChangeReason();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("Code", targetDepth))
-              {
-                clusterStateChangeReason.Code = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Message", targetDepth))
-              {
-                clusterStateChangeReason.Message = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("Code", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Code = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Message", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Message = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return clusterStateChangeReason;
+            return unmarshalledObject;
         }
 
-        private static ClusterStateChangeReasonUnmarshaller instance;
-        public static ClusterStateChangeReasonUnmarshaller GetInstance()
+
+        private static ClusterStateChangeReasonUnmarshaller _instance = new ClusterStateChangeReasonUnmarshaller();        
+
+        public static ClusterStateChangeReasonUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new ClusterStateChangeReasonUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

@@ -29,68 +29,64 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Add Tags Request Marshaller
+    /// AddTags Request Marshaller
     /// </summary>       
-    internal class AddTagsRequestMarshaller : IMarshaller<IRequest, AddTagsRequest> 
+    public class AddTagsRequestMarshaller : IMarshaller<IRequest, AddTagsRequest> 
     {
-        
-
-        public IRequest Marshall(AddTagsRequest addTagsRequest) 
+        public IRequest Marshall(AddTagsRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(addTagsRequest, "AmazonElasticMapReduce");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticMapReduce");
             string target = "ElasticMapReduce.AddTags";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (addTagsRequest != null && addTagsRequest.IsSetResourceId()) 
+                if(publicRequest.IsSetResourceId())
                 {
                     writer.WritePropertyName("ResourceId");
-                    writer.Write(addTagsRequest.ResourceId);
+                    writer.Write(publicRequest.ResourceId);
                 }
 
-                if (addTagsRequest != null && addTagsRequest.Tags != null && addTagsRequest.Tags.Count > 0)
+                if(publicRequest.IsSetTags())
                 {
-                    List<Tag> tagsList = addTagsRequest.Tags;
                     writer.WritePropertyName("Tags");
                     writer.WriteArrayStart();
-
-                    foreach (Tag tagsListValue in tagsList) 
+                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
                     {
                         writer.WriteObjectStart();
-                        if (tagsListValue != null && tagsListValue.IsSetKey()) 
+                        if(publicRequestTagsListValue.IsSetKey())
                         {
                             writer.WritePropertyName("Key");
-                            writer.Write(tagsListValue.Key);
+                            writer.Write(publicRequestTagsListValue.Key);
                         }
-                        if (tagsListValue != null && tagsListValue.IsSetValue()) 
+
+                        if(publicRequestTagsListValue.IsSetValue())
                         {
                             writer.WritePropertyName("Value");
-                            writer.Write(tagsListValue.Value);
+                            writer.Write(publicRequestTagsListValue.Value);
                         }
+
                         writer.WriteObjectEnd();
                     }
                     writer.WriteArrayEnd();
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

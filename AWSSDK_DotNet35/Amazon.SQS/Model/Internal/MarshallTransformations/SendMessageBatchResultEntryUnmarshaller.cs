@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SendMessageBatchResultEntry Object
     /// </summary>  
-    internal class SendMessageBatchResultEntryUnmarshaller : IUnmarshaller<SendMessageBatchResultEntry, XmlUnmarshallerContext>, IUnmarshaller<SendMessageBatchResultEntry, JsonUnmarshallerContext>
+    public class SendMessageBatchResultEntryUnmarshaller : IUnmarshaller<SendMessageBatchResultEntry, XmlUnmarshallerContext>, IUnmarshaller<SendMessageBatchResultEntry, JsonUnmarshallerContext>
     {
         public SendMessageBatchResultEntry Unmarshall(XmlUnmarshallerContext context)
         {
@@ -47,25 +47,25 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Id", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MD5OfMessageAttributes", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.MD5OfMessageAttributes = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MD5OfMessageBody", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.MD5OfMessageBody = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MessageId", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.MessageId = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -85,15 +85,14 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         }
 
 
-        private static SendMessageBatchResultEntryUnmarshaller instance;
-        public static SendMessageBatchResultEntryUnmarshaller GetInstance()
-        {
-            if (instance == null)
-            {
-                instance = new SendMessageBatchResultEntryUnmarshaller();
-            }
-            return instance;
-        }
+        private static SendMessageBatchResultEntryUnmarshaller _instance = new SendMessageBatchResultEntryUnmarshaller();        
 
+        public static SendMessageBatchResultEntryUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,65 +18,76 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para>The timeline of the instance lifecycle.</para>
+    /// The timeline of the instance lifecycle.
     /// </summary>
-    public class InstanceTimeline
+    public partial class InstanceTimeline
     {
-        
-        private DateTime? creationDateTime;
-        private DateTime? readyDateTime;
-        private DateTime? endDateTime;
+        private DateTime? _creationDateTime;
+        private DateTime? _endDateTime;
+        private DateTime? _readyDateTime;
 
 
         /// <summary>
+        /// Gets and sets the property CreationDateTime. 
+        /// <para>
         /// The creation date and time of the instance.
-        ///  
+        /// </para>
         /// </summary>
         public DateTime CreationDateTime
         {
-            get { return this.creationDateTime ?? default(DateTime); }
-            set { this.creationDateTime = value; }
+            get { return this._creationDateTime.GetValueOrDefault(); }
+            set { this._creationDateTime = value; }
         }
 
         // Check to see if CreationDateTime property is set
         internal bool IsSetCreationDateTime()
         {
-            return this.creationDateTime.HasValue;
+            return this._creationDateTime.HasValue; 
         }
+
 
         /// <summary>
-        /// The date and time when the instance was ready to perform tasks.
-        ///  
-        /// </summary>
-        public DateTime ReadyDateTime
-        {
-            get { return this.readyDateTime ?? default(DateTime); }
-            set { this.readyDateTime = value; }
-        }
-
-        // Check to see if ReadyDateTime property is set
-        internal bool IsSetReadyDateTime()
-        {
-            return this.readyDateTime.HasValue;
-        }
-
-        /// <summary>
+        /// Gets and sets the property EndDateTime. 
+        /// <para>
         /// The date and time when the instance was terminated.
-        ///  
+        /// </para>
         /// </summary>
         public DateTime EndDateTime
         {
-            get { return this.endDateTime ?? default(DateTime); }
-            set { this.endDateTime = value; }
+            get { return this._endDateTime.GetValueOrDefault(); }
+            set { this._endDateTime = value; }
         }
 
         // Check to see if EndDateTime property is set
         internal bool IsSetEndDateTime()
         {
-            return this.endDateTime.HasValue;
+            return this._endDateTime.HasValue; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property ReadyDateTime. 
+        /// <para>
+        /// The date and time when the instance was ready to perform tasks.
+        /// </para>
+        /// </summary>
+        public DateTime ReadyDateTime
+        {
+            get { return this._readyDateTime.GetValueOrDefault(); }
+            set { this._readyDateTime = value; }
+        }
+
+        // Check to see if ReadyDateTime property is set
+        internal bool IsSetReadyDateTime()
+        {
+            return this._readyDateTime.HasValue; 
+        }
+
     }
 }

@@ -29,68 +29,63 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// List Instances Request Marshaller
+    /// ListInstances Request Marshaller
     /// </summary>       
-    internal class ListInstancesRequestMarshaller : IMarshaller<IRequest, ListInstancesRequest> 
+    public class ListInstancesRequestMarshaller : IMarshaller<IRequest, ListInstancesRequest> 
     {
-        
-
-        public IRequest Marshall(ListInstancesRequest listInstancesRequest) 
+        public IRequest Marshall(ListInstancesRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(listInstancesRequest, "AmazonElasticMapReduce");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticMapReduce");
             string target = "ElasticMapReduce.ListInstances";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (listInstancesRequest != null && listInstancesRequest.IsSetClusterId()) 
+                if(publicRequest.IsSetClusterId())
                 {
                     writer.WritePropertyName("ClusterId");
-                    writer.Write(listInstancesRequest.ClusterId);
+                    writer.Write(publicRequest.ClusterId);
                 }
-                if (listInstancesRequest != null && listInstancesRequest.IsSetInstanceGroupId()) 
+
+                if(publicRequest.IsSetInstanceGroupId())
                 {
                     writer.WritePropertyName("InstanceGroupId");
-                    writer.Write(listInstancesRequest.InstanceGroupId);
+                    writer.Write(publicRequest.InstanceGroupId);
                 }
 
-                if (listInstancesRequest != null && listInstancesRequest.InstanceGroupTypes != null && listInstancesRequest.InstanceGroupTypes.Count > 0) 
+                if(publicRequest.IsSetInstanceGroupTypes())
                 {
-                    List<string> instanceGroupTypesList = listInstancesRequest.InstanceGroupTypes;
                     writer.WritePropertyName("InstanceGroupTypes");
                     writer.WriteArrayStart();
-
-                    foreach (string instanceGroupTypesListValue in instanceGroupTypesList) 
-                    { 
-                        writer.Write(StringUtils.FromString(instanceGroupTypesListValue));
+                    foreach(var publicRequestInstanceGroupTypesListValue in publicRequest.InstanceGroupTypes)
+                    {
+                        writer.Write(publicRequestInstanceGroupTypesListValue);
                     }
-
                     writer.WriteArrayEnd();
                 }
-                if (listInstancesRequest != null && listInstancesRequest.IsSetMarker()) 
+
+                if(publicRequest.IsSetMarker())
                 {
                     writer.WritePropertyName("Marker");
-                    writer.Write(listInstancesRequest.Marker);
+                    writer.Write(publicRequest.Marker);
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

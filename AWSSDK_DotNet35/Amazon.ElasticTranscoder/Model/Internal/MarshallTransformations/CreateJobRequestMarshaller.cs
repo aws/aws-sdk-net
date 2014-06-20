@@ -29,441 +29,579 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Job Request Marshaller
+    /// CreateJob Request Marshaller
     /// </summary>       
-    internal class CreateJobRequestMarshaller : IMarshaller<IRequest, CreateJobRequest> 
+    public class CreateJobRequestMarshaller : IMarshaller<IRequest, CreateJobRequest> 
     {
-        
-
-        public IRequest Marshall(CreateJobRequest createJobRequest) 
+        public IRequest Marshall(CreateJobRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(createJobRequest, "AmazonElasticTranscoder");
-            string target = "EtsCustomerService.CreateJob";
-            request.Headers["X-Amz-Target"] = target;
-            
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticTranscoder");
+            request.Headers["Content-Type"] = "application/x-amz-json-";
             request.HttpMethod = "POST";
-            string uriResourcePath = "2012-09-25/jobs"; 
+
+            string uriResourcePath = "/2012-09-25/jobs";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (createJobRequest != null && createJobRequest.IsSetPipelineId()) 
+                if(publicRequest.IsSetInput())
                 {
-                    writer.WritePropertyName("PipelineId");
-                    writer.Write(createJobRequest.PipelineId);
-                }
-
-                if (createJobRequest != null) 
-                {
-                    JobInput input = createJobRequest.Input;
-                    if (input != null)
+                    writer.WritePropertyName("Input");
+                    writer.WriteObjectStart();
+                    if(publicRequest.Input.IsSetAspectRatio())
                     {
-                        writer.WritePropertyName("Input");
-                        writer.WriteObjectStart();
-                        if (input != null && input.IsSetKey()) 
-                        {
-                            writer.WritePropertyName("Key");
-                            writer.Write(input.Key);
-                        }
-                        if (input != null && input.IsSetFrameRate()) 
-                        {
-                            writer.WritePropertyName("FrameRate");
-                            writer.Write(input.FrameRate);
-                        }
-                        if (input != null && input.IsSetResolution()) 
-                        {
-                            writer.WritePropertyName("Resolution");
-                            writer.Write(input.Resolution);
-                        }
-                        if (input != null && input.IsSetAspectRatio()) 
-                        {
-                            writer.WritePropertyName("AspectRatio");
-                            writer.Write(input.AspectRatio);
-                        }
-                        if (input != null && input.IsSetInterlaced()) 
-                        {
-                            writer.WritePropertyName("Interlaced");
-                            writer.Write(input.Interlaced);
-                        }
-                        if (input != null && input.IsSetContainer()) 
-                        {
-                            writer.WritePropertyName("Container");
-                            writer.Write(input.Container);
-                        }
-                        writer.WriteObjectEnd();
+                        writer.WritePropertyName("AspectRatio");
+                        writer.Write(publicRequest.Input.AspectRatio);
                     }
+
+                    if(publicRequest.Input.IsSetContainer())
+                    {
+                        writer.WritePropertyName("Container");
+                        writer.Write(publicRequest.Input.Container);
+                    }
+
+                    if(publicRequest.Input.IsSetFrameRate())
+                    {
+                        writer.WritePropertyName("FrameRate");
+                        writer.Write(publicRequest.Input.FrameRate);
+                    }
+
+                    if(publicRequest.Input.IsSetInterlaced())
+                    {
+                        writer.WritePropertyName("Interlaced");
+                        writer.Write(publicRequest.Input.Interlaced);
+                    }
+
+                    if(publicRequest.Input.IsSetKey())
+                    {
+                        writer.WritePropertyName("Key");
+                        writer.Write(publicRequest.Input.Key);
+                    }
+
+                    if(publicRequest.Input.IsSetResolution())
+                    {
+                        writer.WritePropertyName("Resolution");
+                        writer.Write(publicRequest.Input.Resolution);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if (createJobRequest != null) 
+                if(publicRequest.IsSetOutput())
                 {
-                    CreateJobOutput output = createJobRequest.Output;
-                    if (output != null)
+                    writer.WritePropertyName("Output");
+                    writer.WriteObjectStart();
+                    if(publicRequest.Output.IsSetAlbumArt())
                     {
-                        writer.WritePropertyName("Output");
+                        writer.WritePropertyName("AlbumArt");
                         writer.WriteObjectStart();
-                        if (output != null && output.IsSetKey()) 
+                        if(publicRequest.Output.AlbumArt.IsSetArtwork())
                         {
-                            writer.WritePropertyName("Key");
-                            writer.Write(output.Key);
-                        }
-                        if (output != null && output.IsSetThumbnailPattern()) 
-                        {
-                            writer.WritePropertyName("ThumbnailPattern");
-                            writer.Write(output.ThumbnailPattern);
-                        }
-                        if (output != null && output.IsSetRotate()) 
-                        {
-                            writer.WritePropertyName("Rotate");
-                            writer.Write(output.Rotate);
-                        }
-                        if (output != null && output.IsSetPresetId()) 
-                        {
-                            writer.WritePropertyName("PresetId");
-                            writer.Write(output.PresetId);
-                        }
-                        if (output != null && output.IsSetSegmentDuration()) 
-                        {
-                            writer.WritePropertyName("SegmentDuration");
-                            writer.Write(output.SegmentDuration);
-                        }
-
-                        if (output != null && output.Watermarks != null && output.Watermarks.Count > 0)
-                        {
-                            List<JobWatermark> watermarksList = output.Watermarks;
-                            writer.WritePropertyName("Watermarks");
+                            writer.WritePropertyName("Artwork");
                             writer.WriteArrayStart();
-
-                            foreach (JobWatermark watermarksListValue in watermarksList) 
+                            foreach(var publicRequestOutputAlbumArtArtworkListValue in publicRequest.Output.AlbumArt.Artwork)
                             {
                                 writer.WriteObjectStart();
-                                if (watermarksListValue != null && watermarksListValue.IsSetPresetWatermarkId()) 
+                                if(publicRequestOutputAlbumArtArtworkListValue.IsSetAlbumArtFormat())
                                 {
-                                    writer.WritePropertyName("PresetWatermarkId");
-                                    writer.Write(watermarksListValue.PresetWatermarkId);
+                                    writer.WritePropertyName("AlbumArtFormat");
+                                    writer.Write(publicRequestOutputAlbumArtArtworkListValue.AlbumArtFormat);
                                 }
-                                if (watermarksListValue != null && watermarksListValue.IsSetInputKey()) 
+
+                                if(publicRequestOutputAlbumArtArtworkListValue.IsSetInputKey())
                                 {
                                     writer.WritePropertyName("InputKey");
-                                    writer.Write(watermarksListValue.InputKey);
+                                    writer.Write(publicRequestOutputAlbumArtArtworkListValue.InputKey);
                                 }
+
+                                if(publicRequestOutputAlbumArtArtworkListValue.IsSetMaxHeight())
+                                {
+                                    writer.WritePropertyName("MaxHeight");
+                                    writer.Write(publicRequestOutputAlbumArtArtworkListValue.MaxHeight);
+                                }
+
+                                if(publicRequestOutputAlbumArtArtworkListValue.IsSetMaxWidth())
+                                {
+                                    writer.WritePropertyName("MaxWidth");
+                                    writer.Write(publicRequestOutputAlbumArtArtworkListValue.MaxWidth);
+                                }
+
+                                if(publicRequestOutputAlbumArtArtworkListValue.IsSetPaddingPolicy())
+                                {
+                                    writer.WritePropertyName("PaddingPolicy");
+                                    writer.Write(publicRequestOutputAlbumArtArtworkListValue.PaddingPolicy);
+                                }
+
+                                if(publicRequestOutputAlbumArtArtworkListValue.IsSetSizingPolicy())
+                                {
+                                    writer.WritePropertyName("SizingPolicy");
+                                    writer.Write(publicRequestOutputAlbumArtArtworkListValue.SizingPolicy);
+                                }
+
                                 writer.WriteObjectEnd();
                             }
                             writer.WriteArrayEnd();
                         }
 
-                        if (output != null) 
+                        if(publicRequest.Output.AlbumArt.IsSetMergePolicy())
                         {
-                            JobAlbumArt albumArt = output.AlbumArt;
-                            if (albumArt != null)
-                            {
-                                writer.WritePropertyName("AlbumArt");
-                                writer.WriteObjectStart();
-                                if (albumArt != null && albumArt.IsSetMergePolicy()) 
-                                {
-                                    writer.WritePropertyName("MergePolicy");
-                                    writer.Write(albumArt.MergePolicy);
-                                }
-
-                                if (albumArt != null && albumArt.Artwork != null && albumArt.Artwork.Count > 0)
-                                {
-                                    List<Artwork> artworkList = albumArt.Artwork;
-                                    writer.WritePropertyName("Artwork");
-                                    writer.WriteArrayStart();
-
-                                    foreach (Artwork artworkListValue in artworkList) 
-                                    {
-                                        writer.WriteObjectStart();
-                                        if (artworkListValue != null && artworkListValue.IsSetInputKey()) 
-                                        {
-                                            writer.WritePropertyName("InputKey");
-                                            writer.Write(artworkListValue.InputKey);
-                                        }
-                                        if (artworkListValue != null && artworkListValue.IsSetMaxWidth()) 
-                                        {
-                                            writer.WritePropertyName("MaxWidth");
-                                            writer.Write(artworkListValue.MaxWidth);
-                                        }
-                                        if (artworkListValue != null && artworkListValue.IsSetMaxHeight()) 
-                                        {
-                                            writer.WritePropertyName("MaxHeight");
-                                            writer.Write(artworkListValue.MaxHeight);
-                                        }
-                                        if (artworkListValue != null && artworkListValue.IsSetSizingPolicy()) 
-                                        {
-                                            writer.WritePropertyName("SizingPolicy");
-                                            writer.Write(artworkListValue.SizingPolicy);
-                                        }
-                                        if (artworkListValue != null && artworkListValue.IsSetPaddingPolicy()) 
-                                        {
-                                            writer.WritePropertyName("PaddingPolicy");
-                                            writer.Write(artworkListValue.PaddingPolicy);
-                                        }
-                                        if (artworkListValue != null && artworkListValue.IsSetAlbumArtFormat()) 
-                                        {
-                                            writer.WritePropertyName("AlbumArtFormat");
-                                            writer.Write(artworkListValue.AlbumArtFormat);
-                                        }
-                                        writer.WriteObjectEnd();
-                                    }
-                                    writer.WriteArrayEnd();
-                                }
-                                writer.WriteObjectEnd();
-                            }
+                            writer.WritePropertyName("MergePolicy");
+                            writer.Write(publicRequest.Output.AlbumArt.MergePolicy);
                         }
 
-                        if (output != null && output.Composition != null && output.Composition.Count > 0)
-                        {
-                            List<Clip> compositionList = output.Composition;
-                            writer.WritePropertyName("Composition");
-                            writer.WriteArrayStart();
-
-                            foreach (Clip compositionListValue in compositionList) 
-                            {
-                                writer.WriteObjectStart();
-
-                                if (compositionListValue != null) 
-                                {
-                                    TimeSpan timeSpan = compositionListValue.TimeSpan;
-                                    if (timeSpan != null)
-                                    {
-                                        writer.WritePropertyName("TimeSpan");
-                                        writer.WriteObjectStart();
-                                        if (timeSpan != null && timeSpan.IsSetStartTime()) 
-                                        {
-                                            writer.WritePropertyName("StartTime");
-                                            writer.Write(timeSpan.StartTime);
-                                        }
-                                        if (timeSpan != null && timeSpan.IsSetDuration()) 
-                                        {
-                                            writer.WritePropertyName("Duration");
-                                            writer.Write(timeSpan.Duration);
-                                        }
-                                        writer.WriteObjectEnd();
-                                    }
-                                }
-                                writer.WriteObjectEnd();
-                            }
-                            writer.WriteArrayEnd();
-                        }
                         writer.WriteObjectEnd();
                     }
-                }
 
-                if (createJobRequest != null && createJobRequest.Outputs != null && createJobRequest.Outputs.Count > 0)
-                {
-                    List<CreateJobOutput> outputsList = createJobRequest.Outputs;
-                    writer.WritePropertyName("Outputs");
-                    writer.WriteArrayStart();
-
-                    foreach (CreateJobOutput outputsListValue in outputsList) 
+                    if(publicRequest.Output.IsSetCaptions())
                     {
+                        writer.WritePropertyName("Captions");
                         writer.WriteObjectStart();
-                        if (outputsListValue != null && outputsListValue.IsSetKey()) 
+                        if(publicRequest.Output.Captions.IsSetCaptionFormats())
                         {
-                            writer.WritePropertyName("Key");
-                            writer.Write(outputsListValue.Key);
-                        }
-                        if (outputsListValue != null && outputsListValue.IsSetThumbnailPattern()) 
-                        {
-                            writer.WritePropertyName("ThumbnailPattern");
-                            writer.Write(outputsListValue.ThumbnailPattern);
-                        }
-                        if (outputsListValue != null && outputsListValue.IsSetRotate()) 
-                        {
-                            writer.WritePropertyName("Rotate");
-                            writer.Write(outputsListValue.Rotate);
-                        }
-                        if (outputsListValue != null && outputsListValue.IsSetPresetId()) 
-                        {
-                            writer.WritePropertyName("PresetId");
-                            writer.Write(outputsListValue.PresetId);
-                        }
-                        if (outputsListValue != null && outputsListValue.IsSetSegmentDuration()) 
-                        {
-                            writer.WritePropertyName("SegmentDuration");
-                            writer.Write(outputsListValue.SegmentDuration);
-                        }
-
-                        if (outputsListValue != null && outputsListValue.Watermarks != null && outputsListValue.Watermarks.Count > 0)
-                        {
-                            List<JobWatermark> watermarksList = outputsListValue.Watermarks;
-                            writer.WritePropertyName("Watermarks");
+                            writer.WritePropertyName("CaptionFormats");
                             writer.WriteArrayStart();
-
-                            foreach (JobWatermark watermarksListValue in watermarksList) 
+                            foreach(var publicRequestOutputCaptionsCaptionFormatsListValue in publicRequest.Output.Captions.CaptionFormats)
                             {
                                 writer.WriteObjectStart();
-                                if (watermarksListValue != null && watermarksListValue.IsSetPresetWatermarkId()) 
+                                if(publicRequestOutputCaptionsCaptionFormatsListValue.IsSetFormat())
                                 {
-                                    writer.WritePropertyName("PresetWatermarkId");
-                                    writer.Write(watermarksListValue.PresetWatermarkId);
+                                    writer.WritePropertyName("Format");
+                                    writer.Write(publicRequestOutputCaptionsCaptionFormatsListValue.Format);
                                 }
-                                if (watermarksListValue != null && watermarksListValue.IsSetInputKey()) 
+
+                                if(publicRequestOutputCaptionsCaptionFormatsListValue.IsSetPattern())
                                 {
-                                    writer.WritePropertyName("InputKey");
-                                    writer.Write(watermarksListValue.InputKey);
+                                    writer.WritePropertyName("Pattern");
+                                    writer.Write(publicRequestOutputCaptionsCaptionFormatsListValue.Pattern);
                                 }
+
                                 writer.WriteObjectEnd();
                             }
                             writer.WriteArrayEnd();
                         }
 
-                        if (outputsListValue != null) 
+                        if(publicRequest.Output.Captions.IsSetCaptionSources())
                         {
-                            JobAlbumArt albumArt = outputsListValue.AlbumArt;
-                            if (albumArt != null)
-                            {
-                                writer.WritePropertyName("AlbumArt");
-                                writer.WriteObjectStart();
-                                if (albumArt != null && albumArt.IsSetMergePolicy()) 
-                                {
-                                    writer.WritePropertyName("MergePolicy");
-                                    writer.Write(albumArt.MergePolicy);
-                                }
-
-                                if (albumArt != null && albumArt.Artwork != null && albumArt.Artwork.Count > 0)
-                                {
-                                    List<Artwork> artworkList = albumArt.Artwork;
-                                    writer.WritePropertyName("Artwork");
-                                    writer.WriteArrayStart();
-
-                                    foreach (Artwork artworkListValue in artworkList) 
-                                    {
-                                        writer.WriteObjectStart();
-                                        if (artworkListValue != null && artworkListValue.IsSetInputKey()) 
-                                        {
-                                            writer.WritePropertyName("InputKey");
-                                            writer.Write(artworkListValue.InputKey);
-                                        }
-                                        if (artworkListValue != null && artworkListValue.IsSetMaxWidth()) 
-                                        {
-                                            writer.WritePropertyName("MaxWidth");
-                                            writer.Write(artworkListValue.MaxWidth);
-                                        }
-                                        if (artworkListValue != null && artworkListValue.IsSetMaxHeight()) 
-                                        {
-                                            writer.WritePropertyName("MaxHeight");
-                                            writer.Write(artworkListValue.MaxHeight);
-                                        }
-                                        if (artworkListValue != null && artworkListValue.IsSetSizingPolicy()) 
-                                        {
-                                            writer.WritePropertyName("SizingPolicy");
-                                            writer.Write(artworkListValue.SizingPolicy);
-                                        }
-                                        if (artworkListValue != null && artworkListValue.IsSetPaddingPolicy()) 
-                                        {
-                                            writer.WritePropertyName("PaddingPolicy");
-                                            writer.Write(artworkListValue.PaddingPolicy);
-                                        }
-                                        if (artworkListValue != null && artworkListValue.IsSetAlbumArtFormat()) 
-                                        {
-                                            writer.WritePropertyName("AlbumArtFormat");
-                                            writer.Write(artworkListValue.AlbumArtFormat);
-                                        }
-                                        writer.WriteObjectEnd();
-                                    }
-                                    writer.WriteArrayEnd();
-                                }
-                                writer.WriteObjectEnd();
-                            }
-                        }
-
-                        if (outputsListValue != null && outputsListValue.Composition != null && outputsListValue.Composition.Count > 0)
-                        {
-                            List<Clip> compositionList = outputsListValue.Composition;
-                            writer.WritePropertyName("Composition");
+                            writer.WritePropertyName("CaptionSources");
                             writer.WriteArrayStart();
-
-                            foreach (Clip compositionListValue in compositionList) 
+                            foreach(var publicRequestOutputCaptionsCaptionSourcesListValue in publicRequest.Output.Captions.CaptionSources)
                             {
                                 writer.WriteObjectStart();
-
-                                if (compositionListValue != null) 
+                                if(publicRequestOutputCaptionsCaptionSourcesListValue.IsSetKey())
                                 {
-                                    TimeSpan timeSpan = compositionListValue.TimeSpan;
-                                    if (timeSpan != null)
-                                    {
-                                        writer.WritePropertyName("TimeSpan");
-                                        writer.WriteObjectStart();
-                                        if (timeSpan != null && timeSpan.IsSetStartTime()) 
-                                        {
-                                            writer.WritePropertyName("StartTime");
-                                            writer.Write(timeSpan.StartTime);
-                                        }
-                                        if (timeSpan != null && timeSpan.IsSetDuration()) 
-                                        {
-                                            writer.WritePropertyName("Duration");
-                                            writer.Write(timeSpan.Duration);
-                                        }
-                                        writer.WriteObjectEnd();
-                                    }
+                                    writer.WritePropertyName("Key");
+                                    writer.Write(publicRequestOutputCaptionsCaptionSourcesListValue.Key);
                                 }
+
+                                if(publicRequestOutputCaptionsCaptionSourcesListValue.IsSetLabel())
+                                {
+                                    writer.WritePropertyName("Label");
+                                    writer.Write(publicRequestOutputCaptionsCaptionSourcesListValue.Label);
+                                }
+
+                                if(publicRequestOutputCaptionsCaptionSourcesListValue.IsSetLanguage())
+                                {
+                                    writer.WritePropertyName("Language");
+                                    writer.Write(publicRequestOutputCaptionsCaptionSourcesListValue.Language);
+                                }
+
+                                if(publicRequestOutputCaptionsCaptionSourcesListValue.IsSetTimeOffset())
+                                {
+                                    writer.WritePropertyName("TimeOffset");
+                                    writer.Write(publicRequestOutputCaptionsCaptionSourcesListValue.TimeOffset);
+                                }
+
                                 writer.WriteObjectEnd();
                             }
                             writer.WriteArrayEnd();
                         }
+
+                        if(publicRequest.Output.Captions.IsSetMergePolicy())
+                        {
+                            writer.WritePropertyName("MergePolicy");
+                            writer.Write(publicRequest.Output.Captions.MergePolicy);
+                        }
+
                         writer.WriteObjectEnd();
                     }
-                    writer.WriteArrayEnd();
+
+                    if(publicRequest.Output.IsSetComposition())
+                    {
+                        writer.WritePropertyName("Composition");
+                        writer.WriteArrayStart();
+                        foreach(var publicRequestOutputCompositionListValue in publicRequest.Output.Composition)
+                        {
+                            writer.WriteObjectStart();
+                            if(publicRequestOutputCompositionListValue.IsSetTimeSpan())
+                            {
+                                writer.WritePropertyName("TimeSpan");
+                                writer.WriteObjectStart();
+                                if(publicRequestOutputCompositionListValue.TimeSpan.IsSetDuration())
+                                {
+                                    writer.WritePropertyName("Duration");
+                                    writer.Write(publicRequestOutputCompositionListValue.TimeSpan.Duration);
+                                }
+
+                                if(publicRequestOutputCompositionListValue.TimeSpan.IsSetStartTime())
+                                {
+                                    writer.WritePropertyName("StartTime");
+                                    writer.Write(publicRequestOutputCompositionListValue.TimeSpan.StartTime);
+                                }
+
+                                writer.WriteObjectEnd();
+                            }
+
+                            writer.WriteObjectEnd();
+                        }
+                        writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.Output.IsSetKey())
+                    {
+                        writer.WritePropertyName("Key");
+                        writer.Write(publicRequest.Output.Key);
+                    }
+
+                    if(publicRequest.Output.IsSetPresetId())
+                    {
+                        writer.WritePropertyName("PresetId");
+                        writer.Write(publicRequest.Output.PresetId);
+                    }
+
+                    if(publicRequest.Output.IsSetRotate())
+                    {
+                        writer.WritePropertyName("Rotate");
+                        writer.Write(publicRequest.Output.Rotate);
+                    }
+
+                    if(publicRequest.Output.IsSetSegmentDuration())
+                    {
+                        writer.WritePropertyName("SegmentDuration");
+                        writer.Write(publicRequest.Output.SegmentDuration);
+                    }
+
+                    if(publicRequest.Output.IsSetThumbnailPattern())
+                    {
+                        writer.WritePropertyName("ThumbnailPattern");
+                        writer.Write(publicRequest.Output.ThumbnailPattern);
+                    }
+
+                    if(publicRequest.Output.IsSetWatermarks())
+                    {
+                        writer.WritePropertyName("Watermarks");
+                        writer.WriteArrayStart();
+                        foreach(var publicRequestOutputWatermarksListValue in publicRequest.Output.Watermarks)
+                        {
+                            writer.WriteObjectStart();
+                            if(publicRequestOutputWatermarksListValue.IsSetInputKey())
+                            {
+                                writer.WritePropertyName("InputKey");
+                                writer.Write(publicRequestOutputWatermarksListValue.InputKey);
+                            }
+
+                            if(publicRequestOutputWatermarksListValue.IsSetPresetWatermarkId())
+                            {
+                                writer.WritePropertyName("PresetWatermarkId");
+                                writer.Write(publicRequestOutputWatermarksListValue.PresetWatermarkId);
+                            }
+
+                            writer.WriteObjectEnd();
+                        }
+                        writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
-                if (createJobRequest != null && createJobRequest.IsSetOutputKeyPrefix()) 
+
+                if(publicRequest.IsSetOutputKeyPrefix())
                 {
                     writer.WritePropertyName("OutputKeyPrefix");
-                    writer.Write(createJobRequest.OutputKeyPrefix);
+                    writer.Write(publicRequest.OutputKeyPrefix);
                 }
 
-                if (createJobRequest != null && createJobRequest.Playlists != null && createJobRequest.Playlists.Count > 0)
+                if(publicRequest.IsSetOutputs())
                 {
-                    List<CreateJobPlaylist> playlistsList = createJobRequest.Playlists;
-                    writer.WritePropertyName("Playlists");
+                    writer.WritePropertyName("Outputs");
                     writer.WriteArrayStart();
-
-                    foreach (CreateJobPlaylist playlistsListValue in playlistsList) 
+                    foreach(var publicRequestOutputsListValue in publicRequest.Outputs)
                     {
                         writer.WriteObjectStart();
-                        if (playlistsListValue != null && playlistsListValue.IsSetName()) 
+                        if(publicRequestOutputsListValue.IsSetAlbumArt())
                         {
-                            writer.WritePropertyName("Name");
-                            writer.Write(playlistsListValue.Name);
-                        }
-                        if (playlistsListValue != null && playlistsListValue.IsSetFormat()) 
-                        {
-                            writer.WritePropertyName("Format");
-                            writer.Write(playlistsListValue.Format);
-                        }
+                            writer.WritePropertyName("AlbumArt");
+                            writer.WriteObjectStart();
+                            if(publicRequestOutputsListValue.AlbumArt.IsSetArtwork())
+                            {
+                                writer.WritePropertyName("Artwork");
+                                writer.WriteArrayStart();
+                                foreach(var publicRequestOutputsListValueAlbumArtArtworkListValue in publicRequestOutputsListValue.AlbumArt.Artwork)
+                                {
+                                    writer.WriteObjectStart();
+                                    if(publicRequestOutputsListValueAlbumArtArtworkListValue.IsSetAlbumArtFormat())
+                                    {
+                                        writer.WritePropertyName("AlbumArtFormat");
+                                        writer.Write(publicRequestOutputsListValueAlbumArtArtworkListValue.AlbumArtFormat);
+                                    }
 
-                        if (playlistsListValue != null && playlistsListValue.OutputKeys != null && playlistsListValue.OutputKeys.Count > 0) 
-                        {
-                            List<string> outputKeysList = playlistsListValue.OutputKeys;
-                            writer.WritePropertyName("OutputKeys");
-                            writer.WriteArrayStart();
+                                    if(publicRequestOutputsListValueAlbumArtArtworkListValue.IsSetInputKey())
+                                    {
+                                        writer.WritePropertyName("InputKey");
+                                        writer.Write(publicRequestOutputsListValueAlbumArtArtworkListValue.InputKey);
+                                    }
 
-                            foreach (string outputKeysListValue in outputKeysList) 
-                            { 
-                                writer.Write(StringUtils.FromString(outputKeysListValue));
+                                    if(publicRequestOutputsListValueAlbumArtArtworkListValue.IsSetMaxHeight())
+                                    {
+                                        writer.WritePropertyName("MaxHeight");
+                                        writer.Write(publicRequestOutputsListValueAlbumArtArtworkListValue.MaxHeight);
+                                    }
+
+                                    if(publicRequestOutputsListValueAlbumArtArtworkListValue.IsSetMaxWidth())
+                                    {
+                                        writer.WritePropertyName("MaxWidth");
+                                        writer.Write(publicRequestOutputsListValueAlbumArtArtworkListValue.MaxWidth);
+                                    }
+
+                                    if(publicRequestOutputsListValueAlbumArtArtworkListValue.IsSetPaddingPolicy())
+                                    {
+                                        writer.WritePropertyName("PaddingPolicy");
+                                        writer.Write(publicRequestOutputsListValueAlbumArtArtworkListValue.PaddingPolicy);
+                                    }
+
+                                    if(publicRequestOutputsListValueAlbumArtArtworkListValue.IsSetSizingPolicy())
+                                    {
+                                        writer.WritePropertyName("SizingPolicy");
+                                        writer.Write(publicRequestOutputsListValueAlbumArtArtworkListValue.SizingPolicy);
+                                    }
+
+                                    writer.WriteObjectEnd();
+                                }
+                                writer.WriteArrayEnd();
                             }
 
+                            if(publicRequestOutputsListValue.AlbumArt.IsSetMergePolicy())
+                            {
+                                writer.WritePropertyName("MergePolicy");
+                                writer.Write(publicRequestOutputsListValue.AlbumArt.MergePolicy);
+                            }
+
+                            writer.WriteObjectEnd();
+                        }
+
+                        if(publicRequestOutputsListValue.IsSetCaptions())
+                        {
+                            writer.WritePropertyName("Captions");
+                            writer.WriteObjectStart();
+                            if(publicRequestOutputsListValue.Captions.IsSetCaptionFormats())
+                            {
+                                writer.WritePropertyName("CaptionFormats");
+                                writer.WriteArrayStart();
+                                foreach(var publicRequestOutputsListValueCaptionsCaptionFormatsListValue in publicRequestOutputsListValue.Captions.CaptionFormats)
+                                {
+                                    writer.WriteObjectStart();
+                                    if(publicRequestOutputsListValueCaptionsCaptionFormatsListValue.IsSetFormat())
+                                    {
+                                        writer.WritePropertyName("Format");
+                                        writer.Write(publicRequestOutputsListValueCaptionsCaptionFormatsListValue.Format);
+                                    }
+
+                                    if(publicRequestOutputsListValueCaptionsCaptionFormatsListValue.IsSetPattern())
+                                    {
+                                        writer.WritePropertyName("Pattern");
+                                        writer.Write(publicRequestOutputsListValueCaptionsCaptionFormatsListValue.Pattern);
+                                    }
+
+                                    writer.WriteObjectEnd();
+                                }
+                                writer.WriteArrayEnd();
+                            }
+
+                            if(publicRequestOutputsListValue.Captions.IsSetCaptionSources())
+                            {
+                                writer.WritePropertyName("CaptionSources");
+                                writer.WriteArrayStart();
+                                foreach(var publicRequestOutputsListValueCaptionsCaptionSourcesListValue in publicRequestOutputsListValue.Captions.CaptionSources)
+                                {
+                                    writer.WriteObjectStart();
+                                    if(publicRequestOutputsListValueCaptionsCaptionSourcesListValue.IsSetKey())
+                                    {
+                                        writer.WritePropertyName("Key");
+                                        writer.Write(publicRequestOutputsListValueCaptionsCaptionSourcesListValue.Key);
+                                    }
+
+                                    if(publicRequestOutputsListValueCaptionsCaptionSourcesListValue.IsSetLabel())
+                                    {
+                                        writer.WritePropertyName("Label");
+                                        writer.Write(publicRequestOutputsListValueCaptionsCaptionSourcesListValue.Label);
+                                    }
+
+                                    if(publicRequestOutputsListValueCaptionsCaptionSourcesListValue.IsSetLanguage())
+                                    {
+                                        writer.WritePropertyName("Language");
+                                        writer.Write(publicRequestOutputsListValueCaptionsCaptionSourcesListValue.Language);
+                                    }
+
+                                    if(publicRequestOutputsListValueCaptionsCaptionSourcesListValue.IsSetTimeOffset())
+                                    {
+                                        writer.WritePropertyName("TimeOffset");
+                                        writer.Write(publicRequestOutputsListValueCaptionsCaptionSourcesListValue.TimeOffset);
+                                    }
+
+                                    writer.WriteObjectEnd();
+                                }
+                                writer.WriteArrayEnd();
+                            }
+
+                            if(publicRequestOutputsListValue.Captions.IsSetMergePolicy())
+                            {
+                                writer.WritePropertyName("MergePolicy");
+                                writer.Write(publicRequestOutputsListValue.Captions.MergePolicy);
+                            }
+
+                            writer.WriteObjectEnd();
+                        }
+
+                        if(publicRequestOutputsListValue.IsSetComposition())
+                        {
+                            writer.WritePropertyName("Composition");
+                            writer.WriteArrayStart();
+                            foreach(var publicRequestOutputsListValueCompositionListValue in publicRequestOutputsListValue.Composition)
+                            {
+                                writer.WriteObjectStart();
+                                if(publicRequestOutputsListValueCompositionListValue.IsSetTimeSpan())
+                                {
+                                    writer.WritePropertyName("TimeSpan");
+                                    writer.WriteObjectStart();
+                                    if(publicRequestOutputsListValueCompositionListValue.TimeSpan.IsSetDuration())
+                                    {
+                                        writer.WritePropertyName("Duration");
+                                        writer.Write(publicRequestOutputsListValueCompositionListValue.TimeSpan.Duration);
+                                    }
+
+                                    if(publicRequestOutputsListValueCompositionListValue.TimeSpan.IsSetStartTime())
+                                    {
+                                        writer.WritePropertyName("StartTime");
+                                        writer.Write(publicRequestOutputsListValueCompositionListValue.TimeSpan.StartTime);
+                                    }
+
+                                    writer.WriteObjectEnd();
+                                }
+
+                                writer.WriteObjectEnd();
+                            }
                             writer.WriteArrayEnd();
                         }
+
+                        if(publicRequestOutputsListValue.IsSetKey())
+                        {
+                            writer.WritePropertyName("Key");
+                            writer.Write(publicRequestOutputsListValue.Key);
+                        }
+
+                        if(publicRequestOutputsListValue.IsSetPresetId())
+                        {
+                            writer.WritePropertyName("PresetId");
+                            writer.Write(publicRequestOutputsListValue.PresetId);
+                        }
+
+                        if(publicRequestOutputsListValue.IsSetRotate())
+                        {
+                            writer.WritePropertyName("Rotate");
+                            writer.Write(publicRequestOutputsListValue.Rotate);
+                        }
+
+                        if(publicRequestOutputsListValue.IsSetSegmentDuration())
+                        {
+                            writer.WritePropertyName("SegmentDuration");
+                            writer.Write(publicRequestOutputsListValue.SegmentDuration);
+                        }
+
+                        if(publicRequestOutputsListValue.IsSetThumbnailPattern())
+                        {
+                            writer.WritePropertyName("ThumbnailPattern");
+                            writer.Write(publicRequestOutputsListValue.ThumbnailPattern);
+                        }
+
+                        if(publicRequestOutputsListValue.IsSetWatermarks())
+                        {
+                            writer.WritePropertyName("Watermarks");
+                            writer.WriteArrayStart();
+                            foreach(var publicRequestOutputsListValueWatermarksListValue in publicRequestOutputsListValue.Watermarks)
+                            {
+                                writer.WriteObjectStart();
+                                if(publicRequestOutputsListValueWatermarksListValue.IsSetInputKey())
+                                {
+                                    writer.WritePropertyName("InputKey");
+                                    writer.Write(publicRequestOutputsListValueWatermarksListValue.InputKey);
+                                }
+
+                                if(publicRequestOutputsListValueWatermarksListValue.IsSetPresetWatermarkId())
+                                {
+                                    writer.WritePropertyName("PresetWatermarkId");
+                                    writer.Write(publicRequestOutputsListValueWatermarksListValue.PresetWatermarkId);
+                                }
+
+                                writer.WriteObjectEnd();
+                            }
+                            writer.WriteArrayEnd();
+                        }
+
                         writer.WriteObjectEnd();
                     }
                     writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetPipelineId())
+                {
+                    writer.WritePropertyName("PipelineId");
+                    writer.Write(publicRequest.PipelineId);
+                }
+
+                if(publicRequest.IsSetPlaylists())
+                {
+                    writer.WritePropertyName("Playlists");
+                    writer.WriteArrayStart();
+                    foreach(var publicRequestPlaylistsListValue in publicRequest.Playlists)
+                    {
+                        writer.WriteObjectStart();
+                        if(publicRequestPlaylistsListValue.IsSetFormat())
+                        {
+                            writer.WritePropertyName("Format");
+                            writer.Write(publicRequestPlaylistsListValue.Format);
+                        }
+
+                        if(publicRequestPlaylistsListValue.IsSetName())
+                        {
+                            writer.WritePropertyName("Name");
+                            writer.Write(publicRequestPlaylistsListValue.Name);
+                        }
+
+                        if(publicRequestPlaylistsListValue.IsSetOutputKeys())
+                        {
+                            writer.WritePropertyName("OutputKeys");
+                            writer.WriteArrayStart();
+                            foreach(var publicRequestPlaylistsListValueOutputKeysListValue in publicRequestPlaylistsListValue.OutputKeys)
+                            {
+                                writer.Write(publicRequestPlaylistsListValueOutputKeysListValue);
+                            }
+                            writer.WriteArrayEnd();
+                        }
+
+                        writer.WriteObjectEnd();
+                    }
+                    writer.WriteArrayEnd();
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

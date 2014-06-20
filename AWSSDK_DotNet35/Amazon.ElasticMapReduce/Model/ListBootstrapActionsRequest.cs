@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,47 +25,50 @@ namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
     /// Container for the parameters to the ListBootstrapActions operation.
-    /// <para>Provides information about the bootstrap actions associated with a cluster.</para>
+    /// Provides information about the bootstrap actions associated with a cluster.
     /// </summary>
     public partial class ListBootstrapActionsRequest : AmazonElasticMapReduceRequest
     {
-        private string clusterId;
-        private string marker;
+        private string _clusterId;
+        private string _marker;
 
 
         /// <summary>
-        /// The cluster identifier for the bootstrap actions to list.
-        ///  
+        /// Gets and sets the property ClusterId. 
+        /// <para>
+        /// The cluster identifier for the bootstrap actions to list      .
+        /// </para>
         /// </summary>
         public string ClusterId
         {
-            get { return this.clusterId; }
-            set { this.clusterId = value; }
+            get { return this._clusterId; }
+            set { this._clusterId = value; }
         }
 
         // Check to see if ClusterId property is set
         internal bool IsSetClusterId()
         {
-            return this.clusterId != null;
+            return this._clusterId != null;
         }
 
+
         /// <summary>
-        /// The pagination token is a random string indicating whether there are more results to fetch. Provide the pagination token from earlier API
-        /// calls to retrieve the next page of results. When the value is null, all results have been returned.
-        ///  
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// The pagination token that indicates the next set of results to retrieve         .
+        /// </para>
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
         }
 
     }
 }
-    

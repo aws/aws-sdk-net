@@ -404,7 +404,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="conditions">
         /// Conditions that the results should meet.
         /// </param>
-        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
+        /// <param name="operationConfig">Config object which can be used to override the table used.</param>
         /// <returns>Lazy-loaded collection of results.</returns>
         public IEnumerable<T> Scan<T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig)
         {

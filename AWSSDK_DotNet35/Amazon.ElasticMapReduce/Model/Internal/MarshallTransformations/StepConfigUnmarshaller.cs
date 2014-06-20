@@ -12,66 +12,76 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.ElasticMapReduce.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+using Amazon.ElasticMapReduce.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for StepConfig Object
+    /// </summary>  
+    public class StepConfigUnmarshaller : IUnmarshaller<StepConfig, XmlUnmarshallerContext>, IUnmarshaller<StepConfig, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// StepConfigUnmarshaller
-      /// </summary>
-      internal class StepConfigUnmarshaller : IUnmarshaller<StepConfig, XmlUnmarshallerContext>, IUnmarshaller<StepConfig, JsonUnmarshallerContext>
-      {
         StepConfig IUnmarshaller<StepConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public StepConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            StepConfig stepConfig = new StepConfig();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            StepConfig unmarshalledObject = new StepConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("Name", targetDepth))
-              {
-                stepConfig.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("ActionOnFailure", targetDepth))
-              {
-                stepConfig.ActionOnFailure = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("HadoopJarStep", targetDepth))
-              {
-                stepConfig.HadoopJarStep = HadoopJarStepConfigUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("ActionOnFailure", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ActionOnFailure = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HadoopJarStep", targetDepth))
+                {
+                    var unmarshaller = HadoopJarStepConfigUnmarshaller.Instance;
+                    unmarshalledObject.HadoopJarStep = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return stepConfig;
+            return unmarshalledObject;
         }
 
-        private static StepConfigUnmarshaller instance;
-        public static StepConfigUnmarshaller GetInstance()
+
+        private static StepConfigUnmarshaller _instance = new StepConfigUnmarshaller();        
+
+        public static StepConfigUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new StepConfigUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

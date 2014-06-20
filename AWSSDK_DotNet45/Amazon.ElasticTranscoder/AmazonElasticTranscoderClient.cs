@@ -27,9 +27,12 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ElasticTranscoder
 {
     /// <summary>
-    /// Implementation for accessing AmazonElasticTranscoder.
+    /// Implementation for accessing ElasticTranscoder
     /// 
-    /// AWS Elastic Transcoder Service <para>The AWS Elastic Transcoder Service.</para>
+    /// AWS Elastic Transcoder Service
+    /// <para>
+    /// The AWS Elastic Transcoder Service.
+    /// </para>
     /// </summary>
 	public partial class AmazonElasticTranscoderClient : AmazonWebServiceClient, Amazon.ElasticTranscoder.IAmazonElasticTranscoder
     {
@@ -206,22 +209,37 @@ namespace Amazon.ElasticTranscoder
 
  
         /// <summary>
-        /// <para>The CancelJob operation cancels an unfinished job.</para> <para><b>NOTE:</b>You can only cancel a job that has a status of Submitted.
-        /// To prevent a pipeline from starting to process a job while you're getting the job identifier, use UpdatePipelineStatus to temporarily pause
-        /// the pipeline.</para>
+        /// The CancelJob operation cancels an unfinished job.
+        /// 
+        /// <note>You can only cancel a job that has a status of <code>Submitted</code>.
+        /// To prevent a            pipeline from starting to process a job while you're getting
+        /// the job identifier, use                <a>UpdatePipelineStatus</a> to temporarily
+        /// pause the pipeline.</note>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelJob service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CancelJob service method on
-        /// AmazonElasticTranscoder.</param>
+        /// <returns>The response from the CancelJob service method, as returned by ElasticTranscoder.</returns>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException">
+        /// General authentication failure. The request was not signed correctly.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException">
         /// 
-        /// <returns>The response from the CancelJob service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceNotFoundException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceInUseException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException">
+        /// Elastic Transcoder encountered an unexpected exception while trying to fulfill the
+        /// request.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceInUseException">
+        /// The resource you are attempting to change is in use. For example, you are attempting
+        /// to            delete a pipeline that is currently in use.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceNotFoundException">
+        /// The requested resource does not exist or is not available. For example, the pipeline
+        /// to            which you're trying to add a job doesn't exist or is still being created.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException">
+        /// One or more required parameter values were not provided in the request.
+        /// </exception>
 		public CancelJobResponse CancelJob(CancelJobRequest request)
         {
             var task = CancelJobAsync(request);
@@ -254,23 +272,41 @@ namespace Amazon.ElasticTranscoder
         }
  
         /// <summary>
-        /// <para> When you create a job, Elastic Transcoder returns JSON data that includes the values that you specified plus information about the
-        /// job that is created. </para> <para>If you have specified more than one output for your jobs (for example, one output for the Kindle Fire and
-        /// another output for the Apple iPhone 4s), you currently must use the Elastic Transcoder API to list the jobs (as opposed to the AWS
-        /// Console).</para>
+        /// When you create a job, Elastic Transcoder returns JSON data that includes the values
+        /// that you specified plus information about the job that is created.
+        /// 
+        /// 
+        /// <para>
+        /// If you have specified more than one output for your jobs (for example, one output
+        /// for the            Kindle Fire and another output for the Apple iPhone 4s), you currently
+        /// must use the            Elastic Transcoder API to list the jobs (as opposed to the
+        /// AWS Console).
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateJob service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateJob service method on
-        /// AmazonElasticTranscoder.</param>
+        /// <returns>The response from the CreateJob service method, as returned by ElasticTranscoder.</returns>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException">
+        /// General authentication failure. The request was not signed correctly.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException">
         /// 
-        /// <returns>The response from the CreateJob service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceNotFoundException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.LimitExceededException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException">
+        /// Elastic Transcoder encountered an unexpected exception while trying to fulfill the
+        /// request.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.LimitExceededException">
+        /// Too many operations for a given AWS account. For example, the number of pipelines
+        /// exceeds            the maximum allowed.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceNotFoundException">
+        /// The requested resource does not exist or is not available. For example, the pipeline
+        /// to            which you're trying to add a job doesn't exist or is still being created.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException">
+        /// One or more required parameter values were not provided in the request.
+        /// </exception>
 		public CreateJobResponse CreateJob(CreateJobRequest request)
         {
             var task = CreateJobAsync(request);
@@ -303,20 +339,32 @@ namespace Amazon.ElasticTranscoder
         }
  
         /// <summary>
-        /// <para>The CreatePipeline operation creates a pipeline with settings that you specify.</para>
+        /// The CreatePipeline operation creates a pipeline with settings that you specify.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePipeline service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreatePipeline service method on
-        /// AmazonElasticTranscoder.</param>
+        /// <returns>The response from the CreatePipeline service method, as returned by ElasticTranscoder.</returns>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException">
+        /// General authentication failure. The request was not signed correctly.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException">
         /// 
-        /// <returns>The response from the CreatePipeline service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceNotFoundException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.LimitExceededException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException">
+        /// Elastic Transcoder encountered an unexpected exception while trying to fulfill the
+        /// request.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.LimitExceededException">
+        /// Too many operations for a given AWS account. For example, the number of pipelines
+        /// exceeds            the maximum allowed.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceNotFoundException">
+        /// The requested resource does not exist or is not available. For example, the pipeline
+        /// to            which you're trying to add a job doesn't exist or is still being created.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException">
+        /// One or more required parameter values were not provided in the request.
+        /// </exception>
 		public CreatePipelineResponse CreatePipeline(CreatePipelineRequest request)
         {
             var task = CreatePipelineAsync(request);
@@ -349,26 +397,44 @@ namespace Amazon.ElasticTranscoder
         }
  
         /// <summary>
-        /// <para>The CreatePreset operation creates a preset with settings that you specify.</para> <para><b>IMPORTANT:</b>Elastic Transcoder checks
-        /// the CreatePreset settings to ensure that they meet Elastic Transcoder requirements and to determine whether they comply with H.264
-        /// standards. If your settings are not valid for Elastic Transcoder, Elastic Transcoder returns an HTTP 400 response (ValidationException) and
-        /// does not create the preset. If the settings are valid for Elastic Transcoder but aren't strictly compliant with the H.264 standard, Elastic
-        /// Transcoder creates the preset and returns a warning message in the response. This helps you determine whether your settings comply with the
-        /// H.264 standard while giving you greater flexibility with respect to the video that Elastic Transcoder produces.</para> <para>Elastic
-        /// Transcoder uses the H.264 video-compression format. For more information, see the International Telecommunication Union publication
-        /// <i>Recommendation ITU-T H.264: Advanced video coding for generic audiovisual services</i> .</para>
+        /// The CreatePreset operation creates a preset with settings that you specify.
+        /// 
+        /// <important>Elastic Transcoder checks the CreatePreset settings to ensure that
+        /// they meet Elastic Transcoder requirements            and to determine whether they
+        /// comply with H.264 standards. If your settings are not            valid for Elastic
+        /// Transcoder, Elastic Transcoder returns an HTTP 400 response (<code>ValidationException</code>)
+        /// and            does not create the preset. If the settings are valid for Elastic Transcoder
+        /// but aren't strictly            compliant with the H.264 standard, Elastic Transcoder
+        /// creates the preset and returns a warning message            in the response. This
+        /// helps you determine whether your settings comply with the H.264            standard
+        /// while giving you greater flexibility with respect to the video that Elastic Transcoder
+        /// produces.</important>
+        /// <para>
+        /// Elastic Transcoder uses the H.264 video-compression format. For more information,
+        /// see the International            Telecommunication Union publication <i>Recommendation
+        /// ITU-T H.264: Advanced video coding                for generic audiovisual services</i>.
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePreset service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreatePreset service method on
-        /// AmazonElasticTranscoder.</param>
+        /// <returns>The response from the CreatePreset service method, as returned by ElasticTranscoder.</returns>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException">
+        /// General authentication failure. The request was not signed correctly.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException">
         /// 
-        /// <returns>The response from the CreatePreset service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.LimitExceededException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException">
+        /// Elastic Transcoder encountered an unexpected exception while trying to fulfill the
+        /// request.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.LimitExceededException">
+        /// Too many operations for a given AWS account. For example, the number of pipelines
+        /// exceeds            the maximum allowed.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException">
+        /// One or more required parameter values were not provided in the request.
+        /// </exception>
 		public CreatePresetResponse CreatePreset(CreatePresetRequest request)
         {
             var task = CreatePresetAsync(request);
@@ -401,21 +467,39 @@ namespace Amazon.ElasticTranscoder
         }
  
         /// <summary>
-        /// <para>The DeletePipeline operation removes a pipeline.</para> <para> You can only delete a pipeline that has never been used or that is not
-        /// currently in use (doesn't contain any active jobs). If the pipeline is currently in use, <c>DeletePipeline</c> returns an error. </para>
+        /// The DeletePipeline operation removes a pipeline.
+        /// 
+        /// 
+        /// <para>
+        /// You can only delete a pipeline that has never been used or that is not currently
+        /// in use            (doesn't contain any active jobs). If the pipeline is currently
+        /// in use,                <code>DeletePipeline</code> returns an error.
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePipeline service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeletePipeline service method on
-        /// AmazonElasticTranscoder.</param>
+        /// <returns>The response from the DeletePipeline service method, as returned by ElasticTranscoder.</returns>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException">
+        /// General authentication failure. The request was not signed correctly.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException">
         /// 
-        /// <returns>The response from the DeletePipeline service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceNotFoundException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceInUseException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException">
+        /// Elastic Transcoder encountered an unexpected exception while trying to fulfill the
+        /// request.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceInUseException">
+        /// The resource you are attempting to change is in use. For example, you are attempting
+        /// to            delete a pipeline that is currently in use.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceNotFoundException">
+        /// The requested resource does not exist or is not available. For example, the pipeline
+        /// to            which you're trying to add a job doesn't exist or is still being created.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException">
+        /// One or more required parameter values were not provided in the request.
+        /// </exception>
 		public DeletePipelineResponse DeletePipeline(DeletePipelineRequest request)
         {
             var task = DeletePipelineAsync(request);
@@ -448,20 +532,34 @@ namespace Amazon.ElasticTranscoder
         }
  
         /// <summary>
-        /// <para>The DeletePreset operation removes a preset that you've added in an AWS region.</para> <para><b>NOTE:</b> You can't delete the default
-        /// presets that are included with Elastic Transcoder. </para>
+        /// The DeletePreset operation removes a preset that you've added in an AWS region.
+        /// 
+        /// <note>
+        /// <para>
+        /// You can't delete the default presets that are included with Elastic Transcoder.
+        /// </para>
+        /// </note>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePreset service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeletePreset service method on
-        /// AmazonElasticTranscoder.</param>
+        /// <returns>The response from the DeletePreset service method, as returned by ElasticTranscoder.</returns>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException">
+        /// General authentication failure. The request was not signed correctly.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException">
         /// 
-        /// <returns>The response from the DeletePreset service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceNotFoundException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException">
+        /// Elastic Transcoder encountered an unexpected exception while trying to fulfill the
+        /// request.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceNotFoundException">
+        /// The requested resource does not exist or is not available. For example, the pipeline
+        /// to            which you're trying to add a job doesn't exist or is still being created.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException">
+        /// One or more required parameter values were not provided in the request.
+        /// </exception>
 		public DeletePresetResponse DeletePreset(DeletePresetRequest request)
         {
             var task = DeletePresetAsync(request);
@@ -494,20 +592,35 @@ namespace Amazon.ElasticTranscoder
         }
  
         /// <summary>
-        /// <para>The ListJobsByPipeline operation gets a list of the jobs currently in a pipeline.</para> <para>Elastic Transcoder returns all of the
-        /// jobs currently in the specified pipeline. The response body contains one element for each job that satisfies the search criteria.</para>
+        /// The ListJobsByPipeline operation gets a list of the jobs currently in a pipeline.
+        /// 
+        /// 
+        /// <para>
+        /// Elastic Transcoder returns all of the jobs currently in the specified pipeline. The
+        /// response body contains one element for each job that satisfies the search
+        /// criteria.
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobsByPipeline service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListJobsByPipeline service method on
-        /// AmazonElasticTranscoder.</param>
+        /// <returns>The response from the ListJobsByPipeline service method, as returned by ElasticTranscoder.</returns>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException">
+        /// General authentication failure. The request was not signed correctly.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException">
         /// 
-        /// <returns>The response from the ListJobsByPipeline service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceNotFoundException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException">
+        /// Elastic Transcoder encountered an unexpected exception while trying to fulfill the
+        /// request.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceNotFoundException">
+        /// The requested resource does not exist or is not available. For example, the pipeline
+        /// to            which you're trying to add a job doesn't exist or is still being created.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException">
+        /// One or more required parameter values were not provided in the request.
+        /// </exception>
 		public ListJobsByPipelineResponse ListJobsByPipeline(ListJobsByPipelineRequest request)
         {
             var task = ListJobsByPipelineAsync(request);
@@ -540,20 +653,30 @@ namespace Amazon.ElasticTranscoder
         }
  
         /// <summary>
-        /// <para>The ListJobsByStatus operation gets a list of jobs that have a specified status. The response body contains one element for each job
-        /// that satisfies the search criteria.</para>
+        /// The ListJobsByStatus operation gets a list of jobs that have a specified status. The
+        /// response body contains one element for each job that satisfies the search
+        /// criteria.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobsByStatus service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListJobsByStatus service method on
-        /// AmazonElasticTranscoder.</param>
+        /// <returns>The response from the ListJobsByStatus service method, as returned by ElasticTranscoder.</returns>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException">
+        /// General authentication failure. The request was not signed correctly.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException">
         /// 
-        /// <returns>The response from the ListJobsByStatus service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceNotFoundException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException">
+        /// Elastic Transcoder encountered an unexpected exception while trying to fulfill the
+        /// request.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceNotFoundException">
+        /// The requested resource does not exist or is not available. For example, the pipeline
+        /// to            which you're trying to add a job doesn't exist or is still being created.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException">
+        /// One or more required parameter values were not provided in the request.
+        /// </exception>
 		public ListJobsByStatusResponse ListJobsByStatus(ListJobsByStatusRequest request)
         {
             var task = ListJobsByStatusAsync(request);
@@ -586,18 +709,49 @@ namespace Amazon.ElasticTranscoder
         }
  
         /// <summary>
-        /// <para>The ListPipelines operation gets a list of the pipelines associated with the current AWS account.</para>
+        /// The ListPipelines operation gets a list of the pipelines associated with the current
+        /// AWS            account.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListPipelines service method on
-        /// AmazonElasticTranscoder.</param>
+        /// <returns>The response from the ListPipelines service method, as returned by ElasticTranscoder.</returns>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException">
+        /// General authentication failure. The request was not signed correctly.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException">
         /// 
-        /// <returns>The response from the ListPipelines service method, as returned by AmazonElasticTranscoder.</returns>
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException">
+        /// Elastic Transcoder encountered an unexpected exception while trying to fulfill the
+        /// request.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException">
+        /// One or more required parameter values were not provided in the request.
+        /// </exception>
+		public ListPipelinesResponse ListPipelines()
+        {
+            return this.ListPipelines(new ListPipelinesRequest());
+        }
+ 
+        /// <summary>
+        /// The ListPipelines operation gets a list of the pipelines associated with the current
+        /// AWS            account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPipelines service method.</param>
         /// 
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
+        /// <returns>The response from the ListPipelines service method, as returned by ElasticTranscoder.</returns>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException">
+        /// General authentication failure. The request was not signed correctly.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException">
+        /// 
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException">
+        /// Elastic Transcoder encountered an unexpected exception while trying to fulfill the
+        /// request.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException">
+        /// One or more required parameter values were not provided in the request.
+        /// </exception>
 		public ListPipelinesResponse ListPipelines(ListPipelinesRequest request)
         {
             var task = ListPipelinesAsync(request);
@@ -630,35 +784,49 @@ namespace Amazon.ElasticTranscoder
         }
  
         /// <summary>
-        /// <para>The ListPipelines operation gets a list of the pipelines associated with the current AWS account.</para>
+        /// The ListPresets operation gets a list of the default presets included with Elastic
+        /// Transcoder and the            presets that you've added in an AWS region.
         /// </summary>
         /// 
+        /// <returns>The response from the ListPresets service method, as returned by ElasticTranscoder.</returns>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException">
+        /// General authentication failure. The request was not signed correctly.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException">
         /// 
-        /// <returns>The response from the ListPipelines service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
-		public ListPipelinesResponse ListPipelines()
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException">
+        /// Elastic Transcoder encountered an unexpected exception while trying to fulfill the
+        /// request.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException">
+        /// One or more required parameter values were not provided in the request.
+        /// </exception>
+		public ListPresetsResponse ListPresets()
         {
-            return this.ListPipelines(new ListPipelinesRequest());
+            return this.ListPresets(new ListPresetsRequest());
         }
  
         /// <summary>
-        /// <para>The ListPresets operation gets a list of the default presets included with Elastic Transcoder and the presets that you've added in an
-        /// AWS region.</para>
+        /// The ListPresets operation gets a list of the default presets included with Elastic
+        /// Transcoder and the            presets that you've added in an AWS region.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPresets service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListPresets service method on
-        /// AmazonElasticTranscoder.</param>
+        /// <returns>The response from the ListPresets service method, as returned by ElasticTranscoder.</returns>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException">
+        /// General authentication failure. The request was not signed correctly.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException">
         /// 
-        /// <returns>The response from the ListPresets service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException">
+        /// Elastic Transcoder encountered an unexpected exception while trying to fulfill the
+        /// request.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException">
+        /// One or more required parameter values were not provided in the request.
+        /// </exception>
 		public ListPresetsResponse ListPresets(ListPresetsRequest request)
         {
             var task = ListPresetsAsync(request);
@@ -691,36 +859,28 @@ namespace Amazon.ElasticTranscoder
         }
  
         /// <summary>
-        /// <para>The ListPresets operation gets a list of the default presets included with Elastic Transcoder and the presets that you've added in an
-        /// AWS region.</para>
+        /// The ReadJob operation returns detailed information about a job.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReadJob service method.</param>
         /// 
+        /// <returns>The response from the ReadJob service method, as returned by ElasticTranscoder.</returns>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException">
+        /// General authentication failure. The request was not signed correctly.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException">
         /// 
-        /// <returns>The response from the ListPresets service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
-		public ListPresetsResponse ListPresets()
-        {
-            return this.ListPresets(new ListPresetsRequest());
-        }
- 
-        /// <summary>
-        /// <para>The ReadJob operation returns detailed information about a job.</para>
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ReadJob service method on
-        /// AmazonElasticTranscoder.</param>
-        /// 
-        /// <returns>The response from the ReadJob service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceNotFoundException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException">
+        /// Elastic Transcoder encountered an unexpected exception while trying to fulfill the
+        /// request.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceNotFoundException">
+        /// The requested resource does not exist or is not available. For example, the pipeline
+        /// to            which you're trying to add a job doesn't exist or is still being created.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException">
+        /// One or more required parameter values were not provided in the request.
+        /// </exception>
 		public ReadJobResponse ReadJob(ReadJobRequest request)
         {
             var task = ReadJobAsync(request);
@@ -753,19 +913,28 @@ namespace Amazon.ElasticTranscoder
         }
  
         /// <summary>
-        /// <para>The ReadPipeline operation gets detailed information about a pipeline.</para>
+        /// The ReadPipeline operation gets detailed information about a pipeline.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReadPipeline service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ReadPipeline service method on
-        /// AmazonElasticTranscoder.</param>
+        /// <returns>The response from the ReadPipeline service method, as returned by ElasticTranscoder.</returns>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException">
+        /// General authentication failure. The request was not signed correctly.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException">
         /// 
-        /// <returns>The response from the ReadPipeline service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceNotFoundException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException">
+        /// Elastic Transcoder encountered an unexpected exception while trying to fulfill the
+        /// request.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceNotFoundException">
+        /// The requested resource does not exist or is not available. For example, the pipeline
+        /// to            which you're trying to add a job doesn't exist or is still being created.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException">
+        /// One or more required parameter values were not provided in the request.
+        /// </exception>
 		public ReadPipelineResponse ReadPipeline(ReadPipelineRequest request)
         {
             var task = ReadPipelineAsync(request);
@@ -798,19 +967,28 @@ namespace Amazon.ElasticTranscoder
         }
  
         /// <summary>
-        /// <para>The ReadPreset operation gets detailed information about a preset.</para>
+        /// The ReadPreset operation gets detailed information about a preset.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReadPreset service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ReadPreset service method on
-        /// AmazonElasticTranscoder.</param>
+        /// <returns>The response from the ReadPreset service method, as returned by ElasticTranscoder.</returns>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException">
+        /// General authentication failure. The request was not signed correctly.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException">
         /// 
-        /// <returns>The response from the ReadPreset service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceNotFoundException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException">
+        /// Elastic Transcoder encountered an unexpected exception while trying to fulfill the
+        /// request.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceNotFoundException">
+        /// The requested resource does not exist or is not available. For example, the pipeline
+        /// to            which you're trying to add a job doesn't exist or is still being created.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException">
+        /// One or more required parameter values were not provided in the request.
+        /// </exception>
 		public ReadPresetResponse ReadPreset(ReadPresetRequest request)
         {
             var task = ReadPresetAsync(request);
@@ -843,22 +1021,37 @@ namespace Amazon.ElasticTranscoder
         }
  
         /// <summary>
-        /// <para>The TestRole operation tests the IAM role used to create the pipeline.</para> <para>The <c>TestRole</c> action lets you determine
-        /// whether the IAM role you are using has sufficient permissions to let Elastic Transcoder perform tasks associated with the transcoding
-        /// process. The action attempts to assume the specified IAM role, checks read access to the input and output buckets, and tries to send a test
-        /// notification to Amazon SNS topics that you specify.</para>
+        /// The TestRole operation tests the IAM role used to create the pipeline.
+        /// 
+        /// 
+        /// <para>
+        /// The <code>TestRole</code> action lets you determine whether the IAM role you are using
+        /// has sufficient permissions to let Elastic Transcoder perform tasks associated
+        /// with the transcoding            process. The action attempts to assume the specified
+        /// IAM role, checks read access to the            input and output buckets, and tries
+        /// to send a test notification to Amazon SNS topics            that you specify.
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestRole service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the TestRole service method on
-        /// AmazonElasticTranscoder.</param>
+        /// <returns>The response from the TestRole service method, as returned by ElasticTranscoder.</returns>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException">
+        /// General authentication failure. The request was not signed correctly.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException">
         /// 
-        /// <returns>The response from the TestRole service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceNotFoundException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException">
+        /// Elastic Transcoder encountered an unexpected exception while trying to fulfill the
+        /// request.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceNotFoundException">
+        /// The requested resource does not exist or is not available. For example, the pipeline
+        /// to            which you're trying to add a job doesn't exist or is still being created.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException">
+        /// One or more required parameter values were not provided in the request.
+        /// </exception>
 		public TestRoleResponse TestRole(TestRoleRequest request)
         {
             var task = TestRoleAsync(request);
@@ -891,22 +1084,36 @@ namespace Amazon.ElasticTranscoder
         }
  
         /// <summary>
-        /// <para> Use the <c>UpdatePipeline</c> operation to update settings for a pipeline. <para><b>IMPORTANT:</b>When you change pipeline settings,
-        /// your changes take effect immediately. Jobs that you have already submitted and that Elastic Transcoder has not started to process are
-        /// affected in addition to jobs that you submit after you change settings. </para> </para>
+        /// Use the <code>UpdatePipeline</code> operation to update settings for a pipeline.
+        /// <important>When you change pipeline settings, your changes take effect
+        /// immediately.                Jobs that you have already submitted and that Elastic
+        /// Transcoder has not started to process are                affected in addition to jobs
+        /// that you submit after you change settings. </important>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePipeline service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdatePipeline service method on
-        /// AmazonElasticTranscoder.</param>
+        /// <returns>The response from the UpdatePipeline service method, as returned by ElasticTranscoder.</returns>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException">
+        /// General authentication failure. The request was not signed correctly.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException">
         /// 
-        /// <returns>The response from the UpdatePipeline service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceNotFoundException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceInUseException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException">
+        /// Elastic Transcoder encountered an unexpected exception while trying to fulfill the
+        /// request.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceInUseException">
+        /// The resource you are attempting to change is in use. For example, you are attempting
+        /// to            delete a pipeline that is currently in use.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceNotFoundException">
+        /// The requested resource does not exist or is not available. For example, the pipeline
+        /// to            which you're trying to add a job doesn't exist or is still being created.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException">
+        /// One or more required parameter values were not provided in the request.
+        /// </exception>
 		public UpdatePipelineResponse UpdatePipeline(UpdatePipelineRequest request)
         {
             var task = UpdatePipelineAsync(request);
@@ -939,22 +1146,39 @@ namespace Amazon.ElasticTranscoder
         }
  
         /// <summary>
-        /// <para>With the UpdatePipelineNotifications operation, you can update Amazon Simple Notification Service (Amazon SNS) notifications for a
-        /// pipeline.</para> <para>When you update notifications for a pipeline, Elastic Transcoder returns the values that you specified in the
-        /// request.</para>
+        /// With the UpdatePipelineNotifications operation, you can update Amazon Simple Notification
+        /// Service (Amazon SNS)            notifications for a pipeline.
+        /// 
+        /// 
+        /// <para>
+        /// When you update notifications for a pipeline, Elastic Transcoder returns the values
+        /// that you specified            in the request.
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePipelineNotifications service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdatePipelineNotifications service
-        /// method on AmazonElasticTranscoder.</param>
+        /// <returns>The response from the UpdatePipelineNotifications service method, as returned by ElasticTranscoder.</returns>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException">
+        /// General authentication failure. The request was not signed correctly.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException">
         /// 
-        /// <returns>The response from the UpdatePipelineNotifications service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceNotFoundException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceInUseException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException">
+        /// Elastic Transcoder encountered an unexpected exception while trying to fulfill the
+        /// request.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceInUseException">
+        /// The resource you are attempting to change is in use. For example, you are attempting
+        /// to            delete a pipeline that is currently in use.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceNotFoundException">
+        /// The requested resource does not exist or is not available. For example, the pipeline
+        /// to            which you're trying to add a job doesn't exist or is still being created.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException">
+        /// One or more required parameter values were not provided in the request.
+        /// </exception>
 		public UpdatePipelineNotificationsResponse UpdatePipelineNotifications(UpdatePipelineNotificationsRequest request)
         {
             var task = UpdatePipelineNotificationsAsync(request);
@@ -987,23 +1211,42 @@ namespace Amazon.ElasticTranscoder
         }
  
         /// <summary>
-        /// <para>The UpdatePipelineStatus operation pauses or reactivates a pipeline, so that the pipeline stops or restarts the processing of
-        /// jobs.</para> <para>Changing the pipeline status is useful if you want to cancel one or more jobs. You can't cancel jobs after Elastic
-        /// Transcoder has started processing them; if you pause the pipeline to which you submitted the jobs, you have more time to get the job IDs for
-        /// the jobs that you want to cancel, and to send a CancelJob request. </para>
+        /// The UpdatePipelineStatus operation pauses or reactivates a pipeline, so that the pipeline
+        /// stops or restarts the processing of jobs.
+        /// 
+        /// 
+        /// <para>
+        /// Changing the pipeline status is useful if you want to cancel one or more jobs. You
+        /// can't            cancel jobs after Elastic Transcoder has started processing them;
+        /// if you pause the pipeline to which            you submitted the jobs, you have more
+        /// time to get the job IDs for the jobs that you want            to cancel, and to send
+        /// a <a>CancelJob</a> request.
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePipelineStatus service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdatePipelineStatus service method on
-        /// AmazonElasticTranscoder.</param>
+        /// <returns>The response from the UpdatePipelineStatus service method, as returned by ElasticTranscoder.</returns>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException">
+        /// General authentication failure. The request was not signed correctly.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException">
         /// 
-        /// <returns>The response from the UpdatePipelineStatus service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceNotFoundException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceInUseException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException">
+        /// Elastic Transcoder encountered an unexpected exception while trying to fulfill the
+        /// request.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceInUseException">
+        /// The resource you are attempting to change is in use. For example, you are attempting
+        /// to            delete a pipeline that is currently in use.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceNotFoundException">
+        /// The requested resource does not exist or is not available. For example, the pipeline
+        /// to            which you're trying to add a job doesn't exist or is still being created.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException">
+        /// One or more required parameter values were not provided in the request.
+        /// </exception>
 		public UpdatePipelineStatusResponse UpdatePipelineStatus(UpdatePipelineStatusRequest request)
         {
             var task = UpdatePipelineStatusAsync(request);

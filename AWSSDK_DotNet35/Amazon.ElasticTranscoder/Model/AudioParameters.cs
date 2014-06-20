@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,139 +18,148 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// <para>Parameters required for transcoding audio.</para>
+    /// Parameters required for transcoding audio.
     /// </summary>
-    public class AudioParameters
+    public partial class AudioParameters
     {
-        
-        private string codec;
-        private string sampleRate;
-        private string bitRate;
-        private string channels;
-        private AudioCodecOptions codecOptions;
+        private string _bitRate;
+        private string _channels;
+        private string _codec;
+        private AudioCodecOptions _codecOptions;
+        private string _sampleRate;
 
 
         /// <summary>
-        /// The audio codec for the output file. Valid values include <c>aac</c>, <c>mp3</c>, and <c>vorbis</c>.
-        ///  
+        /// Gets and sets the property BitRate. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>(^AAC$)|(^vorbis$)|(^mp3$)</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string Codec
-        {
-            get { return this.codec; }
-            set { this.codec = value; }
-        }
-
-        // Check to see if Codec property is set
-        internal bool IsSetCodec()
-        {
-            return this.codec != null;
-        }
-
-        /// <summary>
-        /// The sample rate of the audio stream in the output file, in Hertz. Valid values include: <c>auto</c>, <c>22050</c>, <c>32000</c>,
-        /// <c>44100</c>, <c>48000</c>, <c>96000</c> If you specify <c>auto</c>, Elastic Transcoder automatically detects the sample rate.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>(^auto$)|(^22050$)|(^32000$)|(^44100$)|(^48000$)|(^96000$)</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string SampleRate
-        {
-            get { return this.sampleRate; }
-            set { this.sampleRate = value; }
-        }
-
-        // Check to see if SampleRate property is set
-        internal bool IsSetSampleRate()
-        {
-            return this.sampleRate != null;
-        }
-
-        /// <summary>
-        /// The bit rate of the audio stream in the output file, in kilobits/second. Enter an integer between 64 and 320, inclusive.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>^\d{1,3}$</description>
-        ///     </item>
-        /// </list>
+        /// The bit rate of the audio stream in the output file, in kilobits/second. Enter an
+        /// integer            between 64 and 320, inclusive.
         /// </para>
         /// </summary>
         public string BitRate
         {
-            get { return this.bitRate; }
-            set { this.bitRate = value; }
+            get { return this._bitRate; }
+            set { this._bitRate = value; }
         }
 
         // Check to see if BitRate property is set
         internal bool IsSetBitRate()
         {
-            return this.bitRate != null;
+            return this._bitRate != null;
         }
 
+
         /// <summary>
-        /// The number of audio channels in the output file. Valid values include: <c>auto</c>, <c>0</c>, <c>1</c>, <c>2</c> If you specify <c>auto</c>,
-        /// Elastic Transcoder automatically detects the number of channels in the input file.
-        ///  
+        /// Gets and sets the property Channels. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>(^auto$)|(^0$)|(^1$)|(^2$)</description>
-        ///     </item>
-        /// </list>
+        /// The number of audio channels in the output file. Valid values include:
+        /// </para>
+        ///         
+        /// <para>
+        /// <code>auto</code>, <code>0</code>, <code>1</code>, <code>2</code>
+        /// </para>
+        ///         
+        /// <para>
+        /// If you specify <code>auto</code>, Elastic Transcoder automatically detects the number
+        /// of channels in            the input file.
         /// </para>
         /// </summary>
         public string Channels
         {
-            get { return this.channels; }
-            set { this.channels = value; }
+            get { return this._channels; }
+            set { this._channels = value; }
         }
 
         // Check to see if Channels property is set
         internal bool IsSetChannels()
         {
-            return this.channels != null;
+            return this._channels != null;
         }
 
+
         /// <summary>
-        /// If you specified <c>AAC</c> for <c>Audio:Codec</c>, this is the <c>AAC</c> compression profile to use. Valid values include: <c>auto</c>,
-        /// <c>AAC-LC</c>, <c>HE-AAC</c>, <c>HE-AACv2</c> If you specify <c>auto</c>, Elastic Transcoder chooses a profile based on the bit rate of the
-        /// output file.
-        ///  
+        /// Gets and sets the property Codec. 
+        /// <para>
+        /// The audio codec for the output file. Valid values include <code>aac</code>,      
+        ///       <code>mp3</code>, and <code>vorbis</code>.
+        /// </para>
+        /// </summary>
+        public string Codec
+        {
+            get { return this._codec; }
+            set { this._codec = value; }
+        }
+
+        // Check to see if Codec property is set
+        internal bool IsSetCodec()
+        {
+            return this._codec != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property CodecOptions. 
+        /// <para>
+        /// If you specified <code>AAC</code> for <code>Audio:Codec</code>, this is the <code>AAC</code>
+        ///             compression profile to use. Valid values include:
+        /// </para>
+        ///         
+        /// <para>
+        /// <code>auto</code>, <code>AAC-LC</code>, <code>HE-AAC</code>, <code>HE-AACv2</code>
+        /// </para>
+        ///         
+        /// <para>
+        /// If you specify <code>auto</code>, Elastic Transcoder chooses a profile based on the
+        /// bit rate of the output file.
+        /// </para>
         /// </summary>
         public AudioCodecOptions CodecOptions
         {
-            get { return this.codecOptions; }
-            set { this.codecOptions = value; }
+            get { return this._codecOptions; }
+            set { this._codecOptions = value; }
         }
 
         // Check to see if CodecOptions property is set
         internal bool IsSetCodecOptions()
         {
-            return this.codecOptions != null;
+            return this._codecOptions != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property SampleRate. 
+        /// <para>
+        /// The sample rate of the audio stream in the output file, in Hertz. Valid values   
+        ///         include:
+        /// </para>
+        ///         
+        /// <para>
+        /// <code>auto</code>, <code>22050</code>, <code>32000</code>, <code>44100</code>,   
+        ///             <code>48000</code>, <code>96000</code>
+        /// </para>
+        ///         
+        /// <para>
+        /// If you specify <code>auto</code>, Elastic Transcoder automatically detects the sample
+        /// rate.
+        /// </para>
+        /// </summary>
+        public string SampleRate
+        {
+            get { return this._sampleRate; }
+            set { this._sampleRate = value; }
+        }
+
+        // Check to see if SampleRate property is set
+        internal bool IsSetSampleRate()
+        {
+            return this._sampleRate != null;
+        }
+
     }
 }

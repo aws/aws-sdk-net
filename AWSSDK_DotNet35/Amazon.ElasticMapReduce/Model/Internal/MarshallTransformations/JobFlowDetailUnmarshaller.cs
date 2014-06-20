@@ -12,126 +12,130 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.ElasticMapReduce.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+using Amazon.ElasticMapReduce.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for JobFlowDetail Object
+    /// </summary>  
+    public class JobFlowDetailUnmarshaller : IUnmarshaller<JobFlowDetail, XmlUnmarshallerContext>, IUnmarshaller<JobFlowDetail, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// JobFlowDetailUnmarshaller
-      /// </summary>
-      internal class JobFlowDetailUnmarshaller : IUnmarshaller<JobFlowDetail, XmlUnmarshallerContext>, IUnmarshaller<JobFlowDetail, JsonUnmarshallerContext>
-      {
         JobFlowDetail IUnmarshaller<JobFlowDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public JobFlowDetail Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            JobFlowDetail jobFlowDetail = new JobFlowDetail();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            JobFlowDetail unmarshalledObject = new JobFlowDetail();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("JobFlowId", targetDepth))
-              {
-                jobFlowDetail.JobFlowId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Name", targetDepth))
-              {
-                jobFlowDetail.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("LogUri", targetDepth))
-              {
-                jobFlowDetail.LogUri = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("AmiVersion", targetDepth))
-              {
-                jobFlowDetail.AmiVersion = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("ExecutionStatusDetail", targetDepth))
-              {
-                jobFlowDetail.ExecutionStatusDetail = JobFlowExecutionStatusDetailUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Instances", targetDepth))
-              {
-                jobFlowDetail.Instances = JobFlowInstancesDetailUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Steps", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<StepDetail,StepDetailUnmarshaller>(
-                    StepDetailUnmarshaller.GetInstance());                  
-                jobFlowDetail.Steps = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
-              if (context.TestExpression("BootstrapActions", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<BootstrapActionDetail,BootstrapActionDetailUnmarshaller>(
-                    BootstrapActionDetailUnmarshaller.GetInstance());                  
-                jobFlowDetail.BootstrapActions = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
-              if (context.TestExpression("SupportedProducts", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<String,StringUnmarshaller>(
-                    StringUnmarshaller.GetInstance());                  
-                jobFlowDetail.SupportedProducts = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
-              if (context.TestExpression("VisibleToAllUsers", targetDepth))
-              {
-                jobFlowDetail.VisibleToAllUsers = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("JobFlowRole", targetDepth))
-              {
-                jobFlowDetail.JobFlowRole = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("AmiVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AmiVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("BootstrapActions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<BootstrapActionDetail, BootstrapActionDetailUnmarshaller>(BootstrapActionDetailUnmarshaller.Instance);
+                    unmarshalledObject.BootstrapActions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ExecutionStatusDetail", targetDepth))
+                {
+                    var unmarshaller = JobFlowExecutionStatusDetailUnmarshaller.Instance;
+                    unmarshalledObject.ExecutionStatusDetail = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Instances", targetDepth))
+                {
+                    var unmarshaller = JobFlowInstancesDetailUnmarshaller.Instance;
+                    unmarshalledObject.Instances = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("JobFlowId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.JobFlowId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("JobFlowRole", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.JobFlowRole = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LogUri", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LogUri = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ServiceRole", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ServiceRole = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Steps", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<StepDetail, StepDetailUnmarshaller>(StepDetailUnmarshaller.Instance);
+                    unmarshalledObject.Steps = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SupportedProducts", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SupportedProducts = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VisibleToAllUsers", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.VisibleToAllUsers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return jobFlowDetail;
+            return unmarshalledObject;
         }
 
-        private static JobFlowDetailUnmarshaller instance;
-        public static JobFlowDetailUnmarshaller GetInstance()
+
+        private static JobFlowDetailUnmarshaller _instance = new JobFlowDetailUnmarshaller();        
+
+        public static JobFlowDetailUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new JobFlowDetailUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  
