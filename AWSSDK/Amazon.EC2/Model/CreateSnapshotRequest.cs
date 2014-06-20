@@ -26,27 +26,22 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Creates a snapshot of an Amazon EBS volume and stores it in Amazon S3.
-    /// You can use snapshots for backups, to make identical copies of instance
-    /// devices, and to save data before shutting down an instance.
+    /// Container for the parameters to the CreateSnapshot operation.
+    /// <para>Creates a snapshot of an Amazon EBS volume and stores it in Amazon S3. You can use snapshots for backups, to make copies of Amazon EBS
+    /// volumes, and to save data before shutting down an instance.</para> <para>When a snapshot is created, any AWS Marketplace product codes that
+    /// are associated with the source volume are propagated to the snapshot.</para> <para>You can take a snapshot of an attached volume that is in
+    /// use. However, snapshots only capture data that has been written to your Amazon EBS volume at the time the snapshot command is issued; this
+    /// may exclude any data that has been cached by any applications or the operating system. If you can pause any file writes to the volume long
+    /// enough to take a snapshot, your snapshot should be complete. However, if you cannot pause all file writes to the volume, you should unmount
+    /// the volume from within the instance, issue the snapshot command, and then remount the volume to ensure a consistent and complete snapshot.
+    /// You may remount and use your volume while the snapshot status is <c>pending</c> .</para> <para>To create a snapshot for Amazon EBS volumes
+    /// that serve as root devices, you should stop the instance before taking the snapshot.</para> <para>Snapshots that are taken from encrypted
+    /// volumes are automatically encrypted. Volumes that are created from encrypted snapshots are also automatically encrypted. Your encrypted
+    /// volumes and any associated snapshots always remain protected.</para> <para>For more information, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html" >Amazon Elastic Block Store</a> and <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html" >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute
+    /// Cloud User Guide</i> .</para>
     /// </summary>
-    /// <remarks>
-    /// When taking a snapshot of a file system, we recommend unmounting it
-    /// first. This ensures the file system metadata is in a consistent state,
-    /// that the 'mounted indicator' is cleared, and that all applications
-    /// using that file system are stopped and in a consistent state. Some file
-    /// systems, such as xfs, can freeze and unfreeze activity so a
-    /// snapshot can be made without unmounting.
-    ///
-    /// For Linux/UNIX, enter the
-    /// following command from the command line.
-    ///
-    /// umount -d /dev/sdh
-    ///
-    /// For Windows, open Disk Management, right-click the volume to unmount,
-    /// and select Change Drive Letter and Path. Then, select the mount
-    /// point to remove and click Remove.
-    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class CreateSnapshotRequest : EC2Request
     {    

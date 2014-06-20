@@ -26,28 +26,19 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Shuts down one or more instances.
+    /// Container for the parameters to the TerminateInstances operation.
+    /// <para>Shuts down one or more instances. This operation is idempotent; if you terminate an instance more than once, each call
+    /// succeeds.</para> <para>Terminated instances remain visible after termination (for approximately one hour).</para> <para>By default, Amazon
+    /// EC2 deletes all Amazon EBS volumes that were attached when the instance launched. Volumes attached after instance launch continue
+    /// running.</para> <para>You can stop, start, and terminate EBS-backed instances. You can only terminate instance store-backed instances. What
+    /// happens to an instance differs if you stop it or terminate it. For example, when you stop an instance, the root device and any other devices
+    /// attached to the instance persist. When you terminate an instance, the root device and any other devices attached during the instance launch
+    /// are automatically deleted. For more information about the differences between stopping and terminating instances, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html" >Instance Lifecycle</a> in the <i>Amazon Elastic
+    /// Compute Cloud User Guide</i> .</para> <para>For more information about troubleshooting, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html" >Troubleshooting Terminating Your
+    /// Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
     /// </summary>
-    /// <remarks>
-    /// <para>
-    /// This operation is idempotent; if you terminate an instance more than
-    /// once, each call will succeed. Terminated instances will remain visible
-    /// after termination (approximately one hour).
-    /// </para>
-    /// <para>
-    /// By default, Amazon EC2 deletes all Amazon EBS volumes that were attached
-    /// when the instance launched. Amazon EBS volumes attached after instance
-    /// launch continue running.
-    /// </para>
-    /// <para>
-    /// You can stop, start, and terminate EBS-backed instances. You can only
-    /// terminate S3-backed instances. What happens to an instance differs if
-    /// you stop it or terminate it. For example, when you stop an instance,
-    /// the root device and any other devices attached to the instance persist.
-    /// When you terminate an instance, the root device and any other devices
-    /// attached during the instance launch are automatically deleted.
-    /// </para>
-    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class TerminateInstancesRequest : EC2Request
     {    

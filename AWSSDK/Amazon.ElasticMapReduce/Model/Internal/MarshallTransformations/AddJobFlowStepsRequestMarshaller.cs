@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
@@ -28,148 +29,118 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Add Job Flow Steps Request Marshaller
+    /// AddJobFlowSteps Request Marshaller
     /// </summary>       
-    internal class AddJobFlowStepsRequestMarshaller : IMarshaller<IRequest, AddJobFlowStepsRequest> 
+    public class AddJobFlowStepsRequestMarshaller : IMarshaller<IRequest, AddJobFlowStepsRequest> 
     {
-        
-
-        public IRequest Marshall(AddJobFlowStepsRequest addJobFlowStepsRequest) 
+        public IRequest Marshall(AddJobFlowStepsRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(addJobFlowStepsRequest, "AmazonElasticMapReduce");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticMapReduce");
             string target = "ElasticMapReduce.AddJobFlowSteps";
             request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
 
-            
-              
-            string uriResourcePath = ""; 
-            
-            if (uriResourcePath.Contains("?")) 
-            {
-                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
-                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
-        
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                }
-            }
-            
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
-            using (StringWriter stringWriter = new StringWriter())
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (addJobFlowStepsRequest != null && addJobFlowStepsRequest.IsSetJobFlowId()) 
+                if(publicRequest != null && publicRequest.IsSetJobFlowId())
                 {
                     writer.WritePropertyName("JobFlowId");
-                    writer.Write(addJobFlowStepsRequest.JobFlowId);
+                    writer.Write(publicRequest.JobFlowId);
                 }
 
-                if (addJobFlowStepsRequest != null && addJobFlowStepsRequest.Steps != null && addJobFlowStepsRequest.Steps.Count > 0)
+                if(publicRequest != null && publicRequest.IsSetSteps() && publicRequest.Steps.Count > 0)
                 {
-                    List<StepConfig> stepsList = addJobFlowStepsRequest.Steps;
                     writer.WritePropertyName("Steps");
                     writer.WriteArrayStart();
-
-                    foreach (StepConfig stepsListValue in stepsList) 
+                    foreach(var publicRequestStepsListValue in publicRequest.Steps)
                     {
                         writer.WriteObjectStart();
-                        if (stepsListValue != null && stepsListValue.IsSetName()) 
-                        {
-                            writer.WritePropertyName("Name");
-                            writer.Write(stepsListValue.Name);
-                        }
-                        if (stepsListValue != null && stepsListValue.IsSetActionOnFailure()) 
+                        if(publicRequestStepsListValue != null && publicRequestStepsListValue.IsSetActionOnFailure())
                         {
                             writer.WritePropertyName("ActionOnFailure");
-                            writer.Write(stepsListValue.ActionOnFailure);
+                            writer.Write(publicRequestStepsListValue.ActionOnFailure);
                         }
 
-                        if (stepsListValue != null) 
+                        if(publicRequestStepsListValue != null && publicRequestStepsListValue.IsSetHadoopJarStep())
                         {
-                            HadoopJarStepConfig hadoopJarStep = stepsListValue.HadoopJarStep;
-                            if (hadoopJarStep != null)
+                            writer.WritePropertyName("HadoopJarStep");
+                            writer.WriteObjectStart();
+                            if(publicRequestStepsListValue.HadoopJarStep != null && publicRequestStepsListValue.HadoopJarStep.IsSetArgs() && publicRequestStepsListValue.HadoopJarStep.Args.Count > 0)
                             {
-                                writer.WritePropertyName("HadoopJarStep");
-                                writer.WriteObjectStart();
-
-                                if (hadoopJarStep != null && hadoopJarStep.Properties != null && hadoopJarStep.Properties.Count > 0)
+                                writer.WritePropertyName("Args");
+                                writer.WriteArrayStart();
+                                foreach(var publicRequestStepsListValueHadoopJarStepArgsListValue in publicRequestStepsListValue.HadoopJarStep.Args)
                                 {
-                                    List<KeyValue> propertiesList = hadoopJarStep.Properties;
-                                    writer.WritePropertyName("Properties");
-                                    writer.WriteArrayStart();
-
-                                    foreach (KeyValue propertiesListValue in propertiesList) 
-                                    {
-                                        writer.WriteObjectStart();
-                                        if (propertiesListValue != null && propertiesListValue.IsSetKey()) 
-                                        {
-                                            writer.WritePropertyName("Key");
-                                            writer.Write(propertiesListValue.Key);
-                                        }
-                                        if (propertiesListValue != null && propertiesListValue.IsSetValue()) 
-                                        {
-                                            writer.WritePropertyName("Value");
-                                            writer.Write(propertiesListValue.Value);
-                                        }
-                                        writer.WriteObjectEnd();
-                                    }
-                                    writer.WriteArrayEnd();
+                                    writer.Write(publicRequestStepsListValueHadoopJarStepArgsListValue);
                                 }
-                                if (hadoopJarStep != null && hadoopJarStep.IsSetJar()) 
-                                {
-                                    writer.WritePropertyName("Jar");
-                                    writer.Write(hadoopJarStep.Jar);
-                                }
-                                if (hadoopJarStep != null && hadoopJarStep.IsSetMainClass()) 
-                                {
-                                    writer.WritePropertyName("MainClass");
-                                    writer.Write(hadoopJarStep.MainClass);
-                                }
-
-                                if (hadoopJarStep != null && hadoopJarStep.Args != null && hadoopJarStep.Args.Count > 0) 
-                                {
-                                    List<string> argsList = hadoopJarStep.Args;
-                                    writer.WritePropertyName("Args");
-                                    writer.WriteArrayStart();
-
-                                    foreach (string argsListValue in argsList) 
-                                    { 
-                                        writer.Write(StringUtils.FromString(argsListValue));
-                                    }
-
-                                    writer.WriteArrayEnd();
-                                }
-                                writer.WriteObjectEnd();
+                                writer.WriteArrayEnd();
                             }
+
+                            if(publicRequestStepsListValue.HadoopJarStep != null && publicRequestStepsListValue.HadoopJarStep.IsSetJar())
+                            {
+                                writer.WritePropertyName("Jar");
+                                writer.Write(publicRequestStepsListValue.HadoopJarStep.Jar);
+                            }
+
+                            if(publicRequestStepsListValue.HadoopJarStep != null && publicRequestStepsListValue.HadoopJarStep.IsSetMainClass())
+                            {
+                                writer.WritePropertyName("MainClass");
+                                writer.Write(publicRequestStepsListValue.HadoopJarStep.MainClass);
+                            }
+
+                            if(publicRequestStepsListValue.HadoopJarStep != null && publicRequestStepsListValue.HadoopJarStep.IsSetProperties() && publicRequestStepsListValue.HadoopJarStep.Properties.Count > 0)
+                            {
+                                writer.WritePropertyName("Properties");
+                                writer.WriteArrayStart();
+                                foreach(var publicRequestStepsListValueHadoopJarStepPropertiesListValue in publicRequestStepsListValue.HadoopJarStep.Properties)
+                                {
+                                    writer.WriteObjectStart();
+                                    if(publicRequestStepsListValueHadoopJarStepPropertiesListValue != null && publicRequestStepsListValueHadoopJarStepPropertiesListValue.IsSetKey())
+                                    {
+                                        writer.WritePropertyName("Key");
+                                        writer.Write(publicRequestStepsListValueHadoopJarStepPropertiesListValue.Key);
+                                    }
+
+                                    if(publicRequestStepsListValueHadoopJarStepPropertiesListValue != null && publicRequestStepsListValueHadoopJarStepPropertiesListValue.IsSetValue())
+                                    {
+                                        writer.WritePropertyName("Value");
+                                        writer.Write(publicRequestStepsListValueHadoopJarStepPropertiesListValue.Value);
+                                    }
+
+                                    writer.WriteObjectEnd();
+                                }
+                                writer.WriteArrayEnd();
+                            }
+
+                            writer.WriteObjectEnd();
                         }
+
+                        if(publicRequestStepsListValue != null && publicRequestStepsListValue.IsSetName())
+                        {
+                            writer.WritePropertyName("Name");
+                            writer.Write(publicRequestStepsListValue.Name);
+                        }
+
                         writer.WriteObjectEnd();
                     }
                     writer.WriteArrayEnd();
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
 
             return request;
         }
+
+
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,61 +18,65 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para> The output for the DescribeJobFlows operation. </para>
+    /// The output for the <a>DescribeJobFlows</a> operation.
     /// </summary>
-    public class DescribeJobFlowsResult
+    public partial class DescribeJobFlowsResult
     {
-        
-        private List<JobFlowDetail> jobFlows = new List<JobFlowDetail>();
+        private List<JobFlowDetail> _jobFlows = new List<JobFlowDetail>();
+
 
         /// <summary>
+        /// Gets and sets the property JobFlows. 
+        /// <para>
         /// A list of job flows matching the parameters supplied.
-        ///  
+        /// </para>
         /// </summary>
         public List<JobFlowDetail> JobFlows
         {
-            get { return this.jobFlows; }
-            set { this.jobFlows = value; }
+            get { return this._jobFlows; }
+            set { this._jobFlows = value; }
         }
+
         /// <summary>
-        /// Adds elements to the JobFlows collection
+        /// Sets the JobFlows property
         /// </summary>
         /// <param name="jobFlows">The values to add to the JobFlows collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobFlowsResult WithJobFlows(params JobFlowDetail[] jobFlows)
         {
-            foreach (JobFlowDetail element in jobFlows)
+            foreach (var element in jobFlows)
             {
-                this.jobFlows.Add(element);
+                this._jobFlows.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the JobFlows collection
+        /// Sets the JobFlows property
         /// </summary>
         /// <param name="jobFlows">The values to add to the JobFlows collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobFlowsResult WithJobFlows(IEnumerable<JobFlowDetail> jobFlows)
         {
-            foreach (JobFlowDetail element in jobFlows)
+            foreach (var element in jobFlows)
             {
-                this.jobFlows.Add(element);
+                this._jobFlows.Add(element);
             }
-
             return this;
         }
-
         // Check to see if JobFlows property is set
         internal bool IsSetJobFlows()
         {
-            return this.jobFlows.Count > 0;
+            return this._jobFlows != null && this._jobFlows.Count > 0; 
         }
+
     }
 }

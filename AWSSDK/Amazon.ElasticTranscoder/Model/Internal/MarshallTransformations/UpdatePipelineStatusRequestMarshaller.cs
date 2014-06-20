@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
@@ -28,74 +29,41 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Update Pipeline Status Request Marshaller
+    /// UpdatePipelineStatus Request Marshaller
     /// </summary>       
-    internal class UpdatePipelineStatusRequestMarshaller : IMarshaller<IRequest, UpdatePipelineStatusRequest> 
+    public class UpdatePipelineStatusRequestMarshaller : IMarshaller<IRequest, UpdatePipelineStatusRequest> 
     {
-        
-
-        public IRequest Marshall(UpdatePipelineStatusRequest updatePipelineStatusRequest) 
+        public IRequest Marshall(UpdatePipelineStatusRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(updatePipelineStatusRequest, "AmazonElasticTranscoder");
-            string target = "EtsCustomerService.UpdatePipelineStatus";
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticTranscoder");
+            string target = ".UpdatePipelineStatus";
             request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
 
+            request.Headers["Content-Type"] = "application/x-amz-json-";
             request.HttpMethod = "POST";
-              
-            string uriResourcePath = "2012-09-25/pipelines/{Id}/status"; 
-            if(updatePipelineStatusRequest.IsSetId())
-                uriResourcePath = uriResourcePath.Replace("{Id}", StringUtils.FromString(updatePipelineStatusRequest.Id) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{Id}", "" ); 
-            
-            if (uriResourcePath.Contains("?")) 
-            {
-                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
-                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
-        
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                }
-            }
-            
+
+            string uriResourcePath = "/2012-09-25/pipelines/{Id}/status";
+            uriResourcePath = uriResourcePath.Replace("{Id}", publicRequest.Id ?? string.Empty);
             request.ResourcePath = uriResourcePath;
-            
-             
-            using (StringWriter stringWriter = new StringWriter())
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (updatePipelineStatusRequest != null && updatePipelineStatusRequest.IsSetId()) 
-                {
-                    writer.WritePropertyName("Id");
-                    writer.Write(updatePipelineStatusRequest.Id);
-                }
-                if (updatePipelineStatusRequest != null && updatePipelineStatusRequest.IsSetStatus()) 
+                if(publicRequest != null && publicRequest.IsSetStatus())
                 {
                     writer.WritePropertyName("Status");
-                    writer.Write(updatePipelineStatusRequest.Status);
+                    writer.Write(publicRequest.Status);
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
 
             return request;
         }
+
+
     }
 }

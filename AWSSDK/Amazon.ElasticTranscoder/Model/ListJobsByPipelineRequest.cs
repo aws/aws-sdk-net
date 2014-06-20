@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,73 +25,36 @@ namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
     /// Container for the parameters to the ListJobsByPipeline operation.
-    /// <para>The ListJobsByPipeline operation gets a list of the jobs currently in a pipeline.</para> <para>Elastic Transcoder returns all of the
-    /// jobs currently in the specified pipeline. The response body contains one element for each job that satisfies the search criteria.</para>
+    /// The ListJobsByPipeline operation gets a list of the jobs currently in a pipeline.
+    /// 
+    ///         
+    /// <para>
+    /// Elastic Transcoder returns all of the jobs currently in the specified pipeline. The
+    ///            response body contains one element for each job that satisfies the search
+    /// criteria.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.ElasticTranscoder.AmazonElasticTranscoder.ListJobsByPipeline"/>
-    public class ListJobsByPipelineRequest : AmazonWebServiceRequest
+    public partial class ListJobsByPipelineRequest : AmazonWebServiceRequest
     {
-        private string pipelineId;
-        private string ascending;
-        private string pageToken;
+        private string _ascending;
+        private string _pageToken;
+        private string _pipelineId;
+
 
         /// <summary>
-        /// The ID of the pipeline for which you want to get job information.
-        ///  
+        /// Gets and sets the property Ascending. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>^\d{13}-\w{6}$</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string PipelineId
-        {
-            get { return this.pipelineId; }
-            set { this.pipelineId = value; }
-        }
-
-        /// <summary>
-        /// Sets the PipelineId property
-        /// </summary>
-        /// <param name="pipelineId">The value to set for the PipelineId property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ListJobsByPipelineRequest WithPipelineId(string pipelineId)
-        {
-            this.pipelineId = pipelineId;
-            return this;
-        }
-            
-
-        // Check to see if PipelineId property is set
-        internal bool IsSetPipelineId()
-        {
-            return this.pipelineId != null;
-        }
-
-        /// <summary>
-        /// To list jobs in chronological order by the date and time that they were submitted, enter <c>true</c>. To list jobs in reverse chronological
-        /// order, enter <c>false</c>.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>(^true$)|(^false$)</description>
-        ///     </item>
-        /// </list>
+        ///  To list jobs in chronological order by the date and time that they were submitted,
+        /// enter                <code>true</code>. To list jobs in reverse chronological order,
+        /// enter                <code>false</code>. 
         /// </para>
         /// </summary>
         public string Ascending
         {
-            get { return this.ascending; }
-            set { this.ascending = value; }
+            get { return this._ascending; }
+            set { this._ascending = value; }
         }
+
 
         /// <summary>
         /// Sets the Ascending property
@@ -101,36 +64,31 @@ namespace Amazon.ElasticTranscoder.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListJobsByPipelineRequest WithAscending(string ascending)
         {
-            this.ascending = ascending;
+            this._ascending = ascending;
             return this;
         }
-            
 
         // Check to see if Ascending property is set
         internal bool IsSetAscending()
         {
-            return this.ascending != null;
+            return this._ascending != null;
         }
 
+
         /// <summary>
-        /// When Elastic Transcoder returns more than one page of results, use <c>pageToken</c> in subsequent <c>GET</c> requests to get each successive
-        /// page of results.
-        ///  
+        /// Gets and sets the property PageToken. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>^\d{13}-\w{6}$</description>
-        ///     </item>
-        /// </list>
+        ///  When Elastic Transcoder returns more than one page of results, use <code>pageToken</code>
+        /// in            subsequent <code>GET</code> requests to get each successive page of
+        /// results. 
         /// </para>
         /// </summary>
         public string PageToken
         {
-            get { return this.pageToken; }
-            set { this.pageToken = value; }
+            get { return this._pageToken; }
+            set { this._pageToken = value; }
         }
+
 
         /// <summary>
         /// Sets the PageToken property
@@ -140,16 +98,47 @@ namespace Amazon.ElasticTranscoder.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListJobsByPipelineRequest WithPageToken(string pageToken)
         {
-            this.pageToken = pageToken;
+            this._pageToken = pageToken;
             return this;
         }
-            
 
         // Check to see if PageToken property is set
         internal bool IsSetPageToken()
         {
-            return this.pageToken != null;
+            return this._pageToken != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property PipelineId. 
+        /// <para>
+        ///  The ID of the pipeline for which you want to get job information. 
+        /// </para>
+        /// </summary>
+        public string PipelineId
+        {
+            get { return this._pipelineId; }
+            set { this._pipelineId = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the PipelineId property
+        /// </summary>
+        /// <param name="pipelineId">The value to set for the PipelineId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ListJobsByPipelineRequest WithPipelineId(string pipelineId)
+        {
+            this._pipelineId = pipelineId;
+            return this;
+        }
+
+        // Check to see if PipelineId property is set
+        internal bool IsSetPipelineId()
+        {
+            return this._pipelineId != null;
+        }
+
     }
 }
-    

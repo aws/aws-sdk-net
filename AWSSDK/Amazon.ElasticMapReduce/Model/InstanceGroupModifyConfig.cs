@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,68 +18,84 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para>Modify an instance group size.</para>
+    /// Modify an instance group size.
     /// </summary>
-    public class InstanceGroupModifyConfig
+    public partial class InstanceGroupModifyConfig
     {
-        
-        private string instanceGroupId;
-        private int? instanceCount;
+        private List<string> _eC2InstanceIdsToTerminate = new List<string>();
+        private int? _instanceCount;
+        private string _instanceGroupId;
+
 
         /// <summary>
-        /// Unique ID of the instance group to expand or shrink.
-        ///  
+        /// Gets and sets the property EC2InstanceIdsToTerminate. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 256</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// The EC2 InstanceIds to terminate. For advanced users only.                       
+        ///                                                                                  
+        ///                            Once you terminate the instances, the instance group will
+        /// not return to its original requested size.
         /// </para>
         /// </summary>
-        public string InstanceGroupId
+        public List<string> EC2InstanceIdsToTerminate
         {
-            get { return this.instanceGroupId; }
-            set { this.instanceGroupId = value; }
+            get { return this._eC2InstanceIdsToTerminate; }
+            set { this._eC2InstanceIdsToTerminate = value; }
         }
 
         /// <summary>
-        /// Sets the InstanceGroupId property
+        /// Sets the EC2InstanceIdsToTerminate property
         /// </summary>
-        /// <param name="instanceGroupId">The value to set for the InstanceGroupId property </param>
+        /// <param name="eC2InstanceIdsToTerminate">The values to add to the EC2InstanceIdsToTerminate collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public InstanceGroupModifyConfig WithInstanceGroupId(string instanceGroupId)
+        public InstanceGroupModifyConfig WithEC2InstanceIdsToTerminate(params string[] eC2InstanceIdsToTerminate)
         {
-            this.instanceGroupId = instanceGroupId;
+            foreach (var element in eC2InstanceIdsToTerminate)
+            {
+                this._eC2InstanceIdsToTerminate.Add(element);
+            }
             return this;
-        }
-            
-
-        // Check to see if InstanceGroupId property is set
-        internal bool IsSetInstanceGroupId()
-        {
-            return this.instanceGroupId != null;
         }
 
         /// <summary>
+        /// Sets the EC2InstanceIdsToTerminate property
+        /// </summary>
+        /// <param name="eC2InstanceIdsToTerminate">The values to add to the EC2InstanceIdsToTerminate collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public InstanceGroupModifyConfig WithEC2InstanceIdsToTerminate(IEnumerable<string> eC2InstanceIdsToTerminate)
+        {
+            foreach (var element in eC2InstanceIdsToTerminate)
+            {
+                this._eC2InstanceIdsToTerminate.Add(element);
+            }
+            return this;
+        }
+        // Check to see if EC2InstanceIdsToTerminate property is set
+        internal bool IsSetEC2InstanceIdsToTerminate()
+        {
+            return this._eC2InstanceIdsToTerminate != null && this._eC2InstanceIdsToTerminate.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property InstanceCount. 
+        /// <para>
         /// Target size for the instance group.
-        ///  
+        /// </para>
         /// </summary>
         public int InstanceCount
         {
-            get { return this.instanceCount ?? default(int); }
-            set { this.instanceCount = value; }
+            get { return this._instanceCount.GetValueOrDefault(); }
+            set { this._instanceCount = value; }
         }
+
 
         /// <summary>
         /// Sets the InstanceCount property
@@ -89,15 +105,47 @@ namespace Amazon.ElasticMapReduce.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceGroupModifyConfig WithInstanceCount(int instanceCount)
         {
-            this.instanceCount = instanceCount;
+            this._instanceCount = instanceCount;
             return this;
         }
-            
 
         // Check to see if InstanceCount property is set
         internal bool IsSetInstanceCount()
         {
-            return this.instanceCount.HasValue;
+            return this._instanceCount.HasValue; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property InstanceGroupId. 
+        /// <para>
+        /// Unique ID of the instance group to expand or shrink.
+        /// </para>
+        /// </summary>
+        public string InstanceGroupId
+        {
+            get { return this._instanceGroupId; }
+            set { this._instanceGroupId = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the InstanceGroupId property
+        /// </summary>
+        /// <param name="instanceGroupId">The value to set for the InstanceGroupId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public InstanceGroupModifyConfig WithInstanceGroupId(string instanceGroupId)
+        {
+            this._instanceGroupId = instanceGroupId;
+            return this;
+        }
+
+        // Check to see if InstanceGroupId property is set
+        internal bool IsSetInstanceGroupId()
+        {
+            return this._instanceGroupId != null;
+        }
+
     }
 }

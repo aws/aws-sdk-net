@@ -26,31 +26,26 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Creates a set of DHCP options that you can then associate with one or more VPCs, causing all
-    /// existing and new instances that you launch in those VPCs to use the set of DHCP options.
+    /// Container for the parameters to the CreateDhcpOptions operation.
+    /// <para>Creates a set of DHCP options for your VPC. After creating the set, you must associate it with the VPC, causing all existing and new
+    /// instances that you launch in the VPC to use this set of DHCP options. The following are the individual DHCP options you can specify. For
+    /// more information about the options, see <a href="http://www.ietf.org/rfc/rfc2132.txt" >RFC 2132</a> .</para>
+    /// <ul>
+    /// <li> <c>domain-name-servers</c> - The IP addresses of up to four domain name servers, or <c>AmazonProvidedDNS</c> . The default DHCP option
+    /// set specifies <c>AmazonProvidedDNS</c> . If specifying more than one domain name server, specify the IP addresses in a single parameter,
+    /// separated by commas.</li>
+    /// <li> <c>domain-name</c> - If you're using AmazonProvidedDNS in <c>us-east-1</c> ,
+    /// specify <c>ec2.internal</c> . If you're using AmazonProvidedDNS in another region, specify <c>region.compute.internal</c> (for
+    /// example, <c>ap-northeast-1.compute.internal</c> ). Otherwise, specify a domain name (for example, <c>MyCompany.com</c> ).</li>
+    /// <li> <c>ntp-servers</c> - The IP addresses of up to four Network Time Protocol (NTP) servers.</li>
+    /// <li> <c>netbios-name-servers</c> - The IP addresses of up to four NetBIOS name servers.</li>
+    /// <li> <c>netbios-node-type</c> - The NetBIOS node type (1, 2, 4, or 8). We recommend that you specify 2 (broadcast and multicast are not
+    /// currently supported). For more information about these node types, see <a href="http://www.ietf.org/rfc/rfc2132.txt" >RFC 2132</a> . </li>
+    /// 
+    /// </ul>
+    /// <para>For more information about DHCP options, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"
+    /// >DHCP Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i> .</para>
     /// </summary>
-    /// <remarks>
-    /// The following are DHCP options you can specify.
-    ///
-    /// Options:
-    /// 1. domain-name
-    /// A domain name of your choice (e.g., mydomain.com).
-    ///
-    /// 2. domain-name-servers
-    /// The IP address of a domain name server (e.g., 10.2.5.1).
-    /// You can specify up to four addresses.
-    ///
-    /// 3. ntp-servers
-    /// The IP address of a Network Time Protocol (NTP)
-    /// server (e.g., 10.4.6.1). You can specify up to four addresses.
-    ///
-    /// 4. netbios-name-servers
-    /// The IP address of a NetBIOS name server (e.g., 10.8.9.5).
-    /// You can specify up to four addresses.
-    ///
-    /// 5. netbios-node-type
-    /// Value indicating the NetBIOS node type (1, 2, 4, or 8).
-    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class CreateDhcpOptionsRequest : EC2Request
     {    

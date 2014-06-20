@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,76 +12,66 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Net;
-    using Amazon.ElasticTranscoder.Model;
-    using Amazon.Runtime;
-    using Amazon.Runtime.Internal;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
+using Amazon.ElasticTranscoder.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for ListPresets operation
+    /// </summary>  
+    public class ListPresetsResponseUnmarshaller : JsonResponseUnmarshaller
     {
-      /// <summary>
-      /// Response Unmarshaller for ListPresets operation
-      /// </summary>
-      internal class ListPresetsResponseUnmarshaller : JsonResponseUnmarshaller
-      {
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-          ListPresetsResponse response = new ListPresetsResponse();
-          
-          context.Read();
-      
-          response.ListPresetsResult = ListPresetsResultUnmarshaller.GetInstance().Unmarshall(context);
-          
-          return response;
+            var response = new ListPresetsResponse();
+            context.Read();
+            response.ListPresetsResult = ListPresetsResultUnmarshaller.GetInstance().Unmarshall(context);
+            return response;
         }
-        
+
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-          ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-          
-          if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
-          {
-            AccessDeniedException ex = new AccessDeniedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            
-            return ex;
-          }
-  
-          if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServiceException"))
-          {
-            InternalServiceException ex = new InternalServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            
-            return ex;
-          }
-  
-          if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
-          {
-            ValidationException ex = new ValidationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            
-            return ex;
-          }
-  
-          if (errorResponse.Code != null && errorResponse.Code.Equals("IncompatibleVersionException"))
-          {
-            IncompatibleVersionException ex = new IncompatibleVersionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            
-            return ex;
-          }
-  
-          return new AmazonElasticTranscoderException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
+            {
+                return new AccessDeniedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("IncompatibleVersionException"))
+            {
+                return new IncompatibleVersionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServiceException"))
+            {
+                return new InternalServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
+            {
+                return new ValidationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            return new AmazonElasticTranscoderException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
         private static ListPresetsResponseUnmarshaller instance;
         public static ListPresetsResponseUnmarshaller GetInstance()
         {
-          if (instance == null)
-          {
-            instance = new ListPresetsResponseUnmarshaller();
-          }
-          return instance;
+            if (instance == null)
+            {
+                instance = new ListPresetsResponseUnmarshaller();
+            }
+            return instance;
         }
-  
-      }
+
     }
-  
+}

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,21 +12,16 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// Returns information about the TerminateJobFlows response metadata.
-    /// The TerminateJobFlows operation has a void result type.
+    /// Returns information about the TerminateJobFlowsResult response and response metadata.
     /// </summary>
     public class TerminateJobFlowsResponse : AmazonWebServiceResponse
     {
     }
 }
-    

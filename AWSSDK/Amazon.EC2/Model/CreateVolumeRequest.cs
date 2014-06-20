@@ -26,9 +26,15 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Creates a new Amazon EBS volume that can be attached to any Amazon EC2
-    /// instance in the same Availability Zone.
-    /// Any AWS Marketplace product codes from the snapshot are propagated to the volume.
+    /// Container for the parameters to the CreateVolume operation.
+    /// <para>Creates an Amazon EBS volume that can be attached to an instance in the same Availability Zone. The volume is created in the specified
+    /// region.</para> <para>You can create a new empty volume or restore a volume from an Amazon EBS snapshot. Any AWS Marketplace product codes
+    /// from the snapshot are propagated to the volume.</para> <para>You can create encrypted volumes with the <c>Encrypted</c> parameter. Encrypted
+    /// volumes may only be attached to instances that support Amazon EBS encryption. Volumes that are created from encrypted snapshots are also
+    /// automatically encrypted. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html" >Amazon
+    /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para> <para>For more information, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html" >Creating or Restoring an Amazon EBS Volume</a> in the
+    /// <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class CreateVolumeRequest : EC2Request

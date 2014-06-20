@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.ElasticTranscoder.Model
 {
     ///<summary>
-    /// AmazonElasticTranscoder exception
+    /// ElasticTranscoder exception
     /// </summary>
     public class InternalServiceException : AmazonElasticTranscoderException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.ElasticTranscoder.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal InternalServiceException(string message) 
+        public InternalServiceException(string message) 
             : base(message) {}
           
-        internal InternalServiceException(string message, Exception innerException) 
+        public InternalServiceException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal InternalServiceException(Exception innerException) 
+        public InternalServiceException(Exception innerException) 
             : base(innerException) {}
             
-        internal InternalServiceException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InternalServiceException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal InternalServiceException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InternalServiceException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

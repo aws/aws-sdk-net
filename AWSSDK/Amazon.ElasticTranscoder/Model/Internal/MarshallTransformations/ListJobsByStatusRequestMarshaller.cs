@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
@@ -28,62 +29,57 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// List Jobs By Status Request Marshaller
+    /// ListJobsByStatus Request Marshaller
     /// </summary>       
-    internal class ListJobsByStatusRequestMarshaller : IMarshaller<IRequest, ListJobsByStatusRequest> 
+    public class ListJobsByStatusRequestMarshaller : IMarshaller<IRequest, ListJobsByStatusRequest> 
     {
-        
-
-        public IRequest Marshall(ListJobsByStatusRequest listJobsByStatusRequest) 
+        public IRequest Marshall(ListJobsByStatusRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(listJobsByStatusRequest, "AmazonElasticTranscoder");
-            string target = "EtsCustomerService.ListJobsByStatus";
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticTranscoder");
+            string target = ".ListJobsByStatus";
             request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
 
             request.HttpMethod = "GET";
-              
-            string uriResourcePath = "2012-09-25/jobsByStatus/{Status}?Ascending={Ascending};PageToken={PageToken}"; 
-            if(listJobsByStatusRequest.IsSetStatus())
-                uriResourcePath = uriResourcePath.Replace("{Status}", StringUtils.FromString(listJobsByStatusRequest.Status) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{Status}", "" ); 
-            if(listJobsByStatusRequest.IsSetAscending())
-                uriResourcePath = uriResourcePath.Replace("{Ascending}", StringUtils.FromString(listJobsByStatusRequest.Ascending) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{Ascending}", "" ); 
-            if(listJobsByStatusRequest.IsSetPageToken())
-                uriResourcePath = uriResourcePath.Replace("{PageToken}", StringUtils.FromString(listJobsByStatusRequest.PageToken) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{PageToken}", "" ); 
-            
-            if (uriResourcePath.Contains("?")) 
-            {
-                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
-                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
-        
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                }
-            }
-            
-            request.ResourcePath = uriResourcePath;
-            
-        
-            request.UseQueryString = true;
-        
 
+            string uriResourcePath = "/2012-09-25/jobsByStatus/{Status}";
+            uriResourcePath = uriResourcePath.Replace("{Status}", publicRequest.Status ?? string.Empty);
+            var queryStringBuilder = new StringBuilder(uriResourcePath);
+            queryStringBuilder.Append("?");
+            
+            if (publicRequest.IsSetAscending())
+                queryStringBuilder.AppendFormat("{0}={1};", "Ascending", StringUtils.FromString(publicRequest.Ascending));
+            
+            if (publicRequest.IsSetPageToken())
+                queryStringBuilder.AppendFormat("{0}={1};", "PageToken", StringUtils.FromString(publicRequest.PageToken));
+            // Remove the last character ';'
+            queryStringBuilder.Remove(queryStringBuilder.Length - 1, 1);
+            uriResourcePath = queryStringBuilder.ToString();
+            AddQueryParameters(request,uriResourcePath);    
+            request.ResourcePath = uriResourcePath;
+            request.UseQueryString = true;
             return request;
         }
+
+        private static void AddQueryParameters(IRequest request, string uriResourcePath)
+        {            
+            int queryIndex = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
+            string queryString = uriResourcePath.Substring(queryIndex + 1);
+
+            uriResourcePath = uriResourcePath.Substring(0, queryIndex);
+
+            foreach (string s in queryString.Split('&', ';'))
+            {
+                string[] nameValuePair = s.Split('=');
+                if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0)
+                {
+                    request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
+                }
+                else
+                {
+                    request.Parameters.Add(nameValuePair[0], null);
+                }
+            }            
+        }
+
     }
 }

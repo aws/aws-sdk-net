@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,35 +18,83 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// <para>The <c>TestRoleResponse</c> structure.</para>
+    /// The <code>TestRoleResponse</code> structure.
     /// </summary>
     public partial class TestRoleResult
     {
-        
-        private string success;
-        private List<string> messages = new List<string>();
+        private List<string> _messages = new List<string>();
+        private string _success;
+
 
         /// <summary>
-        /// If the operation is successful, this value is <c>true</c>; otherwise, the value is <c>false</c>.
-        ///  
+        /// Gets and sets the property Messages. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>(^true$)|(^false$)</description>
-        ///     </item>
-        /// </list>
+        /// If the <code>Success</code> element contains <code>false</code>, this value is an
+        /// array            of one or more error messages that were generated during the test
+        /// process.
+        /// </para>
+        /// </summary>
+        public List<string> Messages
+        {
+            get { return this._messages; }
+            set { this._messages = value; }
+        }
+
+        /// <summary>
+        /// Sets the Messages property
+        /// </summary>
+        /// <param name="messages">The values to add to the Messages collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public TestRoleResult WithMessages(params string[] messages)
+        {
+            foreach (var element in messages)
+            {
+                this._messages.Add(element);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the Messages property
+        /// </summary>
+        /// <param name="messages">The values to add to the Messages collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public TestRoleResult WithMessages(IEnumerable<string> messages)
+        {
+            foreach (var element in messages)
+            {
+                this._messages.Add(element);
+            }
+            return this;
+        }
+        // Check to see if Messages property is set
+        internal bool IsSetMessages()
+        {
+            return this._messages != null && this._messages.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Success. 
+        /// <para>
+        /// If the operation is successful, this value is <code>true</code>; otherwise, the value
+        /// is                <code>false</code>.
         /// </para>
         /// </summary>
         public string Success
         {
-            get { return this.success; }
-            set { this.success = value; }
+            get { return this._success; }
+            set { this._success = value; }
         }
+
 
         /// <summary>
         /// Sets the Success property
@@ -56,63 +104,15 @@ namespace Amazon.ElasticTranscoder.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TestRoleResult WithSuccess(string success)
         {
-            this.success = success;
+            this._success = success;
             return this;
         }
-            
 
         // Check to see if Success property is set
         internal bool IsSetSuccess()
         {
-            return this.success != null;
+            return this._success != null;
         }
 
-        /// <summary>
-        /// If the <c>Success</c> element contains <c>false</c>, this value is an array of one or more error messages that were generated during the
-        /// test process.
-        ///  
-        /// </summary>
-        public List<string> Messages
-        {
-            get { return this.messages; }
-            set { this.messages = value; }
-        }
-        /// <summary>
-        /// Adds elements to the Messages collection
-        /// </summary>
-        /// <param name="messages">The values to add to the Messages collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public TestRoleResult WithMessages(params string[] messages)
-        {
-            foreach (string element in messages)
-            {
-                this.messages.Add(element);
-            }
-
-            return this;
-        }
-
-        /// <summary>
-        /// Adds elements to the Messages collection
-        /// </summary>
-        /// <param name="messages">The values to add to the Messages collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public TestRoleResult WithMessages(IEnumerable<string> messages)
-        {
-            foreach (string element in messages)
-            {
-                this.messages.Add(element);
-            }
-
-            return this;
-        }
-
-        // Check to see if Messages property is set
-        internal bool IsSetMessages()
-        {
-            return this.messages.Count > 0;
-        }
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// Returns information about the  ReadJobResult response and response metadata.
+    /// Returns information about the ReadJobResult response and response metadata.
     /// </summary>
     public class ReadJobResponse : AmazonWebServiceResponse
     {
-        private ReadJobResult readJobResult;
+        private ReadJobResult _readJobResult;
 
         /// <summary>
         /// Gets and sets the ReadJobResult property.
-        /// The ReadJobResponse structure.
+        /// Represents the output of a ReadJob operation.
         /// </summary>
         public ReadJobResult ReadJobResult
         {
             get
             {
-                if(this.readJobResult == null)
+                if(this._readJobResult == null)
                 {
-                    this.readJobResult = new ReadJobResult();
+                    this._readJobResult = new ReadJobResult();
                 }
-
-                return this.readJobResult;
+                return this._readJobResult;
             }
-            set { this.readJobResult = value; }
+            set { this._readJobResult = value; }
         }
     }
 }
-    

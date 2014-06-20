@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// Returns information about the  ReadPresetResult response and response metadata.
+    /// Returns information about the ReadPresetResult response and response metadata.
     /// </summary>
     public class ReadPresetResponse : AmazonWebServiceResponse
     {
-        private ReadPresetResult readPresetResult;
+        private ReadPresetResult _readPresetResult;
 
         /// <summary>
         /// Gets and sets the ReadPresetResult property.
-        /// The ReadPresetResponse structure.
+        /// Represents the output of a ReadPreset operation.
         /// </summary>
         public ReadPresetResult ReadPresetResult
         {
             get
             {
-                if(this.readPresetResult == null)
+                if(this._readPresetResult == null)
                 {
-                    this.readPresetResult = new ReadPresetResult();
+                    this._readPresetResult = new ReadPresetResult();
                 }
-
-                return this.readPresetResult;
+                return this._readPresetResult;
             }
-            set { this.readPresetResult = value; }
+            set { this._readPresetResult = value; }
         }
     }
 }
-    

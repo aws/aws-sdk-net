@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// Returns information about the  RunJobFlowResult response and response metadata.
+    /// Returns information about the RunJobFlowResult response and response metadata.
     /// </summary>
     public class RunJobFlowResponse : AmazonWebServiceResponse
     {
-        private RunJobFlowResult runJobFlowResult;
+        private RunJobFlowResult _runJobFlowResult;
 
         /// <summary>
         /// Gets and sets the RunJobFlowResult property.
-        /// The result of the RunJobFlow operation.
+        /// Represents the output of a RunJobFlow operation.
         /// </summary>
         public RunJobFlowResult RunJobFlowResult
         {
             get
             {
-                if(this.runJobFlowResult == null)
+                if(this._runJobFlowResult == null)
                 {
-                    this.runJobFlowResult = new RunJobFlowResult();
+                    this._runJobFlowResult = new RunJobFlowResult();
                 }
-
-                return this.runJobFlowResult;
+                return this._runJobFlowResult;
             }
-            set { this.runJobFlowResult = value; }
+            set { this._runJobFlowResult = value; }
         }
     }
 }
-    

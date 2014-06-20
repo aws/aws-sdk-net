@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,25 +18,33 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// <para>When you create a pipeline, Elastic Transcoder returns the values that you specified in the request.</para>
+    /// When you create a pipeline, Elastic Transcoder returns the values that you specified
+    /// in the            request.
     /// </summary>
     public partial class CreatePipelineResult
     {
-        
-        private Pipeline pipeline;
+        private Pipeline _pipeline;
+
 
         /// <summary>
-        /// A section of the response body that provides information about the pipeline that is created.
-        ///  
+        /// Gets and sets the property Pipeline. 
+        /// <para>
+        /// A section of the response body that provides information about the pipeline that is
+        ///            created.
+        /// </para>
         /// </summary>
         public Pipeline Pipeline
         {
-            get { return this.pipeline; }
-            set { this.pipeline = value; }
+            get { return this._pipeline; }
+            set { this._pipeline = value; }
         }
+
 
         /// <summary>
         /// Sets the Pipeline property
@@ -46,15 +54,15 @@ namespace Amazon.ElasticTranscoder.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreatePipelineResult WithPipeline(Pipeline pipeline)
         {
-            this.pipeline = pipeline;
+            this._pipeline = pipeline;
             return this;
         }
-            
 
         // Check to see if Pipeline property is set
         internal bool IsSetPipeline()
         {
-            return this.pipeline != null;
+            return this._pipeline != null;
         }
+
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
@@ -28,109 +29,88 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Add Instance Groups Request Marshaller
+    /// AddInstanceGroups Request Marshaller
     /// </summary>       
-    internal class AddInstanceGroupsRequestMarshaller : IMarshaller<IRequest, AddInstanceGroupsRequest> 
+    public class AddInstanceGroupsRequestMarshaller : IMarshaller<IRequest, AddInstanceGroupsRequest> 
     {
-        
-
-        public IRequest Marshall(AddInstanceGroupsRequest addInstanceGroupsRequest) 
+        public IRequest Marshall(AddInstanceGroupsRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(addInstanceGroupsRequest, "AmazonElasticMapReduce");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticMapReduce");
             string target = "ElasticMapReduce.AddInstanceGroups";
             request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
 
-            
-              
-            string uriResourcePath = ""; 
-            
-            if (uriResourcePath.Contains("?")) 
-            {
-                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
-                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
-        
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                }
-            }
-            
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
-            using (StringWriter stringWriter = new StringWriter())
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-
-                if (addInstanceGroupsRequest != null && addInstanceGroupsRequest.InstanceGroups != null && addInstanceGroupsRequest.InstanceGroups.Count > 0)
+                if(publicRequest != null && publicRequest.IsSetInstanceGroups() && publicRequest.InstanceGroups.Count > 0)
                 {
-                    List<InstanceGroupConfig> instanceGroupsList = addInstanceGroupsRequest.InstanceGroups;
                     writer.WritePropertyName("InstanceGroups");
                     writer.WriteArrayStart();
-
-                    foreach (InstanceGroupConfig instanceGroupsListValue in instanceGroupsList) 
+                    foreach(var publicRequestInstanceGroupsListValue in publicRequest.InstanceGroups)
                     {
                         writer.WriteObjectStart();
-                        if (instanceGroupsListValue != null && instanceGroupsListValue.IsSetName()) 
-                        {
-                            writer.WritePropertyName("Name");
-                            writer.Write(instanceGroupsListValue.Name);
-                        }
-                        if (instanceGroupsListValue != null && instanceGroupsListValue.IsSetMarket()) 
-                        {
-                            writer.WritePropertyName("Market");
-                            writer.Write(instanceGroupsListValue.Market);
-                        }
-                        if (instanceGroupsListValue != null && instanceGroupsListValue.IsSetInstanceRole()) 
-                        {
-                            writer.WritePropertyName("InstanceRole");
-                            writer.Write(instanceGroupsListValue.InstanceRole);
-                        }
-                        if (instanceGroupsListValue != null && instanceGroupsListValue.IsSetBidPrice()) 
+                        if(publicRequestInstanceGroupsListValue != null && publicRequestInstanceGroupsListValue.IsSetBidPrice())
                         {
                             writer.WritePropertyName("BidPrice");
-                            writer.Write(instanceGroupsListValue.BidPrice);
+                            writer.Write(publicRequestInstanceGroupsListValue.BidPrice);
                         }
-                        if (instanceGroupsListValue != null && instanceGroupsListValue.IsSetInstanceType()) 
-                        {
-                            writer.WritePropertyName("InstanceType");
-                            writer.Write(instanceGroupsListValue.InstanceType);
-                        }
-                        if (instanceGroupsListValue != null && instanceGroupsListValue.IsSetInstanceCount()) 
+
+                        if(publicRequestInstanceGroupsListValue != null && publicRequestInstanceGroupsListValue.IsSetInstanceCount())
                         {
                             writer.WritePropertyName("InstanceCount");
-                            writer.Write(instanceGroupsListValue.InstanceCount);
+                            writer.Write(publicRequestInstanceGroupsListValue.InstanceCount);
                         }
+
+                        if(publicRequestInstanceGroupsListValue != null && publicRequestInstanceGroupsListValue.IsSetInstanceRole())
+                        {
+                            writer.WritePropertyName("InstanceRole");
+                            writer.Write(publicRequestInstanceGroupsListValue.InstanceRole);
+                        }
+
+                        if(publicRequestInstanceGroupsListValue != null && publicRequestInstanceGroupsListValue.IsSetInstanceType())
+                        {
+                            writer.WritePropertyName("InstanceType");
+                            writer.Write(publicRequestInstanceGroupsListValue.InstanceType);
+                        }
+
+                        if(publicRequestInstanceGroupsListValue != null && publicRequestInstanceGroupsListValue.IsSetMarket())
+                        {
+                            writer.WritePropertyName("Market");
+                            writer.Write(publicRequestInstanceGroupsListValue.Market);
+                        }
+
+                        if(publicRequestInstanceGroupsListValue != null && publicRequestInstanceGroupsListValue.IsSetName())
+                        {
+                            writer.WritePropertyName("Name");
+                            writer.Write(publicRequestInstanceGroupsListValue.Name);
+                        }
+
                         writer.WriteObjectEnd();
                     }
                     writer.WriteArrayEnd();
                 }
-                if (addInstanceGroupsRequest != null && addInstanceGroupsRequest.IsSetJobFlowId()) 
+
+                if(publicRequest != null && publicRequest.IsSetJobFlowId())
                 {
                     writer.WritePropertyName("JobFlowId");
-                    writer.Write(addInstanceGroupsRequest.JobFlowId);
+                    writer.Write(publicRequest.JobFlowId);
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
 
             return request;
         }
+
+
     }
 }

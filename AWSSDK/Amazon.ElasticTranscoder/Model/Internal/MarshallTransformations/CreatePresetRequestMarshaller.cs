@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
@@ -28,330 +29,322 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Preset Request Marshaller
+    /// CreatePreset Request Marshaller
     /// </summary>       
-    internal class CreatePresetRequestMarshaller : IMarshaller<IRequest, CreatePresetRequest> 
+    public class CreatePresetRequestMarshaller : IMarshaller<IRequest, CreatePresetRequest> 
     {
-        
-
-        public IRequest Marshall(CreatePresetRequest createPresetRequest) 
+        public IRequest Marshall(CreatePresetRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(createPresetRequest, "AmazonElasticTranscoder");
-            string target = "EtsCustomerService.CreatePreset";
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticTranscoder");
+            string target = ".CreatePreset";
             request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
 
+            request.Headers["Content-Type"] = "application/x-amz-json-";
             request.HttpMethod = "POST";
-              
-            string uriResourcePath = "2012-09-25/presets"; 
-            
-            if (uriResourcePath.Contains("?")) 
-            {
-                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
-                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
-        
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                }
-            }
-            
+
+            string uriResourcePath = "/2012-09-25/presets";
             request.ResourcePath = uriResourcePath;
-            
-             
-            using (StringWriter stringWriter = new StringWriter())
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (createPresetRequest != null && createPresetRequest.IsSetName()) 
+                if(publicRequest != null && publicRequest.IsSetAudio())
                 {
-                    writer.WritePropertyName("Name");
-                    writer.Write(createPresetRequest.Name);
+                    writer.WritePropertyName("Audio");
+                    writer.WriteObjectStart();
+                    if(publicRequest.Audio != null && publicRequest.Audio.IsSetBitRate())
+                    {
+                        writer.WritePropertyName("BitRate");
+                        writer.Write(publicRequest.Audio.BitRate);
+                    }
+
+                    if(publicRequest.Audio != null && publicRequest.Audio.IsSetChannels())
+                    {
+                        writer.WritePropertyName("Channels");
+                        writer.Write(publicRequest.Audio.Channels);
+                    }
+
+                    if(publicRequest.Audio != null && publicRequest.Audio.IsSetCodec())
+                    {
+                        writer.WritePropertyName("Codec");
+                        writer.Write(publicRequest.Audio.Codec);
+                    }
+
+                    if(publicRequest.Audio != null && publicRequest.Audio.IsSetCodecOptions())
+                    {
+                        writer.WritePropertyName("CodecOptions");
+                        writer.WriteObjectStart();
+                        if(publicRequest.Audio.CodecOptions != null && publicRequest.Audio.CodecOptions.IsSetProfile())
+                        {
+                            writer.WritePropertyName("Profile");
+                            writer.Write(publicRequest.Audio.CodecOptions.Profile);
+                        }
+
+                        writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.Audio != null && publicRequest.Audio.IsSetSampleRate())
+                    {
+                        writer.WritePropertyName("SampleRate");
+                        writer.Write(publicRequest.Audio.SampleRate);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
-                if (createPresetRequest != null && createPresetRequest.IsSetDescription()) 
-                {
-                    writer.WritePropertyName("Description");
-                    writer.Write(createPresetRequest.Description);
-                }
-                if (createPresetRequest != null && createPresetRequest.IsSetContainer()) 
+
+                if(publicRequest != null && publicRequest.IsSetContainer())
                 {
                     writer.WritePropertyName("Container");
-                    writer.Write(createPresetRequest.Container);
+                    writer.Write(publicRequest.Container);
                 }
 
-                if (createPresetRequest != null) 
+                if(publicRequest != null && publicRequest.IsSetDescription())
                 {
-                    VideoParameters video = createPresetRequest.Video;
-                    if (video != null)
+                    writer.WritePropertyName("Description");
+                    writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetName())
+                {
+                    writer.WritePropertyName("Name");
+                    writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest != null && publicRequest.IsSetThumbnails())
+                {
+                    writer.WritePropertyName("Thumbnails");
+                    writer.WriteObjectStart();
+                    if(publicRequest.Thumbnails != null && publicRequest.Thumbnails.IsSetAspectRatio())
                     {
-                        writer.WritePropertyName("Video");
+                        writer.WritePropertyName("AspectRatio");
+                        writer.Write(publicRequest.Thumbnails.AspectRatio);
+                    }
+
+                    if(publicRequest.Thumbnails != null && publicRequest.Thumbnails.IsSetFormat())
+                    {
+                        writer.WritePropertyName("Format");
+                        writer.Write(publicRequest.Thumbnails.Format);
+                    }
+
+                    if(publicRequest.Thumbnails != null && publicRequest.Thumbnails.IsSetInterval())
+                    {
+                        writer.WritePropertyName("Interval");
+                        writer.Write(publicRequest.Thumbnails.Interval);
+                    }
+
+                    if(publicRequest.Thumbnails != null && publicRequest.Thumbnails.IsSetMaxHeight())
+                    {
+                        writer.WritePropertyName("MaxHeight");
+                        writer.Write(publicRequest.Thumbnails.MaxHeight);
+                    }
+
+                    if(publicRequest.Thumbnails != null && publicRequest.Thumbnails.IsSetMaxWidth())
+                    {
+                        writer.WritePropertyName("MaxWidth");
+                        writer.Write(publicRequest.Thumbnails.MaxWidth);
+                    }
+
+                    if(publicRequest.Thumbnails != null && publicRequest.Thumbnails.IsSetPaddingPolicy())
+                    {
+                        writer.WritePropertyName("PaddingPolicy");
+                        writer.Write(publicRequest.Thumbnails.PaddingPolicy);
+                    }
+
+                    if(publicRequest.Thumbnails != null && publicRequest.Thumbnails.IsSetResolution())
+                    {
+                        writer.WritePropertyName("Resolution");
+                        writer.Write(publicRequest.Thumbnails.Resolution);
+                    }
+
+                    if(publicRequest.Thumbnails != null && publicRequest.Thumbnails.IsSetSizingPolicy())
+                    {
+                        writer.WritePropertyName("SizingPolicy");
+                        writer.Write(publicRequest.Thumbnails.SizingPolicy);
+                    }
+
+                    writer.WriteObjectEnd();
+                }
+
+                if(publicRequest != null && publicRequest.IsSetVideo())
+                {
+                    writer.WritePropertyName("Video");
+                    writer.WriteObjectStart();
+                    if(publicRequest.Video != null && publicRequest.Video.IsSetAspectRatio())
+                    {
+                        writer.WritePropertyName("AspectRatio");
+                        writer.Write(publicRequest.Video.AspectRatio);
+                    }
+
+                    if(publicRequest.Video != null && publicRequest.Video.IsSetBitRate())
+                    {
+                        writer.WritePropertyName("BitRate");
+                        writer.Write(publicRequest.Video.BitRate);
+                    }
+
+                    if(publicRequest.Video != null && publicRequest.Video.IsSetCodec())
+                    {
+                        writer.WritePropertyName("Codec");
+                        writer.Write(publicRequest.Video.Codec);
+                    }
+
+                    if(publicRequest.Video != null && publicRequest.Video.IsSetCodecOptions() && publicRequest.Video.CodecOptions.Count > 0)
+                    {
+                        writer.WritePropertyName("CodecOptions");
                         writer.WriteObjectStart();
-                        if (video != null && video.IsSetCodec()) 
+                        foreach (var publicRequestVideoCodecOptionsKvp in publicRequest.Video.CodecOptions)
                         {
-                            writer.WritePropertyName("Codec");
-                            writer.Write(video.Codec);
-                        }
-                        if (video != null) 
-                        {
-                            if (video.CodecOptions != null && video.CodecOptions.Count > 0)
-                            {
-                                writer.WritePropertyName("CodecOptions");
-                                writer.WriteObjectStart();
-                                foreach (string videoCodecOptionsKey in video.CodecOptions.Keys)
-                                {
-                                    string codecOptionsListValue;
-                                    bool codecOptionsListValueHasValue = video.CodecOptions.TryGetValue(videoCodecOptionsKey, out codecOptionsListValue);
-                                    writer.WritePropertyName(videoCodecOptionsKey);
+                            writer.WritePropertyName(publicRequestVideoCodecOptionsKvp.Key);
+                            var publicRequestVideoCodecOptionsValue = publicRequestVideoCodecOptionsKvp.Value;
 
-                                writer.Write(codecOptionsListValue);
-                                }
-                                writer.WriteObjectEnd();
-                            }
-                        }
-                        if (video != null && video.IsSetKeyframesMaxDist()) 
-                        {
-                            writer.WritePropertyName("KeyframesMaxDist");
-                            writer.Write(video.KeyframesMaxDist);
-                        }
-                        if (video != null && video.IsSetFixedGOP()) 
-                        {
-                            writer.WritePropertyName("FixedGOP");
-                            writer.Write(video.FixedGOP);
-                        }
-                        if (video != null && video.IsSetBitRate()) 
-                        {
-                            writer.WritePropertyName("BitRate");
-                            writer.Write(video.BitRate);
-                        }
-                        if (video != null && video.IsSetFrameRate()) 
-                        {
-                            writer.WritePropertyName("FrameRate");
-                            writer.Write(video.FrameRate);
-                        }
-                        if (video != null && video.IsSetMaxFrameRate()) 
-                        {
-                            writer.WritePropertyName("MaxFrameRate");
-                            writer.Write(video.MaxFrameRate);
-                        }
-                        if (video != null && video.IsSetResolution()) 
-                        {
-                            writer.WritePropertyName("Resolution");
-                            writer.Write(video.Resolution);
-                        }
-                        if (video != null && video.IsSetAspectRatio()) 
-                        {
-                            writer.WritePropertyName("AspectRatio");
-                            writer.Write(video.AspectRatio);
-                        }
-                        if (video != null && video.IsSetMaxWidth()) 
-                        {
-                            writer.WritePropertyName("MaxWidth");
-                            writer.Write(video.MaxWidth);
-                        }
-                        if (video != null && video.IsSetMaxHeight()) 
-                        {
-                            writer.WritePropertyName("MaxHeight");
-                            writer.Write(video.MaxHeight);
-                        }
-                        if (video != null && video.IsSetDisplayAspectRatio()) 
-                        {
-                            writer.WritePropertyName("DisplayAspectRatio");
-                            writer.Write(video.DisplayAspectRatio);
-                        }
-                        if (video != null && video.IsSetSizingPolicy()) 
-                        {
-                            writer.WritePropertyName("SizingPolicy");
-                            writer.Write(video.SizingPolicy);
-                        }
-                        if (video != null && video.IsSetPaddingPolicy()) 
-                        {
-                            writer.WritePropertyName("PaddingPolicy");
-                            writer.Write(video.PaddingPolicy);
-                        }
-
-                        if (video != null && video.Watermarks != null && video.Watermarks.Count > 0)
-                        {
-                            List<PresetWatermark> watermarksList = video.Watermarks;
-                            writer.WritePropertyName("Watermarks");
-                            writer.WriteArrayStart();
-
-                            foreach (PresetWatermark watermarksListValue in watermarksList) 
-                            {
-                                writer.WriteObjectStart();
-                                if (watermarksListValue != null && watermarksListValue.IsSetId()) 
-                                {
-                                    writer.WritePropertyName("Id");
-                                    writer.Write(watermarksListValue.Id);
-                                }
-                                if (watermarksListValue != null && watermarksListValue.IsSetMaxWidth()) 
-                                {
-                                    writer.WritePropertyName("MaxWidth");
-                                    writer.Write(watermarksListValue.MaxWidth);
-                                }
-                                if (watermarksListValue != null && watermarksListValue.IsSetMaxHeight()) 
-                                {
-                                    writer.WritePropertyName("MaxHeight");
-                                    writer.Write(watermarksListValue.MaxHeight);
-                                }
-                                if (watermarksListValue != null && watermarksListValue.IsSetSizingPolicy()) 
-                                {
-                                    writer.WritePropertyName("SizingPolicy");
-                                    writer.Write(watermarksListValue.SizingPolicy);
-                                }
-                                if (watermarksListValue != null && watermarksListValue.IsSetHorizontalAlign()) 
-                                {
-                                    writer.WritePropertyName("HorizontalAlign");
-                                    writer.Write(watermarksListValue.HorizontalAlign);
-                                }
-                                if (watermarksListValue != null && watermarksListValue.IsSetHorizontalOffset()) 
-                                {
-                                    writer.WritePropertyName("HorizontalOffset");
-                                    writer.Write(watermarksListValue.HorizontalOffset);
-                                }
-                                if (watermarksListValue != null && watermarksListValue.IsSetVerticalAlign()) 
-                                {
-                                    writer.WritePropertyName("VerticalAlign");
-                                    writer.Write(watermarksListValue.VerticalAlign);
-                                }
-                                if (watermarksListValue != null && watermarksListValue.IsSetVerticalOffset()) 
-                                {
-                                    writer.WritePropertyName("VerticalOffset");
-                                    writer.Write(watermarksListValue.VerticalOffset);
-                                }
-                                if (watermarksListValue != null && watermarksListValue.IsSetOpacity()) 
-                                {
-                                    writer.WritePropertyName("Opacity");
-                                    writer.Write(watermarksListValue.Opacity);
-                                }
-                                if (watermarksListValue != null && watermarksListValue.IsSetTarget()) 
-                                {
-                                    writer.WritePropertyName("Target");
-                                    writer.Write(watermarksListValue.Target);
-                                }
-                                writer.WriteObjectEnd();
-                            }
-                            writer.WriteArrayEnd();
+                            writer.Write(publicRequestVideoCodecOptionsValue);
                         }
                         writer.WriteObjectEnd();
                     }
-                }
 
-                if (createPresetRequest != null) 
-                {
-                    AudioParameters audio = createPresetRequest.Audio;
-                    if (audio != null)
+                    if(publicRequest.Video != null && publicRequest.Video.IsSetDisplayAspectRatio())
                     {
-                        writer.WritePropertyName("Audio");
-                        writer.WriteObjectStart();
-                        if (audio != null && audio.IsSetCodec()) 
-                        {
-                            writer.WritePropertyName("Codec");
-                            writer.Write(audio.Codec);
-                        }
-                        if (audio != null && audio.IsSetSampleRate()) 
-                        {
-                            writer.WritePropertyName("SampleRate");
-                            writer.Write(audio.SampleRate);
-                        }
-                        if (audio != null && audio.IsSetBitRate()) 
-                        {
-                            writer.WritePropertyName("BitRate");
-                            writer.Write(audio.BitRate);
-                        }
-                        if (audio != null && audio.IsSetChannels()) 
-                        {
-                            writer.WritePropertyName("Channels");
-                            writer.Write(audio.Channels);
-                        }
+                        writer.WritePropertyName("DisplayAspectRatio");
+                        writer.Write(publicRequest.Video.DisplayAspectRatio);
+                    }
 
-                        if (audio != null) 
+                    if(publicRequest.Video != null && publicRequest.Video.IsSetFixedGOP())
+                    {
+                        writer.WritePropertyName("FixedGOP");
+                        writer.Write(publicRequest.Video.FixedGOP);
+                    }
+
+                    if(publicRequest.Video != null && publicRequest.Video.IsSetFrameRate())
+                    {
+                        writer.WritePropertyName("FrameRate");
+                        writer.Write(publicRequest.Video.FrameRate);
+                    }
+
+                    if(publicRequest.Video != null && publicRequest.Video.IsSetKeyframesMaxDist())
+                    {
+                        writer.WritePropertyName("KeyframesMaxDist");
+                        writer.Write(publicRequest.Video.KeyframesMaxDist);
+                    }
+
+                    if(publicRequest.Video != null && publicRequest.Video.IsSetMaxFrameRate())
+                    {
+                        writer.WritePropertyName("MaxFrameRate");
+                        writer.Write(publicRequest.Video.MaxFrameRate);
+                    }
+
+                    if(publicRequest.Video != null && publicRequest.Video.IsSetMaxHeight())
+                    {
+                        writer.WritePropertyName("MaxHeight");
+                        writer.Write(publicRequest.Video.MaxHeight);
+                    }
+
+                    if(publicRequest.Video != null && publicRequest.Video.IsSetMaxWidth())
+                    {
+                        writer.WritePropertyName("MaxWidth");
+                        writer.Write(publicRequest.Video.MaxWidth);
+                    }
+
+                    if(publicRequest.Video != null && publicRequest.Video.IsSetPaddingPolicy())
+                    {
+                        writer.WritePropertyName("PaddingPolicy");
+                        writer.Write(publicRequest.Video.PaddingPolicy);
+                    }
+
+                    if(publicRequest.Video != null && publicRequest.Video.IsSetResolution())
+                    {
+                        writer.WritePropertyName("Resolution");
+                        writer.Write(publicRequest.Video.Resolution);
+                    }
+
+                    if(publicRequest.Video != null && publicRequest.Video.IsSetSizingPolicy())
+                    {
+                        writer.WritePropertyName("SizingPolicy");
+                        writer.Write(publicRequest.Video.SizingPolicy);
+                    }
+
+                    if(publicRequest.Video != null && publicRequest.Video.IsSetWatermarks() && publicRequest.Video.Watermarks.Count > 0)
+                    {
+                        writer.WritePropertyName("Watermarks");
+                        writer.WriteArrayStart();
+                        foreach(var publicRequestVideoWatermarksListValue in publicRequest.Video.Watermarks)
                         {
-                            AudioCodecOptions codecOptions = audio.CodecOptions;
-                            if (codecOptions != null)
+                            writer.WriteObjectStart();
+                            if(publicRequestVideoWatermarksListValue != null && publicRequestVideoWatermarksListValue.IsSetHorizontalAlign())
                             {
-                                writer.WritePropertyName("CodecOptions");
-                                writer.WriteObjectStart();
-                                if (codecOptions != null && codecOptions.IsSetProfile()) 
-                                {
-                                    writer.WritePropertyName("Profile");
-                                    writer.Write(codecOptions.Profile);
-                                }
-                                writer.WriteObjectEnd();
+                                writer.WritePropertyName("HorizontalAlign");
+                                writer.Write(publicRequestVideoWatermarksListValue.HorizontalAlign);
                             }
+
+                            if(publicRequestVideoWatermarksListValue != null && publicRequestVideoWatermarksListValue.IsSetHorizontalOffset())
+                            {
+                                writer.WritePropertyName("HorizontalOffset");
+                                writer.Write(publicRequestVideoWatermarksListValue.HorizontalOffset);
+                            }
+
+                            if(publicRequestVideoWatermarksListValue != null && publicRequestVideoWatermarksListValue.IsSetId())
+                            {
+                                writer.WritePropertyName("Id");
+                                writer.Write(publicRequestVideoWatermarksListValue.Id);
+                            }
+
+                            if(publicRequestVideoWatermarksListValue != null && publicRequestVideoWatermarksListValue.IsSetMaxHeight())
+                            {
+                                writer.WritePropertyName("MaxHeight");
+                                writer.Write(publicRequestVideoWatermarksListValue.MaxHeight);
+                            }
+
+                            if(publicRequestVideoWatermarksListValue != null && publicRequestVideoWatermarksListValue.IsSetMaxWidth())
+                            {
+                                writer.WritePropertyName("MaxWidth");
+                                writer.Write(publicRequestVideoWatermarksListValue.MaxWidth);
+                            }
+
+                            if(publicRequestVideoWatermarksListValue != null && publicRequestVideoWatermarksListValue.IsSetOpacity())
+                            {
+                                writer.WritePropertyName("Opacity");
+                                writer.Write(publicRequestVideoWatermarksListValue.Opacity);
+                            }
+
+                            if(publicRequestVideoWatermarksListValue != null && publicRequestVideoWatermarksListValue.IsSetSizingPolicy())
+                            {
+                                writer.WritePropertyName("SizingPolicy");
+                                writer.Write(publicRequestVideoWatermarksListValue.SizingPolicy);
+                            }
+
+                            if(publicRequestVideoWatermarksListValue != null && publicRequestVideoWatermarksListValue.IsSetTarget())
+                            {
+                                writer.WritePropertyName("Target");
+                                writer.Write(publicRequestVideoWatermarksListValue.Target);
+                            }
+
+                            if(publicRequestVideoWatermarksListValue != null && publicRequestVideoWatermarksListValue.IsSetVerticalAlign())
+                            {
+                                writer.WritePropertyName("VerticalAlign");
+                                writer.Write(publicRequestVideoWatermarksListValue.VerticalAlign);
+                            }
+
+                            if(publicRequestVideoWatermarksListValue != null && publicRequestVideoWatermarksListValue.IsSetVerticalOffset())
+                            {
+                                writer.WritePropertyName("VerticalOffset");
+                                writer.Write(publicRequestVideoWatermarksListValue.VerticalOffset);
+                            }
+
+                            writer.WriteObjectEnd();
                         }
-                        writer.WriteObjectEnd();
+                        writer.WriteArrayEnd();
                     }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if (createPresetRequest != null) 
-                {
-                    Thumbnails thumbnails = createPresetRequest.Thumbnails;
-                    if (thumbnails != null)
-                    {
-                        writer.WritePropertyName("Thumbnails");
-                        writer.WriteObjectStart();
-                        if (thumbnails != null && thumbnails.IsSetFormat()) 
-                        {
-                            writer.WritePropertyName("Format");
-                            writer.Write(thumbnails.Format);
-                        }
-                        if (thumbnails != null && thumbnails.IsSetInterval()) 
-                        {
-                            writer.WritePropertyName("Interval");
-                            writer.Write(thumbnails.Interval);
-                        }
-                        if (thumbnails != null && thumbnails.IsSetResolution()) 
-                        {
-                            writer.WritePropertyName("Resolution");
-                            writer.Write(thumbnails.Resolution);
-                        }
-                        if (thumbnails != null && thumbnails.IsSetAspectRatio()) 
-                        {
-                            writer.WritePropertyName("AspectRatio");
-                            writer.Write(thumbnails.AspectRatio);
-                        }
-                        if (thumbnails != null && thumbnails.IsSetMaxWidth()) 
-                        {
-                            writer.WritePropertyName("MaxWidth");
-                            writer.Write(thumbnails.MaxWidth);
-                        }
-                        if (thumbnails != null && thumbnails.IsSetMaxHeight()) 
-                        {
-                            writer.WritePropertyName("MaxHeight");
-                            writer.Write(thumbnails.MaxHeight);
-                        }
-                        if (thumbnails != null && thumbnails.IsSetSizingPolicy()) 
-                        {
-                            writer.WritePropertyName("SizingPolicy");
-                            writer.Write(thumbnails.SizingPolicy);
-                        }
-                        if (thumbnails != null && thumbnails.IsSetPaddingPolicy()) 
-                        {
-                            writer.WritePropertyName("PaddingPolicy");
-                            writer.Write(thumbnails.PaddingPolicy);
-                        }
-                        writer.WriteObjectEnd();
-                    }
-                }
-
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
 
             return request;
         }
+
+
     }
 }

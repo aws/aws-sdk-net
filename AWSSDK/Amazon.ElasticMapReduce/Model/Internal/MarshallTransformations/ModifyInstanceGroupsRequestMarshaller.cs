@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
@@ -28,84 +29,69 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Modify Instance Groups Request Marshaller
+    /// ModifyInstanceGroups Request Marshaller
     /// </summary>       
-    internal class ModifyInstanceGroupsRequestMarshaller : IMarshaller<IRequest, ModifyInstanceGroupsRequest> 
+    public class ModifyInstanceGroupsRequestMarshaller : IMarshaller<IRequest, ModifyInstanceGroupsRequest> 
     {
-        
-
-        public IRequest Marshall(ModifyInstanceGroupsRequest modifyInstanceGroupsRequest) 
+        public IRequest Marshall(ModifyInstanceGroupsRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(modifyInstanceGroupsRequest, "AmazonElasticMapReduce");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticMapReduce");
             string target = "ElasticMapReduce.ModifyInstanceGroups";
             request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
 
-            
-              
-            string uriResourcePath = ""; 
-            
-            if (uriResourcePath.Contains("?")) 
-            {
-                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
-                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
-        
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                }
-            }
-            
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
-            using (StringWriter stringWriter = new StringWriter())
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-
-                if (modifyInstanceGroupsRequest != null && modifyInstanceGroupsRequest.InstanceGroups != null && modifyInstanceGroupsRequest.InstanceGroups.Count > 0)
+                if(publicRequest != null && publicRequest.IsSetInstanceGroups() && publicRequest.InstanceGroups.Count > 0)
                 {
-                    List<InstanceGroupModifyConfig> instanceGroupsList = modifyInstanceGroupsRequest.InstanceGroups;
                     writer.WritePropertyName("InstanceGroups");
                     writer.WriteArrayStart();
-
-                    foreach (InstanceGroupModifyConfig instanceGroupsListValue in instanceGroupsList) 
+                    foreach(var publicRequestInstanceGroupsListValue in publicRequest.InstanceGroups)
                     {
                         writer.WriteObjectStart();
-                        if (instanceGroupsListValue != null && instanceGroupsListValue.IsSetInstanceGroupId()) 
+                        if(publicRequestInstanceGroupsListValue != null && publicRequestInstanceGroupsListValue.IsSetEC2InstanceIdsToTerminate() && publicRequestInstanceGroupsListValue.EC2InstanceIdsToTerminate.Count > 0)
                         {
-                            writer.WritePropertyName("InstanceGroupId");
-                            writer.Write(instanceGroupsListValue.InstanceGroupId);
+                            writer.WritePropertyName("EC2InstanceIdsToTerminate");
+                            writer.WriteArrayStart();
+                            foreach(var publicRequestInstanceGroupsListValueEC2InstanceIdsToTerminateListValue in publicRequestInstanceGroupsListValue.EC2InstanceIdsToTerminate)
+                            {
+                                writer.Write(publicRequestInstanceGroupsListValueEC2InstanceIdsToTerminateListValue);
+                            }
+                            writer.WriteArrayEnd();
                         }
-                        if (instanceGroupsListValue != null && instanceGroupsListValue.IsSetInstanceCount()) 
+
+                        if(publicRequestInstanceGroupsListValue != null && publicRequestInstanceGroupsListValue.IsSetInstanceCount())
                         {
                             writer.WritePropertyName("InstanceCount");
-                            writer.Write(instanceGroupsListValue.InstanceCount);
+                            writer.Write(publicRequestInstanceGroupsListValue.InstanceCount);
                         }
+
+                        if(publicRequestInstanceGroupsListValue != null && publicRequestInstanceGroupsListValue.IsSetInstanceGroupId())
+                        {
+                            writer.WritePropertyName("InstanceGroupId");
+                            writer.Write(publicRequestInstanceGroupsListValue.InstanceGroupId);
+                        }
+
                         writer.WriteObjectEnd();
                     }
                     writer.WriteArrayEnd();
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
 
             return request;
         }
+
+
     }
 }

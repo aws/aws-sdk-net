@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,61 +12,72 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using Amazon.ElasticMapReduce.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+using Amazon.ElasticMapReduce.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for PlacementType Object
+    /// </summary>  
+    public class PlacementTypeUnmarshaller : IUnmarshaller<PlacementType, XmlUnmarshallerContext>, IUnmarshaller<PlacementType, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// PlacementTypeUnmarshaller
-      /// </summary>
-      internal class PlacementTypeUnmarshaller : IUnmarshaller<PlacementType, XmlUnmarshallerContext>, IUnmarshaller<PlacementType, JsonUnmarshallerContext>
-      {
         PlacementType IUnmarshaller<PlacementType, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public PlacementType Unmarshall(JsonUnmarshallerContext context)
         {
-            PlacementType placementType = new PlacementType();
-          
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
+            
+            var unmarshalledObject = new PlacementType();
+                    
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+
             while (context.Read())
             {
                 if ((context.IsKey) && (context.CurrentDepth == targetDepth))
                 {
-                context.Read();
-                context.Read();
-              
-              if (context.TestExpression("AvailabilityZone", targetDepth))
-              {
-                placementType.AvailabilityZone = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                    context.Read();
+                    context.Read();
+                    if (context.TestExpression("AvailabilityZone", targetDepth))
+                    {
+                        unmarshalledObject.AvailabilityZone = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {
-                    return placementType;
+                    return unmarshalledObject;
                 }
-            }
-          
-
-            return placementType;
+            }          
+            return unmarshalledObject;
         }
+
 
         private static PlacementTypeUnmarshaller instance;
         public static PlacementTypeUnmarshaller GetInstance()
         {
             if (instance == null)
+            {
                 instance = new PlacementTypeUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-  

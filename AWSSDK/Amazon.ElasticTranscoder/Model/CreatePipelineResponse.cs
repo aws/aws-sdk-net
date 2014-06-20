@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// Returns information about the  CreatePipelineResult response and response metadata.
+    /// Returns information about the CreatePipelineResult response and response metadata.
     /// </summary>
     public class CreatePipelineResponse : AmazonWebServiceResponse
     {
-        private CreatePipelineResult createPipelineResult;
+        private CreatePipelineResult _createPipelineResult;
 
         /// <summary>
         /// Gets and sets the CreatePipelineResult property.
-        /// When you create a pipeline, Elastic Transcoder returns the values that you specified in the request.
+        /// Represents the output of a CreatePipeline operation.
         /// </summary>
         public CreatePipelineResult CreatePipelineResult
         {
             get
             {
-                if(this.createPipelineResult == null)
+                if(this._createPipelineResult == null)
                 {
-                    this.createPipelineResult = new CreatePipelineResult();
+                    this._createPipelineResult = new CreatePipelineResult();
                 }
-
-                return this.createPipelineResult;
+                return this._createPipelineResult;
             }
-            set { this.createPipelineResult = value; }
+            set { this._createPipelineResult = value; }
         }
     }
 }
-    

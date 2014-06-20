@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,83 +18,34 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// <para>The <c>ListPresetsResponse</c> structure.</para>
+    /// The <code>ListPresetsResponse</code> structure.
     /// </summary>
     public partial class ListPresetsResult
     {
-        
-        private List<Preset> presets = new List<Preset>();
-        private string nextPageToken;
+        private string _nextPageToken;
+        private List<Preset> _presets = new List<Preset>();
+
 
         /// <summary>
-        /// An array of <c>Preset</c> objects.
-        ///  
-        /// </summary>
-        public List<Preset> Presets
-        {
-            get { return this.presets; }
-            set { this.presets = value; }
-        }
-        /// <summary>
-        /// Adds elements to the Presets collection
-        /// </summary>
-        /// <param name="presets">The values to add to the Presets collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ListPresetsResult WithPresets(params Preset[] presets)
-        {
-            foreach (Preset element in presets)
-            {
-                this.presets.Add(element);
-            }
-
-            return this;
-        }
-
-        /// <summary>
-        /// Adds elements to the Presets collection
-        /// </summary>
-        /// <param name="presets">The values to add to the Presets collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ListPresetsResult WithPresets(IEnumerable<Preset> presets)
-        {
-            foreach (Preset element in presets)
-            {
-                this.presets.Add(element);
-            }
-
-            return this;
-        }
-
-        // Check to see if Presets property is set
-        internal bool IsSetPresets()
-        {
-            return this.presets.Count > 0;
-        }
-
-        /// <summary>
-        /// A value that you use to access the second and subsequent pages of results, if any. When the presets fit on one page or when you've reached
-        /// the last page of results, the value of <c>NextPageToken</c> is <c>null</c>.
-        ///  
+        /// Gets and sets the property NextPageToken. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>^\d{13}-\w{6}$</description>
-        ///     </item>
-        /// </list>
+        /// A value that you use to access the second and subsequent pages of results, if any.
+        /// When            the presets fit on one page or when you've reached the last page 
+        ///           of results, the value of <code>NextPageToken</code> is <code>null</code>.
         /// </para>
         /// </summary>
         public string NextPageToken
         {
-            get { return this.nextPageToken; }
-            set { this.nextPageToken = value; }
+            get { return this._nextPageToken; }
+            set { this._nextPageToken = value; }
         }
+
 
         /// <summary>
         /// Sets the NextPageToken property
@@ -104,15 +55,63 @@ namespace Amazon.ElasticTranscoder.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListPresetsResult WithNextPageToken(string nextPageToken)
         {
-            this.nextPageToken = nextPageToken;
+            this._nextPageToken = nextPageToken;
             return this;
         }
-            
 
         // Check to see if NextPageToken property is set
         internal bool IsSetNextPageToken()
         {
-            return this.nextPageToken != null;
+            return this._nextPageToken != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Presets. 
+        /// <para>
+        /// An array of <code>Preset</code> objects.
+        /// </para>
+        /// </summary>
+        public List<Preset> Presets
+        {
+            get { return this._presets; }
+            set { this._presets = value; }
+        }
+
+        /// <summary>
+        /// Sets the Presets property
+        /// </summary>
+        /// <param name="presets">The values to add to the Presets collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ListPresetsResult WithPresets(params Preset[] presets)
+        {
+            foreach (var element in presets)
+            {
+                this._presets.Add(element);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the Presets property
+        /// </summary>
+        /// <param name="presets">The values to add to the Presets collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ListPresetsResult WithPresets(IEnumerable<Preset> presets)
+        {
+            foreach (var element in presets)
+            {
+                this._presets.Add(element);
+            }
+            return this;
+        }
+        // Check to see if Presets property is set
+        internal bool IsSetPresets()
+        {
+            return this._presets != null && this._presets.Count > 0; 
+        }
+
     }
 }

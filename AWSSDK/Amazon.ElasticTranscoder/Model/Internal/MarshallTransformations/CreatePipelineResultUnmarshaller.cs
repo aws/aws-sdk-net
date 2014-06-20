@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,63 +12,73 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using Amazon.ElasticTranscoder.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
+using Amazon.ElasticTranscoder.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for CreatePipeline Object
+    /// </summary>  
+    public class CreatePipelineResultUnmarshaller : IUnmarshaller<CreatePipelineResult, XmlUnmarshallerContext>, IUnmarshaller<CreatePipelineResult, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// CreatePipelineResultUnmarshaller
-      /// </summary>
-      internal class CreatePipelineResultUnmarshaller : IUnmarshaller<CreatePipelineResult, XmlUnmarshallerContext>, IUnmarshaller<CreatePipelineResult, JsonUnmarshallerContext>
-      {
         CreatePipelineResult IUnmarshaller<CreatePipelineResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public CreatePipelineResult Unmarshall(JsonUnmarshallerContext context)
         {
             if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
                 return null;
-            CreatePipelineResult createPipelineResult = new CreatePipelineResult();
-          
+            
+            var unmarshalledObject = new CreatePipelineResult();
+                    
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+
             while (context.Read())
             {
                 if ((context.IsKey) && (context.CurrentDepth == targetDepth))
                 {
-                context.Read();
-                context.Read();
-              
-              if (context.TestExpression("Pipeline", targetDepth))
-              {
-                createPipelineResult.Pipeline = PipelineUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                    context.Read();
+                    context.Read();
+                    if (context.TestExpression("Pipeline", targetDepth))
+                    {
+                        unmarshalledObject.Pipeline = PipelineUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {
-                    return createPipelineResult;
+                    return unmarshalledObject;
                 }
-            }
-          
-
-            return createPipelineResult;
+            }   
+                           
+            return unmarshalledObject;
         }
+
 
         private static CreatePipelineResultUnmarshaller instance;
         public static CreatePipelineResultUnmarshaller GetInstance()
         {
             if (instance == null)
+            {
                 instance = new CreatePipelineResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-  

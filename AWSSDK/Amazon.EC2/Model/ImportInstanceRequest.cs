@@ -26,7 +26,10 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Creates a new import instance task using metadata from the specified disk image.
+    /// Container for the parameters to the ImportInstance operation.
+    /// <para>Creates an import instance task using metadata from the specified disk image. After importing the image, you then upload it using the
+    /// ec2-import-volume command in the EC2 command line tools. For more information, see Using the Command Line Tools to Import Your Virtual
+    /// Machine to Amazon EC2 in the Amazon Elastic Compute Cloud User Guide.</para>
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class ImportInstanceRequest : EC2Request

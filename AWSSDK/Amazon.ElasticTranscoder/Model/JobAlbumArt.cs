@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,39 +18,95 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// <para>The .jpg or .png file associated with an audio file.</para>
+    /// The .jpg or .png file associated with an audio file.
     /// </summary>
     public partial class JobAlbumArt
     {
-        
-        private string mergePolicy;
-        private List<Artwork> artwork = new List<Artwork>();
+        private List<Artwork> _artwork = new List<Artwork>();
+        private string _mergePolicy;
+
 
         /// <summary>
-        /// A policy that determines how Elastic Transcoder will handle the existence of multiple album artwork files. <ul> <li><c>Replace:</c> The
-        /// specified album art will replace any existing album art.</li> <li><c>Prepend:</c> The specified album art will be placed in front of any
-        /// existing album art.</li> <li><c>Append:</c> The specified album art will be placed after any existing album art.</li> <li><c>Fallback:</c>
-        /// If the original input file contains artwork, Elastic Transcoder will use that artwork for the output. If the original input does not contain
-        /// artwork, Elastic Transcoder will use the specified album art file.</li> </ul>
-        ///  
+        /// Gets and sets the property Artwork. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>(^Replace$)|(^Prepend$)|(^Append$)|(^Fallback$)</description>
-        ///     </item>
-        /// </list>
+        /// The file to be used as album art. There can be multiple artworks associated with an
+        /// audio file,             to a maximum of 20. Valid formats are <code>.jpg</code> and
+        /// <code>.png</code>
+        /// </para>
+        /// </summary>
+        public List<Artwork> Artwork
+        {
+            get { return this._artwork; }
+            set { this._artwork = value; }
+        }
+
+        /// <summary>
+        /// Sets the Artwork property
+        /// </summary>
+        /// <param name="artwork">The values to add to the Artwork collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public JobAlbumArt WithArtwork(params Artwork[] artwork)
+        {
+            foreach (var element in artwork)
+            {
+                this._artwork.Add(element);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the Artwork property
+        /// </summary>
+        /// <param name="artwork">The values to add to the Artwork collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public JobAlbumArt WithArtwork(IEnumerable<Artwork> artwork)
+        {
+            foreach (var element in artwork)
+            {
+                this._artwork.Add(element);
+            }
+            return this;
+        }
+        // Check to see if Artwork property is set
+        internal bool IsSetArtwork()
+        {
+            return this._artwork != null && this._artwork.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property MergePolicy. 
+        /// <para>
+        /// A policy that determines how Elastic Transcoder will handle the existence of multiple
+        /// album artwork files.
+        /// </para>
+        ///         
+        /// <para>
+        ///             <ul>                <li><code>Replace:</code> The specified album art
+        /// will replace any existing album art.</li>                <li><code>Prepend:</code>
+        /// The specified album art will be placed in front of any existing                  
+        ///   album art.</li>                <li><code>Append:</code> The specified album art
+        /// will be placed after any existing album art.</li>                <li><code>Fallback:</code>
+        /// If the original input file contains artwork, Elastic Transcoder will use that    
+        ///                artwork for the output. If the original input does not contain artwork,
+        /// Elastic Transcoder will use the                     specified album art file.</li>
+        ///            </ul>        
         /// </para>
         /// </summary>
         public string MergePolicy
         {
-            get { return this.mergePolicy; }
-            set { this.mergePolicy = value; }
+            get { return this._mergePolicy; }
+            set { this._mergePolicy = value; }
         }
+
 
         /// <summary>
         /// Sets the MergePolicy property
@@ -60,63 +116,15 @@ namespace Amazon.ElasticTranscoder.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobAlbumArt WithMergePolicy(string mergePolicy)
         {
-            this.mergePolicy = mergePolicy;
+            this._mergePolicy = mergePolicy;
             return this;
         }
-            
 
         // Check to see if MergePolicy property is set
         internal bool IsSetMergePolicy()
         {
-            return this.mergePolicy != null;
+            return this._mergePolicy != null;
         }
 
-        /// <summary>
-        /// The file to be used as album art. There can be multiple artworks associated with an audio file, to a maximum of 20. Valid formats are
-        /// <c>.jpg</c> and <c>.png</c>
-        ///  
-        /// </summary>
-        public List<Artwork> Artwork
-        {
-            get { return this.artwork; }
-            set { this.artwork = value; }
-        }
-        /// <summary>
-        /// Adds elements to the Artwork collection
-        /// </summary>
-        /// <param name="artwork">The values to add to the Artwork collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public JobAlbumArt WithArtwork(params Artwork[] artwork)
-        {
-            foreach (Artwork element in artwork)
-            {
-                this.artwork.Add(element);
-            }
-
-            return this;
-        }
-
-        /// <summary>
-        /// Adds elements to the Artwork collection
-        /// </summary>
-        /// <param name="artwork">The values to add to the Artwork collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public JobAlbumArt WithArtwork(IEnumerable<Artwork> artwork)
-        {
-            foreach (Artwork element in artwork)
-            {
-                this.artwork.Add(element);
-            }
-
-            return this;
-        }
-
-        // Check to see if Artwork property is set
-        internal bool IsSetArtwork()
-        {
-            return this.artwork.Count > 0;
-        }
     }
 }

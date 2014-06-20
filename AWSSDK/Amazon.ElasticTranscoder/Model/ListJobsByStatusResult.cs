@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,83 +18,83 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// <para> The <c>ListJobsByStatusResponse</c> structure. </para>
+    /// The <code>ListJobsByStatusResponse</code> structure.
     /// </summary>
     public partial class ListJobsByStatusResult
     {
-        
-        private List<Job> jobs = new List<Job>();
-        private string nextPageToken;
+        private List<Job> _jobs = new List<Job>();
+        private string _nextPageToken;
+
 
         /// <summary>
-        /// An array of <c>Job</c> objects that have the specified status.
-        ///  
+        /// Gets and sets the property Jobs. 
+        /// <para>
+        /// An array of <code>Job</code> objects that have the specified status.
+        /// </para>
         /// </summary>
         public List<Job> Jobs
         {
-            get { return this.jobs; }
-            set { this.jobs = value; }
+            get { return this._jobs; }
+            set { this._jobs = value; }
         }
+
         /// <summary>
-        /// Adds elements to the Jobs collection
+        /// Sets the Jobs property
         /// </summary>
         /// <param name="jobs">The values to add to the Jobs collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListJobsByStatusResult WithJobs(params Job[] jobs)
         {
-            foreach (Job element in jobs)
+            foreach (var element in jobs)
             {
-                this.jobs.Add(element);
+                this._jobs.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the Jobs collection
+        /// Sets the Jobs property
         /// </summary>
         /// <param name="jobs">The values to add to the Jobs collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListJobsByStatusResult WithJobs(IEnumerable<Job> jobs)
         {
-            foreach (Job element in jobs)
+            foreach (var element in jobs)
             {
-                this.jobs.Add(element);
+                this._jobs.Add(element);
             }
-
             return this;
         }
-
         // Check to see if Jobs property is set
         internal bool IsSetJobs()
         {
-            return this.jobs.Count > 0;
+            return this._jobs != null && this._jobs.Count > 0; 
         }
 
+
         /// <summary>
-        /// A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page
-        /// or when you've reached the last page of results, the value of <c>NextPageToken</c> is <c>null</c>.
-        ///  
+        /// Gets and sets the property NextPageToken. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>^\d{13}-\w{6}$</description>
-        ///     </item>
-        /// </list>
+        ///  A value that you use to access the second and subsequent pages of results, if any.
+        /// When            the jobs in the specified pipeline fit on one page or when you've
+        /// reached the last page            of results, the value of <code>NextPageToken</code>
+        /// is <code>null</code>. 
         /// </para>
         /// </summary>
         public string NextPageToken
         {
-            get { return this.nextPageToken; }
-            set { this.nextPageToken = value; }
+            get { return this._nextPageToken; }
+            set { this._nextPageToken = value; }
         }
+
 
         /// <summary>
         /// Sets the NextPageToken property
@@ -104,15 +104,15 @@ namespace Amazon.ElasticTranscoder.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListJobsByStatusResult WithNextPageToken(string nextPageToken)
         {
-            this.nextPageToken = nextPageToken;
+            this._nextPageToken = nextPageToken;
             return this;
         }
-            
 
         // Check to see if NextPageToken property is set
         internal bool IsSetNextPageToken()
         {
-            return this.nextPageToken != null;
+            return this._nextPageToken != null;
         }
+
     }
 }

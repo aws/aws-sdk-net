@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// Returns information about the  TestRoleResult response and response metadata.
+    /// Returns information about the TestRoleResult response and response metadata.
     /// </summary>
     public class TestRoleResponse : AmazonWebServiceResponse
     {
-        private TestRoleResult testRoleResult;
+        private TestRoleResult _testRoleResult;
 
         /// <summary>
         /// Gets and sets the TestRoleResult property.
-        /// The TestRoleResponse structure.
+        /// Represents the output of a TestRole operation.
         /// </summary>
         public TestRoleResult TestRoleResult
         {
             get
             {
-                if(this.testRoleResult == null)
+                if(this._testRoleResult == null)
                 {
-                    this.testRoleResult = new TestRoleResult();
+                    this._testRoleResult = new TestRoleResult();
                 }
-
-                return this.testRoleResult;
+                return this._testRoleResult;
             }
-            set { this.testRoleResult = value; }
+            set { this._testRoleResult = value; }
         }
     }
 }
-    

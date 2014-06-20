@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,25 +18,32 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// <para>The CreateJobResponse structure.</para>
+    /// The CreateJobResponse structure.
     /// </summary>
     public partial class CreateJobResult
     {
-        
-        private Job job;
+        private Job _job;
+
 
         /// <summary>
-        /// A section of the response body that provides information about the job that is created.
-        ///  
+        /// Gets and sets the property Job. 
+        /// <para>
+        ///  A section of the response body that provides information about the job that is created.
+        ///        
+        /// </para>
         /// </summary>
         public Job Job
         {
-            get { return this.job; }
-            set { this.job = value; }
+            get { return this._job; }
+            set { this._job = value; }
         }
+
 
         /// <summary>
         /// Sets the Job property
@@ -46,15 +53,15 @@ namespace Amazon.ElasticTranscoder.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobResult WithJob(Job job)
         {
-            this.job = job;
+            this._job = job;
             return this;
         }
-            
 
         // Check to see if Job property is set
         internal bool IsSetJob()
         {
-            return this.job != null;
+            return this._job != null;
         }
+
     }
 }

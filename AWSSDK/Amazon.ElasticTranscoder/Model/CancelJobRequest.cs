@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,34 +25,35 @@ namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelJob operation.
-    /// <para>The CancelJob operation cancels an unfinished job.</para> <para><b>NOTE:</b>You can only cancel a job that has a status of Submitted.
-    /// To prevent a pipeline from starting to process a job while you're getting the job identifier, use UpdatePipelineStatus to temporarily pause
-    /// the pipeline.</para>
+    /// The CancelJob operation cancels an unfinished job.
+    /// 
+    ///         <note>You can only cancel a job that has a status of <code>Submitted</code>.
+    /// To prevent a            pipeline from starting to process a job while you're getting
+    /// the job identifier, use                <a>UpdatePipelineStatus</a> to temporarily
+    /// pause the pipeline.</note>
     /// </summary>
-    /// <seealso cref="Amazon.ElasticTranscoder.AmazonElasticTranscoder.CancelJob"/>
-    public class CancelJobRequest : AmazonWebServiceRequest
+    public partial class CancelJobRequest : AmazonWebServiceRequest
     {
-        private string id;
+        private string _id;
+
 
         /// <summary>
-        /// The identifier of the job that you want to cancel. To get a list of the jobs (including their <c>jobId</c>) that have a status of
-        /// <c>Submitted</c>, use the <a>ListJobsByStatus</a> API action.
-        ///  
+        /// Gets and sets the property Id. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>^\d{13}-\w{6}$</description>
-        ///     </item>
-        /// </list>
+        /// The identifier of the job that you want to cancel. 
+        /// </para>
+        ///         
+        /// <para>
+        /// To get a list of the jobs (including their <code>jobId</code>) that have a status
+        /// of                <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.
         /// </para>
         /// </summary>
         public string Id
         {
-            get { return this.id; }
-            set { this.id = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
+
 
         /// <summary>
         /// Sets the Id property
@@ -62,16 +63,15 @@ namespace Amazon.ElasticTranscoder.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CancelJobRequest WithId(string id)
         {
-            this.id = id;
+            this._id = id;
             return this;
         }
-            
 
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;
+            return this._id != null;
         }
+
     }
 }
-    

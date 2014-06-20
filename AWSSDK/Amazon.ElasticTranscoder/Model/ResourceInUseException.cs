@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.ElasticTranscoder.Model
 {
     ///<summary>
-    /// AmazonElasticTranscoder exception
+    /// ElasticTranscoder exception
     /// </summary>
     public class ResourceInUseException : AmazonElasticTranscoderException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.ElasticTranscoder.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal ResourceInUseException(string message) 
+        public ResourceInUseException(string message) 
             : base(message) {}
           
-        internal ResourceInUseException(string message, Exception innerException) 
+        public ResourceInUseException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal ResourceInUseException(Exception innerException) 
+        public ResourceInUseException(Exception innerException) 
             : base(innerException) {}
             
-        internal ResourceInUseException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ResourceInUseException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal ResourceInUseException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ResourceInUseException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

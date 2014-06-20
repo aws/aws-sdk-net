@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,25 +18,31 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// <para>The <c>ReadPresetResponse</c> structure.</para>
+    /// The <code>ReadPresetResponse</code> structure.
     /// </summary>
     public partial class ReadPresetResult
     {
-        
-        private Preset preset;
+        private Preset _preset;
+
 
         /// <summary>
+        /// Gets and sets the property Preset. 
+        /// <para>
         /// A section of the response body that provides information about the preset.
-        ///  
+        /// </para>
         /// </summary>
         public Preset Preset
         {
-            get { return this.preset; }
-            set { this.preset = value; }
+            get { return this._preset; }
+            set { this._preset = value; }
         }
+
 
         /// <summary>
         /// Sets the Preset property
@@ -46,15 +52,15 @@ namespace Amazon.ElasticTranscoder.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReadPresetResult WithPreset(Preset preset)
         {
-            this.preset = preset;
+            this._preset = preset;
             return this;
         }
-            
 
         // Check to see if Preset property is set
         internal bool IsSetPreset()
         {
-            return this.preset != null;
+            return this._preset != null;
         }
+
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
@@ -28,98 +29,68 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Job Flows Request Marshaller
+    /// DescribeJobFlows Request Marshaller
     /// </summary>       
-    internal class DescribeJobFlowsRequestMarshaller : IMarshaller<IRequest, DescribeJobFlowsRequest> 
+    public class DescribeJobFlowsRequestMarshaller : IMarshaller<IRequest, DescribeJobFlowsRequest> 
     {
-        
-
-        public IRequest Marshall(DescribeJobFlowsRequest describeJobFlowsRequest) 
+        public IRequest Marshall(DescribeJobFlowsRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(describeJobFlowsRequest, "AmazonElasticMapReduce");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticMapReduce");
             string target = "ElasticMapReduce.DescribeJobFlows";
             request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
 
-            
-              
-            string uriResourcePath = ""; 
-            
-            if (uriResourcePath.Contains("?")) 
-            {
-                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
-                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
-        
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                }
-            }
-            
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
-            using (StringWriter stringWriter = new StringWriter())
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (describeJobFlowsRequest != null && describeJobFlowsRequest.IsSetCreatedAfter()) 
+                if(publicRequest != null && publicRequest.IsSetCreatedAfter())
                 {
                     writer.WritePropertyName("CreatedAfter");
-                    writer.Write(describeJobFlowsRequest.CreatedAfter);
+                    writer.Write(publicRequest.CreatedAfter);
                 }
-                if (describeJobFlowsRequest != null && describeJobFlowsRequest.IsSetCreatedBefore()) 
+
+                if(publicRequest != null && publicRequest.IsSetCreatedBefore())
                 {
                     writer.WritePropertyName("CreatedBefore");
-                    writer.Write(describeJobFlowsRequest.CreatedBefore);
+                    writer.Write(publicRequest.CreatedBefore);
                 }
 
-                if (describeJobFlowsRequest != null && describeJobFlowsRequest.JobFlowIds != null && describeJobFlowsRequest.JobFlowIds.Count > 0) 
+                if(publicRequest != null && publicRequest.IsSetJobFlowIds() && publicRequest.JobFlowIds.Count > 0)
                 {
-                    List<string> jobFlowIdsList = describeJobFlowsRequest.JobFlowIds;
                     writer.WritePropertyName("JobFlowIds");
                     writer.WriteArrayStart();
-
-                    foreach (string jobFlowIdsListValue in jobFlowIdsList) 
-                    { 
-                        writer.Write(StringUtils.FromString(jobFlowIdsListValue));
+                    foreach(var publicRequestJobFlowIdsListValue in publicRequest.JobFlowIds)
+                    {
+                        writer.Write(publicRequestJobFlowIdsListValue);
                     }
-
                     writer.WriteArrayEnd();
                 }
 
-                if (describeJobFlowsRequest != null && describeJobFlowsRequest.JobFlowStates != null && describeJobFlowsRequest.JobFlowStates.Count > 0) 
+                if(publicRequest != null && publicRequest.IsSetJobFlowStates() && publicRequest.JobFlowStates.Count > 0)
                 {
-                    List<string> jobFlowStatesList = describeJobFlowsRequest.JobFlowStates;
                     writer.WritePropertyName("JobFlowStates");
                     writer.WriteArrayStart();
-
-                    foreach (string jobFlowStatesListValue in jobFlowStatesList) 
-                    { 
-                        writer.Write(StringUtils.FromString(jobFlowStatesListValue));
+                    foreach(var publicRequestJobFlowStatesListValue in publicRequest.JobFlowStates)
+                    {
+                        writer.Write(publicRequestJobFlowStatesListValue);
                     }
-
                     writer.WriteArrayEnd();
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
 
             return request;
         }
+
+
     }
 }

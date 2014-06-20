@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,38 +25,54 @@ namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeJobFlows operation.
-    /// <para> DescribeJobFlows returns a list of job flows that match all of the supplied parameters. The parameters can include a list of job flow
-    /// IDs, job flow states, and restrictions on job flow creation date and time.</para> <para> Regardless of supplied parameters, only job flows
-    /// created within the last two months are returned.</para> <para> If no parameters are supplied, then job flows matching either of the
-    /// following criteria are returned:</para>
-    /// <ul>
-    /// <li>Job flows created and completed in the last two weeks</li>
-    /// <li> Job flows created within the last two months that are in one of the following states: <c>RUNNING</c> ,
-    /// <c>WAITING</c> ,
-    /// <c>SHUTTING_DOWN</c> ,
+    /// This API is deprecated and will eventually be removed. We recommend you use <a>ListClusters</a>,
+    ///         <a>DescribeCluster</a>, <a>ListSteps</a>, <a>ListInstanceGroups</a> and <a>ListBootstrapActions</a>
+    ///         instead.
     /// 
-    /// <c>STARTING</c> </li>
-    /// 
-    /// </ul>
-    /// <para> Amazon Elastic MapReduce can return a maximum of 512 job flow descriptions. </para>
+    ///       
+    /// <para>
+    ///  DescribeJobFlows returns a list of job flows that match all of the supplied parameters.
+    ///         The parameters can include a list of job flow IDs, job flow states, and restrictions
+    /// on job         flow creation date and time.
+    /// </para>
+    ///       
+    /// <para>
+    ///  Regardless of supplied parameters, only job flows created within the last two months
+    /// are         returned.
+    /// </para>
+    ///       
+    /// <para>
+    ///  If no parameters are supplied, then job flows matching either of the following criteria
+    ///         are returned:
+    /// </para>
+    ///       <ul>         <li>Job flows created and completed in the last two weeks</li>
+    ///         <li> Job flows created within the last two months that are in one of the following
+    /// states:               <code>RUNNING</code>, <code>WAITING</code>, <code>SHUTTING_DOWN</code>,
+    ///               <code>STARTING</code>         </li>      </ul>      
+    /// <para>
+    ///  Amazon Elastic MapReduce can return a maximum of 512 job flow descriptions. 
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.ElasticMapReduce.AmazonElasticMapReduce.DescribeJobFlows"/>
-    public class DescribeJobFlowsRequest : AmazonWebServiceRequest
+    public partial class DescribeJobFlowsRequest : AmazonWebServiceRequest
     {
-        private DateTime? createdAfter;
-        private DateTime? createdBefore;
-        private List<string> jobFlowIds = new List<string>();
-        private List<string> jobFlowStates = new List<string>();
+        private DateTime? _createdAfter;
+        private DateTime? _createdBefore;
+        private List<string> _jobFlowIds = new List<string>();
+        private List<string> _jobFlowStates = new List<string>();
+
 
         /// <summary>
+        /// Gets and sets the property CreatedAfter. 
+        /// <para>
         /// Return only job flows created after this date and time.
-        ///  
+        /// </para>
         /// </summary>
         public DateTime CreatedAfter
         {
-            get { return this.createdAfter ?? default(DateTime); }
-            set { this.createdAfter = value; }
+            get { return this._createdAfter.GetValueOrDefault(); }
+            set { this._createdAfter = value; }
         }
+
 
         /// <summary>
         /// Sets the CreatedAfter property
@@ -66,26 +82,29 @@ namespace Amazon.ElasticMapReduce.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobFlowsRequest WithCreatedAfter(DateTime createdAfter)
         {
-            this.createdAfter = createdAfter;
+            this._createdAfter = createdAfter;
             return this;
         }
-            
 
         // Check to see if CreatedAfter property is set
         internal bool IsSetCreatedAfter()
         {
-            return this.createdAfter.HasValue;
+            return this._createdAfter.HasValue; 
         }
 
+
         /// <summary>
+        /// Gets and sets the property CreatedBefore. 
+        /// <para>
         /// Return only job flows created before this date and time.
-        ///  
+        /// </para>
         /// </summary>
         public DateTime CreatedBefore
         {
-            get { return this.createdBefore ?? default(DateTime); }
-            set { this.createdBefore = value; }
+            get { return this._createdBefore.GetValueOrDefault(); }
+            set { this._createdBefore = value; }
         }
+
 
         /// <summary>
         /// Sets the CreatedBefore property
@@ -95,110 +114,111 @@ namespace Amazon.ElasticMapReduce.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobFlowsRequest WithCreatedBefore(DateTime createdBefore)
         {
-            this.createdBefore = createdBefore;
+            this._createdBefore = createdBefore;
             return this;
         }
-            
 
         // Check to see if CreatedBefore property is set
         internal bool IsSetCreatedBefore()
         {
-            return this.createdBefore.HasValue;
+            return this._createdBefore.HasValue; 
         }
 
+
         /// <summary>
-        /// Return only job flows whose job flow ID is contained in this list.
-        ///  
+        /// Gets and sets the property JobFlowIds. 
+        /// <para>
+        /// Return only job flows whose job flow ID is contained in this list. 
+        /// </para>
         /// </summary>
         public List<string> JobFlowIds
         {
-            get { return this.jobFlowIds; }
-            set { this.jobFlowIds = value; }
+            get { return this._jobFlowIds; }
+            set { this._jobFlowIds = value; }
         }
+
         /// <summary>
-        /// Adds elements to the JobFlowIds collection
+        /// Sets the JobFlowIds property
         /// </summary>
         /// <param name="jobFlowIds">The values to add to the JobFlowIds collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobFlowsRequest WithJobFlowIds(params string[] jobFlowIds)
         {
-            foreach (string element in jobFlowIds)
+            foreach (var element in jobFlowIds)
             {
-                this.jobFlowIds.Add(element);
+                this._jobFlowIds.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the JobFlowIds collection
+        /// Sets the JobFlowIds property
         /// </summary>
         /// <param name="jobFlowIds">The values to add to the JobFlowIds collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobFlowsRequest WithJobFlowIds(IEnumerable<string> jobFlowIds)
         {
-            foreach (string element in jobFlowIds)
+            foreach (var element in jobFlowIds)
             {
-                this.jobFlowIds.Add(element);
+                this._jobFlowIds.Add(element);
             }
-
             return this;
         }
-
         // Check to see if JobFlowIds property is set
         internal bool IsSetJobFlowIds()
         {
-            return this.jobFlowIds.Count > 0;
+            return this._jobFlowIds != null && this._jobFlowIds.Count > 0; 
         }
 
+
         /// <summary>
+        /// Gets and sets the property JobFlowStates. 
+        /// <para>
         /// Return only job flows whose state is contained in this list.
-        ///  
+        /// </para>
         /// </summary>
         public List<string> JobFlowStates
         {
-            get { return this.jobFlowStates; }
-            set { this.jobFlowStates = value; }
+            get { return this._jobFlowStates; }
+            set { this._jobFlowStates = value; }
         }
+
         /// <summary>
-        /// Adds elements to the JobFlowStates collection
+        /// Sets the JobFlowStates property
         /// </summary>
         /// <param name="jobFlowStates">The values to add to the JobFlowStates collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobFlowsRequest WithJobFlowStates(params string[] jobFlowStates)
         {
-            foreach (string element in jobFlowStates)
+            foreach (var element in jobFlowStates)
             {
-                this.jobFlowStates.Add(element);
+                this._jobFlowStates.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the JobFlowStates collection
+        /// Sets the JobFlowStates property
         /// </summary>
         /// <param name="jobFlowStates">The values to add to the JobFlowStates collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobFlowsRequest WithJobFlowStates(IEnumerable<string> jobFlowStates)
         {
-            foreach (string element in jobFlowStates)
+            foreach (var element in jobFlowStates)
             {
-                this.jobFlowStates.Add(element);
+                this._jobFlowStates.Add(element);
             }
-
             return this;
         }
-
         // Check to see if JobFlowStates property is set
         internal bool IsSetJobFlowStates()
         {
-            return this.jobFlowStates.Count > 0;
+            return this._jobFlowStates != null && this._jobFlowStates.Count > 0; 
         }
+
     }
 }
-    

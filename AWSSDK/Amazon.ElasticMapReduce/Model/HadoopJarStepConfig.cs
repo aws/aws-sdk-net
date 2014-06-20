@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,89 +18,84 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para>A job flow step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute
-    /// and waits for the job to finish or fail. </para>
+    /// A job flow step consisting of a JAR file whose main function will be executed. The
+    /// main         function submits a job for Hadoop to execute and waits for the job to
+    /// finish or fail.
     /// </summary>
-    public class HadoopJarStepConfig
+    public partial class HadoopJarStepConfig
     {
-        
-        private List<KeyValue> properties = new List<KeyValue>();
-        private string jar;
-        private string mainClass;
-        private List<string> args = new List<string>();
+        private List<string> _args = new List<string>();
+        private string _jar;
+        private string _mainClass;
+        private List<KeyValue> _properties = new List<KeyValue>();
+
 
         /// <summary>
-        /// A list of Java properties that are set when the step runs. You can use these properties to pass key value pairs to your main function.
-        ///  
-        /// </summary>
-        public List<KeyValue> Properties
-        {
-            get { return this.properties; }
-            set { this.properties = value; }
-        }
-        /// <summary>
-        /// Adds elements to the Properties collection
-        /// </summary>
-        /// <param name="properties">The values to add to the Properties collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public HadoopJarStepConfig WithProperties(params KeyValue[] properties)
-        {
-            foreach (KeyValue element in properties)
-            {
-                this.properties.Add(element);
-            }
-
-            return this;
-        }
-
-        /// <summary>
-        /// Adds elements to the Properties collection
-        /// </summary>
-        /// <param name="properties">The values to add to the Properties collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public HadoopJarStepConfig WithProperties(IEnumerable<KeyValue> properties)
-        {
-            foreach (KeyValue element in properties)
-            {
-                this.properties.Add(element);
-            }
-
-            return this;
-        }
-
-        // Check to see if Properties property is set
-        internal bool IsSetProperties()
-        {
-            return this.properties.Count > 0;
-        }
-
-        /// <summary>
-        /// A path to a JAR file run during the step.
-        ///  
+        /// Gets and sets the property Args. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 10280</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// A list of command line arguments passed to the JAR file's main function when executed.
+        /// </para>
+        /// </summary>
+        public List<string> Args
+        {
+            get { return this._args; }
+            set { this._args = value; }
+        }
+
+        /// <summary>
+        /// Sets the Args property
+        /// </summary>
+        /// <param name="args">The values to add to the Args collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public HadoopJarStepConfig WithArgs(params string[] args)
+        {
+            foreach (var element in args)
+            {
+                this._args.Add(element);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the Args property
+        /// </summary>
+        /// <param name="args">The values to add to the Args collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public HadoopJarStepConfig WithArgs(IEnumerable<string> args)
+        {
+            foreach (var element in args)
+            {
+                this._args.Add(element);
+            }
+            return this;
+        }
+        // Check to see if Args property is set
+        internal bool IsSetArgs()
+        {
+            return this._args != null && this._args.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Jar. 
+        /// <para>
+        /// A path to a JAR file run during the step.
         /// </para>
         /// </summary>
         public string Jar
         {
-            get { return this.jar; }
-            set { this.jar = value; }
+            get { return this._jar; }
+            set { this._jar = value; }
         }
+
 
         /// <summary>
         /// Sets the Jar property
@@ -110,39 +105,30 @@ namespace Amazon.ElasticMapReduce.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HadoopJarStepConfig WithJar(string jar)
         {
-            this.jar = jar;
+            this._jar = jar;
             return this;
         }
-            
 
         // Check to see if Jar property is set
         internal bool IsSetJar()
         {
-            return this.jar != null;
+            return this._jar != null;
         }
 
+
         /// <summary>
-        /// The name of the main class in the specified Java file. If not specified, the JAR file should specify a Main-Class in its manifest file.
-        ///  
+        /// Gets and sets the property MainClass. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 10280</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// The name of the main class in the specified Java file. If not specified, the JAR file
+        ///         should specify a Main-Class in its manifest file.
         /// </para>
         /// </summary>
         public string MainClass
         {
-            get { return this.mainClass; }
-            set { this.mainClass = value; }
+            get { return this._mainClass; }
+            set { this._mainClass = value; }
         }
+
 
         /// <summary>
         /// Sets the MainClass property
@@ -152,62 +138,64 @@ namespace Amazon.ElasticMapReduce.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HadoopJarStepConfig WithMainClass(string mainClass)
         {
-            this.mainClass = mainClass;
+            this._mainClass = mainClass;
             return this;
         }
-            
 
         // Check to see if MainClass property is set
         internal bool IsSetMainClass()
         {
-            return this.mainClass != null;
+            return this._mainClass != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Properties. 
+        /// <para>
+        /// A list of Java properties that are set when the step runs. You can use these properties
+        /// to         pass key value pairs to your main function.
+        /// </para>
+        /// </summary>
+        public List<KeyValue> Properties
+        {
+            get { return this._properties; }
+            set { this._properties = value; }
         }
 
         /// <summary>
-        /// A list of command line arguments passed to the JAR file's main function when executed.
-        ///  
+        /// Sets the Properties property
         /// </summary>
-        public List<string> Args
-        {
-            get { return this.args; }
-            set { this.args = value; }
-        }
-        /// <summary>
-        /// Adds elements to the Args collection
-        /// </summary>
-        /// <param name="args">The values to add to the Args collection </param>
+        /// <param name="properties">The values to add to the Properties collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public HadoopJarStepConfig WithArgs(params string[] args)
+        public HadoopJarStepConfig WithProperties(params KeyValue[] properties)
         {
-            foreach (string element in args)
+            foreach (var element in properties)
             {
-                this.args.Add(element);
+                this._properties.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the Args collection
+        /// Sets the Properties property
         /// </summary>
-        /// <param name="args">The values to add to the Args collection </param>
+        /// <param name="properties">The values to add to the Properties collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public HadoopJarStepConfig WithArgs(IEnumerable<string> args)
+        public HadoopJarStepConfig WithProperties(IEnumerable<KeyValue> properties)
         {
-            foreach (string element in args)
+            foreach (var element in properties)
             {
-                this.args.Add(element);
+                this._properties.Add(element);
             }
-
             return this;
         }
-
-        // Check to see if Args property is set
-        internal bool IsSetArgs()
+        // Check to see if Properties property is set
+        internal bool IsSetProperties()
         {
-            return this.args.Count > 0;
+            return this._properties != null && this._properties.Count > 0; 
         }
+
     }
 }

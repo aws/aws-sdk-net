@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// Returns information about the  CancelJobResult response and response metadata.
+    /// Returns information about the CancelJobResult response and response metadata.
     /// </summary>
     public class CancelJobResponse : AmazonWebServiceResponse
     {
-        private CancelJobResult cancelJobResult;
+        private CancelJobResult _cancelJobResult;
 
         /// <summary>
         /// Gets and sets the CancelJobResult property.
-        /// The response body contains a JSON object. If the job is successfully canceled, the value of Success is true.
+        /// Represents the output of a CancelJob operation.
         /// </summary>
         public CancelJobResult CancelJobResult
         {
             get
             {
-                if(this.cancelJobResult == null)
+                if(this._cancelJobResult == null)
                 {
-                    this.cancelJobResult = new CancelJobResult();
+                    this._cancelJobResult = new CancelJobResult();
                 }
-
-                return this.cancelJobResult;
+                return this._cancelJobResult;
             }
-            set { this.cancelJobResult = value; }
+            set { this._cancelJobResult = value; }
         }
     }
 }
-    

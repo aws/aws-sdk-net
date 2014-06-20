@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// Returns information about the  ListPresetsResult response and response metadata.
+    /// Returns information about the ListPresetsResult response and response metadata.
     /// </summary>
     public class ListPresetsResponse : AmazonWebServiceResponse
     {
-        private ListPresetsResult listPresetsResult;
+        private ListPresetsResult _listPresetsResult;
 
         /// <summary>
         /// Gets and sets the ListPresetsResult property.
-        /// The ListPresetsResponse structure.
+        /// Represents the output of a ListPresets operation.
         /// </summary>
         public ListPresetsResult ListPresetsResult
         {
             get
             {
-                if(this.listPresetsResult == null)
+                if(this._listPresetsResult == null)
                 {
-                    this.listPresetsResult = new ListPresetsResult();
+                    this._listPresetsResult = new ListPresetsResult();
                 }
-
-                return this.listPresetsResult;
+                return this._listPresetsResult;
             }
-            set { this.listPresetsResult = value; }
+            set { this._listPresetsResult = value; }
         }
     }
 }
-    

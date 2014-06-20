@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,39 +18,32 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para>A key value pair.</para>
+    /// A key value pair.
     /// </summary>
-    public class KeyValue
+    public partial class KeyValue
     {
-        
-        private string key;
-        private string value;
+        private string _key;
+        private string _value;
+
 
         /// <summary>
-        /// The unique identifier of a key value pair.
-        ///  
+        /// Gets and sets the property Key. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 10280</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// The unique identifier of a key value pair.
         /// </para>
         /// </summary>
         public string Key
         {
-            get { return this.key; }
-            set { this.key = value; }
+            get { return this._key; }
+            set { this._key = value; }
         }
+
 
         /// <summary>
         /// Sets the Key property
@@ -60,39 +53,29 @@ namespace Amazon.ElasticMapReduce.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public KeyValue WithKey(string key)
         {
-            this.key = key;
+            this._key = key;
             return this;
         }
-            
 
         // Check to see if Key property is set
         internal bool IsSetKey()
         {
-            return this.key != null;
+            return this._key != null;
         }
 
+
         /// <summary>
-        /// The value part of the identified key.
-        ///  
+        /// Gets and sets the property Value. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 10280</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// The value part of the identified key.
         /// </para>
         /// </summary>
         public string Value
         {
-            get { return this.value; }
-            set { this.value = value; }
+            get { return this._value; }
+            set { this._value = value; }
         }
+
 
         /// <summary>
         /// Sets the Value property
@@ -102,15 +85,15 @@ namespace Amazon.ElasticMapReduce.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public KeyValue WithValue(string value)
         {
-            this.value = value;
+            this._value = value;
             return this;
         }
-            
 
         // Check to see if Value property is set
         internal bool IsSetValue()
         {
-            return this.value != null;
+            return this._value != null;
         }
+
     }
 }

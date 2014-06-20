@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
@@ -28,54 +29,25 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Cancel Job Request Marshaller
+    /// CancelJob Request Marshaller
     /// </summary>       
-    internal class CancelJobRequestMarshaller : IMarshaller<IRequest, CancelJobRequest> 
+    public class CancelJobRequestMarshaller : IMarshaller<IRequest, CancelJobRequest> 
     {
-        
-
-        public IRequest Marshall(CancelJobRequest cancelJobRequest) 
+        public IRequest Marshall(CancelJobRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(cancelJobRequest, "AmazonElasticTranscoder");
-            string target = "EtsCustomerService.CancelJob";
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticTranscoder");
+            string target = ".CancelJob";
             request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
 
             request.HttpMethod = "DELETE";
-              
-            string uriResourcePath = "2012-09-25/jobs/{Id}"; 
-            if(cancelJobRequest.IsSetId())
-                uriResourcePath = uriResourcePath.Replace("{Id}", StringUtils.FromString(cancelJobRequest.Id) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{Id}", "" ); 
-            
-            if (uriResourcePath.Contains("?")) 
-            {
-                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
-                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
-        
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                }
-            }
-            
-            request.ResourcePath = uriResourcePath;
-            
-        
-            request.UseQueryString = true;
-        
 
+            string uriResourcePath = "/2012-09-25/jobs/{Id}";
+            uriResourcePath = uriResourcePath.Replace("{Id}", publicRequest.Id ?? string.Empty);
+            request.ResourcePath = uriResourcePath;
+            request.UseQueryString = true;
             return request;
         }
+
+
     }
 }

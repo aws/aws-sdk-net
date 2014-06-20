@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// Returns information about the  UpdatePipelineNotificationsResult response and response metadata.
+    /// Returns information about the UpdatePipelineNotificationsResult response and response metadata.
     /// </summary>
     public class UpdatePipelineNotificationsResponse : AmazonWebServiceResponse
     {
-        private UpdatePipelineNotificationsResult updatePipelineNotificationsResult;
+        private UpdatePipelineNotificationsResult _updatePipelineNotificationsResult;
 
         /// <summary>
         /// Gets and sets the UpdatePipelineNotificationsResult property.
-        /// The UpdatePipelineNotificationsResponse structure.
+        /// Represents the output of a UpdatePipelineNotifications operation.
         /// </summary>
         public UpdatePipelineNotificationsResult UpdatePipelineNotificationsResult
         {
             get
             {
-                if(this.updatePipelineNotificationsResult == null)
+                if(this._updatePipelineNotificationsResult == null)
                 {
-                    this.updatePipelineNotificationsResult = new UpdatePipelineNotificationsResult();
+                    this._updatePipelineNotificationsResult = new UpdatePipelineNotificationsResult();
                 }
-
-                return this.updatePipelineNotificationsResult;
+                return this._updatePipelineNotificationsResult;
             }
-            set { this.updatePipelineNotificationsResult = value; }
+            set { this._updatePipelineNotificationsResult = value; }
         }
     }
 }
-    

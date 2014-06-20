@@ -206,10 +206,31 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A list of filters used to match system-defined properties and user-defined tags associated 
-        /// with the specified Images.
-        /// For a complete reference to the available filter keys for this operation, see the
-        /// Amazon EC2 API reference.
+        /// One or more filters. <ul> <li> <c>architecture</c> - The image architecture (<c>i386</c> | <c>x86_64</c>). </li> <li>
+        /// <c>block-device-mapping.delete-on-termination</c> - A Boolean value that indicates whether the Amazon EBS volume is deleted on instance
+        /// termination. </li> <li> <c>block-device-mapping.device-name</c> - The device name for the Amazon EBS volume (for example, <c>/dev/sdh</c>).
+        /// </li> <li> <c>block-device-mapping.snapshot-id</c> - The ID of the snapshot used for the Amazon EBS volume. </li> <li>
+        /// <c>block-device-mapping.volume-size</c> - The volume size of the Amazon EBS volume, in GiB. </li> <li>
+        /// <c>block-device-mapping.volume-type</c> - The volume type of the Amazon EBS volume (<c>gp2</c> | <c>standard</c> | <c>io1</c>). </li> <li>
+        /// <c>description</c> - The description of the image (provided during image creation). </li> <li> <c>hypervisor</c> - The hypervisor type
+        /// (<c>ovm</c> | <c>xen</c>). </li> <li> <c>image-id</c> - The ID of the image. </li> <li> <c>image-type</c> - The image type (<c>machine</c> |
+        /// <c>kernel</c> | <c>ramdisk</c>). </li> <li> <c>is-public</c> - A Boolean that indicates whether the image is public. </li> <li>
+        /// <c>kernel-id</c> - The kernel ID. </li> <li> <c>manifest-location</c> - The location of the image manifest. </li> <li> <c>name</c> - The
+        /// name of the AMI (provided during image creation). </li> <li> <c>owner-alias</c> - The AWS account alias (for example, <c>amazon</c>). </li>
+        /// <li> <c>owner-id</c> - The AWS account ID of the image owner. </li> <li> <c>platform</c> - The platform. To only list Windows-based AMIs,
+        /// use <c>windows</c>. </li> <li> <c>product-code</c> - The product code. </li> <li> <c>product-code.type</c> - The type of the product code
+        /// (<c>devpay</c> | <c>marketplace</c>). </li> <li> <c>ramdisk-id</c> - The RAM disk ID. </li> <li> <c>root-device-name</c> - The name of the
+        /// root device volume (for example, <c>/dev/sda1</c>). </li> <li> <c>root-device-type</c> - The type of the root device volume (<c>ebs</c> |
+        /// <c>instance-store</c>). </li> <li> <c>state</c> - The state of the image (<c>available</c> | <c>pending</c> | <c>failed</c>). </li> <li>
+        /// <c>state-reason-code</c> - The reason code for the state change. </li> <li> <c>state-reason-message</c> - The message for the state change.
+        /// </li> <li> <c>tag</c>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. </li> <li> <c>tag-key</c> - The
+        /// key of a tag assigned to the resource. This filter is independent of the tag-value filter. For example, if you use both the filter
+        /// "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value
+        /// is), and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X, see the
+        /// <c>tag</c>:<i>key</i>=<i>value</i> filter. </li> <li> <c>tag-value</c> - The value of a tag assigned to the resource. This filter is
+        /// independent of the <c>tag-key</c> filter. </li> <li> <c>virtualization-type</c> - The virtualization type (<c>paravirtual</c> | <c>hvm</c>).
+        /// </li> </ul>
+        ///  
         /// </summary>
         [XmlElementAttribute(ElementName = "Filter")]
         public List<Filter> Filter

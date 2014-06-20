@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,31 +25,25 @@ namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
     /// Container for the parameters to the ReadJob operation.
-    /// <para>The ReadJob operation returns detailed information about a job.</para>
+    /// The ReadJob operation returns detailed information about a job.
     /// </summary>
-    /// <seealso cref="Amazon.ElasticTranscoder.AmazonElasticTranscoder.ReadJob"/>
-    public class ReadJobRequest : AmazonWebServiceRequest
+    public partial class ReadJobRequest : AmazonWebServiceRequest
     {
-        private string id;
+        private string _id;
+
 
         /// <summary>
-        /// The identifier of the job for which you want to get detailed information.
-        ///  
+        /// Gets and sets the property Id. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>^\d{13}-\w{6}$</description>
-        ///     </item>
-        /// </list>
+        /// The identifier of the job for which you want to get detailed information.
         /// </para>
         /// </summary>
         public string Id
         {
-            get { return this.id; }
-            set { this.id = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
+
 
         /// <summary>
         /// Sets the Id property
@@ -59,16 +53,15 @@ namespace Amazon.ElasticTranscoder.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReadJobRequest WithId(string id)
         {
-            this.id = id;
+            this._id = id;
             return this;
         }
-            
 
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;
+            return this._id != null;
         }
+
     }
 }
-    

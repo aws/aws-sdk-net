@@ -26,17 +26,13 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Requests a reboot of one or more instances.
+    /// Container for the parameters to the RebootInstances operation.
+    /// <para>Requests a reboot of one or more instances. This operation is asynchronous; it only queues a request to reboot the specified
+    /// instances. The operation succeeds if the instances are valid and belong to you. Requests to reboot terminated instances are ignored.</para>
+    /// <para>If a Linux/Unix instance does not cleanly shut down within four minutes, Amazon EC2 performs a hard reboot.</para> <para>For more
+    /// information about troubleshooting, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html" >Getting Console
+    /// Output and Rebooting Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
     /// </summary>
-    /// <remarks>
-    /// This operation is asynchronous; it only queues a request to
-    /// reboot the specified instance(s). The operation will succeed if the instances
-    /// are valid and belong to you. Requests to reboot terminated instances
-    /// are ignored.
-    ///
-    /// Note - if a Linux/UNIX instance does not cleanly shut
-    /// down within four minutes, Amazon EC2 will perform a hard reboot.
-    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class RebootInstancesRequest : EC2Request
     {    

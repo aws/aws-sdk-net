@@ -464,18 +464,28 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Attaches an Amazon EBS volume to a running instance and exposes it with the
-        /// specified device name.
+        /// <para>Attaches an Amazon EBS volume to a running or stopped instance and exposes it to the instance with the specified device name.</para>
+        /// <para>Encrypted Amazon EBS volumes may only be attached to instances that support Amazon EBS encryption. For more information, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html" >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute
+        /// Cloud User Guide</i> .</para> <para>For a list of supported device names, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html" >Attaching an Amazon EBS Volume to an Instance</a> . Any
+        /// device names that aren't reserved for instance store volumes can be used for Amazon EBS volumes. For more information, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html" >Amazon EC2 Instance Store</a> in the <i>Amazon Elastic
+        /// Compute Cloud User Guide</i> .</para> <para>If a volume has an AWS Marketplace product code:</para>
+        /// <ul>
+        /// <li>The volume can only be attached as the root device of a stopped instance.</li>
+        /// <li>You must be subscribed to the AWS Marketplace code that is on the volume.</li>
+        /// <li>The configuration (instance type, operating system) of the instance must support that specific AWS Marketplace code. For example, you
+        /// cannot take a volume from a Windows instance and attach it to a Linux instance.</li>
+        /// <li>AWS Marketplace product codes are copied from the volume to the instance.</li>
+        /// 
+        /// </ul>
+        /// <para>For an overview of the AWS Marketplace, see <a href="https://aws.amazon.com/marketplace/help/200900000"
+        /// >https://aws.amazon.com/marketplace/help/200900000</a> . For more information about how to use the AWS Marketplace, see <a
+        /// href="https://aws.amazon.com/marketplace" >AWS Marketplace</a> .</para> <para>For more information about Amazon EBS volumes, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html" >Attaching Amazon EBS Volumes</a> in the <i>Amazon
+        /// Elastic Compute Cloud User Guide</i> .</para>
         /// </summary>
-        /// <remarks>
-        /// Windows instances currently support devices xvda through xvdp. Devices
-        /// xvda and xvdb are reserved by the operating system, xvdc is
-        /// assigned to drive C:\, and, depending on the instance type, devices xvdd through
-        /// xvde might be reserved by the instance stores. Any device that is not
-        /// reserved can be attached to an Amazon EBS volume. For a list of
-        /// devices that are reserved by the instance stores, go to the Amazon
-        /// Elastic Compute Cloud Developer Guide.
-        /// </remarks>
         /// <param name="request">Attach Volume  request</param>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
@@ -671,27 +681,21 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Creates a snapshot of an Amazon EBS volume and stores it in Amazon S3.
-        /// You can use snapshots for backups, to make identical copies of instance
-        /// devices, and to save data before shutting down an instance.
+        /// <para>Creates a snapshot of an Amazon EBS volume and stores it in Amazon S3. You can use snapshots for backups, to make copies of Amazon EBS
+        /// volumes, and to save data before shutting down an instance.</para> <para>When a snapshot is created, any AWS Marketplace product codes that
+        /// are associated with the source volume are propagated to the snapshot.</para> <para>You can take a snapshot of an attached volume that is in
+        /// use. However, snapshots only capture data that has been written to your Amazon EBS volume at the time the snapshot command is issued; this
+        /// may exclude any data that has been cached by any applications or the operating system. If you can pause any file writes to the volume long
+        /// enough to take a snapshot, your snapshot should be complete. However, if you cannot pause all file writes to the volume, you should unmount
+        /// the volume from within the instance, issue the snapshot command, and then remount the volume to ensure a consistent and complete snapshot.
+        /// You may remount and use your volume while the snapshot status is <c>pending</c> .</para> <para>To create a snapshot for Amazon EBS volumes
+        /// that serve as root devices, you should stop the instance before taking the snapshot.</para> <para>Snapshots that are taken from encrypted
+        /// volumes are automatically encrypted. Volumes that are created from encrypted snapshots are also automatically encrypted. Your encrypted
+        /// volumes and any associated snapshots always remain protected.</para> <para>For more information, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html" >Amazon Elastic Block Store</a> and <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html" >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute
+        /// Cloud User Guide</i> .</para>
         /// </summary>
-        /// <remarks>
-        /// When taking a snapshot of a file system, we recommend unmounting it
-        /// first. This ensures the file system metadata is in a consistent state,
-        /// that the 'mounted indicator' is cleared, and that all applications
-        /// using that file system are stopped and in a consistent state. Some file
-        /// systems, such as xfs, can freeze and unfreeze activity so a
-        /// snapshot can be made without unmounting.
-        ///
-        /// For Linux/UNIX, enter the
-        /// following command from the command line.
-        ///
-        /// umount -d /dev/sdh
-        ///
-        /// For Windows, open Disk Management, right-click the volume to unmount,
-        /// and select Change Drive Letter and Path. Then, select the mount
-        /// point to remove and click Remove.
-        /// </remarks>
         /// <param name="request">Create Snapshot  request</param>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
@@ -717,9 +721,14 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Creates a new Amazon EBS volume that can be attached to any Amazon EC2
-        /// instance in the same Availability Zone.
-        /// Any AWS Marketplace product codes from the snapshot are propagated to the volume.
+        /// <para>Creates an Amazon EBS volume that can be attached to an instance in the same Availability Zone. The volume is created in the specified
+        /// region.</para> <para>You can create a new empty volume or restore a volume from an Amazon EBS snapshot. Any AWS Marketplace product codes
+        /// from the snapshot are propagated to the volume.</para> <para>You can create encrypted volumes with the <c>Encrypted</c> parameter. Encrypted
+        /// volumes may only be attached to instances that support Amazon EBS encryption. Volumes that are created from encrypted snapshots are also
+        /// automatically encrypted. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html" >Amazon
+        /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para> <para>For more information, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html" >Creating or Restoring an Amazon EBS Volume</a> in the
+        /// <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
         /// </summary>
         /// <param name="request">Create Volume  request</param>
         /// <exception cref="T:System.Net.WebException"></exception>
@@ -820,8 +829,10 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Deletes an Amazon EBS volume that you own.
-        /// The volume must be in the available state (not attached to an instance).
+        /// <para>Deletes the specified Amazon EBS volume. The volume must be in the <c>available</c> state (not attached to an instance).</para>
+        /// <para><b>NOTE:</b> The volume may remain in the deleting state for several minutes. </para> <para>For more information, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html" >Deleting an Amazon EBS Volume</a> in the <i>Amazon
+        /// Elastic Compute Cloud User Guide</i> .</para>
         /// </summary>
         /// <param name="request">Delete Volume  request</param>
         /// <exception cref="T:System.Net.WebException"></exception>
@@ -1008,12 +1019,46 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describes the status of an Amazon Elastic Compute Cloud (Amazon EC2) instance.
-        /// Instance status provides information about two types of scheduled events for
-        /// an instance that may require your attention, Scheduled Reboot and Scheduled Retirement.
-        /// Only information about instances in the running state is returned.
-        /// </summary>
-        /// <param name="request">Describe Instance Status request</param>
+        /// <para>Describes the status of one or more instances, including any scheduled events.</para> <para>Instance status has two main
+        /// components:</para>
+        /// <ul>
+        /// <li> <para>System Status reports impaired functionality that stems from issues related to the systems that support an instance, such as
+        /// such as hardware failures and network connectivity problems. This call reports such problems as impaired reachability.</para> </li>
+        /// <li> <para>Instance Status reports impaired functionality that arises from problems internal to the instance. This call reports such
+        /// problems as impaired reachability.</para> </li>
+        /// 
+        /// </ul>
+        /// <para>Instance status provides information about four types of scheduled events for an instance that may require your attention:</para>
+        /// <ul>
+        /// <li> <para>Scheduled Reboot: When Amazon EC2 determines that an instance must be rebooted, the instances status returns one of two event
+        /// codes: <c>system-reboot</c> or <c>instance-reboot</c> . System reboot commonly occurs if certain maintenance or upgrade operations require a
+        /// reboot of the underlying host that supports an instance. Instance reboot commonly occurs if the instance must be rebooted, rather than the
+        /// underlying host. Rebooting events include a scheduled start and end time.</para> </li>
+        /// <li> <para>System Maintenance: When Amazon EC2 determines that an instance requires maintenance that requires power or network impact, the
+        /// instance status is the event code <c>system-maintenance</c> . System maintenance is either power maintenance or network maintenance. For
+        /// power maintenance, your instance will be unavailable for a brief period of time and then rebooted. For network maintenance, your instance
+        /// will experience a brief loss of network connectivity. System maintenance events include a scheduled start and end time. You will also be
+        /// notified by email if one of your instances is set for system maintenance. The email message indicates when your instance is scheduled for
+        /// maintenance.</para> </li>
+        /// <li> <para>Scheduled Retirement: When Amazon EC2 determines that an instance must be shut down, the instance status is the event code
+        /// <c>instance-retirement</c> . Retirement commonly occurs when the underlying host is degraded and must be replaced. Retirement events include
+        /// a scheduled start and end time. You will also be notified by email if one of your instances is set to retiring. The email message indicates
+        /// when your instance will be permanently retired.</para> </li>
+        /// <li> <para>Scheduled Stop: When Amazon EC2 determines that an instance must be shut down, the instances status returns an event code called
+        /// <c>instance-stop</c> .
+        /// Stop events include a scheduled start and end time. You will also be notified by email if one of your instances is set to stop. The
+        /// email message indicates when your instance will be stopped.</para> </li>
+        /// 
+        /// </ul>
+        /// <para>When your instance is retired, it will either be terminated (if its root device type is the instance-store) or stopped (if its root
+        /// device type is an EBS volume). Instances stopped due to retirement will not be restarted, but you can do so manually. You can also avoid
+        /// retirement of EBS-backed instances by manually restarting your instance when its event code is <c>instance-retirement</c> . This ensures
+        /// that your instance is started on a different underlying host.</para> <para>For more information about failed status checks, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html" >Troubleshooting Instances with Failed Status
+        /// Checks</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> . For more information about working with scheduled events, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#schedevents_actions" >Working with an
+        /// Instance That Has a Scheduled Event</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
+        /// </summary>        /// <param name="request">Describe Instance Status request</param>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Describe Instance Status response from the service</returns>
@@ -1389,17 +1434,12 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Requests a reboot of one or more instances.
+        /// <para>Requests a reboot of one or more instances. This operation is asynchronous; it only queues a request to reboot the specified
+        /// instances. The operation succeeds if the instances are valid and belong to you. Requests to reboot terminated instances are ignored.</para>
+        /// <para>If a Linux/Unix instance does not cleanly shut down within four minutes, Amazon EC2 performs a hard reboot.</para> <para>For more
+        /// information about troubleshooting, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html" >Getting Console
+        /// Output and Rebooting Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
         /// </summary>
-        /// <remarks>
-        /// This operation is asynchronous; it only queues a request to
-        /// reboot the specified instance(s). The operation will succeed if the instances
-        /// are valid and belong to you. Requests to reboot terminated instances
-        /// are ignored.
-        ///
-        /// Note - if a Linux/UNIX instance does not cleanly shut
-        /// down within four minutes, Amazon EC2 will perform a hard reboot.
-        /// </remarks>
         /// <param name="request">Reboot Instances  request</param>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
@@ -1516,73 +1556,21 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Launches a specified number of instances of an AMI for which you have permissions.
+        /// <para>Launches the specified number of instances using an AMI for which you have permissions.</para> <para>When you launch an instance, it
+        /// enters the <c>pending</c> state. After the instance is ready for you, it enters the <c>running</c> state. To check the state of your
+        /// instance, call DescribeInstances.</para> <para>If you don't specify a security group when launching an instance, Amazon EC2 uses the default
+        /// security group. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html" >Security
+        /// Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para> <para>Linux instances have access to the public key of the key
+        /// pair at boot. You can use this key to provide secure access to the instance. Amazon EC2 public images use this feature to provide secure
+        /// access without passwords. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html" >Key
+        /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para> <para>You can provide optional user data when launching an
+        /// instance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html" >Instance
+        /// Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para> <para>If any of the AMIs have a product code attached for which
+        /// the user has not subscribed, <c>RunInstances</c> fails.</para> <para>For more information about troubleshooting, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html" >What To Do If An Instance Immediately
+        /// Terminates</a> , and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html" >Troubleshooting
+        /// Connecting to Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
         /// </summary>
-        /// <remarks>
-        /// If Amazon EC2 cannot launch the minimum number AMIs you request, no
-        /// instances will be launched. If there is insufficient capacity to
-        /// launch the maximum number of AMIs you request, Amazon EC2 launches the minimum
-        /// number specified for each AMI and allocate the remaining available
-        /// instances using round robin.
-        ///
-        /// In the following example, Libby generates a request to
-        /// launch two images (database and web_server):
-        ///
-        /// Libby runs the RunInstances operation to launch database instances
-        /// (min. 10, max. 15) and web_server instances (min. 30, max. 40).
-        ///
-        /// Because there are currently 30 instances available and Libby needs a
-        /// minimum of 40, no instances are launched.
-        ///
-        /// Libby adjusts the number of instances she needs and runs the
-        /// RunInstances operation to launch database
-        /// instances (min. 5, max. 10) and web_server
-        /// instances (min. 20, max. 40).
-        ///
-        /// Amazon EC2 launches the minimum number of instances for each
-        /// AMI (5 database, 20 web_server).
-        ///
-        /// The remaining 5 instances are allocated using round robin.
-        ///
-        /// Libby adjusts the number of instances she needs and runs the RunInstances
-        /// operation again to launch database instances (min. 5, max. 10) and
-        /// web_server instances (min. 20, max. 40).
-        ///
-        /// Note - every instance is launched in a security group
-        /// (created using the CreateSecurityGroup operation.)
-        ///
-        /// You can provide an optional key pair ID for each image in the launch request
-        /// (created using the CreateKeyPair operation). All instances that
-        /// are created from images that use this key pair will have access to
-        /// the associated public key at boot. You can use this key to provide
-        /// secure access to an instance of an image on a per-instance basis.
-        /// Amazon EC2 public images use this feature to provide secure access
-        /// without passwords.
-        ///
-        /// Important - launching public images without a key pair ID will leave them
-        /// inaccessible.
-        ///
-        /// The public key material is made available to the instance at boot
-        /// time by placing it in the openssh_id.pub file on a logical device that is exposed
-        /// to the instance as /dev/sda2 (the instance store). The format of this
-        /// file is suitable for use as an entry within ~/.ssh/authorized_keys
-        /// (the OpenSSH format). This can be done at boot (e.g., as part of rc.local) allowing
-        /// for secure access without passwords.
-        ///
-        /// Optional user data can be provided in the launch request. All instances that
-        /// collectively comprise the launch request have access to this data.
-        /// For more information, go the Amazon Elastic Compute Cloud Developer
-        /// Guide.
-        ///
-        /// Note - if any of the AMIs have a product code attached for
-        /// which the user has not subscribed, the RunInstances call will fail.
-        ///
-        /// Important - we strongly recommend using the 2.6.18 Xen stock
-        /// kernel with High-CPU and High-Memory instances. Although the
-        /// default Amazon EC2 kernels will work, the new kernels provide
-        /// greater stability and performance for these instance types. For more
-        /// information about kernels, go the Amazon Elastic Compute Cloud Developer Guide
-        /// </remarks>
         /// <param name="request">Run Instances  request</param>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
@@ -1593,42 +1581,22 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Stops an Amazon EBS-backed instance.
+        /// <para>Stops an Amazon EBS-backed instance. Each time you transition an instance from stopped to started, Amazon EC2 charges a full instance
+        /// hour, even if transitions happen multiple times within a single hour.</para> <para>You can't start or stop Spot Instances.</para>
+        /// <para>Instances that use Amazon EBS volumes as their root devices can be quickly stopped and started. When an instance is stopped, the
+        /// compute resources are released and you are not billed for hourly instance usage. However, your root partition Amazon EBS volume remains,
+        /// continues to persist your data, and you are charged for Amazon EBS volume usage. You can restart your instance at any time.</para>
+        /// <para>Before stopping an instance, make sure it is in a state from which it can be restarted. Stopping an instance does not preserve data
+        /// stored in RAM.</para> <para>Performing this operation on an instance that uses an instance store as its root device returns an error.</para>
+        /// <para>You can stop, start, and terminate EBS-backed instances. You can only terminate instance store-backed instances. What happens to an
+        /// instance differs if you stop it or terminate it. For example, when you stop an instance, the root device and any other devices attached to
+        /// the instance persist. When you terminate an instance, the root device and any other devices attached during the instance launch are
+        /// automatically deleted. For more information about the differences between stopping and terminating instances, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html" >Instance Lifecycle</a> in the <i>Amazon Elastic
+        /// Compute Cloud User Guide</i> .</para> <para>For more information about troubleshooting, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html" >Troubleshooting Stopping Your Instance</a>
+        /// in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
         /// </summary>
-        /// <remarks>
-        /// <para>
-        /// Each time you transition an instance from stopped to started,
-        /// we charge a full instance hour, even if transitions happen multiple
-        /// times within a single hour.
-        /// </para>
-        /// <para>
-        /// Although Spot Instances can use Amazon EBS-backed AMIs, they don't
-        /// support Stop/Start. In other words, you can't stop and start Spot
-        /// Instances launched from an AMI with an Amazon EBS root device.
-        /// </para>
-        /// <para>
-        /// Instances that use Amazon EBS volumes as their root devices can be
-        /// quickly stopped and started. When an instance is stopped, the compute
-        /// resources are released and you are not billed for hourly instance usage.
-        /// However, your root partition Amazon EBS volume remains, continues to
-        /// persist your data, and you are charged for Amazon EBS volume usage.
-        /// You can restart your instance at any time.
-        /// </para>
-        /// <para>
-        /// Before stopping an instance, make sure it is in a state from which it
-        /// can be restarted. Stopping an instance does not preserve data stored
-        /// in RAM. Performing this operation on an instance that uses an instance
-        /// store as its root device returns an error.
-        /// </para>
-        /// <para>
-        /// You can stop, start, and terminate EBS-backed instances. You can only
-        /// terminate S3-backed instances. What happens to an instance differs
-        /// if you stop it or terminate it. For example, when you stop an instance,
-        /// the root device and any other devices attached to the instance persist.
-        /// When you terminate an instance, the root device and any other devices
-        /// attached during the instance launch are automatically deleted.
-        /// </para>
-        /// </remarks>
         /// <param name="request">Stop Instances  request</param>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
@@ -1708,28 +1676,18 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Shuts down one or more instances.
+        /// <para>Shuts down one or more instances. This operation is idempotent; if you terminate an instance more than once, each call
+        /// succeeds.</para> <para>Terminated instances remain visible after termination (for approximately one hour).</para> <para>By default, Amazon
+        /// EC2 deletes all Amazon EBS volumes that were attached when the instance launched. Volumes attached after instance launch continue
+        /// running.</para> <para>You can stop, start, and terminate EBS-backed instances. You can only terminate instance store-backed instances. What
+        /// happens to an instance differs if you stop it or terminate it. For example, when you stop an instance, the root device and any other devices
+        /// attached to the instance persist. When you terminate an instance, the root device and any other devices attached during the instance launch
+        /// are automatically deleted. For more information about the differences between stopping and terminating instances, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html" >Instance Lifecycle</a> in the <i>Amazon Elastic
+        /// Compute Cloud User Guide</i> .</para> <para>For more information about troubleshooting, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html" >Troubleshooting Terminating Your
+        /// Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
         /// </summary>
-        /// <remarks>
-        /// <para>
-        /// This operation is idempotent; if you terminate an instance more than
-        /// once, each call will succeed. Terminated instances will remain visible
-        /// after termination (approximately one hour).
-        /// </para>
-        /// <para>
-        /// By default, Amazon EC2 deletes all Amazon EBS volumes that were attached
-        /// when the instance launched. Amazon EBS volumes attached after instance
-        /// launch continue running.
-        /// </para>
-        /// <para>
-        /// You can stop, start, and terminate EBS-backed instances. You can only
-        /// terminate S3-backed instances. What happens to an instance differs if
-        /// you stop it or terminate it. For example, when you stop an instance,
-        /// the root device and any other devices attached to the instance persist.
-        /// When you terminate an instance, the root device and any other devices
-        /// attached during the instance launch are automatically deleted.
-        /// </para>
-        /// </remarks>
         /// <param name="request">Terminate Instances  request</param>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
@@ -2282,31 +2240,25 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Creates a set of DHCP options that you can then associate with one or more VPCs, causing all
-        /// existing and new instances that you launch in those VPCs to use the set of DHCP options.
+        /// <para>Creates a set of DHCP options for your VPC. After creating the set, you must associate it with the VPC, causing all existing and new
+        /// instances that you launch in the VPC to use this set of DHCP options. The following are the individual DHCP options you can specify. For
+        /// more information about the options, see <a href="http://www.ietf.org/rfc/rfc2132.txt" >RFC 2132</a> .</para>
+        /// <ul>
+        /// <li> <c>domain-name-servers</c> - The IP addresses of up to four domain name servers, or <c>AmazonProvidedDNS</c> . The default DHCP option
+        /// set specifies <c>AmazonProvidedDNS</c> . If specifying more than one domain name server, specify the IP addresses in a single parameter,
+        /// separated by commas.</li>
+        /// <li> <c>domain-name</c> - If you're using AmazonProvidedDNS in <c>us-east-1</c> ,
+        /// specify <c>ec2.internal</c> . If you're using AmazonProvidedDNS in another region, specify <c>region.compute.internal</c> (for
+        /// example, <c>ap-northeast-1.compute.internal</c> ). Otherwise, specify a domain name (for example, <c>MyCompany.com</c> ).</li>
+        /// <li> <c>ntp-servers</c> - The IP addresses of up to four Network Time Protocol (NTP) servers.</li>
+        /// <li> <c>netbios-name-servers</c> - The IP addresses of up to four NetBIOS name servers.</li>
+        /// <li> <c>netbios-node-type</c> - The NetBIOS node type (1, 2, 4, or 8). We recommend that you specify 2 (broadcast and multicast are not
+        /// currently supported). For more information about these node types, see <a href="http://www.ietf.org/rfc/rfc2132.txt" >RFC 2132</a> . </li>
+        /// 
+        /// </ul>
+        /// <para>For more information about DHCP options, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html"
+        /// >DHCP Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i> .</para>
         /// </summary>
-        /// <remarks>
-        /// The following are DHCP options you can specify.
-        ///
-        /// Options:
-        /// 1. domain-name
-        /// A domain name of your choice (e.g., mydomain.com).
-        ///
-        /// 2. domain-name-servers
-        /// The IP address of a domain name server (e.g., 10.2.5.1).
-        /// You can specify up to four addresses.
-        ///
-        /// 3. ntp-servers
-        /// The IP address of a Network Time Protocol (NTP)
-        /// server (e.g., 10.4.6.1). You can specify up to four addresses.
-        ///
-        /// 4. netbios-name-servers
-        /// The IP address of a NetBIOS name server (e.g., 10.8.9.5).
-        /// You can specify up to four addresses.
-        ///
-        /// 5. netbios-node-type
-        /// Value indicating the NetBIOS node type (1, 2, 4, or 8).
-        /// </remarks>
         /// <param name="request">Create Dhcp Options  request</param>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
@@ -2450,7 +2402,9 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Creates a new import instance task using metadata from the specified disk image.
+        /// <para>Creates an import instance task using metadata from the specified disk image. After importing the image, you then upload it using the
+        /// ec2-import-volume command in the EC2 command line tools. For more information, see Using the Command Line Tools to Import Your Virtual
+        /// Machine to Amazon EC2 in the Amazon Elastic Compute Cloud User Guide.</para>
         /// </summary>
         /// <param name="request">Import Instance  request</param>
         /// <exception cref="T:System.Net.WebException"></exception>
@@ -2462,7 +2416,10 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Creates a new import volume task using metadata from the specified disk image.
+        /// <para>Creates an import volume task using metadata from the specified disk image. After importing the image, you then upload it using the
+        /// ec2-import-volume command in the Amazon EC2 command-line interface (CLI) tools. For more information, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html" >Using the Command Line Tools to Import Your
+        /// Virtual Machine to Amazon EC2</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
         /// </summary>
         /// <param name="request">Import Volume  request</param>
         /// <exception cref="T:System.Net.WebException"></exception>
@@ -3225,7 +3182,12 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Copies a snapshot from a source region to the current region.
+        /// <para>Copies a point-in-time snapshot of an Amazon EBS volume and stores it in Amazon S3. You can copy the snapshot within the same region
+        /// or from one region to another. You can use the snapshot to create Amazon EBS volumes or Amazon Machine Images (AMIs). The snapshot is copied
+        /// to the regional endpoint that you send the HTTP request to.</para> <para>Copies of encrypted Amazon EBS snapshots remain encrypted. Copies
+        /// of unencrypted snapshots remain unencrypted.</para> <para>For more information, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html" >Copying an Amazon EBS Snapshot</a> in the <i>Amazon
+        /// Elastic Compute Cloud User Guide</i> .</para>
         /// </summary>
         /// <param name="request">Copy Snapshot request</param>
         /// <exception cref="T:System.Net.WebException"></exception>
@@ -3237,7 +3199,10 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Copies a image from a source region to the current region.
+        /// <para>Initiates the copy of an AMI from the specified source region to the region in which the request was made. You specify the destination
+        /// region by using its endpoint when making the request. AMIs that use encrypted Amazon EBS snapshots cannot be copied with this method.</para>
+        /// <para>For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html" >Copying AMIs</a> in the
+        /// <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
         /// </summary>
         /// <param name="request">Copy Image request</param>
         /// <exception cref="T:System.Net.WebException"></exception>
@@ -3392,9 +3357,9 @@ namespace Amazon.EC2
         /// <summary>
         /// <para>Requests a VPC peering connection between two VPCs: a requester VPC that you own and a peer VPC with which to create the connection.
         /// The peer VPC can belong to another AWS account. The requester VPC and peer VPC cannot have overlapping CIDR blocks.</para> <para>The owner
-        /// of the peer VPC must accept the the peering request to activate the peering connection. The VPC peering connection request expires after 7
-        /// days, after which it cannot be accepted or rejected.</para> <para>A <c>CreateVpcPeeringConnection</c> request between VPCs with overlapping
-        /// CIDR blocks results in the VPC peering connection having a status of <c>failed</c> .</para>
+        /// of the peer VPC must accept the peering request to activate the peering connection. The VPC peering connection request expires after 7 days,
+        /// after which it cannot be accepted or rejected.</para> <para>A <c>CreateVpcPeeringConnection</c> request between VPCs with overlapping CIDR
+        /// blocks results in the VPC peering connection having a status of <c>failed</c> .</para>
         /// </summary>
         /// <param name="request">CreateVpcPeeringConnection request</param>
         /// <exception cref="T:System.Net.WebException"></exception>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
@@ -28,54 +29,25 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Read Pipeline Request Marshaller
+    /// ReadPipeline Request Marshaller
     /// </summary>       
-    internal class ReadPipelineRequestMarshaller : IMarshaller<IRequest, ReadPipelineRequest> 
+    public class ReadPipelineRequestMarshaller : IMarshaller<IRequest, ReadPipelineRequest> 
     {
-        
-
-        public IRequest Marshall(ReadPipelineRequest readPipelineRequest) 
+        public IRequest Marshall(ReadPipelineRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(readPipelineRequest, "AmazonElasticTranscoder");
-            string target = "EtsCustomerService.ReadPipeline";
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticTranscoder");
+            string target = ".ReadPipeline";
             request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
 
             request.HttpMethod = "GET";
-              
-            string uriResourcePath = "2012-09-25/pipelines/{Id}"; 
-            if(readPipelineRequest.IsSetId())
-                uriResourcePath = uriResourcePath.Replace("{Id}", StringUtils.FromString(readPipelineRequest.Id) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{Id}", "" ); 
-            
-            if (uriResourcePath.Contains("?")) 
-            {
-                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
-                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
-        
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                }
-            }
-            
-            request.ResourcePath = uriResourcePath;
-            
-        
-            request.UseQueryString = true;
-        
 
+            string uriResourcePath = "/2012-09-25/pipelines/{Id}";
+            uriResourcePath = uriResourcePath.Replace("{Id}", publicRequest.Id ?? string.Empty);
+            request.ResourcePath = uriResourcePath;
+            request.UseQueryString = true;
             return request;
         }
+
+
     }
 }

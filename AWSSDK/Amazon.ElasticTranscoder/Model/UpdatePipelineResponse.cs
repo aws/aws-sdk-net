@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// Returns information about the  UpdatePipelineResult response and response metadata.
+    /// Returns information about the UpdatePipelineResult response and response metadata.
     /// </summary>
     public class UpdatePipelineResponse : AmazonWebServiceResponse
     {
-        private UpdatePipelineResult updatePipelineResult;
+        private UpdatePipelineResult _updatePipelineResult;
 
         /// <summary>
         /// Gets and sets the UpdatePipelineResult property.
-        /// When you update a pipeline, Elastic Transcoder returns the values that you specified in the request.
+        /// Represents the output of a UpdatePipeline operation.
         /// </summary>
         public UpdatePipelineResult UpdatePipelineResult
         {
             get
             {
-                if(this.updatePipelineResult == null)
+                if(this._updatePipelineResult == null)
                 {
-                    this.updatePipelineResult = new UpdatePipelineResult();
+                    this._updatePipelineResult = new UpdatePipelineResult();
                 }
-
-                return this.updatePipelineResult;
+                return this._updatePipelineResult;
             }
-            set { this.updatePipelineResult = value; }
+            set { this._updatePipelineResult = value; }
         }
     }
 }
-    

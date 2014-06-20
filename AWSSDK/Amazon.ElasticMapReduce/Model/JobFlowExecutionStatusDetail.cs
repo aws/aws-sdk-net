@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,68 +18,36 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para>Describes the status of the job flow.</para>
+    /// Describes the status of the job flow.
     /// </summary>
-    public class JobFlowExecutionStatusDetail
+    public partial class JobFlowExecutionStatusDetail
     {
-        
-        private string state;
-        private DateTime? creationDateTime;
-        private DateTime? startDateTime;
-        private DateTime? readyDateTime;
-        private DateTime? endDateTime;
-        private string lastStateChangeReason;
+        private DateTime? _creationDateTime;
+        private DateTime? _endDateTime;
+        private string _lastStateChangeReason;
+        private DateTime? _readyDateTime;
+        private DateTime? _startDateTime;
+        private string _state;
+
 
         /// <summary>
-        /// The state of the job flow.
-        ///  
+        /// Gets and sets the property CreationDateTime. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>COMPLETED, FAILED, TERMINATED, RUNNING, SHUTTING_DOWN, STARTING, WAITING, BOOTSTRAPPING</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string State
-        {
-            get { return this.state; }
-            set { this.state = value; }
-        }
-
-        /// <summary>
-        /// Sets the State property
-        /// </summary>
-        /// <param name="state">The value to set for the State property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public JobFlowExecutionStatusDetail WithState(string state)
-        {
-            this.state = state;
-            return this;
-        }
-            
-
-        // Check to see if State property is set
-        internal bool IsSetState()
-        {
-            return this.state != null;
-        }
-
-        /// <summary>
         /// The creation date and time of the job flow.
-        ///  
+        /// </para>
         /// </summary>
         public DateTime CreationDateTime
         {
-            get { return this.creationDateTime ?? default(DateTime); }
-            set { this.creationDateTime = value; }
+            get { return this._creationDateTime.GetValueOrDefault(); }
+            set { this._creationDateTime = value; }
         }
+
 
         /// <summary>
         /// Sets the CreationDateTime property
@@ -89,84 +57,29 @@ namespace Amazon.ElasticMapReduce.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobFlowExecutionStatusDetail WithCreationDateTime(DateTime creationDateTime)
         {
-            this.creationDateTime = creationDateTime;
+            this._creationDateTime = creationDateTime;
             return this;
         }
-            
 
         // Check to see if CreationDateTime property is set
         internal bool IsSetCreationDateTime()
         {
-            return this.creationDateTime.HasValue;
+            return this._creationDateTime.HasValue; 
         }
+
 
         /// <summary>
-        /// The start date and time of the job flow.
-        ///  
-        /// </summary>
-        public DateTime StartDateTime
-        {
-            get { return this.startDateTime ?? default(DateTime); }
-            set { this.startDateTime = value; }
-        }
-
-        /// <summary>
-        /// Sets the StartDateTime property
-        /// </summary>
-        /// <param name="startDateTime">The value to set for the StartDateTime property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public JobFlowExecutionStatusDetail WithStartDateTime(DateTime startDateTime)
-        {
-            this.startDateTime = startDateTime;
-            return this;
-        }
-            
-
-        // Check to see if StartDateTime property is set
-        internal bool IsSetStartDateTime()
-        {
-            return this.startDateTime.HasValue;
-        }
-
-        /// <summary>
-        /// The date and time when the job flow was ready to start running bootstrap actions.
-        ///  
-        /// </summary>
-        public DateTime ReadyDateTime
-        {
-            get { return this.readyDateTime ?? default(DateTime); }
-            set { this.readyDateTime = value; }
-        }
-
-        /// <summary>
-        /// Sets the ReadyDateTime property
-        /// </summary>
-        /// <param name="readyDateTime">The value to set for the ReadyDateTime property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public JobFlowExecutionStatusDetail WithReadyDateTime(DateTime readyDateTime)
-        {
-            this.readyDateTime = readyDateTime;
-            return this;
-        }
-            
-
-        // Check to see if ReadyDateTime property is set
-        internal bool IsSetReadyDateTime()
-        {
-            return this.readyDateTime.HasValue;
-        }
-
-        /// <summary>
+        /// Gets and sets the property EndDateTime. 
+        /// <para>
         /// The completion date and time of the job flow.
-        ///  
+        /// </para>
         /// </summary>
         public DateTime EndDateTime
         {
-            get { return this.endDateTime ?? default(DateTime); }
-            set { this.endDateTime = value; }
+            get { return this._endDateTime.GetValueOrDefault(); }
+            set { this._endDateTime = value; }
         }
+
 
         /// <summary>
         /// Sets the EndDateTime property
@@ -176,39 +89,29 @@ namespace Amazon.ElasticMapReduce.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobFlowExecutionStatusDetail WithEndDateTime(DateTime endDateTime)
         {
-            this.endDateTime = endDateTime;
+            this._endDateTime = endDateTime;
             return this;
         }
-            
 
         // Check to see if EndDateTime property is set
         internal bool IsSetEndDateTime()
         {
-            return this.endDateTime.HasValue;
+            return this._endDateTime.HasValue; 
         }
 
+
         /// <summary>
-        /// Description of the job flow last changed state.
-        ///  
+        /// Gets and sets the property LastStateChangeReason. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 10280</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// Description of the job flow last changed state.
         /// </para>
         /// </summary>
         public string LastStateChangeReason
         {
-            get { return this.lastStateChangeReason; }
-            set { this.lastStateChangeReason = value; }
+            get { return this._lastStateChangeReason; }
+            set { this._lastStateChangeReason = value; }
         }
+
 
         /// <summary>
         /// Sets the LastStateChangeReason property
@@ -218,15 +121,111 @@ namespace Amazon.ElasticMapReduce.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobFlowExecutionStatusDetail WithLastStateChangeReason(string lastStateChangeReason)
         {
-            this.lastStateChangeReason = lastStateChangeReason;
+            this._lastStateChangeReason = lastStateChangeReason;
             return this;
         }
-            
 
         // Check to see if LastStateChangeReason property is set
         internal bool IsSetLastStateChangeReason()
         {
-            return this.lastStateChangeReason != null;
+            return this._lastStateChangeReason != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property ReadyDateTime. 
+        /// <para>
+        /// The date and time when the job flow was ready to start running bootstrap actions.
+        /// </para>
+        /// </summary>
+        public DateTime ReadyDateTime
+        {
+            get { return this._readyDateTime.GetValueOrDefault(); }
+            set { this._readyDateTime = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the ReadyDateTime property
+        /// </summary>
+        /// <param name="readyDateTime">The value to set for the ReadyDateTime property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public JobFlowExecutionStatusDetail WithReadyDateTime(DateTime readyDateTime)
+        {
+            this._readyDateTime = readyDateTime;
+            return this;
+        }
+
+        // Check to see if ReadyDateTime property is set
+        internal bool IsSetReadyDateTime()
+        {
+            return this._readyDateTime.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property StartDateTime. 
+        /// <para>
+        /// The start date and time of the job flow.
+        /// </para>
+        /// </summary>
+        public DateTime StartDateTime
+        {
+            get { return this._startDateTime.GetValueOrDefault(); }
+            set { this._startDateTime = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the StartDateTime property
+        /// </summary>
+        /// <param name="startDateTime">The value to set for the StartDateTime property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public JobFlowExecutionStatusDetail WithStartDateTime(DateTime startDateTime)
+        {
+            this._startDateTime = startDateTime;
+            return this;
+        }
+
+        // Check to see if StartDateTime property is set
+        internal bool IsSetStartDateTime()
+        {
+            return this._startDateTime.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The state of the job flow.
+        /// </para>
+        /// </summary>
+        public string State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the State property
+        /// </summary>
+        /// <param name="state">The value to set for the State property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public JobFlowExecutionStatusDetail WithState(string state)
+        {
+            this._state = state;
+            return this;
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
+        }
+
     }
 }

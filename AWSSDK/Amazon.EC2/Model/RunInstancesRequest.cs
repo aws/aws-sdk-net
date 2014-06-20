@@ -26,73 +26,22 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Launches a specified number of instances of an AMI for which you have permissions.
+    /// Container for the parameters to the RunInstances operation.
+    /// <para>Launches the specified number of instances using an AMI for which you have permissions.</para> <para>When you launch an instance, it
+    /// enters the <c>pending</c> state. After the instance is ready for you, it enters the <c>running</c> state. To check the state of your
+    /// instance, call DescribeInstances.</para> <para>If you don't specify a security group when launching an instance, Amazon EC2 uses the default
+    /// security group. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html" >Security
+    /// Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para> <para>Linux instances have access to the public key of the key
+    /// pair at boot. You can use this key to provide secure access to the instance. Amazon EC2 public images use this feature to provide secure
+    /// access without passwords. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html" >Key
+    /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para> <para>You can provide optional user data when launching an
+    /// instance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html" >Instance
+    /// Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para> <para>If any of the AMIs have a product code attached for which
+    /// the user has not subscribed, <c>RunInstances</c> fails.</para> <para>For more information about troubleshooting, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html" >What To Do If An Instance Immediately
+    /// Terminates</a> , and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html" >Troubleshooting
+    /// Connecting to Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
     /// </summary>
-    /// <remarks>
-    /// If Amazon EC2 cannot launch the minimum number AMIs you request, no
-    /// instances will be launched. If there is insufficient capacity to
-    /// launch the maximum number of AMIs you request, Amazon EC2 launches the minimum
-    /// number specified for each AMI and allocate the remaining available
-    /// instances using round robin.
-    ///
-    /// In the following example, Libby generates a request to
-    /// launch two images (database and web_server):
-    ///
-    /// Libby runs the RunInstances operation to launch database instances
-    /// (min. 10, max. 15) and web_server instances (min. 30, max. 40).
-    ///
-    /// Because there are currently 30 instances available and Libby needs a
-    /// minimum of 40, no instances are launched.
-    ///
-    /// Libby adjusts the number of instances she needs and runs the
-    /// RunInstances operation to launch database
-    /// instances (min. 5, max. 10) and web_server
-    /// instances (min. 20, max. 40).
-    ///
-    /// Amazon EC2 launches the minimum number of instances for each
-    /// AMI (5 database, 20 web_server).
-    ///
-    /// The remaining 5 instances are allocated using round robin.
-    ///
-    /// Libby adjusts the number of instances she needs and runs the RunInstances
-    /// operation again to launch database instances (min. 5, max. 10) and
-    /// web_server instances (min. 20, max. 40).
-    ///
-    /// Note - every instance is launched in a security group
-    /// (created using the CreateSecurityGroup operation.)
-    ///
-    /// You can provide an optional key pair ID for each image in the launch request
-    /// (created using the CreateKeyPair operation). All instances that
-    /// are created from images that use this key pair will have access to
-    /// the associated public key at boot. You can use this key to provide
-    /// secure access to an instance of an image on a per-instance basis.
-    /// Amazon EC2 public images use this feature to provide secure access
-    /// without passwords.
-    ///
-    /// Important - launching public images without a key pair ID will leave them
-    /// inaccessible.
-    ///
-    /// The public key material is made available to the instance at boot
-    /// time by placing it in the openssh_id.pub file on a logical device that is exposed
-    /// to the instance as /dev/sda2 (the instance store). The format of this
-    /// file is suitable for use as an entry within ~/.ssh/authorized_keys
-    /// (the OpenSSH format). This can be done at boot (e.g., as part of rc.local) allowing
-    /// for secure access without passwords.
-    ///
-    /// Optional user data can be provided in the launch request. All instances that
-    /// collectively comprise the launch request have access to this data.
-    /// For more information, go the Amazon Elastic Compute Cloud Developer
-    /// Guide.
-    ///
-    /// Note - if any of the AMIs have a product code attached for
-    /// which the user has not subscribed, the RunInstances call will fail.
-    ///
-    /// Important - we strongly recommend using the 2.6.18 Xen stock
-    /// kernel with High-CPU and High-Memory instances. Although the
-    /// default Amazon EC2 kernels will work, the new kernels provide
-    /// greater stability and performance for these instance types. For more
-    /// information about kernels, go the Amazon Elastic Compute Cloud Developer Guide
-    /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
     public class RunInstancesRequest : EC2Request
     {    

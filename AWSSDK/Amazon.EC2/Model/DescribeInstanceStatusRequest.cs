@@ -26,10 +26,46 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the status of an Amazon Elastic Compute Cloud (Amazon EC2) instance.
-    /// Instance status provides information about two types of scheduled events for
-    /// an instance that may require your attention, Scheduled Reboot and Scheduled Retirement.
-    /// Only information about instances in the running state is returned.
+    /// Container for the parameters to the DescribeInstanceStatus operation.
+    /// <para>Describes the status of one or more instances, including any scheduled events.</para> <para>Instance status has two main
+    /// components:</para>
+    /// <ul>
+    /// <li> <para>System Status reports impaired functionality that stems from issues related to the systems that support an instance, such as
+    /// such as hardware failures and network connectivity problems. This call reports such problems as impaired reachability.</para> </li>
+    /// <li> <para>Instance Status reports impaired functionality that arises from problems internal to the instance. This call reports such
+    /// problems as impaired reachability.</para> </li>
+    /// 
+    /// </ul>
+    /// <para>Instance status provides information about four types of scheduled events for an instance that may require your attention:</para>
+    /// <ul>
+    /// <li> <para>Scheduled Reboot: When Amazon EC2 determines that an instance must be rebooted, the instances status returns one of two event
+    /// codes: <c>system-reboot</c> or <c>instance-reboot</c> . System reboot commonly occurs if certain maintenance or upgrade operations require a
+    /// reboot of the underlying host that supports an instance. Instance reboot commonly occurs if the instance must be rebooted, rather than the
+    /// underlying host. Rebooting events include a scheduled start and end time.</para> </li>
+    /// <li> <para>System Maintenance: When Amazon EC2 determines that an instance requires maintenance that requires power or network impact, the
+    /// instance status is the event code <c>system-maintenance</c> . System maintenance is either power maintenance or network maintenance. For
+    /// power maintenance, your instance will be unavailable for a brief period of time and then rebooted. For network maintenance, your instance
+    /// will experience a brief loss of network connectivity. System maintenance events include a scheduled start and end time. You will also be
+    /// notified by email if one of your instances is set for system maintenance. The email message indicates when your instance is scheduled for
+    /// maintenance.</para> </li>
+    /// <li> <para>Scheduled Retirement: When Amazon EC2 determines that an instance must be shut down, the instance status is the event code
+    /// <c>instance-retirement</c> . Retirement commonly occurs when the underlying host is degraded and must be replaced. Retirement events include
+    /// a scheduled start and end time. You will also be notified by email if one of your instances is set to retiring. The email message indicates
+    /// when your instance will be permanently retired.</para> </li>
+    /// <li> <para>Scheduled Stop: When Amazon EC2 determines that an instance must be shut down, the instances status returns an event code called
+    /// <c>instance-stop</c> .
+    /// Stop events include a scheduled start and end time. You will also be notified by email if one of your instances is set to stop. The
+    /// email message indicates when your instance will be stopped.</para> </li>
+    /// 
+    /// </ul>
+    /// <para>When your instance is retired, it will either be terminated (if its root device type is the instance-store) or stopped (if its root
+    /// device type is an EBS volume). Instances stopped due to retirement will not be restarted, but you can do so manually. You can also avoid
+    /// retirement of EBS-backed instances by manually restarting your instance when its event code is <c>instance-retirement</c> . This ensures
+    /// that your instance is started on a different underlying host.</para> <para>For more information about failed status checks, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html" >Troubleshooting Instances with Failed Status
+    /// Checks</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> . For more information about working with scheduled events, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#schedevents_actions" >Working with an
+    /// Instance That Has a Scheduled Event</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class DescribeInstanceStatusRequest : EC2Request

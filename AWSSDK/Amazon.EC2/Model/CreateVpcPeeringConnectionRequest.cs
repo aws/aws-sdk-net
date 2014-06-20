@@ -26,12 +26,11 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateVpcPeeringConnection operation.
-    /// <para>Requests a VPC peering connection between two VPCs: a requester VPC that you own and a peer VPC with which to create the connection.
-    /// The peer VPC can belong to another AWS account. The requester VPC and peer VPC cannot have overlapping CIDR blocks.</para> <para>The owner
-    /// of the peer VPC must accept the the peering request to activate the peering connection. The VPC peering connection request expires after 7
-    /// days, after which it cannot be accepted or rejected.</para> <para>A <c>CreateVpcPeeringConnection</c> request between VPCs with overlapping
-    /// CIDR blocks results in the VPC peering connection having a status of <c>failed</c> .</para>
+    /// Container for the parameters to the DeleteVolume operation.
+    /// <para>Deletes the specified Amazon EBS volume. The volume must be in the <c>available</c> state (not attached to an instance).</para>
+    /// <para><b>NOTE:</b> The volume may remain in the deleting state for several minutes. </para> <para>For more information, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html" >Deleting an Amazon EBS Volume</a> in the <i>Amazon
+    /// Elastic Compute Cloud User Guide</i> .</para>
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class CreateVpcPeeringConnectionRequest : EC2Request

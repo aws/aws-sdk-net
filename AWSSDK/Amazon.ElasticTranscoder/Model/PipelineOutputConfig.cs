@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,42 +18,46 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// <para>The <c>PipelineOutputConfig</c> structure.</para>
+    /// The <code>PipelineOutputConfig</code> structure.
     /// </summary>
     public partial class PipelineOutputConfig
     {
-        
-        private string bucket;
-        private string storageClass;
-        private List<Permission> permissions = new List<Permission>();
+        private string _bucket;
+        private List<Permission> _permissions = new List<Permission>();
+        private string _storageClass;
+
 
         /// <summary>
-        /// The Amazon S3 bucket in which you want Elastic Transcoder to save the transcoded files. Specify this value when all of the following are
-        /// true: <ul> <li>You want to save transcoded files, thumbnails (if any), and playlists (if any) together in one bucket.</li> <li>You do not
-        /// want to specify the users or groups who have access to the transcoded files, thumbnails, and playlists.</li> <li>You do not want to specify
-        /// the permissions that Elastic Transcoder grants to the files. </li> <li>You want to associate the transcoded files and thumbnails with the
-        /// Amazon S3 Standard storage class.</li> </ul> If you want to save transcoded files and playlists in one bucket and thumbnails in another
-        /// bucket, specify which users can access the transcoded files or the permissions the users have, or change the Amazon S3 storage class, omit
-        /// OutputBucket and specify values for <c>ContentConfig</c> and <c>ThumbnailConfig</c> instead.
-        ///  
+        /// Gets and sets the property Bucket. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>^(\w|\.|-){1,255}$</description>
-        ///     </item>
-        /// </list>
+        ///  The Amazon S3 bucket in which you want Elastic Transcoder to save the transcoded
+        /// files. Specify this            value when all of the following are true: <ul>    
+        ///            <li>You want to save transcoded files, thumbnails (if any), and playlists
+        /// (if any)                    together in one bucket.</li>                <li>You do
+        /// not want to specify the users or groups who have access to the transcoded        
+        ///            files, thumbnails, and playlists.</li>                <li>You do not want
+        /// to specify the permissions that Elastic Transcoder grants to the files. </li>    
+        ///            <li>You want to associate the transcoded files and thumbnails with the
+        /// Amazon S3                    Standard storage class.</li>            </ul> If you
+        /// want to save transcoded files and playlists in one bucket and thumbnails in      
+        ///      another bucket, specify which users can access the transcoded files or the permissions
+        ///            the users have, or change the Amazon S3 storage class, omit OutputBucket
+        /// and specify            values for <code>ContentConfig</code> and <code>ThumbnailConfig</code>
+        /// instead. 
         /// </para>
         /// </summary>
         public string Bucket
         {
-            get { return this.bucket; }
-            set { this.bucket = value; }
+            get { return this._bucket; }
+            set { this._bucket = value; }
         }
+
 
         /// <summary>
         /// Sets the Bucket property
@@ -63,36 +67,96 @@ namespace Amazon.ElasticTranscoder.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PipelineOutputConfig WithBucket(string bucket)
         {
-            this.bucket = bucket;
+            this._bucket = bucket;
             return this;
         }
-            
 
         // Check to see if Bucket property is set
         internal bool IsSetBucket()
         {
-            return this.bucket != null;
+            return this._bucket != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Permissions. 
+        /// <para>
+        /// Optional. The <code>Permissions</code> object specifies which users and/or predefined
+        ///            Amazon S3 groups you want to have access to transcoded files and playlists,
+        /// and the type            of access you want them to have. You can grant permissions
+        /// to a maximum of 30 users            and/or predefined Amazon S3 groups.
+        /// </para>
+        ///         
+        /// <para>
+        /// If you include <code>Permissions</code>, Elastic Transcoder grants only the permissions
+        /// that you            specify. It does not grant full permissions to the owner of the
+        /// role specified by                <code>Role</code>. If you want that user to have
+        /// full control, you must explicitly            grant full control to the user.
+        /// </para>
+        ///         
+        /// <para>
+        ///  If you omit <code>Permissions</code>, Elastic Transcoder grants full control over
+        /// the transcoded files            and playlists to the owner of the role specified by
+        /// <code>Role</code>, and grants no            other permissions to any other user or
+        /// group.
+        /// </para>
+        /// </summary>
+        public List<Permission> Permissions
+        {
+            get { return this._permissions; }
+            set { this._permissions = value; }
         }
 
         /// <summary>
-        /// The Amazon S3 storage class, <c>Standard</c> or <c>ReducedRedundancy</c>, that you want Elastic Transcoder to assign to the video files and
-        /// playlists that it stores in your Amazon S3 bucket.
-        ///  
+        /// Sets the Permissions property
+        /// </summary>
+        /// <param name="permissions">The values to add to the Permissions collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public PipelineOutputConfig WithPermissions(params Permission[] permissions)
+        {
+            foreach (var element in permissions)
+            {
+                this._permissions.Add(element);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the Permissions property
+        /// </summary>
+        /// <param name="permissions">The values to add to the Permissions collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public PipelineOutputConfig WithPermissions(IEnumerable<Permission> permissions)
+        {
+            foreach (var element in permissions)
+            {
+                this._permissions.Add(element);
+            }
+            return this;
+        }
+        // Check to see if Permissions property is set
+        internal bool IsSetPermissions()
+        {
+            return this._permissions != null && this._permissions.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property StorageClass. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>(^ReducedRedundancy$)|(^Standard$)</description>
-        ///     </item>
-        /// </list>
+        ///  The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>,
+        ///            that you want Elastic Transcoder to assign to the video files and playlists
+        /// that it stores in your            Amazon S3 bucket. 
         /// </para>
         /// </summary>
         public string StorageClass
         {
-            get { return this.storageClass; }
-            set { this.storageClass = value; }
+            get { return this._storageClass; }
+            set { this._storageClass = value; }
         }
+
 
         /// <summary>
         /// Sets the StorageClass property
@@ -102,76 +166,15 @@ namespace Amazon.ElasticTranscoder.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PipelineOutputConfig WithStorageClass(string storageClass)
         {
-            this.storageClass = storageClass;
+            this._storageClass = storageClass;
             return this;
         }
-            
 
         // Check to see if StorageClass property is set
         internal bool IsSetStorageClass()
         {
-            return this.storageClass != null;
+            return this._storageClass != null;
         }
 
-        /// <summary>
-        /// Optional. The <c>Permissions</c> object specifies which users and/or predefined Amazon S3 groups you want to have access to transcoded files
-        /// and playlists, and the type of access you want them to have. You can grant permissions to a maximum of 30 users and/or predefined Amazon S3
-        /// groups. If you include <c>Permissions</c>, Elastic Transcoder grants only the permissions that you specify. It does not grant full
-        /// permissions to the owner of the role specified by <c>Role</c>. If you want that user to have full control, you must explicitly grant full
-        /// control to the user. If you omit <c>Permissions</c>, Elastic Transcoder grants full control over the transcoded files and playlists to the
-        /// owner of the role specified by <c>Role</c>, and grants no other permissions to any other user or group.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 30</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public List<Permission> Permissions
-        {
-            get { return this.permissions; }
-            set { this.permissions = value; }
-        }
-        /// <summary>
-        /// Adds elements to the Permissions collection
-        /// </summary>
-        /// <param name="permissions">The values to add to the Permissions collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public PipelineOutputConfig WithPermissions(params Permission[] permissions)
-        {
-            foreach (Permission element in permissions)
-            {
-                this.permissions.Add(element);
-            }
-
-            return this;
-        }
-
-        /// <summary>
-        /// Adds elements to the Permissions collection
-        /// </summary>
-        /// <param name="permissions">The values to add to the Permissions collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public PipelineOutputConfig WithPermissions(IEnumerable<Permission> permissions)
-        {
-            foreach (Permission element in permissions)
-            {
-                this.permissions.Add(element);
-            }
-
-            return this;
-        }
-
-        // Check to see if Permissions property is set
-        internal bool IsSetPermissions()
-        {
-            return this.permissions.Count > 0;
-        }
     }
 }

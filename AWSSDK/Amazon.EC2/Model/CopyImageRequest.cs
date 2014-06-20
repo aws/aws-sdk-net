@@ -26,7 +26,11 @@ using System.Text;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Copies a image from a source region to the current region.
+    /// Container for the parameters to the CopyImage operation.
+    /// <para>Initiates the copy of an AMI from the specified source region to the region in which the request was made. You specify the destination
+    /// region by using its endpoint when making the request. AMIs that use encrypted Amazon EBS snapshots cannot be copied with this method.</para>
+    /// <para>For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html" >Copying AMIs</a> in the
+    /// <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class CopyImageRequest : EC2Request

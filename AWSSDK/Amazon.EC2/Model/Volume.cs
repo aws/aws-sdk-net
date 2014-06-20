@@ -342,9 +342,18 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Volume type.
-        /// May be either "io1" or "standard".
-        /// If VolumeType != "io1", IOPS property cannot be set.
+        /// The volume type. This can be <c>gp2</c> for General Purpose (SSD) volumes, <c>io1</c> for Provisioned IOPS (SSD) volumes, or <c>standard</c>
+        /// for Magnetic volumes.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>standard, io1, gp2</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
         [XmlElementAttribute(ElementName = "VolumeType")]
         public string VolumeType
