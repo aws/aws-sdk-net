@@ -26,6 +26,7 @@ namespace Amazon.Runtime
     /// may throw this exception if there is a problem which is caught in the core client code.
     /// </para>
     /// </summary>
+    [Serializable]
     public class AmazonServiceException : Exception
     {
         private ErrorType errorType;
