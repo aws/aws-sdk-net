@@ -70,6 +70,11 @@ namespace Amazon.S3.Transfer.Internal
                             {
                                 ExceptionDispatchInfo.Capture(exception.InnerException).Throw();
                             }
+                            else if (exception is AmazonServiceException ||
+                                exception is AmazonClientException)
+                            {
+                                throw;
+                            }
                             else
                             {
                                 throw new AmazonServiceException(exception);

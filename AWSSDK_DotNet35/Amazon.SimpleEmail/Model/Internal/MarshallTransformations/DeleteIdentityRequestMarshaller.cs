@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,32 +14,36 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SimpleEmail.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Identity Request Marshaller
+    /// DeleteIdentity Request Marshaller
     /// </summary>       
     public class DeleteIdentityRequestMarshaller : IMarshaller<IRequest, DeleteIdentityRequest>
     {
-        public IRequest Marshall(DeleteIdentityRequest deleteIdentityRequest)
+        public IRequest Marshall(DeleteIdentityRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(deleteIdentityRequest, "AmazonSimpleEmailService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleEmail");
             request.Parameters.Add("Action", "DeleteIdentity");
             request.Parameters.Add("Version", "2010-12-01");
-            if (deleteIdentityRequest != null && deleteIdentityRequest.IsSetIdentity())
-            {
-                request.Parameters.Add("Identity", StringUtils.FromString(deleteIdentityRequest.Identity));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetIdentity())
+                {
+                    request.Parameters.Add("Identity", StringUtils.FromString(publicRequest.Identity));
+                }
+            }
             return request;
         }
     }

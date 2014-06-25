@@ -57,6 +57,12 @@ namespace Amazon.S3.Transfer.Internal
                             {
                                 throw;
                             }
+                            else if (exception is AmazonServiceException ||
+                                exception is AmazonClientException)
+                            {
+                                throw;
+                            }
+
                             else
                             {
                                 throw new AmazonServiceException(exception);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,98 +18,117 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// <para>Represents sending statistics data. Each <c>SendDataPoint</c> contains statistics for a 15-minute period of sending activity. </para>
+    /// Represents sending statistics data. Each            <code>SendDataPoint</code>   
+    ///         contains statistics for a 15-minute period of sending activity.
     /// </summary>
-    public class SendDataPoint
+    public partial class SendDataPoint
     {
-        
-        private DateTime? timestamp;
-        private long? deliveryAttempts;
-        private long? bounces;
-        private long? complaints;
-        private long? rejects;
+        private long? _bounces;
+        private long? _complaints;
+        private long? _deliveryAttempts;
+        private long? _rejects;
+        private DateTime? _timestamp;
+
 
         /// <summary>
-        /// Time of the data point.
-        ///  
-        /// </summary>
-        public DateTime Timestamp
-        {
-            get { return this.timestamp ?? default(DateTime); }
-            set { this.timestamp = value; }
-        }
-
-        // Check to see if Timestamp property is set
-        internal bool IsSetTimestamp()
-        {
-            return this.timestamp.HasValue;
-        }
-
-        /// <summary>
-        /// Number of emails that have been enqueued for sending.
-        ///  
-        /// </summary>
-        public long DeliveryAttempts
-        {
-            get { return this.deliveryAttempts ?? default(long); }
-            set { this.deliveryAttempts = value; }
-        }
-
-        // Check to see if DeliveryAttempts property is set
-        internal bool IsSetDeliveryAttempts()
-        {
-            return this.deliveryAttempts.HasValue;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Bounces. 
+        /// <para>
         /// Number of emails that have bounced.
-        ///  
+        /// </para>
         /// </summary>
         public long Bounces
         {
-            get { return this.bounces ?? default(long); }
-            set { this.bounces = value; }
+            get { return this._bounces.GetValueOrDefault(); }
+            set { this._bounces = value; }
         }
 
         // Check to see if Bounces property is set
         internal bool IsSetBounces()
         {
-            return this.bounces.HasValue;
+            return this._bounces.HasValue; 
         }
 
+
         /// <summary>
+        /// Gets and sets the property Complaints. 
+        /// <para>
         /// Number of unwanted emails that were rejected by recipients.
-        ///  
+        /// </para>
         /// </summary>
         public long Complaints
         {
-            get { return this.complaints ?? default(long); }
-            set { this.complaints = value; }
+            get { return this._complaints.GetValueOrDefault(); }
+            set { this._complaints = value; }
         }
 
         // Check to see if Complaints property is set
         internal bool IsSetComplaints()
         {
-            return this.complaints.HasValue;
+            return this._complaints.HasValue; 
         }
 
+
         /// <summary>
+        /// Gets and sets the property DeliveryAttempts. 
+        /// <para>
+        /// Number of emails that have been enqueued for sending.
+        /// </para>
+        /// </summary>
+        public long DeliveryAttempts
+        {
+            get { return this._deliveryAttempts.GetValueOrDefault(); }
+            set { this._deliveryAttempts = value; }
+        }
+
+        // Check to see if DeliveryAttempts property is set
+        internal bool IsSetDeliveryAttempts()
+        {
+            return this._deliveryAttempts.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Rejects. 
+        /// <para>
         /// Number of emails rejected by Amazon SES.
-        ///  
+        /// </para>
         /// </summary>
         public long Rejects
         {
-            get { return this.rejects ?? default(long); }
-            set { this.rejects = value; }
+            get { return this._rejects.GetValueOrDefault(); }
+            set { this._rejects = value; }
         }
 
         // Check to see if Rejects property is set
         internal bool IsSetRejects()
         {
-            return this.rejects.HasValue;
+            return this._rejects.HasValue; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Timestamp. 
+        /// <para>
+        /// Time of the data point.
+        /// </para>
+        /// </summary>
+        public DateTime Timestamp
+        {
+            get { return this._timestamp.GetValueOrDefault(); }
+            set { this._timestamp = value; }
+        }
+
+        // Check to see if Timestamp property is set
+        internal bool IsSetTimestamp()
+        {
+            return this._timestamp.HasValue; 
+        }
+
     }
 }

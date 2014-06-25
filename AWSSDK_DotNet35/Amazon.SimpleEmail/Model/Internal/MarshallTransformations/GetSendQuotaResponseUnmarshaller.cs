@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,46 +13,52 @@
  * permissions and limitations under the License.
  */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.SimpleEmail.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for GetSendQuota operation
-    /// </summary>
-    internal class GetSendQuotaResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for GetSendQuota operation
+    /// </summary>  
+    public class GetSendQuotaResponseUnmarshaller : XmlResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
             GetSendQuotaResponse response = new GetSendQuotaResponse();
-            
-            while (context.Read())
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
                 if (context.IsStartElement)
                 {                    
                     if(context.TestExpression("GetSendQuotaResult", 2))
                     {
-                        UnmarshallResult(context,response);                        
+                        UnmarshallResult(context, response);                        
                         continue;
                     }
                     
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
                     }
                 }
             }
-                 
-                        
+
             return response;
         }
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,GetSendQuotaResponse response)
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, GetSendQuotaResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -61,58 +67,55 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+
                     if (context.TestExpression("Max24HourSend", targetDepth))
                     {
-                        response.Max24HourSend = DoubleUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        response.Max24HourSend = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MaxSendRate", targetDepth))
                     {
-                        response.MaxSendRate = DoubleUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        response.MaxSendRate = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SentLast24Hours", targetDepth))
                     {
-                        response.SentLast24Hours = DoubleUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        response.SentLast24Hours = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return;
-                }
-            }
-                            
-
+                } 
+           }
 
             return;
         }
-        
+
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             return new AmazonSimpleEmailServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static GetSendQuotaResponseUnmarshaller instance;
 
-        public static GetSendQuotaResponseUnmarshaller GetInstance()
+        private static GetSendQuotaResponseUnmarshaller _instance = new GetSendQuotaResponseUnmarshaller();        
+
+        internal static GetSendQuotaResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new GetSendQuotaResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static GetSendQuotaResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

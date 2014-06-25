@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.SimpleEmail.Model
 {
     ///<summary>
-    /// AmazonSimpleEmailService exception
+    /// SimpleEmailService exception
     /// </summary>
     public class MessageRejectedException : AmazonSimpleEmailServiceException 
     {
@@ -45,6 +45,5 @@ namespace Amazon.SimpleEmail.Model
         public MessageRejectedException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
-        
     }
 }

@@ -380,6 +380,7 @@
     <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\LifecycleRuleNoncurrentVersionTransitionUnmarshaller.cs" />
     <Compile Include="Amazon.S3\Model\LifecycleRuleNoncurrentVersionExpiration.cs" />
     <Compile Include="Amazon.S3\Model\LifecycleRuleNoncurrentVersionTransition.cs" />
+    <Compile Include="Amazon.S3\Model\StreamSizeMismatchException.cs" />
     <Compile Include="Amazon.SecurityToken\*.cs">
       <SubType>Code</SubType>
     </Compile>

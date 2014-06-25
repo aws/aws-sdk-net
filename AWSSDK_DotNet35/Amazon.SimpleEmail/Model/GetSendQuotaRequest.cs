@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,12 +25,15 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSendQuota operation.
-    /// <para>Returns the user's current sending limits.</para> <para>This action is throttled at one request per second.</para>
+    /// Returns the user's current sending limits.
+    /// 
+    ///         
+    /// <para>
+    /// This action is throttled at one request per second.
+    /// </para>
     /// </summary>
     public partial class GetSendQuotaRequest : AmazonSimpleEmailServiceRequest
     {
 
-
     }
 }
-    

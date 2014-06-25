@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// Returns information about the  GetIdentityDkimAttributes response and response metadata.
+    /// Configuration for accessing Amazon GetIdentityDkimAttributes service
     /// </summary>
-    public class GetIdentityDkimAttributesResponse : GetIdentityDkimAttributesResult
+    public partial class GetIdentityDkimAttributesResponse : GetIdentityDkimAttributesResult
     {
         /// <summary>
         /// Gets and sets the GetIdentityDkimAttributesResult property.
-        /// Represents a list of all the DKIM attributes for the specified identity.
+        /// Represents the output of a GetIdentityDkimAttributes operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the GetIdentityDkimAttributesResult class are now available on the GetIdentityDkimAttributesResponse class. You should use the properties on GetIdentityDkimAttributesResponse instead of accessing them through GetIdentityDkimAttributesResult.")]
         public GetIdentityDkimAttributesResult GetIdentityDkimAttributesResult
@@ -40,4 +36,3 @@ namespace Amazon.SimpleEmail.Model
         }
     }
 }
-    

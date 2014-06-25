@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SimpleEmail.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// List Identities Request Marshaller
+    /// ListIdentities Request Marshaller
     /// </summary>       
     public class ListIdentitiesRequestMarshaller : IMarshaller<IRequest, ListIdentitiesRequest>
     {
-        public IRequest Marshall(ListIdentitiesRequest listIdentitiesRequest)
+        public IRequest Marshall(ListIdentitiesRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(listIdentitiesRequest, "AmazonSimpleEmailService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleEmail");
             request.Parameters.Add("Action", "ListIdentities");
             request.Parameters.Add("Version", "2010-12-01");
-            if (listIdentitiesRequest != null && listIdentitiesRequest.IsSetIdentityType())
-            {
-                request.Parameters.Add("IdentityType", StringUtils.FromString(listIdentitiesRequest.IdentityType));
-            }
-            if (listIdentitiesRequest != null && listIdentitiesRequest.IsSetNextToken())
-            {
-                request.Parameters.Add("NextToken", StringUtils.FromString(listIdentitiesRequest.NextToken));
-            }
-            if (listIdentitiesRequest != null && listIdentitiesRequest.IsSetMaxItems())
-            {
-                request.Parameters.Add("MaxItems", StringUtils.FromInt(listIdentitiesRequest.MaxItems));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetIdentityType())
+                {
+                    request.Parameters.Add("IdentityType", StringUtils.FromString(publicRequest.IdentityType));
+                }
+                if(publicRequest.IsSetMaxItems())
+                {
+                    request.Parameters.Add("MaxItems", StringUtils.FromInt(publicRequest.MaxItems));
+                }
+                if(publicRequest.IsSetNextToken())
+                {
+                    request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+                }
+            }
             return request;
         }
     }

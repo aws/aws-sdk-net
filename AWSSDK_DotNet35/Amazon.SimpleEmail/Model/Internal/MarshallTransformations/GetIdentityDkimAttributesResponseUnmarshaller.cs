@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,46 +13,52 @@
  * permissions and limitations under the License.
  */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.SimpleEmail.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for GetIdentityDkimAttributes operation
-    /// </summary>
-    internal class GetIdentityDkimAttributesResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for GetIdentityDkimAttributes operation
+    /// </summary>  
+    public class GetIdentityDkimAttributesResponseUnmarshaller : XmlResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
             GetIdentityDkimAttributesResponse response = new GetIdentityDkimAttributesResponse();
-            
-            while (context.Read())
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
                 if (context.IsStartElement)
                 {                    
                     if(context.TestExpression("GetIdentityDkimAttributesResult", 2))
                     {
-                        UnmarshallResult(context,response);                        
+                        UnmarshallResult(context, response);                        
                         continue;
                     }
                     
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
                     }
                 }
             }
-                 
-                        
+
             return response;
         }
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,GetIdentityDkimAttributesResponse response)
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, GetIdentityDkimAttributesResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -61,47 +67,44 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+
                     if (context.TestExpression("DkimAttributes/entry", targetDepth))
                     {
-                        KeyValueUnmarshaller<string, IdentityDkimAttributes, StringUnmarshaller, IdentityDkimAttributesUnmarshaller> unmarshaller = new KeyValueUnmarshaller<string, IdentityDkimAttributes, StringUnmarshaller, IdentityDkimAttributesUnmarshaller>(StringUnmarshaller.GetInstance(), IdentityDkimAttributesUnmarshaller.GetInstance());
-                        KeyValuePair<string, IdentityDkimAttributes> kvp = unmarshaller.Unmarshall(context);
-                        response.DkimAttributes.Add(kvp.Key, kvp.Value);
+                        var unmarshaller = new KeyValueUnmarshaller<string, IdentityDkimAttributes, StringUnmarshaller, IdentityDkimAttributesUnmarshaller>(StringUnmarshaller.Instance, IdentityDkimAttributesUnmarshaller.Instance);
+                        var item = unmarshaller.Unmarshall(context);
+                        response.DkimAttributes.Add(item);
                         continue;
                     }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return;
-                }
-            }
-                            
-
+                } 
+           }
 
             return;
         }
-        
+
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             return new AmazonSimpleEmailServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static GetIdentityDkimAttributesResponseUnmarshaller instance;
 
-        public static GetIdentityDkimAttributesResponseUnmarshaller GetInstance()
+        private static GetIdentityDkimAttributesResponseUnmarshaller _instance = new GetIdentityDkimAttributesResponseUnmarshaller();        
+
+        internal static GetIdentityDkimAttributesResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new GetIdentityDkimAttributesResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static GetIdentityDkimAttributesResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

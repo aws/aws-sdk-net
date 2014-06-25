@@ -414,7 +414,8 @@ namespace Amazon.S3.Model
                     "The total bytes read {0} from response stream is not equal to the Content-Length {1} for the object {2} in bucket {3}."+
                     " Request ID = {4} , AmzId2 = {5}.",
                     bytesWritten, this.ContentLength, this.Key, this.BucketName, this.ResponseMetadata.RequestId, amzId2);
-                throw new AmazonServiceException(message);
+
+                throw new StreamSizeMismatchException(message, this.ContentLength, bytesWritten, this.ResponseMetadata.RequestId, amzId2);                
             }
         }
     }

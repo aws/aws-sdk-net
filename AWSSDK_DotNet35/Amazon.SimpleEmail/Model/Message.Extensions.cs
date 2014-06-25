@@ -24,37 +24,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// Container for the parameters to the VerifyEmailIdentity operation.
-    /// Verifies an email address. This action causes a confirmation email message       
-    /// to be sent to the specified address.
-    /// 
-    ///         
-    /// <para>
-    /// This action is throttled at one request per second.
-    /// </para>
+    /// Represents the message to be sent, composed of a subject and a body.
     /// </summary>
-    public partial class VerifyEmailIdentityRequest : AmazonSimpleEmailServiceRequest
+    public partial class Message
     {
-        private string _emailAddress;
-
+        /// <summary>
+        /// Default constructor for a new Message object.  Callers should use the
+        /// properties to initialize this object after creating it.
+        /// </summary>
+        public Message() { }
 
         /// <summary>
-        /// Gets and sets the property EmailAddress. 
-        /// <para>
-        /// The email address to be verified.
-        /// </para>
+        /// Constructs a new Message object.
+        /// Callers should use the properties initialize any additional object members.
         /// </summary>
-        public string EmailAddress
+        /// 
+        /// <param name="subject"> The subject of the message: A short summary of the content, which will appear in the recipient's inbox. </param>
+        /// <param name="body"> The message body. </param>
+        public Message(Content subject, Body body)
         {
-            get { return this._emailAddress; }
-            set { this._emailAddress = value; }
+            this.Subject = subject;
+            this.Body = body;
         }
-
-        // Check to see if EmailAddress property is set
-        internal bool IsSetEmailAddress()
-        {
-            return this._emailAddress != null;
-        }
-
     }
 }

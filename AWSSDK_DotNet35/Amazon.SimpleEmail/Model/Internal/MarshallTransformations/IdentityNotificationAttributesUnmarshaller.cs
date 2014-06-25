@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,75 +12,87 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SimpleEmail.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   IdentityNotificationAttributes Unmarshaller
-     /// </summary>
-    internal class IdentityNotificationAttributesUnmarshaller : IUnmarshaller<IdentityNotificationAttributes, XmlUnmarshallerContext>, IUnmarshaller<IdentityNotificationAttributes, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for IdentityNotificationAttributes Object
+    /// </summary>  
+    public class IdentityNotificationAttributesUnmarshaller : IUnmarshaller<IdentityNotificationAttributes, XmlUnmarshallerContext>, IUnmarshaller<IdentityNotificationAttributes, JsonUnmarshallerContext>
     {
-        public IdentityNotificationAttributes Unmarshall(XmlUnmarshallerContext context) 
+        public IdentityNotificationAttributes Unmarshall(XmlUnmarshallerContext context)
         {
-            IdentityNotificationAttributes identityNotificationAttributes = new IdentityNotificationAttributes();
+            IdentityNotificationAttributes unmarshalledObject = new IdentityNotificationAttributes();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("BounceTopic", targetDepth))
                     {
-                        identityNotificationAttributes.BounceTopic = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.BounceTopic = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ComplaintTopic", targetDepth))
                     {
-                        identityNotificationAttributes.ComplaintTopic = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ComplaintTopic = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("DeliveryTopic", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DeliveryTopic = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ForwardingEnabled", targetDepth))
                     {
-                        identityNotificationAttributes.ForwardingEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.ForwardingEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return identityNotificationAttributes;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return identityNotificationAttributes;
+            return unmarshalledObject;
         }
 
-        public IdentityNotificationAttributes Unmarshall(JsonUnmarshallerContext context) 
+        public IdentityNotificationAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static IdentityNotificationAttributesUnmarshaller instance;
 
-        public static IdentityNotificationAttributesUnmarshaller GetInstance() 
+        private static IdentityNotificationAttributesUnmarshaller _instance = new IdentityNotificationAttributesUnmarshaller();        
+
+        public static IdentityNotificationAttributesUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new IdentityNotificationAttributesUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

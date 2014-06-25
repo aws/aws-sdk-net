@@ -24,36 +24,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// Container for the parameters to the VerifyEmailIdentity operation.
-    /// Verifies an email address. This action causes a confirmation email message       
-    /// to be sent to the specified address.
+    /// Represents textual data, plus an optional character set specification.
     /// 
     ///         
     /// <para>
-    /// This action is throttled at one request per second.
+    /// By default, the text must be 7-bit ASCII, due to the constraints of the SMTP protocol.
+    /// If the text must            contain any other characters, then you must also specify
+    /// a character set. Examples include UTF-8, ISO-8859-1,            and Shift_JIS.   
+    ///     
     /// </para>
     /// </summary>
-    public partial class VerifyEmailIdentityRequest : AmazonSimpleEmailServiceRequest
+    public partial class Content
     {
-        private string _emailAddress;
-
+        /// <summary>
+        /// Default constructor for a new Content object.  Callers should use the
+        /// properties to initialize this object after creating it.
+        /// </summary>
+        public Content() { }
 
         /// <summary>
-        /// Gets and sets the property EmailAddress. 
-        /// <para>
-        /// The email address to be verified.
-        /// </para>
+        /// Constructs a new Content object.
+        /// Callers should use the properties initialize any additional object members.
         /// </summary>
-        public string EmailAddress
+        /// 
+        /// <param name="data"> The textual data of the content. </param>
+        public Content(string data)
         {
-            get { return this._emailAddress; }
-            set { this._emailAddress = value; }
-        }
-
-        // Check to see if EmailAddress property is set
-        internal bool IsSetEmailAddress()
-        {
-            return this._emailAddress != null;
+            this.Data = data;
         }
 
     }
