@@ -56,6 +56,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     context.Read();
                     if (context.TestExpression("LayerId", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.LayerId = null;
+                            continue;
+                        }
                         unmarshalledObject.LayerId = StringUnmarshaller.GetInstance().Unmarshall(context);
                         continue;
                     }

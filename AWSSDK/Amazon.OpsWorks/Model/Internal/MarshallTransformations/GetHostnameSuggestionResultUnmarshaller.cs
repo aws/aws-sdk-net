@@ -56,11 +56,21 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     context.Read();
                     if (context.TestExpression("Hostname", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Hostname = null;
+                            continue;
+                        }
                         unmarshalledObject.Hostname = StringUnmarshaller.GetInstance().Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("LayerId", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.LayerId = null;
+                            continue;
+                        }
                         unmarshalledObject.LayerId = StringUnmarshaller.GetInstance().Unmarshall(context);
                         continue;
                     }

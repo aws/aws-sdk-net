@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,128 +14,118 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SimpleEmail.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Send Email Request Marshaller
+    /// SendEmail Request Marshaller
     /// </summary>       
     public class SendEmailRequestMarshaller : IMarshaller<IRequest, SendEmailRequest>
     {
-        public IRequest Marshall(SendEmailRequest sendEmailRequest)
+        public IRequest Marshall(SendEmailRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(sendEmailRequest, "AmazonSimpleEmailService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleEmail");
             request.Parameters.Add("Action", "SendEmail");
             request.Parameters.Add("Version", "2010-12-01");
-            if (sendEmailRequest != null && sendEmailRequest.IsSetSource())
-            {
-                request.Parameters.Add("Source", StringUtils.FromString(sendEmailRequest.Source));
-            }
-            if (sendEmailRequest != null)
-            {
-                Destination destination = sendEmailRequest.Destination;
-                if (destination != null)
-                {
-                    List<string> toAddressesList = destination.ToAddresses;
 
-                    int toAddressesListIndex = 1;
-                    foreach (string toAddressesListValue in toAddressesList)
-                    { 
-                        request.Parameters.Add("Destination.ToAddresses.member." + toAddressesListIndex, StringUtils.FromString(toAddressesListValue));
-                        toAddressesListIndex++;
-                    }
-                }
-                if (destination != null)
-                {
-                    List<string> ccAddressesList = destination.CcAddresses;
-
-                    int ccAddressesListIndex = 1;
-                    foreach (string ccAddressesListValue in ccAddressesList)
-                    { 
-                        request.Parameters.Add("Destination.CcAddresses.member." + ccAddressesListIndex, StringUtils.FromString(ccAddressesListValue));
-                        ccAddressesListIndex++;
-                    }
-                }
-                if (destination != null)
-                {
-                    List<string> bccAddressesList = destination.BccAddresses;
-
-                    int bccAddressesListIndex = 1;
-                    foreach (string bccAddressesListValue in bccAddressesList)
-                    { 
-                        request.Parameters.Add("Destination.BccAddresses.member." + bccAddressesListIndex, StringUtils.FromString(bccAddressesListValue));
-                        bccAddressesListIndex++;
-                    }
-                }
-            }
-            if (sendEmailRequest != null)
+            if(publicRequest != null)
             {
-                Message message = sendEmailRequest.Message;
-                if (message != null)
+                if(publicRequest.IsSetDestination())
                 {
-                    Content subject = message.Subject;
-                    if (subject != null && subject.IsSetData())
+                    if(publicRequest.Destination.IsSetBccAddresses())
                     {
-                        request.Parameters.Add("Message.Subject.Data", StringUtils.FromString(subject.Data));
-                    }
-                    if (subject != null && subject.IsSetCharset())
-                    {
-                        request.Parameters.Add("Message.Subject.Charset", StringUtils.FromString(subject.Charset));
-                    }
-                }
-                if (message != null)
-                {
-                    Body body = message.Body;
-                    if (body != null)
-                    {
-                        Content text = body.Text;
-                        if (text != null && text.IsSetData())
+                        int publicRequestDestinationlistValueIndex = 1;
+                        foreach(var publicRequestDestinationlistValue in publicRequest.Destination.BccAddresses)
                         {
-                            request.Parameters.Add("Message.Body.Text.Data", StringUtils.FromString(text.Data));
-                        }
-                        if (text != null && text.IsSetCharset())
-                        {
-                            request.Parameters.Add("Message.Body.Text.Charset", StringUtils.FromString(text.Charset));
+                            request.Parameters.Add("Destination" + "." + "BccAddresses" + "." + "member" + "." + publicRequestDestinationlistValueIndex, StringUtils.FromString(publicRequestDestinationlistValue));
+                            publicRequestDestinationlistValueIndex++;
                         }
                     }
-                    if (body != null)
+                    if(publicRequest.Destination.IsSetCcAddresses())
                     {
-                        Content html = body.Html;
-                        if (html != null && html.IsSetData())
+                        int publicRequestDestinationlistValueIndex = 1;
+                        foreach(var publicRequestDestinationlistValue in publicRequest.Destination.CcAddresses)
                         {
-                            request.Parameters.Add("Message.Body.Html.Data", StringUtils.FromString(html.Data));
+                            request.Parameters.Add("Destination" + "." + "CcAddresses" + "." + "member" + "." + publicRequestDestinationlistValueIndex, StringUtils.FromString(publicRequestDestinationlistValue));
+                            publicRequestDestinationlistValueIndex++;
                         }
-                        if (html != null && html.IsSetCharset())
+                    }
+                    if(publicRequest.Destination.IsSetToAddresses())
+                    {
+                        int publicRequestDestinationlistValueIndex = 1;
+                        foreach(var publicRequestDestinationlistValue in publicRequest.Destination.ToAddresses)
                         {
-                            request.Parameters.Add("Message.Body.Html.Charset", StringUtils.FromString(html.Charset));
+                            request.Parameters.Add("Destination" + "." + "ToAddresses" + "." + "member" + "." + publicRequestDestinationlistValueIndex, StringUtils.FromString(publicRequestDestinationlistValue));
+                            publicRequestDestinationlistValueIndex++;
                         }
                     }
                 }
-            }
-            if (sendEmailRequest != null)
-            {
-                List<string> replyToAddressesList = sendEmailRequest.ReplyToAddresses;
-
-                int replyToAddressesListIndex = 1;
-                foreach (string replyToAddressesListValue in replyToAddressesList)
-                { 
-                    request.Parameters.Add("ReplyToAddresses.member." + replyToAddressesListIndex, StringUtils.FromString(replyToAddressesListValue));
-                    replyToAddressesListIndex++;
+                if(publicRequest.IsSetMessage())
+                {
+                    if(publicRequest.Message.IsSetBody())
+                    {
+                        if(publicRequest.Message.Body.IsSetHtml())
+                        {
+                            if(publicRequest.Message.Body.Html.IsSetCharset())
+                            {
+                                request.Parameters.Add("Message" + "." + "Body" + "." + "Html" + "." + "Charset", StringUtils.FromString(publicRequest.Message.Body.Html.Charset));
+                            }
+                            if(publicRequest.Message.Body.Html.IsSetData())
+                            {
+                                request.Parameters.Add("Message" + "." + "Body" + "." + "Html" + "." + "Data", StringUtils.FromString(publicRequest.Message.Body.Html.Data));
+                            }
+                        }
+                        if(publicRequest.Message.Body.IsSetText())
+                        {
+                            if(publicRequest.Message.Body.Text.IsSetCharset())
+                            {
+                                request.Parameters.Add("Message" + "." + "Body" + "." + "Text" + "." + "Charset", StringUtils.FromString(publicRequest.Message.Body.Text.Charset));
+                            }
+                            if(publicRequest.Message.Body.Text.IsSetData())
+                            {
+                                request.Parameters.Add("Message" + "." + "Body" + "." + "Text" + "." + "Data", StringUtils.FromString(publicRequest.Message.Body.Text.Data));
+                            }
+                        }
+                    }
+                    if(publicRequest.Message.IsSetSubject())
+                    {
+                        if(publicRequest.Message.Subject.IsSetCharset())
+                        {
+                            request.Parameters.Add("Message" + "." + "Subject" + "." + "Charset", StringUtils.FromString(publicRequest.Message.Subject.Charset));
+                        }
+                        if(publicRequest.Message.Subject.IsSetData())
+                        {
+                            request.Parameters.Add("Message" + "." + "Subject" + "." + "Data", StringUtils.FromString(publicRequest.Message.Subject.Data));
+                        }
+                    }
+                }
+                if(publicRequest.IsSetReplyToAddresses())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.ReplyToAddresses)
+                    {
+                        request.Parameters.Add("ReplyToAddresses" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetReturnPath())
+                {
+                    request.Parameters.Add("ReturnPath", StringUtils.FromString(publicRequest.ReturnPath));
+                }
+                if(publicRequest.IsSetSource())
+                {
+                    request.Parameters.Add("Source", StringUtils.FromString(publicRequest.Source));
                 }
             }
-            if (sendEmailRequest != null && sendEmailRequest.IsSetReturnPath())
-            {
-                request.Parameters.Add("ReturnPath", StringUtils.FromString(sendEmailRequest.ReturnPath));
-            }
-
             return request;
         }
     }

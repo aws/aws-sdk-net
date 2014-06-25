@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.SimpleEmail.Model
 {
     ///<summary>
-    /// AmazonSimpleEmailService exception
+    /// SimpleEmailService exception
     /// </summary>
     public class MessageRejectedException : AmazonSimpleEmailServiceException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.SimpleEmail.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal MessageRejectedException(string message) 
+        public MessageRejectedException(string message) 
             : base(message) {}
           
-        internal MessageRejectedException(string message, Exception innerException) 
+        public MessageRejectedException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal MessageRejectedException(Exception innerException) 
+        public MessageRejectedException(Exception innerException) 
             : base(innerException) {}
             
-        internal MessageRejectedException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public MessageRejectedException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal MessageRejectedException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public MessageRejectedException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

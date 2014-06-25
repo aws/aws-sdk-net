@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,28 +18,35 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// <para>Represents the notification attributes of an identity, including whether a bounce or complaint topic are set, and whether feedback
-    /// forwarding is enabled.</para>
+    /// Represents the notification attributes of an identity, including whether a bounce
+    ///         or complaint topic are set, and whether feedback forwarding is enabled.
     /// </summary>
     public partial class IdentityNotificationAttributes
     {
-        
-        private string bounceTopic;
-        private string complaintTopic;
-        private bool? forwardingEnabled;
+        private string _bounceTopic;
+        private string _complaintTopic;
+        private bool? _forwardingEnabled;
+
 
         /// <summary>
-        /// The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic where Amazon SES will publish bounce notifications.
-        ///  
+        /// Gets and sets the property BounceTopic. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic
+        ///         where Amazon SES will publish bounce notifications.
+        /// </para>
         /// </summary>
         public string BounceTopic
         {
-            get { return this.bounceTopic; }
-            set { this.bounceTopic = value; }
+            get { return this._bounceTopic; }
+            set { this._bounceTopic = value; }
         }
+
 
         /// <summary>
         /// Sets the BounceTopic property
@@ -49,26 +56,30 @@ namespace Amazon.SimpleEmail.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IdentityNotificationAttributes WithBounceTopic(string bounceTopic)
         {
-            this.bounceTopic = bounceTopic;
+            this._bounceTopic = bounceTopic;
             return this;
         }
-            
 
         // Check to see if BounceTopic property is set
         internal bool IsSetBounceTopic()
         {
-            return this.bounceTopic != null;
+            return this._bounceTopic != null;
         }
 
+
         /// <summary>
-        /// The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic where Amazon SES will publish complaint notifications.
-        ///  
+        /// Gets and sets the property ComplaintTopic. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic
+        ///         where Amazon SES will publish complaint notifications.
+        /// </para>
         /// </summary>
         public string ComplaintTopic
         {
-            get { return this.complaintTopic; }
-            set { this.complaintTopic = value; }
+            get { return this._complaintTopic; }
+            set { this._complaintTopic = value; }
         }
+
 
         /// <summary>
         /// Sets the ComplaintTopic property
@@ -78,27 +89,32 @@ namespace Amazon.SimpleEmail.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IdentityNotificationAttributes WithComplaintTopic(string complaintTopic)
         {
-            this.complaintTopic = complaintTopic;
+            this._complaintTopic = complaintTopic;
             return this;
         }
-            
 
         // Check to see if ComplaintTopic property is set
         internal bool IsSetComplaintTopic()
         {
-            return this.complaintTopic != null;
+            return this._complaintTopic != null;
         }
 
+
         /// <summary>
-        /// Describes whether Amazon SES will forward feedback as email. <c>true</c> indicates that Amazon SES will forward feedback as email, while
-        /// <c>false</c> indicates that feedback will be published only to the specified Bounce and Complaint topics.
-        ///  
+        /// Gets and sets the property ForwardingEnabled. 
+        /// <para>
+        /// Describes whether Amazon SES will forward feedback as email. <code>true</code> indicates
+        ///         that Amazon SES will forward feedback as email, while <code>false</code> indicates
+        /// that         feedback will be published only to the specified Bounce and Complaint
+        /// topics.
+        /// </para>
         /// </summary>
         public bool ForwardingEnabled
         {
-            get { return this.forwardingEnabled ?? default(bool); }
-            set { this.forwardingEnabled = value; }
+            get { return this._forwardingEnabled.GetValueOrDefault(); }
+            set { this._forwardingEnabled = value; }
         }
+
 
         /// <summary>
         /// Sets the ForwardingEnabled property
@@ -108,15 +124,15 @@ namespace Amazon.SimpleEmail.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IdentityNotificationAttributes WithForwardingEnabled(bool forwardingEnabled)
         {
-            this.forwardingEnabled = forwardingEnabled;
+            this._forwardingEnabled = forwardingEnabled;
             return this;
         }
-            
 
         // Check to see if ForwardingEnabled property is set
         internal bool IsSetForwardingEnabled()
         {
-            return this.forwardingEnabled.HasValue;
+            return this._forwardingEnabled.HasValue; 
         }
+
     }
 }

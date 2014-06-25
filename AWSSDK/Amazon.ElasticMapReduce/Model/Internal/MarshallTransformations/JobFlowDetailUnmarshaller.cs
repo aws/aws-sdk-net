@@ -64,6 +64,11 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("BootstrapActions", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.BootstrapActions =  null;
+                            continue;
+                        }
                         unmarshalledObject.BootstrapActions = new List<BootstrapActionDetail>();
                         var unmarshaller = BootstrapActionDetailUnmarshaller.GetInstance();
                         while (context.Read())
@@ -116,6 +121,11 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Steps", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Steps =  null;
+                            continue;
+                        }
                         unmarshalledObject.Steps = new List<StepDetail>();
                         var unmarshaller = StepDetailUnmarshaller.GetInstance();
                         while (context.Read())
@@ -133,6 +143,11 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("SupportedProducts", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.SupportedProducts =  null;
+                            continue;
+                        }
                         unmarshalledObject.SupportedProducts = new List<string>();
                         var unmarshaller = StringUnmarshaller.GetInstance();
                         while (context.Read())

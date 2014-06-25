@@ -67,6 +67,11 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("OutputKeys", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.OutputKeys =  null;
+                            continue;
+                        }
                         unmarshalledObject.OutputKeys = new List<string>();
                         var unmarshaller = StringUnmarshaller.GetInstance();
                         while (context.Read())

@@ -57,6 +57,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     context.Read();
                     if (context.TestExpression("ServiceErrors", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.ServiceErrors =  null;
+                            continue;
+                        }
                         unmarshalledObject.ServiceErrors = new List<ServiceError>();
                         var unmarshaller = ServiceErrorUnmarshaller.GetInstance();
                         while (context.Read())

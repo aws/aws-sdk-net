@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,57 +12,61 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SimpleEmail.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   DeleteIdentityResult Unmarshaller
-     /// </summary>
-    internal class DeleteIdentityResultUnmarshaller : IUnmarshaller<DeleteIdentityResult, XmlUnmarshallerContext>, IUnmarshaller<DeleteIdentityResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for DeleteIdentity Object
+    /// </summary>  
+    public class DeleteIdentityResultUnmarshaller : IUnmarshaller<DeleteIdentityResult, XmlUnmarshallerContext>
     {
         public DeleteIdentityResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            DeleteIdentityResult deleteIdentityResult = new DeleteIdentityResult();
+            DeleteIdentityResult result = new DeleteIdentityResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                }
+
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return deleteIdentityResult;
+                    return result;
                 }
             }
-                        
 
-
-            return deleteIdentityResult;
+            return result;
         }
 
-        public DeleteIdentityResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static DeleteIdentityResultUnmarshaller instance;
-
-        public static DeleteIdentityResultUnmarshaller GetInstance() 
+        public static DeleteIdentityResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new DeleteIdentityResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new DeleteIdentityResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

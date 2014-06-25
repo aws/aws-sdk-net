@@ -57,6 +57,11 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     context.Read();
                     if (context.TestExpression("InstanceGroups", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.InstanceGroups =  null;
+                            continue;
+                        }
                         unmarshalledObject.InstanceGroups = new List<InstanceGroup>();
                         var unmarshaller = InstanceGroupUnmarshaller.GetInstance();
                         while (context.Read())
@@ -74,6 +79,11 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Marker", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Marker = null;
+                            continue;
+                        }
                         unmarshalledObject.Marker = StringUnmarshaller.GetInstance().Unmarshall(context);
                         continue;
                     }

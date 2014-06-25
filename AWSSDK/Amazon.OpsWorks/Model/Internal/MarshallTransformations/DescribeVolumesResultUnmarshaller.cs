@@ -57,6 +57,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     context.Read();
                     if (context.TestExpression("Volumes", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Volumes =  null;
+                            continue;
+                        }
                         unmarshalledObject.Volumes = new List<Volume>();
                         var unmarshaller = VolumeUnmarshaller.GetInstance();
                         while (context.Read())

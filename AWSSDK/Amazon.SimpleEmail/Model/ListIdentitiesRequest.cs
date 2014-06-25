@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,35 +25,34 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the ListIdentities operation.
-    /// <para>Returns a list containing all of the identities (email addresses and domains) for a specific AWS Account, regardless of verification
-    /// status.</para> <para>This action is throttled at one request per second.</para>
+    /// Returns a list containing all of the identities (email addresses and domains) for
+    ///         a specific AWS Account, regardless of verification status.
+    /// 
+    ///         
+    /// <para>
+    /// This action is throttled at one request per second.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.ListIdentities"/>
-    public class ListIdentitiesRequest : AmazonWebServiceRequest
+    public partial class ListIdentitiesRequest : AmazonWebServiceRequest
     {
-        private string identityType;
-        private string nextToken;
-        private int? maxItems;
+        private string _identityType;
+        private int? _maxItems;
+        private string _nextToken;
+
 
         /// <summary>
-        /// The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is omitted, then all identities will
-        /// be listed.
-        ///  
+        /// Gets and sets the property IdentityType. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>EmailAddress, Domain</description>
-        ///     </item>
-        /// </list>
+        /// The type of the identities to list. Possible values are "EmailAddress" and "Domain".
+        /// If this parameter is omitted, then all identities will be listed.
         /// </para>
         /// </summary>
         public string IdentityType
         {
-            get { return this.identityType; }
-            set { this.identityType = value; }
+            get { return this._identityType; }
+            set { this._identityType = value; }
         }
+
 
         /// <summary>
         /// Sets the IdentityType property
@@ -63,55 +62,29 @@ namespace Amazon.SimpleEmail.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListIdentitiesRequest WithIdentityType(string identityType)
         {
-            this.identityType = identityType;
+            this._identityType = identityType;
             return this;
         }
-            
 
         // Check to see if IdentityType property is set
         internal bool IsSetIdentityType()
         {
-            return this.identityType != null;
+            return this._identityType != null;
         }
+
 
         /// <summary>
-        /// The token to use for pagination.
-        ///  
-        /// </summary>
-        public string NextToken
-        {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
-        }
-
-        /// <summary>
-        /// Sets the NextToken property
-        /// </summary>
-        /// <param name="nextToken">The value to set for the NextToken property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ListIdentitiesRequest WithNextToken(string nextToken)
-        {
-            this.nextToken = nextToken;
-            return this;
-        }
-            
-
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
-        {
-            return this.nextToken != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property MaxItems. 
+        /// <para>
         /// The maximum number of identities per page. Possible values are 1-100 inclusive.
-        ///  
+        /// </para>
         /// </summary>
         public int MaxItems
         {
-            get { return this.maxItems ?? default(int); }
-            set { this.maxItems = value; }
+            get { return this._maxItems.GetValueOrDefault(); }
+            set { this._maxItems = value; }
         }
+
 
         /// <summary>
         /// Sets the MaxItems property
@@ -121,16 +94,47 @@ namespace Amazon.SimpleEmail.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListIdentitiesRequest WithMaxItems(int maxItems)
         {
-            this.maxItems = maxItems;
+            this._maxItems = maxItems;
             return this;
         }
-            
 
         // Check to see if MaxItems property is set
         internal bool IsSetMaxItems()
         {
-            return this.maxItems.HasValue;
+            return this._maxItems.HasValue; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token to use for pagination.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the NextToken property
+        /// </summary>
+        /// <param name="nextToken">The value to set for the NextToken property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ListIdentitiesRequest WithNextToken(string nextToken)
+        {
+            this._nextToken = nextToken;
+            return this;
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
+
     }
 }
-    

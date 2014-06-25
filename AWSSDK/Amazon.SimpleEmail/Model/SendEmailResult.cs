@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,25 +18,33 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// <para>Represents a unique message ID returned from a successful <c>SendEmail</c> request. </para>
+    /// Represents a unique message ID returned from a successful            <code>SendEmail</code>
+    ///            request.
     /// </summary>
     public partial class SendEmailResult
     {
-        
-        private string messageId;
+        private string _messageId;
+
 
         /// <summary>
-        /// The unique message identifier returned from the <c>SendEmail</c> action.
-        ///  
+        /// Gets and sets the property MessageId. 
+        /// <para>
+        /// The unique message identifier returned from the            <code>SendEmail</code>
+        ///            action.        
+        /// </para>
         /// </summary>
         public string MessageId
         {
-            get { return this.messageId; }
-            set { this.messageId = value; }
+            get { return this._messageId; }
+            set { this._messageId = value; }
         }
+
 
         /// <summary>
         /// Sets the MessageId property
@@ -46,15 +54,15 @@ namespace Amazon.SimpleEmail.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SendEmailResult WithMessageId(string messageId)
         {
-            this.messageId = messageId;
+            this._messageId = messageId;
             return this;
         }
-            
 
         // Check to see if MessageId property is set
         internal bool IsSetMessageId()
         {
-            return this.messageId != null;
+            return this._messageId != null;
         }
+
     }
 }

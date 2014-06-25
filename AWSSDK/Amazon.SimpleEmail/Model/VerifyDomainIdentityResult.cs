@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,25 +18,32 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// <para>Represents a token used for domain ownership verification.</para>
+    /// Represents a token used for domain ownership verification.
     /// </summary>
     public partial class VerifyDomainIdentityResult
     {
-        
-        private string verificationToken;
+        private string _verificationToken;
+
 
         /// <summary>
-        /// A TXT record that must be placed in the DNS settings for the domain, in order to complete domain verification.
-        ///  
+        /// Gets and sets the property VerificationToken. 
+        /// <para>
+        /// A TXT record that must be placed in the DNS settings for the domain, in order to complete
+        /// domain verification.
+        /// </para>
         /// </summary>
         public string VerificationToken
         {
-            get { return this.verificationToken; }
-            set { this.verificationToken = value; }
+            get { return this._verificationToken; }
+            set { this._verificationToken = value; }
         }
+
 
         /// <summary>
         /// Sets the VerificationToken property
@@ -46,15 +53,15 @@ namespace Amazon.SimpleEmail.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VerifyDomainIdentityResult WithVerificationToken(string verificationToken)
         {
-            this.verificationToken = verificationToken;
+            this._verificationToken = verificationToken;
             return this;
         }
-            
 
         // Check to see if VerificationToken property is set
         internal bool IsSetVerificationToken()
         {
-            return this.verificationToken != null;
+            return this._verificationToken != null;
         }
+
     }
 }

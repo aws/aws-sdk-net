@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,64 +12,68 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SimpleEmail.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   GetIdentityDkimAttributesResult Unmarshaller
-     /// </summary>
-    internal class GetIdentityDkimAttributesResultUnmarshaller : IUnmarshaller<GetIdentityDkimAttributesResult, XmlUnmarshallerContext>, IUnmarshaller<GetIdentityDkimAttributesResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for GetIdentityDkimAttributes Object
+    /// </summary>  
+    public class GetIdentityDkimAttributesResultUnmarshaller : IUnmarshaller<GetIdentityDkimAttributesResult, XmlUnmarshallerContext>
     {
         public GetIdentityDkimAttributesResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            GetIdentityDkimAttributesResult getIdentityDkimAttributesResult = new GetIdentityDkimAttributesResult();
+            GetIdentityDkimAttributesResult result = new GetIdentityDkimAttributesResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
+
                     if (context.TestExpression("DkimAttributes/entry", targetDepth))
                     {
-                        KeyValueUnmarshaller<string, IdentityDkimAttributes, StringUnmarshaller, IdentityDkimAttributesUnmarshaller> unmarshaller = new KeyValueUnmarshaller<string, IdentityDkimAttributes, StringUnmarshaller, IdentityDkimAttributesUnmarshaller>(StringUnmarshaller.GetInstance(), IdentityDkimAttributesUnmarshaller.GetInstance());
-                        KeyValuePair<string, IdentityDkimAttributes> kvp = unmarshaller.Unmarshall(context);
-                        getIdentityDkimAttributesResult.DkimAttributes.Add(kvp.Key, kvp.Value);
+                        var unmarshaller = new KeyValueUnmarshaller<string, IdentityDkimAttributes, StringUnmarshaller, IdentityDkimAttributesUnmarshaller>(StringUnmarshaller.GetInstance(), IdentityDkimAttributesUnmarshaller.GetInstance());
+                        var item = unmarshaller.Unmarshall(context);
+                        result.DkimAttributes.Add(item.Key, item.Value);
                         continue;
                     }
-                }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return getIdentityDkimAttributesResult;
+                    return result;
                 }
             }
-                        
 
-
-            return getIdentityDkimAttributesResult;
+            return result;
         }
 
-        public GetIdentityDkimAttributesResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static GetIdentityDkimAttributesResultUnmarshaller instance;
-
-        public static GetIdentityDkimAttributesResultUnmarshaller GetInstance() 
+        public static GetIdentityDkimAttributesResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new GetIdentityDkimAttributesResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new GetIdentityDkimAttributesResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

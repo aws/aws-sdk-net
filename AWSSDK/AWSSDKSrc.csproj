@@ -8352,6 +8352,9 @@
     <Compile Include="Amazon.SecurityToken\Model\InvalidAuthorizationMessageException.cs" />
     <Compile Include="Amazon.SecurityToken\Model\InvalidIdentityTokenException.cs" />
     <Compile Include="Amazon.SimpleDB\Model\SDBRequest.cs" />
+    <Compile Include="Amazon.SimpleEmail\Model\Body.Extensions.cs" />
+    <Compile Include="Amazon.SimpleEmail\Model\Content.Extensions.cs" />
+    <Compile Include="Amazon.SimpleEmail\Model\Message.Extensions.cs" />
     <Compile Include="Amazon.SimpleNotificationService\Model\Endpoint.cs" />
     <Compile Include="Amazon.SimpleNotificationService\Model\ListEndpointsByPlatformApplicationRequest.cs" />
     <Compile Include="Amazon.SimpleNotificationService\Model\ListEndpointsByPlatformApplicationResponse.cs" />

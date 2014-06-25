@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// Returns information about the  ListIdentitiesResult response and response metadata.
+    /// Returns information about the ListIdentitiesResult response and response metadata.
     /// </summary>
     public class ListIdentitiesResponse : AmazonWebServiceResponse
     {
-        private ListIdentitiesResult listIdentitiesResult;
+        private ListIdentitiesResult _listIdentitiesResult;
 
         /// <summary>
         /// Gets and sets the ListIdentitiesResult property.
-        /// Represents a list of all verified identities for the AWS Account.
+        /// Represents the output of a ListIdentities operation.
         /// </summary>
         public ListIdentitiesResult ListIdentitiesResult
         {
-            get 
+            get
             {
-                if(this.listIdentitiesResult == null)
+                if(this._listIdentitiesResult == null)
                 {
-                    this.listIdentitiesResult = new ListIdentitiesResult();
+                    this._listIdentitiesResult = new ListIdentitiesResult();
                 }
-
-                return this.listIdentitiesResult; 
+                return this._listIdentitiesResult;
             }
-            set { this.listIdentitiesResult = value; }
+            set { this._listIdentitiesResult = value; }
         }
     }
 }
-    

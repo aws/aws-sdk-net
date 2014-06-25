@@ -128,6 +128,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("LayerIds", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.LayerIds =  null;
+                            continue;
+                        }
                         unmarshalledObject.LayerIds = new List<string>();
                         var unmarshaller = StringUnmarshaller.GetInstance();
                         while (context.Read())
@@ -180,6 +185,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("SecurityGroupIds", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.SecurityGroupIds =  null;
+                            continue;
+                        }
                         unmarshalledObject.SecurityGroupIds = new List<string>();
                         var unmarshaller = StringUnmarshaller.GetInstance();
                         while (context.Read())

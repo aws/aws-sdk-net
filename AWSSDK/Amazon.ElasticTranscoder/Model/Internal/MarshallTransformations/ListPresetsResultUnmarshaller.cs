@@ -57,11 +57,21 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     context.Read();
                     if (context.TestExpression("NextPageToken", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.NextPageToken = null;
+                            continue;
+                        }
                         unmarshalledObject.NextPageToken = StringUnmarshaller.GetInstance().Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Presets", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Presets =  null;
+                            continue;
+                        }
                         unmarshalledObject.Presets = new List<Preset>();
                         var unmarshaller = PresetUnmarshaller.GetInstance();
                         while (context.Read())

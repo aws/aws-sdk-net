@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,24 +18,30 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// <para>Describes whether an identity has a bounce topic or complaint topic set, or feedback forwarding enabled.</para>
+    /// Describes whether an identity has a bounce topic or complaint topic set, or feedback
+    ///         forwarding enabled.
     /// </summary>
     public partial class GetIdentityNotificationAttributesResult
     {
-        
-        private Dictionary<string,IdentityNotificationAttributes> notificationAttributes = new Dictionary<string,IdentityNotificationAttributes>();
+        private Dictionary<string, IdentityNotificationAttributes> _notificationAttributes = new Dictionary<string, IdentityNotificationAttributes>();
+
 
         /// <summary>
+        /// Gets and sets the property NotificationAttributes. 
+        /// <para>
         /// A map of Identity to IdentityNotificationAttributes.
-        ///  
+        /// </para>
         /// </summary>
-        public Dictionary<string,IdentityNotificationAttributes> NotificationAttributes
+        public Dictionary<string, IdentityNotificationAttributes> NotificationAttributes
         {
-            get { return this.notificationAttributes; }
-            set { this.notificationAttributes = value; }
+            get { return this._notificationAttributes; }
+            set { this._notificationAttributes = value; }
         }
 
         /// <summary>
@@ -50,14 +56,13 @@ namespace Amazon.SimpleEmail.Model
             {
                 this.NotificationAttributes[pair.Key] = pair.Value;
             }
-
             return this;
         }
-
         // Check to see if NotificationAttributes property is set
         internal bool IsSetNotificationAttributes()
         {
-            return this.notificationAttributes != null;
+            return this._notificationAttributes != null && this._notificationAttributes.Count > 0; 
         }
+
     }
 }

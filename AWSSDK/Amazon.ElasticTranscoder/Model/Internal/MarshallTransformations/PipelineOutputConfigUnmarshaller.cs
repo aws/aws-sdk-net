@@ -62,6 +62,11 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Permissions", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Permissions =  null;
+                            continue;
+                        }
                         unmarshalledObject.Permissions = new List<Permission>();
                         var unmarshaller = PermissionUnmarshaller.GetInstance();
                         while (context.Read())

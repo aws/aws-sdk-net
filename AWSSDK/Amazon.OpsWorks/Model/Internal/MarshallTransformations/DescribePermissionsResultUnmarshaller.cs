@@ -57,6 +57,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     context.Read();
                     if (context.TestExpression("Permissions", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Permissions =  null;
+                            continue;
+                        }
                         unmarshalledObject.Permissions = new List<Permission>();
                         var unmarshaller = PermissionUnmarshaller.GetInstance();
                         while (context.Read())

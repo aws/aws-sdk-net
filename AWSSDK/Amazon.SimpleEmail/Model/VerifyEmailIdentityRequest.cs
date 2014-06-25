@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,23 +25,31 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the VerifyEmailIdentity operation.
-    /// <para>Verifies an email address. This action causes a confirmation email message to be sent to the specified address.</para> <para>This
-    /// action is throttled at one request per second.</para>
+    /// Verifies an email address. This action causes a confirmation email message       
+    /// to be sent to the specified address.
+    /// 
+    ///         
+    /// <para>
+    /// This action is throttled at one request per second.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.VerifyEmailIdentity"/>
-    public class VerifyEmailIdentityRequest : AmazonWebServiceRequest
+    public partial class VerifyEmailIdentityRequest : AmazonWebServiceRequest
     {
-        private string emailAddress;
+        private string _emailAddress;
+
 
         /// <summary>
+        /// Gets and sets the property EmailAddress. 
+        /// <para>
         /// The email address to be verified.
-        ///  
+        /// </para>
         /// </summary>
         public string EmailAddress
         {
-            get { return this.emailAddress; }
-            set { this.emailAddress = value; }
+            get { return this._emailAddress; }
+            set { this._emailAddress = value; }
         }
+
 
         /// <summary>
         /// Sets the EmailAddress property
@@ -51,16 +59,15 @@ namespace Amazon.SimpleEmail.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VerifyEmailIdentityRequest WithEmailAddress(string emailAddress)
         {
-            this.emailAddress = emailAddress;
+            this._emailAddress = emailAddress;
             return this;
         }
-            
 
         // Check to see if EmailAddress property is set
         internal bool IsSetEmailAddress()
         {
-            return this.emailAddress != null;
+            return this._emailAddress != null;
         }
+
     }
 }
-    

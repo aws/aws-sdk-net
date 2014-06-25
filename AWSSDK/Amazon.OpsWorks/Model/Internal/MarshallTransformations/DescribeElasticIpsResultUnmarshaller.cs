@@ -57,6 +57,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     context.Read();
                     if (context.TestExpression("ElasticIps", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.ElasticIps =  null;
+                            continue;
+                        }
                         unmarshalledObject.ElasticIps = new List<ElasticIp>();
                         var unmarshaller = ElasticIpUnmarshaller.GetInstance();
                         while (context.Read())

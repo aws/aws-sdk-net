@@ -56,11 +56,21 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     context.Read();
                     if (context.TestExpression("Preset", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Preset = null;
+                            continue;
+                        }
                         unmarshalledObject.Preset = PresetUnmarshaller.GetInstance().Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Warning", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Warning = null;
+                            continue;
+                        }
                         unmarshalledObject.Warning = StringUnmarshaller.GetInstance().Unmarshall(context);
                         continue;
                     }

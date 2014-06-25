@@ -57,6 +57,11 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     context.Read();
                     if (context.TestExpression("Artwork", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Artwork =  null;
+                            continue;
+                        }
                         unmarshalledObject.Artwork = new List<Artwork>();
                         var unmarshaller = ArtworkUnmarshaller.GetInstance();
                         while (context.Read())

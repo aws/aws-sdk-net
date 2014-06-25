@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,23 +25,31 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteIdentity operation.
-    /// <para>Deletes the specified identity (email address or domain) from the list of verified identities.</para> <para>This action is throttled
-    /// at one request per second.</para>
+    /// Deletes the specified identity (email address or domain) from the list of verified
+    /// identities.
+    /// 
+    ///         
+    /// <para>
+    /// This action is throttled at one request per second.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.DeleteIdentity"/>
-    public class DeleteIdentityRequest : AmazonWebServiceRequest
+    public partial class DeleteIdentityRequest : AmazonWebServiceRequest
     {
-        private string identity;
+        private string _identity;
+
 
         /// <summary>
+        /// Gets and sets the property Identity. 
+        /// <para>
         /// The identity to be removed from the list of identities for the AWS Account.
-        ///  
+        /// </para>
         /// </summary>
         public string Identity
         {
-            get { return this.identity; }
-            set { this.identity = value; }
+            get { return this._identity; }
+            set { this._identity = value; }
         }
+
 
         /// <summary>
         /// Sets the Identity property
@@ -51,16 +59,15 @@ namespace Amazon.SimpleEmail.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteIdentityRequest WithIdentity(string identity)
         {
-            this.identity = identity;
+            this._identity = identity;
             return this;
         }
-            
 
         // Check to see if Identity property is set
         internal bool IsSetIdentity()
         {
-            return this.identity != null;
+            return this._identity != null;
         }
+
     }
 }
-    

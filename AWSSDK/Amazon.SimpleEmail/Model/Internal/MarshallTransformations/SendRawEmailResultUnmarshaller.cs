@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,63 +12,67 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SimpleEmail.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   SendRawEmailResult Unmarshaller
-     /// </summary>
-    internal class SendRawEmailResultUnmarshaller : IUnmarshaller<SendRawEmailResult, XmlUnmarshallerContext>, IUnmarshaller<SendRawEmailResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for SendRawEmail Object
+    /// </summary>  
+    public class SendRawEmailResultUnmarshaller : IUnmarshaller<SendRawEmailResult, XmlUnmarshallerContext>
     {
         public SendRawEmailResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            SendRawEmailResult sendRawEmailResult = new SendRawEmailResult();
+            SendRawEmailResult result = new SendRawEmailResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
+
                     if (context.TestExpression("MessageId", targetDepth))
                     {
-                        sendRawEmailResult.MessageId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.MessageId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return sendRawEmailResult;
+                    return result;
                 }
             }
-                        
 
-
-            return sendRawEmailResult;
+            return result;
         }
 
-        public SendRawEmailResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static SendRawEmailResultUnmarshaller instance;
-
-        public static SendRawEmailResultUnmarshaller GetInstance() 
+        public static SendRawEmailResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new SendRawEmailResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new SendRawEmailResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

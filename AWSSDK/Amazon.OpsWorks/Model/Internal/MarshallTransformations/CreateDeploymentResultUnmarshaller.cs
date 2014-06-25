@@ -56,6 +56,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     context.Read();
                     if (context.TestExpression("DeploymentId", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.DeploymentId = null;
+                            continue;
+                        }
                         unmarshalledObject.DeploymentId = StringUnmarshaller.GetInstance().Unmarshall(context);
                         continue;
                     }

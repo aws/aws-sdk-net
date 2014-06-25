@@ -57,6 +57,11 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     context.Read();
                     if (context.TestExpression("Messages", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Messages =  null;
+                            continue;
+                        }
                         unmarshalledObject.Messages = new List<string>();
                         var unmarshaller = StringUnmarshaller.GetInstance();
                         while (context.Read())
@@ -74,6 +79,11 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Success", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Success = null;
+                            continue;
+                        }
                         unmarshalledObject.Success = StringUnmarshaller.GetInstance().Unmarshall(context);
                         continue;
                     }

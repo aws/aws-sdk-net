@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,47 +18,38 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// <para>Represents the raw data of the message.</para>
+    /// Represents the raw data of the message.
     /// </summary>
     public partial class RawMessage
     {
-        
-        private MemoryStream data;
-        /// <summary>
-        /// Default constructor for a new RawMessage object.  Callers should use the
-        /// properties or fluent setter (With...) methods to initialize this object after creating it.
-        /// </summary>
-        public RawMessage() {}
-    
-        /// <summary>
-        /// Constructs a new RawMessage object.
-        /// Callers should use the properties or fluent setter (With...) methods to
-        /// initialize any additional object members.
-        /// </summary>
-        /// 
-        /// <param name="data"> The raw data of the message. The client must ensure that the message format complies with Internet email standards
-        /// regarding email header fields, MIME types, MIME encoding, and base64 encoding (if necessary). For more information, go to the <a
-        /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon SES Developer Guide</a>. </param>
-        public RawMessage(MemoryStream data)
-        {
-            this.data = data;
-        }
-    
+        private MemoryStream _data;
+
 
         /// <summary>
-        /// The raw data of the message. The client must ensure that the message format complies with Internet email standards regarding email header
-        /// fields, MIME types, MIME encoding, and base64 encoding (if necessary). For more information, go to the <a
-        /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon SES Developer Guide</a>.
-        ///  
+        /// Gets and sets the property Data. 
+        /// <para>
+        /// The raw data of the message. The client must ensure that the message format complies
+        /// with Internet email            standards regarding email header fields, MIME types,
+        /// MIME encoding, and base64 encoding (if necessary).        
+        /// </para>
+        ///         
+        /// <para>
+        /// For more information, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
+        /// SES Developer Guide</a>.        
+        /// </para>
         /// </summary>
         public MemoryStream Data
         {
-            get { return this.data; }
-            set { this.data = value; }
+            get { return this._data; }
+            set { this._data = value; }
         }
+
 
         /// <summary>
         /// Sets the Data property
@@ -68,15 +59,15 @@ namespace Amazon.SimpleEmail.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RawMessage WithData(MemoryStream data)
         {
-            this.data = data;
+            this._data = data;
             return this;
         }
-            
 
         // Check to see if Data property is set
         internal bool IsSetData()
         {
-            return this.data != null;
+            return this._data != null;
         }
+
     }
 }

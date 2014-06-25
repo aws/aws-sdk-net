@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,57 +12,61 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SimpleEmail.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   SetIdentityFeedbackForwardingEnabledResult Unmarshaller
-     /// </summary>
-    internal class SetIdentityFeedbackForwardingEnabledResultUnmarshaller : IUnmarshaller<SetIdentityFeedbackForwardingEnabledResult, XmlUnmarshallerContext>, IUnmarshaller<SetIdentityFeedbackForwardingEnabledResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for SetIdentityFeedbackForwardingEnabled Object
+    /// </summary>  
+    public class SetIdentityFeedbackForwardingEnabledResultUnmarshaller : IUnmarshaller<SetIdentityFeedbackForwardingEnabledResult, XmlUnmarshallerContext>
     {
         public SetIdentityFeedbackForwardingEnabledResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            SetIdentityFeedbackForwardingEnabledResult setIdentityFeedbackForwardingEnabledResult = new SetIdentityFeedbackForwardingEnabledResult();
+            SetIdentityFeedbackForwardingEnabledResult result = new SetIdentityFeedbackForwardingEnabledResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                }
+
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return setIdentityFeedbackForwardingEnabledResult;
+                    return result;
                 }
             }
-                        
 
-
-            return setIdentityFeedbackForwardingEnabledResult;
+            return result;
         }
 
-        public SetIdentityFeedbackForwardingEnabledResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static SetIdentityFeedbackForwardingEnabledResultUnmarshaller instance;
-
-        public static SetIdentityFeedbackForwardingEnabledResultUnmarshaller GetInstance() 
+        public static SetIdentityFeedbackForwardingEnabledResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new SetIdentityFeedbackForwardingEnabledResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new SetIdentityFeedbackForwardingEnabledResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

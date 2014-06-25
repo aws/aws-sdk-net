@@ -56,6 +56,11 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     context.Read();
                     if (context.TestExpression("Job", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Job = null;
+                            continue;
+                        }
                         unmarshalledObject.Job = JobUnmarshaller.GetInstance().Unmarshall(context);
                         continue;
                     }

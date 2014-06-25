@@ -57,6 +57,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     context.Read();
                     if (context.TestExpression("UserProfiles", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.UserProfiles =  null;
+                            continue;
+                        }
                         unmarshalledObject.UserProfiles = new List<UserProfile>();
                         var unmarshaller = UserProfileUnmarshaller.GetInstance();
                         while (context.Read())

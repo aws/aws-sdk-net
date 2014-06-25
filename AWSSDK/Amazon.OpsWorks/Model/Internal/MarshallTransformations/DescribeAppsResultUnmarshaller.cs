@@ -57,6 +57,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     context.Read();
                     if (context.TestExpression("Apps", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Apps =  null;
+                            continue;
+                        }
                         unmarshalledObject.Apps = new List<App>();
                         var unmarshaller = AppUnmarshaller.GetInstance();
                         while (context.Read())

@@ -58,6 +58,11 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     context.Read();
                     if (context.TestExpression("CaptionFormats", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.CaptionFormats =  null;
+                            continue;
+                        }
                         unmarshalledObject.CaptionFormats = new List<CaptionFormat>();
                         var unmarshaller = CaptionFormatUnmarshaller.GetInstance();
                         while (context.Read())
@@ -75,6 +80,11 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("CaptionSources", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.CaptionSources =  null;
+                            continue;
+                        }
                         unmarshalledObject.CaptionSources = new List<CaptionSource>();
                         var unmarshaller = CaptionSourceUnmarshaller.GetInstance();
                         while (context.Read())

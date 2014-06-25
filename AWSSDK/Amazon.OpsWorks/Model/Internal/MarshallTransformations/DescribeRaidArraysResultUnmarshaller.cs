@@ -57,6 +57,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     context.Read();
                     if (context.TestExpression("RaidArrays", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.RaidArrays =  null;
+                            continue;
+                        }
                         unmarshalledObject.RaidArrays = new List<RaidArray>();
                         var unmarshaller = RaidArrayUnmarshaller.GetInstance();
                         while (context.Read())

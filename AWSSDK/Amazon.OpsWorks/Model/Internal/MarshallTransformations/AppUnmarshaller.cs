@@ -69,6 +69,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Attributes", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Attributes =  null;
+                            continue;
+                        }
                         unmarshalledObject.Attributes = new Dictionary<string, string>();
                         var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
                         while (context.Read())
@@ -93,6 +98,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("DataSources", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.DataSources =  null;
+                            continue;
+                        }
                         unmarshalledObject.DataSources = new List<DataSource>();
                         var unmarshaller = DataSourceUnmarshaller.GetInstance();
                         while (context.Read())
@@ -115,6 +125,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Domains", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Domains =  null;
+                            continue;
+                        }
                         unmarshalledObject.Domains = new List<string>();
                         var unmarshaller = StringUnmarshaller.GetInstance();
                         while (context.Read())

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// Returns information about the  VerifyDomainIdentityResult response and response metadata.
+    /// Returns information about the VerifyDomainIdentityResult response and response metadata.
     /// </summary>
     public class VerifyDomainIdentityResponse : AmazonWebServiceResponse
     {
-        private VerifyDomainIdentityResult verifyDomainIdentityResult;
+        private VerifyDomainIdentityResult _verifyDomainIdentityResult;
 
         /// <summary>
         /// Gets and sets the VerifyDomainIdentityResult property.
-        /// Represents a token used for domain ownership verification.
+        /// Represents the output of a VerifyDomainIdentity operation.
         /// </summary>
         public VerifyDomainIdentityResult VerifyDomainIdentityResult
         {
-            get 
+            get
             {
-                if(this.verifyDomainIdentityResult == null)
+                if(this._verifyDomainIdentityResult == null)
                 {
-                    this.verifyDomainIdentityResult = new VerifyDomainIdentityResult();
+                    this._verifyDomainIdentityResult = new VerifyDomainIdentityResult();
                 }
-
-                return this.verifyDomainIdentityResult; 
+                return this._verifyDomainIdentityResult;
             }
-            set { this.verifyDomainIdentityResult = value; }
+            set { this._verifyDomainIdentityResult = value; }
         }
     }
 }
-    

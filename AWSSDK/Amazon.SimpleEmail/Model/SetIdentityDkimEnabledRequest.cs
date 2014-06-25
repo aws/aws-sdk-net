@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,63 +25,50 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the SetIdentityDkimEnabled operation.
-    /// <para>Enables or disables Easy DKIM signing of email sent from an identity:</para>
-    /// <ul>
-    /// <li>If Easy DKIM signing is enabled for a domain name identity (e.g., <c>example.com</c> ), then Amazon SES will DKIM-sign all email sent
-    /// by addresses under that domain name (e.g., <c>user@example.com</c> ).</li>
-    /// <li>If Easy DKIM signing is enabled for an email address, then Amazon SES will DKIM-sign all email sent by that email address.</li>
+    /// Enables or disables Easy DKIM signing of email sent from an identity:
     /// 
-    /// </ul>
-    /// <para>For email addresses (e.g., <c>user@example.com</c> ), you can only enable Easy DKIM signing if the corresponding domain (e.g.,
-    /// <c>example.com</c> ) has been set up for Easy DKIM using the AWS Console or the <c>VerifyDomainDkim</c> action.</para> <para>This action is
-    /// throttled at one request per second.</para> <para>For more information about Easy DKIM signing, go to the <a
-    /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html" >Amazon SES Developer Guide</a> .</para>
+    ///             <ul>                <li>If Easy DKIM            signing is enabled for
+    /// a domain name identity (e.g., <code>example.com</code>), then Amazon SES will DKIM-sign
+    ///            all email sent by addresses under that domain name (e.g.,             
+    ///       <code>user@example.com</code>).</li>                <li>If Easy DKIM signing
+    /// is enabled for an email address, then Amazon SES will DKIM-sign            all email
+    /// sent by that email address.</li>            </ul>        
+    /// <para>
+    /// For email addresses (e.g., <code>user@example.com</code>), you can only enable Easy
+    /// DKIM signing  if the        corresponding domain (e.g., <code>example.com</code>)
+    /// has been set up for Easy DKIM using the AWS Console or             the <code>VerifyDomainDkim</code>
+    /// action.
+    /// </para>
+    ///         
+    /// <para>
+    /// This action is throttled at one request per second.
+    /// </para>
+    ///         
+    /// <para>
+    /// For more information about Easy DKIM signing, go to the             <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
+    /// SES Developer Guide</a>.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.SetIdentityDkimEnabled"/>
-    public class SetIdentityDkimEnabledRequest : AmazonWebServiceRequest
+    public partial class SetIdentityDkimEnabledRequest : AmazonWebServiceRequest
     {
-        private string identity;
-        private bool? dkimEnabled;
+        private bool? _dkimEnabled;
+        private string _identity;
+
 
         /// <summary>
-        /// The identity for which DKIM signing should be enabled or disabled.
-        ///  
-        /// </summary>
-        public string Identity
-        {
-            get { return this.identity; }
-            set { this.identity = value; }
-        }
-
-        /// <summary>
-        /// Sets the Identity property
-        /// </summary>
-        /// <param name="identity">The value to set for the Identity property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public SetIdentityDkimEnabledRequest WithIdentity(string identity)
-        {
-            this.identity = identity;
-            return this;
-        }
-            
-
-        // Check to see if Identity property is set
-        internal bool IsSetIdentity()
-        {
-            return this.identity != null;
-        }
-
-        /// <summary>
-        /// Sets whether DKIM signing is enabled for an identity. Set to <c>true</c> to enable DKIM signing for this identity; <c>false</c> to disable
-        /// it.
-        ///  
+        /// Gets and sets the property DkimEnabled. 
+        /// <para>
+        /// Sets whether DKIM signing is enabled for an identity.  Set to <code>true</code> to
+        /// enable DKIM signing for this identity;             <code>false</code> to disable it.
+        /// 
+        /// </para>
         /// </summary>
         public bool DkimEnabled
         {
-            get { return this.dkimEnabled ?? default(bool); }
-            set { this.dkimEnabled = value; }
+            get { return this._dkimEnabled.GetValueOrDefault(); }
+            set { this._dkimEnabled = value; }
         }
+
 
         /// <summary>
         /// Sets the DkimEnabled property
@@ -91,16 +78,47 @@ namespace Amazon.SimpleEmail.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetIdentityDkimEnabledRequest WithDkimEnabled(bool dkimEnabled)
         {
-            this.dkimEnabled = dkimEnabled;
+            this._dkimEnabled = dkimEnabled;
             return this;
         }
-            
 
         // Check to see if DkimEnabled property is set
         internal bool IsSetDkimEnabled()
         {
-            return this.dkimEnabled.HasValue;
+            return this._dkimEnabled.HasValue; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Identity. 
+        /// <para>
+        /// The identity for which DKIM signing should be enabled or disabled.
+        /// </para>
+        /// </summary>
+        public string Identity
+        {
+            get { return this._identity; }
+            set { this._identity = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the Identity property
+        /// </summary>
+        /// <param name="identity">The value to set for the Identity property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public SetIdentityDkimEnabledRequest WithIdentity(string identity)
+        {
+            this._identity = identity;
+            return this;
+        }
+
+        // Check to see if Identity property is set
+        internal bool IsSetIdentity()
+        {
+            return this._identity != null;
+        }
+
     }
 }
-    

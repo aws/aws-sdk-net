@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,66 +18,80 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// <para>Represents the DNS records that must be published in the domain name's DNS to complete DKIM setup.</para>
+    /// Represents the DNS records that must be published in the domain name's DNS to complete
+    ///        DKIM setup.
     /// </summary>
     public partial class VerifyDomainDkimResult
     {
-        
-        private List<string> dkimTokens = new List<string>();
+        private List<string> _dkimTokens = new List<string>();
+
 
         /// <summary>
-        /// A set of character strings that represent the domain's identity. If the identity is an email address, the tokens represent the domain of
-        /// that address. Using these tokens, you will need to create DNS CNAME records that point to DKIM public keys hosted by Amazon SES. Amazon Web
-        /// Services will eventually detect that you have updated your DNS records; this detection process may take up to 72 hours. Upon successful
-        /// detection, Amazon SES will be able to DKIM-sign emails originating from that domain. For more information about creating DNS records using
-        /// DKIM tokens, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon SES Developer
-        /// Guide</a>.
-        ///  
+        /// Gets and sets the property DkimTokens. 
+        /// <para>
+        /// A set of character strings that represent the domain's identity. If the identity is
+        /// an            email address, the tokens represent the domain of that address.
+        /// </para>
+        ///         
+        /// <para>
+        /// Using these tokens, you will need to create DNS CNAME records that point to DKIM public
+        ///            keys hosted by Amazon SES. Amazon Web Services will eventually detect that
+        /// you have            updated your DNS records; this detection process may take up to
+        /// 72 hours. Upon            successful detection, Amazon SES will be able to DKIM-sign
+        /// emails originating from that            domain.
+        /// </para>
+        ///         
+        /// <para>
+        /// For more information about creating DNS records using DKIM tokens, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
+        /// SES                Developer Guide</a>.
+        /// </para>
         /// </summary>
         public List<string> DkimTokens
         {
-            get { return this.dkimTokens; }
-            set { this.dkimTokens = value; }
+            get { return this._dkimTokens; }
+            set { this._dkimTokens = value; }
         }
+
         /// <summary>
-        /// Adds elements to the DkimTokens collection
+        /// Sets the DkimTokens property
         /// </summary>
         /// <param name="dkimTokens">The values to add to the DkimTokens collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VerifyDomainDkimResult WithDkimTokens(params string[] dkimTokens)
         {
-            foreach (string element in dkimTokens)
+            foreach (var element in dkimTokens)
             {
-                this.dkimTokens.Add(element);
+                this._dkimTokens.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the DkimTokens collection
+        /// Sets the DkimTokens property
         /// </summary>
         /// <param name="dkimTokens">The values to add to the DkimTokens collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VerifyDomainDkimResult WithDkimTokens(IEnumerable<string> dkimTokens)
         {
-            foreach (string element in dkimTokens)
+            foreach (var element in dkimTokens)
             {
-                this.dkimTokens.Add(element);
+                this._dkimTokens.Add(element);
             }
-
             return this;
         }
-
         // Check to see if DkimTokens property is set
         internal bool IsSetDkimTokens()
         {
-            return this.dkimTokens.Count > 0;
+            return this._dkimTokens != null && this._dkimTokens.Count > 0; 
         }
+
     }
 }

@@ -56,6 +56,11 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     context.Read();
                     if (context.TestExpression("Pipeline", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Pipeline = null;
+                            continue;
+                        }
                         unmarshalledObject.Pipeline = PipelineUnmarshaller.GetInstance().Unmarshall(context);
                         continue;
                     }

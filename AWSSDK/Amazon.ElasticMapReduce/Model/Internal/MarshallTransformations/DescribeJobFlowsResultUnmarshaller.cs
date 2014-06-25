@@ -57,6 +57,11 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     context.Read();
                     if (context.TestExpression("JobFlows", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.JobFlows =  null;
+                            continue;
+                        }
                         unmarshalledObject.JobFlows = new List<JobFlowDetail>();
                         var unmarshaller = JobFlowDetailUnmarshaller.GetInstance();
                         while (context.Read())

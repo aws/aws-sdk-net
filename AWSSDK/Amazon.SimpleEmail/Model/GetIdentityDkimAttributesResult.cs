@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,24 +18,29 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// <para>Represents a list of all the DKIM attributes for the specified identity.</para>
+    /// Represents a list of all the DKIM attributes for the specified identity.
     /// </summary>
     public partial class GetIdentityDkimAttributesResult
     {
-        
-        private Dictionary<string,IdentityDkimAttributes> dkimAttributes = new Dictionary<string,IdentityDkimAttributes>();
+        private Dictionary<string, IdentityDkimAttributes> _dkimAttributes = new Dictionary<string, IdentityDkimAttributes>();
+
 
         /// <summary>
-        /// The DKIM attributes for an email address or a domain.
-        ///  
+        /// Gets and sets the property DkimAttributes. 
+        /// <para>
+        /// The DKIM attributes for an email address or a domain. 
+        /// </para>
         /// </summary>
-        public Dictionary<string,IdentityDkimAttributes> DkimAttributes
+        public Dictionary<string, IdentityDkimAttributes> DkimAttributes
         {
-            get { return this.dkimAttributes; }
-            set { this.dkimAttributes = value; }
+            get { return this._dkimAttributes; }
+            set { this._dkimAttributes = value; }
         }
 
         /// <summary>
@@ -50,14 +55,13 @@ namespace Amazon.SimpleEmail.Model
             {
                 this.DkimAttributes[pair.Key] = pair.Value;
             }
-
             return this;
         }
-
         // Check to see if DkimAttributes property is set
         internal bool IsSetDkimAttributes()
         {
-            return this.dkimAttributes != null;
+            return this._dkimAttributes != null && this._dkimAttributes.Count > 0; 
         }
+
     }
 }

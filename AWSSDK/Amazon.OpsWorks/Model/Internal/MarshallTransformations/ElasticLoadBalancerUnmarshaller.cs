@@ -59,6 +59,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     context.Read();
                     if (context.TestExpression("AvailabilityZones", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.AvailabilityZones =  null;
+                            continue;
+                        }
                         unmarshalledObject.AvailabilityZones = new List<string>();
                         var unmarshaller = StringUnmarshaller.GetInstance();
                         while (context.Read())
@@ -81,6 +86,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Ec2InstanceIds", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Ec2InstanceIds =  null;
+                            continue;
+                        }
                         unmarshalledObject.Ec2InstanceIds = new List<string>();
                         var unmarshaller = StringUnmarshaller.GetInstance();
                         while (context.Read())
@@ -118,6 +128,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("SubnetIds", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.SubnetIds =  null;
+                            continue;
+                        }
                         unmarshalledObject.SubnetIds = new List<string>();
                         var unmarshaller = StringUnmarshaller.GetInstance();
                         while (context.Read())

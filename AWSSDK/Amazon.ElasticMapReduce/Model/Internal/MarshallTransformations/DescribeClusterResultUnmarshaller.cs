@@ -56,6 +56,11 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     context.Read();
                     if (context.TestExpression("Cluster", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Cluster = null;
+                            continue;
+                        }
                         unmarshalledObject.Cluster = ClusterUnmarshaller.GetInstance().Unmarshall(context);
                         continue;
                     }

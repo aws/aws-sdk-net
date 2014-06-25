@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// Returns information about the  ListVerifiedEmailAddressesResult response and response metadata.
+    /// Returns information about the ListVerifiedEmailAddressesResult response and response metadata.
     /// </summary>
     public class ListVerifiedEmailAddressesResponse : AmazonWebServiceResponse
     {
-        private ListVerifiedEmailAddressesResult listVerifiedEmailAddressesResult;
+        private ListVerifiedEmailAddressesResult _listVerifiedEmailAddressesResult;
 
         /// <summary>
         /// Gets and sets the ListVerifiedEmailAddressesResult property.
-        /// Represents a list of all the email addresses verified for the current user.
+        /// Represents the output of a ListVerifiedEmailAddresses operation.
         /// </summary>
         public ListVerifiedEmailAddressesResult ListVerifiedEmailAddressesResult
         {
-            get 
+            get
             {
-                if(this.listVerifiedEmailAddressesResult == null)
+                if(this._listVerifiedEmailAddressesResult == null)
                 {
-                    this.listVerifiedEmailAddressesResult = new ListVerifiedEmailAddressesResult();
+                    this._listVerifiedEmailAddressesResult = new ListVerifiedEmailAddressesResult();
                 }
-
-                return this.listVerifiedEmailAddressesResult; 
+                return this._listVerifiedEmailAddressesResult;
             }
-            set { this.listVerifiedEmailAddressesResult = value; }
+            set { this._listVerifiedEmailAddressesResult = value; }
         }
     }
 }
-    

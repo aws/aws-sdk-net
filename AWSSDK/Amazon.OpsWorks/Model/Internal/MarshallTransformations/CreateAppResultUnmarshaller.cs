@@ -56,6 +56,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     context.Read();
                     if (context.TestExpression("AppId", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.AppId = null;
+                            continue;
+                        }
                         unmarshalledObject.AppId = StringUnmarshaller.GetInstance().Unmarshall(context);
                         continue;
                     }

@@ -57,6 +57,11 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     context.Read();
                     if (context.TestExpression("Jobs", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Jobs =  null;
+                            continue;
+                        }
                         unmarshalledObject.Jobs = new List<Job>();
                         var unmarshaller = JobUnmarshaller.GetInstance();
                         while (context.Read())
@@ -74,6 +79,11 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("NextPageToken", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.NextPageToken = null;
+                            continue;
+                        }
                         unmarshalledObject.NextPageToken = StringUnmarshaller.GetInstance().Unmarshall(context);
                         continue;
                     }

@@ -57,6 +57,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     context.Read();
                     if (context.TestExpression("LoadBasedAutoScalingConfigurations", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.LoadBasedAutoScalingConfigurations =  null;
+                            continue;
+                        }
                         unmarshalledObject.LoadBasedAutoScalingConfigurations = new List<LoadBasedAutoScalingConfiguration>();
                         var unmarshaller = LoadBasedAutoScalingConfigurationUnmarshaller.GetInstance();
                         while (context.Read())

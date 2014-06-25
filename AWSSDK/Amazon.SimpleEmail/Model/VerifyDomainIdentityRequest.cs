@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,22 +25,30 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the VerifyDomainIdentity operation.
-    /// <para>Verifies a domain.</para> <para>This action is throttled at one request per second.</para>
+    /// Verifies a domain.
+    /// 
+    ///         
+    /// <para>
+    /// This action is throttled at one request per second.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.VerifyDomainIdentity"/>
-    public class VerifyDomainIdentityRequest : AmazonWebServiceRequest
+    public partial class VerifyDomainIdentityRequest : AmazonWebServiceRequest
     {
-        private string domain;
+        private string _domain;
+
 
         /// <summary>
+        /// Gets and sets the property Domain. 
+        /// <para>
         /// The domain to be verified.
-        ///  
+        /// </para>
         /// </summary>
         public string Domain
         {
-            get { return this.domain; }
-            set { this.domain = value; }
+            get { return this._domain; }
+            set { this._domain = value; }
         }
+
 
         /// <summary>
         /// Sets the Domain property
@@ -50,16 +58,15 @@ namespace Amazon.SimpleEmail.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VerifyDomainIdentityRequest WithDomain(string domain)
         {
-            this.domain = domain;
+            this._domain = domain;
             return this;
         }
-            
 
         // Check to see if Domain property is set
         internal bool IsSetDomain()
         {
-            return this.domain != null;
+            return this._domain != null;
         }
+
     }
 }
-    

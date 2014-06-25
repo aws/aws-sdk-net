@@ -63,6 +63,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     context.Read();
                     if (context.TestExpression("Friday", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Friday =  null;
+                            continue;
+                        }
                         unmarshalledObject.Friday = new Dictionary<string, string>();
                         var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
                         while (context.Read())
@@ -82,6 +87,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Monday", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Monday =  null;
+                            continue;
+                        }
                         unmarshalledObject.Monday = new Dictionary<string, string>();
                         var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
                         while (context.Read())
@@ -101,6 +111,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Saturday", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Saturday =  null;
+                            continue;
+                        }
                         unmarshalledObject.Saturday = new Dictionary<string, string>();
                         var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
                         while (context.Read())
@@ -120,6 +135,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Sunday", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Sunday =  null;
+                            continue;
+                        }
                         unmarshalledObject.Sunday = new Dictionary<string, string>();
                         var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
                         while (context.Read())
@@ -139,6 +159,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Thursday", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Thursday =  null;
+                            continue;
+                        }
                         unmarshalledObject.Thursday = new Dictionary<string, string>();
                         var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
                         while (context.Read())
@@ -158,6 +183,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Tuesday", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Tuesday =  null;
+                            continue;
+                        }
                         unmarshalledObject.Tuesday = new Dictionary<string, string>();
                         var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
                         while (context.Read())
@@ -177,6 +207,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Wednesday", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Wednesday =  null;
+                            continue;
+                        }
                         unmarshalledObject.Wednesday = new Dictionary<string, string>();
                         var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
                         while (context.Read())

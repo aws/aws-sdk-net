@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,57 +12,61 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SimpleEmail.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   VerifyEmailIdentityResult Unmarshaller
-     /// </summary>
-    internal class VerifyEmailIdentityResultUnmarshaller : IUnmarshaller<VerifyEmailIdentityResult, XmlUnmarshallerContext>, IUnmarshaller<VerifyEmailIdentityResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for VerifyEmailIdentity Object
+    /// </summary>  
+    public class VerifyEmailIdentityResultUnmarshaller : IUnmarshaller<VerifyEmailIdentityResult, XmlUnmarshallerContext>
     {
         public VerifyEmailIdentityResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            VerifyEmailIdentityResult verifyEmailIdentityResult = new VerifyEmailIdentityResult();
+            VerifyEmailIdentityResult result = new VerifyEmailIdentityResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                }
+
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return verifyEmailIdentityResult;
+                    return result;
                 }
             }
-                        
 
-
-            return verifyEmailIdentityResult;
+            return result;
         }
 
-        public VerifyEmailIdentityResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static VerifyEmailIdentityResultUnmarshaller instance;
-
-        public static VerifyEmailIdentityResultUnmarshaller GetInstance() 
+        public static VerifyEmailIdentityResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new VerifyEmailIdentityResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new VerifyEmailIdentityResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

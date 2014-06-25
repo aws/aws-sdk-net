@@ -73,6 +73,11 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("CodecOptions", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.CodecOptions =  null;
+                            continue;
+                        }
                         unmarshalledObject.CodecOptions = new Dictionary<string, string>();
                         var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
                         while (context.Read())
@@ -142,6 +147,11 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Watermarks", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Watermarks =  null;
+                            continue;
+                        }
                         unmarshalledObject.Watermarks = new List<PresetWatermark>();
                         var unmarshaller = PresetWatermarkUnmarshaller.GetInstance();
                         while (context.Read())

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,63 +12,68 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SimpleEmail.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   GetSendStatisticsResult Unmarshaller
-     /// </summary>
-    internal class GetSendStatisticsResultUnmarshaller : IUnmarshaller<GetSendStatisticsResult, XmlUnmarshallerContext>, IUnmarshaller<GetSendStatisticsResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for GetSendStatistics Object
+    /// </summary>  
+    public class GetSendStatisticsResultUnmarshaller : IUnmarshaller<GetSendStatisticsResult, XmlUnmarshallerContext>
     {
         public GetSendStatisticsResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            GetSendStatisticsResult getSendStatisticsResult = new GetSendStatisticsResult();
+            GetSendStatisticsResult result = new GetSendStatisticsResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
+
                     if (context.TestExpression("SendDataPoints/member", targetDepth))
                     {
-                        getSendStatisticsResult.SendDataPoints.Add(SendDataPointUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = SendDataPointUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        result.SendDataPoints.Add(item);
                         continue;
                     }
-                }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return getSendStatisticsResult;
+                    return result;
                 }
             }
-                        
 
-
-            return getSendStatisticsResult;
+            return result;
         }
 
-        public GetSendStatisticsResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static GetSendStatisticsResultUnmarshaller instance;
-
-        public static GetSendStatisticsResultUnmarshaller GetInstance() 
+        public static GetSendStatisticsResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new GetSendStatisticsResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new GetSendStatisticsResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

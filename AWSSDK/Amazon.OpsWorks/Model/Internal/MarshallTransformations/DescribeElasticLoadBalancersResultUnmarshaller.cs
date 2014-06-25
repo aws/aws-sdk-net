@@ -57,6 +57,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     context.Read();
                     if (context.TestExpression("ElasticLoadBalancers", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.ElasticLoadBalancers =  null;
+                            continue;
+                        }
                         unmarshalledObject.ElasticLoadBalancers = new List<ElasticLoadBalancer>();
                         var unmarshaller = ElasticLoadBalancerUnmarshaller.GetInstance();
                         while (context.Read())

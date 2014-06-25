@@ -68,6 +68,11 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Composition", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Composition =  null;
+                            continue;
+                        }
                         unmarshalledObject.Composition = new List<Clip>();
                         var unmarshaller = ClipUnmarshaller.GetInstance();
                         while (context.Read())
@@ -135,6 +140,11 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Watermarks", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Watermarks =  null;
+                            continue;
+                        }
                         unmarshalledObject.Watermarks = new List<JobWatermark>();
                         var unmarshaller = JobWatermarkUnmarshaller.GetInstance();
                         while (context.Read())

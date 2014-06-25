@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,21 +12,29 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SimpleEmail.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   IdentityDkimAttributes Unmarshaller
-     /// </summary>
-    internal class IdentityDkimAttributesUnmarshaller : IUnmarshaller<IdentityDkimAttributes, XmlUnmarshallerContext>, IUnmarshaller<IdentityDkimAttributes, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for IdentityDkimAttributes Object
+    /// </summary>  
+    public class IdentityDkimAttributesUnmarshaller : IUnmarshaller<IdentityDkimAttributes, XmlUnmarshallerContext>, IUnmarshaller<IdentityDkimAttributes, JsonUnmarshallerContext>
     {
-        public IdentityDkimAttributes Unmarshall(XmlUnmarshallerContext context) 
+        public IdentityDkimAttributes Unmarshall(XmlUnmarshallerContext context)
         {
-            IdentityDkimAttributes identityDkimAttributes = new IdentityDkimAttributes();
+            IdentityDkimAttributes unmarshalledObject = new IdentityDkimAttributes();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,51 +44,51 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
                     if (context.TestExpression("DkimEnabled", targetDepth))
                     {
-                        identityDkimAttributes.DkimEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.GetInstance();
+                        unmarshalledObject.DkimEnabled = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
-                    if (context.TestExpression("DkimVerificationStatus", targetDepth))
-                    {
-                        identityDkimAttributes.DkimVerificationStatus = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                    }
                     if (context.TestExpression("DkimTokens/member", targetDepth))
                     {
-                        identityDkimAttributes.DkimTokens.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.DkimTokens.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("DkimVerificationStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.DkimVerificationStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return identityDkimAttributes;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return identityDkimAttributes;
+            return unmarshalledObject;
         }
 
-        public IdentityDkimAttributes Unmarshall(JsonUnmarshallerContext context) 
+        public IdentityDkimAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static IdentityDkimAttributesUnmarshaller instance;
-
-        public static IdentityDkimAttributesUnmarshaller GetInstance() 
+        public static IdentityDkimAttributesUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new IdentityDkimAttributesUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new IdentityDkimAttributesUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

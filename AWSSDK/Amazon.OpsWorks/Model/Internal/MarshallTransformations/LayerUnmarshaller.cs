@@ -61,6 +61,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     context.Read();
                     if (context.TestExpression("Attributes", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Attributes =  null;
+                            continue;
+                        }
                         unmarshalledObject.Attributes = new Dictionary<string, string>();
                         var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
                         while (context.Read())
@@ -105,6 +110,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("CustomSecurityGroupIds", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.CustomSecurityGroupIds =  null;
+                            continue;
+                        }
                         unmarshalledObject.CustomSecurityGroupIds = new List<string>();
                         var unmarshaller = StringUnmarshaller.GetInstance();
                         while (context.Read())
@@ -127,6 +137,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("DefaultSecurityGroupNames", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.DefaultSecurityGroupNames =  null;
+                            continue;
+                        }
                         unmarshalledObject.DefaultSecurityGroupNames = new List<string>();
                         var unmarshaller = StringUnmarshaller.GetInstance();
                         while (context.Read())
@@ -164,6 +179,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Packages", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Packages =  null;
+                            continue;
+                        }
                         unmarshalledObject.Packages = new List<string>();
                         var unmarshaller = StringUnmarshaller.GetInstance();
                         while (context.Read())
@@ -201,6 +221,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("VolumeConfigurations", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.VolumeConfigurations =  null;
+                            continue;
+                        }
                         unmarshalledObject.VolumeConfigurations = new List<VolumeConfiguration>();
                         var unmarshaller = VolumeConfigurationUnmarshaller.GetInstance();
                         while (context.Read())

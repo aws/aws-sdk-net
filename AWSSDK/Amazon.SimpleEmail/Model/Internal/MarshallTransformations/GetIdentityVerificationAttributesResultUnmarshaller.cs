@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,64 +12,68 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SimpleEmail.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   GetIdentityVerificationAttributesResult Unmarshaller
-     /// </summary>
-    internal class GetIdentityVerificationAttributesResultUnmarshaller : IUnmarshaller<GetIdentityVerificationAttributesResult, XmlUnmarshallerContext>, IUnmarshaller<GetIdentityVerificationAttributesResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for GetIdentityVerificationAttributes Object
+    /// </summary>  
+    public class GetIdentityVerificationAttributesResultUnmarshaller : IUnmarshaller<GetIdentityVerificationAttributesResult, XmlUnmarshallerContext>
     {
         public GetIdentityVerificationAttributesResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            GetIdentityVerificationAttributesResult getIdentityVerificationAttributesResult = new GetIdentityVerificationAttributesResult();
+            GetIdentityVerificationAttributesResult result = new GetIdentityVerificationAttributesResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
+
                     if (context.TestExpression("VerificationAttributes/entry", targetDepth))
                     {
-                        KeyValueUnmarshaller<string, IdentityVerificationAttributes, StringUnmarshaller, IdentityVerificationAttributesUnmarshaller> unmarshaller = new KeyValueUnmarshaller<string, IdentityVerificationAttributes, StringUnmarshaller, IdentityVerificationAttributesUnmarshaller>(StringUnmarshaller.GetInstance(), IdentityVerificationAttributesUnmarshaller.GetInstance());
-                        KeyValuePair<string, IdentityVerificationAttributes> kvp = unmarshaller.Unmarshall(context);
-                        getIdentityVerificationAttributesResult.VerificationAttributes.Add(kvp.Key, kvp.Value);
+                        var unmarshaller = new KeyValueUnmarshaller<string, IdentityVerificationAttributes, StringUnmarshaller, IdentityVerificationAttributesUnmarshaller>(StringUnmarshaller.GetInstance(), IdentityVerificationAttributesUnmarshaller.GetInstance());
+                        var item = unmarshaller.Unmarshall(context);
+                        result.VerificationAttributes.Add(item.Key, item.Value);
                         continue;
                     }
-                }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return getIdentityVerificationAttributesResult;
+                    return result;
                 }
             }
-                        
 
-
-            return getIdentityVerificationAttributesResult;
+            return result;
         }
 
-        public GetIdentityVerificationAttributesResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static GetIdentityVerificationAttributesResultUnmarshaller instance;
-
-        public static GetIdentityVerificationAttributesResultUnmarshaller GetInstance() 
+        public static GetIdentityVerificationAttributesResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new GetIdentityVerificationAttributesResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new GetIdentityVerificationAttributesResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

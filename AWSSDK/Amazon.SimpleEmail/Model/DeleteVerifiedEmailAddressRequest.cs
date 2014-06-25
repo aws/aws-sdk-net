@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,24 +25,32 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVerifiedEmailAddress operation.
-    /// <para>Deletes the specified email address from the list of verified addresses.</para> <para><b>IMPORTANT:</b>The DeleteVerifiedEmailAddress
-    /// action is deprecated as of the May 15, 2012 release of Domain Verification. The DeleteIdentity action is now preferred.</para> <para>This
-    /// action is throttled at one request per second.</para>
+    /// Deletes the specified email address from the list of verified addresses.
+    /// 
+    ///         <important>The DeleteVerifiedEmailAddress action is deprecated as of the May
+    /// 15, 2012 release        of Domain Verification. The DeleteIdentity action is now preferred.</important>
+    ///        
+    /// <para>
+    /// This action is throttled at one request per second.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.DeleteVerifiedEmailAddress"/>
-    public class DeleteVerifiedEmailAddressRequest : AmazonWebServiceRequest
+    public partial class DeleteVerifiedEmailAddressRequest : AmazonWebServiceRequest
     {
-        private string emailAddress;
+        private string _emailAddress;
+
 
         /// <summary>
+        /// Gets and sets the property EmailAddress. 
+        /// <para>
         /// An email address to be removed from the list of verified addresses.
-        ///  
+        /// </para>
         /// </summary>
         public string EmailAddress
         {
-            get { return this.emailAddress; }
-            set { this.emailAddress = value; }
+            get { return this._emailAddress; }
+            set { this._emailAddress = value; }
         }
+
 
         /// <summary>
         /// Sets the EmailAddress property
@@ -52,16 +60,15 @@ namespace Amazon.SimpleEmail.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteVerifiedEmailAddressRequest WithEmailAddress(string emailAddress)
         {
-            this.emailAddress = emailAddress;
+            this._emailAddress = emailAddress;
             return this;
         }
-            
 
         // Check to see if EmailAddress property is set
         internal bool IsSetEmailAddress()
         {
-            return this.emailAddress != null;
+            return this._emailAddress != null;
         }
+
     }
 }
-    

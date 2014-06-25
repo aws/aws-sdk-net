@@ -50,20 +50,23 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetPageToken())
                 queryStringBuilder.AppendFormat("{0}={1};", "PageToken", StringUtils.FromString(publicRequest.PageToken));
-            // Remove the last character ';'
-            queryStringBuilder.Remove(queryStringBuilder.Length - 1, 1);
             uriResourcePath = queryStringBuilder.ToString();
-            AddQueryParameters(request,uriResourcePath);    
+            // Remove the last character if it is ';' or '?' or '&'
+            uriResourcePath = uriResourcePath.TrimEnd(';', '?', '&');
+            uriResourcePath = AddQueryParameters(request,uriResourcePath);
             request.ResourcePath = uriResourcePath;
             request.UseQueryString = true;
             return request;
         }
 
-        private static void AddQueryParameters(IRequest request, string uriResourcePath)
+        private static string AddQueryParameters(IRequest request, string uriResourcePath)
         {            
             int queryIndex = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
-            string queryString = uriResourcePath.Substring(queryIndex + 1);
 
+            if (queryIndex < 0)
+                return uriResourcePath;
+
+            string queryString = uriResourcePath.Substring(queryIndex + 1);
             uriResourcePath = uriResourcePath.Substring(0, queryIndex);
 
             foreach (string s in queryString.Split('&', ';'))
@@ -78,6 +81,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     request.Parameters.Add(nameValuePair[0], null);
                 }
             }            
+            return uriResourcePath;
         }
 
     }

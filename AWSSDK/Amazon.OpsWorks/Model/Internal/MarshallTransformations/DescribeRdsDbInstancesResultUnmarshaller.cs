@@ -57,6 +57,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     context.Read();
                     if (context.TestExpression("RdsDbInstances", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.RdsDbInstances =  null;
+                            continue;
+                        }
                         unmarshalledObject.RdsDbInstances = new List<RdsDbInstance>();
                         var unmarshaller = RdsDbInstanceUnmarshaller.GetInstance();
                         while (context.Read())

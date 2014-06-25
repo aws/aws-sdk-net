@@ -83,6 +83,11 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Outputs", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Outputs =  null;
+                            continue;
+                        }
                         unmarshalledObject.Outputs = new List<JobOutput>();
                         var unmarshaller = JobOutputUnmarshaller.GetInstance();
                         while (context.Read())
@@ -105,6 +110,11 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Playlists", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Playlists =  null;
+                            continue;
+                        }
                         unmarshalledObject.Playlists = new List<Playlist>();
                         var unmarshaller = PlaylistUnmarshaller.GetInstance();
                         while (context.Read())

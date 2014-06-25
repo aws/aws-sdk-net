@@ -57,6 +57,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     context.Read();
                     if (context.TestExpression("TimeBasedAutoScalingConfigurations", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.TimeBasedAutoScalingConfigurations =  null;
+                            continue;
+                        }
                         unmarshalledObject.TimeBasedAutoScalingConfigurations = new List<TimeBasedAutoScalingConfiguration>();
                         var unmarshaller = TimeBasedAutoScalingConfigurationUnmarshaller.GetInstance();
                         while (context.Read())

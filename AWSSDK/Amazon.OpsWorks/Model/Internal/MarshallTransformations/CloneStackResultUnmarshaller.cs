@@ -56,6 +56,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     context.Read();
                     if (context.TestExpression("StackId", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.StackId = null;
+                            continue;
+                        }
                         unmarshalledObject.StackId = StringUnmarshaller.GetInstance().Unmarshall(context);
                         continue;
                     }

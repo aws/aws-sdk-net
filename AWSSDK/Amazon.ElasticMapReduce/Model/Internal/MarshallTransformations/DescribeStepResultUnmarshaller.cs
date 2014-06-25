@@ -56,6 +56,11 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     context.Read();
                     if (context.TestExpression("Step", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Step = null;
+                            continue;
+                        }
                         unmarshalledObject.Step = StepUnmarshaller.GetInstance().Unmarshall(context);
                         continue;
                     }

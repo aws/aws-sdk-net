@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,27 +18,33 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// <para>Represents the DKIM attributes of a verified email address or a domain.</para>
+    /// Represents the DKIM attributes of a verified email address or a domain.
     /// </summary>
     public partial class IdentityDkimAttributes
     {
-        
-        private bool? dkimEnabled;
-        private string dkimVerificationStatus;
-        private List<string> dkimTokens = new List<string>();
+        private bool? _dkimEnabled;
+        private List<string> _dkimTokens = new List<string>();
+        private string _dkimVerificationStatus;
+
 
         /// <summary>
+        /// Gets and sets the property DkimEnabled. 
+        /// <para>
         /// True if DKIM signing is enabled for email sent from the identity; false otherwise.
-        ///  
+        /// </para>
         /// </summary>
         public bool DkimEnabled
         {
-            get { return this.dkimEnabled ?? default(bool); }
-            set { this.dkimEnabled = value; }
+            get { return this._dkimEnabled.GetValueOrDefault(); }
+            set { this._dkimEnabled = value; }
         }
+
 
         /// <summary>
         /// Sets the DkimEnabled property
@@ -48,36 +54,90 @@ namespace Amazon.SimpleEmail.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IdentityDkimAttributes WithDkimEnabled(bool dkimEnabled)
         {
-            this.dkimEnabled = dkimEnabled;
+            this._dkimEnabled = dkimEnabled;
             return this;
         }
-            
 
         // Check to see if DkimEnabled property is set
         internal bool IsSetDkimEnabled()
         {
-            return this.dkimEnabled.HasValue;
+            return this._dkimEnabled.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property DkimTokens. 
+        /// <para>
+        /// A set of character strings that represent the domain's identity. Using these tokens,
+        /// you            will need to create DNS CNAME records that point to DKIM public keys
+        /// hosted by Amazon            SES. Amazon Web Services will eventually detect that you
+        /// have updated your DNS records;            this detection process may take up to 72
+        /// hours. Upon successful detection, Amazon SES            will be able to DKIM-sign
+        /// email originating from that domain. (This only applies to            domain identities,
+        /// not email address identities.)
+        /// </para>
+        ///         
+        /// <para>
+        /// For more information about creating DNS records using DKIM tokens, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
+        /// SES                Developer Guide</a>.
+        /// </para>
+        /// </summary>
+        public List<string> DkimTokens
+        {
+            get { return this._dkimTokens; }
+            set { this._dkimTokens = value; }
         }
 
         /// <summary>
-        /// Describes whether Amazon SES has successfully verified the DKIM DNS records (tokens) published in the domain name's DNS. (This only applies
-        /// to domain identities, not email address identities.)
-        ///  
+        /// Sets the DkimTokens property
+        /// </summary>
+        /// <param name="dkimTokens">The values to add to the DkimTokens collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public IdentityDkimAttributes WithDkimTokens(params string[] dkimTokens)
+        {
+            foreach (var element in dkimTokens)
+            {
+                this._dkimTokens.Add(element);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the DkimTokens property
+        /// </summary>
+        /// <param name="dkimTokens">The values to add to the DkimTokens collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public IdentityDkimAttributes WithDkimTokens(IEnumerable<string> dkimTokens)
+        {
+            foreach (var element in dkimTokens)
+            {
+                this._dkimTokens.Add(element);
+            }
+            return this;
+        }
+        // Check to see if DkimTokens property is set
+        internal bool IsSetDkimTokens()
+        {
+            return this._dkimTokens != null && this._dkimTokens.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property DkimVerificationStatus. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>Pending, Success, Failed, TemporaryFailure, NotStarted</description>
-        ///     </item>
-        /// </list>
+        /// Describes whether Amazon SES has successfully verified the DKIM DNS records      
+        ///      (tokens) published in the domain name's DNS.  (This only applies to domain identities,
+        /// not email address identities.)
         /// </para>
         /// </summary>
         public string DkimVerificationStatus
         {
-            get { return this.dkimVerificationStatus; }
-            set { this.dkimVerificationStatus = value; }
+            get { return this._dkimVerificationStatus; }
+            set { this._dkimVerificationStatus = value; }
         }
+
 
         /// <summary>
         /// Sets the DkimVerificationStatus property
@@ -87,66 +147,15 @@ namespace Amazon.SimpleEmail.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IdentityDkimAttributes WithDkimVerificationStatus(string dkimVerificationStatus)
         {
-            this.dkimVerificationStatus = dkimVerificationStatus;
+            this._dkimVerificationStatus = dkimVerificationStatus;
             return this;
         }
-            
 
         // Check to see if DkimVerificationStatus property is set
         internal bool IsSetDkimVerificationStatus()
         {
-            return this.dkimVerificationStatus != null;
+            return this._dkimVerificationStatus != null;
         }
 
-        /// <summary>
-        /// A set of character strings that represent the domain's identity. Using these tokens, you will need to create DNS CNAME records that point to
-        /// DKIM public keys hosted by Amazon SES. Amazon Web Services will eventually detect that you have updated your DNS records; this detection
-        /// process may take up to 72 hours. Upon successful detection, Amazon SES will be able to DKIM-sign email originating from that domain. (This
-        /// only applies to domain identities, not email address identities.) For more information about creating DNS records using DKIM tokens, go to
-        /// the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon SES Developer Guide</a>.
-        ///  
-        /// </summary>
-        public List<string> DkimTokens
-        {
-            get { return this.dkimTokens; }
-            set { this.dkimTokens = value; }
-        }
-        /// <summary>
-        /// Adds elements to the DkimTokens collection
-        /// </summary>
-        /// <param name="dkimTokens">The values to add to the DkimTokens collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public IdentityDkimAttributes WithDkimTokens(params string[] dkimTokens)
-        {
-            foreach (string element in dkimTokens)
-            {
-                this.dkimTokens.Add(element);
-            }
-
-            return this;
-        }
-
-        /// <summary>
-        /// Adds elements to the DkimTokens collection
-        /// </summary>
-        /// <param name="dkimTokens">The values to add to the DkimTokens collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public IdentityDkimAttributes WithDkimTokens(IEnumerable<string> dkimTokens)
-        {
-            foreach (string element in dkimTokens)
-            {
-                this.dkimTokens.Add(element);
-            }
-
-            return this;
-        }
-
-        // Check to see if DkimTokens property is set
-        internal bool IsSetDkimTokens()
-        {
-            return this.dkimTokens.Count > 0;
-        }
     }
 }

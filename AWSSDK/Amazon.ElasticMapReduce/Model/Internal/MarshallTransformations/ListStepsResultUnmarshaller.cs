@@ -57,11 +57,21 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     context.Read();
                     if (context.TestExpression("Marker", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Marker = null;
+                            continue;
+                        }
                         unmarshalledObject.Marker = StringUnmarshaller.GetInstance().Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Steps", targetDepth))
                     {
+                        if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                        {
+                            unmarshalledObject.Steps =  null;
+                            continue;
+                        }
                         unmarshalledObject.Steps = new List<StepSummary>();
                         var unmarshaller = StepSummaryUnmarshaller.GetInstance();
                         while (context.Read())

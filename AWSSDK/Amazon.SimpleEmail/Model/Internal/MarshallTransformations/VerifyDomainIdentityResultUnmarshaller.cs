@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,63 +12,67 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SimpleEmail.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   VerifyDomainIdentityResult Unmarshaller
-     /// </summary>
-    internal class VerifyDomainIdentityResultUnmarshaller : IUnmarshaller<VerifyDomainIdentityResult, XmlUnmarshallerContext>, IUnmarshaller<VerifyDomainIdentityResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for VerifyDomainIdentity Object
+    /// </summary>  
+    public class VerifyDomainIdentityResultUnmarshaller : IUnmarshaller<VerifyDomainIdentityResult, XmlUnmarshallerContext>
     {
         public VerifyDomainIdentityResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            VerifyDomainIdentityResult verifyDomainIdentityResult = new VerifyDomainIdentityResult();
+            VerifyDomainIdentityResult result = new VerifyDomainIdentityResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
+
                     if (context.TestExpression("VerificationToken", targetDepth))
                     {
-                        verifyDomainIdentityResult.VerificationToken = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.VerificationToken = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return verifyDomainIdentityResult;
+                    return result;
                 }
             }
-                        
 
-
-            return verifyDomainIdentityResult;
+            return result;
         }
 
-        public VerifyDomainIdentityResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static VerifyDomainIdentityResultUnmarshaller instance;
-
-        public static VerifyDomainIdentityResultUnmarshaller GetInstance() 
+        public static VerifyDomainIdentityResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new VerifyDomainIdentityResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new VerifyDomainIdentityResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    
