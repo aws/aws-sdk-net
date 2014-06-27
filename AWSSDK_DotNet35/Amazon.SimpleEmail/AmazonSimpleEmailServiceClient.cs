@@ -267,11 +267,10 @@ namespace Amazon.SimpleEmail
 
         IAsyncResult invokeDeleteIdentity(DeleteIdentityRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DeleteIdentityRequestMarshaller().Marshall(request);
+            var marshaller = new DeleteIdentityRequestMarshaller();
             var unmarshaller = DeleteIdentityResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -332,11 +331,10 @@ namespace Amazon.SimpleEmail
 
         IAsyncResult invokeDeleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DeleteVerifiedEmailAddressRequestMarshaller().Marshall(request);
+            var marshaller = new DeleteVerifiedEmailAddressRequestMarshaller();
             var unmarshaller = DeleteVerifiedEmailAddressResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -414,11 +412,10 @@ namespace Amazon.SimpleEmail
 
         IAsyncResult invokeGetIdentityDkimAttributes(GetIdentityDkimAttributesRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new GetIdentityDkimAttributesRequestMarshaller().Marshall(request);
+            var marshaller = new GetIdentityDkimAttributesRequestMarshaller();
             var unmarshaller = GetIdentityDkimAttributesResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -484,11 +481,10 @@ namespace Amazon.SimpleEmail
 
         IAsyncResult invokeGetIdentityNotificationAttributes(GetIdentityNotificationAttributesRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new GetIdentityNotificationAttributesRequestMarshaller().Marshall(request);
+            var marshaller = new GetIdentityNotificationAttributesRequestMarshaller();
             var unmarshaller = GetIdentityNotificationAttributesResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -548,11 +544,10 @@ namespace Amazon.SimpleEmail
 
         IAsyncResult invokeGetIdentityVerificationAttributes(GetIdentityVerificationAttributesRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new GetIdentityVerificationAttributesRequestMarshaller().Marshall(request);
+            var marshaller = new GetIdentityVerificationAttributesRequestMarshaller();
             var unmarshaller = GetIdentityVerificationAttributesResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -625,11 +620,10 @@ namespace Amazon.SimpleEmail
 
         IAsyncResult invokeGetSendQuota(GetSendQuotaRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new GetSendQuotaRequestMarshaller().Marshall(request);
+            var marshaller = new GetSendQuotaRequestMarshaller();
             var unmarshaller = GetSendQuotaResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -712,11 +706,10 @@ namespace Amazon.SimpleEmail
 
         IAsyncResult invokeGetSendStatistics(GetSendStatisticsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new GetSendStatisticsRequestMarshaller().Marshall(request);
+            var marshaller = new GetSendStatisticsRequestMarshaller();
             var unmarshaller = GetSendStatisticsResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -791,11 +784,10 @@ namespace Amazon.SimpleEmail
 
         IAsyncResult invokeListIdentities(ListIdentitiesRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new ListIdentitiesRequestMarshaller().Marshall(request);
+            var marshaller = new ListIdentitiesRequestMarshaller();
             var unmarshaller = ListIdentitiesResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -872,11 +864,10 @@ namespace Amazon.SimpleEmail
 
         IAsyncResult invokeListVerifiedEmailAddresses(ListVerifiedEmailAddressesRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new ListVerifiedEmailAddressesRequestMarshaller().Marshall(request);
+            var marshaller = new ListVerifiedEmailAddressesRequestMarshaller();
             var unmarshaller = ListVerifiedEmailAddressesResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -961,11 +952,10 @@ namespace Amazon.SimpleEmail
 
         IAsyncResult invokeSendEmail(SendEmailRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new SendEmailRequestMarshaller().Marshall(request);
+            var marshaller = new SendEmailRequestMarshaller();
             var unmarshaller = SendEmailResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1059,11 +1049,10 @@ namespace Amazon.SimpleEmail
 
         IAsyncResult invokeSendRawEmail(SendRawEmailRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new SendRawEmailRequestMarshaller().Marshall(request);
+            var marshaller = new SendRawEmailRequestMarshaller();
             var unmarshaller = SendRawEmailResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1139,11 +1128,10 @@ namespace Amazon.SimpleEmail
 
         IAsyncResult invokeSetIdentityDkimEnabled(SetIdentityDkimEnabledRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new SetIdentityDkimEnabledRequestMarshaller().Marshall(request);
+            var marshaller = new SetIdentityDkimEnabledRequestMarshaller();
             var unmarshaller = SetIdentityDkimEnabledResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1212,11 +1200,10 @@ namespace Amazon.SimpleEmail
 
         IAsyncResult invokeSetIdentityFeedbackForwardingEnabled(SetIdentityFeedbackForwardingEnabledRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new SetIdentityFeedbackForwardingEnabledRequestMarshaller().Marshall(request);
+            var marshaller = new SetIdentityFeedbackForwardingEnabledRequestMarshaller();
             var unmarshaller = SetIdentityFeedbackForwardingEnabledResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1284,11 +1271,10 @@ namespace Amazon.SimpleEmail
 
         IAsyncResult invokeSetIdentityNotificationTopic(SetIdentityNotificationTopicRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new SetIdentityNotificationTopicRequestMarshaller().Marshall(request);
+            var marshaller = new SetIdentityNotificationTopicRequestMarshaller();
             var unmarshaller = SetIdentityNotificationTopicResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1363,11 +1349,10 @@ namespace Amazon.SimpleEmail
 
         IAsyncResult invokeVerifyDomainDkim(VerifyDomainDkimRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new VerifyDomainDkimRequestMarshaller().Marshall(request);
+            var marshaller = new VerifyDomainDkimRequestMarshaller();
             var unmarshaller = VerifyDomainDkimResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1426,11 +1411,10 @@ namespace Amazon.SimpleEmail
 
         IAsyncResult invokeVerifyDomainIdentity(VerifyDomainIdentityRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new VerifyDomainIdentityRequestMarshaller().Marshall(request);
+            var marshaller = new VerifyDomainIdentityRequestMarshaller();
             var unmarshaller = VerifyDomainIdentityResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1492,11 +1476,10 @@ namespace Amazon.SimpleEmail
 
         IAsyncResult invokeVerifyEmailAddress(VerifyEmailAddressRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new VerifyEmailAddressRequestMarshaller().Marshall(request);
+            var marshaller = new VerifyEmailAddressRequestMarshaller();
             var unmarshaller = VerifyEmailAddressResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1556,11 +1539,10 @@ namespace Amazon.SimpleEmail
 
         IAsyncResult invokeVerifyEmailIdentity(VerifyEmailIdentityRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new VerifyEmailIdentityRequestMarshaller().Marshall(request);
+            var marshaller = new VerifyEmailIdentityRequestMarshaller();
             var unmarshaller = VerifyEmailIdentityResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion

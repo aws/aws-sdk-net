@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Returns information about the  CreateDistribution response and response metadata.
+    /// Configuration for accessing Amazon CreateDistribution service
     /// </summary>
     public partial class CreateDistributionResponse : CreateDistributionResult
     {
         /// <summary>
         /// Gets and sets the CreateDistributionResult property.
-        /// The returned result of the corresponding request.
+        /// Represents the output of a CreateDistribution operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateDistributionResult class are now available on the CreateDistributionResponse class. You should use the properties on CreateDistributionResponse instead of accessing them through CreateDistributionResult.")]
         public CreateDistributionResult CreateDistributionResult
@@ -40,4 +36,3 @@ namespace Amazon.CloudFront.Model
         }
     }
 }
-    

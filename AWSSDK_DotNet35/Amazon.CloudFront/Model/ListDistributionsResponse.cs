@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Returns information about the  ListDistributions response and response metadata.
+    /// Configuration for accessing Amazon ListDistributions service
     /// </summary>
     public partial class ListDistributionsResponse : ListDistributionsResult
     {
         /// <summary>
         /// Gets and sets the ListDistributionsResult property.
-        /// The returned result of the corresponding request.
+        /// Represents the output of a ListDistributions operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ListDistributionsResult class are now available on the ListDistributionsResponse class. You should use the properties on ListDistributionsResponse instead of accessing them through ListDistributionsResult.")]
         public ListDistributionsResult ListDistributionsResult
@@ -40,4 +36,3 @@ namespace Amazon.CloudFront.Model
         }
     }
 }
-    

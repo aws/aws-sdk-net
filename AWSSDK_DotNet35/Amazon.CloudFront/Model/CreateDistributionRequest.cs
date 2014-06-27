@@ -25,29 +25,27 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDistribution operation.
-    /// <para> Create a new distribution. </para>
+    /// Create a new distribution.
     /// </summary>
     public partial class CreateDistributionRequest : AmazonCloudFrontRequest
     {
-        private DistributionConfig distributionConfig;
+        private DistributionConfig _distributionConfig;
 
 
         /// <summary>
-        /// The distribution's configuration information.
-        ///  
+        /// Gets and sets the property DistributionConfig. The distribution's configuration information.
         /// </summary>
         public DistributionConfig DistributionConfig
         {
-            get { return this.distributionConfig; }
-            set { this.distributionConfig = value; }
+            get { return this._distributionConfig; }
+            set { this._distributionConfig = value; }
         }
 
         // Check to see if DistributionConfig property is set
         internal bool IsSetDistributionConfig()
         {
-            return this.distributionConfig != null;
+            return this._distributionConfig != null;
         }
 
     }
 }
-    

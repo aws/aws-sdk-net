@@ -17,43 +17,37 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Text;
-using System.Xml;
 using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
-
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using System.Xml;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Get Invalidation Request Marshaller
+    /// GetInvalidation Request Marshaller
     /// </summary>       
-    public class GetInvalidationRequestMarshaller : IMarshaller<IRequest, GetInvalidationRequest>
+    public class GetInvalidationRequestMarshaller : IMarshaller<IRequest, GetInvalidationRequest> 
     {
-        
-    
-        public IRequest Marshall(GetInvalidationRequest getInvalidationRequest)
+        public IRequest Marshall(GetInvalidationRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(getInvalidationRequest, "AmazonCloudFront");
-
-
-
+            var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "GET";
-            string uriResourcePath = "2014-01-31/distribution/{DistributionId}/invalidation/{Id}"; 
-            uriResourcePath = uriResourcePath.Replace("{DistributionId}", getInvalidationRequest.IsSetDistributionId() ? getInvalidationRequest.DistributionId.ToString() : "" ); 
-            uriResourcePath = uriResourcePath.Replace("{Id}", getInvalidationRequest.IsSetId() ? getInvalidationRequest.Id.ToString() : "" ); 
+            var uriResourcePath = "/2014-05-31/distribution/{DistributionId}/invalidation/{Id}";
+
+            uriResourcePath = uriResourcePath.Replace("{DistributionId}", publicRequest.IsSetDistributionId() ? StringUtils.FromString(publicRequest.DistributionId) : string.Empty);
+            uriResourcePath = uriResourcePath.Replace("{Id}", publicRequest.IsSetId() ? StringUtils.FromString(publicRequest.Id) : string.Empty);
             request.ResourcePath = uriResourcePath;
-            
-        
+
+
             request.UseQueryString = true;
-            
-            
             return request;
         }
-    }
+
+        
+    }    
 }
-    

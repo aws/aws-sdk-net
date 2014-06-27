@@ -17,45 +17,39 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Text;
-using System.Xml;
 using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
-
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using System.Xml;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Streaming Distribution Request Marshaller
+    /// DeleteStreamingDistribution Request Marshaller
     /// </summary>       
-    public class DeleteStreamingDistributionRequestMarshaller : IMarshaller<IRequest, DeleteStreamingDistributionRequest>
+    public class DeleteStreamingDistributionRequestMarshaller : IMarshaller<IRequest, DeleteStreamingDistributionRequest> 
     {
-        
-    
-        public IRequest Marshall(DeleteStreamingDistributionRequest deleteStreamingDistributionRequest)
+        public IRequest Marshall(DeleteStreamingDistributionRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(deleteStreamingDistributionRequest, "AmazonCloudFront");
-
-
-
+            var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "DELETE";
-        if(deleteStreamingDistributionRequest.IsSetIfMatch())
-            request.Headers.Add("If-Match", deleteStreamingDistributionRequest.IfMatch);
-            
-            string uriResourcePath = "2014-01-31/streaming-distribution/{Id}"; 
-            uriResourcePath = uriResourcePath.Replace("{Id}", deleteStreamingDistributionRequest.IsSetId() ? deleteStreamingDistributionRequest.Id.ToString() : "" ); 
-            request.ResourcePath = uriResourcePath;
-            
+            var uriResourcePath = "/2014-05-31/streaming-distribution/{Id}";
+
         
+            if(publicRequest.IsSetIfMatch())     
+                request.Headers["If-Match"] = publicRequest.IfMatch;
+            uriResourcePath = uriResourcePath.Replace("{Id}", publicRequest.IsSetId() ? StringUtils.FromString(publicRequest.Id) : string.Empty);
+            request.ResourcePath = uriResourcePath;
+
+
             request.UseQueryString = true;
-            
-            
             return request;
         }
-    }
+
+        
+    }    
 }
-    

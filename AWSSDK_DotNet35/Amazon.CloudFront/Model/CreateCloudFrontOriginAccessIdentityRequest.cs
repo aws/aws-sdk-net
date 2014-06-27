@@ -25,29 +25,28 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCloudFrontOriginAccessIdentity operation.
-    /// <para> Create a new origin access identity. </para>
+    /// Create a new origin access identity.
     /// </summary>
     public partial class CreateCloudFrontOriginAccessIdentityRequest : AmazonCloudFrontRequest
     {
-        private CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig;
+        private CloudFrontOriginAccessIdentityConfig _cloudFrontOriginAccessIdentityConfig;
 
 
         /// <summary>
-        /// The origin access identity's configuration information.
-        ///  
+        /// Gets and sets the property CloudFrontOriginAccessIdentityConfig. The origin access
+        /// identity's configuration information.
         /// </summary>
         public CloudFrontOriginAccessIdentityConfig CloudFrontOriginAccessIdentityConfig
         {
-            get { return this.cloudFrontOriginAccessIdentityConfig; }
-            set { this.cloudFrontOriginAccessIdentityConfig = value; }
+            get { return this._cloudFrontOriginAccessIdentityConfig; }
+            set { this._cloudFrontOriginAccessIdentityConfig = value; }
         }
 
         // Check to see if CloudFrontOriginAccessIdentityConfig property is set
         internal bool IsSetCloudFrontOriginAccessIdentityConfig()
         {
-            return this.cloudFrontOriginAccessIdentityConfig != null;
+            return this._cloudFrontOriginAccessIdentityConfig != null;
         }
 
     }
 }
-    

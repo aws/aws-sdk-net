@@ -25,29 +25,28 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateStreamingDistribution operation.
-    /// <para> Create a new streaming distribution. </para>
+    /// Create a new streaming distribution.
     /// </summary>
     public partial class CreateStreamingDistributionRequest : AmazonCloudFrontRequest
     {
-        private StreamingDistributionConfig streamingDistributionConfig;
+        private StreamingDistributionConfig _streamingDistributionConfig;
 
 
         /// <summary>
-        /// The streaming distribution's configuration information.
-        ///  
+        /// Gets and sets the property StreamingDistributionConfig. The streaming distribution's
+        /// configuration information.
         /// </summary>
         public StreamingDistributionConfig StreamingDistributionConfig
         {
-            get { return this.streamingDistributionConfig; }
-            set { this.streamingDistributionConfig = value; }
+            get { return this._streamingDistributionConfig; }
+            set { this._streamingDistributionConfig = value; }
         }
 
         // Check to see if StreamingDistributionConfig property is set
         internal bool IsSetStreamingDistributionConfig()
         {
-            return this.streamingDistributionConfig != null;
+            return this._streamingDistributionConfig != null;
         }
 
     }
 }
-    

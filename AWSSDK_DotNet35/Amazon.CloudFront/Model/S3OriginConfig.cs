@@ -18,38 +18,44 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> A complex type that contains information about the Amazon S3 origin. If the origin is a custom origin, use the CustomOriginConfig
-    /// element instead. </para>
+    /// A complex type that contains information about the Amazon S3 origin. If    the origin
+    /// is a custom origin, use the CustomOriginConfig element    instead.
     /// </summary>
     public partial class S3OriginConfig
     {
-        
-        private string originAccessIdentity;
+        private string _originAccessIdentity;
 
 
         /// <summary>
-        /// The CloudFront origin access identity to associate with the origin. Use an origin access identity to configure the origin so that end users
-        /// can only access objects in an Amazon S3 bucket through CloudFront. If you want end users to be able to access objects using either the
-        /// CloudFront URL or the Amazon S3 URL, specify an empty OriginAccessIdentity element. To delete the origin access identity from an existing
-        /// distribution, update the distribution configuration and include an empty OriginAccessIdentity element. To replace the origin access
-        /// identity, update the distribution configuration and specify the new origin access identity. Use the format
-        /// origin-access-identity/cloudfront/Id where Id is the value that CloudFront returned in the Id element when you created the origin access
-        /// identity.
-        ///  
+        /// Gets and sets the property OriginAccessIdentity. The CloudFront origin access identity
+        /// to associate with the origin. Use    an origin access identity to configure the origin
+        /// so that end users can    only access objects in an Amazon S3 bucket through CloudFront.
+        ///    If you want end users to be able to access objects using either the    CloudFront
+        /// URL or the Amazon S3 URL, specify an empty    OriginAccessIdentity element.    To
+        /// delete the origin access identity from an existing distribution, update    the distribution
+        /// configuration and include an empty    OriginAccessIdentity element.    To replace
+        /// the origin access identity, update the distribution configuration    and specify the
+        /// new origin access identity.    Use the format origin-access-identity/cloudfront/Id
+        /// where Id is the value that     CloudFront returned in the Id element when you created
+        /// the origin access identity.
         /// </summary>
         public string OriginAccessIdentity
         {
-            get { return this.originAccessIdentity; }
-            set { this.originAccessIdentity = value; }
+            get { return this._originAccessIdentity; }
+            set { this._originAccessIdentity = value; }
         }
 
         // Check to see if OriginAccessIdentity property is set
         internal bool IsSetOriginAccessIdentity()
         {
-            return this.originAccessIdentity != null;
+            return this._originAccessIdentity != null;
         }
+
     }
 }

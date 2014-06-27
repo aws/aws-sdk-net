@@ -17,105 +17,76 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Text;
-using System.Xml;
 using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
-
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using System.Xml;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Invalidation Request Marshaller
+    /// CreateInvalidation Request Marshaller
     /// </summary>       
-    public class CreateInvalidationRequestMarshaller : IMarshaller<IRequest, CreateInvalidationRequest>
+    public class CreateInvalidationRequestMarshaller : IMarshaller<IRequest, CreateInvalidationRequest> 
     {
-        
-    
-        public IRequest Marshall(CreateInvalidationRequest createInvalidationRequest)
+        public IRequest Marshall(CreateInvalidationRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(createInvalidationRequest, "AmazonCloudFront");
-
-
-
+            var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "POST";
-            string uriResourcePath = "2014-01-31/distribution/{DistributionId}/invalidation"; 
-            uriResourcePath = uriResourcePath.Replace("{DistributionId}", createInvalidationRequest.IsSetDistributionId() ? createInvalidationRequest.DistributionId.ToString() : "" ); 
+            var uriResourcePath = "/2014-05-31/distribution/{DistributionId}/invalidation";
+
+            uriResourcePath = uriResourcePath.Replace("{DistributionId}", publicRequest.IsSetDistributionId() ? StringUtils.FromString(publicRequest.DistributionId) : string.Empty);
             request.ResourcePath = uriResourcePath;
-            
-             
-            StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture);
-                using (XmlWriter xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))
+
+            var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
+            using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))
+            {   
+                xmlWriter.WriteStartElement("InvalidationBatch", "http://cloudfront.amazonaws.com/doc/2014-05-31/");                                
+                if(publicRequest.InvalidationBatch.IsSetCallerReference())
+                    xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2014-05-31/", StringUtils.FromString(publicRequest.InvalidationBatch.CallerReference));                    
+
+                
+                if (publicRequest.InvalidationBatch.Paths != null) 
                 {
-                       
-                    if (createInvalidationRequest != null) 
-        {
-            InvalidationBatch invalidationBatchInvalidationBatch = createInvalidationRequest.InvalidationBatch;
-            if (invalidationBatchInvalidationBatch != null) 
-            {
-                xmlWriter.WriteStartElement("InvalidationBatch", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                if (invalidationBatchInvalidationBatch != null) 
-                {
-                    Paths pathsPaths = invalidationBatchInvalidationBatch.Paths;
-                    if (pathsPaths != null) 
-                    {
-                        xmlWriter.WriteStartElement("Paths", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                        if (pathsPaths.IsSetQuantity()) 
+                    xmlWriter.WriteStartElement("Paths", "http://cloudfront.amazonaws.com/doc/2014-05-31/");            
+                    var publicRequestInvalidationBatchPathsItems = publicRequest.InvalidationBatch.Paths.Items;
+                    if (publicRequestInvalidationBatchPathsItems != null && publicRequestInvalidationBatchPathsItems.Count > 0) 
+                    {                        
+                        xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2014-05-31/");
+                        foreach (var publicRequestInvalidationBatchPathsItemsValue in publicRequestInvalidationBatchPathsItems) 
                         {
-                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2014-01-31/", pathsPaths.Quantity.ToString(CultureInfo.InvariantCulture));
-                          }
-
-                        if (pathsPaths != null) 
-                        {
-                            List<string> pathsPathsitemsList = pathsPaths.Items;
-                            if (pathsPathsitemsList != null && pathsPathsitemsList.Count > 0) 
-                            {
-                                int pathsPathsitemsListIndex = 1;
-                                xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                foreach (string pathsPathsitemsListValue in pathsPathsitemsList) 
-                                {
-                                    xmlWriter.WriteStartElement("Path", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                    xmlWriter.WriteValue(pathsPathsitemsListValue);
-                                xmlWriter.WriteEndElement();
-
-
-                                    pathsPathsitemsListIndex++;
-                                }
-                                xmlWriter.WriteEndElement();
-                            }
-                        }
-                        xmlWriter.WriteEndElement();
+                            xmlWriter.WriteStartElement("Path", "http://cloudfront.amazonaws.com/doc/2014-05-31/");
+                            xmlWriter.WriteValue(publicRequestInvalidationBatchPathsItemsValue);
+                            xmlWriter.WriteEndElement();
+                        }            
+                        xmlWriter.WriteEndElement();            
                     }
+                    if(publicRequest.InvalidationBatch.Paths.IsSetQuantity())
+                        xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2014-05-31/", StringUtils.FromInt(publicRequest.InvalidationBatch.Paths.Quantity));                 
+    
+                    xmlWriter.WriteEndElement();
                 }
-                if (invalidationBatchInvalidationBatch.IsSetCallerReference()) 
-                {
-                    xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2014-01-31/", invalidationBatchInvalidationBatch.CallerReference.ToString(CultureInfo.InvariantCulture));
-                  }
-                xmlWriter.WriteEndElement();
-            }
-        }
 
+                xmlWriter.WriteEndElement();
             }
             try 
             {
                 string content = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
                 request.Headers["Content-Type"] = "application/xml";
-                
-                
             } 
             catch (EncoderFallbackException e) 
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-        
-            
+
             return request;
         }
-    }
+
+        
+    }    
 }
-    

@@ -18,48 +18,52 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> A complex type that contains zero or more CustomErrorResponse elements. </para>
+    /// A complex type that contains zero or more CustomErrorResponse elements.
     /// </summary>
     public partial class CustomErrorResponses
     {
-        
-        private int? quantity;
-        private List<CustomErrorResponse> items = new List<CustomErrorResponse>();
+        private List<CustomErrorResponse> _items = new List<CustomErrorResponse>();
+        private int? _quantity;
 
 
         /// <summary>
-        /// The number of custom error responses for this distribution.
-        ///  
-        /// </summary>
-        public int Quantity
-        {
-            get { return this.quantity ?? default(int); }
-            set { this.quantity = value; }
-        }
-
-        // Check to see if Quantity property is set
-        internal bool IsSetQuantity()
-        {
-            return this.quantity.HasValue;
-        }
-
-        /// <summary>
-        /// Optional: A complex type that contains custom error responses for this distribution. If Quantity is 0, you can omit Items.
-        ///  
+        /// Gets and sets the property Items. Optional: A complex type that contains custom error
+        /// responses for this    distribution. If Quantity is 0, you can omit Items.
         /// </summary>
         public List<CustomErrorResponse> Items
         {
-            get { return this.items; }
-            set { this.items = value; }
+            get { return this._items; }
+            set { this._items = value; }
         }
 
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this.items.Count > 0;
+            return this._items != null && this._items.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Quantity. The number of custom error responses for this
+        /// distribution.
+        /// </summary>
+        public int Quantity
+        {
+            get { return this._quantity.GetValueOrDefault(); }
+            set { this._quantity = value; }
+        }
+
+        // Check to see if Quantity property is set
+        internal bool IsSetQuantity()
+        {
+            return this._quantity.HasValue; 
+        }
+
     }
 }

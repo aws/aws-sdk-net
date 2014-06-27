@@ -18,119 +18,126 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> The CloudFrontOriginAccessIdentityList type. </para>
+    /// The CloudFrontOriginAccessIdentityList type.
     /// </summary>
     public partial class CloudFrontOriginAccessIdentityList
     {
-        
-        private string marker;
-        private string nextMarker;
-        private int? maxItems;
-        private bool? isTruncated;
-        private int? quantity;
-        private List<CloudFrontOriginAccessIdentitySummary> items = new List<CloudFrontOriginAccessIdentitySummary>();
+        private bool? _isTruncated;
+        private List<CloudFrontOriginAccessIdentitySummary> _items = new List<CloudFrontOriginAccessIdentitySummary>();
+        private string _marker;
+        private int? _maxItems;
+        private string _nextMarker;
+        private int? _quantity;
 
 
         /// <summary>
-        /// The value you provided for the Marker request parameter.
-        ///  
-        /// </summary>
-        public string Marker
-        {
-            get { return this.marker; }
-            set { this.marker = value; }
-        }
-
-        // Check to see if Marker property is set
-        internal bool IsSetMarker()
-        {
-            return this.marker != null;
-        }
-
-        /// <summary>
-        /// If IsTruncated is true, this element is present and contains the value you can use for the Marker request parameter to continue listing your
-        /// origin access identities where they left off.
-        ///  
-        /// </summary>
-        public string NextMarker
-        {
-            get { return this.nextMarker; }
-            set { this.nextMarker = value; }
-        }
-
-        // Check to see if NextMarker property is set
-        internal bool IsSetNextMarker()
-        {
-            return this.nextMarker != null;
-        }
-
-        /// <summary>
-        /// The value you provided for the MaxItems request parameter.
-        ///  
-        /// </summary>
-        public int MaxItems
-        {
-            get { return this.maxItems ?? default(int); }
-            set { this.maxItems = value; }
-        }
-
-        // Check to see if MaxItems property is set
-        internal bool IsSetMaxItems()
-        {
-            return this.maxItems.HasValue;
-        }
-
-        /// <summary>
-        /// A flag that indicates whether more origin access identities remain to be listed. If your results were truncated, you can make a follow-up
-        /// pagination request using the Marker request parameter to retrieve more items in the list.
-        ///  
+        /// Gets and sets the property IsTruncated. A flag that indicates whether more origin
+        /// access identities remain to be listed.    If your results were truncated, you can
+        /// make a follow-up pagination request using the Marker request parameter to retrieve
+        /// more items in the list.
         /// </summary>
         public bool IsTruncated
         {
-            get { return this.isTruncated ?? default(bool); }
-            set { this.isTruncated = value; }
+            get { return this._isTruncated.GetValueOrDefault(); }
+            set { this._isTruncated = value; }
         }
 
         // Check to see if IsTruncated property is set
         internal bool IsSetIsTruncated()
         {
-            return this.isTruncated.HasValue;
+            return this._isTruncated.HasValue; 
         }
+
 
         /// <summary>
-        /// The number of CloudFront origin access identities that were created by the current AWS account.
-        ///  
-        /// </summary>
-        public int Quantity
-        {
-            get { return this.quantity ?? default(int); }
-            set { this.quantity = value; }
-        }
-
-        // Check to see if Quantity property is set
-        internal bool IsSetQuantity()
-        {
-            return this.quantity.HasValue;
-        }
-
-        /// <summary>
-        /// A complex type that contains one CloudFrontOriginAccessIdentitySummary element for each origin access identity that was created by the
-        /// current AWS account.
-        ///  
+        /// Gets and sets the property Items. A complex type that contains one    CloudFrontOriginAccessIdentitySummary
+        /// element for each origin    access identity that was created by the current AWS account.
         /// </summary>
         public List<CloudFrontOriginAccessIdentitySummary> Items
         {
-            get { return this.items; }
-            set { this.items = value; }
+            get { return this._items; }
+            set { this._items = value; }
         }
 
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this.items.Count > 0;
+            return this._items != null && this._items.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Marker. The value you provided for the Marker request parameter.
+        /// </summary>
+        public string Marker
+        {
+            get { return this._marker; }
+            set { this._marker = value; }
+        }
+
+        // Check to see if Marker property is set
+        internal bool IsSetMarker()
+        {
+            return this._marker != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property MaxItems. The value you provided for the MaxItems request
+        /// parameter.
+        /// </summary>
+        public int MaxItems
+        {
+            get { return this._maxItems.GetValueOrDefault(); }
+            set { this._maxItems = value; }
+        }
+
+        // Check to see if MaxItems property is set
+        internal bool IsSetMaxItems()
+        {
+            return this._maxItems.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property NextMarker. If IsTruncated is true, this element is present
+        /// and contains the value you can use for the Marker request parameter to continue listing
+        /// your origin access identities where they left off.
+        /// </summary>
+        public string NextMarker
+        {
+            get { return this._nextMarker; }
+            set { this._nextMarker = value; }
+        }
+
+        // Check to see if NextMarker property is set
+        internal bool IsSetNextMarker()
+        {
+            return this._nextMarker != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Quantity. The number of CloudFront origin access identities
+        /// that were created by    the current AWS account.
+        /// </summary>
+        public int Quantity
+        {
+            get { return this._quantity.GetValueOrDefault(); }
+            set { this._quantity = value; }
+        }
+
+        // Check to see if Quantity property is set
+        internal bool IsSetQuantity()
+        {
+            return this._quantity.HasValue; 
+        }
+
     }
 }

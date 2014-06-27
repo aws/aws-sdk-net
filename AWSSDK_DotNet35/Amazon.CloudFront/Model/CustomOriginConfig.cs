@@ -18,74 +18,68 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> A customer origin. </para>
+    /// A customer origin.
     /// </summary>
     public partial class CustomOriginConfig
     {
-        
-        private int? hTTPPort;
-        private int? hTTPSPort;
-        private OriginProtocolPolicy originProtocolPolicy;
+        private int? _hTTPPort;
+        private int? _hTTPSPort;
+        private OriginProtocolPolicy _originProtocolPolicy;
 
 
         /// <summary>
-        /// The HTTP port the custom origin listens on.
-        ///  
+        /// Gets and sets the property HTTPPort. The HTTP port the custom origin listens on.
         /// </summary>
         public int HTTPPort
         {
-            get { return this.hTTPPort ?? default(int); }
-            set { this.hTTPPort = value; }
+            get { return this._hTTPPort.GetValueOrDefault(); }
+            set { this._hTTPPort = value; }
         }
 
         // Check to see if HTTPPort property is set
         internal bool IsSetHTTPPort()
         {
-            return this.hTTPPort.HasValue;
+            return this._hTTPPort.HasValue; 
         }
 
+
         /// <summary>
-        /// The HTTPS port the custom origin listens on.
-        ///  
+        /// Gets and sets the property HTTPSPort. The HTTPS port the custom origin listens on.
         /// </summary>
         public int HTTPSPort
         {
-            get { return this.hTTPSPort ?? default(int); }
-            set { this.hTTPSPort = value; }
+            get { return this._hTTPSPort.GetValueOrDefault(); }
+            set { this._hTTPSPort = value; }
         }
 
         // Check to see if HTTPSPort property is set
         internal bool IsSetHTTPSPort()
         {
-            return this.hTTPSPort.HasValue;
+            return this._hTTPSPort.HasValue; 
         }
 
+
         /// <summary>
-        /// The origin protocol policy to apply to your origin.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>http-only, match-viewer</description>
-        ///     </item>
-        /// </list>
-        /// </para>
+        /// Gets and sets the property OriginProtocolPolicy. The origin protocol policy to apply
+        /// to your origin.
         /// </summary>
         public OriginProtocolPolicy OriginProtocolPolicy
         {
-            get { return this.originProtocolPolicy; }
-            set { this.originProtocolPolicy = value; }
+            get { return this._originProtocolPolicy; }
+            set { this._originProtocolPolicy = value; }
         }
 
         // Check to see if OriginProtocolPolicy property is set
         internal bool IsSetOriginProtocolPolicy()
         {
-            return this.originProtocolPolicy != null;
+            return this._originProtocolPolicy != null;
         }
+
     }
 }

@@ -282,11 +282,10 @@ namespace Amazon.ElasticTranscoder
 
         IAsyncResult invokeCancelJob(CancelJobRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new CancelJobRequestMarshaller().Marshall(request);
+            var marshaller = new CancelJobRequestMarshaller();
             var unmarshaller = CancelJobResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -370,11 +369,10 @@ namespace Amazon.ElasticTranscoder
 
         IAsyncResult invokeCreateJob(CreateJobRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new CreateJobRequestMarshaller().Marshall(request);
+            var marshaller = new CreateJobRequestMarshaller();
             var unmarshaller = CreateJobResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -449,11 +447,10 @@ namespace Amazon.ElasticTranscoder
 
         IAsyncResult invokeCreatePipeline(CreatePipelineRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new CreatePipelineRequestMarshaller().Marshall(request);
+            var marshaller = new CreatePipelineRequestMarshaller();
             var unmarshaller = CreatePipelineResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -540,11 +537,10 @@ namespace Amazon.ElasticTranscoder
 
         IAsyncResult invokeCreatePreset(CreatePresetRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new CreatePresetRequestMarshaller().Marshall(request);
+            var marshaller = new CreatePresetRequestMarshaller();
             var unmarshaller = CreatePresetResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -626,11 +622,10 @@ namespace Amazon.ElasticTranscoder
 
         IAsyncResult invokeDeletePipeline(DeletePipelineRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DeletePipelineRequestMarshaller().Marshall(request);
+            var marshaller = new DeletePipelineRequestMarshaller();
             var unmarshaller = DeletePipelineResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -707,11 +702,10 @@ namespace Amazon.ElasticTranscoder
 
         IAsyncResult invokeDeletePreset(DeletePresetRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DeletePresetRequestMarshaller().Marshall(request);
+            var marshaller = new DeletePresetRequestMarshaller();
             var unmarshaller = DeletePresetResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -789,11 +783,10 @@ namespace Amazon.ElasticTranscoder
 
         IAsyncResult invokeListJobsByPipeline(ListJobsByPipelineRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new ListJobsByPipelineRequestMarshaller().Marshall(request);
+            var marshaller = new ListJobsByPipelineRequestMarshaller();
             var unmarshaller = ListJobsByPipelineResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -866,11 +859,10 @@ namespace Amazon.ElasticTranscoder
 
         IAsyncResult invokeListJobsByStatus(ListJobsByStatusRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new ListJobsByStatusRequestMarshaller().Marshall(request);
+            var marshaller = new ListJobsByStatusRequestMarshaller();
             var unmarshaller = ListJobsByStatusResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -961,11 +953,10 @@ namespace Amazon.ElasticTranscoder
 
         IAsyncResult invokeListPipelines(ListPipelinesRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new ListPipelinesRequestMarshaller().Marshall(request);
+            var marshaller = new ListPipelinesRequestMarshaller();
             var unmarshaller = ListPipelinesResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1056,11 +1047,10 @@ namespace Amazon.ElasticTranscoder
 
         IAsyncResult invokeListPresets(ListPresetsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new ListPresetsRequestMarshaller().Marshall(request);
+            var marshaller = new ListPresetsRequestMarshaller();
             var unmarshaller = ListPresetsResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1131,11 +1121,10 @@ namespace Amazon.ElasticTranscoder
 
         IAsyncResult invokeReadJob(ReadJobRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new ReadJobRequestMarshaller().Marshall(request);
+            var marshaller = new ReadJobRequestMarshaller();
             var unmarshaller = ReadJobResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1206,11 +1195,10 @@ namespace Amazon.ElasticTranscoder
 
         IAsyncResult invokeReadPipeline(ReadPipelineRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new ReadPipelineRequestMarshaller().Marshall(request);
+            var marshaller = new ReadPipelineRequestMarshaller();
             var unmarshaller = ReadPipelineResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1281,11 +1269,10 @@ namespace Amazon.ElasticTranscoder
 
         IAsyncResult invokeReadPreset(ReadPresetRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new ReadPresetRequestMarshaller().Marshall(request);
+            var marshaller = new ReadPresetRequestMarshaller();
             var unmarshaller = ReadPresetResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1365,11 +1352,10 @@ namespace Amazon.ElasticTranscoder
 
         IAsyncResult invokeTestRole(TestRoleRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new TestRoleRequestMarshaller().Marshall(request);
+            var marshaller = new TestRoleRequestMarshaller();
             var unmarshaller = TestRoleResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1448,11 +1434,10 @@ namespace Amazon.ElasticTranscoder
 
         IAsyncResult invokeUpdatePipeline(UpdatePipelineRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new UpdatePipelineRequestMarshaller().Marshall(request);
+            var marshaller = new UpdatePipelineRequestMarshaller();
             var unmarshaller = UpdatePipelineResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1534,11 +1519,10 @@ namespace Amazon.ElasticTranscoder
 
         IAsyncResult invokeUpdatePipelineNotifications(UpdatePipelineNotificationsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new UpdatePipelineNotificationsRequestMarshaller().Marshall(request);
+            var marshaller = new UpdatePipelineNotificationsRequestMarshaller();
             var unmarshaller = UpdatePipelineNotificationsResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1623,11 +1607,10 @@ namespace Amazon.ElasticTranscoder
 
         IAsyncResult invokeUpdatePipelineStatus(UpdatePipelineStatusRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new UpdatePipelineStatusRequestMarshaller().Marshall(request);
+            var marshaller = new UpdatePipelineStatusRequestMarshaller();
             var unmarshaller = UpdatePipelineStatusResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion

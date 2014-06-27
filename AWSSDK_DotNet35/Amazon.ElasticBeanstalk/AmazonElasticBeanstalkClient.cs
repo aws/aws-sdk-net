@@ -281,11 +281,10 @@ namespace Amazon.ElasticBeanstalk
 
         IAsyncResult invokeCheckDNSAvailability(CheckDNSAvailabilityRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new CheckDNSAvailabilityRequestMarshaller().Marshall(request);
+            var marshaller = new CheckDNSAvailabilityRequestMarshaller();
             var unmarshaller = CheckDNSAvailabilityResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -348,11 +347,10 @@ namespace Amazon.ElasticBeanstalk
 
         IAsyncResult invokeCreateApplication(CreateApplicationRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new CreateApplicationRequestMarshaller().Marshall(request);
+            var marshaller = new CreateApplicationRequestMarshaller();
             var unmarshaller = CreateApplicationResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -426,11 +424,10 @@ namespace Amazon.ElasticBeanstalk
 
         IAsyncResult invokeCreateApplicationVersion(CreateApplicationVersionRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new CreateApplicationVersionRequestMarshaller().Marshall(request);
+            var marshaller = new CreateApplicationVersionRequestMarshaller();
             var unmarshaller = CreateApplicationVersionResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -502,11 +499,10 @@ namespace Amazon.ElasticBeanstalk
 
         IAsyncResult invokeCreateConfigurationTemplate(CreateConfigurationTemplateRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new CreateConfigurationTemplateRequestMarshaller().Marshall(request);
+            var marshaller = new CreateConfigurationTemplateRequestMarshaller();
             var unmarshaller = CreateConfigurationTemplateResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -568,11 +564,10 @@ namespace Amazon.ElasticBeanstalk
 
         IAsyncResult invokeCreateEnvironment(CreateEnvironmentRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new CreateEnvironmentRequestMarshaller().Marshall(request);
+            var marshaller = new CreateEnvironmentRequestMarshaller();
             var unmarshaller = CreateEnvironmentResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -667,11 +662,10 @@ namespace Amazon.ElasticBeanstalk
 
         IAsyncResult invokeCreateStorageLocation(CreateStorageLocationRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new CreateStorageLocationRequestMarshaller().Marshall(request);
+            var marshaller = new CreateStorageLocationRequestMarshaller();
             var unmarshaller = CreateStorageLocationResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -734,11 +728,10 @@ namespace Amazon.ElasticBeanstalk
 
         IAsyncResult invokeDeleteApplication(DeleteApplicationRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DeleteApplicationRequestMarshaller().Marshall(request);
+            var marshaller = new DeleteApplicationRequestMarshaller();
             var unmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -811,11 +804,10 @@ namespace Amazon.ElasticBeanstalk
 
         IAsyncResult invokeDeleteApplicationVersion(DeleteApplicationVersionRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DeleteApplicationVersionRequestMarshaller().Marshall(request);
+            var marshaller = new DeleteApplicationVersionRequestMarshaller();
             var unmarshaller = DeleteApplicationVersionResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -877,11 +869,10 @@ namespace Amazon.ElasticBeanstalk
 
         IAsyncResult invokeDeleteConfigurationTemplate(DeleteConfigurationTemplateRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DeleteConfigurationTemplateRequestMarshaller().Marshall(request);
+            var marshaller = new DeleteConfigurationTemplateRequestMarshaller();
             var unmarshaller = DeleteConfigurationTemplateResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -945,11 +936,10 @@ namespace Amazon.ElasticBeanstalk
 
         IAsyncResult invokeDeleteEnvironmentConfiguration(DeleteEnvironmentConfigurationRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DeleteEnvironmentConfigurationRequestMarshaller().Marshall(request);
+            var marshaller = new DeleteEnvironmentConfigurationRequestMarshaller();
             var unmarshaller = DeleteEnvironmentConfigurationResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1012,11 +1002,10 @@ namespace Amazon.ElasticBeanstalk
 
         IAsyncResult invokeDescribeApplications(DescribeApplicationsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DescribeApplicationsRequestMarshaller().Marshall(request);
+            var marshaller = new DescribeApplicationsRequestMarshaller();
             var unmarshaller = DescribeApplicationsResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1079,11 +1068,10 @@ namespace Amazon.ElasticBeanstalk
 
         IAsyncResult invokeDescribeApplicationVersions(DescribeApplicationVersionsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DescribeApplicationVersionsRequestMarshaller().Marshall(request);
+            var marshaller = new DescribeApplicationVersionsRequestMarshaller();
             var unmarshaller = DescribeApplicationVersionsResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1154,11 +1142,10 @@ namespace Amazon.ElasticBeanstalk
 
         IAsyncResult invokeDescribeConfigurationOptions(DescribeConfigurationOptionsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DescribeConfigurationOptionsRequestMarshaller().Marshall(request);
+            var marshaller = new DescribeConfigurationOptionsRequestMarshaller();
             var unmarshaller = DescribeConfigurationOptionsResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1229,11 +1216,10 @@ namespace Amazon.ElasticBeanstalk
 
         IAsyncResult invokeDescribeConfigurationSettings(DescribeConfigurationSettingsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DescribeConfigurationSettingsRequestMarshaller().Marshall(request);
+            var marshaller = new DescribeConfigurationSettingsRequestMarshaller();
             var unmarshaller = DescribeConfigurationSettingsResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1291,11 +1277,10 @@ namespace Amazon.ElasticBeanstalk
 
         IAsyncResult invokeDescribeEnvironmentResources(DescribeEnvironmentResourcesRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DescribeEnvironmentResourcesRequestMarshaller().Marshall(request);
+            var marshaller = new DescribeEnvironmentResourcesRequestMarshaller();
             var unmarshaller = DescribeEnvironmentResourcesResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1358,11 +1343,10 @@ namespace Amazon.ElasticBeanstalk
 
         IAsyncResult invokeDescribeEnvironments(DescribeEnvironmentsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DescribeEnvironmentsRequestMarshaller().Marshall(request);
+            var marshaller = new DescribeEnvironmentsRequestMarshaller();
             var unmarshaller = DescribeEnvironmentsResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1431,11 +1415,10 @@ namespace Amazon.ElasticBeanstalk
 
         IAsyncResult invokeDescribeEvents(DescribeEventsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DescribeEventsRequestMarshaller().Marshall(request);
+            var marshaller = new DescribeEventsRequestMarshaller();
             var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1498,11 +1481,10 @@ namespace Amazon.ElasticBeanstalk
 
         IAsyncResult invokeListAvailableSolutionStacks(ListAvailableSolutionStacksRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new ListAvailableSolutionStacksRequestMarshaller().Marshall(request);
+            var marshaller = new ListAvailableSolutionStacksRequestMarshaller();
             var unmarshaller = ListAvailableSolutionStacksResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1562,11 +1544,10 @@ namespace Amazon.ElasticBeanstalk
 
         IAsyncResult invokeRebuildEnvironment(RebuildEnvironmentRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new RebuildEnvironmentRequestMarshaller().Marshall(request);
+            var marshaller = new RebuildEnvironmentRequestMarshaller();
             var unmarshaller = RebuildEnvironmentResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1635,11 +1616,10 @@ namespace Amazon.ElasticBeanstalk
 
         IAsyncResult invokeRequestEnvironmentInfo(RequestEnvironmentInfoRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new RequestEnvironmentInfoRequestMarshaller().Marshall(request);
+            var marshaller = new RequestEnvironmentInfoRequestMarshaller();
             var unmarshaller = RequestEnvironmentInfoResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1694,11 +1674,10 @@ namespace Amazon.ElasticBeanstalk
 
         IAsyncResult invokeRestartAppServer(RestartAppServerRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new RestartAppServerRequestMarshaller().Marshall(request);
+            var marshaller = new RestartAppServerRequestMarshaller();
             var unmarshaller = RestartAppServerResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1760,11 +1739,10 @@ namespace Amazon.ElasticBeanstalk
 
         IAsyncResult invokeRetrieveEnvironmentInfo(RetrieveEnvironmentInfoRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new RetrieveEnvironmentInfoRequestMarshaller().Marshall(request);
+            var marshaller = new RetrieveEnvironmentInfoRequestMarshaller();
             var unmarshaller = RetrieveEnvironmentInfoResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1818,11 +1796,10 @@ namespace Amazon.ElasticBeanstalk
 
         IAsyncResult invokeSwapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new SwapEnvironmentCNAMEsRequestMarshaller().Marshall(request);
+            var marshaller = new SwapEnvironmentCNAMEsRequestMarshaller();
             var unmarshaller = SwapEnvironmentCNAMEsResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1880,11 +1857,10 @@ namespace Amazon.ElasticBeanstalk
 
         IAsyncResult invokeTerminateEnvironment(TerminateEnvironmentRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new TerminateEnvironmentRequestMarshaller().Marshall(request);
+            var marshaller = new TerminateEnvironmentRequestMarshaller();
             var unmarshaller = TerminateEnvironmentResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1942,11 +1918,10 @@ namespace Amazon.ElasticBeanstalk
 
         IAsyncResult invokeUpdateApplication(UpdateApplicationRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new UpdateApplicationRequestMarshaller().Marshall(request);
+            var marshaller = new UpdateApplicationRequestMarshaller();
             var unmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -2005,11 +1980,10 @@ namespace Amazon.ElasticBeanstalk
 
         IAsyncResult invokeUpdateApplicationVersion(UpdateApplicationVersionRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new UpdateApplicationVersionRequestMarshaller().Marshall(request);
+            var marshaller = new UpdateApplicationVersionRequestMarshaller();
             var unmarshaller = UpdateApplicationVersionResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -2077,11 +2051,10 @@ namespace Amazon.ElasticBeanstalk
 
         IAsyncResult invokeUpdateConfigurationTemplate(UpdateConfigurationTemplateRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new UpdateConfigurationTemplateRequestMarshaller().Marshall(request);
+            var marshaller = new UpdateConfigurationTemplateRequestMarshaller();
             var unmarshaller = UpdateConfigurationTemplateResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -2155,11 +2128,10 @@ namespace Amazon.ElasticBeanstalk
 
         IAsyncResult invokeUpdateEnvironment(UpdateEnvironmentRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new UpdateEnvironmentRequestMarshaller().Marshall(request);
+            var marshaller = new UpdateEnvironmentRequestMarshaller();
             var unmarshaller = UpdateEnvironmentResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -2224,11 +2196,10 @@ namespace Amazon.ElasticBeanstalk
 
         IAsyncResult invokeValidateConfigurationSettings(ValidateConfigurationSettingsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new ValidateConfigurationSettingsRequestMarshaller().Marshall(request);
+            var marshaller = new ValidateConfigurationSettingsRequestMarshaller();
             var unmarshaller = ValidateConfigurationSettingsResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion

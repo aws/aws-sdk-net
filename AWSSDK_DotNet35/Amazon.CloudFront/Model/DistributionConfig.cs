@@ -18,255 +18,264 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> A distribution Configuration. </para>
+    /// A distribution Configuration.
     /// </summary>
     public partial class DistributionConfig
     {
-        
-        private string callerReference;
-        private Aliases aliases;
-        private string defaultRootObject;
-        private Origins origins;
-        private DefaultCacheBehavior defaultCacheBehavior;
-        private CacheBehaviors cacheBehaviors;
-        private CustomErrorResponses customErrorResponses;
-        private string comment;
-        private LoggingConfig logging;
-        private PriceClass priceClass;
-        private bool? enabled;
-        private ViewerCertificate viewerCertificate;
-        private Restrictions restrictions;
+        private Aliases _aliases;
+        private CacheBehaviors _cacheBehaviors;
+        private string _callerReference;
+        private string _comment;
+        private CustomErrorResponses _customErrorResponses;
+        private DefaultCacheBehavior _defaultCacheBehavior;
+        private string _defaultRootObject;
+        private bool? _enabled;
+        private LoggingConfig _logging;
+        private Origins _origins;
+        private PriceClass _priceClass;
+        private Restrictions _restrictions;
+        private ViewerCertificate _viewerCertificate;
 
 
         /// <summary>
-        /// A unique number that ensures the request can't be replayed. If the CallerReference is new (no matter the content of the DistributionConfig
-        /// object), a new distribution is created. If the CallerReference is a value you already sent in a previous request to create a distribution,
-        /// and the content of the DistributionConfig is identical to the original request (ignoring white space), the response includes the same
-        /// information returned to the original request. If the CallerReference is a value you already sent in a previous request to create a
-        /// distribution but the content of the DistributionConfig is different from the original request, CloudFront returns a
-        /// DistributionAlreadyExists error.
-        ///  
-        /// </summary>
-        public string CallerReference
-        {
-            get { return this.callerReference; }
-            set { this.callerReference = value; }
-        }
-
-        // Check to see if CallerReference property is set
-        internal bool IsSetCallerReference()
-        {
-            return this.callerReference != null;
-        }
-
-        /// <summary>
-        /// A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.
-        ///  
+        /// Gets and sets the property Aliases. A complex type that contains information about
+        /// CNAMEs (alternate domain names), if any, for this distribution.
         /// </summary>
         public Aliases Aliases
         {
-            get { return this.aliases; }
-            set { this.aliases = value; }
+            get { return this._aliases; }
+            set { this._aliases = value; }
         }
 
         // Check to see if Aliases property is set
         internal bool IsSetAliases()
         {
-            return this.aliases != null;
+            return this._aliases != null;
         }
+
 
         /// <summary>
-        /// The object that you want CloudFront to return (for example, index.html) when an end user requests the root URL for your distribution
-        /// (http://www.example.com) instead of an object in your distribution (http://www.example.com/index.html). Specifying a default root object
-        /// avoids exposing the contents of your distribution. If you don't want to specify a default root object when you create a distribution,
-        /// include an empty DefaultRootObject element. To delete the default root object from an existing distribution, update the distribution
-        /// configuration and include an empty DefaultRootObject element. To replace the default root object, update the distribution configuration and
-        /// specify the new object.
-        ///  
-        /// </summary>
-        public string DefaultRootObject
-        {
-            get { return this.defaultRootObject; }
-            set { this.defaultRootObject = value; }
-        }
-
-        // Check to see if DefaultRootObject property is set
-        internal bool IsSetDefaultRootObject()
-        {
-            return this.defaultRootObject != null;
-        }
-
-        /// <summary>
-        /// A complex type that contains information about origins for this distribution.
-        ///  
-        /// </summary>
-        public Origins Origins
-        {
-            get { return this.origins; }
-            set { this.origins = value; }
-        }
-
-        // Check to see if Origins property is set
-        internal bool IsSetOrigins()
-        {
-            return this.origins != null;
-        }
-
-        /// <summary>
-        /// A complex type that describes the default cache behavior if you do not specify a CacheBehavior element or if files don't match any of the
-        /// values of PathPattern in CacheBehavior elements.You must create exactly one default cache behavior.
-        ///  
-        /// </summary>
-        public DefaultCacheBehavior DefaultCacheBehavior
-        {
-            get { return this.defaultCacheBehavior; }
-            set { this.defaultCacheBehavior = value; }
-        }
-
-        // Check to see if DefaultCacheBehavior property is set
-        internal bool IsSetDefaultCacheBehavior()
-        {
-            return this.defaultCacheBehavior != null;
-        }
-
-        /// <summary>
-        /// A complex type that contains zero or more CacheBehavior elements.
-        ///  
+        /// Gets and sets the property CacheBehaviors. A complex type that contains zero or more
+        /// CacheBehavior elements.
         /// </summary>
         public CacheBehaviors CacheBehaviors
         {
-            get { return this.cacheBehaviors; }
-            set { this.cacheBehaviors = value; }
+            get { return this._cacheBehaviors; }
+            set { this._cacheBehaviors = value; }
         }
 
         // Check to see if CacheBehaviors property is set
         internal bool IsSetCacheBehaviors()
         {
-            return this.cacheBehaviors != null;
+            return this._cacheBehaviors != null;
         }
 
+
         /// <summary>
-        /// A complex type that contains zero or more CustomErrorResponse elements.
-        ///  
+        /// Gets and sets the property CallerReference. A unique number that ensures the request
+        /// can't be replayed.    If the CallerReference is new (no matter the content of the
+        /// DistributionConfig object), a new distribution is created.    If the CallerReference
+        /// is a value you already sent in a previous request to create a distribution, and the
+        /// content of the DistributionConfig is identical to the original request (ignoring white
+        /// space),    the response includes the same information returned to the original request.
+        ///    If the CallerReference is a value you already sent in a previous request to create
+        /// a distribution but the content of the DistributionConfig is different from the original
+        /// request,    CloudFront returns a DistributionAlreadyExists error.
         /// </summary>
-        public CustomErrorResponses CustomErrorResponses
+        public string CallerReference
         {
-            get { return this.customErrorResponses; }
-            set { this.customErrorResponses = value; }
+            get { return this._callerReference; }
+            set { this._callerReference = value; }
         }
 
-        // Check to see if CustomErrorResponses property is set
-        internal bool IsSetCustomErrorResponses()
+        // Check to see if CallerReference property is set
+        internal bool IsSetCallerReference()
         {
-            return this.customErrorResponses != null;
+            return this._callerReference != null;
         }
+
 
         /// <summary>
-        /// Any comments you want to include about the distribution.
-        ///  
+        /// Gets and sets the property Comment. Any comments you want to include about the distribution.
         /// </summary>
         public string Comment
         {
-            get { return this.comment; }
-            set { this.comment = value; }
+            get { return this._comment; }
+            set { this._comment = value; }
         }
 
         // Check to see if Comment property is set
         internal bool IsSetComment()
         {
-            return this.comment != null;
+            return this._comment != null;
         }
 
+
         /// <summary>
-        /// A complex type that controls whether access logs are written for the distribution.
-        ///  
+        /// Gets and sets the property CustomErrorResponses. A complex type that contains zero
+        /// or more CustomErrorResponse elements.
         /// </summary>
-        public LoggingConfig Logging
+        public CustomErrorResponses CustomErrorResponses
         {
-            get { return this.logging; }
-            set { this.logging = value; }
+            get { return this._customErrorResponses; }
+            set { this._customErrorResponses = value; }
         }
 
-        // Check to see if Logging property is set
-        internal bool IsSetLogging()
+        // Check to see if CustomErrorResponses property is set
+        internal bool IsSetCustomErrorResponses()
         {
-            return this.logging != null;
+            return this._customErrorResponses != null;
         }
+
 
         /// <summary>
-        /// A complex type that contains information about price class for this distribution.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>PriceClass_100, PriceClass_200, PriceClass_All</description>
-        ///     </item>
-        /// </list>
-        /// </para>
+        /// Gets and sets the property DefaultCacheBehavior. A complex type that describes the
+        /// default cache behavior if you do not    specify a CacheBehavior element or if files
+        /// don't match any of the values    of PathPattern in CacheBehavior elements.You must
+        /// create exactly    one default cache behavior.
         /// </summary>
-        public PriceClass PriceClass
+        public DefaultCacheBehavior DefaultCacheBehavior
         {
-            get { return this.priceClass; }
-            set { this.priceClass = value; }
+            get { return this._defaultCacheBehavior; }
+            set { this._defaultCacheBehavior = value; }
         }
 
-        // Check to see if PriceClass property is set
-        internal bool IsSetPriceClass()
+        // Check to see if DefaultCacheBehavior property is set
+        internal bool IsSetDefaultCacheBehavior()
         {
-            return this.priceClass != null;
+            return this._defaultCacheBehavior != null;
         }
+
 
         /// <summary>
-        /// Whether the distribution is enabled to accept end user requests for content.
-        ///  
+        /// Gets and sets the property DefaultRootObject. The object that you want CloudFront
+        /// to return (for example, index.html)    when an end user requests the root URL for
+        /// your distribution    (http://www.example.com) instead of an object in your distribution
+        ///    (http://www.example.com/index.html). Specifying a default root    object avoids
+        /// exposing the contents of your distribution.    If you don't want to specify a default
+        /// root object when you create a    distribution, include an empty DefaultRootObject
+        /// element.    To delete the default root object from an existing distribution, update
+        /// the    distribution configuration and include an empty DefaultRootObject    element.
+        /// To replace the default root object, update the distribution configuration    and specify
+        /// the new object.
+        /// </summary>
+        public string DefaultRootObject
+        {
+            get { return this._defaultRootObject; }
+            set { this._defaultRootObject = value; }
+        }
+
+        // Check to see if DefaultRootObject property is set
+        internal bool IsSetDefaultRootObject()
+        {
+            return this._defaultRootObject != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Enabled. Whether the distribution is enabled to accept
+        /// end user requests for content.
         /// </summary>
         public bool Enabled
         {
-            get { return this.enabled ?? default(bool); }
-            set { this.enabled = value; }
+            get { return this._enabled.GetValueOrDefault(); }
+            set { this._enabled = value; }
         }
 
         // Check to see if Enabled property is set
         internal bool IsSetEnabled()
         {
-            return this.enabled.HasValue;
+            return this._enabled.HasValue; 
         }
 
+
         /// <summary>
-        /// A complex type that contains information about viewer certificates for this distribution.
-        ///  
+        /// Gets and sets the property Logging. A complex type that controls whether access logs
+        /// are written for the distribution.
         /// </summary>
-        public ViewerCertificate ViewerCertificate
+        public LoggingConfig Logging
         {
-            get { return this.viewerCertificate; }
-            set { this.viewerCertificate = value; }
+            get { return this._logging; }
+            set { this._logging = value; }
         }
 
-        // Check to see if ViewerCertificate property is set
-        internal bool IsSetViewerCertificate()
+        // Check to see if Logging property is set
+        internal bool IsSetLogging()
         {
-            return this.viewerCertificate != null;
+            return this._logging != null;
         }
+
 
         /// <summary>
-        /// A complex type that identifies ways in which you want to restrict distribution of your content.
-        ///  
+        /// Gets and sets the property Origins. A complex type that contains information about
+        /// origins for this distribution.
+        /// </summary>
+        public Origins Origins
+        {
+            get { return this._origins; }
+            set { this._origins = value; }
+        }
+
+        // Check to see if Origins property is set
+        internal bool IsSetOrigins()
+        {
+            return this._origins != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property PriceClass. A complex type that contains information about
+        /// price class for this distribution.
+        /// </summary>
+        public PriceClass PriceClass
+        {
+            get { return this._priceClass; }
+            set { this._priceClass = value; }
+        }
+
+        // Check to see if PriceClass property is set
+        internal bool IsSetPriceClass()
+        {
+            return this._priceClass != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Restrictions.
         /// </summary>
         public Restrictions Restrictions
         {
-            get { return this.restrictions; }
-            set { this.restrictions = value; }
+            get { return this._restrictions; }
+            set { this._restrictions = value; }
         }
 
         // Check to see if Restrictions property is set
         internal bool IsSetRestrictions()
         {
-            return this.restrictions != null;
+            return this._restrictions != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property ViewerCertificate.
+        /// </summary>
+        public ViewerCertificate ViewerCertificate
+        {
+            get { return this._viewerCertificate; }
+            set { this._viewerCertificate = value; }
+        }
+
+        // Check to see if ViewerCertificate property is set
+        internal bool IsSetViewerCertificate()
+        {
+            return this._viewerCertificate != null;
+        }
+
     }
 }

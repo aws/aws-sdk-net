@@ -17,68 +17,69 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> The returned result of the corresponding request. </para>
+    /// The returned result of the corresponding request.
     /// </summary>
     public partial class CreateDistributionResult : AmazonWebServiceResponse
     {
-        
-        private Distribution distribution;
-        private string location;
-        private string eTag;
+        private Distribution _distribution;
+        private string _eTag;
+        private string _location;
 
 
         /// <summary>
-        /// The distribution's information.
-        ///  
+        /// Gets and sets the property Distribution. The distribution's information.
         /// </summary>
         public Distribution Distribution
         {
-            get { return this.distribution; }
-            set { this.distribution = value; }
+            get { return this._distribution; }
+            set { this._distribution = value; }
         }
 
         // Check to see if Distribution property is set
         internal bool IsSetDistribution()
         {
-            return this.distribution != null;
+            return this._distribution != null;
         }
+
 
         /// <summary>
-        /// The fully qualified URI of the new distribution resource just created. For example:
-        /// https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
-        ///  
-        /// </summary>
-        public string Location
-        {
-            get { return this.location; }
-            set { this.location = value; }
-        }
-
-        // Check to see if Location property is set
-        internal bool IsSetLocation()
-        {
-            return this.location != null;
-        }
-
-        /// <summary>
-        /// The current version of the distribution created.
-        ///  
+        /// Gets and sets the property ETag. The current version of the distribution created.
         /// </summary>
         public string ETag
         {
-            get { return this.eTag; }
-            set { this.eTag = value; }
+            get { return this._eTag; }
+            set { this._eTag = value; }
         }
 
         // Check to see if ETag property is set
         internal bool IsSetETag()
         {
-            return this.eTag != null;
+            return this._eTag != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Location. The fully qualified URI of the new distribution
+        /// resource just created. For example: https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
+        /// </summary>
+        public string Location
+        {
+            get { return this._location; }
+            set { this._location = value; }
+        }
+
+        // Check to see if Location property is set
+        internal bool IsSetLocation()
+        {
+            return this._location != null;
+        }
+
     }
 }

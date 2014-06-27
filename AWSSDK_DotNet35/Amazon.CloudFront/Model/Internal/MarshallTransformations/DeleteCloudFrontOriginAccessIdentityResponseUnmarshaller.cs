@@ -13,73 +13,73 @@
  * permissions and limitations under the License.
  */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.CloudFront.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for DeleteCloudFrontOriginAccessIdentity operation
-    /// </summary>
-    internal class DeleteCloudFrontOriginAccessIdentityResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for DeleteCloudFrontOriginAccessIdentity operation
+    /// </summary>  
+    public class DeleteCloudFrontOriginAccessIdentityResponseUnmarshaller : XmlResponseUnmarshaller
     {
-
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             DeleteCloudFrontOriginAccessIdentityResponse response = new DeleteCloudFrontOriginAccessIdentityResponse();
             
-
             return response;
-        }
-        
-        
+        }        
+  
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidIfMatchVersion"))
-            {
-                return new InvalidIfMatchVersionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("CloudFrontOriginAccessIdentityInUse"))
-            {
-                return new CloudFrontOriginAccessIdentityInUseException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchCloudFrontOriginAccessIdentity"))
-            {
-                return new NoSuchCloudFrontOriginAccessIdentityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("PreconditionFailed"))
-            {
-                return new PreconditionFailedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDenied"))
             {
                 return new AccessDeniedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("CloudFrontOriginAccessIdentityInUse"))
+            {
+                return new CloudFrontOriginAccessIdentityInUseException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidIfMatchVersion"))
+            {
+                return new InvalidIfMatchVersionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchCloudFrontOriginAccessIdentity"))
+            {
+                return new NoSuchCloudFrontOriginAccessIdentityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("PreconditionFailed"))
+            {
+                return new PreconditionFailedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonCloudFrontException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static DeleteCloudFrontOriginAccessIdentityResponseUnmarshaller instance;
 
-        public static DeleteCloudFrontOriginAccessIdentityResponseUnmarshaller GetInstance()
+        private static DeleteCloudFrontOriginAccessIdentityResponseUnmarshaller _instance = new DeleteCloudFrontOriginAccessIdentityResponseUnmarshaller();        
+
+        internal static DeleteCloudFrontOriginAccessIdentityResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new DeleteCloudFrontOriginAccessIdentityResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static DeleteCloudFrontOriginAccessIdentityResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

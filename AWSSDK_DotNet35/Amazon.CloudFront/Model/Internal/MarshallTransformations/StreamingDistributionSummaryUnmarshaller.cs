@@ -12,21 +12,30 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   StreamingDistributionSummary Unmarshaller
-     /// </summary>
-    internal class StreamingDistributionSummaryUnmarshaller : IUnmarshaller<StreamingDistributionSummary, XmlUnmarshallerContext>, IUnmarshaller<StreamingDistributionSummary, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for StreamingDistributionSummary Object
+    /// </summary>  
+    public class StreamingDistributionSummaryUnmarshaller : IUnmarshaller<StreamingDistributionSummary, XmlUnmarshallerContext>
     {
-        public StreamingDistributionSummary Unmarshall(XmlUnmarshallerContext context) 
+        public StreamingDistributionSummary Unmarshall(XmlUnmarshallerContext context)
         {
-            StreamingDistributionSummary streamingDistributionSummary = new StreamingDistributionSummary();
+            StreamingDistributionSummary unmarshalledObject = new StreamingDistributionSummary();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -37,92 +46,83 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Id", targetDepth))
-                    {
-                        streamingDistributionSummary.Id = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Status", targetDepth))
-                    {
-                        streamingDistributionSummary.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("LastModifiedTime", targetDepth))
-                    {
-                        streamingDistributionSummary.LastModifiedTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("DomainName", targetDepth))
-                    {
-                        streamingDistributionSummary.DomainName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("S3Origin", targetDepth))
-                    {
-                        streamingDistributionSummary.S3Origin = S3OriginUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("Aliases", targetDepth))
                     {
-                        streamingDistributionSummary.Aliases = AliasesUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("TrustedSigners", targetDepth))
-                    {
-                        streamingDistributionSummary.TrustedSigners = TrustedSignersUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = AliasesUnmarshaller.Instance;
+                        unmarshalledObject.Aliases = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Comment", targetDepth))
                     {
-                        streamingDistributionSummary.Comment = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Comment = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("PriceClass", targetDepth))
+                    if (context.TestExpression("DomainName", targetDepth))
                     {
-                        streamingDistributionSummary.PriceClass = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DomainName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Enabled", targetDepth))
                     {
-                        streamingDistributionSummary.Enabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Id", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("LastModifiedTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PriceClass", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PriceClass = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("S3Origin", targetDepth))
+                    {
+                        var unmarshaller = S3OriginUnmarshaller.Instance;
+                        unmarshalledObject.S3Origin = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Status", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TrustedSigners", targetDepth))
+                    {
+                        var unmarshaller = TrustedSignersUnmarshaller.Instance;
+                        unmarshalledObject.TrustedSigners = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return streamingDistributionSummary;
+                    return unmarshalledObject;
                 }
+            }          
+            return unmarshalledObject;
+        }
+
+        private static StreamingDistributionSummaryUnmarshaller _instance = new StreamingDistributionSummaryUnmarshaller();        
+
+        public static StreamingDistributionSummaryUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
             }
-                        
-
-
-            return streamingDistributionSummary;
-        }
-
-        public StreamingDistributionSummary Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
-
-        private static StreamingDistributionSummaryUnmarshaller instance;
-
-        public static StreamingDistributionSummaryUnmarshaller GetInstance() 
-        {
-            if (instance == null) 
-               instance = new StreamingDistributionSummaryUnmarshaller();
-
-            return instance;
         }
     }
 }
-    

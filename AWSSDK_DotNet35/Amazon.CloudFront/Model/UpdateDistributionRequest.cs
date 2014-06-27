@@ -25,63 +25,62 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDistribution operation.
-    /// <para> Update a distribution. </para>
+    /// Update a distribution.
     /// </summary>
     public partial class UpdateDistributionRequest : AmazonCloudFrontRequest
     {
-        private DistributionConfig distributionConfig;
-        private string id;
-        private string ifMatch;
+        private DistributionConfig _distributionConfig;
+        private string _id;
+        private string _ifMatch;
 
 
         /// <summary>
-        /// The distribution's configuration information.
-        ///  
+        /// Gets and sets the property DistributionConfig. The distribution's configuration information.
         /// </summary>
         public DistributionConfig DistributionConfig
         {
-            get { return this.distributionConfig; }
-            set { this.distributionConfig = value; }
+            get { return this._distributionConfig; }
+            set { this._distributionConfig = value; }
         }
 
         // Check to see if DistributionConfig property is set
         internal bool IsSetDistributionConfig()
         {
-            return this.distributionConfig != null;
+            return this._distributionConfig != null;
         }
 
+
         /// <summary>
-        /// The distribution's id.
-        ///  
+        /// Gets and sets the property Id. The distribution's id.
         /// </summary>
         public string Id
         {
-            get { return this.id; }
-            set { this.id = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;
+            return this._id != null;
         }
 
+
         /// <summary>
-        /// The value of the ETag header you received when retrieving the distribution's configuration. For example: E2QWRUHAPOMQZL.
-        ///  
+        /// Gets and sets the property IfMatch. The value of the ETag header you received when
+        /// retrieving the distribution's configuration. For example: E2QWRUHAPOMQZL.
         /// </summary>
         public string IfMatch
         {
-            get { return this.ifMatch; }
-            set { this.ifMatch = value; }
+            get { return this._ifMatch; }
+            set { this._ifMatch = value; }
         }
 
         // Check to see if IfMatch property is set
         internal bool IsSetIfMatch()
         {
-            return this.ifMatch != null;
+            return this._ifMatch != null;
         }
 
     }
 }
-    

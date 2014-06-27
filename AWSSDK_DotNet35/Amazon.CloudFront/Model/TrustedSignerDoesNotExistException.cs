@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.CloudFront.Model
 {
     ///<summary>
-    /// AmazonCloudFront exception
+    /// CloudFront exception
     /// </summary>
     public class TrustedSignerDoesNotExistException : AmazonCloudFrontException 
     {
@@ -45,6 +45,5 @@ namespace Amazon.CloudFront.Model
         public TrustedSignerDoesNotExistException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
-        
     }
 }

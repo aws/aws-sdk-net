@@ -12,21 +12,30 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   CustomErrorResponses Unmarshaller
-     /// </summary>
-    internal class CustomErrorResponsesUnmarshaller : IUnmarshaller<CustomErrorResponses, XmlUnmarshallerContext>, IUnmarshaller<CustomErrorResponses, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for CustomErrorResponses Object
+    /// </summary>  
+    public class CustomErrorResponsesUnmarshaller : IUnmarshaller<CustomErrorResponses, XmlUnmarshallerContext>
     {
-        public CustomErrorResponses Unmarshall(XmlUnmarshallerContext context) 
+        public CustomErrorResponses Unmarshall(XmlUnmarshallerContext context)
         {
-            CustomErrorResponses customErrorResponses = new CustomErrorResponses();
+            CustomErrorResponses unmarshalledObject = new CustomErrorResponses();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -37,44 +46,35 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Quantity", targetDepth))
-                    {
-                        customErrorResponses.Quantity = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("Items/CustomErrorResponse", targetDepth))
                     {
-                        customErrorResponses.Items.Add(CustomErrorResponseUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = CustomErrorResponseUnmarshaller.Instance;
+                        unmarshalledObject.Items.Add(unmarshaller.Unmarshall(context));
+                        continue;
+                    }
+                    if (context.TestExpression("Quantity", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.Quantity = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return customErrorResponses;
+                    return unmarshalledObject;
                 }
+            }          
+            return unmarshalledObject;
+        }
+
+        private static CustomErrorResponsesUnmarshaller _instance = new CustomErrorResponsesUnmarshaller();        
+
+        public static CustomErrorResponsesUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
             }
-                        
-
-
-            return customErrorResponses;
-        }
-
-        public CustomErrorResponses Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
-
-        private static CustomErrorResponsesUnmarshaller instance;
-
-        public static CustomErrorResponsesUnmarshaller GetInstance() 
-        {
-            if (instance == null) 
-               instance = new CustomErrorResponsesUnmarshaller();
-
-            return instance;
         }
     }
 }
-    

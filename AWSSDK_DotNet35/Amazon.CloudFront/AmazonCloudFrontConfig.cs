@@ -12,15 +12,17 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+
 using System;
 
 using Amazon.Runtime;
 
+
 namespace Amazon.CloudFront
 {
-
     /// <summary>
-    /// Configuration for accessing AmazonCloudFront service
+    /// Configuration for accessing Amazon CloudFront service
     /// </summary>
     public partial class AmazonCloudFrontConfig : ClientConfig
     {
@@ -30,7 +32,6 @@ namespace Amazon.CloudFront
         public AmazonCloudFrontConfig()
         {
             this.AuthenticationServiceName = "cloudfront";
-            this.RegionEndpoint = RegionEndpoint.USEast1;
         }
 
         /// <summary>
@@ -40,9 +41,7 @@ namespace Amazon.CloudFront
         {
             get
             {
-                
                 return "cloudfront";
-                    
             }
         }
 
@@ -53,10 +52,8 @@ namespace Amazon.CloudFront
         {
             get
             {
-                return "2014-01-31";
+                return "2014-05-31";
             }
         }
     }
 }
-
-    

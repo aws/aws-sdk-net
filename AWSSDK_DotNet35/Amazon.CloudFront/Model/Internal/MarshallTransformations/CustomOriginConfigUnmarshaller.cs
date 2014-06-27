@@ -12,21 +12,30 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   CustomOriginConfig Unmarshaller
-     /// </summary>
-    internal class CustomOriginConfigUnmarshaller : IUnmarshaller<CustomOriginConfig, XmlUnmarshallerContext>, IUnmarshaller<CustomOriginConfig, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for CustomOriginConfig Object
+    /// </summary>  
+    public class CustomOriginConfigUnmarshaller : IUnmarshaller<CustomOriginConfig, XmlUnmarshallerContext>
     {
-        public CustomOriginConfig Unmarshall(XmlUnmarshallerContext context) 
+        public CustomOriginConfig Unmarshall(XmlUnmarshallerContext context)
         {
-            CustomOriginConfig customOriginConfig = new CustomOriginConfig();
+            CustomOriginConfig unmarshalledObject = new CustomOriginConfig();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -39,48 +48,39 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("HTTPPort", targetDepth))
                     {
-                        customOriginConfig.HTTPPort = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.HTTPPort = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("HTTPSPort", targetDepth))
                     {
-                        customOriginConfig.HTTPSPort = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.HTTPSPort = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("OriginProtocolPolicy", targetDepth))
                     {
-                        customOriginConfig.OriginProtocolPolicy = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OriginProtocolPolicy = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return customOriginConfig;
+                    return unmarshalledObject;
                 }
+            }          
+            return unmarshalledObject;
+        }
+
+        private static CustomOriginConfigUnmarshaller _instance = new CustomOriginConfigUnmarshaller();        
+
+        public static CustomOriginConfigUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
             }
-                        
-
-
-            return customOriginConfig;
-        }
-
-        public CustomOriginConfig Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
-
-        private static CustomOriginConfigUnmarshaller instance;
-
-        public static CustomOriginConfigUnmarshaller GetInstance() 
-        {
-            if (instance == null) 
-               instance = new CustomOriginConfigUnmarshaller();
-
-            return instance;
         }
     }
 }
-    

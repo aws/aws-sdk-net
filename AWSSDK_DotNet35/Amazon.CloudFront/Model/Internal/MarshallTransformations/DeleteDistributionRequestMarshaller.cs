@@ -17,45 +17,39 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Text;
-using System.Xml;
 using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
-
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using System.Xml;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Distribution Request Marshaller
+    /// DeleteDistribution Request Marshaller
     /// </summary>       
-    public class DeleteDistributionRequestMarshaller : IMarshaller<IRequest, DeleteDistributionRequest>
+    public class DeleteDistributionRequestMarshaller : IMarshaller<IRequest, DeleteDistributionRequest> 
     {
-        
-    
-        public IRequest Marshall(DeleteDistributionRequest deleteDistributionRequest)
+        public IRequest Marshall(DeleteDistributionRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(deleteDistributionRequest, "AmazonCloudFront");
-
-
-
+            var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "DELETE";
-        if(deleteDistributionRequest.IsSetIfMatch())
-            request.Headers.Add("If-Match", deleteDistributionRequest.IfMatch);
-            
-            string uriResourcePath = "2014-01-31/distribution/{Id}"; 
-            uriResourcePath = uriResourcePath.Replace("{Id}", deleteDistributionRequest.IsSetId() ? deleteDistributionRequest.Id.ToString() : "" ); 
-            request.ResourcePath = uriResourcePath;
-            
+            var uriResourcePath = "/2014-05-31/distribution/{Id}";
+
         
+            if(publicRequest.IsSetIfMatch())     
+                request.Headers["If-Match"] = publicRequest.IfMatch;
+            uriResourcePath = uriResourcePath.Replace("{Id}", publicRequest.IsSetId() ? StringUtils.FromString(publicRequest.Id) : string.Empty);
+            request.ResourcePath = uriResourcePath;
+
+
             request.UseQueryString = true;
-            
-            
             return request;
         }
-    }
+
+        
+    }    
 }
-    

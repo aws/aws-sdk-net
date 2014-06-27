@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,7 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+
 using System;
+using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -21,33 +24,48 @@ using Amazon.CloudFront.Model;
 namespace Amazon.CloudFront
 {
     /// <summary>
-    /// Interface for accessing AmazonCloudFront.
-    /// 
+    /// Implementation for accessing CloudFront
+    ///
     /// 
     /// </summary>
-	public partial interface IAmazonCloudFront : IDisposable
+    public partial interface IAmazonCloudFront : IDisposable
     {
- 
+
+        
+        #region  CreateCloudFrontOriginAccessIdentity
+
 
         /// <summary>
-        /// <para> Create a new origin access identity. </para>
+        /// Create a new origin access identity.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCloudFrontOriginAccessIdentity service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the
-        /// CreateCloudFrontOriginAccessIdentity service method on AmazonCloudFront.</param>
-        /// 
-        /// <returns>The response from the CreateCloudFrontOriginAccessIdentity service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyCloudFrontOriginAccessIdentitiesException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.MissingBodyException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidArgumentException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InconsistentQuantitiesException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.CloudFrontOriginAccessIdentityAlreadyExistsException" />
-		CreateCloudFrontOriginAccessIdentityResponse CreateCloudFrontOriginAccessIdentity(CreateCloudFrontOriginAccessIdentityRequest request);
+        /// <returns>The response from the CreateCloudFrontOriginAccessIdentity service method, as returned by CloudFront.</returns>
+        /// <exception cref="CloudFrontOriginAccessIdentityAlreadyExistsException">
+        /// If the CallerReference is a value you already sent in a previous request to create
+        /// an identity but the content of the CloudFrontOriginAccessIdentityConfig is different
+        /// from the original request,    CloudFront returns a CloudFrontOriginAccessIdentityAlreadyExists
+        /// error.
+        /// </exception>
+        /// <exception cref="InconsistentQuantitiesException">
+        /// The value of Quantity and the size of Items do not match.
+        /// </exception>
+        /// <exception cref="InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        /// <exception cref="MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the Content-Type
+        /// header is set.
+        /// </exception>
+        /// <exception cref="TooManyCloudFrontOriginAccessIdentitiesException">
+        /// Processing your request would cause you to exceed the maximum number of origin access
+        /// identities allowed.
+        /// </exception>
+        CreateCloudFrontOriginAccessIdentityResponse CreateCloudFrontOriginAccessIdentity(CreateCloudFrontOriginAccessIdentityRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCloudFrontOriginAccessIdentity operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront.CreateCloudFrontOriginAccessIdentity"/>
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateCloudFrontOriginAccessIdentity operation.</param>
@@ -55,49 +73,116 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<CreateCloudFrontOriginAccessIdentityResponse> CreateCloudFrontOriginAccessIdentityAsync(CreateCloudFrontOriginAccessIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<CreateCloudFrontOriginAccessIdentityResponse> CreateCloudFrontOriginAccessIdentityAsync(CreateCloudFrontOriginAccessIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateDistribution
+
 
         /// <summary>
-        /// <para> Create a new distribution. </para>
+        /// Create a new distribution.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDistribution service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateDistribution service method on
-        /// AmazonCloudFront.</param>
+        /// <returns>The response from the CreateDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="CNAMEAlreadyExistsException">
         /// 
-        /// <returns>The response from the CreateDistribution service method, as returned by AmazonCloudFront.</returns>
+        /// </exception>
+        /// <exception cref="DistributionAlreadyExistsException">
+        /// The caller reference you attempted to create the distribution with is associated with
+        /// another distribution.
+        /// </exception>
+        /// <exception cref="InconsistentQuantitiesException">
+        /// The value of Quantity and the size of Items do not match.
+        /// </exception>
+        /// <exception cref="InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        /// <exception cref="InvalidDefaultRootObjectException">
+        /// The default root object file name is too big or contains an invalid character.
+        /// </exception>
+        /// <exception cref="InvalidErrorCodeException">
         /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyCookieNamesInWhiteListException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidGeoRestrictionParameterException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidResponseCodeException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.MissingBodyException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidLocationCodeException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyDistributionCNAMEsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyDistributionsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchOriginException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InconsistentQuantitiesException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidArgumentException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.CNAMEAlreadyExistsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidOriginAccessIdentityException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyCacheBehaviorsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyTrustedSignersException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidViewerCertificateException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyOriginsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.DistributionAlreadyExistsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidRequiredProtocolException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidDefaultRootObjectException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidForwardCookiesException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TrustedSignerDoesNotExistException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidOriginException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyCertificatesException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidRelativePathException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidErrorCodeException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
-		CreateDistributionResponse CreateDistribution(CreateDistributionRequest request);
+        /// </exception>
+        /// <exception cref="InvalidForwardCookiesException">
+        /// Your request contains forward cookies option which doesn't match with the expectation
+        /// for the whitelisted    list of cookie names. Either list of cookie names has been
+        /// specified when not allowed or list of cookie names    is missing when expected.
+        /// </exception>
+        /// <exception cref="InvalidGeoRestrictionParameterException">
+        /// 
+        /// </exception>
+        /// <exception cref="InvalidHeadersForS3OriginException">
+        /// 
+        /// </exception>
+        /// <exception cref="InvalidLocationCodeException">
+        /// 
+        /// </exception>
+        /// <exception cref="InvalidOriginAccessIdentityException">
+        /// The origin access identity is not valid or doesn't exist.
+        /// </exception>
+        /// <exception cref="InvalidOriginException">
+        /// The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
+        /// </exception>
+        /// <exception cref="InvalidRelativePathException">
+        /// The relative path is too big, is not URL-encoded, or    does not begin with a slash
+        /// (/).
+        /// </exception>
+        /// <exception cref="InvalidRequiredProtocolException">
+        /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
+        /// in your request, or omit the RequiredProtocols element from your distribution configuration.
+        /// </exception>
+        /// <exception cref="InvalidResponseCodeException">
+        /// 
+        /// </exception>
+        /// <exception cref="InvalidViewerCertificateException">
+        /// 
+        /// </exception>
+        /// <exception cref="MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the Content-Type
+        /// header is set.
+        /// </exception>
+        /// <exception cref="NoSuchOriginException">
+        /// No origin exists with the specified Origin Id.
+        /// </exception>
+        /// <exception cref="TooManyCacheBehaviorsException">
+        /// You cannot create anymore cache behaviors for the distribution.
+        /// </exception>
+        /// <exception cref="TooManyCertificatesException">
+        /// You cannot create anymore custom ssl certificates.
+        /// </exception>
+        /// <exception cref="TooManyCookieNamesInWhiteListException">
+        /// Your request contains more cookie names in the whitelist than are allowed per cache
+        /// behavior.
+        /// </exception>
+        /// <exception cref="TooManyDistributionCNAMEsException">
+        /// Your request contains more CNAMEs than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="TooManyDistributionsException">
+        /// Processing your request would cause you to exceed the maximum number of distributions
+        /// allowed.
+        /// </exception>
+        /// <exception cref="TooManyHeadersInForwardedValuesException">
+        /// 
+        /// </exception>
+        /// <exception cref="TooManyOriginsException">
+        /// You cannot create anymore origins for the distribution.
+        /// </exception>
+        /// <exception cref="TooManyTrustedSignersException">
+        /// Your request contains more trusted signers than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="TrustedSignerDoesNotExistException">
+        /// One or more of your trusted signers do not exist.
+        /// </exception>
+        CreateDistributionResponse CreateDistribution(CreateDistributionRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateDistribution operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront.CreateDistribution"/>
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateDistribution operation.</param>
@@ -105,30 +190,47 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<CreateDistributionResponse> CreateDistributionAsync(CreateDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<CreateDistributionResponse> CreateDistributionAsync(CreateDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateInvalidation
+
 
         /// <summary>
-        /// <para> Create a new invalidation. </para>
+        /// Create a new invalidation.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInvalidation service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateInvalidation service method on
-        /// AmazonCloudFront.</param>
+        /// <returns>The response from the CreateInvalidation service method, as returned by CloudFront.</returns>
+        /// <exception cref="AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="BatchTooLargeException">
         /// 
-        /// <returns>The response from the CreateInvalidation service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyInvalidationsInProgressException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.MissingBodyException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchDistributionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.BatchTooLargeException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidArgumentException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InconsistentQuantitiesException" />
-		CreateInvalidationResponse CreateInvalidation(CreateInvalidationRequest request);
+        /// </exception>
+        /// <exception cref="InconsistentQuantitiesException">
+        /// The value of Quantity and the size of Items do not match.
+        /// </exception>
+        /// <exception cref="InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        /// <exception cref="MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the Content-Type
+        /// header is set.
+        /// </exception>
+        /// <exception cref="NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="TooManyInvalidationsInProgressException">
+        /// You have exceeded the maximum number of allowable InProgress invalidation batch requests,
+        /// or invalidation objects.
+        /// </exception>
+        CreateInvalidationResponse CreateInvalidation(CreateInvalidationRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateInvalidation operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront.CreateInvalidation"/>
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateInvalidation operation.</param>
@@ -136,35 +238,62 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<CreateInvalidationResponse> CreateInvalidationAsync(CreateInvalidationRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<CreateInvalidationResponse> CreateInvalidationAsync(CreateInvalidationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateStreamingDistribution
+
 
         /// <summary>
-        /// <para> Create a new streaming distribution. </para>
+        /// Create a new streaming distribution.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStreamingDistribution service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateStreamingDistribution service
-        /// method on AmazonCloudFront.</param>
+        /// <returns>The response from the CreateStreamingDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="CNAMEAlreadyExistsException">
         /// 
-        /// <returns>The response from the CreateStreamingDistribution service method, as returned by AmazonCloudFront.</returns>
+        /// </exception>
+        /// <exception cref="InconsistentQuantitiesException">
+        /// The value of Quantity and the size of Items do not match.
+        /// </exception>
+        /// <exception cref="InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        /// <exception cref="InvalidOriginAccessIdentityException">
+        /// The origin access identity is not valid or doesn't exist.
+        /// </exception>
+        /// <exception cref="InvalidOriginException">
+        /// The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
+        /// </exception>
+        /// <exception cref="MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the Content-Type
+        /// header is set.
+        /// </exception>
+        /// <exception cref="StreamingDistributionAlreadyExistsException">
         /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyTrustedSignersException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.MissingBodyException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyStreamingDistributionCNAMEsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.StreamingDistributionAlreadyExistsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.CNAMEAlreadyExistsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyStreamingDistributionsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidArgumentException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InconsistentQuantitiesException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidOriginAccessIdentityException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TrustedSignerDoesNotExistException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidOriginException" />
-		CreateStreamingDistributionResponse CreateStreamingDistribution(CreateStreamingDistributionRequest request);
+        /// </exception>
+        /// <exception cref="TooManyStreamingDistributionCNAMEsException">
+        /// 
+        /// </exception>
+        /// <exception cref="TooManyStreamingDistributionsException">
+        /// Processing your request would cause you to exceed the maximum number of streaming
+        /// distributions allowed.
+        /// </exception>
+        /// <exception cref="TooManyTrustedSignersException">
+        /// Your request contains more trusted signers than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="TrustedSignerDoesNotExistException">
+        /// One or more of your trusted signers do not exist.
+        /// </exception>
+        CreateStreamingDistributionResponse CreateStreamingDistribution(CreateStreamingDistributionRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateStreamingDistribution operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront.CreateStreamingDistribution"/>
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateStreamingDistribution operation.</param>
@@ -172,26 +301,60 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<CreateStreamingDistributionResponse> CreateStreamingDistributionAsync(CreateStreamingDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<CreateStreamingDistributionResponse> CreateStreamingDistributionAsync(CreateStreamingDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteCloudFrontOriginAccessIdentity
 
         /// <summary>
-        /// <para> Delete an origin access identity. </para>
+        /// Delete an origin access identity.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the
-        /// DeleteCloudFrontOriginAccessIdentity service method on AmazonCloudFront.</param>
+        /// <returns>The response from the DeleteCloudFrontOriginAccessIdentity service method, as returned by CloudFront.</returns>
+        /// <exception cref="AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="CloudFrontOriginAccessIdentityInUseException">
         /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidIfMatchVersionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.CloudFrontOriginAccessIdentityInUseException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.PreconditionFailedException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
-		DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest request);
+        /// </exception>
+        /// <exception cref="InvalidIfMatchVersionException">
+        /// The If-Match version is missing or not valid for the distribution.
+        /// </exception>
+        /// <exception cref="NoSuchCloudFrontOriginAccessIdentityException">
+        /// The specified origin access identity does not exist.
+        /// </exception>
+        /// <exception cref="PreconditionFailedException">
+        /// The precondition given in one or more of the request-header fields evaluated to false.
+        /// </exception>
+        DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity();
+
+        /// <summary>
+        /// Delete an origin access identity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCloudFrontOriginAccessIdentity service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCloudFrontOriginAccessIdentity service method, as returned by CloudFront.</returns>
+        /// <exception cref="AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="CloudFrontOriginAccessIdentityInUseException">
+        /// 
+        /// </exception>
+        /// <exception cref="InvalidIfMatchVersionException">
+        /// The If-Match version is missing or not valid for the distribution.
+        /// </exception>
+        /// <exception cref="NoSuchCloudFrontOriginAccessIdentityException">
+        /// The specified origin access identity does not exist.
+        /// </exception>
+        /// <exception cref="PreconditionFailedException">
+        /// The precondition given in one or more of the request-header fields evaluated to false.
+        /// </exception>
+        DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCloudFrontOriginAccessIdentity operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront.DeleteCloudFrontOriginAccessIdentity"/>
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteCloudFrontOriginAccessIdentity operation.</param>
@@ -199,38 +362,60 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DeleteCloudFrontOriginAccessIdentityResponse> DeleteCloudFrontOriginAccessIdentityAsync(DeleteCloudFrontOriginAccessIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
-        /// <summary>
-        /// <para> Delete an origin access identity. </para>
-        /// </summary>
-        /// 
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidIfMatchVersionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.CloudFrontOriginAccessIdentityInUseException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.PreconditionFailedException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
-		DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity();
- 
+        Task<DeleteCloudFrontOriginAccessIdentityResponse> DeleteCloudFrontOriginAccessIdentityAsync(DeleteCloudFrontOriginAccessIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteDistribution
 
         /// <summary>
-        /// <para> Delete a distribution. </para>
+        /// Delete a distribution.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteDistribution service method on
-        /// AmazonCloudFront.</param>
+        /// <returns>The response from the DeleteDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="DistributionNotDisabledException">
         /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidIfMatchVersionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchDistributionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.DistributionNotDisabledException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.PreconditionFailedException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
-		DeleteDistributionResponse DeleteDistribution(DeleteDistributionRequest request);
+        /// </exception>
+        /// <exception cref="InvalidIfMatchVersionException">
+        /// The If-Match version is missing or not valid for the distribution.
+        /// </exception>
+        /// <exception cref="NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="PreconditionFailedException">
+        /// The precondition given in one or more of the request-header fields evaluated to false.
+        /// </exception>
+        DeleteDistributionResponse DeleteDistribution();
+
+        /// <summary>
+        /// Delete a distribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDistribution service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="DistributionNotDisabledException">
+        /// 
+        /// </exception>
+        /// <exception cref="InvalidIfMatchVersionException">
+        /// The If-Match version is missing or not valid for the distribution.
+        /// </exception>
+        /// <exception cref="NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="PreconditionFailedException">
+        /// The precondition given in one or more of the request-header fields evaluated to false.
+        /// </exception>
+        DeleteDistributionResponse DeleteDistribution(DeleteDistributionRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDistribution operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront.DeleteDistribution"/>
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteDistribution operation.</param>
@@ -238,38 +423,60 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DeleteDistributionResponse> DeleteDistributionAsync(DeleteDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
-        /// <summary>
-        /// <para> Delete a distribution. </para>
-        /// </summary>
-        /// 
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidIfMatchVersionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchDistributionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.DistributionNotDisabledException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.PreconditionFailedException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
-		DeleteDistributionResponse DeleteDistribution();
- 
+        Task<DeleteDistributionResponse> DeleteDistributionAsync(DeleteDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteStreamingDistribution
 
         /// <summary>
-        /// <para> Delete a streaming distribution. </para>
+        /// Delete a streaming distribution.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteStreamingDistribution service
-        /// method on AmazonCloudFront.</param>
+        /// <returns>The response from the DeleteStreamingDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="InvalidIfMatchVersionException">
+        /// The If-Match version is missing or not valid for the distribution.
+        /// </exception>
+        /// <exception cref="NoSuchStreamingDistributionException">
+        /// The specified streaming distribution does not exist.
+        /// </exception>
+        /// <exception cref="PreconditionFailedException">
+        /// The precondition given in one or more of the request-header fields evaluated to false.
+        /// </exception>
+        /// <exception cref="StreamingDistributionNotDisabledException">
         /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidIfMatchVersionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchStreamingDistributionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.StreamingDistributionNotDisabledException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.PreconditionFailedException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
-		DeleteStreamingDistributionResponse DeleteStreamingDistribution(DeleteStreamingDistributionRequest request);
+        /// </exception>
+        DeleteStreamingDistributionResponse DeleteStreamingDistribution();
+
+        /// <summary>
+        /// Delete a streaming distribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStreamingDistribution service method.</param>
+        /// 
+        /// <returns>The response from the DeleteStreamingDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="InvalidIfMatchVersionException">
+        /// The If-Match version is missing or not valid for the distribution.
+        /// </exception>
+        /// <exception cref="NoSuchStreamingDistributionException">
+        /// The specified streaming distribution does not exist.
+        /// </exception>
+        /// <exception cref="PreconditionFailedException">
+        /// The precondition given in one or more of the request-header fields evaluated to false.
+        /// </exception>
+        /// <exception cref="StreamingDistributionNotDisabledException">
+        /// 
+        /// </exception>
+        DeleteStreamingDistributionResponse DeleteStreamingDistribution(DeleteStreamingDistributionRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteStreamingDistribution operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront.DeleteStreamingDistribution"/>
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteStreamingDistribution operation.</param>
@@ -277,37 +484,42 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<DeleteStreamingDistributionResponse> DeleteStreamingDistributionAsync(DeleteStreamingDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
-        /// <summary>
-        /// <para> Delete a streaming distribution. </para>
-        /// </summary>
-        /// 
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidIfMatchVersionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchStreamingDistributionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.StreamingDistributionNotDisabledException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.PreconditionFailedException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
-		DeleteStreamingDistributionResponse DeleteStreamingDistribution();
- 
+        Task<DeleteStreamingDistributionResponse> DeleteStreamingDistributionAsync(DeleteStreamingDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetCloudFrontOriginAccessIdentity
 
         /// <summary>
-        /// <para> Get the information about an origin access identity. </para>
+        /// Get the information about an origin access identity.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the
-        /// GetCloudFrontOriginAccessIdentity service method on AmazonCloudFront.</param>
+        /// <returns>The response from the GetCloudFrontOriginAccessIdentity service method, as returned by CloudFront.</returns>
+        /// <exception cref="AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="NoSuchCloudFrontOriginAccessIdentityException">
+        /// The specified origin access identity does not exist.
+        /// </exception>
+        GetCloudFrontOriginAccessIdentityResponse GetCloudFrontOriginAccessIdentity();
+
+        /// <summary>
+        /// Get the information about an origin access identity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCloudFrontOriginAccessIdentity service method.</param>
         /// 
-        /// <returns>The response from the GetCloudFrontOriginAccessIdentity service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
-		GetCloudFrontOriginAccessIdentityResponse GetCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest request);
+        /// <returns>The response from the GetCloudFrontOriginAccessIdentity service method, as returned by CloudFront.</returns>
+        /// <exception cref="AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="NoSuchCloudFrontOriginAccessIdentityException">
+        /// The specified origin access identity does not exist.
+        /// </exception>
+        GetCloudFrontOriginAccessIdentityResponse GetCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetCloudFrontOriginAccessIdentity operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront.GetCloudFrontOriginAccessIdentity"/>
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetCloudFrontOriginAccessIdentity operation.</param>
@@ -315,36 +527,42 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<GetCloudFrontOriginAccessIdentityResponse> GetCloudFrontOriginAccessIdentityAsync(GetCloudFrontOriginAccessIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
-        /// <summary>
-        /// <para> Get the information about an origin access identity. </para>
-        /// </summary>
-        /// 
-        /// 
-        /// <returns>The response from the GetCloudFrontOriginAccessIdentity service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
-		GetCloudFrontOriginAccessIdentityResponse GetCloudFrontOriginAccessIdentity();
- 
+        Task<GetCloudFrontOriginAccessIdentityResponse> GetCloudFrontOriginAccessIdentityAsync(GetCloudFrontOriginAccessIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetCloudFrontOriginAccessIdentityConfig
 
         /// <summary>
-        /// <para> Get the configuration information about an origin access identity. </para>
+        /// Get the configuration information about an origin access identity.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the
-        /// GetCloudFrontOriginAccessIdentityConfig service method on AmazonCloudFront.</param>
+        /// <returns>The response from the GetCloudFrontOriginAccessIdentityConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="NoSuchCloudFrontOriginAccessIdentityException">
+        /// The specified origin access identity does not exist.
+        /// </exception>
+        GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig();
+
+        /// <summary>
+        /// Get the configuration information about an origin access identity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCloudFrontOriginAccessIdentityConfig service method.</param>
         /// 
-        /// <returns>The response from the GetCloudFrontOriginAccessIdentityConfig service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
-		GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest request);
+        /// <returns>The response from the GetCloudFrontOriginAccessIdentityConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="NoSuchCloudFrontOriginAccessIdentityException">
+        /// The specified origin access identity does not exist.
+        /// </exception>
+        GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetCloudFrontOriginAccessIdentityConfig operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront.GetCloudFrontOriginAccessIdentityConfig"/>
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetCloudFrontOriginAccessIdentityConfig operation.</param>
@@ -352,36 +570,42 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<GetCloudFrontOriginAccessIdentityConfigResponse> GetCloudFrontOriginAccessIdentityConfigAsync(GetCloudFrontOriginAccessIdentityConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
-        /// <summary>
-        /// <para> Get the configuration information about an origin access identity. </para>
-        /// </summary>
-        /// 
-        /// 
-        /// <returns>The response from the GetCloudFrontOriginAccessIdentityConfig service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
-		GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig();
- 
+        Task<GetCloudFrontOriginAccessIdentityConfigResponse> GetCloudFrontOriginAccessIdentityConfigAsync(GetCloudFrontOriginAccessIdentityConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetDistribution
 
         /// <summary>
-        /// <para> Get the information about a distribution. </para>
+        /// Get the information about a distribution.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetDistribution service method on
-        /// AmazonCloudFront.</param>
+        /// <returns>The response from the GetDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        GetDistributionResponse GetDistribution();
+
+        /// <summary>
+        /// Get the information about a distribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDistribution service method.</param>
         /// 
-        /// <returns>The response from the GetDistribution service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchDistributionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
-		GetDistributionResponse GetDistribution(GetDistributionRequest request);
+        /// <returns>The response from the GetDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        GetDistributionResponse GetDistribution(GetDistributionRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetDistribution operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront.GetDistribution"/>
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetDistribution operation.</param>
@@ -389,36 +613,42 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<GetDistributionResponse> GetDistributionAsync(GetDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
-        /// <summary>
-        /// <para> Get the information about a distribution. </para>
-        /// </summary>
-        /// 
-        /// 
-        /// <returns>The response from the GetDistribution service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchDistributionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
-		GetDistributionResponse GetDistribution();
- 
+        Task<GetDistributionResponse> GetDistributionAsync(GetDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetDistributionConfig
 
         /// <summary>
-        /// <para> Get the configuration information about a distribution. </para>
+        /// Get the configuration information about a distribution.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetDistributionConfig service method on
-        /// AmazonCloudFront.</param>
+        /// <returns>The response from the GetDistributionConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        GetDistributionConfigResponse GetDistributionConfig();
+
+        /// <summary>
+        /// Get the configuration information about a distribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDistributionConfig service method.</param>
         /// 
-        /// <returns>The response from the GetDistributionConfig service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchDistributionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
-		GetDistributionConfigResponse GetDistributionConfig(GetDistributionConfigRequest request);
+        /// <returns>The response from the GetDistributionConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        GetDistributionConfigResponse GetDistributionConfig(GetDistributionConfigRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetDistributionConfig operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront.GetDistributionConfig"/>
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetDistributionConfig operation.</param>
@@ -426,37 +656,33 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<GetDistributionConfigResponse> GetDistributionConfigAsync(GetDistributionConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
-        /// <summary>
-        /// <para> Get the configuration information about a distribution. </para>
-        /// </summary>
-        /// 
-        /// 
-        /// <returns>The response from the GetDistributionConfig service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchDistributionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
-		GetDistributionConfigResponse GetDistributionConfig();
- 
+        Task<GetDistributionConfigResponse> GetDistributionConfigAsync(GetDistributionConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetInvalidation
+
 
         /// <summary>
-        /// <para> Get the information about an invalidation. </para>
+        /// Get the information about an invalidation.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInvalidation service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetInvalidation service method on
-        /// AmazonCloudFront.</param>
-        /// 
-        /// <returns>The response from the GetInvalidation service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchInvalidationException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchDistributionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
-		GetInvalidationResponse GetInvalidation(GetInvalidationRequest request);
+        /// <returns>The response from the GetInvalidation service method, as returned by CloudFront.</returns>
+        /// <exception cref="AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="NoSuchInvalidationException">
+        /// The specified invalidation does not exist.
+        /// </exception>
+        GetInvalidationResponse GetInvalidation(GetInvalidationRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetInvalidation operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront.GetInvalidation"/>
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetInvalidation operation.</param>
@@ -464,25 +690,42 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<GetInvalidationResponse> GetInvalidationAsync(GetInvalidationRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<GetInvalidationResponse> GetInvalidationAsync(GetInvalidationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetStreamingDistribution
 
         /// <summary>
-        /// <para> Get the information about a streaming distribution. </para>
+        /// Get the information about a streaming distribution.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetStreamingDistribution service method
-        /// on AmazonCloudFront.</param>
+        /// <returns>The response from the GetStreamingDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="NoSuchStreamingDistributionException">
+        /// The specified streaming distribution does not exist.
+        /// </exception>
+        GetStreamingDistributionResponse GetStreamingDistribution();
+
+        /// <summary>
+        /// Get the information about a streaming distribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStreamingDistribution service method.</param>
         /// 
-        /// <returns>The response from the GetStreamingDistribution service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchStreamingDistributionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
-		GetStreamingDistributionResponse GetStreamingDistribution(GetStreamingDistributionRequest request);
+        /// <returns>The response from the GetStreamingDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="NoSuchStreamingDistributionException">
+        /// The specified streaming distribution does not exist.
+        /// </exception>
+        GetStreamingDistributionResponse GetStreamingDistribution(GetStreamingDistributionRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetStreamingDistribution operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront.GetStreamingDistribution"/>
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetStreamingDistribution operation.</param>
@@ -490,36 +733,42 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<GetStreamingDistributionResponse> GetStreamingDistributionAsync(GetStreamingDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
-        /// <summary>
-        /// <para> Get the information about a streaming distribution. </para>
-        /// </summary>
-        /// 
-        /// 
-        /// <returns>The response from the GetStreamingDistribution service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchStreamingDistributionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
-		GetStreamingDistributionResponse GetStreamingDistribution();
- 
+        Task<GetStreamingDistributionResponse> GetStreamingDistributionAsync(GetStreamingDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetStreamingDistributionConfig
 
         /// <summary>
-        /// <para> Get the configuration information about a streaming distribution. </para>
+        /// Get the configuration information about a streaming distribution.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetStreamingDistributionConfig
-        /// service method on AmazonCloudFront.</param>
+        /// <returns>The response from the GetStreamingDistributionConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="NoSuchStreamingDistributionException">
+        /// The specified streaming distribution does not exist.
+        /// </exception>
+        GetStreamingDistributionConfigResponse GetStreamingDistributionConfig();
+
+        /// <summary>
+        /// Get the configuration information about a streaming distribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStreamingDistributionConfig service method.</param>
         /// 
-        /// <returns>The response from the GetStreamingDistributionConfig service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchStreamingDistributionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
-		GetStreamingDistributionConfigResponse GetStreamingDistributionConfig(GetStreamingDistributionConfigRequest request);
+        /// <returns>The response from the GetStreamingDistributionConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="NoSuchStreamingDistributionException">
+        /// The specified streaming distribution does not exist.
+        /// </exception>
+        GetStreamingDistributionConfigResponse GetStreamingDistributionConfig(GetStreamingDistributionConfigRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetStreamingDistributionConfig operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront.GetStreamingDistributionConfig"/>
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetStreamingDistributionConfig operation.</param>
@@ -527,35 +776,36 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<GetStreamingDistributionConfigResponse> GetStreamingDistributionConfigAsync(GetStreamingDistributionConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
-        /// <summary>
-        /// <para> Get the configuration information about a streaming distribution. </para>
-        /// </summary>
-        /// 
-        /// 
-        /// <returns>The response from the GetStreamingDistributionConfig service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchStreamingDistributionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
-		GetStreamingDistributionConfigResponse GetStreamingDistributionConfig();
- 
+        Task<GetStreamingDistributionConfigResponse> GetStreamingDistributionConfigAsync(GetStreamingDistributionConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListCloudFrontOriginAccessIdentities
 
         /// <summary>
-        /// <para> List origin access identities. </para>
+        /// List origin access identities.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the
-        /// ListCloudFrontOriginAccessIdentities service method on AmazonCloudFront.</param>
+        /// <returns>The response from the ListCloudFrontOriginAccessIdentities service method, as returned by CloudFront.</returns>
+        /// <exception cref="InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        ListCloudFrontOriginAccessIdentitiesResponse ListCloudFrontOriginAccessIdentities();
+
+        /// <summary>
+        /// List origin access identities.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCloudFrontOriginAccessIdentities service method.</param>
         /// 
-        /// <returns>The response from the ListCloudFrontOriginAccessIdentities service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidArgumentException" />
-		ListCloudFrontOriginAccessIdentitiesResponse ListCloudFrontOriginAccessIdentities(ListCloudFrontOriginAccessIdentitiesRequest request);
+        /// <returns>The response from the ListCloudFrontOriginAccessIdentities service method, as returned by CloudFront.</returns>
+        /// <exception cref="InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        ListCloudFrontOriginAccessIdentitiesResponse ListCloudFrontOriginAccessIdentities(ListCloudFrontOriginAccessIdentitiesRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListCloudFrontOriginAccessIdentities operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront.ListCloudFrontOriginAccessIdentities"/>
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListCloudFrontOriginAccessIdentities operation.</param>
@@ -563,34 +813,36 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<ListCloudFrontOriginAccessIdentitiesResponse> ListCloudFrontOriginAccessIdentitiesAsync(ListCloudFrontOriginAccessIdentitiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
-        /// <summary>
-        /// <para> List origin access identities. </para>
-        /// </summary>
-        /// 
-        /// 
-        /// <returns>The response from the ListCloudFrontOriginAccessIdentities service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidArgumentException" />
-		ListCloudFrontOriginAccessIdentitiesResponse ListCloudFrontOriginAccessIdentities();
- 
+        Task<ListCloudFrontOriginAccessIdentitiesResponse> ListCloudFrontOriginAccessIdentitiesAsync(ListCloudFrontOriginAccessIdentitiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListDistributions
 
         /// <summary>
-        /// <para> List distributions. </para>
+        /// List distributions.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListDistributions service method on
-        /// AmazonCloudFront.</param>
+        /// <returns>The response from the ListDistributions service method, as returned by CloudFront.</returns>
+        /// <exception cref="InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        ListDistributionsResponse ListDistributions();
+
+        /// <summary>
+        /// List distributions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributions service method.</param>
         /// 
-        /// <returns>The response from the ListDistributions service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidArgumentException" />
-		ListDistributionsResponse ListDistributions(ListDistributionsRequest request);
+        /// <returns>The response from the ListDistributions service method, as returned by CloudFront.</returns>
+        /// <exception cref="InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        ListDistributionsResponse ListDistributions(ListDistributionsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListDistributions operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront.ListDistributions"/>
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListDistributions operation.</param>
@@ -598,36 +850,33 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<ListDistributionsResponse> ListDistributionsAsync(ListDistributionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
-        /// <summary>
-        /// <para> List distributions. </para>
-        /// </summary>
-        /// 
-        /// 
-        /// <returns>The response from the ListDistributions service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidArgumentException" />
-		ListDistributionsResponse ListDistributions();
- 
+        Task<ListDistributionsResponse> ListDistributionsAsync(ListDistributionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListInvalidations
+
 
         /// <summary>
-        /// <para> List invalidation batches. </para>
+        /// List invalidation batches.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInvalidations service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListInvalidations service method on
-        /// AmazonCloudFront.</param>
-        /// 
-        /// <returns>The response from the ListInvalidations service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchDistributionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidArgumentException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
-		ListInvalidationsResponse ListInvalidations(ListInvalidationsRequest request);
+        /// <returns>The response from the ListInvalidations service method, as returned by CloudFront.</returns>
+        /// <exception cref="AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        /// <exception cref="NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        ListInvalidationsResponse ListInvalidations(ListInvalidationsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListInvalidations operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront.ListInvalidations"/>
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListInvalidations operation.</param>
@@ -635,24 +884,36 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<ListInvalidationsResponse> ListInvalidationsAsync(ListInvalidationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<ListInvalidationsResponse> ListInvalidationsAsync(ListInvalidationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListStreamingDistributions
 
         /// <summary>
-        /// <para> List streaming distributions. </para>
+        /// List streaming distributions.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListStreamingDistributions service
-        /// method on AmazonCloudFront.</param>
+        /// <returns>The response from the ListStreamingDistributions service method, as returned by CloudFront.</returns>
+        /// <exception cref="InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        ListStreamingDistributionsResponse ListStreamingDistributions();
+
+        /// <summary>
+        /// List streaming distributions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStreamingDistributions service method.</param>
         /// 
-        /// <returns>The response from the ListStreamingDistributions service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidArgumentException" />
-		ListStreamingDistributionsResponse ListStreamingDistributions(ListStreamingDistributionsRequest request);
+        /// <returns>The response from the ListStreamingDistributions service method, as returned by CloudFront.</returns>
+        /// <exception cref="InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        ListStreamingDistributionsResponse ListStreamingDistributions(ListStreamingDistributionsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListStreamingDistributions operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront.ListStreamingDistributions"/>
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListStreamingDistributions operation.</param>
@@ -660,41 +921,49 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<ListStreamingDistributionsResponse> ListStreamingDistributionsAsync(ListStreamingDistributionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
-        /// <summary>
-        /// <para> List streaming distributions. </para>
-        /// </summary>
-        /// 
-        /// 
-        /// <returns>The response from the ListStreamingDistributions service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidArgumentException" />
-		ListStreamingDistributionsResponse ListStreamingDistributions();
- 
+        Task<ListStreamingDistributionsResponse> ListStreamingDistributionsAsync(ListStreamingDistributionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateCloudFrontOriginAccessIdentity
+
 
         /// <summary>
-        /// <para> Update an origin access identity. </para>
+        /// Update an origin access identity.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCloudFrontOriginAccessIdentity service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the
-        /// UpdateCloudFrontOriginAccessIdentity service method on AmazonCloudFront.</param>
-        /// 
-        /// <returns>The response from the UpdateCloudFrontOriginAccessIdentity service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidIfMatchVersionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.IllegalUpdateException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.MissingBodyException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.PreconditionFailedException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidArgumentException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InconsistentQuantitiesException" />
-		UpdateCloudFrontOriginAccessIdentityResponse UpdateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest request);
+        /// <returns>The response from the UpdateCloudFrontOriginAccessIdentity service method, as returned by CloudFront.</returns>
+        /// <exception cref="AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="IllegalUpdateException">
+        /// Origin and CallerReference cannot be updated.
+        /// </exception>
+        /// <exception cref="InconsistentQuantitiesException">
+        /// The value of Quantity and the size of Items do not match.
+        /// </exception>
+        /// <exception cref="InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        /// <exception cref="InvalidIfMatchVersionException">
+        /// The If-Match version is missing or not valid for the distribution.
+        /// </exception>
+        /// <exception cref="MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the Content-Type
+        /// header is set.
+        /// </exception>
+        /// <exception cref="NoSuchCloudFrontOriginAccessIdentityException">
+        /// The specified origin access identity does not exist.
+        /// </exception>
+        /// <exception cref="PreconditionFailedException">
+        /// The precondition given in one or more of the request-header fields evaluated to false.
+        /// </exception>
+        UpdateCloudFrontOriginAccessIdentityResponse UpdateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateCloudFrontOriginAccessIdentity operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront.UpdateCloudFrontOriginAccessIdentity"/>
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateCloudFrontOriginAccessIdentity operation.</param>
@@ -702,50 +971,117 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<UpdateCloudFrontOriginAccessIdentityResponse> UpdateCloudFrontOriginAccessIdentityAsync(UpdateCloudFrontOriginAccessIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<UpdateCloudFrontOriginAccessIdentityResponse> UpdateCloudFrontOriginAccessIdentityAsync(UpdateCloudFrontOriginAccessIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateDistribution
+
 
         /// <summary>
-        /// <para> Update a distribution. </para>
+        /// Update a distribution.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDistribution service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateDistribution service method on
-        /// AmazonCloudFront.</param>
+        /// <returns>The response from the UpdateDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="CNAMEAlreadyExistsException">
         /// 
-        /// <returns>The response from the UpdateDistribution service method, as returned by AmazonCloudFront.</returns>
+        /// </exception>
+        /// <exception cref="IllegalUpdateException">
+        /// Origin and CallerReference cannot be updated.
+        /// </exception>
+        /// <exception cref="InconsistentQuantitiesException">
+        /// The value of Quantity and the size of Items do not match.
+        /// </exception>
+        /// <exception cref="InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        /// <exception cref="InvalidDefaultRootObjectException">
+        /// The default root object file name is too big or contains an invalid character.
+        /// </exception>
+        /// <exception cref="InvalidErrorCodeException">
         /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyCookieNamesInWhiteListException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidGeoRestrictionParameterException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidResponseCodeException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.MissingBodyException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyDistributionCNAMEsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidLocationCodeException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchOriginException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.PreconditionFailedException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InconsistentQuantitiesException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.CNAMEAlreadyExistsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidArgumentException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidOriginAccessIdentityException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyCacheBehaviorsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyTrustedSignersException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchDistributionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidViewerCertificateException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyOriginsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidRequiredProtocolException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidDefaultRootObjectException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidIfMatchVersionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.IllegalUpdateException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidForwardCookiesException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TrustedSignerDoesNotExistException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyCertificatesException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidRelativePathException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidErrorCodeException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
-		UpdateDistributionResponse UpdateDistribution(UpdateDistributionRequest request);
+        /// </exception>
+        /// <exception cref="InvalidForwardCookiesException">
+        /// Your request contains forward cookies option which doesn't match with the expectation
+        /// for the whitelisted    list of cookie names. Either list of cookie names has been
+        /// specified when not allowed or list of cookie names    is missing when expected.
+        /// </exception>
+        /// <exception cref="InvalidGeoRestrictionParameterException">
+        /// 
+        /// </exception>
+        /// <exception cref="InvalidHeadersForS3OriginException">
+        /// 
+        /// </exception>
+        /// <exception cref="InvalidIfMatchVersionException">
+        /// The If-Match version is missing or not valid for the distribution.
+        /// </exception>
+        /// <exception cref="InvalidLocationCodeException">
+        /// 
+        /// </exception>
+        /// <exception cref="InvalidOriginAccessIdentityException">
+        /// The origin access identity is not valid or doesn't exist.
+        /// </exception>
+        /// <exception cref="InvalidRelativePathException">
+        /// The relative path is too big, is not URL-encoded, or    does not begin with a slash
+        /// (/).
+        /// </exception>
+        /// <exception cref="InvalidRequiredProtocolException">
+        /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
+        /// in your request, or omit the RequiredProtocols element from your distribution configuration.
+        /// </exception>
+        /// <exception cref="InvalidResponseCodeException">
+        /// 
+        /// </exception>
+        /// <exception cref="InvalidViewerCertificateException">
+        /// 
+        /// </exception>
+        /// <exception cref="MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the Content-Type
+        /// header is set.
+        /// </exception>
+        /// <exception cref="NoSuchDistributionException">
+        /// The specified distribution does not exist.
+        /// </exception>
+        /// <exception cref="NoSuchOriginException">
+        /// No origin exists with the specified Origin Id.
+        /// </exception>
+        /// <exception cref="PreconditionFailedException">
+        /// The precondition given in one or more of the request-header fields evaluated to false.
+        /// </exception>
+        /// <exception cref="TooManyCacheBehaviorsException">
+        /// You cannot create anymore cache behaviors for the distribution.
+        /// </exception>
+        /// <exception cref="TooManyCertificatesException">
+        /// You cannot create anymore custom ssl certificates.
+        /// </exception>
+        /// <exception cref="TooManyCookieNamesInWhiteListException">
+        /// Your request contains more cookie names in the whitelist than are allowed per cache
+        /// behavior.
+        /// </exception>
+        /// <exception cref="TooManyDistributionCNAMEsException">
+        /// Your request contains more CNAMEs than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="TooManyHeadersInForwardedValuesException">
+        /// 
+        /// </exception>
+        /// <exception cref="TooManyOriginsException">
+        /// You cannot create anymore origins for the distribution.
+        /// </exception>
+        /// <exception cref="TooManyTrustedSignersException">
+        /// Your request contains more trusted signers than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="TrustedSignerDoesNotExistException">
+        /// One or more of your trusted signers do not exist.
+        /// </exception>
+        UpdateDistributionResponse UpdateDistribution(UpdateDistributionRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateDistribution operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront.UpdateDistribution"/>
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateDistribution operation.</param>
@@ -753,36 +1089,64 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<UpdateDistributionResponse> UpdateDistributionAsync(UpdateDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
+        Task<UpdateDistributionResponse> UpdateDistributionAsync(UpdateDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateStreamingDistribution
+
 
         /// <summary>
-        /// <para> Update a streaming distribution. </para>
+        /// Update a streaming distribution.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStreamingDistribution service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateStreamingDistribution service
-        /// method on AmazonCloudFront.</param>
+        /// <returns>The response from the UpdateStreamingDistribution service method, as returned by CloudFront.</returns>
+        /// <exception cref="AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="CNAMEAlreadyExistsException">
         /// 
-        /// <returns>The response from the UpdateStreamingDistribution service method, as returned by AmazonCloudFront.</returns>
+        /// </exception>
+        /// <exception cref="IllegalUpdateException">
+        /// Origin and CallerReference cannot be updated.
+        /// </exception>
+        /// <exception cref="InconsistentQuantitiesException">
+        /// The value of Quantity and the size of Items do not match.
+        /// </exception>
+        /// <exception cref="InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        /// <exception cref="InvalidIfMatchVersionException">
+        /// The If-Match version is missing or not valid for the distribution.
+        /// </exception>
+        /// <exception cref="InvalidOriginAccessIdentityException">
+        /// The origin access identity is not valid or doesn't exist.
+        /// </exception>
+        /// <exception cref="MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the Content-Type
+        /// header is set.
+        /// </exception>
+        /// <exception cref="NoSuchStreamingDistributionException">
+        /// The specified streaming distribution does not exist.
+        /// </exception>
+        /// <exception cref="PreconditionFailedException">
+        /// The precondition given in one or more of the request-header fields evaluated to false.
+        /// </exception>
+        /// <exception cref="TooManyStreamingDistributionCNAMEsException">
         /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidIfMatchVersionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.IllegalUpdateException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.MissingBodyException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.PreconditionFailedException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.CNAMEAlreadyExistsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidArgumentException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InconsistentQuantitiesException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidOriginAccessIdentityException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TrustedSignerDoesNotExistException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyTrustedSignersException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchStreamingDistributionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyStreamingDistributionCNAMEsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
-		UpdateStreamingDistributionResponse UpdateStreamingDistribution(UpdateStreamingDistributionRequest request);
+        /// </exception>
+        /// <exception cref="TooManyTrustedSignersException">
+        /// Your request contains more trusted signers than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="TrustedSignerDoesNotExistException">
+        /// One or more of your trusted signers do not exist.
+        /// </exception>
+        UpdateStreamingDistributionResponse UpdateStreamingDistribution(UpdateStreamingDistributionRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateStreamingDistribution operation.
-        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront.UpdateStreamingDistribution"/>
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateStreamingDistribution operation.</param>
@@ -790,6 +1154,9 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		Task<UpdateStreamingDistributionResponse> UpdateStreamingDistributionAsync(UpdateStreamingDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+        Task<UpdateStreamingDistributionResponse> UpdateStreamingDistributionAsync(UpdateStreamingDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
     }
 }

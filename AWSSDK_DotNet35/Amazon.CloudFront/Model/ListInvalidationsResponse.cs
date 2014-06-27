@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Returns information about the  ListInvalidations response and response metadata.
+    /// Configuration for accessing Amazon ListInvalidations service
     /// </summary>
     public partial class ListInvalidationsResponse : ListInvalidationsResult
     {
         /// <summary>
         /// Gets and sets the ListInvalidationsResult property.
-        /// The returned result of the corresponding request.
+        /// Represents the output of a ListInvalidations operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ListInvalidationsResult class are now available on the ListInvalidationsResponse class. You should use the properties on ListInvalidationsResponse instead of accessing them through ListInvalidationsResult.")]
         public ListInvalidationsResult ListInvalidationsResult
@@ -40,4 +36,3 @@ namespace Amazon.CloudFront.Model
         }
     }
 }
-    

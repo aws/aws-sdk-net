@@ -17,79 +17,61 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Text;
-using System.Xml;
 using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
-
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using System.Xml;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Update Cloud Front Origin Access Identity Request Marshaller
+    /// UpdateCloudFrontOriginAccessIdentity Request Marshaller
     /// </summary>       
-    public class UpdateCloudFrontOriginAccessIdentityRequestMarshaller : IMarshaller<IRequest, UpdateCloudFrontOriginAccessIdentityRequest>
+    public class UpdateCloudFrontOriginAccessIdentityRequestMarshaller : IMarshaller<IRequest, UpdateCloudFrontOriginAccessIdentityRequest> 
     {
-        
-    
-        public IRequest Marshall(UpdateCloudFrontOriginAccessIdentityRequest updateCloudFrontOriginAccessIdentityRequest)
+        public IRequest Marshall(UpdateCloudFrontOriginAccessIdentityRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(updateCloudFrontOriginAccessIdentityRequest, "AmazonCloudFront");
-
-
-
+            var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "PUT";
-        if(updateCloudFrontOriginAccessIdentityRequest.IsSetIfMatch())
-            request.Headers.Add("If-Match", updateCloudFrontOriginAccessIdentityRequest.IfMatch);
-            
-            string uriResourcePath = "2014-01-31/origin-access-identity/cloudfront/{Id}/config"; 
-            uriResourcePath = uriResourcePath.Replace("{Id}", updateCloudFrontOriginAccessIdentityRequest.IsSetId() ? updateCloudFrontOriginAccessIdentityRequest.Id.ToString() : "" ); 
-            request.ResourcePath = uriResourcePath;
-            
-             
-            StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture);
-                using (XmlWriter xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))
-                {
-                       
-                    if (updateCloudFrontOriginAccessIdentityRequest != null) 
-        {
-            CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig = updateCloudFrontOriginAccessIdentityRequest.CloudFrontOriginAccessIdentityConfig;
-            if (cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig != null) 
-            {
-                xmlWriter.WriteStartElement("CloudFrontOriginAccessIdentityConfig", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                if (cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig.IsSetCallerReference()) 
-                {
-                    xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2014-01-31/", cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig.CallerReference.ToString(CultureInfo.InvariantCulture));
-                  }
-                if (cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig.IsSetComment()) 
-                {
-                    xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2014-01-31/", cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig.Comment.ToString(CultureInfo.InvariantCulture));
-                  }
-                xmlWriter.WriteEndElement();
-            }
-        }
+            var uriResourcePath = "/2014-05-31/origin-access-identity/cloudfront/{Id}/config";
 
+        
+            if(publicRequest.IsSetIfMatch())     
+                request.Headers["If-Match"] = publicRequest.IfMatch;
+            uriResourcePath = uriResourcePath.Replace("{Id}", publicRequest.IsSetId() ? StringUtils.FromString(publicRequest.Id) : string.Empty);
+            request.ResourcePath = uriResourcePath;
+
+            var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
+            using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))
+            {   
+                xmlWriter.WriteStartElement("CloudFrontOriginAccessIdentityConfig", "http://cloudfront.amazonaws.com/doc/2014-05-31/");                                
+                if(publicRequest.CloudFrontOriginAccessIdentityConfig.IsSetCallerReference())
+                    xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2014-05-31/", StringUtils.FromString(publicRequest.CloudFrontOriginAccessIdentityConfig.CallerReference));                    
+
+                if(publicRequest.CloudFrontOriginAccessIdentityConfig.IsSetComment())
+                    xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2014-05-31/", StringUtils.FromString(publicRequest.CloudFrontOriginAccessIdentityConfig.Comment));                    
+
+
+                xmlWriter.WriteEndElement();
             }
             try 
             {
                 string content = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
                 request.Headers["Content-Type"] = "application/xml";
-                
-                
             } 
             catch (EncoderFallbackException e) 
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-        
-            
+
             return request;
         }
-    }
+
+        
+    }    
 }
-    

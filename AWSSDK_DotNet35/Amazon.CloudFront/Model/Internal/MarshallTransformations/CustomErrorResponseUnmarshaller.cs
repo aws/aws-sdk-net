@@ -12,21 +12,30 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   CustomErrorResponse Unmarshaller
-     /// </summary>
-    internal class CustomErrorResponseUnmarshaller : IUnmarshaller<CustomErrorResponse, XmlUnmarshallerContext>, IUnmarshaller<CustomErrorResponse, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for CustomErrorResponse Object
+    /// </summary>  
+    public class CustomErrorResponseUnmarshaller : IUnmarshaller<CustomErrorResponse, XmlUnmarshallerContext>
     {
-        public CustomErrorResponse Unmarshall(XmlUnmarshallerContext context) 
+        public CustomErrorResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            CustomErrorResponse customErrorResponse = new CustomErrorResponse();
+            CustomErrorResponse unmarshalledObject = new CustomErrorResponse();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -37,56 +46,47 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("ErrorCode", targetDepth))
+                    if (context.TestExpression("ErrorCachingMinTTL", targetDepth))
                     {
-                        customErrorResponse.ErrorCode = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = LongUnmarshaller.Instance;
+                        unmarshalledObject.ErrorCachingMinTTL = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ResponsePagePath", targetDepth))
+                    if (context.TestExpression("ErrorCode", targetDepth))
                     {
-                        customErrorResponse.ResponsePagePath = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.ErrorCode = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ResponseCode", targetDepth))
                     {
-                        customErrorResponse.ResponseCode = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ResponseCode = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ErrorCachingMinTTL", targetDepth))
+                    if (context.TestExpression("ResponsePagePath", targetDepth))
                     {
-                        customErrorResponse.ErrorCachingMinTTL = LongUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ResponsePagePath = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return customErrorResponse;
+                    return unmarshalledObject;
                 }
+            }          
+            return unmarshalledObject;
+        }
+
+        private static CustomErrorResponseUnmarshaller _instance = new CustomErrorResponseUnmarshaller();        
+
+        public static CustomErrorResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
             }
-                        
-
-
-            return customErrorResponse;
-        }
-
-        public CustomErrorResponse Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
-
-        private static CustomErrorResponseUnmarshaller instance;
-
-        public static CustomErrorResponseUnmarshaller GetInstance() 
-        {
-            if (instance == null) 
-               instance = new CustomErrorResponseUnmarshaller();
-
-            return instance;
         }
     }
 }
-    

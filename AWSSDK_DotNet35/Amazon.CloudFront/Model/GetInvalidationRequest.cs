@@ -25,46 +25,44 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the GetInvalidation operation.
-    /// <para> Get the information about an invalidation. </para>
+    /// Get the information about an invalidation.
     /// </summary>
     public partial class GetInvalidationRequest : AmazonCloudFrontRequest
     {
-        private string distributionId;
-        private string id;
+        private string _distributionId;
+        private string _id;
 
 
         /// <summary>
-        /// The distribution's id.
-        ///  
+        /// Gets and sets the property DistributionId. The distribution's id.
         /// </summary>
         public string DistributionId
         {
-            get { return this.distributionId; }
-            set { this.distributionId = value; }
+            get { return this._distributionId; }
+            set { this._distributionId = value; }
         }
 
         // Check to see if DistributionId property is set
         internal bool IsSetDistributionId()
         {
-            return this.distributionId != null;
+            return this._distributionId != null;
         }
 
+
         /// <summary>
-        /// The invalidation's id.
-        ///  
+        /// Gets and sets the property Id. The invalidation's id.
         /// </summary>
         public string Id
         {
-            get { return this.id; }
-            set { this.id = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;
+            return this._id != null;
         }
 
     }
 }
-    

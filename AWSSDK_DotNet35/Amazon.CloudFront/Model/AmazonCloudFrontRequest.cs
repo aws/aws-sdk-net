@@ -18,10 +18,9 @@ using Amazon.Runtime;
 namespace Amazon.CloudFront
 {
     /// <summary>
-    /// Base class for AmazonCloudFront operation requests.
+    /// Base class for CloudFront operation requests.
     /// </summary>
     public partial class AmazonCloudFrontRequest : AmazonWebServiceRequest
     {
     }
 }
-    

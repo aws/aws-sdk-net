@@ -3,6 +3,7 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#
+	// Used to generate factory methods in AWSClientFactory.tt
 	var supportedServicesInterfaces = new List<string>()
 	{
         "Amazon.AutoScaling.IAmazonAutoScaling",

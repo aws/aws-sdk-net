@@ -266,11 +266,10 @@ namespace Amazon.ElasticMapReduce
 
         IAsyncResult invokeAddInstanceGroups(AddInstanceGroupsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new AddInstanceGroupsRequestMarshaller().Marshall(request);
+            var marshaller = new AddInstanceGroupsRequestMarshaller();
             var unmarshaller = AddInstanceGroupsResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -359,11 +358,10 @@ namespace Amazon.ElasticMapReduce
 
         IAsyncResult invokeAddJobFlowSteps(AddJobFlowStepsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new AddJobFlowStepsRequestMarshaller().Marshall(request);
+            var marshaller = new AddJobFlowStepsRequestMarshaller();
             var unmarshaller = AddJobFlowStepsResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -426,11 +424,10 @@ namespace Amazon.ElasticMapReduce
 
         IAsyncResult invokeAddTags(AddTagsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new AddTagsRequestMarshaller().Marshall(request);
+            var marshaller = new AddTagsRequestMarshaller();
             var unmarshaller = AddTagsResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -507,11 +504,10 @@ namespace Amazon.ElasticMapReduce
 
         IAsyncResult invokeDescribeCluster(DescribeClusterRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DescribeClusterRequestMarshaller().Marshall(request);
+            var marshaller = new DescribeClusterRequestMarshaller();
             var unmarshaller = DescribeClusterResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -634,11 +630,10 @@ namespace Amazon.ElasticMapReduce
 
         IAsyncResult invokeDescribeJobFlows(DescribeJobFlowsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DescribeJobFlowsRequestMarshaller().Marshall(request);
+            var marshaller = new DescribeJobFlowsRequestMarshaller();
             var unmarshaller = DescribeJobFlowsResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -713,11 +708,10 @@ namespace Amazon.ElasticMapReduce
 
         IAsyncResult invokeDescribeStep(DescribeStepRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DescribeStepRequestMarshaller().Marshall(request);
+            var marshaller = new DescribeStepRequestMarshaller();
             var unmarshaller = DescribeStepResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -792,11 +786,10 @@ namespace Amazon.ElasticMapReduce
 
         IAsyncResult invokeListBootstrapActions(ListBootstrapActionsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new ListBootstrapActionsRequestMarshaller().Marshall(request);
+            var marshaller = new ListBootstrapActionsRequestMarshaller();
             var unmarshaller = ListBootstrapActionsResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -879,11 +872,10 @@ namespace Amazon.ElasticMapReduce
 
         IAsyncResult invokeListClusters(ListClustersRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new ListClustersRequestMarshaller().Marshall(request);
+            var marshaller = new ListClustersRequestMarshaller();
             var unmarshaller = ListClustersResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -958,11 +950,10 @@ namespace Amazon.ElasticMapReduce
 
         IAsyncResult invokeListInstanceGroups(ListInstanceGroupsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new ListInstanceGroupsRequestMarshaller().Marshall(request);
+            var marshaller = new ListInstanceGroupsRequestMarshaller();
             var unmarshaller = ListInstanceGroupsResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1043,11 +1034,10 @@ namespace Amazon.ElasticMapReduce
 
         IAsyncResult invokeListInstances(ListInstancesRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new ListInstancesRequestMarshaller().Marshall(request);
+            var marshaller = new ListInstancesRequestMarshaller();
             var unmarshaller = ListInstancesResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1122,11 +1112,10 @@ namespace Amazon.ElasticMapReduce
 
         IAsyncResult invokeListSteps(ListStepsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new ListStepsRequestMarshaller().Marshall(request);
+            var marshaller = new ListStepsRequestMarshaller();
             var unmarshaller = ListStepsResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1187,11 +1176,10 @@ namespace Amazon.ElasticMapReduce
 
         IAsyncResult invokeModifyInstanceGroups(ModifyInstanceGroupsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new ModifyInstanceGroupsRequestMarshaller().Marshall(request);
+            var marshaller = new ModifyInstanceGroupsRequestMarshaller();
             var unmarshaller = ModifyInstanceGroupsResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1259,11 +1247,10 @@ namespace Amazon.ElasticMapReduce
 
         IAsyncResult invokeRemoveTags(RemoveTagsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new RemoveTagsRequestMarshaller().Marshall(request);
+            var marshaller = new RemoveTagsRequestMarshaller();
             var unmarshaller = RemoveTagsResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1353,11 +1340,10 @@ namespace Amazon.ElasticMapReduce
 
         IAsyncResult invokeRunJobFlow(RunJobFlowRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new RunJobFlowRequestMarshaller().Marshall(request);
+            var marshaller = new RunJobFlowRequestMarshaller();
             var unmarshaller = RunJobFlowResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1440,11 +1426,10 @@ namespace Amazon.ElasticMapReduce
 
         IAsyncResult invokeSetTerminationProtection(SetTerminationProtectionRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new SetTerminationProtectionRequestMarshaller().Marshall(request);
+            var marshaller = new SetTerminationProtectionRequestMarshaller();
             var unmarshaller = SetTerminationProtectionResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1506,11 +1491,10 @@ namespace Amazon.ElasticMapReduce
 
         IAsyncResult invokeSetVisibleToAllUsers(SetVisibleToAllUsersRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new SetVisibleToAllUsersRequestMarshaller().Marshall(request);
+            var marshaller = new SetVisibleToAllUsersRequestMarshaller();
             var unmarshaller = SetVisibleToAllUsersResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1580,11 +1564,10 @@ namespace Amazon.ElasticMapReduce
 
         IAsyncResult invokeTerminateJobFlows(TerminateJobFlowsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new TerminateJobFlowsRequestMarshaller().Marshall(request);
+            var marshaller = new TerminateJobFlowsRequestMarshaller();
             var unmarshaller = TerminateJobFlowsResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion

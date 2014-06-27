@@ -12,21 +12,30 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   LoggingConfig Unmarshaller
-     /// </summary>
-    internal class LoggingConfigUnmarshaller : IUnmarshaller<LoggingConfig, XmlUnmarshallerContext>, IUnmarshaller<LoggingConfig, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for LoggingConfig Object
+    /// </summary>  
+    public class LoggingConfigUnmarshaller : IUnmarshaller<LoggingConfig, XmlUnmarshallerContext>
     {
-        public LoggingConfig Unmarshall(XmlUnmarshallerContext context) 
+        public LoggingConfig Unmarshall(XmlUnmarshallerContext context)
         {
-            LoggingConfig loggingConfig = new LoggingConfig();
+            LoggingConfig unmarshalledObject = new LoggingConfig();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -37,56 +46,47 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("Bucket", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Bucket = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Enabled", targetDepth))
                     {
-                        loggingConfig.Enabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("IncludeCookies", targetDepth))
                     {
-                        loggingConfig.IncludeCookies = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Bucket", targetDepth))
-                    {
-                        loggingConfig.Bucket = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.IncludeCookies = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Prefix", targetDepth))
                     {
-                        loggingConfig.Prefix = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Prefix = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return loggingConfig;
+                    return unmarshalledObject;
                 }
+            }          
+            return unmarshalledObject;
+        }
+
+        private static LoggingConfigUnmarshaller _instance = new LoggingConfigUnmarshaller();        
+
+        public static LoggingConfigUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
             }
-                        
-
-
-            return loggingConfig;
-        }
-
-        public LoggingConfig Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
-
-        private static LoggingConfigUnmarshaller instance;
-
-        public static LoggingConfigUnmarshaller GetInstance() 
-        {
-            if (instance == null) 
-               instance = new LoggingConfigUnmarshaller();
-
-            return instance;
         }
     }
 }
-    

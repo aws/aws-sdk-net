@@ -282,11 +282,10 @@ namespace Amazon.SimpleNotificationService
 
         IAsyncResult invokeAddPermission(AddPermissionRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new AddPermissionRequestMarshaller().Marshall(request);
+            var marshaller = new AddPermissionRequestMarshaller();
             var unmarshaller = AddPermissionResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -359,11 +358,10 @@ namespace Amazon.SimpleNotificationService
 
         IAsyncResult invokeConfirmSubscription(ConfirmSubscriptionRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new ConfirmSubscriptionRequestMarshaller().Marshall(request);
+            var marshaller = new ConfirmSubscriptionRequestMarshaller();
             var unmarshaller = ConfirmSubscriptionResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -437,11 +435,10 @@ namespace Amazon.SimpleNotificationService
 
         IAsyncResult invokeCreatePlatformApplication(CreatePlatformApplicationRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new CreatePlatformApplicationRequestMarshaller().Marshall(request);
+            var marshaller = new CreatePlatformApplicationRequestMarshaller();
             var unmarshaller = CreatePlatformApplicationResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -525,11 +522,10 @@ namespace Amazon.SimpleNotificationService
 
         IAsyncResult invokeCreatePlatformEndpoint(CreatePlatformEndpointRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new CreatePlatformEndpointRequestMarshaller().Marshall(request);
+            var marshaller = new CreatePlatformEndpointRequestMarshaller();
             var unmarshaller = CreatePlatformEndpointResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -598,11 +594,10 @@ namespace Amazon.SimpleNotificationService
 
         IAsyncResult invokeCreateTopic(CreateTopicRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new CreateTopicRequestMarshaller().Marshall(request);
+            var marshaller = new CreateTopicRequestMarshaller();
             var unmarshaller = CreateTopicResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -667,11 +662,10 @@ namespace Amazon.SimpleNotificationService
 
         IAsyncResult invokeDeleteEndpoint(DeleteEndpointRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DeleteEndpointRequestMarshaller().Marshall(request);
+            var marshaller = new DeleteEndpointRequestMarshaller();
             var unmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -736,11 +730,10 @@ namespace Amazon.SimpleNotificationService
 
         IAsyncResult invokeDeletePlatformApplication(DeletePlatformApplicationRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DeletePlatformApplicationRequestMarshaller().Marshall(request);
+            var marshaller = new DeletePlatformApplicationRequestMarshaller();
             var unmarshaller = DeletePlatformApplicationResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -809,11 +802,10 @@ namespace Amazon.SimpleNotificationService
 
         IAsyncResult invokeDeleteTopic(DeleteTopicRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DeleteTopicRequestMarshaller().Marshall(request);
+            var marshaller = new DeleteTopicRequestMarshaller();
             var unmarshaller = DeleteTopicResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -881,11 +873,10 @@ namespace Amazon.SimpleNotificationService
 
         IAsyncResult invokeGetEndpointAttributes(GetEndpointAttributesRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new GetEndpointAttributesRequestMarshaller().Marshall(request);
+            var marshaller = new GetEndpointAttributesRequestMarshaller();
             var unmarshaller = GetEndpointAttributesResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -954,11 +945,10 @@ namespace Amazon.SimpleNotificationService
 
         IAsyncResult invokeGetPlatformApplicationAttributes(GetPlatformApplicationAttributesRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new GetPlatformApplicationAttributesRequestMarshaller().Marshall(request);
+            var marshaller = new GetPlatformApplicationAttributesRequestMarshaller();
             var unmarshaller = GetPlatformApplicationAttributesResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1024,11 +1014,10 @@ namespace Amazon.SimpleNotificationService
 
         IAsyncResult invokeGetSubscriptionAttributes(GetSubscriptionAttributesRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new GetSubscriptionAttributesRequestMarshaller().Marshall(request);
+            var marshaller = new GetSubscriptionAttributesRequestMarshaller();
             var unmarshaller = GetSubscriptionAttributesResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1095,11 +1084,10 @@ namespace Amazon.SimpleNotificationService
 
         IAsyncResult invokeGetTopicAttributes(GetTopicAttributesRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new GetTopicAttributesRequestMarshaller().Marshall(request);
+            var marshaller = new GetTopicAttributesRequestMarshaller();
             var unmarshaller = GetTopicAttributesResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1173,11 +1161,10 @@ namespace Amazon.SimpleNotificationService
 
         IAsyncResult invokeListEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new ListEndpointsByPlatformApplicationRequestMarshaller().Marshall(request);
+            var marshaller = new ListEndpointsByPlatformApplicationRequestMarshaller();
             var unmarshaller = ListEndpointsByPlatformApplicationResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1274,11 +1261,10 @@ namespace Amazon.SimpleNotificationService
 
         IAsyncResult invokeListPlatformApplications(ListPlatformApplicationsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new ListPlatformApplicationsRequestMarshaller().Marshall(request);
+            var marshaller = new ListPlatformApplicationsRequestMarshaller();
             var unmarshaller = ListPlatformApplicationsResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1365,11 +1351,10 @@ namespace Amazon.SimpleNotificationService
 
         IAsyncResult invokeListSubscriptions(ListSubscriptionsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new ListSubscriptionsRequestMarshaller().Marshall(request);
+            var marshaller = new ListSubscriptionsRequestMarshaller();
             var unmarshaller = ListSubscriptionsResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1438,11 +1423,10 @@ namespace Amazon.SimpleNotificationService
 
         IAsyncResult invokeListSubscriptionsByTopic(ListSubscriptionsByTopicRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new ListSubscriptionsByTopicRequestMarshaller().Marshall(request);
+            var marshaller = new ListSubscriptionsByTopicRequestMarshaller();
             var unmarshaller = ListSubscriptionsByTopicResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1529,11 +1513,10 @@ namespace Amazon.SimpleNotificationService
 
         IAsyncResult invokeListTopics(ListTopicsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new ListTopicsRequestMarshaller().Marshall(request);
+            var marshaller = new ListTopicsRequestMarshaller();
             var unmarshaller = ListTopicsResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1620,11 +1603,10 @@ namespace Amazon.SimpleNotificationService
 
         IAsyncResult invokePublish(PublishRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new PublishRequestMarshaller().Marshall(request);
+            var marshaller = new PublishRequestMarshaller();
             var unmarshaller = PublishResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1690,11 +1672,10 @@ namespace Amazon.SimpleNotificationService
 
         IAsyncResult invokeRemovePermission(RemovePermissionRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new RemovePermissionRequestMarshaller().Marshall(request);
+            var marshaller = new RemovePermissionRequestMarshaller();
             var unmarshaller = RemovePermissionResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1762,11 +1743,10 @@ namespace Amazon.SimpleNotificationService
 
         IAsyncResult invokeSetEndpointAttributes(SetEndpointAttributesRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new SetEndpointAttributesRequestMarshaller().Marshall(request);
+            var marshaller = new SetEndpointAttributesRequestMarshaller();
             var unmarshaller = SetEndpointAttributesResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1834,11 +1814,10 @@ namespace Amazon.SimpleNotificationService
 
         IAsyncResult invokeSetPlatformApplicationAttributes(SetPlatformApplicationAttributesRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new SetPlatformApplicationAttributesRequestMarshaller().Marshall(request);
+            var marshaller = new SetPlatformApplicationAttributesRequestMarshaller();
             var unmarshaller = SetPlatformApplicationAttributesResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1904,11 +1883,10 @@ namespace Amazon.SimpleNotificationService
 
         IAsyncResult invokeSetSubscriptionAttributes(SetSubscriptionAttributesRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new SetSubscriptionAttributesRequestMarshaller().Marshall(request);
+            var marshaller = new SetSubscriptionAttributesRequestMarshaller();
             var unmarshaller = SetSubscriptionAttributesResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1974,11 +1952,10 @@ namespace Amazon.SimpleNotificationService
 
         IAsyncResult invokeSetTopicAttributes(SetTopicAttributesRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new SetTopicAttributesRequestMarshaller().Marshall(request);
+            var marshaller = new SetTopicAttributesRequestMarshaller();
             var unmarshaller = SetTopicAttributesResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -2050,11 +2027,10 @@ namespace Amazon.SimpleNotificationService
 
         IAsyncResult invokeSubscribe(SubscribeRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new SubscribeRequestMarshaller().Marshall(request);
+            var marshaller = new SubscribeRequestMarshaller();
             var unmarshaller = SubscribeResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -2126,11 +2102,10 @@ namespace Amazon.SimpleNotificationService
 
         IAsyncResult invokeUnsubscribe(UnsubscribeRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new UnsubscribeRequestMarshaller().Marshall(request);
+            var marshaller = new UnsubscribeRequestMarshaller();
             var unmarshaller = UnsubscribeResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion

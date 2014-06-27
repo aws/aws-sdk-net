@@ -411,11 +411,10 @@ namespace Amazon.SecurityToken
 
         IAsyncResult invokeAssumeRole(AssumeRoleRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new AssumeRoleRequestMarshaller().Marshall(request);
+            var marshaller = new AssumeRoleRequestMarshaller();
             var unmarshaller = AssumeRoleResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -554,11 +553,10 @@ namespace Amazon.SecurityToken
 
         IAsyncResult invokeAssumeRoleWithSAML(AssumeRoleWithSAMLRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new AssumeRoleWithSAMLRequestMarshaller().Marshall(request);
+            var marshaller = new AssumeRoleWithSAMLRequestMarshaller();
             var unmarshaller = AssumeRoleWithSAMLResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -716,11 +714,10 @@ namespace Amazon.SecurityToken
 
         IAsyncResult invokeAssumeRoleWithWebIdentity(AssumeRoleWithWebIdentityRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new AssumeRoleWithWebIdentityRequestMarshaller().Marshall(request);
+            var marshaller = new AssumeRoleWithWebIdentityRequestMarshaller();
             var unmarshaller = AssumeRoleWithWebIdentityResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -808,11 +805,10 @@ namespace Amazon.SecurityToken
 
         IAsyncResult invokeDecodeAuthorizationMessage(DecodeAuthorizationMessageRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DecodeAuthorizationMessageRequestMarshaller().Marshall(request);
+            var marshaller = new DecodeAuthorizationMessageRequestMarshaller();
             var unmarshaller = DecodeAuthorizationMessageResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -956,11 +952,10 @@ namespace Amazon.SecurityToken
 
         IAsyncResult invokeGetFederationToken(GetFederationTokenRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new GetFederationTokenRequestMarshaller().Marshall(request);
+            var marshaller = new GetFederationTokenRequestMarshaller();
             var unmarshaller = GetFederationTokenResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1105,11 +1100,10 @@ namespace Amazon.SecurityToken
 
         IAsyncResult invokeGetSessionToken(GetSessionTokenRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new GetSessionTokenRequestMarshaller().Marshall(request);
+            var marshaller = new GetSessionTokenRequestMarshaller();
             var unmarshaller = GetSessionTokenResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion

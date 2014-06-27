@@ -18,59 +18,55 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> A complex type that specifies the cookie preferences associated with this cache behavior. </para>
+    /// A complex type that specifies the cookie preferences associated with this cache behavior.
     /// </summary>
     public partial class CookiePreference
     {
-        
-        private ItemSelection forward;
-        private CookieNames whitelistedNames;
+        private ItemSelection _forward;
+        private CookieNames _whitelistedNames;
 
 
         /// <summary>
-        /// Use this element to specify whether you want CloudFront to forward cookies to the origin that is associated with this cache behavior. You
-        /// can specify all, none or whitelist. If you choose All, CloudFront forwards all cookies regardless of how many your application uses.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>none, whitelist, all</description>
-        ///     </item>
-        /// </list>
-        /// </para>
+        /// Gets and sets the property Forward. Use this element to specify whether you want CloudFront
+        /// to forward cookies to the origin that is    associated with this cache behavior. You
+        /// can specify all, none or whitelist. If you choose All,    CloudFront forwards all
+        /// cookies regardless of how many your application uses.
         /// </summary>
         public ItemSelection Forward
         {
-            get { return this.forward; }
-            set { this.forward = value; }
+            get { return this._forward; }
+            set { this._forward = value; }
         }
 
         // Check to see if Forward property is set
         internal bool IsSetForward()
         {
-            return this.forward != null;
+            return this._forward != null;
         }
 
+
         /// <summary>
-        /// A complex type that specifies the whitelisted cookies, if any, that you want CloudFront to forward to your origin that is associated with
-        /// this cache behavior.
-        ///  
+        /// Gets and sets the property WhitelistedNames. A complex type that specifies the whitelisted
+        /// cookies, if any, that you want CloudFront to forward to your    origin that is associated
+        /// with this cache behavior.
         /// </summary>
         public CookieNames WhitelistedNames
         {
-            get { return this.whitelistedNames; }
-            set { this.whitelistedNames = value; }
+            get { return this._whitelistedNames; }
+            set { this._whitelistedNames = value; }
         }
 
         // Check to see if WhitelistedNames property is set
         internal bool IsSetWhitelistedNames()
         {
-            return this.whitelistedNames != null;
+            return this._whitelistedNames != null;
         }
+
     }
 }

@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Returns information about the  CreateCloudFrontOriginAccessIdentity response and response metadata.
+    /// Configuration for accessing Amazon CreateCloudFrontOriginAccessIdentity service
     /// </summary>
     public partial class CreateCloudFrontOriginAccessIdentityResponse : CreateCloudFrontOriginAccessIdentityResult
     {
         /// <summary>
         /// Gets and sets the CreateCloudFrontOriginAccessIdentityResult property.
-        /// The returned result of the corresponding request.
+        /// Represents the output of a CreateCloudFrontOriginAccessIdentity operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateCloudFrontOriginAccessIdentityResult class are now available on the CreateCloudFrontOriginAccessIdentityResponse class. You should use the properties on CreateCloudFrontOriginAccessIdentityResponse instead of accessing them through CreateCloudFrontOriginAccessIdentityResult.")]
         public CreateCloudFrontOriginAccessIdentityResult CreateCloudFrontOriginAccessIdentityResult
@@ -40,4 +36,3 @@ namespace Amazon.CloudFront.Model
         }
     }
 }
-    

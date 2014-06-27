@@ -18,33 +18,34 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> A complex type that identifies ways in which you want to restrict distribution of your content. </para>
+    /// A complex type that identifies ways in which you want to restrict distribution   
+    ///     of your content.
     /// </summary>
     public partial class Restrictions
     {
-        
-        private GeoRestriction geoRestriction;
+        private GeoRestriction _geoRestriction;
 
 
         /// <summary>
-        /// A complex type that controls the countries in which your content is distributed. For more information about geo restriction, go to
-        /// Customizing Error Responses in the Amazon CloudFront Developer Guide. CloudFront determines the location of your users using MaxMind GeoIP
-        /// databases. For information about the accuracy of these databases, see How accurate are your GeoIP databases? on the MaxMind website.
-        ///  
+        /// Gets and sets the property GeoRestriction.
         /// </summary>
         public GeoRestriction GeoRestriction
         {
-            get { return this.geoRestriction; }
-            set { this.geoRestriction = value; }
+            get { return this._geoRestriction; }
+            set { this._geoRestriction = value; }
         }
 
         // Check to see if GeoRestriction property is set
         internal bool IsSetGeoRestriction()
         {
-            return this.geoRestriction != null;
+            return this._geoRestriction != null;
         }
+
     }
 }

@@ -12,21 +12,30 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Restrictions Unmarshaller
-     /// </summary>
-    internal class RestrictionsUnmarshaller : IUnmarshaller<Restrictions, XmlUnmarshallerContext>, IUnmarshaller<Restrictions, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Restrictions Object
+    /// </summary>  
+    public class RestrictionsUnmarshaller : IUnmarshaller<Restrictions, XmlUnmarshallerContext>
     {
-        public Restrictions Unmarshall(XmlUnmarshallerContext context) 
+        public Restrictions Unmarshall(XmlUnmarshallerContext context)
         {
-            Restrictions restrictions = new Restrictions();
+            Restrictions unmarshalledObject = new Restrictions();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -39,36 +48,27 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("GeoRestriction", targetDepth))
                     {
-                        restrictions.GeoRestriction = GeoRestrictionUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = GeoRestrictionUnmarshaller.Instance;
+                        unmarshalledObject.GeoRestriction = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return restrictions;
+                    return unmarshalledObject;
                 }
+            }          
+            return unmarshalledObject;
+        }
+
+        private static RestrictionsUnmarshaller _instance = new RestrictionsUnmarshaller();        
+
+        public static RestrictionsUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
             }
-                        
-
-
-            return restrictions;
-        }
-
-        public Restrictions Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
-
-        private static RestrictionsUnmarshaller instance;
-
-        public static RestrictionsUnmarshaller GetInstance() 
-        {
-            if (instance == null) 
-               instance = new RestrictionsUnmarshaller();
-
-            return instance;
         }
     }
 }
-    

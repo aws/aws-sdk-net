@@ -12,21 +12,30 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ViewerCertificate Unmarshaller
-     /// </summary>
-    internal class ViewerCertificateUnmarshaller : IUnmarshaller<ViewerCertificate, XmlUnmarshallerContext>, IUnmarshaller<ViewerCertificate, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ViewerCertificate Object
+    /// </summary>  
+    public class ViewerCertificateUnmarshaller : IUnmarshaller<ViewerCertificate, XmlUnmarshallerContext>
     {
-        public ViewerCertificate Unmarshall(XmlUnmarshallerContext context) 
+        public ViewerCertificate Unmarshall(XmlUnmarshallerContext context)
         {
-            ViewerCertificate viewerCertificate = new ViewerCertificate();
+            ViewerCertificate unmarshalledObject = new ViewerCertificate();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -37,50 +46,41 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("IAMCertificateId", targetDepth))
-                    {
-                        viewerCertificate.IAMCertificateId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("CloudFrontDefaultCertificate", targetDepth))
                     {
-                        viewerCertificate.CloudFrontDefaultCertificate = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.CloudFrontDefaultCertificate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("IAMCertificateId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.IAMCertificateId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SSLSupportMethod", targetDepth))
                     {
-                        viewerCertificate.SSLSupportMethod = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SSLSupportMethod = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return viewerCertificate;
+                    return unmarshalledObject;
                 }
+            }          
+            return unmarshalledObject;
+        }
+
+        private static ViewerCertificateUnmarshaller _instance = new ViewerCertificateUnmarshaller();        
+
+        public static ViewerCertificateUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
             }
-                        
-
-
-            return viewerCertificate;
-        }
-
-        public ViewerCertificate Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
-
-        private static ViewerCertificateUnmarshaller instance;
-
-        public static ViewerCertificateUnmarshaller GetInstance() 
-        {
-            if (instance == null) 
-               instance = new ViewerCertificateUnmarshaller();
-
-            return instance;
         }
     }
 }
-    

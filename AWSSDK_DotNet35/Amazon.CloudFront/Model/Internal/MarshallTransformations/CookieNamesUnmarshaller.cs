@@ -12,21 +12,30 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   CookieNames Unmarshaller
-     /// </summary>
-    internal class CookieNamesUnmarshaller : IUnmarshaller<CookieNames, XmlUnmarshallerContext>, IUnmarshaller<CookieNames, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for CookieNames Object
+    /// </summary>  
+    public class CookieNamesUnmarshaller : IUnmarshaller<CookieNames, XmlUnmarshallerContext>
     {
-        public CookieNames Unmarshall(XmlUnmarshallerContext context) 
+        public CookieNames Unmarshall(XmlUnmarshallerContext context)
         {
-            CookieNames cookieNames = new CookieNames();
+            CookieNames unmarshalledObject = new CookieNames();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -37,44 +46,35 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Quantity", targetDepth))
-                    {
-                        cookieNames.Quantity = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("Items/Name", targetDepth))
                     {
-                        cookieNames.Items.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Items.Add(unmarshaller.Unmarshall(context));
+                        continue;
+                    }
+                    if (context.TestExpression("Quantity", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.Quantity = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return cookieNames;
+                    return unmarshalledObject;
                 }
+            }          
+            return unmarshalledObject;
+        }
+
+        private static CookieNamesUnmarshaller _instance = new CookieNamesUnmarshaller();        
+
+        public static CookieNamesUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
             }
-                        
-
-
-            return cookieNames;
-        }
-
-        public CookieNames Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
-
-        private static CookieNamesUnmarshaller instance;
-
-        public static CookieNamesUnmarshaller GetInstance() 
-        {
-            if (instance == null) 
-               instance = new CookieNamesUnmarshaller();
-
-            return instance;
         }
     }
 }
-    

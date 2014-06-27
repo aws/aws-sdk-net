@@ -319,11 +319,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeAuthorizeClusterSecurityGroupIngress(AuthorizeClusterSecurityGroupIngressRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new AuthorizeClusterSecurityGroupIngressRequestMarshaller().Marshall(request);
+            var marshaller = new AuthorizeClusterSecurityGroupIngressRequestMarshaller();
             var unmarshaller = AuthorizeClusterSecurityGroupIngressResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -394,11 +393,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeAuthorizeSnapshotAccess(AuthorizeSnapshotAccessRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new AuthorizeSnapshotAccessRequestMarshaller().Marshall(request);
+            var marshaller = new AuthorizeSnapshotAccessRequestMarshaller();
             var unmarshaller = AuthorizeSnapshotAccessResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -483,11 +481,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeCopyClusterSnapshot(CopyClusterSnapshotRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new CopyClusterSnapshotRequestMarshaller().Marshall(request);
+            var marshaller = new CopyClusterSnapshotRequestMarshaller();
             var unmarshaller = CopyClusterSnapshotResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -599,11 +596,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeCreateCluster(CreateClusterRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new CreateClusterRequestMarshaller().Marshall(request);
+            var marshaller = new CreateClusterRequestMarshaller();
             var unmarshaller = CreateClusterResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -681,11 +677,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeCreateClusterParameterGroup(CreateClusterParameterGroupRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new CreateClusterParameterGroupRequestMarshaller().Marshall(request);
+            var marshaller = new CreateClusterParameterGroupRequestMarshaller();
             var unmarshaller = CreateClusterParameterGroupResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -755,11 +750,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeCreateClusterSecurityGroup(CreateClusterSecurityGroupRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new CreateClusterSecurityGroupRequestMarshaller().Marshall(request);
+            var marshaller = new CreateClusterSecurityGroupRequestMarshaller();
             var unmarshaller = CreateClusterSecurityGroupResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -834,11 +828,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeCreateClusterSnapshot(CreateClusterSnapshotRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new CreateClusterSnapshotRequestMarshaller().Marshall(request);
+            var marshaller = new CreateClusterSnapshotRequestMarshaller();
             var unmarshaller = CreateClusterSnapshotResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -923,11 +916,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeCreateClusterSubnetGroup(CreateClusterSubnetGroupRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new CreateClusterSubnetGroupRequestMarshaller().Marshall(request);
+            var marshaller = new CreateClusterSubnetGroupRequestMarshaller();
             var unmarshaller = CreateClusterSubnetGroupResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1041,11 +1033,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeCreateEventSubscription(CreateEventSubscriptionRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new CreateEventSubscriptionRequestMarshaller().Marshall(request);
+            var marshaller = new CreateEventSubscriptionRequestMarshaller();
             var unmarshaller = CreateEventSubscriptionResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1119,11 +1110,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeCreateHsmClientCertificate(CreateHsmClientCertificateRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new CreateHsmClientCertificateRequestMarshaller().Marshall(request);
+            var marshaller = new CreateHsmClientCertificateRequestMarshaller();
             var unmarshaller = CreateHsmClientCertificateResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1197,11 +1187,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeCreateHsmConfiguration(CreateHsmConfigurationRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new CreateHsmConfigurationRequestMarshaller().Marshall(request);
+            var marshaller = new CreateHsmConfigurationRequestMarshaller();
             var unmarshaller = CreateHsmConfigurationResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1276,11 +1265,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeDeleteCluster(DeleteClusterRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DeleteClusterRequestMarshaller().Marshall(request);
+            var marshaller = new DeleteClusterRequestMarshaller();
             var unmarshaller = DeleteClusterResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1343,11 +1331,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeDeleteClusterParameterGroup(DeleteClusterParameterGroupRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DeleteClusterParameterGroupRequestMarshaller().Marshall(request);
+            var marshaller = new DeleteClusterParameterGroupRequestMarshaller();
             var unmarshaller = DeleteClusterParameterGroupResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1415,11 +1402,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeDeleteClusterSecurityGroup(DeleteClusterSecurityGroupRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DeleteClusterSecurityGroupRequestMarshaller().Marshall(request);
+            var marshaller = new DeleteClusterSecurityGroupRequestMarshaller();
             var unmarshaller = DeleteClusterSecurityGroupResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1491,11 +1477,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeDeleteClusterSnapshot(DeleteClusterSnapshotRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DeleteClusterSnapshotRequestMarshaller().Marshall(request);
+            var marshaller = new DeleteClusterSnapshotRequestMarshaller();
             var unmarshaller = DeleteClusterSnapshotResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1559,11 +1544,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeDeleteClusterSubnetGroup(DeleteClusterSubnetGroupRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DeleteClusterSubnetGroupRequestMarshaller().Marshall(request);
+            var marshaller = new DeleteClusterSubnetGroupRequestMarshaller();
             var unmarshaller = DeleteClusterSubnetGroupResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1625,11 +1609,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeDeleteEventSubscription(DeleteEventSubscriptionRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DeleteEventSubscriptionRequestMarshaller().Marshall(request);
+            var marshaller = new DeleteEventSubscriptionRequestMarshaller();
             var unmarshaller = DeleteEventSubscriptionResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1690,11 +1673,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeDeleteHsmClientCertificate(DeleteHsmClientCertificateRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DeleteHsmClientCertificateRequestMarshaller().Marshall(request);
+            var marshaller = new DeleteHsmClientCertificateRequestMarshaller();
             var unmarshaller = DeleteHsmClientCertificateResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1755,11 +1737,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeDeleteHsmConfiguration(DeleteHsmConfigurationRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DeleteHsmConfigurationRequestMarshaller().Marshall(request);
+            var marshaller = new DeleteHsmConfigurationRequestMarshaller();
             var unmarshaller = DeleteHsmConfigurationResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1850,11 +1831,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeDescribeClusterParameterGroups(DescribeClusterParameterGroupsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DescribeClusterParameterGroupsRequestMarshaller().Marshall(request);
+            var marshaller = new DescribeClusterParameterGroupsRequestMarshaller();
             var unmarshaller = DescribeClusterParameterGroupsResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -1927,11 +1907,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeDescribeClusterParameters(DescribeClusterParametersRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DescribeClusterParametersRequestMarshaller().Marshall(request);
+            var marshaller = new DescribeClusterParametersRequestMarshaller();
             var unmarshaller = DescribeClusterParametersResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -2008,11 +1987,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeDescribeClusters(DescribeClustersRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DescribeClustersRequestMarshaller().Marshall(request);
+            var marshaller = new DescribeClustersRequestMarshaller();
             var unmarshaller = DescribeClustersResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -2099,11 +2077,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeDescribeClusterSecurityGroups(DescribeClusterSecurityGroupsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DescribeClusterSecurityGroupsRequestMarshaller().Marshall(request);
+            var marshaller = new DescribeClusterSecurityGroupsRequestMarshaller();
             var unmarshaller = DescribeClusterSecurityGroupsResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -2178,11 +2155,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeDescribeClusterSnapshots(DescribeClusterSnapshotsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DescribeClusterSnapshotsRequestMarshaller().Marshall(request);
+            var marshaller = new DescribeClusterSnapshotsRequestMarshaller();
             var unmarshaller = DescribeClusterSnapshotsResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -2257,11 +2233,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeDescribeClusterSubnetGroups(DescribeClusterSubnetGroupsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DescribeClusterSubnetGroupsRequestMarshaller().Marshall(request);
+            var marshaller = new DescribeClusterSubnetGroupsRequestMarshaller();
             var unmarshaller = DescribeClusterSubnetGroupsResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -2332,11 +2307,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeDescribeClusterVersions(DescribeClusterVersionsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DescribeClusterVersionsRequestMarshaller().Marshall(request);
+            var marshaller = new DescribeClusterVersionsRequestMarshaller();
             var unmarshaller = DescribeClusterVersionsResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -2397,11 +2371,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeDescribeDefaultClusterParameters(DescribeDefaultClusterParametersRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DescribeDefaultClusterParametersRequestMarshaller().Marshall(request);
+            var marshaller = new DescribeDefaultClusterParametersRequestMarshaller();
             var unmarshaller = DescribeDefaultClusterParametersResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -2470,11 +2443,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeDescribeEventCategories(DescribeEventCategoriesRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DescribeEventCategoriesRequestMarshaller().Marshall(request);
+            var marshaller = new DescribeEventCategoriesRequestMarshaller();
             var unmarshaller = DescribeEventCategoriesResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -2543,11 +2515,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeDescribeEvents(DescribeEventsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DescribeEventsRequestMarshaller().Marshall(request);
+            var marshaller = new DescribeEventsRequestMarshaller();
             var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -2622,11 +2593,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeDescribeEventSubscriptions(DescribeEventSubscriptionsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DescribeEventSubscriptionsRequestMarshaller().Marshall(request);
+            var marshaller = new DescribeEventSubscriptionsRequestMarshaller();
             var unmarshaller = DescribeEventSubscriptionsResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -2699,11 +2669,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeDescribeHsmClientCertificates(DescribeHsmClientCertificatesRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DescribeHsmClientCertificatesRequestMarshaller().Marshall(request);
+            var marshaller = new DescribeHsmClientCertificatesRequestMarshaller();
             var unmarshaller = DescribeHsmClientCertificatesResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -2776,11 +2745,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeDescribeHsmConfigurations(DescribeHsmConfigurationsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DescribeHsmConfigurationsRequestMarshaller().Marshall(request);
+            var marshaller = new DescribeHsmConfigurationsRequestMarshaller();
             var unmarshaller = DescribeHsmConfigurationsResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -2838,11 +2806,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeDescribeLoggingStatus(DescribeLoggingStatusRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DescribeLoggingStatusRequestMarshaller().Marshall(request);
+            var marshaller = new DescribeLoggingStatusRequestMarshaller();
             var unmarshaller = DescribeLoggingStatusResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -2921,11 +2888,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeDescribeOrderableClusterOptions(DescribeOrderableClusterOptionsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DescribeOrderableClusterOptionsRequestMarshaller().Marshall(request);
+            var marshaller = new DescribeOrderableClusterOptionsRequestMarshaller();
             var unmarshaller = DescribeOrderableClusterOptionsResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -3020,11 +2986,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeDescribeReservedNodeOfferings(DescribeReservedNodeOfferingsRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DescribeReservedNodeOfferingsRequestMarshaller().Marshall(request);
+            var marshaller = new DescribeReservedNodeOfferingsRequestMarshaller();
             var unmarshaller = DescribeReservedNodeOfferingsResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -3093,11 +3058,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeDescribeReservedNodes(DescribeReservedNodesRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DescribeReservedNodesRequestMarshaller().Marshall(request);
+            var marshaller = new DescribeReservedNodesRequestMarshaller();
             var unmarshaller = DescribeReservedNodesResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -3167,11 +3131,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeDescribeResize(DescribeResizeRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DescribeResizeRequestMarshaller().Marshall(request);
+            var marshaller = new DescribeResizeRequestMarshaller();
             var unmarshaller = DescribeResizeResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -3229,11 +3192,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeDisableLogging(DisableLoggingRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DisableLoggingRequestMarshaller().Marshall(request);
+            var marshaller = new DisableLoggingRequestMarshaller();
             var unmarshaller = DisableLoggingResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -3300,11 +3262,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeDisableSnapshotCopy(DisableSnapshotCopyRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new DisableSnapshotCopyRequestMarshaller().Marshall(request);
+            var marshaller = new DisableSnapshotCopyRequestMarshaller();
             var unmarshaller = DisableSnapshotCopyResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -3378,11 +3339,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeEnableLogging(EnableLoggingRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new EnableLoggingRequestMarshaller().Marshall(request);
+            var marshaller = new EnableLoggingRequestMarshaller();
             var unmarshaller = EnableLoggingResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -3459,11 +3419,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeEnableSnapshotCopy(EnableSnapshotCopyRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new EnableSnapshotCopyRequestMarshaller().Marshall(request);
+            var marshaller = new EnableSnapshotCopyRequestMarshaller();
             var unmarshaller = EnableSnapshotCopyResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -3571,11 +3530,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeModifyCluster(ModifyClusterRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new ModifyClusterRequestMarshaller().Marshall(request);
+            var marshaller = new ModifyClusterRequestMarshaller();
             var unmarshaller = ModifyClusterResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -3643,11 +3601,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeModifyClusterParameterGroup(ModifyClusterParameterGroupRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new ModifyClusterParameterGroupRequestMarshaller().Marshall(request);
+            var marshaller = new ModifyClusterParameterGroupRequestMarshaller();
             var unmarshaller = ModifyClusterParameterGroupResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -3722,11 +3679,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeModifyClusterSubnetGroup(ModifyClusterSubnetGroupRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new ModifyClusterSubnetGroupRequestMarshaller().Marshall(request);
+            var marshaller = new ModifyClusterSubnetGroupRequestMarshaller();
             var unmarshaller = ModifyClusterSubnetGroupResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -3813,11 +3769,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeModifyEventSubscription(ModifyEventSubscriptionRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new ModifyEventSubscriptionRequestMarshaller().Marshall(request);
+            var marshaller = new ModifyEventSubscriptionRequestMarshaller();
             var unmarshaller = ModifyEventSubscriptionResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -3885,11 +3840,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeModifySnapshotCopyRetentionPeriod(ModifySnapshotCopyRetentionPeriodRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new ModifySnapshotCopyRetentionPeriodRequestMarshaller().Marshall(request);
+            var marshaller = new ModifySnapshotCopyRetentionPeriodRequestMarshaller();
             var unmarshaller = ModifySnapshotCopyRetentionPeriodResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -3965,11 +3919,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokePurchaseReservedNodeOffering(PurchaseReservedNodeOfferingRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new PurchaseReservedNodeOfferingRequestMarshaller().Marshall(request);
+            var marshaller = new PurchaseReservedNodeOfferingRequestMarshaller();
             var unmarshaller = PurchaseReservedNodeOfferingResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -4035,11 +3988,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeRebootCluster(RebootClusterRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new RebootClusterRequestMarshaller().Marshall(request);
+            var marshaller = new RebootClusterRequestMarshaller();
             var unmarshaller = RebootClusterResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -4105,11 +4057,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeResetClusterParameterGroup(ResetClusterParameterGroupRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new ResetClusterParameterGroupRequestMarshaller().Marshall(request);
+            var marshaller = new ResetClusterParameterGroupRequestMarshaller();
             var unmarshaller = ResetClusterParameterGroupResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -4246,11 +4197,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeRestoreFromClusterSnapshot(RestoreFromClusterSnapshotRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new RestoreFromClusterSnapshotRequestMarshaller().Marshall(request);
+            var marshaller = new RestoreFromClusterSnapshotRequestMarshaller();
             var unmarshaller = RestoreFromClusterSnapshotResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -4319,11 +4269,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeRevokeClusterSecurityGroupIngress(RevokeClusterSecurityGroupIngressRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new RevokeClusterSecurityGroupIngressRequestMarshaller().Marshall(request);
+            var marshaller = new RevokeClusterSecurityGroupIngressRequestMarshaller();
             var unmarshaller = RevokeClusterSecurityGroupIngressResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -4396,11 +4345,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeRevokeSnapshotAccess(RevokeSnapshotAccessRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new RevokeSnapshotAccessRequestMarshaller().Marshall(request);
+            var marshaller = new RevokeSnapshotAccessRequestMarshaller();
             var unmarshaller = RevokeSnapshotAccessResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion
@@ -4460,11 +4408,10 @@ namespace Amazon.Redshift
 
         IAsyncResult invokeRotateEncryptionKey(RotateEncryptionKeyRequest request, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new RotateEncryptionKeyRequestMarshaller().Marshall(request);
+            var marshaller = new RotateEncryptionKeyRequestMarshaller();
             var unmarshaller = RotateEncryptionKeyResponseUnmarshaller.Instance;
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
+
+            return Invoke(request, callback, state, synchronized, marshaller, unmarshaller, signer);
         }
 
         #endregion

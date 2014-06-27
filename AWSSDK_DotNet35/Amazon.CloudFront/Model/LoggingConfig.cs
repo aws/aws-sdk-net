@@ -18,89 +18,98 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> A complex type that controls whether access logs are written for the distribution. </para>
+    /// A complex type that controls whether access logs are written for the distribution.
     /// </summary>
     public partial class LoggingConfig
     {
-        
-        private bool? enabled;
-        private bool? includeCookies;
-        private string bucket;
-        private string prefix;
+        private string _bucket;
+        private bool? _enabled;
+        private bool? _includeCookies;
+        private string _prefix;
 
 
         /// <summary>
-        /// Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you do not want to enable logging when you create a
-        /// distribution or if you want to disable logging for an existing distribution, specify false for Enabled, and specify empty Bucket and Prefix
-        /// elements. If you specify false for Enabled but you specify values for Bucket, prefix and IncludeCookies, the values are automatically
-        /// deleted.
-        ///  
-        /// </summary>
-        public bool Enabled
-        {
-            get { return this.enabled ?? default(bool); }
-            set { this.enabled = value; }
-        }
-
-        // Check to see if Enabled property is set
-        internal bool IsSetEnabled()
-        {
-            return this.enabled.HasValue;
-        }
-
-        /// <summary>
-        /// Specifies whether you want CloudFront to include cookies in access logs, specify true for IncludeCookies. If you choose to include cookies
-        /// in logs, CloudFront logs all cookies regardless of how you configure the cache behaviors for this distribution. If you do not want to
-        /// include cookies when you create a distribution or if you want to disable include cookies for an existing distribution, specify false for
-        /// IncludeCookies.
-        ///  
-        /// </summary>
-        public bool IncludeCookies
-        {
-            get { return this.includeCookies ?? default(bool); }
-            set { this.includeCookies = value; }
-        }
-
-        // Check to see if IncludeCookies property is set
-        internal bool IsSetIncludeCookies()
-        {
-            return this.includeCookies.HasValue;
-        }
-
-        /// <summary>
-        /// The Amazon S3 bucket to store the access logs in, for example, myawslogbucket.s3.amazonaws.com.
-        ///  
+        /// Gets and sets the property Bucket. The Amazon S3 bucket to store the access logs in,
+        /// for example,     myawslogbucket.s3.amazonaws.com.
         /// </summary>
         public string Bucket
         {
-            get { return this.bucket; }
-            set { this.bucket = value; }
+            get { return this._bucket; }
+            set { this._bucket = value; }
         }
 
         // Check to see if Bucket property is set
         internal bool IsSetBucket()
         {
-            return this.bucket != null;
+            return this._bucket != null;
         }
 
+
         /// <summary>
-        /// An optional string that you want CloudFront to prefix to the access log filenames for this distribution, for example, myprefix/. If you want
-        /// to enable logging, but you do not want to specify a prefix, you still must include an empty Prefix element in the Logging element.
-        ///  
+        /// Gets and sets the property Enabled. Specifies whether you want CloudFront to save
+        /// access logs to an Amazon    S3 bucket.    If you do not want to enable logging when
+        /// you create a distribution or if    you want to disable logging for an existing distribution,
+        /// specify false for    Enabled, and specify empty Bucket and Prefix elements.    If
+        /// you specify false for Enabled but you specify values for Bucket, prefix and    IncludeCookies,
+        /// the values are automatically deleted.
+        /// </summary>
+        public bool Enabled
+        {
+            get { return this._enabled.GetValueOrDefault(); }
+            set { this._enabled = value; }
+        }
+
+        // Check to see if Enabled property is set
+        internal bool IsSetEnabled()
+        {
+            return this._enabled.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property IncludeCookies. Specifies whether you want CloudFront to
+        /// include cookies in access logs, specify true for    IncludeCookies. If you choose
+        /// to include cookies in logs, CloudFront logs all cookies regardless    of how you configure
+        /// the cache behaviors for this distribution.    If you do not want to include cookies
+        /// when you create a distribution or if you want to     disable include cookies for an
+        /// existing distribution, specify false for IncludeCookies.
+        /// </summary>
+        public bool IncludeCookies
+        {
+            get { return this._includeCookies.GetValueOrDefault(); }
+            set { this._includeCookies = value; }
+        }
+
+        // Check to see if IncludeCookies property is set
+        internal bool IsSetIncludeCookies()
+        {
+            return this._includeCookies.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Prefix. An optional string that you want CloudFront to
+        /// prefix to the access log    filenames for this distribution, for example, myprefix/.
+        ///    If you want to enable logging, but you do not want to specify a prefix, you   
+        /// still must include an empty Prefix element in the Logging element.
         /// </summary>
         public string Prefix
         {
-            get { return this.prefix; }
-            set { this.prefix = value; }
+            get { return this._prefix; }
+            set { this._prefix = value; }
         }
 
         // Check to see if Prefix property is set
         internal bool IsSetPrefix()
         {
-            return this.prefix != null;
+            return this._prefix != null;
         }
+
     }
 }

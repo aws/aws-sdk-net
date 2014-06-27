@@ -25,29 +25,27 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the GetCloudFrontOriginAccessIdentity operation.
-    /// <para> Get the information about an origin access identity. </para>
+    /// Get the information about an origin access identity.
     /// </summary>
     public partial class GetCloudFrontOriginAccessIdentityRequest : AmazonCloudFrontRequest
     {
-        private string id;
+        private string _id;
 
 
         /// <summary>
-        /// The identity's id.
-        ///  
+        /// Gets and sets the property Id. The identity's id.
         /// </summary>
         public string Id
         {
-            get { return this.id; }
-            set { this.id = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;
+            return this._id != null;
         }
 
     }
 }
-    

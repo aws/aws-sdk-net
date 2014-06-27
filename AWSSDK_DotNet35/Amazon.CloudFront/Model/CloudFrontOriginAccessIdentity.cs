@@ -18,66 +18,71 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> CloudFront origin access identity. </para>
+    /// CloudFront origin access identity.
     /// </summary>
     public partial class CloudFrontOriginAccessIdentity
     {
-        
-        private string id;
-        private string s3CanonicalUserId;
-        private CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig;
+        private CloudFrontOriginAccessIdentityConfig _cloudFrontOriginAccessIdentityConfig;
+        private string _id;
+        private string _s3CanonicalUserId;
 
 
         /// <summary>
-        /// The ID for the origin access identity. For example: E74FTE3AJFJ256A.
-        ///  
-        /// </summary>
-        public string Id
-        {
-            get { return this.id; }
-            set { this.id = value; }
-        }
-
-        // Check to see if Id property is set
-        internal bool IsSetId()
-        {
-            return this.id != null;
-        }
-
-        /// <summary>
-        /// The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin access identity read permission to an
-        /// object in Amazon S3.
-        ///  
-        /// </summary>
-        public string S3CanonicalUserId
-        {
-            get { return this.s3CanonicalUserId; }
-            set { this.s3CanonicalUserId = value; }
-        }
-
-        // Check to see if S3CanonicalUserId property is set
-        internal bool IsSetS3CanonicalUserId()
-        {
-            return this.s3CanonicalUserId != null;
-        }
-
-        /// <summary>
-        /// The current configuration information for the identity.
-        ///  
+        /// Gets and sets the property CloudFrontOriginAccessIdentityConfig. The current configuration
+        /// information for the identity.
         /// </summary>
         public CloudFrontOriginAccessIdentityConfig CloudFrontOriginAccessIdentityConfig
         {
-            get { return this.cloudFrontOriginAccessIdentityConfig; }
-            set { this.cloudFrontOriginAccessIdentityConfig = value; }
+            get { return this._cloudFrontOriginAccessIdentityConfig; }
+            set { this._cloudFrontOriginAccessIdentityConfig = value; }
         }
 
         // Check to see if CloudFrontOriginAccessIdentityConfig property is set
         internal bool IsSetCloudFrontOriginAccessIdentityConfig()
         {
-            return this.cloudFrontOriginAccessIdentityConfig != null;
+            return this._cloudFrontOriginAccessIdentityConfig != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Id. The ID for the origin access identity. For example:
+        /// E74FTE3AJFJ256A.
+        /// </summary>
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property S3CanonicalUserId. The Amazon S3 canonical user ID for
+        /// the origin access identity, which you use when giving the origin access identity read
+        /// permission to an object in Amazon S3.
+        /// </summary>
+        public string S3CanonicalUserId
+        {
+            get { return this._s3CanonicalUserId; }
+            set { this._s3CanonicalUserId = value; }
+        }
+
+        // Check to see if S3CanonicalUserId property is set
+        internal bool IsSetS3CanonicalUserId()
+        {
+            return this._s3CanonicalUserId != null;
+        }
+
     }
 }

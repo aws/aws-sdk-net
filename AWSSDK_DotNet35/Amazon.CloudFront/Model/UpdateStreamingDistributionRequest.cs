@@ -25,63 +25,63 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateStreamingDistribution operation.
-    /// <para> Update a streaming distribution. </para>
+    /// Update a streaming distribution.
     /// </summary>
     public partial class UpdateStreamingDistributionRequest : AmazonCloudFrontRequest
     {
-        private StreamingDistributionConfig streamingDistributionConfig;
-        private string id;
-        private string ifMatch;
+        private string _id;
+        private string _ifMatch;
+        private StreamingDistributionConfig _streamingDistributionConfig;
 
 
         /// <summary>
-        /// The streaming distribution's configuration information.
-        ///  
-        /// </summary>
-        public StreamingDistributionConfig StreamingDistributionConfig
-        {
-            get { return this.streamingDistributionConfig; }
-            set { this.streamingDistributionConfig = value; }
-        }
-
-        // Check to see if StreamingDistributionConfig property is set
-        internal bool IsSetStreamingDistributionConfig()
-        {
-            return this.streamingDistributionConfig != null;
-        }
-
-        /// <summary>
-        /// The streaming distribution's id.
-        ///  
+        /// Gets and sets the property Id. The streaming distribution's id.
         /// </summary>
         public string Id
         {
-            get { return this.id; }
-            set { this.id = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;
+            return this._id != null;
         }
 
+
         /// <summary>
-        /// The value of the ETag header you received when retrieving the streaming distribution's configuration. For example: E2QWRUHAPOMQZL.
-        ///  
+        /// Gets and sets the property IfMatch. The value of the ETag header you received when
+        /// retrieving the streaming distribution's configuration. For example: E2QWRUHAPOMQZL.
         /// </summary>
         public string IfMatch
         {
-            get { return this.ifMatch; }
-            set { this.ifMatch = value; }
+            get { return this._ifMatch; }
+            set { this._ifMatch = value; }
         }
 
         // Check to see if IfMatch property is set
         internal bool IsSetIfMatch()
         {
-            return this.ifMatch != null;
+            return this._ifMatch != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property StreamingDistributionConfig. The streaming distribution's
+        /// configuration information.
+        /// </summary>
+        public StreamingDistributionConfig StreamingDistributionConfig
+        {
+            get { return this._streamingDistributionConfig; }
+            set { this._streamingDistributionConfig = value; }
+        }
+
+        // Check to see if StreamingDistributionConfig property is set
+        internal bool IsSetStreamingDistributionConfig()
+        {
+            return this._streamingDistributionConfig != null;
         }
 
     }
 }
-    

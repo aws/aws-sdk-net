@@ -25,29 +25,27 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDistributionConfig operation.
-    /// <para> Get the configuration information about a distribution. </para>
+    /// Get the configuration information about a distribution.
     /// </summary>
     public partial class GetDistributionConfigRequest : AmazonCloudFrontRequest
     {
-        private string id;
+        private string _id;
 
 
         /// <summary>
-        /// The distribution's id.
-        ///  
+        /// Gets and sets the property Id. The distribution's id.
         /// </summary>
         public string Id
         {
-            get { return this.id; }
-            set { this.id = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;
+            return this._id != null;
         }
 
     }
 }
-    
