@@ -18,59 +18,33 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> A complex type that contains information about viewer certificates for this distribution. </para>
+    /// A complex type that contains information about viewer certificates for this distribution.
     /// </summary>
     public partial class ViewerCertificate
     {
-        
-        private string iAMCertificateId;
-        private bool? cloudFrontDefaultCertificate;
-        private string sSLSupportMethod;
+        private bool? _cloudFrontDefaultCertificate;
+        private string _iAMCertificateId;
+        private string _sSLSupportMethod;
+
 
         /// <summary>
-        /// If you want viewers to use HTTPS to request your objects and you're using an alternate domain name in your object URLs (for example,
-        /// https://example.com/logo.jpg), specify the IAM certificate identifier of the custom viewer certificate for this distribution. Specify either
-        /// this value or CloudFrontDefaultCertificate.
-        ///  
-        /// </summary>
-        public string IAMCertificateId
-        {
-            get { return this.iAMCertificateId; }
-            set { this.iAMCertificateId = value; }
-        }
-
-        /// <summary>
-        /// Sets the IAMCertificateId property
-        /// </summary>
-        /// <param name="iAMCertificateId">The value to set for the IAMCertificateId property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ViewerCertificate WithIAMCertificateId(string iAMCertificateId)
-        {
-            this.iAMCertificateId = iAMCertificateId;
-            return this;
-        }
-            
-
-        // Check to see if IAMCertificateId property is set
-        internal bool IsSetIAMCertificateId()
-        {
-            return this.iAMCertificateId != null;
-        }
-
-        /// <summary>
-        /// If you want viewers to use HTTPS to request your objects and you're using the CloudFront domain name of your distribution in your object
-        /// URLs (for example, https://d111111abcdef8.cloudfront.net/logo.jpg), set to true. Omit this value if you are setting an IAMCertificateId.
-        ///  
+        /// Gets and sets the property CloudFrontDefaultCertificate. If you want viewers to use
+        /// HTTPS to request your objects and you're using the CloudFront domain name     of your
+        /// distribution in your object URLs (for example, https://d111111abcdef8.cloudfront.net/logo.jpg),
+        ///    set to true. Omit this value if you are setting an IAMCertificateId.
         /// </summary>
         public bool CloudFrontDefaultCertificate
         {
-            get { return this.cloudFrontDefaultCertificate ?? default(bool); }
-            set { this.cloudFrontDefaultCertificate = value; }
+            get { return this._cloudFrontDefaultCertificate.GetValueOrDefault(); }
+            set { this._cloudFrontDefaultCertificate = value; }
         }
+
 
         /// <summary>
         /// Sets the CloudFrontDefaultCertificate property
@@ -80,39 +54,67 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ViewerCertificate WithCloudFrontDefaultCertificate(bool cloudFrontDefaultCertificate)
         {
-            this.cloudFrontDefaultCertificate = cloudFrontDefaultCertificate;
+            this._cloudFrontDefaultCertificate = cloudFrontDefaultCertificate;
             return this;
         }
-            
 
         // Check to see if CloudFrontDefaultCertificate property is set
         internal bool IsSetCloudFrontDefaultCertificate()
         {
-            return this.cloudFrontDefaultCertificate.HasValue;
+            return this._cloudFrontDefaultCertificate.HasValue; 
         }
 
+
         /// <summary>
-        /// If you specify a value for IAMCertificateId, you must also specify how you want CloudFront to serve HTTPS requests. Valid values are vip and
-        /// sni-only. If you specify vip, CloudFront uses dedicated IP addresses for your content and can respond to HTTPS requests from any viewer.
-        /// However, you must request permission to use this feature, and you incur additional monthly charges. If you specify sni-only, CloudFront can
-        /// only respond to HTTPS requests from viewers that support Server Name Indication (SNI). All modern browsers support SNI, but some browsers
-        /// still in use don't support SNI. Do not specify a value for SSLSupportMethod if you specified true for CloudFrontDefaultCertificate.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>sni-only, vip</description>
-        ///     </item>
-        /// </list>
-        /// </para>
+        /// Gets and sets the property IAMCertificateId. If you want viewers to use HTTPS to request
+        /// your objects and you're using an    alternate domain name in your object URLs (for
+        /// example, https://example.com/logo.jpg),     specify the IAM certificate identifier
+        /// of the custom viewer certificate for this distribution.     Specify either this value
+        /// or CloudFrontDefaultCertificate.
+        /// </summary>
+        public string IAMCertificateId
+        {
+            get { return this._iAMCertificateId; }
+            set { this._iAMCertificateId = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the IAMCertificateId property
+        /// </summary>
+        /// <param name="iAMCertificateId">The value to set for the IAMCertificateId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ViewerCertificate WithIAMCertificateId(string iAMCertificateId)
+        {
+            this._iAMCertificateId = iAMCertificateId;
+            return this;
+        }
+
+        // Check to see if IAMCertificateId property is set
+        internal bool IsSetIAMCertificateId()
+        {
+            return this._iAMCertificateId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SSLSupportMethod. If you specify a value for IAMCertificateId,
+        /// you must also specify how you want CloudFront     to serve HTTPS requests. Valid values
+        /// are vip and sni-only. If you specify vip, CloudFront uses     dedicated IP addresses
+        /// for your content and can respond to HTTPS requests from any viewer.     However, you
+        /// must request permission to use this feature, and you incur additional monthly    
+        /// charges. If you specify sni-only, CloudFront can only respond to HTTPS requests from
+        ///     viewers that support Server Name Indication (SNI). All modern browsers support
+        /// SNI,     but some browsers still in use don't support SNI. Do not specify a value
+        /// for SSLSupportMethod if you     specified true for CloudFrontDefaultCertificate.
         /// </summary>
         public string SSLSupportMethod
         {
-            get { return this.sSLSupportMethod; }
-            set { this.sSLSupportMethod = value; }
+            get { return this._sSLSupportMethod; }
+            set { this._sSLSupportMethod = value; }
         }
+
 
         /// <summary>
         /// Sets the SSLSupportMethod property
@@ -122,15 +124,15 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ViewerCertificate WithSSLSupportMethod(string sSLSupportMethod)
         {
-            this.sSLSupportMethod = sSLSupportMethod;
+            this._sSLSupportMethod = sSLSupportMethod;
             return this;
         }
-            
 
         // Check to see if SSLSupportMethod property is set
         internal bool IsSetSSLSupportMethod()
         {
-            return this.sSLSupportMethod != null;
+            return this._sSLSupportMethod != null;
         }
+
     }
 }

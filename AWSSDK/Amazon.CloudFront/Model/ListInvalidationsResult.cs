@@ -18,25 +18,28 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> The returned result of the corresponding request. </para>
+    /// The returned result of the corresponding request.
     /// </summary>
     public partial class ListInvalidationsResult
     {
-        
-        private InvalidationList invalidationList;
+        private InvalidationList _invalidationList;
+
 
         /// <summary>
-        /// Information about invalidation batches.
-        ///  
+        /// Gets and sets the property InvalidationList. Information about invalidation batches.
         /// </summary>
         public InvalidationList InvalidationList
         {
-            get { return this.invalidationList; }
-            set { this.invalidationList = value; }
+            get { return this._invalidationList; }
+            set { this._invalidationList = value; }
         }
+
 
         /// <summary>
         /// Sets the InvalidationList property
@@ -46,15 +49,15 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListInvalidationsResult WithInvalidationList(InvalidationList invalidationList)
         {
-            this.invalidationList = invalidationList;
+            this._invalidationList = invalidationList;
             return this;
         }
-            
 
         // Check to see if InvalidationList property is set
         internal bool IsSetInvalidationList()
         {
-            return this.invalidationList != null;
+            return this._invalidationList != null;
         }
+
     }
 }

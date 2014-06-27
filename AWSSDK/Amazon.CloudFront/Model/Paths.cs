@@ -18,26 +18,75 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> A complex type that contains information about the objects that you want to invalidate. </para>
+    /// A complex type that contains information about the objects that you    want to invalidate.
     /// </summary>
     public partial class Paths
     {
-        
-        private int? quantity;
-        private List<string> items = new List<string>();
+        private List<string> _items = new List<string>();
+        private int? _quantity;
+
 
         /// <summary>
-        /// The number of objects that you want to invalidate.
-        ///  
+        /// Gets and sets the property Items. A complex type that contains a list of the objects
+        /// that you want to    invalidate.
+        /// </summary>
+        public List<string> Items
+        {
+            get { return this._items; }
+            set { this._items = value; }
+        }
+
+        /// <summary>
+        /// Sets the Items property
+        /// </summary>
+        /// <param name="items">The values to add to the Items collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Paths WithItems(params string[] items)
+        {
+            foreach (var element in items)
+            {
+                this._items.Add(element);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the Items property
+        /// </summary>
+        /// <param name="items">The values to add to the Items collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Paths WithItems(IEnumerable<string> items)
+        {
+            foreach (var element in items)
+            {
+                this._items.Add(element);
+            }
+            return this;
+        }
+        // Check to see if Items property is set
+        internal bool IsSetItems()
+        {
+            return this._items != null && this._items.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Quantity. The number of objects that you want to invalidate.
         /// </summary>
         public int Quantity
         {
-            get { return this.quantity ?? default(int); }
-            set { this.quantity = value; }
+            get { return this._quantity.GetValueOrDefault(); }
+            set { this._quantity = value; }
         }
+
 
         /// <summary>
         /// Sets the Quantity property
@@ -47,62 +96,15 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Paths WithQuantity(int quantity)
         {
-            this.quantity = quantity;
+            this._quantity = quantity;
             return this;
         }
-            
 
         // Check to see if Quantity property is set
         internal bool IsSetQuantity()
         {
-            return this.quantity.HasValue;
+            return this._quantity.HasValue; 
         }
 
-        /// <summary>
-        /// A complex type that contains a list of the objects that you want to invalidate.
-        ///  
-        /// </summary>
-        public List<string> Items
-        {
-            get { return this.items; }
-            set { this.items = value; }
-        }
-        /// <summary>
-        /// Adds elements to the Items collection
-        /// </summary>
-        /// <param name="items">The values to add to the Items collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public Paths WithItems(params string[] items)
-        {
-            foreach (string element in items)
-            {
-                this.items.Add(element);
-            }
-
-            return this;
-        }
-
-        /// <summary>
-        /// Adds elements to the Items collection
-        /// </summary>
-        /// <param name="items">The values to add to the Items collection </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public Paths WithItems(IEnumerable<string> items)
-        {
-            foreach (string element in items)
-            {
-                this.items.Add(element);
-            }
-
-            return this;
-        }
-
-        // Check to see if Items property is set
-        internal bool IsSetItems()
-        {
-            return this.items.Count > 0;
-        }
     }
 }

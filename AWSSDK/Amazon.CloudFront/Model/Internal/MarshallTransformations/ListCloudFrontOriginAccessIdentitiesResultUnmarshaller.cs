@@ -12,60 +12,62 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ListCloudFrontOriginAccessIdentitiesResult Unmarshaller
-     /// </summary>
-    internal class ListCloudFrontOriginAccessIdentitiesResultUnmarshaller : IUnmarshaller<ListCloudFrontOriginAccessIdentitiesResult, XmlUnmarshallerContext>, IUnmarshaller<ListCloudFrontOriginAccessIdentitiesResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Result Unmarshaller for ListCloudFrontOriginAccessIdentities operation
+    /// </summary>  
+    public class ListCloudFrontOriginAccessIdentitiesResultUnmarshaller : IUnmarshaller<ListCloudFrontOriginAccessIdentitiesResult, XmlUnmarshallerContext>
     {
-        public ListCloudFrontOriginAccessIdentitiesResult Unmarshall(XmlUnmarshallerContext context) 
+        public ListCloudFrontOriginAccessIdentitiesResult Unmarshall(XmlUnmarshallerContext context)
         {
-            ListCloudFrontOriginAccessIdentitiesResult listCloudFrontOriginAccessIdentitiesResult = new ListCloudFrontOriginAccessIdentitiesResult();
+            var unmarshalledObject = new ListCloudFrontOriginAccessIdentitiesResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
                     if (context.TestExpression("CloudFrontOriginAccessIdentityList", targetDepth))
                     {
-                        listCloudFrontOriginAccessIdentitiesResult.CloudFrontOriginAccessIdentityList = CloudFrontOriginAccessIdentityListUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = CloudFrontOriginAccessIdentityListUnmarshaller.GetInstance();
+                        unmarshalledObject.CloudFrontOriginAccessIdentityList = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return listCloudFrontOriginAccessIdentitiesResult;
+                    return unmarshalledObject;
                 }
             }
-                        
-
-
-            return listCloudFrontOriginAccessIdentitiesResult;
-        }
-
-        public ListCloudFrontOriginAccessIdentitiesResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
+            
+            return unmarshalledObject;
+        }        
 
         private static ListCloudFrontOriginAccessIdentitiesResultUnmarshaller instance;
-
-        public static ListCloudFrontOriginAccessIdentitiesResultUnmarshaller GetInstance() 
+        public static ListCloudFrontOriginAccessIdentitiesResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new ListCloudFrontOriginAccessIdentitiesResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new ListCloudFrontOriginAccessIdentitiesResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

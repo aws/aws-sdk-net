@@ -18,25 +18,29 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> The returned result of the corresponding request. </para>
+    /// The returned result of the corresponding request.
     /// </summary>
     public partial class ListCloudFrontOriginAccessIdentitiesResult
     {
-        
-        private CloudFrontOriginAccessIdentityList cloudFrontOriginAccessIdentityList;
+        private CloudFrontOriginAccessIdentityList _cloudFrontOriginAccessIdentityList;
+
 
         /// <summary>
-        /// The CloudFrontOriginAccessIdentityList type.
-        ///  
+        /// Gets and sets the property CloudFrontOriginAccessIdentityList. The CloudFrontOriginAccessIdentityList
+        /// type.
         /// </summary>
         public CloudFrontOriginAccessIdentityList CloudFrontOriginAccessIdentityList
         {
-            get { return this.cloudFrontOriginAccessIdentityList; }
-            set { this.cloudFrontOriginAccessIdentityList = value; }
+            get { return this._cloudFrontOriginAccessIdentityList; }
+            set { this._cloudFrontOriginAccessIdentityList = value; }
         }
+
 
         /// <summary>
         /// Sets the CloudFrontOriginAccessIdentityList property
@@ -46,15 +50,15 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListCloudFrontOriginAccessIdentitiesResult WithCloudFrontOriginAccessIdentityList(CloudFrontOriginAccessIdentityList cloudFrontOriginAccessIdentityList)
         {
-            this.cloudFrontOriginAccessIdentityList = cloudFrontOriginAccessIdentityList;
+            this._cloudFrontOriginAccessIdentityList = cloudFrontOriginAccessIdentityList;
             return this;
         }
-            
 
         // Check to see if CloudFrontOriginAccessIdentityList property is set
         internal bool IsSetCloudFrontOriginAccessIdentityList()
         {
-            return this.cloudFrontOriginAccessIdentityList != null;
+            return this._cloudFrontOriginAccessIdentityList != null;
         }
+
     }
 }

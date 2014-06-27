@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Returns information about the  UpdateCloudFrontOriginAccessIdentityResult response and response metadata.
+    /// Returns information about the UpdateCloudFrontOriginAccessIdentityResult response and response metadata.
     /// </summary>
     public class UpdateCloudFrontOriginAccessIdentityResponse : AmazonWebServiceResponse
     {
-        private UpdateCloudFrontOriginAccessIdentityResult updateCloudFrontOriginAccessIdentityResult;
+        private UpdateCloudFrontOriginAccessIdentityResult _updateCloudFrontOriginAccessIdentityResult;
 
         /// <summary>
         /// Gets and sets the UpdateCloudFrontOriginAccessIdentityResult property.
-        /// The returned result of the corresponding request.
+        /// Represents the output of a UpdateCloudFrontOriginAccessIdentity operation.
         /// </summary>
         public UpdateCloudFrontOriginAccessIdentityResult UpdateCloudFrontOriginAccessIdentityResult
         {
             get
             {
-                if(this.updateCloudFrontOriginAccessIdentityResult == null)
+                if(this._updateCloudFrontOriginAccessIdentityResult == null)
                 {
-                    this.updateCloudFrontOriginAccessIdentityResult = new UpdateCloudFrontOriginAccessIdentityResult();
+                    this._updateCloudFrontOriginAccessIdentityResult = new UpdateCloudFrontOriginAccessIdentityResult();
                 }
-
-                return this.updateCloudFrontOriginAccessIdentityResult;
+                return this._updateCloudFrontOriginAccessIdentityResult;
             }
-            set { this.updateCloudFrontOriginAccessIdentityResult = value; }
+            set { this._updateCloudFrontOriginAccessIdentityResult = value; }
         }
     }
 }
-    

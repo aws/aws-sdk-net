@@ -12,15 +12,15 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 using System;
 
 using Amazon.Runtime;
 
 namespace Amazon.CloudFront
 {
-
     /// <summary>
-    /// Configuration for accessing  service
+    /// Configuration for accessing Amazon CloudFront service
     /// </summary>
     public class AmazonCloudFrontConfig : ClientConfig
     {
@@ -29,7 +29,7 @@ namespace Amazon.CloudFront
         /// </summary>
         public AmazonCloudFrontConfig()
         {
-            this.ServiceURL = "https://cloudfront.amazonaws.com/";
+            this.ServiceURL = "https://cloudfront.amazonaws.com";
             this.AuthenticationServiceName = "cloudfront";
         }
 
@@ -51,10 +51,8 @@ namespace Amazon.CloudFront
         {
             get
             {
-                return "2014-01-31";
+                return "2014-05-31";
             }
         }
     }
 }
-
-    

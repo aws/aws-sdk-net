@@ -18,86 +18,31 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> Summary of the information about a CloudFront origin access identity. </para>
+    /// Summary of the information about a CloudFront origin access identity.
     /// </summary>
     public partial class CloudFrontOriginAccessIdentitySummary
     {
-        
-        private string id;
-        private string s3CanonicalUserId;
-        private string comment;
+        private string _comment;
+        private string _id;
+        private string _s3CanonicalUserId;
+
 
         /// <summary>
-        /// The ID for the origin access identity. For example: E74FTE3AJFJ256A.
-        ///  
-        /// </summary>
-        public string Id
-        {
-            get { return this.id; }
-            set { this.id = value; }
-        }
-
-        /// <summary>
-        /// Sets the Id property
-        /// </summary>
-        /// <param name="id">The value to set for the Id property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public CloudFrontOriginAccessIdentitySummary WithId(string id)
-        {
-            this.id = id;
-            return this;
-        }
-            
-
-        // Check to see if Id property is set
-        internal bool IsSetId()
-        {
-            return this.id != null;
-        }
-
-        /// <summary>
-        /// The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin access identity read permission to an
-        /// object in Amazon S3.
-        ///  
-        /// </summary>
-        public string S3CanonicalUserId
-        {
-            get { return this.s3CanonicalUserId; }
-            set { this.s3CanonicalUserId = value; }
-        }
-
-        /// <summary>
-        /// Sets the S3CanonicalUserId property
-        /// </summary>
-        /// <param name="s3CanonicalUserId">The value to set for the S3CanonicalUserId property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public CloudFrontOriginAccessIdentitySummary WithS3CanonicalUserId(string s3CanonicalUserId)
-        {
-            this.s3CanonicalUserId = s3CanonicalUserId;
-            return this;
-        }
-            
-
-        // Check to see if S3CanonicalUserId property is set
-        internal bool IsSetS3CanonicalUserId()
-        {
-            return this.s3CanonicalUserId != null;
-        }
-
-        /// <summary>
-        /// The comment for this origin access identity, as originally specified when created.
-        ///  
+        /// Gets and sets the property Comment. The comment for this origin access identity, as
+        /// originally specified when created.
         /// </summary>
         public string Comment
         {
-            get { return this.comment; }
-            set { this.comment = value; }
+            get { return this._comment; }
+            set { this._comment = value; }
         }
+
 
         /// <summary>
         /// Sets the Comment property
@@ -107,15 +52,76 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CloudFrontOriginAccessIdentitySummary WithComment(string comment)
         {
-            this.comment = comment;
+            this._comment = comment;
             return this;
         }
-            
 
         // Check to see if Comment property is set
         internal bool IsSetComment()
         {
-            return this.comment != null;
+            return this._comment != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Id. The ID for the origin access identity. For example:
+        /// E74FTE3AJFJ256A.
+        /// </summary>
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the Id property
+        /// </summary>
+        /// <param name="id">The value to set for the Id property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CloudFrontOriginAccessIdentitySummary WithId(string id)
+        {
+            this._id = id;
+            return this;
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property S3CanonicalUserId. The Amazon S3 canonical user ID for
+        /// the origin access identity, which you use when     giving the origin access identity
+        /// read permission to an object in Amazon S3.
+        /// </summary>
+        public string S3CanonicalUserId
+        {
+            get { return this._s3CanonicalUserId; }
+            set { this._s3CanonicalUserId = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the S3CanonicalUserId property
+        /// </summary>
+        /// <param name="s3CanonicalUserId">The value to set for the S3CanonicalUserId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CloudFrontOriginAccessIdentitySummary WithS3CanonicalUserId(string s3CanonicalUserId)
+        {
+            this._s3CanonicalUserId = s3CanonicalUserId;
+            return this;
+        }
+
+        // Check to see if S3CanonicalUserId property is set
+        internal bool IsSetS3CanonicalUserId()
+        {
+            return this._s3CanonicalUserId != null;
+        }
+
     }
 }

@@ -25,22 +25,23 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateStreamingDistribution operation.
-    /// <para> Create a new streaming distribution. </para>
+    /// Create a new streaming distribution.
     /// </summary>
-    /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.CreateStreamingDistribution"/>
-    public class CreateStreamingDistributionRequest : AmazonWebServiceRequest
+    public partial class CreateStreamingDistributionRequest : AmazonWebServiceRequest
     {
-        private StreamingDistributionConfig streamingDistributionConfig;
+        private StreamingDistributionConfig _streamingDistributionConfig;
+
 
         /// <summary>
-        /// The streaming distribution's configuration information.
-        ///  
+        /// Gets and sets the property StreamingDistributionConfig. The streaming distribution's
+        /// configuration information.
         /// </summary>
         public StreamingDistributionConfig StreamingDistributionConfig
         {
-            get { return this.streamingDistributionConfig; }
-            set { this.streamingDistributionConfig = value; }
+            get { return this._streamingDistributionConfig; }
+            set { this._streamingDistributionConfig = value; }
         }
+
 
         /// <summary>
         /// Sets the StreamingDistributionConfig property
@@ -50,16 +51,15 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateStreamingDistributionRequest WithStreamingDistributionConfig(StreamingDistributionConfig streamingDistributionConfig)
         {
-            this.streamingDistributionConfig = streamingDistributionConfig;
+            this._streamingDistributionConfig = streamingDistributionConfig;
             return this;
         }
-            
 
         // Check to see if StreamingDistributionConfig property is set
         internal bool IsSetStreamingDistributionConfig()
         {
-            return this.streamingDistributionConfig != null;
+            return this._streamingDistributionConfig != null;
         }
+
     }
 }
-    

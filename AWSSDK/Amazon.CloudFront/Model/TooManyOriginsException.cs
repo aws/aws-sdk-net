@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.CloudFront.Model
 {
     ///<summary>
-    /// AmazonCloudFront exception
+    /// CloudFront exception
     /// </summary>
     public class TooManyOriginsException : AmazonCloudFrontException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.CloudFront.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal TooManyOriginsException(string message) 
+        public TooManyOriginsException(string message) 
             : base(message) {}
           
-        internal TooManyOriginsException(string message, Exception innerException) 
+        public TooManyOriginsException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal TooManyOriginsException(Exception innerException) 
+        public TooManyOriginsException(Exception innerException) 
             : base(innerException) {}
             
-        internal TooManyOriginsException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public TooManyOriginsException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal TooManyOriginsException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public TooManyOriginsException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

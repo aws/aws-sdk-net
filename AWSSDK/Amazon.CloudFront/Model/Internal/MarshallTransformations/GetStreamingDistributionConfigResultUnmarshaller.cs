@@ -12,62 +12,65 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   GetStreamingDistributionConfigResult Unmarshaller
-     /// </summary>
-    internal class GetStreamingDistributionConfigResultUnmarshaller : IUnmarshaller<GetStreamingDistributionConfigResult, XmlUnmarshallerContext>, IUnmarshaller<GetStreamingDistributionConfigResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Result Unmarshaller for GetStreamingDistributionConfig operation
+    /// </summary>  
+    public class GetStreamingDistributionConfigResultUnmarshaller : IUnmarshaller<GetStreamingDistributionConfigResult, XmlUnmarshallerContext>
     {
-        public GetStreamingDistributionConfigResult Unmarshall(XmlUnmarshallerContext context) 
+        public GetStreamingDistributionConfigResult Unmarshall(XmlUnmarshallerContext context)
         {
-            GetStreamingDistributionConfigResult getStreamingDistributionConfigResult = new GetStreamingDistributionConfigResult();
+            var unmarshalledObject = new GetStreamingDistributionConfigResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
                     if (context.TestExpression("StreamingDistributionConfig", targetDepth))
                     {
-                        getStreamingDistributionConfigResult.StreamingDistributionConfig = StreamingDistributionConfigUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StreamingDistributionConfigUnmarshaller.GetInstance();
+                        unmarshalledObject.StreamingDistributionConfig = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return getStreamingDistributionConfigResult;
+                    return unmarshalledObject;
                 }
             }
             
-
-            getStreamingDistributionConfigResult.ETag = context.Headers["ETag"];            
-
-
-            return getStreamingDistributionConfigResult;
-        }
-
-        public GetStreamingDistributionConfigResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
+            if (context.Headers["ETag"] != null)
+                unmarshalledObject.ETag = context.Headers["ETag"];
+            
+            return unmarshalledObject;
+        }        
 
         private static GetStreamingDistributionConfigResultUnmarshaller instance;
-
-        public static GetStreamingDistributionConfigResultUnmarshaller GetInstance() 
+        public static GetStreamingDistributionConfigResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new GetStreamingDistributionConfigResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new GetStreamingDistributionConfigResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

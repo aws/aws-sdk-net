@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.CloudFront.Model
 {
     ///<summary>
-    /// AmazonCloudFront exception
+    /// CloudFront exception
     /// </summary>
     public class StreamingDistributionAlreadyExistsException : AmazonCloudFrontException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.CloudFront.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal StreamingDistributionAlreadyExistsException(string message) 
+        public StreamingDistributionAlreadyExistsException(string message) 
             : base(message) {}
           
-        internal StreamingDistributionAlreadyExistsException(string message, Exception innerException) 
+        public StreamingDistributionAlreadyExistsException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal StreamingDistributionAlreadyExistsException(Exception innerException) 
+        public StreamingDistributionAlreadyExistsException(Exception innerException) 
             : base(innerException) {}
             
-        internal StreamingDistributionAlreadyExistsException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public StreamingDistributionAlreadyExistsException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal StreamingDistributionAlreadyExistsException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public StreamingDistributionAlreadyExistsException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

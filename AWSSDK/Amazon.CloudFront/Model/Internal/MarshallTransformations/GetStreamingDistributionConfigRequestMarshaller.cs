@@ -14,64 +14,39 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
-using System.Xml;
-using System.Xml.Serialization;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using System.Xml;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Get Streaming Distribution Config Request Marshaller
+    /// GetStreamingDistributionConfig Request Marshaller
     /// </summary>       
-    public class GetStreamingDistributionConfigRequestMarshaller : IMarshaller<IRequest, GetStreamingDistributionConfigRequest>
+    public class GetStreamingDistributionConfigRequestMarshaller : IMarshaller<IRequest, GetStreamingDistributionConfigRequest> 
     {
-        
-    
-        public IRequest Marshall(GetStreamingDistributionConfigRequest getStreamingDistributionConfigRequest)
+        public IRequest Marshall(GetStreamingDistributionConfigRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(getStreamingDistributionConfigRequest, "AmazonCloudFront");
-
-
-
+            var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "GET";
-              
-            string uriResourcePath = "2014-01-31/streaming-distribution/{Id}/config"; 
-            uriResourcePath = uriResourcePath.Replace("{Id}", getStreamingDistributionConfigRequest.Id ?? "" ); 
-            
-            if (uriResourcePath.Contains("?")) 
-            {
-                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
-                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
-        
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                }
-            }
-            
+            var uriResourcePath = "/2014-05-31/streaming-distribution/{Id}/config";
+
+            uriResourcePath = uriResourcePath.Replace("{Id}", publicRequest.Id ?? string.Empty);
             request.ResourcePath = uriResourcePath;
-            
-        
+
+
             request.UseQueryString = true;
-        
-            
             return request;
         }
-    }
+
+        
+    }    
 }
-    

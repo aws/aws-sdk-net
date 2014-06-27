@@ -18,25 +18,29 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> The returned result of the corresponding request. </para>
+    /// The returned result of the corresponding request.
     /// </summary>
     public partial class ListStreamingDistributionsResult
     {
-        
-        private StreamingDistributionList streamingDistributionList;
+        private StreamingDistributionList _streamingDistributionList;
+
 
         /// <summary>
-        /// The StreamingDistributionList type.
-        ///  
+        /// Gets and sets the property StreamingDistributionList. The StreamingDistributionList
+        /// type.
         /// </summary>
         public StreamingDistributionList StreamingDistributionList
         {
-            get { return this.streamingDistributionList; }
-            set { this.streamingDistributionList = value; }
+            get { return this._streamingDistributionList; }
+            set { this._streamingDistributionList = value; }
         }
+
 
         /// <summary>
         /// Sets the StreamingDistributionList property
@@ -46,15 +50,15 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListStreamingDistributionsResult WithStreamingDistributionList(StreamingDistributionList streamingDistributionList)
         {
-            this.streamingDistributionList = streamingDistributionList;
+            this._streamingDistributionList = streamingDistributionList;
             return this;
         }
-            
 
         // Check to see if StreamingDistributionList property is set
         internal bool IsSetStreamingDistributionList()
         {
-            return this.streamingDistributionList != null;
+            return this._streamingDistributionList != null;
         }
+
     }
 }

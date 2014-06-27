@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.CloudFront.Model
 {
     ///<summary>
-    /// AmazonCloudFront exception
+    /// CloudFront exception
     /// </summary>
     public class TooManyTrustedSignersException : AmazonCloudFrontException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.CloudFront.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal TooManyTrustedSignersException(string message) 
+        public TooManyTrustedSignersException(string message) 
             : base(message) {}
           
-        internal TooManyTrustedSignersException(string message, Exception innerException) 
+        public TooManyTrustedSignersException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal TooManyTrustedSignersException(Exception innerException) 
+        public TooManyTrustedSignersException(Exception innerException) 
             : base(innerException) {}
             
-        internal TooManyTrustedSignersException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public TooManyTrustedSignersException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal TooManyTrustedSignersException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public TooManyTrustedSignersException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

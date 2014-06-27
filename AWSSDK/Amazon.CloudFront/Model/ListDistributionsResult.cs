@@ -18,25 +18,28 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> The returned result of the corresponding request. </para>
+    /// The returned result of the corresponding request.
     /// </summary>
     public partial class ListDistributionsResult
     {
-        
-        private DistributionList distributionList;
+        private DistributionList _distributionList;
+
 
         /// <summary>
-        /// The DistributionList type.
-        ///  
+        /// Gets and sets the property DistributionList. The DistributionList type.
         /// </summary>
         public DistributionList DistributionList
         {
-            get { return this.distributionList; }
-            set { this.distributionList = value; }
+            get { return this._distributionList; }
+            set { this._distributionList = value; }
         }
+
 
         /// <summary>
         /// Sets the DistributionList property
@@ -46,15 +49,15 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListDistributionsResult WithDistributionList(DistributionList distributionList)
         {
-            this.distributionList = distributionList;
+            this._distributionList = distributionList;
             return this;
         }
-            
 
         // Check to see if DistributionList property is set
         internal bool IsSetDistributionList()
         {
-            return this.distributionList != null;
+            return this._distributionList != null;
         }
+
     }
 }

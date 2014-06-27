@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.CloudFront.Model
 {
     ///<summary>
-    /// AmazonCloudFront exception
+    /// CloudFront exception
     /// </summary>
     public class InvalidRequiredProtocolException : AmazonCloudFrontException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.CloudFront.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal InvalidRequiredProtocolException(string message) 
+        public InvalidRequiredProtocolException(string message) 
             : base(message) {}
           
-        internal InvalidRequiredProtocolException(string message, Exception innerException) 
+        public InvalidRequiredProtocolException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal InvalidRequiredProtocolException(Exception innerException) 
+        public InvalidRequiredProtocolException(Exception innerException) 
             : base(innerException) {}
             
-        internal InvalidRequiredProtocolException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidRequiredProtocolException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal InvalidRequiredProtocolException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidRequiredProtocolException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

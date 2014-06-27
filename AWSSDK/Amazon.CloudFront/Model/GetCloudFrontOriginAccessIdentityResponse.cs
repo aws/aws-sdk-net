@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Returns information about the  GetCloudFrontOriginAccessIdentityResult response and response metadata.
+    /// Returns information about the GetCloudFrontOriginAccessIdentityResult response and response metadata.
     /// </summary>
     public class GetCloudFrontOriginAccessIdentityResponse : AmazonWebServiceResponse
     {
-        private GetCloudFrontOriginAccessIdentityResult getCloudFrontOriginAccessIdentityResult;
+        private GetCloudFrontOriginAccessIdentityResult _getCloudFrontOriginAccessIdentityResult;
 
         /// <summary>
         /// Gets and sets the GetCloudFrontOriginAccessIdentityResult property.
-        /// The returned result of the corresponding request.
+        /// Represents the output of a GetCloudFrontOriginAccessIdentity operation.
         /// </summary>
         public GetCloudFrontOriginAccessIdentityResult GetCloudFrontOriginAccessIdentityResult
         {
             get
             {
-                if(this.getCloudFrontOriginAccessIdentityResult == null)
+                if(this._getCloudFrontOriginAccessIdentityResult == null)
                 {
-                    this.getCloudFrontOriginAccessIdentityResult = new GetCloudFrontOriginAccessIdentityResult();
+                    this._getCloudFrontOriginAccessIdentityResult = new GetCloudFrontOriginAccessIdentityResult();
                 }
-
-                return this.getCloudFrontOriginAccessIdentityResult;
+                return this._getCloudFrontOriginAccessIdentityResult;
             }
-            set { this.getCloudFrontOriginAccessIdentityResult = value; }
+            set { this._getCloudFrontOriginAccessIdentityResult = value; }
         }
     }
 }
-    

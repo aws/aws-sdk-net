@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Returns information about the  CreateInvalidationResult response and response metadata.
+    /// Returns information about the CreateInvalidationResult response and response metadata.
     /// </summary>
     public class CreateInvalidationResponse : AmazonWebServiceResponse
     {
-        private CreateInvalidationResult createInvalidationResult;
+        private CreateInvalidationResult _createInvalidationResult;
 
         /// <summary>
         /// Gets and sets the CreateInvalidationResult property.
-        /// The returned result of the corresponding request.
+        /// Represents the output of a CreateInvalidation operation.
         /// </summary>
         public CreateInvalidationResult CreateInvalidationResult
         {
             get
             {
-                if(this.createInvalidationResult == null)
+                if(this._createInvalidationResult == null)
                 {
-                    this.createInvalidationResult = new CreateInvalidationResult();
+                    this._createInvalidationResult = new CreateInvalidationResult();
                 }
-
-                return this.createInvalidationResult;
+                return this._createInvalidationResult;
             }
-            set { this.createInvalidationResult = value; }
+            set { this._createInvalidationResult = value; }
         }
     }
 }
-    

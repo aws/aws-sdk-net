@@ -12,21 +12,30 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Signer Unmarshaller
-     /// </summary>
-    internal class SignerUnmarshaller : IUnmarshaller<Signer, XmlUnmarshallerContext>, IUnmarshaller<Signer, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Signer Object
+    /// </summary>  
+    public class SignerUnmarshaller : IUnmarshaller<Signer, XmlUnmarshallerContext>
     {
-        public Signer Unmarshall(XmlUnmarshallerContext context) 
+        public Signer Unmarshall(XmlUnmarshallerContext context)
         {
-            Signer signer = new Signer();
+            Signer unmarshalledObject = new Signer();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,45 +45,37 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
                     if (context.TestExpression("AwsAccountNumber", targetDepth))
                     {
-                        signer.AwsAccountNumber = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.AwsAccountNumber = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
                     if (context.TestExpression("KeyPairIds", targetDepth))
                     {
-                        signer.KeyPairIds = KeyPairIdsUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = KeyPairIdsUnmarshaller.GetInstance();
+                        unmarshalledObject.KeyPairIds = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return signer;
+                    return unmarshalledObject;
                 }
-            }
-                        
-
-
-            return signer;
-        }
-
-        public Signer Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
+            }          
+            return unmarshalledObject;
         }
 
         private static SignerUnmarshaller instance;
-
-        public static SignerUnmarshaller GetInstance() 
+        public static SignerUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new SignerUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new SignerUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

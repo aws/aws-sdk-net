@@ -25,24 +25,24 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the ListInvalidations operation.
-    /// <para> List invalidation batches. </para>
+    /// List invalidation batches.
     /// </summary>
-    /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.ListInvalidations"/>
-    public class ListInvalidationsRequest : AmazonWebServiceRequest
+    public partial class ListInvalidationsRequest : AmazonWebServiceRequest
     {
-        private string distributionId;
-        private string marker;
-        private string maxItems;
+        private string _distributionId;
+        private string _marker;
+        private string _maxItems;
+
 
         /// <summary>
-        /// The distribution's id.
-        ///  
+        /// Gets and sets the property DistributionId. The distribution's id.
         /// </summary>
         public string DistributionId
         {
-            get { return this.distributionId; }
-            set { this.distributionId = value; }
+            get { return this._distributionId; }
+            set { this._distributionId = value; }
         }
+
 
         /// <summary>
         /// Sets the DistributionId property
@@ -52,29 +52,32 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListInvalidationsRequest WithDistributionId(string distributionId)
         {
-            this.distributionId = distributionId;
+            this._distributionId = distributionId;
             return this;
         }
-            
 
         // Check to see if DistributionId property is set
         internal bool IsSetDistributionId()
         {
-            return this.distributionId != null;
+            return this._distributionId != null;
         }
 
+
         /// <summary>
-        /// Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned
-        /// in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results,
-        /// and so on. To get the next page of results, set the Marker to the value of the NextMarker from the current page's response. This value is
-        /// the same as the ID of the last invalidation batch on that page.
-        ///  
+        /// Gets and sets the property Marker. Use this parameter when paginating results to indicate
+        /// where to begin in your list of invalidation batches.    Because the results are returned
+        /// in decreasing order from most recent to oldest, the most recent results are on the
+        /// first page, the second page will contain earlier results, and so on.    To get the
+        /// next page of results, set the Marker to the value of the NextMarker from the current
+        /// page's response.    This value is the same as the ID of the last invalidation batch
+        /// on that page.
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
+
 
         /// <summary>
         /// Sets the Marker property
@@ -84,26 +87,27 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListInvalidationsRequest WithMarker(string marker)
         {
-            this.marker = marker;
+            this._marker = marker;
             return this;
         }
-            
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
         }
 
+
         /// <summary>
-        /// The maximum number of invalidation batches you want in the response body.
-        ///  
+        /// Gets and sets the property MaxItems. The maximum number of invalidation batches you
+        /// want in the response body.
         /// </summary>
         public string MaxItems
         {
-            get { return this.maxItems; }
-            set { this.maxItems = value; }
+            get { return this._maxItems; }
+            set { this._maxItems = value; }
         }
+
 
         /// <summary>
         /// Sets the MaxItems property
@@ -113,16 +117,15 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListInvalidationsRequest WithMaxItems(string maxItems)
         {
-            this.maxItems = maxItems;
+            this._maxItems = maxItems;
             return this;
         }
-            
 
         // Check to see if MaxItems property is set
         internal bool IsSetMaxItems()
         {
-            return this.maxItems != null;
+            return this._maxItems != null;
         }
+
     }
 }
-    

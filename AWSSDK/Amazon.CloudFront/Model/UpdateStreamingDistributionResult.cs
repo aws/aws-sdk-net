@@ -18,55 +18,30 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> The returned result of the corresponding request. </para>
+    /// The returned result of the corresponding request.
     /// </summary>
     public partial class UpdateStreamingDistributionResult
     {
-        
-        private StreamingDistribution streamingDistribution;
-        private string eTag;
+        private string _eTag;
+        private StreamingDistribution _streamingDistribution;
+
 
         /// <summary>
-        /// The streaming distribution's information.
-        ///  
-        /// </summary>
-        public StreamingDistribution StreamingDistribution
-        {
-            get { return this.streamingDistribution; }
-            set { this.streamingDistribution = value; }
-        }
-
-        /// <summary>
-        /// Sets the StreamingDistribution property
-        /// </summary>
-        /// <param name="streamingDistribution">The value to set for the StreamingDistribution property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public UpdateStreamingDistributionResult WithStreamingDistribution(StreamingDistribution streamingDistribution)
-        {
-            this.streamingDistribution = streamingDistribution;
-            return this;
-        }
-            
-
-        // Check to see if StreamingDistribution property is set
-        internal bool IsSetStreamingDistribution()
-        {
-            return this.streamingDistribution != null;
-        }
-
-        /// <summary>
-        /// The current version of the configuration. For example: E2QWRUHAPOMQZL.
-        ///  
+        /// Gets and sets the property ETag. The current version of the configuration. For example:
+        /// E2QWRUHAPOMQZL.
         /// </summary>
         public string ETag
         {
-            get { return this.eTag; }
-            set { this.eTag = value; }
+            get { return this._eTag; }
+            set { this._eTag = value; }
         }
+
 
         /// <summary>
         /// Sets the ETag property
@@ -76,15 +51,44 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateStreamingDistributionResult WithETag(string eTag)
         {
-            this.eTag = eTag;
+            this._eTag = eTag;
             return this;
         }
-            
 
         // Check to see if ETag property is set
         internal bool IsSetETag()
         {
-            return this.eTag != null;
+            return this._eTag != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property StreamingDistribution. The streaming distribution's information.
+        /// </summary>
+        public StreamingDistribution StreamingDistribution
+        {
+            get { return this._streamingDistribution; }
+            set { this._streamingDistribution = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the StreamingDistribution property
+        /// </summary>
+        /// <param name="streamingDistribution">The value to set for the StreamingDistribution property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public UpdateStreamingDistributionResult WithStreamingDistribution(StreamingDistribution streamingDistribution)
+        {
+            this._streamingDistribution = streamingDistribution;
+            return this;
+        }
+
+        // Check to see if StreamingDistribution property is set
+        internal bool IsSetStreamingDistribution()
+        {
+            return this._streamingDistribution != null;
+        }
+
     }
 }

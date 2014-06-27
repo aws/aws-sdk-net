@@ -25,23 +25,23 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the GetInvalidation operation.
-    /// <para> Get the information about an invalidation. </para>
+    /// Get the information about an invalidation.
     /// </summary>
-    /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.GetInvalidation"/>
-    public class GetInvalidationRequest : AmazonWebServiceRequest
+    public partial class GetInvalidationRequest : AmazonWebServiceRequest
     {
-        private string distributionId;
-        private string id;
+        private string _distributionId;
+        private string _id;
+
 
         /// <summary>
-        /// The distribution's id.
-        ///  
+        /// Gets and sets the property DistributionId. The distribution's id.
         /// </summary>
         public string DistributionId
         {
-            get { return this.distributionId; }
-            set { this.distributionId = value; }
+            get { return this._distributionId; }
+            set { this._distributionId = value; }
         }
+
 
         /// <summary>
         /// Sets the DistributionId property
@@ -51,26 +51,26 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetInvalidationRequest WithDistributionId(string distributionId)
         {
-            this.distributionId = distributionId;
+            this._distributionId = distributionId;
             return this;
         }
-            
 
         // Check to see if DistributionId property is set
         internal bool IsSetDistributionId()
         {
-            return this.distributionId != null;
+            return this._distributionId != null;
         }
 
+
         /// <summary>
-        /// The invalidation's id.
-        ///  
+        /// Gets and sets the property Id. The invalidation's id.
         /// </summary>
         public string Id
         {
-            get { return this.id; }
-            set { this.id = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
+
 
         /// <summary>
         /// Sets the Id property
@@ -80,16 +80,15 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetInvalidationRequest WithId(string id)
         {
-            this.id = id;
+            this._id = id;
             return this;
         }
-            
 
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;
+            return this._id != null;
         }
+
     }
 }
-    

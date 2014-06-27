@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Returns information about the  ListCloudFrontOriginAccessIdentitiesResult response and response metadata.
+    /// Returns information about the ListCloudFrontOriginAccessIdentitiesResult response and response metadata.
     /// </summary>
     public class ListCloudFrontOriginAccessIdentitiesResponse : AmazonWebServiceResponse
     {
-        private ListCloudFrontOriginAccessIdentitiesResult listCloudFrontOriginAccessIdentitiesResult;
+        private ListCloudFrontOriginAccessIdentitiesResult _listCloudFrontOriginAccessIdentitiesResult;
 
         /// <summary>
         /// Gets and sets the ListCloudFrontOriginAccessIdentitiesResult property.
-        /// The returned result of the corresponding request.
+        /// Represents the output of a ListCloudFrontOriginAccessIdentities operation.
         /// </summary>
         public ListCloudFrontOriginAccessIdentitiesResult ListCloudFrontOriginAccessIdentitiesResult
         {
             get
             {
-                if(this.listCloudFrontOriginAccessIdentitiesResult == null)
+                if(this._listCloudFrontOriginAccessIdentitiesResult == null)
                 {
-                    this.listCloudFrontOriginAccessIdentitiesResult = new ListCloudFrontOriginAccessIdentitiesResult();
+                    this._listCloudFrontOriginAccessIdentitiesResult = new ListCloudFrontOriginAccessIdentitiesResult();
                 }
-
-                return this.listCloudFrontOriginAccessIdentitiesResult;
+                return this._listCloudFrontOriginAccessIdentitiesResult;
             }
-            set { this.listCloudFrontOriginAccessIdentitiesResult = value; }
+            set { this._listCloudFrontOriginAccessIdentitiesResult = value; }
         }
     }
 }
-    

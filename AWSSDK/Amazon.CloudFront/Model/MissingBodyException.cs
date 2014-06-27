@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.CloudFront.Model
 {
     ///<summary>
-    /// AmazonCloudFront exception
+    /// CloudFront exception
     /// </summary>
     public class MissingBodyException : AmazonCloudFrontException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.CloudFront.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal MissingBodyException(string message) 
+        public MissingBodyException(string message) 
             : base(message) {}
           
-        internal MissingBodyException(string message, Exception innerException) 
+        public MissingBodyException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal MissingBodyException(Exception innerException) 
+        public MissingBodyException(Exception innerException) 
             : base(innerException) {}
             
-        internal MissingBodyException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public MissingBodyException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal MissingBodyException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public MissingBodyException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

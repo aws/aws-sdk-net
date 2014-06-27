@@ -18,28 +18,33 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> A complex type that lists the AWS accounts that were included in the TrustedSigners complex type, as well as their active CloudFront
-    /// key pair IDs, if any. </para>
+    /// A complex type that lists the AWS accounts that were    included in the TrustedSigners
+    /// complex type, as    well as their active CloudFront key pair IDs, if any.
     /// </summary>
     public partial class Signer
     {
-        
-        private string awsAccountNumber;
-        private KeyPairIds keyPairIds;
+        private string _awsAccountNumber;
+        private KeyPairIds _keyPairIds;
+
 
         /// <summary>
-        /// Specifies an AWS account that can create signed URLs. Values: self, which indicates that the AWS account that was used to create the
-        /// distribution can created signed URLs, or an AWS account number. Omit the dashes in the account number.
-        ///  
+        /// Gets and sets the property AwsAccountNumber. Specifies an AWS account that can create
+        /// signed URLs.    Values: self, which indicates that the AWS account that was used to
+        /// create    the distribution can created signed URLs, or    an AWS account number. Omit
+        /// the dashes in the account number.
         /// </summary>
         public string AwsAccountNumber
         {
-            get { return this.awsAccountNumber; }
-            set { this.awsAccountNumber = value; }
+            get { return this._awsAccountNumber; }
+            set { this._awsAccountNumber = value; }
         }
+
 
         /// <summary>
         /// Sets the AwsAccountNumber property
@@ -49,26 +54,27 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Signer WithAwsAccountNumber(string awsAccountNumber)
         {
-            this.awsAccountNumber = awsAccountNumber;
+            this._awsAccountNumber = awsAccountNumber;
             return this;
         }
-            
 
         // Check to see if AwsAccountNumber property is set
         internal bool IsSetAwsAccountNumber()
         {
-            return this.awsAccountNumber != null;
+            return this._awsAccountNumber != null;
         }
 
+
         /// <summary>
-        /// A complex type that lists the active CloudFront key pairs, if any, that are associated with AwsAccountNumber.
-        ///  
+        /// Gets and sets the property KeyPairIds. A complex type that lists the active CloudFront
+        /// key    pairs, if any, that are associated with    AwsAccountNumber.
         /// </summary>
         public KeyPairIds KeyPairIds
         {
-            get { return this.keyPairIds; }
-            set { this.keyPairIds = value; }
+            get { return this._keyPairIds; }
+            set { this._keyPairIds = value; }
         }
+
 
         /// <summary>
         /// Sets the KeyPairIds property
@@ -78,15 +84,15 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Signer WithKeyPairIds(KeyPairIds keyPairIds)
         {
-            this.keyPairIds = keyPairIds;
+            this._keyPairIds = keyPairIds;
             return this;
         }
-            
 
         // Check to see if KeyPairIds property is set
         internal bool IsSetKeyPairIds()
         {
-            return this.keyPairIds != null;
+            return this._keyPairIds != null;
         }
+
     }
 }

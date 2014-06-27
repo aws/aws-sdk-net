@@ -12,21 +12,30 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   StreamingLoggingConfig Unmarshaller
-     /// </summary>
-    internal class StreamingLoggingConfigUnmarshaller : IUnmarshaller<StreamingLoggingConfig, XmlUnmarshallerContext>, IUnmarshaller<StreamingLoggingConfig, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for StreamingLoggingConfig Object
+    /// </summary>  
+    public class StreamingLoggingConfigUnmarshaller : IUnmarshaller<StreamingLoggingConfig, XmlUnmarshallerContext>
     {
-        public StreamingLoggingConfig Unmarshall(XmlUnmarshallerContext context) 
+        public StreamingLoggingConfig Unmarshall(XmlUnmarshallerContext context)
         {
-            StreamingLoggingConfig streamingLoggingConfig = new StreamingLoggingConfig();
+            StreamingLoggingConfig unmarshalledObject = new StreamingLoggingConfig();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,51 +45,43 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("Enabled", targetDepth))
-                    {
-                        streamingLoggingConfig.Enabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
                     if (context.TestExpression("Bucket", targetDepth))
                     {
-                        streamingLoggingConfig.Bucket = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Bucket = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
+                    if (context.TestExpression("Enabled", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.GetInstance();
+                        unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Prefix", targetDepth))
                     {
-                        streamingLoggingConfig.Prefix = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Prefix = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return streamingLoggingConfig;
+                    return unmarshalledObject;
                 }
-            }
-                        
-
-
-            return streamingLoggingConfig;
-        }
-
-        public StreamingLoggingConfig Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
+            }          
+            return unmarshalledObject;
         }
 
         private static StreamingLoggingConfigUnmarshaller instance;
-
-        public static StreamingLoggingConfigUnmarshaller GetInstance() 
+        public static StreamingLoggingConfigUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new StreamingLoggingConfigUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new StreamingLoggingConfigUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

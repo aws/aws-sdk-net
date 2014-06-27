@@ -25,23 +25,23 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateInvalidation operation.
-    /// <para> Create a new invalidation. </para>
+    /// Create a new invalidation.
     /// </summary>
-    /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.CreateInvalidation"/>
-    public class CreateInvalidationRequest : AmazonWebServiceRequest
+    public partial class CreateInvalidationRequest : AmazonWebServiceRequest
     {
-        private string distributionId;
-        private InvalidationBatch invalidationBatch;
+        private string _distributionId;
+        private InvalidationBatch _invalidationBatch;
+
 
         /// <summary>
-        /// The distribution's id.
-        ///  
+        /// Gets and sets the property DistributionId. The distribution's id.
         /// </summary>
         public string DistributionId
         {
-            get { return this.distributionId; }
-            set { this.distributionId = value; }
+            get { return this._distributionId; }
+            set { this._distributionId = value; }
         }
+
 
         /// <summary>
         /// Sets the DistributionId property
@@ -51,26 +51,26 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateInvalidationRequest WithDistributionId(string distributionId)
         {
-            this.distributionId = distributionId;
+            this._distributionId = distributionId;
             return this;
         }
-            
 
         // Check to see if DistributionId property is set
         internal bool IsSetDistributionId()
         {
-            return this.distributionId != null;
+            return this._distributionId != null;
         }
 
+
         /// <summary>
-        /// The batch information for the invalidation.
-        ///  
+        /// Gets and sets the property InvalidationBatch. The batch information for the invalidation.
         /// </summary>
         public InvalidationBatch InvalidationBatch
         {
-            get { return this.invalidationBatch; }
-            set { this.invalidationBatch = value; }
+            get { return this._invalidationBatch; }
+            set { this._invalidationBatch = value; }
         }
+
 
         /// <summary>
         /// Sets the InvalidationBatch property
@@ -80,16 +80,15 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateInvalidationRequest WithInvalidationBatch(InvalidationBatch invalidationBatch)
         {
-            this.invalidationBatch = invalidationBatch;
+            this._invalidationBatch = invalidationBatch;
             return this;
         }
-            
 
         // Check to see if InvalidationBatch property is set
         internal bool IsSetInvalidationBatch()
         {
-            return this.invalidationBatch != null;
+            return this._invalidationBatch != null;
         }
+
     }
 }
-    

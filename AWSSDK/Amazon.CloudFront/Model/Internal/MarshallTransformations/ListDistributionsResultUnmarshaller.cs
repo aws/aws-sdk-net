@@ -12,60 +12,62 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ListDistributionsResult Unmarshaller
-     /// </summary>
-    internal class ListDistributionsResultUnmarshaller : IUnmarshaller<ListDistributionsResult, XmlUnmarshallerContext>, IUnmarshaller<ListDistributionsResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Result Unmarshaller for ListDistributions operation
+    /// </summary>  
+    public class ListDistributionsResultUnmarshaller : IUnmarshaller<ListDistributionsResult, XmlUnmarshallerContext>
     {
-        public ListDistributionsResult Unmarshall(XmlUnmarshallerContext context) 
+        public ListDistributionsResult Unmarshall(XmlUnmarshallerContext context)
         {
-            ListDistributionsResult listDistributionsResult = new ListDistributionsResult();
+            var unmarshalledObject = new ListDistributionsResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
                     if (context.TestExpression("DistributionList", targetDepth))
                     {
-                        listDistributionsResult.DistributionList = DistributionListUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DistributionListUnmarshaller.GetInstance();
+                        unmarshalledObject.DistributionList = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return listDistributionsResult;
+                    return unmarshalledObject;
                 }
             }
-                        
-
-
-            return listDistributionsResult;
-        }
-
-        public ListDistributionsResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
+            
+            return unmarshalledObject;
+        }        
 
         private static ListDistributionsResultUnmarshaller instance;
-
-        public static ListDistributionsResultUnmarshaller GetInstance() 
+        public static ListDistributionsResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new ListDistributionsResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new ListDistributionsResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

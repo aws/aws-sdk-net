@@ -25,22 +25,22 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the GetStreamingDistribution operation.
-    /// <para> Get the information about a streaming distribution. </para>
+    /// Get the information about a streaming distribution.
     /// </summary>
-    /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.GetStreamingDistribution"/>
-    public class GetStreamingDistributionRequest : AmazonWebServiceRequest
+    public partial class GetStreamingDistributionRequest : AmazonWebServiceRequest
     {
-        private string id;
+        private string _id;
+
 
         /// <summary>
-        /// The streaming distribution's id.
-        ///  
+        /// Gets and sets the property Id. The streaming distribution's id.
         /// </summary>
         public string Id
         {
-            get { return this.id; }
-            set { this.id = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
+
 
         /// <summary>
         /// Sets the Id property
@@ -50,16 +50,15 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetStreamingDistributionRequest WithId(string id)
         {
-            this.id = id;
+            this._id = id;
             return this;
         }
-            
 
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;
+            return this._id != null;
         }
+
     }
 }
-    

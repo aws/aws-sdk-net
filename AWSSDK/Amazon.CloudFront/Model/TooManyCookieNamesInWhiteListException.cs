@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.CloudFront.Model
 {
     ///<summary>
-    /// AmazonCloudFront exception
+    /// CloudFront exception
     /// </summary>
     public class TooManyCookieNamesInWhiteListException : AmazonCloudFrontException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.CloudFront.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal TooManyCookieNamesInWhiteListException(string message) 
+        public TooManyCookieNamesInWhiteListException(string message) 
             : base(message) {}
           
-        internal TooManyCookieNamesInWhiteListException(string message, Exception innerException) 
+        public TooManyCookieNamesInWhiteListException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal TooManyCookieNamesInWhiteListException(Exception innerException) 
+        public TooManyCookieNamesInWhiteListException(Exception innerException) 
             : base(innerException) {}
             
-        internal TooManyCookieNamesInWhiteListException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public TooManyCookieNamesInWhiteListException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal TooManyCookieNamesInWhiteListException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public TooManyCookieNamesInWhiteListException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

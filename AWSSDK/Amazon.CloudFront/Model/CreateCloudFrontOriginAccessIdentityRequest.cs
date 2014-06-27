@@ -25,22 +25,23 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCloudFrontOriginAccessIdentity operation.
-    /// <para> Create a new origin access identity. </para>
+    /// Create a new origin access identity.
     /// </summary>
-    /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.CreateCloudFrontOriginAccessIdentity"/>
-    public class CreateCloudFrontOriginAccessIdentityRequest : AmazonWebServiceRequest
+    public partial class CreateCloudFrontOriginAccessIdentityRequest : AmazonWebServiceRequest
     {
-        private CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig;
+        private CloudFrontOriginAccessIdentityConfig _cloudFrontOriginAccessIdentityConfig;
+
 
         /// <summary>
-        /// The origin access identity's configuration information.
-        ///  
+        /// Gets and sets the property CloudFrontOriginAccessIdentityConfig. The origin access
+        /// identity's configuration information.
         /// </summary>
         public CloudFrontOriginAccessIdentityConfig CloudFrontOriginAccessIdentityConfig
         {
-            get { return this.cloudFrontOriginAccessIdentityConfig; }
-            set { this.cloudFrontOriginAccessIdentityConfig = value; }
+            get { return this._cloudFrontOriginAccessIdentityConfig; }
+            set { this._cloudFrontOriginAccessIdentityConfig = value; }
         }
+
 
         /// <summary>
         /// Sets the CloudFrontOriginAccessIdentityConfig property
@@ -50,16 +51,15 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCloudFrontOriginAccessIdentityRequest WithCloudFrontOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig)
         {
-            this.cloudFrontOriginAccessIdentityConfig = cloudFrontOriginAccessIdentityConfig;
+            this._cloudFrontOriginAccessIdentityConfig = cloudFrontOriginAccessIdentityConfig;
             return this;
         }
-            
 
         // Check to see if CloudFrontOriginAccessIdentityConfig property is set
         internal bool IsSetCloudFrontOriginAccessIdentityConfig()
         {
-            return this.cloudFrontOriginAccessIdentityConfig != null;
+            return this._cloudFrontOriginAccessIdentityConfig != null;
         }
+
     }
 }
-    

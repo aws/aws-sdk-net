@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.CloudFront.Model
 {
     ///<summary>
-    /// AmazonCloudFront exception
+    /// CloudFront exception
     /// </summary>
     public class TooManyCacheBehaviorsException : AmazonCloudFrontException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.CloudFront.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal TooManyCacheBehaviorsException(string message) 
+        public TooManyCacheBehaviorsException(string message) 
             : base(message) {}
           
-        internal TooManyCacheBehaviorsException(string message, Exception innerException) 
+        public TooManyCacheBehaviorsException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal TooManyCacheBehaviorsException(Exception innerException) 
+        public TooManyCacheBehaviorsException(Exception innerException) 
             : base(innerException) {}
             
-        internal TooManyCacheBehaviorsException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public TooManyCacheBehaviorsException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal TooManyCacheBehaviorsException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public TooManyCacheBehaviorsException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

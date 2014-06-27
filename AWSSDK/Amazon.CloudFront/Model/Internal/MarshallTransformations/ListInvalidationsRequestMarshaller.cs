@@ -14,66 +14,75 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
-using System.Xml;
-using System.Xml.Serialization;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using System.Xml;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// List Invalidations Request Marshaller
+    /// ListInvalidations Request Marshaller
     /// </summary>       
-    public class ListInvalidationsRequestMarshaller : IMarshaller<IRequest, ListInvalidationsRequest>
+    public class ListInvalidationsRequestMarshaller : IMarshaller<IRequest, ListInvalidationsRequest> 
     {
-        
-    
-        public IRequest Marshall(ListInvalidationsRequest listInvalidationsRequest)
+        public IRequest Marshall(ListInvalidationsRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(listInvalidationsRequest, "AmazonCloudFront");
-
-
-
+            var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "GET";
-              
-            string uriResourcePath = "2014-01-31/distribution/{DistributionId}/invalidation?Marker={Marker}&MaxItems={MaxItems}"; 
-            uriResourcePath = uriResourcePath.Replace("{DistributionId}", listInvalidationsRequest.DistributionId ?? "" ); 
-            uriResourcePath = uriResourcePath.Replace("{Marker}", listInvalidationsRequest.Marker ?? "" ); 
-            uriResourcePath = uriResourcePath.Replace("{MaxItems}", listInvalidationsRequest.MaxItems ?? "" ); 
+            var uriResourcePath = "/2014-05-31/distribution/{DistributionId}/invalidation";
+
+            uriResourcePath = uriResourcePath.Replace("{DistributionId}", publicRequest.DistributionId ?? string.Empty);
+            var queryStringBuilder = new StringBuilder(uriResourcePath);
+            queryStringBuilder.Append("?");
             
-            if (uriResourcePath.Contains("?")) 
-            {
-                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
-                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
-        
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                }
-            }
+            if (publicRequest.IsSetMarker())
+                queryStringBuilder.AppendFormat("{0}={1};", "Marker", StringUtils.FromString(publicRequest.Marker));
             
+            if (publicRequest.IsSetMaxItems())
+                queryStringBuilder.AppendFormat("{0}={1};", "MaxItems", StringUtils.FromString(publicRequest.MaxItems));
+            uriResourcePath = queryStringBuilder.ToString();
+            // Remove the last character if it is ';' or '?' or '&'
+            uriResourcePath = uriResourcePath.TrimEnd(';', '?', '&');
+            uriResourcePath = AddQueryParameters(request,uriResourcePath);
             request.ResourcePath = uriResourcePath;
-            
-        
+
+
             request.UseQueryString = true;
-        
-            
             return request;
         }
-    }
+
+        private static string AddQueryParameters(IRequest request, string uriResourcePath)
+        {            
+            int queryIndex = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
+
+            if (queryIndex < 0)
+                return uriResourcePath;
+
+            string queryString = uriResourcePath.Substring(queryIndex + 1);
+            uriResourcePath = uriResourcePath.Substring(0, queryIndex);
+
+            foreach (string s in queryString.Split('&', ';'))
+            {
+                string[] nameValuePair = s.Split('=');
+                if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0)
+                {
+                    request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
+                }
+                else
+                {
+                    request.Parameters.Add(nameValuePair[0], null);
+                }
+            }
+            return uriResourcePath;
+        }
+        
+    }    
 }
-    

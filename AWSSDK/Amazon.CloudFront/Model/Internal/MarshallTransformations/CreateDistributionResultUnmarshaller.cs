@@ -12,63 +12,68 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   CreateDistributionResult Unmarshaller
-     /// </summary>
-    internal class CreateDistributionResultUnmarshaller : IUnmarshaller<CreateDistributionResult, XmlUnmarshallerContext>, IUnmarshaller<CreateDistributionResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Result Unmarshaller for CreateDistribution operation
+    /// </summary>  
+    public class CreateDistributionResultUnmarshaller : IUnmarshaller<CreateDistributionResult, XmlUnmarshallerContext>
     {
-        public CreateDistributionResult Unmarshall(XmlUnmarshallerContext context) 
+        public CreateDistributionResult Unmarshall(XmlUnmarshallerContext context)
         {
-            CreateDistributionResult createDistributionResult = new CreateDistributionResult();
+            var unmarshalledObject = new CreateDistributionResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
                     if (context.TestExpression("Distribution", targetDepth))
                     {
-                        createDistributionResult.Distribution = DistributionUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DistributionUnmarshaller.GetInstance();
+                        unmarshalledObject.Distribution = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return createDistributionResult;
+                    return unmarshalledObject;
                 }
             }
             
-
-            createDistributionResult.Location = context.Headers["Location"];
-            createDistributionResult.ETag = context.Headers["ETag"];            
-
-
-            return createDistributionResult;
-        }
-
-        public CreateDistributionResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
+            if (context.Headers["ETag"] != null)
+                unmarshalledObject.ETag = context.Headers["ETag"];
+            
+            if (context.Headers["Location"] != null)
+                unmarshalledObject.Location = context.Headers["Location"];
+            
+            return unmarshalledObject;
+        }        
 
         private static CreateDistributionResultUnmarshaller instance;
-
-        public static CreateDistributionResultUnmarshaller GetInstance() 
+        public static CreateDistributionResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new CreateDistributionResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new CreateDistributionResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

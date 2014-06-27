@@ -12,21 +12,30 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   CookiePreference Unmarshaller
-     /// </summary>
-    internal class CookiePreferenceUnmarshaller : IUnmarshaller<CookiePreference, XmlUnmarshallerContext>, IUnmarshaller<CookiePreference, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for CookiePreference Object
+    /// </summary>  
+    public class CookiePreferenceUnmarshaller : IUnmarshaller<CookiePreference, XmlUnmarshallerContext>
     {
-        public CookiePreference Unmarshall(XmlUnmarshallerContext context) 
+        public CookiePreference Unmarshall(XmlUnmarshallerContext context)
         {
-            CookiePreference cookiePreference = new CookiePreference();
+            CookiePreference unmarshalledObject = new CookiePreference();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,45 +45,37 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
                     if (context.TestExpression("Forward", targetDepth))
                     {
-                        cookiePreference.Forward = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Forward = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
                     if (context.TestExpression("WhitelistedNames", targetDepth))
                     {
-                        cookiePreference.WhitelistedNames = CookieNamesUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = CookieNamesUnmarshaller.GetInstance();
+                        unmarshalledObject.WhitelistedNames = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return cookiePreference;
+                    return unmarshalledObject;
                 }
-            }
-                        
-
-
-            return cookiePreference;
-        }
-
-        public CookiePreference Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
+            }          
+            return unmarshalledObject;
         }
 
         private static CookiePreferenceUnmarshaller instance;
-
-        public static CookiePreferenceUnmarshaller GetInstance() 
+        public static CookiePreferenceUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new CookiePreferenceUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new CookiePreferenceUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

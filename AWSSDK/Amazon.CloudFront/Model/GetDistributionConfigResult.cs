@@ -18,26 +18,29 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> The returned result of the corresponding request. </para>
+    /// The returned result of the corresponding request.
     /// </summary>
     public partial class GetDistributionConfigResult
     {
-        
-        private DistributionConfig distributionConfig;
-        private string eTag;
+        private DistributionConfig _distributionConfig;
+        private string _eTag;
+
 
         /// <summary>
-        /// The distribution's configuration information.
-        ///  
+        /// Gets and sets the property DistributionConfig. The distribution's configuration information.
         /// </summary>
         public DistributionConfig DistributionConfig
         {
-            get { return this.distributionConfig; }
-            set { this.distributionConfig = value; }
+            get { return this._distributionConfig; }
+            set { this._distributionConfig = value; }
         }
+
 
         /// <summary>
         /// Sets the DistributionConfig property
@@ -47,26 +50,27 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetDistributionConfigResult WithDistributionConfig(DistributionConfig distributionConfig)
         {
-            this.distributionConfig = distributionConfig;
+            this._distributionConfig = distributionConfig;
             return this;
         }
-            
 
         // Check to see if DistributionConfig property is set
         internal bool IsSetDistributionConfig()
         {
-            return this.distributionConfig != null;
+            return this._distributionConfig != null;
         }
 
+
         /// <summary>
-        /// The current version of the configuration. For example: E2QWRUHAPOMQZL.
-        ///  
+        /// Gets and sets the property ETag. The current version of the configuration. For example:
+        /// E2QWRUHAPOMQZL.
         /// </summary>
         public string ETag
         {
-            get { return this.eTag; }
-            set { this.eTag = value; }
+            get { return this._eTag; }
+            set { this._eTag = value; }
         }
+
 
         /// <summary>
         /// Sets the ETag property
@@ -76,15 +80,15 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetDistributionConfigResult WithETag(string eTag)
         {
-            this.eTag = eTag;
+            this._eTag = eTag;
             return this;
         }
-            
 
         // Check to see if ETag property is set
         internal bool IsSetETag()
         {
-            return this.eTag != null;
+            return this._eTag != null;
         }
+
     }
 }

@@ -18,56 +18,31 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> A complex type that specifies how CloudFront handles query strings. </para>
+    /// A complex type that specifies how CloudFront handles query strings, cookies and headers.
     /// </summary>
     public partial class ForwardedValues
     {
-        
-        private bool? queryString;
-        private CookiePreference cookies;
+        private CookiePreference _cookies;
+        private Headers _headers;
+        private bool? _queryString;
+
 
         /// <summary>
-        /// Indicates whether you want CloudFront to forward query strings to the origin that is associated with this cache behavior. If so, specify
-        /// true; if not, specify false.
-        ///  
-        /// </summary>
-        public bool QueryString
-        {
-            get { return this.queryString ?? default(bool); }
-            set { this.queryString = value; }
-        }
-
-        /// <summary>
-        /// Sets the QueryString property
-        /// </summary>
-        /// <param name="queryString">The value to set for the QueryString property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ForwardedValues WithQueryString(bool queryString)
-        {
-            this.queryString = queryString;
-            return this;
-        }
-            
-
-        // Check to see if QueryString property is set
-        internal bool IsSetQueryString()
-        {
-            return this.queryString.HasValue;
-        }
-
-        /// <summary>
-        /// A complex type that specifies how CloudFront handles cookies.
-        ///  
+        /// Gets and sets the property Cookies. A complex type that specifies how CloudFront handles
+        /// cookies.
         /// </summary>
         public CookiePreference Cookies
         {
-            get { return this.cookies; }
-            set { this.cookies = value; }
+            get { return this._cookies; }
+            set { this._cookies = value; }
         }
+
 
         /// <summary>
         /// Sets the Cookies property
@@ -77,15 +52,76 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ForwardedValues WithCookies(CookiePreference cookies)
         {
-            this.cookies = cookies;
+            this._cookies = cookies;
             return this;
         }
-            
 
         // Check to see if Cookies property is set
         internal bool IsSetCookies()
         {
-            return this.cookies != null;
+            return this._cookies != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Headers. A complex type that specifies the Headers, if
+        /// any, that you want CloudFront to vary upon    for this cache behavior.
+        /// </summary>
+        public Headers Headers
+        {
+            get { return this._headers; }
+            set { this._headers = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the Headers property
+        /// </summary>
+        /// <param name="headers">The value to set for the Headers property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ForwardedValues WithHeaders(Headers headers)
+        {
+            this._headers = headers;
+            return this;
+        }
+
+        // Check to see if Headers property is set
+        internal bool IsSetHeaders()
+        {
+            return this._headers != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property QueryString. Indicates whether you want CloudFront to forward
+        /// query strings to the    origin that is associated with this cache behavior. If so,
+        /// specify true; if    not, specify false.
+        /// </summary>
+        public bool QueryString
+        {
+            get { return this._queryString.GetValueOrDefault(); }
+            set { this._queryString = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the QueryString property
+        /// </summary>
+        /// <param name="queryString">The value to set for the QueryString property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ForwardedValues WithQueryString(bool queryString)
+        {
+            this._queryString = queryString;
+            return this;
+        }
+
+        // Check to see if QueryString property is set
+        internal bool IsSetQueryString()
+        {
+            return this._queryString.HasValue; 
+        }
+
     }
 }

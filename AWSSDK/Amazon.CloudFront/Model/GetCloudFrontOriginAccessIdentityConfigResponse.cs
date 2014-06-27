@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Returns information about the  GetCloudFrontOriginAccessIdentityConfigResult response and response metadata.
+    /// Returns information about the GetCloudFrontOriginAccessIdentityConfigResult response and response metadata.
     /// </summary>
     public class GetCloudFrontOriginAccessIdentityConfigResponse : AmazonWebServiceResponse
     {
-        private GetCloudFrontOriginAccessIdentityConfigResult getCloudFrontOriginAccessIdentityConfigResult;
+        private GetCloudFrontOriginAccessIdentityConfigResult _getCloudFrontOriginAccessIdentityConfigResult;
 
         /// <summary>
         /// Gets and sets the GetCloudFrontOriginAccessIdentityConfigResult property.
-        /// The returned result of the corresponding request.
+        /// Represents the output of a GetCloudFrontOriginAccessIdentityConfig operation.
         /// </summary>
         public GetCloudFrontOriginAccessIdentityConfigResult GetCloudFrontOriginAccessIdentityConfigResult
         {
             get
             {
-                if(this.getCloudFrontOriginAccessIdentityConfigResult == null)
+                if(this._getCloudFrontOriginAccessIdentityConfigResult == null)
                 {
-                    this.getCloudFrontOriginAccessIdentityConfigResult = new GetCloudFrontOriginAccessIdentityConfigResult();
+                    this._getCloudFrontOriginAccessIdentityConfigResult = new GetCloudFrontOriginAccessIdentityConfigResult();
                 }
-
-                return this.getCloudFrontOriginAccessIdentityConfigResult;
+                return this._getCloudFrontOriginAccessIdentityConfigResult;
             }
-            set { this.getCloudFrontOriginAccessIdentityConfigResult = value; }
+            set { this._getCloudFrontOriginAccessIdentityConfigResult = value; }
         }
     }
 }
-    

@@ -14,688 +14,514 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
-using System.Xml;
-using System.Xml.Serialization;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using System.Xml;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Distribution Request Marshaller
+    /// CreateDistribution Request Marshaller
     /// </summary>       
-    public class CreateDistributionRequestMarshaller : IMarshaller<IRequest, CreateDistributionRequest>
+    public class CreateDistributionRequestMarshaller : IMarshaller<IRequest, CreateDistributionRequest> 
     {
-        
-    
-        public IRequest Marshall(CreateDistributionRequest createDistributionRequest)
+        public IRequest Marshall(CreateDistributionRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(createDistributionRequest, "AmazonCloudFront");
-
-
-
+            var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "POST";
-              
-            string uriResourcePath = "2014-01-31/distribution"; 
-            
-            if (uriResourcePath.Contains("?")) 
-            {
-                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
-                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
-        
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                }
-            }
-            
+            var uriResourcePath = "/2014-05-31/distribution";
+
             request.ResourcePath = uriResourcePath;
+
             
-             
             StringWriter stringWriter = new StringWriter();
             XmlTextWriter xmlWriter = new XmlTextWriter(stringWriter);
             xmlWriter.Namespaces = true;
-                       
-                    if (createDistributionRequest != null) 
-        {
-            DistributionConfig distributionConfigDistributionConfig = createDistributionRequest.DistributionConfig;
-            if (distributionConfigDistributionConfig != null) 
-            {
-                xmlWriter.WriteStartElement("DistributionConfig", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                if (distributionConfigDistributionConfig.IsSetCallerReference()) 
-                {
-                    xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2014-01-31/", distributionConfigDistributionConfig.CallerReference.ToString());
-                  }
-                if (distributionConfigDistributionConfig != null) 
-                {
-                    Aliases aliasesAliases = distributionConfigDistributionConfig.Aliases;
-                    if (aliasesAliases != null) 
-                    {
-                        xmlWriter.WriteStartElement("Aliases", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                        if (aliasesAliases.IsSetQuantity()) 
-                        {
-                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2014-01-31/", aliasesAliases.Quantity.ToString());
-                          }
 
-                        if (aliasesAliases != null) 
+            using (xmlWriter)
+            {   
+                xmlWriter.WriteStartElement("DistributionConfig", "http://cloudfront.amazonaws.com/doc/2014-05-31/");                                
+                
+                if (publicRequest.DistributionConfig.Aliases != null) 
+                {
+                    xmlWriter.WriteStartElement("Aliases", "http://cloudfront.amazonaws.com/doc/2014-05-31/");            
+                    var publicRequestDistributionConfigAliasesItems = publicRequest.DistributionConfig.Aliases.Items;
+                    if (publicRequestDistributionConfigAliasesItems != null && publicRequestDistributionConfigAliasesItems.Count > 0) 
+                    {                        
+                        xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2014-05-31/");
+                        foreach (var publicRequestDistributionConfigAliasesItemsValue in publicRequestDistributionConfigAliasesItems) 
                         {
-                            List<string> aliasesAliasesitemsList = aliasesAliases.Items;
-                            if (aliasesAliasesitemsList != null && aliasesAliasesitemsList.Count > 0) 
+                            xmlWriter.WriteStartElement("CNAME", "http://cloudfront.amazonaws.com/doc/2014-05-31/");
+                            xmlWriter.WriteValue(publicRequestDistributionConfigAliasesItemsValue);
+                            xmlWriter.WriteEndElement();
+                        }            
+                        xmlWriter.WriteEndElement();            
+                    }
+                    if(publicRequest.DistributionConfig.Aliases.IsSetQuantity())
+                        xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequest.DistributionConfig.Aliases.Quantity.ToString());                 
+    
+                    xmlWriter.WriteEndElement();
+                }
+                
+                if (publicRequest.DistributionConfig.CacheBehaviors != null) 
+                {
+                    xmlWriter.WriteStartElement("CacheBehaviors", "http://cloudfront.amazonaws.com/doc/2014-05-31/");            
+                    var publicRequestDistributionConfigCacheBehaviorsItems = publicRequest.DistributionConfig.CacheBehaviors.Items;
+                    if (publicRequestDistributionConfigCacheBehaviorsItems != null && publicRequestDistributionConfigCacheBehaviorsItems.Count > 0) 
+                    {                        
+                        xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2014-05-31/");
+                        foreach (var publicRequestDistributionConfigCacheBehaviorsItemsValue in publicRequestDistributionConfigCacheBehaviorsItems) 
+                        {
+                        
+                        if (publicRequestDistributionConfigCacheBehaviorsItemsValue != null) 
+                        {
+                            xmlWriter.WriteStartElement("CacheBehavior", "http://cloudfront.amazonaws.com/doc/2014-05-31/");            
+                            
+                            if (publicRequestDistributionConfigCacheBehaviorsItemsValue.AllowedMethods != null) 
                             {
-                                int aliasesAliasesitemsListIndex = 1;
-                                xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                foreach (string aliasesAliasesitemsListValue in aliasesAliasesitemsList) 
-                                {
-                                    xmlWriter.WriteStartElement("CNAME", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                    xmlWriter.WriteValue(aliasesAliasesitemsListValue);
-                                xmlWriter.WriteEndElement();
-
-
-                                    aliasesAliasesitemsListIndex++;
+                                xmlWriter.WriteStartElement("AllowedMethods", "http://cloudfront.amazonaws.com/doc/2014-05-31/");            
+                                var publicRequestDistributionConfigCacheBehaviorsItemsValueAllowedMethodsItems = publicRequestDistributionConfigCacheBehaviorsItemsValue.AllowedMethods.Items;
+                                if (publicRequestDistributionConfigCacheBehaviorsItemsValueAllowedMethodsItems != null && publicRequestDistributionConfigCacheBehaviorsItemsValueAllowedMethodsItems.Count > 0) 
+                                {                        
+                                    xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2014-05-31/");
+                                    foreach (var publicRequestDistributionConfigCacheBehaviorsItemsValueAllowedMethodsItemsValue in publicRequestDistributionConfigCacheBehaviorsItemsValueAllowedMethodsItems) 
+                                    {
+                                        xmlWriter.WriteStartElement("Method", "http://cloudfront.amazonaws.com/doc/2014-05-31/");
+                                        xmlWriter.WriteValue(publicRequestDistributionConfigCacheBehaviorsItemsValueAllowedMethodsItemsValue);
+                                        xmlWriter.WriteEndElement();
+                                    }            
+                                    xmlWriter.WriteEndElement();            
                                 }
+                                if(publicRequestDistributionConfigCacheBehaviorsItemsValue.AllowedMethods.IsSetQuantity())
+                                    xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequestDistributionConfigCacheBehaviorsItemsValue.AllowedMethods.Quantity.ToString());                 
+                
                                 xmlWriter.WriteEndElement();
                             }
-                        }
-                        xmlWriter.WriteEndElement();
-                    }
-                }
-                if (distributionConfigDistributionConfig.IsSetDefaultRootObject()) 
-                {
-                    xmlWriter.WriteElementString("DefaultRootObject", "http://cloudfront.amazonaws.com/doc/2014-01-31/", distributionConfigDistributionConfig.DefaultRootObject.ToString());
-                  }
-                if (distributionConfigDistributionConfig != null) 
-                {
-                    Origins originsOrigins = distributionConfigDistributionConfig.Origins;
-                    if (originsOrigins != null) 
-                    {
-                        xmlWriter.WriteStartElement("Origins", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                        if (originsOrigins.IsSetQuantity()) 
-                        {
-                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2014-01-31/", originsOrigins.Quantity.ToString());
-                          }
-
-                        if (originsOrigins != null) 
-                        {
-                            List<Origin> originsOriginsitemsList = originsOrigins.Items;
-                            if (originsOriginsitemsList != null && originsOriginsitemsList.Count > 0) 
+                            
+                            if (publicRequestDistributionConfigCacheBehaviorsItemsValue.ForwardedValues != null) 
                             {
-                                int originsOriginsitemsListIndex = 1;
-                                xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                foreach (Origin originsOriginsitemsListValue in originsOriginsitemsList) 
+                                xmlWriter.WriteStartElement("ForwardedValues", "http://cloudfront.amazonaws.com/doc/2014-05-31/");            
+                                
+                                if (publicRequestDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Cookies != null) 
                                 {
-                                    xmlWriter.WriteStartElement("Origin", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                    if (originsOriginsitemsListValue.IsSetId()) 
+                                    xmlWriter.WriteStartElement("Cookies", "http://cloudfront.amazonaws.com/doc/2014-05-31/");            
+                                    if(publicRequestDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Cookies.IsSetForward())
+                                        xmlWriter.WriteElementString("Forward", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequestDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Cookies.Forward.ToString());                 
+                    
+                                    
+                                    if (publicRequestDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Cookies.WhitelistedNames != null) 
                                     {
-                                        xmlWriter.WriteElementString("Id", "http://cloudfront.amazonaws.com/doc/2014-01-31/", originsOriginsitemsListValue.Id.ToString());
-                                      }
-                                    if (originsOriginsitemsListValue.IsSetDomainName()) 
-                                    {
-                                        xmlWriter.WriteElementString("DomainName", "http://cloudfront.amazonaws.com/doc/2014-01-31/", originsOriginsitemsListValue.DomainName.ToString());
-                                      }
-                                    if (originsOriginsitemsListValue != null) 
-                                    {
-                                        S3OriginConfig s3OriginConfigS3OriginConfig = originsOriginsitemsListValue.S3OriginConfig;
-                                        if (s3OriginConfigS3OriginConfig != null) 
-                                        {
-                                            xmlWriter.WriteStartElement("S3OriginConfig", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                            if (s3OriginConfigS3OriginConfig.IsSetOriginAccessIdentity()) 
+                                        xmlWriter.WriteStartElement("WhitelistedNames", "http://cloudfront.amazonaws.com/doc/2014-05-31/");            
+                                        var publicRequestDistributionConfigCacheBehaviorsItemsValueForwardedValuesCookiesWhitelistedNamesItems = publicRequestDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Cookies.WhitelistedNames.Items;
+                                        if (publicRequestDistributionConfigCacheBehaviorsItemsValueForwardedValuesCookiesWhitelistedNamesItems != null && publicRequestDistributionConfigCacheBehaviorsItemsValueForwardedValuesCookiesWhitelistedNamesItems.Count > 0) 
+                                        {                        
+                                            xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2014-05-31/");
+                                            foreach (var publicRequestDistributionConfigCacheBehaviorsItemsValueForwardedValuesCookiesWhitelistedNamesItemsValue in publicRequestDistributionConfigCacheBehaviorsItemsValueForwardedValuesCookiesWhitelistedNamesItems) 
                                             {
-                                                xmlWriter.WriteElementString("OriginAccessIdentity", "http://cloudfront.amazonaws.com/doc/2014-01-31/", s3OriginConfigS3OriginConfig.OriginAccessIdentity.ToString());
-                                              }
-                                            xmlWriter.WriteEndElement();
-                                        }
-                                    }
-                                    if (originsOriginsitemsListValue != null) 
-                                    {
-                                        CustomOriginConfig customOriginConfigCustomOriginConfig = originsOriginsitemsListValue.CustomOriginConfig;
-                                        if (customOriginConfigCustomOriginConfig != null) 
-                                        {
-                                            xmlWriter.WriteStartElement("CustomOriginConfig", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                            if (customOriginConfigCustomOriginConfig.IsSetHTTPPort()) 
-                                            {
-                                                xmlWriter.WriteElementString("HTTPPort", "http://cloudfront.amazonaws.com/doc/2014-01-31/", customOriginConfigCustomOriginConfig.HTTPPort.ToString());
-                                              }
-                                            if (customOriginConfigCustomOriginConfig.IsSetHTTPSPort()) 
-                                            {
-                                                xmlWriter.WriteElementString("HTTPSPort", "http://cloudfront.amazonaws.com/doc/2014-01-31/", customOriginConfigCustomOriginConfig.HTTPSPort.ToString());
-                                              }
-                                            if (customOriginConfigCustomOriginConfig.IsSetOriginProtocolPolicy()) 
-                                            {
-                                                xmlWriter.WriteElementString("OriginProtocolPolicy", "http://cloudfront.amazonaws.com/doc/2014-01-31/", customOriginConfigCustomOriginConfig.OriginProtocolPolicy.ToString());
-                                              }
-                                            xmlWriter.WriteEndElement();
-                                        }
-                                    }
-                                xmlWriter.WriteEndElement();
-
-
-                                    originsOriginsitemsListIndex++;
-                                }
-                                xmlWriter.WriteEndElement();
-                            }
-                        }
-                        xmlWriter.WriteEndElement();
-                    }
-                }
-                if (distributionConfigDistributionConfig != null) 
-                {
-                    DefaultCacheBehavior defaultCacheBehaviorDefaultCacheBehavior = distributionConfigDistributionConfig.DefaultCacheBehavior;
-                    if (defaultCacheBehaviorDefaultCacheBehavior != null) 
-                    {
-                        xmlWriter.WriteStartElement("DefaultCacheBehavior", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                        if (defaultCacheBehaviorDefaultCacheBehavior.IsSetTargetOriginId()) 
-                        {
-                            xmlWriter.WriteElementString("TargetOriginId", "http://cloudfront.amazonaws.com/doc/2014-01-31/", defaultCacheBehaviorDefaultCacheBehavior.TargetOriginId.ToString());
-                          }
-                        if (defaultCacheBehaviorDefaultCacheBehavior != null) 
-                        {
-                            ForwardedValues forwardedValuesForwardedValues = defaultCacheBehaviorDefaultCacheBehavior.ForwardedValues;
-                            if (forwardedValuesForwardedValues != null) 
-                            {
-                                xmlWriter.WriteStartElement("ForwardedValues", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                if (forwardedValuesForwardedValues.IsSetQueryString()) 
-                                {
-                                    xmlWriter.WriteElementString("QueryString", "http://cloudfront.amazonaws.com/doc/2014-01-31/", forwardedValuesForwardedValues.QueryString.ToString().ToLower());
-                                  }
-                                if (forwardedValuesForwardedValues != null) 
-                                {
-                                    CookiePreference cookiePreferenceCookies = forwardedValuesForwardedValues.Cookies;
-                                    if (cookiePreferenceCookies != null) 
-                                    {
-                                        xmlWriter.WriteStartElement("Cookies", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                        if (cookiePreferenceCookies.IsSetForward()) 
-                                        {
-                                            xmlWriter.WriteElementString("Forward", "http://cloudfront.amazonaws.com/doc/2014-01-31/", cookiePreferenceCookies.Forward.ToString());
-                                          }
-                                        if (cookiePreferenceCookies != null) 
-                                        {
-                                            CookieNames cookieNamesWhitelistedNames = cookiePreferenceCookies.WhitelistedNames;
-                                            if (cookieNamesWhitelistedNames != null) 
-                                            {
-                                                xmlWriter.WriteStartElement("WhitelistedNames", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                                if (cookieNamesWhitelistedNames.IsSetQuantity()) 
-                                                {
-                                                    xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2014-01-31/", cookieNamesWhitelistedNames.Quantity.ToString());
-                                                  }
-
-                                                if (cookieNamesWhitelistedNames != null) 
-                                                {
-                                                    List<string> cookieNamesWhitelistedNamesitemsList = cookieNamesWhitelistedNames.Items;
-                                                    if (cookieNamesWhitelistedNamesitemsList != null && cookieNamesWhitelistedNamesitemsList.Count > 0) 
-                                                    {
-                                                        int cookieNamesWhitelistedNamesitemsListIndex = 1;
-                                                        xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                                        foreach (string cookieNamesWhitelistedNamesitemsListValue in cookieNamesWhitelistedNamesitemsList) 
-                                                        {
-                                                            xmlWriter.WriteStartElement("Name", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                                            xmlWriter.WriteValue(cookieNamesWhitelistedNamesitemsListValue);
-                                                        xmlWriter.WriteEndElement();
-
-
-                                                            cookieNamesWhitelistedNamesitemsListIndex++;
-                                                        }
-                                                        xmlWriter.WriteEndElement();
-                                                    }
-                                                }
+                                                xmlWriter.WriteStartElement("Name", "http://cloudfront.amazonaws.com/doc/2014-05-31/");
+                                                xmlWriter.WriteValue(publicRequestDistributionConfigCacheBehaviorsItemsValueForwardedValuesCookiesWhitelistedNamesItemsValue);
                                                 xmlWriter.WriteEndElement();
-                                            }
+                                            }            
+                                            xmlWriter.WriteEndElement();            
                                         }
+                                        if(publicRequestDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Cookies.WhitelistedNames.IsSetQuantity())
+                                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequestDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Cookies.WhitelistedNames.Quantity.ToString());                 
+                        
                                         xmlWriter.WriteEndElement();
                                     }
+                                    xmlWriter.WriteEndElement();
                                 }
-                                xmlWriter.WriteEndElement();
-                            }
-                        }
-                        if (defaultCacheBehaviorDefaultCacheBehavior != null) 
-                        {
-                            TrustedSigners trustedSignersTrustedSigners = defaultCacheBehaviorDefaultCacheBehavior.TrustedSigners;
-                            if (trustedSignersTrustedSigners != null) 
-                            {
-                                xmlWriter.WriteStartElement("TrustedSigners", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                if (trustedSignersTrustedSigners.IsSetEnabled()) 
+                                
+                                if (publicRequestDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Headers != null) 
                                 {
-                                    xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2014-01-31/", trustedSignersTrustedSigners.Enabled.ToString().ToLower());
-                                  }
-                                if (trustedSignersTrustedSigners.IsSetQuantity()) 
-                                {
-                                    xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2014-01-31/", trustedSignersTrustedSigners.Quantity.ToString());
-                                  }
-
-                                if (trustedSignersTrustedSigners != null) 
-                                {
-                                    List<string> trustedSignersTrustedSignersitemsList = trustedSignersTrustedSigners.Items;
-                                    if (trustedSignersTrustedSignersitemsList != null && trustedSignersTrustedSignersitemsList.Count > 0) 
-                                    {
-                                        int trustedSignersTrustedSignersitemsListIndex = 1;
-                                        xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                        foreach (string trustedSignersTrustedSignersitemsListValue in trustedSignersTrustedSignersitemsList) 
+                                    xmlWriter.WriteStartElement("Headers", "http://cloudfront.amazonaws.com/doc/2014-05-31/");            
+                                    var publicRequestDistributionConfigCacheBehaviorsItemsValueForwardedValuesHeadersItems = publicRequestDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Headers.Items;
+                                    if (publicRequestDistributionConfigCacheBehaviorsItemsValueForwardedValuesHeadersItems != null && publicRequestDistributionConfigCacheBehaviorsItemsValueForwardedValuesHeadersItems.Count > 0) 
+                                    {                        
+                                        xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2014-05-31/");
+                                        foreach (var publicRequestDistributionConfigCacheBehaviorsItemsValueForwardedValuesHeadersItemsValue in publicRequestDistributionConfigCacheBehaviorsItemsValueForwardedValuesHeadersItems) 
                                         {
-                                            xmlWriter.WriteStartElement("AwsAccountNumber", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                            xmlWriter.WriteValue(trustedSignersTrustedSignersitemsListValue);
-                                        xmlWriter.WriteEndElement();
-
-
-                                            trustedSignersTrustedSignersitemsListIndex++;
-                                        }
-                                        xmlWriter.WriteEndElement();
-                                    }
-                                }
-                                xmlWriter.WriteEndElement();
-                            }
-                        }
-                        if (defaultCacheBehaviorDefaultCacheBehavior.IsSetViewerProtocolPolicy()) 
-                        {
-                            xmlWriter.WriteElementString("ViewerProtocolPolicy", "http://cloudfront.amazonaws.com/doc/2014-01-31/", defaultCacheBehaviorDefaultCacheBehavior.ViewerProtocolPolicy.ToString());
-                          }
-                        if (defaultCacheBehaviorDefaultCacheBehavior.IsSetMinTTL()) 
-                        {
-                            xmlWriter.WriteElementString("MinTTL", "http://cloudfront.amazonaws.com/doc/2014-01-31/", defaultCacheBehaviorDefaultCacheBehavior.MinTTL.ToString());
-                          }
-                        if (defaultCacheBehaviorDefaultCacheBehavior != null) 
-                        {
-                            AllowedMethods allowedMethodsAllowedMethods = defaultCacheBehaviorDefaultCacheBehavior.AllowedMethods;
-                            if (allowedMethodsAllowedMethods != null) 
-                            {
-                                xmlWriter.WriteStartElement("AllowedMethods", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                if (allowedMethodsAllowedMethods.IsSetQuantity()) 
-                                {
-                                    xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2014-01-31/", allowedMethodsAllowedMethods.Quantity.ToString());
-                                  }
-
-                                if (allowedMethodsAllowedMethods != null) 
-                                {
-                                    List<string> allowedMethodsAllowedMethodsitemsList = allowedMethodsAllowedMethods.Items;
-                                    if (allowedMethodsAllowedMethodsitemsList != null && allowedMethodsAllowedMethodsitemsList.Count > 0) 
-                                    {
-                                        int allowedMethodsAllowedMethodsitemsListIndex = 1;
-                                        xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                        foreach (string allowedMethodsAllowedMethodsitemsListValue in allowedMethodsAllowedMethodsitemsList) 
-                                        {
-                                            xmlWriter.WriteStartElement("Method", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                            xmlWriter.WriteValue(allowedMethodsAllowedMethodsitemsListValue);
-                                        xmlWriter.WriteEndElement();
-
-
-                                            allowedMethodsAllowedMethodsitemsListIndex++;
-                                        }
-                                        xmlWriter.WriteEndElement();
-                                    }
-                                }
-                                xmlWriter.WriteEndElement();
-                            }
-                        }
-                        if (defaultCacheBehaviorDefaultCacheBehavior.IsSetSmoothStreaming()) 
-                        {
-                            xmlWriter.WriteElementString("SmoothStreaming", "http://cloudfront.amazonaws.com/doc/2014-01-31/", defaultCacheBehaviorDefaultCacheBehavior.SmoothStreaming.ToString().ToLower());
-                          }
-                        xmlWriter.WriteEndElement();
-                    }
-                }
-                if (distributionConfigDistributionConfig != null) 
-                {
-                    CacheBehaviors cacheBehaviorsCacheBehaviors = distributionConfigDistributionConfig.CacheBehaviors;
-                    if (cacheBehaviorsCacheBehaviors != null) 
-                    {
-                        xmlWriter.WriteStartElement("CacheBehaviors", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                        if (cacheBehaviorsCacheBehaviors.IsSetQuantity()) 
-                        {
-                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2014-01-31/", cacheBehaviorsCacheBehaviors.Quantity.ToString());
-                          }
-
-                        if (cacheBehaviorsCacheBehaviors != null) 
-                        {
-                            List<CacheBehavior> cacheBehaviorsCacheBehaviorsitemsList = cacheBehaviorsCacheBehaviors.Items;
-                            if (cacheBehaviorsCacheBehaviorsitemsList != null && cacheBehaviorsCacheBehaviorsitemsList.Count > 0) 
-                            {
-                                int cacheBehaviorsCacheBehaviorsitemsListIndex = 1;
-                                xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                foreach (CacheBehavior cacheBehaviorsCacheBehaviorsitemsListValue in cacheBehaviorsCacheBehaviorsitemsList) 
-                                {
-                                    xmlWriter.WriteStartElement("CacheBehavior", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                    if (cacheBehaviorsCacheBehaviorsitemsListValue.IsSetPathPattern()) 
-                                    {
-                                        xmlWriter.WriteElementString("PathPattern", "http://cloudfront.amazonaws.com/doc/2014-01-31/", cacheBehaviorsCacheBehaviorsitemsListValue.PathPattern.ToString());
-                                      }
-                                    if (cacheBehaviorsCacheBehaviorsitemsListValue.IsSetTargetOriginId()) 
-                                    {
-                                        xmlWriter.WriteElementString("TargetOriginId", "http://cloudfront.amazonaws.com/doc/2014-01-31/", cacheBehaviorsCacheBehaviorsitemsListValue.TargetOriginId.ToString());
-                                      }
-                                    if (cacheBehaviorsCacheBehaviorsitemsListValue != null) 
-                                    {
-                                        ForwardedValues forwardedValuesForwardedValues = cacheBehaviorsCacheBehaviorsitemsListValue.ForwardedValues;
-                                        if (forwardedValuesForwardedValues != null) 
-                                        {
-                                            xmlWriter.WriteStartElement("ForwardedValues", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                            if (forwardedValuesForwardedValues.IsSetQueryString()) 
-                                            {
-                                                xmlWriter.WriteElementString("QueryString", "http://cloudfront.amazonaws.com/doc/2014-01-31/", forwardedValuesForwardedValues.QueryString.ToString().ToLower());
-                                              }
-                                            if (forwardedValuesForwardedValues != null) 
-                                            {
-                                                CookiePreference cookiePreferenceCookies = forwardedValuesForwardedValues.Cookies;
-                                                if (cookiePreferenceCookies != null) 
-                                                {
-                                                    xmlWriter.WriteStartElement("Cookies", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                                    if (cookiePreferenceCookies.IsSetForward()) 
-                                                    {
-                                                        xmlWriter.WriteElementString("Forward", "http://cloudfront.amazonaws.com/doc/2014-01-31/", cookiePreferenceCookies.Forward.ToString());
-                                                      }
-                                                    if (cookiePreferenceCookies != null) 
-                                                    {
-                                                        CookieNames cookieNamesWhitelistedNames = cookiePreferenceCookies.WhitelistedNames;
-                                                        if (cookieNamesWhitelistedNames != null) 
-                                                        {
-                                                            xmlWriter.WriteStartElement("WhitelistedNames", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                                            if (cookieNamesWhitelistedNames.IsSetQuantity()) 
-                                                            {
-                                                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2014-01-31/", cookieNamesWhitelistedNames.Quantity.ToString());
-                                                              }
-
-                                                            if (cookieNamesWhitelistedNames != null) 
-                                                            {
-                                                                List<string> cookieNamesWhitelistedNamesitemsList = cookieNamesWhitelistedNames.Items;
-                                                                if (cookieNamesWhitelistedNamesitemsList != null && cookieNamesWhitelistedNamesitemsList.Count > 0) 
-                                                                {
-                                                                    int cookieNamesWhitelistedNamesitemsListIndex = 1;
-                                                                    xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                                                    foreach (string cookieNamesWhitelistedNamesitemsListValue in cookieNamesWhitelistedNamesitemsList) 
-                                                                    {
-                                                                        xmlWriter.WriteStartElement("Name", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                                                        xmlWriter.WriteValue(cookieNamesWhitelistedNamesitemsListValue);
-                                                                    xmlWriter.WriteEndElement();
-
-
-                                                                        cookieNamesWhitelistedNamesitemsListIndex++;
-                                                                    }
-                                                                    xmlWriter.WriteEndElement();
-                                                                }
-                                                            }
-                                                            xmlWriter.WriteEndElement();
-                                                        }
-                                                    }
-                                                    xmlWriter.WriteEndElement();
-                                                }
-                                            }
+                                            xmlWriter.WriteStartElement("Name", "http://cloudfront.amazonaws.com/doc/2014-05-31/");
+                                            xmlWriter.WriteValue(publicRequestDistributionConfigCacheBehaviorsItemsValueForwardedValuesHeadersItemsValue);
                                             xmlWriter.WriteEndElement();
-                                        }
+                                        }            
+                                        xmlWriter.WriteEndElement();            
                                     }
-                                    if (cacheBehaviorsCacheBehaviorsitemsListValue != null) 
-                                    {
-                                        TrustedSigners trustedSignersTrustedSigners = cacheBehaviorsCacheBehaviorsitemsListValue.TrustedSigners;
-                                        if (trustedSignersTrustedSigners != null) 
-                                        {
-                                            xmlWriter.WriteStartElement("TrustedSigners", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                            if (trustedSignersTrustedSigners.IsSetEnabled()) 
-                                            {
-                                                xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2014-01-31/", trustedSignersTrustedSigners.Enabled.ToString().ToLower());
-                                              }
-                                            if (trustedSignersTrustedSigners.IsSetQuantity()) 
-                                            {
-                                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2014-01-31/", trustedSignersTrustedSigners.Quantity.ToString());
-                                              }
-
-                                            if (trustedSignersTrustedSigners != null) 
-                                            {
-                                                List<string> trustedSignersTrustedSignersitemsList = trustedSignersTrustedSigners.Items;
-                                                if (trustedSignersTrustedSignersitemsList != null && trustedSignersTrustedSignersitemsList.Count > 0) 
-                                                {
-                                                    int trustedSignersTrustedSignersitemsListIndex = 1;
-                                                    xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                                    foreach (string trustedSignersTrustedSignersitemsListValue in trustedSignersTrustedSignersitemsList) 
-                                                    {
-                                                        xmlWriter.WriteStartElement("AwsAccountNumber", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                                        xmlWriter.WriteValue(trustedSignersTrustedSignersitemsListValue);
-                                                    xmlWriter.WriteEndElement();
-
-
-                                                        trustedSignersTrustedSignersitemsListIndex++;
-                                                    }
-                                                    xmlWriter.WriteEndElement();
-                                                }
-                                            }
-                                            xmlWriter.WriteEndElement();
-                                        }
-                                    }
-                                    if (cacheBehaviorsCacheBehaviorsitemsListValue.IsSetViewerProtocolPolicy()) 
-                                    {
-                                        xmlWriter.WriteElementString("ViewerProtocolPolicy", "http://cloudfront.amazonaws.com/doc/2014-01-31/", cacheBehaviorsCacheBehaviorsitemsListValue.ViewerProtocolPolicy.ToString());
-                                      }
-                                    if (cacheBehaviorsCacheBehaviorsitemsListValue.IsSetMinTTL()) 
-                                    {
-                                        xmlWriter.WriteElementString("MinTTL", "http://cloudfront.amazonaws.com/doc/2014-01-31/", cacheBehaviorsCacheBehaviorsitemsListValue.MinTTL.ToString());
-                                      }
-                                    if (cacheBehaviorsCacheBehaviorsitemsListValue != null) 
-                                    {
-                                        AllowedMethods allowedMethodsAllowedMethods = cacheBehaviorsCacheBehaviorsitemsListValue.AllowedMethods;
-                                        if (allowedMethodsAllowedMethods != null) 
-                                        {
-                                            xmlWriter.WriteStartElement("AllowedMethods", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                            if (allowedMethodsAllowedMethods.IsSetQuantity()) 
-                                            {
-                                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2014-01-31/", allowedMethodsAllowedMethods.Quantity.ToString());
-                                              }
-
-                                            if (allowedMethodsAllowedMethods != null) 
-                                            {
-                                                List<string> allowedMethodsAllowedMethodsitemsList = allowedMethodsAllowedMethods.Items;
-                                                if (allowedMethodsAllowedMethodsitemsList != null && allowedMethodsAllowedMethodsitemsList.Count > 0) 
-                                                {
-                                                    int allowedMethodsAllowedMethodsitemsListIndex = 1;
-                                                    xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                                    foreach (string allowedMethodsAllowedMethodsitemsListValue in allowedMethodsAllowedMethodsitemsList) 
-                                                    {
-                                                        xmlWriter.WriteStartElement("Method", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                                        xmlWriter.WriteValue(allowedMethodsAllowedMethodsitemsListValue);
-                                                    xmlWriter.WriteEndElement();
-
-
-                                                        allowedMethodsAllowedMethodsitemsListIndex++;
-                                                    }
-                                                    xmlWriter.WriteEndElement();
-                                                }
-                                            }
-                                            xmlWriter.WriteEndElement();
-                                        }
-                                    }
-                                    if (cacheBehaviorsCacheBehaviorsitemsListValue.IsSetSmoothStreaming()) 
-                                    {
-                                        xmlWriter.WriteElementString("SmoothStreaming", "http://cloudfront.amazonaws.com/doc/2014-01-31/", cacheBehaviorsCacheBehaviorsitemsListValue.SmoothStreaming.ToString().ToLower());
-                                      }
-                                xmlWriter.WriteEndElement();
-
-
-                                    cacheBehaviorsCacheBehaviorsitemsListIndex++;
+                                    if(publicRequestDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Headers.IsSetQuantity())
+                                        xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequestDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Headers.Quantity.ToString());                 
+                    
+                                    xmlWriter.WriteEndElement();
                                 }
+                                if(publicRequestDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.IsSetQueryString())
+                                    xmlWriter.WriteElementString("QueryString", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequestDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.QueryString.ToString().ToLower());                 
+                
                                 xmlWriter.WriteEndElement();
                             }
-                        }
-                        xmlWriter.WriteEndElement();
-                    }
-                }
-                if (distributionConfigDistributionConfig != null) 
-                {
-                    CustomErrorResponses customErrorResponsesCustomErrorResponses = distributionConfigDistributionConfig.CustomErrorResponses;
-                    if (customErrorResponsesCustomErrorResponses != null) 
-                    {
-                        xmlWriter.WriteStartElement("CustomErrorResponses", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                        if (customErrorResponsesCustomErrorResponses.IsSetQuantity()) 
-                        {
-                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2014-01-31/", customErrorResponsesCustomErrorResponses.Quantity.ToString());
-                          }
-
-                        if (customErrorResponsesCustomErrorResponses != null) 
-                        {
-                            List<CustomErrorResponse> customErrorResponsesCustomErrorResponsesitemsList = customErrorResponsesCustomErrorResponses.Items;
-                            if (customErrorResponsesCustomErrorResponsesitemsList != null && customErrorResponsesCustomErrorResponsesitemsList.Count > 0) 
+                            if(publicRequestDistributionConfigCacheBehaviorsItemsValue.IsSetMinTTL())
+                                xmlWriter.WriteElementString("MinTTL", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequestDistributionConfigCacheBehaviorsItemsValue.MinTTL.ToString());                 
+            
+                            if(publicRequestDistributionConfigCacheBehaviorsItemsValue.IsSetPathPattern())
+                                xmlWriter.WriteElementString("PathPattern", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequestDistributionConfigCacheBehaviorsItemsValue.PathPattern.ToString());                 
+            
+                            if(publicRequestDistributionConfigCacheBehaviorsItemsValue.IsSetSmoothStreaming())
+                                xmlWriter.WriteElementString("SmoothStreaming", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequestDistributionConfigCacheBehaviorsItemsValue.SmoothStreaming.ToString().ToLower());                 
+            
+                            if(publicRequestDistributionConfigCacheBehaviorsItemsValue.IsSetTargetOriginId())
+                                xmlWriter.WriteElementString("TargetOriginId", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequestDistributionConfigCacheBehaviorsItemsValue.TargetOriginId.ToString());                 
+            
+                            
+                            if (publicRequestDistributionConfigCacheBehaviorsItemsValue.TrustedSigners != null) 
                             {
-                                int customErrorResponsesCustomErrorResponsesitemsListIndex = 1;
-                                xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                foreach (CustomErrorResponse customErrorResponsesCustomErrorResponsesitemsListValue in customErrorResponsesCustomErrorResponsesitemsList) 
-                                {
-                                    xmlWriter.WriteStartElement("CustomErrorResponse", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                    if (customErrorResponsesCustomErrorResponsesitemsListValue.IsSetErrorCode()) 
+                                xmlWriter.WriteStartElement("TrustedSigners", "http://cloudfront.amazonaws.com/doc/2014-05-31/");            
+                                if(publicRequestDistributionConfigCacheBehaviorsItemsValue.TrustedSigners.IsSetEnabled())
+                                    xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequestDistributionConfigCacheBehaviorsItemsValue.TrustedSigners.Enabled.ToString().ToLower());                 
+                
+                                var publicRequestDistributionConfigCacheBehaviorsItemsValueTrustedSignersItems = publicRequestDistributionConfigCacheBehaviorsItemsValue.TrustedSigners.Items;
+                                if (publicRequestDistributionConfigCacheBehaviorsItemsValueTrustedSignersItems != null && publicRequestDistributionConfigCacheBehaviorsItemsValueTrustedSignersItems.Count > 0) 
+                                {                        
+                                    xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2014-05-31/");
+                                    foreach (var publicRequestDistributionConfigCacheBehaviorsItemsValueTrustedSignersItemsValue in publicRequestDistributionConfigCacheBehaviorsItemsValueTrustedSignersItems) 
                                     {
-                                        xmlWriter.WriteElementString("ErrorCode", "http://cloudfront.amazonaws.com/doc/2014-01-31/", customErrorResponsesCustomErrorResponsesitemsListValue.ErrorCode.ToString());
-                                      }
-                                    if (customErrorResponsesCustomErrorResponsesitemsListValue.IsSetResponsePagePath()) 
-                                    {
-                                        xmlWriter.WriteElementString("ResponsePagePath", "http://cloudfront.amazonaws.com/doc/2014-01-31/", customErrorResponsesCustomErrorResponsesitemsListValue.ResponsePagePath.ToString());
-                                      }
-                                    if (customErrorResponsesCustomErrorResponsesitemsListValue.IsSetResponseCode()) 
-                                    {
-                                        xmlWriter.WriteElementString("ResponseCode", "http://cloudfront.amazonaws.com/doc/2014-01-31/", customErrorResponsesCustomErrorResponsesitemsListValue.ResponseCode.ToString());
-                                      }
-                                    if (customErrorResponsesCustomErrorResponsesitemsListValue.IsSetErrorCachingMinTTL()) 
-                                    {
-                                        xmlWriter.WriteElementString("ErrorCachingMinTTL", "http://cloudfront.amazonaws.com/doc/2014-01-31/", customErrorResponsesCustomErrorResponsesitemsListValue.ErrorCachingMinTTL.ToString());
-                                      }
-                                xmlWriter.WriteEndElement();
-
-
-                                    customErrorResponsesCustomErrorResponsesitemsListIndex++;
+                                        xmlWriter.WriteStartElement("AwsAccountNumber", "http://cloudfront.amazonaws.com/doc/2014-05-31/");
+                                        xmlWriter.WriteValue(publicRequestDistributionConfigCacheBehaviorsItemsValueTrustedSignersItemsValue);
+                                        xmlWriter.WriteEndElement();
+                                    }            
+                                    xmlWriter.WriteEndElement();            
                                 }
+                                if(publicRequestDistributionConfigCacheBehaviorsItemsValue.TrustedSigners.IsSetQuantity())
+                                    xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequestDistributionConfigCacheBehaviorsItemsValue.TrustedSigners.Quantity.ToString());                 
+                
                                 xmlWriter.WriteEndElement();
                             }
+                            if(publicRequestDistributionConfigCacheBehaviorsItemsValue.IsSetViewerProtocolPolicy())
+                                xmlWriter.WriteElementString("ViewerProtocolPolicy", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequestDistributionConfigCacheBehaviorsItemsValue.ViewerProtocolPolicy.ToString());                 
+            
+                            xmlWriter.WriteEndElement();
                         }
-                        xmlWriter.WriteEndElement();
+                        }            
+                        xmlWriter.WriteEndElement();            
                     }
+                    if(publicRequest.DistributionConfig.CacheBehaviors.IsSetQuantity())
+                        xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequest.DistributionConfig.CacheBehaviors.Quantity.ToString());                 
+    
+                    xmlWriter.WriteEndElement();
                 }
-                if (distributionConfigDistributionConfig.IsSetComment()) 
+                if(publicRequest.DistributionConfig.IsSetCallerReference())
+                    xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequest.DistributionConfig.CallerReference.ToString());                    
+
+                if(publicRequest.DistributionConfig.IsSetComment())
+                    xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequest.DistributionConfig.Comment.ToString());                    
+
+                
+                if (publicRequest.DistributionConfig.CustomErrorResponses != null) 
                 {
-                    xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2014-01-31/", distributionConfigDistributionConfig.Comment.ToString());
-                  }
-                if (distributionConfigDistributionConfig != null) 
-                {
-                    LoggingConfig loggingConfigLogging = distributionConfigDistributionConfig.Logging;
-                    if (loggingConfigLogging != null) 
-                    {
-                        xmlWriter.WriteStartElement("Logging", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                        if (loggingConfigLogging.IsSetEnabled()) 
+                    xmlWriter.WriteStartElement("CustomErrorResponses", "http://cloudfront.amazonaws.com/doc/2014-05-31/");            
+                    var publicRequestDistributionConfigCustomErrorResponsesItems = publicRequest.DistributionConfig.CustomErrorResponses.Items;
+                    if (publicRequestDistributionConfigCustomErrorResponsesItems != null && publicRequestDistributionConfigCustomErrorResponsesItems.Count > 0) 
+                    {                        
+                        xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2014-05-31/");
+                        foreach (var publicRequestDistributionConfigCustomErrorResponsesItemsValue in publicRequestDistributionConfigCustomErrorResponsesItems) 
                         {
-                            xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2014-01-31/", loggingConfigLogging.Enabled.ToString().ToLower());
-                          }
-                        if (loggingConfigLogging.IsSetIncludeCookies()) 
+                        
+                        if (publicRequestDistributionConfigCustomErrorResponsesItemsValue != null) 
                         {
-                            xmlWriter.WriteElementString("IncludeCookies", "http://cloudfront.amazonaws.com/doc/2014-01-31/", loggingConfigLogging.IncludeCookies.ToString().ToLower());
-                          }
-                        if (loggingConfigLogging.IsSetBucket()) 
-                        {
-                            xmlWriter.WriteElementString("Bucket", "http://cloudfront.amazonaws.com/doc/2014-01-31/", loggingConfigLogging.Bucket.ToString());
-                          }
-                        if (loggingConfigLogging.IsSetPrefix()) 
-                        {
-                            xmlWriter.WriteElementString("Prefix", "http://cloudfront.amazonaws.com/doc/2014-01-31/", loggingConfigLogging.Prefix.ToString());
-                          }
-                        xmlWriter.WriteEndElement();
+                            xmlWriter.WriteStartElement("CustomErrorResponse", "http://cloudfront.amazonaws.com/doc/2014-05-31/");            
+                            if(publicRequestDistributionConfigCustomErrorResponsesItemsValue.IsSetErrorCachingMinTTL())
+                                xmlWriter.WriteElementString("ErrorCachingMinTTL", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequestDistributionConfigCustomErrorResponsesItemsValue.ErrorCachingMinTTL.ToString());                 
+            
+                            if(publicRequestDistributionConfigCustomErrorResponsesItemsValue.IsSetErrorCode())
+                                xmlWriter.WriteElementString("ErrorCode", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequestDistributionConfigCustomErrorResponsesItemsValue.ErrorCode.ToString());                 
+            
+                            if(publicRequestDistributionConfigCustomErrorResponsesItemsValue.IsSetResponseCode())
+                                xmlWriter.WriteElementString("ResponseCode", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequestDistributionConfigCustomErrorResponsesItemsValue.ResponseCode.ToString());                 
+            
+                            if(publicRequestDistributionConfigCustomErrorResponsesItemsValue.IsSetResponsePagePath())
+                                xmlWriter.WriteElementString("ResponsePagePath", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequestDistributionConfigCustomErrorResponsesItemsValue.ResponsePagePath.ToString());                 
+            
+                            xmlWriter.WriteEndElement();
+                        }
+                        }            
+                        xmlWriter.WriteEndElement();            
                     }
+                    if(publicRequest.DistributionConfig.CustomErrorResponses.IsSetQuantity())
+                        xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequest.DistributionConfig.CustomErrorResponses.Quantity.ToString());                 
+    
+                    xmlWriter.WriteEndElement();
                 }
-                if (distributionConfigDistributionConfig.IsSetPriceClass()) 
+                
+                if (publicRequest.DistributionConfig.DefaultCacheBehavior != null) 
                 {
-                    xmlWriter.WriteElementString("PriceClass", "http://cloudfront.amazonaws.com/doc/2014-01-31/", distributionConfigDistributionConfig.PriceClass.ToString());
-                  }
-                if (distributionConfigDistributionConfig.IsSetEnabled()) 
-                {
-                    xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2014-01-31/", distributionConfigDistributionConfig.Enabled.ToString().ToLower());
-                  }
-                if (distributionConfigDistributionConfig != null) 
-                {
-                    ViewerCertificate viewerCertificateViewerCertificate = distributionConfigDistributionConfig.ViewerCertificate;
-                    if (viewerCertificateViewerCertificate != null) 
+                    xmlWriter.WriteStartElement("DefaultCacheBehavior", "http://cloudfront.amazonaws.com/doc/2014-05-31/");            
+                    
+                    if (publicRequest.DistributionConfig.DefaultCacheBehavior.AllowedMethods != null) 
                     {
-                        xmlWriter.WriteStartElement("ViewerCertificate", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                        if (viewerCertificateViewerCertificate.IsSetIAMCertificateId()) 
-                        {
-                            xmlWriter.WriteElementString("IAMCertificateId", "http://cloudfront.amazonaws.com/doc/2014-01-31/", viewerCertificateViewerCertificate.IAMCertificateId.ToString());
-                          }
-                        if (viewerCertificateViewerCertificate.IsSetCloudFrontDefaultCertificate()) 
-                        {
-                            xmlWriter.WriteElementString("CloudFrontDefaultCertificate", "http://cloudfront.amazonaws.com/doc/2014-01-31/", viewerCertificateViewerCertificate.CloudFrontDefaultCertificate.ToString().ToLower());
-                          }
-                        if (viewerCertificateViewerCertificate.IsSetSSLSupportMethod()) 
-                        {
-                            xmlWriter.WriteElementString("SSLSupportMethod", "http://cloudfront.amazonaws.com/doc/2014-01-31/", viewerCertificateViewerCertificate.SSLSupportMethod.ToString());
-                          }
-                        xmlWriter.WriteEndElement();
-                    }
-                }
-                if (distributionConfigDistributionConfig != null) 
-                {
-                    Restrictions restrictionsRestrictions = distributionConfigDistributionConfig.Restrictions;
-                    if (restrictionsRestrictions != null) 
-                    {
-                        xmlWriter.WriteStartElement("Restrictions", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                        if (restrictionsRestrictions != null) 
-                        {
-                            GeoRestriction geoRestrictionGeoRestriction = restrictionsRestrictions.GeoRestriction;
-                            if (geoRestrictionGeoRestriction != null) 
+                        xmlWriter.WriteStartElement("AllowedMethods", "http://cloudfront.amazonaws.com/doc/2014-05-31/");            
+                        var publicRequestDistributionConfigDefaultCacheBehaviorAllowedMethodsItems = publicRequest.DistributionConfig.DefaultCacheBehavior.AllowedMethods.Items;
+                        if (publicRequestDistributionConfigDefaultCacheBehaviorAllowedMethodsItems != null && publicRequestDistributionConfigDefaultCacheBehaviorAllowedMethodsItems.Count > 0) 
+                        {                        
+                            xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2014-05-31/");
+                            foreach (var publicRequestDistributionConfigDefaultCacheBehaviorAllowedMethodsItemsValue in publicRequestDistributionConfigDefaultCacheBehaviorAllowedMethodsItems) 
                             {
-                                xmlWriter.WriteStartElement("GeoRestriction", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                if (geoRestrictionGeoRestriction.IsSetRestrictionType()) 
-                                {
-                                    xmlWriter.WriteElementString("RestrictionType", "http://cloudfront.amazonaws.com/doc/2014-01-31/", geoRestrictionGeoRestriction.RestrictionType.ToString());
-                                  }
-                                if (geoRestrictionGeoRestriction.IsSetQuantity()) 
-                                {
-                                    xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2014-01-31/", geoRestrictionGeoRestriction.Quantity.ToString());
-                                  }
-
-                                if (geoRestrictionGeoRestriction != null) 
-                                {
-                                    List<string> geoRestrictionGeoRestrictionitemsList = geoRestrictionGeoRestriction.Items;
-                                    if (geoRestrictionGeoRestrictionitemsList != null && geoRestrictionGeoRestrictionitemsList.Count > 0) 
-                                    {
-                                        int geoRestrictionGeoRestrictionitemsListIndex = 1;
-                                        xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                        foreach (string geoRestrictionGeoRestrictionitemsListValue in geoRestrictionGeoRestrictionitemsList) 
-                                        {
-                                            xmlWriter.WriteStartElement("Location", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                                            xmlWriter.WriteValue(geoRestrictionGeoRestrictionitemsListValue);
-                                        xmlWriter.WriteEndElement();
-
-
-                                            geoRestrictionGeoRestrictionitemsListIndex++;
-                                        }
-                                        xmlWriter.WriteEndElement();
-                                    }
-                                }
+                                xmlWriter.WriteStartElement("Method", "http://cloudfront.amazonaws.com/doc/2014-05-31/");
+                                xmlWriter.WriteValue(publicRequestDistributionConfigDefaultCacheBehaviorAllowedMethodsItemsValue);
                                 xmlWriter.WriteEndElement();
-                            }
+                            }            
+                            xmlWriter.WriteEndElement();            
                         }
+                        if(publicRequest.DistributionConfig.DefaultCacheBehavior.AllowedMethods.IsSetQuantity())
+                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequest.DistributionConfig.DefaultCacheBehavior.AllowedMethods.Quantity.ToString());                 
+        
                         xmlWriter.WriteEndElement();
                     }
+                    
+                    if (publicRequest.DistributionConfig.DefaultCacheBehavior.ForwardedValues != null) 
+                    {
+                        xmlWriter.WriteStartElement("ForwardedValues", "http://cloudfront.amazonaws.com/doc/2014-05-31/");            
+                        
+                        if (publicRequest.DistributionConfig.DefaultCacheBehavior.ForwardedValues.Cookies != null) 
+                        {
+                            xmlWriter.WriteStartElement("Cookies", "http://cloudfront.amazonaws.com/doc/2014-05-31/");            
+                            if(publicRequest.DistributionConfig.DefaultCacheBehavior.ForwardedValues.Cookies.IsSetForward())
+                                xmlWriter.WriteElementString("Forward", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequest.DistributionConfig.DefaultCacheBehavior.ForwardedValues.Cookies.Forward.ToString());                 
+            
+                            
+                            if (publicRequest.DistributionConfig.DefaultCacheBehavior.ForwardedValues.Cookies.WhitelistedNames != null) 
+                            {
+                                xmlWriter.WriteStartElement("WhitelistedNames", "http://cloudfront.amazonaws.com/doc/2014-05-31/");            
+                                var publicRequestDistributionConfigDefaultCacheBehaviorForwardedValuesCookiesWhitelistedNamesItems = publicRequest.DistributionConfig.DefaultCacheBehavior.ForwardedValues.Cookies.WhitelistedNames.Items;
+                                if (publicRequestDistributionConfigDefaultCacheBehaviorForwardedValuesCookiesWhitelistedNamesItems != null && publicRequestDistributionConfigDefaultCacheBehaviorForwardedValuesCookiesWhitelistedNamesItems.Count > 0) 
+                                {                        
+                                    xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2014-05-31/");
+                                    foreach (var publicRequestDistributionConfigDefaultCacheBehaviorForwardedValuesCookiesWhitelistedNamesItemsValue in publicRequestDistributionConfigDefaultCacheBehaviorForwardedValuesCookiesWhitelistedNamesItems) 
+                                    {
+                                        xmlWriter.WriteStartElement("Name", "http://cloudfront.amazonaws.com/doc/2014-05-31/");
+                                        xmlWriter.WriteValue(publicRequestDistributionConfigDefaultCacheBehaviorForwardedValuesCookiesWhitelistedNamesItemsValue);
+                                        xmlWriter.WriteEndElement();
+                                    }            
+                                    xmlWriter.WriteEndElement();            
+                                }
+                                if(publicRequest.DistributionConfig.DefaultCacheBehavior.ForwardedValues.Cookies.WhitelistedNames.IsSetQuantity())
+                                    xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequest.DistributionConfig.DefaultCacheBehavior.ForwardedValues.Cookies.WhitelistedNames.Quantity.ToString());                 
+                
+                                xmlWriter.WriteEndElement();
+                            }
+                            xmlWriter.WriteEndElement();
+                        }
+                        
+                        if (publicRequest.DistributionConfig.DefaultCacheBehavior.ForwardedValues.Headers != null) 
+                        {
+                            xmlWriter.WriteStartElement("Headers", "http://cloudfront.amazonaws.com/doc/2014-05-31/");            
+                            var publicRequestDistributionConfigDefaultCacheBehaviorForwardedValuesHeadersItems = publicRequest.DistributionConfig.DefaultCacheBehavior.ForwardedValues.Headers.Items;
+                            if (publicRequestDistributionConfigDefaultCacheBehaviorForwardedValuesHeadersItems != null && publicRequestDistributionConfigDefaultCacheBehaviorForwardedValuesHeadersItems.Count > 0) 
+                            {                        
+                                xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2014-05-31/");
+                                foreach (var publicRequestDistributionConfigDefaultCacheBehaviorForwardedValuesHeadersItemsValue in publicRequestDistributionConfigDefaultCacheBehaviorForwardedValuesHeadersItems) 
+                                {
+                                    xmlWriter.WriteStartElement("Name", "http://cloudfront.amazonaws.com/doc/2014-05-31/");
+                                    xmlWriter.WriteValue(publicRequestDistributionConfigDefaultCacheBehaviorForwardedValuesHeadersItemsValue);
+                                    xmlWriter.WriteEndElement();
+                                }            
+                                xmlWriter.WriteEndElement();            
+                            }
+                            if(publicRequest.DistributionConfig.DefaultCacheBehavior.ForwardedValues.Headers.IsSetQuantity())
+                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequest.DistributionConfig.DefaultCacheBehavior.ForwardedValues.Headers.Quantity.ToString());                 
+            
+                            xmlWriter.WriteEndElement();
+                        }
+                        if(publicRequest.DistributionConfig.DefaultCacheBehavior.ForwardedValues.IsSetQueryString())
+                            xmlWriter.WriteElementString("QueryString", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequest.DistributionConfig.DefaultCacheBehavior.ForwardedValues.QueryString.ToString().ToLower());                 
+        
+                        xmlWriter.WriteEndElement();
+                    }
+                    if(publicRequest.DistributionConfig.DefaultCacheBehavior.IsSetMinTTL())
+                        xmlWriter.WriteElementString("MinTTL", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequest.DistributionConfig.DefaultCacheBehavior.MinTTL.ToString());                 
+    
+                    if(publicRequest.DistributionConfig.DefaultCacheBehavior.IsSetSmoothStreaming())
+                        xmlWriter.WriteElementString("SmoothStreaming", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequest.DistributionConfig.DefaultCacheBehavior.SmoothStreaming.ToString().ToLower());                 
+    
+                    if(publicRequest.DistributionConfig.DefaultCacheBehavior.IsSetTargetOriginId())
+                        xmlWriter.WriteElementString("TargetOriginId", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequest.DistributionConfig.DefaultCacheBehavior.TargetOriginId.ToString());                 
+    
+                    
+                    if (publicRequest.DistributionConfig.DefaultCacheBehavior.TrustedSigners != null) 
+                    {
+                        xmlWriter.WriteStartElement("TrustedSigners", "http://cloudfront.amazonaws.com/doc/2014-05-31/");            
+                        if(publicRequest.DistributionConfig.DefaultCacheBehavior.TrustedSigners.IsSetEnabled())
+                            xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequest.DistributionConfig.DefaultCacheBehavior.TrustedSigners.Enabled.ToString().ToLower());                 
+        
+                        var publicRequestDistributionConfigDefaultCacheBehaviorTrustedSignersItems = publicRequest.DistributionConfig.DefaultCacheBehavior.TrustedSigners.Items;
+                        if (publicRequestDistributionConfigDefaultCacheBehaviorTrustedSignersItems != null && publicRequestDistributionConfigDefaultCacheBehaviorTrustedSignersItems.Count > 0) 
+                        {                        
+                            xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2014-05-31/");
+                            foreach (var publicRequestDistributionConfigDefaultCacheBehaviorTrustedSignersItemsValue in publicRequestDistributionConfigDefaultCacheBehaviorTrustedSignersItems) 
+                            {
+                                xmlWriter.WriteStartElement("AwsAccountNumber", "http://cloudfront.amazonaws.com/doc/2014-05-31/");
+                                xmlWriter.WriteValue(publicRequestDistributionConfigDefaultCacheBehaviorTrustedSignersItemsValue);
+                                xmlWriter.WriteEndElement();
+                            }            
+                            xmlWriter.WriteEndElement();            
+                        }
+                        if(publicRequest.DistributionConfig.DefaultCacheBehavior.TrustedSigners.IsSetQuantity())
+                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequest.DistributionConfig.DefaultCacheBehavior.TrustedSigners.Quantity.ToString());                 
+        
+                        xmlWriter.WriteEndElement();
+                    }
+                    if(publicRequest.DistributionConfig.DefaultCacheBehavior.IsSetViewerProtocolPolicy())
+                        xmlWriter.WriteElementString("ViewerProtocolPolicy", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequest.DistributionConfig.DefaultCacheBehavior.ViewerProtocolPolicy.ToString());                 
+    
+                    xmlWriter.WriteEndElement();
                 }
+                if(publicRequest.DistributionConfig.IsSetDefaultRootObject())
+                    xmlWriter.WriteElementString("DefaultRootObject", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequest.DistributionConfig.DefaultRootObject.ToString());                    
+
+                if(publicRequest.DistributionConfig.IsSetEnabled())
+                    xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequest.DistributionConfig.Enabled.ToString().ToLower());                    
+
+                
+                if (publicRequest.DistributionConfig.Logging != null) 
+                {
+                    xmlWriter.WriteStartElement("Logging", "http://cloudfront.amazonaws.com/doc/2014-05-31/");            
+                    if(publicRequest.DistributionConfig.Logging.IsSetBucket())
+                        xmlWriter.WriteElementString("Bucket", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequest.DistributionConfig.Logging.Bucket.ToString());                 
+    
+                    if(publicRequest.DistributionConfig.Logging.IsSetEnabled())
+                        xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequest.DistributionConfig.Logging.Enabled.ToString().ToLower());                 
+    
+                    if(publicRequest.DistributionConfig.Logging.IsSetIncludeCookies())
+                        xmlWriter.WriteElementString("IncludeCookies", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequest.DistributionConfig.Logging.IncludeCookies.ToString().ToLower());                 
+    
+                    if(publicRequest.DistributionConfig.Logging.IsSetPrefix())
+                        xmlWriter.WriteElementString("Prefix", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequest.DistributionConfig.Logging.Prefix.ToString());                 
+    
+                    xmlWriter.WriteEndElement();
+                }
+                
+                if (publicRequest.DistributionConfig.Origins != null) 
+                {
+                    xmlWriter.WriteStartElement("Origins", "http://cloudfront.amazonaws.com/doc/2014-05-31/");            
+                    var publicRequestDistributionConfigOriginsItems = publicRequest.DistributionConfig.Origins.Items;
+                    if (publicRequestDistributionConfigOriginsItems != null && publicRequestDistributionConfigOriginsItems.Count > 0) 
+                    {                        
+                        xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2014-05-31/");
+                        foreach (var publicRequestDistributionConfigOriginsItemsValue in publicRequestDistributionConfigOriginsItems) 
+                        {
+                        
+                        if (publicRequestDistributionConfigOriginsItemsValue != null) 
+                        {
+                            xmlWriter.WriteStartElement("Origin", "http://cloudfront.amazonaws.com/doc/2014-05-31/");            
+                            
+                            if (publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig != null) 
+                            {
+                                xmlWriter.WriteStartElement("CustomOriginConfig", "http://cloudfront.amazonaws.com/doc/2014-05-31/");            
+                                if(publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetHTTPPort())
+                                    xmlWriter.WriteElementString("HTTPPort", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.HTTPPort.ToString());                 
+                
+                                if(publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetHTTPSPort())
+                                    xmlWriter.WriteElementString("HTTPSPort", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.HTTPSPort.ToString());                 
+                
+                                if(publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetOriginProtocolPolicy())
+                                    xmlWriter.WriteElementString("OriginProtocolPolicy", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginProtocolPolicy.ToString());                 
+                
+                                xmlWriter.WriteEndElement();
+                            }
+                            if(publicRequestDistributionConfigOriginsItemsValue.IsSetDomainName())
+                                xmlWriter.WriteElementString("DomainName", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequestDistributionConfigOriginsItemsValue.DomainName.ToString());                 
+            
+                            if(publicRequestDistributionConfigOriginsItemsValue.IsSetId())
+                                xmlWriter.WriteElementString("Id", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequestDistributionConfigOriginsItemsValue.Id.ToString());                 
+            
+                            
+                            if (publicRequestDistributionConfigOriginsItemsValue.S3OriginConfig != null) 
+                            {
+                                xmlWriter.WriteStartElement("S3OriginConfig", "http://cloudfront.amazonaws.com/doc/2014-05-31/");            
+                                if(publicRequestDistributionConfigOriginsItemsValue.S3OriginConfig.IsSetOriginAccessIdentity())
+                                    xmlWriter.WriteElementString("OriginAccessIdentity", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequestDistributionConfigOriginsItemsValue.S3OriginConfig.OriginAccessIdentity.ToString());                 
+                
+                                xmlWriter.WriteEndElement();
+                            }
+                            xmlWriter.WriteEndElement();
+                        }
+                        }            
+                        xmlWriter.WriteEndElement();            
+                    }
+                    if(publicRequest.DistributionConfig.Origins.IsSetQuantity())
+                        xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequest.DistributionConfig.Origins.Quantity.ToString());                 
+    
+                    xmlWriter.WriteEndElement();
+                }
+                if(publicRequest.DistributionConfig.IsSetPriceClass())
+                    xmlWriter.WriteElementString("PriceClass", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequest.DistributionConfig.PriceClass.ToString());                    
+
+                
+                if (publicRequest.DistributionConfig.Restrictions != null) 
+                {
+                    xmlWriter.WriteStartElement("Restrictions", "http://cloudfront.amazonaws.com/doc/2014-05-31/");            
+                    
+                    if (publicRequest.DistributionConfig.Restrictions.GeoRestriction != null) 
+                    {
+                        xmlWriter.WriteStartElement("GeoRestriction", "http://cloudfront.amazonaws.com/doc/2014-05-31/");            
+                        var publicRequestDistributionConfigRestrictionsGeoRestrictionItems = publicRequest.DistributionConfig.Restrictions.GeoRestriction.Items;
+                        if (publicRequestDistributionConfigRestrictionsGeoRestrictionItems != null && publicRequestDistributionConfigRestrictionsGeoRestrictionItems.Count > 0) 
+                        {                        
+                            xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2014-05-31/");
+                            foreach (var publicRequestDistributionConfigRestrictionsGeoRestrictionItemsValue in publicRequestDistributionConfigRestrictionsGeoRestrictionItems) 
+                            {
+                                xmlWriter.WriteStartElement("Location", "http://cloudfront.amazonaws.com/doc/2014-05-31/");
+                                xmlWriter.WriteValue(publicRequestDistributionConfigRestrictionsGeoRestrictionItemsValue);
+                                xmlWriter.WriteEndElement();
+                            }            
+                            xmlWriter.WriteEndElement();            
+                        }
+                        if(publicRequest.DistributionConfig.Restrictions.GeoRestriction.IsSetQuantity())
+                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequest.DistributionConfig.Restrictions.GeoRestriction.Quantity.ToString());                 
+        
+                        if(publicRequest.DistributionConfig.Restrictions.GeoRestriction.IsSetRestrictionType())
+                            xmlWriter.WriteElementString("RestrictionType", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequest.DistributionConfig.Restrictions.GeoRestriction.RestrictionType.ToString());                 
+        
+                        xmlWriter.WriteEndElement();
+                    }
+                    xmlWriter.WriteEndElement();
+                }
+                
+                if (publicRequest.DistributionConfig.ViewerCertificate != null) 
+                {
+                    xmlWriter.WriteStartElement("ViewerCertificate", "http://cloudfront.amazonaws.com/doc/2014-05-31/");            
+                    if(publicRequest.DistributionConfig.ViewerCertificate.IsSetCloudFrontDefaultCertificate())
+                        xmlWriter.WriteElementString("CloudFrontDefaultCertificate", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequest.DistributionConfig.ViewerCertificate.CloudFrontDefaultCertificate.ToString().ToLower());                 
+    
+                    if(publicRequest.DistributionConfig.ViewerCertificate.IsSetIAMCertificateId())
+                        xmlWriter.WriteElementString("IAMCertificateId", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequest.DistributionConfig.ViewerCertificate.IAMCertificateId.ToString());                 
+    
+                    if(publicRequest.DistributionConfig.ViewerCertificate.IsSetSSLSupportMethod())
+                        xmlWriter.WriteElementString("SSLSupportMethod", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequest.DistributionConfig.ViewerCertificate.SSLSupportMethod.ToString());                 
+    
+                    xmlWriter.WriteEndElement();
+                }
+
                 xmlWriter.WriteEndElement();
             }
-        }
-
-    
             try 
             {
-                request.Content = System.Text.Encoding.UTF8.GetBytes(stringWriter.ToString());
-                request.Headers.Add("Content-Type", "application/xml");
+                string content = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(content);
+                request.Headers["Content-Type"] = "application/xml";
             } 
             catch (EncoderFallbackException e) 
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-        
-            
+
             return request;
         }
-    }
+
+        
+    }    
 }
-    

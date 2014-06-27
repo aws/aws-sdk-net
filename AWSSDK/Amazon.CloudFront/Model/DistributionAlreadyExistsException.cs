@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.CloudFront.Model
 {
     ///<summary>
-    /// AmazonCloudFront exception
+    /// CloudFront exception
     /// </summary>
     public class DistributionAlreadyExistsException : AmazonCloudFrontException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.CloudFront.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal DistributionAlreadyExistsException(string message) 
+        public DistributionAlreadyExistsException(string message) 
             : base(message) {}
           
-        internal DistributionAlreadyExistsException(string message, Exception innerException) 
+        public DistributionAlreadyExistsException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal DistributionAlreadyExistsException(Exception innerException) 
+        public DistributionAlreadyExistsException(Exception innerException) 
             : base(innerException) {}
             
-        internal DistributionAlreadyExistsException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public DistributionAlreadyExistsException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal DistributionAlreadyExistsException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public DistributionAlreadyExistsException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

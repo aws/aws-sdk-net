@@ -25,23 +25,23 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDistribution operation.
-    /// <para> Delete a distribution. </para>
+    /// Delete a distribution.
     /// </summary>
-    /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.DeleteDistribution"/>
-    public class DeleteDistributionRequest : AmazonWebServiceRequest
+    public partial class DeleteDistributionRequest : AmazonWebServiceRequest
     {
-        private string id;
-        private string ifMatch;
+        private string _id;
+        private string _ifMatch;
+
 
         /// <summary>
-        /// The distribution id.
-        ///  
+        /// Gets and sets the property Id. The distribution id.
         /// </summary>
         public string Id
         {
-            get { return this.id; }
-            set { this.id = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
+
 
         /// <summary>
         /// Sets the Id property
@@ -51,26 +51,27 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteDistributionRequest WithId(string id)
         {
-            this.id = id;
+            this._id = id;
             return this;
         }
-            
 
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;
+            return this._id != null;
         }
 
+
         /// <summary>
-        /// The value of the ETag header you received when you disabled the distribution. For example: E2QWRUHAPOMQZL.
-        ///  
+        /// Gets and sets the property IfMatch. The value of the ETag header you received when
+        /// you disabled the distribution. For example: E2QWRUHAPOMQZL.
         /// </summary>
         public string IfMatch
         {
-            get { return this.ifMatch; }
-            set { this.ifMatch = value; }
+            get { return this._ifMatch; }
+            set { this._ifMatch = value; }
         }
+
 
         /// <summary>
         /// Sets the IfMatch property
@@ -80,16 +81,15 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteDistributionRequest WithIfMatch(string ifMatch)
         {
-            this.ifMatch = ifMatch;
+            this._ifMatch = ifMatch;
             return this;
         }
-            
 
         // Check to see if IfMatch property is set
         internal bool IsSetIfMatch()
         {
-            return this.ifMatch != null;
+            return this._ifMatch != null;
         }
+
     }
 }
-    

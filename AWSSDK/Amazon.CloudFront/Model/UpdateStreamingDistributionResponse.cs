@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Returns information about the  UpdateStreamingDistributionResult response and response metadata.
+    /// Returns information about the UpdateStreamingDistributionResult response and response metadata.
     /// </summary>
     public class UpdateStreamingDistributionResponse : AmazonWebServiceResponse
     {
-        private UpdateStreamingDistributionResult updateStreamingDistributionResult;
+        private UpdateStreamingDistributionResult _updateStreamingDistributionResult;
 
         /// <summary>
         /// Gets and sets the UpdateStreamingDistributionResult property.
-        /// The returned result of the corresponding request.
+        /// Represents the output of a UpdateStreamingDistribution operation.
         /// </summary>
         public UpdateStreamingDistributionResult UpdateStreamingDistributionResult
         {
             get
             {
-                if(this.updateStreamingDistributionResult == null)
+                if(this._updateStreamingDistributionResult == null)
                 {
-                    this.updateStreamingDistributionResult = new UpdateStreamingDistributionResult();
+                    this._updateStreamingDistributionResult = new UpdateStreamingDistributionResult();
                 }
-
-                return this.updateStreamingDistributionResult;
+                return this._updateStreamingDistributionResult;
             }
-            set { this.updateStreamingDistributionResult = value; }
+            set { this._updateStreamingDistributionResult = value; }
         }
     }
 }
-    

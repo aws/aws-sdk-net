@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.CloudFront.Model
 {
     ///<summary>
-    /// AmazonCloudFront exception
+    /// CloudFront exception
     /// </summary>
     public class TooManyStreamingDistributionsException : AmazonCloudFrontException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.CloudFront.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal TooManyStreamingDistributionsException(string message) 
+        public TooManyStreamingDistributionsException(string message) 
             : base(message) {}
           
-        internal TooManyStreamingDistributionsException(string message, Exception innerException) 
+        public TooManyStreamingDistributionsException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal TooManyStreamingDistributionsException(Exception innerException) 
+        public TooManyStreamingDistributionsException(Exception innerException) 
             : base(innerException) {}
             
-        internal TooManyStreamingDistributionsException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public TooManyStreamingDistributionsException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal TooManyStreamingDistributionsException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public TooManyStreamingDistributionsException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

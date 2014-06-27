@@ -14,68 +14,42 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
-using System.Xml;
-using System.Xml.Serialization;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using System.Xml;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Cloud Front Origin Access Identity Request Marshaller
+    /// DeleteCloudFrontOriginAccessIdentity Request Marshaller
     /// </summary>       
-    public class DeleteCloudFrontOriginAccessIdentityRequestMarshaller : IMarshaller<IRequest, DeleteCloudFrontOriginAccessIdentityRequest>
+    public class DeleteCloudFrontOriginAccessIdentityRequestMarshaller : IMarshaller<IRequest, DeleteCloudFrontOriginAccessIdentityRequest> 
     {
-        
-    
-        public IRequest Marshall(DeleteCloudFrontOriginAccessIdentityRequest deleteCloudFrontOriginAccessIdentityRequest)
+        public IRequest Marshall(DeleteCloudFrontOriginAccessIdentityRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(deleteCloudFrontOriginAccessIdentityRequest, "AmazonCloudFront");
-
-
-
+            var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "DELETE";
-        if(deleteCloudFrontOriginAccessIdentityRequest.IfMatch != null)
-            request.Headers.Add("If-Match", deleteCloudFrontOriginAccessIdentityRequest.IfMatch);
+            var uriResourcePath = "/2014-05-31/origin-access-identity/cloudfront/{Id}";
 
-            
-              
-            string uriResourcePath = "2014-01-31/origin-access-identity/cloudfront/{Id}"; 
-            uriResourcePath = uriResourcePath.Replace("{Id}", deleteCloudFrontOriginAccessIdentityRequest.Id ?? "" ); 
-            
-            if (uriResourcePath.Contains("?")) 
-            {
-                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
-                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
         
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                }
-            }
-            
+            if(publicRequest.IsSetIfMatch())     
+                request.Headers.Add("If-Match", publicRequest.IfMatch);
+            uriResourcePath = uriResourcePath.Replace("{Id}", publicRequest.Id ?? string.Empty);
             request.ResourcePath = uriResourcePath;
-            
-        
+
+
             request.UseQueryString = true;
-        
-            
             return request;
         }
-    }
+
+        
+    }    
 }
-    

@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.CloudFront.Model
 {
     ///<summary>
-    /// AmazonCloudFront exception
+    /// CloudFront exception
     /// </summary>
     public class TooManyCloudFrontOriginAccessIdentitiesException : AmazonCloudFrontException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.CloudFront.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal TooManyCloudFrontOriginAccessIdentitiesException(string message) 
+        public TooManyCloudFrontOriginAccessIdentitiesException(string message) 
             : base(message) {}
           
-        internal TooManyCloudFrontOriginAccessIdentitiesException(string message, Exception innerException) 
+        public TooManyCloudFrontOriginAccessIdentitiesException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal TooManyCloudFrontOriginAccessIdentitiesException(Exception innerException) 
+        public TooManyCloudFrontOriginAccessIdentitiesException(Exception innerException) 
             : base(innerException) {}
             
-        internal TooManyCloudFrontOriginAccessIdentitiesException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public TooManyCloudFrontOriginAccessIdentitiesException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal TooManyCloudFrontOriginAccessIdentitiesException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public TooManyCloudFrontOriginAccessIdentitiesException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

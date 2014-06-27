@@ -1459,6 +1459,7 @@
     <Compile Include="Amazon.CloudFront\Model\GetStreamingDistributionRequest.cs" />
     <Compile Include="Amazon.CloudFront\Model\GetStreamingDistributionResponse.cs" />
     <Compile Include="Amazon.CloudFront\Model\GetStreamingDistributionResult.cs" />
+    <Compile Include="Amazon.CloudFront\Model\Headers.cs" />
     <Compile Include="Amazon.CloudFront\Model\IllegalUpdateException.cs" />
     <Compile Include="Amazon.CloudFront\Model\InconsistentQuantitiesException.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\ActiveTrustedSignersUnmarshaller.cs" />
@@ -1521,6 +1522,7 @@
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\GetStreamingDistributionRequestMarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\GetStreamingDistributionResponseUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\GetStreamingDistributionResultUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\HeadersUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\InvalidationBatchUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\InvalidationListUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\InvalidationSummaryUnmarshaller.cs" />
@@ -1571,6 +1573,7 @@
     <Compile Include="Amazon.CloudFront\Model\InvalidErrorCodeException.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidForwardCookiesException.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidGeoRestrictionParameterException.cs" />
+    <Compile Include="Amazon.CloudFront\Model\InvalidHeadersForS3OriginException.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidIfMatchVersionException.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidLocationCodeException.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidOriginAccessIdentityException.cs" />
@@ -1620,6 +1623,7 @@
     <Compile Include="Amazon.CloudFront\Model\TooManyCookieNamesInWhiteListException.cs" />
     <Compile Include="Amazon.CloudFront\Model\TooManyDistributionCNAMEsException.cs" />
     <Compile Include="Amazon.CloudFront\Model\TooManyDistributionsException.cs" />
+    <Compile Include="Amazon.CloudFront\Model\TooManyHeadersInForwardedValuesException.cs" />
     <Compile Include="Amazon.CloudFront\Model\TooManyInvalidationsInProgressException.cs" />
     <Compile Include="Amazon.CloudFront\Model\TooManyOriginsException.cs" />
     <Compile Include="Amazon.CloudFront\Model\TooManyStreamingDistributionCNAMEsException.cs" />

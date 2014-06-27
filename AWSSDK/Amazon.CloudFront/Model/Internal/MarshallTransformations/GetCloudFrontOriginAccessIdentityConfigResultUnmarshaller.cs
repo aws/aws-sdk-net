@@ -12,62 +12,65 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   GetCloudFrontOriginAccessIdentityConfigResult Unmarshaller
-     /// </summary>
-    internal class GetCloudFrontOriginAccessIdentityConfigResultUnmarshaller : IUnmarshaller<GetCloudFrontOriginAccessIdentityConfigResult, XmlUnmarshallerContext>, IUnmarshaller<GetCloudFrontOriginAccessIdentityConfigResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Result Unmarshaller for GetCloudFrontOriginAccessIdentityConfig operation
+    /// </summary>  
+    public class GetCloudFrontOriginAccessIdentityConfigResultUnmarshaller : IUnmarshaller<GetCloudFrontOriginAccessIdentityConfigResult, XmlUnmarshallerContext>
     {
-        public GetCloudFrontOriginAccessIdentityConfigResult Unmarshall(XmlUnmarshallerContext context) 
+        public GetCloudFrontOriginAccessIdentityConfigResult Unmarshall(XmlUnmarshallerContext context)
         {
-            GetCloudFrontOriginAccessIdentityConfigResult getCloudFrontOriginAccessIdentityConfigResult = new GetCloudFrontOriginAccessIdentityConfigResult();
+            var unmarshalledObject = new GetCloudFrontOriginAccessIdentityConfigResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
                     if (context.TestExpression("CloudFrontOriginAccessIdentityConfig", targetDepth))
                     {
-                        getCloudFrontOriginAccessIdentityConfigResult.CloudFrontOriginAccessIdentityConfig = CloudFrontOriginAccessIdentityConfigUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = CloudFrontOriginAccessIdentityConfigUnmarshaller.GetInstance();
+                        unmarshalledObject.CloudFrontOriginAccessIdentityConfig = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return getCloudFrontOriginAccessIdentityConfigResult;
+                    return unmarshalledObject;
                 }
             }
             
-
-            getCloudFrontOriginAccessIdentityConfigResult.ETag = context.Headers["ETag"];           
-
-
-            return getCloudFrontOriginAccessIdentityConfigResult;
-        }
-
-        public GetCloudFrontOriginAccessIdentityConfigResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
+            if (context.Headers["ETag"] != null)
+                unmarshalledObject.ETag = context.Headers["ETag"];
+            
+            return unmarshalledObject;
+        }        
 
         private static GetCloudFrontOriginAccessIdentityConfigResultUnmarshaller instance;
-
-        public static GetCloudFrontOriginAccessIdentityConfigResultUnmarshaller GetInstance() 
+        public static GetCloudFrontOriginAccessIdentityConfigResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new GetCloudFrontOriginAccessIdentityConfigResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new GetCloudFrontOriginAccessIdentityConfigResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

@@ -18,55 +18,29 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> The returned result of the corresponding request. </para>
+    /// The returned result of the corresponding request.
     /// </summary>
     public partial class CreateInvalidationResult
     {
-        
-        private string location;
-        private Invalidation invalidation;
+        private Invalidation _invalidation;
+        private string _location;
+
 
         /// <summary>
-        /// The fully qualified URI of the distribution and invalidation batch request, including the Invalidation ID.
-        ///  
-        /// </summary>
-        public string Location
-        {
-            get { return this.location; }
-            set { this.location = value; }
-        }
-
-        /// <summary>
-        /// Sets the Location property
-        /// </summary>
-        /// <param name="location">The value to set for the Location property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public CreateInvalidationResult WithLocation(string location)
-        {
-            this.location = location;
-            return this;
-        }
-            
-
-        // Check to see if Location property is set
-        internal bool IsSetLocation()
-        {
-            return this.location != null;
-        }
-
-        /// <summary>
-        /// The invalidation's information.
-        ///  
+        /// Gets and sets the property Invalidation. The invalidation's information.
         /// </summary>
         public Invalidation Invalidation
         {
-            get { return this.invalidation; }
-            set { this.invalidation = value; }
+            get { return this._invalidation; }
+            set { this._invalidation = value; }
         }
+
 
         /// <summary>
         /// Sets the Invalidation property
@@ -76,15 +50,45 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateInvalidationResult WithInvalidation(Invalidation invalidation)
         {
-            this.invalidation = invalidation;
+            this._invalidation = invalidation;
             return this;
         }
-            
 
         // Check to see if Invalidation property is set
         internal bool IsSetInvalidation()
         {
-            return this.invalidation != null;
+            return this._invalidation != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Location. The fully qualified URI of the distribution and
+        /// invalidation batch request, including the Invalidation ID.
+        /// </summary>
+        public string Location
+        {
+            get { return this._location; }
+            set { this._location = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the Location property
+        /// </summary>
+        /// <param name="location">The value to set for the Location property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateInvalidationResult WithLocation(string location)
+        {
+            this._location = location;
+            return this;
+        }
+
+        // Check to see if Location property is set
+        internal bool IsSetLocation()
+        {
+            return this._location != null;
+        }
+
     }
 }

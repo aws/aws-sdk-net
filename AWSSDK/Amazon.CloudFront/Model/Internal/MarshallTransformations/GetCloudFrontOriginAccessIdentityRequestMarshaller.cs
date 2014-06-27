@@ -14,64 +14,39 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
-using System.Xml;
-using System.Xml.Serialization;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using System.Xml;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Get Cloud Front Origin Access Identity Request Marshaller
+    /// GetCloudFrontOriginAccessIdentity Request Marshaller
     /// </summary>       
-    public class GetCloudFrontOriginAccessIdentityRequestMarshaller : IMarshaller<IRequest, GetCloudFrontOriginAccessIdentityRequest>
+    public class GetCloudFrontOriginAccessIdentityRequestMarshaller : IMarshaller<IRequest, GetCloudFrontOriginAccessIdentityRequest> 
     {
-        
-    
-        public IRequest Marshall(GetCloudFrontOriginAccessIdentityRequest getCloudFrontOriginAccessIdentityRequest)
+        public IRequest Marshall(GetCloudFrontOriginAccessIdentityRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(getCloudFrontOriginAccessIdentityRequest, "AmazonCloudFront");
-
-
-
+            var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "GET";
-              
-            string uriResourcePath = "2014-01-31/origin-access-identity/cloudfront/{Id}"; 
-            uriResourcePath = uriResourcePath.Replace("{Id}", getCloudFrontOriginAccessIdentityRequest.Id ?? "" ); 
-            
-            if (uriResourcePath.Contains("?")) 
-            {
-                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
-                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
-        
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                }
-            }
-            
+            var uriResourcePath = "/2014-05-31/origin-access-identity/cloudfront/{Id}";
+
+            uriResourcePath = uriResourcePath.Replace("{Id}", publicRequest.Id ?? string.Empty);
             request.ResourcePath = uriResourcePath;
-            
-        
+
+
             request.UseQueryString = true;
-        
-            
             return request;
         }
-    }
+
+        
+    }    
 }
-    

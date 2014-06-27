@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.CloudFront.Model
 {
     ///<summary>
-    /// AmazonCloudFront exception
+    /// CloudFront exception
     /// </summary>
     public class InvalidOriginAccessIdentityException : AmazonCloudFrontException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.CloudFront.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal InvalidOriginAccessIdentityException(string message) 
+        public InvalidOriginAccessIdentityException(string message) 
             : base(message) {}
           
-        internal InvalidOriginAccessIdentityException(string message, Exception innerException) 
+        public InvalidOriginAccessIdentityException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal InvalidOriginAccessIdentityException(Exception innerException) 
+        public InvalidOriginAccessIdentityException(Exception innerException) 
             : base(innerException) {}
             
-        internal InvalidOriginAccessIdentityException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidOriginAccessIdentityException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal InvalidOriginAccessIdentityException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidOriginAccessIdentityException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

@@ -12,21 +12,30 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   CacheBehaviors Unmarshaller
-     /// </summary>
-    internal class CacheBehaviorsUnmarshaller : IUnmarshaller<CacheBehaviors, XmlUnmarshallerContext>, IUnmarshaller<CacheBehaviors, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for CacheBehaviors Object
+    /// </summary>  
+    public class CacheBehaviorsUnmarshaller : IUnmarshaller<CacheBehaviors, XmlUnmarshallerContext>
     {
-        public CacheBehaviors Unmarshall(XmlUnmarshallerContext context) 
+        public CacheBehaviors Unmarshall(XmlUnmarshallerContext context)
         {
-            CacheBehaviors cacheBehaviors = new CacheBehaviors();
+            CacheBehaviors unmarshalledObject = new CacheBehaviors();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,45 +45,37 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("Quantity", targetDepth))
-                    {
-                        cacheBehaviors.Quantity = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
                     if (context.TestExpression("Items/CacheBehavior", targetDepth))
                     {
-                        cacheBehaviors.Items.Add(CacheBehaviorUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = CacheBehaviorUnmarshaller.GetInstance();
+                        unmarshalledObject.Items.Add(unmarshaller.Unmarshall(context));
+                        continue;
+                    }
+                    if (context.TestExpression("Quantity", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.GetInstance();
+                        unmarshalledObject.Quantity = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return cacheBehaviors;
+                    return unmarshalledObject;
                 }
-            }
-                        
-
-
-            return cacheBehaviors;
-        }
-
-        public CacheBehaviors Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
+            }          
+            return unmarshalledObject;
         }
 
         private static CacheBehaviorsUnmarshaller instance;
-
-        public static CacheBehaviorsUnmarshaller GetInstance() 
+        public static CacheBehaviorsUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new CacheBehaviorsUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new CacheBehaviorsUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

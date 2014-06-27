@@ -12,21 +12,30 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   TrustedSigners Unmarshaller
-     /// </summary>
-    internal class TrustedSignersUnmarshaller : IUnmarshaller<TrustedSigners, XmlUnmarshallerContext>, IUnmarshaller<TrustedSigners, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for TrustedSigners Object
+    /// </summary>  
+    public class TrustedSignersUnmarshaller : IUnmarshaller<TrustedSigners, XmlUnmarshallerContext>
     {
-        public TrustedSigners Unmarshall(XmlUnmarshallerContext context) 
+        public TrustedSigners Unmarshall(XmlUnmarshallerContext context)
         {
-            TrustedSigners trustedSigners = new TrustedSigners();
+            TrustedSigners unmarshalledObject = new TrustedSigners();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,51 +45,43 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
                     if (context.TestExpression("Enabled", targetDepth))
                     {
-                        trustedSigners.Enabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.GetInstance();
+                        unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
-                    if (context.TestExpression("Quantity", targetDepth))
-                    {
-                        trustedSigners.Quantity = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                    }
                     if (context.TestExpression("Items/AwsAccountNumber", targetDepth))
                     {
-                        trustedSigners.Items.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Items.Add(unmarshaller.Unmarshall(context));
+                        continue;
+                    }
+                    if (context.TestExpression("Quantity", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.GetInstance();
+                        unmarshalledObject.Quantity = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return trustedSigners;
+                    return unmarshalledObject;
                 }
-            }
-                        
-
-
-            return trustedSigners;
-        }
-
-        public TrustedSigners Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
+            }          
+            return unmarshalledObject;
         }
 
         private static TrustedSignersUnmarshaller instance;
-
-        public static TrustedSignersUnmarshaller GetInstance() 
+        public static TrustedSignersUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new TrustedSignersUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new TrustedSignersUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

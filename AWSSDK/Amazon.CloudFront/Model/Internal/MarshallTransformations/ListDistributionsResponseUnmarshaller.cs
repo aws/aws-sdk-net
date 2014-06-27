@@ -13,55 +13,52 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for ListDistributions operation
-    /// </summary>
-    internal class ListDistributionsResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for ListDistributions operation
+    /// </summary>  
+    public class ListDistributionsResponseUnmarshaller : XmlResponseUnmarshaller
     {
-
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             ListDistributionsResponse response = new ListDistributionsResponse();
-            
             response.ListDistributionsResult = ListDistributionsResultUnmarshaller.GetInstance().Unmarshall(context);
-             
-                        
             return response;
-        }
+        }        
 
-        
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArgument"))
             {
                 return new InvalidArgumentException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
             return new AmazonCloudFrontException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static ListDistributionsResponseUnmarshaller instance;
 
+        private static ListDistributionsResponseUnmarshaller instance;
         public static ListDistributionsResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
+            if (instance == null)
             {
-               instance = new ListDistributionsResponseUnmarshaller();
+                instance = new ListDistributionsResponseUnmarshaller();
             }
             return instance;
         }
-    
+
     }
 }
-    

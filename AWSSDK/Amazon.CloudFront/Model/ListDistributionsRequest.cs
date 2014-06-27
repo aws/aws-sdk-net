@@ -25,25 +25,27 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDistributions operation.
-    /// <para> List distributions. </para>
+    /// List distributions.
     /// </summary>
-    /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.ListDistributions"/>
-    public class ListDistributionsRequest : AmazonWebServiceRequest
+    public partial class ListDistributionsRequest : AmazonWebServiceRequest
     {
-        private string marker;
-        private string maxItems;
+        private string _marker;
+        private string _maxItems;
+
 
         /// <summary>
-        /// Use this when paginating results to indicate where to begin in your list of distributions. The results include distributions in the list
-        /// that occur after the marker. To get the next page of results, set the Marker to the value of the NextMarker from the current page's response
-        /// (which is also the ID of the last distribution on that page).
-        ///  
+        /// Gets and sets the property Marker. Use this when paginating results to indicate where
+        /// to begin in your list of distributions. The results include distributions in the list
+        /// that occur after the marker.    To get the next page of results, set the Marker to
+        /// the value of the NextMarker from the current page's response (which is also the ID
+        /// of the last distribution on that page).
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
+
 
         /// <summary>
         /// Sets the Marker property
@@ -53,26 +55,27 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListDistributionsRequest WithMarker(string marker)
         {
-            this.marker = marker;
+            this._marker = marker;
             return this;
         }
-            
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
         }
 
+
         /// <summary>
-        /// The maximum number of distributions you want in the response body.
-        ///  
+        /// Gets and sets the property MaxItems. The maximum number of distributions you want
+        /// in the response body.
         /// </summary>
         public string MaxItems
         {
-            get { return this.maxItems; }
-            set { this.maxItems = value; }
+            get { return this._maxItems; }
+            set { this._maxItems = value; }
         }
+
 
         /// <summary>
         /// Sets the MaxItems property
@@ -82,16 +85,15 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListDistributionsRequest WithMaxItems(string maxItems)
         {
-            this.maxItems = maxItems;
+            this._maxItems = maxItems;
             return this;
         }
-            
 
         // Check to see if MaxItems property is set
         internal bool IsSetMaxItems()
         {
-            return this.maxItems != null;
+            return this._maxItems != null;
         }
+
     }
 }
-    

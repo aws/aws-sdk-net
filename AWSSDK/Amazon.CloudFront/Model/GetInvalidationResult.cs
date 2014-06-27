@@ -18,25 +18,28 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> The returned result of the corresponding request. </para>
+    /// The returned result of the corresponding request.
     /// </summary>
     public partial class GetInvalidationResult
     {
-        
-        private Invalidation invalidation;
+        private Invalidation _invalidation;
+
 
         /// <summary>
-        /// The invalidation's information.
-        ///  
+        /// Gets and sets the property Invalidation. The invalidation's information.
         /// </summary>
         public Invalidation Invalidation
         {
-            get { return this.invalidation; }
-            set { this.invalidation = value; }
+            get { return this._invalidation; }
+            set { this._invalidation = value; }
         }
+
 
         /// <summary>
         /// Sets the Invalidation property
@@ -46,15 +49,15 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetInvalidationResult WithInvalidation(Invalidation invalidation)
         {
-            this.invalidation = invalidation;
+            this._invalidation = invalidation;
             return this;
         }
-            
 
         // Check to see if Invalidation property is set
         internal bool IsSetInvalidation()
         {
-            return this.invalidation != null;
+            return this._invalidation != null;
         }
+
     }
 }

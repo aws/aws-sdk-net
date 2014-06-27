@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.CloudFront.Model
 {
     ///<summary>
-    /// AmazonCloudFront exception
+    /// CloudFront exception
     /// </summary>
     public class AccessDeniedException : AmazonCloudFrontException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.CloudFront.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal AccessDeniedException(string message) 
+        public AccessDeniedException(string message) 
             : base(message) {}
           
-        internal AccessDeniedException(string message, Exception innerException) 
+        public AccessDeniedException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal AccessDeniedException(Exception innerException) 
+        public AccessDeniedException(Exception innerException) 
             : base(innerException) {}
             
-        internal AccessDeniedException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public AccessDeniedException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal AccessDeniedException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public AccessDeniedException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

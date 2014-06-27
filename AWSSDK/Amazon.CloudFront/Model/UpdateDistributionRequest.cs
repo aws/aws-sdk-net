@@ -25,24 +25,24 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDistribution operation.
-    /// <para> Update a distribution. </para>
+    /// Update a distribution.
     /// </summary>
-    /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.UpdateDistribution"/>
-    public class UpdateDistributionRequest : AmazonWebServiceRequest
+    public partial class UpdateDistributionRequest : AmazonWebServiceRequest
     {
-        private DistributionConfig distributionConfig;
-        private string id;
-        private string ifMatch;
+        private DistributionConfig _distributionConfig;
+        private string _id;
+        private string _ifMatch;
+
 
         /// <summary>
-        /// The distribution's configuration information.
-        ///  
+        /// Gets and sets the property DistributionConfig. The distribution's configuration information.
         /// </summary>
         public DistributionConfig DistributionConfig
         {
-            get { return this.distributionConfig; }
-            set { this.distributionConfig = value; }
+            get { return this._distributionConfig; }
+            set { this._distributionConfig = value; }
         }
+
 
         /// <summary>
         /// Sets the DistributionConfig property
@@ -52,26 +52,26 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateDistributionRequest WithDistributionConfig(DistributionConfig distributionConfig)
         {
-            this.distributionConfig = distributionConfig;
+            this._distributionConfig = distributionConfig;
             return this;
         }
-            
 
         // Check to see if DistributionConfig property is set
         internal bool IsSetDistributionConfig()
         {
-            return this.distributionConfig != null;
+            return this._distributionConfig != null;
         }
 
+
         /// <summary>
-        /// The distribution's id.
-        ///  
+        /// Gets and sets the property Id. The distribution's id.
         /// </summary>
         public string Id
         {
-            get { return this.id; }
-            set { this.id = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
+
 
         /// <summary>
         /// Sets the Id property
@@ -81,26 +81,27 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateDistributionRequest WithId(string id)
         {
-            this.id = id;
+            this._id = id;
             return this;
         }
-            
 
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;
+            return this._id != null;
         }
 
+
         /// <summary>
-        /// The value of the ETag header you received when retrieving the distribution's configuration. For example: E2QWRUHAPOMQZL.
-        ///  
+        /// Gets and sets the property IfMatch. The value of the ETag header you received when
+        /// retrieving the distribution's configuration. For example: E2QWRUHAPOMQZL.
         /// </summary>
         public string IfMatch
         {
-            get { return this.ifMatch; }
-            set { this.ifMatch = value; }
+            get { return this._ifMatch; }
+            set { this._ifMatch = value; }
         }
+
 
         /// <summary>
         /// Sets the IfMatch property
@@ -110,16 +111,15 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateDistributionRequest WithIfMatch(string ifMatch)
         {
-            this.ifMatch = ifMatch;
+            this._ifMatch = ifMatch;
             return this;
         }
-            
 
         // Check to see if IfMatch property is set
         internal bool IsSetIfMatch()
         {
-            return this.ifMatch != null;
+            return this._ifMatch != null;
         }
+
     }
 }
-    

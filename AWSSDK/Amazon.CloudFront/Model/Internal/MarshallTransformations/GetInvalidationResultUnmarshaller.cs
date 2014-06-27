@@ -12,60 +12,62 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   GetInvalidationResult Unmarshaller
-     /// </summary>
-    internal class GetInvalidationResultUnmarshaller : IUnmarshaller<GetInvalidationResult, XmlUnmarshallerContext>, IUnmarshaller<GetInvalidationResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Result Unmarshaller for GetInvalidation operation
+    /// </summary>  
+    public class GetInvalidationResultUnmarshaller : IUnmarshaller<GetInvalidationResult, XmlUnmarshallerContext>
     {
-        public GetInvalidationResult Unmarshall(XmlUnmarshallerContext context) 
+        public GetInvalidationResult Unmarshall(XmlUnmarshallerContext context)
         {
-            GetInvalidationResult getInvalidationResult = new GetInvalidationResult();
+            var unmarshalledObject = new GetInvalidationResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
                     if (context.TestExpression("Invalidation", targetDepth))
                     {
-                        getInvalidationResult.Invalidation = InvalidationUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = InvalidationUnmarshaller.GetInstance();
+                        unmarshalledObject.Invalidation = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return getInvalidationResult;
+                    return unmarshalledObject;
                 }
             }
-                        
-
-
-            return getInvalidationResult;
-        }
-
-        public GetInvalidationResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
+            
+            return unmarshalledObject;
+        }        
 
         private static GetInvalidationResultUnmarshaller instance;
-
-        public static GetInvalidationResultUnmarshaller GetInstance() 
+        public static GetInvalidationResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new GetInvalidationResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new GetInvalidationResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

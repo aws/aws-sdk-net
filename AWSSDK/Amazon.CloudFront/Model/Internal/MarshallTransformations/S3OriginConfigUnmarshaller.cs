@@ -12,21 +12,30 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   S3OriginConfig Unmarshaller
-     /// </summary>
-    internal class S3OriginConfigUnmarshaller : IUnmarshaller<S3OriginConfig, XmlUnmarshallerContext>, IUnmarshaller<S3OriginConfig, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for S3OriginConfig Object
+    /// </summary>  
+    public class S3OriginConfigUnmarshaller : IUnmarshaller<S3OriginConfig, XmlUnmarshallerContext>
     {
-        public S3OriginConfig Unmarshall(XmlUnmarshallerContext context) 
+        public S3OriginConfig Unmarshall(XmlUnmarshallerContext context)
         {
-            S3OriginConfig s3OriginConfig = new S3OriginConfig();
+            S3OriginConfig unmarshalledObject = new S3OriginConfig();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,39 +45,31 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
                     if (context.TestExpression("OriginAccessIdentity", targetDepth))
                     {
-                        s3OriginConfig.OriginAccessIdentity = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.OriginAccessIdentity = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return s3OriginConfig;
+                    return unmarshalledObject;
                 }
-            }
-                        
-
-
-            return s3OriginConfig;
-        }
-
-        public S3OriginConfig Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
+            }          
+            return unmarshalledObject;
         }
 
         private static S3OriginConfigUnmarshaller instance;
-
-        public static S3OriginConfigUnmarshaller GetInstance() 
+        public static S3OriginConfigUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new S3OriginConfigUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new S3OriginConfigUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

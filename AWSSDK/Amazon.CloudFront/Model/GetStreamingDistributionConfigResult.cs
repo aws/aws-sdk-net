@@ -18,55 +18,30 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> The returned result of the corresponding request. </para>
+    /// The returned result of the corresponding request.
     /// </summary>
     public partial class GetStreamingDistributionConfigResult
     {
-        
-        private StreamingDistributionConfig streamingDistributionConfig;
-        private string eTag;
+        private string _eTag;
+        private StreamingDistributionConfig _streamingDistributionConfig;
+
 
         /// <summary>
-        /// The streaming distribution's configuration information.
-        ///  
-        /// </summary>
-        public StreamingDistributionConfig StreamingDistributionConfig
-        {
-            get { return this.streamingDistributionConfig; }
-            set { this.streamingDistributionConfig = value; }
-        }
-
-        /// <summary>
-        /// Sets the StreamingDistributionConfig property
-        /// </summary>
-        /// <param name="streamingDistributionConfig">The value to set for the StreamingDistributionConfig property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public GetStreamingDistributionConfigResult WithStreamingDistributionConfig(StreamingDistributionConfig streamingDistributionConfig)
-        {
-            this.streamingDistributionConfig = streamingDistributionConfig;
-            return this;
-        }
-            
-
-        // Check to see if StreamingDistributionConfig property is set
-        internal bool IsSetStreamingDistributionConfig()
-        {
-            return this.streamingDistributionConfig != null;
-        }
-
-        /// <summary>
-        /// The current version of the configuration. For example: E2QWRUHAPOMQZL.
-        ///  
+        /// Gets and sets the property ETag. The current version of the configuration. For example:
+        /// E2QWRUHAPOMQZL.
         /// </summary>
         public string ETag
         {
-            get { return this.eTag; }
-            set { this.eTag = value; }
+            get { return this._eTag; }
+            set { this._eTag = value; }
         }
+
 
         /// <summary>
         /// Sets the ETag property
@@ -76,15 +51,45 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetStreamingDistributionConfigResult WithETag(string eTag)
         {
-            this.eTag = eTag;
+            this._eTag = eTag;
             return this;
         }
-            
 
         // Check to see if ETag property is set
         internal bool IsSetETag()
         {
-            return this.eTag != null;
+            return this._eTag != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property StreamingDistributionConfig. The streaming distribution's
+        /// configuration information.
+        /// </summary>
+        public StreamingDistributionConfig StreamingDistributionConfig
+        {
+            get { return this._streamingDistributionConfig; }
+            set { this._streamingDistributionConfig = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the StreamingDistributionConfig property
+        /// </summary>
+        /// <param name="streamingDistributionConfig">The value to set for the StreamingDistributionConfig property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public GetStreamingDistributionConfigResult WithStreamingDistributionConfig(StreamingDistributionConfig streamingDistributionConfig)
+        {
+            this._streamingDistributionConfig = streamingDistributionConfig;
+            return this;
+        }
+
+        // Check to see if StreamingDistributionConfig property is set
+        internal bool IsSetStreamingDistributionConfig()
+        {
+            return this._streamingDistributionConfig != null;
+        }
+
     }
 }

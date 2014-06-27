@@ -18,86 +18,32 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> An invalidation. </para>
+    /// An invalidation.
     /// </summary>
     public partial class Invalidation
     {
-        
-        private string id;
-        private string status;
-        private DateTime? createTime;
-        private InvalidationBatch invalidationBatch;
+        private DateTime? _createTime;
+        private string _id;
+        private InvalidationBatch _invalidationBatch;
+        private string _status;
+
 
         /// <summary>
-        /// The identifier for the invalidation request. For example: IDFDVBD632BHDS5.
-        ///  
-        /// </summary>
-        public string Id
-        {
-            get { return this.id; }
-            set { this.id = value; }
-        }
-
-        /// <summary>
-        /// Sets the Id property
-        /// </summary>
-        /// <param name="id">The value to set for the Id property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public Invalidation WithId(string id)
-        {
-            this.id = id;
-            return this;
-        }
-            
-
-        // Check to see if Id property is set
-        internal bool IsSetId()
-        {
-            return this.id != null;
-        }
-
-        /// <summary>
-        /// The status of the invalidation request. When the invalidation batch is finished, the status is Completed.
-        ///  
-        /// </summary>
-        public string Status
-        {
-            get { return this.status; }
-            set { this.status = value; }
-        }
-
-        /// <summary>
-        /// Sets the Status property
-        /// </summary>
-        /// <param name="status">The value to set for the Status property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public Invalidation WithStatus(string status)
-        {
-            this.status = status;
-            return this;
-        }
-            
-
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
-        {
-            return this.status != null;
-        }
-
-        /// <summary>
-        /// The date and time the invalidation request was first made.
-        ///  
+        /// Gets and sets the property CreateTime. The date and time the invalidation request
+        /// was first made.
         /// </summary>
         public DateTime CreateTime
         {
-            get { return this.createTime ?? default(DateTime); }
-            set { this.createTime = value; }
+            get { return this._createTime.GetValueOrDefault(); }
+            set { this._createTime = value; }
         }
+
 
         /// <summary>
         /// Sets the CreateTime property
@@ -107,26 +53,57 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Invalidation WithCreateTime(DateTime createTime)
         {
-            this.createTime = createTime;
+            this._createTime = createTime;
             return this;
         }
-            
 
         // Check to see if CreateTime property is set
         internal bool IsSetCreateTime()
         {
-            return this.createTime.HasValue;
+            return this._createTime.HasValue; 
         }
 
+
         /// <summary>
-        /// The current invalidation information for the batch request.
-        ///  
+        /// Gets and sets the property Id. The identifier for the invalidation request. For example:
+        /// IDFDVBD632BHDS5.
+        /// </summary>
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the Id property
+        /// </summary>
+        /// <param name="id">The value to set for the Id property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Invalidation WithId(string id)
+        {
+            this._id = id;
+            return this;
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property InvalidationBatch. The current invalidation information
+        /// for the batch request.
         /// </summary>
         public InvalidationBatch InvalidationBatch
         {
-            get { return this.invalidationBatch; }
-            set { this.invalidationBatch = value; }
+            get { return this._invalidationBatch; }
+            set { this._invalidationBatch = value; }
         }
+
 
         /// <summary>
         /// Sets the InvalidationBatch property
@@ -136,15 +113,45 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Invalidation WithInvalidationBatch(InvalidationBatch invalidationBatch)
         {
-            this.invalidationBatch = invalidationBatch;
+            this._invalidationBatch = invalidationBatch;
             return this;
         }
-            
 
         // Check to see if InvalidationBatch property is set
         internal bool IsSetInvalidationBatch()
         {
-            return this.invalidationBatch != null;
+            return this._invalidationBatch != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Status. The status of the invalidation request. When the
+        /// invalidation batch is finished, the status is Completed.
+        /// </summary>
+        public string Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the Status property
+        /// </summary>
+        /// <param name="status">The value to set for the Status property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Invalidation WithStatus(string status)
+        {
+            this._status = status;
+            return this;
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
     }
 }

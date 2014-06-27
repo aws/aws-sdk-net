@@ -13,60 +13,56 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for GetStreamingDistribution operation
-    /// </summary>
-    internal class GetStreamingDistributionResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for GetStreamingDistribution operation
+    /// </summary>  
+    public class GetStreamingDistributionResponseUnmarshaller : XmlResponseUnmarshaller
     {
-
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             GetStreamingDistributionResponse response = new GetStreamingDistributionResponse();
-            
             response.GetStreamingDistributionResult = GetStreamingDistributionResultUnmarshaller.GetInstance().Unmarshall(context);
-             
-                        
             return response;
-        }
+        }        
 
-        
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
-            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchStreamingDistribution"))
-            {
-                return new NoSuchStreamingDistributionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDenied"))
             {
                 return new AccessDeniedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchStreamingDistribution"))
+            {
+                return new NoSuchStreamingDistributionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonCloudFrontException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static GetStreamingDistributionResponseUnmarshaller instance;
 
+        private static GetStreamingDistributionResponseUnmarshaller instance;
         public static GetStreamingDistributionResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
+            if (instance == null)
             {
-               instance = new GetStreamingDistributionResponseUnmarshaller();
+                instance = new GetStreamingDistributionResponseUnmarshaller();
             }
             return instance;
         }
-    
+
     }
 }
-    

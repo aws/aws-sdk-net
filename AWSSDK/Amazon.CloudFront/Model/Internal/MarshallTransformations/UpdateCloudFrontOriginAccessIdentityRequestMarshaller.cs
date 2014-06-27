@@ -14,99 +14,68 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
-using System.Xml;
-using System.Xml.Serialization;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using System.Xml;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Update Cloud Front Origin Access Identity Request Marshaller
+    /// UpdateCloudFrontOriginAccessIdentity Request Marshaller
     /// </summary>       
-    public class UpdateCloudFrontOriginAccessIdentityRequestMarshaller : IMarshaller<IRequest, UpdateCloudFrontOriginAccessIdentityRequest>
+    public class UpdateCloudFrontOriginAccessIdentityRequestMarshaller : IMarshaller<IRequest, UpdateCloudFrontOriginAccessIdentityRequest> 
     {
-        
-    
-        public IRequest Marshall(UpdateCloudFrontOriginAccessIdentityRequest updateCloudFrontOriginAccessIdentityRequest)
+        public IRequest Marshall(UpdateCloudFrontOriginAccessIdentityRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(updateCloudFrontOriginAccessIdentityRequest, "AmazonCloudFront");
-
-
-
+            var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "PUT";
-        if(updateCloudFrontOriginAccessIdentityRequest.IfMatch != null)
-            request.Headers.Add("If-Match", updateCloudFrontOriginAccessIdentityRequest.IfMatch);
+            var uriResourcePath = "/2014-05-31/origin-access-identity/cloudfront/{Id}/config";
+
+        
+            if(publicRequest.IsSetIfMatch())     
+                request.Headers.Add("If-Match", publicRequest.IfMatch);
+            uriResourcePath = uriResourcePath.Replace("{Id}", publicRequest.Id ?? string.Empty);
+            request.ResourcePath = uriResourcePath;
 
             
-              
-            string uriResourcePath = "2014-01-31/origin-access-identity/cloudfront/{Id}/config"; 
-            uriResourcePath = uriResourcePath.Replace("{Id}", updateCloudFrontOriginAccessIdentityRequest.Id ?? "" ); 
-            
-            if (uriResourcePath.Contains("?")) 
-            {
-                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
-                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
-        
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                }
-            }
-            
-            request.ResourcePath = uriResourcePath;
-            
-             
             StringWriter stringWriter = new StringWriter();
             XmlTextWriter xmlWriter = new XmlTextWriter(stringWriter);
             xmlWriter.Namespaces = true;
-                       
-                    if (updateCloudFrontOriginAccessIdentityRequest != null) 
-        {
-            CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig = updateCloudFrontOriginAccessIdentityRequest.CloudFrontOriginAccessIdentityConfig;
-            if (cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig != null) 
-            {
-                xmlWriter.WriteStartElement("CloudFrontOriginAccessIdentityConfig", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
-                if (cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig.IsSetCallerReference()) 
-                {
-                    xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2014-01-31/", cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig.CallerReference.ToString());
-                  }
-                if (cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig.IsSetComment()) 
-                {
-                    xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2014-01-31/", cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig.Comment.ToString());
-                  }
+
+            using (xmlWriter)
+            {   
+                xmlWriter.WriteStartElement("CloudFrontOriginAccessIdentityConfig", "http://cloudfront.amazonaws.com/doc/2014-05-31/");                                
+                if(publicRequest.CloudFrontOriginAccessIdentityConfig.IsSetCallerReference())
+                    xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequest.CloudFrontOriginAccessIdentityConfig.CallerReference.ToString());                    
+
+                if(publicRequest.CloudFrontOriginAccessIdentityConfig.IsSetComment())
+                    xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2014-05-31/", publicRequest.CloudFrontOriginAccessIdentityConfig.Comment.ToString());                    
+
+
                 xmlWriter.WriteEndElement();
             }
-        }
-
-    
             try 
             {
-                request.Content = System.Text.Encoding.UTF8.GetBytes(stringWriter.ToString());
-                request.Headers.Add("Content-Type", "application/xml");
+                string content = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(content);
+                request.Headers["Content-Type"] = "application/xml";
             } 
             catch (EncoderFallbackException e) 
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-        
-            
+
             return request;
         }
-    }
+
+        
+    }    
 }
-    

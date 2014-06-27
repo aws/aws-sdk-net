@@ -12,21 +12,30 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   DefaultCacheBehavior Unmarshaller
-     /// </summary>
-    internal class DefaultCacheBehaviorUnmarshaller : IUnmarshaller<DefaultCacheBehavior, XmlUnmarshallerContext>, IUnmarshaller<DefaultCacheBehavior, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for DefaultCacheBehavior Object
+    /// </summary>  
+    public class DefaultCacheBehaviorUnmarshaller : IUnmarshaller<DefaultCacheBehavior, XmlUnmarshallerContext>
     {
-        public DefaultCacheBehavior Unmarshall(XmlUnmarshallerContext context) 
+        public DefaultCacheBehavior Unmarshall(XmlUnmarshallerContext context)
         {
-            DefaultCacheBehavior defaultCacheBehavior = new DefaultCacheBehavior();
+            DefaultCacheBehavior unmarshalledObject = new DefaultCacheBehavior();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,75 +45,67 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("TargetOriginId", targetDepth))
-                    {
-                        defaultCacheBehavior.TargetOriginId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("ForwardedValues", targetDepth))
-                    {
-                        defaultCacheBehavior.ForwardedValues = ForwardedValuesUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("TrustedSigners", targetDepth))
-                    {
-                        defaultCacheBehavior.TrustedSigners = TrustedSignersUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("ViewerProtocolPolicy", targetDepth))
-                    {
-                        defaultCacheBehavior.ViewerProtocolPolicy = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("MinTTL", targetDepth))
-                    {
-                        defaultCacheBehavior.MinTTL = LongUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
                     if (context.TestExpression("AllowedMethods", targetDepth))
                     {
-                        defaultCacheBehavior.AllowedMethods = AllowedMethodsUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = AllowedMethodsUnmarshaller.GetInstance();
+                        unmarshalledObject.AllowedMethods = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
+                    if (context.TestExpression("ForwardedValues", targetDepth))
+                    {
+                        var unmarshaller = ForwardedValuesUnmarshaller.GetInstance();
+                        unmarshalledObject.ForwardedValues = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MinTTL", targetDepth))
+                    {
+                        var unmarshaller = LongUnmarshaller.GetInstance();
+                        unmarshalledObject.MinTTL = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("SmoothStreaming", targetDepth))
                     {
-                        defaultCacheBehavior.SmoothStreaming = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.GetInstance();
+                        unmarshalledObject.SmoothStreaming = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TargetOriginId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.TargetOriginId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TrustedSigners", targetDepth))
+                    {
+                        var unmarshaller = TrustedSignersUnmarshaller.GetInstance();
+                        unmarshalledObject.TrustedSigners = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ViewerProtocolPolicy", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.ViewerProtocolPolicy = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return defaultCacheBehavior;
+                    return unmarshalledObject;
                 }
-            }
-                        
-
-
-            return defaultCacheBehavior;
-        }
-
-        public DefaultCacheBehavior Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
+            }          
+            return unmarshalledObject;
         }
 
         private static DefaultCacheBehaviorUnmarshaller instance;
-
-        public static DefaultCacheBehaviorUnmarshaller GetInstance() 
+        public static DefaultCacheBehaviorUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new DefaultCacheBehaviorUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new DefaultCacheBehaviorUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

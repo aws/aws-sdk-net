@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.CloudFront.Model
 {
     ///<summary>
-    /// AmazonCloudFront exception
+    /// CloudFront exception
     /// </summary>
     public class InvalidViewerCertificateException : AmazonCloudFrontException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.CloudFront.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal InvalidViewerCertificateException(string message) 
+        public InvalidViewerCertificateException(string message) 
             : base(message) {}
           
-        internal InvalidViewerCertificateException(string message, Exception innerException) 
+        public InvalidViewerCertificateException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal InvalidViewerCertificateException(Exception innerException) 
+        public InvalidViewerCertificateException(Exception innerException) 
             : base(innerException) {}
             
-        internal InvalidViewerCertificateException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidViewerCertificateException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal InvalidViewerCertificateException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidViewerCertificateException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.CloudFront.Model
 {
     ///<summary>
-    /// AmazonCloudFront exception
+    /// CloudFront exception
     /// </summary>
     public class NoSuchDistributionException : AmazonCloudFrontException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.CloudFront.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal NoSuchDistributionException(string message) 
+        public NoSuchDistributionException(string message) 
             : base(message) {}
           
-        internal NoSuchDistributionException(string message, Exception innerException) 
+        public NoSuchDistributionException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal NoSuchDistributionException(Exception innerException) 
+        public NoSuchDistributionException(Exception innerException) 
             : base(innerException) {}
             
-        internal NoSuchDistributionException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public NoSuchDistributionException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal NoSuchDistributionException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public NoSuchDistributionException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

@@ -12,21 +12,30 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   CacheBehavior Unmarshaller
-     /// </summary>
-    internal class CacheBehaviorUnmarshaller : IUnmarshaller<CacheBehavior, XmlUnmarshallerContext>, IUnmarshaller<CacheBehavior, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for CacheBehavior Object
+    /// </summary>  
+    public class CacheBehaviorUnmarshaller : IUnmarshaller<CacheBehavior, XmlUnmarshallerContext>
     {
-        public CacheBehavior Unmarshall(XmlUnmarshallerContext context) 
+        public CacheBehavior Unmarshall(XmlUnmarshallerContext context)
         {
-            CacheBehavior cacheBehavior = new CacheBehavior();
+            CacheBehavior unmarshalledObject = new CacheBehavior();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,81 +45,73 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("PathPattern", targetDepth))
-                    {
-                        cacheBehavior.PathPattern = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("TargetOriginId", targetDepth))
-                    {
-                        cacheBehavior.TargetOriginId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("ForwardedValues", targetDepth))
-                    {
-                        cacheBehavior.ForwardedValues = ForwardedValuesUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("TrustedSigners", targetDepth))
-                    {
-                        cacheBehavior.TrustedSigners = TrustedSignersUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("ViewerProtocolPolicy", targetDepth))
-                    {
-                        cacheBehavior.ViewerProtocolPolicy = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("MinTTL", targetDepth))
-                    {
-                        cacheBehavior.MinTTL = LongUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
                     if (context.TestExpression("AllowedMethods", targetDepth))
                     {
-                        cacheBehavior.AllowedMethods = AllowedMethodsUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = AllowedMethodsUnmarshaller.GetInstance();
+                        unmarshalledObject.AllowedMethods = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
+                    if (context.TestExpression("ForwardedValues", targetDepth))
+                    {
+                        var unmarshaller = ForwardedValuesUnmarshaller.GetInstance();
+                        unmarshalledObject.ForwardedValues = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MinTTL", targetDepth))
+                    {
+                        var unmarshaller = LongUnmarshaller.GetInstance();
+                        unmarshalledObject.MinTTL = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PathPattern", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.PathPattern = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("SmoothStreaming", targetDepth))
                     {
-                        cacheBehavior.SmoothStreaming = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.GetInstance();
+                        unmarshalledObject.SmoothStreaming = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TargetOriginId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.TargetOriginId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TrustedSigners", targetDepth))
+                    {
+                        var unmarshaller = TrustedSignersUnmarshaller.GetInstance();
+                        unmarshalledObject.TrustedSigners = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ViewerProtocolPolicy", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.ViewerProtocolPolicy = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return cacheBehavior;
+                    return unmarshalledObject;
                 }
-            }
-                        
-
-
-            return cacheBehavior;
-        }
-
-        public CacheBehavior Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
+            }          
+            return unmarshalledObject;
         }
 
         private static CacheBehaviorUnmarshaller instance;
-
-        public static CacheBehaviorUnmarshaller GetInstance() 
+        public static CacheBehaviorUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new CacheBehaviorUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new CacheBehaviorUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

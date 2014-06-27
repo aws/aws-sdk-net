@@ -25,22 +25,22 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDistribution operation.
-    /// <para> Create a new distribution. </para>
+    /// Create a new distribution.
     /// </summary>
-    /// <seealso cref="Amazon.CloudFront.AmazonCloudFront.CreateDistribution"/>
-    public class CreateDistributionRequest : AmazonWebServiceRequest
+    public partial class CreateDistributionRequest : AmazonWebServiceRequest
     {
-        private DistributionConfig distributionConfig;
+        private DistributionConfig _distributionConfig;
+
 
         /// <summary>
-        /// The distribution's configuration information.
-        ///  
+        /// Gets and sets the property DistributionConfig. The distribution's configuration information.
         /// </summary>
         public DistributionConfig DistributionConfig
         {
-            get { return this.distributionConfig; }
-            set { this.distributionConfig = value; }
+            get { return this._distributionConfig; }
+            set { this._distributionConfig = value; }
         }
+
 
         /// <summary>
         /// Sets the DistributionConfig property
@@ -50,16 +50,15 @@ namespace Amazon.CloudFront.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateDistributionRequest WithDistributionConfig(DistributionConfig distributionConfig)
         {
-            this.distributionConfig = distributionConfig;
+            this._distributionConfig = distributionConfig;
             return this;
         }
-            
 
         // Check to see if DistributionConfig property is set
         internal bool IsSetDistributionConfig()
         {
-            return this.distributionConfig != null;
+            return this._distributionConfig != null;
         }
+
     }
 }
-    
