@@ -12,24 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the ModifyEventSubscription response and response metadata.
+    /// Configuration for accessing Amazon ModifyEventSubscription service
     /// </summary>
     public partial class ModifyEventSubscriptionResponse : ModifyEventSubscriptionResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the ModifyEventSubscriptionResult property.
-        /// Contains the result of a successful invocation of the ModifyEventSubscription
-        /// action.
-        /// 
+        /// Represents the output of a ModifyEventSubscription operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ModifyEventSubscriptionResult class are now available on the ModifyEventSubscriptionResponse class. You should use the properties on ModifyEventSubscriptionResponse instead of accessing them through ModifyEventSubscriptionResult.")]
         public ModifyEventSubscriptionResult ModifyEventSubscriptionResult
         {
@@ -40,4 +36,3 @@ namespace Amazon.Redshift.Model
         }
     }
 }
-    

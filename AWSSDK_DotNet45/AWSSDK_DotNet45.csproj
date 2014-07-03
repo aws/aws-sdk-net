@@ -77,6 +77,8 @@
     <Compile Include="Amazon.CloudFormation\IAmazonCloudFormation.cs" />
     <Compile Include="Amazon.CloudFront\AmazonCloudFrontClient.cs" />
     <Compile Include="Amazon.CloudFront\IAmazonCloudFront.cs" />
+    <Compile Include="Amazon.CloudSearchDomain\AmazonCloudSearchDomainClient.cs" />
+    <Compile Include="Amazon.CloudSearchDomain\IAmazonCloudSearchDomain.cs" />
     <Compile Include="Amazon.CloudSearch\AmazonCloudSearchClient.cs" />
     <Compile Include="Amazon.CloudSearch\IAmazonCloudSearch.cs" />
     <Compile Include="Amazon.CloudSearch_2011_02_01\AmazonCloudSearchClient.cs" />
@@ -305,6 +307,17 @@
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.CloudSearch\Model\Internal\MarshallTransformations\*">
+      <Visible>false</Visible>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CloudSearchDomain\*" Exclude="..\AWSSDK_DotNet35\Amazon.CloudSearchDomain\IAmazonCloudSearchDomain.cs;..\AWSSDK_DotNet35\Amazon.CloudSearchDomain\AmazonCloudSearchDomainClient.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CloudSearchDomain\Model\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CloudSearchDomain\Model\Internal\MarshallTransformations\*">
       <Visible>false</Visible>
     </Compile>
   </ItemGroup>

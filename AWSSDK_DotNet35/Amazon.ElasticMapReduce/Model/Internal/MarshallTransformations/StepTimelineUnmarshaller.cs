@@ -12,66 +12,76 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.ElasticMapReduce.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+using Amazon.ElasticMapReduce.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for StepTimeline Object
+    /// </summary>  
+    public class StepTimelineUnmarshaller : IUnmarshaller<StepTimeline, XmlUnmarshallerContext>, IUnmarshaller<StepTimeline, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// StepTimelineUnmarshaller
-      /// </summary>
-      internal class StepTimelineUnmarshaller : IUnmarshaller<StepTimeline, XmlUnmarshallerContext>, IUnmarshaller<StepTimeline, JsonUnmarshallerContext>
-      {
         StepTimeline IUnmarshaller<StepTimeline, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public StepTimeline Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            StepTimeline stepTimeline = new StepTimeline();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            StepTimeline unmarshalledObject = new StepTimeline();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("CreationDateTime", targetDepth))
-              {
-                stepTimeline.CreationDateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("StartDateTime", targetDepth))
-              {
-                stepTimeline.StartDateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("EndDateTime", targetDepth))
-              {
-                stepTimeline.EndDateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("CreationDateTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreationDateTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EndDateTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.EndDateTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StartDateTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.StartDateTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return stepTimeline;
+            return unmarshalledObject;
         }
 
-        private static StepTimelineUnmarshaller instance;
-        public static StepTimelineUnmarshaller GetInstance()
+
+        private static StepTimelineUnmarshaller _instance = new StepTimelineUnmarshaller();        
+
+        public static StepTimelineUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new StepTimelineUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

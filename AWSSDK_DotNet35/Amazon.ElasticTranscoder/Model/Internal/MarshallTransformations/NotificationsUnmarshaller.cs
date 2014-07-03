@@ -12,72 +12,82 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.ElasticTranscoder.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
+using Amazon.ElasticTranscoder.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for Notifications Object
+    /// </summary>  
+    public class NotificationsUnmarshaller : IUnmarshaller<Notifications, XmlUnmarshallerContext>, IUnmarshaller<Notifications, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// NotificationsUnmarshaller
-      /// </summary>
-      internal class NotificationsUnmarshaller : IUnmarshaller<Notifications, XmlUnmarshallerContext>, IUnmarshaller<Notifications, JsonUnmarshallerContext>
-      {
         Notifications IUnmarshaller<Notifications, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Notifications Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            Notifications notifications = new Notifications();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            Notifications unmarshalledObject = new Notifications();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("Progressing", targetDepth))
-              {
-                notifications.Progressing = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Completed", targetDepth))
-              {
-                notifications.Completed = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Warning", targetDepth))
-              {
-                notifications.Warning = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Error", targetDepth))
-              {
-                notifications.Error = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("Completed", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Completed = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Error", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Error = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Progressing", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Progressing = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Warning", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Warning = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return notifications;
+            return unmarshalledObject;
         }
 
-        private static NotificationsUnmarshaller instance;
-        public static NotificationsUnmarshaller GetInstance()
+
+        private static NotificationsUnmarshaller _instance = new NotificationsUnmarshaller();        
+
+        public static NotificationsUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new NotificationsUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

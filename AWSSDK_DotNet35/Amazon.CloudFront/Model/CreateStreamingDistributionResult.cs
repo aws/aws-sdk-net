@@ -17,68 +17,70 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> The returned result of the corresponding request. </para>
+    /// The returned result of the corresponding request.
     /// </summary>
     public partial class CreateStreamingDistributionResult : AmazonWebServiceResponse
     {
-        
-        private StreamingDistribution streamingDistribution;
-        private string location;
-        private string eTag;
+        private string _eTag;
+        private string _location;
+        private StreamingDistribution _streamingDistribution;
 
 
         /// <summary>
-        /// The streaming distribution's information.
-        ///  
-        /// </summary>
-        public StreamingDistribution StreamingDistribution
-        {
-            get { return this.streamingDistribution; }
-            set { this.streamingDistribution = value; }
-        }
-
-        // Check to see if StreamingDistribution property is set
-        internal bool IsSetStreamingDistribution()
-        {
-            return this.streamingDistribution != null;
-        }
-
-        /// <summary>
-        /// The fully qualified URI of the new streaming distribution resource just created. For example:
-        /// https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
-        ///  
-        /// </summary>
-        public string Location
-        {
-            get { return this.location; }
-            set { this.location = value; }
-        }
-
-        // Check to see if Location property is set
-        internal bool IsSetLocation()
-        {
-            return this.location != null;
-        }
-
-        /// <summary>
-        /// The current version of the streaming distribution created.
-        ///  
+        /// Gets and sets the property ETag. The current version of the streaming distribution
+        /// created.
         /// </summary>
         public string ETag
         {
-            get { return this.eTag; }
-            set { this.eTag = value; }
+            get { return this._eTag; }
+            set { this._eTag = value; }
         }
 
         // Check to see if ETag property is set
         internal bool IsSetETag()
         {
-            return this.eTag != null;
+            return this._eTag != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Location. The fully qualified URI of the new streaming
+        /// distribution resource just created.    For example: https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
+        /// </summary>
+        public string Location
+        {
+            get { return this._location; }
+            set { this._location = value; }
+        }
+
+        // Check to see if Location property is set
+        internal bool IsSetLocation()
+        {
+            return this._location != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property StreamingDistribution. The streaming distribution's information.
+        /// </summary>
+        public StreamingDistribution StreamingDistribution
+        {
+            get { return this._streamingDistribution; }
+            set { this._streamingDistribution = value; }
+        }
+
+        // Check to see if StreamingDistribution property is set
+        internal bool IsSetStreamingDistribution()
+        {
+            return this._streamingDistribution != null;
+        }
+
     }
 }

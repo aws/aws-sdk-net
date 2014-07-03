@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,101 +25,85 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListVirtualMFADevices operation.
-    /// <para> Lists the virtual MFA devices under the AWS account by assignment status. If you do not specify an assignment status, the action
-    /// returns a list of all virtual MFA devices. Assignment status can be <c>Assigned</c> ,
-    /// <c>Unassigned</c> , or <c>Any</c> . </para> <para>You can paginate the results using the <c>MaxItems</c> and
-    /// <c>Marker</c> parameters.</para>
+    /// Lists the virtual MFA devices under the AWS account by assignment status. If you
+    /// do not            specify an assignment status, the action returns a list of all virtual MFA
+    /// devices. Assignment            status can be <code>Assigned</code>, <code>Unassigned</code>,
+    /// or <code>Any</code>. 
+    /// 
+    ///         
+    /// <para>
+    /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>            parameters.
+    /// </para>
     /// </summary>
     public partial class ListVirtualMFADevicesRequest : AmazonIdentityManagementServiceRequest
     {
-        private AssignmentStatusType assignmentStatus;
-        private string marker;
-        private int? maxItems;
+        private AssignmentStatusType _assignmentStatus;
+        private string _marker;
+        private int? _maxItems;
 
 
         /// <summary>
-        /// The status (unassigned or assigned) of the devices to list. If you do not specify an <c>AssignmentStatus</c>, the action defaults to
-        /// <c>Any</c> which lists both assigned and unassigned virtual MFA devices.
-        ///  
+        /// Gets and sets the property AssignmentStatus. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>Assigned, Unassigned, Any</description>
-        ///     </item>
-        /// </list>
+        /// The status (unassigned or assigned) of the devices to list. If you do not specify
+        /// an                <code>AssignmentStatus</code>, the action defaults to <code>Any</code> which
+        /// lists both            assigned and unassigned virtual MFA devices. 
         /// </para>
         /// </summary>
         public AssignmentStatusType AssignmentStatus
         {
-            get { return this.assignmentStatus; }
-            set { this.assignmentStatus = value; }
+            get { return this._assignmentStatus; }
+            set { this._assignmentStatus = value; }
         }
 
         // Check to see if AssignmentStatus property is set
         internal bool IsSetAssignmentStatus()
         {
-            return this.assignmentStatus != null;
+            return this._assignmentStatus != null;
         }
 
+
         /// <summary>
-        /// Use this parameter only when paginating results, and only in a subsequent request after you've received a response where the results are
-        /// truncated. Set it to the value of the <c>Marker</c> element in the response you just received.
-        ///  
+        /// Gets and sets the property Marker. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 320</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\u00FF]*</description>
-        ///     </item>
-        /// </list>
+        /// Use this parameter only when paginating results, and only in a subsequent request
+        /// after            you've received a response where the results are truncated. Set it to the
+        /// value of the                <code>Marker</code> element in the response you just received.
         /// </para>
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
         }
 
+
         /// <summary>
-        /// Use this parameter only when paginating results to indicate the maximum number of user names you want in the response. If there are
-        /// additional user names beyond the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>. This parameter is optional. If
-        /// you do not include it, it defaults to 100.
-        ///  
+        /// Gets and sets the property MaxItems. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>1 - 1000</description>
-        ///     </item>
-        /// </list>
+        /// Use this parameter only when paginating results to indicate the maximum number of
+        /// user names            you want in the response. If there are additional user names beyond the
+        /// maximum you specify,            the <code>IsTruncated</code> response element is <code>true</code>.
+        /// This parameter is            optional. If you do not include it, it defaults to 100.
         /// </para>
         /// </summary>
         public int MaxItems
         {
-            get { return this.maxItems ?? default(int); }
-            set { this.maxItems = value; }
+            get { return this._maxItems.GetValueOrDefault(); }
+            set { this._maxItems = value; }
         }
 
         // Check to see if MaxItems property is set
         internal bool IsSetMaxItems()
         {
-            return this.maxItems.HasValue;
+            return this._maxItems.HasValue; 
         }
 
     }
 }
-    

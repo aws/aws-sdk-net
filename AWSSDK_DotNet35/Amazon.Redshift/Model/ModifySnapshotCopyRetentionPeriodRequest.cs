@@ -25,51 +25,69 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifySnapshotCopyRetentionPeriod operation.
-    /// <para> Modifies the number of days to retain automated snapshots in the destination region after they are copied from the source region.
-    /// </para>
+    /// Modifies the number of days to retain automated snapshots in the destination
+    /// region after they are copied from the source region.
     /// </summary>
     public partial class ModifySnapshotCopyRetentionPeriodRequest : AmazonRedshiftRequest
     {
-        private string clusterIdentifier;
-        private int? retentionPeriod;
+        private string _clusterIdentifier;
+        private int? _retentionPeriod;
 
 
         /// <summary>
-        /// The unique identifier of the cluster for which you want to change the retention period for automated snapshots that are copied to a
-        /// destination region. Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.
-        ///  
+        /// Gets and sets the property ClusterIdentifier. 
+        /// <para>
+        ///            The unique identifier of the cluster for which you want to change the retention
+        /// period for automated snapshots that are copied to a destination region.        
+        /// </para>
+        ///         
+        /// <para>
+        ///             Constraints: Must be the valid name of an existing cluster that has cross-region
+        /// snapshot copy enabled.        
+        /// </para>
         /// </summary>
         public string ClusterIdentifier
         {
-            get { return this.clusterIdentifier; }
-            set { this.clusterIdentifier = value; }
+            get { return this._clusterIdentifier; }
+            set { this._clusterIdentifier = value; }
         }
 
         // Check to see if ClusterIdentifier property is set
         internal bool IsSetClusterIdentifier()
         {
-            return this.clusterIdentifier != null;
+            return this._clusterIdentifier != null;
         }
 
+
         /// <summary>
-        /// The number of days to retain automated snapshots in the destination region after they are copied from the source region. If you decrease the
-        /// retention period for automated snapshots that are copied to a destination region, Amazon Redshift will delete any existing automated
-        /// snapshots that were copied to the destination region and that fall outside of the new retention period. Constraints: Must be at least 1 and
-        /// no more than 35.
-        ///  
+        /// Gets and sets the property RetentionPeriod. 
+        /// <para>
+        ///             The number of days to retain automated snapshots in the destination region
+        /// after they are copied from the source region.        
+        /// </para>
+        ///         
+        /// <para>
+        ///             If you decrease the retention period for automated snapshots that are
+        /// copied to a destination region, Amazon Redshift will delete any existing automated
+        /// snapshots that were copied to the destination region and that fall outside of the
+        /// new retention period.        
+        /// </para>
+        ///         
+        /// <para>
+        ///             Constraints: Must be at least 1 and no more than 35.        
+        /// </para>
         /// </summary>
         public int RetentionPeriod
         {
-            get { return this.retentionPeriod ?? default(int); }
-            set { this.retentionPeriod = value; }
+            get { return this._retentionPeriod.GetValueOrDefault(); }
+            set { this._retentionPeriod = value; }
         }
 
         // Check to see if RetentionPeriod property is set
         internal bool IsSetRetentionPeriod()
         {
-            return this.retentionPeriod.HasValue;
+            return this._retentionPeriod.HasValue; 
         }
 
     }
 }
-    

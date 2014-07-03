@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,10 +18,9 @@ using Amazon.Runtime;
 namespace Amazon.SimpleNotificationService
 {
     /// <summary>
-    /// Base class for AmazonSimpleNotificationService operation requests.
+    /// Base class for SimpleNotificationService operation requests.
     /// </summary>
     public partial class AmazonSimpleNotificationServiceRequest : AmazonWebServiceRequest
     {
     }
 }
-    

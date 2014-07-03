@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// <para> </para>
+    /// 
     /// </summary>
     public partial class DescribeEventCategoriesResult : AmazonWebServiceResponse
     {
-        
-        private List<EventCategoriesMap> eventCategoriesMapList = new List<EventCategoriesMap>();
+        private List<EventCategoriesMap> _eventCategoriesMapList = new List<EventCategoriesMap>();
 
 
         /// <summary>
-        /// A list of event categories descriptions.
-        ///  
+        /// Gets and sets the property EventCategoriesMapList. 
+        /// <para>
+        ///             A list of event categories descriptions.        
+        /// </para>
         /// </summary>
         public List<EventCategoriesMap> EventCategoriesMapList
         {
-            get { return this.eventCategoriesMapList; }
-            set { this.eventCategoriesMapList = value; }
+            get { return this._eventCategoriesMapList; }
+            set { this._eventCategoriesMapList = value; }
         }
 
         // Check to see if EventCategoriesMapList property is set
         internal bool IsSetEventCategoriesMapList()
         {
-            return this.eventCategoriesMapList.Count > 0;
+            return this._eventCategoriesMapList != null && this._eventCategoriesMapList.Count > 0; 
         }
+
     }
 }

@@ -29,208 +29,195 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Pipeline Request Marshaller
+    /// CreatePipeline Request Marshaller
     /// </summary>       
-    internal class CreatePipelineRequestMarshaller : IMarshaller<IRequest, CreatePipelineRequest> 
+    public class CreatePipelineRequestMarshaller : IMarshaller<IRequest, CreatePipelineRequest> 
     {
-        
-
-        public IRequest Marshall(CreatePipelineRequest createPipelineRequest) 
+        public IRequest Marshall(CreatePipelineRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(createPipelineRequest, "AmazonElasticTranscoder");
-            string target = "EtsCustomerService.CreatePipeline";
-            request.Headers["X-Amz-Target"] = target;
-            
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticTranscoder");
+            request.Headers["Content-Type"] = "application/x-amz-json-";
             request.HttpMethod = "POST";
-            string uriResourcePath = "2012-09-25/pipelines"; 
+
+            string uriResourcePath = "/2012-09-25/pipelines";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (createPipelineRequest != null && createPipelineRequest.IsSetName()) 
+                if(publicRequest.IsSetContentConfig())
                 {
-                    writer.WritePropertyName("Name");
-                    writer.Write(createPipelineRequest.Name);
+                    writer.WritePropertyName("ContentConfig");
+                    writer.WriteObjectStart();
+                    if(publicRequest.ContentConfig.IsSetBucket())
+                    {
+                        writer.WritePropertyName("Bucket");
+                        writer.Write(publicRequest.ContentConfig.Bucket);
+                    }
+
+                    if(publicRequest.ContentConfig.IsSetPermissions())
+                    {
+                        writer.WritePropertyName("Permissions");
+                        writer.WriteArrayStart();
+                        foreach(var publicRequestContentConfigPermissionsListValue in publicRequest.ContentConfig.Permissions)
+                        {
+                            writer.WriteObjectStart();
+                            if(publicRequestContentConfigPermissionsListValue.IsSetAccess())
+                            {
+                                writer.WritePropertyName("Access");
+                                writer.WriteArrayStart();
+                                foreach(var publicRequestContentConfigPermissionsListValueAccessListValue in publicRequestContentConfigPermissionsListValue.Access)
+                                {
+                                    writer.Write(publicRequestContentConfigPermissionsListValueAccessListValue);
+                                }
+                                writer.WriteArrayEnd();
+                            }
+
+                            if(publicRequestContentConfigPermissionsListValue.IsSetGrantee())
+                            {
+                                writer.WritePropertyName("Grantee");
+                                writer.Write(publicRequestContentConfigPermissionsListValue.Grantee);
+                            }
+
+                            if(publicRequestContentConfigPermissionsListValue.IsSetGranteeType())
+                            {
+                                writer.WritePropertyName("GranteeType");
+                                writer.Write(publicRequestContentConfigPermissionsListValue.GranteeType);
+                            }
+
+                            writer.WriteObjectEnd();
+                        }
+                        writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.ContentConfig.IsSetStorageClass())
+                    {
+                        writer.WritePropertyName("StorageClass");
+                        writer.Write(publicRequest.ContentConfig.StorageClass);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
-                if (createPipelineRequest != null && createPipelineRequest.IsSetInputBucket()) 
+
+                if(publicRequest.IsSetInputBucket())
                 {
                     writer.WritePropertyName("InputBucket");
-                    writer.Write(createPipelineRequest.InputBucket);
+                    writer.Write(publicRequest.InputBucket);
                 }
-                if (createPipelineRequest != null && createPipelineRequest.IsSetOutputBucket()) 
+
+                if(publicRequest.IsSetName())
+                {
+                    writer.WritePropertyName("Name");
+                    writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetNotifications())
+                {
+                    writer.WritePropertyName("Notifications");
+                    writer.WriteObjectStart();
+                    if(publicRequest.Notifications.IsSetCompleted())
+                    {
+                        writer.WritePropertyName("Completed");
+                        writer.Write(publicRequest.Notifications.Completed);
+                    }
+
+                    if(publicRequest.Notifications.IsSetError())
+                    {
+                        writer.WritePropertyName("Error");
+                        writer.Write(publicRequest.Notifications.Error);
+                    }
+
+                    if(publicRequest.Notifications.IsSetProgressing())
+                    {
+                        writer.WritePropertyName("Progressing");
+                        writer.Write(publicRequest.Notifications.Progressing);
+                    }
+
+                    if(publicRequest.Notifications.IsSetWarning())
+                    {
+                        writer.WritePropertyName("Warning");
+                        writer.Write(publicRequest.Notifications.Warning);
+                    }
+
+                    writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetOutputBucket())
                 {
                     writer.WritePropertyName("OutputBucket");
-                    writer.Write(createPipelineRequest.OutputBucket);
+                    writer.Write(publicRequest.OutputBucket);
                 }
-                if (createPipelineRequest != null && createPipelineRequest.IsSetRole()) 
+
+                if(publicRequest.IsSetRole())
                 {
                     writer.WritePropertyName("Role");
-                    writer.Write(createPipelineRequest.Role);
+                    writer.Write(publicRequest.Role);
                 }
 
-                if (createPipelineRequest != null) 
+                if(publicRequest.IsSetThumbnailConfig())
                 {
-                    Notifications notifications = createPipelineRequest.Notifications;
-                    if (notifications != null)
+                    writer.WritePropertyName("ThumbnailConfig");
+                    writer.WriteObjectStart();
+                    if(publicRequest.ThumbnailConfig.IsSetBucket())
                     {
-                        writer.WritePropertyName("Notifications");
-                        writer.WriteObjectStart();
-                        if (notifications != null && notifications.IsSetProgressing()) 
-                        {
-                            writer.WritePropertyName("Progressing");
-                            writer.Write(notifications.Progressing);
-                        }
-                        if (notifications != null && notifications.IsSetCompleted()) 
-                        {
-                            writer.WritePropertyName("Completed");
-                            writer.Write(notifications.Completed);
-                        }
-                        if (notifications != null && notifications.IsSetWarning()) 
-                        {
-                            writer.WritePropertyName("Warning");
-                            writer.Write(notifications.Warning);
-                        }
-                        if (notifications != null && notifications.IsSetError()) 
-                        {
-                            writer.WritePropertyName("Error");
-                            writer.Write(notifications.Error);
-                        }
-                        writer.WriteObjectEnd();
+                        writer.WritePropertyName("Bucket");
+                        writer.Write(publicRequest.ThumbnailConfig.Bucket);
                     }
-                }
 
-                if (createPipelineRequest != null) 
-                {
-                    PipelineOutputConfig contentConfig = createPipelineRequest.ContentConfig;
-                    if (contentConfig != null)
+                    if(publicRequest.ThumbnailConfig.IsSetPermissions())
                     {
-                        writer.WritePropertyName("ContentConfig");
-                        writer.WriteObjectStart();
-                        if (contentConfig != null && contentConfig.IsSetBucket()) 
+                        writer.WritePropertyName("Permissions");
+                        writer.WriteArrayStart();
+                        foreach(var publicRequestThumbnailConfigPermissionsListValue in publicRequest.ThumbnailConfig.Permissions)
                         {
-                            writer.WritePropertyName("Bucket");
-                            writer.Write(contentConfig.Bucket);
-                        }
-                        if (contentConfig != null && contentConfig.IsSetStorageClass()) 
-                        {
-                            writer.WritePropertyName("StorageClass");
-                            writer.Write(contentConfig.StorageClass);
-                        }
-
-                        if (contentConfig != null && contentConfig.Permissions != null && contentConfig.Permissions.Count > 0)
-                        {
-                            List<Permission> permissionsList = contentConfig.Permissions;
-                            writer.WritePropertyName("Permissions");
-                            writer.WriteArrayStart();
-
-                            foreach (Permission permissionsListValue in permissionsList) 
+                            writer.WriteObjectStart();
+                            if(publicRequestThumbnailConfigPermissionsListValue.IsSetAccess())
                             {
-                                writer.WriteObjectStart();
-                                if (permissionsListValue != null && permissionsListValue.IsSetGranteeType()) 
+                                writer.WritePropertyName("Access");
+                                writer.WriteArrayStart();
+                                foreach(var publicRequestThumbnailConfigPermissionsListValueAccessListValue in publicRequestThumbnailConfigPermissionsListValue.Access)
                                 {
-                                    writer.WritePropertyName("GranteeType");
-                                    writer.Write(permissionsListValue.GranteeType);
+                                    writer.Write(publicRequestThumbnailConfigPermissionsListValueAccessListValue);
                                 }
-                                if (permissionsListValue != null && permissionsListValue.IsSetGrantee()) 
-                                {
-                                    writer.WritePropertyName("Grantee");
-                                    writer.Write(permissionsListValue.Grantee);
-                                }
-
-                                if (permissionsListValue != null && permissionsListValue.Access != null && permissionsListValue.Access.Count > 0) 
-                                {
-                                    List<string> accessList = permissionsListValue.Access;
-                                    writer.WritePropertyName("Access");
-                                    writer.WriteArrayStart();
-
-                                    foreach (string accessListValue in accessList) 
-                                    { 
-                                        writer.Write(StringUtils.FromString(accessListValue));
-                                    }
-
-                                    writer.WriteArrayEnd();
-                                }
-                                writer.WriteObjectEnd();
+                                writer.WriteArrayEnd();
                             }
-                            writer.WriteArrayEnd();
-                        }
-                        writer.WriteObjectEnd();
-                    }
-                }
 
-                if (createPipelineRequest != null) 
-                {
-                    PipelineOutputConfig thumbnailConfig = createPipelineRequest.ThumbnailConfig;
-                    if (thumbnailConfig != null)
-                    {
-                        writer.WritePropertyName("ThumbnailConfig");
-                        writer.WriteObjectStart();
-                        if (thumbnailConfig != null && thumbnailConfig.IsSetBucket()) 
-                        {
-                            writer.WritePropertyName("Bucket");
-                            writer.Write(thumbnailConfig.Bucket);
-                        }
-                        if (thumbnailConfig != null && thumbnailConfig.IsSetStorageClass()) 
-                        {
-                            writer.WritePropertyName("StorageClass");
-                            writer.Write(thumbnailConfig.StorageClass);
-                        }
-
-                        if (thumbnailConfig != null && thumbnailConfig.Permissions != null && thumbnailConfig.Permissions.Count > 0)
-                        {
-                            List<Permission> permissionsList = thumbnailConfig.Permissions;
-                            writer.WritePropertyName("Permissions");
-                            writer.WriteArrayStart();
-
-                            foreach (Permission permissionsListValue in permissionsList) 
+                            if(publicRequestThumbnailConfigPermissionsListValue.IsSetGrantee())
                             {
-                                writer.WriteObjectStart();
-                                if (permissionsListValue != null && permissionsListValue.IsSetGranteeType()) 
-                                {
-                                    writer.WritePropertyName("GranteeType");
-                                    writer.Write(permissionsListValue.GranteeType);
-                                }
-                                if (permissionsListValue != null && permissionsListValue.IsSetGrantee()) 
-                                {
-                                    writer.WritePropertyName("Grantee");
-                                    writer.Write(permissionsListValue.Grantee);
-                                }
-
-                                if (permissionsListValue != null && permissionsListValue.Access != null && permissionsListValue.Access.Count > 0) 
-                                {
-                                    List<string> accessList = permissionsListValue.Access;
-                                    writer.WritePropertyName("Access");
-                                    writer.WriteArrayStart();
-
-                                    foreach (string accessListValue in accessList) 
-                                    { 
-                                        writer.Write(StringUtils.FromString(accessListValue));
-                                    }
-
-                                    writer.WriteArrayEnd();
-                                }
-                                writer.WriteObjectEnd();
+                                writer.WritePropertyName("Grantee");
+                                writer.Write(publicRequestThumbnailConfigPermissionsListValue.Grantee);
                             }
-                            writer.WriteArrayEnd();
+
+                            if(publicRequestThumbnailConfigPermissionsListValue.IsSetGranteeType())
+                            {
+                                writer.WritePropertyName("GranteeType");
+                                writer.Write(publicRequestThumbnailConfigPermissionsListValue.GranteeType);
+                            }
+
+                            writer.WriteObjectEnd();
                         }
-                        writer.WriteObjectEnd();
+                        writer.WriteArrayEnd();
                     }
+
+                    if(publicRequest.ThumbnailConfig.IsSetStorageClass())
+                    {
+                        writer.WritePropertyName("StorageClass");
+                        writer.Write(publicRequest.ThumbnailConfig.StorageClass);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

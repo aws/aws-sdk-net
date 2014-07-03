@@ -14,32 +14,36 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Rotate Encryption Key Request Marshaller
+    /// RotateEncryptionKey Request Marshaller
     /// </summary>       
     public class RotateEncryptionKeyRequestMarshaller : IMarshaller<IRequest, RotateEncryptionKeyRequest>
     {
-        public IRequest Marshall(RotateEncryptionKeyRequest rotateEncryptionKeyRequest)
+        public IRequest Marshall(RotateEncryptionKeyRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(rotateEncryptionKeyRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "RotateEncryptionKey");
             request.Parameters.Add("Version", "2012-12-01");
-            if (rotateEncryptionKeyRequest != null && rotateEncryptionKeyRequest.IsSetClusterIdentifier())
-            {
-                request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(rotateEncryptionKeyRequest.ClusterIdentifier));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetClusterIdentifier())
+                {
+                    request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(publicRequest.ClusterIdentifier));
+                }
+            }
             return request;
         }
     }

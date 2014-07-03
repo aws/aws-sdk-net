@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,7 +24,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
+    /// Container for the parameters to the SetQueueAttributes operation.
+    /// Sets the value of one or more queue attributes. When you change a queue's attributes,
+    ///       the change can take up to 60 seconds for most of the attributes to propagate
+    /// throughout the SQS system.       Changes made to the <code>MessageRetentionPeriod</code>
+    /// attribute can take up to 15 minutes.
     /// 
+    ///     <note>Going forward, new attributes might be added.     If you are writing code
+    /// that calls this action, we recommend that you structure your code so that it can handle
+    /// new attributes gracefully.</note>
     /// </summary>
     public partial class SetQueueAttributesRequest : AmazonSQSRequest
     {

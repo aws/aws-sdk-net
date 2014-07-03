@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Returns information about the  GetDistributionConfig response and response metadata.
+    /// Configuration for accessing Amazon GetDistributionConfig service
     /// </summary>
     public partial class GetDistributionConfigResponse : GetDistributionConfigResult
     {
         /// <summary>
         /// Gets and sets the GetDistributionConfigResult property.
-        /// The returned result of the corresponding request.
+        /// Represents the output of a GetDistributionConfig operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the GetDistributionConfigResult class are now available on the GetDistributionConfigResponse class. You should use the properties on GetDistributionConfigResponse instead of accessing them through GetDistributionConfigResult.")]
         public GetDistributionConfigResult GetDistributionConfigResult
@@ -40,4 +36,3 @@ namespace Amazon.CloudFront.Model
         }
     }
 }
-    

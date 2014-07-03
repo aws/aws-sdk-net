@@ -12,60 +12,70 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.ElasticMapReduce.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+using Amazon.ElasticMapReduce.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for StepStateChangeReason Object
+    /// </summary>  
+    public class StepStateChangeReasonUnmarshaller : IUnmarshaller<StepStateChangeReason, XmlUnmarshallerContext>, IUnmarshaller<StepStateChangeReason, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// StepStateChangeReasonUnmarshaller
-      /// </summary>
-      internal class StepStateChangeReasonUnmarshaller : IUnmarshaller<StepStateChangeReason, XmlUnmarshallerContext>, IUnmarshaller<StepStateChangeReason, JsonUnmarshallerContext>
-      {
         StepStateChangeReason IUnmarshaller<StepStateChangeReason, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public StepStateChangeReason Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            StepStateChangeReason stepStateChangeReason = new StepStateChangeReason();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            StepStateChangeReason unmarshalledObject = new StepStateChangeReason();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("Code", targetDepth))
-              {
-                stepStateChangeReason.Code = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Message", targetDepth))
-              {
-                stepStateChangeReason.Message = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("Code", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Code = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Message", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Message = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return stepStateChangeReason;
+            return unmarshalledObject;
         }
 
-        private static StepStateChangeReasonUnmarshaller instance;
-        public static StepStateChangeReasonUnmarshaller GetInstance()
+
+        private static StepStateChangeReasonUnmarshaller _instance = new StepStateChangeReasonUnmarshaller();        
+
+        public static StepStateChangeReasonUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new StepStateChangeReasonUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

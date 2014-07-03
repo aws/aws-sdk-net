@@ -21,6 +21,7 @@ using System.Text;
 using Amazon.Runtime;
 using Amazon.S3.Util;
 using Amazon.Util;
+using System.Globalization;
 
 namespace Amazon.S3.Model
 {
@@ -41,6 +42,7 @@ namespace Amazon.S3.Model
         private DateTime? expires;
         private string websiteRedirectLocation;
         private ServerSideEncryptionMethod serverSideEncryption;
+        private ServerSideEncryptionCustomerMethod serverSideEncryptionCustomerMethod;
         private HeadersCollection headersCollection = new HeadersCollection();
         private MetadataCollection metadataCollection = new MetadataCollection();
 
@@ -306,6 +308,7 @@ namespace Amazon.S3.Model
             {
                 long current = 0;
                 BufferedStream bufferedStream = new BufferedStream(this.ResponseStream);
+                
                 byte[] buffer = new byte[S3Constants.DefaultBufferSize];
                 int bytesRead = 0;
 
@@ -323,6 +326,8 @@ namespace Amazon.S3.Model
                         totalIncrementTransferred = 0;
                     }
                 }
+
+                ValidateWrittenStreamSize(current);
             }
             finally
             {
@@ -370,6 +375,48 @@ namespace Amazon.S3.Model
         internal void OnRaiseProgressEvent(string file, long incrementTransferred, long transferred, long total)
         {
             AWSSDKUtils.InvokeInBackground(WriteObjectProgressEvent, new WriteObjectProgressArgs(this.BucketName, this.Key, file, this.VersionId, incrementTransferred, transferred, total), this);
+        }
+
+        /// <summary>
+        /// The Server-side encryption algorithm to be used with the customer provided key.
+        ///  
+        /// </summary>
+        public ServerSideEncryptionCustomerMethod ServerSideEncryptionCustomerMethod
+        {
+            get
+            {
+                if (this.serverSideEncryptionCustomerMethod == null)
+                    return ServerSideEncryptionCustomerMethod.None;
+
+                return this.serverSideEncryptionCustomerMethod;
+            }
+            set { this.serverSideEncryptionCustomerMethod = value; }
+        }
+
+        private void ValidateWrittenStreamSize(long bytesWritten)
+        {
+#if !(WIN_RT || WINDOWS_PHONE)
+            // Check if response stream or it's base stream is a AESDecryptionStream
+            var stream = Runtime.Internal.Util.WrapperStream.SearchWrappedStream(this.ResponseStream,
+                (s => s is Runtime.Internal.Util.DecryptStream));
+
+            // Don't validate length if response is an encrypted object. 
+            if (stream!=null)
+               return;
+#endif
+            if (bytesWritten != this.ContentLength)
+            {
+                string amzId2;                
+                this.ResponseMetadata.Metadata.TryGetValue(S3Constants.AmzId2Header, out amzId2);
+                amzId2 = amzId2 ?? string.Empty;
+ 
+                var message = string.Format(CultureInfo.InvariantCulture,
+                    "The total bytes read {0} from response stream is not equal to the Content-Length {1} for the object {2} in bucket {3}."+
+                    " Request ID = {4} , AmzId2 = {5}.",
+                    bytesWritten, this.ContentLength, this.Key, this.BucketName, this.ResponseMetadata.RequestId, amzId2);
+
+                throw new StreamSizeMismatchException(message, this.ContentLength, bytesWritten, this.ResponseMetadata.RequestId, amzId2);                
+            }
         }
     }
 

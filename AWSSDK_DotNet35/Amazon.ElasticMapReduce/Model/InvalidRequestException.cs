@@ -19,10 +19,10 @@ using Amazon.Runtime;
 namespace Amazon.ElasticMapReduce.Model
 {
     ///<summary>
-    /// AmazonElasticMapReduce exception
+    /// ElasticMapReduce exception
     /// </summary>
     public class InvalidRequestException : AmazonElasticMapReduceException 
-    {    
+    {
         /// <summary>
         /// Constructs a new InvalidRequestException with the specified error
         /// message.
@@ -44,5 +44,6 @@ namespace Amazon.ElasticMapReduce.Model
 
         public InvalidRequestException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
+
     }
 }

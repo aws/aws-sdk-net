@@ -17,50 +17,52 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> The returned result of the corresponding request. </para>
+    /// The returned result of the corresponding request.
     /// </summary>
     public partial class GetDistributionResult : AmazonWebServiceResponse
     {
-        
-        private Distribution distribution;
-        private string eTag;
+        private Distribution _distribution;
+        private string _eTag;
 
 
         /// <summary>
-        /// The distribution's information.
-        ///  
+        /// Gets and sets the property Distribution. The distribution's information.
         /// </summary>
         public Distribution Distribution
         {
-            get { return this.distribution; }
-            set { this.distribution = value; }
+            get { return this._distribution; }
+            set { this._distribution = value; }
         }
 
         // Check to see if Distribution property is set
         internal bool IsSetDistribution()
         {
-            return this.distribution != null;
+            return this._distribution != null;
         }
 
+
         /// <summary>
-        /// The current version of the distribution's information. For example: E2QWRUHAPOMQZL.
-        ///  
+        /// Gets and sets the property ETag. The current version of the distribution's information.
+        /// For example: E2QWRUHAPOMQZL.
         /// </summary>
         public string ETag
         {
-            get { return this.eTag; }
-            set { this.eTag = value; }
+            get { return this._eTag; }
+            set { this._eTag = value; }
         }
 
         // Check to see if ETag property is set
         internal bool IsSetETag()
         {
-            return this.eTag != null;
+            return this._eTag != null;
         }
+
     }
 }

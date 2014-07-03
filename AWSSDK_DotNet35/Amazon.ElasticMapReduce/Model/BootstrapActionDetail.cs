@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,31 +18,36 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para>Reports the configuration of a bootstrap action in a job flow.</para>
+    /// Reports the configuration of a bootstrap action in a job flow.
     /// </summary>
-    public class BootstrapActionDetail
+    public partial class BootstrapActionDetail
     {
-        
-        private BootstrapActionConfig bootstrapActionConfig;
+        private BootstrapActionConfig _bootstrapActionConfig;
 
 
         /// <summary>
+        /// Gets and sets the property BootstrapActionConfig. 
+        /// <para>
         /// A description of the bootstrap action.
-        ///  
+        /// </para>
         /// </summary>
         public BootstrapActionConfig BootstrapActionConfig
         {
-            get { return this.bootstrapActionConfig; }
-            set { this.bootstrapActionConfig = value; }
+            get { return this._bootstrapActionConfig; }
+            set { this._bootstrapActionConfig = value; }
         }
 
         // Check to see if BootstrapActionConfig property is set
         internal bool IsSetBootstrapActionConfig()
         {
-            return this.bootstrapActionConfig != null;
+            return this._bootstrapActionConfig != null;
         }
+
     }
 }

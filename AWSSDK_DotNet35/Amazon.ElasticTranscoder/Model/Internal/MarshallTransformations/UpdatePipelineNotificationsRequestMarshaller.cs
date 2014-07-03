@@ -29,79 +29,64 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Update Pipeline Notifications Request Marshaller
+    /// UpdatePipelineNotifications Request Marshaller
     /// </summary>       
-    internal class UpdatePipelineNotificationsRequestMarshaller : IMarshaller<IRequest, UpdatePipelineNotificationsRequest> 
+    public class UpdatePipelineNotificationsRequestMarshaller : IMarshaller<IRequest, UpdatePipelineNotificationsRequest> 
     {
-        
-
-        public IRequest Marshall(UpdatePipelineNotificationsRequest updatePipelineNotificationsRequest) 
+        public IRequest Marshall(UpdatePipelineNotificationsRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(updatePipelineNotificationsRequest, "AmazonElasticTranscoder");
-            string target = "EtsCustomerService.UpdatePipelineNotifications";
-            request.Headers["X-Amz-Target"] = target;
-            
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticTranscoder");
+            request.Headers["Content-Type"] = "application/x-amz-json-";
             request.HttpMethod = "POST";
-            string uriResourcePath = "2012-09-25/pipelines/{Id}/notifications"; 
-            if(updatePipelineNotificationsRequest.IsSetId())
-                uriResourcePath = uriResourcePath.Replace("{Id}", StringUtils.FromString(updatePipelineNotificationsRequest.Id) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{Id}", "" ); 
+
+            string uriResourcePath = "/2012-09-25/pipelines/{Id}/notifications";
+            uriResourcePath = uriResourcePath.Replace("{Id}", publicRequest.IsSetId() ? StringUtils.FromString(publicRequest.Id) : string.Empty);
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (updatePipelineNotificationsRequest != null && updatePipelineNotificationsRequest.IsSetId()) 
+                if(publicRequest.IsSetNotifications())
                 {
-                    writer.WritePropertyName("Id");
-                    writer.Write(updatePipelineNotificationsRequest.Id);
-                }
-
-                if (updatePipelineNotificationsRequest != null) 
-                {
-                    Notifications notifications = updatePipelineNotificationsRequest.Notifications;
-                    if (notifications != null)
+                    writer.WritePropertyName("Notifications");
+                    writer.WriteObjectStart();
+                    if(publicRequest.Notifications.IsSetCompleted())
                     {
-                        writer.WritePropertyName("Notifications");
-                        writer.WriteObjectStart();
-                        if (notifications != null && notifications.IsSetProgressing()) 
-                        {
-                            writer.WritePropertyName("Progressing");
-                            writer.Write(notifications.Progressing);
-                        }
-                        if (notifications != null && notifications.IsSetCompleted()) 
-                        {
-                            writer.WritePropertyName("Completed");
-                            writer.Write(notifications.Completed);
-                        }
-                        if (notifications != null && notifications.IsSetWarning()) 
-                        {
-                            writer.WritePropertyName("Warning");
-                            writer.Write(notifications.Warning);
-                        }
-                        if (notifications != null && notifications.IsSetError()) 
-                        {
-                            writer.WritePropertyName("Error");
-                            writer.Write(notifications.Error);
-                        }
-                        writer.WriteObjectEnd();
+                        writer.WritePropertyName("Completed");
+                        writer.Write(publicRequest.Notifications.Completed);
                     }
+
+                    if(publicRequest.Notifications.IsSetError())
+                    {
+                        writer.WritePropertyName("Error");
+                        writer.Write(publicRequest.Notifications.Error);
+                    }
+
+                    if(publicRequest.Notifications.IsSetProgressing())
+                    {
+                        writer.WritePropertyName("Progressing");
+                        writer.Write(publicRequest.Notifications.Progressing);
+                    }
+
+                    if(publicRequest.Notifications.IsSetWarning())
+                    {
+                        writer.WritePropertyName("Warning");
+                        writer.Write(publicRequest.Notifications.Warning);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

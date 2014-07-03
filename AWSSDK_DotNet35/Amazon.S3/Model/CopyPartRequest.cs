@@ -42,8 +42,15 @@ namespace Amazon.S3.Model
         private int? partNumber;
         private long? firstByte;
         private long? lastByte;
-        private ServerSideEncryptionMethod serverSideEncryption;
 
+        private ServerSideEncryptionMethod serverSideEncryption;
+        private ServerSideEncryptionCustomerMethod serverSideCustomerEncryption;
+        private string serverSideEncryptionCustomerProvidedKey;
+        private string serverSideEncryptionCustomerProvidedKeyMD5;
+
+        private ServerSideEncryptionCustomerMethod copySourceServerSideCustomerEncryption;
+        private string copySourceServerSideEncryptionCustomerProvidedKey;
+        private string copySourceServerSideEncryptionCustomerProvidedKeyMD5;
 
         /// <summary>
         /// The name of the bucket containing the object to copy.
@@ -364,6 +371,127 @@ namespace Amazon.S3.Model
         internal bool IsSetServerSideEncryptionMethod()
         {
             return this.serverSideEncryption != null && this.serverSideEncryption != ServerSideEncryptionMethod.None;
+        }
+
+        /// <summary>
+        /// The Server-side encryption algorithm to be used with the customer provided key.
+        ///  
+        /// </summary>
+        public ServerSideEncryptionCustomerMethod ServerSideEncryptionCustomerMethod
+        {
+            get { return this.serverSideCustomerEncryption; }
+            set { this.serverSideCustomerEncryption = value; }
+        }
+
+        // Check to see if ServerSideEncryptionCustomerMethod property is set
+        internal bool IsSetServerSideEncryptionCustomerMethod()
+        {
+            return this.serverSideCustomerEncryption != null && this.serverSideCustomerEncryption != ServerSideEncryptionCustomerMethod.None;
+        }
+
+        /// <summary>
+        /// The base64-encoded encryption key for Amazon S3 to use to encrypt the object
+        /// <para>
+        /// Using the encryption key you provide as part of your request Amazon S3 manages both the encryption, as it writes 
+        /// to disks, and decryption, when you access your objects. Therefore, you don't need to maintain any data encryption code. The only 
+        /// thing you do is manage the encryption keys you provide.
+        /// </para>
+        /// <para>
+        /// When you retrieve an object, you must provide the same encryption key as part of your request. Amazon S3 first verifies 
+        /// the encryption key you provided matches, and then decrypts the object before returning the object data to you.
+        /// </para>
+        /// <para>
+        /// Important: Amazon S3 does not store the encryption key you provide.
+        /// </para>
+        /// </summary>
+        public string ServerSideEncryptionCustomerProvidedKey
+        {
+            get { return this.serverSideEncryptionCustomerProvidedKey; }
+            set { this.serverSideEncryptionCustomerProvidedKey = value; }
+        }
+
+        /// <summary>
+        /// Checks if ServerSideEncryptionCustomerProvidedKey property is set.
+        /// </summary>
+        /// <returns>true if ServerSideEncryptionCustomerProvidedKey property is set.</returns>
+        internal bool IsSetServerSideEncryptionCustomerProvidedKey()
+        {
+            return !System.String.IsNullOrEmpty(this.serverSideEncryptionCustomerProvidedKey);
+        }
+
+        /// <summary>
+        /// The MD5 of the customer encryption key specified in the ServerSideEncryptionCustomerProvidedKey property. The MD5 is
+        /// base 64 encoded. This field is optional, the SDK will calculate the MD5 if this is not set.
+        /// </summary>
+        public string ServerSideEncryptionCustomerProvidedKeyMD5
+        {
+            get { return this.serverSideEncryptionCustomerProvidedKeyMD5; }
+            set { this.serverSideEncryptionCustomerProvidedKeyMD5 = value; }
+        }
+
+        /// <summary>
+        /// Checks if ServerSideEncryptionCustomerProvidedKeyMD5 property is set.
+        /// </summary>
+        /// <returns>true if ServerSideEncryptionCustomerProvidedKey property is set.</returns>
+        internal bool IsSetServerSideEncryptionCustomerProvidedKeyMD5()
+        {
+            return !System.String.IsNullOrEmpty(this.serverSideEncryptionCustomerProvidedKeyMD5);
+        }
+
+        /// <summary>
+        /// The Server-side encryption algorithm to be used with the customer provided key.
+        ///  
+        /// </summary>
+        public ServerSideEncryptionCustomerMethod CopySourceServerSideEncryptionCustomerMethod
+        {
+            get { return this.copySourceServerSideCustomerEncryption; }
+            set { this.copySourceServerSideCustomerEncryption = value; }
+        }
+
+        // Check to see if CopySourceServerSideEncryptionCustomerMethod property is set
+        internal bool IsSetCopySourceServerSideEncryptionCustomerMethod()
+        {
+            return this.copySourceServerSideCustomerEncryption != null && this.copySourceServerSideCustomerEncryption != ServerSideEncryptionCustomerMethod.None;
+        }
+
+        /// <summary>
+        /// The customer provided encryption key for the source object of the copy.
+        /// <para>
+        /// Important: Amazon S3 does not store the encryption key you provide.
+        /// </para>
+        /// </summary>
+        public string CopySourceServerSideEncryptionCustomerProvidedKey
+        {
+            get { return this.copySourceServerSideEncryptionCustomerProvidedKey; }
+            set { this.copySourceServerSideEncryptionCustomerProvidedKey = value; }
+        }
+
+        /// <summary>
+        /// Checks if CopySourceServerSideEncryptionCustomerProvidedKey property is set.
+        /// </summary>
+        /// <returns>true if CopySourceServerSideEncryptionCustomerProvidedKey property is set.</returns>
+        internal bool IsSetCopySourceServerSideEncryptionCustomerProvidedKey()
+        {
+            return !System.String.IsNullOrEmpty(this.copySourceServerSideEncryptionCustomerProvidedKey);
+        }
+
+        /// <summary>
+        /// The MD5 of the customer encryption key specified in the CopySourceServerSideEncryptionCustomerProvidedKey property. The MD5 is
+        /// base 64 encoded. This field is optional, the SDK will calculate the MD5 if this is not set.
+        /// </summary>
+        public string CopySourceServerSideEncryptionCustomerProvidedKeyMD5
+        {
+            get { return this.copySourceServerSideEncryptionCustomerProvidedKeyMD5; }
+            set { this.copySourceServerSideEncryptionCustomerProvidedKeyMD5 = value; }
+        }
+
+        /// <summary>
+        /// Checks if CopySourceServerSideEncryptionCustomerProvidedKeyMD5 property is set.
+        /// </summary>
+        /// <returns>true if CopySourceServerSideEncryptionCustomerProvidedKey property is set.</returns>
+        internal bool IsSetCopySourceServerSideEncryptionCustomerProvidedKeyMD5()
+        {
+            return !System.String.IsNullOrEmpty(this.copySourceServerSideEncryptionCustomerProvidedKeyMD5);
         }
     }
 }

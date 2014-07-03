@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,65 +25,50 @@ namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
     /// Container for the parameters to the RemovePermission operation.
-    /// <para>The <c>RemovePermission</c> action removes a statement from a topic's access control policy.</para>
+    /// Removes a statement from a topic's access control policy.
     /// </summary>
     public partial class RemovePermissionRequest : AmazonSimpleNotificationServiceRequest
     {
-        private string topicArn;
-        private string label;
+        private string _label;
+        private string _topicArn;
+
 
         /// <summary>
-        /// Default constructor for a new RemovePermissionRequest object.  Callers should use the
-        /// properties to initialize this object after creating it.
-        /// </summary>
-        public RemovePermissionRequest() {}
-    
-        /// <summary>
-        /// Constructs a new RemovePermissionRequest object.
-        /// Callers should use the properties initialize any additional object members.
-        /// </summary>
-        /// 
-        /// <param name="topicArn"> The ARN of the topic whose access control policy you wish to modify. </param>
-        /// <param name="label"> The unique label of the statement you want to remove. </param>
-        public RemovePermissionRequest(string topicArn, string label)
-        {
-            this.topicArn = topicArn;
-            this.label = label;
-        }
-    
-
-        /// <summary>
-        /// The ARN of the topic whose access control policy you wish to modify.
-        ///  
-        /// </summary>
-        public string TopicArn
-        {
-            get { return this.topicArn; }
-            set { this.topicArn = value; }
-        }
-
-        // Check to see if TopicArn property is set
-        internal bool IsSetTopicArn()
-        {
-            return this.topicArn != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Label. 
+        /// <para>
         /// The unique label of the statement you want to remove.
-        ///  
+        /// </para>
         /// </summary>
         public string Label
         {
-            get { return this.label; }
-            set { this.label = value; }
+            get { return this._label; }
+            set { this._label = value; }
         }
 
         // Check to see if Label property is set
         internal bool IsSetLabel()
         {
-            return this.label != null;
+            return this._label != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property TopicArn. 
+        /// <para>
+        /// The ARN of the topic whose access control policy you wish to modify.
+        /// </para>
+        /// </summary>
+        public string TopicArn
+        {
+            get { return this._topicArn; }
+            set { this._topicArn = value; }
+        }
+
+        // Check to see if TopicArn property is set
+        internal bool IsSetTopicArn()
+        {
+            return this._topicArn != null;
         }
 
     }
 }
-    

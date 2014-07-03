@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,28 +14,32 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SimpleEmail.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// List Verified Email Addresses Request Marshaller
+    /// ListVerifiedEmailAddresses Request Marshaller
     /// </summary>       
     public class ListVerifiedEmailAddressesRequestMarshaller : IMarshaller<IRequest, ListVerifiedEmailAddressesRequest>
     {
-        public IRequest Marshall(ListVerifiedEmailAddressesRequest listVerifiedEmailAddressesRequest)
+        public IRequest Marshall(ListVerifiedEmailAddressesRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(listVerifiedEmailAddressesRequest, "AmazonSimpleEmailService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleEmail");
             request.Parameters.Add("Action", "ListVerifiedEmailAddresses");
             request.Parameters.Add("Version", "2010-12-01");
 
+            if(publicRequest != null)
+            {
+            }
             return request;
         }
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,132 +25,90 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ResyncMFADevice operation.
-    /// <para>Synchronizes the specified MFA device with AWS servers.</para>
+    /// Synchronizes the specified MFA device with AWS servers.
     /// </summary>
     public partial class ResyncMFADeviceRequest : AmazonIdentityManagementServiceRequest
     {
-        private string userName;
-        private string serialNumber;
-        private string authenticationCode1;
-        private string authenticationCode2;
+        private string _authenticationCode1;
+        private string _authenticationCode2;
+        private string _serialNumber;
+        private string _userName;
 
 
         /// <summary>
-        /// Name of the user whose MFA device you want to resynchronize.
-        ///  
+        /// Gets and sets the property AuthenticationCode1. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 128</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=,.@-]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string UserName
-        {
-            get { return this.userName; }
-            set { this.userName = value; }
-        }
-
-        // Check to see if UserName property is set
-        internal bool IsSetUserName()
-        {
-            return this.userName != null;
-        }
-
-        /// <summary>
-        /// Serial number that uniquely identifies the MFA device.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>9 - 256</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=/:,.@-]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string SerialNumber
-        {
-            get { return this.serialNumber; }
-            set { this.serialNumber = value; }
-        }
-
-        // Check to see if SerialNumber property is set
-        internal bool IsSetSerialNumber()
-        {
-            return this.serialNumber != null;
-        }
-
-        /// <summary>
         /// An authentication code emitted by the device.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>6 - 6</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\d]*</description>
-        ///     </item>
-        /// </list>
         /// </para>
         /// </summary>
         public string AuthenticationCode1
         {
-            get { return this.authenticationCode1; }
-            set { this.authenticationCode1 = value; }
+            get { return this._authenticationCode1; }
+            set { this._authenticationCode1 = value; }
         }
 
         // Check to see if AuthenticationCode1 property is set
         internal bool IsSetAuthenticationCode1()
         {
-            return this.authenticationCode1 != null;
+            return this._authenticationCode1 != null;
         }
 
+
         /// <summary>
-        /// A subsequent authentication code emitted by the device.
-        ///  
+        /// Gets and sets the property AuthenticationCode2. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>6 - 6</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\d]*</description>
-        ///     </item>
-        /// </list>
+        /// A subsequent authentication code emitted by the device.
         /// </para>
         /// </summary>
         public string AuthenticationCode2
         {
-            get { return this.authenticationCode2; }
-            set { this.authenticationCode2 = value; }
+            get { return this._authenticationCode2; }
+            set { this._authenticationCode2 = value; }
         }
 
         // Check to see if AuthenticationCode2 property is set
         internal bool IsSetAuthenticationCode2()
         {
-            return this.authenticationCode2 != null;
+            return this._authenticationCode2 != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SerialNumber. 
+        /// <para>
+        /// Serial number that uniquely identifies the MFA device.
+        /// </para>
+        /// </summary>
+        public string SerialNumber
+        {
+            get { return this._serialNumber; }
+            set { this._serialNumber = value; }
+        }
+
+        // Check to see if SerialNumber property is set
+        internal bool IsSetSerialNumber()
+        {
+            return this._serialNumber != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property UserName. 
+        /// <para>
+        /// Name of the user whose MFA device you want to resynchronize.
+        /// </para>
+        /// </summary>
+        public string UserName
+        {
+            get { return this._userName; }
+            set { this._userName = value; }
+        }
+
+        // Check to see if UserName property is set
+        internal bool IsSetUserName()
+        {
+            return this._userName != null;
         }
 
     }
 }
-    

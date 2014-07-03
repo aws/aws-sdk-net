@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,79 +25,67 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UploadSigningCertificate operation.
-    /// <para>Uploads an X.509 signing certificate and associates it with the specified user. Some AWS services use X.509 signing certificates to
-    /// validate requests that are signed with a corresponding private key. When you upload the certificate, its default status is <c>Active</c>
-    /// .</para> <para>If the <c>UserName</c> field is not specified, the user name is determined implicitly based on the AWS access key ID used to
-    /// sign the request. Because this action works for access keys under the AWS account, this API can be used to manage root credentials even if
-    /// the AWS account has no associated users.</para> <para><b>NOTE:</b>Because the body of a X.509 certificate can be large, you should use POST
-    /// rather than GET when calling UploadSigningCertificate. For information about setting up signatures and authorization through the API, go to
-    /// Signing AWS API Requests in the AWS General Reference. For general information about using the Query API with IAM, go to Making Query
-    /// Requests in Using IAM.</para>
+    /// Uploads an X.509 signing certificate and associates it with the specified user. Some
+    /// AWS            services use X.509 signing certificates to validate requests that are signed
+    /// with a            corresponding private key. When you upload the certificate, its default status
+    /// is                <code>Active</code>.
+    /// 
+    ///         
+    /// <para>
+    /// If the <code>UserName</code> field is not specified, the user name is determined implicitly            based
+    /// on the AWS access key ID used to sign the request. Because this action works for access            keys
+    /// under the AWS account, this API can be used to manage root credentials even if the
+    /// AWS            account has no associated users.
+    /// </para>
+    ///         <note>Because the body of a X.509 certificate can be large, you should use POST
+    /// rather than GET            when calling <code>UploadSigningCertificate</code>. For information
+    /// about setting up            signatures and authorization through the API, go to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html"
+    /// target="_blank">Signing AWS API Requests</a> in the <i>AWS General Reference</i>.
+    /// For general information            about using the Query API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html"
+    /// target="_blank">Making                Query Requests</a> in <i>Using IAM</i>.</note>
     /// </summary>
     public partial class UploadSigningCertificateRequest : AmazonIdentityManagementServiceRequest
     {
-        private string userName;
-        private string certificateBody;
+        private string _certificateBody;
+        private string _userName;
 
 
         /// <summary>
-        /// Name of the user the signing certificate is for.
-        ///  
+        /// Gets and sets the property CertificateBody. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 128</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=,.@-]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string UserName
-        {
-            get { return this.userName; }
-            set { this.userName = value; }
-        }
-
-        // Check to see if UserName property is set
-        internal bool IsSetUserName()
-        {
-            return this.userName != null;
-        }
-
-        /// <summary>
         /// The contents of the signing certificate.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 16384</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0009\u000A\u000D\u0020-\u00FF]+</description>
-        ///     </item>
-        /// </list>
         /// </para>
         /// </summary>
         public string CertificateBody
         {
-            get { return this.certificateBody; }
-            set { this.certificateBody = value; }
+            get { return this._certificateBody; }
+            set { this._certificateBody = value; }
         }
 
         // Check to see if CertificateBody property is set
         internal bool IsSetCertificateBody()
         {
-            return this.certificateBody != null;
+            return this._certificateBody != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property UserName. 
+        /// <para>
+        /// Name of the user the signing certificate is for.
+        /// </para>
+        /// </summary>
+        public string UserName
+        {
+            get { return this._userName; }
+            set { this._userName = value; }
+        }
+
+        // Check to see if UserName property is set
+        internal bool IsSetUserName()
+        {
+            return this._userName != null;
         }
 
     }
 }
-    

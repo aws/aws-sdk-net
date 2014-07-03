@@ -27,9 +27,9 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the CreateVpcPeeringConnection operation.
     /// <para>Requests a VPC peering connection between two VPCs: a requester VPC that you own and a peer VPC with which to create the connection.
     /// The peer VPC can belong to another AWS account. The requester VPC and peer VPC cannot have overlapping CIDR blocks.</para> <para>The owner
-    /// of the peer VPC must accept the the peering request to activate the peering connection. The VPC peering connection request expires after 7
-    /// days, after which it cannot be accepted or rejected.</para> <para>A <c>CreateVpcPeeringConnection</c> request between VPCs with overlapping
-    /// CIDR blocks results in the VPC peering connection having a status of <c>failed</c> .</para>
+    /// of the peer VPC must accept the peering request to activate the peering connection. The VPC peering connection request expires after 7 days,
+    /// after which it cannot be accepted or rejected.</para> <para>A <c>CreateVpcPeeringConnection</c> request between VPCs with overlapping CIDR
+    /// blocks results in the VPC peering connection having a status of <c>failed</c> .</para>
     /// </summary>
     public partial class CreateVpcPeeringConnectionRequest : AmazonEC2Request
     {

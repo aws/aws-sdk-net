@@ -38,4 +38,4 @@ The **AWS SDK for .NET** enables .NET developers to easily work with [Amazon Web
 [docs-api]: http://aws-sdk-v2-preview-docs.s3-website-us-east-1.amazonaws.com/ 
 [docs-signup]: http://docs.aws.amazon.com/AWSSdkDocsNET/latest/DeveloperGuide/net-dg-setup.html
 [aws-iam-credentials]: http://docs.aws.amazon.com/AWSSdkDocsNET/latest/DeveloperGuide/net-dg-roles.html
-[docs-guide]: http://docs.aws.amazon.com/AWSSdkDocsNET/latest/DeveloperGuide/net-dg-sdk-v2.html
+[docs-guide]: http://docs.aws.amazon.com/AWSSdkDocsNET/latest/DeveloperGuide/welcome.html

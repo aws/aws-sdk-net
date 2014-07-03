@@ -25,29 +25,30 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteEventSubscription operation.
-    /// <para> Deletes an Amazon Redshift event notification subscription. </para>
+    /// Deletes an Amazon Redshift event notification subscription.
     /// </summary>
     public partial class DeleteEventSubscriptionRequest : AmazonRedshiftRequest
     {
-        private string subscriptionName;
+        private string _subscriptionName;
 
 
         /// <summary>
+        /// Gets and sets the property SubscriptionName. 
+        /// <para>
         /// The name of the Amazon Redshift event notification subscription to be deleted.
-        ///  
+        /// </para>
         /// </summary>
         public string SubscriptionName
         {
-            get { return this.subscriptionName; }
-            set { this.subscriptionName = value; }
+            get { return this._subscriptionName; }
+            set { this._subscriptionName = value; }
         }
 
         // Check to see if SubscriptionName property is set
         internal bool IsSetSubscriptionName()
         {
-            return this.subscriptionName != null;
+            return this._subscriptionName != null;
         }
 
     }
 }
-    

@@ -46,6 +46,17 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if(getObjectRequest.IsSetByteRange())
                 request.Headers.Add("Range", getObjectRequest.ByteRange.FormattedByteRange);
 
+            if (getObjectRequest.IsSetServerSideEncryptionCustomerMethod())
+                request.Headers.Add("x-amz-server-side-encryption-customer-algorithm", getObjectRequest.ServerSideEncryptionCustomerMethod);
+            if (getObjectRequest.IsSetServerSideEncryptionCustomerProvidedKey())
+            {
+                request.Headers.Add("x-amz-server-side-encryption-customer-key", getObjectRequest.ServerSideEncryptionCustomerProvidedKey);
+                if (getObjectRequest.IsSetServerSideEncryptionCustomerProvidedKeyMD5())
+                    request.Headers.Add("x-amz-server-side-encryption-customer-key-MD5", getObjectRequest.ServerSideEncryptionCustomerProvidedKeyMD5);
+                else
+                    request.Headers.Add("x-amz-server-side-encryption-customer-key-MD5", AmazonS3Util.ComputeEncodedMD5FromEncodedString(getObjectRequest.ServerSideEncryptionCustomerProvidedKey));
+            }
+
             var uriResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
                                                 S3Transforms.ToStringValue(getObjectRequest.BucketName),
                                                 S3Transforms.ToStringValue(getObjectRequest.Key));

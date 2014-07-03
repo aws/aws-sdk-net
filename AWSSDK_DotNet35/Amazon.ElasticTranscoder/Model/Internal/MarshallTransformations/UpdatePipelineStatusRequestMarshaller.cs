@@ -29,53 +29,39 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Update Pipeline Status Request Marshaller
+    /// UpdatePipelineStatus Request Marshaller
     /// </summary>       
-    internal class UpdatePipelineStatusRequestMarshaller : IMarshaller<IRequest, UpdatePipelineStatusRequest> 
+    public class UpdatePipelineStatusRequestMarshaller : IMarshaller<IRequest, UpdatePipelineStatusRequest> 
     {
-        
-
-        public IRequest Marshall(UpdatePipelineStatusRequest updatePipelineStatusRequest) 
+        public IRequest Marshall(UpdatePipelineStatusRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(updatePipelineStatusRequest, "AmazonElasticTranscoder");
-            string target = "EtsCustomerService.UpdatePipelineStatus";
-            request.Headers["X-Amz-Target"] = target;
-            
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticTranscoder");
+            request.Headers["Content-Type"] = "application/x-amz-json-";
             request.HttpMethod = "POST";
-            string uriResourcePath = "2012-09-25/pipelines/{Id}/status"; 
-            if(updatePipelineStatusRequest.IsSetId())
-                uriResourcePath = uriResourcePath.Replace("{Id}", StringUtils.FromString(updatePipelineStatusRequest.Id) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{Id}", "" ); 
+
+            string uriResourcePath = "/2012-09-25/pipelines/{Id}/status";
+            uriResourcePath = uriResourcePath.Replace("{Id}", publicRequest.IsSetId() ? StringUtils.FromString(publicRequest.Id) : string.Empty);
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (updatePipelineStatusRequest != null && updatePipelineStatusRequest.IsSetId()) 
-                {
-                    writer.WritePropertyName("Id");
-                    writer.Write(updatePipelineStatusRequest.Id);
-                }
-                if (updatePipelineStatusRequest != null && updatePipelineStatusRequest.IsSetStatus()) 
+                if(publicRequest.IsSetStatus())
                 {
                     writer.WritePropertyName("Status");
-                    writer.Write(updatePipelineStatusRequest.Status);
+                    writer.Write(publicRequest.Status);
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

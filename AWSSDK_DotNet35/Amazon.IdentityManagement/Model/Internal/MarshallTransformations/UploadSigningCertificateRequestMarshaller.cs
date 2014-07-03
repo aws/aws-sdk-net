@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,36 +14,40 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Upload Signing Certificate Request Marshaller
+    /// UploadSigningCertificate Request Marshaller
     /// </summary>       
     public class UploadSigningCertificateRequestMarshaller : IMarshaller<IRequest, UploadSigningCertificateRequest>
     {
-        public IRequest Marshall(UploadSigningCertificateRequest uploadSigningCertificateRequest)
+        public IRequest Marshall(UploadSigningCertificateRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(uploadSigningCertificateRequest, "AmazonIdentityManagementService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.IdentityManagement");
             request.Parameters.Add("Action", "UploadSigningCertificate");
             request.Parameters.Add("Version", "2010-05-08");
-            if (uploadSigningCertificateRequest != null && uploadSigningCertificateRequest.IsSetUserName())
-            {
-                request.Parameters.Add("UserName", StringUtils.FromString(uploadSigningCertificateRequest.UserName));
-            }
-            if (uploadSigningCertificateRequest != null && uploadSigningCertificateRequest.IsSetCertificateBody())
-            {
-                request.Parameters.Add("CertificateBody", StringUtils.FromString(uploadSigningCertificateRequest.CertificateBody));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetCertificateBody())
+                {
+                    request.Parameters.Add("CertificateBody", StringUtils.FromString(publicRequest.CertificateBody));
+                }
+                if(publicRequest.IsSetUserName())
+                {
+                    request.Parameters.Add("UserName", StringUtils.FromString(publicRequest.UserName));
+                }
+            }
             return request;
         }
     }

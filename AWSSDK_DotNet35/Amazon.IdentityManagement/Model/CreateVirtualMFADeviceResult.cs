@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the CreateVirtualMFADevice action.</para>
+    /// Contains the result of a successful invocation of the <a>CreateVirtualMFADevice</a>            action.
     /// </summary>
     public partial class CreateVirtualMFADeviceResult : AmazonWebServiceResponse
     {
-        
-        private VirtualMFADevice virtualMFADevice;
+        private VirtualMFADevice _virtualMFADevice;
 
 
         /// <summary>
+        /// Gets and sets the property VirtualMFADevice. 
+        /// <para>
         /// A newly created virtual MFA device.
-        ///  
+        /// </para>
         /// </summary>
         public VirtualMFADevice VirtualMFADevice
         {
-            get { return this.virtualMFADevice; }
-            set { this.virtualMFADevice = value; }
+            get { return this._virtualMFADevice; }
+            set { this._virtualMFADevice = value; }
         }
 
         // Check to see if VirtualMFADevice property is set
         internal bool IsSetVirtualMFADevice()
         {
-            return this.virtualMFADevice != null;
+            return this._virtualMFADevice != null;
         }
+
     }
 }

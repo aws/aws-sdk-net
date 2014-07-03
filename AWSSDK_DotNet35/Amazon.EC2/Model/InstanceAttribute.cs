@@ -38,6 +38,7 @@ namespace Amazon.EC2.Model
         private List<ProductCode> productCodes = new List<ProductCode>();
         private bool? ebsOptimized;
         private string sriovNetSupport;
+        private bool? sourceDestCheck;
 
 
         /// <summary>
@@ -230,6 +231,23 @@ namespace Amazon.EC2.Model
         internal bool IsSetSriovNetSupport()
         {
             return this.sriovNetSupport != null;
+        }
+
+        /// <summary>
+        /// Indicates whether source/destination checking is enabled. A value of true means checking is enabled, and false means checking is disabled.
+        /// This value must be false for a NAT instance to perform NAT.
+        ///  
+        /// </summary>
+        public bool SourceDestCheck
+        {
+            get { return this.sourceDestCheck ?? default(bool); }
+            set { this.sourceDestCheck = value; }
+        }
+
+        // Check to see if SourceDestCheck property is set
+        internal bool IsSetSourceDestCheck()
+        {
+            return this.sourceDestCheck.HasValue;
         }
     }
 }

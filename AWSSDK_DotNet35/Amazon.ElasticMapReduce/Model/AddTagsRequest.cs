@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,50 +25,56 @@ namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
     /// Container for the parameters to the AddTags operation.
-    /// <para>Adds tags to an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to track
-    /// your Amazon EMR resource allocation costs. For more information, see <a
-    /// href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html" >Tagging Amazon EMR Resources</a> .
-    /// </para>
+    /// Adds tags to an Amazon EMR resource. Tags make it easier to associate clusters in
+    /// various ways, such as grouping clusters to track your Amazon EMR resource allocation
+    /// costs.                  For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging
+    /// Amazon EMR Resources</a>.
     /// </summary>
     public partial class AddTagsRequest : AmazonElasticMapReduceRequest
     {
-        private string resourceId;
-        private List<Tag> tags = new List<Tag>();
+        private string _resourceId;
+        private List<Tag> _tags = new List<Tag>();
 
 
         /// <summary>
-        /// The Amazon EMR resource identifier to which tags will be added. This value must be a cluster identifier.
-        ///  
+        /// Gets and sets the property ResourceId. 
+        /// <para>
+        /// The Amazon EMR resource identifier to which tags will be added. This value must be
+        /// a cluster identifier.
+        /// </para>
         /// </summary>
         public string ResourceId
         {
-            get { return this.resourceId; }
-            set { this.resourceId = value; }
+            get { return this._resourceId; }
+            set { this._resourceId = value; }
         }
 
         // Check to see if ResourceId property is set
         internal bool IsSetResourceId()
         {
-            return this.resourceId != null;
+            return this._resourceId != null;
         }
 
+
         /// <summary>
-        /// A list of tags to associate with a cluster and propagate to Amazon EC2 instances. Tags are user-defined key/value pairs that consist of a
-        /// required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.
-        ///  
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags to associate with a cluster and propagate to Amazon EC2 instances.
+        /// Tags are user-defined key/value pairs that consist of a required key string with a
+        /// maximum of 128 characters, and an optional value string with a maximum of 256 characters.
+        /// </para>
         /// </summary>
         public List<Tag> Tags
         {
-            get { return this.tags; }
-            set { this.tags = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this.tags.Count > 0;
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }
 }
-    

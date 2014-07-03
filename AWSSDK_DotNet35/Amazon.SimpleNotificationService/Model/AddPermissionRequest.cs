@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,106 +25,97 @@ namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
     /// Container for the parameters to the AddPermission operation.
-    /// <para>The <c>AddPermission</c> action adds a statement to a topic's access control policy, granting access for the specified AWS accounts to
-    /// the specified actions.</para>
+    /// Adds a statement to a topic's access control policy, granting access for the specified
+    /// AWS accounts to the specified actions.
     /// </summary>
     public partial class AddPermissionRequest : AmazonSimpleNotificationServiceRequest
     {
-        private string topicArn;
-        private string label;
-        private List<string> aWSAccountId = new List<string>();
-        private List<string> actionName = new List<string>();
+        private List<string> _actionName = new List<string>();
+        private List<string> _aWSAccountId = new List<string>();
+        private string _label;
+        private string _topicArn;
+
 
         /// <summary>
-        /// Default constructor for a new AddPermissionRequest object.  Callers should use the
-        /// properties to initialize this object after creating it.
-        /// </summary>
-        public AddPermissionRequest() {}
-    
-        /// <summary>
-        /// Constructs a new AddPermissionRequest object.
-        /// Callers should use the properties initialize any additional object members.
-        /// </summary>
-        /// 
-        /// <param name="topicArn"> The ARN of the topic whose access control policy you wish to modify. </param>
-        /// <param name="label"> A unique identifier for the new policy statement. </param>
-        /// <param name="aWSAccountId"> The AWS account IDs of the users (principals) who will be given access to the specified actions. The users must
-        /// have AWS accounts, but do not need to be signed up for this service. </param>
-        /// <param name="actionName"> The action you want to allow for the specified principal(s). Valid values: any Amazon SNS action name. </param>
-        public AddPermissionRequest(string topicArn, string label, List<string> aWSAccountId, List<string> actionName)
-        {
-            this.topicArn = topicArn;
-            this.label = label;
-            this.aWSAccountId = aWSAccountId;
-            this.actionName = actionName;
-        }
-    
-
-        /// <summary>
-        /// The ARN of the topic whose access control policy you wish to modify.
-        ///  
-        /// </summary>
-        public string TopicArn
-        {
-            get { return this.topicArn; }
-            set { this.topicArn = value; }
-        }
-
-        // Check to see if TopicArn property is set
-        internal bool IsSetTopicArn()
-        {
-            return this.topicArn != null;
-        }
-
-        /// <summary>
-        /// A unique identifier for the new policy statement.
-        ///  
-        /// </summary>
-        public string Label
-        {
-            get { return this.label; }
-            set { this.label = value; }
-        }
-
-        // Check to see if Label property is set
-        internal bool IsSetLabel()
-        {
-            return this.label != null;
-        }
-
-        /// <summary>
-        /// The AWS account IDs of the users (principals) who will be given access to the specified actions. The users must have AWS accounts, but do
-        /// not need to be signed up for this service.
-        ///  
-        /// </summary>
-        public List<string> AWSAccountId
-        {
-            get { return this.aWSAccountId; }
-            set { this.aWSAccountId = value; }
-        }
-
-        // Check to see if AWSAccountId property is set
-        internal bool IsSetAWSAccountId()
-        {
-            return this.aWSAccountId.Count > 0;
-        }
-
-        /// <summary>
-        /// The action you want to allow for the specified principal(s). Valid values: any Amazon SNS action name.
-        ///  
+        /// Gets and sets the property ActionName. 
+        /// <para>
+        /// The action you want to allow for the specified principal(s).
+        /// </para>
+        ///     
+        /// <para>
+        /// Valid values: any Amazon SNS action name.
+        /// </para>
         /// </summary>
         public List<string> ActionName
         {
-            get { return this.actionName; }
-            set { this.actionName = value; }
+            get { return this._actionName; }
+            set { this._actionName = value; }
         }
 
         // Check to see if ActionName property is set
         internal bool IsSetActionName()
         {
-            return this.actionName.Count > 0;
+            return this._actionName != null && this._actionName.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property AWSAccountId. 
+        /// <para>
+        /// The AWS account IDs of the users (principals) who will be given access to the specified
+        ///    actions. The users must have AWS accounts, but do not need to be signed up    
+        /// for this service. 
+        /// </para>
+        /// </summary>
+        public List<string> AWSAccountId
+        {
+            get { return this._aWSAccountId; }
+            set { this._aWSAccountId = value; }
+        }
+
+        // Check to see if AWSAccountId property is set
+        internal bool IsSetAWSAccountId()
+        {
+            return this._aWSAccountId != null && this._aWSAccountId.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Label. 
+        /// <para>
+        /// A unique identifier for the new policy statement.
+        /// </para>
+        /// </summary>
+        public string Label
+        {
+            get { return this._label; }
+            set { this._label = value; }
+        }
+
+        // Check to see if Label property is set
+        internal bool IsSetLabel()
+        {
+            return this._label != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property TopicArn. 
+        /// <para>
+        /// The ARN of the topic whose access control policy you wish to modify.
+        /// </para>
+        /// </summary>
+        public string TopicArn
+        {
+            get { return this._topicArn; }
+            set { this._topicArn = value; }
+        }
+
+        // Check to see if TopicArn property is set
+        internal bool IsSetTopicArn()
+        {
+            return this._topicArn != null;
         }
 
     }
 }
-    

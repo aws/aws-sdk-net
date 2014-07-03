@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,74 +25,52 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAssumeRolePolicy operation.
-    /// <para>Updates the policy that grants an entity permission to assume a role. Currently, only an Amazon EC2 instance can assume a role. For
-    /// more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html" >Working with Roles</a>
-    /// .</para>
+    /// Updates the policy that grants an entity permission to assume a role. For more information
+    /// about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
+    /// with            Roles</a>.
     /// </summary>
     public partial class UpdateAssumeRolePolicyRequest : AmazonIdentityManagementServiceRequest
     {
-        private string roleName;
-        private string policyDocument;
+        private string _policyDocument;
+        private string _roleName;
 
 
         /// <summary>
-        /// Name of the role to update.
-        ///  
+        /// Gets and sets the property PolicyDocument. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 64</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=,.@-]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string RoleName
-        {
-            get { return this.roleName; }
-            set { this.roleName = value; }
-        }
-
-        // Check to see if RoleName property is set
-        internal bool IsSetRoleName()
-        {
-            return this.roleName != null;
-        }
-
-        /// <summary>
         /// The policy that grants an entity permission to assume the role.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 131072</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0009\u000A\u000D\u0020-\u00FF]+</description>
-        ///     </item>
-        /// </list>
         /// </para>
         /// </summary>
         public string PolicyDocument
         {
-            get { return this.policyDocument; }
-            set { this.policyDocument = value; }
+            get { return this._policyDocument; }
+            set { this._policyDocument = value; }
         }
 
         // Check to see if PolicyDocument property is set
         internal bool IsSetPolicyDocument()
         {
-            return this.policyDocument != null;
+            return this._policyDocument != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property RoleName. 
+        /// <para>
+        /// Name of the role to update.
+        /// </para>
+        /// </summary>
+        public string RoleName
+        {
+            get { return this._roleName; }
+            set { this._roleName = value; }
+        }
+
+        // Check to see if RoleName property is set
+        internal bool IsSetRoleName()
+        {
+            return this._roleName != null;
         }
 
     }
 }
-    

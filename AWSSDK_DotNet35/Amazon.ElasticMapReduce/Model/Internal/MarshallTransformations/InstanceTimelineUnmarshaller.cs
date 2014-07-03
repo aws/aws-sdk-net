@@ -12,66 +12,76 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.ElasticMapReduce.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+using Amazon.ElasticMapReduce.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for InstanceTimeline Object
+    /// </summary>  
+    public class InstanceTimelineUnmarshaller : IUnmarshaller<InstanceTimeline, XmlUnmarshallerContext>, IUnmarshaller<InstanceTimeline, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// InstanceTimelineUnmarshaller
-      /// </summary>
-      internal class InstanceTimelineUnmarshaller : IUnmarshaller<InstanceTimeline, XmlUnmarshallerContext>, IUnmarshaller<InstanceTimeline, JsonUnmarshallerContext>
-      {
         InstanceTimeline IUnmarshaller<InstanceTimeline, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public InstanceTimeline Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            InstanceTimeline instanceTimeline = new InstanceTimeline();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            InstanceTimeline unmarshalledObject = new InstanceTimeline();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("CreationDateTime", targetDepth))
-              {
-                instanceTimeline.CreationDateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("ReadyDateTime", targetDepth))
-              {
-                instanceTimeline.ReadyDateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("EndDateTime", targetDepth))
-              {
-                instanceTimeline.EndDateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("CreationDateTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreationDateTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EndDateTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.EndDateTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ReadyDateTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.ReadyDateTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return instanceTimeline;
+            return unmarshalledObject;
         }
 
-        private static InstanceTimelineUnmarshaller instance;
-        public static InstanceTimelineUnmarshaller GetInstance()
+
+        private static InstanceTimelineUnmarshaller _instance = new InstanceTimelineUnmarshaller();        
+
+        public static InstanceTimelineUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new InstanceTimelineUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

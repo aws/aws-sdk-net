@@ -18,249 +18,267 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> A summary of the information for an Amazon CloudFront distribution. </para>
+    /// A summary of the information for an Amazon CloudFront distribution.
     /// </summary>
     public partial class DistributionSummary
     {
-        
-        private string id;
-        private string status;
-        private DateTime? lastModifiedTime;
-        private string domainName;
-        private Aliases aliases;
-        private Origins origins;
-        private DefaultCacheBehavior defaultCacheBehavior;
-        private CacheBehaviors cacheBehaviors;
-        private CustomErrorResponses customErrorResponses;
-        private string comment;
-        private PriceClass priceClass;
-        private bool? enabled;
-        private ViewerCertificate viewerCertificate;
-        private Restrictions restrictions;
+        private Aliases _aliases;
+        private CacheBehaviors _cacheBehaviors;
+        private string _comment;
+        private CustomErrorResponses _customErrorResponses;
+        private DefaultCacheBehavior _defaultCacheBehavior;
+        private string _domainName;
+        private bool? _enabled;
+        private string _id;
+        private DateTime? _lastModifiedTime;
+        private Origins _origins;
+        private PriceClass _priceClass;
+        private Restrictions _restrictions;
+        private string _status;
+        private ViewerCertificate _viewerCertificate;
 
 
         /// <summary>
-        /// The identifier for the distribution. For example: EDFDVBD632BHDS5.
-        ///  
-        /// </summary>
-        public string Id
-        {
-            get { return this.id; }
-            set { this.id = value; }
-        }
-
-        // Check to see if Id property is set
-        internal bool IsSetId()
-        {
-            return this.id != null;
-        }
-
-        /// <summary>
-        /// This response element indicates the current status of the distribution. When the status is Deployed, the distribution's information is fully
-        /// propagated throughout the Amazon CloudFront system.
-        ///  
-        /// </summary>
-        public string Status
-        {
-            get { return this.status; }
-            set { this.status = value; }
-        }
-
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
-        {
-            return this.status != null;
-        }
-
-        /// <summary>
-        /// The date and time the distribution was last modified.
-        ///  
-        /// </summary>
-        public DateTime LastModifiedTime
-        {
-            get { return this.lastModifiedTime ?? default(DateTime); }
-            set { this.lastModifiedTime = value; }
-        }
-
-        // Check to see if LastModifiedTime property is set
-        internal bool IsSetLastModifiedTime()
-        {
-            return this.lastModifiedTime.HasValue;
-        }
-
-        /// <summary>
-        /// The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.
-        ///  
-        /// </summary>
-        public string DomainName
-        {
-            get { return this.domainName; }
-            set { this.domainName = value; }
-        }
-
-        // Check to see if DomainName property is set
-        internal bool IsSetDomainName()
-        {
-            return this.domainName != null;
-        }
-
-        /// <summary>
-        /// A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.
-        ///  
+        /// Gets and sets the property Aliases. A complex type that contains information about
+        /// CNAMEs (alternate domain names), if any, for this distribution.
         /// </summary>
         public Aliases Aliases
         {
-            get { return this.aliases; }
-            set { this.aliases = value; }
+            get { return this._aliases; }
+            set { this._aliases = value; }
         }
 
         // Check to see if Aliases property is set
         internal bool IsSetAliases()
         {
-            return this.aliases != null;
+            return this._aliases != null;
         }
+
 
         /// <summary>
-        /// A complex type that contains information about origins for this distribution.
-        ///  
-        /// </summary>
-        public Origins Origins
-        {
-            get { return this.origins; }
-            set { this.origins = value; }
-        }
-
-        // Check to see if Origins property is set
-        internal bool IsSetOrigins()
-        {
-            return this.origins != null;
-        }
-
-        /// <summary>
-        /// A complex type that describes the default cache behavior if you do not specify a CacheBehavior element or if files don't match any of the
-        /// values of PathPattern in CacheBehavior elements.You must create exactly one default cache behavior.
-        ///  
-        /// </summary>
-        public DefaultCacheBehavior DefaultCacheBehavior
-        {
-            get { return this.defaultCacheBehavior; }
-            set { this.defaultCacheBehavior = value; }
-        }
-
-        // Check to see if DefaultCacheBehavior property is set
-        internal bool IsSetDefaultCacheBehavior()
-        {
-            return this.defaultCacheBehavior != null;
-        }
-
-        /// <summary>
-        /// A complex type that contains zero or more CacheBehavior elements.
-        ///  
+        /// Gets and sets the property CacheBehaviors. A complex type that contains zero or more
+        /// CacheBehavior elements.
         /// </summary>
         public CacheBehaviors CacheBehaviors
         {
-            get { return this.cacheBehaviors; }
-            set { this.cacheBehaviors = value; }
+            get { return this._cacheBehaviors; }
+            set { this._cacheBehaviors = value; }
         }
 
         // Check to see if CacheBehaviors property is set
         internal bool IsSetCacheBehaviors()
         {
-            return this.cacheBehaviors != null;
+            return this._cacheBehaviors != null;
         }
+
 
         /// <summary>
-        /// A complex type that contains zero or more CustomErrorResponses elements.
-        ///  
-        /// </summary>
-        public CustomErrorResponses CustomErrorResponses
-        {
-            get { return this.customErrorResponses; }
-            set { this.customErrorResponses = value; }
-        }
-
-        // Check to see if CustomErrorResponses property is set
-        internal bool IsSetCustomErrorResponses()
-        {
-            return this.customErrorResponses != null;
-        }
-
-        /// <summary>
-        /// The comment originally specified when this distribution was created.
-        ///  
+        /// Gets and sets the property Comment. The comment originally specified when this distribution
+        /// was created.
         /// </summary>
         public string Comment
         {
-            get { return this.comment; }
-            set { this.comment = value; }
+            get { return this._comment; }
+            set { this._comment = value; }
         }
 
         // Check to see if Comment property is set
         internal bool IsSetComment()
         {
-            return this.comment != null;
-        }
-        public PriceClass PriceClass
-        {
-            get { return this.priceClass; }
-            set { this.priceClass = value; }
+            return this._comment != null;
         }
 
-        // Check to see if PriceClass property is set
-        internal bool IsSetPriceClass()
-        {
-            return this.priceClass != null;
-        }
 
         /// <summary>
-        /// Whether the distribution is enabled to accept end user requests for content.
-        ///  
+        /// Gets and sets the property CustomErrorResponses. A complex type that contains zero
+        /// or more CustomErrorResponses elements.
+        /// </summary>
+        public CustomErrorResponses CustomErrorResponses
+        {
+            get { return this._customErrorResponses; }
+            set { this._customErrorResponses = value; }
+        }
+
+        // Check to see if CustomErrorResponses property is set
+        internal bool IsSetCustomErrorResponses()
+        {
+            return this._customErrorResponses != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property DefaultCacheBehavior. A complex type that describes the
+        /// default cache behavior if you do not    specify a CacheBehavior element or if files
+        /// don't match any of the values    of PathPattern in CacheBehavior elements.You must
+        /// create exactly    one default cache behavior.
+        /// </summary>
+        public DefaultCacheBehavior DefaultCacheBehavior
+        {
+            get { return this._defaultCacheBehavior; }
+            set { this._defaultCacheBehavior = value; }
+        }
+
+        // Check to see if DefaultCacheBehavior property is set
+        internal bool IsSetDefaultCacheBehavior()
+        {
+            return this._defaultCacheBehavior != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property DomainName. The domain name corresponding to the distribution.
+        /// For example: d604721fxaaqy9.cloudfront.net.
+        /// </summary>
+        public string DomainName
+        {
+            get { return this._domainName; }
+            set { this._domainName = value; }
+        }
+
+        // Check to see if DomainName property is set
+        internal bool IsSetDomainName()
+        {
+            return this._domainName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Enabled. Whether the distribution is enabled to accept
+        /// end user requests for content.
         /// </summary>
         public bool Enabled
         {
-            get { return this.enabled ?? default(bool); }
-            set { this.enabled = value; }
+            get { return this._enabled.GetValueOrDefault(); }
+            set { this._enabled = value; }
         }
 
         // Check to see if Enabled property is set
         internal bool IsSetEnabled()
         {
-            return this.enabled.HasValue;
+            return this._enabled.HasValue; 
         }
 
+
         /// <summary>
-        /// A complex type that contains information about viewer certificates for this distribution.
-        ///  
+        /// Gets and sets the property Id. The identifier for the distribution. For example: EDFDVBD632BHDS5.
         /// </summary>
-        public ViewerCertificate ViewerCertificate
+        public string Id
         {
-            get { return this.viewerCertificate; }
-            set { this.viewerCertificate = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
-        // Check to see if ViewerCertificate property is set
-        internal bool IsSetViewerCertificate()
+        // Check to see if Id property is set
+        internal bool IsSetId()
         {
-            return this.viewerCertificate != null;
+            return this._id != null;
         }
+
 
         /// <summary>
-        /// A complex type that identifies ways in which you want to restrict distribution of your content.
-        ///  
+        /// Gets and sets the property LastModifiedTime. The date and time the distribution was
+        /// last modified.
+        /// </summary>
+        public DateTime LastModifiedTime
+        {
+            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            set { this._lastModifiedTime = value; }
+        }
+
+        // Check to see if LastModifiedTime property is set
+        internal bool IsSetLastModifiedTime()
+        {
+            return this._lastModifiedTime.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Origins. A complex type that contains information about
+        /// origins for this distribution.
+        /// </summary>
+        public Origins Origins
+        {
+            get { return this._origins; }
+            set { this._origins = value; }
+        }
+
+        // Check to see if Origins property is set
+        internal bool IsSetOrigins()
+        {
+            return this._origins != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property PriceClass.
+        /// </summary>
+        public PriceClass PriceClass
+        {
+            get { return this._priceClass; }
+            set { this._priceClass = value; }
+        }
+
+        // Check to see if PriceClass property is set
+        internal bool IsSetPriceClass()
+        {
+            return this._priceClass != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Restrictions.
         /// </summary>
         public Restrictions Restrictions
         {
-            get { return this.restrictions; }
-            set { this.restrictions = value; }
+            get { return this._restrictions; }
+            set { this._restrictions = value; }
         }
 
         // Check to see if Restrictions property is set
         internal bool IsSetRestrictions()
         {
-            return this.restrictions != null;
+            return this._restrictions != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Status. This response element indicates the current status
+        /// of the distribution.    When the status is Deployed, the distribution's information
+        /// is fully propagated throughout the Amazon CloudFront system.
+        /// </summary>
+        public string Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ViewerCertificate.
+        /// </summary>
+        public ViewerCertificate ViewerCertificate
+        {
+            get { return this._viewerCertificate; }
+            set { this._viewerCertificate = value; }
+        }
+
+        // Check to see if ViewerCertificate property is set
+        internal bool IsSetViewerCertificate()
+        {
+            return this._viewerCertificate != null;
+        }
+
     }
 }

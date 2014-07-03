@@ -16,27 +16,24 @@ using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// The results from the DescribeDefaultClusterParameters action.
+    /// Describes the default cluster parameters for a parameter group family.
     /// </summary>
     public partial class DescribeDefaultClusterParametersResult : AmazonWebServiceResponse
     {
-        private DefaultClusterParameters defaultClusterParametersValue;
+        private DefaultClusterParameters _response;
 
-        /// <summary>
-        /// Gets and sets the DescribeDefaultClusterParametersResult property.
-        /// Contains the result of a successful invocation of the DescribeDefaultClusterParameters
-        /// action.
-        /// </summary>
         public DefaultClusterParameters DefaultClusterParameters
         {
-            get { return this.defaultClusterParametersValue; }
-            set { this.defaultClusterParametersValue = value; }
+            get { return this._response; }
+            set { this._response = value; }
         }
     }
 }
-    

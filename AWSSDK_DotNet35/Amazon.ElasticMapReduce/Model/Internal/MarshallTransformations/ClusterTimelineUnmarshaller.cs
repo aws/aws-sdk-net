@@ -12,66 +12,76 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.ElasticMapReduce.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+using Amazon.ElasticMapReduce.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for ClusterTimeline Object
+    /// </summary>  
+    public class ClusterTimelineUnmarshaller : IUnmarshaller<ClusterTimeline, XmlUnmarshallerContext>, IUnmarshaller<ClusterTimeline, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// ClusterTimelineUnmarshaller
-      /// </summary>
-      internal class ClusterTimelineUnmarshaller : IUnmarshaller<ClusterTimeline, XmlUnmarshallerContext>, IUnmarshaller<ClusterTimeline, JsonUnmarshallerContext>
-      {
         ClusterTimeline IUnmarshaller<ClusterTimeline, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public ClusterTimeline Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            ClusterTimeline clusterTimeline = new ClusterTimeline();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            ClusterTimeline unmarshalledObject = new ClusterTimeline();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("CreationDateTime", targetDepth))
-              {
-                clusterTimeline.CreationDateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("ReadyDateTime", targetDepth))
-              {
-                clusterTimeline.ReadyDateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("EndDateTime", targetDepth))
-              {
-                clusterTimeline.EndDateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("CreationDateTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreationDateTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EndDateTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.EndDateTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ReadyDateTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.ReadyDateTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return clusterTimeline;
+            return unmarshalledObject;
         }
 
-        private static ClusterTimelineUnmarshaller instance;
-        public static ClusterTimelineUnmarshaller GetInstance()
+
+        private static ClusterTimelineUnmarshaller _instance = new ClusterTimelineUnmarshaller();        
+
+        public static ClusterTimelineUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new ClusterTimelineUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

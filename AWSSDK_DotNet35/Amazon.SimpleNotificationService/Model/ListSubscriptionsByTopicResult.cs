@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,51 +17,58 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// <para>Response for ListSubscriptionsByTopic action.</para>
+    /// Response for ListSubscriptionsByTopic action.
     /// </summary>
     public partial class ListSubscriptionsByTopicResult : AmazonWebServiceResponse
     {
-        
-        private List<Subscription> subscriptions = new List<Subscription>();
-        private string nextToken;
+        private string _nextToken;
+        private List<Subscription> _subscriptions = new List<Subscription>();
 
 
         /// <summary>
-        /// A list of subscriptions.
-        ///  
-        /// </summary>
-        public List<Subscription> Subscriptions
-        {
-            get { return this.subscriptions; }
-            set { this.subscriptions = value; }
-        }
-
-        // Check to see if Subscriptions property is set
-        internal bool IsSetSubscriptions()
-        {
-            return this.subscriptions.Count > 0;
-        }
-
-        /// <summary>
-        /// Token to pass along to the next <c>ListSubscriptionsByTopic</c> request. This element is returned if there are more subscriptions to
-        /// retrieve.
-        ///  
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// Token to pass along to the next <code>ListSubscriptionsByTopic</code> request. This
+        /// element is returned if there are more subscriptions to retrieve.
+        /// </para>
         /// </summary>
         public string NextToken
         {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;
+            return this._nextToken != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Subscriptions. 
+        /// <para>
+        /// A list of subscriptions.
+        /// </para>
+        /// </summary>
+        public List<Subscription> Subscriptions
+        {
+            get { return this._subscriptions; }
+            set { this._subscriptions = value; }
+        }
+
+        // Check to see if Subscriptions property is set
+        internal bool IsSetSubscriptions()
+        {
+            return this._subscriptions != null && this._subscriptions.Count > 0; 
+        }
+
     }
 }

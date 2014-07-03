@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DeleteQueue operation
     /// </summary>  
-    internal class DeleteQueueResponseUnmarshaller : XmlResponseUnmarshaller
+    public class DeleteQueueResponseUnmarshaller : XmlResponseUnmarshaller
     {
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
@@ -44,13 +44,13 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                 {                    
                     if(context.TestExpression("DeleteQueueResult", 2))
                     {
-                        UnmarshallResult(context,response);                        
+                        UnmarshallResult(context, response);                        
                         continue;
                     }
                     
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
                     }
                 }
             }
@@ -58,7 +58,8 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context,DeleteQueueResponse response)
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId="response")]
+        private static void UnmarshallResult(XmlUnmarshallerContext context, DeleteQueueResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -85,14 +86,18 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             return new AmazonSQSException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DeleteQueueResponseUnmarshaller instance;
-        public static DeleteQueueResponseUnmarshaller GetInstance()
+        private static DeleteQueueResponseUnmarshaller _instance = new DeleteQueueResponseUnmarshaller();        
+
+        internal static DeleteQueueResponseUnmarshaller GetInstance()
         {
-            if (instance == null)
+            return _instance;
+        }
+        public static DeleteQueueResponseUnmarshaller Instance
+        {
+            get
             {
-                instance = new DeleteQueueResponseUnmarshaller();
+                return _instance;
             }
-            return instance;
         }
 
     }

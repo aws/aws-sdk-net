@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Returns information about the UpdateGroup response metadata.
-    /// The UpdateGroup operation has a void result type.
+    /// Configuration for accessing Amazon UpdateGroup service
     /// </summary>
-    public partial class UpdateGroupResponse : AmazonWebServiceResponse
+    public partial class UpdateGroupResponse : UpdateGroupResult
     {
+        /// <summary>
+        /// Gets and sets the UpdateGroupResult property.
+        /// Represents the output of a UpdateGroup operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the UpdateGroupResult class are now available on the UpdateGroupResponse class. You should use the properties on UpdateGroupResponse instead of accessing them through UpdateGroupResult.")]
+        public UpdateGroupResult UpdateGroupResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

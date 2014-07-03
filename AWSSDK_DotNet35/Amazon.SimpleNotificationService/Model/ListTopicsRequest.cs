@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,48 +25,33 @@ namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTopics operation.
-    /// <para>The <c>ListTopics</c> action returns a list of the requester's topics. Each call returns a limited list of topics, up to 100. If there
-    /// are more topics, a <c>NextToken</c> is also returned. Use the <c>NextToken</c> parameter in a new <c>ListTopics</c> call to get further
-    /// results.</para>
+    /// Returns a list of the requester's topics. Each call returns a limited list of topics,
+    /// up to 100. If      there are more topics, a <code>NextToken</code> is also returned.
+    /// Use the <code>NextToken</code> parameter in a new <code>ListTopics</code> call to
+    /// get      further results.
     /// </summary>
     public partial class ListTopicsRequest : AmazonSimpleNotificationServiceRequest
     {
-        private string nextToken;
+        private string _nextToken;
+
 
         /// <summary>
-        /// Default constructor for a new ListTopicsRequest object.  Callers should use the
-        /// properties to initialize this object after creating it.
-        /// </summary>
-        public ListTopicsRequest() {}
-    
-        /// <summary>
-        /// Constructs a new ListTopicsRequest object.
-        /// Callers should use the properties initialize any additional object members.
-        /// </summary>
-        /// 
-        /// <param name="nextToken"> Token returned by the previous <c>ListTopics</c> request. </param>
-        public ListTopicsRequest(string nextToken)
-        {
-            this.nextToken = nextToken;
-        }
-    
-
-        /// <summary>
-        /// Token returned by the previous <c>ListTopics</c> request.
-        ///  
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// Token returned by the previous <code>ListTopics</code> request.
+        /// </para>
         /// </summary>
         public string NextToken
         {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;
+            return this._nextToken != null;
         }
 
     }
 }
-    

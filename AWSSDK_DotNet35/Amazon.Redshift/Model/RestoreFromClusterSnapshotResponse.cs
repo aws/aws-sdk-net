@@ -12,24 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the RestoreFromClusterSnapshot response and response metadata.
+    /// Configuration for accessing Amazon RestoreFromClusterSnapshot service
     /// </summary>
     public partial class RestoreFromClusterSnapshotResponse : RestoreFromClusterSnapshotResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the RestoreFromClusterSnapshotResult property.
-        /// Contains the result of a successful invocation of the RestoreFromClusterSnapshot
-        /// action.
-        /// 
+        /// Represents the output of a RestoreFromClusterSnapshot operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the RestoreFromClusterSnapshotResult class are now available on the RestoreFromClusterSnapshotResponse class. You should use the properties on RestoreFromClusterSnapshotResponse instead of accessing them through RestoreFromClusterSnapshotResult.")]
         public RestoreFromClusterSnapshotResult RestoreFromClusterSnapshotResult
         {
@@ -40,4 +36,3 @@ namespace Amazon.Redshift.Model
         }
     }
 }
-    

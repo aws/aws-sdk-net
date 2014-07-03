@@ -17,189 +17,238 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// 
     /// </summary>
-    public partial class EventSubscription : AmazonWebServiceResponse
+    public partial class EventSubscription
     {
-        
-        private string customerAwsId;
-        private string custSubscriptionId;
-        private string snsTopicArn;
-        private string status;
-        private DateTime? subscriptionCreationTime;
-        private string sourceType;
-        private List<string> sourceIdsList = new List<string>();
-        private List<string> eventCategoriesList = new List<string>();
-        private string severity;
-        private bool? enabled;
+        private string _customerAwsId;
+        private string _custSubscriptionId;
+        private bool? _enabled;
+        private List<string> _eventCategoriesList = new List<string>();
+        private string _severity;
+        private string _snsTopicArn;
+        private List<string> _sourceIdsList = new List<string>();
+        private string _sourceType;
+        private string _status;
+        private DateTime? _subscriptionCreationTime;
 
 
         /// <summary>
+        /// Gets and sets the property CustomerAwsId. 
+        /// <para>
         /// The AWS customer account associated with the Amazon Redshift event notification subscription.
-        ///  
+        /// </para>
         /// </summary>
         public string CustomerAwsId
         {
-            get { return this.customerAwsId; }
-            set { this.customerAwsId = value; }
+            get { return this._customerAwsId; }
+            set { this._customerAwsId = value; }
         }
 
         // Check to see if CustomerAwsId property is set
         internal bool IsSetCustomerAwsId()
         {
-            return this.customerAwsId != null;
+            return this._customerAwsId != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property CustSubscriptionId. 
+        /// <para>
         /// The name of the Amazon Redshift event notification subscription.
-        ///  
+        /// </para>
         /// </summary>
         public string CustSubscriptionId
         {
-            get { return this.custSubscriptionId; }
-            set { this.custSubscriptionId = value; }
+            get { return this._custSubscriptionId; }
+            set { this._custSubscriptionId = value; }
         }
 
         // Check to see if CustSubscriptionId property is set
         internal bool IsSetCustSubscriptionId()
         {
-            return this.custSubscriptionId != null;
+            return this._custSubscriptionId != null;
         }
+
 
         /// <summary>
-        /// The Amazon Resource Name (ARN) of the Amazon SNS topic used by the event notification subscription.
-        ///  
-        /// </summary>
-        public string SnsTopicArn
-        {
-            get { return this.snsTopicArn; }
-            set { this.snsTopicArn = value; }
-        }
-
-        // Check to see if SnsTopicArn property is set
-        internal bool IsSetSnsTopicArn()
-        {
-            return this.snsTopicArn != null;
-        }
-
-        /// <summary>
-        /// The status of the Amazon Redshift event notification subscription. Constraints: <ul> <li>Can be one of the following: active | no-permission
-        /// | topic-not-exist</li> <li>The status "no-permission" indicates that Amazon Redshift no longer has permission to post to the Amazon SNS
-        /// topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</li> </ul>
-        ///  
-        /// </summary>
-        public string Status
-        {
-            get { return this.status; }
-            set { this.status = value; }
-        }
-
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
-        {
-            return this.status != null;
-        }
-
-        /// <summary>
-        /// The date and time the Amazon Redshift event notification subscription was created.
-        ///  
-        /// </summary>
-        public DateTime SubscriptionCreationTime
-        {
-            get { return this.subscriptionCreationTime ?? default(DateTime); }
-            set { this.subscriptionCreationTime = value; }
-        }
-
-        // Check to see if SubscriptionCreationTime property is set
-        internal bool IsSetSubscriptionCreationTime()
-        {
-            return this.subscriptionCreationTime.HasValue;
-        }
-
-        /// <summary>
-        /// The source type of the events returned the Amazon Redshift event notification, such as cluster, or cluster-snapshot.
-        ///  
-        /// </summary>
-        public string SourceType
-        {
-            get { return this.sourceType; }
-            set { this.sourceType = value; }
-        }
-
-        // Check to see if SourceType property is set
-        internal bool IsSetSourceType()
-        {
-            return this.sourceType != null;
-        }
-
-        /// <summary>
-        /// A list of the sources that publish events to the Amazon Redshift event notification subscription.
-        ///  
-        /// </summary>
-        public List<string> SourceIdsList
-        {
-            get { return this.sourceIdsList; }
-            set { this.sourceIdsList = value; }
-        }
-
-        // Check to see if SourceIdsList property is set
-        internal bool IsSetSourceIdsList()
-        {
-            return this.sourceIdsList.Count > 0;
-        }
-
-        /// <summary>
-        /// The list of Amazon Redshift event categories specified in the event notification subscription. Values: Configuration, Management,
-        /// Monitoring, Security
-        ///  
-        /// </summary>
-        public List<string> EventCategoriesList
-        {
-            get { return this.eventCategoriesList; }
-            set { this.eventCategoriesList = value; }
-        }
-
-        // Check to see if EventCategoriesList property is set
-        internal bool IsSetEventCategoriesList()
-        {
-            return this.eventCategoriesList.Count > 0;
-        }
-
-        /// <summary>
-        /// The event severity specified in the Amazon Redshift event notification subscription. Values: ERROR, INFO
-        ///  
-        /// </summary>
-        public string Severity
-        {
-            get { return this.severity; }
-            set { this.severity = value; }
-        }
-
-        // Check to see if Severity property is set
-        internal bool IsSetSeverity()
-        {
-            return this.severity != null;
-        }
-
-        /// <summary>
-        /// A Boolean value indicating whether the subscription is enabled. <c>true</c> indicates the subscription is enabled.
-        ///  
+        /// Gets and sets the property Enabled. 
+        /// <para>
+        /// A Boolean value indicating whether the subscription is enabled. <code>true</code>
+        /// indicates the subscription is enabled.
+        /// </para>
         /// </summary>
         public bool Enabled
         {
-            get { return this.enabled ?? default(bool); }
-            set { this.enabled = value; }
+            get { return this._enabled.GetValueOrDefault(); }
+            set { this._enabled = value; }
         }
 
         // Check to see if Enabled property is set
         internal bool IsSetEnabled()
         {
-            return this.enabled.HasValue;
+            return this._enabled.HasValue; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property EventCategoriesList. 
+        /// <para>
+        /// The list of Amazon Redshift event categories specified in the event notification subscription.
+        /// </para>
+        ///         
+        /// <para>
+        /// Values: Configuration, Management, Monitoring, Security
+        /// </para>
+        /// </summary>
+        public List<string> EventCategoriesList
+        {
+            get { return this._eventCategoriesList; }
+            set { this._eventCategoriesList = value; }
+        }
+
+        // Check to see if EventCategoriesList property is set
+        internal bool IsSetEventCategoriesList()
+        {
+            return this._eventCategoriesList != null && this._eventCategoriesList.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Severity. 
+        /// <para>
+        /// The event severity specified in the Amazon Redshift event notification subscription.
+        /// </para>
+        ///         
+        /// <para>
+        /// Values: ERROR, INFO
+        /// </para>
+        /// </summary>
+        public string Severity
+        {
+            get { return this._severity; }
+            set { this._severity = value; }
+        }
+
+        // Check to see if Severity property is set
+        internal bool IsSetSeverity()
+        {
+            return this._severity != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SnsTopicArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Amazon SNS topic used by the event notification
+        /// subscription.
+        /// </para>
+        /// </summary>
+        public string SnsTopicArn
+        {
+            get { return this._snsTopicArn; }
+            set { this._snsTopicArn = value; }
+        }
+
+        // Check to see if SnsTopicArn property is set
+        internal bool IsSetSnsTopicArn()
+        {
+            return this._snsTopicArn != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SourceIdsList. 
+        /// <para>
+        /// A list of the sources that publish events to the Amazon Redshift event notification
+        /// subscription.
+        /// </para>
+        /// </summary>
+        public List<string> SourceIdsList
+        {
+            get { return this._sourceIdsList; }
+            set { this._sourceIdsList = value; }
+        }
+
+        // Check to see if SourceIdsList property is set
+        internal bool IsSetSourceIdsList()
+        {
+            return this._sourceIdsList != null && this._sourceIdsList.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SourceType. 
+        /// <para>
+        /// The source type of the events returned the Amazon Redshift event notification, such
+        /// as cluster, or            cluster-snapshot.
+        /// </para>
+        /// </summary>
+        public string SourceType
+        {
+            get { return this._sourceType; }
+            set { this._sourceType = value; }
+        }
+
+        // Check to see if SourceType property is set
+        internal bool IsSetSourceType()
+        {
+            return this._sourceType != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the Amazon Redshift event notification subscription.
+        /// </para>
+        ///         
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///         <ul>            <li>Can be one of the following: active | no-permission |
+        /// topic-not-exist</li>            <li>The status "no-permission" indicates that Amazon
+        /// Redshift no longer has permission to post                to the Amazon SNS topic.
+        /// The status "topic-not-exist" indicates that the topic was deleted                after
+        /// the subscription was created.</li>        </ul>
+        /// </summary>
+        public string Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SubscriptionCreationTime. 
+        /// <para>
+        /// The date and time the Amazon Redshift event notification subscription was created.
+        /// </para>
+        /// </summary>
+        public DateTime SubscriptionCreationTime
+        {
+            get { return this._subscriptionCreationTime.GetValueOrDefault(); }
+            set { this._subscriptionCreationTime = value; }
+        }
+
+        // Check to see if SubscriptionCreationTime property is set
+        internal bool IsSetSubscriptionCreationTime()
+        {
+            return this._subscriptionCreationTime.HasValue; 
+        }
+
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SimpleNotificationService.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Confirm Subscription Request Marshaller
+    /// ConfirmSubscription Request Marshaller
     /// </summary>       
     public class ConfirmSubscriptionRequestMarshaller : IMarshaller<IRequest, ConfirmSubscriptionRequest>
     {
-        public IRequest Marshall(ConfirmSubscriptionRequest confirmSubscriptionRequest)
+        public IRequest Marshall(ConfirmSubscriptionRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(confirmSubscriptionRequest, "AmazonSimpleNotificationService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleNotificationService");
             request.Parameters.Add("Action", "ConfirmSubscription");
             request.Parameters.Add("Version", "2010-03-31");
-            if (confirmSubscriptionRequest != null && confirmSubscriptionRequest.IsSetTopicArn())
-            {
-                request.Parameters.Add("TopicArn", StringUtils.FromString(confirmSubscriptionRequest.TopicArn));
-            }
-            if (confirmSubscriptionRequest != null && confirmSubscriptionRequest.IsSetToken())
-            {
-                request.Parameters.Add("Token", StringUtils.FromString(confirmSubscriptionRequest.Token));
-            }
-            if (confirmSubscriptionRequest != null && confirmSubscriptionRequest.IsSetAuthenticateOnUnsubscribe())
-            {
-                request.Parameters.Add("AuthenticateOnUnsubscribe", StringUtils.FromString(confirmSubscriptionRequest.AuthenticateOnUnsubscribe));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAuthenticateOnUnsubscribe())
+                {
+                    request.Parameters.Add("AuthenticateOnUnsubscribe", StringUtils.FromString(publicRequest.AuthenticateOnUnsubscribe));
+                }
+                if(publicRequest.IsSetToken())
+                {
+                    request.Parameters.Add("Token", StringUtils.FromString(publicRequest.Token));
+                }
+                if(publicRequest.IsSetTopicArn())
+                {
+                    request.Parameters.Add("TopicArn", StringUtils.FromString(publicRequest.TopicArn));
+                }
+            }
             return request;
         }
     }

@@ -25,63 +25,63 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateCloudFrontOriginAccessIdentity operation.
-    /// <para> Update an origin access identity. </para>
+    /// Update an origin access identity.
     /// </summary>
     public partial class UpdateCloudFrontOriginAccessIdentityRequest : AmazonCloudFrontRequest
     {
-        private CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig;
-        private string id;
-        private string ifMatch;
+        private CloudFrontOriginAccessIdentityConfig _cloudFrontOriginAccessIdentityConfig;
+        private string _id;
+        private string _ifMatch;
 
 
         /// <summary>
-        /// The identity's configuration information.
-        ///  
+        /// Gets and sets the property CloudFrontOriginAccessIdentityConfig. The identity's configuration
+        /// information.
         /// </summary>
         public CloudFrontOriginAccessIdentityConfig CloudFrontOriginAccessIdentityConfig
         {
-            get { return this.cloudFrontOriginAccessIdentityConfig; }
-            set { this.cloudFrontOriginAccessIdentityConfig = value; }
+            get { return this._cloudFrontOriginAccessIdentityConfig; }
+            set { this._cloudFrontOriginAccessIdentityConfig = value; }
         }
 
         // Check to see if CloudFrontOriginAccessIdentityConfig property is set
         internal bool IsSetCloudFrontOriginAccessIdentityConfig()
         {
-            return this.cloudFrontOriginAccessIdentityConfig != null;
+            return this._cloudFrontOriginAccessIdentityConfig != null;
         }
 
+
         /// <summary>
-        /// The identity's id.
-        ///  
+        /// Gets and sets the property Id. The identity's id.
         /// </summary>
         public string Id
         {
-            get { return this.id; }
-            set { this.id = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;
+            return this._id != null;
         }
 
+
         /// <summary>
-        /// The value of the ETag header you received when retrieving the identity's configuration. For example: E2QWRUHAPOMQZL.
-        ///  
+        /// Gets and sets the property IfMatch. The value of the ETag header you received when
+        /// retrieving the identity's configuration. For example: E2QWRUHAPOMQZL.
         /// </summary>
         public string IfMatch
         {
-            get { return this.ifMatch; }
-            set { this.ifMatch = value; }
+            get { return this._ifMatch; }
+            set { this._ifMatch = value; }
         }
 
         // Check to see if IfMatch property is set
         internal bool IsSetIfMatch()
         {
-            return this.ifMatch != null;
+            return this._ifMatch != null;
         }
 
     }
 }
-    

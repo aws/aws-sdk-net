@@ -17,33 +17,34 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> The returned result of the corresponding request. </para>
+    /// The returned result of the corresponding request.
     /// </summary>
     public partial class ListDistributionsResult : AmazonWebServiceResponse
     {
-        
-        private DistributionList distributionList;
+        private DistributionList _distributionList;
 
 
         /// <summary>
-        /// The DistributionList type.
-        ///  
+        /// Gets and sets the property DistributionList. The DistributionList type.
         /// </summary>
         public DistributionList DistributionList
         {
-            get { return this.distributionList; }
-            set { this.distributionList = value; }
+            get { return this._distributionList; }
+            set { this._distributionList = value; }
         }
 
         // Check to see if DistributionList property is set
         internal bool IsSetDistributionList()
         {
-            return this.distributionList != null;
+            return this._distributionList != null;
         }
+
     }
 }

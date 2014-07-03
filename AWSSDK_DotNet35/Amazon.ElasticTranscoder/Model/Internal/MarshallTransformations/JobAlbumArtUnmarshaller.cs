@@ -12,64 +12,70 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.ElasticTranscoder.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
+using Amazon.ElasticTranscoder.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for JobAlbumArt Object
+    /// </summary>  
+    public class JobAlbumArtUnmarshaller : IUnmarshaller<JobAlbumArt, XmlUnmarshallerContext>, IUnmarshaller<JobAlbumArt, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// JobAlbumArtUnmarshaller
-      /// </summary>
-      internal class JobAlbumArtUnmarshaller : IUnmarshaller<JobAlbumArt, XmlUnmarshallerContext>, IUnmarshaller<JobAlbumArt, JsonUnmarshallerContext>
-      {
         JobAlbumArt IUnmarshaller<JobAlbumArt, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public JobAlbumArt Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            JobAlbumArt jobAlbumArt = new JobAlbumArt();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            JobAlbumArt unmarshalledObject = new JobAlbumArt();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("MergePolicy", targetDepth))
-              {
-                jobAlbumArt.MergePolicy = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Artwork", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<Artwork,ArtworkUnmarshaller>(
-                    ArtworkUnmarshaller.GetInstance());                  
-                jobAlbumArt.Artwork = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
+                if (context.TestExpression("Artwork", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Artwork, ArtworkUnmarshaller>(ArtworkUnmarshaller.Instance);
+                    unmarshalledObject.Artwork = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MergePolicy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MergePolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return jobAlbumArt;
+            return unmarshalledObject;
         }
 
-        private static JobAlbumArtUnmarshaller instance;
-        public static JobAlbumArtUnmarshaller GetInstance()
+
+        private static JobAlbumArtUnmarshaller _instance = new JobAlbumArtUnmarshaller();        
+
+        public static JobAlbumArtUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new JobAlbumArtUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

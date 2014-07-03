@@ -25,8 +25,12 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateVolume operation.
-    /// <para>Creates an Amazon EBS volume that can be attached to any instance in the same Availability Zone.</para> <para>Any AWS Marketplace
-    /// product codes from the snapshot are propagated to the volume.</para> <para>For more information, see <a
+    /// <para>Creates an Amazon EBS volume that can be attached to an instance in the same Availability Zone. The volume is created in the specified
+    /// region.</para> <para>You can create a new empty volume or restore a volume from an Amazon EBS snapshot. Any AWS Marketplace product codes
+    /// from the snapshot are propagated to the volume.</para> <para>You can create encrypted volumes with the <c>Encrypted</c> parameter. Encrypted
+    /// volumes may only be attached to instances that support Amazon EBS encryption. Volumes that are created from encrypted snapshots are also
+    /// automatically encrypted. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html" >Amazon
+    /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para> <para>For more information, see <a
     /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html" >Creating or Restoring an Amazon EBS Volume</a> in the
     /// <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
     /// </summary>
@@ -91,14 +95,15 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The volume type. Default: <c>standard</c>
+        /// The volume type. This can be <c>gp2</c> for General Purpose (SSD) volumes, <c>io1</c> for Provisioned IOPS (SSD) volumes, or <c>standard</c>
+        /// for Magnetic volumes. Default: <c>standard</c>
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>standard, io1</description>
+        ///         <description>standard, io1, gp2</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -116,8 +121,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The number of I/O operations per second (IOPS) that the volume supports. This parameter is not used with standard volumes, but is required
-        /// when the volume type is <c>io1</c>.
+        /// The number of I/O operations per second (IOPS) that the volume supports. This parameter is not used with Magnetic or General Purpose (SSD)
+        /// volumes, but is required when the volume type is <c>io1</c>.
         ///  
         /// </summary>
         public int Iops
@@ -133,7 +138,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// If true the volume will be encrypted.
+        /// Specifies whether the volume should be encrypted.
+        ///  
         /// </summary>
         public bool Encrypted
         {

@@ -17,222 +17,268 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// <para> Describes a reserved node. </para>
+    /// Describes a reserved node.
     /// </summary>
-    public partial class ReservedNode : AmazonWebServiceResponse
+    public partial class ReservedNode
     {
-        
-        private string reservedNodeId;
-        private string reservedNodeOfferingId;
-        private string nodeType;
-        private DateTime? startTime;
-        private int? duration;
-        private double? fixedPrice;
-        private double? usagePrice;
-        private string currencyCode;
-        private int? nodeCount;
-        private string state;
-        private string offeringType;
-        private List<RecurringCharge> recurringCharges = new List<RecurringCharge>();
+        private string _currencyCode;
+        private int? _duration;
+        private double? _fixedPrice;
+        private int? _nodeCount;
+        private string _nodeType;
+        private string _offeringType;
+        private List<RecurringCharge> _recurringCharges = new List<RecurringCharge>();
+        private string _reservedNodeId;
+        private string _reservedNodeOfferingId;
+        private DateTime? _startTime;
+        private string _state;
+        private double? _usagePrice;
 
 
         /// <summary>
-        /// The unique identifier for the reservation.
-        ///  
-        /// </summary>
-        public string ReservedNodeId
-        {
-            get { return this.reservedNodeId; }
-            set { this.reservedNodeId = value; }
-        }
-
-        // Check to see if ReservedNodeId property is set
-        internal bool IsSetReservedNodeId()
-        {
-            return this.reservedNodeId != null;
-        }
-
-        /// <summary>
-        /// The identifier for the reserved node offering.
-        ///  
-        /// </summary>
-        public string ReservedNodeOfferingId
-        {
-            get { return this.reservedNodeOfferingId; }
-            set { this.reservedNodeOfferingId = value; }
-        }
-
-        // Check to see if ReservedNodeOfferingId property is set
-        internal bool IsSetReservedNodeOfferingId()
-        {
-            return this.reservedNodeOfferingId != null;
-        }
-
-        /// <summary>
-        /// The node type of the reserved node.
-        ///  
-        /// </summary>
-        public string NodeType
-        {
-            get { return this.nodeType; }
-            set { this.nodeType = value; }
-        }
-
-        // Check to see if NodeType property is set
-        internal bool IsSetNodeType()
-        {
-            return this.nodeType != null;
-        }
-
-        /// <summary>
-        /// The time the reservation started. You purchase a reserved node offering for a duration. This is the start time of that duration.
-        ///  
-        /// </summary>
-        public DateTime StartTime
-        {
-            get { return this.startTime ?? default(DateTime); }
-            set { this.startTime = value; }
-        }
-
-        // Check to see if StartTime property is set
-        internal bool IsSetStartTime()
-        {
-            return this.startTime.HasValue;
-        }
-
-        /// <summary>
-        /// The duration of the node reservation in seconds.
-        ///  
-        /// </summary>
-        public int Duration
-        {
-            get { return this.duration ?? default(int); }
-            set { this.duration = value; }
-        }
-
-        // Check to see if Duration property is set
-        internal bool IsSetDuration()
-        {
-            return this.duration.HasValue;
-        }
-
-        /// <summary>
-        /// The fixed cost Amazon Redshift charged you for this reserved node.
-        ///  
-        /// </summary>
-        public double FixedPrice
-        {
-            get { return this.fixedPrice ?? default(double); }
-            set { this.fixedPrice = value; }
-        }
-
-        // Check to see if FixedPrice property is set
-        internal bool IsSetFixedPrice()
-        {
-            return this.fixedPrice.HasValue;
-        }
-
-        /// <summary>
-        /// The hourly rate Amazon Redshift charge you for this reserved node.
-        ///  
-        /// </summary>
-        public double UsagePrice
-        {
-            get { return this.usagePrice ?? default(double); }
-            set { this.usagePrice = value; }
-        }
-
-        // Check to see if UsagePrice property is set
-        internal bool IsSetUsagePrice()
-        {
-            return this.usagePrice.HasValue;
-        }
-
-        /// <summary>
+        /// Gets and sets the property CurrencyCode. 
+        /// <para>
         /// The currency code for the reserved cluster.
-        ///  
+        /// </para>
         /// </summary>
         public string CurrencyCode
         {
-            get { return this.currencyCode; }
-            set { this.currencyCode = value; }
+            get { return this._currencyCode; }
+            set { this._currencyCode = value; }
         }
 
         // Check to see if CurrencyCode property is set
         internal bool IsSetCurrencyCode()
         {
-            return this.currencyCode != null;
+            return this._currencyCode != null;
         }
 
+
         /// <summary>
-        /// The number of reserved compute nodes.
-        ///  
+        /// Gets and sets the property Duration. 
+        /// <para>
+        ///     The duration of the node reservation in seconds.    
+        /// </para>
+        /// </summary>
+        public int Duration
+        {
+            get { return this._duration.GetValueOrDefault(); }
+            set { this._duration = value; }
+        }
+
+        // Check to see if Duration property is set
+        internal bool IsSetDuration()
+        {
+            return this._duration.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property FixedPrice. 
+        /// <para>
+        ///     The fixed cost Amazon Redshift charged you for this reserved node.    
+        /// </para>
+        /// </summary>
+        public double FixedPrice
+        {
+            get { return this._fixedPrice.GetValueOrDefault(); }
+            set { this._fixedPrice = value; }
+        }
+
+        // Check to see if FixedPrice property is set
+        internal bool IsSetFixedPrice()
+        {
+            return this._fixedPrice.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property NodeCount. 
+        /// <para>
+        ///     The number of reserved compute nodes.    
+        /// </para>
         /// </summary>
         public int NodeCount
         {
-            get { return this.nodeCount ?? default(int); }
-            set { this.nodeCount = value; }
+            get { return this._nodeCount.GetValueOrDefault(); }
+            set { this._nodeCount = value; }
         }
 
         // Check to see if NodeCount property is set
         internal bool IsSetNodeCount()
         {
-            return this.nodeCount.HasValue;
+            return this._nodeCount.HasValue; 
         }
 
+
         /// <summary>
-        /// The state of the reserved Compute Node. Possible Values: <ul> <li>pending-payment-This reserved node has recently been purchased, and the
-        /// sale has been approved, but payment has not yet been confirmed.</li> <li>active-This reserved node is owned by the caller and is available
-        /// for use.</li> <li>payment-failed-Payment failed for the purchase attempt.</li> </ul>
-        ///  
+        /// Gets and sets the property NodeType. 
+        /// <para>
+        ///     The node type of the reserved node.    
+        /// </para>
         /// </summary>
-        public string State
+        public string NodeType
         {
-            get { return this.state; }
-            set { this.state = value; }
+            get { return this._nodeType; }
+            set { this._nodeType = value; }
         }
 
-        // Check to see if State property is set
-        internal bool IsSetState()
+        // Check to see if NodeType property is set
+        internal bool IsSetNodeType()
         {
-            return this.state != null;
+            return this._nodeType != null;
         }
+
 
         /// <summary>
-        /// The anticipated utilization of the reserved node, as defined in the reserved node offering.
-        ///  
+        /// Gets and sets the property OfferingType. 
+        /// <para>
+        /// The anticipated utilization of the reserved node, as defined in the reserved node
+        /// offering.
+        /// </para>
         /// </summary>
         public string OfferingType
         {
-            get { return this.offeringType; }
-            set { this.offeringType = value; }
+            get { return this._offeringType; }
+            set { this._offeringType = value; }
         }
 
         // Check to see if OfferingType property is set
         internal bool IsSetOfferingType()
         {
-            return this.offeringType != null;
+            return this._offeringType != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property RecurringCharges. 
+        /// <para>
         /// The recurring charges for the reserved node.
-        ///  
+        /// </para>
         /// </summary>
         public List<RecurringCharge> RecurringCharges
         {
-            get { return this.recurringCharges; }
-            set { this.recurringCharges = value; }
+            get { return this._recurringCharges; }
+            set { this._recurringCharges = value; }
         }
 
         // Check to see if RecurringCharges property is set
         internal bool IsSetRecurringCharges()
         {
-            return this.recurringCharges.Count > 0;
+            return this._recurringCharges != null && this._recurringCharges.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property ReservedNodeId. 
+        /// <para>
+        ///     The unique identifier for the reservation.    
+        /// </para>
+        /// </summary>
+        public string ReservedNodeId
+        {
+            get { return this._reservedNodeId; }
+            set { this._reservedNodeId = value; }
+        }
+
+        // Check to see if ReservedNodeId property is set
+        internal bool IsSetReservedNodeId()
+        {
+            return this._reservedNodeId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ReservedNodeOfferingId. 
+        /// <para>
+        ///     The identifier for the reserved node offering.    
+        /// </para>
+        /// </summary>
+        public string ReservedNodeOfferingId
+        {
+            get { return this._reservedNodeOfferingId; }
+            set { this._reservedNodeOfferingId = value; }
+        }
+
+        // Check to see if ReservedNodeOfferingId property is set
+        internal bool IsSetReservedNodeOfferingId()
+        {
+            return this._reservedNodeOfferingId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        ///     The time the reservation started. You purchase a reserved node offering for a
+        /// duration. This is the start     time of that duration.    
+        /// </para>
+        /// </summary>
+        public DateTime StartTime
+        {
+            get { return this._startTime.GetValueOrDefault(); }
+            set { this._startTime = value; }
+        }
+
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
+        {
+            return this._startTime.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        ///     The state of the reserved Compute Node.     
+        /// </para>
+        ///        
+        /// <para>
+        /// Possible Values:
+        /// </para>
+        ///        <ul>           <li>pending-payment-This reserved node has recently been purchased,
+        /// and the sale                has been approved, but payment has not yet been confirmed.</li>
+        ///           <li>active-This reserved node is owned by the caller and is available for
+        /// use.</li>           <li>payment-failed-Payment failed for the purchase attempt.</li>
+        ///       </ul>
+        /// </summary>
+        public string State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property UsagePrice. 
+        /// <para>
+        ///     The hourly rate Amazon Redshift charge you for this reserved node.    
+        /// </para>
+        /// </summary>
+        public double UsagePrice
+        {
+            get { return this._usagePrice.GetValueOrDefault(); }
+            set { this._usagePrice = value; }
+        }
+
+        // Check to see if UsagePrice property is set
+        internal bool IsSetUsagePrice()
+        {
+            return this._usagePrice.HasValue; 
+        }
+
     }
 }

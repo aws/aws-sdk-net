@@ -29,58 +29,51 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Set Termination Protection Request Marshaller
+    /// SetTerminationProtection Request Marshaller
     /// </summary>       
-    internal class SetTerminationProtectionRequestMarshaller : IMarshaller<IRequest, SetTerminationProtectionRequest> 
+    public class SetTerminationProtectionRequestMarshaller : IMarshaller<IRequest, SetTerminationProtectionRequest> 
     {
-        
-
-        public IRequest Marshall(SetTerminationProtectionRequest setTerminationProtectionRequest) 
+        public IRequest Marshall(SetTerminationProtectionRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(setTerminationProtectionRequest, "AmazonElasticMapReduce");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticMapReduce");
             string target = "ElasticMapReduce.SetTerminationProtection";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-
-                if (setTerminationProtectionRequest != null && setTerminationProtectionRequest.JobFlowIds != null && setTerminationProtectionRequest.JobFlowIds.Count > 0) 
+                if(publicRequest.IsSetJobFlowIds())
                 {
-                    List<string> jobFlowIdsList = setTerminationProtectionRequest.JobFlowIds;
                     writer.WritePropertyName("JobFlowIds");
                     writer.WriteArrayStart();
-
-                    foreach (string jobFlowIdsListValue in jobFlowIdsList) 
-                    { 
-                        writer.Write(StringUtils.FromString(jobFlowIdsListValue));
+                    foreach(var publicRequestJobFlowIdsListValue in publicRequest.JobFlowIds)
+                    {
+                        writer.Write(publicRequestJobFlowIdsListValue);
                     }
-
                     writer.WriteArrayEnd();
                 }
-                if (setTerminationProtectionRequest != null && setTerminationProtectionRequest.IsSetTerminationProtected()) 
+
+                if(publicRequest.IsSetTerminationProtected())
                 {
                     writer.WritePropertyName("TerminationProtected");
-                    writer.Write(setTerminationProtectionRequest.TerminationProtected);
+                    writer.Write(publicRequest.TerminationProtected);
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

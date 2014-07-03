@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,94 +25,79 @@ namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
     /// Container for the parameters to the ListJobsByStatus operation.
-    /// <para>The ListJobsByStatus operation gets a list of jobs that have a specified status. The response body contains one element for each job
-    /// that satisfies the search criteria.</para>
+    /// The ListJobsByStatus operation gets a list of jobs that have a specified status. The
+    ///            response body contains one element for each job that satisfies the search
+    /// criteria.
     /// </summary>
     public partial class ListJobsByStatusRequest : AmazonElasticTranscoderRequest
     {
-        private string status;
-        private string ascending;
-        private string pageToken;
+        private string _ascending;
+        private string _pageToken;
+        private string _status;
 
 
         /// <summary>
-        /// To get information about all of the jobs associated with the current AWS account that have a given status, specify the following status:
-        /// <c>Submitted</c>, <c>Progressing</c>, <c>Complete</c>, <c>Canceled</c>, or <c>Error</c>.
-        ///  
+        /// Gets and sets the property Ascending. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>(^Submitted$)|(^Progressing$)|(^Complete$)|(^Canceled$)|(^Error$)</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string Status
-        {
-            get { return this.status; }
-            set { this.status = value; }
-        }
-
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
-        {
-            return this.status != null;
-        }
-
-        /// <summary>
-        /// To list jobs in chronological order by the date and time that they were submitted, enter <c>true</c>. To list jobs in reverse chronological
-        /// order, enter <c>false</c>.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>(^true$)|(^false$)</description>
-        ///     </item>
-        /// </list>
+        ///  To list jobs in chronological order by the date and time that they were submitted,
+        /// enter                <code>true</code>. To list jobs in reverse chronological order,
+        /// enter                <code>false</code>. 
         /// </para>
         /// </summary>
         public string Ascending
         {
-            get { return this.ascending; }
-            set { this.ascending = value; }
+            get { return this._ascending; }
+            set { this._ascending = value; }
         }
 
         // Check to see if Ascending property is set
         internal bool IsSetAscending()
         {
-            return this.ascending != null;
+            return this._ascending != null;
         }
 
+
         /// <summary>
-        /// When Elastic Transcoder returns more than one page of results, use <c>pageToken</c> in subsequent <c>GET</c> requests to get each successive
-        /// page of results.
-        ///  
+        /// Gets and sets the property PageToken. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>^\d{13}-\w{6}$</description>
-        ///     </item>
-        /// </list>
+        ///  When Elastic Transcoder returns more than one page of results, use <code>pageToken</code>
+        /// in            subsequent <code>GET</code> requests to get each successive page of
+        /// results. 
         /// </para>
         /// </summary>
         public string PageToken
         {
-            get { return this.pageToken; }
-            set { this.pageToken = value; }
+            get { return this._pageToken; }
+            set { this._pageToken = value; }
         }
 
         // Check to see if PageToken property is set
         internal bool IsSetPageToken()
         {
-            return this.pageToken != null;
+            return this._pageToken != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// To get information about all of the jobs associated with the current AWS account that
+        ///            have a given status, specify the following status: <code>Submitted</code>,
+        ///                <code>Progressing</code>, <code>Complete</code>, <code>Canceled</code>,
+        /// or                <code>Error</code>.
+        /// </para>
+        /// </summary>
+        public string Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }
 }
-    

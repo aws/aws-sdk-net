@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,87 +12,99 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ServerCertificateMetadata Unmarshaller
-     /// </summary>
-    internal class ServerCertificateMetadataUnmarshaller : IUnmarshaller<ServerCertificateMetadata, XmlUnmarshallerContext>, IUnmarshaller<ServerCertificateMetadata, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ServerCertificateMetadata Object
+    /// </summary>  
+    public class ServerCertificateMetadataUnmarshaller : IUnmarshaller<ServerCertificateMetadata, XmlUnmarshallerContext>, IUnmarshaller<ServerCertificateMetadata, JsonUnmarshallerContext>
     {
-        public ServerCertificateMetadata Unmarshall(XmlUnmarshallerContext context) 
+        public ServerCertificateMetadata Unmarshall(XmlUnmarshallerContext context)
         {
-            ServerCertificateMetadata serverCertificateMetadata = new ServerCertificateMetadata();
+            ServerCertificateMetadata unmarshalledObject = new ServerCertificateMetadata();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Path", targetDepth))
+                    if (context.TestExpression("Arn", targetDepth))
                     {
-                        serverCertificateMetadata.Path = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ServerCertificateName", targetDepth))
+                    if (context.TestExpression("Expiration", targetDepth))
                     {
-                        serverCertificateMetadata.ServerCertificateName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.Expiration = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Path", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Path = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ServerCertificateId", targetDepth))
                     {
-                        serverCertificateMetadata.ServerCertificateId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ServerCertificateId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Arn", targetDepth))
+                    if (context.TestExpression("ServerCertificateName", targetDepth))
                     {
-                        serverCertificateMetadata.Arn = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ServerCertificateName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("UploadDate", targetDepth))
                     {
-                        serverCertificateMetadata.UploadDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.UploadDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return serverCertificateMetadata;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return serverCertificateMetadata;
+            return unmarshalledObject;
         }
 
-        public ServerCertificateMetadata Unmarshall(JsonUnmarshallerContext context) 
+        public ServerCertificateMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static ServerCertificateMetadataUnmarshaller instance;
 
-        public static ServerCertificateMetadataUnmarshaller GetInstance() 
+        private static ServerCertificateMetadataUnmarshaller _instance = new ServerCertificateMetadataUnmarshaller();        
+
+        public static ServerCertificateMetadataUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new ServerCertificateMetadataUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Update Group Request Marshaller
+    /// UpdateGroup Request Marshaller
     /// </summary>       
     public class UpdateGroupRequestMarshaller : IMarshaller<IRequest, UpdateGroupRequest>
     {
-        public IRequest Marshall(UpdateGroupRequest updateGroupRequest)
+        public IRequest Marshall(UpdateGroupRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(updateGroupRequest, "AmazonIdentityManagementService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.IdentityManagement");
             request.Parameters.Add("Action", "UpdateGroup");
             request.Parameters.Add("Version", "2010-05-08");
-            if (updateGroupRequest != null && updateGroupRequest.IsSetGroupName())
-            {
-                request.Parameters.Add("GroupName", StringUtils.FromString(updateGroupRequest.GroupName));
-            }
-            if (updateGroupRequest != null && updateGroupRequest.IsSetNewPath())
-            {
-                request.Parameters.Add("NewPath", StringUtils.FromString(updateGroupRequest.NewPath));
-            }
-            if (updateGroupRequest != null && updateGroupRequest.IsSetNewGroupName())
-            {
-                request.Parameters.Add("NewGroupName", StringUtils.FromString(updateGroupRequest.NewGroupName));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetGroupName())
+                {
+                    request.Parameters.Add("GroupName", StringUtils.FromString(publicRequest.GroupName));
+                }
+                if(publicRequest.IsSetNewGroupName())
+                {
+                    request.Parameters.Add("NewGroupName", StringUtils.FromString(publicRequest.NewGroupName));
+                }
+                if(publicRequest.IsSetNewPath())
+                {
+                    request.Parameters.Add("NewPath", StringUtils.FromString(publicRequest.NewPath));
+                }
+            }
             return request;
         }
     }

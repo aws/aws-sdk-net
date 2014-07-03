@@ -12,66 +12,76 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.ElasticMapReduce.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+using Amazon.ElasticMapReduce.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for StepStatus Object
+    /// </summary>  
+    public class StepStatusUnmarshaller : IUnmarshaller<StepStatus, XmlUnmarshallerContext>, IUnmarshaller<StepStatus, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// StepStatusUnmarshaller
-      /// </summary>
-      internal class StepStatusUnmarshaller : IUnmarshaller<StepStatus, XmlUnmarshallerContext>, IUnmarshaller<StepStatus, JsonUnmarshallerContext>
-      {
         StepStatus IUnmarshaller<StepStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public StepStatus Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            StepStatus stepStatus = new StepStatus();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            StepStatus unmarshalledObject = new StepStatus();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("State", targetDepth))
-              {
-                stepStatus.State = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("StateChangeReason", targetDepth))
-              {
-                stepStatus.StateChangeReason = StepStateChangeReasonUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Timeline", targetDepth))
-              {
-                stepStatus.Timeline = StepTimelineUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("State", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StateChangeReason", targetDepth))
+                {
+                    var unmarshaller = StepStateChangeReasonUnmarshaller.Instance;
+                    unmarshalledObject.StateChangeReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Timeline", targetDepth))
+                {
+                    var unmarshaller = StepTimelineUnmarshaller.Instance;
+                    unmarshalledObject.Timeline = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return stepStatus;
+            return unmarshalledObject;
         }
 
-        private static StepStatusUnmarshaller instance;
-        public static StepStatusUnmarshaller GetInstance()
+
+        private static StepStatusUnmarshaller _instance = new StepStatusUnmarshaller();        
+
+        public static StepStatusUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new StepStatusUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

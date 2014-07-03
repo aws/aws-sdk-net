@@ -37,7 +37,9 @@ namespace Amazon.EC2.Model
     /// the instance persist. When you terminate an instance, the root device and any other devices attached during the instance launch are
     /// automatically deleted. For more information about the differences between stopping and terminating instances, see <a
     /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html" >Instance Lifecycle</a> in the <i>Amazon Elastic
-    /// Compute Cloud User Guide</i> .</para>
+    /// Compute Cloud User Guide</i> .</para> <para>For more information about troubleshooting, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html" >Troubleshooting Stopping Your Instance</a>
+    /// in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
     /// </summary>
     public partial class StopInstancesRequest : AmazonEC2Request
     {

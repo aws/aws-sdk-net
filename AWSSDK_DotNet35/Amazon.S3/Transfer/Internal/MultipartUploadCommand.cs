@@ -170,6 +170,9 @@ namespace Amazon.S3.Transfer.Internal
                         UploadId = initResponse.UploadId,
                         PartNumber = partNumber,
                         PartSize = this._partSize,
+                        ServerSideEncryptionCustomerMethod = this._fileTransporterRequest.ServerSideEncryptionCustomerMethod,
+                        ServerSideEncryptionCustomerProvidedKey = this._fileTransporterRequest.ServerSideEncryptionCustomerProvidedKey,
+                        ServerSideEncryptionCustomerProvidedKeyMD5 = this._fileTransporterRequest.ServerSideEncryptionCustomerProvidedKeyMD5,
 #if (BCL && !BCL45)
                         Timeout = ClientConfig.GetTimeoutValue(this._config.DefaultTimeout, this._fileTransporterRequest.Timeout)
 #endif
@@ -220,7 +223,10 @@ namespace Amazon.S3.Transfer.Internal
                 CannedACL = this._fileTransporterRequest.CannedACL,
                 ContentType = determineContentType(),
                 StorageClass = this._fileTransporterRequest.StorageClass,
-                ServerSideEncryptionMethod = this._fileTransporterRequest.ServerSideEncryptionMethod
+                ServerSideEncryptionMethod = this._fileTransporterRequest.ServerSideEncryptionMethod,
+                ServerSideEncryptionCustomerMethod = this._fileTransporterRequest.ServerSideEncryptionCustomerMethod,
+                ServerSideEncryptionCustomerProvidedKey = this._fileTransporterRequest.ServerSideEncryptionCustomerProvidedKey,
+                ServerSideEncryptionCustomerProvidedKeyMD5 = this._fileTransporterRequest.ServerSideEncryptionCustomerProvidedKeyMD5
             };
             initRequest.BeforeRequestEvent += this.RequestEventHandler;
 

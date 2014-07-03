@@ -29,77 +29,68 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Job Flows Request Marshaller
+    /// DescribeJobFlows Request Marshaller
     /// </summary>       
-    internal class DescribeJobFlowsRequestMarshaller : IMarshaller<IRequest, DescribeJobFlowsRequest> 
+    public class DescribeJobFlowsRequestMarshaller : IMarshaller<IRequest, DescribeJobFlowsRequest> 
     {
-        
-
-        public IRequest Marshall(DescribeJobFlowsRequest describeJobFlowsRequest) 
+        public IRequest Marshall(DescribeJobFlowsRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(describeJobFlowsRequest, "AmazonElasticMapReduce");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticMapReduce");
             string target = "ElasticMapReduce.DescribeJobFlows";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (describeJobFlowsRequest != null && describeJobFlowsRequest.IsSetCreatedAfter()) 
+                if(publicRequest.IsSetCreatedAfter())
                 {
                     writer.WritePropertyName("CreatedAfter");
-                    writer.Write(describeJobFlowsRequest.CreatedAfter);
+                    writer.Write(publicRequest.CreatedAfter);
                 }
-                if (describeJobFlowsRequest != null && describeJobFlowsRequest.IsSetCreatedBefore()) 
+
+                if(publicRequest.IsSetCreatedBefore())
                 {
                     writer.WritePropertyName("CreatedBefore");
-                    writer.Write(describeJobFlowsRequest.CreatedBefore);
+                    writer.Write(publicRequest.CreatedBefore);
                 }
 
-                if (describeJobFlowsRequest != null && describeJobFlowsRequest.JobFlowIds != null && describeJobFlowsRequest.JobFlowIds.Count > 0) 
+                if(publicRequest.IsSetJobFlowIds())
                 {
-                    List<string> jobFlowIdsList = describeJobFlowsRequest.JobFlowIds;
                     writer.WritePropertyName("JobFlowIds");
                     writer.WriteArrayStart();
-
-                    foreach (string jobFlowIdsListValue in jobFlowIdsList) 
-                    { 
-                        writer.Write(StringUtils.FromString(jobFlowIdsListValue));
+                    foreach(var publicRequestJobFlowIdsListValue in publicRequest.JobFlowIds)
+                    {
+                        writer.Write(publicRequestJobFlowIdsListValue);
                     }
-
                     writer.WriteArrayEnd();
                 }
 
-                if (describeJobFlowsRequest != null && describeJobFlowsRequest.JobFlowStates != null && describeJobFlowsRequest.JobFlowStates.Count > 0) 
+                if(publicRequest.IsSetJobFlowStates())
                 {
-                    List<string> jobFlowStatesList = describeJobFlowsRequest.JobFlowStates;
                     writer.WritePropertyName("JobFlowStates");
                     writer.WriteArrayStart();
-
-                    foreach (string jobFlowStatesListValue in jobFlowStatesList) 
-                    { 
-                        writer.Write(StringUtils.FromString(jobFlowStatesListValue));
+                    foreach(var publicRequestJobFlowStatesListValue in publicRequest.JobFlowStates)
+                    {
+                        writer.Write(publicRequestJobFlowStatesListValue);
                     }
-
                     writer.WriteArrayEnd();
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

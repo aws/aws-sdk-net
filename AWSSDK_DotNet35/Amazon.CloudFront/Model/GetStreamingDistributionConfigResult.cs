@@ -17,50 +17,53 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> The returned result of the corresponding request. </para>
+    /// The returned result of the corresponding request.
     /// </summary>
     public partial class GetStreamingDistributionConfigResult : AmazonWebServiceResponse
     {
-        
-        private StreamingDistributionConfig streamingDistributionConfig;
-        private string eTag;
+        private string _eTag;
+        private StreamingDistributionConfig _streamingDistributionConfig;
 
 
         /// <summary>
-        /// The streaming distribution's configuration information.
-        ///  
-        /// </summary>
-        public StreamingDistributionConfig StreamingDistributionConfig
-        {
-            get { return this.streamingDistributionConfig; }
-            set { this.streamingDistributionConfig = value; }
-        }
-
-        // Check to see if StreamingDistributionConfig property is set
-        internal bool IsSetStreamingDistributionConfig()
-        {
-            return this.streamingDistributionConfig != null;
-        }
-
-        /// <summary>
-        /// The current version of the configuration. For example: E2QWRUHAPOMQZL.
-        ///  
+        /// Gets and sets the property ETag. The current version of the configuration. For example:
+        /// E2QWRUHAPOMQZL.
         /// </summary>
         public string ETag
         {
-            get { return this.eTag; }
-            set { this.eTag = value; }
+            get { return this._eTag; }
+            set { this._eTag = value; }
         }
 
         // Check to see if ETag property is set
         internal bool IsSetETag()
         {
-            return this.eTag != null;
+            return this._eTag != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property StreamingDistributionConfig. The streaming distribution's
+        /// configuration information.
+        /// </summary>
+        public StreamingDistributionConfig StreamingDistributionConfig
+        {
+            get { return this._streamingDistributionConfig; }
+            set { this._streamingDistributionConfig = value; }
+        }
+
+        // Check to see if StreamingDistributionConfig property is set
+        internal bool IsSetStreamingDistributionConfig()
+        {
+            return this._streamingDistributionConfig != null;
+        }
+
     }
 }

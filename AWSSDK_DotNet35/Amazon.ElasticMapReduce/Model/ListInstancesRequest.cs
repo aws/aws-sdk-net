@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,83 +25,93 @@ namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
     /// Container for the parameters to the ListInstances operation.
-    /// <para>Provides information about the cluster instances that Amazon EMR provisions on behalf of a user when it creates the cluster. For
-    /// example, this operation indicates when the EC2 instances reach the Ready state, when instances become available to Amazon EMR to use for
-    /// jobs, and the IP addresses for cluster instances, etc. </para>
+    /// Provides information about the cluster instances that Amazon EMR provisions on behalf
+    /// of a user when it creates the cluster.          For example, this operation indicates
+    /// when the EC2 instances reach the Ready state, when instances become available to Amazon
+    /// EMR to use for jobs, and the IP addresses for cluster instances, etc.
     /// </summary>
     public partial class ListInstancesRequest : AmazonElasticMapReduceRequest
     {
-        private string clusterId;
-        private string instanceGroupId;
-        private List<string> instanceGroupTypes = new List<string>();
-        private string marker;
+        private string _clusterId;
+        private string _instanceGroupId;
+        private List<string> _instanceGroupTypes = new List<string>();
+        private string _marker;
 
 
         /// <summary>
+        /// Gets and sets the property ClusterId. 
+        /// <para>
         /// The identifier of the cluster for which to list the instances.
-        ///  
+        /// </para>
         /// </summary>
         public string ClusterId
         {
-            get { return this.clusterId; }
-            set { this.clusterId = value; }
+            get { return this._clusterId; }
+            set { this._clusterId = value; }
         }
 
         // Check to see if ClusterId property is set
         internal bool IsSetClusterId()
         {
-            return this.clusterId != null;
+            return this._clusterId != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property InstanceGroupId. 
+        /// <para>
         /// The identifier of the instance group for which to list the instances.
-        ///  
+        /// </para>
         /// </summary>
         public string InstanceGroupId
         {
-            get { return this.instanceGroupId; }
-            set { this.instanceGroupId = value; }
+            get { return this._instanceGroupId; }
+            set { this._instanceGroupId = value; }
         }
 
         // Check to see if InstanceGroupId property is set
         internal bool IsSetInstanceGroupId()
         {
-            return this.instanceGroupId != null;
+            return this._instanceGroupId != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property InstanceGroupTypes. 
+        /// <para>
         /// The type of instance group for which to list the instances.
-        ///  
+        /// </para>
         /// </summary>
         public List<string> InstanceGroupTypes
         {
-            get { return this.instanceGroupTypes; }
-            set { this.instanceGroupTypes = value; }
+            get { return this._instanceGroupTypes; }
+            set { this._instanceGroupTypes = value; }
         }
 
         // Check to see if InstanceGroupTypes property is set
         internal bool IsSetInstanceGroupTypes()
         {
-            return this.instanceGroupTypes.Count > 0;
+            return this._instanceGroupTypes != null && this._instanceGroupTypes.Count > 0; 
         }
 
+
         /// <summary>
-        /// The pagination token is a random string indicating whether there are more results to fetch. Provide the pagination token from earlier API
-        /// calls to retrieve the next page of results. When the value is null, all results have been returned.
-        ///  
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// The pagination token that indicates the next set of results to retrieve.
+        /// </para>
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
         }
 
     }
 }
-    

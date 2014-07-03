@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,82 +25,70 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateVirtualMFADevice operation.
-    /// <para>Creates a new virtual MFA device for the AWS account. After creating the virtual MFA, use <a
-    /// href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html" >EnableMFADevice</a> to attach the MFA device to an IAM
-    /// user. For more information about creating and working with virtual MFA devices, go to <a
-    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_VirtualMFA.html" >Using a Virtual MFA Device</a> in <i>Using AWS
-    /// Identity and Access Management</i> .</para> <para>For information about limits on the number of MFA devices you can create, see <a
-    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html" >Limitations on Entities</a> in <i>Using AWS
-    /// Identity and Access Management</i> .</para> <para><b>IMPORTANT:</b>The seed information contained in the QR code and the Base32 string
-    /// should be treated like any other secret access information, such as your AWS access keys or your passwords. After you provision your virtual
-    /// device, you should ensure that the information is destroyed following secure procedures.</para>
+    /// Creates a new virtual MFA device for the AWS account. After creating the virtual MFA,
+    /// use <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html"
+    /// target="_blank">EnableMFADevice</a> to attach the MFA device to an IAM user. For more
+    /// information about            creating and working with virtual MFA devices, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html"
+    /// target="_blank">Using a Virtual MFA Device</a> in <i>Using AWS Identity and Access
+    /// Management</i>.
+    /// 
+    ///         
+    /// <para>
+    /// For information about limits on the number of MFA devices you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"
+    /// target="_blank">Limitations on Entities</a> in <i>Using AWS Identity and Access                Management</i>.
+    /// </para>
+    ///         <important>The seed information contained in the QR code and the Base32 string should
+    /// be treated            like any other secret access information, such as your AWS access keys
+    /// or your passwords.            After you provision your virtual device, you should ensure that
+    /// the information is destroyed            following secure procedures.</important>
     /// </summary>
     public partial class CreateVirtualMFADeviceRequest : AmazonIdentityManagementServiceRequest
     {
-        private string path;
-        private string virtualMFADeviceName;
+        private string _path;
+        private string _virtualMFADeviceName;
 
 
         /// <summary>
-        /// The path for the virtual MFA device. For more information about paths, see <a
-        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
-        /// <i>Using AWS Identity and Access Management</i>. This parameter is optional. If it is not included, it defaults to a slash (/).
-        ///  
+        /// Gets and sets the property Path. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 512</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</description>
-        ///     </item>
-        /// </list>
+        /// The path for the virtual MFA device. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+        /// target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access                Management</i>.
+        /// </para>
+        ///         
+        /// <para>
+        /// This parameter is optional. If it is not included, it defaults to a slash (/).
         /// </para>
         /// </summary>
         public string Path
         {
-            get { return this.path; }
-            set { this.path = value; }
+            get { return this._path; }
+            set { this._path = value; }
         }
 
         // Check to see if Path property is set
         internal bool IsSetPath()
         {
-            return this.path != null;
+            return this._path != null;
         }
 
+
         /// <summary>
-        /// The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA device.
-        ///  
+        /// Gets and sets the property VirtualMFADeviceName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - </description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=,.@-]*</description>
-        ///     </item>
-        /// </list>
+        /// The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA            device.
         /// </para>
         /// </summary>
         public string VirtualMFADeviceName
         {
-            get { return this.virtualMFADeviceName; }
-            set { this.virtualMFADeviceName = value; }
+            get { return this._virtualMFADeviceName; }
+            set { this._virtualMFADeviceName = value; }
         }
 
         // Check to see if VirtualMFADeviceName property is set
         internal bool IsSetVirtualMFADeviceName()
         {
-            return this.virtualMFADeviceName != null;
+            return this._virtualMFADeviceName != null;
         }
 
     }
 }
-    

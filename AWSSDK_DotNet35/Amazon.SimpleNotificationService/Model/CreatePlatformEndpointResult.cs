@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// <para>Response from CreateEndpoint action.</para>
+    /// Response from CreateEndpoint action.
     /// </summary>
     public partial class CreatePlatformEndpointResult : AmazonWebServiceResponse
     {
-        
-        private string endpointArn;
+        private string _endpointArn;
 
 
         /// <summary>
+        /// Gets and sets the property EndpointArn. 
+        /// <para>
         /// EndpointArn returned from CreateEndpoint action.
-        ///  
+        /// </para>
         /// </summary>
         public string EndpointArn
         {
-            get { return this.endpointArn; }
-            set { this.endpointArn = value; }
+            get { return this._endpointArn; }
+            set { this._endpointArn = value; }
         }
 
         // Check to see if EndpointArn property is set
         internal bool IsSetEndpointArn()
         {
-            return this.endpointArn != null;
+            return this._endpointArn != null;
         }
+
     }
 }

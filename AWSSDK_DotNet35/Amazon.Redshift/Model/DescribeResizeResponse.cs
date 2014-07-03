@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeResize response and response metadata.
+    /// Configuration for accessing Amazon DescribeResize service
     /// </summary>
     public partial class DescribeResizeResponse : DescribeResizeResult
     {
         /// <summary>
         /// Gets and sets the DescribeResizeResult property.
-        /// Describes the result of a cluster resize operation.
+        /// Represents the output of a DescribeResize operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeResizeResult class are now available on the DescribeResizeResponse class. You should use the properties on DescribeResizeResponse instead of accessing them through DescribeResizeResult.")]
         public DescribeResizeResult DescribeResizeResult
@@ -40,4 +36,3 @@ namespace Amazon.Redshift.Model
         }
     }
 }
-    

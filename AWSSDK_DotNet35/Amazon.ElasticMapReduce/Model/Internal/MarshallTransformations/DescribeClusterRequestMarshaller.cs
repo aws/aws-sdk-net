@@ -29,44 +29,40 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Cluster Request Marshaller
+    /// DescribeCluster Request Marshaller
     /// </summary>       
-    internal class DescribeClusterRequestMarshaller : IMarshaller<IRequest, DescribeClusterRequest> 
+    public class DescribeClusterRequestMarshaller : IMarshaller<IRequest, DescribeClusterRequest> 
     {
-        
-
-        public IRequest Marshall(DescribeClusterRequest describeClusterRequest) 
+        public IRequest Marshall(DescribeClusterRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(describeClusterRequest, "AmazonElasticMapReduce");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticMapReduce");
             string target = "ElasticMapReduce.DescribeCluster";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (describeClusterRequest != null && describeClusterRequest.IsSetClusterId()) 
+                if(publicRequest.IsSetClusterId())
                 {
                     writer.WritePropertyName("ClusterId");
-                    writer.Write(describeClusterRequest.ClusterId);
+                    writer.Write(publicRequest.ClusterId);
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

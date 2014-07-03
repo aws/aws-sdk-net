@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,14 +25,16 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAccountSummary operation.
-    /// <para>Retrieves account level information about account entity usage and IAM quotas.</para> <para>For information about limitations on IAM
-    /// entities, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html" >Limitations on IAM
-    /// Entities</a> in <i>Using AWS Identity and Access Management</i> .</para>
+    /// Retrieves account level information about account entity usage and IAM quotas.
+    /// 
+    ///         
+    /// <para>
+    /// For information about limitations on IAM entities, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"
+    /// target="_blank">Limitations on IAM Entities</a> in <i>Using AWS Identity and Access                Management</i>.
+    /// </para>
     /// </summary>
     public partial class GetAccountSummaryRequest : AmazonIdentityManagementServiceRequest
     {
 
-
     }
 }
-    

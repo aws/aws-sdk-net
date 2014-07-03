@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Returns information about the  UpdateDistribution response and response metadata.
+    /// Configuration for accessing Amazon UpdateDistribution service
     /// </summary>
     public partial class UpdateDistributionResponse : UpdateDistributionResult
     {
         /// <summary>
         /// Gets and sets the UpdateDistributionResult property.
-        /// The returned result of the corresponding request.
+        /// Represents the output of a UpdateDistribution operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the UpdateDistributionResult class are now available on the UpdateDistributionResponse class. You should use the properties on UpdateDistributionResponse instead of accessing them through UpdateDistributionResult.")]
         public UpdateDistributionResult UpdateDistributionResult
@@ -40,4 +36,3 @@ namespace Amazon.CloudFront.Model
         }
     }
 }
-    

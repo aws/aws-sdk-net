@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,35 +12,32 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 using System;
 
 using Amazon.Runtime;
 
-
 namespace Amazon.IdentityManagement
 {
 
-
-    /// <summary>assignment Status Type
+    /// <summary>
+    /// Constants used for properties of type AssignmentStatusType.
     /// </summary>
     public class AssignmentStatusType : ConstantClass
     {
 
-
-       /// <summary>Constant Any for AssignmentStatusType
-       /// </summary>
+        /// <summary>
+        /// Constant Any for AssignmentStatusType
+        /// </summary>
         public static readonly AssignmentStatusType Any = new AssignmentStatusType("Any");
-    
-
-       /// <summary>Constant Assigned for AssignmentStatusType
-       /// </summary>
+        /// <summary>
+        /// Constant Assigned for AssignmentStatusType
+        /// </summary>
         public static readonly AssignmentStatusType Assigned = new AssignmentStatusType("Assigned");
-    
-
-       /// <summary>Constant Unassigned for AssignmentStatusType
-       /// </summary>
+        /// <summary>
+        /// Constant Unassigned for AssignmentStatusType
+        /// </summary>
         public static readonly AssignmentStatusType Unassigned = new AssignmentStatusType("Unassigned");
-    
 
         /// <summary>
         /// Default Constructor
@@ -65,23 +62,22 @@ namespace Amazon.IdentityManagement
             return FindValue(value);
         }
     }
-    
 
-    /// <summary>status Type
+
+    /// <summary>
+    /// Constants used for properties of type StatusType.
     /// </summary>
     public class StatusType : ConstantClass
     {
 
-
-       /// <summary>Constant Active for StatusType
-       /// </summary>
+        /// <summary>
+        /// Constant Active for StatusType
+        /// </summary>
         public static readonly StatusType Active = new StatusType("Active");
-    
-
-       /// <summary>Constant Inactive for StatusType
-       /// </summary>
+        /// <summary>
+        /// Constant Inactive for StatusType
+        /// </summary>
         public static readonly StatusType Inactive = new StatusType("Inactive");
-    
 
         /// <summary>
         /// Default Constructor
@@ -106,83 +102,70 @@ namespace Amazon.IdentityManagement
             return FindValue(value);
         }
     }
-    
 
-    /// <summary>summary Key Type
+
+    /// <summary>
+    /// Constants used for properties of type SummaryKeyType.
     /// </summary>
     public class SummaryKeyType : ConstantClass
     {
 
-
-       /// <summary>Constant AccessKeysPerUserQuota for SummaryKeyType
-       /// </summary>
+        /// <summary>
+        /// Constant AccessKeysPerUserQuota for SummaryKeyType
+        /// </summary>
         public static readonly SummaryKeyType AccessKeysPerUserQuota = new SummaryKeyType("AccessKeysPerUserQuota");
-    
-
-       /// <summary>Constant AccountMFAEnabled for SummaryKeyType
-       /// </summary>
+        /// <summary>
+        /// Constant AccountMFAEnabled for SummaryKeyType
+        /// </summary>
         public static readonly SummaryKeyType AccountMFAEnabled = new SummaryKeyType("AccountMFAEnabled");
-    
-
-       /// <summary>Constant GroupPolicySizeQuota for SummaryKeyType
-       /// </summary>
+        /// <summary>
+        /// Constant GroupPolicySizeQuota for SummaryKeyType
+        /// </summary>
         public static readonly SummaryKeyType GroupPolicySizeQuota = new SummaryKeyType("GroupPolicySizeQuota");
-    
-
-       /// <summary>Constant Groups for SummaryKeyType
-       /// </summary>
+        /// <summary>
+        /// Constant Groups for SummaryKeyType
+        /// </summary>
         public static readonly SummaryKeyType Groups = new SummaryKeyType("Groups");
-    
-
-       /// <summary>Constant GroupsPerUserQuota for SummaryKeyType
-       /// </summary>
+        /// <summary>
+        /// Constant GroupsPerUserQuota for SummaryKeyType
+        /// </summary>
         public static readonly SummaryKeyType GroupsPerUserQuota = new SummaryKeyType("GroupsPerUserQuota");
-    
-
-       /// <summary>Constant GroupsQuota for SummaryKeyType
-       /// </summary>
+        /// <summary>
+        /// Constant GroupsQuota for SummaryKeyType
+        /// </summary>
         public static readonly SummaryKeyType GroupsQuota = new SummaryKeyType("GroupsQuota");
-    
-
-       /// <summary>Constant MFADevices for SummaryKeyType
-       /// </summary>
+        /// <summary>
+        /// Constant MFADevices for SummaryKeyType
+        /// </summary>
         public static readonly SummaryKeyType MFADevices = new SummaryKeyType("MFADevices");
-    
-
-       /// <summary>Constant MFADevicesInUse for SummaryKeyType
-       /// </summary>
+        /// <summary>
+        /// Constant MFADevicesInUse for SummaryKeyType
+        /// </summary>
         public static readonly SummaryKeyType MFADevicesInUse = new SummaryKeyType("MFADevicesInUse");
-    
-
-       /// <summary>Constant ServerCertificates for SummaryKeyType
-       /// </summary>
+        /// <summary>
+        /// Constant ServerCertificates for SummaryKeyType
+        /// </summary>
         public static readonly SummaryKeyType ServerCertificates = new SummaryKeyType("ServerCertificates");
-    
-
-       /// <summary>Constant ServerCertificatesQuota for SummaryKeyType
-       /// </summary>
+        /// <summary>
+        /// Constant ServerCertificatesQuota for SummaryKeyType
+        /// </summary>
         public static readonly SummaryKeyType ServerCertificatesQuota = new SummaryKeyType("ServerCertificatesQuota");
-    
-
-       /// <summary>Constant SigningCertificatesPerUserQuota for SummaryKeyType
-       /// </summary>
+        /// <summary>
+        /// Constant SigningCertificatesPerUserQuota for SummaryKeyType
+        /// </summary>
         public static readonly SummaryKeyType SigningCertificatesPerUserQuota = new SummaryKeyType("SigningCertificatesPerUserQuota");
-    
-
-       /// <summary>Constant UserPolicySizeQuota for SummaryKeyType
-       /// </summary>
+        /// <summary>
+        /// Constant UserPolicySizeQuota for SummaryKeyType
+        /// </summary>
         public static readonly SummaryKeyType UserPolicySizeQuota = new SummaryKeyType("UserPolicySizeQuota");
-    
-
-       /// <summary>Constant Users for SummaryKeyType
-       /// </summary>
+        /// <summary>
+        /// Constant Users for SummaryKeyType
+        /// </summary>
         public static readonly SummaryKeyType Users = new SummaryKeyType("Users");
-    
-
-       /// <summary>Constant UsersQuota for SummaryKeyType
-       /// </summary>
+        /// <summary>
+        /// Constant UsersQuota for SummaryKeyType
+        /// </summary>
         public static readonly SummaryKeyType UsersQuota = new SummaryKeyType("UsersQuota");
-    
 
         /// <summary>
         /// Default Constructor
@@ -207,7 +190,5 @@ namespace Amazon.IdentityManagement
             return FindValue(value);
         }
     }
-    
 
 }
-        

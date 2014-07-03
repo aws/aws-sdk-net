@@ -12,24 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the RevokeClusterSecurityGroupIngress response and response metadata.
+    /// Configuration for accessing Amazon RevokeClusterSecurityGroupIngress service
     /// </summary>
     public partial class RevokeClusterSecurityGroupIngressResponse : RevokeClusterSecurityGroupIngressResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the RevokeClusterSecurityGroupIngressResult property.
-        /// Contains the result of a successful invocation of the RevokeClusterSecurityGroupIngress
-        /// action.
-        /// 
+        /// Represents the output of a RevokeClusterSecurityGroupIngress operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the RevokeClusterSecurityGroupIngressResult class are now available on the RevokeClusterSecurityGroupIngressResponse class. You should use the properties on RevokeClusterSecurityGroupIngressResponse instead of accessing them through RevokeClusterSecurityGroupIngressResult.")]
         public RevokeClusterSecurityGroupIngressResult RevokeClusterSecurityGroupIngressResult
         {
@@ -40,4 +36,3 @@ namespace Amazon.Redshift.Model
         }
     }
 }
-    

@@ -12,80 +12,82 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.ElasticMapReduce.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+using Amazon.ElasticMapReduce.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for HadoopJarStepConfig Object
+    /// </summary>  
+    public class HadoopJarStepConfigUnmarshaller : IUnmarshaller<HadoopJarStepConfig, XmlUnmarshallerContext>, IUnmarshaller<HadoopJarStepConfig, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// HadoopJarStepConfigUnmarshaller
-      /// </summary>
-      internal class HadoopJarStepConfigUnmarshaller : IUnmarshaller<HadoopJarStepConfig, XmlUnmarshallerContext>, IUnmarshaller<HadoopJarStepConfig, JsonUnmarshallerContext>
-      {
         HadoopJarStepConfig IUnmarshaller<HadoopJarStepConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public HadoopJarStepConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            HadoopJarStepConfig hadoopJarStepConfig = new HadoopJarStepConfig();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            HadoopJarStepConfig unmarshalledObject = new HadoopJarStepConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("Properties", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<KeyValue,KeyValueUnmarshaller>(
-                    KeyValueUnmarshaller.GetInstance());                  
-                hadoopJarStepConfig.Properties = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
-              if (context.TestExpression("Jar", targetDepth))
-              {
-                hadoopJarStepConfig.Jar = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("MainClass", targetDepth))
-              {
-                hadoopJarStepConfig.MainClass = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Args", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<String,StringUnmarshaller>(
-                    StringUnmarshaller.GetInstance());                  
-                hadoopJarStepConfig.Args = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
+                if (context.TestExpression("Args", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Args = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Jar", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Jar = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MainClass", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MainClass = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Properties", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<KeyValue, KeyValueUnmarshaller>(KeyValueUnmarshaller.Instance);
+                    unmarshalledObject.Properties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return hadoopJarStepConfig;
+            return unmarshalledObject;
         }
 
-        private static HadoopJarStepConfigUnmarshaller instance;
-        public static HadoopJarStepConfigUnmarshaller GetInstance()
+
+        private static HadoopJarStepConfigUnmarshaller _instance = new HadoopJarStepConfigUnmarshaller();        
+
+        public static HadoopJarStepConfigUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new HadoopJarStepConfigUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

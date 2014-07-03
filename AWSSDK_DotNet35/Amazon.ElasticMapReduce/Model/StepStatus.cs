@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,74 +18,76 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para>The execution status details of the cluster step. </para>
+    /// The execution status details of the cluster step.
     /// </summary>
-    public class StepStatus
+    public partial class StepStatus
     {
-        
-        private StepState state;
-        private StepStateChangeReason stateChangeReason;
-        private StepTimeline timeline;
+        private StepState _state;
+        private StepStateChangeReason _stateChangeReason;
+        private StepTimeline _timeline;
 
 
         /// <summary>
-        /// The execution state of the cluster step.
-        ///  
+        /// Gets and sets the property State. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>PENDING, RUNNING, COMPLETED, CANCELLED, FAILED, INTERRUPTED</description>
-        ///     </item>
-        /// </list>
+        /// The execution state of the cluster step.      
         /// </para>
         /// </summary>
         public StepState State
         {
-            get { return this.state; }
-            set { this.state = value; }
+            get { return this._state; }
+            set { this._state = value; }
         }
 
         // Check to see if State property is set
         internal bool IsSetState()
         {
-            return this.state != null;
+            return this._state != null;
         }
 
+
         /// <summary>
-        /// The reason for the step execution status change.
-        ///  
+        /// Gets and sets the property StateChangeReason. 
+        /// <para>
+        /// The reason for the step execution status change.      
+        /// </para>
         /// </summary>
         public StepStateChangeReason StateChangeReason
         {
-            get { return this.stateChangeReason; }
-            set { this.stateChangeReason = value; }
+            get { return this._stateChangeReason; }
+            set { this._stateChangeReason = value; }
         }
 
         // Check to see if StateChangeReason property is set
         internal bool IsSetStateChangeReason()
         {
-            return this.stateChangeReason != null;
+            return this._stateChangeReason != null;
         }
 
+
         /// <summary>
-        /// The timeline of the cluster step status over time.
-        ///  
+        /// Gets and sets the property Timeline. 
+        /// <para>
+        /// The timeline of the cluster step status over time.      
+        /// </para>
         /// </summary>
         public StepTimeline Timeline
         {
-            get { return this.timeline; }
-            set { this.timeline = value; }
+            get { return this._timeline; }
+            set { this._timeline = value; }
         }
 
         // Check to see if Timeline property is set
         internal bool IsSetTimeline()
         {
-            return this.timeline != null;
+            return this._timeline != null;
         }
+
     }
 }

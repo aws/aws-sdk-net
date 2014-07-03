@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,51 +14,52 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SimpleEmail.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Send Raw Email Request Marshaller
+    /// SendRawEmail Request Marshaller
     /// </summary>       
     public class SendRawEmailRequestMarshaller : IMarshaller<IRequest, SendRawEmailRequest>
     {
-        public IRequest Marshall(SendRawEmailRequest sendRawEmailRequest)
+        public IRequest Marshall(SendRawEmailRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(sendRawEmailRequest, "AmazonSimpleEmailService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleEmail");
             request.Parameters.Add("Action", "SendRawEmail");
             request.Parameters.Add("Version", "2010-12-01");
-            if (sendRawEmailRequest != null && sendRawEmailRequest.IsSetSource())
-            {
-                request.Parameters.Add("Source", StringUtils.FromString(sendRawEmailRequest.Source));
-            }
-            if (sendRawEmailRequest != null)
-            {
-                List<string> destinationsList = sendRawEmailRequest.Destinations;
 
-                int destinationsListIndex = 1;
-                foreach (string destinationsListValue in destinationsList)
-                { 
-                    request.Parameters.Add("Destinations.member." + destinationsListIndex, StringUtils.FromString(destinationsListValue));
-                    destinationsListIndex++;
-                }
-            }
-            if (sendRawEmailRequest != null)
+            if(publicRequest != null)
             {
-                RawMessage rawMessage = sendRawEmailRequest.RawMessage;
-                if (rawMessage != null && rawMessage.IsSetData())
+                if(publicRequest.IsSetDestinations())
                 {
-                    request.Parameters.Add("RawMessage.Data", StringUtils.FromMemoryStream(rawMessage.Data));
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Destinations)
+                    {
+                        request.Parameters.Add("Destinations" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetRawMessage())
+                {
+                    if(publicRequest.RawMessage.IsSetData())
+                    {
+                        request.Parameters.Add("RawMessage" + "." + "Data", StringUtils.FromMemoryStream(publicRequest.RawMessage.Data));
+                    }
+                }
+                if(publicRequest.IsSetSource())
+                {
+                    request.Parameters.Add("Source", StringUtils.FromString(publicRequest.Source));
                 }
             }
-
             return request;
         }
     }

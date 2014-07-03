@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,60 +17,59 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// <para>A list of the pipelines associated with the current AWS account.</para>
+    /// A list of the pipelines associated with the current AWS account.
     /// </summary>
     public partial class ListPipelinesResult : AmazonWebServiceResponse
     {
-        
-        private List<Pipeline> pipelines = new List<Pipeline>();
-        private string nextPageToken;
+        private string _nextPageToken;
+        private List<Pipeline> _pipelines = new List<Pipeline>();
 
 
         /// <summary>
-        /// An array of <c>Pipeline</c> objects.
-        ///  
-        /// </summary>
-        public List<Pipeline> Pipelines
-        {
-            get { return this.pipelines; }
-            set { this.pipelines = value; }
-        }
-
-        // Check to see if Pipelines property is set
-        internal bool IsSetPipelines()
-        {
-            return this.pipelines.Count > 0;
-        }
-
-        /// <summary>
-        /// A value that you use to access the second and subsequent pages of results, if any. When the pipelines fit on one page or when you've reached
-        /// the last page of results, the value of <c>NextPageToken</c> is <c>null</c>.
-        ///  
+        /// Gets and sets the property NextPageToken. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>^\d{13}-\w{6}$</description>
-        ///     </item>
-        /// </list>
+        /// A value that you use to access the second and subsequent pages of results, if any.
+        /// When            the pipelines fit on one page or when you've reached the last page
+        ///            of results, the value of <code>NextPageToken</code> is <code>null</code>.
         /// </para>
         /// </summary>
         public string NextPageToken
         {
-            get { return this.nextPageToken; }
-            set { this.nextPageToken = value; }
+            get { return this._nextPageToken; }
+            set { this._nextPageToken = value; }
         }
 
         // Check to see if NextPageToken property is set
         internal bool IsSetNextPageToken()
         {
-            return this.nextPageToken != null;
+            return this._nextPageToken != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Pipelines. 
+        /// <para>
+        /// An array of <code>Pipeline</code> objects.
+        /// </para>
+        /// </summary>
+        public List<Pipeline> Pipelines
+        {
+            get { return this._pipelines; }
+            set { this._pipelines = value; }
+        }
+
+        // Check to see if Pipelines property is set
+        internal bool IsSetPipelines()
+        {
+            return this._pipelines != null && this._pipelines.Count > 0; 
+        }
+
     }
 }

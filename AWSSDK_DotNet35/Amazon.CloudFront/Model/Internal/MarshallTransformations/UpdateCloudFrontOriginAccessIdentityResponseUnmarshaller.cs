@@ -13,44 +13,49 @@
  * permissions and limitations under the License.
  */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.CloudFront.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for UpdateCloudFrontOriginAccessIdentity operation
-    /// </summary>
-    internal class UpdateCloudFrontOriginAccessIdentityResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for UpdateCloudFrontOriginAccessIdentity operation
+    /// </summary>  
+    public class UpdateCloudFrontOriginAccessIdentityResponseUnmarshaller : XmlResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
-            UpdateCloudFrontOriginAccessIdentityResponse response = new UpdateCloudFrontOriginAccessIdentityResponse();
-            
-            UnmarshallResult(context,response);
-             
-                        
-            return response;
-        }
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,UpdateCloudFrontOriginAccessIdentityResponse response)
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
+            UpdateCloudFrontOriginAccessIdentityResponse response = new UpdateCloudFrontOriginAccessIdentityResponse();
+            UnmarshallResult(context,response);
+            if (context.ResponseData.IsHeaderPresent("ETag"))
+                response.ETag = context.ResponseData.GetHeaderValue("ETag");
             
+            return response;
+        }        
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, UpdateCloudFrontOriginAccessIdentityResponse response)
+        {
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("CloudFrontOriginAccessIdentity", targetDepth))
                     {
-                        response.CloudFrontOriginAccessIdentity = CloudFrontOriginAccessIdentityUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = CloudFrontOriginAccessIdentityUnmarshaller.Instance;
+                        response.CloudFrontOriginAccessIdentity = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -59,74 +64,62 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-                
-
-            IWebResponseData responseData = context.ResponseData;
-            if (responseData.IsHeaderPresent("ETag"))
-                response.ETag = responseData.GetHeaderValue("ETag");            
-
-
+          
             return;
         }
-        
+  
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidIfMatchVersion"))
-            {
-                return new InvalidIfMatchVersionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("IllegalUpdate"))
-            {
-                return new IllegalUpdateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("MissingBody"))
-            {
-                return new MissingBodyException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchCloudFrontOriginAccessIdentity"))
-            {
-                return new NoSuchCloudFrontOriginAccessIdentityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("PreconditionFailed"))
-            {
-                return new PreconditionFailedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDenied"))
             {
                 return new AccessDeniedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArgument"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("IllegalUpdate"))
             {
-                return new InvalidArgumentException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new IllegalUpdateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("InconsistentQuantities"))
             {
                 return new InconsistentQuantitiesException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArgument"))
+            {
+                return new InvalidArgumentException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidIfMatchVersion"))
+            {
+                return new InvalidIfMatchVersionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("MissingBody"))
+            {
+                return new MissingBodyException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchCloudFrontOriginAccessIdentity"))
+            {
+                return new NoSuchCloudFrontOriginAccessIdentityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("PreconditionFailed"))
+            {
+                return new PreconditionFailedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonCloudFrontException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static UpdateCloudFrontOriginAccessIdentityResponseUnmarshaller instance;
 
-        public static UpdateCloudFrontOriginAccessIdentityResponseUnmarshaller GetInstance()
+        private static UpdateCloudFrontOriginAccessIdentityResponseUnmarshaller _instance = new UpdateCloudFrontOriginAccessIdentityResponseUnmarshaller();        
+
+        internal static UpdateCloudFrontOriginAccessIdentityResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new UpdateCloudFrontOriginAccessIdentityResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static UpdateCloudFrontOriginAccessIdentityResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

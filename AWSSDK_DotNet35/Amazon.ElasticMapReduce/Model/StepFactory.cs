@@ -81,11 +81,28 @@ namespace Amazon.ElasticMapReduce.Model
         private const string 
             DEFAULT_BUCKET = "us-east-1.elasticmapreduce";
 
-        public StepFactory(String bucket) 
+
+        /// <summary>
+        /// Constructor that gets its resources from the S3 bucket specified 
+        /// </summary>
+        /// <param name="bucket">The bucket that contains the resources used by the step factory</param>
+        public StepFactory(string bucket) 
         {
             this.bucket = bucket;
         }
 
+        /// <summary>
+        /// Constructor that gets its resources EMR bucket in the specified region. 
+        /// </summary>
+        /// <param name="region">The region of the EMR bucket to use.</param>
+        public StepFactory(RegionEndpoint region)
+        {
+            this.bucket = string.Format(CultureInfo.InvariantCulture,"{0}.elasticmapreduce", region.SystemName);
+        }
+
+        /// <summary>
+        /// Default constructor that gets its resources from the S3 in us-east-1. 
+        /// </summary>
         public StepFactory() 
             : this(DEFAULT_BUCKET)
         {

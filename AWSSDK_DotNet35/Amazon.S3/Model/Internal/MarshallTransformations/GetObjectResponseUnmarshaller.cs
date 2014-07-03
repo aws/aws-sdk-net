@@ -85,6 +85,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 response.WebsiteRedirectLocation = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-website-redirect-location"));
             if (responseData.IsHeaderPresent("x-amz-server-side-encryption"))
                 response.ServerSideEncryptionMethod = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-server-side-encryption"));
+            if (responseData.IsHeaderPresent("x-amz-server-side-encryption-customer-algorithm"))
+                response.ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.FindValue(responseData.GetHeaderValue("x-amz-server-side-encryption-customer-algorithm"));
 
             foreach (var name in responseData.GetHeaderNames())
             {

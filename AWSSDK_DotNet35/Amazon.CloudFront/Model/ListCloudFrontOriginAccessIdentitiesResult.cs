@@ -17,33 +17,35 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> The returned result of the corresponding request. </para>
+    /// The returned result of the corresponding request.
     /// </summary>
     public partial class ListCloudFrontOriginAccessIdentitiesResult : AmazonWebServiceResponse
     {
-        
-        private CloudFrontOriginAccessIdentityList cloudFrontOriginAccessIdentityList;
+        private CloudFrontOriginAccessIdentityList _cloudFrontOriginAccessIdentityList;
 
 
         /// <summary>
-        /// The CloudFrontOriginAccessIdentityList type.
-        ///  
+        /// Gets and sets the property CloudFrontOriginAccessIdentityList. The CloudFrontOriginAccessIdentityList
+        /// type.
         /// </summary>
         public CloudFrontOriginAccessIdentityList CloudFrontOriginAccessIdentityList
         {
-            get { return this.cloudFrontOriginAccessIdentityList; }
-            set { this.cloudFrontOriginAccessIdentityList = value; }
+            get { return this._cloudFrontOriginAccessIdentityList; }
+            set { this._cloudFrontOriginAccessIdentityList = value; }
         }
 
         // Check to see if CloudFrontOriginAccessIdentityList property is set
         internal bool IsSetCloudFrontOriginAccessIdentityList()
         {
-            return this.cloudFrontOriginAccessIdentityList != null;
+            return this._cloudFrontOriginAccessIdentityList != null;
         }
+
     }
 }

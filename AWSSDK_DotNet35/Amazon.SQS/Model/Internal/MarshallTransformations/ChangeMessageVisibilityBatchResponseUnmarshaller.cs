@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ChangeMessageVisibilityBatch operation
     /// </summary>  
-    internal class ChangeMessageVisibilityBatchResponseUnmarshaller : XmlResponseUnmarshaller
+    public class ChangeMessageVisibilityBatchResponseUnmarshaller : XmlResponseUnmarshaller
     {
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
@@ -44,13 +44,13 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                 {                    
                     if(context.TestExpression("ChangeMessageVisibilityBatchResult", 2))
                     {
-                        UnmarshallResult(context,response);                        
+                        UnmarshallResult(context, response);                        
                         continue;
                     }
                     
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
                     }
                 }
             }
@@ -58,7 +58,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context,ChangeMessageVisibilityBatchResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, ChangeMessageVisibilityBatchResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -74,14 +74,14 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("BatchResultErrorEntry", targetDepth))
                     {
-                        var unmarshaller = BatchResultErrorEntryUnmarshaller.GetInstance();
+                        var unmarshaller = BatchResultErrorEntryUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         response.Failed.Add(item);
                         continue;
                     }
                     if (context.TestExpression("ChangeMessageVisibilityBatchResultEntry", targetDepth))
                     {
-                        var unmarshaller = ChangeMessageVisibilityBatchResultEntryUnmarshaller.GetInstance();
+                        var unmarshaller = ChangeMessageVisibilityBatchResultEntryUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         response.Successful.Add(item);
                         continue;
@@ -115,14 +115,18 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             return new AmazonSQSException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static ChangeMessageVisibilityBatchResponseUnmarshaller instance;
-        public static ChangeMessageVisibilityBatchResponseUnmarshaller GetInstance()
+        private static ChangeMessageVisibilityBatchResponseUnmarshaller _instance = new ChangeMessageVisibilityBatchResponseUnmarshaller();        
+
+        internal static ChangeMessageVisibilityBatchResponseUnmarshaller GetInstance()
         {
-            if (instance == null)
+            return _instance;
+        }
+        public static ChangeMessageVisibilityBatchResponseUnmarshaller Instance
+        {
+            get
             {
-                instance = new ChangeMessageVisibilityBatchResponseUnmarshaller();
+                return _instance;
             }
-            return instance;
         }
 
     }

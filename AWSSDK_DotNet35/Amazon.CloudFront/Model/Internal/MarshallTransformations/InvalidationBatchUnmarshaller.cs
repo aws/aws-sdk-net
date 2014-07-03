@@ -12,21 +12,30 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   InvalidationBatch Unmarshaller
-     /// </summary>
-    internal class InvalidationBatchUnmarshaller : IUnmarshaller<InvalidationBatch, XmlUnmarshallerContext>, IUnmarshaller<InvalidationBatch, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for InvalidationBatch Object
+    /// </summary>  
+    public class InvalidationBatchUnmarshaller : IUnmarshaller<InvalidationBatch, XmlUnmarshallerContext>
     {
-        public InvalidationBatch Unmarshall(XmlUnmarshallerContext context) 
+        public InvalidationBatch Unmarshall(XmlUnmarshallerContext context)
         {
-            InvalidationBatch invalidationBatch = new InvalidationBatch();
+            InvalidationBatch unmarshalledObject = new InvalidationBatch();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -37,44 +46,35 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Paths", targetDepth))
-                    {
-                        invalidationBatch.Paths = PathsUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("CallerReference", targetDepth))
                     {
-                        invalidationBatch.CallerReference = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CallerReference = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Paths", targetDepth))
+                    {
+                        var unmarshaller = PathsUnmarshaller.Instance;
+                        unmarshalledObject.Paths = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return invalidationBatch;
+                    return unmarshalledObject;
                 }
+            }          
+            return unmarshalledObject;
+        }
+
+        private static InvalidationBatchUnmarshaller _instance = new InvalidationBatchUnmarshaller();        
+
+        public static InvalidationBatchUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
             }
-                        
-
-
-            return invalidationBatch;
-        }
-
-        public InvalidationBatch Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
-
-        private static InvalidationBatchUnmarshaller instance;
-
-        public static InvalidationBatchUnmarshaller GetInstance() 
-        {
-            if (instance == null) 
-               instance = new InvalidationBatchUnmarshaller();
-
-            return instance;
         }
     }
 }
-    

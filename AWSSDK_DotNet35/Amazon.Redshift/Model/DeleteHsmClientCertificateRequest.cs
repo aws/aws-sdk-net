@@ -25,29 +25,30 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteHsmClientCertificate operation.
-    /// <para>Deletes the specified HSM client certificate.</para>
+    /// Deletes the specified HSM client certificate.
     /// </summary>
     public partial class DeleteHsmClientCertificateRequest : AmazonRedshiftRequest
     {
-        private string hsmClientCertificateIdentifier;
+        private string _hsmClientCertificateIdentifier;
 
 
         /// <summary>
+        /// Gets and sets the property HsmClientCertificateIdentifier. 
+        /// <para>
         /// The identifier of the HSM client certificate to be deleted.
-        ///  
+        /// </para>
         /// </summary>
         public string HsmClientCertificateIdentifier
         {
-            get { return this.hsmClientCertificateIdentifier; }
-            set { this.hsmClientCertificateIdentifier = value; }
+            get { return this._hsmClientCertificateIdentifier; }
+            set { this._hsmClientCertificateIdentifier = value; }
         }
 
         // Check to see if HsmClientCertificateIdentifier property is set
         internal bool IsSetHsmClientCertificateIdentifier()
         {
-            return this.hsmClientCertificateIdentifier != null;
+            return this._hsmClientCertificateIdentifier != null;
         }
 
     }
 }
-    

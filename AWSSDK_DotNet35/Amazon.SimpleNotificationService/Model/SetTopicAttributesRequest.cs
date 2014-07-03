@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,86 +25,75 @@ namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
     /// Container for the parameters to the SetTopicAttributes operation.
-    /// <para>The <c>SetTopicAttributes</c> action allows a topic owner to set an attribute of the topic to a new value.</para>
+    /// Allows a topic owner to set an attribute of the topic to a new value.
     /// </summary>
     public partial class SetTopicAttributesRequest : AmazonSimpleNotificationServiceRequest
     {
-        private string topicArn;
-        private string attributeName;
-        private string attributeValue;
+        private string _attributeName;
+        private string _attributeValue;
+        private string _topicArn;
+
 
         /// <summary>
-        /// Default constructor for a new SetTopicAttributesRequest object.  Callers should use the
-        /// properties to initialize this object after creating it.
-        /// </summary>
-        public SetTopicAttributesRequest() {}
-    
-        /// <summary>
-        /// Constructs a new SetTopicAttributesRequest object.
-        /// Callers should use the properties initialize any additional object members.
-        /// </summary>
-        /// 
-        /// <param name="topicArn"> The ARN of the topic to modify. </param>
-        /// <param name="attributeName"> The name of the attribute you want to set. Only a subset of the topic's attributes are mutable. Valid values:
-        /// <c>Policy</c> | <c>DisplayName</c> | <c>DeliveryPolicy</c> </param>
-        /// <param name="attributeValue"> The new value for the attribute. </param>
-        public SetTopicAttributesRequest(string topicArn, string attributeName, string attributeValue)
-        {
-            this.topicArn = topicArn;
-            this.attributeName = attributeName;
-            this.attributeValue = attributeValue;
-        }
-    
-
-        /// <summary>
-        /// The ARN of the topic to modify.
-        ///  
-        /// </summary>
-        public string TopicArn
-        {
-            get { return this.topicArn; }
-            set { this.topicArn = value; }
-        }
-
-        // Check to see if TopicArn property is set
-        internal bool IsSetTopicArn()
-        {
-            return this.topicArn != null;
-        }
-
-        /// <summary>
-        /// The name of the attribute you want to set. Only a subset of the topic's attributes are mutable. Valid values: <c>Policy</c> |
-        /// <c>DisplayName</c> | <c>DeliveryPolicy</c>
-        ///  
+        /// Gets and sets the property AttributeName. 
+        /// <para>
+        /// The name of the attribute you want to set. Only a subset of the topic's attributes
+        /// are mutable.
+        /// </para>
+        ///     
+        /// <para>
+        /// Valid values: <code>Policy</code> | <code>DisplayName</code> | <code>DeliveryPolicy</code>
+        /// </para>
         /// </summary>
         public string AttributeName
         {
-            get { return this.attributeName; }
-            set { this.attributeName = value; }
+            get { return this._attributeName; }
+            set { this._attributeName = value; }
         }
 
         // Check to see if AttributeName property is set
         internal bool IsSetAttributeName()
         {
-            return this.attributeName != null;
+            return this._attributeName != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property AttributeValue. 
+        /// <para>
         /// The new value for the attribute.
-        ///  
+        /// </para>
         /// </summary>
         public string AttributeValue
         {
-            get { return this.attributeValue; }
-            set { this.attributeValue = value; }
+            get { return this._attributeValue; }
+            set { this._attributeValue = value; }
         }
 
         // Check to see if AttributeValue property is set
         internal bool IsSetAttributeValue()
         {
-            return this.attributeValue != null;
+            return this._attributeValue != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property TopicArn. 
+        /// <para>
+        /// The ARN of the topic to modify.
+        /// </para>
+        /// </summary>
+        public string TopicArn
+        {
+            get { return this._topicArn; }
+            set { this._topicArn = value; }
+        }
+
+        // Check to see if TopicArn property is set
+        internal bool IsSetTopicArn()
+        {
+            return this._topicArn != null;
         }
 
     }
 }
-    

@@ -12,24 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the RebootCluster response and response metadata.
+    /// Configuration for accessing Amazon RebootCluster service
     /// </summary>
     public partial class RebootClusterResponse : RebootClusterResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the RebootClusterResult property.
-        /// Contains the result of a successful invocation of the RebootCluster
-        /// action.
-        /// 
+        /// Represents the output of a RebootCluster operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the RebootClusterResult class are now available on the RebootClusterResponse class. You should use the properties on RebootClusterResponse instead of accessing them through RebootClusterResult.")]
         public RebootClusterResult RebootClusterResult
         {
@@ -40,4 +36,3 @@ namespace Amazon.Redshift.Model
         }
     }
 }
-    

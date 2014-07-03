@@ -18,49 +18,53 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> A complex type that specifies the whitelisted cookies, if any, that you want CloudFront to forward to your origin that is associated
-    /// with this cache behavior. </para>
+    /// A complex type that specifies the whitelisted cookies, if any, that you want CloudFront
+    /// to forward to your    origin that is associated with this cache behavior.
     /// </summary>
     public partial class CookieNames
     {
-        
-        private int? quantity;
-        private List<string> items = new List<string>();
+        private List<string> _items = new List<string>();
+        private int? _quantity;
 
 
         /// <summary>
-        /// The number of whitelisted cookies for this cache behavior.
-        ///  
-        /// </summary>
-        public int Quantity
-        {
-            get { return this.quantity ?? default(int); }
-            set { this.quantity = value; }
-        }
-
-        // Check to see if Quantity property is set
-        internal bool IsSetQuantity()
-        {
-            return this.quantity.HasValue;
-        }
-
-        /// <summary>
-        /// Optional: A complex type that contains whitelisted cookies for this cache behavior. If Quantity is 0, you can omit Items.
-        ///  
+        /// Gets and sets the property Items. Optional: A complex type that contains whitelisted
+        /// cookies for this cache    behavior. If Quantity is 0, you can omit Items.
         /// </summary>
         public List<string> Items
         {
-            get { return this.items; }
-            set { this.items = value; }
+            get { return this._items; }
+            set { this._items = value; }
         }
 
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this.items.Count > 0;
+            return this._items != null && this._items.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Quantity. The number of whitelisted cookies for this cache
+        /// behavior.
+        /// </summary>
+        public int Quantity
+        {
+            get { return this._quantity.GetValueOrDefault(); }
+            set { this._quantity = value; }
+        }
+
+        // Check to see if Quantity property is set
+        internal bool IsSetQuantity()
+        {
+            return this._quantity.HasValue; 
+        }
+
     }
 }

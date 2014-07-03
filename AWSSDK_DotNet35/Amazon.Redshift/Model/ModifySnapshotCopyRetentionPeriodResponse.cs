@@ -12,24 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the ModifySnapshotCopyRetentionPeriod response and response metadata.
+    /// Configuration for accessing Amazon ModifySnapshotCopyRetentionPeriod service
     /// </summary>
     public partial class ModifySnapshotCopyRetentionPeriodResponse : ModifySnapshotCopyRetentionPeriodResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the ModifySnapshotCopyRetentionPeriodResult property.
-        /// Contains the result of a successful invocation of the ModifySnapshotCopyRetentionPeriod
-        /// action.
-        /// 
+        /// Represents the output of a ModifySnapshotCopyRetentionPeriod operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ModifySnapshotCopyRetentionPeriodResult class are now available on the ModifySnapshotCopyRetentionPeriodResponse class. You should use the properties on ModifySnapshotCopyRetentionPeriodResponse instead of accessing them through ModifySnapshotCopyRetentionPeriodResult.")]
         public ModifySnapshotCopyRetentionPeriodResult ModifySnapshotCopyRetentionPeriodResult
         {
@@ -40,4 +36,3 @@ namespace Amazon.Redshift.Model
         }
     }
 }
-    

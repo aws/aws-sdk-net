@@ -25,64 +25,72 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyClusterSubnetGroup operation.
-    /// <para> Modifies a cluster subnet group to include the specified list of VPC subnets. The operation replaces the existing list of subnets
-    /// with the new list of subnets. </para>
+    /// Modifies a cluster subnet group to include the specified list of VPC subnets.
+    ///         The operation replaces the existing list of subnets with the new list of subnets.
     /// </summary>
     public partial class ModifyClusterSubnetGroupRequest : AmazonRedshiftRequest
     {
-        private string clusterSubnetGroupName;
-        private string description;
-        private List<string> subnetIds = new List<string>();
+        private string _clusterSubnetGroupName;
+        private string _description;
+        private List<string> _subnetIds = new List<string>();
 
 
         /// <summary>
+        /// Gets and sets the property ClusterSubnetGroupName. 
+        /// <para>
         /// The name of the subnet group to be modified.
-        ///  
+        /// </para>
         /// </summary>
         public string ClusterSubnetGroupName
         {
-            get { return this.clusterSubnetGroupName; }
-            set { this.clusterSubnetGroupName = value; }
+            get { return this._clusterSubnetGroupName; }
+            set { this._clusterSubnetGroupName = value; }
         }
 
         // Check to see if ClusterSubnetGroupName property is set
         internal bool IsSetClusterSubnetGroupName()
         {
-            return this.clusterSubnetGroupName != null;
+            return this._clusterSubnetGroupName != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
         /// A text description of the subnet group to be modified.
-        ///  
+        /// </para>
         /// </summary>
         public string Description
         {
-            get { return this.description; }
-            set { this.description = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
 
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;
+            return this._description != null;
         }
 
+
         /// <summary>
-        /// An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.
-        ///  
+        /// Gets and sets the property SubnetIds. 
+        /// <para>
+        ///             An array of VPC subnet IDs.              A maximum of 20 subnets can be
+        /// modified in a single request.        
+        /// </para>
         /// </summary>
         public List<string> SubnetIds
         {
-            get { return this.subnetIds; }
-            set { this.subnetIds = value; }
+            get { return this._subnetIds; }
+            set { this._subnetIds = value; }
         }
 
         // Check to see if SubnetIds property is set
         internal bool IsSetSubnetIds()
         {
-            return this.subnetIds.Count > 0;
+            return this._subnetIds != null && this._subnetIds.Count > 0; 
         }
 
     }
 }
-    

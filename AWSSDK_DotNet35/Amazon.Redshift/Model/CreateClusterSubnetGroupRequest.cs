@@ -25,69 +25,92 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateClusterSubnetGroup operation.
-    /// <para> Creates a new Amazon Redshift subnet group. You must provide a list of one or more subnets in your existing Amazon Virtual Private
-    /// Cloud (Amazon VPC) when creating Amazon Redshift subnet group. </para> <para> For information about subnet groups, go to <a
-    /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html" >Amazon Redshift Cluster Subnet Groups</a> in
-    /// the <i>Amazon Redshift Management Guide</i> .
+    /// Creates a new Amazon Redshift subnet group. You must provide a list of
+    /// one or more subnets in             your existing Amazon Virtual Private Cloud (Amazon
+    /// VPC) when creating Amazon Redshift subnet group.                   
+    /// 
+    ///         
+    /// <para>
+    ///  For information about subnet groups, go to<a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html">Amazon
+    /// Redshift Cluster Subnet Groups</a> in the <i>Amazon Redshift Management Guide</i>.
+    ///        
     /// </para>
     /// </summary>
     public partial class CreateClusterSubnetGroupRequest : AmazonRedshiftRequest
     {
-        private string clusterSubnetGroupName;
-        private string description;
-        private List<string> subnetIds = new List<string>();
+        private string _clusterSubnetGroupName;
+        private string _description;
+        private List<string> _subnetIds = new List<string>();
 
 
         /// <summary>
-        /// The name for the subnet group. Amazon Redshift stores the value as a lowercase string. Constraints: <ul> <li>Must contain no more than 255
-        /// alphanumeric characters or hyphens.</li> <li>Must not be "Default".</li> <li>Must be unique for all subnet groups that are created by your
-        /// AWS account.</li> </ul> Example: <c>examplesubnetgroup</c>
-        ///  
+        /// Gets and sets the property ClusterSubnetGroupName. 
+        /// <para>
+        ///             The name for the subnet group.            Amazon Redshift stores the value
+        /// as a lowercase string.        
+        /// </para>
+        ///         
+        /// <para>
+        /// Constraints: 
+        /// </para>
+        ///         <ul>            <li>Must contain no more than 255 alphanumeric characters
+        /// or hyphens.</li>            <li>Must not be "Default".</li>            <li>Must be
+        /// unique for all subnet groups that are created by your AWS account.</li>        </ul>
+        ///                
+        /// <para>
+        /// Example: <code>examplesubnetgroup</code>
+        /// </para>
         /// </summary>
         public string ClusterSubnetGroupName
         {
-            get { return this.clusterSubnetGroupName; }
-            set { this.clusterSubnetGroupName = value; }
+            get { return this._clusterSubnetGroupName; }
+            set { this._clusterSubnetGroupName = value; }
         }
 
         // Check to see if ClusterSubnetGroupName property is set
         internal bool IsSetClusterSubnetGroupName()
         {
-            return this.clusterSubnetGroupName != null;
+            return this._clusterSubnetGroupName != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
         /// A description for the subnet group.
-        ///  
+        /// </para>
         /// </summary>
         public string Description
         {
-            get { return this.description; }
-            set { this.description = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
 
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;
+            return this._description != null;
         }
 
+
         /// <summary>
-        /// An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.
-        ///  
+        /// Gets and sets the property SubnetIds. 
+        /// <para>
+        ///             An array of VPC subnet IDs.              A maximum of 20 subnets can be
+        /// modified in a single request.        
+        /// </para>
         /// </summary>
         public List<string> SubnetIds
         {
-            get { return this.subnetIds; }
-            set { this.subnetIds = value; }
+            get { return this._subnetIds; }
+            set { this._subnetIds = value; }
         }
 
         // Check to see if SubnetIds property is set
         internal bool IsSetSubnetIds()
         {
-            return this.subnetIds.Count > 0;
+            return this._subnetIds != null && this._subnetIds.Count > 0; 
         }
 
     }
 }
-    

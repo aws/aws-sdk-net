@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the DeleteClusterParameterGroup response metadata.
-    /// The DeleteClusterParameterGroup operation has a void result type.
+    /// Configuration for accessing Amazon DeleteClusterParameterGroup service
     /// </summary>
-    public partial class DeleteClusterParameterGroupResponse : AmazonWebServiceResponse
+    public partial class DeleteClusterParameterGroupResponse : DeleteClusterParameterGroupResult
     {
+        /// <summary>
+        /// Gets and sets the DeleteClusterParameterGroupResult property.
+        /// Represents the output of a DeleteClusterParameterGroup operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DeleteClusterParameterGroupResult class are now available on the DeleteClusterParameterGroupResponse class. You should use the properties on DeleteClusterParameterGroupResponse instead of accessing them through DeleteClusterParameterGroupResult.")]
+        public DeleteClusterParameterGroupResult DeleteClusterParameterGroupResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

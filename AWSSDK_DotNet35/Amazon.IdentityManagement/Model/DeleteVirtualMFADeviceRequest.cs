@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,43 +25,34 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVirtualMFADevice operation.
-    /// <para>Deletes a virtual MFA device.</para> <para><b>NOTE:</b>You must deactivate a user's virtual MFA device before you can delete it. For
-    /// information about deactivating MFA devices, see DeactivateMFADevice.</para>
+    /// Deletes a virtual MFA device.
+    /// 
+    ///         <note>You must deactivate a user's virtual MFA device before you can delete it.
+    /// For information            about deactivating MFA devices, see <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeactivateMFADevice.html">DeactivateMFADevice</a>.</note>
     /// </summary>
     public partial class DeleteVirtualMFADeviceRequest : AmazonIdentityManagementServiceRequest
     {
-        private string serialNumber;
+        private string _serialNumber;
 
 
         /// <summary>
-        /// The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the same as the ARN.
-        ///  
+        /// Gets and sets the property SerialNumber. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>9 - 256</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=/:,.@-]*</description>
-        ///     </item>
-        /// </list>
+        /// The serial number that uniquely identifies the MFA device. For virtual MFA devices,
+        /// the            serial number is the same as the ARN.
         /// </para>
         /// </summary>
         public string SerialNumber
         {
-            get { return this.serialNumber; }
-            set { this.serialNumber = value; }
+            get { return this._serialNumber; }
+            set { this._serialNumber = value; }
         }
 
         // Check to see if SerialNumber property is set
         internal bool IsSetSerialNumber()
         {
-            return this.serialNumber != null;
+            return this._serialNumber != null;
         }
 
     }
 }
-    

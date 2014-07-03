@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the DeleteEventSubscription response metadata.
-    /// The DeleteEventSubscription operation has a void result type.
+    /// Configuration for accessing Amazon DeleteEventSubscription service
     /// </summary>
-    public partial class DeleteEventSubscriptionResponse : AmazonWebServiceResponse
+    public partial class DeleteEventSubscriptionResponse : DeleteEventSubscriptionResult
     {
+        /// <summary>
+        /// Gets and sets the DeleteEventSubscriptionResult property.
+        /// Represents the output of a DeleteEventSubscription operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DeleteEventSubscriptionResult class are now available on the DeleteEventSubscriptionResponse class. You should use the properties on DeleteEventSubscriptionResponse instead of accessing them through DeleteEventSubscriptionResult.")]
+        public DeleteEventSubscriptionResult DeleteEventSubscriptionResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

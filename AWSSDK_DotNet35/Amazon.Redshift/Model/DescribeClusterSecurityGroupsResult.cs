@@ -17,52 +17,62 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// <para> Contains the output from the DescribeClusterSecurityGroups action. </para>
+    /// Contains the output from the <a>DescribeClusterSecurityGroups</a> action.
     /// </summary>
     public partial class DescribeClusterSecurityGroupsResult : AmazonWebServiceResponse
     {
-        
-        private string marker;
-        private List<ClusterSecurityGroup> clusterSecurityGroups = new List<ClusterSecurityGroup>();
+        private List<ClusterSecurityGroup> _clusterSecurityGroups = new List<ClusterSecurityGroup>();
+        private string _marker;
 
 
         /// <summary>
-        /// A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a
-        /// response, you can retrieve the next set of records by providing this returned marker value in the <c>Marker</c> parameter and retrying the
-        /// command. If the <c>Marker</c> field is empty, all response records have been retrieved for the request.
-        ///  
-        /// </summary>
-        public string Marker
-        {
-            get { return this.marker; }
-            set { this.marker = value; }
-        }
-
-        // Check to see if Marker property is set
-        internal bool IsSetMarker()
-        {
-            return this.marker != null;
-        }
-
-        /// <summary>
-        /// A list of <a>ClusterSecurityGroup</a> instances.
-        ///  
+        /// Gets and sets the property ClusterSecurityGroups. 
+        /// <para>
+        ///         A list of <a>ClusterSecurityGroup</a> instances.        
+        /// </para>
         /// </summary>
         public List<ClusterSecurityGroup> ClusterSecurityGroups
         {
-            get { return this.clusterSecurityGroups; }
-            set { this.clusterSecurityGroups = value; }
+            get { return this._clusterSecurityGroups; }
+            set { this._clusterSecurityGroups = value; }
         }
 
         // Check to see if ClusterSecurityGroups property is set
         internal bool IsSetClusterSecurityGroups()
         {
-            return this.clusterSecurityGroups.Count > 0;
+            return this._clusterSecurityGroups != null && this._clusterSecurityGroups.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Marker. 
+        /// <para>
+        ///             A value that indicates the starting point for the next set of response
+        /// records in a subsequent request.             If a value is returned in a response,
+        /// you can retrieve the next set of records by providing this returned             marker
+        /// value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code>
+        /// field            is empty, all response records have been retrieved for the request.
+        ///        
+        /// </para>
+        /// </summary>
+        public string Marker
+        {
+            get { return this._marker; }
+            set { this._marker = value; }
+        }
+
+        // Check to see if Marker property is set
+        internal bool IsSetMarker()
+        {
+            return this._marker != null;
+        }
+
     }
 }

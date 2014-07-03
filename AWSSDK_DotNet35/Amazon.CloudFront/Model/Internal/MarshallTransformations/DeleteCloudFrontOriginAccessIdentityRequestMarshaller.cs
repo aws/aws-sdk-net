@@ -17,45 +17,39 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Text;
-using System.Xml;
 using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
-
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using System.Xml;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Cloud Front Origin Access Identity Request Marshaller
+    /// DeleteCloudFrontOriginAccessIdentity Request Marshaller
     /// </summary>       
-    public class DeleteCloudFrontOriginAccessIdentityRequestMarshaller : IMarshaller<IRequest, DeleteCloudFrontOriginAccessIdentityRequest>
+    public class DeleteCloudFrontOriginAccessIdentityRequestMarshaller : IMarshaller<IRequest, DeleteCloudFrontOriginAccessIdentityRequest> 
     {
-        
-    
-        public IRequest Marshall(DeleteCloudFrontOriginAccessIdentityRequest deleteCloudFrontOriginAccessIdentityRequest)
+        public IRequest Marshall(DeleteCloudFrontOriginAccessIdentityRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(deleteCloudFrontOriginAccessIdentityRequest, "AmazonCloudFront");
-
-
-
+            var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "DELETE";
-        if(deleteCloudFrontOriginAccessIdentityRequest.IsSetIfMatch())
-            request.Headers.Add("If-Match", deleteCloudFrontOriginAccessIdentityRequest.IfMatch);
-            
-            string uriResourcePath = "2014-01-31/origin-access-identity/cloudfront/{Id}"; 
-            uriResourcePath = uriResourcePath.Replace("{Id}", deleteCloudFrontOriginAccessIdentityRequest.IsSetId() ? deleteCloudFrontOriginAccessIdentityRequest.Id.ToString() : "" ); 
-            request.ResourcePath = uriResourcePath;
-            
+            var uriResourcePath = "/2014-05-31/origin-access-identity/cloudfront/{Id}";
+
         
+            if(publicRequest.IsSetIfMatch())     
+                request.Headers["If-Match"] = publicRequest.IfMatch;
+            uriResourcePath = uriResourcePath.Replace("{Id}", publicRequest.IsSetId() ? StringUtils.FromString(publicRequest.Id) : string.Empty);
+            request.ResourcePath = uriResourcePath;
+
+
             request.UseQueryString = true;
-            
-            
             return request;
         }
-    }
+
+        
+    }    
 }
-    

@@ -12,60 +12,70 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.ElasticMapReduce.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+using Amazon.ElasticMapReduce.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for BootstrapActionConfig Object
+    /// </summary>  
+    public class BootstrapActionConfigUnmarshaller : IUnmarshaller<BootstrapActionConfig, XmlUnmarshallerContext>, IUnmarshaller<BootstrapActionConfig, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// BootstrapActionConfigUnmarshaller
-      /// </summary>
-      internal class BootstrapActionConfigUnmarshaller : IUnmarshaller<BootstrapActionConfig, XmlUnmarshallerContext>, IUnmarshaller<BootstrapActionConfig, JsonUnmarshallerContext>
-      {
         BootstrapActionConfig IUnmarshaller<BootstrapActionConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public BootstrapActionConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            BootstrapActionConfig bootstrapActionConfig = new BootstrapActionConfig();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            BootstrapActionConfig unmarshalledObject = new BootstrapActionConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("Name", targetDepth))
-              {
-                bootstrapActionConfig.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("ScriptBootstrapAction", targetDepth))
-              {
-                bootstrapActionConfig.ScriptBootstrapAction = ScriptBootstrapActionConfigUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("Name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ScriptBootstrapAction", targetDepth))
+                {
+                    var unmarshaller = ScriptBootstrapActionConfigUnmarshaller.Instance;
+                    unmarshalledObject.ScriptBootstrapAction = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return bootstrapActionConfig;
+            return unmarshalledObject;
         }
 
-        private static BootstrapActionConfigUnmarshaller instance;
-        public static BootstrapActionConfigUnmarshaller GetInstance()
+
+        private static BootstrapActionConfigUnmarshaller _instance = new BootstrapActionConfigUnmarshaller();        
+
+        public static BootstrapActionConfigUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new BootstrapActionConfigUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

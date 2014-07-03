@@ -13,44 +13,49 @@
  * permissions and limitations under the License.
  */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.CloudFront.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for GetStreamingDistributionConfig operation
-    /// </summary>
-    internal class GetStreamingDistributionConfigResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for GetStreamingDistributionConfig operation
+    /// </summary>  
+    public class GetStreamingDistributionConfigResponseUnmarshaller : XmlResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
-            GetStreamingDistributionConfigResponse response = new GetStreamingDistributionConfigResponse();
-            
-            UnmarshallResult(context,response);
-             
-                        
-            return response;
-        }
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,GetStreamingDistributionConfigResponse response)
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
+            GetStreamingDistributionConfigResponse response = new GetStreamingDistributionConfigResponse();
+            UnmarshallResult(context,response);
+            if (context.ResponseData.IsHeaderPresent("ETag"))
+                response.ETag = context.ResponseData.GetHeaderValue("ETag");
             
+            return response;
+        }        
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, GetStreamingDistributionConfigResponse response)
+        {
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("StreamingDistributionConfig", targetDepth))
                     {
-                        response.StreamingDistributionConfig = StreamingDistributionConfigUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StreamingDistributionConfigUnmarshaller.Instance;
+                        response.StreamingDistributionConfig = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -59,44 +64,38 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-                
-
-            IWebResponseData responseData = context.ResponseData;
-            if (responseData.IsHeaderPresent("ETag"))
-                response.ETag = responseData.GetHeaderValue("ETag");            
-
-
+          
             return;
         }
-        
+  
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
-            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchStreamingDistribution"))
-            {
-                return new NoSuchStreamingDistributionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDenied"))
             {
                 return new AccessDeniedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchStreamingDistribution"))
+            {
+                return new NoSuchStreamingDistributionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonCloudFrontException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static GetStreamingDistributionConfigResponseUnmarshaller instance;
 
-        public static GetStreamingDistributionConfigResponseUnmarshaller GetInstance()
+        private static GetStreamingDistributionConfigResponseUnmarshaller _instance = new GetStreamingDistributionConfigResponseUnmarshaller();        
+
+        internal static GetStreamingDistributionConfigResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new GetStreamingDistributionConfigResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static GetStreamingDistributionConfigResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,39 +14,41 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SimpleEmail.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Get Identity Verification Attributes Request Marshaller
+    /// GetIdentityVerificationAttributes Request Marshaller
     /// </summary>       
     public class GetIdentityVerificationAttributesRequestMarshaller : IMarshaller<IRequest, GetIdentityVerificationAttributesRequest>
     {
-        public IRequest Marshall(GetIdentityVerificationAttributesRequest getIdentityVerificationAttributesRequest)
+        public IRequest Marshall(GetIdentityVerificationAttributesRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(getIdentityVerificationAttributesRequest, "AmazonSimpleEmailService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleEmail");
             request.Parameters.Add("Action", "GetIdentityVerificationAttributes");
             request.Parameters.Add("Version", "2010-12-01");
-            if (getIdentityVerificationAttributesRequest != null)
-            {
-                List<string> identitiesList = getIdentityVerificationAttributesRequest.Identities;
 
-                int identitiesListIndex = 1;
-                foreach (string identitiesListValue in identitiesList)
-                { 
-                    request.Parameters.Add("Identities.member." + identitiesListIndex, StringUtils.FromString(identitiesListValue));
-                    identitiesListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetIdentities())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Identities)
+                    {
+                        request.Parameters.Add("Identities" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
-
             return request;
         }
     }

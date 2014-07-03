@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,32 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// <para>Represents a list of all the email addresses verified for the current user.</para>
+    /// Represents a list of all the email addresses verified for the current user.
     /// </summary>
     public partial class ListVerifiedEmailAddressesResult : AmazonWebServiceResponse
     {
-        
-        private List<string> verifiedEmailAddresses = new List<string>();
+        private List<string> _verifiedEmailAddresses = new List<string>();
+
 
         /// <summary>
+        /// Gets and sets the property VerifiedEmailAddresses. 
+        /// <para>
         /// A list of email addresses that have been verified.
-        ///  
+        /// </para>
         /// </summary>
         public List<string> VerifiedEmailAddresses
         {
-            get { return this.verifiedEmailAddresses; }
-            set { this.verifiedEmailAddresses = value; }
+            get { return this._verifiedEmailAddresses; }
+            set { this._verifiedEmailAddresses = value; }
         }
 
         // Check to see if VerifiedEmailAddresses property is set
         internal bool IsSetVerifiedEmailAddresses()
         {
-            return this.verifiedEmailAddresses.Count > 0;
+            return this._verifiedEmailAddresses != null && this._verifiedEmailAddresses.Count > 0; 
         }
+
     }
 }

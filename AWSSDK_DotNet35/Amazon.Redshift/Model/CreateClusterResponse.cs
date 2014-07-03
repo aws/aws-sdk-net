@@ -12,24 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the CreateCluster response and response metadata.
+    /// Configuration for accessing Amazon CreateCluster service
     /// </summary>
     public partial class CreateClusterResponse : CreateClusterResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the CreateClusterResult property.
-        /// Contains the result of a successful invocation of the CreateCluster
-        /// action.
-        /// 
+        /// Represents the output of a CreateCluster operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateClusterResult class are now available on the CreateClusterResponse class. You should use the properties on CreateClusterResponse instead of accessing them through CreateClusterResult.")]
         public CreateClusterResult CreateClusterResult
         {
@@ -40,4 +36,3 @@ namespace Amazon.Redshift.Model
         }
     }
 }
-    

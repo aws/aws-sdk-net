@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,36 +14,40 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create User Request Marshaller
+    /// CreateUser Request Marshaller
     /// </summary>       
     public class CreateUserRequestMarshaller : IMarshaller<IRequest, CreateUserRequest>
     {
-        public IRequest Marshall(CreateUserRequest createUserRequest)
+        public IRequest Marshall(CreateUserRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(createUserRequest, "AmazonIdentityManagementService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.IdentityManagement");
             request.Parameters.Add("Action", "CreateUser");
             request.Parameters.Add("Version", "2010-05-08");
-            if (createUserRequest != null && createUserRequest.IsSetPath())
-            {
-                request.Parameters.Add("Path", StringUtils.FromString(createUserRequest.Path));
-            }
-            if (createUserRequest != null && createUserRequest.IsSetUserName())
-            {
-                request.Parameters.Add("UserName", StringUtils.FromString(createUserRequest.UserName));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetPath())
+                {
+                    request.Parameters.Add("Path", StringUtils.FromString(publicRequest.Path));
+                }
+                if(publicRequest.IsSetUserName())
+                {
+                    request.Parameters.Add("UserName", StringUtils.FromString(publicRequest.UserName));
+                }
+            }
             return request;
         }
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,31 +25,38 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the VerifyEmailAddress operation.
-    /// <para>Verifies an email address. This action causes a confirmation email message to be sent to the specified address.</para>
-    /// <para><b>IMPORTANT:</b>The VerifyEmailAddress action is deprecated as of the May 15, 2012 release of Domain Verification. The
-    /// VerifyEmailIdentity action is now preferred.</para> <para>This action is throttled at one request per second.</para>
+    /// Verifies an email address. This action causes a confirmation email message to be 
+    ///        sent to the specified address.
+    /// 
+    ///         <important>The VerifyEmailAddress action is deprecated as of the May 15, 2012
+    /// release        of Domain Verification. The VerifyEmailIdentity action is now preferred.</important>
+    ///        
+    /// <para>
+    /// This action is throttled at one request per second.
+    /// </para>
     /// </summary>
     public partial class VerifyEmailAddressRequest : AmazonSimpleEmailServiceRequest
     {
-        private string emailAddress;
+        private string _emailAddress;
 
 
         /// <summary>
+        /// Gets and sets the property EmailAddress. 
+        /// <para>
         /// The email address to be verified.
-        ///  
+        /// </para>
         /// </summary>
         public string EmailAddress
         {
-            get { return this.emailAddress; }
-            set { this.emailAddress = value; }
+            get { return this._emailAddress; }
+            set { this._emailAddress = value; }
         }
 
         // Check to see if EmailAddress property is set
         internal bool IsSetEmailAddress()
         {
-            return this.emailAddress != null;
+            return this._emailAddress != null;
         }
 
     }
 }
-    

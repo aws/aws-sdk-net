@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,170 +25,135 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UploadServerCertificate operation.
-    /// <para>Uploads a server certificate entity for the AWS account. The server certificate entity includes a public key certificate, a private
-    /// key, and an optional certificate chain, which should all be PEM-encoded.</para> <para>For information about the number of server
-    /// certificates you can upload, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"
-    /// >Limitations on IAM Entities</a> in <i>Using AWS Identity and Access Management</i> .</para> <para><b>NOTE:</b>Because the body of the
-    /// public key certificate, private key, and the certificate chain can be large, you should use POST rather than GET when calling
-    /// UploadServerCertificate. For information about setting up signatures and authorization through the API, go to Signing AWS API Requests in
-    /// the AWS General Reference. For general information about using the Query API with IAM, go to Making Query Requests in Using IAM.</para>
+    /// Uploads a server certificate entity for the AWS account. The server certificate entity            includes
+    /// a public key certificate, a private key, and an optional certificate chain, which            should
+    /// all be PEM-encoded.
+    /// 
+    ///         
+    /// <para>
+    /// For information about the number of server certificates you can upload, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"
+    /// target="_blank">Limitations on IAM Entities</a> in <i>Using AWS Identity and Access                Management</i>.
+    /// </para>
+    ///         <note>Because the body of the public key certificate, private key, and the certificate
+    /// chain can            be large, you should use POST rather than GET when calling                <code>UploadServerCertificate</code>.
+    /// For information about setting up signatures and            authorization through the API, go
+    /// to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html"
+    /// target="_blank">Signing AWS API Requests</a> in the <i>AWS General Reference</i>.
+    /// For general information            about using the Query API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html"
+    /// target="_blank">Making                Query Requests</a> in <i>Using IAM</i>.</note>
     /// </summary>
     public partial class UploadServerCertificateRequest : AmazonIdentityManagementServiceRequest
     {
-        private string path;
-        private string serverCertificateName;
-        private string certificateBody;
-        private string privateKey;
-        private string certificateChain;
+        private string _certificateBody;
+        private string _certificateChain;
+        private string _path;
+        private string _privateKey;
+        private string _serverCertificateName;
 
 
         /// <summary>
-        /// The path for the server certificate. For more information about paths, see <a
-        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
-        /// <i>Using AWS Identity and Access Management</i>. This parameter is optional. If it is not included, it defaults to a slash (/).
-        ///  
+        /// Gets and sets the property CertificateBody. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 512</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string Path
-        {
-            get { return this.path; }
-            set { this.path = value; }
-        }
-
-        // Check to see if Path property is set
-        internal bool IsSetPath()
-        {
-            return this.path != null;
-        }
-
-        /// <summary>
-        /// The name for the server certificate. Do not include the path in this value.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 128</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=,.@-]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string ServerCertificateName
-        {
-            get { return this.serverCertificateName; }
-            set { this.serverCertificateName = value; }
-        }
-
-        // Check to see if ServerCertificateName property is set
-        internal bool IsSetServerCertificateName()
-        {
-            return this.serverCertificateName != null;
-        }
-
-        /// <summary>
         /// The contents of the public key certificate in PEM-encoded format.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 16384</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0009\u000A\u000D\u0020-\u00FF]+</description>
-        ///     </item>
-        /// </list>
         /// </para>
         /// </summary>
         public string CertificateBody
         {
-            get { return this.certificateBody; }
-            set { this.certificateBody = value; }
+            get { return this._certificateBody; }
+            set { this._certificateBody = value; }
         }
 
         // Check to see if CertificateBody property is set
         internal bool IsSetCertificateBody()
         {
-            return this.certificateBody != null;
+            return this._certificateBody != null;
         }
+
 
         /// <summary>
-        /// The contents of the private key in PEM-encoded format.
-        ///  
+        /// Gets and sets the property CertificateChain. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 16384</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0009\u000A\u000D\u0020-\u00FF]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string PrivateKey
-        {
-            get { return this.privateKey; }
-            set { this.privateKey = value; }
-        }
-
-        // Check to see if PrivateKey property is set
-        internal bool IsSetPrivateKey()
-        {
-            return this.privateKey != null;
-        }
-
-        /// <summary>
-        /// The contents of the certificate chain. This is typically a concatenation of the PEM-encoded public key certificates of the chain.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 2097152</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0009\u000A\u000D\u0020-\u00FF]*</description>
-        ///     </item>
-        /// </list>
+        /// The contents of the certificate chain. This is typically a concatenation of the PEM-encoded            public
+        /// key certificates of the chain.
         /// </para>
         /// </summary>
         public string CertificateChain
         {
-            get { return this.certificateChain; }
-            set { this.certificateChain = value; }
+            get { return this._certificateChain; }
+            set { this._certificateChain = value; }
         }
 
         // Check to see if CertificateChain property is set
         internal bool IsSetCertificateChain()
         {
-            return this.certificateChain != null;
+            return this._certificateChain != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Path. 
+        /// <para>
+        /// The path for the server certificate. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+        /// target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access                Management</i>.
+        /// </para>
+        ///         
+        /// <para>
+        /// This parameter is optional. If it is not included, it defaults to a slash (/).
+        /// </para>
+        ///         <note>If you are uploading a server certificate specifically for use with Amazon
+        /// CloudFront            distributions, you must specify a path using the <code>--path</code>
+        /// option. The path must begin            with <code>/cloudfront</code> and must include a trailing
+        /// slash (for example, <code>/cloudfront/test/</code>).        </note>
+        /// </summary>
+        public string Path
+        {
+            get { return this._path; }
+            set { this._path = value; }
+        }
+
+        // Check to see if Path property is set
+        internal bool IsSetPath()
+        {
+            return this._path != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property PrivateKey. 
+        /// <para>
+        /// The contents of the private key in PEM-encoded format.
+        /// </para>
+        /// </summary>
+        public string PrivateKey
+        {
+            get { return this._privateKey; }
+            set { this._privateKey = value; }
+        }
+
+        // Check to see if PrivateKey property is set
+        internal bool IsSetPrivateKey()
+        {
+            return this._privateKey != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ServerCertificateName. 
+        /// <para>
+        /// The name for the server certificate. Do not include the path in this value.
+        /// </para>
+        /// </summary>
+        public string ServerCertificateName
+        {
+            get { return this._serverCertificateName; }
+            set { this._serverCertificateName = value; }
+        }
+
+        // Check to see if ServerCertificateName property is set
+        internal bool IsSetServerCertificateName()
+        {
+            return this._serverCertificateName != null;
         }
 
     }
 }
-    

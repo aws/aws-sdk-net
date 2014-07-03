@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,33 +17,38 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// <para>The CreateJobResponse structure.</para>
+    /// The CreateJobResponse structure.
     /// </summary>
     public partial class CreateJobResult : AmazonWebServiceResponse
     {
-        
-        private Job job;
+        private Job _job;
 
 
         /// <summary>
-        /// A section of the response body that provides information about the job that is created.
-        ///  
+        /// Gets and sets the property Job. 
+        /// <para>
+        ///  A section of the response body that provides information about the job that is created.
+        ///        
+        /// </para>
         /// </summary>
         public Job Job
         {
-            get { return this.job; }
-            set { this.job = value; }
+            get { return this._job; }
+            set { this._job = value; }
         }
 
         // Check to see if Job property is set
         internal bool IsSetJob()
         {
-            return this.job != null;
+            return this._job != null;
         }
+
     }
 }

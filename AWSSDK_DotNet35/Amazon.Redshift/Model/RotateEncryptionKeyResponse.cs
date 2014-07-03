@@ -12,24 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the RotateEncryptionKey response and response metadata.
+    /// Configuration for accessing Amazon RotateEncryptionKey service
     /// </summary>
     public partial class RotateEncryptionKeyResponse : RotateEncryptionKeyResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the RotateEncryptionKeyResult property.
-        /// Contains the result of a successful invocation of the RotateEncryptionKey
-        /// action.
-        /// 
+        /// Represents the output of a RotateEncryptionKey operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the RotateEncryptionKeyResult class are now available on the RotateEncryptionKeyResponse class. You should use the properties on RotateEncryptionKeyResponse instead of accessing them through RotateEncryptionKeyResult.")]
         public RotateEncryptionKeyResult RotateEncryptionKeyResult
         {
@@ -40,4 +36,3 @@ namespace Amazon.Redshift.Model
         }
     }
 }
-    

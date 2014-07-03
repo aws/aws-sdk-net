@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,75 +12,81 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ServerCertificate Unmarshaller
-     /// </summary>
-    internal class ServerCertificateUnmarshaller : IUnmarshaller<ServerCertificate, XmlUnmarshallerContext>, IUnmarshaller<ServerCertificate, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ServerCertificate Object
+    /// </summary>  
+    public class ServerCertificateUnmarshaller : IUnmarshaller<ServerCertificate, XmlUnmarshallerContext>, IUnmarshaller<ServerCertificate, JsonUnmarshallerContext>
     {
-        public ServerCertificate Unmarshall(XmlUnmarshallerContext context) 
+        public ServerCertificate Unmarshall(XmlUnmarshallerContext context)
         {
-            ServerCertificate serverCertificate = new ServerCertificate();
+            ServerCertificate unmarshalledObject = new ServerCertificate();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("ServerCertificateMetadata", targetDepth))
-                    {
-                        serverCertificate.ServerCertificateMetadata = ServerCertificateMetadataUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("CertificateBody", targetDepth))
                     {
-                        serverCertificate.CertificateBody = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CertificateBody = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("CertificateChain", targetDepth))
                     {
-                        serverCertificate.CertificateChain = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CertificateChain = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ServerCertificateMetadata", targetDepth))
+                    {
+                        var unmarshaller = ServerCertificateMetadataUnmarshaller.Instance;
+                        unmarshalledObject.ServerCertificateMetadata = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return serverCertificate;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return serverCertificate;
+            return unmarshalledObject;
         }
 
-        public ServerCertificate Unmarshall(JsonUnmarshallerContext context) 
+        public ServerCertificate Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static ServerCertificateUnmarshaller instance;
 
-        public static ServerCertificateUnmarshaller GetInstance() 
+        private static ServerCertificateUnmarshaller _instance = new ServerCertificateUnmarshaller();        
+
+        public static ServerCertificateUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new ServerCertificateUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

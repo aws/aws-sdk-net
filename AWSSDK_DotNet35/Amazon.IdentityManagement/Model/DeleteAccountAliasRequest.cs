@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,44 +25,33 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAccountAlias operation.
-    /// <para>Deletes the specified AWS account alias. For information about using an AWS account alias, see <a
-    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html" >Using an Alias for Your AWS Account ID</a> in <i>Using AWS
-    /// Identity and Access Management</i> .</para>
+    /// Deletes the specified AWS account alias. For information about using an AWS account
+    /// alias,            see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html"
+    /// target="_blank">Using an                Alias for Your AWS Account ID</a> in <i>Using AWS Identity
+    /// and Access Management</i>.
     /// </summary>
     public partial class DeleteAccountAliasRequest : AmazonIdentityManagementServiceRequest
     {
-        private string accountAlias;
+        private string _accountAlias;
 
 
         /// <summary>
-        /// Name of the account alias to delete.
-        ///  
+        /// Gets and sets the property AccountAlias. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>3 - 63</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$</description>
-        ///     </item>
-        /// </list>
+        /// Name of the account alias to delete.
         /// </para>
         /// </summary>
         public string AccountAlias
         {
-            get { return this.accountAlias; }
-            set { this.accountAlias = value; }
+            get { return this._accountAlias; }
+            set { this._accountAlias = value; }
         }
 
         // Check to see if AccountAlias property is set
         internal bool IsSetAccountAlias()
         {
-            return this.accountAlias != null;
+            return this._accountAlias != null;
         }
 
     }
 }
-    

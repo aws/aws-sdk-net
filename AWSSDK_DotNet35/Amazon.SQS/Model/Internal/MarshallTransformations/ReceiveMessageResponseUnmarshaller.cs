@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReceiveMessage operation
     /// </summary>  
-    internal class ReceiveMessageResponseUnmarshaller : XmlResponseUnmarshaller
+    public class ReceiveMessageResponseUnmarshaller : XmlResponseUnmarshaller
     {
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
@@ -44,13 +44,13 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                 {                    
                     if(context.TestExpression("ReceiveMessageResult", 2))
                     {
-                        UnmarshallResult(context,response);                        
+                        UnmarshallResult(context, response);                        
                         continue;
                     }
                     
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
                     }
                 }
             }
@@ -58,7 +58,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context,ReceiveMessageResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, ReceiveMessageResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -74,7 +74,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("Message", targetDepth))
                     {
-                        var unmarshaller = MessageUnmarshaller.GetInstance();
+                        var unmarshaller = MessageUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         response.Messages.Add(item);
                         continue;
@@ -96,14 +96,18 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             return new AmazonSQSException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static ReceiveMessageResponseUnmarshaller instance;
-        public static ReceiveMessageResponseUnmarshaller GetInstance()
+        private static ReceiveMessageResponseUnmarshaller _instance = new ReceiveMessageResponseUnmarshaller();        
+
+        internal static ReceiveMessageResponseUnmarshaller GetInstance()
         {
-            if (instance == null)
+            return _instance;
+        }
+        public static ReceiveMessageResponseUnmarshaller Instance
+        {
+            get
             {
-                instance = new ReceiveMessageResponseUnmarshaller();
+                return _instance;
             }
-            return instance;
         }
 
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Returns information about the DeleteGroupPolicy response metadata.
-    /// The DeleteGroupPolicy operation has a void result type.
+    /// Configuration for accessing Amazon DeleteGroupPolicy service
     /// </summary>
-    public partial class DeleteGroupPolicyResponse : AmazonWebServiceResponse
+    public partial class DeleteGroupPolicyResponse : DeleteGroupPolicyResult
     {
+        /// <summary>
+        /// Gets and sets the DeleteGroupPolicyResult property.
+        /// Represents the output of a DeleteGroupPolicy operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DeleteGroupPolicyResult class are now available on the DeleteGroupPolicyResponse class. You should use the properties on DeleteGroupPolicyResponse instead of accessing them through DeleteGroupPolicyResult.")]
+        public DeleteGroupPolicyResult DeleteGroupPolicyResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

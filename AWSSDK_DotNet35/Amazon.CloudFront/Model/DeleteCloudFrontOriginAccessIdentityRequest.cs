@@ -25,46 +25,45 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCloudFrontOriginAccessIdentity operation.
-    /// <para> Delete an origin access identity. </para>
+    /// Delete an origin access identity.
     /// </summary>
     public partial class DeleteCloudFrontOriginAccessIdentityRequest : AmazonCloudFrontRequest
     {
-        private string id;
-        private string ifMatch;
+        private string _id;
+        private string _ifMatch;
 
 
         /// <summary>
-        /// The origin access identity's id.
-        ///  
+        /// Gets and sets the property Id. The origin access identity's id.
         /// </summary>
         public string Id
         {
-            get { return this.id; }
-            set { this.id = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;
+            return this._id != null;
         }
 
+
         /// <summary>
-        /// The value of the ETag header you received from a previous GET or PUT request. For example: E2QWRUHAPOMQZL.
-        ///  
+        /// Gets and sets the property IfMatch. The value of the ETag header you received from
+        /// a previous GET or PUT request. For example: E2QWRUHAPOMQZL.
         /// </summary>
         public string IfMatch
         {
-            get { return this.ifMatch; }
-            set { this.ifMatch = value; }
+            get { return this._ifMatch; }
+            set { this._ifMatch = value; }
         }
 
         // Check to see if IfMatch property is set
         internal bool IsSetIfMatch()
         {
-            return this.ifMatch != null;
+            return this._ifMatch != null;
         }
 
     }
 }
-    

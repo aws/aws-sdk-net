@@ -18,31 +18,36 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// <para> Describes an availability zone. </para>
+    /// Describes an availability zone.
     /// </summary>
     public partial class AvailabilityZone
     {
-        
-        private string name;
+        private string _name;
 
 
         /// <summary>
-        /// The name of the availability zone.
-        ///  
+        /// Gets and sets the property Name. 
+        /// <para>
+        ///             The name of the availability zone.        
+        /// </para>
         /// </summary>
         public string Name
         {
-            get { return this.name; }
-            set { this.name = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;
+            return this._name != null;
         }
+
     }
 }

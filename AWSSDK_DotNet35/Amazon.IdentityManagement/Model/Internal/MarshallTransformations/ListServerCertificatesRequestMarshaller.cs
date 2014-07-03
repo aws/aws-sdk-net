@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// List Server Certificates Request Marshaller
+    /// ListServerCertificates Request Marshaller
     /// </summary>       
     public class ListServerCertificatesRequestMarshaller : IMarshaller<IRequest, ListServerCertificatesRequest>
     {
-        public IRequest Marshall(ListServerCertificatesRequest listServerCertificatesRequest)
+        public IRequest Marshall(ListServerCertificatesRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(listServerCertificatesRequest, "AmazonIdentityManagementService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.IdentityManagement");
             request.Parameters.Add("Action", "ListServerCertificates");
             request.Parameters.Add("Version", "2010-05-08");
-            if (listServerCertificatesRequest != null && listServerCertificatesRequest.IsSetPathPrefix())
-            {
-                request.Parameters.Add("PathPrefix", StringUtils.FromString(listServerCertificatesRequest.PathPrefix));
-            }
-            if (listServerCertificatesRequest != null && listServerCertificatesRequest.IsSetMarker())
-            {
-                request.Parameters.Add("Marker", StringUtils.FromString(listServerCertificatesRequest.Marker));
-            }
-            if (listServerCertificatesRequest != null && listServerCertificatesRequest.IsSetMaxItems())
-            {
-                request.Parameters.Add("MaxItems", StringUtils.FromInt(listServerCertificatesRequest.MaxItems));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetMarker())
+                {
+                    request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
+                }
+                if(publicRequest.IsSetMaxItems())
+                {
+                    request.Parameters.Add("MaxItems", StringUtils.FromInt(publicRequest.MaxItems));
+                }
+                if(publicRequest.IsSetPathPrefix())
+                {
+                    request.Parameters.Add("PathPrefix", StringUtils.FromString(publicRequest.PathPrefix));
+                }
+            }
             return request;
         }
     }

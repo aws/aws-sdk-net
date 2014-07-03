@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Runtime;
 using Amazon.S3.Util;
 using Amazon.Util;
 using System;
@@ -69,6 +70,8 @@ namespace Amazon.S3.Model
                         totalIncrementTransferred = 0;
                     }
                 }
+
+                ValidateWrittenStreamSize(current);
             }
             finally
             {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,51 +17,57 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para>This output contains the bootstrap actions detail.</para>
+    /// This output contains the boostrap actions detail      .
     /// </summary>
     public partial class ListBootstrapActionsResult : AmazonWebServiceResponse
     {
-        
-        private List<Command> bootstrapActions = new List<Command>();
-        private string marker;
+        private List<Command> _bootstrapActions = new List<Command>();
+        private string _marker;
 
 
         /// <summary>
-        /// The bootstrap actions associated with the cluster.
-        ///  
+        /// Gets and sets the property BootstrapActions. 
+        /// <para>
+        /// The bootstrap actions associated with the cluster      .
+        /// </para>
         /// </summary>
         public List<Command> BootstrapActions
         {
-            get { return this.bootstrapActions; }
-            set { this.bootstrapActions = value; }
+            get { return this._bootstrapActions; }
+            set { this._bootstrapActions = value; }
         }
 
         // Check to see if BootstrapActions property is set
         internal bool IsSetBootstrapActions()
         {
-            return this.bootstrapActions.Count > 0;
+            return this._bootstrapActions != null && this._bootstrapActions.Count > 0; 
         }
 
+
         /// <summary>
-        /// The pagination token is a random string indicating whether there are more results to fetch. Use the pagination token in later API calls to
-        /// retrieve the next page of results. When the value is null, all results have been returned.
-        ///  
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// The pagination token that indicates the next set of results to retrieve      .
+        /// </para>
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
         }
+
     }
 }

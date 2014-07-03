@@ -316,6 +316,14 @@ namespace Amazon.S3.Util
             }
         }
 
+        internal static string ComputeEncodedMD5FromEncodedString(string base64EncodedString)
+        {
+            var unencodedValue = Convert.FromBase64String(base64EncodedString);
+            var valueMD5 = CryptoUtilFactory.CryptoInstance.ComputeMD5Hash(unencodedValue);
+            var encodedMD5 = Convert.ToBase64String(valueMD5);
+            return encodedMD5;
+        }
+
         internal static void SetMetadataHeaders(IRequest request, MetadataCollection metadata)
         {
             foreach (var name in metadata.Keys)

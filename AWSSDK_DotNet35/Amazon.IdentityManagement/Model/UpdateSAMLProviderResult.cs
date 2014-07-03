@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,42 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the UpdateSAMLProvider action.</para>
+    /// Contains the result of a successful invocation of the <a>UpdateSAMLProvider</a> action.
     /// </summary>
     public partial class UpdateSAMLProviderResult : AmazonWebServiceResponse
     {
-        
-        private string sAMLProviderArn;
+        private string _sAMLProviderArn;
 
 
         /// <summary>
-        /// The Amazon Resource Name (ARN) of the SAML provider that was updated.
-        ///  
+        /// Gets and sets the property SAMLProviderArn. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>20 - 2048</description>
-        ///     </item>
-        /// </list>
+        /// The Amazon Resource Name (ARN) of the SAML provider that was updated.
         /// </para>
         /// </summary>
         public string SAMLProviderArn
         {
-            get { return this.sAMLProviderArn; }
-            set { this.sAMLProviderArn = value; }
+            get { return this._sAMLProviderArn; }
+            set { this._sAMLProviderArn = value; }
         }
 
         // Check to see if SAMLProviderArn property is set
         internal bool IsSetSAMLProviderArn()
         {
-            return this.sAMLProviderArn != null;
+            return this._sAMLProviderArn != null;
         }
+
     }
 }

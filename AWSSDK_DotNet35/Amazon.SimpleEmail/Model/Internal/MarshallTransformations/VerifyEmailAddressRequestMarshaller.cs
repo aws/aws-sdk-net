@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,32 +14,36 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SimpleEmail.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Verify Email Address Request Marshaller
+    /// VerifyEmailAddress Request Marshaller
     /// </summary>       
     public class VerifyEmailAddressRequestMarshaller : IMarshaller<IRequest, VerifyEmailAddressRequest>
     {
-        public IRequest Marshall(VerifyEmailAddressRequest verifyEmailAddressRequest)
+        public IRequest Marshall(VerifyEmailAddressRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(verifyEmailAddressRequest, "AmazonSimpleEmailService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleEmail");
             request.Parameters.Add("Action", "VerifyEmailAddress");
             request.Parameters.Add("Version", "2010-12-01");
-            if (verifyEmailAddressRequest != null && verifyEmailAddressRequest.IsSetEmailAddress())
-            {
-                request.Parameters.Add("EmailAddress", StringUtils.FromString(verifyEmailAddressRequest.EmailAddress));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetEmailAddress())
+                {
+                    request.Parameters.Add("EmailAddress", StringUtils.FromString(publicRequest.EmailAddress));
+                }
+            }
             return request;
         }
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,51 +17,58 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// <para>Response for ListEndpointsByPlatformApplication action.</para>
+    /// Response for ListEndpointsByPlatformApplication action.
     /// </summary>
     public partial class ListEndpointsByPlatformApplicationResult : AmazonWebServiceResponse
     {
-        
-        private List<Endpoint> endpoints = new List<Endpoint>();
-        private string nextToken;
+        private List<Endpoint> _endpoints = new List<Endpoint>();
+        private string _nextToken;
 
 
         /// <summary>
+        /// Gets and sets the property Endpoints. 
+        /// <para>
         /// Endpoints returned for ListEndpointsByPlatformApplication action.
-        ///  
+        /// </para>
         /// </summary>
         public List<Endpoint> Endpoints
         {
-            get { return this.endpoints; }
-            set { this.endpoints = value; }
+            get { return this._endpoints; }
+            set { this._endpoints = value; }
         }
 
         // Check to see if Endpoints property is set
         internal bool IsSetEndpoints()
         {
-            return this.endpoints.Count > 0;
+            return this._endpoints != null && this._endpoints.Count > 0; 
         }
 
+
         /// <summary>
-        /// NextToken string is returned when calling ListEndpointsByPlatformApplication action if additional records are available after the first page
-        /// results.
-        ///  
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// NextToken string is returned when calling ListEndpointsByPlatformApplication action
+        /// if additional records are available after the first page results.
+        /// </para>
         /// </summary>
         public string NextToken
         {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;
+            return this._nextToken != null;
         }
+
     }
 }

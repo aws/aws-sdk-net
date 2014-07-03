@@ -52,7 +52,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The snapshot attribute.
+        /// The snapshot attribute you would like to view.
         ///  
         /// <para>
         /// <b>Constraints:</b>

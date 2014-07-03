@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,52 +17,61 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// <para>The <c>CreatePresetResponse</c> structure.</para>
+    /// The <code>CreatePresetResponse</code> structure.
     /// </summary>
     public partial class CreatePresetResult : AmazonWebServiceResponse
     {
-        
-        private Preset preset;
-        private string warning;
+        private Preset _preset;
+        private string _warning;
 
 
         /// <summary>
-        /// A section of the response body that provides information about the preset that is created.
-        ///  
+        /// Gets and sets the property Preset. 
+        /// <para>
+        ///  A section of the response body that provides information about the preset that is
+        ///            created. 
+        /// </para>
         /// </summary>
         public Preset Preset
         {
-            get { return this.preset; }
-            set { this.preset = value; }
+            get { return this._preset; }
+            set { this._preset = value; }
         }
 
         // Check to see if Preset property is set
         internal bool IsSetPreset()
         {
-            return this.preset != null;
+            return this._preset != null;
         }
 
+
         /// <summary>
-        /// If the preset settings don't comply with the standards for the video codec but Elastic Transcoder created the preset, this message explains
-        /// the reason the preset settings don't meet the standard. Elastic Transcoder created the preset because the settings might produce acceptable
-        /// output.
-        ///  
+        /// Gets and sets the property Warning. 
+        /// <para>
+        /// If the preset settings don't comply with the standards for the video codec but Elastic
+        /// Transcoder            created the preset, this message explains the reason the preset
+        /// settings don't meet the            standard. Elastic Transcoder created the preset
+        /// because the settings might produce acceptable            output.
+        /// </para>
         /// </summary>
         public string Warning
         {
-            get { return this.warning; }
-            set { this.warning = value; }
+            get { return this._warning; }
+            set { this._warning = value; }
         }
 
         // Check to see if Warning property is set
         internal bool IsSetWarning()
         {
-            return this.warning != null;
+            return this._warning != null;
         }
+
     }
 }

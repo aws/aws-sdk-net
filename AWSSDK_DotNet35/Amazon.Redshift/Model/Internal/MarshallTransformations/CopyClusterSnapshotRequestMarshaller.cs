@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Copy Cluster Snapshot Request Marshaller
+    /// CopyClusterSnapshot Request Marshaller
     /// </summary>       
     public class CopyClusterSnapshotRequestMarshaller : IMarshaller<IRequest, CopyClusterSnapshotRequest>
     {
-        public IRequest Marshall(CopyClusterSnapshotRequest copyClusterSnapshotRequest)
+        public IRequest Marshall(CopyClusterSnapshotRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(copyClusterSnapshotRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "CopyClusterSnapshot");
             request.Parameters.Add("Version", "2012-12-01");
-            if (copyClusterSnapshotRequest != null && copyClusterSnapshotRequest.IsSetSourceSnapshotIdentifier())
-            {
-                request.Parameters.Add("SourceSnapshotIdentifier", StringUtils.FromString(copyClusterSnapshotRequest.SourceSnapshotIdentifier));
-            }
-            if (copyClusterSnapshotRequest != null && copyClusterSnapshotRequest.IsSetSourceSnapshotClusterIdentifier())
-            {
-                request.Parameters.Add("SourceSnapshotClusterIdentifier", StringUtils.FromString(copyClusterSnapshotRequest.SourceSnapshotClusterIdentifier));
-            }
-            if (copyClusterSnapshotRequest != null && copyClusterSnapshotRequest.IsSetTargetSnapshotIdentifier())
-            {
-                request.Parameters.Add("TargetSnapshotIdentifier", StringUtils.FromString(copyClusterSnapshotRequest.TargetSnapshotIdentifier));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetSourceSnapshotClusterIdentifier())
+                {
+                    request.Parameters.Add("SourceSnapshotClusterIdentifier", StringUtils.FromString(publicRequest.SourceSnapshotClusterIdentifier));
+                }
+                if(publicRequest.IsSetSourceSnapshotIdentifier())
+                {
+                    request.Parameters.Add("SourceSnapshotIdentifier", StringUtils.FromString(publicRequest.SourceSnapshotIdentifier));
+                }
+                if(publicRequest.IsSetTargetSnapshotIdentifier())
+                {
+                    request.Parameters.Add("TargetSnapshotIdentifier", StringUtils.FromString(publicRequest.TargetSnapshotIdentifier));
+                }
+            }
             return request;
         }
     }

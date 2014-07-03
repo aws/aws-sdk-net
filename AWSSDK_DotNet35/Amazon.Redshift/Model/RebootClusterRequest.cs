@@ -25,33 +25,36 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the RebootCluster operation.
-    /// <para> Reboots a cluster. This action is taken as soon as possible. It results in a momentary outage to the cluster, during which the
-    /// cluster status is set to <c>rebooting</c> . A cluster event is created when the reboot is completed. Any pending cluster modifications (see
-    /// ModifyCluster) are applied at this reboot. For more information about managing clusters, go to <a
-    /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html" >Amazon Redshift Clusters</a> in the <i>Amazon Redshift
-    /// Management Guide</i> </para>
+    /// Reboots a cluster.         This action is taken as soon as possible. It results
+    /// in a momentary outage to the cluster,        during which the cluster status is set
+    /// to <code>rebooting</code>. A cluster event is created            when the reboot is
+    /// completed.                    Any pending cluster modifications (see <a>ModifyCluster</a>)
+    /// are applied at this reboot.        For more information about managing clusters, go
+    /// to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+    /// Redshift Clusters</a> in the <i>Amazon Redshift Management Guide</i>
     /// </summary>
     public partial class RebootClusterRequest : AmazonRedshiftRequest
     {
-        private string clusterIdentifier;
+        private string _clusterIdentifier;
 
 
         /// <summary>
-        /// The cluster identifier.
-        ///  
+        /// Gets and sets the property ClusterIdentifier. 
+        /// <para>
+        ///         The cluster identifier.        
+        /// </para>
         /// </summary>
         public string ClusterIdentifier
         {
-            get { return this.clusterIdentifier; }
-            set { this.clusterIdentifier = value; }
+            get { return this._clusterIdentifier; }
+            set { this._clusterIdentifier = value; }
         }
 
         // Check to see if ClusterIdentifier property is set
         internal bool IsSetClusterIdentifier()
         {
-            return this.clusterIdentifier != null;
+            return this._clusterIdentifier != null;
         }
 
     }
 }
-    

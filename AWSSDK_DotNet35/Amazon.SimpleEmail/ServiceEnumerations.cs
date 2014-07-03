@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,30 +12,28 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 using System;
 
 using Amazon.Runtime;
 
-
 namespace Amazon.SimpleEmail
 {
 
-
-    /// <summary>Identity Type
+    /// <summary>
+    /// Constants used for properties of type IdentityType.
     /// </summary>
     public class IdentityType : ConstantClass
     {
 
-
-       /// <summary>Constant Domain for IdentityType
-       /// </summary>
+        /// <summary>
+        /// Constant Domain for IdentityType
+        /// </summary>
         public static readonly IdentityType Domain = new IdentityType("Domain");
-    
-
-       /// <summary>Constant EmailAddress for IdentityType
-       /// </summary>
+        /// <summary>
+        /// Constant EmailAddress for IdentityType
+        /// </summary>
         public static readonly IdentityType EmailAddress = new IdentityType("EmailAddress");
-    
 
         /// <summary>
         /// Default Constructor
@@ -60,23 +58,26 @@ namespace Amazon.SimpleEmail
             return FindValue(value);
         }
     }
-    
 
-    /// <summary>Notification Type
+
+    /// <summary>
+    /// Constants used for properties of type NotificationType.
     /// </summary>
     public class NotificationType : ConstantClass
     {
 
-
-       /// <summary>Constant Bounce for NotificationType
-       /// </summary>
+        /// <summary>
+        /// Constant Bounce for NotificationType
+        /// </summary>
         public static readonly NotificationType Bounce = new NotificationType("Bounce");
-    
-
-       /// <summary>Constant Complaint for NotificationType
-       /// </summary>
+        /// <summary>
+        /// Constant Complaint for NotificationType
+        /// </summary>
         public static readonly NotificationType Complaint = new NotificationType("Complaint");
-    
+        /// <summary>
+        /// Constant Delivery for NotificationType
+        /// </summary>
+        public static readonly NotificationType Delivery = new NotificationType("Delivery");
 
         /// <summary>
         /// Default Constructor
@@ -101,38 +102,34 @@ namespace Amazon.SimpleEmail
             return FindValue(value);
         }
     }
-    
 
-    /// <summary>Verification Status
+
+    /// <summary>
+    /// Constants used for properties of type VerificationStatus.
     /// </summary>
     public class VerificationStatus : ConstantClass
     {
 
-
-       /// <summary>Constant Failed for VerificationStatus
-       /// </summary>
+        /// <summary>
+        /// Constant Failed for VerificationStatus
+        /// </summary>
         public static readonly VerificationStatus Failed = new VerificationStatus("Failed");
-    
-
-       /// <summary>Constant NotStarted for VerificationStatus
-       /// </summary>
+        /// <summary>
+        /// Constant NotStarted for VerificationStatus
+        /// </summary>
         public static readonly VerificationStatus NotStarted = new VerificationStatus("NotStarted");
-    
-
-       /// <summary>Constant Pending for VerificationStatus
-       /// </summary>
+        /// <summary>
+        /// Constant Pending for VerificationStatus
+        /// </summary>
         public static readonly VerificationStatus Pending = new VerificationStatus("Pending");
-    
-
-       /// <summary>Constant Success for VerificationStatus
-       /// </summary>
+        /// <summary>
+        /// Constant Success for VerificationStatus
+        /// </summary>
         public static readonly VerificationStatus Success = new VerificationStatus("Success");
-    
-
-       /// <summary>Constant TemporaryFailure for VerificationStatus
-       /// </summary>
+        /// <summary>
+        /// Constant TemporaryFailure for VerificationStatus
+        /// </summary>
         public static readonly VerificationStatus TemporaryFailure = new VerificationStatus("TemporaryFailure");
-    
 
         /// <summary>
         /// Default Constructor
@@ -157,7 +154,5 @@ namespace Amazon.SimpleEmail
             return FindValue(value);
         }
     }
-    
 
 }
-        

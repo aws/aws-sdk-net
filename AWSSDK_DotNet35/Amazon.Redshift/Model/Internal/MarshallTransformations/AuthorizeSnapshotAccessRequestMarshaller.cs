@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Authorize Snapshot Access Request Marshaller
+    /// AuthorizeSnapshotAccess Request Marshaller
     /// </summary>       
     public class AuthorizeSnapshotAccessRequestMarshaller : IMarshaller<IRequest, AuthorizeSnapshotAccessRequest>
     {
-        public IRequest Marshall(AuthorizeSnapshotAccessRequest authorizeSnapshotAccessRequest)
+        public IRequest Marshall(AuthorizeSnapshotAccessRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(authorizeSnapshotAccessRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "AuthorizeSnapshotAccess");
             request.Parameters.Add("Version", "2012-12-01");
-            if (authorizeSnapshotAccessRequest != null && authorizeSnapshotAccessRequest.IsSetSnapshotIdentifier())
-            {
-                request.Parameters.Add("SnapshotIdentifier", StringUtils.FromString(authorizeSnapshotAccessRequest.SnapshotIdentifier));
-            }
-            if (authorizeSnapshotAccessRequest != null && authorizeSnapshotAccessRequest.IsSetSnapshotClusterIdentifier())
-            {
-                request.Parameters.Add("SnapshotClusterIdentifier", StringUtils.FromString(authorizeSnapshotAccessRequest.SnapshotClusterIdentifier));
-            }
-            if (authorizeSnapshotAccessRequest != null && authorizeSnapshotAccessRequest.IsSetAccountWithRestoreAccess())
-            {
-                request.Parameters.Add("AccountWithRestoreAccess", StringUtils.FromString(authorizeSnapshotAccessRequest.AccountWithRestoreAccess));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAccountWithRestoreAccess())
+                {
+                    request.Parameters.Add("AccountWithRestoreAccess", StringUtils.FromString(publicRequest.AccountWithRestoreAccess));
+                }
+                if(publicRequest.IsSetSnapshotClusterIdentifier())
+                {
+                    request.Parameters.Add("SnapshotClusterIdentifier", StringUtils.FromString(publicRequest.SnapshotClusterIdentifier));
+                }
+                if(publicRequest.IsSetSnapshotIdentifier())
+                {
+                    request.Parameters.Add("SnapshotIdentifier", StringUtils.FromString(publicRequest.SnapshotIdentifier));
+                }
+            }
             return request;
         }
     }

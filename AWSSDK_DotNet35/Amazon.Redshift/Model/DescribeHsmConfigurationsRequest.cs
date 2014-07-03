@@ -25,70 +25,91 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeHsmConfigurations operation.
-    /// <para>Returns information about the specified Amazon Redshift HSM configuration. If no configuration ID is specified, returns information
-    /// about all the HSM configurations owned by your AWS customer account.</para>
+    /// Returns information about the specified Amazon Redshift HSM configuration. If no configuration
+    /// ID is            specified, returns information about all the HSM configurations owned
+    /// by your AWS customer account.
     /// </summary>
     public partial class DescribeHsmConfigurationsRequest : AmazonRedshiftRequest
     {
-        private string hsmConfigurationIdentifier;
-        private int? maxRecords;
-        private string marker;
+        private string _hsmConfigurationIdentifier;
+        private string _marker;
+        private int? _maxRecords;
 
 
         /// <summary>
-        /// The identifier of a specific Amazon Redshift HSM configuration to be described. If no identifier is specified, information is returned for
-        /// all HSM configurations owned by your AWS customer account.
-        ///  
+        /// Gets and sets the property HsmConfigurationIdentifier. 
+        /// <para>
+        /// The identifier of a specific Amazon Redshift HSM configuration to be described. If
+        /// no            identifier is specified, information is returned for all HSM configurations
+        ///            owned by your AWS customer account.
+        /// </para>
         /// </summary>
         public string HsmConfigurationIdentifier
         {
-            get { return this.hsmConfigurationIdentifier; }
-            set { this.hsmConfigurationIdentifier = value; }
+            get { return this._hsmConfigurationIdentifier; }
+            set { this._hsmConfigurationIdentifier = value; }
         }
 
         // Check to see if HsmConfigurationIdentifier property is set
         internal bool IsSetHsmConfigurationIdentifier()
         {
-            return this.hsmConfigurationIdentifier != null;
+            return this._hsmConfigurationIdentifier != null;
         }
+
 
         /// <summary>
-        /// The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified
-        /// <c>MaxRecords</c> value, a value is returned in a <c>marker</c> field of the response. You can retrieve the next set of records by retrying
-        /// the command with the returned marker value. Default: <c>100</c> Constraints: minimum 20, maximum 100.
-        ///  
-        /// </summary>
-        public int MaxRecords
-        {
-            get { return this.maxRecords ?? default(int); }
-            set { this.maxRecords = value; }
-        }
-
-        // Check to see if MaxRecords property is set
-        internal bool IsSetMaxRecords()
-        {
-            return this.maxRecords.HasValue;
-        }
-
-        /// <summary>
-        /// An optional parameter that specifies the starting point to return a set of response records. When the results of a
-        /// <a>DescribeHsmConfigurations</a> request exceed the value specified in <c>MaxRecords</c>, AWS returns a value in the <c>Marker</c> field of
-        /// the response. You can retrieve the next set of response records by providing the returned marker value in the <c>Marker</c> parameter and
-        /// retrying the request.
-        ///  
+        /// Gets and sets the property Marker. 
+        /// <para>
+        ///             An optional parameter that specifies the starting point to return a set
+        /// of response records.             When the results of a <a>DescribeHsmConfigurations</a>
+        /// request exceed the value specified in <code>MaxRecords</code>,             AWS returns
+        /// a value in the <code>Marker</code> field of the response. You can retrieve the next
+        /// set of             response records by providing the returned marker value in the
+        /// <code>Marker</code> parameter and             retrying the request.        
+        /// </para>
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property MaxRecords. 
+        /// <para>
+        ///             The maximum number of response records to return in each call.       
+        ///      If the number of remaining response records exceeds the specified <code>MaxRecords</code>
+        /// value,             a value is returned in a <code>marker</code> field of the response.
+        ///             You can retrieve the next set of records by retrying the command with
+        /// the returned marker value.        
+        /// </para>
+        ///         
+        /// <para>
+        /// Default: <code>100</code>
+        /// </para>
+        ///         
+        /// <para>
+        /// Constraints: minimum 20, maximum 100.
+        /// </para>
+        /// </summary>
+        public int MaxRecords
+        {
+            get { return this._maxRecords.GetValueOrDefault(); }
+            set { this._maxRecords = value; }
+        }
+
+        // Check to see if MaxRecords property is set
+        internal bool IsSetMaxRecords()
+        {
+            return this._maxRecords.HasValue; 
         }
 
     }
 }
-    

@@ -17,84 +17,100 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// <para>Describes a security group.</para>
+    /// Describes a security group.
     /// </summary>
-    public partial class ClusterSecurityGroup : AmazonWebServiceResponse
+    public partial class ClusterSecurityGroup
     {
-        
-        private string clusterSecurityGroupName;
-        private string description;
-        private List<EC2SecurityGroup> eC2SecurityGroups = new List<EC2SecurityGroup>();
-        private List<IPRange> iPRanges = new List<IPRange>();
+        private string _clusterSecurityGroupName;
+        private string _description;
+        private List<EC2SecurityGroup> _eC2SecurityGroups = new List<EC2SecurityGroup>();
+        private List<IPRange> _iPRanges = new List<IPRange>();
 
 
         /// <summary>
-        /// The name of the cluster security group to which the operation was applied.
-        ///  
+        /// Gets and sets the property ClusterSecurityGroupName. 
+        /// <para>
+        ///         The name of the cluster security group to which the operation was applied.
+        ///        
+        /// </para>
         /// </summary>
         public string ClusterSecurityGroupName
         {
-            get { return this.clusterSecurityGroupName; }
-            set { this.clusterSecurityGroupName = value; }
+            get { return this._clusterSecurityGroupName; }
+            set { this._clusterSecurityGroupName = value; }
         }
 
         // Check to see if ClusterSecurityGroupName property is set
         internal bool IsSetClusterSecurityGroupName()
         {
-            return this.clusterSecurityGroupName != null;
+            return this._clusterSecurityGroupName != null;
         }
 
+
         /// <summary>
-        /// A description of the security group.
-        ///  
+        /// Gets and sets the property Description. 
+        /// <para>
+        ///         A description of the security group.        
+        /// </para>
         /// </summary>
         public string Description
         {
-            get { return this.description; }
-            set { this.description = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
 
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;
+            return this._description != null;
         }
 
+
         /// <summary>
-        /// A list of EC2 security groups that are permitted to access clusters associated with this cluster security group.
-        ///  
+        /// Gets and sets the property EC2SecurityGroups. 
+        /// <para>
+        ///             A list of EC2 security groups that are permitted to access clusters associated
+        /// with             this cluster security group.        
+        /// </para>
         /// </summary>
         public List<EC2SecurityGroup> EC2SecurityGroups
         {
-            get { return this.eC2SecurityGroups; }
-            set { this.eC2SecurityGroups = value; }
+            get { return this._eC2SecurityGroups; }
+            set { this._eC2SecurityGroups = value; }
         }
 
         // Check to see if EC2SecurityGroups property is set
         internal bool IsSetEC2SecurityGroups()
         {
-            return this.eC2SecurityGroups.Count > 0;
+            return this._eC2SecurityGroups != null && this._eC2SecurityGroups.Count > 0; 
         }
 
+
         /// <summary>
-        /// A list of IP ranges (CIDR blocks) that are permitted to access clusters associated with this cluster security group.
-        ///  
+        /// Gets and sets the property IPRanges. 
+        /// <para>
+        ///             A list of IP ranges (CIDR blocks) that are permitted to access       
+        ///      clusters associated with this cluster security group.        
+        /// </para>
         /// </summary>
         public List<IPRange> IPRanges
         {
-            get { return this.iPRanges; }
-            set { this.iPRanges = value; }
+            get { return this._iPRanges; }
+            set { this._iPRanges = value; }
         }
 
         // Check to see if IPRanges property is set
         internal bool IsSetIPRanges()
         {
-            return this.iPRanges.Count > 0;
+            return this._iPRanges != null && this._iPRanges.Count > 0; 
         }
+
     }
 }

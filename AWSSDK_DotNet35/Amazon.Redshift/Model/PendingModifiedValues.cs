@@ -18,117 +18,161 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// <para> Describes cluster attributes that are in a pending state. A change to one or more the attributes was requested and is in progress or
-    /// will be applied. </para>
+    /// Describes cluster attributes that are in a pending state. A change to one
+    /// or        more the attributes was requested and is in progress or will be applied.
     /// </summary>
     public partial class PendingModifiedValues
     {
-        
-        private string masterUserPassword;
-        private string nodeType;
-        private int? numberOfNodes;
-        private string clusterType;
-        private string clusterVersion;
-        private int? automatedSnapshotRetentionPeriod;
+        private int? _automatedSnapshotRetentionPeriod;
+        private string _clusterIdentifier;
+        private string _clusterType;
+        private string _clusterVersion;
+        private string _masterUserPassword;
+        private string _nodeType;
+        private int? _numberOfNodes;
 
 
         /// <summary>
-        /// The pending or in-progress change of the master user password for the cluster.
-        ///  
-        /// </summary>
-        public string MasterUserPassword
-        {
-            get { return this.masterUserPassword; }
-            set { this.masterUserPassword = value; }
-        }
-
-        // Check to see if MasterUserPassword property is set
-        internal bool IsSetMasterUserPassword()
-        {
-            return this.masterUserPassword != null;
-        }
-
-        /// <summary>
-        /// The pending or in-progress change of the cluster's node type.
-        ///  
-        /// </summary>
-        public string NodeType
-        {
-            get { return this.nodeType; }
-            set { this.nodeType = value; }
-        }
-
-        // Check to see if NodeType property is set
-        internal bool IsSetNodeType()
-        {
-            return this.nodeType != null;
-        }
-
-        /// <summary>
-        /// The pending or in-progress change of the number nodes in the cluster.
-        ///  
-        /// </summary>
-        public int NumberOfNodes
-        {
-            get { return this.numberOfNodes ?? default(int); }
-            set { this.numberOfNodes = value; }
-        }
-
-        // Check to see if NumberOfNodes property is set
-        internal bool IsSetNumberOfNodes()
-        {
-            return this.numberOfNodes.HasValue;
-        }
-
-        /// <summary>
-        /// The pending or in-progress change of the cluster type.
-        ///  
-        /// </summary>
-        public string ClusterType
-        {
-            get { return this.clusterType; }
-            set { this.clusterType = value; }
-        }
-
-        // Check to see if ClusterType property is set
-        internal bool IsSetClusterType()
-        {
-            return this.clusterType != null;
-        }
-
-        /// <summary>
-        /// The pending or in-progress change of the service version.
-        ///  
-        /// </summary>
-        public string ClusterVersion
-        {
-            get { return this.clusterVersion; }
-            set { this.clusterVersion = value; }
-        }
-
-        // Check to see if ClusterVersion property is set
-        internal bool IsSetClusterVersion()
-        {
-            return this.clusterVersion != null;
-        }
-
-        /// <summary>
-        /// The pending or in-progress change of the automated snapshot retention period.
-        ///  
+        /// Gets and sets the property AutomatedSnapshotRetentionPeriod. 
+        /// <para>
+        ///             The pending or in-progress change of the automated snapshot retention
+        /// period.                    
+        /// </para>
         /// </summary>
         public int AutomatedSnapshotRetentionPeriod
         {
-            get { return this.automatedSnapshotRetentionPeriod ?? default(int); }
-            set { this.automatedSnapshotRetentionPeriod = value; }
+            get { return this._automatedSnapshotRetentionPeriod.GetValueOrDefault(); }
+            set { this._automatedSnapshotRetentionPeriod = value; }
         }
 
         // Check to see if AutomatedSnapshotRetentionPeriod property is set
         internal bool IsSetAutomatedSnapshotRetentionPeriod()
         {
-            return this.automatedSnapshotRetentionPeriod.HasValue;
+            return this._automatedSnapshotRetentionPeriod.HasValue; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property ClusterIdentifier. 
+        /// <para>
+        /// The pending or in-progress change of the new identifier for the cluster.
+        /// </para>
+        /// </summary>
+        public string ClusterIdentifier
+        {
+            get { return this._clusterIdentifier; }
+            set { this._clusterIdentifier = value; }
+        }
+
+        // Check to see if ClusterIdentifier property is set
+        internal bool IsSetClusterIdentifier()
+        {
+            return this._clusterIdentifier != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ClusterType. 
+        /// <para>
+        ///         The pending or in-progress change of the cluster type.        
+        /// </para>
+        /// </summary>
+        public string ClusterType
+        {
+            get { return this._clusterType; }
+            set { this._clusterType = value; }
+        }
+
+        // Check to see if ClusterType property is set
+        internal bool IsSetClusterType()
+        {
+            return this._clusterType != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ClusterVersion. 
+        /// <para>
+        ///          The pending or in-progress change of the service version.               
+        ///     
+        /// </para>
+        /// </summary>
+        public string ClusterVersion
+        {
+            get { return this._clusterVersion; }
+            set { this._clusterVersion = value; }
+        }
+
+        // Check to see if ClusterVersion property is set
+        internal bool IsSetClusterVersion()
+        {
+            return this._clusterVersion != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property MasterUserPassword. 
+        /// <para>
+        ///         The pending or in-progress change of the master user password for the cluster.
+        ///        
+        /// </para>
+        /// </summary>
+        public string MasterUserPassword
+        {
+            get { return this._masterUserPassword; }
+            set { this._masterUserPassword = value; }
+        }
+
+        // Check to see if MasterUserPassword property is set
+        internal bool IsSetMasterUserPassword()
+        {
+            return this._masterUserPassword != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property NodeType. 
+        /// <para>
+        ///         The pending or in-progress change of the cluster's node type.        
+        /// </para>
+        /// </summary>
+        public string NodeType
+        {
+            get { return this._nodeType; }
+            set { this._nodeType = value; }
+        }
+
+        // Check to see if NodeType property is set
+        internal bool IsSetNodeType()
+        {
+            return this._nodeType != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property NumberOfNodes. 
+        /// <para>
+        ///             The pending or in-progress change of the number of nodes in the cluster.
+        ///                    
+        /// </para>
+        /// </summary>
+        public int NumberOfNodes
+        {
+            get { return this._numberOfNodes.GetValueOrDefault(); }
+            set { this._numberOfNodes = value; }
+        }
+
+        // Check to see if NumberOfNodes property is set
+        internal bool IsSetNumberOfNodes()
+        {
+            return this._numberOfNodes.HasValue; 
+        }
+
     }
 }

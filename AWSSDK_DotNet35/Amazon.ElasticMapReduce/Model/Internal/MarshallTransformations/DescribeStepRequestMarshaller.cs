@@ -29,49 +29,46 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Step Request Marshaller
+    /// DescribeStep Request Marshaller
     /// </summary>       
-    internal class DescribeStepRequestMarshaller : IMarshaller<IRequest, DescribeStepRequest> 
+    public class DescribeStepRequestMarshaller : IMarshaller<IRequest, DescribeStepRequest> 
     {
-        
-
-        public IRequest Marshall(DescribeStepRequest describeStepRequest) 
+        public IRequest Marshall(DescribeStepRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(describeStepRequest, "AmazonElasticMapReduce");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticMapReduce");
             string target = "ElasticMapReduce.DescribeStep";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (describeStepRequest != null && describeStepRequest.IsSetClusterId()) 
+                if(publicRequest.IsSetClusterId())
                 {
                     writer.WritePropertyName("ClusterId");
-                    writer.Write(describeStepRequest.ClusterId);
-                }
-                if (describeStepRequest != null && describeStepRequest.IsSetStepId()) 
-                {
-                    writer.WritePropertyName("StepId");
-                    writer.Write(describeStepRequest.StepId);
+                    writer.Write(publicRequest.ClusterId);
                 }
 
+                if(publicRequest.IsSetStepId())
+                {
+                    writer.WritePropertyName("StepId");
+                    writer.Write(publicRequest.StepId);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

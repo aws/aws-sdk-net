@@ -12,21 +12,30 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Distribution Unmarshaller
-     /// </summary>
-    internal class DistributionUnmarshaller : IUnmarshaller<Distribution, XmlUnmarshallerContext>, IUnmarshaller<Distribution, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Distribution Object
+    /// </summary>  
+    public class DistributionUnmarshaller : IUnmarshaller<Distribution, XmlUnmarshallerContext>
     {
-        public Distribution Unmarshall(XmlUnmarshallerContext context) 
+        public Distribution Unmarshall(XmlUnmarshallerContext context)
         {
-            Distribution distribution = new Distribution();
+            Distribution unmarshalledObject = new Distribution();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -37,74 +46,65 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Id", targetDepth))
-                    {
-                        distribution.Id = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Status", targetDepth))
-                    {
-                        distribution.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("LastModifiedTime", targetDepth))
-                    {
-                        distribution.LastModifiedTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("InProgressInvalidationBatches", targetDepth))
-                    {
-                        distribution.InProgressInvalidationBatches = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("DomainName", targetDepth))
-                    {
-                        distribution.DomainName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("ActiveTrustedSigners", targetDepth))
                     {
-                        distribution.ActiveTrustedSigners = ActiveTrustedSignersUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = ActiveTrustedSignersUnmarshaller.Instance;
+                        unmarshalledObject.ActiveTrustedSigners = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DistributionConfig", targetDepth))
                     {
-                        distribution.DistributionConfig = DistributionConfigUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DistributionConfigUnmarshaller.Instance;
+                        unmarshalledObject.DistributionConfig = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("DomainName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DomainName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Id", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("InProgressInvalidationBatches", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.InProgressInvalidationBatches = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("LastModifiedTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Status", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return distribution;
+                    return unmarshalledObject;
                 }
+            }          
+            return unmarshalledObject;
+        }
+
+        private static DistributionUnmarshaller _instance = new DistributionUnmarshaller();        
+
+        public static DistributionUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
             }
-                        
-
-
-            return distribution;
-        }
-
-        public Distribution Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
-
-        private static DistributionUnmarshaller instance;
-
-        public static DistributionUnmarshaller GetInstance() 
-        {
-            if (instance == null) 
-               instance = new DistributionUnmarshaller();
-
-            return instance;
         }
     }
 }
-    

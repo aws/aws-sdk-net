@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,74 +18,76 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>The list of SAML providers for this account.</para>
+    /// The list of SAML providers for this account.
     /// </summary>
-    public class SAMLProviderListEntry
+    public partial class SAMLProviderListEntry
     {
-        
-        private string arn;
-        private DateTime? validUntil;
-        private DateTime? createDate;
+        private string _arn;
+        private DateTime? _createDate;
+        private DateTime? _validUntil;
 
 
         /// <summary>
-        /// The Amazon Resource Name (ARN) of the SAML provider.
-        ///  
+        /// Gets and sets the property Arn. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>20 - 2048</description>
-        ///     </item>
-        /// </list>
+        /// The Amazon Resource Name (ARN) of the SAML provider.
         /// </para>
         /// </summary>
         public string Arn
         {
-            get { return this.arn; }
-            set { this.arn = value; }
+            get { return this._arn; }
+            set { this._arn = value; }
         }
 
         // Check to see if Arn property is set
         internal bool IsSetArn()
         {
-            return this.arn != null;
+            return this._arn != null;
         }
+
 
         /// <summary>
-        /// The expiration date and time for the SAML provider.
-        ///  
-        /// </summary>
-        public DateTime ValidUntil
-        {
-            get { return this.validUntil ?? default(DateTime); }
-            set { this.validUntil = value; }
-        }
-
-        // Check to see if ValidUntil property is set
-        internal bool IsSetValidUntil()
-        {
-            return this.validUntil.HasValue;
-        }
-
-        /// <summary>
+        /// Gets and sets the property CreateDate. 
+        /// <para>
         /// The date and time when the SAML provider was created.
-        ///  
+        /// </para>
         /// </summary>
         public DateTime CreateDate
         {
-            get { return this.createDate ?? default(DateTime); }
-            set { this.createDate = value; }
+            get { return this._createDate.GetValueOrDefault(); }
+            set { this._createDate = value; }
         }
 
         // Check to see if CreateDate property is set
         internal bool IsSetCreateDate()
         {
-            return this.createDate.HasValue;
+            return this._createDate.HasValue; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property ValidUntil. 
+        /// <para>
+        /// The expiration date and time for the SAML provider.
+        /// </para>
+        /// </summary>
+        public DateTime ValidUntil
+        {
+            get { return this._validUntil.GetValueOrDefault(); }
+            set { this._validUntil = value; }
+        }
+
+        // Check to see if ValidUntil property is set
+        internal bool IsSetValidUntil()
+        {
+            return this._validUntil.HasValue; 
+        }
+
     }
 }

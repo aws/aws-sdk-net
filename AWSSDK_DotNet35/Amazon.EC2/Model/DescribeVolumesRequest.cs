@@ -57,15 +57,17 @@ namespace Amazon.EC2.Model
         /// device name that is exposed to the instance (for example, <c>/dev/sda1</c>). </li> <li> <c>attachment.instance-id</c> - The ID of the
         /// instance the volume is attached to. </li> <li> <c>attachment.status</c> - The attachment state (<c>attaching</c> | <c>attached</c> |
         /// <c>detaching</c> | <c>detached</c>). </li> <li> <c>availability-zone</c> - The Availability Zone in which the volume was created. </li> <li>
-        /// <c>create-time</c> - The time stamp when the volume was created. </li> <li> <c>size</c> - The size of the volume, in GiB. </li> <li>
-        /// <c>snapshot-id</c> - The snapshot from which the volume was created. </li> <li> <c>status</c> - The status of the volume (<c>creating</c> |
-        /// <c>available</c> | <c>in-use</c> | <c>deleting</c> | <c>deleted</c> | <c>error</c>). </li> <li> <c>tag</c>:<i>key</i>=<i>value</i> - The
-        /// key/value combination of a tag assigned to the resource. </li> <li> <c>tag-key</c> - The key of a tag assigned to the resource. This filter
-        /// is independent of the <c>tag-value</c> filter. For example, if you use both the filter "tag-key=Purpose" and the filter "tag-value=X", you
-        /// get any resources assigned both the tag key Purpose (regardless of what the tag's value is), and the tag value X (regardless of what the
-        /// tag's key is). If you want to list only resources where Purpose is X, see the <c>tag</c>:<i>key</i>=<i>value</i> filter. </li> <li>
-        /// <c>tag-value</c> - The value of a tag assigned to the resource. This filter is independent of the <c>tag-key</c> filter. </li> <li>
-        /// <c>volume-id</c> - The volume ID. </li> <li> <c>volume-type</c> - The Amazon EBS volume type (<c>standard</c> | <c>io1</c>). </li> </ul>
+        /// <c>create-time</c> - The time stamp when the volume was created. </li> <li> <c>encrypted</c> - The encryption status of the volume. </li>
+        /// <li> <c>size</c> - The size of the volume, in GiB. </li> <li> <c>snapshot-id</c> - The snapshot from which the volume was created. </li>
+        /// <li> <c>status</c> - The status of the volume (<c>creating</c> | <c>available</c> | <c>in-use</c> | <c>deleting</c> | <c>deleted</c> |
+        /// <c>error</c>). </li> <li> <c>tag</c>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. </li> <li>
+        /// <c>tag-key</c> - The key of a tag assigned to the resource. This filter is independent of the <c>tag-value</c> filter. For example, if you
+        /// use both the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of
+        /// what the tag's value is), and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X,
+        /// see the <c>tag</c>:<i>key</i>=<i>value</i> filter. </li> <li> <c>tag-value</c> - The value of a tag assigned to the resource. This filter is
+        /// independent of the <c>tag-key</c> filter. </li> <li> <c>volume-id</c> - The volume ID. </li> <li> <c>volume-type</c> - The Amazon EBS volume
+        /// type. This can be <c>gp2</c> for General Purpose (SSD) volumes, <c>io1</c> for Provisioned IOPS (SSD) volumes, or <c>standard</c> for
+        /// Magnetic volumes. </li> </ul>
         ///  
         /// </summary>
         public List<Filter> Filters

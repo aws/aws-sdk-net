@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,72 +25,52 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeactivateMFADevice operation.
-    /// <para>Deactivates the specified MFA device and removes it from association with the user name for which it was originally enabled.</para>
+    /// Deactivates the specified MFA device and removes it from association with the user
+    /// name for            which it was originally enabled.
     /// </summary>
     public partial class DeactivateMFADeviceRequest : AmazonIdentityManagementServiceRequest
     {
-        private string userName;
-        private string serialNumber;
+        private string _serialNumber;
+        private string _userName;
 
 
         /// <summary>
-        /// Name of the user whose MFA device you want to deactivate.
-        ///  
+        /// Gets and sets the property SerialNumber. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 128</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=,.@-]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string UserName
-        {
-            get { return this.userName; }
-            set { this.userName = value; }
-        }
-
-        // Check to see if UserName property is set
-        internal bool IsSetUserName()
-        {
-            return this.userName != null;
-        }
-
-        /// <summary>
-        /// The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>9 - 256</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=/:,.@-]*</description>
-        ///     </item>
-        /// </list>
+        /// The serial number that uniquely identifies the MFA device. For virtual MFA devices,
+        /// the            serial number is the device ARN.
         /// </para>
         /// </summary>
         public string SerialNumber
         {
-            get { return this.serialNumber; }
-            set { this.serialNumber = value; }
+            get { return this._serialNumber; }
+            set { this._serialNumber = value; }
         }
 
         // Check to see if SerialNumber property is set
         internal bool IsSetSerialNumber()
         {
-            return this.serialNumber != null;
+            return this._serialNumber != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property UserName. 
+        /// <para>
+        /// Name of the user whose MFA device you want to deactivate.
+        /// </para>
+        /// </summary>
+        public string UserName
+        {
+            get { return this._userName; }
+            set { this._userName = value; }
+        }
+
+        // Check to see if UserName property is set
+        internal bool IsSetUserName()
+        {
+            return this._userName != null;
         }
 
     }
 }
-    

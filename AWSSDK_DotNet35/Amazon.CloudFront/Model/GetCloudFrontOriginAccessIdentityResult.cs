@@ -17,50 +17,53 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> The returned result of the corresponding request. </para>
+    /// The returned result of the corresponding request.
     /// </summary>
     public partial class GetCloudFrontOriginAccessIdentityResult : AmazonWebServiceResponse
     {
-        
-        private CloudFrontOriginAccessIdentity cloudFrontOriginAccessIdentity;
-        private string eTag;
+        private CloudFrontOriginAccessIdentity _cloudFrontOriginAccessIdentity;
+        private string _eTag;
 
 
         /// <summary>
-        /// The origin access identity's information.
-        ///  
+        /// Gets and sets the property CloudFrontOriginAccessIdentity. The origin access identity's
+        /// information.
         /// </summary>
         public CloudFrontOriginAccessIdentity CloudFrontOriginAccessIdentity
         {
-            get { return this.cloudFrontOriginAccessIdentity; }
-            set { this.cloudFrontOriginAccessIdentity = value; }
+            get { return this._cloudFrontOriginAccessIdentity; }
+            set { this._cloudFrontOriginAccessIdentity = value; }
         }
 
         // Check to see if CloudFrontOriginAccessIdentity property is set
         internal bool IsSetCloudFrontOriginAccessIdentity()
         {
-            return this.cloudFrontOriginAccessIdentity != null;
+            return this._cloudFrontOriginAccessIdentity != null;
         }
 
+
         /// <summary>
-        /// The current version of the origin access identity's information. For example: E2QWRUHAPOMQZL.
-        ///  
+        /// Gets and sets the property ETag. The current version of the origin access identity's
+        /// information. For example: E2QWRUHAPOMQZL.
         /// </summary>
         public string ETag
         {
-            get { return this.eTag; }
-            set { this.eTag = value; }
+            get { return this._eTag; }
+            set { this._eTag = value; }
         }
 
         // Check to see if ETag property is set
         internal bool IsSetETag()
         {
-            return this.eTag != null;
+            return this._eTag != null;
         }
+
     }
 }

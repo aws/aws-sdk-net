@@ -12,35 +12,32 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 using System;
 
 using Amazon.Runtime;
 
-
 namespace Amazon.CloudFront
 {
 
-
-    /// <summary>Geo Restriction Type
+    /// <summary>
+    /// Constants used for properties of type GeoRestrictionType.
     /// </summary>
     public class GeoRestrictionType : ConstantClass
     {
 
-
-       /// <summary>Constant Blacklist for GeoRestrictionType
-       /// </summary>
+        /// <summary>
+        /// Constant Blacklist for GeoRestrictionType
+        /// </summary>
         public static readonly GeoRestrictionType Blacklist = new GeoRestrictionType("blacklist");
-    
-
-       /// <summary>Constant None for GeoRestrictionType
-       /// </summary>
+        /// <summary>
+        /// Constant None for GeoRestrictionType
+        /// </summary>
         public static readonly GeoRestrictionType None = new GeoRestrictionType("none");
-    
-
-       /// <summary>Constant Whitelist for GeoRestrictionType
-       /// </summary>
+        /// <summary>
+        /// Constant Whitelist for GeoRestrictionType
+        /// </summary>
         public static readonly GeoRestrictionType Whitelist = new GeoRestrictionType("whitelist");
-    
 
         /// <summary>
         /// Default Constructor
@@ -65,28 +62,26 @@ namespace Amazon.CloudFront
             return FindValue(value);
         }
     }
-    
 
-    /// <summary>Item Selection
+
+    /// <summary>
+    /// Constants used for properties of type ItemSelection.
     /// </summary>
     public class ItemSelection : ConstantClass
     {
 
-
-       /// <summary>Constant All for ItemSelection
-       /// </summary>
+        /// <summary>
+        /// Constant All for ItemSelection
+        /// </summary>
         public static readonly ItemSelection All = new ItemSelection("all");
-    
-
-       /// <summary>Constant None for ItemSelection
-       /// </summary>
+        /// <summary>
+        /// Constant None for ItemSelection
+        /// </summary>
         public static readonly ItemSelection None = new ItemSelection("none");
-    
-
-       /// <summary>Constant Whitelist for ItemSelection
-       /// </summary>
+        /// <summary>
+        /// Constant Whitelist for ItemSelection
+        /// </summary>
         public static readonly ItemSelection Whitelist = new ItemSelection("whitelist");
-    
 
         /// <summary>
         /// Default Constructor
@@ -111,48 +106,42 @@ namespace Amazon.CloudFront
             return FindValue(value);
         }
     }
-    
 
-    /// <summary>Method
+
+    /// <summary>
+    /// Constants used for properties of type Method.
     /// </summary>
     public class Method : ConstantClass
     {
 
-
-       /// <summary>Constant DELETE for Method
-       /// </summary>
+        /// <summary>
+        /// Constant DELETE for Method
+        /// </summary>
         public static readonly Method DELETE = new Method("DELETE");
-    
-
-       /// <summary>Constant GET for Method
-       /// </summary>
+        /// <summary>
+        /// Constant GET for Method
+        /// </summary>
         public static readonly Method GET = new Method("GET");
-    
-
-       /// <summary>Constant HEAD for Method
-       /// </summary>
+        /// <summary>
+        /// Constant HEAD for Method
+        /// </summary>
         public static readonly Method HEAD = new Method("HEAD");
-    
-
-       /// <summary>Constant OPTIONS for Method
-       /// </summary>
+        /// <summary>
+        /// Constant OPTIONS for Method
+        /// </summary>
         public static readonly Method OPTIONS = new Method("OPTIONS");
-    
-
-       /// <summary>Constant PATCH for Method
-       /// </summary>
+        /// <summary>
+        /// Constant PATCH for Method
+        /// </summary>
         public static readonly Method PATCH = new Method("PATCH");
-    
-
-       /// <summary>Constant POST for Method
-       /// </summary>
+        /// <summary>
+        /// Constant POST for Method
+        /// </summary>
         public static readonly Method POST = new Method("POST");
-    
-
-       /// <summary>Constant PUT for Method
-       /// </summary>
+        /// <summary>
+        /// Constant PUT for Method
+        /// </summary>
         public static readonly Method PUT = new Method("PUT");
-    
 
         /// <summary>
         /// Default Constructor
@@ -177,23 +166,22 @@ namespace Amazon.CloudFront
             return FindValue(value);
         }
     }
-    
 
-    /// <summary>Origin Protocol Policy
+
+    /// <summary>
+    /// Constants used for properties of type OriginProtocolPolicy.
     /// </summary>
     public class OriginProtocolPolicy : ConstantClass
     {
 
-
-       /// <summary>Constant HttpOnly for OriginProtocolPolicy
-       /// </summary>
+        /// <summary>
+        /// Constant HttpOnly for OriginProtocolPolicy
+        /// </summary>
         public static readonly OriginProtocolPolicy HttpOnly = new OriginProtocolPolicy("http-only");
-    
-
-       /// <summary>Constant MatchViewer for OriginProtocolPolicy
-       /// </summary>
+        /// <summary>
+        /// Constant MatchViewer for OriginProtocolPolicy
+        /// </summary>
         public static readonly OriginProtocolPolicy MatchViewer = new OriginProtocolPolicy("match-viewer");
-    
 
         /// <summary>
         /// Default Constructor
@@ -218,28 +206,26 @@ namespace Amazon.CloudFront
             return FindValue(value);
         }
     }
-    
 
-    /// <summary>Price Class
+
+    /// <summary>
+    /// Constants used for properties of type PriceClass.
     /// </summary>
     public class PriceClass : ConstantClass
     {
 
-
-       /// <summary>Constant PriceClass_100 for PriceClass
-       /// </summary>
+        /// <summary>
+        /// Constant PriceClass_100 for PriceClass
+        /// </summary>
         public static readonly PriceClass PriceClass_100 = new PriceClass("PriceClass_100");
-    
-
-       /// <summary>Constant PriceClass_200 for PriceClass
-       /// </summary>
+        /// <summary>
+        /// Constant PriceClass_200 for PriceClass
+        /// </summary>
         public static readonly PriceClass PriceClass_200 = new PriceClass("PriceClass_200");
-    
-
-       /// <summary>Constant PriceClass_All for PriceClass
-       /// </summary>
+        /// <summary>
+        /// Constant PriceClass_All for PriceClass
+        /// </summary>
         public static readonly PriceClass PriceClass_All = new PriceClass("PriceClass_All");
-    
 
         /// <summary>
         /// Default Constructor
@@ -264,23 +250,22 @@ namespace Amazon.CloudFront
             return FindValue(value);
         }
     }
-    
 
-    /// <summary>S S L Support Method
+
+    /// <summary>
+    /// Constants used for properties of type SSLSupportMethod.
     /// </summary>
     public class SSLSupportMethod : ConstantClass
     {
 
-
-       /// <summary>Constant SniOnly for SSLSupportMethod
-       /// </summary>
+        /// <summary>
+        /// Constant SniOnly for SSLSupportMethod
+        /// </summary>
         public static readonly SSLSupportMethod SniOnly = new SSLSupportMethod("sni-only");
-    
-
-       /// <summary>Constant Vip for SSLSupportMethod
-       /// </summary>
+        /// <summary>
+        /// Constant Vip for SSLSupportMethod
+        /// </summary>
         public static readonly SSLSupportMethod Vip = new SSLSupportMethod("vip");
-    
 
         /// <summary>
         /// Default Constructor
@@ -305,28 +290,26 @@ namespace Amazon.CloudFront
             return FindValue(value);
         }
     }
-    
 
-    /// <summary>Viewer Protocol Policy
+
+    /// <summary>
+    /// Constants used for properties of type ViewerProtocolPolicy.
     /// </summary>
     public class ViewerProtocolPolicy : ConstantClass
     {
 
-
-       /// <summary>Constant AllowAll for ViewerProtocolPolicy
-       /// </summary>
+        /// <summary>
+        /// Constant AllowAll for ViewerProtocolPolicy
+        /// </summary>
         public static readonly ViewerProtocolPolicy AllowAll = new ViewerProtocolPolicy("allow-all");
-    
-
-       /// <summary>Constant HttpsOnly for ViewerProtocolPolicy
-       /// </summary>
+        /// <summary>
+        /// Constant HttpsOnly for ViewerProtocolPolicy
+        /// </summary>
         public static readonly ViewerProtocolPolicy HttpsOnly = new ViewerProtocolPolicy("https-only");
-    
-
-       /// <summary>Constant RedirectToHttps for ViewerProtocolPolicy
-       /// </summary>
+        /// <summary>
+        /// Constant RedirectToHttps for ViewerProtocolPolicy
+        /// </summary>
         public static readonly ViewerProtocolPolicy RedirectToHttps = new ViewerProtocolPolicy("redirect-to-https");
-    
 
         /// <summary>
         /// Default Constructor
@@ -351,7 +334,5 @@ namespace Amazon.CloudFront
             return FindValue(value);
         }
     }
-    
 
 }
-        

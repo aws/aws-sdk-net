@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,74 +18,76 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para>The detailed status of the cluster.</para>
+    /// The detailed status of the cluster.
     /// </summary>
-    public class ClusterStatus
+    public partial class ClusterStatus
     {
-        
-        private ClusterState state;
-        private ClusterStateChangeReason stateChangeReason;
-        private ClusterTimeline timeline;
+        private ClusterState _state;
+        private ClusterStateChangeReason _stateChangeReason;
+        private ClusterTimeline _timeline;
 
 
         /// <summary>
-        /// The current state of the cluster.
-        ///  
+        /// Gets and sets the property State. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>STARTING, BOOTSTRAPPING, RUNNING, WAITING, TERMINATING, TERMINATED, TERMINATED_WITH_ERRORS</description>
-        ///     </item>
-        /// </list>
+        /// The current state of the cluster.
         /// </para>
         /// </summary>
         public ClusterState State
         {
-            get { return this.state; }
-            set { this.state = value; }
+            get { return this._state; }
+            set { this._state = value; }
         }
 
         // Check to see if State property is set
         internal bool IsSetState()
         {
-            return this.state != null;
+            return this._state != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property StateChangeReason. 
+        /// <para>
         /// The reason for the cluster status change.
-        ///  
+        /// </para>
         /// </summary>
         public ClusterStateChangeReason StateChangeReason
         {
-            get { return this.stateChangeReason; }
-            set { this.stateChangeReason = value; }
+            get { return this._stateChangeReason; }
+            set { this._stateChangeReason = value; }
         }
 
         // Check to see if StateChangeReason property is set
         internal bool IsSetStateChangeReason()
         {
-            return this.stateChangeReason != null;
+            return this._stateChangeReason != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property Timeline. 
+        /// <para>
         /// A timeline that represents the status of a cluster over the lifetime of the cluster.
-        ///  
+        /// </para>
         /// </summary>
         public ClusterTimeline Timeline
         {
-            get { return this.timeline; }
-            set { this.timeline = value; }
+            get { return this._timeline; }
+            set { this._timeline = value; }
         }
 
         // Check to see if Timeline property is set
         internal bool IsSetTimeline()
         {
-            return this.timeline != null;
+            return this._timeline != null;
         }
+
     }
 }

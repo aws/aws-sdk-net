@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,48 +18,56 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// <para>Endpoint for mobile app and device.</para>
+    /// Endpoint for mobile app and device.
     /// </summary>
-    public class Endpoint
+    public partial class Endpoint
     {
-        
-        private string endpointArn;
-        private Dictionary<string,string> attributes = new Dictionary<string,string>();
+        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private string _endpointArn;
 
 
         /// <summary>
-        /// EndpointArn for mobile app and device.
-        ///  
-        /// </summary>
-        public string EndpointArn
-        {
-            get { return this.endpointArn; }
-            set { this.endpointArn = value; }
-        }
-
-        // Check to see if EndpointArn property is set
-        internal bool IsSetEndpointArn()
-        {
-            return this.endpointArn != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Attributes. 
+        /// <para>
         /// Attributes for endpoint.
-        ///  
+        /// </para>
         /// </summary>
-        public Dictionary<string,string> Attributes
+        public Dictionary<string, string> Attributes
         {
-            get { return this.attributes; }
-            set { this.attributes = value; }
+            get { return this._attributes; }
+            set { this._attributes = value; }
         }
 
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this.attributes != null;
+            return this._attributes != null && this._attributes.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property EndpointArn. 
+        /// <para>
+        /// EndpointArn for mobile app and device.
+        /// </para>
+        /// </summary>
+        public string EndpointArn
+        {
+            get { return this._endpointArn; }
+            set { this._endpointArn = value; }
+        }
+
+        // Check to see if EndpointArn property is set
+        internal bool IsSetEndpointArn()
+        {
+            return this._endpointArn != null;
+        }
+
     }
 }

@@ -35,29 +35,40 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "PUT";
 
-            if(putObjectRequest.IsSetCannedACL())
+            if (putObjectRequest.IsSetCannedACL())
                 request.Headers.Add("x-amz-acl", S3Transforms.ToStringValue(putObjectRequest.CannedACL));
 
             var headers = putObjectRequest.Headers;
             foreach (var key in headers.Keys)
                 request.Headers[key] = headers[key];
 
-            if(putObjectRequest.IsSetMD5Digest())
+            if (putObjectRequest.IsSetMD5Digest())
                 request.Headers["Content-MD5"] = putObjectRequest.MD5Digest;
 
             HeaderACLRequestMarshaller.Marshall(request, putObjectRequest);
 
-            if(putObjectRequest.IsSetServerSideEncryptionMethod())
+            if (putObjectRequest.IsSetServerSideEncryptionMethod())
                 request.Headers.Add("x-amz-server-side-encryption", S3Transforms.ToStringValue(putObjectRequest.ServerSideEncryptionMethod));
-            
-            if(putObjectRequest.IsSetStorageClass())
+
+            if (putObjectRequest.IsSetStorageClass())
                 request.Headers.Add("x-amz-storage-class", S3Transforms.ToStringValue(putObjectRequest.StorageClass));
-            
-            if(putObjectRequest.IsSetWebsiteRedirectLocation())
+
+            if (putObjectRequest.IsSetWebsiteRedirectLocation())
                 request.Headers.Add("x-amz-website-redirect-location", S3Transforms.ToStringValue(putObjectRequest.WebsiteRedirectLocation));
 
+            if (putObjectRequest.IsSetServerSideEncryptionCustomerMethod())
+                request.Headers.Add("x-amz-server-side-encryption-customer-algorithm", putObjectRequest.ServerSideEncryptionCustomerMethod);
+            if (putObjectRequest.IsSetServerSideEncryptionCustomerProvidedKey())
+            {
+                request.Headers.Add("x-amz-server-side-encryption-customer-key", putObjectRequest.ServerSideEncryptionCustomerProvidedKey);
+                if (putObjectRequest.IsSetServerSideEncryptionCustomerProvidedKeyMD5())
+                    request.Headers.Add("x-amz-server-side-encryption-customer-key-MD5", putObjectRequest.ServerSideEncryptionCustomerProvidedKeyMD5);
+                else
+                    request.Headers.Add("x-amz-server-side-encryption-customer-key-MD5", AmazonS3Util.ComputeEncodedMD5FromEncodedString(putObjectRequest.ServerSideEncryptionCustomerProvidedKey));
+            }
+
             AmazonS3Util.SetMetadataHeaders(request, putObjectRequest.Metadata);
-            
+
             var uriResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
                                                 S3Transforms.ToStringValue(putObjectRequest.BucketName),
                                                 S3Transforms.ToStringValue(putObjectRequest.Key));
@@ -80,11 +91,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 var hashStream = new MD5Stream(streamWithLength, null, length);
                 putObjectRequest.InputStream = hashStream;
             }
-        
+
             request.ContentStream = putObjectRequest.InputStream;
             if (!request.Headers.ContainsKey("Content-Type"))
                 request.Headers.Add("Content-Type", "text/plain");
-        
+
             if (!request.UseQueryString)
             {
                 var queryString = AWSSDKUtils.GetParametersAsString(request.Parameters);
@@ -93,7 +104,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     request.ResourcePath = string.Concat(request.ResourcePath, request.ResourcePath.Contains("?") ? "&" : "?", queryString);
                 }
             }
-                      
+
             return request;
         }
 
@@ -125,4 +136,4 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
     }
 }
-    
+

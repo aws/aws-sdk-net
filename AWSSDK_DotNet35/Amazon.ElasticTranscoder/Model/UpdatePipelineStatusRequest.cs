@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,68 +25,63 @@ namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdatePipelineStatus operation.
-    /// <para>The UpdatePipelineStatus operation pauses or reactivates a pipeline, so that the pipeline stops or restarts the processing of
-    /// jobs.</para> <para>Changing the pipeline status is useful if you want to cancel one or more jobs. You can't cancel jobs after Elastic
-    /// Transcoder has started processing them; if you pause the pipeline to which you submitted the jobs, you have more time to get the job IDs for
-    /// the jobs that you want to cancel, and to send a CancelJob request. </para>
+    /// The UpdatePipelineStatus operation pauses or reactivates a pipeline, so that the pipeline
+    ///            stops or restarts the processing of jobs.
+    /// 
+    ///         
+    /// <para>
+    /// Changing the pipeline status is useful if you want to cancel one or more jobs. You
+    /// can't            cancel jobs after Elastic Transcoder has started processing them;
+    /// if you pause the pipeline to which            you submitted the jobs, you have more
+    /// time to get the job IDs for the jobs that you want            to cancel, and to send
+    /// a <a>CancelJob</a> request. 
+    /// </para>
     /// </summary>
     public partial class UpdatePipelineStatusRequest : AmazonElasticTranscoderRequest
     {
-        private string id;
-        private string status;
+        private string _id;
+        private string _status;
 
 
         /// <summary>
-        /// The identifier of the pipeline to update.
-        ///  
+        /// Gets and sets the property Id. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>^\d{13}-\w{6}$</description>
-        ///     </item>
-        /// </list>
+        /// The identifier of the pipeline to update.
         /// </para>
         /// </summary>
         public string Id
         {
-            get { return this.id; }
-            set { this.id = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;
+            return this._id != null;
         }
 
+
         /// <summary>
-        /// The desired status of the pipeline: <ul> <li> <c>Active</c>: The pipeline is processing jobs.</li> <li> <c>Paused</c>: The pipeline is not
-        /// currently processing jobs.</li> </ul>
-        ///  
+        /// Gets and sets the property Status. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>(^Active$)|(^Paused$)</description>
-        ///     </item>
-        /// </list>
+        /// The desired status of the pipeline:
         /// </para>
+        ///         <ul>            <li>                <code>Active</code>: The pipeline is processing
+        /// jobs.</li>            <li>                <code>Paused</code>: The pipeline is not
+        /// currently processing jobs.</li>        </ul>
         /// </summary>
         public string Status
         {
-            get { return this.status; }
-            set { this.status = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;
+            return this._status != null;
         }
 
     }
 }
-    

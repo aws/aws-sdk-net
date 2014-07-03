@@ -17,101 +17,118 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// <para>Describes a subnet group.</para>
+    /// Describes a subnet group.
     /// </summary>
-    public partial class ClusterSubnetGroup : AmazonWebServiceResponse
+    public partial class ClusterSubnetGroup
     {
-        
-        private string clusterSubnetGroupName;
-        private string description;
-        private string vpcId;
-        private string subnetGroupStatus;
-        private List<Subnet> subnets = new List<Subnet>();
+        private string _clusterSubnetGroupName;
+        private string _description;
+        private string _subnetGroupStatus;
+        private List<Subnet> _subnets = new List<Subnet>();
+        private string _vpcId;
 
 
         /// <summary>
-        /// The name of the cluster subnet group.
-        ///  
+        /// Gets and sets the property ClusterSubnetGroupName. 
+        /// <para>
+        ///         The name of the cluster subnet group.        
+        /// </para>
         /// </summary>
         public string ClusterSubnetGroupName
         {
-            get { return this.clusterSubnetGroupName; }
-            set { this.clusterSubnetGroupName = value; }
+            get { return this._clusterSubnetGroupName; }
+            set { this._clusterSubnetGroupName = value; }
         }
 
         // Check to see if ClusterSubnetGroupName property is set
         internal bool IsSetClusterSubnetGroupName()
         {
-            return this.clusterSubnetGroupName != null;
+            return this._clusterSubnetGroupName != null;
         }
 
+
         /// <summary>
-        /// The description of the cluster subnet group.
-        ///  
+        /// Gets and sets the property Description. 
+        /// <para>
+        ///         The description of the cluster subnet group.        
+        /// </para>
         /// </summary>
         public string Description
         {
-            get { return this.description; }
-            set { this.description = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
 
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;
+            return this._description != null;
         }
+
 
         /// <summary>
-        /// The VPC ID of the cluster subnet group.
-        ///  
-        /// </summary>
-        public string VpcId
-        {
-            get { return this.vpcId; }
-            set { this.vpcId = value; }
-        }
-
-        // Check to see if VpcId property is set
-        internal bool IsSetVpcId()
-        {
-            return this.vpcId != null;
-        }
-
-        /// <summary>
-        /// The status of the cluster subnet group. Possible values are <c>Complete</c>, <c>Incomplete</c> and <c>Invalid</c>.
-        ///  
+        /// Gets and sets the property SubnetGroupStatus. 
+        /// <para>
+        ///             The status of the cluster subnet group.  Possible values are <code>Complete</code>,
+        ///             <code>Incomplete</code> and <code>Invalid</code>.        
+        /// </para>
         /// </summary>
         public string SubnetGroupStatus
         {
-            get { return this.subnetGroupStatus; }
-            set { this.subnetGroupStatus = value; }
+            get { return this._subnetGroupStatus; }
+            set { this._subnetGroupStatus = value; }
         }
 
         // Check to see if SubnetGroupStatus property is set
         internal bool IsSetSubnetGroupStatus()
         {
-            return this.subnetGroupStatus != null;
+            return this._subnetGroupStatus != null;
         }
 
+
         /// <summary>
-        /// A list of the VPC <a>Subnet</a> elements.
-        ///  
+        /// Gets and sets the property Subnets. 
+        /// <para>
+        ///         A list of the VPC <a>Subnet</a> elements.        
+        /// </para>
         /// </summary>
         public List<Subnet> Subnets
         {
-            get { return this.subnets; }
-            set { this.subnets = value; }
+            get { return this._subnets; }
+            set { this._subnets = value; }
         }
 
         // Check to see if Subnets property is set
         internal bool IsSetSubnets()
         {
-            return this.subnets.Count > 0;
+            return this._subnets != null && this._subnets.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property VpcId. 
+        /// <para>
+        ///         The VPC ID of the cluster subnet group.        
+        /// </para>
+        /// </summary>
+        public string VpcId
+        {
+            get { return this._vpcId; }
+            set { this._vpcId = value; }
+        }
+
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
+        {
+            return this._vpcId != null;
+        }
+
     }
 }

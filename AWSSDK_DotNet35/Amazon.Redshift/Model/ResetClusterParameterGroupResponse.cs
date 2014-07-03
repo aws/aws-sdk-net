@@ -12,24 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the  ResetClusterParameterGroup response and response metadata.
+    /// Configuration for accessing Amazon ResetClusterParameterGroup service
     /// </summary>
     public partial class ResetClusterParameterGroupResponse : ResetClusterParameterGroupResult
     {
         /// <summary>
         /// Gets and sets the ResetClusterParameterGroupResult property.
-        /// Contains the output from the ModifyClusterParameterGroup and ResetClusterParameterGroup actions and indicate the parameter group involved
-        /// and the status of the operation on the parameter group.
+        /// Represents the output of a ResetClusterParameterGroup operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ResetClusterParameterGroupResult class are now available on the ResetClusterParameterGroupResponse class. You should use the properties on ResetClusterParameterGroupResponse instead of accessing them through ResetClusterParameterGroupResult.")]
         public ResetClusterParameterGroupResult ResetClusterParameterGroupResult
@@ -41,4 +36,3 @@ namespace Amazon.Redshift.Model
         }
     }
 }
-    

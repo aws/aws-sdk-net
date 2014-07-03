@@ -16,27 +16,24 @@ using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// The results from the ModifyEventSubscription action.
+    /// 
     /// </summary>
     public partial class ModifyEventSubscriptionResult : AmazonWebServiceResponse
     {
-        private EventSubscription eventSubscriptionValue;
+        private EventSubscription _response;
 
-        /// <summary>
-        /// Gets and sets the ModifyEventSubscriptionResult property.
-        /// Contains the result of a successful invocation of the ModifyEventSubscription
-        /// action.
-        /// </summary>
         public EventSubscription EventSubscription
         {
-            get { return this.eventSubscriptionValue; }
-            set { this.eventSubscriptionValue = value; }
+            get { return this._response; }
+            set { this._response = value; }
         }
     }
 }
-    

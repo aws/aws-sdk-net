@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Returns information about the  CreateInstanceProfile response and response metadata.
+    /// Configuration for accessing Amazon CreateInstanceProfile service
     /// </summary>
-    public class CreateInstanceProfileResponse : CreateInstanceProfileResult
+    public partial class CreateInstanceProfileResponse : CreateInstanceProfileResult
     {
         /// <summary>
         /// Gets and sets the CreateInstanceProfileResult property.
-        /// Contains the result of a successful invocation of the CreateInstanceProfile action.
+        /// Represents the output of a CreateInstanceProfile operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateInstanceProfileResult class are now available on the CreateInstanceProfileResponse class. You should use the properties on CreateInstanceProfileResponse instead of accessing them through CreateInstanceProfileResult.")]
         public CreateInstanceProfileResult CreateInstanceProfileResult
@@ -40,4 +36,3 @@ namespace Amazon.IdentityManagement.Model
         }
     }
 }
-    

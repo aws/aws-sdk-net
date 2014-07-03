@@ -12,66 +12,76 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.ElasticMapReduce.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+using Amazon.ElasticMapReduce.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for InstanceStatus Object
+    /// </summary>  
+    public class InstanceStatusUnmarshaller : IUnmarshaller<InstanceStatus, XmlUnmarshallerContext>, IUnmarshaller<InstanceStatus, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// InstanceStatusUnmarshaller
-      /// </summary>
-      internal class InstanceStatusUnmarshaller : IUnmarshaller<InstanceStatus, XmlUnmarshallerContext>, IUnmarshaller<InstanceStatus, JsonUnmarshallerContext>
-      {
         InstanceStatus IUnmarshaller<InstanceStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public InstanceStatus Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            InstanceStatus instanceStatus = new InstanceStatus();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            InstanceStatus unmarshalledObject = new InstanceStatus();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("State", targetDepth))
-              {
-                instanceStatus.State = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("StateChangeReason", targetDepth))
-              {
-                instanceStatus.StateChangeReason = InstanceStateChangeReasonUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Timeline", targetDepth))
-              {
-                instanceStatus.Timeline = InstanceTimelineUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("State", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StateChangeReason", targetDepth))
+                {
+                    var unmarshaller = InstanceStateChangeReasonUnmarshaller.Instance;
+                    unmarshalledObject.StateChangeReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Timeline", targetDepth))
+                {
+                    var unmarshaller = InstanceTimelineUnmarshaller.Instance;
+                    unmarshalledObject.Timeline = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return instanceStatus;
+            return unmarshalledObject;
         }
 
-        private static InstanceStatusUnmarshaller instance;
-        public static InstanceStatusUnmarshaller GetInstance()
+
+        private static InstanceStatusUnmarshaller _instance = new InstanceStatusUnmarshaller();        
+
+        public static InstanceStatusUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new InstanceStatusUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

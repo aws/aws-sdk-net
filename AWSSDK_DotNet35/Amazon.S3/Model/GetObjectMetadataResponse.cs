@@ -38,6 +38,7 @@ namespace Amazon.S3.Model
         private DateTime? expires;
         private string websiteRedirectLocation;
         private ServerSideEncryptionMethod serverSideEncryption;
+        private ServerSideEncryptionCustomerMethod serverSideEncryptionCustomerMethod;
         private HeadersCollection headersCollection = new HeadersCollection();
         private MetadataCollection metadataCollection = new MetadataCollection();
 
@@ -248,10 +249,33 @@ namespace Amazon.S3.Model
             set { this.serverSideEncryption = value; }
         }
 
-        // Check to see if ServerSideEncryptionMethod property is set
+        // Check to see if ServerSideEncryptionCustomerMethod property is set
         internal bool IsSetServerSideEncryptionMethod()
         {
-            return this.serverSideEncryption != null;
+            return this.serverSideEncryptionCustomerMethod != null;
+        }
+
+        /// <summary>
+        /// The Server-side encryption algorithm to be used with the customer provided key.
+        ///  
+        /// </summary>
+        public ServerSideEncryptionCustomerMethod ServerSideEncryptionCustomerMethod 
+        { 
+            get
+            {
+                if (this.serverSideEncryptionCustomerMethod == null)
+                    return ServerSideEncryptionCustomerMethod.None;
+
+                return this.serverSideEncryptionCustomerMethod;
+            }
+            set { this.serverSideEncryptionCustomerMethod = value; } 
+        }
+
+
+        // Check to see if ServerSideEncryptionCustomerMethod property is set
+        internal bool IsSetServerSideEncryptionCustomerMethod()
+        {
+            return this.serverSideEncryptionCustomerMethod != null;
         }
     }
 }

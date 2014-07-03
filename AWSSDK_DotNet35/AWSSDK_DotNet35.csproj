@@ -185,6 +185,15 @@
     <Compile Include="Amazon.CloudSearch_2011_02_01\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.CloudSearchDomain\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.CloudSearchDomain\Model\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.CloudSearchDomain\Model\Internal\MarshallTransformations\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.CloudTrail\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -371,6 +380,7 @@
     <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.Runtime\Internal\Auth\NullSigner.cs" />
     <Compile Include="Amazon.Runtime\Internal\AutoConstructedTypes.cs" />
     <Compile Include="Amazon.Runtime\Internal\Settings\PersistenceManager.cs" />
     <Compile Include="Amazon.Runtime\Internal\Settings\SettingsCollection.cs" />
@@ -380,6 +390,7 @@
     <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\LifecycleRuleNoncurrentVersionTransitionUnmarshaller.cs" />
     <Compile Include="Amazon.S3\Model\LifecycleRuleNoncurrentVersionExpiration.cs" />
     <Compile Include="Amazon.S3\Model\LifecycleRuleNoncurrentVersionTransition.cs" />
+    <Compile Include="Amazon.S3\Model\StreamSizeMismatchException.cs" />
     <Compile Include="Amazon.SecurityToken\*.cs">
       <SubType>Code</SubType>
     </Compile>

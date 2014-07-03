@@ -25,73 +25,101 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeClusters operation.
-    /// <para> Returns properties of provisioned clusters including general cluster properties, cluster database properties, maintenance and backup
-    /// properties, and security and access properties. This operation supports pagination. For more information about managing clusters, go to <a
-    /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html" >Amazon Redshift Clusters</a> in the <i>Amazon Redshift
-    /// Management Guide</i> .
-    /// </para>
+    /// Returns properties of provisioned clusters including general cluster properties,
+    /// cluster database properties,            maintenance and backup properties, and security
+    /// and access properties. This operation supports pagination.             For more information
+    /// about managing clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+    /// Redshift Clusters</a> in the <i>Amazon Redshift Management Guide</i>.
     /// </summary>
     public partial class DescribeClustersRequest : AmazonRedshiftRequest
     {
-        private string clusterIdentifier;
-        private int? maxRecords;
-        private string marker;
+        private string _clusterIdentifier;
+        private string _marker;
+        private int? _maxRecords;
 
 
         /// <summary>
-        /// The unique identifier of a cluster whose properties you are requesting. This parameter is case sensitive. The default is that all clusters
-        /// defined for an account are returned.
-        ///  
+        /// Gets and sets the property ClusterIdentifier. 
+        /// <para>
+        ///             The unique identifier of a cluster whose properties you are requesting.
+        ///            This parameter is case sensitive.        
+        /// </para>
+        ///                 
+        /// <para>
+        /// The default is that all clusters defined for an account are returned.        
+        /// </para>
         /// </summary>
         public string ClusterIdentifier
         {
-            get { return this.clusterIdentifier; }
-            set { this.clusterIdentifier = value; }
+            get { return this._clusterIdentifier; }
+            set { this._clusterIdentifier = value; }
         }
 
         // Check to see if ClusterIdentifier property is set
         internal bool IsSetClusterIdentifier()
         {
-            return this.clusterIdentifier != null;
+            return this._clusterIdentifier != null;
         }
+
 
         /// <summary>
-        /// The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified
-        /// <c>MaxRecords</c> value, a value is returned in a <c>marker</c> field of the response. You can retrieve the next set of records by retrying
-        /// the command with the returned marker value. Default: <c>100</c> Constraints: minimum 20, maximum 100.
-        ///  
-        /// </summary>
-        public int MaxRecords
-        {
-            get { return this.maxRecords ?? default(int); }
-            set { this.maxRecords = value; }
-        }
-
-        // Check to see if MaxRecords property is set
-        internal bool IsSetMaxRecords()
-        {
-            return this.maxRecords.HasValue;
-        }
-
-        /// <summary>
-        /// An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeClusters</a>
-        /// request exceed the value specified in <c>MaxRecords</c>, AWS returns a value in the <c>Marker</c> field of the response. You can retrieve
-        /// the next set of response records by providing the returned marker value in the <c>Marker</c> parameter and retrying the request.
-        /// Constraints: You can specify either the <b>ClusterIdentifier</b> parameter or the <b>Marker</b> parameter, but not both.
-        ///  
+        /// Gets and sets the property Marker. 
+        /// <para>
+        ///             An optional parameter that specifies the starting point to return a set
+        /// of response records.             When the results of a <a>DescribeClusters</a> request
+        /// exceed the value specified in <code>MaxRecords</code>,             AWS returns a value
+        /// in the <code>Marker</code> field of the response. You can retrieve the next set of
+        ///             response records by providing the returned marker value in the <code>Marker</code>
+        /// parameter and             retrying the request.        
+        /// </para>
+        ///         
+        /// <para>
+        ///             Constraints: You can specify either the <b>ClusterIdentifier</b> parameter
+        /// or the <b>Marker</b> parameter, but not both.        
+        /// </para>
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property MaxRecords. 
+        /// <para>
+        ///             The maximum number of response records to return in each call.       
+        ///      If the number of remaining response records exceeds the specified <code>MaxRecords</code>
+        /// value,             a value is returned in a <code>marker</code> field of the response.
+        ///             You can retrieve the next set of records by retrying the command with
+        /// the returned marker value.        
+        /// </para>
+        ///         
+        /// <para>
+        /// Default: <code>100</code>
+        /// </para>
+        ///         
+        /// <para>
+        /// Constraints: minimum 20, maximum 100.
+        /// </para>
+        /// </summary>
+        public int MaxRecords
+        {
+            get { return this._maxRecords.GetValueOrDefault(); }
+            set { this._maxRecords = value; }
+        }
+
+        // Check to see if MaxRecords property is set
+        internal bool IsSetMaxRecords()
+        {
+            return this._maxRecords.HasValue; 
         }
 
     }
 }
-    

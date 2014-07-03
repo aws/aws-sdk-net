@@ -29,77 +29,69 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Modify Instance Groups Request Marshaller
+    /// ModifyInstanceGroups Request Marshaller
     /// </summary>       
-    internal class ModifyInstanceGroupsRequestMarshaller : IMarshaller<IRequest, ModifyInstanceGroupsRequest> 
+    public class ModifyInstanceGroupsRequestMarshaller : IMarshaller<IRequest, ModifyInstanceGroupsRequest> 
     {
-        
-
-        public IRequest Marshall(ModifyInstanceGroupsRequest modifyInstanceGroupsRequest) 
+        public IRequest Marshall(ModifyInstanceGroupsRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(modifyInstanceGroupsRequest, "AmazonElasticMapReduce");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticMapReduce");
             string target = "ElasticMapReduce.ModifyInstanceGroups";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-
-                if (modifyInstanceGroupsRequest != null && modifyInstanceGroupsRequest.InstanceGroups != null && modifyInstanceGroupsRequest.InstanceGroups.Count > 0)
+                if(publicRequest.IsSetInstanceGroups())
                 {
-                    List<InstanceGroupModifyConfig> instanceGroupsList = modifyInstanceGroupsRequest.InstanceGroups;
                     writer.WritePropertyName("InstanceGroups");
                     writer.WriteArrayStart();
-
-                    foreach (InstanceGroupModifyConfig instanceGroupsListValue in instanceGroupsList) 
+                    foreach(var publicRequestInstanceGroupsListValue in publicRequest.InstanceGroups)
                     {
                         writer.WriteObjectStart();
-                        if (instanceGroupsListValue != null && instanceGroupsListValue.IsSetInstanceGroupId()) 
+                        if(publicRequestInstanceGroupsListValue.IsSetEC2InstanceIdsToTerminate())
                         {
-                            writer.WritePropertyName("InstanceGroupId");
-                            writer.Write(instanceGroupsListValue.InstanceGroupId);
-                        }
-                        if (instanceGroupsListValue != null && instanceGroupsListValue.IsSetInstanceCount()) 
-                        {
-                            writer.WritePropertyName("InstanceCount");
-                            writer.Write(instanceGroupsListValue.InstanceCount);
-                        }
-
-                        if (instanceGroupsListValue != null && instanceGroupsListValue.EC2InstanceIdsToTerminate != null && instanceGroupsListValue.EC2InstanceIdsToTerminate.Count > 0) 
-                        {
-                            List<string> eC2InstanceIdsToTerminateList = instanceGroupsListValue.EC2InstanceIdsToTerminate;
                             writer.WritePropertyName("EC2InstanceIdsToTerminate");
                             writer.WriteArrayStart();
-
-                            foreach (string eC2InstanceIdsToTerminateListValue in eC2InstanceIdsToTerminateList) 
-                            { 
-                                writer.Write(StringUtils.FromString(eC2InstanceIdsToTerminateListValue));
+                            foreach(var publicRequestInstanceGroupsListValueEC2InstanceIdsToTerminateListValue in publicRequestInstanceGroupsListValue.EC2InstanceIdsToTerminate)
+                            {
+                                writer.Write(publicRequestInstanceGroupsListValueEC2InstanceIdsToTerminateListValue);
                             }
-
                             writer.WriteArrayEnd();
                         }
+
+                        if(publicRequestInstanceGroupsListValue.IsSetInstanceCount())
+                        {
+                            writer.WritePropertyName("InstanceCount");
+                            writer.Write(publicRequestInstanceGroupsListValue.InstanceCount);
+                        }
+
+                        if(publicRequestInstanceGroupsListValue.IsSetInstanceGroupId())
+                        {
+                            writer.WritePropertyName("InstanceGroupId");
+                            writer.Write(publicRequestInstanceGroupsListValue.InstanceGroupId);
+                        }
+
                         writer.WriteObjectEnd();
                     }
                     writer.WriteArrayEnd();
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

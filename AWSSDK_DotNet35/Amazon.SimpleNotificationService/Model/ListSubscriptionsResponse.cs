@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// Returns information about the  ListSubscriptions response and response metadata.
+    /// Configuration for accessing Amazon ListSubscriptions service
     /// </summary>
-    public class ListSubscriptionsResponse : ListSubscriptionsResult
+    public partial class ListSubscriptionsResponse : ListSubscriptionsResult
     {
         /// <summary>
         /// Gets and sets the ListSubscriptionsResult property.
-        /// 
+        /// Represents the output of a ListSubscriptions operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ListSubscriptionsResult class are now available on the ListSubscriptionsResponse class. You should use the properties on ListSubscriptionsResponse instead of accessing them through ListSubscriptionsResult.")]
         public ListSubscriptionsResult ListSubscriptionsResult
@@ -40,4 +36,3 @@ namespace Amazon.SimpleNotificationService.Model
         }
     }
 }
-    

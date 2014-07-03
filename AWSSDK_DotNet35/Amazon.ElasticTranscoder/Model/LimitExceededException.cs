@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.ElasticTranscoder.Model
 {
     ///<summary>
-    /// AmazonElasticTranscoder exception
+    /// ElasticTranscoder exception
     /// </summary>
     public class LimitExceededException : AmazonElasticTranscoderException 
     {
@@ -45,6 +45,5 @@ namespace Amazon.ElasticTranscoder.Model
         public LimitExceededException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
-        
     }
 }

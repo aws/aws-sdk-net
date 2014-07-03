@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,51 +17,57 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para>This output contains the list of steps.</para>
+    /// This output contains the list of steps.
     /// </summary>
     public partial class ListStepsResult : AmazonWebServiceResponse
     {
-        
-        private List<StepSummary> steps = new List<StepSummary>();
-        private string marker;
+        private string _marker;
+        private List<StepSummary> _steps = new List<StepSummary>();
 
 
         /// <summary>
-        /// The filtered list of steps for the cluster.
-        ///  
-        /// </summary>
-        public List<StepSummary> Steps
-        {
-            get { return this.steps; }
-            set { this.steps = value; }
-        }
-
-        // Check to see if Steps property is set
-        internal bool IsSetSteps()
-        {
-            return this.steps.Count > 0;
-        }
-
-        /// <summary>
-        /// The pagination token is a random string indicating whether there are more results to fetch. Use the pagination token in later API calls to
-        /// retrieve the next page of results. When the value is null, all results have been returned.
-        ///  
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// The pagination token that indicates the next set of results to retrieve.
+        /// </para>
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Steps. 
+        /// <para>
+        /// The filtered list of steps for the cluster.
+        /// </para>
+        /// </summary>
+        public List<StepSummary> Steps
+        {
+            get { return this._steps; }
+            set { this._steps = value; }
+        }
+
+        // Check to see if Steps property is set
+        internal bool IsSetSteps()
+        {
+            return this._steps != null && this._steps.Count > 0; 
+        }
+
     }
 }

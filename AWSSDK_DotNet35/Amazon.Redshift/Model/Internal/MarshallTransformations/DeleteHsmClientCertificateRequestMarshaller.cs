@@ -14,32 +14,36 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Hsm Client Certificate Request Marshaller
+    /// DeleteHsmClientCertificate Request Marshaller
     /// </summary>       
     public class DeleteHsmClientCertificateRequestMarshaller : IMarshaller<IRequest, DeleteHsmClientCertificateRequest>
     {
-        public IRequest Marshall(DeleteHsmClientCertificateRequest deleteHsmClientCertificateRequest)
+        public IRequest Marshall(DeleteHsmClientCertificateRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(deleteHsmClientCertificateRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "DeleteHsmClientCertificate");
             request.Parameters.Add("Version", "2012-12-01");
-            if (deleteHsmClientCertificateRequest != null && deleteHsmClientCertificateRequest.IsSetHsmClientCertificateIdentifier())
-            {
-                request.Parameters.Add("HsmClientCertificateIdentifier", StringUtils.FromString(deleteHsmClientCertificateRequest.HsmClientCertificateIdentifier));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetHsmClientCertificateIdentifier())
+                {
+                    request.Parameters.Add("HsmClientCertificateIdentifier", StringUtils.FromString(publicRequest.HsmClientCertificateIdentifier));
+                }
+            }
             return request;
         }
     }

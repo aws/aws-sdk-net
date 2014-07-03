@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the ListSAMLProviders action.</para>
+    /// Contains the result of a successful invocation of the <a>ListSAMLProviders</a> action.
     /// </summary>
     public partial class ListSAMLProvidersResult : AmazonWebServiceResponse
     {
-        
-        private List<SAMLProviderListEntry> sAMLProviderList = new List<SAMLProviderListEntry>();
+        private List<SAMLProviderListEntry> _sAMLProviderList = new List<SAMLProviderListEntry>();
 
 
         /// <summary>
+        /// Gets and sets the property SAMLProviderList. 
+        /// <para>
         /// The list of SAML providers for this account.
-        ///  
+        /// </para>
         /// </summary>
         public List<SAMLProviderListEntry> SAMLProviderList
         {
-            get { return this.sAMLProviderList; }
-            set { this.sAMLProviderList = value; }
+            get { return this._sAMLProviderList; }
+            set { this._sAMLProviderList = value; }
         }
 
         // Check to see if SAMLProviderList property is set
         internal bool IsSetSAMLProviderList()
         {
-            return this.sAMLProviderList.Count > 0;
+            return this._sAMLProviderList != null && this._sAMLProviderList.Count > 0; 
         }
+
     }
 }

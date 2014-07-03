@@ -12,24 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the AuthorizeSnapshotAccess response and response metadata.
+    /// Configuration for accessing Amazon AuthorizeSnapshotAccess service
     /// </summary>
     public partial class AuthorizeSnapshotAccessResponse : AuthorizeSnapshotAccessResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the AuthorizeSnapshotAccessResult property.
-        /// Contains the result of a successful invocation of the AuthorizeSnapshotAccess
-        /// action.
-        /// 
+        /// Represents the output of a AuthorizeSnapshotAccess operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the AuthorizeSnapshotAccessResult class are now available on the AuthorizeSnapshotAccessResponse class. You should use the properties on AuthorizeSnapshotAccessResponse instead of accessing them through AuthorizeSnapshotAccessResult.")]
         public AuthorizeSnapshotAccessResult AuthorizeSnapshotAccessResult
         {
@@ -40,4 +36,3 @@ namespace Amazon.Redshift.Model
         }
     }
 }
-    

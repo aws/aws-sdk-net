@@ -12,69 +12,75 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Endpoint Unmarshaller
-     /// </summary>
-    internal class EndpointUnmarshaller : IUnmarshaller<Endpoint, XmlUnmarshallerContext>, IUnmarshaller<Endpoint, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Endpoint Object
+    /// </summary>  
+    public class EndpointUnmarshaller : IUnmarshaller<Endpoint, XmlUnmarshallerContext>, IUnmarshaller<Endpoint, JsonUnmarshallerContext>
     {
-        public Endpoint Unmarshall(XmlUnmarshallerContext context) 
+        public Endpoint Unmarshall(XmlUnmarshallerContext context)
         {
-            Endpoint endpoint = new Endpoint();
+            Endpoint unmarshalledObject = new Endpoint();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("Address", targetDepth))
                     {
-                        endpoint.Address = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Address = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Port", targetDepth))
                     {
-                        endpoint.Port = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.Port = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return endpoint;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return endpoint;
+            return unmarshalledObject;
         }
 
-        public Endpoint Unmarshall(JsonUnmarshallerContext context) 
+        public Endpoint Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static EndpointUnmarshaller instance;
 
-        public static EndpointUnmarshaller GetInstance() 
+        private static EndpointUnmarshaller _instance = new EndpointUnmarshaller();        
+
+        public static EndpointUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new EndpointUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

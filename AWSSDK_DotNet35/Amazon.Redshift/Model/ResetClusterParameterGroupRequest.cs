@@ -25,66 +25,85 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the ResetClusterParameterGroup operation.
-    /// <para> Sets one or more parameters of the specified parameter group to their default values and sets the source values of the parameters to
-    /// "engine-default". To reset the entire parameter group specify the <i>ResetAllParameters</i> parameter. For parameter changes to take effect
-    /// you must reboot any associated clusters. </para>
+    /// Sets one or more parameters of the specified parameter group to their
+    /// default values and sets the             source values of the parameters to "engine-default".
+    ///             To reset the entire parameter group specify the <i>ResetAllParameters</i>
+    /// parameter.             For parameter changes to take effect you must reboot any associated
+    /// clusters.
     /// </summary>
     public partial class ResetClusterParameterGroupRequest : AmazonRedshiftRequest
     {
-        private string parameterGroupName;
-        private bool? resetAllParameters;
-        private List<Parameter> parameters = new List<Parameter>();
+        private string _parameterGroupName;
+        private List<Parameter> _parameters = new List<Parameter>();
+        private bool? _resetAllParameters;
 
 
         /// <summary>
-        /// The name of the cluster parameter group to be reset.
-        ///  
+        /// Gets and sets the property ParameterGroupName. 
+        /// <para>
+        ///         The name of the cluster parameter group to be reset.        
+        /// </para>
         /// </summary>
         public string ParameterGroupName
         {
-            get { return this.parameterGroupName; }
-            set { this.parameterGroupName = value; }
+            get { return this._parameterGroupName; }
+            set { this._parameterGroupName = value; }
         }
 
         // Check to see if ParameterGroupName property is set
         internal bool IsSetParameterGroupName()
         {
-            return this.parameterGroupName != null;
+            return this._parameterGroupName != null;
         }
+
 
         /// <summary>
-        /// If <c>true</c>, all parameters in the specified parameter group will be reset to their default values. Default: <c>true</c>
-        ///  
-        /// </summary>
-        public bool ResetAllParameters
-        {
-            get { return this.resetAllParameters ?? default(bool); }
-            set { this.resetAllParameters = value; }
-        }
-
-        // Check to see if ResetAllParameters property is set
-        internal bool IsSetResetAllParameters()
-        {
-            return this.resetAllParameters.HasValue;
-        }
-
-        /// <summary>
-        /// An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is not used, then at least one parameter name must be
-        /// supplied. Constraints: A maximum of 20 parameters can be reset in a single request.
-        ///  
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        ///         An array of names of parameters to be reset. If <i>ResetAllParameters</i>
+        /// option is not used,         then at least one parameter name must be supplied.   
+        ///             
+        /// </para>
+        ///         
+        /// <para>
+        /// Constraints: A maximum of 20 parameters can be reset in a single request.
+        /// </para>
         /// </summary>
         public List<Parameter> Parameters
         {
-            get { return this.parameters; }
-            set { this.parameters = value; }
+            get { return this._parameters; }
+            set { this._parameters = value; }
         }
 
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this.parameters.Count > 0;
+            return this._parameters != null && this._parameters.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ResetAllParameters. 
+        /// <para>
+        ///             If <code>true</code>, all parameters        in the specified parameter
+        /// group will be reset to their default values.        
+        /// </para>
+        ///         
+        /// <para>
+        /// Default: <code>true</code>
+        /// </para>
+        /// </summary>
+        public bool ResetAllParameters
+        {
+            get { return this._resetAllParameters.GetValueOrDefault(); }
+            set { this._resetAllParameters = value; }
+        }
+
+        // Check to see if ResetAllParameters property is set
+        internal bool IsSetResetAllParameters()
+        {
+            return this._resetAllParameters.HasValue; 
         }
 
     }
 }
-    

@@ -12,24 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the CreateClusterParameterGroup response and response metadata.
+    /// Configuration for accessing Amazon CreateClusterParameterGroup service
     /// </summary>
     public partial class CreateClusterParameterGroupResponse : CreateClusterParameterGroupResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the CreateClusterParameterGroupResult property.
-        /// Contains the result of a successful invocation of the CreateClusterParameterGroup
-        /// action.
-        /// 
+        /// Represents the output of a CreateClusterParameterGroup operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateClusterParameterGroupResult class are now available on the CreateClusterParameterGroupResponse class. You should use the properties on CreateClusterParameterGroupResponse instead of accessing them through CreateClusterParameterGroupResult.")]
         public CreateClusterParameterGroupResult CreateClusterParameterGroupResult
         {
@@ -40,4 +36,3 @@ namespace Amazon.Redshift.Model
         }
     }
 }
-    

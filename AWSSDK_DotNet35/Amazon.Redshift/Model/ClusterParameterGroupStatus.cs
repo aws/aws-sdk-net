@@ -18,48 +18,56 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// <para> Describes the status of a parameter group. </para>
+    /// Describes the status of a parameter group.
     /// </summary>
     public partial class ClusterParameterGroupStatus
     {
-        
-        private string parameterGroupName;
-        private string parameterApplyStatus;
+        private string _parameterApplyStatus;
+        private string _parameterGroupName;
 
 
         /// <summary>
-        /// The name of the cluster parameter group.
-        ///  
-        /// </summary>
-        public string ParameterGroupName
-        {
-            get { return this.parameterGroupName; }
-            set { this.parameterGroupName = value; }
-        }
-
-        // Check to see if ParameterGroupName property is set
-        internal bool IsSetParameterGroupName()
-        {
-            return this.parameterGroupName != null;
-        }
-
-        /// <summary>
-        /// The status of parameter updates.
-        ///  
+        /// Gets and sets the property ParameterApplyStatus. 
+        /// <para>
+        ///         The status of parameter updates.        
+        /// </para>
         /// </summary>
         public string ParameterApplyStatus
         {
-            get { return this.parameterApplyStatus; }
-            set { this.parameterApplyStatus = value; }
+            get { return this._parameterApplyStatus; }
+            set { this._parameterApplyStatus = value; }
         }
 
         // Check to see if ParameterApplyStatus property is set
         internal bool IsSetParameterApplyStatus()
         {
-            return this.parameterApplyStatus != null;
+            return this._parameterApplyStatus != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property ParameterGroupName. 
+        /// <para>
+        ///         The name of the cluster parameter group.        
+        /// </para>
+        /// </summary>
+        public string ParameterGroupName
+        {
+            get { return this._parameterGroupName; }
+            set { this._parameterGroupName = value; }
+        }
+
+        // Check to see if ParameterGroupName property is set
+        internal bool IsSetParameterGroupName()
+        {
+            return this._parameterGroupName != null;
+        }
+
     }
 }

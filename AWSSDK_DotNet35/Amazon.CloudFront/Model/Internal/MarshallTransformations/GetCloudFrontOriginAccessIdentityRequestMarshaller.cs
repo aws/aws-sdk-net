@@ -17,42 +17,36 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Text;
-using System.Xml;
 using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
-
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using System.Xml;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Get Cloud Front Origin Access Identity Request Marshaller
+    /// GetCloudFrontOriginAccessIdentity Request Marshaller
     /// </summary>       
-    public class GetCloudFrontOriginAccessIdentityRequestMarshaller : IMarshaller<IRequest, GetCloudFrontOriginAccessIdentityRequest>
+    public class GetCloudFrontOriginAccessIdentityRequestMarshaller : IMarshaller<IRequest, GetCloudFrontOriginAccessIdentityRequest> 
     {
-        
-    
-        public IRequest Marshall(GetCloudFrontOriginAccessIdentityRequest getCloudFrontOriginAccessIdentityRequest)
+        public IRequest Marshall(GetCloudFrontOriginAccessIdentityRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(getCloudFrontOriginAccessIdentityRequest, "AmazonCloudFront");
-
-
-
+            var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "GET";
-            string uriResourcePath = "2014-01-31/origin-access-identity/cloudfront/{Id}"; 
-            uriResourcePath = uriResourcePath.Replace("{Id}", getCloudFrontOriginAccessIdentityRequest.IsSetId() ? getCloudFrontOriginAccessIdentityRequest.Id.ToString() : "" ); 
+            var uriResourcePath = "/2014-05-31/origin-access-identity/cloudfront/{Id}";
+
+            uriResourcePath = uriResourcePath.Replace("{Id}", publicRequest.IsSetId() ? StringUtils.FromString(publicRequest.Id) : string.Empty);
             request.ResourcePath = uriResourcePath;
-            
-        
+
+
             request.UseQueryString = true;
-            
-            
             return request;
         }
-    }
+
+        
+    }    
 }
-    

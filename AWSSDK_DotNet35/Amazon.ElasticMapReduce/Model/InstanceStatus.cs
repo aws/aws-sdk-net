@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,74 +18,76 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para>The instance status details.</para>
+    /// The instance status details.
     /// </summary>
-    public class InstanceStatus
+    public partial class InstanceStatus
     {
-        
-        private InstanceState state;
-        private InstanceStateChangeReason stateChangeReason;
-        private InstanceTimeline timeline;
+        private InstanceState _state;
+        private InstanceStateChangeReason _stateChangeReason;
+        private InstanceTimeline _timeline;
 
 
         /// <summary>
-        /// The current state of the instance.
-        ///  
+        /// Gets and sets the property State. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>AWAITING_FULFILLMENT, PROVISIONING, BOOTSTRAPPING, RUNNING, TERMINATED</description>
-        ///     </item>
-        /// </list>
+        /// The current state of the instance.
         /// </para>
         /// </summary>
         public InstanceState State
         {
-            get { return this.state; }
-            set { this.state = value; }
+            get { return this._state; }
+            set { this._state = value; }
         }
 
         // Check to see if State property is set
         internal bool IsSetState()
         {
-            return this.state != null;
+            return this._state != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property StateChangeReason. 
+        /// <para>
         /// The details of the status change reason for the instance.
-        ///  
+        /// </para>
         /// </summary>
         public InstanceStateChangeReason StateChangeReason
         {
-            get { return this.stateChangeReason; }
-            set { this.stateChangeReason = value; }
+            get { return this._stateChangeReason; }
+            set { this._stateChangeReason = value; }
         }
 
         // Check to see if StateChangeReason property is set
         internal bool IsSetStateChangeReason()
         {
-            return this.stateChangeReason != null;
+            return this._stateChangeReason != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property Timeline. 
+        /// <para>
         /// The timeline of the instance status over time.
-        ///  
+        /// </para>
         /// </summary>
         public InstanceTimeline Timeline
         {
-            get { return this.timeline; }
-            set { this.timeline = value; }
+            get { return this._timeline; }
+            set { this._timeline = value; }
         }
 
         // Check to see if Timeline property is set
         internal bool IsSetTimeline()
         {
-            return this.timeline != null;
+            return this._timeline != null;
         }
+
     }
 }

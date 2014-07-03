@@ -12,128 +12,136 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.ElasticMapReduce.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+using Amazon.ElasticMapReduce.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for Cluster Object
+    /// </summary>  
+    public class ClusterUnmarshaller : IUnmarshaller<Cluster, XmlUnmarshallerContext>, IUnmarshaller<Cluster, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// ClusterUnmarshaller
-      /// </summary>
-      internal class ClusterUnmarshaller : IUnmarshaller<Cluster, XmlUnmarshallerContext>, IUnmarshaller<Cluster, JsonUnmarshallerContext>
-      {
         Cluster IUnmarshaller<Cluster, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Cluster Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            Cluster cluster = new Cluster();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            Cluster unmarshalledObject = new Cluster();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("Id", targetDepth))
-              {
-                cluster.Id = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Name", targetDepth))
-              {
-                cluster.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Status", targetDepth))
-              {
-                cluster.Status = ClusterStatusUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Ec2InstanceAttributes", targetDepth))
-              {
-                cluster.Ec2InstanceAttributes = Ec2InstanceAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("LogUri", targetDepth))
-              {
-                cluster.LogUri = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("RequestedAmiVersion", targetDepth))
-              {
-                cluster.RequestedAmiVersion = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("RunningAmiVersion", targetDepth))
-              {
-                cluster.RunningAmiVersion = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("AutoTerminate", targetDepth))
-              {
-                cluster.AutoTerminate = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("TerminationProtected", targetDepth))
-              {
-                cluster.TerminationProtected = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("VisibleToAllUsers", targetDepth))
-              {
-                cluster.VisibleToAllUsers = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Applications", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<Application,ApplicationUnmarshaller>(
-                    ApplicationUnmarshaller.GetInstance());                  
-                cluster.Applications = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
-              if (context.TestExpression("Tags", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<Tag,TagUnmarshaller>(
-                    TagUnmarshaller.GetInstance());                  
-                cluster.Tags = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
+                if (context.TestExpression("Applications", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Application, ApplicationUnmarshaller>(ApplicationUnmarshaller.Instance);
+                    unmarshalledObject.Applications = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AutoTerminate", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AutoTerminate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Ec2InstanceAttributes", targetDepth))
+                {
+                    var unmarshaller = Ec2InstanceAttributesUnmarshaller.Instance;
+                    unmarshalledObject.Ec2InstanceAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Id", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LogUri", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LogUri = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RequestedAmiVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RequestedAmiVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RunningAmiVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RunningAmiVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ServiceRole", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ServiceRole = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Status", targetDepth))
+                {
+                    var unmarshaller = ClusterStatusUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Tags", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TerminationProtected", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.TerminationProtected = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VisibleToAllUsers", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.VisibleToAllUsers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return cluster;
+            return unmarshalledObject;
         }
 
-        private static ClusterUnmarshaller instance;
-        public static ClusterUnmarshaller GetInstance()
+
+        private static ClusterUnmarshaller _instance = new ClusterUnmarshaller();        
+
+        public static ClusterUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new ClusterUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

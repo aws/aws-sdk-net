@@ -18,10 +18,9 @@ using Amazon.Runtime;
 namespace Amazon.Redshift
 {
     /// <summary>
-    /// Base class for AmazonRedshift operation requests.
+    /// Base class for Redshift operation requests.
     /// </summary>
     public partial class AmazonRedshiftRequest : AmazonWebServiceRequest
     {
     }
 }
-    

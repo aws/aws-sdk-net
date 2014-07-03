@@ -18,60 +18,67 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> Summary of an invalidation request. </para>
+    /// Summary of an invalidation request.
     /// </summary>
     public partial class InvalidationSummary
     {
-        
-        private string id;
-        private DateTime? createTime;
-        private string status;
+        private DateTime? _createTime;
+        private string _id;
+        private string _status;
 
 
         /// <summary>
-        /// The unique ID for an invalidation request.
-        ///  
+        /// Gets and sets the property CreateTime.
         /// </summary>
-        public string Id
-        {
-            get { return this.id; }
-            set { this.id = value; }
-        }
-
-        // Check to see if Id property is set
-        internal bool IsSetId()
-        {
-            return this.id != null;
-        }
         public DateTime CreateTime
         {
-            get { return this.createTime ?? default(DateTime); }
-            set { this.createTime = value; }
+            get { return this._createTime.GetValueOrDefault(); }
+            set { this._createTime = value; }
         }
 
         // Check to see if CreateTime property is set
         internal bool IsSetCreateTime()
         {
-            return this.createTime.HasValue;
+            return this._createTime.HasValue; 
         }
 
+
         /// <summary>
-        /// The status of an invalidation request.
-        ///  
+        /// Gets and sets the property Id. The unique ID for an invalidation request.
+        /// </summary>
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Status. The status of an invalidation request.
         /// </summary>
         public string Status
         {
-            get { return this.status; }
-            set { this.status = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;
+            return this._status != null;
         }
+
     }
 }

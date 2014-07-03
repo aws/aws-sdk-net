@@ -195,7 +195,7 @@ namespace Amazon.DynamoDBv2.DataModel
             TypedResults = new List<T>();
             foreach (var doc in items)
             {
-                var item = Context.FromDocument<T>(doc);
+                var item = Context.FromDocumentHelper<T>(doc, Config);
                 TypedResults.Add(item);
                 UntypedResults.Add(item);
             }

@@ -12,24 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the AuthorizeClusterSecurityGroupIngress response and response metadata.
+    /// Configuration for accessing Amazon AuthorizeClusterSecurityGroupIngress service
     /// </summary>
     public partial class AuthorizeClusterSecurityGroupIngressResponse : AuthorizeClusterSecurityGroupIngressResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the AuthorizeClusterSecurityGroupIngressResult property.
-        /// Contains the result of a successful invocation of the AuthorizeClusterSecurityGroupIngress
-        /// action.
-        /// 
+        /// Represents the output of a AuthorizeClusterSecurityGroupIngress operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the AuthorizeClusterSecurityGroupIngressResult class are now available on the AuthorizeClusterSecurityGroupIngressResponse class. You should use the properties on AuthorizeClusterSecurityGroupIngressResponse instead of accessing them through AuthorizeClusterSecurityGroupIngressResult.")]
         public AuthorizeClusterSecurityGroupIngressResult AuthorizeClusterSecurityGroupIngressResult
         {
@@ -40,4 +36,3 @@ namespace Amazon.Redshift.Model
         }
     }
 }
-    

@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.SimpleNotificationService.Model
 {
     ///<summary>
-    /// AmazonSimpleNotificationService exception
+    /// SimpleNotificationService exception
     /// </summary>
     public class SubscriptionLimitExceededException : AmazonSimpleNotificationServiceException 
     {
@@ -45,6 +45,5 @@ namespace Amazon.SimpleNotificationService.Model
         public SubscriptionLimitExceededException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
-        
     }
 }

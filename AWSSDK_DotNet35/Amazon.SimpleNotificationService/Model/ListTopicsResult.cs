@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,50 +17,58 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// <para>Response for ListTopics action.</para>
+    /// Response for ListTopics action.
     /// </summary>
     public partial class ListTopicsResult : AmazonWebServiceResponse
     {
-        
-        private List<Topic> topics = new List<Topic>();
-        private string nextToken;
+        private string _nextToken;
+        private List<Topic> _topics = new List<Topic>();
 
 
         /// <summary>
-        /// A list of topic ARNs.
-        ///  
-        /// </summary>
-        public List<Topic> Topics
-        {
-            get { return this.topics; }
-            set { this.topics = value; }
-        }
-
-        // Check to see if Topics property is set
-        internal bool IsSetTopics()
-        {
-            return this.topics.Count > 0;
-        }
-
-        /// <summary>
-        /// Token to pass along to the next <c>ListTopics</c> request. This element is returned if there are additional topics to retrieve.
-        ///  
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// Token to pass along to the next <code>ListTopics</code> request. This element is returned
+        /// if there are additional topics to retrieve.
+        /// </para>
         /// </summary>
         public string NextToken
         {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;
+            return this._nextToken != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Topics. 
+        /// <para>
+        /// A list of topic ARNs.
+        /// </para>
+        /// </summary>
+        public List<Topic> Topics
+        {
+            get { return this._topics; }
+            set { this._topics = value; }
+        }
+
+        // Check to see if Topics property is set
+        internal bool IsSetTopics()
+        {
+            return this._topics != null && this._topics.Count > 0; 
+        }
+
     }
 }

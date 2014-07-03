@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,32 +14,36 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SimpleNotificationService.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// List Platform Applications Request Marshaller
+    /// ListPlatformApplications Request Marshaller
     /// </summary>       
     public class ListPlatformApplicationsRequestMarshaller : IMarshaller<IRequest, ListPlatformApplicationsRequest>
     {
-        public IRequest Marshall(ListPlatformApplicationsRequest listPlatformApplicationsRequest)
+        public IRequest Marshall(ListPlatformApplicationsRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(listPlatformApplicationsRequest, "AmazonSimpleNotificationService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleNotificationService");
             request.Parameters.Add("Action", "ListPlatformApplications");
             request.Parameters.Add("Version", "2010-03-31");
-            if (listPlatformApplicationsRequest != null && listPlatformApplicationsRequest.IsSetNextToken())
-            {
-                request.Parameters.Add("NextToken", StringUtils.FromString(listPlatformApplicationsRequest.NextToken));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetNextToken())
+                {
+                    request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+                }
+            }
             return request;
         }
     }

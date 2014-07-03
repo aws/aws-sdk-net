@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,876 +12,1029 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+
 using System;
 
-using Amazon.SimpleEmail;
 using Amazon.SimpleEmail.Model;
 
 namespace Amazon.SimpleEmail
 {
     /// <summary>
-    /// Interface for accessing AmazonSimpleEmailService.
-    ///  
-    ///  Amazon Simple Email Service <para> This is the API Reference for Amazon Simple Email Service (Amazon SES). This documentation is intended to
-    /// be used in conjunction with the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html" >Amazon SES Developer Guide</a>
-    /// .
-    /// </para> <para><b>NOTE:</b>For a list of Amazon SES endpoints to use in service requests, see Regions and Amazon SES in the Amazon
-    /// SES Developer Guide. </para>
+    /// Implementation for accessing SimpleEmailService
+    ///
+    /// Amazon Simple Email Service        
+    /// <para>
+    ///             This is the API Reference for Amazon Simple Email Service (Amazon SES).
+    /// This documentation is intended to be            used in conjunction with the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+    /// SES Developer Guide</a>.        
+    /// </para>
+    ///         <note>For a list of Amazon SES endpoints to use in service requests, see <a
+    /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions and
+    /// Amazon SES</a>             in the Amazon SES Developer Guide.         </note>
     /// </summary>
     public partial interface IAmazonSimpleEmailService : IDisposable
     {
 
+        
+        #region  DeleteIdentity
 
-        #region DeleteIdentity
 
         /// <summary>
-        /// <para>Deletes the specified identity (email address or domain) from the list of verified identities.</para> <para>This action is throttled
-        /// at one request per second.</para>
+        /// Deletes the specified identity (email address or domain) from the list of verified
+        /// identities.
+        /// 
+        ///         
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIdentity service method.</param>
         /// 
-        /// <param name="deleteIdentityRequest">Container for the necessary parameters to execute the DeleteIdentity service method on
-        ///          AmazonSimpleEmailService.</param>
-        /// 
-        /// <returns>The response from the DeleteIdentity service method, as returned by AmazonSimpleEmailService.</returns>
-        /// 
-        DeleteIdentityResponse DeleteIdentity(DeleteIdentityRequest deleteIdentityRequest);
+        /// <returns>The response from the DeleteIdentity service method, as returned by SimpleEmailService.</returns>
+        DeleteIdentityResponse DeleteIdentity(DeleteIdentityRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteIdentity operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.DeleteIdentity"/>
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
-        /// <param name="deleteIdentityRequest">Container for the necessary parameters to execute the DeleteIdentity operation on
-        ///          AmazonSimpleEmailService.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIdentity operation on AmazonSimpleEmailServiceClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIdentity
         ///         operation.</returns>
-        IAsyncResult BeginDeleteIdentity(DeleteIdentityRequest deleteIdentityRequest, AsyncCallback callback, object state);
+        IAsyncResult BeginDeleteIdentity(DeleteIdentityRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DeleteIdentity operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.DeleteIdentity"/>
+        /// Finishes the asynchronous execution of the  DeleteIdentity operation.
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIdentity.</param>
         /// 
-        /// <returns>Returns a DeleteIdentityResult from AmazonSimpleEmailService.</returns>
+        /// <returns>Returns a  DeleteIdentityResult from SimpleEmailService.</returns>
         DeleteIdentityResponse EndDeleteIdentity(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
+        #region  DeleteVerifiedEmailAddress
 
-        #region DeleteVerifiedEmailAddress
 
         /// <summary>
-        /// <para>Deletes the specified email address from the list of verified addresses.</para> <para><b>IMPORTANT:</b>The DeleteVerifiedEmailAddress
-        /// action is deprecated as of the May 15, 2012 release of Domain Verification. The DeleteIdentity action is now preferred.</para> <para>This
-        /// action is throttled at one request per second.</para>
+        /// Deletes the specified email address from the list of verified addresses.
+        /// 
+        ///         <important>The DeleteVerifiedEmailAddress action is deprecated as of the May
+        /// 15, 2012 release        of Domain Verification. The DeleteIdentity action is now preferred.</important>
+        ///        
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVerifiedEmailAddress service method.</param>
         /// 
-        /// <param name="deleteVerifiedEmailAddressRequest">Container for the necessary parameters to execute the DeleteVerifiedEmailAddress service
-        ///          method on AmazonSimpleEmailService.</param>
-        /// 
-        DeleteVerifiedEmailAddressResponse DeleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest deleteVerifiedEmailAddressRequest);
+        /// <returns>The response from the DeleteVerifiedEmailAddress service method, as returned by SimpleEmailService.</returns>
+        DeleteVerifiedEmailAddressResponse DeleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteVerifiedEmailAddress operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.DeleteVerifiedEmailAddress"/>
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
-        /// <param name="deleteVerifiedEmailAddressRequest">Container for the necessary parameters to execute the DeleteVerifiedEmailAddress operation
-        ///          on AmazonSimpleEmailService.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVerifiedEmailAddress operation on AmazonSimpleEmailServiceClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginDeleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest deleteVerifiedEmailAddressRequest, AsyncCallback callback, object state);
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVerifiedEmailAddress
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DeleteVerifiedEmailAddress operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.DeleteVerifiedEmailAddress"/>
+        /// Finishes the asynchronous execution of the  DeleteVerifiedEmailAddress operation.
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVerifiedEmailAddress.</param>
+        /// 
+        /// <returns>Returns a  DeleteVerifiedEmailAddressResult from SimpleEmailService.</returns>
         DeleteVerifiedEmailAddressResponse EndDeleteVerifiedEmailAddress(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
+        #region  GetIdentityDkimAttributes
 
-        #region GetIdentityDkimAttributes
 
         /// <summary>
-        /// <para>Returns the current status of Easy DKIM signing for an entity. For domain name identities, this action also returns the DKIM tokens
-        /// that are required for Easy DKIM signing, and whether Amazon SES has successfully verified that these tokens have been published.</para>
-        /// <para>This action takes a list of identities as input and returns the following information for each:</para>
-        /// <ul>
-        /// <li>Whether Easy DKIM signing is enabled or disabled.</li>
-        /// <li>A set of DKIM tokens that represent the identity. If the identity is an email address, the tokens represent the domain of that
-        /// address.</li>
-        /// <li>Whether Amazon SES has successfully verified the DKIM tokens published in the domain's DNS. This information is only returned for
-        /// domain name identities, not for email addresses.</li>
+        /// Returns the current status of Easy DKIM signing for an entity. For domain name   
+        ///         identities, this action also returns the DKIM tokens that are required for
+        /// Easy DKIM            signing, and whether Amazon SES has successfully verified that
+        /// these tokens have been            published.
         /// 
-        /// </ul>
-        /// <para>This action is throttled at one request per second.</para> <para>For more information about creating DNS records using DKIM tokens,
-        /// go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html" >Amazon SES Developer Guide</a> .</para>
+        ///         
+        /// <para>
+        /// This action takes a list of identities as input and returns the following        
+        ///    information for each:
+        /// </para>
+        ///         <ul>            <li>Whether Easy DKIM signing is enabled or disabled.</li>
+        ///            <li>A set of DKIM tokens that represent the identity. If the identity is
+        /// an email                address, the tokens represent the domain of that address.</li>
+        ///            <li>Whether Amazon SES has successfully verified the DKIM tokens published
+        /// in the                domain's DNS.  This information is only returned for domain
+        /// name identities, not for                email addresses.</li>        </ul>       
+        /// 
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        ///         
+        /// <para>
+        /// For more information about creating DNS records using DKIM tokens, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
+        /// SES                Developer Guide</a>.
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityDkimAttributes service method.</param>
         /// 
-        /// <param name="getIdentityDkimAttributesRequest">Container for the necessary parameters to execute the GetIdentityDkimAttributes service
-        ///          method on AmazonSimpleEmailService.</param>
-        /// 
-        /// <returns>The response from the GetIdentityDkimAttributes service method, as returned by AmazonSimpleEmailService.</returns>
-        /// 
-        GetIdentityDkimAttributesResponse GetIdentityDkimAttributes(GetIdentityDkimAttributesRequest getIdentityDkimAttributesRequest);
+        /// <returns>The response from the GetIdentityDkimAttributes service method, as returned by SimpleEmailService.</returns>
+        GetIdentityDkimAttributesResponse GetIdentityDkimAttributes(GetIdentityDkimAttributesRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetIdentityDkimAttributes operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.GetIdentityDkimAttributes"/>
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
-        /// <param name="getIdentityDkimAttributesRequest">Container for the necessary parameters to execute the GetIdentityDkimAttributes operation on
-        ///          AmazonSimpleEmailService.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityDkimAttributes operation on AmazonSimpleEmailServiceClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndGetIdentityDkimAttributes operation.</returns>
-        IAsyncResult BeginGetIdentityDkimAttributes(GetIdentityDkimAttributesRequest getIdentityDkimAttributesRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIdentityDkimAttributes
+        ///         operation.</returns>
+        IAsyncResult BeginGetIdentityDkimAttributes(GetIdentityDkimAttributesRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the GetIdentityDkimAttributes operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.GetIdentityDkimAttributes"/>
+        /// Finishes the asynchronous execution of the  GetIdentityDkimAttributes operation.
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIdentityDkimAttributes.</param>
         /// 
-        /// <returns>Returns a GetIdentityDkimAttributesResult from AmazonSimpleEmailService.</returns>
+        /// <returns>Returns a  GetIdentityDkimAttributesResult from SimpleEmailService.</returns>
         GetIdentityDkimAttributesResponse EndGetIdentityDkimAttributes(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
+        #region  GetIdentityNotificationAttributes
 
-        #region GetIdentityNotificationAttributes
 
         /// <summary>
-        /// <para>Given a list of verified identities (email addresses and/or domains), returns a structure describing identity notification
-        /// attributes.</para> <para>This action is throttled at one request per second.</para> <para>For more information about feedback notification,
-        /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html" >Amazon SES Developer Guide</a>
-        /// .</para>
+        /// Given a list of verified identities (email addresses and/or domains), returns a structure
+        /// describing identity         notification attributes.
+        /// 
+        ///         
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        ///         
+        /// <para>
+        /// For more information about using notifications with Amazon SES, see the          
+        ///  <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityNotificationAttributes service method.</param>
         /// 
-        /// <param name="getIdentityNotificationAttributesRequest">Container for the necessary parameters to execute the
-        ///          GetIdentityNotificationAttributes service method on AmazonSimpleEmailService.</param>
-        /// 
-        /// <returns>The response from the GetIdentityNotificationAttributes service method, as returned by AmazonSimpleEmailService.</returns>
-        /// 
-        GetIdentityNotificationAttributesResponse GetIdentityNotificationAttributes(GetIdentityNotificationAttributesRequest getIdentityNotificationAttributesRequest);
+        /// <returns>The response from the GetIdentityNotificationAttributes service method, as returned by SimpleEmailService.</returns>
+        GetIdentityNotificationAttributesResponse GetIdentityNotificationAttributes(GetIdentityNotificationAttributesRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetIdentityNotificationAttributes operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.GetIdentityNotificationAttributes"/>
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
-        /// <param name="getIdentityNotificationAttributesRequest">Container for the necessary parameters to execute the
-        ///          GetIdentityNotificationAttributes operation on AmazonSimpleEmailService.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityNotificationAttributes operation on AmazonSimpleEmailServiceClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndGetIdentityNotificationAttributes operation.</returns>
-        IAsyncResult BeginGetIdentityNotificationAttributes(GetIdentityNotificationAttributesRequest getIdentityNotificationAttributesRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIdentityNotificationAttributes
+        ///         operation.</returns>
+        IAsyncResult BeginGetIdentityNotificationAttributes(GetIdentityNotificationAttributesRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the GetIdentityNotificationAttributes operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.GetIdentityNotificationAttributes"/>
+        /// Finishes the asynchronous execution of the  GetIdentityNotificationAttributes operation.
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIdentityNotificationAttributes.</param>
         /// 
-        /// <returns>Returns a GetIdentityNotificationAttributesResult from AmazonSimpleEmailService.</returns>
+        /// <returns>Returns a  GetIdentityNotificationAttributesResult from SimpleEmailService.</returns>
         GetIdentityNotificationAttributesResponse EndGetIdentityNotificationAttributes(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
+        #region  GetIdentityVerificationAttributes
 
-        #region GetIdentityVerificationAttributes
 
         /// <summary>
-        /// <para>Given a list of identities (email addresses and/or domains), returns the verification status and (for domain identities) the
-        /// verification token for each identity.</para> <para>This action is throttled at one request per second.</para>
+        /// Given a list of identities (email addresses and/or domains), returns the verification
+        ///        status and (for domain identities) the verification token for each identity.
+        /// 
+        ///         
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityVerificationAttributes service method.</param>
         /// 
-        /// <param name="getIdentityVerificationAttributesRequest">Container for the necessary parameters to execute the
-        ///          GetIdentityVerificationAttributes service method on AmazonSimpleEmailService.</param>
-        /// 
-        /// <returns>The response from the GetIdentityVerificationAttributes service method, as returned by AmazonSimpleEmailService.</returns>
-        /// 
-        GetIdentityVerificationAttributesResponse GetIdentityVerificationAttributes(GetIdentityVerificationAttributesRequest getIdentityVerificationAttributesRequest);
+        /// <returns>The response from the GetIdentityVerificationAttributes service method, as returned by SimpleEmailService.</returns>
+        GetIdentityVerificationAttributesResponse GetIdentityVerificationAttributes(GetIdentityVerificationAttributesRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetIdentityVerificationAttributes operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.GetIdentityVerificationAttributes"/>
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
-        /// <param name="getIdentityVerificationAttributesRequest">Container for the necessary parameters to execute the
-        ///          GetIdentityVerificationAttributes operation on AmazonSimpleEmailService.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityVerificationAttributes operation on AmazonSimpleEmailServiceClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndGetIdentityVerificationAttributes operation.</returns>
-        IAsyncResult BeginGetIdentityVerificationAttributes(GetIdentityVerificationAttributesRequest getIdentityVerificationAttributesRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIdentityVerificationAttributes
+        ///         operation.</returns>
+        IAsyncResult BeginGetIdentityVerificationAttributes(GetIdentityVerificationAttributesRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the GetIdentityVerificationAttributes operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.GetIdentityVerificationAttributes"/>
+        /// Finishes the asynchronous execution of the  GetIdentityVerificationAttributes operation.
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIdentityVerificationAttributes.</param>
         /// 
-        /// <returns>Returns a GetIdentityVerificationAttributesResult from AmazonSimpleEmailService.</returns>
+        /// <returns>Returns a  GetIdentityVerificationAttributesResult from SimpleEmailService.</returns>
         GetIdentityVerificationAttributesResponse EndGetIdentityVerificationAttributes(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
-
-        #region GetSendQuota
+        #region  GetSendQuota
 
         /// <summary>
-        /// <para>Returns the user's current sending limits.</para> <para>This action is throttled at one request per second.</para>
+        /// Returns the user's current sending limits.
+        /// 
+        ///         
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
         /// </summary>
         /// 
-        /// <param name="getSendQuotaRequest">Container for the necessary parameters to execute the GetSendQuota service method on
-        ///          AmazonSimpleEmailService.</param>
+        /// <returns>The response from the GetSendQuota service method, as returned by SimpleEmailService.</returns>
+        GetSendQuotaResponse GetSendQuota();
+
+        /// <summary>
+        /// Returns the user's current sending limits.
         /// 
-        /// <returns>The response from the GetSendQuota service method, as returned by AmazonSimpleEmailService.</returns>
+        ///         
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSendQuota service method.</param>
         /// 
-        GetSendQuotaResponse GetSendQuota(GetSendQuotaRequest getSendQuotaRequest);
+        /// <returns>The response from the GetSendQuota service method, as returned by SimpleEmailService.</returns>
+        GetSendQuotaResponse GetSendQuota(GetSendQuotaRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetSendQuota operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.GetSendQuota"/>
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
-        /// <param name="getSendQuotaRequest">Container for the necessary parameters to execute the GetSendQuota operation on
-        ///          AmazonSimpleEmailService.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetSendQuota operation on AmazonSimpleEmailServiceClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSendQuota
         ///         operation.</returns>
-        IAsyncResult BeginGetSendQuota(GetSendQuotaRequest getSendQuotaRequest, AsyncCallback callback, object state);
+        IAsyncResult BeginGetSendQuota(GetSendQuotaRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the GetSendQuota operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.GetSendQuota"/>
+        /// Finishes the asynchronous execution of the  GetSendQuota operation.
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSendQuota.</param>
         /// 
-        /// <returns>Returns a GetSendQuotaResult from AmazonSimpleEmailService.</returns>
+        /// <returns>Returns a  GetSendQuotaResult from SimpleEmailService.</returns>
         GetSendQuotaResponse EndGetSendQuota(IAsyncResult asyncResult);
 
-        /// <summary>
-        /// <para>Returns the user's current sending limits.</para> <para>This action is throttled at one request per second.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the GetSendQuota service method, as returned by AmazonSimpleEmailService.</returns>
-        /// 
-        GetSendQuotaResponse GetSendQuota();
-        
         #endregion
         
-    
-
-        #region GetSendStatistics
+        #region  GetSendStatistics
 
         /// <summary>
-        /// <para>Returns the user's sending statistics. The result is a list of data points, representing the last two weeks of sending activity.
-        /// </para> <para>Each data point in the list contains statistics for a 15-minute interval.</para> <para>This action is throttled at one request
-        /// per second.</para>
+        /// Returns the user's sending statistics. The result is a list of data points, representing
+        /// the last two weeks of            sending activity.        
+        /// 
+        ///         
+        /// <para>
+        /// Each data point in the list contains statistics for a 15-minute interval.
+        /// </para>
+        ///         
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
         /// </summary>
         /// 
-        /// <param name="getSendStatisticsRequest">Container for the necessary parameters to execute the GetSendStatistics service method on
-        ///          AmazonSimpleEmailService.</param>
+        /// <returns>The response from the GetSendStatistics service method, as returned by SimpleEmailService.</returns>
+        GetSendStatisticsResponse GetSendStatistics();
+
+        /// <summary>
+        /// Returns the user's sending statistics. The result is a list of data points, representing
+        /// the last two weeks of            sending activity.        
         /// 
-        /// <returns>The response from the GetSendStatistics service method, as returned by AmazonSimpleEmailService.</returns>
+        ///         
+        /// <para>
+        /// Each data point in the list contains statistics for a 15-minute interval.
+        /// </para>
+        ///         
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSendStatistics service method.</param>
         /// 
-        GetSendStatisticsResponse GetSendStatistics(GetSendStatisticsRequest getSendStatisticsRequest);
+        /// <returns>The response from the GetSendStatistics service method, as returned by SimpleEmailService.</returns>
+        GetSendStatisticsResponse GetSendStatistics(GetSendStatisticsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetSendStatistics operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.GetSendStatistics"/>
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
-        /// <param name="getSendStatisticsRequest">Container for the necessary parameters to execute the GetSendStatistics operation on
-        ///          AmazonSimpleEmailService.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetSendStatistics operation on AmazonSimpleEmailServiceClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSendStatistics
         ///         operation.</returns>
-        IAsyncResult BeginGetSendStatistics(GetSendStatisticsRequest getSendStatisticsRequest, AsyncCallback callback, object state);
+        IAsyncResult BeginGetSendStatistics(GetSendStatisticsRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the GetSendStatistics operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.GetSendStatistics"/>
+        /// Finishes the asynchronous execution of the  GetSendStatistics operation.
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSendStatistics.</param>
         /// 
-        /// <returns>Returns a GetSendStatisticsResult from AmazonSimpleEmailService.</returns>
+        /// <returns>Returns a  GetSendStatisticsResult from SimpleEmailService.</returns>
         GetSendStatisticsResponse EndGetSendStatistics(IAsyncResult asyncResult);
 
-        /// <summary>
-        /// <para>Returns the user's sending statistics. The result is a list of data points, representing the last two weeks of sending activity.
-        /// </para> <para>Each data point in the list contains statistics for a 15-minute interval.</para> <para>This action is throttled at one request
-        /// per second.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the GetSendStatistics service method, as returned by AmazonSimpleEmailService.</returns>
-        /// 
-        GetSendStatisticsResponse GetSendStatistics();
-        
         #endregion
         
-    
-
-        #region ListIdentities
+        #region  ListIdentities
 
         /// <summary>
-        /// <para>Returns a list containing all of the identities (email addresses and domains) for a specific AWS Account, regardless of verification
-        /// status.</para> <para>This action is throttled at one request per second.</para>
+        /// Returns a list containing all of the identities (email addresses and domains) for
+        ///         a specific AWS Account, regardless of verification status.
+        /// 
+        ///         
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
         /// </summary>
         /// 
-        /// <param name="listIdentitiesRequest">Container for the necessary parameters to execute the ListIdentities service method on
-        ///          AmazonSimpleEmailService.</param>
+        /// <returns>The response from the ListIdentities service method, as returned by SimpleEmailService.</returns>
+        ListIdentitiesResponse ListIdentities();
+
+        /// <summary>
+        /// Returns a list containing all of the identities (email addresses and domains) for
+        ///         a specific AWS Account, regardless of verification status.
         /// 
-        /// <returns>The response from the ListIdentities service method, as returned by AmazonSimpleEmailService.</returns>
+        ///         
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIdentities service method.</param>
         /// 
-        ListIdentitiesResponse ListIdentities(ListIdentitiesRequest listIdentitiesRequest);
+        /// <returns>The response from the ListIdentities service method, as returned by SimpleEmailService.</returns>
+        ListIdentitiesResponse ListIdentities(ListIdentitiesRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListIdentities operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.ListIdentities"/>
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
-        /// <param name="listIdentitiesRequest">Container for the necessary parameters to execute the ListIdentities operation on
-        ///          AmazonSimpleEmailService.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListIdentities operation on AmazonSimpleEmailServiceClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListIdentities
         ///         operation.</returns>
-        IAsyncResult BeginListIdentities(ListIdentitiesRequest listIdentitiesRequest, AsyncCallback callback, object state);
+        IAsyncResult BeginListIdentities(ListIdentitiesRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the ListIdentities operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.ListIdentities"/>
+        /// Finishes the asynchronous execution of the  ListIdentities operation.
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListIdentities.</param>
         /// 
-        /// <returns>Returns a ListIdentitiesResult from AmazonSimpleEmailService.</returns>
+        /// <returns>Returns a  ListIdentitiesResult from SimpleEmailService.</returns>
         ListIdentitiesResponse EndListIdentities(IAsyncResult asyncResult);
 
-        /// <summary>
-        /// <para>Returns a list containing all of the identities (email addresses and domains) for a specific AWS Account, regardless of verification
-        /// status.</para> <para>This action is throttled at one request per second.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the ListIdentities service method, as returned by AmazonSimpleEmailService.</returns>
-        /// 
-        ListIdentitiesResponse ListIdentities();
-        
         #endregion
         
-    
-
-        #region ListVerifiedEmailAddresses
+        #region  ListVerifiedEmailAddresses
 
         /// <summary>
-        /// <para>Returns a list containing all of the email addresses that have been verified.</para> <para><b>IMPORTANT:</b>The
-        /// ListVerifiedEmailAddresses action is deprecated as of the May 15, 2012 release of Domain Verification. The ListIdentities action is now
-        /// preferred.</para> <para>This action is throttled at one request per second.</para>
+        /// Returns a list containing all of the email addresses that have been verified.
+        /// 
+        ///         <important>The ListVerifiedEmailAddresses action is deprecated as of the May
+        /// 15, 2012 release of         Domain Verification. The ListIdentities action is now
+        /// preferred.</important>        
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
         /// </summary>
         /// 
-        /// <param name="listVerifiedEmailAddressesRequest">Container for the necessary parameters to execute the ListVerifiedEmailAddresses service
-        ///          method on AmazonSimpleEmailService.</param>
+        /// <returns>The response from the ListVerifiedEmailAddresses service method, as returned by SimpleEmailService.</returns>
+        ListVerifiedEmailAddressesResponse ListVerifiedEmailAddresses();
+
+        /// <summary>
+        /// Returns a list containing all of the email addresses that have been verified.
         /// 
-        /// <returns>The response from the ListVerifiedEmailAddresses service method, as returned by AmazonSimpleEmailService.</returns>
+        ///         <important>The ListVerifiedEmailAddresses action is deprecated as of the May
+        /// 15, 2012 release of         Domain Verification. The ListIdentities action is now
+        /// preferred.</important>        
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVerifiedEmailAddresses service method.</param>
         /// 
-        ListVerifiedEmailAddressesResponse ListVerifiedEmailAddresses(ListVerifiedEmailAddressesRequest listVerifiedEmailAddressesRequest);
+        /// <returns>The response from the ListVerifiedEmailAddresses service method, as returned by SimpleEmailService.</returns>
+        ListVerifiedEmailAddressesResponse ListVerifiedEmailAddresses(ListVerifiedEmailAddressesRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListVerifiedEmailAddresses operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.ListVerifiedEmailAddresses"/>
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
-        /// <param name="listVerifiedEmailAddressesRequest">Container for the necessary parameters to execute the ListVerifiedEmailAddresses operation
-        ///          on AmazonSimpleEmailService.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListVerifiedEmailAddresses operation on AmazonSimpleEmailServiceClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndListVerifiedEmailAddresses operation.</returns>
-        IAsyncResult BeginListVerifiedEmailAddresses(ListVerifiedEmailAddressesRequest listVerifiedEmailAddressesRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListVerifiedEmailAddresses
+        ///         operation.</returns>
+        IAsyncResult BeginListVerifiedEmailAddresses(ListVerifiedEmailAddressesRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the ListVerifiedEmailAddresses operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.ListVerifiedEmailAddresses"/>
+        /// Finishes the asynchronous execution of the  ListVerifiedEmailAddresses operation.
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVerifiedEmailAddresses.</param>
         /// 
-        /// <returns>Returns a ListVerifiedEmailAddressesResult from AmazonSimpleEmailService.</returns>
+        /// <returns>Returns a  ListVerifiedEmailAddressesResult from SimpleEmailService.</returns>
         ListVerifiedEmailAddressesResponse EndListVerifiedEmailAddresses(IAsyncResult asyncResult);
 
-        /// <summary>
-        /// <para>Returns a list containing all of the email addresses that have been verified.</para> <para><b>IMPORTANT:</b>The
-        /// ListVerifiedEmailAddresses action is deprecated as of the May 15, 2012 release of Domain Verification. The ListIdentities action is now
-        /// preferred.</para> <para>This action is throttled at one request per second.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the ListVerifiedEmailAddresses service method, as returned by AmazonSimpleEmailService.</returns>
-        /// 
-        ListVerifiedEmailAddressesResponse ListVerifiedEmailAddresses();
-        
         #endregion
         
-    
+        #region  SendEmail
 
-        #region SendEmail
 
         /// <summary>
-        /// <para>Composes an email message based on input data, and then immediately queues the message for sending. </para> <para><b>IMPORTANT:</b>
-        /// You can only send email from verified email addresses and domains. If you have not requested production access to Amazon SES, you must also
-        /// verify every recipient email address except for the recipients provided by the Amazon SES mailbox simulator. For more information, go to the
-        /// Amazon SES Developer Guide. </para> <para>The total size of the message cannot exceed 10 MB.</para> <para>Amazon SES has a limit on the
-        /// total number of recipients per message: The combined number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to send an
-        /// email message to a larger audience, you can divide your recipient list into groups of 50 or fewer, and then call Amazon SES repeatedly to
-        /// send the message to each group. </para> <para>For every message that you send, the total number of recipients (To:, CC: and BCC:) is counted
-        /// against your <i>sending quota</i> - the maximum number of emails you can send in a 24-hour period. For information about your sending quota,
-        /// go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html" >Amazon SES Developer Guide</a> .
+        /// Composes an email message based on input data, and then immediately queues the message
+        ///            for sending.        
+        /// 
+        ///         <important>            You can only send email from verified email addresses
+        /// and domains.             If you have not requested production access to Amazon SES,
+        /// you must also             verify every recipient email address except for the recipients
+        /// provided             by the Amazon SES mailbox simulator. For more information, go
+        /// to the            <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+        /// SES                Developer Guide</a>.        </important>        
+        /// <para>
+        /// The total size of the message cannot exceed 10 MB.
+        /// </para>
+        ///         
+        /// <para>
+        /// Amazon SES has a limit on the total number of recipients per message: The combined
+        /// number            of To:, CC: and BCC: email addresses cannot exceed 50. If you need
+        /// to send an email            message to a larger audience, you can divide your recipient
+        /// list into groups of 50 or            fewer, and then call Amazon SES repeatedly to
+        /// send the message to each group.        
+        /// </para>
+        ///         
+        /// <para>
+        /// For every message that you send, the total number of recipients (To:, CC: and BCC:)
+        /// is            counted against your            <i>sending quota</i>            - the
+        /// maximum number of emails you can send in            a 24-hour period. For information
+        /// about your sending quota, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
+        /// SES                Developer Guide</a>.        
         /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendEmail service method.</param>
         /// 
-        /// <param name="sendEmailRequest">Container for the necessary parameters to execute the SendEmail service method on
-        ///          AmazonSimpleEmailService.</param>
-        /// 
-        /// <returns>The response from the SendEmail service method, as returned by AmazonSimpleEmailService.</returns>
-        /// 
-        /// <exception cref="MessageRejectedException"/>
-        SendEmailResponse SendEmail(SendEmailRequest sendEmailRequest);
+        /// <returns>The response from the SendEmail service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="MessageRejectedException">
+        /// Indicates that the action failed, and the message could not be sent. Check the error
+        /// stack for more        information about what caused the error.
+        /// </exception>
+        SendEmailResponse SendEmail(SendEmailRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the SendEmail operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.SendEmail"/>
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
-        /// <param name="sendEmailRequest">Container for the necessary parameters to execute the SendEmail operation on
-        ///          AmazonSimpleEmailService.</param>
+        /// <param name="request">Container for the necessary parameters to execute the SendEmail operation on AmazonSimpleEmailServiceClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendEmail
         ///         operation.</returns>
-        IAsyncResult BeginSendEmail(SendEmailRequest sendEmailRequest, AsyncCallback callback, object state);
+        IAsyncResult BeginSendEmail(SendEmailRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the SendEmail operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.SendEmail"/>
+        /// Finishes the asynchronous execution of the  SendEmail operation.
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendEmail.</param>
         /// 
-        /// <returns>Returns a SendEmailResult from AmazonSimpleEmailService.</returns>
+        /// <returns>Returns a  SendEmailResult from SimpleEmailService.</returns>
         SendEmailResponse EndSendEmail(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
+        #region  SendRawEmail
 
-        #region SendRawEmail
 
         /// <summary>
-        /// <para>Sends an email message, with header and content specified by the client. The <c>SendRawEmail</c> action is useful for sending
-        /// multipart MIME emails. The raw text of the message must comply with Internet email standards; otherwise, the message cannot be sent. </para>
-        /// <para><b>IMPORTANT:</b> You can only send email from verified email addresses and domains. If you have not requested production access to
-        /// Amazon SES, you must also verify every recipient email address except for the recipients provided by the Amazon SES mailbox simulator. For
-        /// more information, go to the Amazon SES Developer Guide. </para> <para>The total size of the message cannot exceed 10 MB. This includes any
-        /// attachments that are part of the message.</para> <para>Amazon SES has a limit on the total number of recipients per message: The combined
-        /// number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to send an email message to a larger audience, you can divide your
-        /// recipient list into groups of 50 or fewer, and then call Amazon SES repeatedly to send the message to each group. </para> <para>For every
-        /// message that you send, the total number of recipients (To:, CC: and BCC:) is counted against your <i>sending quota</i> - the maximum number
-        /// of emails you can send in a 24-hour period. For information about your sending quota, go to the <a
-        /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html" >Amazon SES Developer Guide</a> .
+        /// Sends an email message, with header and content specified by the client. The     
+        ///       <code>SendRawEmail</code>            action is useful for sending multipart
+        /// MIME emails. The raw text of the message must comply with Internet            email
+        /// standards; otherwise, the message cannot be sent.        
+        /// 
+        ///         <important>            You can only send email from verified email addresses
+        /// and domains.             If you have not requested production access to Amazon SES,
+        /// you must also             verify every recipient email address except for the recipients
+        /// provided             by the Amazon SES mailbox simulator. For more information, go
+        /// to the            <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+        /// SES                Developer Guide</a>.        </important>        
+        /// <para>
+        /// The total size of the message cannot exceed 10 MB. This includes any attachments that
+        /// are part of the message.
+        /// </para>
+        ///         
+        /// <para>
+        /// Amazon SES has a limit on the total number of recipients per message: The combined
+        /// number            of To:, CC: and BCC: email addresses cannot exceed 50. If you need
+        /// to send an email            message to a larger audience, you can divide your recipient
+        /// list into groups of 50 or            fewer, and then call Amazon SES repeatedly to
+        /// send the message to each group.        
+        /// </para>
+        ///         
+        /// <para>
+        /// The To:, CC:, and BCC: headers in the raw message can contain a group list. Note that
+        /// each recipient in a group list         counts towards the 50-recipient limit.    
+        ///    
+        /// </para>
+        ///         
+        /// <para>
+        /// For every message that you send, the total number of recipients (To:, CC: and BCC:)
+        /// is            counted against your            <i>sending quota</i>            - the
+        /// maximum number of emails you can send in            a 24-hour period. For information
+        /// about your sending quota, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
+        /// SES                Developer Guide</a>.        
         /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendRawEmail service method.</param>
         /// 
-        /// <param name="sendRawEmailRequest">Container for the necessary parameters to execute the SendRawEmail service method on
-        ///          AmazonSimpleEmailService.</param>
-        /// 
-        /// <returns>The response from the SendRawEmail service method, as returned by AmazonSimpleEmailService.</returns>
-        /// 
-        /// <exception cref="MessageRejectedException"/>
-        SendRawEmailResponse SendRawEmail(SendRawEmailRequest sendRawEmailRequest);
+        /// <returns>The response from the SendRawEmail service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="MessageRejectedException">
+        /// Indicates that the action failed, and the message could not be sent. Check the error
+        /// stack for more        information about what caused the error.
+        /// </exception>
+        SendRawEmailResponse SendRawEmail(SendRawEmailRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the SendRawEmail operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.SendRawEmail"/>
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
-        /// <param name="sendRawEmailRequest">Container for the necessary parameters to execute the SendRawEmail operation on
-        ///          AmazonSimpleEmailService.</param>
+        /// <param name="request">Container for the necessary parameters to execute the SendRawEmail operation on AmazonSimpleEmailServiceClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendRawEmail
         ///         operation.</returns>
-        IAsyncResult BeginSendRawEmail(SendRawEmailRequest sendRawEmailRequest, AsyncCallback callback, object state);
+        IAsyncResult BeginSendRawEmail(SendRawEmailRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the SendRawEmail operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.SendRawEmail"/>
+        /// Finishes the asynchronous execution of the  SendRawEmail operation.
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendRawEmail.</param>
         /// 
-        /// <returns>Returns a SendRawEmailResult from AmazonSimpleEmailService.</returns>
+        /// <returns>Returns a  SendRawEmailResult from SimpleEmailService.</returns>
         SendRawEmailResponse EndSendRawEmail(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
+        #region  SetIdentityDkimEnabled
 
-        #region SetIdentityDkimEnabled
 
         /// <summary>
-        /// <para>Enables or disables Easy DKIM signing of email sent from an identity:</para>
-        /// <ul>
-        /// <li>If Easy DKIM signing is enabled for a domain name identity (e.g., <c>example.com</c> ), then Amazon SES will DKIM-sign all email sent
-        /// by addresses under that domain name (e.g., <c>user@example.com</c> ).</li>
-        /// <li>If Easy DKIM signing is enabled for an email address, then Amazon SES will DKIM-sign all email sent by that email address.</li>
+        /// Enables or disables Easy DKIM signing of email sent from an identity:
         /// 
-        /// </ul>
-        /// <para>For email addresses (e.g., <c>user@example.com</c> ), you can only enable Easy DKIM signing if the corresponding domain (e.g.,
-        /// <c>example.com</c> ) has been set up for Easy DKIM using the AWS Console or the <c>VerifyDomainDkim</c> action.</para> <para>This action is
-        /// throttled at one request per second.</para> <para>For more information about Easy DKIM signing, go to the <a
-        /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html" >Amazon SES Developer Guide</a> .</para>
+        ///             <ul>                <li>If Easy DKIM            signing is enabled for
+        /// a domain name identity (e.g., <code>example.com</code>), then Amazon SES will DKIM-sign
+        ///            all email sent by addresses under that domain name (e.g.,             
+        ///       <code>user@example.com</code>).</li>                <li>If Easy DKIM signing
+        /// is enabled for an email address, then Amazon SES will DKIM-sign            all email
+        /// sent by that email address.</li>            </ul>        
+        /// <para>
+        /// For email addresses (e.g., <code>user@example.com</code>), you can only enable Easy
+        /// DKIM signing  if the        corresponding domain (e.g., <code>example.com</code>)
+        /// has been set up for Easy DKIM using the AWS Console or             the <code>VerifyDomainDkim</code>
+        /// action.
+        /// </para>
+        ///         
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        ///         
+        /// <para>
+        /// For more information about Easy DKIM signing, go to the             <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetIdentityDkimEnabled service method.</param>
         /// 
-        /// <param name="setIdentityDkimEnabledRequest">Container for the necessary parameters to execute the SetIdentityDkimEnabled service method on
-        ///          AmazonSimpleEmailService.</param>
-        /// 
-        /// <returns>The response from the SetIdentityDkimEnabled service method, as returned by AmazonSimpleEmailService.</returns>
-        /// 
-        SetIdentityDkimEnabledResponse SetIdentityDkimEnabled(SetIdentityDkimEnabledRequest setIdentityDkimEnabledRequest);
+        /// <returns>The response from the SetIdentityDkimEnabled service method, as returned by SimpleEmailService.</returns>
+        SetIdentityDkimEnabledResponse SetIdentityDkimEnabled(SetIdentityDkimEnabledRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetIdentityDkimEnabled operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.SetIdentityDkimEnabled"/>
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
-        /// <param name="setIdentityDkimEnabledRequest">Container for the necessary parameters to execute the SetIdentityDkimEnabled operation on
-        ///          AmazonSimpleEmailService.</param>
+        /// <param name="request">Container for the necessary parameters to execute the SetIdentityDkimEnabled operation on AmazonSimpleEmailServiceClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndSetIdentityDkimEnabled operation.</returns>
-        IAsyncResult BeginSetIdentityDkimEnabled(SetIdentityDkimEnabledRequest setIdentityDkimEnabledRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetIdentityDkimEnabled
+        ///         operation.</returns>
+        IAsyncResult BeginSetIdentityDkimEnabled(SetIdentityDkimEnabledRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the SetIdentityDkimEnabled operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.SetIdentityDkimEnabled"/>
+        /// Finishes the asynchronous execution of the  SetIdentityDkimEnabled operation.
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetIdentityDkimEnabled.</param>
         /// 
-        /// <returns>Returns a SetIdentityDkimEnabledResult from AmazonSimpleEmailService.</returns>
+        /// <returns>Returns a  SetIdentityDkimEnabledResult from SimpleEmailService.</returns>
         SetIdentityDkimEnabledResponse EndSetIdentityDkimEnabled(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
+        #region  SetIdentityFeedbackForwardingEnabled
 
-        #region SetIdentityFeedbackForwardingEnabled
 
         /// <summary>
-        /// <para>Given an identity (email address or domain), enables or disables whether Amazon SES forwards feedback notifications as email. Feedback
-        /// forwarding may only be disabled when both complaint and bounce topics are set.</para> <para>This action is throttled at one request per
-        /// second.</para> <para>For more information about feedback notification, see the <a
-        /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html" >Amazon SES Developer Guide</a> .</para>
+        /// Given an identity (email address or domain), enables or disables whether Amazon SES
+        /// forwards            bounce and complaint notifications as email. Feedback forwarding
+        /// can only be disabled when            Amazon Simple Notification Service (Amazon SNS)
+        /// topics are specified for both bounces and complaints.
+        /// 
+        ///         <note>Feedback forwarding does not apply to delivery notifications.      
+        ///      Delivery notifications are only available through Amazon SNS.</note>        
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        ///         
+        /// <para>
+        /// For more information about using notifications with Amazon SES,            see the
+        /// <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetIdentityFeedbackForwardingEnabled service method.</param>
         /// 
-        /// <param name="setIdentityFeedbackForwardingEnabledRequest">Container for the necessary parameters to execute the
-        ///          SetIdentityFeedbackForwardingEnabled service method on AmazonSimpleEmailService.</param>
-        /// 
-        /// <returns>The response from the SetIdentityFeedbackForwardingEnabled service method, as returned by AmazonSimpleEmailService.</returns>
-        /// 
-        SetIdentityFeedbackForwardingEnabledResponse SetIdentityFeedbackForwardingEnabled(SetIdentityFeedbackForwardingEnabledRequest setIdentityFeedbackForwardingEnabledRequest);
+        /// <returns>The response from the SetIdentityFeedbackForwardingEnabled service method, as returned by SimpleEmailService.</returns>
+        SetIdentityFeedbackForwardingEnabledResponse SetIdentityFeedbackForwardingEnabled(SetIdentityFeedbackForwardingEnabledRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetIdentityFeedbackForwardingEnabled operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.SetIdentityFeedbackForwardingEnabled"/>
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
-        /// <param name="setIdentityFeedbackForwardingEnabledRequest">Container for the necessary parameters to execute the
-        ///          SetIdentityFeedbackForwardingEnabled operation on AmazonSimpleEmailService.</param>
+        /// <param name="request">Container for the necessary parameters to execute the SetIdentityFeedbackForwardingEnabled operation on AmazonSimpleEmailServiceClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndSetIdentityFeedbackForwardingEnabled operation.</returns>
-        IAsyncResult BeginSetIdentityFeedbackForwardingEnabled(SetIdentityFeedbackForwardingEnabledRequest setIdentityFeedbackForwardingEnabledRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetIdentityFeedbackForwardingEnabled
+        ///         operation.</returns>
+        IAsyncResult BeginSetIdentityFeedbackForwardingEnabled(SetIdentityFeedbackForwardingEnabledRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the SetIdentityFeedbackForwardingEnabled operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.SetIdentityFeedbackForwardingEnabled"/>
+        /// Finishes the asynchronous execution of the  SetIdentityFeedbackForwardingEnabled operation.
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetIdentityFeedbackForwardingEnabled.</param>
         /// 
-        /// <returns>Returns a SetIdentityFeedbackForwardingEnabledResult from AmazonSimpleEmailService.</returns>
+        /// <returns>Returns a  SetIdentityFeedbackForwardingEnabledResult from SimpleEmailService.</returns>
         SetIdentityFeedbackForwardingEnabledResponse EndSetIdentityFeedbackForwardingEnabled(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
+        #region  SetIdentityNotificationTopic
 
-        #region SetIdentityNotificationTopic
 
         /// <summary>
-        /// <para>Given an identity (email address or domain), sets the Amazon SNS topic to which Amazon SES will publish bounce and complaint
-        /// notifications for emails sent with that identity as the <c>Source</c> .
-        /// Publishing to topics may only be disabled when feedback forwarding is enabled.</para> <para>This action is throttled at one request
-        /// per second.</para> <para>For more information about feedback notification, see the <a
-        /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html" >Amazon SES Developer Guide</a> .</para>
+        /// Given an identity (email address or domain), sets the Amazon Simple Notification Service
+        /// (Amazon SNS) topic to which Amazon SES will publish        bounce, complaint, and/or
+        /// delivery notifications for emails sent with that identity as the <code>Source</code>.
+        /// 
+        ///         <note>Unless feedback forwarding is enabled, you must specify Amazon SNS topics
+        /// for bounce and complaint notifications.            For more information, see <code>SetIdentityFeedbackForwardingEnabled</code>.
+        ///        </note>        
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        ///         
+        /// <para>
+        /// For more information about feedback notification, see the            <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetIdentityNotificationTopic service method.</param>
         /// 
-        /// <param name="setIdentityNotificationTopicRequest">Container for the necessary parameters to execute the SetIdentityNotificationTopic service
-        ///          method on AmazonSimpleEmailService.</param>
-        /// 
-        /// <returns>The response from the SetIdentityNotificationTopic service method, as returned by AmazonSimpleEmailService.</returns>
-        /// 
-        SetIdentityNotificationTopicResponse SetIdentityNotificationTopic(SetIdentityNotificationTopicRequest setIdentityNotificationTopicRequest);
+        /// <returns>The response from the SetIdentityNotificationTopic service method, as returned by SimpleEmailService.</returns>
+        SetIdentityNotificationTopicResponse SetIdentityNotificationTopic(SetIdentityNotificationTopicRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the SetIdentityNotificationTopic operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.SetIdentityNotificationTopic"/>
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
-        /// <param name="setIdentityNotificationTopicRequest">Container for the necessary parameters to execute the SetIdentityNotificationTopic
-        ///          operation on AmazonSimpleEmailService.</param>
+        /// <param name="request">Container for the necessary parameters to execute the SetIdentityNotificationTopic operation on AmazonSimpleEmailServiceClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndSetIdentityNotificationTopic operation.</returns>
-        IAsyncResult BeginSetIdentityNotificationTopic(SetIdentityNotificationTopicRequest setIdentityNotificationTopicRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetIdentityNotificationTopic
+        ///         operation.</returns>
+        IAsyncResult BeginSetIdentityNotificationTopic(SetIdentityNotificationTopicRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the SetIdentityNotificationTopic operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.SetIdentityNotificationTopic"/>
+        /// Finishes the asynchronous execution of the  SetIdentityNotificationTopic operation.
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetIdentityNotificationTopic.</param>
         /// 
-        /// <returns>Returns a SetIdentityNotificationTopicResult from AmazonSimpleEmailService.</returns>
+        /// <returns>Returns a  SetIdentityNotificationTopicResult from SimpleEmailService.</returns>
         SetIdentityNotificationTopicResponse EndSetIdentityNotificationTopic(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
+        #region  VerifyDomainDkim
 
-        #region VerifyDomainDkim
 
         /// <summary>
-        /// <para>Returns a set of DKIM tokens for a domain. DKIM <i>tokens</i> are character strings that represent your domain's identity. Using these
-        /// tokens, you will need to create DNS CNAME records that point to DKIM public keys hosted by Amazon SES. Amazon Web Services will eventually
-        /// detect that you have updated your DNS records; this detection process may take up to 72 hours. Upon successful detection, Amazon SES will be
-        /// able to DKIM-sign email originating from that domain.</para> <para>This action is throttled at one request per second.</para> <para>To
-        /// enable or disable Easy DKIM signing for a domain, use the <c>SetIdentityDkimEnabled</c> action.</para> <para>For more information about
-        /// creating DNS records using DKIM tokens, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html"
-        /// >Amazon SES Developer Guide</a> .</para>
+        /// Returns a set of DKIM tokens for a domain. DKIM <i>tokens</i> are character strings
+        /// that            represent your domain's identity. Using these tokens, you will need
+        /// to create DNS CNAME            records that point to DKIM public keys hosted by Amazon
+        /// SES. Amazon Web Services will            eventually detect that you have updated your
+        /// DNS records; this detection process may            take up to 72 hours. Upon successful
+        /// detection, Amazon SES will be able to DKIM-sign            email originating from
+        /// that domain.
+        /// 
+        ///         
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        ///         
+        /// <para>
+        /// To enable or disable Easy DKIM signing for            a domain, use the <code>SetIdentityDkimEnabled</code>
+        /// action.
+        /// </para>
+        ///         
+        /// <para>
+        /// For more information about creating DNS records using DKIM tokens, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
+        /// SES                Developer Guide</a>.
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the VerifyDomainDkim service method.</param>
         /// 
-        /// <param name="verifyDomainDkimRequest">Container for the necessary parameters to execute the VerifyDomainDkim service method on
-        ///          AmazonSimpleEmailService.</param>
-        /// 
-        /// <returns>The response from the VerifyDomainDkim service method, as returned by AmazonSimpleEmailService.</returns>
-        /// 
-        VerifyDomainDkimResponse VerifyDomainDkim(VerifyDomainDkimRequest verifyDomainDkimRequest);
+        /// <returns>The response from the VerifyDomainDkim service method, as returned by SimpleEmailService.</returns>
+        VerifyDomainDkimResponse VerifyDomainDkim(VerifyDomainDkimRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the VerifyDomainDkim operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.VerifyDomainDkim"/>
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
-        /// <param name="verifyDomainDkimRequest">Container for the necessary parameters to execute the VerifyDomainDkim operation on
-        ///          AmazonSimpleEmailService.</param>
+        /// <param name="request">Container for the necessary parameters to execute the VerifyDomainDkim operation on AmazonSimpleEmailServiceClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndVerifyDomainDkim
         ///         operation.</returns>
-        IAsyncResult BeginVerifyDomainDkim(VerifyDomainDkimRequest verifyDomainDkimRequest, AsyncCallback callback, object state);
+        IAsyncResult BeginVerifyDomainDkim(VerifyDomainDkimRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the VerifyDomainDkim operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.VerifyDomainDkim"/>
+        /// Finishes the asynchronous execution of the  VerifyDomainDkim operation.
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginVerifyDomainDkim.</param>
         /// 
-        /// <returns>Returns a VerifyDomainDkimResult from AmazonSimpleEmailService.</returns>
+        /// <returns>Returns a  VerifyDomainDkimResult from SimpleEmailService.</returns>
         VerifyDomainDkimResponse EndVerifyDomainDkim(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
+        #region  VerifyDomainIdentity
 
-        #region VerifyDomainIdentity
 
         /// <summary>
-        /// <para>Verifies a domain.</para> <para>This action is throttled at one request per second.</para>
+        /// Verifies a domain.
+        /// 
+        ///         
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the VerifyDomainIdentity service method.</param>
         /// 
-        /// <param name="verifyDomainIdentityRequest">Container for the necessary parameters to execute the VerifyDomainIdentity service method on
-        ///          AmazonSimpleEmailService.</param>
-        /// 
-        /// <returns>The response from the VerifyDomainIdentity service method, as returned by AmazonSimpleEmailService.</returns>
-        /// 
-        VerifyDomainIdentityResponse VerifyDomainIdentity(VerifyDomainIdentityRequest verifyDomainIdentityRequest);
+        /// <returns>The response from the VerifyDomainIdentity service method, as returned by SimpleEmailService.</returns>
+        VerifyDomainIdentityResponse VerifyDomainIdentity(VerifyDomainIdentityRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the VerifyDomainIdentity operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.VerifyDomainIdentity"/>
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
-        /// <param name="verifyDomainIdentityRequest">Container for the necessary parameters to execute the VerifyDomainIdentity operation on
-        ///          AmazonSimpleEmailService.</param>
+        /// <param name="request">Container for the necessary parameters to execute the VerifyDomainIdentity operation on AmazonSimpleEmailServiceClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndVerifyDomainIdentity operation.</returns>
-        IAsyncResult BeginVerifyDomainIdentity(VerifyDomainIdentityRequest verifyDomainIdentityRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndVerifyDomainIdentity
+        ///         operation.</returns>
+        IAsyncResult BeginVerifyDomainIdentity(VerifyDomainIdentityRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the VerifyDomainIdentity operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.VerifyDomainIdentity"/>
+        /// Finishes the asynchronous execution of the  VerifyDomainIdentity operation.
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginVerifyDomainIdentity.</param>
         /// 
-        /// <returns>Returns a VerifyDomainIdentityResult from AmazonSimpleEmailService.</returns>
+        /// <returns>Returns a  VerifyDomainIdentityResult from SimpleEmailService.</returns>
         VerifyDomainIdentityResponse EndVerifyDomainIdentity(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
+        #region  VerifyEmailAddress
 
-        #region VerifyEmailAddress
 
         /// <summary>
-        /// <para>Verifies an email address. This action causes a confirmation email message to be sent to the specified address.</para>
-        /// <para><b>IMPORTANT:</b>The VerifyEmailAddress action is deprecated as of the May 15, 2012 release of Domain Verification. The
-        /// VerifyEmailIdentity action is now preferred.</para> <para>This action is throttled at one request per second.</para>
+        /// Verifies an email address. This action causes a confirmation email message to be 
+        ///        sent to the specified address.
+        /// 
+        ///         <important>The VerifyEmailAddress action is deprecated as of the May 15, 2012
+        /// release        of Domain Verification. The VerifyEmailIdentity action is now preferred.</important>
+        ///        
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the VerifyEmailAddress service method.</param>
         /// 
-        /// <param name="verifyEmailAddressRequest">Container for the necessary parameters to execute the VerifyEmailAddress service method on
-        ///          AmazonSimpleEmailService.</param>
-        /// 
-        VerifyEmailAddressResponse VerifyEmailAddress(VerifyEmailAddressRequest verifyEmailAddressRequest);
+        /// <returns>The response from the VerifyEmailAddress service method, as returned by SimpleEmailService.</returns>
+        VerifyEmailAddressResponse VerifyEmailAddress(VerifyEmailAddressRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the VerifyEmailAddress operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.VerifyEmailAddress"/>
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
-        /// <param name="verifyEmailAddressRequest">Container for the necessary parameters to execute the VerifyEmailAddress operation on
-        ///          AmazonSimpleEmailService.</param>
+        /// <param name="request">Container for the necessary parameters to execute the VerifyEmailAddress operation on AmazonSimpleEmailServiceClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginVerifyEmailAddress(VerifyEmailAddressRequest verifyEmailAddressRequest, AsyncCallback callback, object state);
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndVerifyEmailAddress
+        ///         operation.</returns>
+        IAsyncResult BeginVerifyEmailAddress(VerifyEmailAddressRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the VerifyEmailAddress operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.VerifyEmailAddress"/>
+        /// Finishes the asynchronous execution of the  VerifyEmailAddress operation.
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginVerifyEmailAddress.</param>
+        /// 
+        /// <returns>Returns a  VerifyEmailAddressResult from SimpleEmailService.</returns>
         VerifyEmailAddressResponse EndVerifyEmailAddress(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
+        #region  VerifyEmailIdentity
 
-        #region VerifyEmailIdentity
 
         /// <summary>
-        /// <para>Verifies an email address. This action causes a confirmation email message to be sent to the specified address.</para> <para>This
-        /// action is throttled at one request per second.</para>
+        /// Verifies an email address. This action causes a confirmation email message       
+        /// to be sent to the specified address.
+        /// 
+        ///         
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the VerifyEmailIdentity service method.</param>
         /// 
-        /// <param name="verifyEmailIdentityRequest">Container for the necessary parameters to execute the VerifyEmailIdentity service method on
-        ///          AmazonSimpleEmailService.</param>
-        /// 
-        /// <returns>The response from the VerifyEmailIdentity service method, as returned by AmazonSimpleEmailService.</returns>
-        /// 
-        VerifyEmailIdentityResponse VerifyEmailIdentity(VerifyEmailIdentityRequest verifyEmailIdentityRequest);
+        /// <returns>The response from the VerifyEmailIdentity service method, as returned by SimpleEmailService.</returns>
+        VerifyEmailIdentityResponse VerifyEmailIdentity(VerifyEmailIdentityRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the VerifyEmailIdentity operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.VerifyEmailIdentity"/>
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
-        /// <param name="verifyEmailIdentityRequest">Container for the necessary parameters to execute the VerifyEmailIdentity operation on
-        ///          AmazonSimpleEmailService.</param>
+        /// <param name="request">Container for the necessary parameters to execute the VerifyEmailIdentity operation on AmazonSimpleEmailServiceClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndVerifyEmailIdentity operation.</returns>
-        IAsyncResult BeginVerifyEmailIdentity(VerifyEmailIdentityRequest verifyEmailIdentityRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndVerifyEmailIdentity
+        ///         operation.</returns>
+        IAsyncResult BeginVerifyEmailIdentity(VerifyEmailIdentityRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the VerifyEmailIdentity operation.
-        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService.VerifyEmailIdentity"/>
+        /// Finishes the asynchronous execution of the  VerifyEmailIdentity operation.
+        /// <seealso cref="Amazon.SimpleEmail.IAmazonSimpleEmailService"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginVerifyEmailIdentity.</param>
         /// 
-        /// <returns>Returns a VerifyEmailIdentityResult from AmazonSimpleEmailService.</returns>
+        /// <returns>Returns a  VerifyEmailIdentityResult from SimpleEmailService.</returns>
         VerifyEmailIdentityResponse EndVerifyEmailIdentity(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
     }
 }
-    

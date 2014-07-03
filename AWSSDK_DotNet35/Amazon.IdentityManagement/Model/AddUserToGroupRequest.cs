@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,72 +25,50 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the AddUserToGroup operation.
-    /// <para>Adds the specified user to the specified group.</para>
+    /// Adds the specified user to the specified group.
     /// </summary>
     public partial class AddUserToGroupRequest : AmazonIdentityManagementServiceRequest
     {
-        private string groupName;
-        private string userName;
+        private string _groupName;
+        private string _userName;
 
 
         /// <summary>
-        /// Name of the group to update.
-        ///  
+        /// Gets and sets the property GroupName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 128</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=,.@-]*</description>
-        ///     </item>
-        /// </list>
+        /// Name of the group to update.
         /// </para>
         /// </summary>
         public string GroupName
         {
-            get { return this.groupName; }
-            set { this.groupName = value; }
+            get { return this._groupName; }
+            set { this._groupName = value; }
         }
 
         // Check to see if GroupName property is set
         internal bool IsSetGroupName()
         {
-            return this.groupName != null;
+            return this._groupName != null;
         }
 
+
         /// <summary>
-        /// Name of the user to add.
-        ///  
+        /// Gets and sets the property UserName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 128</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=,.@-]*</description>
-        ///     </item>
-        /// </list>
+        /// Name of the user to add.
         /// </para>
         /// </summary>
         public string UserName
         {
-            get { return this.userName; }
-            set { this.userName = value; }
+            get { return this._userName; }
+            set { this._userName = value; }
         }
 
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
-            return this.userName != null;
+            return this._userName != null;
         }
 
     }
 }
-    

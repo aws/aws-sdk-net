@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,48 +18,56 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// <para>Platform application object.</para>
+    /// Platform application object.
     /// </summary>
-    public class PlatformApplication
+    public partial class PlatformApplication
     {
-        
-        private string platformApplicationArn;
-        private Dictionary<string,string> attributes = new Dictionary<string,string>();
+        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private string _platformApplicationArn;
 
 
         /// <summary>
-        /// PlatformApplicationArn for platform application object.
-        ///  
-        /// </summary>
-        public string PlatformApplicationArn
-        {
-            get { return this.platformApplicationArn; }
-            set { this.platformApplicationArn = value; }
-        }
-
-        // Check to see if PlatformApplicationArn property is set
-        internal bool IsSetPlatformApplicationArn()
-        {
-            return this.platformApplicationArn != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Attributes. 
+        /// <para>
         /// Attributes for platform application object.
-        ///  
+        /// </para>
         /// </summary>
-        public Dictionary<string,string> Attributes
+        public Dictionary<string, string> Attributes
         {
-            get { return this.attributes; }
-            set { this.attributes = value; }
+            get { return this._attributes; }
+            set { this._attributes = value; }
         }
 
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this.attributes != null;
+            return this._attributes != null && this._attributes.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property PlatformApplicationArn. 
+        /// <para>
+        /// PlatformApplicationArn for platform application object.
+        /// </para>
+        /// </summary>
+        public string PlatformApplicationArn
+        {
+            get { return this._platformApplicationArn; }
+            set { this._platformApplicationArn = value; }
+        }
+
+        // Check to see if PlatformApplicationArn property is set
+        internal bool IsSetPlatformApplicationArn()
+        {
+            return this._platformApplicationArn != null;
+        }
+
     }
 }

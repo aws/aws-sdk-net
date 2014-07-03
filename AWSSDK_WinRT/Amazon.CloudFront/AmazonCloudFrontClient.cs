@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,6 +12,8 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+
 using System;
 using System.Runtime.ExceptionServices;
 using System.Threading;
@@ -27,14 +29,23 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.CloudFront
 {
     /// <summary>
-    /// Implementation for accessing AmazonCloudFront.
-    /// 
+    /// Implementation for accessing CloudFront
+    ///
     /// 
     /// </summary>
-	public partial class AmazonCloudFrontClient : AmazonWebServiceClient, Amazon.CloudFront.IAmazonCloudFront
+    public partial class AmazonCloudFrontClient : AmazonWebServiceClient, IAmazonCloudFront
     {
-
         AWS4Signer signer = new AWS4Signer();
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+        }
+
+        #endregion
+
         #region Constructors
 
         /// <summary>
@@ -52,7 +63,7 @@ namespace Amazon.CloudFront
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="region">The region to connect.</param>
         public AmazonCloudFrontClient(AWSCredentials credentials, RegionEndpoint region)
-            : this(credentials, new AmazonCloudFrontConfig(){RegionEndpoint=region})
+            : this(credentials, new AmazonCloudFrontConfig{RegionEndpoint = region})
         {
         }
 
@@ -90,7 +101,7 @@ namespace Amazon.CloudFront
 
         /// <summary>
         /// Constructs AmazonCloudFrontClient with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonCloudFrontClient Configuration object.
+        /// AmazonCloudFrontClient Configuration object. 
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
@@ -119,13 +130,13 @@ namespace Amazon.CloudFront
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="region">The region to connect.</param>
         public AmazonCloudFrontClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, RegionEndpoint region)
-            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonCloudFrontConfig(){RegionEndpoint = region})
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonCloudFrontConfig{RegionEndpoint = region})
         {
         }
 
         /// <summary>
         /// Constructs AmazonCloudFrontClient with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonCloudFrontClient Configuration object.
+        /// AmazonCloudFrontClient Configuration object. 
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
@@ -138,8 +149,10 @@ namespace Amazon.CloudFront
 
         #endregion
 
- 
-		internal CreateCloudFrontOriginAccessIdentityResponse CreateCloudFrontOriginAccessIdentity(CreateCloudFrontOriginAccessIdentityRequest request)
+        
+        #region  CreateCloudFrontOriginAccessIdentity
+
+        internal CreateCloudFrontOriginAccessIdentityResponse CreateCloudFrontOriginAccessIdentity(CreateCloudFrontOriginAccessIdentityRequest request)
         {
             var task = CreateCloudFrontOriginAccessIdentityAsync(request);
             try
@@ -154,30 +167,27 @@ namespace Amazon.CloudFront
         }
 
         /// <summary>
-        /// <para> Create a new origin access identity. </para>
+        /// Initiates the asynchronous execution of the CreateCloudFrontOriginAccessIdentity operation.
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
-        /// <param name="createCloudFrontOriginAccessIdentityRequest">Container for the necessary parameters to execute the
-        /// CreateCloudFrontOriginAccessIdentity service method on AmazonCloudFront.</param>
-        /// 
-        /// <returns>The response from the CreateCloudFrontOriginAccessIdentity service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyCloudFrontOriginAccessIdentitiesException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.MissingBodyException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidArgumentException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InconsistentQuantitiesException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.CloudFrontOriginAccessIdentityAlreadyExistsException" />
+        /// <param name="request">Container for the necessary parameters to execute the CreateCloudFrontOriginAccessIdentity operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<CreateCloudFrontOriginAccessIdentityResponse> CreateCloudFrontOriginAccessIdentityAsync(CreateCloudFrontOriginAccessIdentityRequest createCloudFrontOriginAccessIdentityRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateCloudFrontOriginAccessIdentityResponse> CreateCloudFrontOriginAccessIdentityAsync(CreateCloudFrontOriginAccessIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateCloudFrontOriginAccessIdentityRequestMarshaller();
-            var unmarshaller = CreateCloudFrontOriginAccessIdentityResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, CreateCloudFrontOriginAccessIdentityRequest, CreateCloudFrontOriginAccessIdentityResponse>(createCloudFrontOriginAccessIdentityRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = CreateCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
+            return Invoke<IRequest, CreateCloudFrontOriginAccessIdentityRequest, CreateCloudFrontOriginAccessIdentityResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
         }
- 
-		internal CreateDistributionResponse CreateDistribution(CreateDistributionRequest request)
+
+        #endregion
+        
+        #region  CreateDistribution
+
+        internal CreateDistributionResponse CreateDistribution(CreateDistributionRequest request)
         {
             var task = CreateDistributionAsync(request);
             try
@@ -192,51 +202,27 @@ namespace Amazon.CloudFront
         }
 
         /// <summary>
-        /// <para> Create a new distribution. </para>
+        /// Initiates the asynchronous execution of the CreateDistribution operation.
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
-        /// <param name="createDistributionRequest">Container for the necessary parameters to execute the CreateDistribution service method on
-        /// AmazonCloudFront.</param>
-        /// 
-        /// <returns>The response from the CreateDistribution service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyCookieNamesInWhiteListException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidGeoRestrictionParameterException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidResponseCodeException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.MissingBodyException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidLocationCodeException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyDistributionCNAMEsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyDistributionsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchOriginException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InconsistentQuantitiesException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidArgumentException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.CNAMEAlreadyExistsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidOriginAccessIdentityException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyCacheBehaviorsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyTrustedSignersException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidViewerCertificateException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyOriginsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.DistributionAlreadyExistsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidRequiredProtocolException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidDefaultRootObjectException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidForwardCookiesException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TrustedSignerDoesNotExistException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidOriginException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyCertificatesException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidRelativePathException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidErrorCodeException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
+        /// <param name="request">Container for the necessary parameters to execute the CreateDistribution operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<CreateDistributionResponse> CreateDistributionAsync(CreateDistributionRequest createDistributionRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateDistributionResponse> CreateDistributionAsync(CreateDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDistributionRequestMarshaller();
-            var unmarshaller = CreateDistributionResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, CreateDistributionRequest, CreateDistributionResponse>(createDistributionRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = CreateDistributionResponseUnmarshaller.Instance;
+            return Invoke<IRequest, CreateDistributionRequest, CreateDistributionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
         }
- 
-		internal CreateInvalidationResponse CreateInvalidation(CreateInvalidationRequest request)
+
+        #endregion
+        
+        #region  CreateInvalidation
+
+        internal CreateInvalidationResponse CreateInvalidation(CreateInvalidationRequest request)
         {
             var task = CreateInvalidationAsync(request);
             try
@@ -251,32 +237,27 @@ namespace Amazon.CloudFront
         }
 
         /// <summary>
-        /// <para> Create a new invalidation. </para>
+        /// Initiates the asynchronous execution of the CreateInvalidation operation.
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
-        /// <param name="createInvalidationRequest">Container for the necessary parameters to execute the CreateInvalidation service method on
-        /// AmazonCloudFront.</param>
-        /// 
-        /// <returns>The response from the CreateInvalidation service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyInvalidationsInProgressException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.MissingBodyException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchDistributionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.BatchTooLargeException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidArgumentException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InconsistentQuantitiesException" />
+        /// <param name="request">Container for the necessary parameters to execute the CreateInvalidation operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<CreateInvalidationResponse> CreateInvalidationAsync(CreateInvalidationRequest createInvalidationRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateInvalidationResponse> CreateInvalidationAsync(CreateInvalidationRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateInvalidationRequestMarshaller();
-            var unmarshaller = CreateInvalidationResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, CreateInvalidationRequest, CreateInvalidationResponse>(createInvalidationRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = CreateInvalidationResponseUnmarshaller.Instance;
+            return Invoke<IRequest, CreateInvalidationRequest, CreateInvalidationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
         }
- 
-		internal CreateStreamingDistributionResponse CreateStreamingDistribution(CreateStreamingDistributionRequest request)
+
+        #endregion
+        
+        #region  CreateStreamingDistribution
+
+        internal CreateStreamingDistributionResponse CreateStreamingDistribution(CreateStreamingDistributionRequest request)
         {
             var task = CreateStreamingDistributionAsync(request);
             try
@@ -291,37 +272,31 @@ namespace Amazon.CloudFront
         }
 
         /// <summary>
-        /// <para> Create a new streaming distribution. </para>
+        /// Initiates the asynchronous execution of the CreateStreamingDistribution operation.
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
-        /// <param name="createStreamingDistributionRequest">Container for the necessary parameters to execute the CreateStreamingDistribution service
-        /// method on AmazonCloudFront.</param>
-        /// 
-        /// <returns>The response from the CreateStreamingDistribution service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyTrustedSignersException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.MissingBodyException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyStreamingDistributionCNAMEsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.StreamingDistributionAlreadyExistsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.CNAMEAlreadyExistsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyStreamingDistributionsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidArgumentException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InconsistentQuantitiesException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidOriginAccessIdentityException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TrustedSignerDoesNotExistException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidOriginException" />
+        /// <param name="request">Container for the necessary parameters to execute the CreateStreamingDistribution operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<CreateStreamingDistributionResponse> CreateStreamingDistributionAsync(CreateStreamingDistributionRequest createStreamingDistributionRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateStreamingDistributionResponse> CreateStreamingDistributionAsync(CreateStreamingDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateStreamingDistributionRequestMarshaller();
-            var unmarshaller = CreateStreamingDistributionResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, CreateStreamingDistributionRequest, CreateStreamingDistributionResponse>(createStreamingDistributionRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = CreateStreamingDistributionResponseUnmarshaller.Instance;
+            return Invoke<IRequest, CreateStreamingDistributionRequest, CreateStreamingDistributionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
         }
- 
-		internal DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest request)
+
+        #endregion
+        
+        #region  DeleteCloudFrontOriginAccessIdentity
+
+        internal DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity()
+        {
+            return DeleteCloudFrontOriginAccessIdentity(new DeleteCloudFrontOriginAccessIdentityRequest());
+        }
+        internal DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest request)
         {
             var task = DeleteCloudFrontOriginAccessIdentityAsync(request);
             try
@@ -336,28 +311,31 @@ namespace Amazon.CloudFront
         }
 
         /// <summary>
-        /// <para> Delete an origin access identity. </para>
+        /// Initiates the asynchronous execution of the DeleteCloudFrontOriginAccessIdentity operation.
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
-        /// <param name="deleteCloudFrontOriginAccessIdentityRequest">Container for the necessary parameters to execute the
-        /// DeleteCloudFrontOriginAccessIdentity service method on AmazonCloudFront.</param>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidIfMatchVersionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.CloudFrontOriginAccessIdentityInUseException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.PreconditionFailedException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCloudFrontOriginAccessIdentity operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<DeleteCloudFrontOriginAccessIdentityResponse> DeleteCloudFrontOriginAccessIdentityAsync(DeleteCloudFrontOriginAccessIdentityRequest deleteCloudFrontOriginAccessIdentityRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteCloudFrontOriginAccessIdentityResponse> DeleteCloudFrontOriginAccessIdentityAsync(DeleteCloudFrontOriginAccessIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteCloudFrontOriginAccessIdentityRequestMarshaller();
-            var unmarshaller = DeleteCloudFrontOriginAccessIdentityResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, DeleteCloudFrontOriginAccessIdentityRequest, DeleteCloudFrontOriginAccessIdentityResponse>(deleteCloudFrontOriginAccessIdentityRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = DeleteCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
+            return Invoke<IRequest, DeleteCloudFrontOriginAccessIdentityRequest, DeleteCloudFrontOriginAccessIdentityResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
         }
- 
-		internal DeleteDistributionResponse DeleteDistribution(DeleteDistributionRequest request)
+
+        #endregion
+        
+        #region  DeleteDistribution
+
+        internal DeleteDistributionResponse DeleteDistribution()
+        {
+            return DeleteDistribution(new DeleteDistributionRequest());
+        }
+        internal DeleteDistributionResponse DeleteDistribution(DeleteDistributionRequest request)
         {
             var task = DeleteDistributionAsync(request);
             try
@@ -372,28 +350,31 @@ namespace Amazon.CloudFront
         }
 
         /// <summary>
-        /// <para> Delete a distribution. </para>
+        /// Initiates the asynchronous execution of the DeleteDistribution operation.
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
-        /// <param name="deleteDistributionRequest">Container for the necessary parameters to execute the DeleteDistribution service method on
-        /// AmazonCloudFront.</param>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidIfMatchVersionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchDistributionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.DistributionNotDisabledException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.PreconditionFailedException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDistribution operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<DeleteDistributionResponse> DeleteDistributionAsync(DeleteDistributionRequest deleteDistributionRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteDistributionResponse> DeleteDistributionAsync(DeleteDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDistributionRequestMarshaller();
-            var unmarshaller = DeleteDistributionResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, DeleteDistributionRequest, DeleteDistributionResponse>(deleteDistributionRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = DeleteDistributionResponseUnmarshaller.Instance;
+            return Invoke<IRequest, DeleteDistributionRequest, DeleteDistributionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
         }
- 
-		internal DeleteStreamingDistributionResponse DeleteStreamingDistribution(DeleteStreamingDistributionRequest request)
+
+        #endregion
+        
+        #region  DeleteStreamingDistribution
+
+        internal DeleteStreamingDistributionResponse DeleteStreamingDistribution()
+        {
+            return DeleteStreamingDistribution(new DeleteStreamingDistributionRequest());
+        }
+        internal DeleteStreamingDistributionResponse DeleteStreamingDistribution(DeleteStreamingDistributionRequest request)
         {
             var task = DeleteStreamingDistributionAsync(request);
             try
@@ -408,28 +389,31 @@ namespace Amazon.CloudFront
         }
 
         /// <summary>
-        /// <para> Delete a streaming distribution. </para>
+        /// Initiates the asynchronous execution of the DeleteStreamingDistribution operation.
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
-        /// <param name="deleteStreamingDistributionRequest">Container for the necessary parameters to execute the DeleteStreamingDistribution service
-        /// method on AmazonCloudFront.</param>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidIfMatchVersionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchStreamingDistributionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.StreamingDistributionNotDisabledException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.PreconditionFailedException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStreamingDistribution operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<DeleteStreamingDistributionResponse> DeleteStreamingDistributionAsync(DeleteStreamingDistributionRequest deleteStreamingDistributionRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteStreamingDistributionResponse> DeleteStreamingDistributionAsync(DeleteStreamingDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteStreamingDistributionRequestMarshaller();
-            var unmarshaller = DeleteStreamingDistributionResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, DeleteStreamingDistributionRequest, DeleteStreamingDistributionResponse>(deleteStreamingDistributionRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = DeleteStreamingDistributionResponseUnmarshaller.Instance;
+            return Invoke<IRequest, DeleteStreamingDistributionRequest, DeleteStreamingDistributionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
         }
- 
-		internal GetCloudFrontOriginAccessIdentityResponse GetCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest request)
+
+        #endregion
+        
+        #region  GetCloudFrontOriginAccessIdentity
+
+        internal GetCloudFrontOriginAccessIdentityResponse GetCloudFrontOriginAccessIdentity()
+        {
+            return GetCloudFrontOriginAccessIdentity(new GetCloudFrontOriginAccessIdentityRequest());
+        }
+        internal GetCloudFrontOriginAccessIdentityResponse GetCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest request)
         {
             var task = GetCloudFrontOriginAccessIdentityAsync(request);
             try
@@ -444,27 +428,31 @@ namespace Amazon.CloudFront
         }
 
         /// <summary>
-        /// <para> Get the information about an origin access identity. </para>
+        /// Initiates the asynchronous execution of the GetCloudFrontOriginAccessIdentity operation.
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
-        /// <param name="getCloudFrontOriginAccessIdentityRequest">Container for the necessary parameters to execute the
-        /// GetCloudFrontOriginAccessIdentity service method on AmazonCloudFront.</param>
-        /// 
-        /// <returns>The response from the GetCloudFrontOriginAccessIdentity service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
+        /// <param name="request">Container for the necessary parameters to execute the GetCloudFrontOriginAccessIdentity operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<GetCloudFrontOriginAccessIdentityResponse> GetCloudFrontOriginAccessIdentityAsync(GetCloudFrontOriginAccessIdentityRequest getCloudFrontOriginAccessIdentityRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetCloudFrontOriginAccessIdentityResponse> GetCloudFrontOriginAccessIdentityAsync(GetCloudFrontOriginAccessIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetCloudFrontOriginAccessIdentityRequestMarshaller();
-            var unmarshaller = GetCloudFrontOriginAccessIdentityResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, GetCloudFrontOriginAccessIdentityRequest, GetCloudFrontOriginAccessIdentityResponse>(getCloudFrontOriginAccessIdentityRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = GetCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
+            return Invoke<IRequest, GetCloudFrontOriginAccessIdentityRequest, GetCloudFrontOriginAccessIdentityResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
         }
- 
-		internal GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest request)
+
+        #endregion
+        
+        #region  GetCloudFrontOriginAccessIdentityConfig
+
+        internal GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig()
+        {
+            return GetCloudFrontOriginAccessIdentityConfig(new GetCloudFrontOriginAccessIdentityConfigRequest());
+        }
+        internal GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest request)
         {
             var task = GetCloudFrontOriginAccessIdentityConfigAsync(request);
             try
@@ -479,27 +467,31 @@ namespace Amazon.CloudFront
         }
 
         /// <summary>
-        /// <para> Get the configuration information about an origin access identity. </para>
+        /// Initiates the asynchronous execution of the GetCloudFrontOriginAccessIdentityConfig operation.
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
-        /// <param name="getCloudFrontOriginAccessIdentityConfigRequest">Container for the necessary parameters to execute the
-        /// GetCloudFrontOriginAccessIdentityConfig service method on AmazonCloudFront.</param>
-        /// 
-        /// <returns>The response from the GetCloudFrontOriginAccessIdentityConfig service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
+        /// <param name="request">Container for the necessary parameters to execute the GetCloudFrontOriginAccessIdentityConfig operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<GetCloudFrontOriginAccessIdentityConfigResponse> GetCloudFrontOriginAccessIdentityConfigAsync(GetCloudFrontOriginAccessIdentityConfigRequest getCloudFrontOriginAccessIdentityConfigRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetCloudFrontOriginAccessIdentityConfigResponse> GetCloudFrontOriginAccessIdentityConfigAsync(GetCloudFrontOriginAccessIdentityConfigRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetCloudFrontOriginAccessIdentityConfigRequestMarshaller();
-            var unmarshaller = GetCloudFrontOriginAccessIdentityConfigResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, GetCloudFrontOriginAccessIdentityConfigRequest, GetCloudFrontOriginAccessIdentityConfigResponse>(getCloudFrontOriginAccessIdentityConfigRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = GetCloudFrontOriginAccessIdentityConfigResponseUnmarshaller.Instance;
+            return Invoke<IRequest, GetCloudFrontOriginAccessIdentityConfigRequest, GetCloudFrontOriginAccessIdentityConfigResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
         }
- 
-		internal GetDistributionResponse GetDistribution(GetDistributionRequest request)
+
+        #endregion
+        
+        #region  GetDistribution
+
+        internal GetDistributionResponse GetDistribution()
+        {
+            return GetDistribution(new GetDistributionRequest());
+        }
+        internal GetDistributionResponse GetDistribution(GetDistributionRequest request)
         {
             var task = GetDistributionAsync(request);
             try
@@ -514,27 +506,31 @@ namespace Amazon.CloudFront
         }
 
         /// <summary>
-        /// <para> Get the information about a distribution. </para>
+        /// Initiates the asynchronous execution of the GetDistribution operation.
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
-        /// <param name="getDistributionRequest">Container for the necessary parameters to execute the GetDistribution service method on
-        /// AmazonCloudFront.</param>
-        /// 
-        /// <returns>The response from the GetDistribution service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchDistributionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
+        /// <param name="request">Container for the necessary parameters to execute the GetDistribution operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<GetDistributionResponse> GetDistributionAsync(GetDistributionRequest getDistributionRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetDistributionResponse> GetDistributionAsync(GetDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDistributionRequestMarshaller();
-            var unmarshaller = GetDistributionResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, GetDistributionRequest, GetDistributionResponse>(getDistributionRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = GetDistributionResponseUnmarshaller.Instance;
+            return Invoke<IRequest, GetDistributionRequest, GetDistributionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
         }
- 
-		internal GetDistributionConfigResponse GetDistributionConfig(GetDistributionConfigRequest request)
+
+        #endregion
+        
+        #region  GetDistributionConfig
+
+        internal GetDistributionConfigResponse GetDistributionConfig()
+        {
+            return GetDistributionConfig(new GetDistributionConfigRequest());
+        }
+        internal GetDistributionConfigResponse GetDistributionConfig(GetDistributionConfigRequest request)
         {
             var task = GetDistributionConfigAsync(request);
             try
@@ -549,27 +545,27 @@ namespace Amazon.CloudFront
         }
 
         /// <summary>
-        /// <para> Get the configuration information about a distribution. </para>
+        /// Initiates the asynchronous execution of the GetDistributionConfig operation.
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
-        /// <param name="getDistributionConfigRequest">Container for the necessary parameters to execute the GetDistributionConfig service method on
-        /// AmazonCloudFront.</param>
-        /// 
-        /// <returns>The response from the GetDistributionConfig service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchDistributionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
+        /// <param name="request">Container for the necessary parameters to execute the GetDistributionConfig operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<GetDistributionConfigResponse> GetDistributionConfigAsync(GetDistributionConfigRequest getDistributionConfigRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetDistributionConfigResponse> GetDistributionConfigAsync(GetDistributionConfigRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDistributionConfigRequestMarshaller();
-            var unmarshaller = GetDistributionConfigResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, GetDistributionConfigRequest, GetDistributionConfigResponse>(getDistributionConfigRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = GetDistributionConfigResponseUnmarshaller.Instance;
+            return Invoke<IRequest, GetDistributionConfigRequest, GetDistributionConfigResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
         }
- 
-		internal GetInvalidationResponse GetInvalidation(GetInvalidationRequest request)
+
+        #endregion
+        
+        #region  GetInvalidation
+
+        internal GetInvalidationResponse GetInvalidation(GetInvalidationRequest request)
         {
             var task = GetInvalidationAsync(request);
             try
@@ -584,28 +580,31 @@ namespace Amazon.CloudFront
         }
 
         /// <summary>
-        /// <para> Get the information about an invalidation. </para>
+        /// Initiates the asynchronous execution of the GetInvalidation operation.
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
-        /// <param name="getInvalidationRequest">Container for the necessary parameters to execute the GetInvalidation service method on
-        /// AmazonCloudFront.</param>
-        /// 
-        /// <returns>The response from the GetInvalidation service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchInvalidationException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchDistributionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
+        /// <param name="request">Container for the necessary parameters to execute the GetInvalidation operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<GetInvalidationResponse> GetInvalidationAsync(GetInvalidationRequest getInvalidationRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetInvalidationResponse> GetInvalidationAsync(GetInvalidationRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetInvalidationRequestMarshaller();
-            var unmarshaller = GetInvalidationResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, GetInvalidationRequest, GetInvalidationResponse>(getInvalidationRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = GetInvalidationResponseUnmarshaller.Instance;
+            return Invoke<IRequest, GetInvalidationRequest, GetInvalidationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
         }
- 
-		internal GetStreamingDistributionResponse GetStreamingDistribution(GetStreamingDistributionRequest request)
+
+        #endregion
+        
+        #region  GetStreamingDistribution
+
+        internal GetStreamingDistributionResponse GetStreamingDistribution()
+        {
+            return GetStreamingDistribution(new GetStreamingDistributionRequest());
+        }
+        internal GetStreamingDistributionResponse GetStreamingDistribution(GetStreamingDistributionRequest request)
         {
             var task = GetStreamingDistributionAsync(request);
             try
@@ -620,27 +619,31 @@ namespace Amazon.CloudFront
         }
 
         /// <summary>
-        /// <para> Get the information about a streaming distribution. </para>
+        /// Initiates the asynchronous execution of the GetStreamingDistribution operation.
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
-        /// <param name="getStreamingDistributionRequest">Container for the necessary parameters to execute the GetStreamingDistribution service method
-        /// on AmazonCloudFront.</param>
-        /// 
-        /// <returns>The response from the GetStreamingDistribution service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchStreamingDistributionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
+        /// <param name="request">Container for the necessary parameters to execute the GetStreamingDistribution operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<GetStreamingDistributionResponse> GetStreamingDistributionAsync(GetStreamingDistributionRequest getStreamingDistributionRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetStreamingDistributionResponse> GetStreamingDistributionAsync(GetStreamingDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetStreamingDistributionRequestMarshaller();
-            var unmarshaller = GetStreamingDistributionResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, GetStreamingDistributionRequest, GetStreamingDistributionResponse>(getStreamingDistributionRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = GetStreamingDistributionResponseUnmarshaller.Instance;
+            return Invoke<IRequest, GetStreamingDistributionRequest, GetStreamingDistributionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
         }
- 
-		internal GetStreamingDistributionConfigResponse GetStreamingDistributionConfig(GetStreamingDistributionConfigRequest request)
+
+        #endregion
+        
+        #region  GetStreamingDistributionConfig
+
+        internal GetStreamingDistributionConfigResponse GetStreamingDistributionConfig()
+        {
+            return GetStreamingDistributionConfig(new GetStreamingDistributionConfigRequest());
+        }
+        internal GetStreamingDistributionConfigResponse GetStreamingDistributionConfig(GetStreamingDistributionConfigRequest request)
         {
             var task = GetStreamingDistributionConfigAsync(request);
             try
@@ -655,27 +658,31 @@ namespace Amazon.CloudFront
         }
 
         /// <summary>
-        /// <para> Get the configuration information about a streaming distribution. </para>
+        /// Initiates the asynchronous execution of the GetStreamingDistributionConfig operation.
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
-        /// <param name="getStreamingDistributionConfigRequest">Container for the necessary parameters to execute the GetStreamingDistributionConfig
-        /// service method on AmazonCloudFront.</param>
-        /// 
-        /// <returns>The response from the GetStreamingDistributionConfig service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchStreamingDistributionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
+        /// <param name="request">Container for the necessary parameters to execute the GetStreamingDistributionConfig operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<GetStreamingDistributionConfigResponse> GetStreamingDistributionConfigAsync(GetStreamingDistributionConfigRequest getStreamingDistributionConfigRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetStreamingDistributionConfigResponse> GetStreamingDistributionConfigAsync(GetStreamingDistributionConfigRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetStreamingDistributionConfigRequestMarshaller();
-            var unmarshaller = GetStreamingDistributionConfigResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, GetStreamingDistributionConfigRequest, GetStreamingDistributionConfigResponse>(getStreamingDistributionConfigRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = GetStreamingDistributionConfigResponseUnmarshaller.Instance;
+            return Invoke<IRequest, GetStreamingDistributionConfigRequest, GetStreamingDistributionConfigResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
         }
- 
-		internal ListCloudFrontOriginAccessIdentitiesResponse ListCloudFrontOriginAccessIdentities(ListCloudFrontOriginAccessIdentitiesRequest request)
+
+        #endregion
+        
+        #region  ListCloudFrontOriginAccessIdentities
+
+        internal ListCloudFrontOriginAccessIdentitiesResponse ListCloudFrontOriginAccessIdentities()
+        {
+            return ListCloudFrontOriginAccessIdentities(new ListCloudFrontOriginAccessIdentitiesRequest());
+        }
+        internal ListCloudFrontOriginAccessIdentitiesResponse ListCloudFrontOriginAccessIdentities(ListCloudFrontOriginAccessIdentitiesRequest request)
         {
             var task = ListCloudFrontOriginAccessIdentitiesAsync(request);
             try
@@ -690,26 +697,31 @@ namespace Amazon.CloudFront
         }
 
         /// <summary>
-        /// <para> List origin access identities. </para>
+        /// Initiates the asynchronous execution of the ListCloudFrontOriginAccessIdentities operation.
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
-        /// <param name="listCloudFrontOriginAccessIdentitiesRequest">Container for the necessary parameters to execute the
-        /// ListCloudFrontOriginAccessIdentities service method on AmazonCloudFront.</param>
-        /// 
-        /// <returns>The response from the ListCloudFrontOriginAccessIdentities service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidArgumentException" />
+        /// <param name="request">Container for the necessary parameters to execute the ListCloudFrontOriginAccessIdentities operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<ListCloudFrontOriginAccessIdentitiesResponse> ListCloudFrontOriginAccessIdentitiesAsync(ListCloudFrontOriginAccessIdentitiesRequest listCloudFrontOriginAccessIdentitiesRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListCloudFrontOriginAccessIdentitiesResponse> ListCloudFrontOriginAccessIdentitiesAsync(ListCloudFrontOriginAccessIdentitiesRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListCloudFrontOriginAccessIdentitiesRequestMarshaller();
-            var unmarshaller = ListCloudFrontOriginAccessIdentitiesResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, ListCloudFrontOriginAccessIdentitiesRequest, ListCloudFrontOriginAccessIdentitiesResponse>(listCloudFrontOriginAccessIdentitiesRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = ListCloudFrontOriginAccessIdentitiesResponseUnmarshaller.Instance;
+            return Invoke<IRequest, ListCloudFrontOriginAccessIdentitiesRequest, ListCloudFrontOriginAccessIdentitiesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
         }
- 
-		internal ListDistributionsResponse ListDistributions(ListDistributionsRequest request)
+
+        #endregion
+        
+        #region  ListDistributions
+
+        internal ListDistributionsResponse ListDistributions()
+        {
+            return ListDistributions(new ListDistributionsRequest());
+        }
+        internal ListDistributionsResponse ListDistributions(ListDistributionsRequest request)
         {
             var task = ListDistributionsAsync(request);
             try
@@ -724,26 +736,27 @@ namespace Amazon.CloudFront
         }
 
         /// <summary>
-        /// <para> List distributions. </para>
+        /// Initiates the asynchronous execution of the ListDistributions operation.
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
-        /// <param name="listDistributionsRequest">Container for the necessary parameters to execute the ListDistributions service method on
-        /// AmazonCloudFront.</param>
-        /// 
-        /// <returns>The response from the ListDistributions service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidArgumentException" />
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributions operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<ListDistributionsResponse> ListDistributionsAsync(ListDistributionsRequest listDistributionsRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListDistributionsResponse> ListDistributionsAsync(ListDistributionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListDistributionsRequestMarshaller();
-            var unmarshaller = ListDistributionsResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, ListDistributionsRequest, ListDistributionsResponse>(listDistributionsRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = ListDistributionsResponseUnmarshaller.Instance;
+            return Invoke<IRequest, ListDistributionsRequest, ListDistributionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
         }
- 
-		internal ListInvalidationsResponse ListInvalidations(ListInvalidationsRequest request)
+
+        #endregion
+        
+        #region  ListInvalidations
+
+        internal ListInvalidationsResponse ListInvalidations(ListInvalidationsRequest request)
         {
             var task = ListInvalidationsAsync(request);
             try
@@ -758,28 +771,31 @@ namespace Amazon.CloudFront
         }
 
         /// <summary>
-        /// <para> List invalidation batches. </para>
+        /// Initiates the asynchronous execution of the ListInvalidations operation.
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
-        /// <param name="listInvalidationsRequest">Container for the necessary parameters to execute the ListInvalidations service method on
-        /// AmazonCloudFront.</param>
-        /// 
-        /// <returns>The response from the ListInvalidations service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchDistributionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidArgumentException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
+        /// <param name="request">Container for the necessary parameters to execute the ListInvalidations operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<ListInvalidationsResponse> ListInvalidationsAsync(ListInvalidationsRequest listInvalidationsRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListInvalidationsResponse> ListInvalidationsAsync(ListInvalidationsRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListInvalidationsRequestMarshaller();
-            var unmarshaller = ListInvalidationsResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, ListInvalidationsRequest, ListInvalidationsResponse>(listInvalidationsRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = ListInvalidationsResponseUnmarshaller.Instance;
+            return Invoke<IRequest, ListInvalidationsRequest, ListInvalidationsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
         }
- 
-		internal ListStreamingDistributionsResponse ListStreamingDistributions(ListStreamingDistributionsRequest request)
+
+        #endregion
+        
+        #region  ListStreamingDistributions
+
+        internal ListStreamingDistributionsResponse ListStreamingDistributions()
+        {
+            return ListStreamingDistributions(new ListStreamingDistributionsRequest());
+        }
+        internal ListStreamingDistributionsResponse ListStreamingDistributions(ListStreamingDistributionsRequest request)
         {
             var task = ListStreamingDistributionsAsync(request);
             try
@@ -794,26 +810,27 @@ namespace Amazon.CloudFront
         }
 
         /// <summary>
-        /// <para> List streaming distributions. </para>
+        /// Initiates the asynchronous execution of the ListStreamingDistributions operation.
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
-        /// <param name="listStreamingDistributionsRequest">Container for the necessary parameters to execute the ListStreamingDistributions service
-        /// method on AmazonCloudFront.</param>
-        /// 
-        /// <returns>The response from the ListStreamingDistributions service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidArgumentException" />
+        /// <param name="request">Container for the necessary parameters to execute the ListStreamingDistributions operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<ListStreamingDistributionsResponse> ListStreamingDistributionsAsync(ListStreamingDistributionsRequest listStreamingDistributionsRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListStreamingDistributionsResponse> ListStreamingDistributionsAsync(ListStreamingDistributionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListStreamingDistributionsRequestMarshaller();
-            var unmarshaller = ListStreamingDistributionsResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, ListStreamingDistributionsRequest, ListStreamingDistributionsResponse>(listStreamingDistributionsRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = ListStreamingDistributionsResponseUnmarshaller.Instance;
+            return Invoke<IRequest, ListStreamingDistributionsRequest, ListStreamingDistributionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
         }
- 
-		internal UpdateCloudFrontOriginAccessIdentityResponse UpdateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest request)
+
+        #endregion
+        
+        #region  UpdateCloudFrontOriginAccessIdentity
+
+        internal UpdateCloudFrontOriginAccessIdentityResponse UpdateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest request)
         {
             var task = UpdateCloudFrontOriginAccessIdentityAsync(request);
             try
@@ -828,33 +845,27 @@ namespace Amazon.CloudFront
         }
 
         /// <summary>
-        /// <para> Update an origin access identity. </para>
+        /// Initiates the asynchronous execution of the UpdateCloudFrontOriginAccessIdentity operation.
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
-        /// <param name="updateCloudFrontOriginAccessIdentityRequest">Container for the necessary parameters to execute the
-        /// UpdateCloudFrontOriginAccessIdentity service method on AmazonCloudFront.</param>
-        /// 
-        /// <returns>The response from the UpdateCloudFrontOriginAccessIdentity service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidIfMatchVersionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.IllegalUpdateException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.MissingBodyException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.PreconditionFailedException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidArgumentException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InconsistentQuantitiesException" />
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCloudFrontOriginAccessIdentity operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<UpdateCloudFrontOriginAccessIdentityResponse> UpdateCloudFrontOriginAccessIdentityAsync(UpdateCloudFrontOriginAccessIdentityRequest updateCloudFrontOriginAccessIdentityRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateCloudFrontOriginAccessIdentityResponse> UpdateCloudFrontOriginAccessIdentityAsync(UpdateCloudFrontOriginAccessIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateCloudFrontOriginAccessIdentityRequestMarshaller();
-            var unmarshaller = UpdateCloudFrontOriginAccessIdentityResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, UpdateCloudFrontOriginAccessIdentityRequest, UpdateCloudFrontOriginAccessIdentityResponse>(updateCloudFrontOriginAccessIdentityRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = UpdateCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
+            return Invoke<IRequest, UpdateCloudFrontOriginAccessIdentityRequest, UpdateCloudFrontOriginAccessIdentityResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
         }
- 
-		internal UpdateDistributionResponse UpdateDistribution(UpdateDistributionRequest request)
+
+        #endregion
+        
+        #region  UpdateDistribution
+
+        internal UpdateDistributionResponse UpdateDistribution(UpdateDistributionRequest request)
         {
             var task = UpdateDistributionAsync(request);
             try
@@ -869,52 +880,27 @@ namespace Amazon.CloudFront
         }
 
         /// <summary>
-        /// <para> Update a distribution. </para>
+        /// Initiates the asynchronous execution of the UpdateDistribution operation.
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
-        /// <param name="updateDistributionRequest">Container for the necessary parameters to execute the UpdateDistribution service method on
-        /// AmazonCloudFront.</param>
-        /// 
-        /// <returns>The response from the UpdateDistribution service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyCookieNamesInWhiteListException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidGeoRestrictionParameterException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidResponseCodeException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.MissingBodyException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyDistributionCNAMEsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidLocationCodeException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchOriginException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.PreconditionFailedException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InconsistentQuantitiesException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.CNAMEAlreadyExistsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidArgumentException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidOriginAccessIdentityException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyCacheBehaviorsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyTrustedSignersException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchDistributionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidViewerCertificateException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyOriginsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidRequiredProtocolException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidDefaultRootObjectException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidIfMatchVersionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.IllegalUpdateException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidForwardCookiesException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TrustedSignerDoesNotExistException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyCertificatesException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidRelativePathException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidErrorCodeException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDistribution operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<UpdateDistributionResponse> UpdateDistributionAsync(UpdateDistributionRequest updateDistributionRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateDistributionResponse> UpdateDistributionAsync(UpdateDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateDistributionRequestMarshaller();
-            var unmarshaller = UpdateDistributionResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, UpdateDistributionRequest, UpdateDistributionResponse>(updateDistributionRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = UpdateDistributionResponseUnmarshaller.Instance;
+            return Invoke<IRequest, UpdateDistributionRequest, UpdateDistributionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
         }
- 
-		internal UpdateStreamingDistributionResponse UpdateStreamingDistribution(UpdateStreamingDistributionRequest request)
+
+        #endregion
+        
+        #region  UpdateStreamingDistribution
+
+        internal UpdateStreamingDistributionResponse UpdateStreamingDistribution(UpdateStreamingDistributionRequest request)
         {
             var task = UpdateStreamingDistributionAsync(request);
             try
@@ -929,35 +915,23 @@ namespace Amazon.CloudFront
         }
 
         /// <summary>
-        /// <para> Update a streaming distribution. </para>
+        /// Initiates the asynchronous execution of the UpdateStreamingDistribution operation.
+        /// <seealso cref="Amazon.CloudFront.IAmazonCloudFront"/>
         /// </summary>
         /// 
-        /// <param name="updateStreamingDistributionRequest">Container for the necessary parameters to execute the UpdateStreamingDistribution service
-        /// method on AmazonCloudFront.</param>
-        /// 
-        /// <returns>The response from the UpdateStreamingDistribution service method, as returned by AmazonCloudFront.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidIfMatchVersionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.IllegalUpdateException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.MissingBodyException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.PreconditionFailedException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.CNAMEAlreadyExistsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidArgumentException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InconsistentQuantitiesException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidOriginAccessIdentityException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TrustedSignerDoesNotExistException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyTrustedSignersException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.NoSuchStreamingDistributionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyStreamingDistributionCNAMEsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStreamingDistribution operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<UpdateStreamingDistributionResponse> UpdateStreamingDistributionAsync(UpdateStreamingDistributionRequest updateStreamingDistributionRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateStreamingDistributionResponse> UpdateStreamingDistributionAsync(UpdateStreamingDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateStreamingDistributionRequestMarshaller();
-            var unmarshaller = UpdateStreamingDistributionResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, UpdateStreamingDistributionRequest, UpdateStreamingDistributionResponse>(updateStreamingDistributionRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = UpdateStreamingDistributionResponseUnmarshaller.Instance;
+            return Invoke<IRequest, UpdateStreamingDistributionRequest, UpdateStreamingDistributionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
         }
+
+        #endregion
+        
     }
 }

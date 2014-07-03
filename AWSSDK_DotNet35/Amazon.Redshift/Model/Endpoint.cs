@@ -18,48 +18,56 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// <para>Describes a connection endpoint.</para>
+    /// Describes a connection endpoint.
     /// </summary>
     public partial class Endpoint
     {
-        
-        private string address;
-        private int? port;
+        private string _address;
+        private int? _port;
 
 
         /// <summary>
-        /// The DNS address of the Cluster.
-        ///  
+        /// Gets and sets the property Address. 
+        /// <para>
+        ///         The DNS address of the Cluster.        
+        /// </para>
         /// </summary>
         public string Address
         {
-            get { return this.address; }
-            set { this.address = value; }
+            get { return this._address; }
+            set { this._address = value; }
         }
 
         // Check to see if Address property is set
         internal bool IsSetAddress()
         {
-            return this.address != null;
+            return this._address != null;
         }
 
+
         /// <summary>
-        /// The port that the database engine is listening on.
-        ///  
+        /// Gets and sets the property Port. 
+        /// <para>
+        ///         The port that the database engine is listening on.        
+        /// </para>
         /// </summary>
         public int Port
         {
-            get { return this.port ?? default(int); }
-            set { this.port = value; }
+            get { return this._port.GetValueOrDefault(); }
+            set { this._port = value; }
         }
 
         // Check to see if Port property is set
         internal bool IsSetPort()
         {
-            return this.port.HasValue;
+            return this._port.HasValue; 
         }
+
     }
 }

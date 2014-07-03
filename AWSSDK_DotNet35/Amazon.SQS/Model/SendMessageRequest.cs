@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,7 +24,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
+    /// Container for the parameters to the SendMessage operation.
+    /// Delivers a message to the specified      queue. With Amazon SQS, you now have
+    /// the ability to send large payload messages that are up      to 256KB (262,144 bytes)
+    /// in size. To send large payloads, you must use an AWS SDK that      supports SigV4
+    /// signing. To verify whether SigV4 is supported for an AWS SDK, check the SDK      release
+    /// notes.    
     /// 
+    ///     <important>      
+    /// <para>
+    ///         The following list shows the characters (in Unicode) allowed in your message,
+    /// according        to the W3C XML specification. For more information, go to       
+    ///         <a href="http://www.w3.org/TR/REC-xml/#charsets">http://www.w3.org/TR/REC-xml/#charsets</a>
+    ///                If you send any characters not included in the list, your request will
+    /// be rejected.      
+    /// </para>
+    ///       
+    /// <para>
+    ///         #x9 | #xA | #xD | [#x20 to #xD7FF] | [#xE000 to #xFFFD] | [#x10000 to #x10FFFF]
+    ///      
+    /// </para>
+    ///     </important>
     /// </summary>
     public partial class SendMessageRequest : AmazonSQSRequest
     {

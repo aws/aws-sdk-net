@@ -12,60 +12,70 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.ElasticTranscoder.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
+using Amazon.ElasticTranscoder.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for TimeSpan Object
+    /// </summary>  
+    public class TimeSpanUnmarshaller : IUnmarshaller<TimeSpan, XmlUnmarshallerContext>, IUnmarshaller<TimeSpan, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// TimeSpanUnmarshaller
-      /// </summary>
-      internal class TimeSpanUnmarshaller : IUnmarshaller<TimeSpan, XmlUnmarshallerContext>, IUnmarshaller<TimeSpan, JsonUnmarshallerContext>
-      {
         TimeSpan IUnmarshaller<TimeSpan, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public TimeSpan Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            TimeSpan timeSpan = new TimeSpan();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            TimeSpan unmarshalledObject = new TimeSpan();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("StartTime", targetDepth))
-              {
-                timeSpan.StartTime = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Duration", targetDepth))
-              {
-                timeSpan.Duration = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("Duration", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Duration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StartTime", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return timeSpan;
+            return unmarshalledObject;
         }
 
-        private static TimeSpanUnmarshaller instance;
-        public static TimeSpanUnmarshaller GetInstance()
+
+        private static TimeSpanUnmarshaller _instance = new TimeSpanUnmarshaller();        
+
+        public static TimeSpanUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new TimeSpanUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

@@ -25,29 +25,36 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableLogging operation.
-    /// <para>Stops logging information, such as queries and connection attempts, for the specified Amazon Redshift cluster.</para>
+    /// Stops logging information, such as queries and connection attempts,           for
+    /// the specified Amazon Redshift cluster.
     /// </summary>
     public partial class DisableLoggingRequest : AmazonRedshiftRequest
     {
-        private string clusterIdentifier;
+        private string _clusterIdentifier;
 
 
         /// <summary>
-        /// The identifier of the cluster on which logging is to be stopped. Example: <c>examplecluster</c>
-        ///  
+        /// Gets and sets the property ClusterIdentifier. 
+        /// <para>
+        ///             The identifier of the cluster on which logging is to be stopped.     
+        ///    
+        /// </para>
+        ///         
+        /// <para>
+        /// Example: <code>examplecluster</code>
+        /// </para>
         /// </summary>
         public string ClusterIdentifier
         {
-            get { return this.clusterIdentifier; }
-            set { this.clusterIdentifier = value; }
+            get { return this._clusterIdentifier; }
+            set { this._clusterIdentifier = value; }
         }
 
         // Check to see if ClusterIdentifier property is set
         internal bool IsSetClusterIdentifier()
         {
-            return this.clusterIdentifier != null;
+            return this._clusterIdentifier != null;
         }
 
     }
 }
-    

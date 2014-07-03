@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,54 +14,55 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SimpleNotificationService.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Platform Application Request Marshaller
+    /// CreatePlatformApplication Request Marshaller
     /// </summary>       
     public class CreatePlatformApplicationRequestMarshaller : IMarshaller<IRequest, CreatePlatformApplicationRequest>
     {
-        public IRequest Marshall(CreatePlatformApplicationRequest createPlatformApplicationRequest)
+        public IRequest Marshall(CreatePlatformApplicationRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(createPlatformApplicationRequest, "AmazonSimpleNotificationService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleNotificationService");
             request.Parameters.Add("Action", "CreatePlatformApplication");
             request.Parameters.Add("Version", "2010-03-31");
-            if (createPlatformApplicationRequest != null && createPlatformApplicationRequest.IsSetName())
+
+            if(publicRequest != null)
             {
-                request.Parameters.Add("Name", StringUtils.FromString(createPlatformApplicationRequest.Name));
-            }
-            if (createPlatformApplicationRequest != null && createPlatformApplicationRequest.IsSetPlatform())
-            {
-                request.Parameters.Add("Platform", StringUtils.FromString(createPlatformApplicationRequest.Platform));
-            }
-            if (createPlatformApplicationRequest != null)
-            {
-                if (createPlatformApplicationRequest.Attributes != null)
+                if(publicRequest.IsSetAttributes())
                 {
-                    int attributesListIndex = 1;
-                    foreach (string key in createPlatformApplicationRequest.Attributes.Keys)
+                    int mapIndex = 1;
+                    foreach(var key in publicRequest.Attributes.Keys)
                     {
-                        string value;
-                        bool hasValue = createPlatformApplicationRequest.Attributes.TryGetValue(key, out value);
-                                    request.Parameters.Add("Attributes.entry." + attributesListIndex + ".key", StringUtils.FromString(key));
-                        if (hasValue) 
+                        String value;
+                        bool hasValue = publicRequest.Attributes.TryGetValue(key, out value);
+                        request.Parameters.Add("Attributes" + "." + "entry" + "." + mapIndex + "." + "key", StringUtils.FromString(key));
+                        if (hasValue)
                         {
-                            request.Parameters.Add("Attributes.entry." + attributesListIndex + ".value", StringUtils.FromString(value));
+                            request.Parameters.Add("Attributes" + "." + "entry" + "." + mapIndex + "." + "value", StringUtils.FromString(value));
                         }
-                            ++attributesListIndex;
+                        mapIndex++;
                     }
                 }
+                if(publicRequest.IsSetName())
+                {
+                    request.Parameters.Add("Name", StringUtils.FromString(publicRequest.Name));
+                }
+                if(publicRequest.IsSetPlatform())
+                {
+                    request.Parameters.Add("Platform", StringUtils.FromString(publicRequest.Platform));
+                }
             }
-
             return request;
         }
     }

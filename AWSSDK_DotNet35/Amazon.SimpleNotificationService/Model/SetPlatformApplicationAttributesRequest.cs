@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,57 +25,66 @@ namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
     /// Container for the parameters to the SetPlatformApplicationAttributes operation.
-    /// <para>The <c>SetPlatformApplicationAttributes</c> action sets the attributes of the platform application object for the supported push
-    /// notification services, such as APNS and GCM. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"
-    /// >Using Amazon SNS Mobile Push Notifications</a> .
-    /// </para>
+    /// Sets the attributes of the platform application object for the supported push notification
+    /// services,       such as APNS and GCM.      For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
+    /// Amazon SNS Mobile Push Notifications</a>.
     /// </summary>
     public partial class SetPlatformApplicationAttributesRequest : AmazonSimpleNotificationServiceRequest
     {
-        private string platformApplicationArn;
-        private Dictionary<string,string> attributes = new Dictionary<string,string>();
+        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private string _platformApplicationArn;
 
 
         /// <summary>
-        /// PlatformApplicationArn for SetPlatformApplicationAttributes action.
-        ///  
+        /// Gets and sets the property Attributes. 
+        /// <para>
+        /// A map of the platform application attributes. Attributes in this map include the following:
+        /// </para>
+        ///     <ul>            <li><code>PlatformCredential</code> -- The credential received
+        /// from the notification service. For APNS/APNS_SANDBOX, PlatformCredential is "private
+        /// key".         For GCM, PlatformCredential is "API key". For ADM, PlatformCredential
+        /// is "client secret".</li>      <li><code>PlatformPrincipal</code> -- The principal
+        /// received from the notification service. For APNS/APNS_SANDBOX, PlatformPrincipal is
+        /// "SSL certificate".         For GCM, PlatformPrincipal is not applicable. For ADM,
+        /// PlatformPrincipal is "client id".</li>            <li><code>EventEndpointCreated</code>
+        /// -- Topic ARN to which EndpointCreated event notifications should be sent.</li>   
+        ///   <li><code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted event
+        /// notifications should be sent.</li>      <li><code>EventEndpointUpdated</code> -- Topic
+        /// ARN to which EndpointUpdate event notifications should be sent.</li>            <li><code>EventDeliveryFailure</code>
+        /// -- Topic ARN to which DeliveryFailure event notifications should be sent upon Direct
+        /// Publish delivery failure (permanent) to one of the application's endpoints.</li> 
+        ///         </ul>
         /// </summary>
-        public string PlatformApplicationArn
+        public Dictionary<string, string> Attributes
         {
-            get { return this.platformApplicationArn; }
-            set { this.platformApplicationArn = value; }
-        }
-
-        // Check to see if PlatformApplicationArn property is set
-        internal bool IsSetPlatformApplicationArn()
-        {
-            return this.platformApplicationArn != null;
-        }
-
-        /// <summary>
-        /// A map of the platform application attributes. Attributes in this map include the following: <ul> <li><c>PlatformCredential</c> -- The
-        /// credential received from the notification service. For APNS/APNS_SANDBOX, PlatformCredential is "private key". For GCM, PlatformCredential
-        /// is "API key". For ADM, PlatformCredential is "client secret".</li> <li><c>PlatformPrincipal</c> -- The principal received from the
-        /// notification service. For APNS/APNS_SANDBOX, PlatformPrincipal is "SSL certificate". For GCM, PlatformPrincipal is not applicable. For ADM,
-        /// PlatformPrincipal is "client id".</li> <li><c>EventEndpointCreated</c> -- Topic ARN to which EndpointCreated event notifications should be
-        /// sent.</li> <li><c>EventEndpointDeleted</c> -- Topic ARN to which EndpointDeleted event notifications should be sent.</li>
-        /// <li><c>EventEndpointUpdated</c> -- Topic ARN to which EndpointUpdate event notifications should be sent.</li>
-        /// <li><c>EventDeliveryFailure</c> -- Topic ARN to which DeliveryFailure event notifications should be sent upon Direct Publish delivery
-        /// failure (permanent) to one of the application's endpoints.</li> </ul>
-        ///  
-        /// </summary>
-        public Dictionary<string,string> Attributes
-        {
-            get { return this.attributes; }
-            set { this.attributes = value; }
+            get { return this._attributes; }
+            set { this._attributes = value; }
         }
 
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this.attributes != null;
+            return this._attributes != null && this._attributes.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property PlatformApplicationArn. 
+        /// <para>
+        /// PlatformApplicationArn for SetPlatformApplicationAttributes action.
+        /// </para>
+        /// </summary>
+        public string PlatformApplicationArn
+        {
+            get { return this._platformApplicationArn; }
+            set { this._platformApplicationArn = value; }
+        }
+
+        // Check to see if PlatformApplicationArn property is set
+        internal bool IsSetPlatformApplicationArn()
+        {
+            return this._platformApplicationArn != null;
         }
 
     }
 }
-    

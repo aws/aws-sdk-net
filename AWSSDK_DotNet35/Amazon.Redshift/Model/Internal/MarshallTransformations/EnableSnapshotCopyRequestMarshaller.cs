@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Enable Snapshot Copy Request Marshaller
+    /// EnableSnapshotCopy Request Marshaller
     /// </summary>       
     public class EnableSnapshotCopyRequestMarshaller : IMarshaller<IRequest, EnableSnapshotCopyRequest>
     {
-        public IRequest Marshall(EnableSnapshotCopyRequest enableSnapshotCopyRequest)
+        public IRequest Marshall(EnableSnapshotCopyRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(enableSnapshotCopyRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "EnableSnapshotCopy");
             request.Parameters.Add("Version", "2012-12-01");
-            if (enableSnapshotCopyRequest != null && enableSnapshotCopyRequest.IsSetClusterIdentifier())
-            {
-                request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(enableSnapshotCopyRequest.ClusterIdentifier));
-            }
-            if (enableSnapshotCopyRequest != null && enableSnapshotCopyRequest.IsSetDestinationRegion())
-            {
-                request.Parameters.Add("DestinationRegion", StringUtils.FromString(enableSnapshotCopyRequest.DestinationRegion));
-            }
-            if (enableSnapshotCopyRequest != null && enableSnapshotCopyRequest.IsSetRetentionPeriod())
-            {
-                request.Parameters.Add("RetentionPeriod", StringUtils.FromInt(enableSnapshotCopyRequest.RetentionPeriod));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetClusterIdentifier())
+                {
+                    request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(publicRequest.ClusterIdentifier));
+                }
+                if(publicRequest.IsSetDestinationRegion())
+                {
+                    request.Parameters.Add("DestinationRegion", StringUtils.FromString(publicRequest.DestinationRegion));
+                }
+                if(publicRequest.IsSetRetentionPeriod())
+                {
+                    request.Parameters.Add("RetentionPeriod", StringUtils.FromInt(publicRequest.RetentionPeriod));
+                }
+            }
             return request;
         }
     }

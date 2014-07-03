@@ -14,32 +14,36 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Hsm Configuration Request Marshaller
+    /// DeleteHsmConfiguration Request Marshaller
     /// </summary>       
     public class DeleteHsmConfigurationRequestMarshaller : IMarshaller<IRequest, DeleteHsmConfigurationRequest>
     {
-        public IRequest Marshall(DeleteHsmConfigurationRequest deleteHsmConfigurationRequest)
+        public IRequest Marshall(DeleteHsmConfigurationRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(deleteHsmConfigurationRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "DeleteHsmConfiguration");
             request.Parameters.Add("Version", "2012-12-01");
-            if (deleteHsmConfigurationRequest != null && deleteHsmConfigurationRequest.IsSetHsmConfigurationIdentifier())
-            {
-                request.Parameters.Add("HsmConfigurationIdentifier", StringUtils.FromString(deleteHsmConfigurationRequest.HsmConfigurationIdentifier));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetHsmConfigurationIdentifier())
+                {
+                    request.Parameters.Add("HsmConfigurationIdentifier", StringUtils.FromString(publicRequest.HsmConfigurationIdentifier));
+                }
+            }
             return request;
         }
     }

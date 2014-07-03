@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Returns information about the  CreateStreamingDistribution response and response metadata.
+    /// Configuration for accessing Amazon CreateStreamingDistribution service
     /// </summary>
     public partial class CreateStreamingDistributionResponse : CreateStreamingDistributionResult
     {
         /// <summary>
         /// Gets and sets the CreateStreamingDistributionResult property.
-        /// The returned result of the corresponding request.
+        /// Represents the output of a CreateStreamingDistribution operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateStreamingDistributionResult class are now available on the CreateStreamingDistributionResponse class. You should use the properties on CreateStreamingDistributionResponse instead of accessing them through CreateStreamingDistributionResult.")]
         public CreateStreamingDistributionResult CreateStreamingDistributionResult
@@ -40,4 +36,3 @@ namespace Amazon.CloudFront.Model
         }
     }
 }
-    

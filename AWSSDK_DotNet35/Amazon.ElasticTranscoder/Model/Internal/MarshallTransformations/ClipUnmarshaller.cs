@@ -12,54 +12,64 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.ElasticTranscoder.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
+using Amazon.ElasticTranscoder.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for Clip Object
+    /// </summary>  
+    public class ClipUnmarshaller : IUnmarshaller<Clip, XmlUnmarshallerContext>, IUnmarshaller<Clip, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// ClipUnmarshaller
-      /// </summary>
-      internal class ClipUnmarshaller : IUnmarshaller<Clip, XmlUnmarshallerContext>, IUnmarshaller<Clip, JsonUnmarshallerContext>
-      {
         Clip IUnmarshaller<Clip, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Clip Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            Clip clip = new Clip();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            Clip unmarshalledObject = new Clip();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("TimeSpan", targetDepth))
-              {
-                clip.TimeSpan = TimeSpanUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("TimeSpan", targetDepth))
+                {
+                    var unmarshaller = TimeSpanUnmarshaller.Instance;
+                    unmarshalledObject.TimeSpan = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return clip;
+            return unmarshalledObject;
         }
 
-        private static ClipUnmarshaller instance;
-        public static ClipUnmarshaller GetInstance()
+
+        private static ClipUnmarshaller _instance = new ClipUnmarshaller();        
+
+        public static ClipUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new ClipUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

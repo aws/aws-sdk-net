@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para>The output for the AddJobFlowSteps operation. </para>
+    /// The output for the <a>AddJobFlowSteps</a> operation.
     /// </summary>
     public partial class AddJobFlowStepsResult : AmazonWebServiceResponse
     {
-        
-        private List<string> stepIds = new List<string>();
+        private List<string> _stepIds = new List<string>();
 
 
         /// <summary>
+        /// Gets and sets the property StepIds. 
+        /// <para>
         /// The identifiers of the list of steps added to the job flow.
-        ///  
+        /// </para>
         /// </summary>
         public List<string> StepIds
         {
-            get { return this.stepIds; }
-            set { this.stepIds = value; }
+            get { return this._stepIds; }
+            set { this._stepIds = value; }
         }
 
         // Check to see if StepIds property is set
         internal bool IsSetStepIds()
         {
-            return this.stepIds.Count > 0;
+            return this._stepIds != null && this._stepIds.Count > 0; 
         }
+
     }
 }

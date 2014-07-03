@@ -25,29 +25,30 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteClusterSubnetGroup operation.
-    /// <para> Deletes the specified cluster subnet group. </para>
+    /// Deletes the specified cluster subnet group.
     /// </summary>
     public partial class DeleteClusterSubnetGroupRequest : AmazonRedshiftRequest
     {
-        private string clusterSubnetGroupName;
+        private string _clusterSubnetGroupName;
 
 
         /// <summary>
+        /// Gets and sets the property ClusterSubnetGroupName. 
+        /// <para>
         /// The name of the cluster subnet group name to be deleted.
-        ///  
+        /// </para>
         /// </summary>
         public string ClusterSubnetGroupName
         {
-            get { return this.clusterSubnetGroupName; }
-            set { this.clusterSubnetGroupName = value; }
+            get { return this._clusterSubnetGroupName; }
+            set { this._clusterSubnetGroupName = value; }
         }
 
         // Check to see if ClusterSubnetGroupName property is set
         internal bool IsSetClusterSubnetGroupName()
         {
-            return this.clusterSubnetGroupName != null;
+            return this._clusterSubnetGroupName != null;
         }
 
     }
 }
-    

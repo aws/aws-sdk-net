@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,49 +25,36 @@ namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
     /// Container for the parameters to the Unsubscribe operation.
-    /// <para>The <c>Unsubscribe</c> action deletes a subscription. If the subscription requires authentication for deletion, only the owner of the
-    /// subscription or the topic's owner can unsubscribe, and an AWS signature is required. If the <c>Unsubscribe</c> call does not require
-    /// authentication and the requester is not the subscription owner, a final cancellation message is delivered to the endpoint, so that the
-    /// endpoint owner can easily resubscribe to the topic if the <c>Unsubscribe</c> request was unintended.</para>
+    /// Deletes a subscription. If the subscription requires authentication for       deletion,
+    /// only the owner of the subscription or the topic's owner       can unsubscribe, and
+    /// an AWS signature is required. If the       <code>Unsubscribe</code> call does not
+    /// require authentication and the requester is not       the subscription owner, a final
+    /// cancellation message is delivered to the       endpoint, so that the endpoint owner
+    /// can easily resubscribe to the topic if       the <code>Unsubscribe</code> request
+    /// was unintended.
     /// </summary>
     public partial class UnsubscribeRequest : AmazonSimpleNotificationServiceRequest
     {
-        private string subscriptionArn;
+        private string _subscriptionArn;
+
 
         /// <summary>
-        /// Default constructor for a new UnsubscribeRequest object.  Callers should use the
-        /// properties to initialize this object after creating it.
-        /// </summary>
-        public UnsubscribeRequest() {}
-    
-        /// <summary>
-        /// Constructs a new UnsubscribeRequest object.
-        /// Callers should use the properties initialize any additional object members.
-        /// </summary>
-        /// 
-        /// <param name="subscriptionArn"> The ARN of the subscription to be deleted. </param>
-        public UnsubscribeRequest(string subscriptionArn)
-        {
-            this.subscriptionArn = subscriptionArn;
-        }
-    
-
-        /// <summary>
+        /// Gets and sets the property SubscriptionArn. 
+        /// <para>
         /// The ARN of the subscription to be deleted.
-        ///  
+        /// </para>
         /// </summary>
         public string SubscriptionArn
         {
-            get { return this.subscriptionArn; }
-            set { this.subscriptionArn = value; }
+            get { return this._subscriptionArn; }
+            set { this._subscriptionArn = value; }
         }
 
         // Check to see if SubscriptionArn property is set
         internal bool IsSetSubscriptionArn()
         {
-            return this.subscriptionArn != null;
+            return this._subscriptionArn != null;
         }
 
     }
 }
-    

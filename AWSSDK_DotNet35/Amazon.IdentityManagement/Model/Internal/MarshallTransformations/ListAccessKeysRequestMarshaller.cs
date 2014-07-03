@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// List Access Keys Request Marshaller
+    /// ListAccessKeys Request Marshaller
     /// </summary>       
     public class ListAccessKeysRequestMarshaller : IMarshaller<IRequest, ListAccessKeysRequest>
     {
-        public IRequest Marshall(ListAccessKeysRequest listAccessKeysRequest)
+        public IRequest Marshall(ListAccessKeysRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(listAccessKeysRequest, "AmazonIdentityManagementService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.IdentityManagement");
             request.Parameters.Add("Action", "ListAccessKeys");
             request.Parameters.Add("Version", "2010-05-08");
-            if (listAccessKeysRequest != null && listAccessKeysRequest.IsSetUserName())
-            {
-                request.Parameters.Add("UserName", StringUtils.FromString(listAccessKeysRequest.UserName));
-            }
-            if (listAccessKeysRequest != null && listAccessKeysRequest.IsSetMarker())
-            {
-                request.Parameters.Add("Marker", StringUtils.FromString(listAccessKeysRequest.Marker));
-            }
-            if (listAccessKeysRequest != null && listAccessKeysRequest.IsSetMaxItems())
-            {
-                request.Parameters.Add("MaxItems", StringUtils.FromInt(listAccessKeysRequest.MaxItems));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetMarker())
+                {
+                    request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
+                }
+                if(publicRequest.IsSetMaxItems())
+                {
+                    request.Parameters.Add("MaxItems", StringUtils.FromInt(publicRequest.MaxItems));
+                }
+                if(publicRequest.IsSetUserName())
+                {
+                    request.Parameters.Add("UserName", StringUtils.FromString(publicRequest.UserName));
+                }
+            }
             return request;
         }
     }

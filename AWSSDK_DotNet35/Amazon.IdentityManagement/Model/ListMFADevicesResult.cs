@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,82 +17,81 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the ListMFADevices action.</para>
+    /// Contains the result of a successful invocation of the <a>ListMFADevices</a> action.
     /// </summary>
     public partial class ListMFADevicesResult : AmazonWebServiceResponse
     {
-        
-        private List<MFADevice> mFADevices = new List<MFADevice>();
-        private bool? isTruncated;
-        private string marker;
+        private bool? _isTruncated;
+        private string _marker;
+        private List<MFADevice> _mFADevices = new List<MFADevice>();
 
 
         /// <summary>
-        /// A list of MFA devices.
-        ///  
-        /// </summary>
-        public List<MFADevice> MFADevices
-        {
-            get { return this.mFADevices; }
-            set { this.mFADevices = value; }
-        }
-
-        // Check to see if MFADevices property is set
-        internal bool IsSetMFADevices()
-        {
-            return this.mFADevices.Count > 0;
-        }
-
-        /// <summary>
-        /// A flag that indicates whether there are more MFA devices to list. If your results were truncated, you can make a subsequent pagination
-        /// request using the <c>Marker</c> request parameter to retrieve more MFA devices in the list.
-        ///  
+        /// Gets and sets the property IsTruncated. 
+        /// <para>
+        /// A flag that indicates whether there are more MFA devices to list. If your results
+        /// were            truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request            parameter to retrieve more MFA devices in the list.
+        /// </para>
         /// </summary>
         public bool IsTruncated
         {
-            get { return this.isTruncated ?? default(bool); }
-            set { this.isTruncated = value; }
+            get { return this._isTruncated.GetValueOrDefault(); }
+            set { this._isTruncated = value; }
         }
 
         // Check to see if IsTruncated property is set
         internal bool IsSetIsTruncated()
         {
-            return this.isTruncated.HasValue;
+            return this._isTruncated.HasValue; 
         }
 
+
         /// <summary>
-        /// If <c>IsTruncated</c> is <c>true</c>, this element is present and contains the value to use for the <c>Marker</c> parameter in a subsequent
-        /// pagination request.
-        ///  
+        /// Gets and sets the property Marker. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 320</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\u00FF]*</description>
-        ///     </item>
-        /// </list>
+        /// If <code>IsTruncated</code> is <code>true</code>, this element is present and contains
+        /// the            value to use for the <code>Marker</code> parameter in a subsequent pagination
+        /// request.
         /// </para>
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property MFADevices. 
+        /// <para>
+        /// A list of MFA devices.
+        /// </para>
+        /// </summary>
+        public List<MFADevice> MFADevices
+        {
+            get { return this._mFADevices; }
+            set { this._mFADevices = value; }
+        }
+
+        // Check to see if MFADevices property is set
+        internal bool IsSetMFADevices()
+        {
+            return this._mFADevices != null && this._mFADevices.Count > 0; 
+        }
+
     }
 }

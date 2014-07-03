@@ -12,24 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the CreateClusterSnapshot response and response metadata.
+    /// Configuration for accessing Amazon CreateClusterSnapshot service
     /// </summary>
     public partial class CreateClusterSnapshotResponse : CreateClusterSnapshotResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the CreateClusterSnapshotResult property.
-        /// Contains the result of a successful invocation of the CreateClusterSnapshot
-        /// action.
-        /// 
+        /// Represents the output of a CreateClusterSnapshot operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateClusterSnapshotResult class are now available on the CreateClusterSnapshotResponse class. You should use the properties on CreateClusterSnapshotResponse instead of accessing them through CreateClusterSnapshotResult.")]
         public CreateClusterSnapshotResult CreateClusterSnapshotResult
         {
@@ -40,4 +36,3 @@ namespace Amazon.Redshift.Model
         }
     }
 }
-    

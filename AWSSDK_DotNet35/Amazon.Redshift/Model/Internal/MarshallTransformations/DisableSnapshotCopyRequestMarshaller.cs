@@ -14,32 +14,36 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Disable Snapshot Copy Request Marshaller
+    /// DisableSnapshotCopy Request Marshaller
     /// </summary>       
     public class DisableSnapshotCopyRequestMarshaller : IMarshaller<IRequest, DisableSnapshotCopyRequest>
     {
-        public IRequest Marshall(DisableSnapshotCopyRequest disableSnapshotCopyRequest)
+        public IRequest Marshall(DisableSnapshotCopyRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(disableSnapshotCopyRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "DisableSnapshotCopy");
             request.Parameters.Add("Version", "2012-12-01");
-            if (disableSnapshotCopyRequest != null && disableSnapshotCopyRequest.IsSetClusterIdentifier())
-            {
-                request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(disableSnapshotCopyRequest.ClusterIdentifier));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetClusterIdentifier())
+                {
+                    request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(publicRequest.ClusterIdentifier));
+                }
+            }
             return request;
         }
     }

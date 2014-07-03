@@ -13,46 +13,52 @@
  * permissions and limitations under the License.
  */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for ResetClusterParameterGroup operation
-    /// </summary>
-    internal class ResetClusterParameterGroupResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for ResetClusterParameterGroup operation
+    /// </summary>  
+    public class ResetClusterParameterGroupResponseUnmarshaller : XmlResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
             ResetClusterParameterGroupResponse response = new ResetClusterParameterGroupResponse();
-            
-            while (context.Read())
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
                 if (context.IsStartElement)
                 {                    
                     if(context.TestExpression("ResetClusterParameterGroupResult", 2))
                     {
-                        UnmarshallResult(context,response);                        
+                        UnmarshallResult(context, response);                        
                         continue;
                     }
                     
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
                     }
                 }
             }
-                 
-                        
+
             return response;
         }
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,ResetClusterParameterGroupResponse response)
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, ResetClusterParameterGroupResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -61,62 +67,57 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+
                     if (context.TestExpression("ParameterGroupName", targetDepth))
                     {
-                        response.ParameterGroupName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.ParameterGroupName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ParameterGroupStatus", targetDepth))
                     {
-                        response.ParameterGroupStatus = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.ParameterGroupStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return;
-                }
-            }
-                            
-
+                } 
+           }
 
             return;
         }
-        
+
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidClusterParameterGroupState"))
-            {
-                return new InvalidClusterParameterGroupStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("ClusterParameterGroupNotFound"))
             {
                 return new ClusterParameterGroupNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidClusterParameterGroupState"))
+            {
+                return new InvalidClusterParameterGroupStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonRedshiftException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static ResetClusterParameterGroupResponseUnmarshaller instance;
 
-        public static ResetClusterParameterGroupResponseUnmarshaller GetInstance()
+        private static ResetClusterParameterGroupResponseUnmarshaller _instance = new ResetClusterParameterGroupResponseUnmarshaller();        
+
+        internal static ResetClusterParameterGroupResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new ResetClusterParameterGroupResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static ResetClusterParameterGroupResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,79 +18,79 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para>Modify an instance group size.</para>
+    /// Modify an instance group size.
     /// </summary>
-    public class InstanceGroupModifyConfig
+    public partial class InstanceGroupModifyConfig
     {
-        
-        private string instanceGroupId;
-        private int? instanceCount;
-        private List<string> eC2InstanceIdsToTerminate = new List<string>();
+        private List<string> _eC2InstanceIdsToTerminate = new List<string>();
+        private int? _instanceCount;
+        private string _instanceGroupId;
 
 
         /// <summary>
-        /// Unique ID of the instance group to expand or shrink.
-        ///  
+        /// Gets and sets the property EC2InstanceIdsToTerminate. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 256</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// The EC2 InstanceIds to terminate. For advanced users only.                       
+        ///                                                                                  
+        ///                            Once you terminate the instances, the instance group will
+        /// not return to its original requested size.
         /// </para>
-        /// </summary>
-        public string InstanceGroupId
-        {
-            get { return this.instanceGroupId; }
-            set { this.instanceGroupId = value; }
-        }
-
-        // Check to see if InstanceGroupId property is set
-        internal bool IsSetInstanceGroupId()
-        {
-            return this.instanceGroupId != null;
-        }
-
-        /// <summary>
-        /// Target size for the instance group.
-        ///  
-        /// </summary>
-        public int InstanceCount
-        {
-            get { return this.instanceCount ?? default(int); }
-            set { this.instanceCount = value; }
-        }
-
-        // Check to see if InstanceCount property is set
-        internal bool IsSetInstanceCount()
-        {
-            return this.instanceCount.HasValue;
-        }
-
-        /// <summary>
-        /// The EC2 InstanceIds to terminate. For advanced users only. Once you terminate the instances, the instance group will not return to its
-        /// original requested size.
-        ///  
         /// </summary>
         public List<string> EC2InstanceIdsToTerminate
         {
-            get { return this.eC2InstanceIdsToTerminate; }
-            set { this.eC2InstanceIdsToTerminate = value; }
+            get { return this._eC2InstanceIdsToTerminate; }
+            set { this._eC2InstanceIdsToTerminate = value; }
         }
 
         // Check to see if EC2InstanceIdsToTerminate property is set
         internal bool IsSetEC2InstanceIdsToTerminate()
         {
-            return this.eC2InstanceIdsToTerminate.Count > 0;
+            return this._eC2InstanceIdsToTerminate != null && this._eC2InstanceIdsToTerminate.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property InstanceCount. 
+        /// <para>
+        /// Target size for the instance group.
+        /// </para>
+        /// </summary>
+        public int InstanceCount
+        {
+            get { return this._instanceCount.GetValueOrDefault(); }
+            set { this._instanceCount = value; }
+        }
+
+        // Check to see if InstanceCount property is set
+        internal bool IsSetInstanceCount()
+        {
+            return this._instanceCount.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property InstanceGroupId. 
+        /// <para>
+        /// Unique ID of the instance group to expand or shrink.
+        /// </para>
+        /// </summary>
+        public string InstanceGroupId
+        {
+            get { return this._instanceGroupId; }
+            set { this._instanceGroupId = value; }
+        }
+
+        // Check to see if InstanceGroupId property is set
+        internal bool IsSetInstanceGroupId()
+        {
+            return this._instanceGroupId != null;
+        }
+
     }
 }

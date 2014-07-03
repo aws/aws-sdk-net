@@ -18,6 +18,9 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -25,41 +28,47 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class EventCategoriesMap
     {
-        
-        private string sourceType;
-        private List<EventInfoMap> events = new List<EventInfoMap>();
+        private List<EventInfoMap> _events = new List<EventInfoMap>();
+        private string _sourceType;
 
 
         /// <summary>
-        /// The Amazon Redshift source type, such as cluster or cluster-snapshot, that the returned categories belong to.
-        ///  
-        /// </summary>
-        public string SourceType
-        {
-            get { return this.sourceType; }
-            set { this.sourceType = value; }
-        }
-
-        // Check to see if SourceType property is set
-        internal bool IsSetSourceType()
-        {
-            return this.sourceType != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Events. 
+        /// <para>
         /// The events in the event category.
-        ///  
+        /// </para>
         /// </summary>
         public List<EventInfoMap> Events
         {
-            get { return this.events; }
-            set { this.events = value; }
+            get { return this._events; }
+            set { this._events = value; }
         }
 
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this.events.Count > 0;
+            return this._events != null && this._events.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property SourceType. 
+        /// <para>
+        /// The Amazon Redshift source type, such as cluster or cluster-snapshot, that the returned
+        /// categories belong to.
+        /// </para>
+        /// </summary>
+        public string SourceType
+        {
+            get { return this._sourceType; }
+            set { this._sourceType = value; }
+        }
+
+        // Check to see if SourceType property is set
+        internal bool IsSetSourceType()
+        {
+            return this._sourceType != null;
+        }
+
     }
 }

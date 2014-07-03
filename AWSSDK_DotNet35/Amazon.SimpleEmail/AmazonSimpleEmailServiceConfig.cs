@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,15 +12,17 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+
 using System;
 
 using Amazon.Runtime;
 
+
 namespace Amazon.SimpleEmail
 {
-
     /// <summary>
-    /// Configuration for accessing Amazon Simple Email Service service
+    /// Configuration for accessing Amazon SimpleEmailService service
     /// </summary>
     public partial class AmazonSimpleEmailServiceConfig : ClientConfig
     {
@@ -29,7 +31,6 @@ namespace Amazon.SimpleEmail
         /// </summary>
         public AmazonSimpleEmailServiceConfig()
         {
-            
         }
 
         /// <summary>
@@ -39,9 +40,7 @@ namespace Amazon.SimpleEmail
         {
             get
             {
-                
                 return "email";
-                    
             }
         }
 
@@ -57,5 +56,3 @@ namespace Amazon.SimpleEmail
         }
     }
 }
-
-    

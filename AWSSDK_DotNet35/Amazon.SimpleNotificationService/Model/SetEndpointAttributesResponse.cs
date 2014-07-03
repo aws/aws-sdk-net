@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// Returns information about the SetEndpointAttributes response metadata.
-    /// The SetEndpointAttributes operation has a void result type.
+    /// Configuration for accessing Amazon SetEndpointAttributes service
     /// </summary>
-    public partial class SetEndpointAttributesResponse : AmazonWebServiceResponse
+    public partial class SetEndpointAttributesResponse : SetEndpointAttributesResult
     {
+        /// <summary>
+        /// Gets and sets the SetEndpointAttributesResult property.
+        /// Represents the output of a SetEndpointAttributes operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the SetEndpointAttributesResult class are now available on the SetEndpointAttributesResponse class. You should use the properties on SetEndpointAttributesResponse instead of accessing them through SetEndpointAttributesResult.")]
+        public SetEndpointAttributesResult SetEndpointAttributesResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

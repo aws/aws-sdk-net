@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Returns information about the DeleteStreamingDistribution response metadata.
-    /// The DeleteStreamingDistribution operation has a void result type.
+    /// Configuration for accessing Amazon DeleteStreamingDistribution service
     /// </summary>
-    public partial class DeleteStreamingDistributionResponse : AmazonWebServiceResponse
+    public partial class DeleteStreamingDistributionResponse : DeleteStreamingDistributionResult
     {
+        /// <summary>
+        /// Gets and sets the DeleteStreamingDistributionResult property.
+        /// Represents the output of a DeleteStreamingDistribution operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DeleteStreamingDistributionResult class are now available on the DeleteStreamingDistributionResponse class. You should use the properties on DeleteStreamingDistributionResponse instead of accessing them through DeleteStreamingDistributionResult.")]
+        public DeleteStreamingDistributionResult DeleteStreamingDistributionResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

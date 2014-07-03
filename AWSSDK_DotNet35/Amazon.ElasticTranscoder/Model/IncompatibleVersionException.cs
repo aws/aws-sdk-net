@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.ElasticTranscoder.Model
 {
     ///<summary>
-    /// AmazonElasticTranscoder exception
+    /// ElasticTranscoder exception
     /// </summary>
     public class IncompatibleVersionException : AmazonElasticTranscoderException 
     {
@@ -45,6 +45,5 @@ namespace Amazon.ElasticTranscoder.Model
         public IncompatibleVersionException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
-        
     }
 }

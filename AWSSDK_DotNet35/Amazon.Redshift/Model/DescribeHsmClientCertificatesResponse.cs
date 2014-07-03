@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeHsmClientCertificates response and response metadata.
+    /// Configuration for accessing Amazon DescribeHsmClientCertificates service
     /// </summary>
     public partial class DescribeHsmClientCertificatesResponse : DescribeHsmClientCertificatesResult
     {
         /// <summary>
         /// Gets and sets the DescribeHsmClientCertificatesResult property.
-        /// 
+        /// Represents the output of a DescribeHsmClientCertificates operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeHsmClientCertificatesResult class are now available on the DescribeHsmClientCertificatesResponse class. You should use the properties on DescribeHsmClientCertificatesResponse instead of accessing them through DescribeHsmClientCertificatesResult.")]
         public DescribeHsmClientCertificatesResult DescribeHsmClientCertificatesResult
@@ -40,4 +36,3 @@ namespace Amazon.Redshift.Model
         }
     }
 }
-    

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,57 +18,56 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para>The details of the step state change reason. </para>
+    /// The details of the step state change reason.
     /// </summary>
-    public class StepStateChangeReason
+    public partial class StepStateChangeReason
     {
-        
-        private StepStateChangeReasonCode code;
-        private string message;
+        private StepStateChangeReasonCode _code;
+        private string _message;
 
 
         /// <summary>
-        /// The programmable code for the state change reason.
-        ///  
+        /// Gets and sets the property Code. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>NONE</description>
-        ///     </item>
-        /// </list>
+        /// The programmable code for the state change reason.      
         /// </para>
         /// </summary>
         public StepStateChangeReasonCode Code
         {
-            get { return this.code; }
-            set { this.code = value; }
+            get { return this._code; }
+            set { this._code = value; }
         }
 
         // Check to see if Code property is set
         internal bool IsSetCode()
         {
-            return this.code != null;
+            return this._code != null;
         }
 
+
         /// <summary>
-        /// The descriptive message for the state change reason.
-        ///  
+        /// Gets and sets the property Message. 
+        /// <para>
+        /// The descriptive message for the state change reason.      
+        /// </para>
         /// </summary>
         public string Message
         {
-            get { return this.message; }
-            set { this.message = value; }
+            get { return this._message; }
+            set { this._message = value; }
         }
 
         // Check to see if Message property is set
         internal bool IsSetMessage()
         {
-            return this.message != null;
+            return this._message != null;
         }
+
     }
 }

@@ -65,7 +65,7 @@ namespace Amazon.EC2.Model
         /// <li> <c>launch.block-device-mapping.device-name</c> - The device name for the Amazon EBS volume (for example, <c>/dev/sdh</c>). </li> <li>
         /// <c>launch.block-device-mapping.snapshot-id</c> - The ID of the snapshot used for the Amazon EBS volume. </li> <li>
         /// <c>launch.block-device-mapping.volume-size</c> - The size of the Amazon EBS volume, in GiB. </li> <li>
-        /// <c>launch.block-device-mapping.volume-type</c> - The type of the Amazon EBS volume (<c>standard</c> | <c>io1</c>). </li> <li>
+        /// <c>launch.block-device-mapping.volume-type</c> - The type of the Amazon EBS volume (<c>gp2</c> | <c>standard</c> | <c>io1</c>). </li> <li>
         /// <c>launch.group-id</c> - The security group for the instance. </li> <li> <c>launch.image-id</c> - The ID of the AMI. </li> <li>
         /// <c>launch.instance-type</c> - The type of instance (for example, <c>m1.small</c>). </li> <li> <c>launch.kernel-id</c> - The kernel ID. </li>
         /// <li> <c>launch.key-name</c> - The name of the key pair the instance launched with. </li> <li> <c>launch.monitoring-enabled</c> - Whether

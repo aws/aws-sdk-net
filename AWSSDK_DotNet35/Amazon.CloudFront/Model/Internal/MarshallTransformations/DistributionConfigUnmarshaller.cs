@@ -12,21 +12,30 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   DistributionConfig Unmarshaller
-     /// </summary>
-    internal class DistributionConfigUnmarshaller : IUnmarshaller<DistributionConfig, XmlUnmarshallerContext>, IUnmarshaller<DistributionConfig, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for DistributionConfig Object
+    /// </summary>  
+    public class DistributionConfigUnmarshaller : IUnmarshaller<DistributionConfig, XmlUnmarshallerContext>
     {
-        public DistributionConfig Unmarshall(XmlUnmarshallerContext context) 
+        public DistributionConfig Unmarshall(XmlUnmarshallerContext context)
         {
-            DistributionConfig distributionConfig = new DistributionConfig();
+            DistributionConfig unmarshalledObject = new DistributionConfig();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -37,110 +46,101 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("CallerReference", targetDepth))
-                    {
-                        distributionConfig.CallerReference = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("Aliases", targetDepth))
                     {
-                        distributionConfig.Aliases = AliasesUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("DefaultRootObject", targetDepth))
-                    {
-                        distributionConfig.DefaultRootObject = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Origins", targetDepth))
-                    {
-                        distributionConfig.Origins = OriginsUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("DefaultCacheBehavior", targetDepth))
-                    {
-                        distributionConfig.DefaultCacheBehavior = DefaultCacheBehaviorUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = AliasesUnmarshaller.Instance;
+                        unmarshalledObject.Aliases = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("CacheBehaviors", targetDepth))
                     {
-                        distributionConfig.CacheBehaviors = CacheBehaviorsUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = CacheBehaviorsUnmarshaller.Instance;
+                        unmarshalledObject.CacheBehaviors = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("CustomErrorResponses", targetDepth))
+                    if (context.TestExpression("CallerReference", targetDepth))
                     {
-                        distributionConfig.CustomErrorResponses = CustomErrorResponsesUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CallerReference = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Comment", targetDepth))
                     {
-                        distributionConfig.Comment = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Comment = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Logging", targetDepth))
+                    if (context.TestExpression("CustomErrorResponses", targetDepth))
                     {
-                        distributionConfig.Logging = LoggingConfigUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = CustomErrorResponsesUnmarshaller.Instance;
+                        unmarshalledObject.CustomErrorResponses = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("PriceClass", targetDepth))
+                    if (context.TestExpression("DefaultCacheBehavior", targetDepth))
                     {
-                        distributionConfig.PriceClass = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DefaultCacheBehaviorUnmarshaller.Instance;
+                        unmarshalledObject.DefaultCacheBehavior = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("DefaultRootObject", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DefaultRootObject = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Enabled", targetDepth))
                     {
-                        distributionConfig.Enabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ViewerCertificate", targetDepth))
+                    if (context.TestExpression("Logging", targetDepth))
                     {
-                        distributionConfig.ViewerCertificate = ViewerCertificateUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = LoggingConfigUnmarshaller.Instance;
+                        unmarshalledObject.Logging = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Origins", targetDepth))
+                    {
+                        var unmarshaller = OriginsUnmarshaller.Instance;
+                        unmarshalledObject.Origins = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PriceClass", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PriceClass = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Restrictions", targetDepth))
                     {
-                        distributionConfig.Restrictions = RestrictionsUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = RestrictionsUnmarshaller.Instance;
+                        unmarshalledObject.Restrictions = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ViewerCertificate", targetDepth))
+                    {
+                        var unmarshaller = ViewerCertificateUnmarshaller.Instance;
+                        unmarshalledObject.ViewerCertificate = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return distributionConfig;
+                    return unmarshalledObject;
                 }
+            }          
+            return unmarshalledObject;
+        }
+
+        private static DistributionConfigUnmarshaller _instance = new DistributionConfigUnmarshaller();        
+
+        public static DistributionConfigUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
             }
-                        
-
-
-            return distributionConfig;
-        }
-
-        public DistributionConfig Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
-
-        private static DistributionConfigUnmarshaller instance;
-
-        public static DistributionConfigUnmarshaller GetInstance() 
-        {
-            if (instance == null) 
-               instance = new DistributionConfigUnmarshaller();
-
-            return instance;
         }
     }
 }
-    

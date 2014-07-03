@@ -18,6 +18,9 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -25,75 +28,90 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class EventInfoMap
     {
-        
-        private string eventId;
-        private List<string> eventCategories = new List<string>();
-        private string eventDescription;
-        private string severity;
+        private List<string> _eventCategories = new List<string>();
+        private string _eventDescription;
+        private string _eventId;
+        private string _severity;
 
 
         /// <summary>
-        /// The identifier of an Amazon Redshift event.
-        ///  
-        /// </summary>
-        public string EventId
-        {
-            get { return this.eventId; }
-            set { this.eventId = value; }
-        }
-
-        // Check to see if EventId property is set
-        internal bool IsSetEventId()
-        {
-            return this.eventId != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property EventCategories. 
+        /// <para>
         /// The category of an Amazon Redshift event.
-        ///  
+        /// </para>
         /// </summary>
         public List<string> EventCategories
         {
-            get { return this.eventCategories; }
-            set { this.eventCategories = value; }
+            get { return this._eventCategories; }
+            set { this._eventCategories = value; }
         }
 
         // Check to see if EventCategories property is set
         internal bool IsSetEventCategories()
         {
-            return this.eventCategories.Count > 0;
+            return this._eventCategories != null && this._eventCategories.Count > 0; 
         }
 
+
         /// <summary>
+        /// Gets and sets the property EventDescription. 
+        /// <para>
         /// The description of an Amazon Redshift event.
-        ///  
+        /// </para>
         /// </summary>
         public string EventDescription
         {
-            get { return this.eventDescription; }
-            set { this.eventDescription = value; }
+            get { return this._eventDescription; }
+            set { this._eventDescription = value; }
         }
 
         // Check to see if EventDescription property is set
         internal bool IsSetEventDescription()
         {
-            return this.eventDescription != null;
+            return this._eventDescription != null;
         }
 
+
         /// <summary>
-        /// The severity of the event. Values: ERROR, INFO
-        ///  
+        /// Gets and sets the property EventId. 
+        /// <para>
+        /// The identifier of an Amazon Redshift event.
+        /// </para>
+        /// </summary>
+        public string EventId
+        {
+            get { return this._eventId; }
+            set { this._eventId = value; }
+        }
+
+        // Check to see if EventId property is set
+        internal bool IsSetEventId()
+        {
+            return this._eventId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Severity. 
+        /// <para>
+        /// The severity of the event.
+        /// </para>
+        ///         
+        /// <para>
+        /// Values: ERROR, INFO
+        /// </para>
         /// </summary>
         public string Severity
         {
-            get { return this.severity; }
-            set { this.severity = value; }
+            get { return this._severity; }
+            set { this._severity = value; }
         }
 
         // Check to see if Severity property is set
         internal bool IsSetSeverity()
         {
-            return this.severity != null;
+            return this._severity != null;
         }
+
     }
 }

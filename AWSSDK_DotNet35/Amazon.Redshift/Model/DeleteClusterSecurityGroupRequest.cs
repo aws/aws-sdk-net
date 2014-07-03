@@ -25,33 +25,37 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteClusterSecurityGroup operation.
-    /// <para> Deletes an Amazon Redshift security group. </para> <para><b>NOTE:</b>You cannot delete a security group that is associated with any
-    /// clusters. You cannot delete the default security group.</para> <para> For information about managing security groups, go to <a
-    /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html" >Amazon Redshift Cluster Security Groups</a> in the
-    /// <i>Amazon Redshift Management Guide</i> .
+    /// Deletes an Amazon Redshift security group.         
+    /// 
+    ///         <note>You cannot delete a security group that is associated with any clusters.
+    /// You cannot        delete the default security group.</note>        
+    /// <para>
+    /// For information about managing security groups, go to<a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
+    /// Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Management Guide</i>.
     /// </para>
     /// </summary>
     public partial class DeleteClusterSecurityGroupRequest : AmazonRedshiftRequest
     {
-        private string clusterSecurityGroupName;
+        private string _clusterSecurityGroupName;
 
 
         /// <summary>
-        /// The name of the cluster security group to be deleted.
-        ///  
+        /// Gets and sets the property ClusterSecurityGroupName. 
+        /// <para>
+        ///         The name of the cluster security group to be deleted.        
+        /// </para>
         /// </summary>
         public string ClusterSecurityGroupName
         {
-            get { return this.clusterSecurityGroupName; }
-            set { this.clusterSecurityGroupName = value; }
+            get { return this._clusterSecurityGroupName; }
+            set { this._clusterSecurityGroupName = value; }
         }
 
         // Check to see if ClusterSecurityGroupName property is set
         internal bool IsSetClusterSecurityGroupName()
         {
-            return this.clusterSecurityGroupName != null;
+            return this._clusterSecurityGroupName != null;
         }
 
     }
 }
-    

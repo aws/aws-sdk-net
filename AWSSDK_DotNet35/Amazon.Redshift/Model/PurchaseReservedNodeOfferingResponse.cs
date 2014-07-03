@@ -12,24 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the PurchaseReservedNodeOffering response and response metadata.
+    /// Configuration for accessing Amazon PurchaseReservedNodeOffering service
     /// </summary>
     public partial class PurchaseReservedNodeOfferingResponse : PurchaseReservedNodeOfferingResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the PurchaseReservedNodeOfferingResult property.
-        /// Contains the result of a successful invocation of the PurchaseReservedNodeOffering
-        /// action.
-        /// 
+        /// Represents the output of a PurchaseReservedNodeOffering operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the PurchaseReservedNodeOfferingResult class are now available on the PurchaseReservedNodeOfferingResponse class. You should use the properties on PurchaseReservedNodeOfferingResponse instead of accessing them through PurchaseReservedNodeOfferingResult.")]
         public PurchaseReservedNodeOfferingResult PurchaseReservedNodeOfferingResult
         {
@@ -40,4 +36,3 @@ namespace Amazon.Redshift.Model
         }
     }
 }
-    

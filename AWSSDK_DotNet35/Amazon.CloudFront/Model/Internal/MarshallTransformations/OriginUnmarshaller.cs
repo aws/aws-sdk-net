@@ -12,21 +12,30 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Origin Unmarshaller
-     /// </summary>
-    internal class OriginUnmarshaller : IUnmarshaller<Origin, XmlUnmarshallerContext>, IUnmarshaller<Origin, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Origin Object
+    /// </summary>  
+    public class OriginUnmarshaller : IUnmarshaller<Origin, XmlUnmarshallerContext>
     {
-        public Origin Unmarshall(XmlUnmarshallerContext context) 
+        public Origin Unmarshall(XmlUnmarshallerContext context)
         {
-            Origin origin = new Origin();
+            Origin unmarshalledObject = new Origin();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -37,56 +46,47 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Id", targetDepth))
+                    if (context.TestExpression("CustomOriginConfig", targetDepth))
                     {
-                        origin.Id = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = CustomOriginConfigUnmarshaller.Instance;
+                        unmarshalledObject.CustomOriginConfig = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DomainName", targetDepth))
                     {
-                        origin.DomainName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DomainName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Id", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("S3OriginConfig", targetDepth))
                     {
-                        origin.S3OriginConfig = S3OriginConfigUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("CustomOriginConfig", targetDepth))
-                    {
-                        origin.CustomOriginConfig = CustomOriginConfigUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = S3OriginConfigUnmarshaller.Instance;
+                        unmarshalledObject.S3OriginConfig = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return origin;
+                    return unmarshalledObject;
                 }
+            }          
+            return unmarshalledObject;
+        }
+
+        private static OriginUnmarshaller _instance = new OriginUnmarshaller();        
+
+        public static OriginUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
             }
-                        
-
-
-            return origin;
-        }
-
-        public Origin Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
-
-        private static OriginUnmarshaller instance;
-
-        public static OriginUnmarshaller GetInstance() 
-        {
-            if (instance == null) 
-               instance = new OriginUnmarshaller();
-
-            return instance;
         }
     }
 }
-    

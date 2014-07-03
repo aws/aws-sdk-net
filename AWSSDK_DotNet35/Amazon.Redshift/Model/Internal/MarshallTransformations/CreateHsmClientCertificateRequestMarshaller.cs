@@ -14,32 +14,36 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Hsm Client Certificate Request Marshaller
+    /// CreateHsmClientCertificate Request Marshaller
     /// </summary>       
     public class CreateHsmClientCertificateRequestMarshaller : IMarshaller<IRequest, CreateHsmClientCertificateRequest>
     {
-        public IRequest Marshall(CreateHsmClientCertificateRequest createHsmClientCertificateRequest)
+        public IRequest Marshall(CreateHsmClientCertificateRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(createHsmClientCertificateRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "CreateHsmClientCertificate");
             request.Parameters.Add("Version", "2012-12-01");
-            if (createHsmClientCertificateRequest != null && createHsmClientCertificateRequest.IsSetHsmClientCertificateIdentifier())
-            {
-                request.Parameters.Add("HsmClientCertificateIdentifier", StringUtils.FromString(createHsmClientCertificateRequest.HsmClientCertificateIdentifier));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetHsmClientCertificateIdentifier())
+                {
+                    request.Parameters.Add("HsmClientCertificateIdentifier", StringUtils.FromString(publicRequest.HsmClientCertificateIdentifier));
+                }
+            }
             return request;
         }
     }

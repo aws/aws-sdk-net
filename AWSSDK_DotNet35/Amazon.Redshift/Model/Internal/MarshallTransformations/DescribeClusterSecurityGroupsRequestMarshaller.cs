@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Cluster Security Groups Request Marshaller
+    /// DescribeClusterSecurityGroups Request Marshaller
     /// </summary>       
     public class DescribeClusterSecurityGroupsRequestMarshaller : IMarshaller<IRequest, DescribeClusterSecurityGroupsRequest>
     {
-        public IRequest Marshall(DescribeClusterSecurityGroupsRequest describeClusterSecurityGroupsRequest)
+        public IRequest Marshall(DescribeClusterSecurityGroupsRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describeClusterSecurityGroupsRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "DescribeClusterSecurityGroups");
             request.Parameters.Add("Version", "2012-12-01");
-            if (describeClusterSecurityGroupsRequest != null && describeClusterSecurityGroupsRequest.IsSetClusterSecurityGroupName())
-            {
-                request.Parameters.Add("ClusterSecurityGroupName", StringUtils.FromString(describeClusterSecurityGroupsRequest.ClusterSecurityGroupName));
-            }
-            if (describeClusterSecurityGroupsRequest != null && describeClusterSecurityGroupsRequest.IsSetMaxRecords())
-            {
-                request.Parameters.Add("MaxRecords", StringUtils.FromInt(describeClusterSecurityGroupsRequest.MaxRecords));
-            }
-            if (describeClusterSecurityGroupsRequest != null && describeClusterSecurityGroupsRequest.IsSetMarker())
-            {
-                request.Parameters.Add("Marker", StringUtils.FromString(describeClusterSecurityGroupsRequest.Marker));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetClusterSecurityGroupName())
+                {
+                    request.Parameters.Add("ClusterSecurityGroupName", StringUtils.FromString(publicRequest.ClusterSecurityGroupName));
+                }
+                if(publicRequest.IsSetMarker())
+                {
+                    request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
+                }
+                if(publicRequest.IsSetMaxRecords())
+                {
+                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
+                }
+            }
             return request;
         }
     }

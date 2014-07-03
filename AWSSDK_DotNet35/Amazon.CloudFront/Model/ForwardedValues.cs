@@ -18,49 +18,71 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> A complex type that specifies how CloudFront handles query strings. </para>
+    /// A complex type that specifies how CloudFront handles query strings, cookies and headers.
     /// </summary>
     public partial class ForwardedValues
     {
-        
-        private bool? queryString;
-        private CookiePreference cookies;
+        private CookiePreference _cookies;
+        private Headers _headers;
+        private bool? _queryString;
 
 
         /// <summary>
-        /// Indicates whether you want CloudFront to forward query strings to the origin that is associated with this cache behavior. If so, specify
-        /// true; if not, specify false.
-        ///  
-        /// </summary>
-        public bool QueryString
-        {
-            get { return this.queryString ?? default(bool); }
-            set { this.queryString = value; }
-        }
-
-        // Check to see if QueryString property is set
-        internal bool IsSetQueryString()
-        {
-            return this.queryString.HasValue;
-        }
-
-        /// <summary>
-        /// A complex type that specifies how CloudFront handles cookies.
-        ///  
+        /// Gets and sets the property Cookies. A complex type that specifies how CloudFront handles
+        /// cookies.
         /// </summary>
         public CookiePreference Cookies
         {
-            get { return this.cookies; }
-            set { this.cookies = value; }
+            get { return this._cookies; }
+            set { this._cookies = value; }
         }
 
         // Check to see if Cookies property is set
         internal bool IsSetCookies()
         {
-            return this.cookies != null;
+            return this._cookies != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Headers. A complex type that specifies the Headers, if
+        /// any, that you want CloudFront to vary upon    for this cache behavior.
+        /// </summary>
+        public Headers Headers
+        {
+            get { return this._headers; }
+            set { this._headers = value; }
+        }
+
+        // Check to see if Headers property is set
+        internal bool IsSetHeaders()
+        {
+            return this._headers != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property QueryString. Indicates whether you want CloudFront to forward
+        /// query strings to the    origin that is associated with this cache behavior. If so,
+        /// specify true; if    not, specify false.
+        /// </summary>
+        public bool QueryString
+        {
+            get { return this._queryString.GetValueOrDefault(); }
+            set { this._queryString = value; }
+        }
+
+        // Check to see if QueryString property is set
+        internal bool IsSetQueryString()
+        {
+            return this._queryString.HasValue; 
+        }
+
     }
 }

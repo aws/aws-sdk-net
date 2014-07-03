@@ -18,48 +18,56 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// <para>Describes a security group.</para>
+    /// Describes a security group.
     /// </summary>
     public partial class ClusterSecurityGroupMembership
     {
-        
-        private string clusterSecurityGroupName;
-        private string status;
+        private string _clusterSecurityGroupName;
+        private string _status;
 
 
         /// <summary>
-        /// The name of the cluster security group.
-        ///  
+        /// Gets and sets the property ClusterSecurityGroupName. 
+        /// <para>
+        ///         The name of the cluster security group.        
+        /// </para>
         /// </summary>
         public string ClusterSecurityGroupName
         {
-            get { return this.clusterSecurityGroupName; }
-            set { this.clusterSecurityGroupName = value; }
+            get { return this._clusterSecurityGroupName; }
+            set { this._clusterSecurityGroupName = value; }
         }
 
         // Check to see if ClusterSecurityGroupName property is set
         internal bool IsSetClusterSecurityGroupName()
         {
-            return this.clusterSecurityGroupName != null;
+            return this._clusterSecurityGroupName != null;
         }
 
+
         /// <summary>
-        /// The status of the cluster security group.
-        ///  
+        /// Gets and sets the property Status. 
+        /// <para>
+        ///         The status of the cluster security group.        
+        /// </para>
         /// </summary>
         public string Status
         {
-            get { return this.status; }
-            set { this.status = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;
+            return this._status != null;
         }
+
     }
 }

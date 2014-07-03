@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,105 +18,116 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// <para>A wrapper type for the attributes of an SNS subscription.</para>
+    /// A wrapper type for the attributes of an Amazon SNS subscription.
     /// </summary>
-    public class Subscription
+    public partial class Subscription
     {
-        
-        private string subscriptionArn;
-        private string owner;
-        private string protocol;
-        private string endpoint;
-        private string topicArn;
+        private string _endpoint;
+        private string _owner;
+        private string _protocol;
+        private string _subscriptionArn;
+        private string _topicArn;
+
 
         /// <summary>
-        /// Default constructor for a new Subscription object.  Callers should use the
-        /// properties to initialize this object after creating it.
-        /// </summary>
-        public Subscription() {}
-    
-
-        /// <summary>
-        /// The subscription's ARN.
-        ///  
-        /// </summary>
-        public string SubscriptionArn
-        {
-            get { return this.subscriptionArn; }
-            set { this.subscriptionArn = value; }
-        }
-
-        // Check to see if SubscriptionArn property is set
-        internal bool IsSetSubscriptionArn()
-        {
-            return this.subscriptionArn != null;
-        }
-
-        /// <summary>
-        /// The subscription's owner.
-        ///  
-        /// </summary>
-        public string Owner
-        {
-            get { return this.owner; }
-            set { this.owner = value; }
-        }
-
-        // Check to see if Owner property is set
-        internal bool IsSetOwner()
-        {
-            return this.owner != null;
-        }
-
-        /// <summary>
-        /// The subscription's protocol.
-        ///  
-        /// </summary>
-        public string Protocol
-        {
-            get { return this.protocol; }
-            set { this.protocol = value; }
-        }
-
-        // Check to see if Protocol property is set
-        internal bool IsSetProtocol()
-        {
-            return this.protocol != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Endpoint. 
+        /// <para>
         /// The subscription's endpoint (format depends on the protocol).
-        ///  
+        /// </para>
         /// </summary>
         public string Endpoint
         {
-            get { return this.endpoint; }
-            set { this.endpoint = value; }
+            get { return this._endpoint; }
+            set { this._endpoint = value; }
         }
 
         // Check to see if Endpoint property is set
         internal bool IsSetEndpoint()
         {
-            return this.endpoint != null;
+            return this._endpoint != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property Owner. 
+        /// <para>
+        /// The subscription's owner.
+        /// </para>
+        /// </summary>
+        public string Owner
+        {
+            get { return this._owner; }
+            set { this._owner = value; }
+        }
+
+        // Check to see if Owner property is set
+        internal bool IsSetOwner()
+        {
+            return this._owner != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Protocol. 
+        /// <para>
+        /// The subscription's protocol.
+        /// </para>
+        /// </summary>
+        public string Protocol
+        {
+            get { return this._protocol; }
+            set { this._protocol = value; }
+        }
+
+        // Check to see if Protocol property is set
+        internal bool IsSetProtocol()
+        {
+            return this._protocol != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SubscriptionArn. 
+        /// <para>
+        /// The subscription's ARN.
+        /// </para>
+        /// </summary>
+        public string SubscriptionArn
+        {
+            get { return this._subscriptionArn; }
+            set { this._subscriptionArn = value; }
+        }
+
+        // Check to see if SubscriptionArn property is set
+        internal bool IsSetSubscriptionArn()
+        {
+            return this._subscriptionArn != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property TopicArn. 
+        /// <para>
         /// The ARN of the subscription's topic.
-        ///  
+        /// </para>
         /// </summary>
         public string TopicArn
         {
-            get { return this.topicArn; }
-            set { this.topicArn = value; }
+            get { return this._topicArn; }
+            set { this._topicArn = value; }
         }
 
         // Check to see if TopicArn property is set
         internal bool IsSetTopicArn()
         {
-            return this.topicArn != null;
+            return this._topicArn != null;
         }
+
     }
 }

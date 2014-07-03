@@ -29,31 +29,23 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Read Job Request Marshaller
+    /// ReadJob Request Marshaller
     /// </summary>       
-    internal class ReadJobRequestMarshaller : IMarshaller<IRequest, ReadJobRequest> 
+    public class ReadJobRequestMarshaller : IMarshaller<IRequest, ReadJobRequest> 
     {
-        
-
-        public IRequest Marshall(ReadJobRequest readJobRequest) 
+        public IRequest Marshall(ReadJobRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(readJobRequest, "AmazonElasticTranscoder");
-            string target = "EtsCustomerService.ReadJob";
-            request.Headers["X-Amz-Target"] = target;
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticTranscoder");
             request.HttpMethod = "GET";
-            string uriResourcePath = "2012-09-25/jobs/{Id}"; 
-            if(readJobRequest.IsSetId())
-                uriResourcePath = uriResourcePath.Replace("{Id}", StringUtils.FromString(readJobRequest.Id) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{Id}", "" ); 
+
+            string uriResourcePath = "/2012-09-25/jobs/{Id}";
+            uriResourcePath = uriResourcePath.Replace("{Id}", publicRequest.IsSetId() ? StringUtils.FromString(publicRequest.Id) : string.Empty);
             request.ResourcePath = uriResourcePath;
-            
-        
             request.UseQueryString = true;
-        
 
             return request;
         }
+
+
     }
 }

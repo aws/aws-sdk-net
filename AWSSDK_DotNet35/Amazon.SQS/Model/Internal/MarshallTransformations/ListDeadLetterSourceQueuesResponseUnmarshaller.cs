@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ListDeadLetterSourceQueues operation
     /// </summary>  
-    internal class ListDeadLetterSourceQueuesResponseUnmarshaller : XmlResponseUnmarshaller
+    public class ListDeadLetterSourceQueuesResponseUnmarshaller : XmlResponseUnmarshaller
     {
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
@@ -44,13 +44,13 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                 {                    
                     if(context.TestExpression("ListDeadLetterSourceQueuesResult", 2))
                     {
-                        UnmarshallResult(context,response);                        
+                        UnmarshallResult(context, response);                        
                         continue;
                     }
                     
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
                     }
                 }
             }
@@ -58,7 +58,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context,ListDeadLetterSourceQueuesResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, ListDeadLetterSourceQueuesResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -74,7 +74,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("QueueUrl", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        var unmarshaller = StringUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         response.QueueUrls.Add(item);
                         continue;
@@ -96,14 +96,18 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             return new AmazonSQSException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static ListDeadLetterSourceQueuesResponseUnmarshaller instance;
-        public static ListDeadLetterSourceQueuesResponseUnmarshaller GetInstance()
+        private static ListDeadLetterSourceQueuesResponseUnmarshaller _instance = new ListDeadLetterSourceQueuesResponseUnmarshaller();        
+
+        internal static ListDeadLetterSourceQueuesResponseUnmarshaller GetInstance()
         {
-            if (instance == null)
+            return _instance;
+        }
+        public static ListDeadLetterSourceQueuesResponseUnmarshaller Instance
+        {
+            get
             {
-                instance = new ListDeadLetterSourceQueuesResponseUnmarshaller();
+                return _instance;
             }
-            return instance;
         }
 
     }

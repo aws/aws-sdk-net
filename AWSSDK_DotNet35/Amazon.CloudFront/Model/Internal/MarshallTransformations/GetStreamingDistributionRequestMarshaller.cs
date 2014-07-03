@@ -17,42 +17,36 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Text;
-using System.Xml;
 using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
-
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using System.Xml;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Get Streaming Distribution Request Marshaller
+    /// GetStreamingDistribution Request Marshaller
     /// </summary>       
-    public class GetStreamingDistributionRequestMarshaller : IMarshaller<IRequest, GetStreamingDistributionRequest>
+    public class GetStreamingDistributionRequestMarshaller : IMarshaller<IRequest, GetStreamingDistributionRequest> 
     {
-        
-    
-        public IRequest Marshall(GetStreamingDistributionRequest getStreamingDistributionRequest)
+        public IRequest Marshall(GetStreamingDistributionRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(getStreamingDistributionRequest, "AmazonCloudFront");
-
-
-
+            var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "GET";
-            string uriResourcePath = "2014-01-31/streaming-distribution/{Id}"; 
-            uriResourcePath = uriResourcePath.Replace("{Id}", getStreamingDistributionRequest.IsSetId() ? getStreamingDistributionRequest.Id.ToString() : "" ); 
+            var uriResourcePath = "/2014-05-31/streaming-distribution/{Id}";
+
+            uriResourcePath = uriResourcePath.Replace("{Id}", publicRequest.IsSetId() ? StringUtils.FromString(publicRequest.Id) : string.Empty);
             request.ResourcePath = uriResourcePath;
-            
-        
+
+
             request.UseQueryString = true;
-            
-            
             return request;
         }
-    }
+
+        
+    }    
 }
-    

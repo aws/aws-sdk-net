@@ -29,58 +29,51 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Set Visible To All Users Request Marshaller
+    /// SetVisibleToAllUsers Request Marshaller
     /// </summary>       
-    internal class SetVisibleToAllUsersRequestMarshaller : IMarshaller<IRequest, SetVisibleToAllUsersRequest> 
+    public class SetVisibleToAllUsersRequestMarshaller : IMarshaller<IRequest, SetVisibleToAllUsersRequest> 
     {
-        
-
-        public IRequest Marshall(SetVisibleToAllUsersRequest setVisibleToAllUsersRequest) 
+        public IRequest Marshall(SetVisibleToAllUsersRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(setVisibleToAllUsersRequest, "AmazonElasticMapReduce");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticMapReduce");
             string target = "ElasticMapReduce.SetVisibleToAllUsers";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-
-                if (setVisibleToAllUsersRequest != null && setVisibleToAllUsersRequest.JobFlowIds != null && setVisibleToAllUsersRequest.JobFlowIds.Count > 0) 
+                if(publicRequest.IsSetJobFlowIds())
                 {
-                    List<string> jobFlowIdsList = setVisibleToAllUsersRequest.JobFlowIds;
                     writer.WritePropertyName("JobFlowIds");
                     writer.WriteArrayStart();
-
-                    foreach (string jobFlowIdsListValue in jobFlowIdsList) 
-                    { 
-                        writer.Write(StringUtils.FromString(jobFlowIdsListValue));
+                    foreach(var publicRequestJobFlowIdsListValue in publicRequest.JobFlowIds)
+                    {
+                        writer.Write(publicRequestJobFlowIdsListValue);
                     }
-
                     writer.WriteArrayEnd();
                 }
-                if (setVisibleToAllUsersRequest != null && setVisibleToAllUsersRequest.IsSetVisibleToAllUsers()) 
+
+                if(publicRequest.IsSetVisibleToAllUsers())
                 {
                     writer.WritePropertyName("VisibleToAllUsers");
-                    writer.Write(setVisibleToAllUsersRequest.VisibleToAllUsers);
+                    writer.Write(publicRequest.VisibleToAllUsers);
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

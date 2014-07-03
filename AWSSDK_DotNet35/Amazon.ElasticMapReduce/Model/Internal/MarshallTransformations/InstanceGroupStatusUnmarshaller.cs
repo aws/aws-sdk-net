@@ -12,66 +12,76 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.ElasticMapReduce.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+using Amazon.ElasticMapReduce.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for InstanceGroupStatus Object
+    /// </summary>  
+    public class InstanceGroupStatusUnmarshaller : IUnmarshaller<InstanceGroupStatus, XmlUnmarshallerContext>, IUnmarshaller<InstanceGroupStatus, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// InstanceGroupStatusUnmarshaller
-      /// </summary>
-      internal class InstanceGroupStatusUnmarshaller : IUnmarshaller<InstanceGroupStatus, XmlUnmarshallerContext>, IUnmarshaller<InstanceGroupStatus, JsonUnmarshallerContext>
-      {
         InstanceGroupStatus IUnmarshaller<InstanceGroupStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public InstanceGroupStatus Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            InstanceGroupStatus instanceGroupStatus = new InstanceGroupStatus();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            InstanceGroupStatus unmarshalledObject = new InstanceGroupStatus();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("State", targetDepth))
-              {
-                instanceGroupStatus.State = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("StateChangeReason", targetDepth))
-              {
-                instanceGroupStatus.StateChangeReason = InstanceGroupStateChangeReasonUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Timeline", targetDepth))
-              {
-                instanceGroupStatus.Timeline = InstanceGroupTimelineUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("State", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StateChangeReason", targetDepth))
+                {
+                    var unmarshaller = InstanceGroupStateChangeReasonUnmarshaller.Instance;
+                    unmarshalledObject.StateChangeReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Timeline", targetDepth))
+                {
+                    var unmarshaller = InstanceGroupTimelineUnmarshaller.Instance;
+                    unmarshalledObject.Timeline = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return instanceGroupStatus;
+            return unmarshalledObject;
         }
 
-        private static InstanceGroupStatusUnmarshaller instance;
-        public static InstanceGroupStatusUnmarshaller GetInstance()
+
+        private static InstanceGroupStatusUnmarshaller _instance = new InstanceGroupStatusUnmarshaller();        
+
+        public static InstanceGroupStatusUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new InstanceGroupStatusUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,30 +25,36 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the GetIdentityVerificationAttributes operation.
-    /// <para>Given a list of identities (email addresses and/or domains), returns the verification status and (for domain identities) the
-    /// verification token for each identity.</para> <para>This action is throttled at one request per second.</para>
+    /// Given a list of identities (email addresses and/or domains), returns the verification
+    ///        status and (for domain identities) the verification token for each identity.
+    /// 
+    ///         
+    /// <para>
+    /// This action is throttled at one request per second.
+    /// </para>
     /// </summary>
     public partial class GetIdentityVerificationAttributesRequest : AmazonSimpleEmailServiceRequest
     {
-        private List<string> identities = new List<string>();
+        private List<string> _identities = new List<string>();
 
 
         /// <summary>
+        /// Gets and sets the property Identities. 
+        /// <para>
         /// A list of identities.
-        ///  
+        /// </para>
         /// </summary>
         public List<string> Identities
         {
-            get { return this.identities; }
-            set { this.identities = value; }
+            get { return this._identities; }
+            set { this._identities = value; }
         }
 
         // Check to see if Identities property is set
         internal bool IsSetIdentities()
         {
-            return this.identities.Count > 0;
+            return this._identities != null && this._identities.Count > 0; 
         }
 
     }
 }
-    

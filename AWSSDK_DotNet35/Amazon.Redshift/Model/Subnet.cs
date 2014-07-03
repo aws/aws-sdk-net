@@ -18,65 +18,73 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// <para> Describes a subnet. </para>
+    /// Describes a subnet.
     /// </summary>
     public partial class Subnet
     {
-        
-        private string subnetIdentifier;
-        private AvailabilityZone subnetAvailabilityZone;
-        private string subnetStatus;
+        private AvailabilityZone _subnetAvailabilityZone;
+        private string _subnetIdentifier;
+        private string _subnetStatus;
 
 
         /// <summary>
-        /// The identifier of the subnet.
-        ///  
-        /// </summary>
-        public string SubnetIdentifier
-        {
-            get { return this.subnetIdentifier; }
-            set { this.subnetIdentifier = value; }
-        }
-
-        // Check to see if SubnetIdentifier property is set
-        internal bool IsSetSubnetIdentifier()
-        {
-            return this.subnetIdentifier != null;
-        }
-
-        /// <summary>
-        /// Describes an availability zone.
-        ///  
+        /// Gets and sets the property SubnetAvailabilityZone.
         /// </summary>
         public AvailabilityZone SubnetAvailabilityZone
         {
-            get { return this.subnetAvailabilityZone; }
-            set { this.subnetAvailabilityZone = value; }
+            get { return this._subnetAvailabilityZone; }
+            set { this._subnetAvailabilityZone = value; }
         }
 
         // Check to see if SubnetAvailabilityZone property is set
         internal bool IsSetSubnetAvailabilityZone()
         {
-            return this.subnetAvailabilityZone != null;
+            return this._subnetAvailabilityZone != null;
         }
 
+
         /// <summary>
-        /// The status of the subnet.
-        ///  
+        /// Gets and sets the property SubnetIdentifier. 
+        /// <para>
+        ///         The identifier of the subnet.        
+        /// </para>
+        /// </summary>
+        public string SubnetIdentifier
+        {
+            get { return this._subnetIdentifier; }
+            set { this._subnetIdentifier = value; }
+        }
+
+        // Check to see if SubnetIdentifier property is set
+        internal bool IsSetSubnetIdentifier()
+        {
+            return this._subnetIdentifier != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SubnetStatus. 
+        /// <para>
+        ///         The status of the subnet.        
+        /// </para>
         /// </summary>
         public string SubnetStatus
         {
-            get { return this.subnetStatus; }
-            set { this.subnetStatus = value; }
+            get { return this._subnetStatus; }
+            set { this._subnetStatus = value; }
         }
 
         // Check to see if SubnetStatus property is set
         internal bool IsSetSubnetStatus()
         {
-            return this.subnetStatus != null;
+            return this._subnetStatus != null;
         }
+
     }
 }

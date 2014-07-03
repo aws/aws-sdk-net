@@ -29,49 +29,46 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// List Bootstrap Actions Request Marshaller
+    /// ListBootstrapActions Request Marshaller
     /// </summary>       
-    internal class ListBootstrapActionsRequestMarshaller : IMarshaller<IRequest, ListBootstrapActionsRequest> 
+    public class ListBootstrapActionsRequestMarshaller : IMarshaller<IRequest, ListBootstrapActionsRequest> 
     {
-        
-
-        public IRequest Marshall(ListBootstrapActionsRequest listBootstrapActionsRequest) 
+        public IRequest Marshall(ListBootstrapActionsRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(listBootstrapActionsRequest, "AmazonElasticMapReduce");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticMapReduce");
             string target = "ElasticMapReduce.ListBootstrapActions";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (listBootstrapActionsRequest != null && listBootstrapActionsRequest.IsSetClusterId()) 
+                if(publicRequest.IsSetClusterId())
                 {
                     writer.WritePropertyName("ClusterId");
-                    writer.Write(listBootstrapActionsRequest.ClusterId);
-                }
-                if (listBootstrapActionsRequest != null && listBootstrapActionsRequest.IsSetMarker()) 
-                {
-                    writer.WritePropertyName("Marker");
-                    writer.Write(listBootstrapActionsRequest.Marker);
+                    writer.Write(publicRequest.ClusterId);
                 }
 
+                if(publicRequest.IsSetMarker())
+                {
+                    writer.WritePropertyName("Marker");
+                    writer.Write(publicRequest.Marker);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

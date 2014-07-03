@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,48 +18,56 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para>Combines the execution state and configuration of a step.</para>
+    /// Combines the execution state and configuration of a step.
     /// </summary>
-    public class StepDetail
+    public partial class StepDetail
     {
-        
-        private StepConfig stepConfig;
-        private StepExecutionStatusDetail executionStatusDetail;
+        private StepExecutionStatusDetail _executionStatusDetail;
+        private StepConfig _stepConfig;
 
 
         /// <summary>
-        /// The step configuration.
-        ///  
-        /// </summary>
-        public StepConfig StepConfig
-        {
-            get { return this.stepConfig; }
-            set { this.stepConfig = value; }
-        }
-
-        // Check to see if StepConfig property is set
-        internal bool IsSetStepConfig()
-        {
-            return this.stepConfig != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property ExecutionStatusDetail. 
+        /// <para>
         /// The description of the step status.
-        ///  
+        /// </para>
         /// </summary>
         public StepExecutionStatusDetail ExecutionStatusDetail
         {
-            get { return this.executionStatusDetail; }
-            set { this.executionStatusDetail = value; }
+            get { return this._executionStatusDetail; }
+            set { this._executionStatusDetail = value; }
         }
 
         // Check to see if ExecutionStatusDetail property is set
         internal bool IsSetExecutionStatusDetail()
         {
-            return this.executionStatusDetail != null;
+            return this._executionStatusDetail != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property StepConfig. 
+        /// <para>
+        /// The step configuration.
+        /// </para>
+        /// </summary>
+        public StepConfig StepConfig
+        {
+            get { return this._stepConfig; }
+            set { this._stepConfig = value; }
+        }
+
+        // Check to see if StepConfig property is set
+        internal bool IsSetStepConfig()
+        {
+            return this._stepConfig != null;
+        }
+
     }
 }

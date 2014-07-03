@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Hsm Configurations Request Marshaller
+    /// DescribeHsmConfigurations Request Marshaller
     /// </summary>       
     public class DescribeHsmConfigurationsRequestMarshaller : IMarshaller<IRequest, DescribeHsmConfigurationsRequest>
     {
-        public IRequest Marshall(DescribeHsmConfigurationsRequest describeHsmConfigurationsRequest)
+        public IRequest Marshall(DescribeHsmConfigurationsRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describeHsmConfigurationsRequest, "AmazonRedshift");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
             request.Parameters.Add("Action", "DescribeHsmConfigurations");
             request.Parameters.Add("Version", "2012-12-01");
-            if (describeHsmConfigurationsRequest != null && describeHsmConfigurationsRequest.IsSetHsmConfigurationIdentifier())
-            {
-                request.Parameters.Add("HsmConfigurationIdentifier", StringUtils.FromString(describeHsmConfigurationsRequest.HsmConfigurationIdentifier));
-            }
-            if (describeHsmConfigurationsRequest != null && describeHsmConfigurationsRequest.IsSetMaxRecords())
-            {
-                request.Parameters.Add("MaxRecords", StringUtils.FromInt(describeHsmConfigurationsRequest.MaxRecords));
-            }
-            if (describeHsmConfigurationsRequest != null && describeHsmConfigurationsRequest.IsSetMarker())
-            {
-                request.Parameters.Add("Marker", StringUtils.FromString(describeHsmConfigurationsRequest.Marker));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetHsmConfigurationIdentifier())
+                {
+                    request.Parameters.Add("HsmConfigurationIdentifier", StringUtils.FromString(publicRequest.HsmConfigurationIdentifier));
+                }
+                if(publicRequest.IsSetMarker())
+                {
+                    request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
+                }
+                if(publicRequest.IsSetMaxRecords())
+                {
+                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
+                }
+            }
             return request;
         }
     }

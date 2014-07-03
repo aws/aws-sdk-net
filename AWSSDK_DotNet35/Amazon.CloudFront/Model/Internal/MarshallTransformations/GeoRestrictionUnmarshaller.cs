@@ -12,21 +12,30 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   GeoRestriction Unmarshaller
-     /// </summary>
-    internal class GeoRestrictionUnmarshaller : IUnmarshaller<GeoRestriction, XmlUnmarshallerContext>, IUnmarshaller<GeoRestriction, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for GeoRestriction Object
+    /// </summary>  
+    public class GeoRestrictionUnmarshaller : IUnmarshaller<GeoRestriction, XmlUnmarshallerContext>
     {
-        public GeoRestriction Unmarshall(XmlUnmarshallerContext context) 
+        public GeoRestriction Unmarshall(XmlUnmarshallerContext context)
         {
-            GeoRestriction geoRestriction = new GeoRestriction();
+            GeoRestriction unmarshalledObject = new GeoRestriction();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -37,50 +46,41 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("RestrictionType", targetDepth))
+                    if (context.TestExpression("Items/Location", targetDepth))
                     {
-                        geoRestriction.RestrictionType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Items.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
                     if (context.TestExpression("Quantity", targetDepth))
                     {
-                        geoRestriction.Quantity = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.Quantity = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Items/Location", targetDepth))
+                    if (context.TestExpression("RestrictionType", targetDepth))
                     {
-                        geoRestriction.Items.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.RestrictionType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return geoRestriction;
+                    return unmarshalledObject;
                 }
+            }          
+            return unmarshalledObject;
+        }
+
+        private static GeoRestrictionUnmarshaller _instance = new GeoRestrictionUnmarshaller();        
+
+        public static GeoRestrictionUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
             }
-                        
-
-
-            return geoRestriction;
-        }
-
-        public GeoRestriction Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
-
-        private static GeoRestrictionUnmarshaller instance;
-
-        public static GeoRestrictionUnmarshaller GetInstance() 
-        {
-            if (instance == null) 
-               instance = new GeoRestrictionUnmarshaller();
-
-            return instance;
         }
     }
 }
-    

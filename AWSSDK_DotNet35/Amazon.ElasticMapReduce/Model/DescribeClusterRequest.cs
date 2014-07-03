@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,30 +25,31 @@ namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCluster operation.
-    /// <para>Provides cluster-level details including status, hardware and software configuration, VPC settings, and so on. For information about
-    /// the cluster steps, see ListSteps.</para>
+    /// Provides cluster-level details including status, hardware and software configuration,
+    /// VPC settings, and so on. For information about the cluster steps, see <a>ListSteps</a>.
     /// </summary>
     public partial class DescribeClusterRequest : AmazonElasticMapReduceRequest
     {
-        private string clusterId;
+        private string _clusterId;
 
 
         /// <summary>
+        /// Gets and sets the property ClusterId. 
+        /// <para>
         /// The identifier of the cluster to describe.
-        ///  
+        /// </para>
         /// </summary>
         public string ClusterId
         {
-            get { return this.clusterId; }
-            set { this.clusterId = value; }
+            get { return this._clusterId; }
+            set { this._clusterId = value; }
         }
 
         // Check to see if ClusterId property is set
         internal bool IsSetClusterId()
         {
-            return this.clusterId != null;
+            return this._clusterId != null;
         }
 
     }
 }
-    

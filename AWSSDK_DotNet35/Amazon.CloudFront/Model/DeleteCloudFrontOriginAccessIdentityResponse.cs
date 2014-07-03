@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Returns information about the DeleteCloudFrontOriginAccessIdentity response metadata.
-    /// The DeleteCloudFrontOriginAccessIdentity operation has a void result type.
+    /// Configuration for accessing Amazon DeleteCloudFrontOriginAccessIdentity service
     /// </summary>
-    public partial class DeleteCloudFrontOriginAccessIdentityResponse : AmazonWebServiceResponse
+    public partial class DeleteCloudFrontOriginAccessIdentityResponse : DeleteCloudFrontOriginAccessIdentityResult
     {
+        /// <summary>
+        /// Gets and sets the DeleteCloudFrontOriginAccessIdentityResult property.
+        /// Represents the output of a DeleteCloudFrontOriginAccessIdentity operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DeleteCloudFrontOriginAccessIdentityResult class are now available on the DeleteCloudFrontOriginAccessIdentityResponse class. You should use the properties on DeleteCloudFrontOriginAccessIdentityResponse instead of accessing them through DeleteCloudFrontOriginAccessIdentityResult.")]
+        public DeleteCloudFrontOriginAccessIdentityResult DeleteCloudFrontOriginAccessIdentityResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

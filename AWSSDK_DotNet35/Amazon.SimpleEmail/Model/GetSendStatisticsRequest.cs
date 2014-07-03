@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,14 +25,20 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSendStatistics operation.
-    /// <para>Returns the user's sending statistics. The result is a list of data points, representing the last two weeks of sending activity.
-    /// </para> <para>Each data point in the list contains statistics for a 15-minute interval.</para> <para>This action is throttled at one request
-    /// per second.</para>
+    /// Returns the user's sending statistics. The result is a list of data points, representing
+    /// the last two weeks of            sending activity.        
+    /// 
+    ///         
+    /// <para>
+    /// Each data point in the list contains statistics for a 15-minute interval.
+    /// </para>
+    ///         
+    /// <para>
+    /// This action is throttled at one request per second.
+    /// </para>
     /// </summary>
     public partial class GetSendStatisticsRequest : AmazonSimpleEmailServiceRequest
     {
 
-
     }
 }
-    

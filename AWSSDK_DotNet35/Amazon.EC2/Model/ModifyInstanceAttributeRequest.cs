@@ -72,7 +72,7 @@ namespace Amazon.EC2.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet, ebsOptimized</description>
+        ///         <description>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet, ebsOptimized, sriovNetSupport</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -279,7 +279,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// 
+        /// Set to <c>simple</c> to enable enhanced networking for the instance. There is no way to disable enhanced networking at this time. This
+        /// option is supported only for HVM instances. Specifying this option with a PV instance can make it unreachable.
         ///  
         /// </summary>
         public string SriovNetSupport

@@ -12,54 +12,64 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.ElasticMapReduce.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+using Amazon.ElasticMapReduce.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for BootstrapActionDetail Object
+    /// </summary>  
+    public class BootstrapActionDetailUnmarshaller : IUnmarshaller<BootstrapActionDetail, XmlUnmarshallerContext>, IUnmarshaller<BootstrapActionDetail, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// BootstrapActionDetailUnmarshaller
-      /// </summary>
-      internal class BootstrapActionDetailUnmarshaller : IUnmarshaller<BootstrapActionDetail, XmlUnmarshallerContext>, IUnmarshaller<BootstrapActionDetail, JsonUnmarshallerContext>
-      {
         BootstrapActionDetail IUnmarshaller<BootstrapActionDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public BootstrapActionDetail Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            BootstrapActionDetail bootstrapActionDetail = new BootstrapActionDetail();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            BootstrapActionDetail unmarshalledObject = new BootstrapActionDetail();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("BootstrapActionConfig", targetDepth))
-              {
-                bootstrapActionDetail.BootstrapActionConfig = BootstrapActionConfigUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("BootstrapActionConfig", targetDepth))
+                {
+                    var unmarshaller = BootstrapActionConfigUnmarshaller.Instance;
+                    unmarshalledObject.BootstrapActionConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return bootstrapActionDetail;
+            return unmarshalledObject;
         }
 
-        private static BootstrapActionDetailUnmarshaller instance;
-        public static BootstrapActionDetailUnmarshaller GetInstance()
+
+        private static BootstrapActionDetailUnmarshaller _instance = new BootstrapActionDetailUnmarshaller();        
+
+        public static BootstrapActionDetailUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new BootstrapActionDetailUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

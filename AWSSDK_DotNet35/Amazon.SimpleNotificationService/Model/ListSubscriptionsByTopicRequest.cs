@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,78 +25,53 @@ namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSubscriptionsByTopic operation.
-    /// <para>The <c>ListSubscriptionsByTopic</c> action returns a list of the subscriptions to a specific topic. Each call returns a limited list
-    /// of subscriptions, up to 100. If there are more subscriptions, a <c>NextToken</c> is also returned. Use the <c>NextToken</c> parameter in a
-    /// new <c>ListSubscriptionsByTopic</c> call to get further results.</para>
+    /// Returns a list of the subscriptions to a specific topic. Each call returns       a
+    /// limited list of subscriptions, up to 100. If there are more subscriptions, a <code>NextToken</code>
+    /// is also returned. Use the <code>NextToken</code>       parameter in a new <code>ListSubscriptionsByTopic</code>
+    /// call to get further results.
     /// </summary>
     public partial class ListSubscriptionsByTopicRequest : AmazonSimpleNotificationServiceRequest
     {
-        private string topicArn;
-        private string nextToken;
+        private string _nextToken;
+        private string _topicArn;
+
 
         /// <summary>
-        /// Default constructor for a new ListSubscriptionsByTopicRequest object.  Callers should use the
-        /// properties to initialize this object after creating it.
-        /// </summary>
-        public ListSubscriptionsByTopicRequest() {}
-    
-        /// <summary>
-        /// Constructs a new ListSubscriptionsByTopicRequest object.
-        /// Callers should use the properties initialize any additional object members.
-        /// </summary>
-        /// 
-        /// <param name="topicArn"> The ARN of the topic for which you wish to find subscriptions. </param>
-        public ListSubscriptionsByTopicRequest(string topicArn)
-        {
-            this.topicArn = topicArn;
-        }
-    
-        /// <summary>
-        /// Constructs a new ListSubscriptionsByTopicRequest object.
-        /// Callers should use the properties initialize any additional object members.
-        /// </summary>
-        /// 
-        /// <param name="topicArn"> The ARN of the topic for which you wish to find subscriptions. </param>
-        /// <param name="nextToken"> Token returned by the previous <c>ListSubscriptionsByTopic</c> request. </param>
-        public ListSubscriptionsByTopicRequest(string topicArn, string nextToken)
-        {
-            this.topicArn = topicArn;
-            this.nextToken = nextToken;
-        }
-    
-
-        /// <summary>
-        /// The ARN of the topic for which you wish to find subscriptions.
-        ///  
-        /// </summary>
-        public string TopicArn
-        {
-            get { return this.topicArn; }
-            set { this.topicArn = value; }
-        }
-
-        // Check to see if TopicArn property is set
-        internal bool IsSetTopicArn()
-        {
-            return this.topicArn != null;
-        }
-
-        /// <summary>
-        /// Token returned by the previous <c>ListSubscriptionsByTopic</c> request.
-        ///  
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// Token returned by the previous <code>ListSubscriptionsByTopic</code> request.
+        /// </para>
         /// </summary>
         public string NextToken
         {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;
+            return this._nextToken != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property TopicArn. 
+        /// <para>
+        /// The ARN of the topic for which you wish to find subscriptions.
+        /// </para>
+        /// </summary>
+        public string TopicArn
+        {
+            get { return this._topicArn; }
+            set { this._topicArn = value; }
+        }
+
+        // Check to see if TopicArn property is set
+        internal bool IsSetTopicArn()
+        {
+            return this._topicArn != null;
         }
 
     }
 }
-    

@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the DeleteHsmClientCertificate response metadata.
-    /// The DeleteHsmClientCertificate operation has a void result type.
+    /// Configuration for accessing Amazon DeleteHsmClientCertificate service
     /// </summary>
-    public partial class DeleteHsmClientCertificateResponse : AmazonWebServiceResponse
+    public partial class DeleteHsmClientCertificateResponse : DeleteHsmClientCertificateResult
     {
+        /// <summary>
+        /// Gets and sets the DeleteHsmClientCertificateResult property.
+        /// Represents the output of a DeleteHsmClientCertificate operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DeleteHsmClientCertificateResult class are now available on the DeleteHsmClientCertificateResponse class. You should use the properties on DeleteHsmClientCertificateResponse instead of accessing them through DeleteHsmClientCertificateResult.")]
+        public DeleteHsmClientCertificateResult DeleteHsmClientCertificateResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

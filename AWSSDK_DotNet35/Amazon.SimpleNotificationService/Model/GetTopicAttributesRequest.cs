@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,47 +25,31 @@ namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetTopicAttributes operation.
-    /// <para>The <c>GetTopicAttributes</c> action returns all of the properties of a topic. Topic properties returned might differ based on the
-    /// authorization of the user. </para>
+    /// Returns all of the properties of a topic.     Topic properties returned might differ
+    /// based on the authorization of the user.
     /// </summary>
     public partial class GetTopicAttributesRequest : AmazonSimpleNotificationServiceRequest
     {
-        private string topicArn;
+        private string _topicArn;
+
 
         /// <summary>
-        /// Default constructor for a new GetTopicAttributesRequest object.  Callers should use the
-        /// properties to initialize this object after creating it.
-        /// </summary>
-        public GetTopicAttributesRequest() {}
-    
-        /// <summary>
-        /// Constructs a new GetTopicAttributesRequest object.
-        /// Callers should use the properties initialize any additional object members.
-        /// </summary>
-        /// 
-        /// <param name="topicArn"> The ARN of the topic whose properties you want to get. </param>
-        public GetTopicAttributesRequest(string topicArn)
-        {
-            this.topicArn = topicArn;
-        }
-    
-
-        /// <summary>
+        /// Gets and sets the property TopicArn. 
+        /// <para>
         /// The ARN of the topic whose properties you want to get.
-        ///  
+        /// </para>
         /// </summary>
         public string TopicArn
         {
-            get { return this.topicArn; }
-            set { this.topicArn = value; }
+            get { return this._topicArn; }
+            set { this._topicArn = value; }
         }
 
         // Check to see if TopicArn property is set
         internal bool IsSetTopicArn()
         {
-            return this.topicArn != null;
+            return this._topicArn != null;
         }
 
     }
 }
-    

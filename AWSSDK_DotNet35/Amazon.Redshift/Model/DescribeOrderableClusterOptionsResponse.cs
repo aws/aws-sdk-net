@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeOrderableClusterOptions response and response metadata.
+    /// Configuration for accessing Amazon DescribeOrderableClusterOptions service
     /// </summary>
     public partial class DescribeOrderableClusterOptionsResponse : DescribeOrderableClusterOptionsResult
     {
         /// <summary>
         /// Gets and sets the DescribeOrderableClusterOptionsResult property.
-        /// Contains the output from the DescribeOrderableClusterOptions action.
+        /// Represents the output of a DescribeOrderableClusterOptions operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeOrderableClusterOptionsResult class are now available on the DescribeOrderableClusterOptionsResponse class. You should use the properties on DescribeOrderableClusterOptionsResponse instead of accessing them through DescribeOrderableClusterOptionsResult.")]
         public DescribeOrderableClusterOptionsResult DescribeOrderableClusterOptionsResult
@@ -40,4 +36,3 @@ namespace Amazon.Redshift.Model
         }
     }
 }
-    

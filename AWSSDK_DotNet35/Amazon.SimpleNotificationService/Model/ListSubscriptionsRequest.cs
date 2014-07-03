@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,48 +25,33 @@ namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSubscriptions operation.
-    /// <para>The <c>ListSubscriptions</c> action returns a list of the requester's subscriptions. Each call returns a limited list of
-    /// subscriptions, up to 100. If there are more subscriptions, a <c>NextToken</c> is also returned. Use the <c>NextToken</c> parameter in a new
-    /// <c>ListSubscriptions</c> call to get further results.</para>
+    /// Returns a list of the requester's subscriptions. Each call returns a limited list
+    ///      of subscriptions, up to 100. If there are more subscriptions, a <code>NextToken</code>
+    /// is also returned. Use the <code>NextToken</code> parameter in a       new <code>ListSubscriptions</code>
+    /// call to get further results.
     /// </summary>
     public partial class ListSubscriptionsRequest : AmazonSimpleNotificationServiceRequest
     {
-        private string nextToken;
+        private string _nextToken;
+
 
         /// <summary>
-        /// Default constructor for a new ListSubscriptionsRequest object.  Callers should use the
-        /// properties to initialize this object after creating it.
-        /// </summary>
-        public ListSubscriptionsRequest() {}
-    
-        /// <summary>
-        /// Constructs a new ListSubscriptionsRequest object.
-        /// Callers should use the properties initialize any additional object members.
-        /// </summary>
-        /// 
-        /// <param name="nextToken"> Token returned by the previous <c>ListSubscriptions</c> request. </param>
-        public ListSubscriptionsRequest(string nextToken)
-        {
-            this.nextToken = nextToken;
-        }
-    
-
-        /// <summary>
-        /// Token returned by the previous <c>ListSubscriptions</c> request.
-        ///  
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// Token returned by the previous <code>ListSubscriptions</code> request.
+        /// </para>
         /// </summary>
         public string NextToken
         {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;
+            return this._nextToken != null;
         }
 
     }
 }
-    

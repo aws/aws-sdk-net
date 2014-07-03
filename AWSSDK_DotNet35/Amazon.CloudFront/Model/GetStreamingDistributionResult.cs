@@ -17,50 +17,52 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// <para> The returned result of the corresponding request. </para>
+    /// The returned result of the corresponding request.
     /// </summary>
     public partial class GetStreamingDistributionResult : AmazonWebServiceResponse
     {
-        
-        private StreamingDistribution streamingDistribution;
-        private string eTag;
+        private string _eTag;
+        private StreamingDistribution _streamingDistribution;
 
 
         /// <summary>
-        /// The streaming distribution's information.
-        ///  
-        /// </summary>
-        public StreamingDistribution StreamingDistribution
-        {
-            get { return this.streamingDistribution; }
-            set { this.streamingDistribution = value; }
-        }
-
-        // Check to see if StreamingDistribution property is set
-        internal bool IsSetStreamingDistribution()
-        {
-            return this.streamingDistribution != null;
-        }
-
-        /// <summary>
-        /// The current version of the streaming distribution's information. For example: E2QWRUHAPOMQZL.
-        ///  
+        /// Gets and sets the property ETag. The current version of the streaming distribution's
+        /// information. For example: E2QWRUHAPOMQZL.
         /// </summary>
         public string ETag
         {
-            get { return this.eTag; }
-            set { this.eTag = value; }
+            get { return this._eTag; }
+            set { this._eTag = value; }
         }
 
         // Check to see if ETag property is set
         internal bool IsSetETag()
         {
-            return this.eTag != null;
+            return this._eTag != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property StreamingDistribution. The streaming distribution's information.
+        /// </summary>
+        public StreamingDistribution StreamingDistribution
+        {
+            get { return this._streamingDistribution; }
+            set { this._streamingDistribution = value; }
+        }
+
+        // Check to see if StreamingDistribution property is set
+        internal bool IsSetStreamingDistribution()
+        {
+            return this._streamingDistribution != null;
+        }
+
     }
 }

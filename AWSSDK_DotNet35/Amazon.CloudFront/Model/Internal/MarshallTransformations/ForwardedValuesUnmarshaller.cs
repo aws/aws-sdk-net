@@ -12,21 +12,30 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ForwardedValues Unmarshaller
-     /// </summary>
-    internal class ForwardedValuesUnmarshaller : IUnmarshaller<ForwardedValues, XmlUnmarshallerContext>, IUnmarshaller<ForwardedValues, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ForwardedValues Object
+    /// </summary>  
+    public class ForwardedValuesUnmarshaller : IUnmarshaller<ForwardedValues, XmlUnmarshallerContext>
     {
-        public ForwardedValues Unmarshall(XmlUnmarshallerContext context) 
+        public ForwardedValues Unmarshall(XmlUnmarshallerContext context)
         {
-            ForwardedValues forwardedValues = new ForwardedValues();
+            ForwardedValues unmarshalledObject = new ForwardedValues();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -37,44 +46,41 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("QueryString", targetDepth))
-                    {
-                        forwardedValues.QueryString = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("Cookies", targetDepth))
                     {
-                        forwardedValues.Cookies = CookiePreferenceUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = CookiePreferenceUnmarshaller.Instance;
+                        unmarshalledObject.Cookies = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Headers", targetDepth))
+                    {
+                        var unmarshaller = HeadersUnmarshaller.Instance;
+                        unmarshalledObject.Headers = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("QueryString", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.QueryString = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return forwardedValues;
+                    return unmarshalledObject;
                 }
+            }          
+            return unmarshalledObject;
+        }
+
+        private static ForwardedValuesUnmarshaller _instance = new ForwardedValuesUnmarshaller();        
+
+        public static ForwardedValuesUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
             }
-                        
-
-
-            return forwardedValues;
-        }
-
-        public ForwardedValues Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
-
-        private static ForwardedValuesUnmarshaller instance;
-
-        public static ForwardedValuesUnmarshaller GetInstance() 
-        {
-            if (instance == null) 
-               instance = new ForwardedValuesUnmarshaller();
-
-            return instance;
         }
     }
 }
-    

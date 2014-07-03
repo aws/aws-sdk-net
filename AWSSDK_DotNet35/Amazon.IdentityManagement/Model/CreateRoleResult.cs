@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the CreateRole action.</para>
+    /// Contains the result of a successful invocation of the <a>CreateRole</a> action.
     /// </summary>
     public partial class CreateRoleResult : AmazonWebServiceResponse
     {
-        
-        private Role role;
+        private Role _role;
 
 
         /// <summary>
+        /// Gets and sets the property Role. 
+        /// <para>
         /// Information about the role.
-        ///  
+        /// </para>
         /// </summary>
         public Role Role
         {
-            get { return this.role; }
-            set { this.role = value; }
+            get { return this._role; }
+            set { this._role = value; }
         }
 
         // Check to see if Role property is set
         internal bool IsSetRole()
         {
-            return this.role != null;
+            return this._role != null;
         }
+
     }
 }

@@ -62,6 +62,8 @@ namespace Amazon.S3.Model
                         totalIncrementTransferred = 0;
                     }
                 }
+				
+				ValidateWrittenStreamSize(current);
             }
             finally
             {

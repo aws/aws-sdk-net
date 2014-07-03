@@ -12,21 +12,30 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.CloudFront.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   CloudFrontOriginAccessIdentity Unmarshaller
-     /// </summary>
-    internal class CloudFrontOriginAccessIdentityUnmarshaller : IUnmarshaller<CloudFrontOriginAccessIdentity, XmlUnmarshallerContext>, IUnmarshaller<CloudFrontOriginAccessIdentity, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for CloudFrontOriginAccessIdentity Object
+    /// </summary>  
+    public class CloudFrontOriginAccessIdentityUnmarshaller : IUnmarshaller<CloudFrontOriginAccessIdentity, XmlUnmarshallerContext>
     {
-        public CloudFrontOriginAccessIdentity Unmarshall(XmlUnmarshallerContext context) 
+        public CloudFrontOriginAccessIdentity Unmarshall(XmlUnmarshallerContext context)
         {
-            CloudFrontOriginAccessIdentity cloudFrontOriginAccessIdentity = new CloudFrontOriginAccessIdentity();
+            CloudFrontOriginAccessIdentity unmarshalledObject = new CloudFrontOriginAccessIdentity();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -37,50 +46,41 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("CloudFrontOriginAccessIdentityConfig", targetDepth))
+                    {
+                        var unmarshaller = CloudFrontOriginAccessIdentityConfigUnmarshaller.Instance;
+                        unmarshalledObject.CloudFrontOriginAccessIdentityConfig = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Id", targetDepth))
                     {
-                        cloudFrontOriginAccessIdentity.Id = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("S3CanonicalUserId", targetDepth))
                     {
-                        cloudFrontOriginAccessIdentity.S3CanonicalUserId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("CloudFrontOriginAccessIdentityConfig", targetDepth))
-                    {
-                        cloudFrontOriginAccessIdentity.CloudFrontOriginAccessIdentityConfig = CloudFrontOriginAccessIdentityConfigUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.S3CanonicalUserId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return cloudFrontOriginAccessIdentity;
+                    return unmarshalledObject;
                 }
+            }          
+            return unmarshalledObject;
+        }
+
+        private static CloudFrontOriginAccessIdentityUnmarshaller _instance = new CloudFrontOriginAccessIdentityUnmarshaller();        
+
+        public static CloudFrontOriginAccessIdentityUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
             }
-                        
-
-
-            return cloudFrontOriginAccessIdentity;
-        }
-
-        public CloudFrontOriginAccessIdentity Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
-
-        private static CloudFrontOriginAccessIdentityUnmarshaller instance;
-
-        public static CloudFrontOriginAccessIdentityUnmarshaller GetInstance() 
-        {
-            if (instance == null) 
-               instance = new CloudFrontOriginAccessIdentityUnmarshaller();
-
-            return instance;
         }
     }
 }
-    

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,46 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para> The result of the RunJobFlow operation. </para>
+    /// The result of the <a>RunJobFlow</a> operation.
     /// </summary>
     public partial class RunJobFlowResult : AmazonWebServiceResponse
     {
-        
-        private string jobFlowId;
+        private string _jobFlowId;
 
 
         /// <summary>
-        /// An unique identifier for the job flow.
-        ///  
+        /// Gets and sets the property JobFlowId. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 256</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// An unique identifier for the job flow.
         /// </para>
         /// </summary>
         public string JobFlowId
         {
-            get { return this.jobFlowId; }
-            set { this.jobFlowId = value; }
+            get { return this._jobFlowId; }
+            set { this._jobFlowId = value; }
         }
 
         // Check to see if JobFlowId property is set
         internal bool IsSetJobFlowId()
         {
-            return this.jobFlowId != null;
+            return this._jobFlowId != null;
         }
+
     }
 }

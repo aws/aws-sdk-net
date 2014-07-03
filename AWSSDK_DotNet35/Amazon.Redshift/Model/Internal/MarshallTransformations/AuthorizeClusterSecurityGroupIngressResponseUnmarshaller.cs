@@ -13,112 +13,112 @@
  * permissions and limitations under the License.
  */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.Redshift.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for AuthorizeClusterSecurityGroupIngress operation
-    /// </summary>
-    internal class AuthorizeClusterSecurityGroupIngressResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for AuthorizeClusterSecurityGroupIngress operation
+    /// </summary>  
+    public class AuthorizeClusterSecurityGroupIngressResponseUnmarshaller : XmlResponseUnmarshaller
     {
-
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             AuthorizeClusterSecurityGroupIngressResponse response = new AuthorizeClusterSecurityGroupIngressResponse();
-            
-            while (context.Read())
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
-                
                 if (context.IsStartElement)
-                {
-                    
+                {                    
                     if(context.TestExpression("AuthorizeClusterSecurityGroupIngressResult", 2))
                     {
-                        UnmarshallResult(context,response);                    
+                        UnmarshallResult(context, response);                        
                         continue;
                     }
                     
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
                     }
                 }
-                
             }
-                
 
             return response;
         }
-        
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,AuthorizeClusterSecurityGroupIngressResponse response)
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, AuthorizeClusterSecurityGroupIngressResponse response)
         {
+            
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("ClusterSecurityGroup", targetDepth))
+
+                    if ( context.TestExpression("ClusterSecurityGroup", targetDepth))
                     {
-                        response.ClusterSecurityGroup = ClusterSecurityGroupUnmarshaller.GetInstance().Unmarshall(context);
+                        response.ClusterSecurityGroup = ClusterSecurityGroupUnmarshaller.Instance.Unmarshall(context);
                         continue;
                     }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return;
-                }
-            }
+                } 
+           }
+
+            return;
         }
-        
+
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidClusterSecurityGroupState"))
-            {
-                return new InvalidClusterSecurityGroupStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("AuthorizationAlreadyExists"))
             {
                 return new AuthorizationAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("AuthorizationQuotaExceeded"))
             {
                 return new AuthorizationQuotaExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("ClusterSecurityGroupNotFound"))
             {
                 return new ClusterSecurityGroupNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidClusterSecurityGroupState"))
+            {
+                return new InvalidClusterSecurityGroupStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonRedshiftException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static AuthorizeClusterSecurityGroupIngressResponseUnmarshaller instance;
 
-        public static AuthorizeClusterSecurityGroupIngressResponseUnmarshaller GetInstance()
+        private static AuthorizeClusterSecurityGroupIngressResponseUnmarshaller _instance = new AuthorizeClusterSecurityGroupIngressResponseUnmarshaller();        
+
+        internal static AuthorizeClusterSecurityGroupIngressResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new AuthorizeClusterSecurityGroupIngressResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static AuthorizeClusterSecurityGroupIngressResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

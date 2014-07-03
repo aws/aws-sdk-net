@@ -12,66 +12,76 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.ElasticMapReduce.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+using Amazon.ElasticMapReduce.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for ClusterSummary Object
+    /// </summary>  
+    public class ClusterSummaryUnmarshaller : IUnmarshaller<ClusterSummary, XmlUnmarshallerContext>, IUnmarshaller<ClusterSummary, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// ClusterSummaryUnmarshaller
-      /// </summary>
-      internal class ClusterSummaryUnmarshaller : IUnmarshaller<ClusterSummary, XmlUnmarshallerContext>, IUnmarshaller<ClusterSummary, JsonUnmarshallerContext>
-      {
         ClusterSummary IUnmarshaller<ClusterSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public ClusterSummary Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            ClusterSummary clusterSummary = new ClusterSummary();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            ClusterSummary unmarshalledObject = new ClusterSummary();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("Id", targetDepth))
-              {
-                clusterSummary.Id = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Name", targetDepth))
-              {
-                clusterSummary.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Status", targetDepth))
-              {
-                clusterSummary.Status = ClusterStatusUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("Id", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Status", targetDepth))
+                {
+                    var unmarshaller = ClusterStatusUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return clusterSummary;
+            return unmarshalledObject;
         }
 
-        private static ClusterSummaryUnmarshaller instance;
-        public static ClusterSummaryUnmarshaller GetInstance()
+
+        private static ClusterSummaryUnmarshaller _instance = new ClusterSummaryUnmarshaller();        
+
+        public static ClusterSummaryUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new ClusterSummaryUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

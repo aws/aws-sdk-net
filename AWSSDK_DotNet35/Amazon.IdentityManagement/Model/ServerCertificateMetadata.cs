@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,154 +18,148 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>ServerCertificateMetadata contains information about a server certificate without its certificate body, certificate chain, and private
-    /// key.</para> <para>This data type is used as a response element in the action UploadServerCertificate and ListServerCertificates.</para>
+    /// ServerCertificateMetadata contains information about a server certificate without
+    /// its            certificate body, certificate chain, and private key.
+    /// 
+    ///         
+    /// <para>
+    /// This data type is used as a response element in the action <a>UploadServerCertificate</a>
+    /// and                <a>ListServerCertificates</a>.
+    /// </para>
     /// </summary>
-    public class ServerCertificateMetadata
+    public partial class ServerCertificateMetadata
     {
-        
-        private string path;
-        private string serverCertificateName;
-        private string serverCertificateId;
-        private string arn;
-        private DateTime? uploadDate;
+        private string _arn;
+        private DateTime? _expiration;
+        private string _path;
+        private string _serverCertificateId;
+        private string _serverCertificateName;
+        private DateTime? _uploadDate;
 
 
         /// <summary>
-        /// Path to the server certificate. For more information about paths, see <a
-        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
-        /// <i>Using AWS Identity and Access Management</i>.
-        ///  
+        /// Gets and sets the property Arn. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 512</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string Path
-        {
-            get { return this.path; }
-            set { this.path = value; }
-        }
-
-        // Check to see if Path property is set
-        internal bool IsSetPath()
-        {
-            return this.path != null;
-        }
-
-        /// <summary>
-        /// The name that identifies the server certificate.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 128</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=,.@-]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string ServerCertificateName
-        {
-            get { return this.serverCertificateName; }
-            set { this.serverCertificateName = value; }
-        }
-
-        // Check to see if ServerCertificateName property is set
-        internal bool IsSetServerCertificateName()
-        {
-            return this.serverCertificateName != null;
-        }
-
-        /// <summary>
-        /// The stable and unique string identifying the server certificate. For more information about IDs, see <a
-        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
-        /// <i>Using AWS Identity and Access Management</i>.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>16 - 32</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string ServerCertificateId
-        {
-            get { return this.serverCertificateId; }
-            set { this.serverCertificateId = value; }
-        }
-
-        // Check to see if ServerCertificateId property is set
-        internal bool IsSetServerCertificateId()
-        {
-            return this.serverCertificateId != null;
-        }
-
-        /// <summary>
-        /// The Amazon Resource Name (ARN) specifying the server certificate. For more information about ARNs and how to use them in policies, see <a
-        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
-        /// <i>Using AWS Identity and Access Management</i>.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>20 - 2048</description>
-        ///     </item>
-        /// </list>
+        /// The Amazon Resource Name (ARN) specifying the server certificate. For more information
+        /// about            ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+        /// target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access                Management</i>.
         /// </para>
         /// </summary>
         public string Arn
         {
-            get { return this.arn; }
-            set { this.arn = value; }
+            get { return this._arn; }
+            set { this._arn = value; }
         }
 
         // Check to see if Arn property is set
         internal bool IsSetArn()
         {
-            return this.arn != null;
+            return this._arn != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property Expiration. 
+        /// <para>
+        /// The date on which the certificate is set to expire.
+        /// </para>
+        /// </summary>
+        public DateTime Expiration
+        {
+            get { return this._expiration.GetValueOrDefault(); }
+            set { this._expiration = value; }
+        }
+
+        // Check to see if Expiration property is set
+        internal bool IsSetExpiration()
+        {
+            return this._expiration.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Path. 
+        /// <para>
+        /// Path to the server certificate. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+        /// target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access                Management</i>.
+        /// </para>
+        /// </summary>
+        public string Path
+        {
+            get { return this._path; }
+            set { this._path = value; }
+        }
+
+        // Check to see if Path property is set
+        internal bool IsSetPath()
+        {
+            return this._path != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ServerCertificateId. 
+        /// <para>
+        /// The stable and unique string identifying the server certificate. For more information
+        /// about            IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+        /// target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access                Management</i>.
+        /// </para>
+        /// </summary>
+        public string ServerCertificateId
+        {
+            get { return this._serverCertificateId; }
+            set { this._serverCertificateId = value; }
+        }
+
+        // Check to see if ServerCertificateId property is set
+        internal bool IsSetServerCertificateId()
+        {
+            return this._serverCertificateId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ServerCertificateName. 
+        /// <para>
+        /// The name that identifies the server certificate.
+        /// </para>
+        /// </summary>
+        public string ServerCertificateName
+        {
+            get { return this._serverCertificateName; }
+            set { this._serverCertificateName = value; }
+        }
+
+        // Check to see if ServerCertificateName property is set
+        internal bool IsSetServerCertificateName()
+        {
+            return this._serverCertificateName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property UploadDate. 
+        /// <para>
         /// The date when the server certificate was uploaded.
-        ///  
+        /// </para>
         /// </summary>
         public DateTime UploadDate
         {
-            get { return this.uploadDate ?? default(DateTime); }
-            set { this.uploadDate = value; }
+            get { return this._uploadDate.GetValueOrDefault(); }
+            set { this._uploadDate = value; }
         }
 
         // Check to see if UploadDate property is set
         internal bool IsSetUploadDate()
         {
-            return this.uploadDate.HasValue;
+            return this._uploadDate.HasValue; 
         }
+
     }
 }

@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Returns information about the  CreateInvalidation response and response metadata.
+    /// Configuration for accessing Amazon CreateInvalidation service
     /// </summary>
     public partial class CreateInvalidationResponse : CreateInvalidationResult
     {
         /// <summary>
         /// Gets and sets the CreateInvalidationResult property.
-        /// The returned result of the corresponding request.
+        /// Represents the output of a CreateInvalidation operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateInvalidationResult class are now available on the CreateInvalidationResponse class. You should use the properties on CreateInvalidationResponse instead of accessing them through CreateInvalidationResult.")]
         public CreateInvalidationResult CreateInvalidationResult
@@ -40,4 +36,3 @@ namespace Amazon.CloudFront.Model
         }
     }
 }
-    

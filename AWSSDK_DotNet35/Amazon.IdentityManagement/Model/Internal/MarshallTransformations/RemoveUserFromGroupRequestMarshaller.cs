@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,36 +14,40 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Remove User From Group Request Marshaller
+    /// RemoveUserFromGroup Request Marshaller
     /// </summary>       
     public class RemoveUserFromGroupRequestMarshaller : IMarshaller<IRequest, RemoveUserFromGroupRequest>
     {
-        public IRequest Marshall(RemoveUserFromGroupRequest removeUserFromGroupRequest)
+        public IRequest Marshall(RemoveUserFromGroupRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(removeUserFromGroupRequest, "AmazonIdentityManagementService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.IdentityManagement");
             request.Parameters.Add("Action", "RemoveUserFromGroup");
             request.Parameters.Add("Version", "2010-05-08");
-            if (removeUserFromGroupRequest != null && removeUserFromGroupRequest.IsSetGroupName())
-            {
-                request.Parameters.Add("GroupName", StringUtils.FromString(removeUserFromGroupRequest.GroupName));
-            }
-            if (removeUserFromGroupRequest != null && removeUserFromGroupRequest.IsSetUserName())
-            {
-                request.Parameters.Add("UserName", StringUtils.FromString(removeUserFromGroupRequest.UserName));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetGroupName())
+                {
+                    request.Parameters.Add("GroupName", StringUtils.FromString(publicRequest.GroupName));
+                }
+                if(publicRequest.IsSetUserName())
+                {
+                    request.Parameters.Add("UserName", StringUtils.FromString(publicRequest.UserName));
+                }
+            }
             return request;
         }
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,36 +14,40 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Update Login Profile Request Marshaller
+    /// UpdateLoginProfile Request Marshaller
     /// </summary>       
     public class UpdateLoginProfileRequestMarshaller : IMarshaller<IRequest, UpdateLoginProfileRequest>
     {
-        public IRequest Marshall(UpdateLoginProfileRequest updateLoginProfileRequest)
+        public IRequest Marshall(UpdateLoginProfileRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(updateLoginProfileRequest, "AmazonIdentityManagementService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.IdentityManagement");
             request.Parameters.Add("Action", "UpdateLoginProfile");
             request.Parameters.Add("Version", "2010-05-08");
-            if (updateLoginProfileRequest != null && updateLoginProfileRequest.IsSetUserName())
-            {
-                request.Parameters.Add("UserName", StringUtils.FromString(updateLoginProfileRequest.UserName));
-            }
-            if (updateLoginProfileRequest != null && updateLoginProfileRequest.IsSetPassword())
-            {
-                request.Parameters.Add("Password", StringUtils.FromString(updateLoginProfileRequest.Password));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetPassword())
+                {
+                    request.Parameters.Add("Password", StringUtils.FromString(publicRequest.Password));
+                }
+                if(publicRequest.IsSetUserName())
+                {
+                    request.Parameters.Add("UserName", StringUtils.FromString(publicRequest.UserName));
+                }
+            }
             return request;
         }
     }

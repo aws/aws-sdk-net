@@ -18,48 +18,56 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// <para>Describes the status of the elastic IP (EIP) address.</para>
+    /// Describes the status of the elastic IP (EIP) address.
     /// </summary>
     public partial class ElasticIpStatus
     {
-        
-        private string elasticIp;
-        private string status;
+        private string _elasticIp;
+        private string _status;
 
 
         /// <summary>
+        /// Gets and sets the property ElasticIp. 
+        /// <para>
         /// The elastic IP (EIP) address for the cluster.
-        ///  
+        /// </para>
         /// </summary>
         public string ElasticIp
         {
-            get { return this.elasticIp; }
-            set { this.elasticIp = value; }
+            get { return this._elasticIp; }
+            set { this._elasticIp = value; }
         }
 
         // Check to see if ElasticIp property is set
         internal bool IsSetElasticIp()
         {
-            return this.elasticIp != null;
+            return this._elasticIp != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
         /// Describes the status of the elastic IP (EIP) address.
-        ///  
+        /// </para>
         /// </summary>
         public string Status
         {
-            get { return this.status; }
-            set { this.status = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;
+            return this._status != null;
         }
+
     }
 }

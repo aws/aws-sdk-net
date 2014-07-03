@@ -381,6 +381,42 @@ namespace Amazon.S3
     }
 
     /// <summary>
+    /// A list of all server-side encryption methods for customer provided encryption keys.
+    /// </summary>
+    public sealed class ServerSideEncryptionCustomerMethod : ConstantClass
+    {
+        /// <summary>
+        /// No server side encryption to be used.
+        /// </summary>
+        public static readonly ServerSideEncryptionCustomerMethod None = new ServerSideEncryptionCustomerMethod("");
+
+        /// <summary>
+        /// Use AES 256 server side encryption.
+        /// </summary>
+        public static readonly ServerSideEncryptionCustomerMethod AES256 = new ServerSideEncryptionCustomerMethod("AES256");
+
+        public ServerSideEncryptionCustomerMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static ServerSideEncryptionCustomerMethod FindValue(string value)
+        {
+            return FindValue<ServerSideEncryptionCustomerMethod>(value);
+        }
+
+        public static implicit operator ServerSideEncryptionCustomerMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// A list of all server-side encryption methods.
     /// </summary>
     public sealed class ServerSideEncryptionMethod : ConstantClass

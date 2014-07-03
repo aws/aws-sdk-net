@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,33 +17,41 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// <para>Response for Publish action.</para>
+    /// Response for Publish action.
     /// </summary>
     public partial class PublishResult : AmazonWebServiceResponse
     {
-        
-        private string messageId;
+        private string _messageId;
 
 
         /// <summary>
-        /// Unique identifier assigned to the published message. Length Constraint: Maximum 100 characters
-        ///  
+        /// Gets and sets the property MessageId. 
+        /// <para>
+        /// Unique identifier assigned to the published message.
+        /// </para>
+        ///     
+        /// <para>
+        /// Length Constraint: Maximum 100 characters
+        /// </para>
         /// </summary>
         public string MessageId
         {
-            get { return this.messageId; }
-            set { this.messageId = value; }
+            get { return this._messageId; }
+            set { this._messageId = value; }
         }
 
         // Check to see if MessageId property is set
         internal bool IsSetMessageId()
         {
-            return this.messageId != null;
+            return this._messageId != null;
         }
+
     }
 }

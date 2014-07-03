@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,75 +18,76 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para>The details of the instance group status.</para>
+    /// The details of the instance group status.
     /// </summary>
-    public class InstanceGroupStatus
+    public partial class InstanceGroupStatus
     {
-        
-        private InstanceGroupState state;
-        private InstanceGroupStateChangeReason stateChangeReason;
-        private InstanceGroupTimeline timeline;
+        private InstanceGroupState _state;
+        private InstanceGroupStateChangeReason _stateChangeReason;
+        private InstanceGroupTimeline _timeline;
 
 
         /// <summary>
-        /// The current state of the instance group. The following values are deprecated: ARRESTED, SHUTTING_DOWN, and ENDED. Use SUSPENDED,
-        /// TERMINATING, and TERMINATED instead, respectively.
-        ///  
+        /// Gets and sets the property State. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>PROVISIONING, BOOTSTRAPPING, RUNNING, RESIZING, SUSPENDED, TERMINATING, TERMINATED, ARRESTED, SHUTTING_DOWN, ENDED</description>
-        ///     </item>
-        /// </list>
+        /// The current state of the instance group.
         /// </para>
         /// </summary>
         public InstanceGroupState State
         {
-            get { return this.state; }
-            set { this.state = value; }
+            get { return this._state; }
+            set { this._state = value; }
         }
 
         // Check to see if State property is set
         internal bool IsSetState()
         {
-            return this.state != null;
+            return this._state != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property StateChangeReason. 
+        /// <para>
         /// The status change reason details for the instance group.
-        ///  
+        /// </para>
         /// </summary>
         public InstanceGroupStateChangeReason StateChangeReason
         {
-            get { return this.stateChangeReason; }
-            set { this.stateChangeReason = value; }
+            get { return this._stateChangeReason; }
+            set { this._stateChangeReason = value; }
         }
 
         // Check to see if StateChangeReason property is set
         internal bool IsSetStateChangeReason()
         {
-            return this.stateChangeReason != null;
+            return this._stateChangeReason != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property Timeline. 
+        /// <para>
         /// The timeline of the instance group status over time.
-        ///  
+        /// </para>
         /// </summary>
         public InstanceGroupTimeline Timeline
         {
-            get { return this.timeline; }
-            set { this.timeline = value; }
+            get { return this._timeline; }
+            set { this._timeline = value; }
         }
 
         // Check to see if Timeline property is set
         internal bool IsSetTimeline()
         {
-            return this.timeline != null;
+            return this._timeline != null;
         }
+
     }
 }

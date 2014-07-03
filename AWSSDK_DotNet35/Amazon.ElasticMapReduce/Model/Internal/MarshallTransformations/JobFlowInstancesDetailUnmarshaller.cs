@@ -12,130 +12,136 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.ElasticMapReduce.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+using Amazon.ElasticMapReduce.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for JobFlowInstancesDetail Object
+    /// </summary>  
+    public class JobFlowInstancesDetailUnmarshaller : IUnmarshaller<JobFlowInstancesDetail, XmlUnmarshallerContext>, IUnmarshaller<JobFlowInstancesDetail, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// JobFlowInstancesDetailUnmarshaller
-      /// </summary>
-      internal class JobFlowInstancesDetailUnmarshaller : IUnmarshaller<JobFlowInstancesDetail, XmlUnmarshallerContext>, IUnmarshaller<JobFlowInstancesDetail, JsonUnmarshallerContext>
-      {
         JobFlowInstancesDetail IUnmarshaller<JobFlowInstancesDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public JobFlowInstancesDetail Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            JobFlowInstancesDetail jobFlowInstancesDetail = new JobFlowInstancesDetail();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            JobFlowInstancesDetail unmarshalledObject = new JobFlowInstancesDetail();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("MasterInstanceType", targetDepth))
-              {
-                jobFlowInstancesDetail.MasterInstanceType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("MasterPublicDnsName", targetDepth))
-              {
-                jobFlowInstancesDetail.MasterPublicDnsName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("MasterInstanceId", targetDepth))
-              {
-                jobFlowInstancesDetail.MasterInstanceId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("SlaveInstanceType", targetDepth))
-              {
-                jobFlowInstancesDetail.SlaveInstanceType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("InstanceCount", targetDepth))
-              {
-                jobFlowInstancesDetail.InstanceCount = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("InstanceGroups", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<InstanceGroupDetail,InstanceGroupDetailUnmarshaller>(
-                    InstanceGroupDetailUnmarshaller.GetInstance());                  
-                jobFlowInstancesDetail.InstanceGroups = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
-              if (context.TestExpression("NormalizedInstanceHours", targetDepth))
-              {
-                jobFlowInstancesDetail.NormalizedInstanceHours = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Ec2KeyName", targetDepth))
-              {
-                jobFlowInstancesDetail.Ec2KeyName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Ec2SubnetId", targetDepth))
-              {
-                jobFlowInstancesDetail.Ec2SubnetId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("Placement", targetDepth))
-              {
-                jobFlowInstancesDetail.Placement = PlacementTypeUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("KeepJobFlowAliveWhenNoSteps", targetDepth))
-              {
-                jobFlowInstancesDetail.KeepJobFlowAliveWhenNoSteps = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("TerminationProtected", targetDepth))
-              {
-                jobFlowInstancesDetail.TerminationProtected = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("HadoopVersion", targetDepth))
-              {
-                jobFlowInstancesDetail.HadoopVersion = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("Ec2KeyName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Ec2KeyName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Ec2SubnetId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Ec2SubnetId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HadoopVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HadoopVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("InstanceCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.InstanceCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("InstanceGroups", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<InstanceGroupDetail, InstanceGroupDetailUnmarshaller>(InstanceGroupDetailUnmarshaller.Instance);
+                    unmarshalledObject.InstanceGroups = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("KeepJobFlowAliveWhenNoSteps", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.KeepJobFlowAliveWhenNoSteps = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MasterInstanceId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MasterInstanceId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MasterInstanceType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MasterInstanceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MasterPublicDnsName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MasterPublicDnsName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NormalizedInstanceHours", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.NormalizedInstanceHours = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Placement", targetDepth))
+                {
+                    var unmarshaller = PlacementTypeUnmarshaller.Instance;
+                    unmarshalledObject.Placement = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SlaveInstanceType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SlaveInstanceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TerminationProtected", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.TerminationProtected = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return jobFlowInstancesDetail;
+            return unmarshalledObject;
         }
 
-        private static JobFlowInstancesDetailUnmarshaller instance;
-        public static JobFlowInstancesDetailUnmarshaller GetInstance()
+
+        private static JobFlowInstancesDetailUnmarshaller _instance = new JobFlowInstancesDetailUnmarshaller();        
+
+        public static JobFlowInstancesDetailUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new JobFlowInstancesDetailUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

@@ -68,8 +68,8 @@ namespace Amazon.TraceListener
     /// &lt;system.diagnostics&gt;
     ///   &lt;trace&gt;
     ///     &lt;listeners&gt;
-    ///       &lt;add name=&quot;dynamo&quot; type=&quot;Amazon.Logging.DynamoDBTraceListener, AWS.Extensions&quot;
-    ///             AWSProfileName="AWS Default"
+    ///       &lt;add name=&quot;dynamo&quot; type=&quot;Amazon.TraceListener.DynamoDBTraceListener, AWS.TraceListener&quot;
+    ///             AWSProfileName="default"
     ///             AWSProfilesLocation=".aws/credentials"
     ///             Region=&quot;us-west-2&quot;
     ///             Table=&quot;Logs&quot;
@@ -179,9 +179,13 @@ namespace Amazon.TraceListener
                     {
                         AmazonDynamoDBConfig config = new AmazonDynamoDBConfig
                         {
-                            RegionEndpoint = Configuration.Region,
                             DisableLogging = true
                         };
+
+                        if (Configuration.Region != null)
+                            config.RegionEndpoint = Configuration.Region;
+                        if (Configuration.ServiceURL != null)
+                            config.ServiceURL = Configuration.ServiceURL;
 
                         AWSCredentials credentials = null;
                         if (!string.IsNullOrEmpty(Configuration.AWSAccessKey) && !string.IsNullOrEmpty(Configuration.AWSSecretKey))
@@ -303,6 +307,7 @@ namespace Amazon.TraceListener
         private const string CONFIG_PROFILENAME = "AWSProfileName";
         private const string CONFIG_PROFILESLOCATION = "AWSProfilesLocation";
         private const string CONFIG_REGION = "Region";
+        private const string CONFIG_SERVICE_URL = "ServiceURL";
         private const string CONFIG_TABLE = "Table";
         private const string CONFIG_CREATE_TABLE_IF_NOT_EXIST = "CreateIfNotExist";
         private const string CONFIG_READ_UNITS = "ReadCapacityUnits";
@@ -682,6 +687,7 @@ namespace Amazon.TraceListener
                 CONFIG_ACCESSKEY,
                 CONFIG_SECRETKEY,
                 CONFIG_REGION,
+                CONFIG_SERVICE_URL,
                 CONFIG_TABLE,
 
                 CONFIG_CREATE_TABLE_IF_NOT_EXIST,
@@ -840,6 +846,7 @@ namespace Amazon.TraceListener
                 AWSProfileName = GetAttribute(CONFIG_PROFILENAME),
                 AWSProfilesLocation = GetAttribute(CONFIG_PROFILESLOCATION),
                 Region = RegionEndpoint.GetBySystemName(GetAttribute(CONFIG_REGION, defaultConfigs.Region.SystemName)),
+                ServiceURL = GetAttribute(CONFIG_SERVICE_URL),
                 TableName = GetAttribute(CONFIG_TABLE, defaultConfigs.TableName),
                 ReadUnits = GetAttributeAsInt(CONFIG_READ_UNITS, defaultConfigs.ReadUnits),
                 WriteUnits = GetAttributeAsInt(CONFIG_WRITE_UNITS, defaultConfigs.WriteUnits),
@@ -976,6 +983,12 @@ namespace Amazon.TraceListener
             /// Config key: Region
             /// </summary>
             public RegionEndpoint Region { get; set; }
+
+            /// <summary>
+            /// The URL of the DynamoDB endpoint. This can be used instead of region. This property is commonly used for connecting to DynamoDB Local (e.g. http://localhost:8000/)
+            /// Config key: ServiceURL
+            /// </summary>
+            public string ServiceURL { get; set; }
 
             /// <summary>
             /// Table used to store logs. Default is "Logs".

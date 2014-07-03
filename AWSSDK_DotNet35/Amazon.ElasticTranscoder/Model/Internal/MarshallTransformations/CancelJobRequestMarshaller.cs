@@ -29,31 +29,23 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Cancel Job Request Marshaller
+    /// CancelJob Request Marshaller
     /// </summary>       
-    internal class CancelJobRequestMarshaller : IMarshaller<IRequest, CancelJobRequest> 
+    public class CancelJobRequestMarshaller : IMarshaller<IRequest, CancelJobRequest> 
     {
-        
-
-        public IRequest Marshall(CancelJobRequest cancelJobRequest) 
+        public IRequest Marshall(CancelJobRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(cancelJobRequest, "AmazonElasticTranscoder");
-            string target = "EtsCustomerService.CancelJob";
-            request.Headers["X-Amz-Target"] = target;
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticTranscoder");
             request.HttpMethod = "DELETE";
-            string uriResourcePath = "2012-09-25/jobs/{Id}"; 
-            if(cancelJobRequest.IsSetId())
-                uriResourcePath = uriResourcePath.Replace("{Id}", StringUtils.FromString(cancelJobRequest.Id) ); 
-            else
-                uriResourcePath = uriResourcePath.Replace("{Id}", "" ); 
+
+            string uriResourcePath = "/2012-09-25/jobs/{Id}";
+            uriResourcePath = uriResourcePath.Replace("{Id}", publicRequest.IsSetId() ? StringUtils.FromString(publicRequest.Id) : string.Empty);
             request.ResourcePath = uriResourcePath;
-            
-        
             request.UseQueryString = true;
-        
 
             return request;
         }
+
+
     }
 }
