@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,33 +17,38 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the UploadServerCertificate action.</para>
+    /// Contains the result of a successful invocation of the <a>UploadServerCertificate</a>            action.
     /// </summary>
     public partial class UploadServerCertificateResult : AmazonWebServiceResponse
     {
-        
-        private ServerCertificateMetadata serverCertificateMetadata;
+        private ServerCertificateMetadata _serverCertificateMetadata;
 
 
         /// <summary>
-        /// The meta information of the uploaded server certificate without its certificate body, certificate chain, and private key.
-        ///  
+        /// Gets and sets the property ServerCertificateMetadata. 
+        /// <para>
+        /// The meta information of the uploaded server certificate without its certificate body,            certificate
+        /// chain, and private key.
+        /// </para>
         /// </summary>
         public ServerCertificateMetadata ServerCertificateMetadata
         {
-            get { return this.serverCertificateMetadata; }
-            set { this.serverCertificateMetadata = value; }
+            get { return this._serverCertificateMetadata; }
+            set { this._serverCertificateMetadata = value; }
         }
 
         // Check to see if ServerCertificateMetadata property is set
         internal bool IsSetServerCertificateMetadata()
         {
-            return this.serverCertificateMetadata != null;
+            return this._serverCertificateMetadata != null;
         }
+
     }
 }

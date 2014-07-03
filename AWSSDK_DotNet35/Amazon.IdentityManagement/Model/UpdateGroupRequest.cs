@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,106 +25,81 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateGroup operation.
-    /// <para>Updates the name and/or the path of the specified group.</para> <para><b>IMPORTANT:</b> You should understand the implications of
-    /// changing a group's path or name. For more information, see Renaming Users and Groups in Using AWS Identity and Access Management. </para>
-    /// <para><b>NOTE:</b>To change a group name the requester must have appropriate permissions on both the source object and the target object.
-    /// For example, to change Managers to MGRs, the entity making the request must have permission on Managers and MGRs, or must have permission on
-    /// all (*). For more information about permissions, see Permissions and Policies. </para>
+    /// Updates the name and/or the path of the specified group.
+    /// 
+    ///         <important> You should understand the implications of changing a group's path or
+    /// name. For more          information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_WorkingWithGroupsAndUsers.html"
+    /// target="_blank">Renaming Users and Groups</a> in <i>Using AWS Identity and Access                Management</i>.
+    /// </important>        <note>To change a group name the requester must have appropriate permissions
+    /// on both the source            object and the target object. For example, to change Managers
+    /// to MGRs, the entity making the            request must have permission on Managers and MGRs,
+    /// or must have permission on all (*). For            more information about permissions, see
+    /// <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html"
+    /// target="blank">Permissions and Policies</a>. </note>
     /// </summary>
     public partial class UpdateGroupRequest : AmazonIdentityManagementServiceRequest
     {
-        private string groupName;
-        private string newPath;
-        private string newGroupName;
+        private string _groupName;
+        private string _newGroupName;
+        private string _newPath;
 
 
         /// <summary>
-        /// Name of the group to update. If you're changing the name of the group, this is the original name.
-        ///  
+        /// Gets and sets the property GroupName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 128</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=,.@-]*</description>
-        ///     </item>
-        /// </list>
+        /// Name of the group to update. If you're changing the name of the group, this is the
+        /// original            name.
         /// </para>
         /// </summary>
         public string GroupName
         {
-            get { return this.groupName; }
-            set { this.groupName = value; }
+            get { return this._groupName; }
+            set { this._groupName = value; }
         }
 
         // Check to see if GroupName property is set
         internal bool IsSetGroupName()
         {
-            return this.groupName != null;
+            return this._groupName != null;
         }
 
+
         /// <summary>
-        /// New path for the group. Only include this if changing the group's path.
-        ///  
+        /// Gets and sets the property NewGroupName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 512</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string NewPath
-        {
-            get { return this.newPath; }
-            set { this.newPath = value; }
-        }
-
-        // Check to see if NewPath property is set
-        internal bool IsSetNewPath()
-        {
-            return this.newPath != null;
-        }
-
-        /// <summary>
         /// New name for the group. Only include this if changing the group's name.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 128</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=,.@-]*</description>
-        ///     </item>
-        /// </list>
         /// </para>
         /// </summary>
         public string NewGroupName
         {
-            get { return this.newGroupName; }
-            set { this.newGroupName = value; }
+            get { return this._newGroupName; }
+            set { this._newGroupName = value; }
         }
 
         // Check to see if NewGroupName property is set
         internal bool IsSetNewGroupName()
         {
-            return this.newGroupName != null;
+            return this._newGroupName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property NewPath. 
+        /// <para>
+        /// New path for the group. Only include this if changing the group's path.
+        /// </para>
+        /// </summary>
+        public string NewPath
+        {
+            get { return this._newPath; }
+            set { this._newPath = value; }
+        }
+
+        // Check to see if NewPath property is set
+        internal bool IsSetNewPath()
+        {
+            return this._newPath != null;
         }
 
     }
 }
-    

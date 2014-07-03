@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,85 +25,114 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAccountPasswordPolicy operation.
-    /// <para>Updates the password policy settings for the account. For more information about using a password policy, go to <a
-    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html" >Managing an IAM Password Policy</a> .</para>
+    /// Updates the password policy settings for the account. For more information about using
+    /// a            password policy, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
+    /// an                IAM Password Policy</a>.
     /// </summary>
     public partial class UpdateAccountPasswordPolicyRequest : AmazonIdentityManagementServiceRequest
     {
-        private int? minimumPasswordLength;
-        private bool? requireSymbols;
-        private bool? requireNumbers;
-        private bool? requireUppercaseCharacters;
-        private bool? requireLowercaseCharacters;
-        private bool? allowUsersToChangePassword;
+        private bool? _allowUsersToChangePassword;
+        private int? _minimumPasswordLength;
+        private bool? _requireLowercaseCharacters;
+        private bool? _requireNumbers;
+        private bool? _requireSymbols;
+        private bool? _requireUppercaseCharacters;
 
-        public int MinimumPasswordLength
-        {
-            get { return this.minimumPasswordLength ?? default(int); }
-            set { this.minimumPasswordLength = value; }
-        }
 
-        // Check to see if MinimumPasswordLength property is set
-        internal bool IsSetMinimumPasswordLength()
-        {
-            return this.minimumPasswordLength.HasValue;
-        }
-        public bool RequireSymbols
-        {
-            get { return this.requireSymbols ?? default(bool); }
-            set { this.requireSymbols = value; }
-        }
-
-        // Check to see if RequireSymbols property is set
-        internal bool IsSetRequireSymbols()
-        {
-            return this.requireSymbols.HasValue;
-        }
-        public bool RequireNumbers
-        {
-            get { return this.requireNumbers ?? default(bool); }
-            set { this.requireNumbers = value; }
-        }
-
-        // Check to see if RequireNumbers property is set
-        internal bool IsSetRequireNumbers()
-        {
-            return this.requireNumbers.HasValue;
-        }
-        public bool RequireUppercaseCharacters
-        {
-            get { return this.requireUppercaseCharacters ?? default(bool); }
-            set { this.requireUppercaseCharacters = value; }
-        }
-
-        // Check to see if RequireUppercaseCharacters property is set
-        internal bool IsSetRequireUppercaseCharacters()
-        {
-            return this.requireUppercaseCharacters.HasValue;
-        }
-        public bool RequireLowercaseCharacters
-        {
-            get { return this.requireLowercaseCharacters ?? default(bool); }
-            set { this.requireLowercaseCharacters = value; }
-        }
-
-        // Check to see if RequireLowercaseCharacters property is set
-        internal bool IsSetRequireLowercaseCharacters()
-        {
-            return this.requireLowercaseCharacters.HasValue;
-        }
+        /// <summary>
+        /// Gets and sets the property AllowUsersToChangePassword.
+        /// </summary>
         public bool AllowUsersToChangePassword
         {
-            get { return this.allowUsersToChangePassword ?? default(bool); }
-            set { this.allowUsersToChangePassword = value; }
+            get { return this._allowUsersToChangePassword.GetValueOrDefault(); }
+            set { this._allowUsersToChangePassword = value; }
         }
 
         // Check to see if AllowUsersToChangePassword property is set
         internal bool IsSetAllowUsersToChangePassword()
         {
-            return this.allowUsersToChangePassword.HasValue;
+            return this._allowUsersToChangePassword.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property MinimumPasswordLength.
+        /// </summary>
+        public int MinimumPasswordLength
+        {
+            get { return this._minimumPasswordLength.GetValueOrDefault(); }
+            set { this._minimumPasswordLength = value; }
+        }
+
+        // Check to see if MinimumPasswordLength property is set
+        internal bool IsSetMinimumPasswordLength()
+        {
+            return this._minimumPasswordLength.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property RequireLowercaseCharacters.
+        /// </summary>
+        public bool RequireLowercaseCharacters
+        {
+            get { return this._requireLowercaseCharacters.GetValueOrDefault(); }
+            set { this._requireLowercaseCharacters = value; }
+        }
+
+        // Check to see if RequireLowercaseCharacters property is set
+        internal bool IsSetRequireLowercaseCharacters()
+        {
+            return this._requireLowercaseCharacters.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property RequireNumbers.
+        /// </summary>
+        public bool RequireNumbers
+        {
+            get { return this._requireNumbers.GetValueOrDefault(); }
+            set { this._requireNumbers = value; }
+        }
+
+        // Check to see if RequireNumbers property is set
+        internal bool IsSetRequireNumbers()
+        {
+            return this._requireNumbers.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property RequireSymbols.
+        /// </summary>
+        public bool RequireSymbols
+        {
+            get { return this._requireSymbols.GetValueOrDefault(); }
+            set { this._requireSymbols = value; }
+        }
+
+        // Check to see if RequireSymbols property is set
+        internal bool IsSetRequireSymbols()
+        {
+            return this._requireSymbols.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property RequireUppercaseCharacters.
+        /// </summary>
+        public bool RequireUppercaseCharacters
+        {
+            get { return this._requireUppercaseCharacters.GetValueOrDefault(); }
+            set { this._requireUppercaseCharacters = value; }
+        }
+
+        // Check to see if RequireUppercaseCharacters property is set
+        internal bool IsSetRequireUppercaseCharacters()
+        {
+            return this._requireUppercaseCharacters.HasValue; 
         }
 
     }
 }
-    

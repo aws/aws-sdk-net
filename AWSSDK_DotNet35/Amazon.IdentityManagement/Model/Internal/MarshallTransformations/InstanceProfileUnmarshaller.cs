@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,93 +12,100 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   InstanceProfile Unmarshaller
-     /// </summary>
-    internal class InstanceProfileUnmarshaller : IUnmarshaller<InstanceProfile, XmlUnmarshallerContext>, IUnmarshaller<InstanceProfile, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for InstanceProfile Object
+    /// </summary>  
+    public class InstanceProfileUnmarshaller : IUnmarshaller<InstanceProfile, XmlUnmarshallerContext>, IUnmarshaller<InstanceProfile, JsonUnmarshallerContext>
     {
-        public InstanceProfile Unmarshall(XmlUnmarshallerContext context) 
+        public InstanceProfile Unmarshall(XmlUnmarshallerContext context)
         {
-            InstanceProfile instanceProfile = new InstanceProfile();
+            InstanceProfile unmarshalledObject = new InstanceProfile();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Path", targetDepth))
-                    {
-                        instanceProfile.Path = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("InstanceProfileName", targetDepth))
-                    {
-                        instanceProfile.InstanceProfileName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("InstanceProfileId", targetDepth))
-                    {
-                        instanceProfile.InstanceProfileId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("Arn", targetDepth))
                     {
-                        instanceProfile.Arn = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("CreateDate", targetDepth))
                     {
-                        instanceProfile.CreateDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.CreateDate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("InstanceProfileId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.InstanceProfileId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("InstanceProfileName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.InstanceProfileName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Path", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Path = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Roles/member", targetDepth))
                     {
-                        instanceProfile.Roles.Add(RoleUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = RoleUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Roles.Add(item);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return instanceProfile;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return instanceProfile;
+            return unmarshalledObject;
         }
 
-        public InstanceProfile Unmarshall(JsonUnmarshallerContext context) 
+        public InstanceProfile Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static InstanceProfileUnmarshaller instance;
 
-        public static InstanceProfileUnmarshaller GetInstance() 
+        private static InstanceProfileUnmarshaller _instance = new InstanceProfileUnmarshaller();        
+
+        public static InstanceProfileUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new InstanceProfileUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

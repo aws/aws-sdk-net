@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Returns information about the AddRoleToInstanceProfile response metadata.
-    /// The AddRoleToInstanceProfile operation has a void result type.
+    /// Configuration for accessing Amazon AddRoleToInstanceProfile service
     /// </summary>
-    public partial class AddRoleToInstanceProfileResponse : AmazonWebServiceResponse
+    public partial class AddRoleToInstanceProfileResponse : AddRoleToInstanceProfileResult
     {
+        /// <summary>
+        /// Gets and sets the AddRoleToInstanceProfileResult property.
+        /// Represents the output of a AddRoleToInstanceProfile operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the AddRoleToInstanceProfileResult class are now available on the AddRoleToInstanceProfileResponse class. You should use the properties on AddRoleToInstanceProfileResponse instead of accessing them through AddRoleToInstanceProfileResult.")]
+        public AddRoleToInstanceProfileResult AddRoleToInstanceProfileResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

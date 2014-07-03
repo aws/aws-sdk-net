@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// List Groups Request Marshaller
+    /// ListGroups Request Marshaller
     /// </summary>       
     public class ListGroupsRequestMarshaller : IMarshaller<IRequest, ListGroupsRequest>
     {
-        public IRequest Marshall(ListGroupsRequest listGroupsRequest)
+        public IRequest Marshall(ListGroupsRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(listGroupsRequest, "AmazonIdentityManagementService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.IdentityManagement");
             request.Parameters.Add("Action", "ListGroups");
             request.Parameters.Add("Version", "2010-05-08");
-            if (listGroupsRequest != null && listGroupsRequest.IsSetPathPrefix())
-            {
-                request.Parameters.Add("PathPrefix", StringUtils.FromString(listGroupsRequest.PathPrefix));
-            }
-            if (listGroupsRequest != null && listGroupsRequest.IsSetMarker())
-            {
-                request.Parameters.Add("Marker", StringUtils.FromString(listGroupsRequest.Marker));
-            }
-            if (listGroupsRequest != null && listGroupsRequest.IsSetMaxItems())
-            {
-                request.Parameters.Add("MaxItems", StringUtils.FromInt(listGroupsRequest.MaxItems));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetMarker())
+                {
+                    request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
+                }
+                if(publicRequest.IsSetMaxItems())
+                {
+                    request.Parameters.Add("MaxItems", StringUtils.FromInt(publicRequest.MaxItems));
+                }
+                if(publicRequest.IsSetPathPrefix())
+                {
+                    request.Parameters.Add("PathPrefix", StringUtils.FromString(publicRequest.PathPrefix));
+                }
+            }
             return request;
         }
     }

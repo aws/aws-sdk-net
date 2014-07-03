@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// List Signing Certificates Request Marshaller
+    /// ListSigningCertificates Request Marshaller
     /// </summary>       
     public class ListSigningCertificatesRequestMarshaller : IMarshaller<IRequest, ListSigningCertificatesRequest>
     {
-        public IRequest Marshall(ListSigningCertificatesRequest listSigningCertificatesRequest)
+        public IRequest Marshall(ListSigningCertificatesRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(listSigningCertificatesRequest, "AmazonIdentityManagementService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.IdentityManagement");
             request.Parameters.Add("Action", "ListSigningCertificates");
             request.Parameters.Add("Version", "2010-05-08");
-            if (listSigningCertificatesRequest != null && listSigningCertificatesRequest.IsSetUserName())
-            {
-                request.Parameters.Add("UserName", StringUtils.FromString(listSigningCertificatesRequest.UserName));
-            }
-            if (listSigningCertificatesRequest != null && listSigningCertificatesRequest.IsSetMarker())
-            {
-                request.Parameters.Add("Marker", StringUtils.FromString(listSigningCertificatesRequest.Marker));
-            }
-            if (listSigningCertificatesRequest != null && listSigningCertificatesRequest.IsSetMaxItems())
-            {
-                request.Parameters.Add("MaxItems", StringUtils.FromInt(listSigningCertificatesRequest.MaxItems));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetMarker())
+                {
+                    request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
+                }
+                if(publicRequest.IsSetMaxItems())
+                {
+                    request.Parameters.Add("MaxItems", StringUtils.FromInt(publicRequest.MaxItems));
+                }
+                if(publicRequest.IsSetUserName())
+                {
+                    request.Parameters.Add("UserName", StringUtils.FromString(publicRequest.UserName));
+                }
+            }
             return request;
         }
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// List Instance Profiles Request Marshaller
+    /// ListInstanceProfiles Request Marshaller
     /// </summary>       
     public class ListInstanceProfilesRequestMarshaller : IMarshaller<IRequest, ListInstanceProfilesRequest>
     {
-        public IRequest Marshall(ListInstanceProfilesRequest listInstanceProfilesRequest)
+        public IRequest Marshall(ListInstanceProfilesRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(listInstanceProfilesRequest, "AmazonIdentityManagementService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.IdentityManagement");
             request.Parameters.Add("Action", "ListInstanceProfiles");
             request.Parameters.Add("Version", "2010-05-08");
-            if (listInstanceProfilesRequest != null && listInstanceProfilesRequest.IsSetPathPrefix())
-            {
-                request.Parameters.Add("PathPrefix", StringUtils.FromString(listInstanceProfilesRequest.PathPrefix));
-            }
-            if (listInstanceProfilesRequest != null && listInstanceProfilesRequest.IsSetMarker())
-            {
-                request.Parameters.Add("Marker", StringUtils.FromString(listInstanceProfilesRequest.Marker));
-            }
-            if (listInstanceProfilesRequest != null && listInstanceProfilesRequest.IsSetMaxItems())
-            {
-                request.Parameters.Add("MaxItems", StringUtils.FromInt(listInstanceProfilesRequest.MaxItems));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetMarker())
+                {
+                    request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
+                }
+                if(publicRequest.IsSetMaxItems())
+                {
+                    request.Parameters.Add("MaxItems", StringUtils.FromInt(publicRequest.MaxItems));
+                }
+                if(publicRequest.IsSetPathPrefix())
+                {
+                    request.Parameters.Add("PathPrefix", StringUtils.FromString(publicRequest.PathPrefix));
+                }
+            }
             return request;
         }
     }

@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.IdentityManagement.Model
 {
     ///<summary>
-    /// AmazonIdentityManagementService exception
+    /// IdentityManagementService exception
     /// </summary>
     public class NoSuchEntityException : AmazonIdentityManagementServiceException 
     {
@@ -45,6 +45,5 @@ namespace Amazon.IdentityManagement.Model
         public NoSuchEntityException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
-        
     }
 }

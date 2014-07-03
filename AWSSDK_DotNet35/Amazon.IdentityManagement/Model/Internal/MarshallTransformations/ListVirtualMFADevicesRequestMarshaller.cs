@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// List Virtual M F A Devices Request Marshaller
+    /// ListVirtualMFADevices Request Marshaller
     /// </summary>       
     public class ListVirtualMFADevicesRequestMarshaller : IMarshaller<IRequest, ListVirtualMFADevicesRequest>
     {
-        public IRequest Marshall(ListVirtualMFADevicesRequest listVirtualMFADevicesRequest)
+        public IRequest Marshall(ListVirtualMFADevicesRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(listVirtualMFADevicesRequest, "AmazonIdentityManagementService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.IdentityManagement");
             request.Parameters.Add("Action", "ListVirtualMFADevices");
             request.Parameters.Add("Version", "2010-05-08");
-            if (listVirtualMFADevicesRequest != null && listVirtualMFADevicesRequest.IsSetAssignmentStatus())
-            {
-                request.Parameters.Add("AssignmentStatus", StringUtils.FromString(listVirtualMFADevicesRequest.AssignmentStatus));
-            }
-            if (listVirtualMFADevicesRequest != null && listVirtualMFADevicesRequest.IsSetMarker())
-            {
-                request.Parameters.Add("Marker", StringUtils.FromString(listVirtualMFADevicesRequest.Marker));
-            }
-            if (listVirtualMFADevicesRequest != null && listVirtualMFADevicesRequest.IsSetMaxItems())
-            {
-                request.Parameters.Add("MaxItems", StringUtils.FromInt(listVirtualMFADevicesRequest.MaxItems));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAssignmentStatus())
+                {
+                    request.Parameters.Add("AssignmentStatus", StringUtils.FromString(publicRequest.AssignmentStatus));
+                }
+                if(publicRequest.IsSetMarker())
+                {
+                    request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
+                }
+                if(publicRequest.IsSetMaxItems())
+                {
+                    request.Parameters.Add("MaxItems", StringUtils.FromInt(publicRequest.MaxItems));
+                }
+            }
             return request;
         }
     }

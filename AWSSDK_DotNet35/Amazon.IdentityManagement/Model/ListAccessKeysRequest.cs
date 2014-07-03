@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,106 +25,91 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAccessKeys operation.
-    /// <para>Returns information about the access key IDs associated with the specified user. If there are none, the action returns an empty
-    /// list.</para> <para>Although each user is limited to a small number of keys, you can still paginate the results using the <c>MaxItems</c> and
-    /// <c>Marker</c> parameters.</para> <para>If the <c>UserName</c> field is not specified, the UserName is determined implicitly based on the AWS
-    /// access key ID used to sign the request. Because this action works for access keys under the AWS account, this API can be used to manage root
-    /// credentials even if the AWS account has no associated users.</para> <para><b>NOTE:</b>To ensure the security of your AWS account, the secret
-    /// access key is accessible only during key and user creation.</para>
+    /// Returns information about the access key IDs associated with the specified user. If
+    /// there are            none, the action returns an empty list.
+    /// 
+    ///         
+    /// <para>
+    /// Although each user is limited to a small number of keys, you can still paginate the
+    /// results            using the <code>MaxItems</code> and <code>Marker</code> parameters.
+    /// </para>
+    ///         
+    /// <para>
+    /// If the <code>UserName</code> field is not specified, the UserName is determined implicitly            based
+    /// on the AWS access key ID used to sign the request. Because this action works for access            keys
+    /// under the AWS account, this API can be used to manage root credentials even if the
+    /// AWS            account has no associated users.
+    /// </para>
+    ///         <note>To ensure the security of your AWS account, the secret access key is accessible
+    /// only            during key and user creation.</note>
     /// </summary>
     public partial class ListAccessKeysRequest : AmazonIdentityManagementServiceRequest
     {
-        private string userName;
-        private string marker;
-        private int? maxItems;
+        private string _marker;
+        private int? _maxItems;
+        private string _userName;
 
 
         /// <summary>
-        /// Name of the user.
-        ///  
+        /// Gets and sets the property Marker. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 128</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=,.@-]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string UserName
-        {
-            get { return this.userName; }
-            set { this.userName = value; }
-        }
-
-        // Check to see if UserName property is set
-        internal bool IsSetUserName()
-        {
-            return this.userName != null;
-        }
-
-        /// <summary>
-        /// Use this parameter only when paginating results, and only in a subsequent request after you've received a response where the results are
-        /// truncated. Set it to the value of the <c>Marker</c> element in the response you just received.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 320</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\u00FF]*</description>
-        ///     </item>
-        /// </list>
+        /// Use this parameter only when paginating results, and only in a subsequent request
+        /// after            you've received a response where the results are truncated. Set it to the
+        /// value of the                <code>Marker</code> element in the response you just received.
         /// </para>
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
         }
 
+
         /// <summary>
-        /// Use this parameter only when paginating results to indicate the maximum number of keys you want in the response. If there are additional
-        /// keys beyond the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>. This parameter is optional. If you do not
-        /// include it, it defaults to 100.
-        ///  
+        /// Gets and sets the property MaxItems. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>1 - 1000</description>
-        ///     </item>
-        /// </list>
+        /// Use this parameter only when paginating results to indicate the maximum number of
+        /// keys you            want in the response. If there are additional keys beyond the maximum you
+        /// specify, the                <code>IsTruncated</code> response element is <code>true</code>. This
+        /// parameter is optional.            If you do not include it, it defaults to 100.
         /// </para>
         /// </summary>
         public int MaxItems
         {
-            get { return this.maxItems ?? default(int); }
-            set { this.maxItems = value; }
+            get { return this._maxItems.GetValueOrDefault(); }
+            set { this._maxItems = value; }
         }
 
         // Check to see if MaxItems property is set
         internal bool IsSetMaxItems()
         {
-            return this.maxItems.HasValue;
+            return this._maxItems.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property UserName. 
+        /// <para>
+        /// Name of the user.
+        /// </para>
+        /// </summary>
+        public string UserName
+        {
+            get { return this._userName; }
+            set { this._userName = value; }
+        }
+
+        // Check to see if UserName property is set
+        internal bool IsSetUserName()
+        {
+            return this._userName != null;
         }
 
     }
 }
-    

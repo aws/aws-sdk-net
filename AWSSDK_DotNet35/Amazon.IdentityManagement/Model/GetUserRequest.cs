@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,43 +25,42 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetUser operation.
-    /// <para>Retrieves information about the specified user, including the user's path, unique ID, and ARN.</para> <para>If you do not specify a
-    /// user name, IAM determines the user name implicitly based on the AWS access key ID signing the request.</para>
+    /// Retrieves information about the specified user, including the user's path, unique
+    /// ID, and            ARN.
+    /// 
+    ///         
+    /// <para>
+    /// If you do not specify a user name, IAM determines the user name implicitly based on
+    /// the AWS            access key ID signing the request.
+    /// </para>
     /// </summary>
     public partial class GetUserRequest : AmazonIdentityManagementServiceRequest
     {
-        private string userName;
+        private string _userName;
 
 
         /// <summary>
-        /// Name of the user to get information about. This parameter is optional. If it is not included, it defaults to the user making the request.
-        ///  
+        /// Gets and sets the property UserName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 128</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=,.@-]*</description>
-        ///     </item>
-        /// </list>
+        /// Name of the user to get information about.
+        /// </para>
+        ///         
+        /// <para>
+        /// This parameter is optional. If it is not included, it defaults to the user making
+        /// the            request.
         /// </para>
         /// </summary>
         public string UserName
         {
-            get { return this.userName; }
-            set { this.userName = value; }
+            get { return this._userName; }
+            set { this._userName = value; }
         }
 
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
-            return this.userName != null;
+            return this._userName != null;
         }
 
     }
 }
-    

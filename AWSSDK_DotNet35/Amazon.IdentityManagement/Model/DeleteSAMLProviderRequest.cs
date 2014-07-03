@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,40 +25,39 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteSAMLProvider operation.
-    /// <para>Deletes a SAML provider.</para> <para>Deleting the provider does not update any roles that reference the SAML provider as a principal
-    /// in their trust policies. Any attempt to assume a role that references a SAML provider that has been deleted will fail. </para>
-    /// <para><b>NOTE:</b>This operation requires Signature Version 4.</para>
+    /// Deletes a SAML provider.
+    /// 
+    ///         
+    /// <para>
+    /// Deleting the provider does not update any roles that reference the SAML provider as
+    /// a            principal in their trust policies. Any attempt to assume a role that references
+    /// a SAML            provider that has been deleted will fail. 
+    /// </para>
+    ///         <note>This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    /// Version            4</a>.</note>
     /// </summary>
     public partial class DeleteSAMLProviderRequest : AmazonIdentityManagementServiceRequest
     {
-        private string sAMLProviderArn;
+        private string _sAMLProviderArn;
 
 
         /// <summary>
-        /// The Amazon Resource Name (ARN) of the SAML provider to delete.
-        ///  
+        /// Gets and sets the property SAMLProviderArn. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>20 - 2048</description>
-        ///     </item>
-        /// </list>
+        /// The Amazon Resource Name (ARN) of the SAML provider to delete.
         /// </para>
         /// </summary>
         public string SAMLProviderArn
         {
-            get { return this.sAMLProviderArn; }
-            set { this.sAMLProviderArn = value; }
+            get { return this._sAMLProviderArn; }
+            set { this._sAMLProviderArn = value; }
         }
 
         // Check to see if SAMLProviderArn property is set
         internal bool IsSetSAMLProviderArn()
         {
-            return this.sAMLProviderArn != null;
+            return this._sAMLProviderArn != null;
         }
 
     }
 }
-    

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the CreateGroup action.</para>
+    /// Contains the result of a successful invocation of the <a>CreateGroup</a> action.
     /// </summary>
     public partial class CreateGroupResult : AmazonWebServiceResponse
     {
-        
-        private Group group;
+        private Group _group;
 
 
         /// <summary>
+        /// Gets and sets the property Group. 
+        /// <para>
         /// Information about the group.
-        ///  
+        /// </para>
         /// </summary>
         public Group Group
         {
-            get { return this.group; }
-            set { this.group = value; }
+            get { return this._group; }
+            set { this._group = value; }
         }
 
         // Check to see if Group property is set
         internal bool IsSetGroup()
         {
-            return this.group != null;
+            return this._group != null;
         }
+
     }
 }

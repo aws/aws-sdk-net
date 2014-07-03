@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Returns information about the  ListGroups response and response metadata.
+    /// Configuration for accessing Amazon ListGroups service
     /// </summary>
-    public class ListGroupsResponse : ListGroupsResult
+    public partial class ListGroupsResponse : ListGroupsResult
     {
         /// <summary>
         /// Gets and sets the ListGroupsResult property.
-        /// Contains the result of a successful invocation of the ListGroups action.
+        /// Represents the output of a ListGroups operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ListGroupsResult class are now available on the ListGroupsResponse class. You should use the properties on ListGroupsResponse instead of accessing them through ListGroupsResult.")]
         public ListGroupsResult ListGroupsResult
@@ -40,4 +36,3 @@ namespace Amazon.IdentityManagement.Model
         }
     }
 }
-    

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,32 +14,36 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Get S A M L Provider Request Marshaller
+    /// GetSAMLProvider Request Marshaller
     /// </summary>       
     public class GetSAMLProviderRequestMarshaller : IMarshaller<IRequest, GetSAMLProviderRequest>
     {
-        public IRequest Marshall(GetSAMLProviderRequest getSAMLProviderRequest)
+        public IRequest Marshall(GetSAMLProviderRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(getSAMLProviderRequest, "AmazonIdentityManagementService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.IdentityManagement");
             request.Parameters.Add("Action", "GetSAMLProvider");
             request.Parameters.Add("Version", "2010-05-08");
-            if (getSAMLProviderRequest != null && getSAMLProviderRequest.IsSetSAMLProviderArn())
-            {
-                request.Parameters.Add("SAMLProviderArn", StringUtils.FromString(getSAMLProviderRequest.SAMLProviderArn));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetSAMLProviderArn())
+                {
+                    request.Parameters.Add("SAMLProviderArn", StringUtils.FromString(publicRequest.SAMLProviderArn));
+                }
+            }
             return request;
         }
     }

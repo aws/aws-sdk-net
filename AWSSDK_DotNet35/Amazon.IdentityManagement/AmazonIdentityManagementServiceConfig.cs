@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,25 +12,25 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+
 using System;
 
 using Amazon.Runtime;
 
+
 namespace Amazon.IdentityManagement
 {
-
     /// <summary>
-    /// Configuration for accessing AWS Identity and Access Management service
+    /// Configuration for accessing Amazon IdentityManagementService service
     /// </summary>
-    public class AmazonIdentityManagementServiceConfig : ClientConfig
+    public partial class AmazonIdentityManagementServiceConfig : ClientConfig
     {
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonIdentityManagementServiceConfig()
         {
-            this.AuthenticationServiceName = "iam";
-            this.RegionEndpoint = RegionEndpoint.USEast1;
         }
 
         /// <summary>
@@ -40,9 +40,7 @@ namespace Amazon.IdentityManagement
         {
             get
             {
-                
                 return "iam";
-                    
             }
         }
 
@@ -58,5 +56,3 @@ namespace Amazon.IdentityManagement
         }
     }
 }
-
-    

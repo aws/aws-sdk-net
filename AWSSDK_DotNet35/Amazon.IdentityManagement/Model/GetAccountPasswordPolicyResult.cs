@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,34 +17,34 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the GetAccountPasswordPolicy action.</para>
+    /// Contains the result of a successful invocation of the <a>GetAccountPasswordPolicy</a>            action.
     /// </summary>
     public partial class GetAccountPasswordPolicyResult : AmazonWebServiceResponse
     {
-        
-        private PasswordPolicy passwordPolicy;
+        private PasswordPolicy _passwordPolicy;
 
 
         /// <summary>
-        /// The PasswordPolicy data type contains information about the account password policy. This data type is used as a response element in the
-        /// action <a>GetAccountPasswordPolicy</a>.
-        ///  
+        /// Gets and sets the property PasswordPolicy.
         /// </summary>
         public PasswordPolicy PasswordPolicy
         {
-            get { return this.passwordPolicy; }
-            set { this.passwordPolicy = value; }
+            get { return this._passwordPolicy; }
+            set { this._passwordPolicy = value; }
         }
 
         // Check to see if PasswordPolicy property is set
         internal bool IsSetPasswordPolicy()
         {
-            return this.passwordPolicy != null;
+            return this._passwordPolicy != null;
         }
+
     }
 }

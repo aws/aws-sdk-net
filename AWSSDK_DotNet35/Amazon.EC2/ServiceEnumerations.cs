@@ -1356,6 +1356,21 @@ namespace Amazon.EC2
         public static readonly InstanceType T1Micro = new InstanceType("t1.micro");
     
 
+       /// <summary>Constant T2Medium for InstanceType
+       /// </summary>
+        public static readonly InstanceType T2Medium = new InstanceType("t2.medium");
+    
+
+       /// <summary>Constant T2Micro for InstanceType
+       /// </summary>
+        public static readonly InstanceType T2Micro = new InstanceType("t2.micro");
+    
+
+       /// <summary>Constant T2Small for InstanceType
+       /// </summary>
+        public static readonly InstanceType T2Small = new InstanceType("t2.small");
+    
+
         /// <summary>
         /// Default Constructor
         /// </summary>

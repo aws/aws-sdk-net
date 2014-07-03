@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Returns information about the RemoveRoleFromInstanceProfile response metadata.
-    /// The RemoveRoleFromInstanceProfile operation has a void result type.
+    /// Configuration for accessing Amazon RemoveRoleFromInstanceProfile service
     /// </summary>
-    public partial class RemoveRoleFromInstanceProfileResponse : AmazonWebServiceResponse
+    public partial class RemoveRoleFromInstanceProfileResponse : RemoveRoleFromInstanceProfileResult
     {
+        /// <summary>
+        /// Gets and sets the RemoveRoleFromInstanceProfileResult property.
+        /// Represents the output of a RemoveRoleFromInstanceProfile operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the RemoveRoleFromInstanceProfileResult class are now available on the RemoveRoleFromInstanceProfileResponse class. You should use the properties on RemoveRoleFromInstanceProfileResponse instead of accessing them through RemoveRoleFromInstanceProfileResult.")]
+        public RemoveRoleFromInstanceProfileResult RemoveRoleFromInstanceProfileResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

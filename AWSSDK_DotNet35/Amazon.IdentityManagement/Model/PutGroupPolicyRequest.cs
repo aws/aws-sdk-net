@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,108 +25,85 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the PutGroupPolicy operation.
-    /// <para>Adds (or updates) a policy document associated with the specified group. For information about policies, refer to <a
-    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?PoliciesOverview.html" >Overview of Policies</a> in <i>Using AWS Identity
-    /// and Access Management</i> .</para> <para>For information about limits on the number of policies you can associate with a group, see <a
-    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html" >Limitations on IAM Entities</a> in <i>Using
-    /// AWS Identity and Access Management</i> .</para> <para><b>NOTE:</b>Because policy documents can be large, you should use POST rather than GET
-    /// when calling PutGroupPolicy. For information about setting up signatures and authorization through the API, go to Signing AWS API Requests
-    /// in the AWS General Reference. For general information about using the Query API with IAM, go to Making Query Requests in Using IAM.</para>
+    /// Adds (or updates) a policy document associated with the specified group. For information            about
+    /// policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html"
+    /// target="_blank">Overview of Policies</a> in <i>Using AWS Identity and Access Management</i>.
+    /// 
+    ///         
+    /// <para>
+    /// For information about limits on the number of policies you can associate with a group,
+    /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"
+    /// target="_blank">Limitations on IAM Entities</a> in <i>Using AWS Identity and Access                Management</i>.
+    /// </para>
+    ///         <note>Because policy documents can be large, you should use POST rather than GET
+    /// when calling                <code>PutGroupPolicy</code>. For information about setting up signatures
+    /// and authorization            through the API, go to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html"
+    /// target="_blank">Signing AWS API Requests</a> in the <i>AWS General Reference</i>.
+    /// For general information            about using the Query API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html"
+    /// target="_blank">Making                Query Requests</a> in <i>Using IAM</i>.</note>
     /// </summary>
     public partial class PutGroupPolicyRequest : AmazonIdentityManagementServiceRequest
     {
-        private string groupName;
-        private string policyName;
-        private string policyDocument;
+        private string _groupName;
+        private string _policyDocument;
+        private string _policyName;
 
 
         /// <summary>
-        /// Name of the group to associate the policy with.
-        ///  
+        /// Gets and sets the property GroupName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 128</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=,.@-]*</description>
-        ///     </item>
-        /// </list>
+        /// Name of the group to associate the policy with.
         /// </para>
         /// </summary>
         public string GroupName
         {
-            get { return this.groupName; }
-            set { this.groupName = value; }
+            get { return this._groupName; }
+            set { this._groupName = value; }
         }
 
         // Check to see if GroupName property is set
         internal bool IsSetGroupName()
         {
-            return this.groupName != null;
+            return this._groupName != null;
         }
 
+
         /// <summary>
-        /// Name of the policy document.
-        ///  
+        /// Gets and sets the property PolicyDocument. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 128</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=,.@-]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string PolicyName
-        {
-            get { return this.policyName; }
-            set { this.policyName = value; }
-        }
-
-        // Check to see if PolicyName property is set
-        internal bool IsSetPolicyName()
-        {
-            return this.policyName != null;
-        }
-
-        /// <summary>
         /// The policy document.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 131072</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0009\u000A\u000D\u0020-\u00FF]+</description>
-        ///     </item>
-        /// </list>
         /// </para>
         /// </summary>
         public string PolicyDocument
         {
-            get { return this.policyDocument; }
-            set { this.policyDocument = value; }
+            get { return this._policyDocument; }
+            set { this._policyDocument = value; }
         }
 
         // Check to see if PolicyDocument property is set
         internal bool IsSetPolicyDocument()
         {
-            return this.policyDocument != null;
+            return this._policyDocument != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property PolicyName. 
+        /// <para>
+        /// Name of the policy document.
+        /// </para>
+        /// </summary>
+        public string PolicyName
+        {
+            get { return this._policyName; }
+            set { this._policyName = value; }
+        }
+
+        // Check to see if PolicyName property is set
+        internal bool IsSetPolicyName()
+        {
+            return this._policyName != null;
         }
 
     }
 }
-    

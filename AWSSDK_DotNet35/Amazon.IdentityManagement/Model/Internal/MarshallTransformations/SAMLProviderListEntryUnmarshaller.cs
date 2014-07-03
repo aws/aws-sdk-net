@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,75 +12,81 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   SAMLProviderListEntry Unmarshaller
-     /// </summary>
-    internal class SAMLProviderListEntryUnmarshaller : IUnmarshaller<SAMLProviderListEntry, XmlUnmarshallerContext>, IUnmarshaller<SAMLProviderListEntry, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for SAMLProviderListEntry Object
+    /// </summary>  
+    public class SAMLProviderListEntryUnmarshaller : IUnmarshaller<SAMLProviderListEntry, XmlUnmarshallerContext>, IUnmarshaller<SAMLProviderListEntry, JsonUnmarshallerContext>
     {
-        public SAMLProviderListEntry Unmarshall(XmlUnmarshallerContext context) 
+        public SAMLProviderListEntry Unmarshall(XmlUnmarshallerContext context)
         {
-            SAMLProviderListEntry sAMLProviderListEntry = new SAMLProviderListEntry();
+            SAMLProviderListEntry unmarshalledObject = new SAMLProviderListEntry();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("Arn", targetDepth))
                     {
-                        sAMLProviderListEntry.Arn = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("ValidUntil", targetDepth))
-                    {
-                        sAMLProviderListEntry.ValidUntil = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("CreateDate", targetDepth))
                     {
-                        sAMLProviderListEntry.CreateDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.CreateDate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ValidUntil", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.ValidUntil = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return sAMLProviderListEntry;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return sAMLProviderListEntry;
+            return unmarshalledObject;
         }
 
-        public SAMLProviderListEntry Unmarshall(JsonUnmarshallerContext context) 
+        public SAMLProviderListEntry Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static SAMLProviderListEntryUnmarshaller instance;
 
-        public static SAMLProviderListEntryUnmarshaller GetInstance() 
+        private static SAMLProviderListEntryUnmarshaller _instance = new SAMLProviderListEntryUnmarshaller();        
+
+        public static SAMLProviderListEntryUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new SAMLProviderListEntryUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

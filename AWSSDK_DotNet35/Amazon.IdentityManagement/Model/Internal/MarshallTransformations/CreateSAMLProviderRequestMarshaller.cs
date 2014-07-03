@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,36 +14,40 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create S A M L Provider Request Marshaller
+    /// CreateSAMLProvider Request Marshaller
     /// </summary>       
     public class CreateSAMLProviderRequestMarshaller : IMarshaller<IRequest, CreateSAMLProviderRequest>
     {
-        public IRequest Marshall(CreateSAMLProviderRequest createSAMLProviderRequest)
+        public IRequest Marshall(CreateSAMLProviderRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(createSAMLProviderRequest, "AmazonIdentityManagementService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.IdentityManagement");
             request.Parameters.Add("Action", "CreateSAMLProvider");
             request.Parameters.Add("Version", "2010-05-08");
-            if (createSAMLProviderRequest != null && createSAMLProviderRequest.IsSetSAMLMetadataDocument())
-            {
-                request.Parameters.Add("SAMLMetadataDocument", StringUtils.FromString(createSAMLProviderRequest.SAMLMetadataDocument));
-            }
-            if (createSAMLProviderRequest != null && createSAMLProviderRequest.IsSetName())
-            {
-                request.Parameters.Add("Name", StringUtils.FromString(createSAMLProviderRequest.Name));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetName())
+                {
+                    request.Parameters.Add("Name", StringUtils.FromString(publicRequest.Name));
+                }
+                if(publicRequest.IsSetSAMLMetadataDocument())
+                {
+                    request.Parameters.Add("SAMLMetadataDocument", StringUtils.FromString(publicRequest.SAMLMetadataDocument));
+                }
+            }
             return request;
         }
     }

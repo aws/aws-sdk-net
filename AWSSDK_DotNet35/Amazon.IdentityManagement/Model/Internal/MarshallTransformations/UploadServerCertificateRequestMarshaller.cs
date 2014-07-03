@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,48 +14,52 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Upload Server Certificate Request Marshaller
+    /// UploadServerCertificate Request Marshaller
     /// </summary>       
     public class UploadServerCertificateRequestMarshaller : IMarshaller<IRequest, UploadServerCertificateRequest>
     {
-        public IRequest Marshall(UploadServerCertificateRequest uploadServerCertificateRequest)
+        public IRequest Marshall(UploadServerCertificateRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(uploadServerCertificateRequest, "AmazonIdentityManagementService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.IdentityManagement");
             request.Parameters.Add("Action", "UploadServerCertificate");
             request.Parameters.Add("Version", "2010-05-08");
-            if (uploadServerCertificateRequest != null && uploadServerCertificateRequest.IsSetPath())
-            {
-                request.Parameters.Add("Path", StringUtils.FromString(uploadServerCertificateRequest.Path));
-            }
-            if (uploadServerCertificateRequest != null && uploadServerCertificateRequest.IsSetServerCertificateName())
-            {
-                request.Parameters.Add("ServerCertificateName", StringUtils.FromString(uploadServerCertificateRequest.ServerCertificateName));
-            }
-            if (uploadServerCertificateRequest != null && uploadServerCertificateRequest.IsSetCertificateBody())
-            {
-                request.Parameters.Add("CertificateBody", StringUtils.FromString(uploadServerCertificateRequest.CertificateBody));
-            }
-            if (uploadServerCertificateRequest != null && uploadServerCertificateRequest.IsSetPrivateKey())
-            {
-                request.Parameters.Add("PrivateKey", StringUtils.FromString(uploadServerCertificateRequest.PrivateKey));
-            }
-            if (uploadServerCertificateRequest != null && uploadServerCertificateRequest.IsSetCertificateChain())
-            {
-                request.Parameters.Add("CertificateChain", StringUtils.FromString(uploadServerCertificateRequest.CertificateChain));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetCertificateBody())
+                {
+                    request.Parameters.Add("CertificateBody", StringUtils.FromString(publicRequest.CertificateBody));
+                }
+                if(publicRequest.IsSetCertificateChain())
+                {
+                    request.Parameters.Add("CertificateChain", StringUtils.FromString(publicRequest.CertificateChain));
+                }
+                if(publicRequest.IsSetPath())
+                {
+                    request.Parameters.Add("Path", StringUtils.FromString(publicRequest.Path));
+                }
+                if(publicRequest.IsSetPrivateKey())
+                {
+                    request.Parameters.Add("PrivateKey", StringUtils.FromString(publicRequest.PrivateKey));
+                }
+                if(publicRequest.IsSetServerCertificateName())
+                {
+                    request.Parameters.Add("ServerCertificateName", StringUtils.FromString(publicRequest.ServerCertificateName));
+                }
+            }
             return request;
         }
     }

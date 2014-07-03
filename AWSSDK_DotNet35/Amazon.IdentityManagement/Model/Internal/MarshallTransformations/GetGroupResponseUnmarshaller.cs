@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,46 +13,52 @@
  * permissions and limitations under the License.
  */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.IdentityManagement.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for GetGroup operation
-    /// </summary>
-    internal class GetGroupResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for GetGroup operation
+    /// </summary>  
+    public class GetGroupResponseUnmarshaller : XmlResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
             GetGroupResponse response = new GetGroupResponse();
-            
-            while (context.Read())
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
                 if (context.IsStartElement)
                 {                    
                     if(context.TestExpression("GetGroupResult", 2))
                     {
-                        UnmarshallResult(context,response);                        
+                        UnmarshallResult(context, response);                        
                         continue;
                     }
                     
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
                     }
                 }
             }
-                 
-                        
+
             return response;
         }
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,GetGroupResponse response)
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, GetGroupResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -61,69 +67,66 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+
                     if (context.TestExpression("Group", targetDepth))
                     {
-                        response.Group = GroupUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Users/member", targetDepth))
-                    {
-                        response.Users.Add(UserUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = GroupUnmarshaller.Instance;
+                        response.Group = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("IsTruncated", targetDepth))
                     {
-                        response.IsTruncated = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        response.IsTruncated = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Marker", targetDepth))
                     {
-                        response.Marker = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.Marker = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return;
-                }
-            }
-                            
-
+                    if (context.TestExpression("Users/member", targetDepth))
+                    {
+                        var unmarshaller = UserUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.Users.Add(item);
+                        continue;
+                    }
+                } 
+           }
 
             return;
         }
-        
+
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchEntity"))
             {
                 return new NoSuchEntityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
             return new AmazonIdentityManagementServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static GetGroupResponseUnmarshaller instance;
 
-        public static GetGroupResponseUnmarshaller GetInstance()
+        private static GetGroupResponseUnmarshaller _instance = new GetGroupResponseUnmarshaller();        
+
+        internal static GetGroupResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new GetGroupResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static GetGroupResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

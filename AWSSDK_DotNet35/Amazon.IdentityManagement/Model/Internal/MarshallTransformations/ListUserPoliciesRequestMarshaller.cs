@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// List User Policies Request Marshaller
+    /// ListUserPolicies Request Marshaller
     /// </summary>       
     public class ListUserPoliciesRequestMarshaller : IMarshaller<IRequest, ListUserPoliciesRequest>
     {
-        public IRequest Marshall(ListUserPoliciesRequest listUserPoliciesRequest)
+        public IRequest Marshall(ListUserPoliciesRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(listUserPoliciesRequest, "AmazonIdentityManagementService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.IdentityManagement");
             request.Parameters.Add("Action", "ListUserPolicies");
             request.Parameters.Add("Version", "2010-05-08");
-            if (listUserPoliciesRequest != null && listUserPoliciesRequest.IsSetUserName())
-            {
-                request.Parameters.Add("UserName", StringUtils.FromString(listUserPoliciesRequest.UserName));
-            }
-            if (listUserPoliciesRequest != null && listUserPoliciesRequest.IsSetMarker())
-            {
-                request.Parameters.Add("Marker", StringUtils.FromString(listUserPoliciesRequest.Marker));
-            }
-            if (listUserPoliciesRequest != null && listUserPoliciesRequest.IsSetMaxItems())
-            {
-                request.Parameters.Add("MaxItems", StringUtils.FromInt(listUserPoliciesRequest.MaxItems));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetMarker())
+                {
+                    request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
+                }
+                if(publicRequest.IsSetMaxItems())
+                {
+                    request.Parameters.Add("MaxItems", StringUtils.FromInt(publicRequest.MaxItems));
+                }
+                if(publicRequest.IsSetUserName())
+                {
+                    request.Parameters.Add("UserName", StringUtils.FromString(publicRequest.UserName));
+                }
+            }
             return request;
         }
     }

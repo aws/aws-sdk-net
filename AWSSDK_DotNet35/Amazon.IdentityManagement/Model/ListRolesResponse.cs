@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Returns information about the  ListRoles response and response metadata.
+    /// Configuration for accessing Amazon ListRoles service
     /// </summary>
-    public class ListRolesResponse : ListRolesResult
+    public partial class ListRolesResponse : ListRolesResult
     {
         /// <summary>
         /// Gets and sets the ListRolesResult property.
-        /// Contains the result of a successful invocation of the ListRoles action.
+        /// Represents the output of a ListRoles operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ListRolesResult class are now available on the ListRolesResponse class. You should use the properties on ListRolesResponse instead of accessing them through ListRolesResult.")]
         public ListRolesResult ListRolesResult
@@ -40,4 +36,3 @@ namespace Amazon.IdentityManagement.Model
         }
     }
 }
-    
