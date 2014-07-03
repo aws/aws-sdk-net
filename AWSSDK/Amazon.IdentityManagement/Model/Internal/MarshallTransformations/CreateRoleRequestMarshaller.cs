@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Role Request Marshaller
+    /// CreateRole Request Marshaller
     /// </summary>       
     public class CreateRoleRequestMarshaller : IMarshaller<IRequest, CreateRoleRequest>
     {
-        public IRequest Marshall(CreateRoleRequest createRoleRequest)
+        public IRequest Marshall(CreateRoleRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(createRoleRequest, "AmazonIdentityManagementService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.IdentityManagement");
             request.Parameters.Add("Action", "CreateRole");
             request.Parameters.Add("Version", "2010-05-08");
-            if (createRoleRequest != null && createRoleRequest.IsSetPath())
-            {
-                request.Parameters.Add("Path", StringUtils.FromString(createRoleRequest.Path));
-            }
-            if (createRoleRequest != null && createRoleRequest.IsSetRoleName())
-            {
-                request.Parameters.Add("RoleName", StringUtils.FromString(createRoleRequest.RoleName));
-            }
-            if (createRoleRequest != null && createRoleRequest.IsSetAssumeRolePolicyDocument())
-            {
-                request.Parameters.Add("AssumeRolePolicyDocument", StringUtils.FromString(createRoleRequest.AssumeRolePolicyDocument));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAssumeRolePolicyDocument())
+                {
+                    request.Parameters.Add("AssumeRolePolicyDocument", StringUtils.FromString(publicRequest.AssumeRolePolicyDocument));
+                }
+                if(publicRequest.IsSetPath())
+                {
+                    request.Parameters.Add("Path", StringUtils.FromString(publicRequest.Path));
+                }
+                if(publicRequest.IsSetRoleName())
+                {
+                    request.Parameters.Add("RoleName", StringUtils.FromString(publicRequest.RoleName));
+                }
+            }
             return request;
         }
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,70 +18,38 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>The ServerCertificate data type contains information about a server certificate.</para> <para>This data type is used as a response
-    /// element in the action GetServerCertificate.</para>
+    /// The ServerCertificate data type contains information about a server certificate.
+    /// 
+    ///         
+    /// <para>
+    /// This data type is used as a response element in the action <a>GetServerCertificate</a>.
+    /// </para>
     /// </summary>
     public partial class ServerCertificate
     {
-        
-        private ServerCertificateMetadata serverCertificateMetadata;
-        private string certificateBody;
-        private string certificateChain;
+        private string _certificateBody;
+        private string _certificateChain;
+        private ServerCertificateMetadata _serverCertificateMetadata;
+
 
         /// <summary>
-        /// The meta information of the server certificate, such as its name, path, ID, and ARN.
-        ///  
-        /// </summary>
-        public ServerCertificateMetadata ServerCertificateMetadata
-        {
-            get { return this.serverCertificateMetadata; }
-            set { this.serverCertificateMetadata = value; }
-        }
-
-        /// <summary>
-        /// Sets the ServerCertificateMetadata property
-        /// </summary>
-        /// <param name="serverCertificateMetadata">The value to set for the ServerCertificateMetadata property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ServerCertificate WithServerCertificateMetadata(ServerCertificateMetadata serverCertificateMetadata)
-        {
-            this.serverCertificateMetadata = serverCertificateMetadata;
-            return this;
-        }
-            
-
-        // Check to see if ServerCertificateMetadata property is set
-        internal bool IsSetServerCertificateMetadata()
-        {
-            return this.serverCertificateMetadata != null;
-        }
-
-        /// <summary>
-        /// The contents of the public key certificate.
-        ///  
+        /// Gets and sets the property CertificateBody. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 16384</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0009\u000A\u000D\u0020-\u00FF]+</description>
-        ///     </item>
-        /// </list>
+        /// The contents of the public key certificate.
         /// </para>
         /// </summary>
         public string CertificateBody
         {
-            get { return this.certificateBody; }
-            set { this.certificateBody = value; }
+            get { return this._certificateBody; }
+            set { this._certificateBody = value; }
         }
+
 
         /// <summary>
         /// Sets the CertificateBody property
@@ -91,39 +59,29 @@ namespace Amazon.IdentityManagement.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ServerCertificate WithCertificateBody(string certificateBody)
         {
-            this.certificateBody = certificateBody;
+            this._certificateBody = certificateBody;
             return this;
         }
-            
 
         // Check to see if CertificateBody property is set
         internal bool IsSetCertificateBody()
         {
-            return this.certificateBody != null;
+            return this._certificateBody != null;
         }
 
+
         /// <summary>
-        /// The contents of the public key certificate chain.
-        ///  
+        /// Gets and sets the property CertificateChain. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 2097152</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0009\u000A\u000D\u0020-\u00FF]*</description>
-        ///     </item>
-        /// </list>
+        /// The contents of the public key certificate chain.
         /// </para>
         /// </summary>
         public string CertificateChain
         {
-            get { return this.certificateChain; }
-            set { this.certificateChain = value; }
+            get { return this._certificateChain; }
+            set { this._certificateChain = value; }
         }
+
 
         /// <summary>
         /// Sets the CertificateChain property
@@ -133,15 +91,47 @@ namespace Amazon.IdentityManagement.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ServerCertificate WithCertificateChain(string certificateChain)
         {
-            this.certificateChain = certificateChain;
+            this._certificateChain = certificateChain;
             return this;
         }
-            
 
         // Check to see if CertificateChain property is set
         internal bool IsSetCertificateChain()
         {
-            return this.certificateChain != null;
+            return this._certificateChain != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property ServerCertificateMetadata. 
+        /// <para>
+        /// The meta information of the server certificate, such as its name, path, ID, and ARN.
+        /// </para>
+        /// </summary>
+        public ServerCertificateMetadata ServerCertificateMetadata
+        {
+            get { return this._serverCertificateMetadata; }
+            set { this._serverCertificateMetadata = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the ServerCertificateMetadata property
+        /// </summary>
+        /// <param name="serverCertificateMetadata">The value to set for the ServerCertificateMetadata property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ServerCertificate WithServerCertificateMetadata(ServerCertificateMetadata serverCertificateMetadata)
+        {
+            this._serverCertificateMetadata = serverCertificateMetadata;
+            return this;
+        }
+
+        // Check to see if ServerCertificateMetadata property is set
+        internal bool IsSetServerCertificateMetadata()
+        {
+            return this._serverCertificateMetadata != null;
+        }
+
     }
 }

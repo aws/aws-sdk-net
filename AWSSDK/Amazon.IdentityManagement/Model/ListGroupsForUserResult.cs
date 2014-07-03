@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,75 +18,83 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the ListGroupsForUser action.</para>
+    /// Contains the result of a successful invocation of the <a>ListGroupsForUser</a> action.
     /// </summary>
     public partial class ListGroupsForUserResult
     {
-        
-        private List<Group> groups = new List<Group>();
-        private bool? isTruncated;
-        private string marker;
+        private List<Group> _groups = new List<Group>();
+        private bool? _isTruncated;
+        private string _marker;
+
 
         /// <summary>
+        /// Gets and sets the property Groups. 
+        /// <para>
         /// A list of groups.
-        ///  
+        /// </para>
         /// </summary>
         public List<Group> Groups
         {
-            get { return this.groups; }
-            set { this.groups = value; }
+            get { return this._groups; }
+            set { this._groups = value; }
         }
+
         /// <summary>
-        /// Adds elements to the Groups collection
+        /// Sets the Groups property
         /// </summary>
         /// <param name="groups">The values to add to the Groups collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListGroupsForUserResult WithGroups(params Group[] groups)
         {
-            foreach (Group element in groups)
+            foreach (var element in groups)
             {
-                this.groups.Add(element);
+                this._groups.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the Groups collection
+        /// Sets the Groups property
         /// </summary>
         /// <param name="groups">The values to add to the Groups collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListGroupsForUserResult WithGroups(IEnumerable<Group> groups)
         {
-            foreach (Group element in groups)
+            foreach (var element in groups)
             {
-                this.groups.Add(element);
+                this._groups.Add(element);
             }
-
             return this;
         }
-
         // Check to see if Groups property is set
         internal bool IsSetGroups()
         {
-            return this.groups.Count > 0;
+            return this._groups != null && this._groups.Count > 0; 
         }
 
+
         /// <summary>
-        /// A flag that indicates whether there are more groups to list. If your results were truncated, you can make a subsequent pagination request
-        /// using the <c>Marker</c> request parameter to retrieve more groups in the list.
-        ///  
+        /// Gets and sets the property IsTruncated. 
+        /// <para>
+        /// A flag that indicates whether there are more groups to list. If your results were
+        /// truncated,            you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter            to retrieve more groups in the list.
+        /// </para>
         /// </summary>
         public bool IsTruncated
         {
-            get { return this.isTruncated ?? default(bool); }
-            set { this.isTruncated = value; }
+            get { return this._isTruncated.GetValueOrDefault(); }
+            set { this._isTruncated = value; }
         }
+
 
         /// <summary>
         /// Sets the IsTruncated property
@@ -96,40 +104,31 @@ namespace Amazon.IdentityManagement.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListGroupsForUserResult WithIsTruncated(bool isTruncated)
         {
-            this.isTruncated = isTruncated;
+            this._isTruncated = isTruncated;
             return this;
         }
-            
 
         // Check to see if IsTruncated property is set
         internal bool IsSetIsTruncated()
         {
-            return this.isTruncated.HasValue;
+            return this._isTruncated.HasValue; 
         }
 
+
         /// <summary>
-        /// If <c>IsTruncated</c> is <c>true</c>, this element is present and contains the value to use for the <c>Marker</c> parameter in a subsequent
-        /// pagination request.
-        ///  
+        /// Gets and sets the property Marker. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 320</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\u00FF]*</description>
-        ///     </item>
-        /// </list>
+        /// If <code>IsTruncated</code> is <code>true</code>, this element is present and contains
+        /// the            value to use for the <code>Marker</code> parameter in a subsequent pagination
+        /// request.
         /// </para>
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
+
 
         /// <summary>
         /// Sets the Marker property
@@ -139,15 +138,15 @@ namespace Amazon.IdentityManagement.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListGroupsForUserResult WithMarker(string marker)
         {
-            this.marker = marker;
+            this._marker = marker;
             return this;
         }
-            
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
         }
+
     }
 }

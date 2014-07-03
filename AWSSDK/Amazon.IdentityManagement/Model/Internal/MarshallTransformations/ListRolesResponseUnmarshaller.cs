@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,28 +13,34 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for ListRoles operation
-    /// </summary>
-    internal class ListRolesResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for ListRoles operation
+    /// </summary>  
+    public class ListRolesResponseUnmarshaller : XmlResponseUnmarshaller
     {
-
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             ListRolesResponse response = new ListRolesResponse();
-            
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
             while (context.Read())
             {
-                if (context.IsStartElement)                
+                if (context.IsStartElement)
                 {
                     if(context.TestExpression("ListRolesResult", 2))
                     {
@@ -47,30 +53,26 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     }
                 }
             }
-                 
-                        
+
             return response;
         }
 
-        
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             return new AmazonIdentityManagementServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static ListRolesResponseUnmarshaller instance;
 
+        private static ListRolesResponseUnmarshaller instance;
         public static ListRolesResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
+            if (instance == null)
             {
-               instance = new ListRolesResponseUnmarshaller();
+                instance = new ListRolesResponseUnmarshaller();
             }
             return instance;
         }
-    
+
     }
 }
-    

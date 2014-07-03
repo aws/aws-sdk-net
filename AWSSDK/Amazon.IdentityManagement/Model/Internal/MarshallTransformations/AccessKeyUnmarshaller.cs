@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,21 +12,29 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   AccessKey Unmarshaller
-     /// </summary>
-    internal class AccessKeyUnmarshaller : IUnmarshaller<AccessKey, XmlUnmarshallerContext>, IUnmarshaller<AccessKey, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for AccessKey Object
+    /// </summary>  
+    public class AccessKeyUnmarshaller : IUnmarshaller<AccessKey, XmlUnmarshallerContext>, IUnmarshaller<AccessKey, JsonUnmarshallerContext>
     {
-        public AccessKey Unmarshall(XmlUnmarshallerContext context) 
+        public AccessKey Unmarshall(XmlUnmarshallerContext context)
         {
-            AccessKey accessKey = new AccessKey();
+            AccessKey unmarshalledObject = new AccessKey();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,63 +44,62 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("UserName", targetDepth))
-                    {
-                        accessKey.UserName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
                     if (context.TestExpression("AccessKeyId", targetDepth))
                     {
-                        accessKey.AccessKeyId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.AccessKeyId = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
-                    if (context.TestExpression("Status", targetDepth))
-                    {
-                        accessKey.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("SecretAccessKey", targetDepth))
-                    {
-                        accessKey.SecretAccessKey = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                    }
                     if (context.TestExpression("CreateDate", targetDepth))
                     {
-                        accessKey.CreateDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.GetInstance();
+                        unmarshalledObject.CreateDate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SecretAccessKey", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.SecretAccessKey = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Status", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("UserName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.UserName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return accessKey;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return accessKey;
+            return unmarshalledObject;
         }
 
-        public AccessKey Unmarshall(JsonUnmarshallerContext context) 
+        public AccessKey Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static AccessKeyUnmarshaller instance;
-
-        public static AccessKeyUnmarshaller GetInstance() 
+        public static AccessKeyUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new AccessKeyUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new AccessKeyUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

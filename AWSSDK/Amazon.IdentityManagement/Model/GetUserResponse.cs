@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Returns information about the  GetUserResult response and response metadata.
+    /// Returns information about the GetUserResult response and response metadata.
     /// </summary>
     public class GetUserResponse : AmazonWebServiceResponse
     {
-        private GetUserResult getUserResult;
+        private GetUserResult _getUserResult;
 
         /// <summary>
         /// Gets and sets the GetUserResult property.
-        /// Contains the result of a successful invocation of the GetUser action.
+        /// Represents the output of a GetUser operation.
         /// </summary>
         public GetUserResult GetUserResult
         {
-            get 
+            get
             {
-                if(this.getUserResult == null)
+                if(this._getUserResult == null)
                 {
-                    this.getUserResult = new GetUserResult();
+                    this._getUserResult = new GetUserResult();
                 }
-
-                return this.getUserResult; 
+                return this._getUserResult;
             }
-            set { this.getUserResult = value; }
+            set { this._getUserResult = value; }
         }
     }
 }
-    

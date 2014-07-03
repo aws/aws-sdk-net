@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,11 +25,13 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSAMLProviders operation.
-    /// <para>Lists the SAML providers in the account.</para> <para><b>NOTE:</b>This operation requires Signature Version 4.</para>
+    /// Lists the SAML providers in the account.
+    /// 
+    ///         <note>This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    /// Version            4</a>.</note>
     /// </summary>
-    /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.ListSAMLProviders"/>
-    public class ListSAMLProvidersRequest : AmazonWebServiceRequest
+    public partial class ListSAMLProvidersRequest : AmazonWebServiceRequest
     {
+
     }
 }
-    

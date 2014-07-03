@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,75 +12,79 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   GetUserPolicyResult Unmarshaller
-     /// </summary>
-    internal class GetUserPolicyResultUnmarshaller : IUnmarshaller<GetUserPolicyResult, XmlUnmarshallerContext>, IUnmarshaller<GetUserPolicyResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for GetUserPolicy Object
+    /// </summary>  
+    public class GetUserPolicyResultUnmarshaller : IUnmarshaller<GetUserPolicyResult, XmlUnmarshallerContext>
     {
         public GetUserPolicyResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            GetUserPolicyResult getUserPolicyResult = new GetUserPolicyResult();
+            GetUserPolicyResult result = new GetUserPolicyResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("UserName", targetDepth))
-                    {
-                        getUserPolicyResult.UserName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("PolicyName", targetDepth))
-                    {
-                        getUserPolicyResult.PolicyName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
+
                     if (context.TestExpression("PolicyDocument", targetDepth))
                     {
-                        getUserPolicyResult.PolicyDocument = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.PolicyDocument = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
+                    if (context.TestExpression("PolicyName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.PolicyName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("UserName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.UserName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return getUserPolicyResult;
+                    return result;
                 }
             }
-                        
 
-
-            return getUserPolicyResult;
+            return result;
         }
 
-        public GetUserPolicyResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static GetUserPolicyResultUnmarshaller instance;
-
-        public static GetUserPolicyResultUnmarshaller GetInstance() 
+        public static GetUserPolicyResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new GetUserPolicyResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new GetUserPolicyResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

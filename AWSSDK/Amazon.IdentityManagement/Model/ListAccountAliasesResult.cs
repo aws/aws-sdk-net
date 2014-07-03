@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,75 +18,83 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the ListAccountAliases action.</para>
+    /// Contains the result of a successful invocation of the <a>ListAccountAliases</a> action.
     /// </summary>
     public partial class ListAccountAliasesResult
     {
-        
-        private List<string> accountAliases = new List<string>();
-        private bool? isTruncated;
-        private string marker;
+        private List<string> _accountAliases = new List<string>();
+        private bool? _isTruncated;
+        private string _marker;
+
 
         /// <summary>
+        /// Gets and sets the property AccountAliases. 
+        /// <para>
         /// A list of aliases associated with the account.
-        ///  
+        /// </para>
         /// </summary>
         public List<string> AccountAliases
         {
-            get { return this.accountAliases; }
-            set { this.accountAliases = value; }
+            get { return this._accountAliases; }
+            set { this._accountAliases = value; }
         }
+
         /// <summary>
-        /// Adds elements to the AccountAliases collection
+        /// Sets the AccountAliases property
         /// </summary>
         /// <param name="accountAliases">The values to add to the AccountAliases collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListAccountAliasesResult WithAccountAliases(params string[] accountAliases)
         {
-            foreach (string element in accountAliases)
+            foreach (var element in accountAliases)
             {
-                this.accountAliases.Add(element);
+                this._accountAliases.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the AccountAliases collection
+        /// Sets the AccountAliases property
         /// </summary>
         /// <param name="accountAliases">The values to add to the AccountAliases collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListAccountAliasesResult WithAccountAliases(IEnumerable<string> accountAliases)
         {
-            foreach (string element in accountAliases)
+            foreach (var element in accountAliases)
             {
-                this.accountAliases.Add(element);
+                this._accountAliases.Add(element);
             }
-
             return this;
         }
-
         // Check to see if AccountAliases property is set
         internal bool IsSetAccountAliases()
         {
-            return this.accountAliases.Count > 0;
+            return this._accountAliases != null && this._accountAliases.Count > 0; 
         }
 
+
         /// <summary>
-        /// A flag that indicates whether there are more account aliases to list. If your results were truncated, you can make a subsequent pagination
-        /// request using the <c>Marker</c> request parameter to retrieve more account aliases in the list.
-        ///  
+        /// Gets and sets the property IsTruncated. 
+        /// <para>
+        /// A flag that indicates whether there are more account aliases to list. If your results
+        /// were            truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request            parameter to retrieve more account aliases in the list.
+        /// </para>
         /// </summary>
         public bool IsTruncated
         {
-            get { return this.isTruncated ?? default(bool); }
-            set { this.isTruncated = value; }
+            get { return this._isTruncated.GetValueOrDefault(); }
+            set { this._isTruncated = value; }
         }
+
 
         /// <summary>
         /// Sets the IsTruncated property
@@ -96,40 +104,31 @@ namespace Amazon.IdentityManagement.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListAccountAliasesResult WithIsTruncated(bool isTruncated)
         {
-            this.isTruncated = isTruncated;
+            this._isTruncated = isTruncated;
             return this;
         }
-            
 
         // Check to see if IsTruncated property is set
         internal bool IsSetIsTruncated()
         {
-            return this.isTruncated.HasValue;
+            return this._isTruncated.HasValue; 
         }
 
+
         /// <summary>
-        /// Use this only when paginating results, and only in a subsequent request after you've received a response where the results are truncated.
-        /// Set it to the value of the <c>Marker</c> element in the response you just received.
-        ///  
+        /// Gets and sets the property Marker. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 320</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\u00FF]*</description>
-        ///     </item>
-        /// </list>
+        /// Use this only when paginating results, and only in a subsequent request after you've
+        /// received            a response where the results are truncated. Set it to the value of the
+        /// <code>Marker</code>            element in the response you just received.
         /// </para>
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
+
 
         /// <summary>
         /// Sets the Marker property
@@ -139,15 +138,15 @@ namespace Amazon.IdentityManagement.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListAccountAliasesResult WithMarker(string marker)
         {
-            this.marker = marker;
+            this._marker = marker;
             return this;
         }
-            
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
         }
+
     }
 }

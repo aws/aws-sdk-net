@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,25 +18,31 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the GetLoginProfile action.</para>
+    /// Contains the result of a successful invocation of the <a>GetLoginProfile</a> action.
     /// </summary>
     public partial class GetLoginProfileResult
     {
-        
-        private LoginProfile loginProfile;
+        private LoginProfile _loginProfile;
+
 
         /// <summary>
+        /// Gets and sets the property LoginProfile. 
+        /// <para>
         /// User name and password create date for the user.
-        ///  
+        /// </para>
         /// </summary>
         public LoginProfile LoginProfile
         {
-            get { return this.loginProfile; }
-            set { this.loginProfile = value; }
+            get { return this._loginProfile; }
+            set { this._loginProfile = value; }
         }
+
 
         /// <summary>
         /// Sets the LoginProfile property
@@ -46,15 +52,15 @@ namespace Amazon.IdentityManagement.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetLoginProfileResult WithLoginProfile(LoginProfile loginProfile)
         {
-            this.loginProfile = loginProfile;
+            this._loginProfile = loginProfile;
             return this;
         }
-            
 
         // Check to see if LoginProfile property is set
         internal bool IsSetLoginProfile()
         {
-            return this.loginProfile != null;
+            return this._loginProfile != null;
         }
+
     }
 }

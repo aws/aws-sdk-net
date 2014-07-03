@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,75 +12,79 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   GetSAMLProviderResult Unmarshaller
-     /// </summary>
-    internal class GetSAMLProviderResultUnmarshaller : IUnmarshaller<GetSAMLProviderResult, XmlUnmarshallerContext>, IUnmarshaller<GetSAMLProviderResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for GetSAMLProvider Object
+    /// </summary>  
+    public class GetSAMLProviderResultUnmarshaller : IUnmarshaller<GetSAMLProviderResult, XmlUnmarshallerContext>
     {
         public GetSAMLProviderResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            GetSAMLProviderResult getSAMLProviderResult = new GetSAMLProviderResult();
+            GetSAMLProviderResult result = new GetSAMLProviderResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("SAMLMetadataDocument", targetDepth))
-                    {
-                        getSAMLProviderResult.SAMLMetadataDocument = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
+
                     if (context.TestExpression("CreateDate", targetDepth))
                     {
-                        getSAMLProviderResult.CreateDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("ValidUntil", targetDepth))
-                    {
-                        getSAMLProviderResult.ValidUntil = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.GetInstance();
+                        result.CreateDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
+                    if (context.TestExpression("SAMLMetadataDocument", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.SAMLMetadataDocument = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ValidUntil", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.GetInstance();
+                        result.ValidUntil = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return getSAMLProviderResult;
+                    return result;
                 }
             }
-                        
 
-
-            return getSAMLProviderResult;
+            return result;
         }
 
-        public GetSAMLProviderResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static GetSAMLProviderResultUnmarshaller instance;
-
-        public static GetSAMLProviderResultUnmarshaller GetInstance() 
+        public static GetSAMLProviderResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new GetSAMLProviderResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new GetSAMLProviderResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

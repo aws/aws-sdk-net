@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,75 +12,80 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ListGroupPoliciesResult Unmarshaller
-     /// </summary>
-    internal class ListGroupPoliciesResultUnmarshaller : IUnmarshaller<ListGroupPoliciesResult, XmlUnmarshallerContext>, IUnmarshaller<ListGroupPoliciesResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ListGroupPolicies Object
+    /// </summary>  
+    public class ListGroupPoliciesResultUnmarshaller : IUnmarshaller<ListGroupPoliciesResult, XmlUnmarshallerContext>
     {
         public ListGroupPoliciesResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            ListGroupPoliciesResult listGroupPoliciesResult = new ListGroupPoliciesResult();
+            ListGroupPoliciesResult result = new ListGroupPoliciesResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("PolicyNames/member", targetDepth))
-                    {
-                        listGroupPoliciesResult.PolicyNames.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    } 
+                {
+
                     if (context.TestExpression("IsTruncated", targetDepth))
                     {
-                        listGroupPoliciesResult.IsTruncated = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("Marker", targetDepth))
-                    {
-                        listGroupPoliciesResult.Marker = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.GetInstance();
+                        result.IsTruncated = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
+                    if (context.TestExpression("Marker", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.Marker = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PolicyNames/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        result.PolicyNames.Add(item);
+                        continue;
+                    }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return listGroupPoliciesResult;
+                    return result;
                 }
             }
-                        
 
-
-            return listGroupPoliciesResult;
+            return result;
         }
 
-        public ListGroupPoliciesResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static ListGroupPoliciesResultUnmarshaller instance;
-
-        public static ListGroupPoliciesResultUnmarshaller GetInstance() 
+        public static ListGroupPoliciesResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new ListGroupPoliciesResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new ListGroupPoliciesResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,63 +12,67 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   CreateVirtualMFADeviceResult Unmarshaller
-     /// </summary>
-    internal class CreateVirtualMFADeviceResultUnmarshaller : IUnmarshaller<CreateVirtualMFADeviceResult, XmlUnmarshallerContext>, IUnmarshaller<CreateVirtualMFADeviceResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for CreateVirtualMFADevice Object
+    /// </summary>  
+    public class CreateVirtualMFADeviceResultUnmarshaller : IUnmarshaller<CreateVirtualMFADeviceResult, XmlUnmarshallerContext>
     {
         public CreateVirtualMFADeviceResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            CreateVirtualMFADeviceResult createVirtualMFADeviceResult = new CreateVirtualMFADeviceResult();
+            CreateVirtualMFADeviceResult result = new CreateVirtualMFADeviceResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
+
                     if (context.TestExpression("VirtualMFADevice", targetDepth))
                     {
-                        createVirtualMFADeviceResult.VirtualMFADevice = VirtualMFADeviceUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = VirtualMFADeviceUnmarshaller.GetInstance();
+                        result.VirtualMFADevice = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return createVirtualMFADeviceResult;
+                    return result;
                 }
             }
-                        
 
-
-            return createVirtualMFADeviceResult;
+            return result;
         }
 
-        public CreateVirtualMFADeviceResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static CreateVirtualMFADeviceResultUnmarshaller instance;
-
-        public static CreateVirtualMFADeviceResultUnmarshaller GetInstance() 
+        public static CreateVirtualMFADeviceResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new CreateVirtualMFADeviceResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new CreateVirtualMFADeviceResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,42 +25,43 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAccessKey operation.
-    /// <para>Creates a new AWS secret access key and corresponding AWS access key ID for the specified user. The default status for new keys is
-    /// <c>Active</c> .</para> <para>If you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID
-    /// signing the request. Because this action works for access keys under the AWS account, you can use this API to manage root credentials even
-    /// if the AWS account has no associated users.</para> <para>For information about limits on the number of keys you can create, see <a
-    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html" >Limitations on IAM Entities</a> in <i>Using
-    /// AWS Identity and Access Management</i> .</para> <para><b>IMPORTANT:</b>To ensure the security of your AWS account, the secret access key is
-    /// accessible only during key and user creation. You must save the key (for example, in a text file) if you want to be able to access it again.
-    /// If a secret key is lost, you can delete the access keys for the associated user and then create new keys.</para>
+    /// Creates a new AWS secret access key and corresponding AWS access key ID for the specified            user.
+    /// The default status for new keys is <code>Active</code>.
+    /// 
+    ///         
+    /// <para>
+    /// If you do not specify a user name, IAM determines the user name implicitly based on
+    /// the AWS            access key ID signing the request. Because this action works for access
+    /// keys under the AWS            account, you can use this API to manage root credentials even
+    /// if the AWS account has no            associated users.
+    /// </para>
+    ///         
+    /// <para>
+    /// For information about limits on the number of keys you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"
+    /// target="_blank">Limitations on IAM Entities</a> in <i>Using AWS Identity and Access                Management</i>.
+    /// </para>
+    ///         <important>To ensure the security of your AWS account, the secret access key is
+    /// accessible only            during key and user creation. You must save the key (for example,
+    /// in a text file) if you want            to be able to access it again. If a secret key is lost,
+    /// you can delete the access keys for the            associated user and then create new keys.</important>
     /// </summary>
-    /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.CreateAccessKey"/>
-    public class CreateAccessKeyRequest : AmazonWebServiceRequest
+    public partial class CreateAccessKeyRequest : AmazonWebServiceRequest
     {
-        private string userName;
+        private string _userName;
+
 
         /// <summary>
-        /// The user name that the new key will belong to.
-        ///  
+        /// Gets and sets the property UserName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 128</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=,.@-]*</description>
-        ///     </item>
-        /// </list>
+        /// The user name that the new key will belong to.
         /// </para>
         /// </summary>
         public string UserName
         {
-            get { return this.userName; }
-            set { this.userName = value; }
+            get { return this._userName; }
+            set { this._userName = value; }
         }
+
 
         /// <summary>
         /// Sets the UserName property
@@ -70,16 +71,15 @@ namespace Amazon.IdentityManagement.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateAccessKeyRequest WithUserName(string userName)
         {
-            this.userName = userName;
+            this._userName = userName;
             return this;
         }
-            
 
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
-            return this.userName != null;
+            return this._userName != null;
         }
+
     }
 }
-    

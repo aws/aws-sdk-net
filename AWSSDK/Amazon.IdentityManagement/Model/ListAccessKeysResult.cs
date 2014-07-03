@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,75 +18,83 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the ListAccessKeys action.</para>
+    /// Contains the result of a successful invocation of the <a>ListAccessKeys</a> action.
     /// </summary>
     public partial class ListAccessKeysResult
     {
-        
-        private List<AccessKeyMetadata> accessKeyMetadata = new List<AccessKeyMetadata>();
-        private bool? isTruncated;
-        private string marker;
+        private List<AccessKeyMetadata> _accessKeyMetadata = new List<AccessKeyMetadata>();
+        private bool? _isTruncated;
+        private string _marker;
+
 
         /// <summary>
+        /// Gets and sets the property AccessKeyMetadata. 
+        /// <para>
         /// A list of access key metadata.
-        ///  
+        /// </para>
         /// </summary>
         public List<AccessKeyMetadata> AccessKeyMetadata
         {
-            get { return this.accessKeyMetadata; }
-            set { this.accessKeyMetadata = value; }
+            get { return this._accessKeyMetadata; }
+            set { this._accessKeyMetadata = value; }
         }
+
         /// <summary>
-        /// Adds elements to the AccessKeyMetadata collection
+        /// Sets the AccessKeyMetadata property
         /// </summary>
         /// <param name="accessKeyMetadata">The values to add to the AccessKeyMetadata collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListAccessKeysResult WithAccessKeyMetadata(params AccessKeyMetadata[] accessKeyMetadata)
         {
-            foreach (AccessKeyMetadata element in accessKeyMetadata)
+            foreach (var element in accessKeyMetadata)
             {
-                this.accessKeyMetadata.Add(element);
+                this._accessKeyMetadata.Add(element);
             }
-
             return this;
         }
 
         /// <summary>
-        /// Adds elements to the AccessKeyMetadata collection
+        /// Sets the AccessKeyMetadata property
         /// </summary>
         /// <param name="accessKeyMetadata">The values to add to the AccessKeyMetadata collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListAccessKeysResult WithAccessKeyMetadata(IEnumerable<AccessKeyMetadata> accessKeyMetadata)
         {
-            foreach (AccessKeyMetadata element in accessKeyMetadata)
+            foreach (var element in accessKeyMetadata)
             {
-                this.accessKeyMetadata.Add(element);
+                this._accessKeyMetadata.Add(element);
             }
-
             return this;
         }
-
         // Check to see if AccessKeyMetadata property is set
         internal bool IsSetAccessKeyMetadata()
         {
-            return this.accessKeyMetadata.Count > 0;
+            return this._accessKeyMetadata != null && this._accessKeyMetadata.Count > 0; 
         }
 
+
         /// <summary>
-        /// A flag that indicates whether there are more keys to list. If your results were truncated, you can make a subsequent pagination request
-        /// using the <c>Marker</c> request parameter to retrieve more keys in the list.
-        ///  
+        /// Gets and sets the property IsTruncated. 
+        /// <para>
+        /// A flag that indicates whether there are more keys to list. If your results were truncated,            you
+        /// can make a subsequent pagination request using the <code>Marker</code> request parameter            to
+        /// retrieve more keys in the list.
+        /// </para>
         /// </summary>
         public bool IsTruncated
         {
-            get { return this.isTruncated ?? default(bool); }
-            set { this.isTruncated = value; }
+            get { return this._isTruncated.GetValueOrDefault(); }
+            set { this._isTruncated = value; }
         }
+
 
         /// <summary>
         /// Sets the IsTruncated property
@@ -96,40 +104,31 @@ namespace Amazon.IdentityManagement.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListAccessKeysResult WithIsTruncated(bool isTruncated)
         {
-            this.isTruncated = isTruncated;
+            this._isTruncated = isTruncated;
             return this;
         }
-            
 
         // Check to see if IsTruncated property is set
         internal bool IsSetIsTruncated()
         {
-            return this.isTruncated.HasValue;
+            return this._isTruncated.HasValue; 
         }
 
+
         /// <summary>
-        /// If <c>IsTruncated</c> is <c>true</c>, this element is present and contains the value to use for the <c>Marker</c> parameter in a subsequent
-        /// pagination request.
-        ///  
+        /// Gets and sets the property Marker. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 320</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\u00FF]*</description>
-        ///     </item>
-        /// </list>
+        /// If <code>IsTruncated</code> is <code>true</code>, this element is present and contains
+        /// the            value to use for the <code>Marker</code> parameter in a subsequent pagination
+        /// request.
         /// </para>
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
+
 
         /// <summary>
         /// Sets the Marker property
@@ -139,15 +138,15 @@ namespace Amazon.IdentityManagement.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListAccessKeysResult WithMarker(string marker)
         {
-            this.marker = marker;
+            this._marker = marker;
             return this;
         }
-            
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
         }
+
     }
 }

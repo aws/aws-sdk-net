@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,11 +25,10 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAccountPasswordPolicy operation.
-    /// <para>Deletes the password policy for the AWS account.</para>
+    /// Deletes the password policy for the AWS account.
     /// </summary>
-    /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.DeleteAccountPasswordPolicy"/>
-    public class DeleteAccountPasswordPolicyRequest : AmazonWebServiceRequest
+    public partial class DeleteAccountPasswordPolicyRequest : AmazonWebServiceRequest
     {
+
     }
 }
-    

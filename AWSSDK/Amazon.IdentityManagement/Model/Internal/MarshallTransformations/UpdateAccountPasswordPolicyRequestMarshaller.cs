@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,52 +14,56 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Update Account Password Policy Request Marshaller
+    /// UpdateAccountPasswordPolicy Request Marshaller
     /// </summary>       
     public class UpdateAccountPasswordPolicyRequestMarshaller : IMarshaller<IRequest, UpdateAccountPasswordPolicyRequest>
     {
-        public IRequest Marshall(UpdateAccountPasswordPolicyRequest updateAccountPasswordPolicyRequest)
+        public IRequest Marshall(UpdateAccountPasswordPolicyRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(updateAccountPasswordPolicyRequest, "AmazonIdentityManagementService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.IdentityManagement");
             request.Parameters.Add("Action", "UpdateAccountPasswordPolicy");
             request.Parameters.Add("Version", "2010-05-08");
-            if (updateAccountPasswordPolicyRequest != null && updateAccountPasswordPolicyRequest.IsSetMinimumPasswordLength())
-            {
-                request.Parameters.Add("MinimumPasswordLength", StringUtils.FromInt(updateAccountPasswordPolicyRequest.MinimumPasswordLength));
-            }
-            if (updateAccountPasswordPolicyRequest != null && updateAccountPasswordPolicyRequest.IsSetRequireSymbols())
-            {
-                request.Parameters.Add("RequireSymbols", StringUtils.FromBool(updateAccountPasswordPolicyRequest.RequireSymbols));
-            }
-            if (updateAccountPasswordPolicyRequest != null && updateAccountPasswordPolicyRequest.IsSetRequireNumbers())
-            {
-                request.Parameters.Add("RequireNumbers", StringUtils.FromBool(updateAccountPasswordPolicyRequest.RequireNumbers));
-            }
-            if (updateAccountPasswordPolicyRequest != null && updateAccountPasswordPolicyRequest.IsSetRequireUppercaseCharacters())
-            {
-                request.Parameters.Add("RequireUppercaseCharacters", StringUtils.FromBool(updateAccountPasswordPolicyRequest.RequireUppercaseCharacters));
-            }
-            if (updateAccountPasswordPolicyRequest != null && updateAccountPasswordPolicyRequest.IsSetRequireLowercaseCharacters())
-            {
-                request.Parameters.Add("RequireLowercaseCharacters", StringUtils.FromBool(updateAccountPasswordPolicyRequest.RequireLowercaseCharacters));
-            }
-            if (updateAccountPasswordPolicyRequest != null && updateAccountPasswordPolicyRequest.IsSetAllowUsersToChangePassword())
-            {
-                request.Parameters.Add("AllowUsersToChangePassword", StringUtils.FromBool(updateAccountPasswordPolicyRequest.AllowUsersToChangePassword));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAllowUsersToChangePassword())
+                {
+                    request.Parameters.Add("AllowUsersToChangePassword", StringUtils.FromBool(publicRequest.AllowUsersToChangePassword));
+                }
+                if(publicRequest.IsSetMinimumPasswordLength())
+                {
+                    request.Parameters.Add("MinimumPasswordLength", StringUtils.FromInt(publicRequest.MinimumPasswordLength));
+                }
+                if(publicRequest.IsSetRequireLowercaseCharacters())
+                {
+                    request.Parameters.Add("RequireLowercaseCharacters", StringUtils.FromBool(publicRequest.RequireLowercaseCharacters));
+                }
+                if(publicRequest.IsSetRequireNumbers())
+                {
+                    request.Parameters.Add("RequireNumbers", StringUtils.FromBool(publicRequest.RequireNumbers));
+                }
+                if(publicRequest.IsSetRequireSymbols())
+                {
+                    request.Parameters.Add("RequireSymbols", StringUtils.FromBool(publicRequest.RequireSymbols));
+                }
+                if(publicRequest.IsSetRequireUppercaseCharacters())
+                {
+                    request.Parameters.Add("RequireUppercaseCharacters", StringUtils.FromBool(publicRequest.RequireUppercaseCharacters));
+                }
+            }
             return request;
         }
     }

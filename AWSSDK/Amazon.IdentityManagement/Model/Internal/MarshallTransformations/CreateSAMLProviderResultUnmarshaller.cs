@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,63 +12,67 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   CreateSAMLProviderResult Unmarshaller
-     /// </summary>
-    internal class CreateSAMLProviderResultUnmarshaller : IUnmarshaller<CreateSAMLProviderResult, XmlUnmarshallerContext>, IUnmarshaller<CreateSAMLProviderResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for CreateSAMLProvider Object
+    /// </summary>  
+    public class CreateSAMLProviderResultUnmarshaller : IUnmarshaller<CreateSAMLProviderResult, XmlUnmarshallerContext>
     {
         public CreateSAMLProviderResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            CreateSAMLProviderResult createSAMLProviderResult = new CreateSAMLProviderResult();
+            CreateSAMLProviderResult result = new CreateSAMLProviderResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
+
                     if (context.TestExpression("SAMLProviderArn", targetDepth))
                     {
-                        createSAMLProviderResult.SAMLProviderArn = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.SAMLProviderArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return createSAMLProviderResult;
+                    return result;
                 }
             }
-                        
 
-
-            return createSAMLProviderResult;
+            return result;
         }
 
-        public CreateSAMLProviderResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static CreateSAMLProviderResultUnmarshaller instance;
-
-        public static CreateSAMLProviderResultUnmarshaller GetInstance() 
+        public static CreateSAMLProviderResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new CreateSAMLProviderResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new CreateSAMLProviderResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

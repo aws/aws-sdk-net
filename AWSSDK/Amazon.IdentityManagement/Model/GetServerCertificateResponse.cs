@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Returns information about the  GetServerCertificateResult response and response metadata.
+    /// Returns information about the GetServerCertificateResult response and response metadata.
     /// </summary>
     public class GetServerCertificateResponse : AmazonWebServiceResponse
     {
-        private GetServerCertificateResult getServerCertificateResult;
+        private GetServerCertificateResult _getServerCertificateResult;
 
         /// <summary>
         /// Gets and sets the GetServerCertificateResult property.
-        /// Contains the result of a successful invocation of the GetServerCertificate action.
+        /// Represents the output of a GetServerCertificate operation.
         /// </summary>
         public GetServerCertificateResult GetServerCertificateResult
         {
-            get 
+            get
             {
-                if(this.getServerCertificateResult == null)
+                if(this._getServerCertificateResult == null)
                 {
-                    this.getServerCertificateResult = new GetServerCertificateResult();
+                    this._getServerCertificateResult = new GetServerCertificateResult();
                 }
-
-                return this.getServerCertificateResult; 
+                return this._getServerCertificateResult;
             }
-            set { this.getServerCertificateResult = value; }
+            set { this._getServerCertificateResult = value; }
         }
     }
 }
-    

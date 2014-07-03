@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,130 +25,38 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateRole operation.
-    /// <para>Creates a new role for your AWS account. For more information about roles, go to <a
-    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html" >Working with Roles</a> .
-    /// For information about limitations on role names and the number of roles you can create, go to <a
-    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html" >Limitations on IAM Entities</a> in <i>Using
-    /// AWS Identity and Access Management</i> .</para> <para>The policy grants permission to an EC2 instance to assume the role. The policy is
-    /// URL-encoded according to RFC 3986. For more information about RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html"
-    /// >http://www.faqs.org/rfcs/rfc3986.html</a> .
-    /// Currently, only EC2 instances can assume roles.</para>
+    /// Creates a new role for your AWS account. For more information about roles, go to <a
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
+    /// with Roles</a>.            For information about limitations on role names and the number of
+    /// roles you can create, go to                <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"
+    /// target="_blank">Limitations on IAM Entities</a> in <i>Using AWS Identity and Access                Management</i>.
+    /// 
+    ///         
+    /// <para>
+    /// The example policy grants permission to an EC2 instance to assume the role. The policy
+    /// is URL-encoded            according to RFC 3986. For more information about RFC 3986, go to
+    /// <a href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.CreateRole"/>
-    public class CreateRoleRequest : AmazonWebServiceRequest
+    public partial class CreateRoleRequest : AmazonWebServiceRequest
     {
-        private string path;
-        private string roleName;
-        private string assumeRolePolicyDocument;
+        private string _assumeRolePolicyDocument;
+        private string _path;
+        private string _roleName;
+
 
         /// <summary>
-        /// The path to the role. For more information about paths, see <a
-        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
-        /// <i>Using AWS Identity and Access Management</i>. This parameter is optional. If it is not included, it defaults to a slash (/).
-        ///  
+        /// Gets and sets the property AssumeRolePolicyDocument. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 512</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string Path
-        {
-            get { return this.path; }
-            set { this.path = value; }
-        }
-
-        /// <summary>
-        /// Sets the Path property
-        /// </summary>
-        /// <param name="path">The value to set for the Path property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public CreateRoleRequest WithPath(string path)
-        {
-            this.path = path;
-            return this;
-        }
-            
-
-        // Check to see if Path property is set
-        internal bool IsSetPath()
-        {
-            return this.path != null;
-        }
-
-        /// <summary>
-        /// Name of the role to create.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 64</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=,.@-]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string RoleName
-        {
-            get { return this.roleName; }
-            set { this.roleName = value; }
-        }
-
-        /// <summary>
-        /// Sets the RoleName property
-        /// </summary>
-        /// <param name="roleName">The value to set for the RoleName property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public CreateRoleRequest WithRoleName(string roleName)
-        {
-            this.roleName = roleName;
-            return this;
-        }
-            
-
-        // Check to see if RoleName property is set
-        internal bool IsSetRoleName()
-        {
-            return this.roleName != null;
-        }
-
-        /// <summary>
         /// The policy that grants an entity permission to assume the role.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 131072</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0009\u000A\u000D\u0020-\u00FF]+</description>
-        ///     </item>
-        /// </list>
         /// </para>
         /// </summary>
         public string AssumeRolePolicyDocument
         {
-            get { return this.assumeRolePolicyDocument; }
-            set { this.assumeRolePolicyDocument = value; }
+            get { return this._assumeRolePolicyDocument; }
+            set { this._assumeRolePolicyDocument = value; }
         }
+
 
         /// <summary>
         /// Sets the AssumeRolePolicyDocument property
@@ -158,16 +66,84 @@ namespace Amazon.IdentityManagement.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateRoleRequest WithAssumeRolePolicyDocument(string assumeRolePolicyDocument)
         {
-            this.assumeRolePolicyDocument = assumeRolePolicyDocument;
+            this._assumeRolePolicyDocument = assumeRolePolicyDocument;
             return this;
         }
-            
 
         // Check to see if AssumeRolePolicyDocument property is set
         internal bool IsSetAssumeRolePolicyDocument()
         {
-            return this.assumeRolePolicyDocument != null;
+            return this._assumeRolePolicyDocument != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Path. 
+        /// <para>
+        /// The path to the role. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+        /// target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access                Management</i>.
+        /// </para>
+        ///         
+        /// <para>
+        /// This parameter is optional. If it is not included, it defaults to a slash (/).
+        /// </para>
+        /// </summary>
+        public string Path
+        {
+            get { return this._path; }
+            set { this._path = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the Path property
+        /// </summary>
+        /// <param name="path">The value to set for the Path property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateRoleRequest WithPath(string path)
+        {
+            this._path = path;
+            return this;
+        }
+
+        // Check to see if Path property is set
+        internal bool IsSetPath()
+        {
+            return this._path != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property RoleName. 
+        /// <para>
+        /// Name of the role to create.
+        /// </para>
+        /// </summary>
+        public string RoleName
+        {
+            get { return this._roleName; }
+            set { this._roleName = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the RoleName property
+        /// </summary>
+        /// <param name="roleName">The value to set for the RoleName property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateRoleRequest WithRoleName(string roleName)
+        {
+            this._roleName = roleName;
+            return this;
+        }
+
+        // Check to see if RoleName property is set
+        internal bool IsSetRoleName()
+        {
+            return this._roleName != null;
+        }
+
     }
 }
-    

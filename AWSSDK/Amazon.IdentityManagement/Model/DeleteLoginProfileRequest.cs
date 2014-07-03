@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,38 +25,32 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLoginProfile operation.
-    /// <para>Deletes the password for the specified user, which terminates the user's ability to access AWS services through the AWS Management
-    /// Console.</para> <para><b>IMPORTANT:</b>Deleting a user's password does not prevent a user from accessing IAM through the command line
-    /// interface or the API. To prevent all user access you must also either make the access key inactive or delete it. For more information about
-    /// making keys inactive or deleting them, see UpdateAccessKey and DeleteAccessKey. </para>
+    /// Deletes the password for the specified user, which terminates the user's ability to
+    /// access            AWS services through the AWS Management Console.
+    /// 
+    ///         <important>Deleting a user's password does not prevent a user from accessing IAM
+    /// through the            command line interface or the API. To prevent all user access you must
+    /// also either make the            access key inactive or delete it. For more information about
+    /// making keys inactive or deleting            them, see <a>UpdateAccessKey</a> and <a>DeleteAccessKey</a>.
+    /// </important>
     /// </summary>
-    /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.DeleteLoginProfile"/>
-    public class DeleteLoginProfileRequest : AmazonWebServiceRequest
+    public partial class DeleteLoginProfileRequest : AmazonWebServiceRequest
     {
-        private string userName;
+        private string _userName;
+
 
         /// <summary>
-        /// Name of the user whose password you want to delete.
-        ///  
+        /// Gets and sets the property UserName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 64</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=,.@-]*</description>
-        ///     </item>
-        /// </list>
+        /// Name of the user whose password you want to delete.
         /// </para>
         /// </summary>
         public string UserName
         {
-            get { return this.userName; }
-            set { this.userName = value; }
+            get { return this._userName; }
+            set { this._userName = value; }
         }
+
 
         /// <summary>
         /// Sets the UserName property
@@ -66,16 +60,15 @@ namespace Amazon.IdentityManagement.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteLoginProfileRequest WithUserName(string userName)
         {
-            this.userName = userName;
+            this._userName = userName;
             return this;
         }
-            
 
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
-            return this.userName != null;
+            return this._userName != null;
         }
+
     }
 }
-    

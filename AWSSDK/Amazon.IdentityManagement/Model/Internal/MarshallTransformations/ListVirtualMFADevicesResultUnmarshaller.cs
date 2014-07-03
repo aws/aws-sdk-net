@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,75 +12,80 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ListVirtualMFADevicesResult Unmarshaller
-     /// </summary>
-    internal class ListVirtualMFADevicesResultUnmarshaller : IUnmarshaller<ListVirtualMFADevicesResult, XmlUnmarshallerContext>, IUnmarshaller<ListVirtualMFADevicesResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ListVirtualMFADevices Object
+    /// </summary>  
+    public class ListVirtualMFADevicesResultUnmarshaller : IUnmarshaller<ListVirtualMFADevicesResult, XmlUnmarshallerContext>
     {
         public ListVirtualMFADevicesResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            ListVirtualMFADevicesResult listVirtualMFADevicesResult = new ListVirtualMFADevicesResult();
+            ListVirtualMFADevicesResult result = new ListVirtualMFADevicesResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("VirtualMFADevices/member", targetDepth))
-                    {
-                        listVirtualMFADevicesResult.VirtualMFADevices.Add(VirtualMFADeviceUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    } 
+                {
+
                     if (context.TestExpression("IsTruncated", targetDepth))
                     {
-                        listVirtualMFADevicesResult.IsTruncated = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("Marker", targetDepth))
-                    {
-                        listVirtualMFADevicesResult.Marker = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.GetInstance();
+                        result.IsTruncated = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
+                    if (context.TestExpression("Marker", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.Marker = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("VirtualMFADevices/member", targetDepth))
+                    {
+                        var unmarshaller = VirtualMFADeviceUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        result.VirtualMFADevices.Add(item);
+                        continue;
+                    }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return listVirtualMFADevicesResult;
+                    return result;
                 }
             }
-                        
 
-
-            return listVirtualMFADevicesResult;
+            return result;
         }
 
-        public ListVirtualMFADevicesResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static ListVirtualMFADevicesResultUnmarshaller instance;
-
-        public static ListVirtualMFADevicesResultUnmarshaller GetInstance() 
+        public static ListVirtualMFADevicesResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new ListVirtualMFADevicesResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new ListVirtualMFADevicesResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

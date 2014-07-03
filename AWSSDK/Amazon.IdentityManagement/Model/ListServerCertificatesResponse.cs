@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Returns information about the  ListServerCertificatesResult response and response metadata.
+    /// Returns information about the ListServerCertificatesResult response and response metadata.
     /// </summary>
     public class ListServerCertificatesResponse : AmazonWebServiceResponse
     {
-        private ListServerCertificatesResult listServerCertificatesResult;
+        private ListServerCertificatesResult _listServerCertificatesResult;
 
         /// <summary>
         /// Gets and sets the ListServerCertificatesResult property.
-        /// Contains the result of a successful invocation of the ListServerCertificates action.
+        /// Represents the output of a ListServerCertificates operation.
         /// </summary>
         public ListServerCertificatesResult ListServerCertificatesResult
         {
-            get 
+            get
             {
-                if(this.listServerCertificatesResult == null)
+                if(this._listServerCertificatesResult == null)
                 {
-                    this.listServerCertificatesResult = new ListServerCertificatesResult();
+                    this._listServerCertificatesResult = new ListServerCertificatesResult();
                 }
-
-                return this.listServerCertificatesResult; 
+                return this._listServerCertificatesResult;
             }
-            set { this.listServerCertificatesResult = value; }
+            set { this._listServerCertificatesResult = value; }
         }
     }
 }
-    

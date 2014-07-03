@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,75 +12,80 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ListGroupsResult Unmarshaller
-     /// </summary>
-    internal class ListGroupsResultUnmarshaller : IUnmarshaller<ListGroupsResult, XmlUnmarshallerContext>, IUnmarshaller<ListGroupsResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ListGroups Object
+    /// </summary>  
+    public class ListGroupsResultUnmarshaller : IUnmarshaller<ListGroupsResult, XmlUnmarshallerContext>
     {
         public ListGroupsResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            ListGroupsResult listGroupsResult = new ListGroupsResult();
+            ListGroupsResult result = new ListGroupsResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
+
                     if (context.TestExpression("Groups/member", targetDepth))
                     {
-                        listGroupsResult.Groups.Add(GroupUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("IsTruncated", targetDepth))
-                    {
-                        listGroupsResult.IsTruncated = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("Marker", targetDepth))
-                    {
-                        listGroupsResult.Marker = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = GroupUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        result.Groups.Add(item);
                         continue;
                     }
-                }
+                    if (context.TestExpression("IsTruncated", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.GetInstance();
+                        result.IsTruncated = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Marker", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        result.Marker = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return listGroupsResult;
+                    return result;
                 }
             }
-                        
 
-
-            return listGroupsResult;
+            return result;
         }
 
-        public ListGroupsResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static ListGroupsResultUnmarshaller instance;
-
-        public static ListGroupsResultUnmarshaller GetInstance() 
+        public static ListGroupsResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new ListGroupsResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new ListGroupsResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

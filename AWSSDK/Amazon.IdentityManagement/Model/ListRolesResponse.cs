@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Returns information about the  ListRolesResult response and response metadata.
+    /// Returns information about the ListRolesResult response and response metadata.
     /// </summary>
     public class ListRolesResponse : AmazonWebServiceResponse
     {
-        private ListRolesResult listRolesResult;
+        private ListRolesResult _listRolesResult;
 
         /// <summary>
         /// Gets and sets the ListRolesResult property.
-        /// Contains the result of a successful invocation of the ListRoles action.
+        /// Represents the output of a ListRoles operation.
         /// </summary>
         public ListRolesResult ListRolesResult
         {
             get
             {
-                if(this.listRolesResult == null)
+                if(this._listRolesResult == null)
                 {
-                    this.listRolesResult = new ListRolesResult();
+                    this._listRolesResult = new ListRolesResult();
                 }
-
-                return this.listRolesResult;
+                return this._listRolesResult;
             }
-            set { this.listRolesResult = value; }
+            set { this._listRolesResult = value; }
         }
     }
 }
-    

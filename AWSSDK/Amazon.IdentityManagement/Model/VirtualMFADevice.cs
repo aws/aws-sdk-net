@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,72 +18,36 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>The <c>VirtualMFADevice</c> data type contains information about a virtual MFA device.</para>
+    /// The <code>VirtualMFADevice</code> data type contains information about a virtual MFA            device.
     /// </summary>
     public partial class VirtualMFADevice
     {
-        
-        private string serialNumber;
-        private MemoryStream base32StringSeed;
-        private MemoryStream qRCodePNG;
-        private User user;
-        private DateTime? enableDate;
+        private MemoryStream _base32StringSeed;
+        private DateTime? _enableDate;
+        private MemoryStream _qRCodePNG;
+        private string _serialNumber;
+        private User _user;
+
 
         /// <summary>
-        /// The serial number associated with <c>VirtualMFADevice</c>.
-        ///  
+        /// Gets and sets the property Base32StringSeed. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>9 - 256</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=/:,.@-]*</description>
-        ///     </item>
-        /// </list>
+        /// The Base32 seed defined as specified in <a href="http://www.ietf.org/rfc/rfc3548.txt"
+        /// target="_blank">RFC3548</a>. The <code>Base32StringSeed</code> is Base64-encoded.
         /// </para>
-        /// </summary>
-        public string SerialNumber
-        {
-            get { return this.serialNumber; }
-            set { this.serialNumber = value; }
-        }
-
-        /// <summary>
-        /// Sets the SerialNumber property
-        /// </summary>
-        /// <param name="serialNumber">The value to set for the SerialNumber property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public VirtualMFADevice WithSerialNumber(string serialNumber)
-        {
-            this.serialNumber = serialNumber;
-            return this;
-        }
-            
-
-        // Check to see if SerialNumber property is set
-        internal bool IsSetSerialNumber()
-        {
-            return this.serialNumber != null;
-        }
-
-        /// <summary>
-        /// The Base32 seed defined as specified in <a href="http://www.ietf.org/rfc/rfc3548.txt" target="_blank">RFC3548</a>. The
-        /// <c>Base32StringSeed</c> is Base64-encoded.
-        ///  
         /// </summary>
         public MemoryStream Base32StringSeed
         {
-            get { return this.base32StringSeed; }
-            set { this.base32StringSeed = value; }
+            get { return this._base32StringSeed; }
+            set { this._base32StringSeed = value; }
         }
+
 
         /// <summary>
         /// Sets the Base32StringSeed property
@@ -93,82 +57,26 @@ namespace Amazon.IdentityManagement.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VirtualMFADevice WithBase32StringSeed(MemoryStream base32StringSeed)
         {
-            this.base32StringSeed = base32StringSeed;
+            this._base32StringSeed = base32StringSeed;
             return this;
         }
-            
 
         // Check to see if Base32StringSeed property is set
         internal bool IsSetBase32StringSeed()
         {
-            return this.base32StringSeed != null;
+            return this._base32StringSeed != null;
         }
+
 
         /// <summary>
-        /// A QR code PNG image that encodes <i>otpauth://totp/$virtualMFADeviceName@$AccountName? secret=$Base32String</i> where $virtualMFADeviceName
-        /// is one of the create call arguments, AccountName is the user name if set (accountId otherwise), and Base32String is the seed in Base32
-        /// format. The <c>Base32String</c> is Base64-encoded.
-        ///  
+        /// Gets and sets the property EnableDate.
         /// </summary>
-        public MemoryStream QRCodePNG
-        {
-            get { return this.qRCodePNG; }
-            set { this.qRCodePNG = value; }
-        }
-
-        /// <summary>
-        /// Sets the QRCodePNG property
-        /// </summary>
-        /// <param name="qRCodePNG">The value to set for the QRCodePNG property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public VirtualMFADevice WithQRCodePNG(MemoryStream qRCodePNG)
-        {
-            this.qRCodePNG = qRCodePNG;
-            return this;
-        }
-            
-
-        // Check to see if QRCodePNG property is set
-        internal bool IsSetQRCodePNG()
-        {
-            return this.qRCodePNG != null;
-        }
-
-        /// <summary>
-        /// The User data type contains information about a user. This data type is used as a response element in the following actions: <ul>
-        /// <li><a>CreateUser</a></li> <li><a>GetUser</a></li> <li><a>ListUsers</a></li> </ul>
-        ///  
-        /// </summary>
-        public User User
-        {
-            get { return this.user; }
-            set { this.user = value; }
-        }
-
-        /// <summary>
-        /// Sets the User property
-        /// </summary>
-        /// <param name="user">The value to set for the User property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public VirtualMFADevice WithUser(User user)
-        {
-            this.user = user;
-            return this;
-        }
-            
-
-        // Check to see if User property is set
-        internal bool IsSetUser()
-        {
-            return this.user != null;
-        }
         public DateTime EnableDate
         {
-            get { return this.enableDate ?? default(DateTime); }
-            set { this.enableDate = value; }
+            get { return this._enableDate.GetValueOrDefault(); }
+            set { this._enableDate = value; }
         }
+
 
         /// <summary>
         /// Sets the EnableDate property
@@ -178,15 +86,111 @@ namespace Amazon.IdentityManagement.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VirtualMFADevice WithEnableDate(DateTime enableDate)
         {
-            this.enableDate = enableDate;
+            this._enableDate = enableDate;
             return this;
         }
-            
 
         // Check to see if EnableDate property is set
         internal bool IsSetEnableDate()
         {
-            return this.enableDate.HasValue;
+            return this._enableDate.HasValue; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property QRCodePNG. 
+        /// <para>
+        /// A QR code PNG image that encodes <i>otpauth://totp/$virtualMFADeviceName@$AccountName?                secret=$Base32String</i>
+        /// where $virtualMFADeviceName is one of the create call arguments,            AccountName is
+        /// the user name if set (accountId otherwise), and Base32String is the seed in            Base32
+        /// format. The <code>Base32String</code> is Base64-encoded.
+        /// </para>
+        /// </summary>
+        public MemoryStream QRCodePNG
+        {
+            get { return this._qRCodePNG; }
+            set { this._qRCodePNG = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the QRCodePNG property
+        /// </summary>
+        /// <param name="qRCodePNG">The value to set for the QRCodePNG property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public VirtualMFADevice WithQRCodePNG(MemoryStream qRCodePNG)
+        {
+            this._qRCodePNG = qRCodePNG;
+            return this;
+        }
+
+        // Check to see if QRCodePNG property is set
+        internal bool IsSetQRCodePNG()
+        {
+            return this._qRCodePNG != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SerialNumber. 
+        /// <para>
+        /// The serial number associated with <code>VirtualMFADevice</code>.
+        /// </para>
+        /// </summary>
+        public string SerialNumber
+        {
+            get { return this._serialNumber; }
+            set { this._serialNumber = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the SerialNumber property
+        /// </summary>
+        /// <param name="serialNumber">The value to set for the SerialNumber property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public VirtualMFADevice WithSerialNumber(string serialNumber)
+        {
+            this._serialNumber = serialNumber;
+            return this;
+        }
+
+        // Check to see if SerialNumber property is set
+        internal bool IsSetSerialNumber()
+        {
+            return this._serialNumber != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property User.
+        /// </summary>
+        public User User
+        {
+            get { return this._user; }
+            set { this._user = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the User property
+        /// </summary>
+        /// <param name="user">The value to set for the User property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public VirtualMFADevice WithUser(User user)
+        {
+            this._user = user;
+            return this;
+        }
+
+        // Check to see if User property is set
+        internal bool IsSetUser()
+        {
+            return this._user != null;
+        }
+
     }
 }

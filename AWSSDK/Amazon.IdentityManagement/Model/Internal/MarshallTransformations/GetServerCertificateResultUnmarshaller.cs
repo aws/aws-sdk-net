@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,63 +12,67 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   GetServerCertificateResult Unmarshaller
-     /// </summary>
-    internal class GetServerCertificateResultUnmarshaller : IUnmarshaller<GetServerCertificateResult, XmlUnmarshallerContext>, IUnmarshaller<GetServerCertificateResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for GetServerCertificate Object
+    /// </summary>  
+    public class GetServerCertificateResultUnmarshaller : IUnmarshaller<GetServerCertificateResult, XmlUnmarshallerContext>
     {
         public GetServerCertificateResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            GetServerCertificateResult getServerCertificateResult = new GetServerCertificateResult();
+            GetServerCertificateResult result = new GetServerCertificateResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
+
                     if (context.TestExpression("ServerCertificate", targetDepth))
                     {
-                        getServerCertificateResult.ServerCertificate = ServerCertificateUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = ServerCertificateUnmarshaller.GetInstance();
+                        result.ServerCertificate = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return getServerCertificateResult;
+                    return result;
                 }
             }
-                        
 
-
-            return getServerCertificateResult;
+            return result;
         }
 
-        public GetServerCertificateResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static GetServerCertificateResultUnmarshaller instance;
-
-        public static GetServerCertificateResultUnmarshaller GetInstance() 
+        public static GetServerCertificateResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new GetServerCertificateResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new GetServerCertificateResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

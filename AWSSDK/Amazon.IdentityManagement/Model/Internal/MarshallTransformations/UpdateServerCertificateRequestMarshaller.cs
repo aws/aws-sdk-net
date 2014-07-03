@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Update Server Certificate Request Marshaller
+    /// UpdateServerCertificate Request Marshaller
     /// </summary>       
     public class UpdateServerCertificateRequestMarshaller : IMarshaller<IRequest, UpdateServerCertificateRequest>
     {
-        public IRequest Marshall(UpdateServerCertificateRequest updateServerCertificateRequest)
+        public IRequest Marshall(UpdateServerCertificateRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(updateServerCertificateRequest, "AmazonIdentityManagementService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.IdentityManagement");
             request.Parameters.Add("Action", "UpdateServerCertificate");
             request.Parameters.Add("Version", "2010-05-08");
-            if (updateServerCertificateRequest != null && updateServerCertificateRequest.IsSetServerCertificateName())
-            {
-                request.Parameters.Add("ServerCertificateName", StringUtils.FromString(updateServerCertificateRequest.ServerCertificateName));
-            }
-            if (updateServerCertificateRequest != null && updateServerCertificateRequest.IsSetNewPath())
-            {
-                request.Parameters.Add("NewPath", StringUtils.FromString(updateServerCertificateRequest.NewPath));
-            }
-            if (updateServerCertificateRequest != null && updateServerCertificateRequest.IsSetNewServerCertificateName())
-            {
-                request.Parameters.Add("NewServerCertificateName", StringUtils.FromString(updateServerCertificateRequest.NewServerCertificateName));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetNewPath())
+                {
+                    request.Parameters.Add("NewPath", StringUtils.FromString(publicRequest.NewPath));
+                }
+                if(publicRequest.IsSetNewServerCertificateName())
+                {
+                    request.Parameters.Add("NewServerCertificateName", StringUtils.FromString(publicRequest.NewServerCertificateName));
+                }
+                if(publicRequest.IsSetServerCertificateName())
+                {
+                    request.Parameters.Add("ServerCertificateName", StringUtils.FromString(publicRequest.ServerCertificateName));
+                }
+            }
             return request;
         }
     }

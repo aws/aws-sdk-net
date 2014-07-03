@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Returns information about the  CreateUserResult response and response metadata.
+    /// Returns information about the CreateUserResult response and response metadata.
     /// </summary>
     public class CreateUserResponse : AmazonWebServiceResponse
     {
-        private CreateUserResult createUserResult;
+        private CreateUserResult _createUserResult;
 
         /// <summary>
         /// Gets and sets the CreateUserResult property.
-        /// Contains the result of a successful invocation of the CreateUser action.
+        /// Represents the output of a CreateUser operation.
         /// </summary>
         public CreateUserResult CreateUserResult
         {
-            get 
+            get
             {
-                if(this.createUserResult == null)
+                if(this._createUserResult == null)
                 {
-                    this.createUserResult = new CreateUserResult();
+                    this._createUserResult = new CreateUserResult();
                 }
-
-                return this.createUserResult; 
+                return this._createUserResult;
             }
-            set { this.createUserResult = value; }
+            set { this._createUserResult = value; }
         }
     }
 }
-    

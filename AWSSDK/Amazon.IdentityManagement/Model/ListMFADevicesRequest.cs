@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,82 +25,37 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMFADevices operation.
-    /// <para>Lists the MFA devices. If the request includes the user name, then this action lists all the MFA devices associated with the specified
-    /// user name. If you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID signing the
-    /// request.</para> <para>You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para>
+    /// Lists the MFA devices. If the request includes the user name, then this action lists
+    /// all the            MFA devices associated with the specified user name. If you do not specify
+    /// a user name, IAM            determines the user name implicitly based on the AWS access key
+    /// ID signing the request.
+    /// 
+    ///         
+    /// <para>
+    /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>            parameters.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.ListMFADevices"/>
-    public class ListMFADevicesRequest : AmazonWebServiceRequest
+    public partial class ListMFADevicesRequest : AmazonWebServiceRequest
     {
-        private string userName;
-        private string marker;
-        private int? maxItems;
+        private string _marker;
+        private int? _maxItems;
+        private string _userName;
+
 
         /// <summary>
-        /// Name of the user whose MFA devices you want to list.
-        ///  
+        /// Gets and sets the property Marker. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 128</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=,.@-]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string UserName
-        {
-            get { return this.userName; }
-            set { this.userName = value; }
-        }
-
-        /// <summary>
-        /// Sets the UserName property
-        /// </summary>
-        /// <param name="userName">The value to set for the UserName property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ListMFADevicesRequest WithUserName(string userName)
-        {
-            this.userName = userName;
-            return this;
-        }
-            
-
-        // Check to see if UserName property is set
-        internal bool IsSetUserName()
-        {
-            return this.userName != null;
-        }
-
-        /// <summary>
-        /// Use this only when paginating results, and only in a subsequent request after you've received a response where the results are truncated.
-        /// Set it to the value of the <c>Marker</c> element in the response you just received.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 320</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\u00FF]*</description>
-        ///     </item>
-        /// </list>
+        /// Use this only when paginating results, and only in a subsequent request after you've
+        /// received            a response where the results are truncated. Set it to the value of the
+        /// <code>Marker</code>            element in the response you just received.
         /// </para>
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
+
 
         /// <summary>
         /// Sets the Marker property
@@ -110,37 +65,32 @@ namespace Amazon.IdentityManagement.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListMFADevicesRequest WithMarker(string marker)
         {
-            this.marker = marker;
+            this._marker = marker;
             return this;
         }
-            
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
         }
 
+
         /// <summary>
-        /// Use this only when paginating results to indicate the maximum number of MFA devices you want in the response. If there are additional MFA
-        /// devices beyond the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>. This parameter is optional. If you do not
-        /// include it, it defaults to 100.
-        ///  
+        /// Gets and sets the property MaxItems. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>1 - 1000</description>
-        ///     </item>
-        /// </list>
+        /// Use this only when paginating results to indicate the maximum number of MFA devices
+        /// you want            in the response. If there are additional MFA devices beyond the maximum
+        /// you specify, the                <code>IsTruncated</code> response element is <code>true</code>.
+        /// This parameter is optional.            If you do not include it, it defaults to 100.
         /// </para>
         /// </summary>
         public int MaxItems
         {
-            get { return this.maxItems ?? default(int); }
-            set { this.maxItems = value; }
+            get { return this._maxItems.GetValueOrDefault(); }
+            set { this._maxItems = value; }
         }
+
 
         /// <summary>
         /// Sets the MaxItems property
@@ -150,16 +100,47 @@ namespace Amazon.IdentityManagement.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListMFADevicesRequest WithMaxItems(int maxItems)
         {
-            this.maxItems = maxItems;
+            this._maxItems = maxItems;
             return this;
         }
-            
 
         // Check to see if MaxItems property is set
         internal bool IsSetMaxItems()
         {
-            return this.maxItems.HasValue;
+            return this._maxItems.HasValue; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property UserName. 
+        /// <para>
+        /// Name of the user whose MFA devices you want to list.
+        /// </para>
+        /// </summary>
+        public string UserName
+        {
+            get { return this._userName; }
+            set { this._userName = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the UserName property
+        /// </summary>
+        /// <param name="userName">The value to set for the UserName property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ListMFADevicesRequest WithUserName(string userName)
+        {
+            this._userName = userName;
+            return this;
+        }
+
+        // Check to see if UserName property is set
+        internal bool IsSetUserName()
+        {
+            return this._userName != null;
+        }
+
     }
 }
-    

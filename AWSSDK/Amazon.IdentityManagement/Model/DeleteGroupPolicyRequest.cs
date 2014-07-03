@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,36 +25,26 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteGroupPolicy operation.
-    /// <para>Deletes the specified policy that is associated with the specified group.</para>
+    /// Deletes the specified policy that is associated with the specified group.
     /// </summary>
-    /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.DeleteGroupPolicy"/>
-    public class DeleteGroupPolicyRequest : AmazonWebServiceRequest
+    public partial class DeleteGroupPolicyRequest : AmazonWebServiceRequest
     {
-        private string groupName;
-        private string policyName;
+        private string _groupName;
+        private string _policyName;
+
 
         /// <summary>
-        /// Name of the group the policy is associated with.
-        ///  
+        /// Gets and sets the property GroupName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 128</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=,.@-]*</description>
-        ///     </item>
-        /// </list>
+        /// Name of the group the policy is associated with.
         /// </para>
         /// </summary>
         public string GroupName
         {
-            get { return this.groupName; }
-            set { this.groupName = value; }
+            get { return this._groupName; }
+            set { this._groupName = value; }
         }
+
 
         /// <summary>
         /// Sets the GroupName property
@@ -64,39 +54,29 @@ namespace Amazon.IdentityManagement.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteGroupPolicyRequest WithGroupName(string groupName)
         {
-            this.groupName = groupName;
+            this._groupName = groupName;
             return this;
         }
-            
 
         // Check to see if GroupName property is set
         internal bool IsSetGroupName()
         {
-            return this.groupName != null;       
+            return this._groupName != null;
         }
 
+
         /// <summary>
-        /// Name of the policy document to delete.
-        ///  
+        /// Gets and sets the property PolicyName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 128</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=,.@-]*</description>
-        ///     </item>
-        /// </list>
+        /// Name of the policy document to delete.
         /// </para>
         /// </summary>
         public string PolicyName
         {
-            get { return this.policyName; }
-            set { this.policyName = value; }
+            get { return this._policyName; }
+            set { this._policyName = value; }
         }
+
 
         /// <summary>
         /// Sets the PolicyName property
@@ -106,16 +86,15 @@ namespace Amazon.IdentityManagement.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteGroupPolicyRequest WithPolicyName(string policyName)
         {
-            this.policyName = policyName;
+            this._policyName = policyName;
             return this;
         }
-            
 
         // Check to see if PolicyName property is set
         internal bool IsSetPolicyName()
         {
-            return this.policyName != null;       
+            return this._policyName != null;
         }
+
     }
 }
-    

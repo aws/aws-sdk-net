@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Returns information about the  ListGroupsResult response and response metadata.
+    /// Returns information about the ListGroupsResult response and response metadata.
     /// </summary>
     public class ListGroupsResponse : AmazonWebServiceResponse
     {
-        private ListGroupsResult listGroupsResult;
+        private ListGroupsResult _listGroupsResult;
 
         /// <summary>
         /// Gets and sets the ListGroupsResult property.
-        /// Contains the result of a successful invocation of the ListGroups action.
+        /// Represents the output of a ListGroups operation.
         /// </summary>
         public ListGroupsResult ListGroupsResult
         {
-            get 
+            get
             {
-                if(this.listGroupsResult == null)
+                if(this._listGroupsResult == null)
                 {
-                    this.listGroupsResult = new ListGroupsResult();
+                    this._listGroupsResult = new ListGroupsResult();
                 }
-
-                return this.listGroupsResult; 
+                return this._listGroupsResult;
             }
-            set { this.listGroupsResult = value; }
+            set { this._listGroupsResult = value; }
         }
     }
 }
-    

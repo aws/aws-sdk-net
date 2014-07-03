@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,21 +12,29 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   SigningCertificate Unmarshaller
-     /// </summary>
-    internal class SigningCertificateUnmarshaller : IUnmarshaller<SigningCertificate, XmlUnmarshallerContext>, IUnmarshaller<SigningCertificate, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for SigningCertificate Object
+    /// </summary>  
+    public class SigningCertificateUnmarshaller : IUnmarshaller<SigningCertificate, XmlUnmarshallerContext>, IUnmarshaller<SigningCertificate, JsonUnmarshallerContext>
     {
-        public SigningCertificate Unmarshall(XmlUnmarshallerContext context) 
+        public SigningCertificate Unmarshall(XmlUnmarshallerContext context)
         {
-            SigningCertificate signingCertificate = new SigningCertificate();
+            SigningCertificate unmarshalledObject = new SigningCertificate();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,63 +44,62 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("UserName", targetDepth))
-                    {
-                        signingCertificate.UserName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("CertificateId", targetDepth))
-                    {
-                        signingCertificate.CertificateId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
                     if (context.TestExpression("CertificateBody", targetDepth))
                     {
-                        signingCertificate.CertificateBody = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.CertificateBody = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
+                    if (context.TestExpression("CertificateId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.CertificateId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Status", targetDepth))
                     {
-                        signingCertificate.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
-                    } 
+                    }
                     if (context.TestExpression("UploadDate", targetDepth))
                     {
-                        signingCertificate.UploadDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.GetInstance();
+                        unmarshalledObject.UploadDate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("UserName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.UserName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return signingCertificate;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return signingCertificate;
+            return unmarshalledObject;
         }
 
-        public SigningCertificate Unmarshall(JsonUnmarshallerContext context) 
+        public SigningCertificate Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static SigningCertificateUnmarshaller instance;
-
-        public static SigningCertificateUnmarshaller GetInstance() 
+        public static SigningCertificateUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new SigningCertificateUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new SigningCertificateUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

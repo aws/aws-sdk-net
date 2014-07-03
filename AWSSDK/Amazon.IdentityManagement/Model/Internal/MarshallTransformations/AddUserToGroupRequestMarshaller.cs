@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,36 +14,40 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Add User To Group Request Marshaller
+    /// AddUserToGroup Request Marshaller
     /// </summary>       
     public class AddUserToGroupRequestMarshaller : IMarshaller<IRequest, AddUserToGroupRequest>
     {
-        public IRequest Marshall(AddUserToGroupRequest addUserToGroupRequest)
+        public IRequest Marshall(AddUserToGroupRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(addUserToGroupRequest, "AmazonIdentityManagementService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.IdentityManagement");
             request.Parameters.Add("Action", "AddUserToGroup");
             request.Parameters.Add("Version", "2010-05-08");
-            if (addUserToGroupRequest != null && addUserToGroupRequest.IsSetGroupName())
-            {
-                request.Parameters.Add("GroupName", StringUtils.FromString(addUserToGroupRequest.GroupName));
-            }
-            if (addUserToGroupRequest != null && addUserToGroupRequest.IsSetUserName())
-            {
-                request.Parameters.Add("UserName", StringUtils.FromString(addUserToGroupRequest.UserName));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetGroupName())
+                {
+                    request.Parameters.Add("GroupName", StringUtils.FromString(publicRequest.GroupName));
+                }
+                if(publicRequest.IsSetUserName())
+                {
+                    request.Parameters.Add("UserName", StringUtils.FromString(publicRequest.UserName));
+                }
+            }
             return request;
         }
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,65 +18,33 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the GetSAMLProvider action.</para>
+    /// Contains the result of a successful invocation of the <a>GetSAMLProvider</a> action.
     /// </summary>
     public partial class GetSAMLProviderResult
     {
-        
-        private string sAMLMetadataDocument;
-        private DateTime? createDate;
-        private DateTime? validUntil;
+        private DateTime? _createDate;
+        private string _sAMLMetadataDocument;
+        private DateTime? _validUntil;
+
 
         /// <summary>
-        /// The XML metadata document that includes information about an identity provider.
-        ///  
+        /// Gets and sets the property CreateDate. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1000 - 10000000</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string SAMLMetadataDocument
-        {
-            get { return this.sAMLMetadataDocument; }
-            set { this.sAMLMetadataDocument = value; }
-        }
-
-        /// <summary>
-        /// Sets the SAMLMetadataDocument property
-        /// </summary>
-        /// <param name="sAMLMetadataDocument">The value to set for the SAMLMetadataDocument property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public GetSAMLProviderResult WithSAMLMetadataDocument(string sAMLMetadataDocument)
-        {
-            this.sAMLMetadataDocument = sAMLMetadataDocument;
-            return this;
-        }
-            
-
-        // Check to see if SAMLMetadataDocument property is set
-        internal bool IsSetSAMLMetadataDocument()
-        {
-            return this.sAMLMetadataDocument != null;
-        }
-
-        /// <summary>
         /// The date and time when the SAML provider was created.
-        ///  
+        /// </para>
         /// </summary>
         public DateTime CreateDate
         {
-            get { return this.createDate ?? default(DateTime); }
-            set { this.createDate = value; }
+            get { return this._createDate.GetValueOrDefault(); }
+            set { this._createDate = value; }
         }
+
 
         /// <summary>
         /// Sets the CreateDate property
@@ -86,26 +54,61 @@ namespace Amazon.IdentityManagement.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetSAMLProviderResult WithCreateDate(DateTime createDate)
         {
-            this.createDate = createDate;
+            this._createDate = createDate;
             return this;
         }
-            
 
         // Check to see if CreateDate property is set
         internal bool IsSetCreateDate()
         {
-            return this.createDate.HasValue;
+            return this._createDate.HasValue; 
         }
 
+
         /// <summary>
+        /// Gets and sets the property SAMLMetadataDocument. 
+        /// <para>
+        /// The XML metadata document that includes information about an identity provider.
+        /// </para>
+        /// </summary>
+        public string SAMLMetadataDocument
+        {
+            get { return this._sAMLMetadataDocument; }
+            set { this._sAMLMetadataDocument = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the SAMLMetadataDocument property
+        /// </summary>
+        /// <param name="sAMLMetadataDocument">The value to set for the SAMLMetadataDocument property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public GetSAMLProviderResult WithSAMLMetadataDocument(string sAMLMetadataDocument)
+        {
+            this._sAMLMetadataDocument = sAMLMetadataDocument;
+            return this;
+        }
+
+        // Check to see if SAMLMetadataDocument property is set
+        internal bool IsSetSAMLMetadataDocument()
+        {
+            return this._sAMLMetadataDocument != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ValidUntil. 
+        /// <para>
         /// The expiration date and time for the SAML provider.
-        ///  
+        /// </para>
         /// </summary>
         public DateTime ValidUntil
         {
-            get { return this.validUntil ?? default(DateTime); }
-            set { this.validUntil = value; }
+            get { return this._validUntil.GetValueOrDefault(); }
+            set { this._validUntil = value; }
         }
+
 
         /// <summary>
         /// Sets the ValidUntil property
@@ -115,15 +118,15 @@ namespace Amazon.IdentityManagement.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetSAMLProviderResult WithValidUntil(DateTime validUntil)
         {
-            this.validUntil = validUntil;
+            this._validUntil = validUntil;
             return this;
         }
-            
 
         // Check to see if ValidUntil property is set
         internal bool IsSetValidUntil()
         {
-            return this.validUntil.HasValue;
+            return this._validUntil.HasValue; 
         }
+
     }
 }

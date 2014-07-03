@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,35 +25,25 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetServerCertificate operation.
-    /// <para>Retrieves information about the specified server certificate.</para>
+    /// Retrieves information about the specified server certificate.
     /// </summary>
-    /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.GetServerCertificate"/>
-    public class GetServerCertificateRequest : AmazonWebServiceRequest
+    public partial class GetServerCertificateRequest : AmazonWebServiceRequest
     {
-        private string serverCertificateName;
+        private string _serverCertificateName;
+
 
         /// <summary>
-        /// The name of the server certificate you want to retrieve information about.
-        ///  
+        /// Gets and sets the property ServerCertificateName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 128</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=,.@-]*</description>
-        ///     </item>
-        /// </list>
+        /// The name of the server certificate you want to retrieve information about.
         /// </para>
         /// </summary>
         public string ServerCertificateName
         {
-            get { return this.serverCertificateName; }
-            set { this.serverCertificateName = value; }
+            get { return this._serverCertificateName; }
+            set { this._serverCertificateName = value; }
         }
+
 
         /// <summary>
         /// Sets the ServerCertificateName property
@@ -63,16 +53,15 @@ namespace Amazon.IdentityManagement.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetServerCertificateRequest WithServerCertificateName(string serverCertificateName)
         {
-            this.serverCertificateName = serverCertificateName;
+            this._serverCertificateName = serverCertificateName;
             return this;
         }
-            
 
         // Check to see if ServerCertificateName property is set
         internal bool IsSetServerCertificateName()
         {
-            return this.serverCertificateName != null;       
+            return this._serverCertificateName != null;
         }
+
     }
 }
-    

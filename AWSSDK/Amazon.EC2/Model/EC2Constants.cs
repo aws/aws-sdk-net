@@ -77,6 +77,11 @@ namespace Amazon.EC2.Model
         // Micro instances
         public const string T1micro = "t1.micro";
 
+        // Burstable Performance instances
+        public const string T2Medium = "t2.medium";
+        public const string T2Micro = "t2.micro";
+        public const string T2Small = "t2.small";    
+        
         // High-memory instances
         public const string M2Xlarge = "m2.xlarge";
         public const string M22xlarge = "m2.2xlarge";

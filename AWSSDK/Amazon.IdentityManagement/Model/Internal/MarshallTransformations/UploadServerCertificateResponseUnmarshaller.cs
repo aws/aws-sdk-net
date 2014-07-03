@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,28 +13,34 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for UploadServerCertificate operation
-    /// </summary>
-    internal class UploadServerCertificateResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for UploadServerCertificate operation
+    /// </summary>  
+    public class UploadServerCertificateResponseUnmarshaller : XmlResponseUnmarshaller
     {
-
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             UploadServerCertificateResponse response = new UploadServerCertificateResponse();
-            
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
             while (context.Read())
             {
-                if (context.IsStartElement)                
+                if (context.IsStartElement)
                 {
                     if(context.TestExpression("UploadServerCertificateResult", 2))
                     {
@@ -47,50 +53,42 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     }
                 }
             }
-                 
-                        
+
             return response;
         }
 
-        
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
-            if (errorResponse.Code != null && errorResponse.Code.Equals("KeyPairMismatch"))
-            {
-                return new KeyPairMismatchException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("MalformedCertificate"))
-            {
-                return new MalformedCertificateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceeded"))
-            {
-                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("EntityAlreadyExists"))
             {
                 return new EntityAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("KeyPairMismatch"))
+            {
+                return new KeyPairMismatchException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceeded"))
+            {
+                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("MalformedCertificate"))
+            {
+                return new MalformedCertificateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonIdentityManagementServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static UploadServerCertificateResponseUnmarshaller instance;
 
+        private static UploadServerCertificateResponseUnmarshaller instance;
         public static UploadServerCertificateResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
+            if (instance == null)
             {
-               instance = new UploadServerCertificateResponseUnmarshaller();
+                instance = new UploadServerCertificateResponseUnmarshaller();
             }
             return instance;
         }
-    
+
     }
 }
-    

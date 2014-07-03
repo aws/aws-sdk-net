@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,25 +18,31 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the UploadSigningCertificate action.</para>
+    /// Contains the result of a successful invocation of the <a>UploadSigningCertificate</a>            action.
     /// </summary>
     public partial class UploadSigningCertificateResult
     {
-        
-        private SigningCertificate certificate;
+        private SigningCertificate _certificate;
+
 
         /// <summary>
+        /// Gets and sets the property Certificate. 
+        /// <para>
         /// Information about the certificate.
-        ///  
+        /// </para>
         /// </summary>
         public SigningCertificate Certificate
         {
-            get { return this.certificate; }
-            set { this.certificate = value; }
+            get { return this._certificate; }
+            set { this._certificate = value; }
         }
+
 
         /// <summary>
         /// Sets the Certificate property
@@ -46,15 +52,15 @@ namespace Amazon.IdentityManagement.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadSigningCertificateResult WithCertificate(SigningCertificate certificate)
         {
-            this.certificate = certificate;
+            this._certificate = certificate;
             return this;
         }
-            
 
         // Check to see if Certificate property is set
         internal bool IsSetCertificate()
         {
-            return this.certificate != null;
+            return this._certificate != null;
         }
+
     }
 }

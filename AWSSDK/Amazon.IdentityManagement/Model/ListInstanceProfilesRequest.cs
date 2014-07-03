@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,84 +25,37 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListInstanceProfiles operation.
-    /// <para>Lists the instance profiles that have the specified path prefix. If there are none, the action returns an empty list. For more
-    /// information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html" >About
-    /// Instance Profiles</a> .</para> <para>You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para>
+    /// Lists the instance profiles that have the specified path prefix. If there are none,
+    /// the            action returns an empty list. For more information about instance profiles,
+    /// go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
+    /// Instance                Profiles</a>.
+    /// 
+    ///         
+    /// <para>
+    /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>            parameters.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.ListInstanceProfiles"/>
-    public class ListInstanceProfilesRequest : AmazonWebServiceRequest
+    public partial class ListInstanceProfilesRequest : AmazonWebServiceRequest
     {
-        private string pathPrefix;
-        private string marker;
-        private int? maxItems;
+        private string _marker;
+        private int? _maxItems;
+        private string _pathPrefix;
+
 
         /// <summary>
-        /// The path prefix for filtering the results. For example: <c>/application_abc/component_xyz/</c>, which would get all instance profiles whose
-        /// path starts with <c>/application_abc/component_xyz/</c>. This parameter is optional. If it is not included, it defaults to a slash (/),
-        /// listing all instance profiles.
-        ///  
+        /// Gets and sets the property Marker. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 512</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>\u002F[\u0021-\u007F]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string PathPrefix
-        {
-            get { return this.pathPrefix; }
-            set { this.pathPrefix = value; }
-        }
-
-        /// <summary>
-        /// Sets the PathPrefix property
-        /// </summary>
-        /// <param name="pathPrefix">The value to set for the PathPrefix property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ListInstanceProfilesRequest WithPathPrefix(string pathPrefix)
-        {
-            this.pathPrefix = pathPrefix;
-            return this;
-        }
-            
-
-        // Check to see if PathPrefix property is set
-        internal bool IsSetPathPrefix()
-        {
-            return this.pathPrefix != null;
-        }
-
-        /// <summary>
-        /// Use this parameter only when paginating results, and only in a subsequent request after you've received a response where the results are
-        /// truncated. Set it to the value of the <c>Marker</c> element in the response you just received.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 320</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\u00FF]*</description>
-        ///     </item>
-        /// </list>
+        /// Use this parameter only when paginating results, and only in a subsequent request
+        /// after            you've received a response where the results are truncated. Set it to the
+        /// value of the                <code>Marker</code> element in the response you just received.
         /// </para>
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
+
 
         /// <summary>
         /// Sets the Marker property
@@ -112,37 +65,32 @@ namespace Amazon.IdentityManagement.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListInstanceProfilesRequest WithMarker(string marker)
         {
-            this.marker = marker;
+            this._marker = marker;
             return this;
         }
-            
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
         }
 
+
         /// <summary>
-        /// Use this parameter only when paginating results to indicate the maximum number of user names you want in the response. If there are
-        /// additional user names beyond the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>. This parameter is optional. If
-        /// you do not include it, it defaults to 100.
-        ///  
+        /// Gets and sets the property MaxItems. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>1 - 1000</description>
-        ///     </item>
-        /// </list>
+        /// Use this parameter only when paginating results to indicate the maximum number of
+        /// user names            you want in the response. If there are additional user names beyond the
+        /// maximum you specify,            the <code>IsTruncated</code> response element is <code>true</code>.
+        /// This parameter is            optional. If you do not include it, it defaults to 100.
         /// </para>
         /// </summary>
         public int MaxItems
         {
-            get { return this.maxItems ?? default(int); }
-            set { this.maxItems = value; }
+            get { return this._maxItems.GetValueOrDefault(); }
+            set { this._maxItems = value; }
         }
+
 
         /// <summary>
         /// Sets the MaxItems property
@@ -152,16 +100,53 @@ namespace Amazon.IdentityManagement.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListInstanceProfilesRequest WithMaxItems(int maxItems)
         {
-            this.maxItems = maxItems;
+            this._maxItems = maxItems;
             return this;
         }
-            
 
         // Check to see if MaxItems property is set
         internal bool IsSetMaxItems()
         {
-            return this.maxItems.HasValue;
+            return this._maxItems.HasValue; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property PathPrefix. 
+        /// <para>
+        /// The path prefix for filtering the results. For example:                <code>/application_abc/component_xyz/</code>,
+        /// which would get all instance profiles whose            path starts with <code>/application_abc/component_xyz/</code>.
+        /// </para>
+        ///         
+        /// <para>
+        /// This parameter is optional. If it is not included, it defaults to a slash (/), listing
+        /// all            instance profiles.
+        /// </para>
+        /// </summary>
+        public string PathPrefix
+        {
+            get { return this._pathPrefix; }
+            set { this._pathPrefix = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the PathPrefix property
+        /// </summary>
+        /// <param name="pathPrefix">The value to set for the PathPrefix property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ListInstanceProfilesRequest WithPathPrefix(string pathPrefix)
+        {
+            this._pathPrefix = pathPrefix;
+            return this;
+        }
+
+        // Check to see if PathPrefix property is set
+        internal bool IsSetPathPrefix()
+        {
+            return this._pathPrefix != null;
+        }
+
     }
 }
-    

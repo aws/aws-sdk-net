@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,36 +25,26 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the AddUserToGroup operation.
-    /// <para>Adds the specified user to the specified group.</para>
+    /// Adds the specified user to the specified group.
     /// </summary>
-    /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.AddUserToGroup"/>
-    public class AddUserToGroupRequest : AmazonWebServiceRequest
+    public partial class AddUserToGroupRequest : AmazonWebServiceRequest
     {
-        private string groupName;
-        private string userName;
+        private string _groupName;
+        private string _userName;
+
 
         /// <summary>
-        /// Name of the group to update.
-        ///  
+        /// Gets and sets the property GroupName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 128</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=,.@-]*</description>
-        ///     </item>
-        /// </list>
+        /// Name of the group to update.
         /// </para>
         /// </summary>
         public string GroupName
         {
-            get { return this.groupName; }
-            set { this.groupName = value; }
+            get { return this._groupName; }
+            set { this._groupName = value; }
         }
+
 
         /// <summary>
         /// Sets the GroupName property
@@ -64,39 +54,29 @@ namespace Amazon.IdentityManagement.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddUserToGroupRequest WithGroupName(string groupName)
         {
-            this.groupName = groupName;
+            this._groupName = groupName;
             return this;
         }
-            
 
         // Check to see if GroupName property is set
         internal bool IsSetGroupName()
         {
-            return this.groupName != null;       
+            return this._groupName != null;
         }
 
+
         /// <summary>
-        /// Name of the user to add.
-        ///  
+        /// Gets and sets the property UserName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 128</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=,.@-]*</description>
-        ///     </item>
-        /// </list>
+        /// Name of the user to add.
         /// </para>
         /// </summary>
         public string UserName
         {
-            get { return this.userName; }
-            set { this.userName = value; }
+            get { return this._userName; }
+            set { this._userName = value; }
         }
+
 
         /// <summary>
         /// Sets the UserName property
@@ -106,16 +86,15 @@ namespace Amazon.IdentityManagement.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddUserToGroupRequest WithUserName(string userName)
         {
-            this.userName = userName;
+            this._userName = userName;
             return this;
         }
-            
 
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
-            return this.userName != null;       
+            return this._userName != null;
         }
+
     }
 }
-    

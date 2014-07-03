@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Returns information about the  GetGroupPolicyResult response and response metadata.
+    /// Returns information about the GetGroupPolicyResult response and response metadata.
     /// </summary>
     public class GetGroupPolicyResponse : AmazonWebServiceResponse
     {
-        private GetGroupPolicyResult getGroupPolicyResult;
+        private GetGroupPolicyResult _getGroupPolicyResult;
 
         /// <summary>
         /// Gets and sets the GetGroupPolicyResult property.
-        /// Contains the result of a successful invocation of the GetGroupPolicy action.
+        /// Represents the output of a GetGroupPolicy operation.
         /// </summary>
         public GetGroupPolicyResult GetGroupPolicyResult
         {
-            get 
+            get
             {
-                if(this.getGroupPolicyResult == null)
+                if(this._getGroupPolicyResult == null)
                 {
-                    this.getGroupPolicyResult = new GetGroupPolicyResult();
+                    this._getGroupPolicyResult = new GetGroupPolicyResult();
                 }
-
-                return this.getGroupPolicyResult; 
+                return this._getGroupPolicyResult;
             }
-            set { this.getGroupPolicyResult = value; }
+            set { this._getGroupPolicyResult = value; }
         }
     }
 }
-    

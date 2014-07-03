@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,36 +14,40 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Change Password Request Marshaller
+    /// ChangePassword Request Marshaller
     /// </summary>       
     public class ChangePasswordRequestMarshaller : IMarshaller<IRequest, ChangePasswordRequest>
     {
-        public IRequest Marshall(ChangePasswordRequest changePasswordRequest)
+        public IRequest Marshall(ChangePasswordRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(changePasswordRequest, "AmazonIdentityManagementService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.IdentityManagement");
             request.Parameters.Add("Action", "ChangePassword");
             request.Parameters.Add("Version", "2010-05-08");
-            if (changePasswordRequest != null && changePasswordRequest.IsSetOldPassword())
-            {
-                request.Parameters.Add("OldPassword", StringUtils.FromString(changePasswordRequest.OldPassword));
-            }
-            if (changePasswordRequest != null && changePasswordRequest.IsSetNewPassword())
-            {
-                request.Parameters.Add("NewPassword", StringUtils.FromString(changePasswordRequest.NewPassword));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetNewPassword())
+                {
+                    request.Parameters.Add("NewPassword", StringUtils.FromString(publicRequest.NewPassword));
+                }
+                if(publicRequest.IsSetOldPassword())
+                {
+                    request.Parameters.Add("OldPassword", StringUtils.FromString(publicRequest.OldPassword));
+                }
+            }
             return request;
         }
     }

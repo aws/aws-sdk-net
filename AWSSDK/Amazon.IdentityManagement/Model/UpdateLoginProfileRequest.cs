@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,78 +25,26 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateLoginProfile operation.
-    /// <para>Changes the password for the specified user.</para>
+    /// Changes the password for the specified user.
     /// </summary>
-    /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.UpdateLoginProfile"/>
-    public class UpdateLoginProfileRequest : AmazonWebServiceRequest
+    public partial class UpdateLoginProfileRequest : AmazonWebServiceRequest
     {
-        private string userName;
-        private string password;
+        private string _password;
+        private string _userName;
+
 
         /// <summary>
-        /// Name of the user whose password you want to update.
-        ///  
+        /// Gets and sets the property Password. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 64</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=,.@-]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string UserName
-        {
-            get { return this.userName; }
-            set { this.userName = value; }
-        }
-
-        /// <summary>
-        /// Sets the UserName property
-        /// </summary>
-        /// <param name="userName">The value to set for the UserName property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public UpdateLoginProfileRequest WithUserName(string userName)
-        {
-            this.userName = userName;
-            return this;
-        }
-            
-
-        // Check to see if UserName property is set
-        internal bool IsSetUserName()
-        {
-            return this.userName != null;       
-        }
-
-        /// <summary>
         /// The new password for the user name.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 128</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0009\u000A\u000D\u0020-\u00FF]+</description>
-        ///     </item>
-        /// </list>
         /// </para>
         /// </summary>
         public string Password
         {
-            get { return this.password; }
-            set { this.password = value; }
+            get { return this._password; }
+            set { this._password = value; }
         }
+
 
         /// <summary>
         /// Sets the Password property
@@ -106,16 +54,47 @@ namespace Amazon.IdentityManagement.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateLoginProfileRequest WithPassword(string password)
         {
-            this.password = password;
+            this._password = password;
             return this;
         }
-            
 
         // Check to see if Password property is set
         internal bool IsSetPassword()
         {
-            return this.password != null;       
+            return this._password != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property UserName. 
+        /// <para>
+        /// Name of the user whose password you want to update.
+        /// </para>
+        /// </summary>
+        public string UserName
+        {
+            get { return this._userName; }
+            set { this._userName = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the UserName property
+        /// </summary>
+        /// <param name="userName">The value to set for the UserName property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public UpdateLoginProfileRequest WithUserName(string userName)
+        {
+            this._userName = userName;
+            return this;
+        }
+
+        // Check to see if UserName property is set
+        internal bool IsSetUserName()
+        {
+            return this._userName != null;
+        }
+
     }
 }
-    

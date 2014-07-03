@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,21 +12,29 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   MFADevice Unmarshaller
-     /// </summary>
-    internal class MFADeviceUnmarshaller : IUnmarshaller<MFADevice, XmlUnmarshallerContext>, IUnmarshaller<MFADevice, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for MFADevice Object
+    /// </summary>  
+    public class MFADeviceUnmarshaller : IUnmarshaller<MFADevice, XmlUnmarshallerContext>, IUnmarshaller<MFADevice, JsonUnmarshallerContext>
     {
-        public MFADevice Unmarshall(XmlUnmarshallerContext context) 
+        public MFADevice Unmarshall(XmlUnmarshallerContext context)
         {
-            MFADevice mFADevice = new MFADevice();
+            MFADevice unmarshalledObject = new MFADevice();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -36,51 +44,50 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("UserName", targetDepth))
-                    {
-                        mFADevice.UserName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("SerialNumber", targetDepth))
-                    {
-                        mFADevice.SerialNumber = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
+                {
                     if (context.TestExpression("EnableDate", targetDepth))
                     {
-                        mFADevice.EnableDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.GetInstance();
+                        unmarshalledObject.EnableDate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SerialNumber", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.SerialNumber = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("UserName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.UserName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return mFADevice;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return mFADevice;
+            return unmarshalledObject;
         }
 
-        public MFADevice Unmarshall(JsonUnmarshallerContext context) 
+        public MFADevice Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static MFADeviceUnmarshaller instance;
-
-        public static MFADeviceUnmarshaller GetInstance() 
+        public static MFADeviceUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new MFADeviceUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new MFADeviceUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

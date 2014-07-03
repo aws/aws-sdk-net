@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Returns information about the  ListInstanceProfilesForRoleResult response and response metadata.
+    /// Returns information about the ListInstanceProfilesForRoleResult response and response metadata.
     /// </summary>
     public class ListInstanceProfilesForRoleResponse : AmazonWebServiceResponse
     {
-        private ListInstanceProfilesForRoleResult listInstanceProfilesForRoleResult;
+        private ListInstanceProfilesForRoleResult _listInstanceProfilesForRoleResult;
 
         /// <summary>
         /// Gets and sets the ListInstanceProfilesForRoleResult property.
-        /// Contains the result of a successful invocation of the ListInstanceProfilesForRole action.
+        /// Represents the output of a ListInstanceProfilesForRole operation.
         /// </summary>
         public ListInstanceProfilesForRoleResult ListInstanceProfilesForRoleResult
         {
             get
             {
-                if(this.listInstanceProfilesForRoleResult == null)
+                if(this._listInstanceProfilesForRoleResult == null)
                 {
-                    this.listInstanceProfilesForRoleResult = new ListInstanceProfilesForRoleResult();
+                    this._listInstanceProfilesForRoleResult = new ListInstanceProfilesForRoleResult();
                 }
-
-                return this.listInstanceProfilesForRoleResult;
+                return this._listInstanceProfilesForRoleResult;
             }
-            set { this.listInstanceProfilesForRoleResult = value; }
+            set { this._listInstanceProfilesForRoleResult = value; }
         }
     }
 }
-    

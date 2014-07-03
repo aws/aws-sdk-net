@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Returns information about the  ListSigningCertificatesResult response and response metadata.
+    /// Returns information about the ListSigningCertificatesResult response and response metadata.
     /// </summary>
     public class ListSigningCertificatesResponse : AmazonWebServiceResponse
     {
-        private ListSigningCertificatesResult listSigningCertificatesResult;
+        private ListSigningCertificatesResult _listSigningCertificatesResult;
 
         /// <summary>
         /// Gets and sets the ListSigningCertificatesResult property.
-        /// Contains the result of a successful invocation of the ListSigningCertificates action.
+        /// Represents the output of a ListSigningCertificates operation.
         /// </summary>
         public ListSigningCertificatesResult ListSigningCertificatesResult
         {
-            get 
+            get
             {
-                if(this.listSigningCertificatesResult == null)
+                if(this._listSigningCertificatesResult == null)
                 {
-                    this.listSigningCertificatesResult = new ListSigningCertificatesResult();
+                    this._listSigningCertificatesResult = new ListSigningCertificatesResult();
                 }
-
-                return this.listSigningCertificatesResult; 
+                return this._listSigningCertificatesResult;
             }
-            set { this.listSigningCertificatesResult = value; }
+            set { this._listSigningCertificatesResult = value; }
         }
     }
 }
-    

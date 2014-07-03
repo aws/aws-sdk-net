@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Returns information about the  GetAccountPasswordPolicyResult response and response metadata.
+    /// Returns information about the GetAccountPasswordPolicyResult response and response metadata.
     /// </summary>
     public class GetAccountPasswordPolicyResponse : AmazonWebServiceResponse
     {
-        private GetAccountPasswordPolicyResult getAccountPasswordPolicyResult;
+        private GetAccountPasswordPolicyResult _getAccountPasswordPolicyResult;
 
         /// <summary>
         /// Gets and sets the GetAccountPasswordPolicyResult property.
-        /// Contains the result of a successful invocation of the GetAccountPasswordPolicy action.
+        /// Represents the output of a GetAccountPasswordPolicy operation.
         /// </summary>
         public GetAccountPasswordPolicyResult GetAccountPasswordPolicyResult
         {
             get
             {
-                if(this.getAccountPasswordPolicyResult == null)
+                if(this._getAccountPasswordPolicyResult == null)
                 {
-                    this.getAccountPasswordPolicyResult = new GetAccountPasswordPolicyResult();
+                    this._getAccountPasswordPolicyResult = new GetAccountPasswordPolicyResult();
                 }
-
-                return this.getAccountPasswordPolicyResult;
+                return this._getAccountPasswordPolicyResult;
             }
-            set { this.getAccountPasswordPolicyResult = value; }
+            set { this._getAccountPasswordPolicyResult = value; }
         }
     }
 }
-    

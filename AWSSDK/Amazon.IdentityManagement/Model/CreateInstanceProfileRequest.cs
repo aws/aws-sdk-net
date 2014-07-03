@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,40 +25,34 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateInstanceProfile operation.
-    /// <para>Creates a new instance profile. For information about instance profiles, go to <a
-    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html" >About Instance Profiles</a> .</para> <para>For
-    /// information about the number of instance profiles you can create, see <a
-    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html" >Limitations on IAM Entities</a> in <i>Using
-    /// AWS Identity and Access Management</i> .</para>
+    /// Creates a new instance profile. For information about instance profiles, go to <a
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
+    /// Instance                Profiles</a>.
+    /// 
+    ///         
+    /// <para>
+    /// For information about the number of instance profiles you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"
+    /// target="_blank">Limitations on IAM Entities</a> in <i>Using AWS Identity and Access                Management</i>.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.CreateInstanceProfile"/>
-    public class CreateInstanceProfileRequest : AmazonWebServiceRequest
+    public partial class CreateInstanceProfileRequest : AmazonWebServiceRequest
     {
-        private string instanceProfileName;
-        private string path;
+        private string _instanceProfileName;
+        private string _path;
+
 
         /// <summary>
-        /// Name of the instance profile to create.
-        ///  
+        /// Gets and sets the property InstanceProfileName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 128</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=,.@-]*</description>
-        ///     </item>
-        /// </list>
+        /// Name of the instance profile to create.
         /// </para>
         /// </summary>
         public string InstanceProfileName
         {
-            get { return this.instanceProfileName; }
-            set { this.instanceProfileName = value; }
+            get { return this._instanceProfileName; }
+            set { this._instanceProfileName = value; }
         }
+
 
         /// <summary>
         /// Sets the InstanceProfileName property
@@ -68,41 +62,34 @@ namespace Amazon.IdentityManagement.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateInstanceProfileRequest WithInstanceProfileName(string instanceProfileName)
         {
-            this.instanceProfileName = instanceProfileName;
+            this._instanceProfileName = instanceProfileName;
             return this;
         }
-            
 
         // Check to see if InstanceProfileName property is set
         internal bool IsSetInstanceProfileName()
         {
-            return this.instanceProfileName != null;
+            return this._instanceProfileName != null;
         }
 
+
         /// <summary>
-        /// The path to the instance profile. For more information about paths, see <a
-        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
-        /// <i>Using AWS Identity and Access Management</i>. This parameter is optional. If it is not included, it defaults to a slash (/).
-        ///  
+        /// Gets and sets the property Path. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 512</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</description>
-        ///     </item>
-        /// </list>
+        /// The path to the instance profile. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+        /// target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access                Management</i>.
+        /// </para>
+        ///         
+        /// <para>
+        /// This parameter is optional. If it is not included, it defaults to a slash (/).
         /// </para>
         /// </summary>
         public string Path
         {
-            get { return this.path; }
-            set { this.path = value; }
+            get { return this._path; }
+            set { this._path = value; }
         }
+
 
         /// <summary>
         /// Sets the Path property
@@ -112,16 +99,15 @@ namespace Amazon.IdentityManagement.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateInstanceProfileRequest WithPath(string path)
         {
-            this.path = path;
+            this._path = path;
             return this;
         }
-            
 
         // Check to see if Path property is set
         internal bool IsSetPath()
         {
-            return this.path != null;
+            return this._path != null;
         }
+
     }
 }
-    

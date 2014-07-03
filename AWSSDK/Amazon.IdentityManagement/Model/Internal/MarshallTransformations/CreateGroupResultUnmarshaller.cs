@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,63 +12,67 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   CreateGroupResult Unmarshaller
-     /// </summary>
-    internal class CreateGroupResultUnmarshaller : IUnmarshaller<CreateGroupResult, XmlUnmarshallerContext>, IUnmarshaller<CreateGroupResult, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for CreateGroup Object
+    /// </summary>  
+    public class CreateGroupResultUnmarshaller : IUnmarshaller<CreateGroupResult, XmlUnmarshallerContext>
     {
         public CreateGroupResult Unmarshall(XmlUnmarshallerContext context) 
         {
-            CreateGroupResult createGroupResult = new CreateGroupResult();
+            CreateGroupResult result = new CreateGroupResult();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
-                { 
+                {
+
                     if (context.TestExpression("Group", targetDepth))
                     {
-                        createGroupResult.Group = GroupUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = GroupUnmarshaller.GetInstance();
+                        result.Group = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
+                } 
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return createGroupResult;
+                    return result;
                 }
             }
-                        
 
-
-            return createGroupResult;
+            return result;
         }
 
-        public CreateGroupResult Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static CreateGroupResultUnmarshaller instance;
-
-        public static CreateGroupResultUnmarshaller GetInstance() 
+        public static CreateGroupResultUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new CreateGroupResultUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new CreateGroupResultUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

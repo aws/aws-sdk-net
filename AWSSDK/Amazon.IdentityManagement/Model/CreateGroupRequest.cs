@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,82 +25,32 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateGroup operation.
-    /// <para>Creates a new group.</para> <para>For information about the number of groups you can create, see <a
-    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html" >Limitations on IAM Entities</a> in <i>Using
-    /// AWS Identity and Access Management</i> .</para>
+    /// Creates a new group.
+    /// 
+    ///         
+    /// <para>
+    /// For information about the number of groups you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"
+    /// target="_blank">Limitations on IAM Entities</a> in <i>Using AWS Identity and Access                Management</i>.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.CreateGroup"/>
-    public class CreateGroupRequest : AmazonWebServiceRequest
+    public partial class CreateGroupRequest : AmazonWebServiceRequest
     {
-        private string path;
-        private string groupName;
+        private string _groupName;
+        private string _path;
+
 
         /// <summary>
-        /// The path to the group. For more information about paths, see <a
-        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
-        /// <i>Using AWS Identity and Access Management</i>. This parameter is optional. If it is not included, it defaults to a slash (/).
-        ///  
+        /// Gets and sets the property GroupName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 512</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string Path
-        {
-            get { return this.path; }
-            set { this.path = value; }
-        }
-
-        /// <summary>
-        /// Sets the Path property
-        /// </summary>
-        /// <param name="path">The value to set for the Path property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public CreateGroupRequest WithPath(string path)
-        {
-            this.path = path;
-            return this;
-        }
-            
-
-        // Check to see if Path property is set
-        internal bool IsSetPath()
-        {
-            return this.path != null;
-        }
-
-        /// <summary>
         /// Name of the group to create. Do not include the path in this value.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 128</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=,.@-]*</description>
-        ///     </item>
-        /// </list>
         /// </para>
         /// </summary>
         public string GroupName
         {
-            get { return this.groupName; }
-            set { this.groupName = value; }
+            get { return this._groupName; }
+            set { this._groupName = value; }
         }
+
 
         /// <summary>
         /// Sets the GroupName property
@@ -110,16 +60,52 @@ namespace Amazon.IdentityManagement.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateGroupRequest WithGroupName(string groupName)
         {
-            this.groupName = groupName;
+            this._groupName = groupName;
             return this;
         }
-            
 
         // Check to see if GroupName property is set
         internal bool IsSetGroupName()
         {
-            return this.groupName != null;
+            return this._groupName != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Path. 
+        /// <para>
+        /// The path to the group. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
+        /// target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access                Management</i>.
+        /// </para>
+        ///         
+        /// <para>
+        /// This parameter is optional. If it is not included, it defaults to a slash (/).
+        /// </para>
+        /// </summary>
+        public string Path
+        {
+            get { return this._path; }
+            set { this._path = value; }
+        }
+
+
+        /// <summary>
+        /// Sets the Path property
+        /// </summary>
+        /// <param name="path">The value to set for the Path property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateGroupRequest WithPath(string path)
+        {
+            this._path = path;
+            return this;
+        }
+
+        // Check to see if Path property is set
+        internal bool IsSetPath()
+        {
+            return this._path != null;
+        }
+
     }
 }
-    

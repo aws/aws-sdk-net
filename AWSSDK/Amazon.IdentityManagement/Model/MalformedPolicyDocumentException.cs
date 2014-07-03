@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.IdentityManagement.Model
 {
     ///<summary>
-    /// AmazonIdentityManagementService exception
+    /// IdentityManagementService exception
     /// </summary>
     public class MalformedPolicyDocumentException : AmazonIdentityManagementServiceException 
     {
@@ -30,21 +30,19 @@ namespace Amazon.IdentityManagement.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal MalformedPolicyDocumentException(string message) 
+        public MalformedPolicyDocumentException(string message) 
             : base(message) {}
           
-        internal MalformedPolicyDocumentException(string message, Exception innerException) 
+        public MalformedPolicyDocumentException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal MalformedPolicyDocumentException(Exception innerException) 
+        public MalformedPolicyDocumentException(Exception innerException) 
             : base(innerException) {}
             
-        internal MalformedPolicyDocumentException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public MalformedPolicyDocumentException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal MalformedPolicyDocumentException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public MalformedPolicyDocumentException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
-
-        
     }
 }

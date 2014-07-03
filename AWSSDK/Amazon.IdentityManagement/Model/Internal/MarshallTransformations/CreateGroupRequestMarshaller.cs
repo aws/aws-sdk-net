@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,36 +14,40 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Group Request Marshaller
+    /// CreateGroup Request Marshaller
     /// </summary>       
     public class CreateGroupRequestMarshaller : IMarshaller<IRequest, CreateGroupRequest>
     {
-        public IRequest Marshall(CreateGroupRequest createGroupRequest)
+        public IRequest Marshall(CreateGroupRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(createGroupRequest, "AmazonIdentityManagementService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.IdentityManagement");
             request.Parameters.Add("Action", "CreateGroup");
             request.Parameters.Add("Version", "2010-05-08");
-            if (createGroupRequest != null && createGroupRequest.IsSetPath())
-            {
-                request.Parameters.Add("Path", StringUtils.FromString(createGroupRequest.Path));
-            }
-            if (createGroupRequest != null && createGroupRequest.IsSetGroupName())
-            {
-                request.Parameters.Add("GroupName", StringUtils.FromString(createGroupRequest.GroupName));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetGroupName())
+                {
+                    request.Parameters.Add("GroupName", StringUtils.FromString(publicRequest.GroupName));
+                }
+                if(publicRequest.IsSetPath())
+                {
+                    request.Parameters.Add("Path", StringUtils.FromString(publicRequest.Path));
+                }
+            }
             return request;
         }
     }

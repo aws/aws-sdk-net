@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Returns information about the  ListRolePoliciesResult response and response metadata.
+    /// Returns information about the ListRolePoliciesResult response and response metadata.
     /// </summary>
     public class ListRolePoliciesResponse : AmazonWebServiceResponse
     {
-        private ListRolePoliciesResult listRolePoliciesResult;
+        private ListRolePoliciesResult _listRolePoliciesResult;
 
         /// <summary>
         /// Gets and sets the ListRolePoliciesResult property.
-        /// Contains the result of a successful invocation of the ListRolePolicies action.
+        /// Represents the output of a ListRolePolicies operation.
         /// </summary>
         public ListRolePoliciesResult ListRolePoliciesResult
         {
             get
             {
-                if(this.listRolePoliciesResult == null)
+                if(this._listRolePoliciesResult == null)
                 {
-                    this.listRolePoliciesResult = new ListRolePoliciesResult();
+                    this._listRolePoliciesResult = new ListRolePoliciesResult();
                 }
-
-                return this.listRolePoliciesResult;
+                return this._listRolePoliciesResult;
             }
-            set { this.listRolePoliciesResult = value; }
+            set { this._listRolePoliciesResult = value; }
         }
     }
 }
-    

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,39 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
+using System;
 using Amazon.Runtime;
 
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Returns information about the  GetInstanceProfileResult response and response metadata.
+    /// Returns information about the GetInstanceProfileResult response and response metadata.
     /// </summary>
     public class GetInstanceProfileResponse : AmazonWebServiceResponse
     {
-        private GetInstanceProfileResult getInstanceProfileResult;
+        private GetInstanceProfileResult _getInstanceProfileResult;
 
         /// <summary>
         /// Gets and sets the GetInstanceProfileResult property.
-        /// Contains the result of a successful invocation of the GetInstanceProfile action.
+        /// Represents the output of a GetInstanceProfile operation.
         /// </summary>
         public GetInstanceProfileResult GetInstanceProfileResult
         {
             get
             {
-                if(this.getInstanceProfileResult == null)
+                if(this._getInstanceProfileResult == null)
                 {
-                    this.getInstanceProfileResult = new GetInstanceProfileResult();
+                    this._getInstanceProfileResult = new GetInstanceProfileResult();
                 }
-
-                return this.getInstanceProfileResult;
+                return this._getInstanceProfileResult;
             }
-            set { this.getInstanceProfileResult = value; }
+            set { this._getInstanceProfileResult = value; }
         }
     }
 }
-    

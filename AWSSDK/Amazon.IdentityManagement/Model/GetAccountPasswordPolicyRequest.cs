@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,12 +25,12 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAccountPasswordPolicy operation.
-    /// <para>Retrieves the password policy for the AWS account. For more information about using a password policy, go to <a
-    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html" >Managing an IAM Password Policy</a> .</para>
+    /// Retrieves the password policy for the AWS account. For more information about using
+    /// a            password policy, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
+    /// an                IAM Password Policy</a>.
     /// </summary>
-    /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.GetAccountPasswordPolicy"/>
-    public class GetAccountPasswordPolicyRequest : AmazonWebServiceRequest
+    public partial class GetAccountPasswordPolicyRequest : AmazonWebServiceRequest
     {
+
     }
 }
-    

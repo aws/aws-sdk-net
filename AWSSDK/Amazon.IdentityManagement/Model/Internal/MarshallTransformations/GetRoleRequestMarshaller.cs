@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,32 +14,36 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.IdentityManagement.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Get Role Request Marshaller
+    /// GetRole Request Marshaller
     /// </summary>       
     public class GetRoleRequestMarshaller : IMarshaller<IRequest, GetRoleRequest>
     {
-        public IRequest Marshall(GetRoleRequest getRoleRequest)
+        public IRequest Marshall(GetRoleRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(getRoleRequest, "AmazonIdentityManagementService");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.IdentityManagement");
             request.Parameters.Add("Action", "GetRole");
             request.Parameters.Add("Version", "2010-05-08");
-            if (getRoleRequest != null && getRoleRequest.IsSetRoleName())
-            {
-                request.Parameters.Add("RoleName", StringUtils.FromString(getRoleRequest.RoleName));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetRoleName())
+                {
+                    request.Parameters.Add("RoleName", StringUtils.FromString(publicRequest.RoleName));
+                }
+            }
             return request;
         }
     }

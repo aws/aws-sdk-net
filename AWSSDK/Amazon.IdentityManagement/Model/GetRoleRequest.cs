@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,40 +25,35 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetRole operation.
-    /// <para>Retrieves information about the specified role, including the role's path, GUID, ARN, and the policy granting permission to EC2 to
-    /// assume the role. For more information about ARNs, go to <a href="
-    /// http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs" >ARNs</a> . For more information about roles, go to
-    /// <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html" >Working with Roles</a> .</para> <para>The returned policy
-    /// is URL-encoded according to RFC 3986. For more information about RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html"
-    /// >http://www.faqs.org/rfcs/rfc3986.html</a> .</para>
+    /// Retrieves information about the specified role, including the role's path, GUID, ARN,
+    /// and the            policy granting permission to assume the role. For more information about
+    /// ARNs, go to                <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs">ARNs</a>.
+    /// For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
+    /// with            Roles</a>.
+    /// 
+    ///         
+    /// <para>
+    /// The returned policy is URL-encoded according to RFC 3986. For more information about
+    /// RFC            3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
+    /// </para>
     /// </summary>
-    /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.GetRole"/>
-    public class GetRoleRequest : AmazonWebServiceRequest
+    public partial class GetRoleRequest : AmazonWebServiceRequest
     {
-        private string roleName;
+        private string _roleName;
+
 
         /// <summary>
-        /// Name of the role to get information about.
-        ///  
+        /// Gets and sets the property RoleName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 64</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\w+=,.@-]*</description>
-        ///     </item>
-        /// </list>
+        /// Name of the role to get information about.
         /// </para>
         /// </summary>
         public string RoleName
         {
-            get { return this.roleName; }
-            set { this.roleName = value; }
+            get { return this._roleName; }
+            set { this._roleName = value; }
         }
+
 
         /// <summary>
         /// Sets the RoleName property
@@ -68,16 +63,15 @@ namespace Amazon.IdentityManagement.Model
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetRoleRequest WithRoleName(string roleName)
         {
-            this.roleName = roleName;
+            this._roleName = roleName;
             return this;
         }
-            
 
         // Check to see if RoleName property is set
         internal bool IsSetRoleName()
         {
-            return this.roleName != null;
+            return this._roleName != null;
         }
+
     }
 }
-    
