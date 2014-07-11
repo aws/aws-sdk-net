@@ -301,10 +301,14 @@ namespace Amazon
                         if (xmlEndpoint.Element("AuthRegion") is XElement)
                             authregion = xmlEndpoint.Element("AuthRegion").Value;
 
+                        string signatureOverride = null;
+                        if (xmlEndpoint.Element("SignatureVersionOverride") is XElement)
+                            signatureOverride = xmlEndpoint.Element("SignatureVersionOverride").Value;
+
                         if (region.endpoints == null)
                             region.endpoints = new Dictionary<string, Endpoint>();
 
-                        region.endpoints.Add(serviceName, new Endpoint(hostname, https, http, authregion));
+                        region.endpoints.Add(serviceName, new Endpoint(hostname, https, http, authregion, signatureOverride));
                     }
                 }
 
@@ -392,12 +396,13 @@ namespace Amazon
         public class Endpoint
         {
 
-            internal Endpoint(string hostname, bool https, bool http, string authregion = null)
+            internal Endpoint(string hostname, bool https, bool http, string authregion = null, string signatureVersionOverride = null)
             {
                 this.Hostname = hostname;
                 this.HTTPS = https;
                 this.HTTP = http;
                 this.AuthRegion = authregion;
+                this.SignatureVersionOverride = signatureVersionOverride;
             }
 
             /// <summary>
@@ -439,6 +444,17 @@ namespace Amazon
             public override string ToString()
             {
                 return this.Hostname;
+            }
+
+            /// <summary>
+            /// Overrides the default signing protocol for an
+            /// endpoint. Typically used to force Signature V4
+            /// for services that can support multiple signing
+            /// protocols.
+            /// </summary>
+            public string SignatureVersionOverride
+            {
+                get; private set;
             }
         }
     }

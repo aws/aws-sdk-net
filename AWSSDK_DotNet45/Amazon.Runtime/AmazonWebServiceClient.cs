@@ -228,7 +228,7 @@ WebExceptionStatusesToRetryOn.Contains(we.Status)
                     }
                 }
                 catch (OperationCanceledException operationCancelledException)
-                {                    
+                {
                     if (cancellationToken.IsCancellationRequested)
                     {
                         // Throw an exception with the original cancellation token.
@@ -242,7 +242,7 @@ WebExceptionStatusesToRetryOn.Contains(we.Status)
                 }
                 finally
                 {
-                    if (responseMessage != null && !state.Unmarshaller.HasStreamingProperty)
+                    if (responseMessage != null && (response == null || !state.Unmarshaller.HasStreamingProperty))
                     {
                         responseMessage.Dispose();
                         responseMessage = null;
@@ -521,8 +521,7 @@ WebExceptionStatusesToRetryOn.Contains(we.Status)
             bool acceptJson = state.Unmarshaller is JsonResponseUnmarshaller;
 
             Uri url = ComposeUrl(wrappedRequest, wrappedRequest.Endpoint);
-            var request = new HttpRequestMessage();
-            request.RequestUri = url;
+            var request = new HttpRequestMessage {RequestUri = url};
 
             HttpMethod method;
             switch (wrappedRequest.HttpMethod.ToUpperInvariant())
@@ -552,30 +551,30 @@ WebExceptionStatusesToRetryOn.Contains(we.Status)
                 if (wrappedRequest.ContentStream != null)
                 {
                     if (wrappedRequest.OriginalRequest.IncludeSHA256Header 
-                        && !wrappedRequest.Headers.ContainsKey(AWS4Signer.XAmzContentSha256))
+                        && !wrappedRequest.Headers.ContainsKey(HeaderKeys.XAmzContentSha256Header))
                     {
-                        request.Headers.TryAddWithoutValidation(AWS4Signer.XAmzContentSha256, wrappedRequest.ComputeContentStreamHash());
+                        request.Headers.TryAddWithoutValidation(HeaderKeys.XAmzContentSha256Header, wrappedRequest.ComputeContentStreamHash());
                     }
-                    request.Headers.TryAddWithoutValidation("content-length", wrappedRequest.ContentStream.Length.ToString(CultureInfo.InvariantCulture));
+                    request.Headers.TryAddWithoutValidation(HeaderKeys.ContentLengthHeader, wrappedRequest.ContentStream.Length.ToString(CultureInfo.InvariantCulture));
                 }
                 else
                 {
                     byte[] requestData = GetRequestData(wrappedRequest);
-                    request.Headers.TryAddWithoutValidation("content-length", requestData.Length.ToString(CultureInfo.InvariantCulture));
+                    request.Headers.TryAddWithoutValidation(HeaderKeys.ContentLengthHeader, requestData.Length.ToString(CultureInfo.InvariantCulture));
                 }
             }
             else
             {
                 string headerValue;
-                if (wrappedRequest.Headers.TryGetValue("x-amz-content-length", out headerValue) && headerValue != null)
+                if (wrappedRequest.Headers.TryGetValue(HeaderKeys.XAmzContentLengthHeader, out headerValue) && headerValue != null)
                 {
-                    request.Headers.Add("content-length", headerValue);
+                    request.Headers.Add(HeaderKeys.ContentLengthHeader, headerValue);
                 }
             }
 
             foreach (var kvp in wrappedRequest.Headers)
             {
-                if (!string.Equals(kvp.Key, "Content-MD5", StringComparison.OrdinalIgnoreCase))
+                if (!string.Equals(kvp.Key, HeaderKeys.ContentMD5Header, StringComparison.OrdinalIgnoreCase))
                 {
                     request.Headers.TryAddWithoutValidation(kvp.Key, kvp.Value);
                 }

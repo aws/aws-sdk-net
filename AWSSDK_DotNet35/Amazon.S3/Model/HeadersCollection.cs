@@ -23,7 +23,7 @@ namespace Amazon.S3.Model
     /// </summary>
     public sealed class HeadersCollection
     {
-        IDictionary<string, string> values = new Dictionary<string, string>();
+        readonly IDictionary<string, string> _values = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
         /// <summary>
         /// Gets and sets headers to set for the object.
@@ -35,7 +35,7 @@ namespace Amazon.S3.Model
             get
             {
                 string value;
-                if (values.TryGetValue(name, out value))
+                if (_values.TryGetValue(name, out value))
                     return value;
 
                 return null;
@@ -44,11 +44,11 @@ namespace Amazon.S3.Model
             {
                 if (value != null)
                 {
-                    values[name] = value;
+                    _values[name] = value;
                 }
-                else if (values.ContainsKey(name))
+                else if (_values.ContainsKey(name))
                 {
-                    values.Remove(name);
+                    _values.Remove(name);
                 }
             }
         }
@@ -58,7 +58,7 @@ namespace Amazon.S3.Model
         /// </summary>
         public int Count
         {
-            get { return this.values.Count; }
+            get { return this._values.Count; }
         }
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.S3.Model
         /// </summary>
         public ICollection<string> Keys
         {
-            get { return values.Keys; }
+            get { return _values.Keys; }
         }
 
         /// <summary>

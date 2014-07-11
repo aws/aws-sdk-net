@@ -29,12 +29,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "DELETE";
 
-            var uriResourcePath = string.Concat("/", S3Transforms.ToStringValue(deleteBucketWebsiteRequest.BucketName));
-
-            request.Parameters.Add("website", null);
-
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
-            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
+            request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(deleteBucketWebsiteRequest.BucketName));
+            request.AddSubResource("website");
             request.UseQueryString = true;
             
             return request;

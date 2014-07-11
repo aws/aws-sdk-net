@@ -29,17 +29,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(getObjectAclRequest, "AmazonS3");
 
             request.HttpMethod = "GET";
-              
-            var uriResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
-                                                S3Transforms.ToStringValue(getObjectAclRequest.BucketName),
-                                                S3Transforms.ToStringValue(getObjectAclRequest.Key));
 
-            request.Parameters.Add("acl", null);
+            request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
+                                                 S3Transforms.ToStringValue(getObjectAclRequest.BucketName),
+                                                 S3Transforms.ToStringValue(getObjectAclRequest.Key));
+
+            request.AddSubResource("acl");
             if (getObjectAclRequest.IsSetVersionId())
-                request.Parameters.Add("versionId", S3Transforms.ToStringValue(getObjectAclRequest.VersionId));
-
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
-            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
+                request.AddSubResource("versionId", S3Transforms.ToStringValue(getObjectAclRequest.VersionId));
             request.UseQueryString = true;
             
             return request;

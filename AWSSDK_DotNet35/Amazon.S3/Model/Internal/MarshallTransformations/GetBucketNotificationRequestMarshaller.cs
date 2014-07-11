@@ -29,12 +29,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "GET";
 
-            var uriResourcePath = string.Concat("/", S3Transforms.ToStringValue(getBucketNotificationRequest.BucketName));
-
-            request.Parameters.Add("notification", null);
-
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
-            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
+            request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(getBucketNotificationRequest.BucketName));
+            request.AddSubResource("notification");
             request.UseQueryString = true;
             
             return request;

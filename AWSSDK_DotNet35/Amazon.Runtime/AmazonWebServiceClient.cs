@@ -93,12 +93,9 @@ namespace Amazon.Runtime
 
         protected Uri DetermineEndpoint(IRequest request)
         {
-            Uri endpoint;
-            if (request.AlternateEndpoint != null)
-                endpoint = new Uri(ClientConfig.GetUrl(request.AlternateEndpoint, Config.RegionEndpointServiceName, Config.UseHttp));
-            else
-                endpoint = new Uri(this.Config.DetermineServiceURL());
-            return endpoint;
+            return request.AlternateEndpoint != null 
+                ? new Uri(ClientConfig.GetUrl(request.AlternateEndpoint, Config.RegionEndpointServiceName, Config.UseHttp)) 
+                : new Uri(this.Config.DetermineServiceURL());
         }
 
         private void InvokeHelper(AsyncResult asyncResult)
@@ -494,7 +491,7 @@ namespace Amazon.Runtime
 
                 statusCode = httpErrorResponse.StatusCode;
                 asyncResult.Metrics.AddProperty(Metric.StatusCode, statusCode);
-                string redirectedLocation = httpErrorResponse.Headers["location"];
+                string redirectedLocation = httpErrorResponse.Headers[HeaderKeys.LocationHeader];
                 asyncResult.Metrics.AddProperty(Metric.RedirectLocation, redirectedLocation);
 
                 using (httpErrorResponse)
@@ -603,9 +600,9 @@ namespace Amazon.Runtime
                     if (wrappedRequest.ContentStream != null)
                     {
                         if (wrappedRequest.OriginalRequest.IncludeSHA256Header 
-                            && !wrappedRequest.Headers.ContainsKey(AWS4Signer.XAmzContentSha256))
+                            && !wrappedRequest.Headers.ContainsKey(HeaderKeys.XAmzContentSha256Header))
                         {
-                            request.Headers[AWS4Signer.XAmzContentSha256] = wrappedRequest.ComputeContentStreamHash();
+                            request.Headers[HeaderKeys.XAmzContentSha256Header] = wrappedRequest.ComputeContentStreamHash();
                         }
                         request.ContentLength = wrappedRequest.ContentStream.Length;
                     }
@@ -617,7 +614,7 @@ namespace Amazon.Runtime
                 else
                 {
                     string headerValue;
-                    if (wrappedRequest.Headers.TryGetValue("x-amz-content-length", out headerValue) && headerValue != null)
+                    if (wrappedRequest.Headers.TryGetValue(HeaderKeys.XAmzContentLengthHeader, out headerValue) && headerValue != null)
                     {
                         request.ContentLength = long.Parse(headerValue, CultureInfo.InvariantCulture);
                     }
@@ -647,29 +644,29 @@ namespace Amazon.Runtime
             var headers = request.Headers;
             foreach (var kvp in headersToAdd)
             {
-                if (WebHeaderCollection.IsRestricted(kvp.Key) || string.Equals(kvp.Key, "Range", StringComparison.OrdinalIgnoreCase))
+                if (WebHeaderCollection.IsRestricted(kvp.Key) || string.Equals(kvp.Key, HeaderKeys.RangeHeader, StringComparison.OrdinalIgnoreCase))
                 {
-                    if (string.Equals(kvp.Key, "Accept", StringComparison.OrdinalIgnoreCase))
+                    if (string.Equals(kvp.Key, HeaderKeys.AcceptHeader, StringComparison.OrdinalIgnoreCase))
                         request.Accept = kvp.Value;
-                    else if (string.Equals(kvp.Key, "Connection", StringComparison.OrdinalIgnoreCase))
+                    else if (string.Equals(kvp.Key, HeaderKeys.ConnectionHeader, StringComparison.OrdinalIgnoreCase))
                         request.Connection = kvp.Value;
-                    else if (string.Equals(kvp.Key, "Content-Type", StringComparison.OrdinalIgnoreCase))
+                    else if (string.Equals(kvp.Key, HeaderKeys.ContentTypeHeader, StringComparison.OrdinalIgnoreCase))
                         request.ContentType = kvp.Value;
-                    else if (string.Equals(kvp.Key, "Content-Length", StringComparison.OrdinalIgnoreCase))
+                    else if (string.Equals(kvp.Key, HeaderKeys.ContentLengthHeader, StringComparison.OrdinalIgnoreCase))
                         request.ContentLength = long.Parse(kvp.Value, CultureInfo.InvariantCulture);
-                    else if (string.Equals(kvp.Key, "Expect", StringComparison.OrdinalIgnoreCase))
+                    else if (string.Equals(kvp.Key, HeaderKeys.ExpectHeader, StringComparison.OrdinalIgnoreCase))
                         request.Expect = kvp.Value;
-                    else if (string.Equals(kvp.Key, "User-Agent", StringComparison.OrdinalIgnoreCase))
+                    else if (string.Equals(kvp.Key, HeaderKeys.UserAgentHeader, StringComparison.OrdinalIgnoreCase))
                         request.UserAgent = kvp.Value;
                     // Date accessor is only present in .NET 4.0, so using reflection
-                    else if (string.Equals(kvp.Key, "Date", StringComparison.OrdinalIgnoreCase))
-                        _addWithoutValidateHeadersMethod.Invoke(request.Headers, new[] { "Date", kvp.Value });
+                    else if (string.Equals(kvp.Key, HeaderKeys.DateHeader, StringComparison.OrdinalIgnoreCase))
+                        _addWithoutValidateHeadersMethod.Invoke(request.Headers, new[] { HeaderKeys.DateHeader, kvp.Value });
                     // Host accessor is only present in .NET 4.0, so using reflection
-                    else if (string.Equals(kvp.Key, "Host", StringComparison.OrdinalIgnoreCase))
-                        _addWithoutValidateHeadersMethod.Invoke(request.Headers, new[] { "Host", kvp.Value });
-                    else if (string.Equals(kvp.Key, "Range", StringComparison.OrdinalIgnoreCase))
-                        _addWithoutValidateHeadersMethod.Invoke(request.Headers, new[] { "Range", kvp.Value });
-                    else if (string.Equals(kvp.Key, "If-Modified-Since", StringComparison.OrdinalIgnoreCase))
+                    else if (string.Equals(kvp.Key, HeaderKeys.HostHeader, StringComparison.OrdinalIgnoreCase))
+                        _addWithoutValidateHeadersMethod.Invoke(request.Headers, new[] { HeaderKeys.HostHeader, kvp.Value });
+                    else if (string.Equals(kvp.Key, HeaderKeys.RangeHeader, StringComparison.OrdinalIgnoreCase))
+                        _addWithoutValidateHeadersMethod.Invoke(request.Headers, new[] { HeaderKeys.RangeHeader, kvp.Value });
+                    else if (string.Equals(kvp.Key, HeaderKeys.IfModifiedSinceHeader, StringComparison.OrdinalIgnoreCase))
                         _addWithoutValidateHeadersMethod.Invoke(request.Headers, new[] { kvp.Key, kvp.Value });
                     else
                         throw new NotSupportedException("Header with name " + kvp.Key + " is not suppored");

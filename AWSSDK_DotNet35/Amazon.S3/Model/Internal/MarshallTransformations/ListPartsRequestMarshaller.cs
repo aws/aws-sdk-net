@@ -30,21 +30,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "GET";
 
-            var uriResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
-                                                S3Transforms.ToStringValue(listPartsRequest.BucketName),
-                                                S3Transforms.ToStringValue(listPartsRequest.Key));
+            request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
+                                                 S3Transforms.ToStringValue(listPartsRequest.BucketName),
+                                                 S3Transforms.ToStringValue(listPartsRequest.Key));
+
+            if (listPartsRequest.IsSetUploadId())
+                request.AddSubResource("uploadId", S3Transforms.ToStringValue(listPartsRequest.UploadId));
 
             if (listPartsRequest.IsSetMaxParts())
                 request.Parameters.Add("max-parts", S3Transforms.ToStringValue(listPartsRequest.MaxParts));
             if (listPartsRequest.IsSetPartNumberMarker())
                 request.Parameters.Add("part-number-marker", S3Transforms.ToStringValue(listPartsRequest.PartNumberMarker));
-            if (listPartsRequest.IsSetUploadId())
-                request.Parameters.Add("uploadId", S3Transforms.ToStringValue(listPartsRequest.UploadId));
             if (listPartsRequest.IsSetEncoding())
                 request.Parameters.Add("encoding-type", S3Transforms.ToStringValue(listPartsRequest.Encoding));
 
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
-            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
             request.UseQueryString = true;
             
             return request;

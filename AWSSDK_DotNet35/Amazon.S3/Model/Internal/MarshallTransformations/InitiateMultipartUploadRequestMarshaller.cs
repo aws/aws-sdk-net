@@ -17,6 +17,7 @@ using Amazon.S3.Util;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using System.Globalization;
+using Amazon.Util;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -32,7 +33,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             if (initiateMultipartUploadRequest.IsSetCannedACL())
-                request.Headers.Add("x-amz-acl", S3Transforms.ToStringValue(initiateMultipartUploadRequest.CannedACL));
+                request.Headers.Add(HeaderKeys.XAmzAclHeader, S3Transforms.ToStringValue(initiateMultipartUploadRequest.CannedACL));
 
             var headers = initiateMultipartUploadRequest.Headers;
             foreach (var key in headers.Keys)
@@ -41,34 +42,32 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             HeaderACLRequestMarshaller.Marshall(request, initiateMultipartUploadRequest);
 
             if (initiateMultipartUploadRequest.IsSetServerSideEncryptionMethod())
-                request.Headers.Add("x-amz-server-side-encryption", S3Transforms.ToStringValue(initiateMultipartUploadRequest.ServerSideEncryptionMethod));
+                request.Headers.Add(HeaderKeys.XAmzServerSideEncryptionHeader, S3Transforms.ToStringValue(initiateMultipartUploadRequest.ServerSideEncryptionMethod));
             if (initiateMultipartUploadRequest.IsSetServerSideEncryptionCustomerMethod())
-                request.Headers.Add("x-amz-server-side-encryption-customer-algorithm", initiateMultipartUploadRequest.ServerSideEncryptionCustomerMethod);
+                request.Headers.Add(HeaderKeys.XAmzSSECustomerAlgorithmHeader, initiateMultipartUploadRequest.ServerSideEncryptionCustomerMethod);
             if (initiateMultipartUploadRequest.IsSetServerSideEncryptionCustomerProvidedKey())
             {
-                request.Headers.Add("x-amz-server-side-encryption-customer-key", initiateMultipartUploadRequest.ServerSideEncryptionCustomerProvidedKey);
+                request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyHeader, initiateMultipartUploadRequest.ServerSideEncryptionCustomerProvidedKey);
                 if (initiateMultipartUploadRequest.IsSetServerSideEncryptionCustomerProvidedKeyMD5())
-                    request.Headers.Add("x-amz-server-side-encryption-customer-key-MD5", initiateMultipartUploadRequest.ServerSideEncryptionCustomerProvidedKeyMD5);
+                    request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyMD5Header, initiateMultipartUploadRequest.ServerSideEncryptionCustomerProvidedKeyMD5);
                 else
-                    request.Headers.Add("x-amz-server-side-encryption-customer-key-MD5", AmazonS3Util.ComputeEncodedMD5FromEncodedString(initiateMultipartUploadRequest.ServerSideEncryptionCustomerProvidedKey));
+                    request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyMD5Header, AmazonS3Util.ComputeEncodedMD5FromEncodedString(initiateMultipartUploadRequest.ServerSideEncryptionCustomerProvidedKey));
             }
 
             if (initiateMultipartUploadRequest.IsSetStorageClass())
-                request.Headers.Add("x-amz-storage-class", S3Transforms.ToStringValue(initiateMultipartUploadRequest.StorageClass));
+                request.Headers.Add(HeaderKeys.XAmzStorageClassHeader, S3Transforms.ToStringValue(initiateMultipartUploadRequest.StorageClass));
 
             if (initiateMultipartUploadRequest.IsSetWebsiteRedirectLocation())
-                request.Headers.Add("x-amz-website-redirect-location", S3Transforms.ToStringValue(initiateMultipartUploadRequest.WebsiteRedirectLocation));
+                request.Headers.Add(HeaderKeys.XAmzWebsiteRedirectLocationHeader, S3Transforms.ToStringValue(initiateMultipartUploadRequest.WebsiteRedirectLocation));
 
             AmazonS3Util.SetMetadataHeaders(request, initiateMultipartUploadRequest.Metadata);
 
-            var uriResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
-                                                S3Transforms.ToStringValue(initiateMultipartUploadRequest.BucketName),
-                                                S3Transforms.ToStringValue(initiateMultipartUploadRequest.Key));
+            request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
+                                                 S3Transforms.ToStringValue(initiateMultipartUploadRequest.BucketName),
+                                                 S3Transforms.ToStringValue(initiateMultipartUploadRequest.Key));
 
-            request.Parameters.Add("uploads", null);
+            request.AddSubResource("uploads");
 
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
-            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
             request.UseQueryString = true;
 
             return request;

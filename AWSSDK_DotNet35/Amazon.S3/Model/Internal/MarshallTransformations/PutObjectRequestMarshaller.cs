@@ -35,47 +35,44 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "PUT";
 
-            if (putObjectRequest.IsSetCannedACL())
-                request.Headers.Add("x-amz-acl", S3Transforms.ToStringValue(putObjectRequest.CannedACL));
+            if(putObjectRequest.IsSetCannedACL())
+                request.Headers.Add(HeaderKeys.XAmzAclHeader, S3Transforms.ToStringValue(putObjectRequest.CannedACL));
 
             var headers = putObjectRequest.Headers;
             foreach (var key in headers.Keys)
                 request.Headers[key] = headers[key];
 
-            if (putObjectRequest.IsSetMD5Digest())
-                request.Headers["Content-MD5"] = putObjectRequest.MD5Digest;
+            if(putObjectRequest.IsSetMD5Digest())
+                request.Headers[HeaderKeys.ContentMD5Header] = putObjectRequest.MD5Digest;
 
             HeaderACLRequestMarshaller.Marshall(request, putObjectRequest);
 
-            if (putObjectRequest.IsSetServerSideEncryptionMethod())
-                request.Headers.Add("x-amz-server-side-encryption", S3Transforms.ToStringValue(putObjectRequest.ServerSideEncryptionMethod));
-
-            if (putObjectRequest.IsSetStorageClass())
-                request.Headers.Add("x-amz-storage-class", S3Transforms.ToStringValue(putObjectRequest.StorageClass));
-
-            if (putObjectRequest.IsSetWebsiteRedirectLocation())
-                request.Headers.Add("x-amz-website-redirect-location", S3Transforms.ToStringValue(putObjectRequest.WebsiteRedirectLocation));
+            if(putObjectRequest.IsSetServerSideEncryptionMethod())
+                request.Headers.Add(HeaderKeys.XAmzServerSideEncryptionHeader, S3Transforms.ToStringValue(putObjectRequest.ServerSideEncryptionMethod));
+            
+            if(putObjectRequest.IsSetStorageClass())
+                request.Headers.Add(HeaderKeys.XAmzStorageClassHeader, S3Transforms.ToStringValue(putObjectRequest.StorageClass));
+            
+            if(putObjectRequest.IsSetWebsiteRedirectLocation())
+                request.Headers.Add(HeaderKeys.XAmzWebsiteRedirectLocationHeader, S3Transforms.ToStringValue(putObjectRequest.WebsiteRedirectLocation));
 
             if (putObjectRequest.IsSetServerSideEncryptionCustomerMethod())
-                request.Headers.Add("x-amz-server-side-encryption-customer-algorithm", putObjectRequest.ServerSideEncryptionCustomerMethod);
+                request.Headers.Add(HeaderKeys.XAmzSSECustomerAlgorithmHeader, putObjectRequest.ServerSideEncryptionCustomerMethod);
             if (putObjectRequest.IsSetServerSideEncryptionCustomerProvidedKey())
             {
-                request.Headers.Add("x-amz-server-side-encryption-customer-key", putObjectRequest.ServerSideEncryptionCustomerProvidedKey);
+                request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyHeader, putObjectRequest.ServerSideEncryptionCustomerProvidedKey);
                 if (putObjectRequest.IsSetServerSideEncryptionCustomerProvidedKeyMD5())
-                    request.Headers.Add("x-amz-server-side-encryption-customer-key-MD5", putObjectRequest.ServerSideEncryptionCustomerProvidedKeyMD5);
+                    request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyMD5Header, putObjectRequest.ServerSideEncryptionCustomerProvidedKeyMD5);
                 else
-                    request.Headers.Add("x-amz-server-side-encryption-customer-key-MD5", AmazonS3Util.ComputeEncodedMD5FromEncodedString(putObjectRequest.ServerSideEncryptionCustomerProvidedKey));
+                    request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyMD5Header, AmazonS3Util.ComputeEncodedMD5FromEncodedString(putObjectRequest.ServerSideEncryptionCustomerProvidedKey));
             }
 
             AmazonS3Util.SetMetadataHeaders(request, putObjectRequest.Metadata);
 
-            var uriResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
-                                                S3Transforms.ToStringValue(putObjectRequest.BucketName),
-                                                S3Transforms.ToStringValue(putObjectRequest.Key));
+            request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
+                                                 S3Transforms.ToStringValue(putObjectRequest.BucketName),
+                                                 S3Transforms.ToStringValue(putObjectRequest.Key));
 
-
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
-            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
 
             if (putObjectRequest.InputStream != null)
             {
@@ -84,27 +81,18 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 if (streamWithLength.Length > 0)
                     request.UseChunkEncoding = true;
                 var length = streamWithLength.Length - streamWithLength.Position;
-                if (!request.Headers.ContainsKey("Content-Length"))
-                    request.Headers.Add("Content-Length", length.ToString(CultureInfo.InvariantCulture));
+                if (!request.Headers.ContainsKey(HeaderKeys.ContentLengthHeader))
+                    request.Headers.Add(HeaderKeys.ContentLengthHeader, length.ToString(CultureInfo.InvariantCulture));
 
                 // Wrap input stream in MD5Stream
                 var hashStream = new MD5Stream(streamWithLength, null, length);
                 putObjectRequest.InputStream = hashStream;
             }
-
+        
             request.ContentStream = putObjectRequest.InputStream;
-            if (!request.Headers.ContainsKey("Content-Type"))
-                request.Headers.Add("Content-Type", "text/plain");
-
-            if (!request.UseQueryString)
-            {
-                var queryString = AWSSDKUtils.GetParametersAsString(request.Parameters);
-                if (!string.IsNullOrEmpty(queryString))
-                {
-                    request.ResourcePath = string.Concat(request.ResourcePath, request.ResourcePath.Contains("?") ? "&" : "?", queryString);
-                }
-            }
-
+            if (!request.Headers.ContainsKey(HeaderKeys.ContentTypeHeader))
+                request.Headers.Add(HeaderKeys.ContentTypeHeader, "text/plain");
+                      
             return request;
         }
 

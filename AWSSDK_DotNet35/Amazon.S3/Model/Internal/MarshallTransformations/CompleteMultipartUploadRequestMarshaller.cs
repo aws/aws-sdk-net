@@ -21,6 +21,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using System.Globalization;
+using Amazon.Util;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -35,14 +36,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "POST";
 
-            var uriResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
-                                                S3Transforms.ToStringValue(completeMultipartUploadRequest.BucketName),
-                                                S3Transforms.ToStringValue(completeMultipartUploadRequest.Key));
+            request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
+                                                 S3Transforms.ToStringValue(completeMultipartUploadRequest.BucketName),
+                                                 S3Transforms.ToStringValue(completeMultipartUploadRequest.Key));
 
-            request.Parameters.Add("uploadId", S3Transforms.ToStringValue(completeMultipartUploadRequest.UploadId));
-
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
-            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
+            request.AddSubResource("uploadId", S3Transforms.ToStringValue(completeMultipartUploadRequest.UploadId));
 
             var stringWriter = new StringWriter(System.Globalization.CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = Encoding.UTF8, OmitXmlDeclaration = true }))
@@ -76,25 +74,15 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 var content = stringWriter.ToString();
                 request.Content = Encoding.UTF8.GetBytes(content);
-                request.Headers["Content-Type"] = "application/xml";
+                request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
 
-                request.Parameters[S3QueryParameter.ContentType.ToString()] = "application/xml";
                 var checksum = AmazonS3Util.GenerateChecksumForContent(content, true);
-                request.Headers[Amazon.Util.AWSSDKUtils.ContentMD5Header] = checksum;
+                request.Headers[HeaderKeys.ContentMD5Header] = checksum;
 
             }
             catch (EncoderFallbackException e)
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
-            }
-
-            if (!request.UseQueryString)
-            {
-                var queryString = Amazon.Util.AWSSDKUtils.GetParametersAsString(request.Parameters);
-                if (!string.IsNullOrEmpty(queryString))
-                {
-                    request.ResourcePath = string.Concat(request.ResourcePath, request.ResourcePath.Contains("?") ? "&" : "?", queryString);
-                }
             }
 
             return request;

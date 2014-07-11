@@ -30,14 +30,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "DELETE";
 
-            var uriResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}", 
-                                                S3Transforms.ToStringValue(abortMultipartUploadRequest.BucketName),
-                                                S3Transforms.ToStringValue(abortMultipartUploadRequest.Key));
+            request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}", 
+                                                 S3Transforms.ToStringValue(abortMultipartUploadRequest.BucketName),
+                                                 S3Transforms.ToStringValue(abortMultipartUploadRequest.Key));
 
-            request.Parameters.Add("uploadId", S3Transforms.ToStringValue(abortMultipartUploadRequest.UploadId));
-
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
-            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
+            request.AddSubResource("uploadId", S3Transforms.ToStringValue(abortMultipartUploadRequest.UploadId));
             request.UseQueryString = true;
             
             return request;

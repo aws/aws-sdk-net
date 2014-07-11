@@ -82,6 +82,7 @@ namespace Amazon.S3.Transfer.Internal
 #endif
             var progressHandler = new ProgressHandler(this.PutObjectProgressEventCallback);
             putRequest.StreamUploadProgressCallback += progressHandler.OnTransferProgress;
+            putRequest.BeforeRequestEvent += this.RequestEventHandler;
 
             putRequest.InputStream = this._fileTransporterRequest.InputStream;
             return putRequest;

@@ -42,19 +42,19 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Facets", targetDepth))
+                if (context.TestExpression("facets", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, BucketInfo, StringUnmarshaller, BucketInfoUnmarshaller>(StringUnmarshaller.Instance, BucketInfoUnmarshaller.Instance);
                     response.Facets = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Hits", targetDepth))
+                if (context.TestExpression("hits", targetDepth))
                 {
                     var unmarshaller = HitsUnmarshaller.Instance;
                     response.Hits = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = SearchStatusUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context);

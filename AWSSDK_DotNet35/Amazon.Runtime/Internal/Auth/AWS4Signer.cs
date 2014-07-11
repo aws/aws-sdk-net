@@ -15,6 +15,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Globalization;
 using System.Text.RegularExpressions;
@@ -39,14 +40,7 @@ namespace Amazon.Runtime.Internal.Auth
 
         public const string EmptyBodySha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
         public const string StreamingBodySha256 = "STREAMING-AWS4-HMAC-SHA256-PAYLOAD";
-
-        public const string HostHeader = "host";
-        public const string AuthorizationHeader = "Authorization";
-
-        internal const string XAmzDate = "X-Amz-Date";
-        internal const string XAmzSignedHeaders = "X-Amz-SignedHeaders";
-        internal const string XAmzContentSha256 = "X-Amz-Content-SHA256";
-        internal const string XAmzDecodedContentLength = "X-Amz-Decoded-Content-Length";
+        public const string AWSChunkedEncoding = "aws-chunked";
 
         static readonly Regex CompressWhitespaceRegex = new Regex("\\s+");
         const SigningAlgorithm SignerAlgorithm = SigningAlgorithm.HmacSHA256;
@@ -90,7 +84,7 @@ namespace Amazon.Runtime.Internal.Auth
                                   string awsSecretAccessKey)
         {
             var signingResult = SignRequest(request, clientConfig, metrics, awsAccessKeyId, awsSecretAccessKey);
-            request.Headers[AuthorizationHeader] = signingResult.ForAuthorizationHeader;
+            request.Headers[HeaderKeys.AuthorizationHeader] = signingResult.ForAuthorizationHeader;
         }
 
         /// <summary>
@@ -132,32 +126,16 @@ namespace Amazon.Runtime.Internal.Auth
             var signedAt = InitializeHeaders(request.Headers, request.Endpoint);
             var service = DetermineService(clientConfig);
             var region = DetermineSigningRegion(clientConfig, service);
-            
-            var resourcePathParamStart = -1;
-            var resourcePath = string.Empty;
 
-            // Extract the true resource path, less any query parameters or sub resource
-            if (!string.IsNullOrEmpty(request.ResourcePath))
-            {
-                resourcePathParamStart = request.ResourcePath.IndexOf('?');
-                resourcePath = resourcePathParamStart == -1 ? request.ResourcePath : request.ResourcePath.Substring(0, resourcePathParamStart);
-            }
-
-            // if UseQueryString is indicated and Parameters are present, canonicalize those (including uri encoding them)
-            // otherwise if we spotted parameters in the resource path, canonicalize those instead (which should be encoded
-            // already)
-            var canonicalQueryParams = string.Empty;
-            if (request.UseQueryString && request.Parameters.Count > 0)
-                canonicalQueryParams = CanonicalizeQueryParameters(request.Parameters);
-            else if (resourcePathParamStart != -1)
-                canonicalQueryParams = CanonicalizeQueryParameters(request.ResourcePath.Substring(resourcePathParamStart + 1), false);
-
+            var parametersToCanonicalize = GetParametersToCanonicalize(request);
+            var canonicalParameters = CanonicalizeQueryParameters(parametersToCanonicalize);
             var bodyHash = SetRequestBodyHash(request);
             var sortedHeaders = SortHeaders(request.Headers);
-            var canonicalRequest = CanonicalizeRequest(resourcePath,
+            
+            var canonicalRequest = CanonicalizeRequest(request.ResourcePath,
                                                        request.HttpMethod,
                                                        sortedHeaders,
-                                                       canonicalQueryParams,
+                                                       canonicalParameters,
                                                        bodyHash);
             if (metrics != null)
                 metrics.AddProperty(Metric.CanonicalRequest, canonicalRequest);
@@ -197,18 +175,18 @@ namespace Amazon.Runtime.Internal.Auth
         public static DateTime InitializeHeaders(IDictionary<string, string> headers, Uri requestEndpoint, DateTime requestDateTime)
         {
             // clean up any prior signature in the headers if resigning
-            headers.Remove(AuthorizationHeader);
+            headers.Remove(HeaderKeys.AuthorizationHeader);
 
-            if (!headers.ContainsKey(HostHeader))
+            if (!headers.ContainsKey(HeaderKeys.HostHeader))
             {
                 var hostHeader = requestEndpoint.Host;
                 if (!requestEndpoint.IsDefaultPort)
                     hostHeader += ":" + requestEndpoint.Port;
-                headers.Add(HostHeader, hostHeader);
+                headers.Add(HeaderKeys.HostHeader, hostHeader);
             }
 
             var dt = requestDateTime;
-            headers[XAmzDate] = dt.ToString(AWSSDKUtils.ISO8601BasicDateTimeFormat, CultureInfo.InvariantCulture);
+            headers[HeaderKeys.XAmzDateHeader] = dt.ToString(AWSSDKUtils.ISO8601BasicDateTimeFormat, CultureInfo.InvariantCulture);
 
             return dt;
         }
@@ -340,22 +318,22 @@ namespace Amazon.Runtime.Internal.Auth
         public static string SetRequestBodyHash(IRequest request)
         {
             string computedContentHash = null;
-            if (request.Headers.TryGetValue(XAmzContentSha256, out computedContentHash))
+            if (request.Headers.TryGetValue(HeaderKeys.XAmzContentSha256Header, out computedContentHash))
                 return computedContentHash;
 
             if (request.UseChunkEncoding)
             {
                 computedContentHash = StreamingBodySha256;
-                if (request.Headers.ContainsKey("Content-Length"))
+                if (request.Headers.ContainsKey(HeaderKeys.ContentLengthHeader))
                 {
                     // substitute the originally declared content length with the true size of
                     // the data we'll upload, which is inflated with chunk metadata
-                    request.Headers[XAmzDecodedContentLength] = request.Headers["Content-Length"];
-                    var originalContentLength = long.Parse(request.Headers["Content-Length"], CultureInfo.InvariantCulture);
-                    request.Headers["Content-Length"]
+                    request.Headers[HeaderKeys.XAmzDecodedContentLengthHeader] = request.Headers[HeaderKeys.ContentLengthHeader];
+                    var originalContentLength = long.Parse(request.Headers[HeaderKeys.ContentLengthHeader], CultureInfo.InvariantCulture);
+                    request.Headers[HeaderKeys.ContentLengthHeader]
                         = ChunkedUploadWrapperStream.ComputeChunkedContentLength(originalContentLength).ToString(CultureInfo.InvariantCulture);
                 }
-                request.Headers["Content-Encoding"] = "aws-chunked";
+                request.Headers[HeaderKeys.ContentEncodingHeader] = AWSChunkedEncoding;
             }
             else
             {
@@ -376,7 +354,7 @@ namespace Amazon.Runtime.Internal.Auth
             }
 
             if (computedContentHash != null)
-                request.Headers.Add(XAmzContentSha256, computedContentHash);
+                request.Headers.Add(HeaderKeys.XAmzContentSha256Header, computedContentHash);
 
             return computedContentHash;
         }
@@ -494,7 +472,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// will look for the hash as a header on the request.
         /// </param>
         /// <returns>Canonicalised request as a string</returns>
-        protected static string CanonicalizeRequest(string resourcePath, 
+        protected static string CanonicalizeRequest(string resourcePath,
                                                     string httpMethod,
                                                     IDictionary<string, string> sortedHeaders,
                                                     string canonicalQueryString,
@@ -515,7 +493,7 @@ namespace Amazon.Runtime.Internal.Auth
             else
             {
                 string contentHash;
-                if (sortedHeaders.TryGetValue(XAmzContentSha256, out contentHash))
+                if (sortedHeaders.TryGetValue(HeaderKeys.XAmzContentSha256Header, out contentHash))
                     canonicalRequest.Append(contentHash);
             }
 
@@ -529,10 +507,20 @@ namespace Amazon.Runtime.Internal.Auth
         /// <returns>Canonicalized resource path for the endpoint</returns>
         protected static string CanonicalizeResourcePath(string resourcePath)
         {
-            if (string.IsNullOrEmpty(resourcePath))
+            if (string.IsNullOrEmpty(resourcePath) || resourcePath == "/")
                 return "/";
-            var canonicalizedPath = resourcePath.StartsWith("/", StringComparison.Ordinal) ? resourcePath : "/" + resourcePath;
-            return AWSSDKUtils.UrlEncode(canonicalizedPath, true);
+
+            var pathSegments = resourcePath.Split(new char[] {'/'}, StringSplitOptions.RemoveEmptyEntries);
+            var canonicalizedPath = new StringBuilder();
+            foreach (var segment in pathSegments)
+            {
+                canonicalizedPath.AppendFormat("/{0}", AWSSDKUtils.UrlEncode(segment, false));
+            }
+            
+            if (resourcePath.EndsWith("/", StringComparison.Ordinal))
+                canonicalizedPath.Append("/");
+
+            return canonicalizedPath.ToString();
         }
 
         /// <summary>
@@ -543,12 +531,12 @@ namespace Amazon.Runtime.Internal.Auth
         /// <remarks>For AWS4 signing, all headers are considered viable for inclusion</remarks>
         protected static IDictionary<string, string> SortHeaders(IEnumerable<KeyValuePair<string, string>> requestHeaders)
         {
-            var canonicalizedHeaders = new SortedDictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+            var sortedHeaders = new SortedDictionary<string, string>(StringComparer.OrdinalIgnoreCase);
             foreach (var header in requestHeaders)
             {
-                canonicalizedHeaders.Add(header.Key, header.Value);
+                sortedHeaders.Add(header.Key, header.Value);
             }
-            return canonicalizedHeaders;
+            return sortedHeaders;
         }
 
         /// <summary>
@@ -592,6 +580,35 @@ namespace Amazon.Runtime.Internal.Auth
         }
 
         /// <summary>
+        /// Collects the subresource and query string parameters into one collection
+        /// ready for canonicalization
+        /// </summary>
+        /// <param name="request">The in-flight request being signed</param>
+        /// <returns>The fused set of parameters</returns>
+        protected static IDictionary<string, string> GetParametersToCanonicalize(IRequest request)
+        {
+            var parametersToCanonicalize = new Dictionary<string, string>();
+
+            if (request.SubResources != null && request.SubResources.Count > 0)
+            {
+                foreach (var subResource in request.SubResources)
+                {
+                    parametersToCanonicalize.Add(subResource.Key, subResource.Value);
+                }
+            }
+
+            if (request.UseQueryString && request.Parameters != null && request.Parameters.Count > 0)
+            {
+                foreach (var queryParameter in request.Parameters.Where(queryParameter => queryParameter.Value != null))
+                {
+                    parametersToCanonicalize.Add(queryParameter.Key, queryParameter.Value);
+                }
+            }
+
+            return parametersToCanonicalize;
+        }
+
+        /// <summary>
         /// Computes and returns the canonicalized query string, if query parameters have been supplied.
         /// Parameters with no value will be canonicalized as 'param='. The expectation is that parameters
         /// have not already been url encoded prior to canonicalization.
@@ -612,19 +629,19 @@ namespace Amazon.Runtime.Internal.Auth
 
             var queryParamsStart = queryString.IndexOf('?');
             var qs = queryString.Substring(++queryParamsStart); 
-            int subStringPos = 0;
-            int index = qs.IndexOfAny(new char[] { '&', ';' }, 0);
+            var subStringPos = 0;
+            var index = qs.IndexOfAny(new char[] { '&', ';' }, 0);
             if (index == -1 && subStringPos < qs.Length)
                 index = qs.Length;
             while (index != -1)
             {
-                string token = qs.Substring(subStringPos, index - subStringPos);
+                var token = qs.Substring(subStringPos, index - subStringPos);
 
                 // If the next character is a space then this isn't the end of query string value
                 // Content Disposition is an example of this.
                 if (!(index + 1 < qs.Length && qs[index + 1] == ' '))
                 {
-                    int equalPos = token.IndexOf('=');
+                    var equalPos = token.IndexOf('=');
                     if (equalPos == -1)
                         queryParams.Add(token, null);
                     else
@@ -705,11 +722,9 @@ namespace Amazon.Runtime.Internal.Auth
         {
             if (request.Content == null)
                 return AWSSDKUtils.GetParametersAsString(request.Parameters);
-            else
-            {
-                var encoding = Encoding.GetEncoding(DEFAULT_ENCODING);
-                return encoding.GetString(request.Content, 0, request.Content.Length);
-            }
+
+            var encoding = Encoding.GetEncoding(DEFAULT_ENCODING);
+            return encoding.GetString(request.Content, 0, request.Content.Length);
         }
 
         #endregion
@@ -848,42 +863,40 @@ namespace Amazon.Runtime.Internal.Auth
                                                  string overrideSigningRegion)
         {
             // clean up any prior signature in the headers if resigning
-            request.Headers.Remove(AuthorizationHeader);
-            if (!request.Headers.ContainsKey(HostHeader))
+            request.Headers.Remove(HeaderKeys.AuthorizationHeader);
+            if (!request.Headers.ContainsKey(HeaderKeys.HostHeader))
             {
                 var hostHeader = request.Endpoint.Host;
                 if (!request.Endpoint.IsDefaultPort)
                     hostHeader += ":" + request.Endpoint.Port;
-                request.Headers.Add(HostHeader, hostHeader);
+                request.Headers.Add(HeaderKeys.HostHeader, hostHeader);
             }
 
             var signedAt = DateTime.UtcNow;
-            var region = overrideSigningRegion == null ? DetermineSigningRegion(clientConfig, service) : overrideSigningRegion;
+            var region = overrideSigningRegion ?? DetermineSigningRegion(clientConfig, service);
 
-            // remove any hash supplied in headers in favor of the 'unsigned-payload' expected by AWS4
-            if (request.Headers.ContainsKey(XAmzContentSha256))
-                request.Headers.Remove(XAmzContentSha256);
+            // AWS4 presigned urls got S3 are expected to contain a 'UNSIGNED-PAYLOAD' magic string
+            // during signing (other services use the empty-body sha)
+            if (request.Headers.ContainsKey(HeaderKeys.XAmzContentSha256Header))
+                request.Headers.Remove(HeaderKeys.XAmzContentSha256Header);
+
             var sortedHeaders = SortHeaders(request.Headers);
             var canonicalizedHeaderNames = CanonicalizeHeaderNames(sortedHeaders);
 
-            // add the auth parameters for canonicalization to a copy of the parameters so we don't
-            // end up adding url encoded data to the url subsquently
-            var copiedParameters = new Dictionary<string, string>(request.Parameters)
-                {
-                    {XAmzAlgorithm, string.Format(CultureInfo.InvariantCulture, "{0}-{1}", Scheme, Algorithm)},
-                    {
-                        XAmzCredential, string.Format(CultureInfo.InvariantCulture, "{0}/{1}/{2}/{3}/{4}",
-                                                      awsAccessKeyId,
-                                                      FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateFormat),
-                                                      region,
-                                                      service,
-                                                      Terminator)
-                    },
-                    {XAmzDate, FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateTimeFormat)},
-                    {XAmzSignedHeaders, canonicalizedHeaderNames}
-                };
+            var parametersToCanonicalize = GetParametersToCanonicalize(request);
+            parametersToCanonicalize.Add(XAmzAlgorithm, string.Format(CultureInfo.InvariantCulture, "{0}-{1}", Scheme, Algorithm));
+            parametersToCanonicalize.Add(XAmzCredential,
+                                         string.Format(CultureInfo.InvariantCulture, "{0}/{1}/{2}/{3}/{4}",
+                                                       awsAccessKeyId,
+                                                       FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateFormat),
+                                                       region,
+                                                       service,
+                                                       Terminator));
 
-            var canonicalQueryParams = CanonicalizeQueryParameters(copiedParameters);
+            parametersToCanonicalize.Add(HeaderKeys.XAmzDateHeader, FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateTimeFormat));
+            parametersToCanonicalize.Add(HeaderKeys.XAmzSignedHeadersHeader, canonicalizedHeaderNames);
+
+            var canonicalQueryParams = CanonicalizeQueryParameters(parametersToCanonicalize);
 
             var canonicalRequest = CanonicalizeRequest(request.ResourcePath,
                                                        request.HttpMethod,
@@ -1055,8 +1068,8 @@ namespace Amazon.Runtime.Internal.Auth
                 authParams.AppendFormat("&{0}={1}",
                                         AWS4PreSignedUrlSigner.XAmzCredential,
                                         string.Format(CultureInfo.InvariantCulture, "{0}/{1}", AccessKeyId, Scope));
-                authParams.AppendFormat("&{0}={1}", AWS4Signer.XAmzDate, ISO8601DateTime);
-                authParams.AppendFormat("&{0}={1}", AWS4Signer.XAmzSignedHeaders, SignedHeaders);
+                authParams.AppendFormat("&{0}={1}", HeaderKeys.XAmzDateHeader, ISO8601DateTime);
+                authParams.AppendFormat("&{0}={1}", HeaderKeys.XAmzSignedHeadersHeader, SignedHeaders);
                 authParams.AppendFormat("&{0}={1}", AWS4PreSignedUrlSigner.XAmzSignature, Signature);
 
                 return authParams.ToString();

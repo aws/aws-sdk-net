@@ -110,6 +110,12 @@ namespace Amazon.Runtime
             {
                 this.serviceURL = null;
                 this.regionEndpoint = value;
+                if (this.regionEndpoint != null)
+                {
+                    var endpoint = this.regionEndpoint.GetEndpointForService(RegionEndpointServiceName);
+                    if (endpoint != null && endpoint.SignatureVersionOverride != null)
+                        this.SignatureVersion = endpoint.SignatureVersionOverride;
+                }
             }
         }
 

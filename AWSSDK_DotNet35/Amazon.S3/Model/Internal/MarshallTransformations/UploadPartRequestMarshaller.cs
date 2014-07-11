@@ -19,8 +19,8 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using Amazon.Util;
 using Amazon.S3.Util;
+using Amazon.Util;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -36,30 +36,27 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             if (uploadPartRequest.IsSetMD5Digest())
-                request.Headers["Content-MD5"] = uploadPartRequest.MD5Digest;
+                request.Headers[HeaderKeys.ContentMD5Header] = uploadPartRequest.MD5Digest;
 
             if (uploadPartRequest.IsSetServerSideEncryptionCustomerMethod())
-                request.Headers.Add("x-amz-server-side-encryption-customer-algorithm", uploadPartRequest.ServerSideEncryptionCustomerMethod);
+                request.Headers.Add(HeaderKeys.XAmzSSECustomerAlgorithmHeader, uploadPartRequest.ServerSideEncryptionCustomerMethod);
             if (uploadPartRequest.IsSetServerSideEncryptionCustomerProvidedKey())
             {
-                request.Headers.Add("x-amz-server-side-encryption-customer-key", uploadPartRequest.ServerSideEncryptionCustomerProvidedKey);
+                request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyHeader, uploadPartRequest.ServerSideEncryptionCustomerProvidedKey);
                 if (uploadPartRequest.IsSetServerSideEncryptionCustomerProvidedKeyMD5())
-                    request.Headers.Add("x-amz-server-side-encryption-customer-key-MD5", uploadPartRequest.ServerSideEncryptionCustomerProvidedKeyMD5);
+                    request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyMD5Header, uploadPartRequest.ServerSideEncryptionCustomerProvidedKeyMD5);
                 else
-                    request.Headers.Add("x-amz-server-side-encryption-customer-key-MD5", AmazonS3Util.ComputeEncodedMD5FromEncodedString(uploadPartRequest.ServerSideEncryptionCustomerProvidedKey));
+                    request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyMD5Header, AmazonS3Util.ComputeEncodedMD5FromEncodedString(uploadPartRequest.ServerSideEncryptionCustomerProvidedKey));
             }
 
-            var uriResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
-                                                S3Transforms.ToStringValue(uploadPartRequest.BucketName),
-                                                S3Transforms.ToStringValue(uploadPartRequest.Key));
+            request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
+                                                 S3Transforms.ToStringValue(uploadPartRequest.BucketName),
+                                                 S3Transforms.ToStringValue(uploadPartRequest.Key));
 
             if (uploadPartRequest.IsSetPartNumber())
-                request.Parameters.Add("partNumber", S3Transforms.ToStringValue(uploadPartRequest.PartNumber));
+                request.AddSubResource("partNumber", S3Transforms.ToStringValue(uploadPartRequest.PartNumber));
             if (uploadPartRequest.IsSetUploadId())
-                request.Parameters.Add("uploadId", S3Transforms.ToStringValue(uploadPartRequest.UploadId));
-
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
-            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
+                request.AddSubResource("uploadId", S3Transforms.ToStringValue(uploadPartRequest.UploadId));
 
             if (uploadPartRequest.InputStream != null)
             {
@@ -67,8 +64,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 var partialStream = new PartialWrapperStream(uploadPartRequest.InputStream, uploadPartRequest.PartSize);
                 if (partialStream.Length > 0)
                     request.UseChunkEncoding = true;
-                if (!request.Headers.ContainsKey("Content-Length"))
-                    request.Headers.Add("Content-Length", partialStream.Length.ToString(CultureInfo.InvariantCulture));
+                if (!request.Headers.ContainsKey(HeaderKeys.ContentLengthHeader))
+                    request.Headers.Add(HeaderKeys.ContentLengthHeader, partialStream.Length.ToString(CultureInfo.InvariantCulture));
 
                 // Wrap input stream in MD5Stream; after this we can no longer seek or position the stream
                 var hashStream = new MD5Stream(partialStream, null, partialStream.Length);
@@ -77,17 +74,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.ContentStream = uploadPartRequest.InputStream;
 
-            if (!request.Headers.ContainsKey("Content-Type"))
-                request.Headers.Add("Content-Type", "text/plain");
-
-            if (!request.UseQueryString)
-            {
-                var queryString = AWSSDKUtils.GetParametersAsString(request.Parameters);
-                if (!string.IsNullOrEmpty(queryString))
-                {
-                    request.ResourcePath = string.Concat(request.ResourcePath, request.ResourcePath.Contains("?") ? "&" : "?", queryString);
-                }
-            }
+            if (!request.Headers.ContainsKey(HeaderKeys.ContentTypeHeader))
+                request.Headers.Add(HeaderKeys.ContentTypeHeader, "text/plain");
 
             return request;
         }

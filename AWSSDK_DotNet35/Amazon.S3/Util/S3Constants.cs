@@ -46,23 +46,6 @@ namespace Amazon.S3.Util
         // The maximum number of keys that can be passed into a DeleteObjects call.
         internal const int MULTIPLE_OBJECT_DELETE_LIMIT = 1000;
 
-        // Commonly used headers
-        internal const string AmzRequestIdHeader = "x-amz-request-id";
-        internal const string AmzId2Header = "x-amz-id-2";
-        internal const string AmzAclHeader = "x-amz-acl";
-        internal const string AmzDateHeader = "x-amz-date";
-        internal const string AmzMetadataDirectiveHeader = "x-amz-metadata-directive";
-        internal const string AuthorizationHeader = "Authorization";
-        internal const string AmzVersionIdHeader = "x-amz-version-id";
-        internal const string AmzDeleteMarkerHeader = "x-amz-delete-marker";
-        internal const string AmzMfaHeader = "x-amz-mfa";
-        internal const string AmzStorageClassHeader = "x-amz-storage-class";
-        internal const string AmzSecurityTokenHeader = "x-amz-security-token";
-        internal const string AmzServerSideEncryptionHeader = "x-amz-server-side-encryption";
-        internal const string AmzExpirationHeader = "x-amz-expiration";
-        internal const string AmzWebsiteRedirectLocationHeader = "x-amz-website-redirect-location";
-        internal const string AmzRestoreHeader = "x-amz-restore";
-
         internal const string 
             AmzGrantHeaderRead        = "x-amz-grant-read",
             AmzGrantHeaderWrite       = "x-amz-grant-write",
@@ -84,16 +67,8 @@ namespace Amazon.S3.Util
             PostFormDataPolicy = "Policy",
             PostFormDataSignature = "Signature";
 
-        // Accepted HTTP Verbs
-        internal static readonly string[] Verbs = { "GET", "HEAD", "PUT", "DELETE", "POST" };
-        internal static readonly string GetVerb = Verbs[0];
-        internal static readonly string HeadVerb = Verbs[1];
-        internal static readonly string PutVerb = Verbs[2];
-        internal static readonly string DeleteVerb = Verbs[3];
-        internal static readonly string PostVerb = Verbs[4];
-
         // Commonly used static strings
-        internal const string RequestParam = "request";
+        //internal const string RequestParam = "request";
 
         // Bucket Version strings
         internal static readonly string[] BucketVersions = { "", "V1", "V2" };

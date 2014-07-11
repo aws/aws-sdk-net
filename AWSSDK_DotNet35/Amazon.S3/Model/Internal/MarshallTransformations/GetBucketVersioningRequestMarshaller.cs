@@ -29,12 +29,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "GET";
 
-            var uriResourcePath = string.Concat("/", S3Transforms.ToStringValue(getBucketVersioningRequest.BucketName));
-
-            request.Parameters.Add("versioning", null);
-
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
-            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
+            request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(getBucketVersioningRequest.BucketName));
+            request.AddSubResource("versioning");
             request.UseQueryString = true;
             
             return request;

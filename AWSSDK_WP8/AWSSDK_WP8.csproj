@@ -389,6 +389,9 @@
     <Compile Include="..\AWSSDK_DotNet35\Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\*">
       <Visible>false</Visible>
     </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.SimpleNotificationService\Util\*">
+      <Visible>false</Visible>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.SQS\*" Exclude="..\AWSSDK_DotNet35\Amazon.SQS\IAmazonSQS.cs;..\AWSSDK_DotNet35\Amazon.SQS\AmazonSQSClient.cs">

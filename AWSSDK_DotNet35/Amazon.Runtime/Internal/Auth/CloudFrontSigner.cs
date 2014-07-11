@@ -40,11 +40,11 @@ namespace Amazon.Runtime.Internal.Auth
             }
 
             string dateTime = AWSSDKUtils.GetFormattedTimestampRFC822(0);
-            request.Headers.Add("X-Amz-Date", dateTime);
+            request.Headers.Add(HeaderKeys.XAmzDateHeader, dateTime);
 
             string signature = ComputeHash(dateTime, awsSecretAccessKey, SigningAlgorithm.HmacSHA1);
 
-            request.Headers.Add("Authorization", "AWS " + awsAccessKeyId + ":" + signature);
+            request.Headers.Add(HeaderKeys.AuthorizationHeader, "AWS " + awsAccessKeyId + ":" + signature);
         }
     }
 }

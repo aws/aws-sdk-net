@@ -17,6 +17,7 @@ using Amazon.S3.Util;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using System.Globalization;
+using Amazon.Util;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -32,7 +33,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             if (copyObjectRequest.IsSetCannedACL())
-                request.Headers.Add("x-amz-acl", S3Transforms.ToStringValue(copyObjectRequest.CannedACL));
+                request.Headers.Add(HeaderKeys.XAmzAclHeader, S3Transforms.ToStringValue(copyObjectRequest.CannedACL));
 
             var headers = copyObjectRequest.Headers;
             foreach (var key in headers.Keys)
@@ -41,60 +42,58 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             HeaderACLRequestMarshaller.Marshall(request, copyObjectRequest);
 
             if (copyObjectRequest.IsSetSourceBucket())
-                request.Headers.Add("x-amz-copy-source", ConstructCopySourceHeaderValue(copyObjectRequest.SourceBucket, copyObjectRequest.SourceKey, copyObjectRequest.SourceVersionId));
+                request.Headers.Add(HeaderKeys.XAmzCopySourceHeader, ConstructCopySourceHeaderValue(copyObjectRequest.SourceBucket, copyObjectRequest.SourceKey, copyObjectRequest.SourceVersionId));
 
             if (copyObjectRequest.IsSetETagToMatch())
-                request.Headers.Add("x-amz-copy-source-if-match", S3Transforms.ToStringValue(copyObjectRequest.ETagToMatch));
+                request.Headers.Add(HeaderKeys.XAmzCopySourceIfMatchHeader, S3Transforms.ToStringValue(copyObjectRequest.ETagToMatch));
 
             if (copyObjectRequest.IsSetModifiedSinceDate())
-                request.Headers.Add("x-amz-copy-source-if-modified-since", S3Transforms.ToStringValue(copyObjectRequest.ModifiedSinceDate));
+                request.Headers.Add(HeaderKeys.XAmzCopySourceIfModifiedSinceHeader, S3Transforms.ToStringValue(copyObjectRequest.ModifiedSinceDate));
 
             if (copyObjectRequest.IsSetETagToNotMatch())
-                request.Headers.Add("x-amz-copy-source-if-none-match", S3Transforms.ToStringValue(copyObjectRequest.ETagToNotMatch));
+                request.Headers.Add(HeaderKeys.XAmzCopySourceIfNoneMatchHeader, S3Transforms.ToStringValue(copyObjectRequest.ETagToNotMatch));
 
             if (copyObjectRequest.IsSetUnmodifiedSinceDate())
-                request.Headers.Add("x-amz-copy-source-if-unmodified-since", S3Transforms.ToStringValue(copyObjectRequest.UnmodifiedSinceDate));
+                request.Headers.Add(HeaderKeys.XAmzCopySourceIfUnmodifiedSinceHeader, S3Transforms.ToStringValue(copyObjectRequest.UnmodifiedSinceDate));
 
-            request.Headers.Add("x-amz-metadata-directive", S3Transforms.ToStringValue(copyObjectRequest.MetadataDirective.ToString()));
+            request.Headers.Add(HeaderKeys.XAmzMetadataDirectiveHeader, S3Transforms.ToStringValue(copyObjectRequest.MetadataDirective.ToString()));
 
             if (copyObjectRequest.IsSetServerSideEncryptionMethod())
-                request.Headers.Add("x-amz-server-side-encryption", S3Transforms.ToStringValue(copyObjectRequest.ServerSideEncryptionMethod));
+                request.Headers.Add(HeaderKeys.XAmzServerSideEncryptionHeader, S3Transforms.ToStringValue(copyObjectRequest.ServerSideEncryptionMethod));
             if (copyObjectRequest.IsSetServerSideEncryptionCustomerMethod())
-                request.Headers.Add("x-amz-server-side-encryption-customer-algorithm", copyObjectRequest.ServerSideEncryptionCustomerMethod);
+                request.Headers.Add(HeaderKeys.XAmzSSECustomerAlgorithmHeader, copyObjectRequest.ServerSideEncryptionCustomerMethod);
             if (copyObjectRequest.IsSetServerSideEncryptionCustomerProvidedKey())
             {
-                request.Headers.Add("x-amz-server-side-encryption-customer-key", copyObjectRequest.ServerSideEncryptionCustomerProvidedKey);
+                request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyHeader, copyObjectRequest.ServerSideEncryptionCustomerProvidedKey);
                 if(copyObjectRequest.IsSetServerSideEncryptionCustomerProvidedKeyMD5())
-                    request.Headers.Add("x-amz-server-side-encryption-customer-key-MD5", copyObjectRequest.ServerSideEncryptionCustomerProvidedKeyMD5);
+                    request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyMD5Header, copyObjectRequest.ServerSideEncryptionCustomerProvidedKeyMD5);
                 else
-                    request.Headers.Add("x-amz-server-side-encryption-customer-key-MD5", AmazonS3Util.ComputeEncodedMD5FromEncodedString(copyObjectRequest.ServerSideEncryptionCustomerProvidedKey));
+                    request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyMD5Header, AmazonS3Util.ComputeEncodedMD5FromEncodedString(copyObjectRequest.ServerSideEncryptionCustomerProvidedKey));
             }
             if (copyObjectRequest.IsSetCopySourceServerSideEncryptionCustomerMethod())
-                request.Headers.Add("x-amz-copy-source-server-side-encryption-customer-algorithm", copyObjectRequest.CopySourceServerSideEncryptionCustomerMethod);
+                request.Headers.Add(HeaderKeys.XAmzCopySourceSSECustomerAlgorithmHeader, copyObjectRequest.CopySourceServerSideEncryptionCustomerMethod);
             if (copyObjectRequest.IsSetCopySourceServerSideEncryptionCustomerProvidedKey())
             {
-                request.Headers.Add("x-amz-copy-source-server-side-encryption-customer-key", copyObjectRequest.CopySourceServerSideEncryptionCustomerProvidedKey);
+                request.Headers.Add(HeaderKeys.XAmzCopySourceSSECustomerKeyHeader, copyObjectRequest.CopySourceServerSideEncryptionCustomerProvidedKey);
                 if (copyObjectRequest.IsSetCopySourceServerSideEncryptionCustomerProvidedKeyMD5())
-                    request.Headers.Add("x-amz-copy-source-server-side-encryption-customer-key-MD5", copyObjectRequest.CopySourceServerSideEncryptionCustomerProvidedKeyMD5);
+                    request.Headers.Add(HeaderKeys.XAmzCopySourceSSECustomerKeyMD5Header, copyObjectRequest.CopySourceServerSideEncryptionCustomerProvidedKeyMD5);
                 else
-                    request.Headers.Add("x-amz-copy-source-server-side-encryption-customer-key-MD5", AmazonS3Util.ComputeEncodedMD5FromEncodedString(copyObjectRequest.CopySourceServerSideEncryptionCustomerProvidedKey));
+                    request.Headers.Add(HeaderKeys.XAmzCopySourceSSECustomerKeyMD5Header, AmazonS3Util.ComputeEncodedMD5FromEncodedString(copyObjectRequest.CopySourceServerSideEncryptionCustomerProvidedKey));
             }
 
             if (copyObjectRequest.IsSetStorageClass())
-                request.Headers.Add("x-amz-storage-class", S3Transforms.ToStringValue(copyObjectRequest.StorageClass));
+                request.Headers.Add(HeaderKeys.XAmzStorageClassHeader, S3Transforms.ToStringValue(copyObjectRequest.StorageClass));
 
             if (copyObjectRequest.IsSetWebsiteRedirectLocation())
-                request.Headers.Add("x-amz-website-redirect-location", S3Transforms.ToStringValue(copyObjectRequest.WebsiteRedirectLocation));
+                request.Headers.Add(HeaderKeys.XAmzWebsiteRedirectLocationHeader, S3Transforms.ToStringValue(copyObjectRequest.WebsiteRedirectLocation));
 
             AmazonS3Util.SetMetadataHeaders(request, copyObjectRequest.Metadata);
 
-            var uriResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
-                                                S3Transforms.ToStringValue(copyObjectRequest.DestinationBucket),
-                                                S3Transforms.ToStringValue(copyObjectRequest.DestinationKey));
+            request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
+                                                 S3Transforms.ToStringValue(copyObjectRequest.DestinationBucket),
+                                                 S3Transforms.ToStringValue(copyObjectRequest.DestinationKey));
 
 
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
-            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
             request.UseQueryString = true;
 
             return request;

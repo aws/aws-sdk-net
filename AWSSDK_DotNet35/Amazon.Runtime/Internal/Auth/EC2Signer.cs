@@ -55,23 +55,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <returns></returns>
         AbstractAWSSigner SelectSigner(ClientConfig config)
         {
-            // do a cascading series of checks to try and arrive at whether we have
-            // a recognisable region; this is required to use the AWS4 signer
-            RegionEndpoint r = null;
-            if (!string.IsNullOrEmpty(config.AuthenticationRegion))
-                r = RegionEndpoint.GetBySystemName(config.AuthenticationRegion);
-
-            if (r == null && !string.IsNullOrEmpty(config.ServiceURL))
-            {
-                var parsedRegion = AWSSDKUtils.DetermineRegion(config.ServiceURL);
-                if (!string.IsNullOrEmpty(parsedRegion))
-                    r = RegionEndpoint.GetBySystemName(parsedRegion);
-            }
-
-            if (r == null && config.RegionEndpoint != null)
-                r = config.RegionEndpoint;
-
-            if (_useSigV4 || r == RegionEndpoint.CNNorth1)
+            if (UseV4Signing(_useSigV4, config))
                 return AWS4SignerInstance;
 
             return this;

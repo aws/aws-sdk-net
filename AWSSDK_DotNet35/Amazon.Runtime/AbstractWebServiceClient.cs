@@ -16,10 +16,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
-using System.Security;
+using System.Reflection;
 using System.Text;
 using System.Threading;
-
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
@@ -181,6 +180,59 @@ namespace Amazon.Runtime
         protected virtual void Initialize()
         {
         }
+
+        /// <summary>
+        /// Patches the in-flight uri to stop it unescaping the path etc (what Uri did before
+        /// Microsoft deprecated the constructor flag). This is particularly important for
+        /// Amazon S3 customers who want to use backslash (\) in their key names.
+        /// </summary>
+        /// <remarks>
+        /// Different behavior in the various runtimes has been observed and in addition some 
+        /// 'documented' ways of doing this between 2.x and 4.x runtimes has also been observed 
+        /// to not be reliable.
+        /// 
+        /// This patch effectively emulates what adding a schemesettings element to the 
+        /// app.config file with value 'name="http" genericUriParserOptions="DontUnescapePathDotsAndSlashes"'
+        /// does. As we're a dll, that avenue is not open to us.
+        /// </remarks>
+        /// <param name="uri"></param>
+        public void DontUnescapePathDotsAndSlashes(Uri uri)
+        {
+#if BCL
+            // System.UriSyntaxFlags is internal
+            const int UnEscapeDotsAndSlashes = 0x2000000;
+
+            if (uri == null)
+                throw new ArgumentNullException("uri");
+
+            try
+            {
+                // currently prefer silent return than exceptions or log messages if reflection fails to
+                // find the fields we need, otherwise we could generate a lot of noise if someone
+                // runs on a platform without these fields
+                FieldInfo fieldInfo = uri.GetType().GetField("m_Syntax", BindingFlags.Instance | BindingFlags.NonPublic);
+                if (fieldInfo == null)
+                    return;
+
+                var uriParser = fieldInfo.GetValue(uri);
+
+                fieldInfo = typeof(UriParser).GetField("m_Flags", BindingFlags.Instance | BindingFlags.NonPublic);
+                if (fieldInfo == null)
+                    return;
+
+                var uriSyntaxFlags = fieldInfo.GetValue(uriParser);
+                uriSyntaxFlags = (int)uriSyntaxFlags & ~UnEscapeDotsAndSlashes;
+
+                fieldInfo.SetValue(uriParser, uriSyntaxFlags);
+            }
+            catch (Exception e)
+            {
+                // swallow the exception, but log it for reference if a user
+                // complains of errors
+                logger.InfoFormat("Caught exception attempting to set DontUnescapePathDotsAndSlashes mode on uri: {0}", e.Message);
+            }
+#endif
+        }
         #endregion
 
         /// <summary>
@@ -214,7 +266,7 @@ namespace Amazon.Runtime
                             requestData.Request.Parameters["SecurityToken"] = immutableCredentials.Token;
                             break;
                         case ClientProtocol.RestProtocol:
-                            requestData.Request.Headers["x-amz-security-token"] = immutableCredentials.Token;
+                            requestData.Request.Headers[HeaderKeys.XAmzSecurityTokenHeader] = immutableCredentials.Token;
                             break;
                         default:
                             throw new InvalidDataException("Cannot determine protocol");
@@ -226,17 +278,17 @@ namespace Amazon.Runtime
 
         protected void ConfigureRequest(IRequestData requestData)
         {
-            requestData.Request.Headers["User-Agent"] = this.Config.UserAgent; // +" " + (asyncResult.CompletedSynchronously ? "ClientSync" : "ClientAsync");
+            requestData.Request.Headers[HeaderKeys.UserAgentHeader] = this.Config.UserAgent; // +" " + (asyncResult.CompletedSynchronously ? "ClientSync" : "ClientAsync");
 
             var method = requestData.Request.HttpMethod.ToUpper(CultureInfo.InvariantCulture);
             if (method != "GET" && method != "DELETE" && method != "HEAD")
             {
-                if (!requestData.Request.Headers.ContainsKey(AWSSDKUtils.ContentTypeHeader))
+                if (!requestData.Request.Headers.ContainsKey(HeaderKeys.ContentTypeHeader))
                 {
                     if (requestData.Request.UseQueryString)
-                        requestData.Request.Headers[AWSSDKUtils.ContentTypeHeader] = "application/x-amz-json-1.0";
+                        requestData.Request.Headers[HeaderKeys.ContentTypeHeader] = "application/x-amz-json-1.0";
                     else
-                        requestData.Request.Headers[AWSSDKUtils.ContentTypeHeader] = AWSSDKUtils.UrlEncodedContent;
+                        requestData.Request.Headers[HeaderKeys.ContentTypeHeader] = AWSSDKUtils.UrlEncodedContent;
                 }
             }
 
@@ -259,45 +311,49 @@ namespace Amazon.Runtime
             return requestData;
         }
 
-        protected static Uri ComposeUrl(IRequest iRequest, Uri endpoint)
+        protected Uri ComposeUrl(IRequest iRequest, Uri endpoint)
         {
-            Uri url = endpoint;
-            if (!string.IsNullOrEmpty(iRequest.ResourcePath))
+            var url = endpoint;
+            var resourcePath = iRequest.ResourcePath;
+            if (resourcePath == null)
+                resourcePath = string.Empty;
+            else
             {
-                string resourcePath = iRequest.ResourcePath;
                 if (resourcePath.StartsWith("//", StringComparison.Ordinal))
                     resourcePath = resourcePath.Substring(2);
                 else if (resourcePath.StartsWith("/", StringComparison.Ordinal))
                     resourcePath = resourcePath.Substring(1);
+            }
 
-                string newPath;
-                if (resourcePath.Contains("?"))
+            // Construct any sub resource/query parameter additions to append to the
+            // resource path. Services like S3 which allow '?' and/or '&' in resource paths 
+            // should use SubResources instead of appending them to the resource path with 
+            // query string delimiters during request marshalling.
+
+            var delim = "?";
+            var sb = new StringBuilder();
+
+            if (iRequest.SubResources.Count > 0)
+            {
+                foreach (var subResource in iRequest.SubResources)
                 {
-                    string[] tokens = resourcePath.Split('?');
-                    newPath = AWSSDKUtils.UrlEncode(tokens[0], true) + "?" + tokens[1];
+                    sb.AppendFormat("{0}{1}", delim, subResource.Key);
+                    if (subResource.Value != null)
+                        sb.AppendFormat("={0}", subResource.Value);
+                    delim = "&";
                 }
-                else
-                    newPath = AWSSDKUtils.UrlEncode(resourcePath, true);
-
-                string fullUri = url.AbsoluteUri + newPath;
-                url = new Uri(fullUri);
             }
 
             if (iRequest.UseQueryString && iRequest.Parameters.Count > 0)
             {
-                string queryString = AWSSDKUtils.GetParametersAsString(iRequest.Parameters);
-                if (!string.IsNullOrEmpty(queryString))
-                {
-                    if (url.AbsoluteUri.Contains("?"))
-                        url = new Uri(string.Format(CultureInfo.InvariantCulture, "{0}&{1}", url.AbsoluteUri, queryString));
-                    else
-                        url = new Uri(string.Format(CultureInfo.InvariantCulture, "{0}?{1}", url.AbsoluteUri, queryString));
-                }
-                else
-                    url = new Uri(url.AbsoluteUri);
+                var queryString = AWSSDKUtils.GetParametersAsString(iRequest.Parameters);
+                sb.AppendFormat("{0}{1}", delim, queryString);
             }
 
-            return url;
+            var parameterizedPath = string.Concat(AWSSDKUtils.UrlEncode(resourcePath, true), sb);
+            var uri= new Uri(url.AbsoluteUri + parameterizedPath);
+            DontUnescapePathDotsAndSlashes(uri);
+            return uri;
         }
 
         /// <summary>

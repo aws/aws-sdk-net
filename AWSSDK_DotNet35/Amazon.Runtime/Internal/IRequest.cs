@@ -65,6 +65,30 @@ namespace Amazon.Runtime.Internal
         }
 
         /// <summary>
+        /// Returns the subresources that should be appended to the resource path.
+        /// This is used primarily for Amazon S3, where object keys can contain '?'
+        /// characters, making string-splitting of a resource path potentially 
+        /// hazardous.
+        /// </summary>
+        IDictionary<string, string> SubResources
+        {
+            get;
+        }
+
+        /// <summary>
+        /// Adds a new null entry to the SubResources collection for the request
+        /// </summary>
+        /// <param name="subResource">The name of the subresource</param>
+        void AddSubResource(string subResource);
+
+        /// <summary>
+        /// Adds a new entry to the SubResources collection for the request
+        /// </summary>
+        /// <param name="subResource">The name of the subresource</param>
+        /// <param name="value">Value of the entry</param>
+        void AddSubResource(string subResource, string value);
+
+        /// <summary>
         /// Gets and sets the type of http request to make, whether it should be POST,GET or DELETE
         /// </summary>
         string HttpMethod
@@ -86,12 +110,6 @@ namespace Amazon.Runtime.Internal
         /// Gets and Sets the resource path added on to the endpoint.
         /// </summary>
         string ResourcePath
-        {
-            get;
-            set;
-        }
-
-        string CanonicalResource
         {
             get;
             set;
@@ -187,6 +205,19 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         /// <returns></returns>
         bool UseChunkEncoding
+        {
+            get; 
+            set;
+        }
+
+        /// <summary>
+        /// Used for Amazon S3 requests where the bucket name is removed from
+        /// the marshalled resource path into the host header. To comply with
+        /// AWS2 signature calculation, we need to recover the bucket name
+        /// and include it in the resource canonicalization, which we do using
+        /// this field.
+        /// </summary>
+        string CanonicalResourcePrefix
         {
             get; 
             set;

@@ -29,9 +29,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "GET";
 
-            var uriResourcePath = string.Concat("/", S3Transforms.ToStringValue(listVersionsRequest.BucketName));
+            request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(listVersionsRequest.BucketName));
 
-            request.Parameters.Add("versions", null);
+            request.AddSubResource("versions");
 
             if (listVersionsRequest.IsSetDelimiter())
                 request.Parameters.Add("delimiter", S3Transforms.ToStringValue(listVersionsRequest.Delimiter));
@@ -46,8 +46,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (listVersionsRequest.IsSetEncoding())
                 request.Parameters.Add("encoding-type", S3Transforms.ToStringValue(listVersionsRequest.Encoding));
 
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
-            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
             request.UseQueryString = true;
             
             return request;

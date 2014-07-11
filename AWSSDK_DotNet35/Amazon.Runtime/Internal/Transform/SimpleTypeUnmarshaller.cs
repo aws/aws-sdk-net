@@ -315,6 +315,37 @@ namespace Amazon.Runtime.Internal.Transform
         }
     }
 
+    public class DateTimeEpochLongMillisecondsUnmarshaller : IUnmarshaller<DateTime, XmlUnmarshallerContext>, IUnmarshaller<DateTime, JsonUnmarshallerContext>
+    {
+        private DateTimeEpochLongMillisecondsUnmarshaller() { }
+
+        private static DateTimeEpochLongMillisecondsUnmarshaller _instance = new DateTimeEpochLongMillisecondsUnmarshaller();
+
+        public static DateTimeEpochLongMillisecondsUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
+        public static DateTimeEpochLongMillisecondsUnmarshaller GetInstance()
+        {
+            return DateTimeEpochLongMillisecondsUnmarshaller.Instance;
+        }
+
+        public DateTime Unmarshall(XmlUnmarshallerContext context)
+        {
+            return SimpleTypeUnmarshaller<DateTime>.Unmarshall(context);
+        }
+        public DateTime Unmarshall(JsonUnmarshallerContext context)
+        {
+            long millseconds = LongUnmarshaller.Instance.Unmarshall(context);
+            var ret = Amazon.Util.AWSSDKUtils.EPOCH_START.AddMilliseconds(millseconds);
+            return ret;
+        }
+    }
+
     /// <summary>
     /// Unmarshaller for MemoryStream fields
     /// </summary>

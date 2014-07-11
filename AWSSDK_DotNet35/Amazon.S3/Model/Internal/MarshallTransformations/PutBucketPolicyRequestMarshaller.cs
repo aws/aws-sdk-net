@@ -17,6 +17,7 @@ using System.IO;
 using System.Text;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Util;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -32,27 +33,15 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             if (putBucketPolicyRequest.IsSetContentMD5())
-                request.Headers.Add("Content-MD5", S3Transforms.ToStringValue(putBucketPolicyRequest.ContentMD5));
-            if (!request.Headers.ContainsKey("Content-Type"))
-                request.Headers.Add("Content-Type", "text/plain");
+                request.Headers.Add(HeaderKeys.ContentMD5Header, S3Transforms.ToStringValue(putBucketPolicyRequest.ContentMD5));
+            if (!request.Headers.ContainsKey(HeaderKeys.ContentTypeHeader))
+                request.Headers.Add(HeaderKeys.ContentTypeHeader, "text/plain");
 
-            var uriResourcePath = string.Concat("/", S3Transforms.ToStringValue(putBucketPolicyRequest.BucketName));
+            request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(putBucketPolicyRequest.BucketName));
 
-            request.Parameters.Add("policy", null);
-
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
-            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
+            request.AddSubResource("policy");
 
             request.ContentStream = new MemoryStream(Encoding.UTF8.GetBytes(putBucketPolicyRequest.Policy));
-
-            if (!request.UseQueryString)
-            {
-                var queryString = Amazon.Util.AWSSDKUtils.GetParametersAsString(request.Parameters);
-                if (!string.IsNullOrEmpty(queryString))
-                {
-                    request.ResourcePath = string.Concat(request.ResourcePath, request.ResourcePath.Contains("?") ? "&" : "?", queryString);
-                }
-            }
 
             return request;
         }

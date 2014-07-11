@@ -28,10 +28,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(listMultipartUploadsRequest, "AmazonS3");
 
             request.HttpMethod = "GET";
-              
-            var uriResourcePath = string.Concat("/", S3Transforms.ToStringValue(listMultipartUploadsRequest.BucketName));
 
-            request.Parameters.Add("uploads", null);
+            request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(listMultipartUploadsRequest.BucketName));
+
+            request.AddSubResource("uploads");
 
             if (listMultipartUploadsRequest.IsSetDelimiter())
                 request.Parameters.Add("delimiter", S3Transforms.ToStringValue(listMultipartUploadsRequest.Delimiter));
@@ -46,8 +46,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (listMultipartUploadsRequest.IsSetEncoding())
                 request.Parameters.Add("encoding-type", S3Transforms.ToStringValue(listMultipartUploadsRequest.Encoding));
 
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
-            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
             request.UseQueryString = true;
             
             return request;

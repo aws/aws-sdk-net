@@ -21,11 +21,11 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Text;
+using System.IO;
 using System.Linq;
+using System.Text;
 
 using Amazon.Runtime.Internal.Util;
-using System.IO;
 
 namespace Amazon.Util
 {
@@ -40,21 +40,13 @@ namespace Amazon.Util
         internal const string DefaultRegion = "us-east-1";
         internal const string DefaultGovRegion = "us-gov-west-1";
 
-        internal const string SDKVersionNumber = "2.1.7.0";
+        internal const string SDKVersionNumber = "2.1.8.0";
 
-        internal const string IfModifiedSinceHeader = "IfModifiedSince";
-        internal const string IfMatchHeader = "If-Match";
-        internal const string ContentTypeHeader = "Content-Type";
-        internal const string ContentLengthHeader = "Content-Length";
-        internal const string ContentMD5Header = "Content-MD5";
-        internal const string ETagHeader = "ETag";
-        internal const string RequestIdHeader = "x-amzn-RequestId";
-        internal const string S3RequestIdHeader = "x-amz-request-id";
         internal const int DefaultMaxRetry = 3;
         private const int DefaultConnectionLimit = 50;
         private const int DefaultMaxIdleTime = 50 * 1000; // 50 seconds
 
-        private static readonly DateTime EPOCH_START = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+        internal static readonly DateTime EPOCH_START = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 
         internal const int DefaultBufferSize = 8192;
 
@@ -100,18 +92,16 @@ namespace Amazon.Util
         // per http://msdn.microsoft.com/en-us/library/hh367887%28v=vs.110%29.aspx
         private static string DetermineValidPathCharacters()
         {
-            string basePathCharacters = "/:'()!*[]";
+            const string basePathCharacters = "/:'()!*[]";
 
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
             foreach (var c in basePathCharacters)
             {
-                string escaped = Uri.EscapeUriString(c.ToString());
+                var escaped = Uri.EscapeUriString(c.ToString());
                 if (escaped.Length == 1 && escaped[0] == c)
                     sb.Append(c);
             }
-            string result = sb.ToString();
-
-            return result;
+            return sb.ToString();
         }
 
         /// <summary>
@@ -148,7 +138,6 @@ namespace Amazon.Util
         /// The RFC822Date Format string. Used when parsing date objects
         /// </summary>
         public const string RFC822DateFormat = "ddd, dd MMM yyyy HH:mm:ss \\G\\M\\T";
-
 
         #endregion
 

@@ -143,6 +143,24 @@
     <Compile Include="Amazon.AWSSupport\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.CognitoIdentity\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.CognitoIdentity\Model\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.CognitoIdentity\Model\Internal\MarshallTransformations\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.CognitoSync\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.CognitoSync\Model\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.CognitoSync\Model\Internal\MarshallTransformations\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.CloudFormation\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -210,6 +228,15 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.CloudWatch\Model\Internal\MarshallTransformations\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.CloudWatchLogs\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.CloudWatchLogs\Model\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.CloudWatchLogs\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.DataPipeline\*.cs">
@@ -386,6 +413,7 @@
     <Compile Include="Amazon.Runtime\Internal\Settings\SettingsCollection.cs" />
     <Compile Include="Amazon.Runtime\Internal\Settings\SettingsConstants.cs" />
     <Compile Include="Amazon.Runtime\Internal\Settings\UserCrypto.cs" />
+    <Compile Include="Amazon.Runtime\Internal\Transform\CustomMarshallTransformations.cs" />
     <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\LifecycleRuleNoncurrentVersionExpirationUnmarshaller.cs" />
     <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\LifecycleRuleNoncurrentVersionTransitionUnmarshaller.cs" />
     <Compile Include="Amazon.S3\Model\LifecycleRuleNoncurrentVersionExpiration.cs" />
@@ -430,6 +458,7 @@
     <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.SimpleNotificationService\Util\Message.cs" />
     <Compile Include="Amazon.SimpleWorkflow\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -879,6 +908,7 @@
     <Compile Include="Amazon.Util\AWSSDKUtils.bcl.cs" />
     <Compile Include="Amazon.Util\CryptoUtil.cs" />
     <Compile Include="Amazon.Util\CryptoUtil.bcl.cs" />
+    <Compile Include="Amazon.Util\HeaderKeys.cs" />
     <Compile Include="Amazon.Util\ICryptoUtil.cs" />
     <Compile Include="Amazon.Util\PaginatedResource.cs" />
     <Compile Include="Amazon.Util\PaginatedResourceFactory.cs" />

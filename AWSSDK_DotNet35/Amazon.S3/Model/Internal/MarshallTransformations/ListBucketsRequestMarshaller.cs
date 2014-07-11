@@ -28,11 +28,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(listBucketsRequest, "AmazonS3");
 
             request.HttpMethod = "GET";
-              
-            const string uriResourcePath = "/";
 
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
-            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
+            request.ResourcePath = "/";
             request.UseQueryString = true;
             
             return request;

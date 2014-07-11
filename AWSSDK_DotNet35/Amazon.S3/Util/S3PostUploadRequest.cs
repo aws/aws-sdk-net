@@ -27,6 +27,7 @@ using System.Text;
 
 using Amazon.S3.Model;
 using System.Globalization;
+using Amazon.Util;
 
 namespace Amazon.S3.Util
 {
@@ -173,7 +174,7 @@ namespace Amazon.S3.Util
             WriteFormDatum(outputStream, S3Constants.PostFormDataAcl, this.CannedACL, boundary);
 
             if (this._isSetStorageClass)
-                WriteFormDatum(outputStream, S3Constants.AmzStorageClassHeader, this.StorageClass, boundary);
+                WriteFormDatum(outputStream, HeaderKeys.XAmzStorageClassHeader, this.StorageClass, boundary);
 
             if (this._isSetActionStatus)
                 WriteFormDatum(outputStream, S3Constants.PostFormDataStatus, ((Int32)this.SuccessActionStatus).ToString(CultureInfo.InvariantCulture), boundary);

@@ -50,13 +50,13 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Rid", targetDepth))
+                if (context.TestExpression("rid", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Rid = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Timems", targetDepth))
+                if (context.TestExpression("timems", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
                     unmarshalledObject.Timems = unmarshaller.Unmarshall(context);

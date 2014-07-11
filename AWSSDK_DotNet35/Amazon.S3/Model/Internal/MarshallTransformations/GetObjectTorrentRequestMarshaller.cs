@@ -30,14 +30,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "GET";
 
-            var uriResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
-                                                S3Transforms.ToStringValue(getObjectTorrentRequest.BucketName),
-                                                S3Transforms.ToStringValue(getObjectTorrentRequest.Key));
+            request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
+                                                 S3Transforms.ToStringValue(getObjectTorrentRequest.BucketName),
+                                                 S3Transforms.ToStringValue(getObjectTorrentRequest.Key));
 
-            request.Parameters.Add("torrent", null);
-
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
-            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
+            request.AddSubResource("torrent");
             request.UseQueryString = true;
             
             return request;

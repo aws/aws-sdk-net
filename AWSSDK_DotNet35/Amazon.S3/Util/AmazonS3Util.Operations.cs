@@ -65,7 +65,10 @@ namespace Amazon.S3.Util
 
             GetPreSignedUrlRequest request = new GetPreSignedUrlRequest();
             request.BucketName = bucketName;
-            request.Expires = new DateTime(2019, 12, 31);
+            if (AWSConfigs.S3Config.UseSignatureVersion4)
+                request.Expires = DateTime.Now.AddDays(6);
+            else
+                request.Expires = new DateTime(2019, 12, 31);
             request.Verb = HttpVerb.HEAD;
             request.Protocol = Protocol.HTTP;
             string url = s3Client.GetPreSignedURL(request);

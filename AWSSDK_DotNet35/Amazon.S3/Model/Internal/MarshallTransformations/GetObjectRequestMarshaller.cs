@@ -17,6 +17,7 @@ using Amazon.S3.Util;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using System.Globalization;
+using Amazon.Util;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -32,34 +33,34 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             if (getObjectRequest.IsSetEtagToMatch())
-                request.Headers.Add("If-Match", S3Transforms.ToStringValue(getObjectRequest.EtagToMatch));
+                request.Headers.Add(HeaderKeys.IfMatchHeader, S3Transforms.ToStringValue(getObjectRequest.EtagToMatch));
 
             if (getObjectRequest.IsSetModifiedSinceDate())
-                request.Headers.Add("If-Modified-Since", S3Transforms.ToStringValue(getObjectRequest.ModifiedSinceDate));
+                request.Headers.Add(HeaderKeys.IfModifiedSinceHeader, S3Transforms.ToStringValue(getObjectRequest.ModifiedSinceDate));
 
             if (getObjectRequest.IsSetEtagToNotMatch())
-                request.Headers.Add("If-None-Match", S3Transforms.ToStringValue(getObjectRequest.EtagToNotMatch));
+                request.Headers.Add(HeaderKeys.IfNoneMatchHeader, S3Transforms.ToStringValue(getObjectRequest.EtagToNotMatch));
             
             if(getObjectRequest.IsSetUnmodifiedSinceDate())
-                request.Headers.Add("If-Unmodified-Since", S3Transforms.ToStringValue(getObjectRequest.UnmodifiedSinceDate));
+                request.Headers.Add(HeaderKeys.IfUnmodifiedSinceHeader, S3Transforms.ToStringValue(getObjectRequest.UnmodifiedSinceDate));
             
             if(getObjectRequest.IsSetByteRange())
-                request.Headers.Add("Range", getObjectRequest.ByteRange.FormattedByteRange);
+                request.Headers.Add(HeaderKeys.RangeHeader, getObjectRequest.ByteRange.FormattedByteRange);
 
             if (getObjectRequest.IsSetServerSideEncryptionCustomerMethod())
-                request.Headers.Add("x-amz-server-side-encryption-customer-algorithm", getObjectRequest.ServerSideEncryptionCustomerMethod);
+                request.Headers.Add(HeaderKeys.XAmzSSECustomerAlgorithmHeader, getObjectRequest.ServerSideEncryptionCustomerMethod);
             if (getObjectRequest.IsSetServerSideEncryptionCustomerProvidedKey())
             {
-                request.Headers.Add("x-amz-server-side-encryption-customer-key", getObjectRequest.ServerSideEncryptionCustomerProvidedKey);
+                request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyHeader, getObjectRequest.ServerSideEncryptionCustomerProvidedKey);
                 if (getObjectRequest.IsSetServerSideEncryptionCustomerProvidedKeyMD5())
-                    request.Headers.Add("x-amz-server-side-encryption-customer-key-MD5", getObjectRequest.ServerSideEncryptionCustomerProvidedKeyMD5);
+                    request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyMD5Header, getObjectRequest.ServerSideEncryptionCustomerProvidedKeyMD5);
                 else
-                    request.Headers.Add("x-amz-server-side-encryption-customer-key-MD5", AmazonS3Util.ComputeEncodedMD5FromEncodedString(getObjectRequest.ServerSideEncryptionCustomerProvidedKey));
+                    request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyMD5Header, AmazonS3Util.ComputeEncodedMD5FromEncodedString(getObjectRequest.ServerSideEncryptionCustomerProvidedKey));
             }
 
-            var uriResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
-                                                S3Transforms.ToStringValue(getObjectRequest.BucketName),
-                                                S3Transforms.ToStringValue(getObjectRequest.Key));
+            request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
+                                                 S3Transforms.ToStringValue(getObjectRequest.BucketName),
+                                                 S3Transforms.ToStringValue(getObjectRequest.Key));
 
             var headerOverrides = getObjectRequest.ResponseHeaderOverrides;
             if (headerOverrides.CacheControl != null)
@@ -75,10 +76,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (getObjectRequest.IsSetResponseExpires())
                 request.Parameters.Add("response-expires", S3Transforms.ToStringValue(getObjectRequest.ResponseExpires));
             if (getObjectRequest.IsSetVersionId())
-                request.Parameters.Add("versionId", S3Transforms.ToStringValue(getObjectRequest.VersionId));
+                request.AddSubResource("versionId", S3Transforms.ToStringValue(getObjectRequest.VersionId));
 
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters, S3Constants.GetObjectExtraSubResources);
-            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
             request.UseQueryString = true;
 
             return request;

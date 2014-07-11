@@ -407,7 +407,7 @@ namespace Amazon.S3.Model
             if (bytesWritten != this.ContentLength)
             {
                 string amzId2;                
-                this.ResponseMetadata.Metadata.TryGetValue(S3Constants.AmzId2Header, out amzId2);
+                this.ResponseMetadata.Metadata.TryGetValue(HeaderKeys.XAmzId2Header, out amzId2);
                 amzId2 = amzId2 ?? string.Empty;
  
                 var message = string.Format(CultureInfo.InvariantCulture,

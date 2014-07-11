@@ -34,8 +34,10 @@ namespace Amazon.Runtime.Internal
     /// </summary>
     internal class DefaultRequest : IRequest
     {
-        IDictionary<string, string> parameters = new Dictionary<string, string>();
-        IDictionary<string, string> headers = new Dictionary<string, string>();
+        readonly IDictionary<string, string> parameters = new Dictionary<string, string>(StringComparer.Ordinal);
+        readonly IDictionary<string, string> headers = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        readonly IDictionary<string, string> subResources = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+
         Uri endpoint;
         string resourcePath;
         string serviceName;
@@ -141,6 +143,39 @@ namespace Amazon.Runtime.Internal
             {
                 return this.parameters;
             }
+        }
+
+        /// <summary>
+        /// Returns the subresources that should be appended to the resource path.
+        /// This is used primarily for Amazon S3, where object keys can contain '?'
+        /// characters, making string-splitting of a resource path potentially 
+        /// hazardous.
+        /// </summary>
+        public IDictionary<string, string> SubResources
+        {
+            get
+            {
+                return this.subResources;
+            }
+        }
+
+        /// <summary>
+        /// Adds a new null entry to the SubResources collection for the request
+        /// </summary>
+        /// <param name="subResource">The name of the subresource</param>
+        public void AddSubResource(string subResource)
+        {
+            AddSubResource(subResource, null);
+        }
+
+        /// <summary>
+        /// Adds a new entry to the SubResources collection for the request
+        /// </summary>
+        /// <param name="subResource">The name of the subresource</param>
+        /// <param name="value">Value of the entry</param>
+        public void AddSubResource(string subResource, string value)
+        {
+            SubResources.Add(subResource, value);
         }
 
         /// <summary>
@@ -306,5 +341,18 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         /// <returns></returns>
         public bool UseChunkEncoding { get; set; }
+
+        /// <summary>
+        /// Used for Amazon S3 requests where the bucket name is removed from
+        /// the marshalled resource path into the host header. To comply with
+        /// AWS2 signature calculation, we need to recover the bucket name
+        /// and include it in the resource canonicalization, which we do using
+        /// this field.
+        /// </summary>
+        public string CanonicalResourcePrefix
+        {
+            get;
+            set;
+        }
     }
 }

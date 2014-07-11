@@ -14,11 +14,9 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Security;
 using System.Text;
 
 using Amazon.Util;
-using Amazon.Runtime;
 using System.Globalization;
 using Amazon.Runtime.Internal.Util;
 
@@ -26,8 +24,6 @@ namespace Amazon.Runtime.Internal.Auth
 {
     internal class AWS3Signer : AbstractAWSSigner
     {
-        private const string AUTHORIZATION_HEADER = "X-Amzn-Authorization";
-        private const string NONCE_HEADER = "x-amz-nonce";
         private const string HTTP_SCHEME = "AWS3";
         private const string HTTPS_SCHEME = "AWS3-HTTPS";
 
@@ -87,9 +83,9 @@ namespace Amazon.Runtime.Internal.Auth
             builder.Append("SignedHeaders=x-amz-date;x-amz-nonce,");
             builder.Append("Signature=" + signature);
 
-            request.Headers[AUTHORIZATION_HEADER] = builder.ToString();
-            request.Headers[NONCE_HEADER] = nonce;
-            request.Headers["x-amz-date"] = date;
+            request.Headers[HeaderKeys.XAmzAuthorizationHeader] = builder.ToString();
+            request.Headers[HeaderKeys.XAmzNonceHeader] = nonce;
+            request.Headers[HeaderKeys.XAmzDateHeader] = date;
         }
 
         private static void SignHttp(IRequest request, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
@@ -102,21 +98,21 @@ namespace Amazon.Runtime.Internal.Auth
             // Temporarily disabling the AWS3 HTTPS signing scheme and only using AWS3 HTTP
             isHttps = false;
 
-            request.Headers["Date"] = date;
-            request.Headers["X-Amz-Date"] = date;
+            request.Headers[HeaderKeys.DateHeader] = date;
+            request.Headers[HeaderKeys.XAmzDateHeader] = date;
 
             // AWS3 HTTP requires that we sign the Host header
             // so we have to have it in the request by the time we sign.
             string hostHeader = request.Endpoint.Host;
             if (!request.Endpoint.IsDefaultPort)
                 hostHeader += ":" + request.Endpoint.Port;
-            request.Headers["Host"] = hostHeader;
+            request.Headers[HeaderKeys.HostHeader] = hostHeader;
 
             byte[] bytesToSign = null;
             string stringToSign;
             if (isHttps)
             {
-                request.Headers[NONCE_HEADER] = nonce;
+                request.Headers[HeaderKeys.XAmzNonceHeader] = nonce;
                 stringToSign = date + nonce;
                 bytesToSign = Encoding.UTF8.GetBytes(stringToSign);
             }
@@ -151,7 +147,7 @@ namespace Amazon.Runtime.Internal.Auth
 
             builder.Append("Signature=" + signature);
             string authorizationHeader = builder.ToString();
-            request.Headers[AUTHORIZATION_HEADER] = authorizationHeader;
+            request.Headers[HeaderKeys.XAmzAuthorizationHeader] = authorizationHeader;
         }
 
         #region Http signing helpers

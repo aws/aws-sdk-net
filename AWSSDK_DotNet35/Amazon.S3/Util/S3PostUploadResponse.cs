@@ -21,6 +21,7 @@
 
 using System.Linq;
 using System.Net;
+using Amazon.Util;
 
 namespace Amazon.S3.Util
 {
@@ -33,10 +34,10 @@ namespace Amazon.S3.Util
         internal static S3PostUploadResponse FromWebResponse(HttpWebResponse response)
         {
             var postResponse = new S3PostUploadResponse{ StatusCode = response.StatusCode };
-            if (response.Headers.AllKeys.Contains(S3Constants.AmzRequestIdHeader))
-                postResponse.RequestId = response.Headers[S3Constants.AmzRequestIdHeader];
-            if (response.Headers.AllKeys.Contains(S3Constants.AmzId2Header))
-                postResponse.HostId = response.Headers[S3Constants.AmzId2Header];
+            if (response.Headers.AllKeys.Contains(HeaderKeys.XAmzRequestIdHeader))
+                postResponse.RequestId = response.Headers[HeaderKeys.XAmzRequestIdHeader];
+            if (response.Headers.AllKeys.Contains(HeaderKeys.XAmzId2Header))
+                postResponse.HostId = response.Headers[HeaderKeys.XAmzId2Header];
 
             return postResponse;
         }

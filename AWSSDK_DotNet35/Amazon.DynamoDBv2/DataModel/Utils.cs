@@ -183,7 +183,7 @@ namespace Amazon.DynamoDBv2.DataModel
             }
             else if (field != null)
             {
-                return field.IsPublic;
+                return (field.IsPublic && !field.IsLiteral);
             }
             else
             {

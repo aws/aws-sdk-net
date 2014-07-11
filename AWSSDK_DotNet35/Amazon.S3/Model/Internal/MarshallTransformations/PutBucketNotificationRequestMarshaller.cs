@@ -20,6 +20,7 @@ using Amazon.S3.Util;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Util;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -33,14 +34,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(putBucketNotificationRequest, "AmazonS3");
 
             request.HttpMethod = "PUT";
-              
-            var uriResourcePath = string.Concat("/", S3Transforms.ToStringValue(putBucketNotificationRequest.BucketName));
 
-            request.Parameters.Add("notification", null);
+            request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(putBucketNotificationRequest.BucketName));
 
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
-            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
-             
+            request.AddSubResource("notification");
+
             var stringWriter = new StringWriter(System.Globalization.CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))
             {
@@ -73,11 +71,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 var content = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
-                request.Headers["Content-Type"] = "application/xml";
+                request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
                 
-                request.Parameters[S3QueryParameter.ContentType.ToString()] = "application/xml";
                 var checksum = AmazonS3Util.GenerateChecksumForContent(content, true);
-                request.Headers[Amazon.Util.AWSSDKUtils.ContentMD5Header] = checksum;
+                request.Headers[HeaderKeys.ContentMD5Header] = checksum;
                 
             } 
             catch (EncoderFallbackException e) 
@@ -85,15 +82,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
         
-            if (!request.UseQueryString)
-            {
-                var queryString = Amazon.Util.AWSSDKUtils.GetParametersAsString(request.Parameters);
-                if (!string.IsNullOrEmpty(queryString))
-                {
-                    request.ResourcePath = string.Concat(request.ResourcePath, request.ResourcePath.Contains("?") ? "&" : "?", queryString);
-                }
-            }
-            
             return request;
         }
     }

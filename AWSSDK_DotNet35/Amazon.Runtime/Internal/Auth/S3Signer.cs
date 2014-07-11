@@ -18,17 +18,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Globalization;
-using Amazon.EC2.Model;
 using Amazon.Util;
-using Amazon.S3;
-using Amazon.S3.Util;
 using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Runtime.Internal.Auth
 {
     internal class S3Signer : AbstractAWSSigner
     {
-        private bool _useSigV4 = false;
+        private readonly bool _useSigV4;
 
         AWS4Signer _aws4Signer;
         AWS4Signer AWS4SignerInstance 
@@ -64,23 +61,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <returns></returns>
         private AbstractAWSSigner SelectSigner(ClientConfig config)
         {
-            // do a cascading series of checks to try and arrive at whether we have
-            // a recognisable region and if it is Beijing so as to select AWS4
-            RegionEndpoint r = null;
-            if (!string.IsNullOrEmpty(config.AuthenticationRegion))
-                r = RegionEndpoint.GetBySystemName(config.AuthenticationRegion);
-
-            if (r == null && !string.IsNullOrEmpty(config.ServiceURL))
-            {
-                var parsedRegion = AWSSDKUtils.DetermineRegion(config.ServiceURL);
-                if (!string.IsNullOrEmpty(parsedRegion))
-                    r = RegionEndpoint.GetBySystemName(parsedRegion);
-            }
-
-            if (r == null && config.RegionEndpoint != null)
-                r = config.RegionEndpoint;
-
-            if (_useSigV4 || r == RegionEndpoint.CNNorth1)
+            if (UseV4Signing(_useSigV4, config))
                 return AWS4SignerInstance;
 
             return this;
@@ -97,7 +78,7 @@ namespace Amazon.Runtime.Internal.Auth
             if (aws4Signer != null)
             {
                 var signingResult = aws4Signer.SignRequest(request, clientConfig, metrics, awsAccessKeyId, awsSecretAccessKey);
-                request.Headers[AWS4Signer.AuthorizationHeader] = signingResult.ForAuthorizationHeader;
+                request.Headers[HeaderKeys.AuthorizationHeader] = signingResult.ForAuthorizationHeader;
                 if (request.UseChunkEncoding)
                     request.AWS4SignerResult = signingResult;
             }
@@ -107,38 +88,41 @@ namespace Amazon.Runtime.Internal.Auth
 
         internal void SignRequest(IRequest request, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
         {
-            request.Headers["x-amz-date"] = AWSSDKUtils.FormattedCurrentTimestampRFC822;
+            request.Headers[HeaderKeys.XAmzDateHeader] = AWSSDKUtils.FormattedCurrentTimestampRFC822;
 
-            string toSign = buildSigningString(request.HttpMethod, request.CanonicalResource, request.Parameters, request.Headers);
-            metrics.AddProperty(Metric.StringToSign, toSign);
-            string auth = CryptoUtilFactory.CryptoInstance.HMACSign(toSign, awsSecretAccessKey, SigningAlgorithm.HmacSHA1);
-            string authorization = string.Concat("AWS ", awsAccessKeyId, ":", auth);
-            request.Headers[S3QueryParameter.Authorization.ToString()] = authorization;
+            var stringToSign = BuildStringToSign(request);
+            metrics.AddProperty(Metric.StringToSign, stringToSign);
+            var auth = CryptoUtilFactory.CryptoInstance.HMACSign(stringToSign, awsSecretAccessKey, SigningAlgorithm.HmacSHA1);
+            var authorization = string.Concat("AWS ", awsAccessKeyId, ":", auth);
+            request.Headers[HeaderKeys.AuthorizationHeader] = authorization;
         }
 
-        static string buildSigningString(string verb, string canonicalizedResource, IDictionary<string, string> parameters, IDictionary<string,string> webHeaders)
+        static string BuildStringToSign(IRequest request)
         {
-            StringBuilder sb = new StringBuilder("", 256);
-            string value = null;
+            var sb = new StringBuilder("", 256);
 
-            sb.Append(verb);
+            sb.Append(request.HttpMethod);
             sb.Append("\n");
 
-            if (webHeaders != null)
+            var headers = request.Headers;
+            var parameters = request.Parameters;
+
+            if (headers != null)
             {
-                if (webHeaders.ContainsKey(AWSSDKUtils.ContentMD5Header) && !String.IsNullOrEmpty(value = webHeaders[AWSSDKUtils.ContentMD5Header]))
+                string value = null;
+                if (headers.ContainsKey(HeaderKeys.ContentMD5Header) && !String.IsNullOrEmpty(value = headers[HeaderKeys.ContentMD5Header]))
                 {
                     sb.Append(value);
                 }
                 sb.Append("\n");
 
-                if (parameters.ContainsKey(S3QueryParameter.ContentType.ToString()))
+                if (parameters.ContainsKey("ContentType"))
                 {
-                    sb.Append(parameters[S3QueryParameter.ContentType.ToString()]);
+                    sb.Append(parameters["ContentType"]);
                 }
-                else if (webHeaders.ContainsKey("Content-Type"))
+                else if (headers.ContainsKey(HeaderKeys.ContentTypeHeader))
                 {
-                    sb.Append(webHeaders["Content-Type"]);
+                    sb.Append(headers[HeaderKeys.ContentTypeHeader]);
                 }
                 sb.Append("\n");
             }
@@ -150,39 +134,27 @@ namespace Amazon.Runtime.Internal.Auth
                 sb.Append("\n\n");
             }
 
-            if (parameters.ContainsKey(S3QueryParameter.Expires.ToString()))
+            if (parameters.ContainsKey("Expires"))
             {
-                sb.Append(parameters[S3QueryParameter.Expires.ToString()]);
-                webHeaders.Remove(S3Constants.AmzDateHeader);
+                sb.Append(parameters["Expires"]);
+                if (headers != null)
+                    headers.Remove(HeaderKeys.XAmzDateHeader);
             }
 
             sb.Append("\n");
-            sb.Append(buildCanonicalizedHeaders(webHeaders));
+            sb.Append(BuildCanonicalizedHeaders(headers));
 
+            var canonicalizedResource = BuildCanonicalizedResource(request);
             if (!string.IsNullOrEmpty(canonicalizedResource))
-            {
-                int quotePos = canonicalizedResource.IndexOf("?", StringComparison.OrdinalIgnoreCase);
-                if (quotePos != -1)
-                {
-                    var path = canonicalizedResource.Substring(0, quotePos);
-                    var query = canonicalizedResource.Substring(quotePos);
-                    var fullPath = AmazonS3Util.UrlEncode(path, true) + query;
-                    sb.Append(fullPath);
-                }
-                else
-                {
-                    sb.Append(AmazonS3Util.UrlEncode(canonicalizedResource, true));
-                }
-            }
+                sb.Append(canonicalizedResource);
 
             return sb.ToString();
         }
 
-        static StringBuilder buildCanonicalizedHeaders(IDictionary<string, string> headers)
+        static string BuildCanonicalizedHeaders(IDictionary<string, string> headers)
         {
-            // Create the canonicalized header string to return.
-            StringBuilder sb = new StringBuilder(256);
-            foreach (string key in headers.Keys.OrderBy(x => x, StringComparer.OrdinalIgnoreCase))
+            var sb = new StringBuilder(256);
+            foreach (var key in headers.Keys.OrderBy(x => x, StringComparer.OrdinalIgnoreCase))
             {
                 var lowerKey = key.ToLower(CultureInfo.InvariantCulture);
                 if (!lowerKey.StartsWith("x-amz-", StringComparison.Ordinal))
@@ -191,7 +163,67 @@ namespace Amazon.Runtime.Internal.Auth
                 sb.Append(String.Concat(lowerKey, ":", headers[key], "\n"));
             }
 
-            return sb;
+            return sb.ToString();
+        }
+
+        private static readonly HashSet<string> SignableParameters = new HashSet<string>
+        (
+            new[]
+            {
+                "response-content-type",
+                "response-content-language",
+                "response-expires",
+                "response-cache-control",
+                "response-content-disposition",
+                "response-content-encoding"
+            }, 
+            StringComparer.OrdinalIgnoreCase
+        );
+
+        static string BuildCanonicalizedResource(IRequest request)
+        {
+            // CanonicalResourcePrefix will hold the bucket name if we switched to virtual host addressing
+            // during request preprocessing (where it would have been removed from ResourcePath)
+            var sb = new StringBuilder(request.CanonicalResourcePrefix);
+            sb.Append(!string.IsNullOrEmpty(request.ResourcePath)
+                                ? AWSSDKUtils.UrlEncode(request.ResourcePath, true)
+                                : "/");
+
+            // form up the set of all subresources and specific query parameters that must be 
+            // included in the canonical resource, then append them ordered by key to the 
+            // canonicalization
+            var resourcesToSign = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+            if (request.SubResources.Count > 0)
+            {
+                foreach (var subResource in request.SubResources)
+                {
+                    resourcesToSign.Add(subResource.Key, subResource.Value);
+                }
+            }
+
+            if (request.Parameters.Count > 0)
+            {
+                var parameters 
+                    = request.Parameters.Where(kvp => SignableParameters.Contains(kvp.Key) 
+                                                        && kvp.Value != null)
+                                        .ToList();
+
+                foreach (var kvp in parameters)
+                {
+                    resourcesToSign.Add(kvp.Key, kvp.Value);
+                }
+            }
+
+            var delim = "?";
+            foreach (var resourceToSign in resourcesToSign.OrderBy(r => r.Key))
+            {
+                sb.AppendFormat("{0}{1}", delim, resourceToSign.Key);
+                if (resourceToSign.Value != null)
+                    sb.AppendFormat("={0}", resourceToSign.Value);
+                delim = "&";
+            }
+
+            return sb.ToString();
         }
     }
 }

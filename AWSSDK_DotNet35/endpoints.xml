@@ -3,6 +3,19 @@
     <Region>
       <Name>us-east-1</Name>
       <Endpoint>
+        <ServiceName>cognito-sync</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>cognito-sync.us-east-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>cognito-identity</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>cognito-identity.us-east-1.amazonaws.com</Hostname>
+      </Endpoint>
+
+      <Endpoint>
         <ServiceName>cloudformation</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -31,6 +44,12 @@
         <Http>true</Http>
         <Https>true</Https>
         <Hostname>monitoring.us-east-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>logs</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>logs.us-east-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>dynamodb</ServiceName>
@@ -208,6 +227,7 @@
         <Http>true</Http>
         <Https>true</Https>
         <Hostname>cloudfront.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
       </Endpoint>
       <Endpoint>
         <ServiceName>cloudsearch</ServiceName>
@@ -369,6 +389,7 @@
         <Http>true</Http>
         <Https>true</Https>
         <Hostname>cloudfront.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
       </Endpoint>
       <Endpoint>
         <ServiceName>cloudsearch</ServiceName>
@@ -554,6 +575,7 @@
         <Http>true</Http>
         <Https>true</Https>
         <Hostname>cloudfront.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
       </Endpoint>
       <Endpoint>
         <ServiceName>cloudsearch</ServiceName>
@@ -727,6 +749,7 @@
         <Http>true</Http>
         <Https>true</Https>
         <Hostname>cloudfront.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
       </Endpoint>
       <Endpoint>
         <ServiceName>cloudsearch</ServiceName>
@@ -888,6 +911,7 @@
         <Http>true</Http>
         <Https>true</Https>
         <Hostname>cloudfront.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
       </Endpoint>
       <Endpoint>
         <ServiceName>cloudsearch</ServiceName>
@@ -1055,6 +1079,7 @@
         <Http>true</Http>
         <Https>true</Https>
         <Hostname>cloudfront.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
       </Endpoint>
       <Endpoint>
         <ServiceName>cloudsearch</ServiceName>
@@ -1204,6 +1229,7 @@
         <Http>true</Http>
         <Https>true</Https>
         <Hostname>cloudfront.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
       </Endpoint>
       <Endpoint>
         <ServiceName>cloudsearch</ServiceName>
@@ -1402,6 +1428,7 @@
         <Http>true</Http>
         <Https>true</Https>
         <Hostname>ec2.cn-north-1.amazonaws.com.cn</Hostname>
+        <SignatureVersionOverride>4</SignatureVersionOverride>
       </Endpoint>
       <Endpoint>
         <ServiceName>elasticmapreduce</ServiceName>
@@ -1438,6 +1465,7 @@
         <Http>true</Http>
         <Https>true</Https>
         <Hostname>s3.cn-north-1.amazonaws.com.cn</Hostname>
+        <SignatureVersionOverride>4</SignatureVersionOverride>
       </Endpoint>
       <Endpoint>
         <ServiceName>autoscaling</ServiceName>

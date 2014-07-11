@@ -30,12 +30,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.Suppress404Exceptions = true;
             request.HttpMethod = "GET";
 
-            var uriResourcePath = string.Concat("/", S3Transforms.ToStringValue(getBucketPolicyRequest.BucketName));
-            
-            request.Parameters.Add("policy", null);
-
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
-            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
+            request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(getBucketPolicyRequest.BucketName));
+            request.AddSubResource("policy");
             request.UseQueryString = true;
             
             return request;

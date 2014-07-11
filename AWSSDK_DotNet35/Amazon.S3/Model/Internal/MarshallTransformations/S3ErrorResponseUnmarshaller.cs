@@ -15,7 +15,6 @@
 
 using Amazon.Runtime.Internal;
 
-using System;
 using Amazon.Util;
 using Amazon.S3.Util;
 using Amazon.Runtime.Internal.Transform;
@@ -39,10 +38,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             S3ErrorResponse response = new S3ErrorResponse();
 
             response.Code = context.ResponseData.StatusCode.ToString();
-            if (context.ResponseData.IsHeaderPresent(AWSSDKUtils.S3RequestIdHeader))
-                response.RequestId = context.ResponseData.GetHeaderValue(AWSSDKUtils.S3RequestIdHeader);
-            if (context.ResponseData.IsHeaderPresent(S3Constants.AmzId2Header))
-                response.Id2 = context.ResponseData.GetHeaderValue(S3Constants.AmzId2Header);
+            if (context.ResponseData.IsHeaderPresent(HeaderKeys.XAmzRequestIdHeader))
+                response.RequestId = context.ResponseData.GetHeaderValue(HeaderKeys.XAmzRequestIdHeader);
+            if (context.ResponseData.IsHeaderPresent(HeaderKeys.XAmzId2Header))
+                response.Id2 = context.ResponseData.GetHeaderValue(HeaderKeys.XAmzId2Header);
 
             if ((int)context.ResponseData.StatusCode >= 500)
                 response.Type = ErrorType.Receiver;
@@ -52,8 +51,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 response.Type = ErrorType.Unknown;
 
             string contentLengthHeader = null;
-            if (context.ResponseData.IsHeaderPresent(AWSSDKUtils.ContentLengthHeader))
-                contentLengthHeader = context.ResponseData.GetHeaderValue(AWSSDKUtils.ContentLengthHeader);
+            if (context.ResponseData.IsHeaderPresent(HeaderKeys.ContentLengthHeader))
+                contentLengthHeader = context.ResponseData.GetHeaderValue(HeaderKeys.ContentLengthHeader);
 
             long contentLength;
             if (string.IsNullOrEmpty(contentLengthHeader) || !long.TryParse(contentLengthHeader, out contentLength))

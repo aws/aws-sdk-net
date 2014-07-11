@@ -73,6 +73,10 @@
     <Compile Include="Amazon.AutoScaling\IAmazonAutoScaling.cs" />
     <Compile Include="Amazon.AWSSupport\AmazonAWSSupportClient.cs" />
     <Compile Include="Amazon.AWSSupport\IAmazonAWSSupport.cs" />
+    <Compile Include="Amazon.CognitoIdentity\AmazonCognitoIdentityClient.cs" />
+    <Compile Include="Amazon.CognitoIdentity\IAmazonCognitoIdentity.cs" />
+    <Compile Include="Amazon.CognitoSync\AmazonCognitoSyncClient.cs" />
+    <Compile Include="Amazon.CognitoSync\IAmazonCognitoSync.cs" />
     <Compile Include="Amazon.CloudFormation\AmazonCloudFormationClient.cs" />
     <Compile Include="Amazon.CloudFormation\IAmazonCloudFormation.cs" />
     <Compile Include="Amazon.CloudFront\AmazonCloudFrontClient.cs" />
@@ -85,6 +89,8 @@
     <Compile Include="Amazon.CloudSearch_2011_02_01\IAmazonCloudSearch.cs" />
     <Compile Include="Amazon.CloudTrail\AmazonCloudTrailClient.cs" />
     <Compile Include="Amazon.CloudTrail\IAmazonCloudTrail.cs" />
+    <Compile Include="Amazon.CloudWatchLogs\AmazonCloudWatchLogsClient.cs" />
+    <Compile Include="Amazon.CloudWatchLogs\IAmazonCloudWatchLogs.cs" />
     <Compile Include="Amazon.CloudWatch\AmazonCloudWatchClient.cs" />
     <Compile Include="Amazon.CloudWatch\IAmazonCloudWatch.cs" />
     <Compile Include="Amazon.DataPipeline\AmazonDataPipelineClient.cs" />
@@ -261,6 +267,28 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CognitoIdentity\*" Exclude="..\AWSSDK_DotNet35\Amazon.CognitoIdentity\IAmazonCognitoIdentity.cs;..\AWSSDK_DotNet35\Amazon.CognitoIdentity\AmazonCognitoIdentityClient.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CognitoIdentity\Model\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CognitoIdentity\Model\Internal\MarshallTransformations\*">
+      <Visible>false</Visible>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CognitoSync\*" Exclude="..\AWSSDK_DotNet35\Amazon.CognitoSync\IAmazonCognitoSync.cs;..\AWSSDK_DotNet35\Amazon.CognitoSync\AmazonCognitoSyncClient.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CognitoSync\Model\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CognitoSync\Model\Internal\MarshallTransformations\*">
+      <Visible>false</Visible>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.AutoScaling\*" Exclude="..\AWSSDK_DotNet35\Amazon.AutoScaling\IAmazonAutoScaling.cs;..\AWSSDK_DotNet35\Amazon.AutoScaling\AmazonAutoScalingClient.cs">
       <Visible>false</Visible>
     </Compile>
@@ -351,6 +379,17 @@
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.CloudWatch\Model\Internal\MarshallTransformations\*">
+      <Visible>false</Visible>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CloudWatchLogs\*" Exclude="..\AWSSDK_DotNet35\Amazon.CloudWatchLogs\IAmazonCloudWatchLogs.cs;..\AWSSDK_DotNet35\Amazon.CloudWatchLogs\AmazonCloudWatchLogsClient.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CloudWatchLogs\Model\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CloudWatchLogs\Model\Internal\MarshallTransformations\*">
       <Visible>false</Visible>
     </Compile>
   </ItemGroup>
@@ -632,6 +671,9 @@
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.SimpleNotificationService\Util\*">
       <Visible>false</Visible>
     </Compile>
   </ItemGroup>

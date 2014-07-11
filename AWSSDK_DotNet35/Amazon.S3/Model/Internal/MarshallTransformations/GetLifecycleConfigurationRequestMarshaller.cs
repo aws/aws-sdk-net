@@ -29,13 +29,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.Suppress404Exceptions = true;
             request.HttpMethod = "GET";
-              
-            var uriResourcePath = string.Concat("/", S3Transforms.ToStringValue(getLifecycleConfiguration.BucketName));
 
-            request.Parameters.Add("lifecycle", null);
-
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
-            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
+            request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(getLifecycleConfiguration.BucketName));
+            request.AddSubResource("lifecycle");
             request.UseQueryString = true;
             
             return request;

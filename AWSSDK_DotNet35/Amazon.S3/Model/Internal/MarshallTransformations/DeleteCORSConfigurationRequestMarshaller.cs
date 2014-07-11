@@ -29,12 +29,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "DELETE";
 
-            var uriResourcePath = string.Concat("/", S3Transforms.ToStringValue(deleteCORSConfigurationRequest.BucketName));
-
-            request.Parameters.Add("cors", null);
-
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
-            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
+            request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(deleteCORSConfigurationRequest.BucketName));
+            request.AddSubResource("cors");
             request.UseQueryString = true;
             
             return request;

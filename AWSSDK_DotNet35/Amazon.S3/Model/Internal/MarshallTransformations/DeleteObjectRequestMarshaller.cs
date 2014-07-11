@@ -16,6 +16,7 @@
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using System.Globalization;
+using Amazon.Util;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -31,17 +32,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.HttpMethod = "DELETE";
 
             if (deleteObjectRequest.IsSetMfaCodes())
-                request.Headers.Add("x-amz-mfa", deleteObjectRequest.MfaCodes.FormattedMfaCodes);
+                request.Headers.Add(HeaderKeys.XAmzMfaHeader, deleteObjectRequest.MfaCodes.FormattedMfaCodes);
 
-            var uriResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}", 
-                                                S3Transforms.ToStringValue(deleteObjectRequest.BucketName), 
-                                                S3Transforms.ToStringValue(deleteObjectRequest.Key));
+            request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}", 
+                                                 S3Transforms.ToStringValue(deleteObjectRequest.BucketName), 
+                                                 S3Transforms.ToStringValue(deleteObjectRequest.Key));
 
             if (deleteObjectRequest.IsSetVersionId())
-                request.Parameters.Add("versionId", S3Transforms.ToStringValue(deleteObjectRequest.VersionId));
-
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
-            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
+                request.AddSubResource("versionId", S3Transforms.ToStringValue(deleteObjectRequest.VersionId));
             request.UseQueryString = true;
             
             return request;

@@ -22,6 +22,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using System.Globalization;
+using Amazon.Util;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -37,13 +38,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             if (putBucketRequest.IsSetCannedACL())
-                request.Headers.Add("x-amz-acl", putBucketRequest.CannedACL.Value);
+                request.Headers.Add(HeaderKeys.XAmzAclHeader, putBucketRequest.CannedACL.Value);
             else if (putBucketRequest.Grants != null && putBucketRequest.Grants.Count > 0)
                 ConvertPutWithACLRequest(putBucketRequest, request);
 
             var uriResourcePath = string.Concat("/", S3Transforms.ToStringValue(putBucketRequest.BucketName));
 
-            request.CanonicalResource = uriResourcePath;
             request.ResourcePath = uriResourcePath;
 
             var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
@@ -75,27 +75,15 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 var content = stringWriter.ToString();
                 request.Content = Encoding.UTF8.GetBytes(content);
-                request.Headers["Content-Type"] = "application/xml";
+                request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
 
-                request.Parameters[S3QueryParameter.ContentType.ToString()] = "application/xml";
                 var checksum = AmazonS3Util.GenerateChecksumForContent(content, true);
-                request.Headers[Amazon.Util.AWSSDKUtils.ContentMD5Header] = checksum;
+                request.Headers[HeaderKeys.ContentMD5Header] = checksum;
 
             }
             catch (EncoderFallbackException e)
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
-            }
-
-            if (!request.UseQueryString)
-            {
-                var queryString = Amazon.Util.AWSSDKUtils.GetParametersAsString(request.Parameters);
-                if (!string.IsNullOrEmpty(queryString))
-                {
-                    request.ResourcePath = string.Concat(request.ResourcePath, 
-                                                         request.ResourcePath.Contains("?") ? "&" : "?", 
-                                                         queryString);
-                }
             }
 
             return request;

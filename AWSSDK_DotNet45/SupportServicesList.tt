@@ -38,7 +38,9 @@
 		"Amazon.SimpleWorkflow.IAmazonSimpleWorkflow",
 		"Amazon.SQS.IAmazonSQS",
 		"Amazon.StorageGateway.IAmazonStorageGateway",
-		"Amazon.AWSSupport.IAmazonAWSSupport"
+		"Amazon.AWSSupport.IAmazonAWSSupport",
+		"Amazon.CognitoIdentity.IAmazonCognitoIdentity",
+		"Amazon.CognitoSync.IAmazonCognitoSync"
 	};
 	
 	// Used to generate factory methods in AWSClientFactory.tt
@@ -51,6 +53,7 @@
 		"Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch",
 		"Amazon.CloudTrail.IAmazonCloudTrail",
 		"Amazon.CloudWatch.IAmazonCloudWatch",
+		"Amazon.CloudWatchLogs.IAmazonCloudWatchLogs",
 		"Amazon.DataPipeline.IAmazonDataPipeline",
 		"Amazon.DirectConnect.IAmazonDirectConnect",
 		"Amazon.DynamoDBv2.IAmazonDynamoDB",
@@ -76,6 +79,8 @@
 		"Amazon.SimpleWorkflow.IAmazonSimpleWorkflow",
 		"Amazon.SQS.IAmazonSQS",
 		"Amazon.StorageGateway.IAmazonStorageGateway",
-		"Amazon.AWSSupport.IAmazonAWSSupport"
+		"Amazon.AWSSupport.IAmazonAWSSupport",
+		"Amazon.CognitoIdentity.IAmazonCognitoIdentity",
+		"Amazon.CognitoSync.IAmazonCognitoSync"
 	};
 #>

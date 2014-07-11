@@ -79,7 +79,8 @@ namespace Amazon.S3
             if (aws4Signing && string.IsNullOrEmpty(region))
                 throw new InvalidOperationException("To use AWS4 signing, a region must be specified in the client configuration using the AuthenticationRegion or Region properties, or be determinable from the service URL.");
 
-            if (region.Equals(RegionEndpoint.CNNorth1.SystemName, StringComparison.OrdinalIgnoreCase))
+            RegionEndpoint endpoint = RegionEndpoint.GetBySystemName(region);
+            if (endpoint.GetEndpointForService("s3").SignatureVersionOverride == "4")
                 aws4Signing = true;
 
             var immutableCredentials = Credentials.GetCredentials();
@@ -103,7 +104,7 @@ namespace Amazon.S3
             else
             {
                 signer.SignRequest(irequest, metrics, immutableCredentials.AccessKey, immutableCredentials.SecretKey);
-                authorization = irequest.Headers[S3QueryParameter.Authorization.ToString()];
+                authorization = irequest.Headers[HeaderKeys.AuthorizationHeader];
                 authorization = authorization.Substring(authorization.IndexOf(":", StringComparison.Ordinal) + 1);
                 authorization = "&Signature=" + AmazonS3Util.UrlEncode(authorization, false);
             }
@@ -154,18 +155,17 @@ namespace Amazon.S3
             AmazonS3Util.SetMetadataHeaders(request, getPreSignedUrlRequest.Metadata);
 
             if (!string.IsNullOrEmpty(token))
-                request.Headers[S3Constants.AmzSecurityTokenHeader] = token;
+                request.Headers[HeaderKeys.XAmzSecurityTokenHeader] = token;
 
             if (getPreSignedUrlRequest.ServerSideEncryptionMethod != null && getPreSignedUrlRequest.ServerSideEncryptionMethod != ServerSideEncryptionMethod.None)
-                request.Headers.Add("x-amz-server-side-encryption", S3Transforms.ToStringValue(getPreSignedUrlRequest.ServerSideEncryptionMethod));
+                request.Headers.Add(HeaderKeys.XAmzServerSideEncryptionHeader, S3Transforms.ToStringValue(getPreSignedUrlRequest.ServerSideEncryptionMethod));
 
             if (getPreSignedUrlRequest.IsSetServerSideEncryptionCustomerMethod())
-                request.Headers.Add("x-amz-server-side-encryption-customer-algorithm", getPreSignedUrlRequest.ServerSideEncryptionCustomerMethod);
+                request.Headers.Add(HeaderKeys.XAmzSSECustomerAlgorithmHeader, getPreSignedUrlRequest.ServerSideEncryptionCustomerMethod);
             if (getPreSignedUrlRequest.IsSetServerSideEncryptionCustomerProvidedKey())
-                request.Headers.Add("x-amz-server-side-encryption-customer-key", getPreSignedUrlRequest.ServerSideEncryptionCustomerProvidedKey);
+                request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyHeader, getPreSignedUrlRequest.ServerSideEncryptionCustomerProvidedKey);
             if (getPreSignedUrlRequest.IsSetServerSideEncryptionCustomerMethod())
-                request.Headers.Add("x-amz-server-side-encryption-customer-key-MD5", getPreSignedUrlRequest.ServerSideEncryptionCustomerProvidedKeyMD5);
-
+                request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyMD5Header, getPreSignedUrlRequest.ServerSideEncryptionCustomerProvidedKeyMD5);
 
             var queryParameters = request.Parameters;
 
@@ -196,7 +196,7 @@ namespace Amazon.S3
             if (!aws4Signing)
                 queryParameters.Add("AWSAccessKeyId", accessKey);
             if (getPreSignedUrlRequest.IsSetVersionId())
-                queryParameters.Add("versionId", S3Transforms.ToStringValue(getPreSignedUrlRequest.VersionId));
+                request.AddSubResource("versionId", S3Transforms.ToStringValue(getPreSignedUrlRequest.VersionId));
 
             var responseHeaderOverrides = getPreSignedUrlRequest.ResponseHeaderOverrides;
             if (!string.IsNullOrEmpty(responseHeaderOverrides.CacheControl))
@@ -212,9 +212,7 @@ namespace Amazon.S3
             if (!string.IsNullOrEmpty(responseHeaderOverrides.ContentEncoding))
                 queryParameters.Add("response-content-encoding", responseHeaderOverrides.ContentEncoding);
 
-            var path = uriResourcePath.ToString();
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(path, queryParameters, S3Constants.GetObjectExtraSubResources);
-            request.ResourcePath = S3Transforms.FormatResourcePath(path, queryParameters);
+            request.ResourcePath = uriResourcePath.ToString();
             request.UseQueryString = true;
 
             return request;
@@ -469,7 +467,7 @@ namespace Amazon.S3
                 if (putBucketRequest.UseClientRegion &&
                     !(putBucketRequest.IsSetBucketRegionName() || putBucketRequest.IsSetBucketRegion()))
                 {
-                    var regionCode = Amazon.Util.AWSSDKUtils.DetermineRegion(this.Config.DetermineServiceURL());
+                    var regionCode = DetermineBucketRegionCode(this.Config);
                     if (regionCode == S3Constants.REGION_US_EAST_1)
                         regionCode = null;
                     else if (regionCode == S3Constants.REGION_EU_WEST_1)
@@ -484,7 +482,7 @@ namespace Amazon.S3
             {
                 if (deleteBucketRequest.UseClientRegion && !deleteBucketRequest.IsSetBucketRegion())
                 {
-                    var regionCode = Amazon.Util.AWSSDKUtils.DetermineRegion(this.Config.DetermineServiceURL());
+                    var regionCode = DetermineBucketRegionCode(this.Config);
                     if (regionCode == S3Constants.REGION_US_EAST_1)
                         regionCode = null;
                     //else if (regionCode == S3Constants.REGION_EU_WEST_1)
@@ -533,56 +531,59 @@ namespace Amazon.S3
             }
         }
 
+        static string DetermineBucketRegionCode(ClientConfig config)
+        {
+            if (config.RegionEndpoint != null && string.IsNullOrEmpty(config.ServiceURL))
+                return config.RegionEndpoint.SystemName;
+
+            return AWSSDKUtils.DetermineRegion(config.DetermineServiceURL());
+        }
+
         protected override void ProcessRequestHandlers(IRequest request)
         {
             base.ProcessRequestHandlers(request);
 
-            var s3config = Config as AmazonS3Config;
+            var bucketName = GetBucketName(request.ResourcePath);
+            if (string.IsNullOrEmpty(bucketName))
+                return;
 
-            // Only modify endpoint and path if path style is not forced
-            if (!s3config.ForcePathStyle)
+            var s3Config = Config as AmazonS3Config;
+
+            // If path style is not forced and the bucket name is DNS
+            // compatible modify the endpoint to use virtual host style
+            // addressing
+            var bucketIsDnsCompatible = IsDnsCompatibleBucketName(bucketName);
+            var ub = new UriBuilder(DetermineEndpoint(request));
+
+            if (!s3Config.ForcePathStyle && bucketIsDnsCompatible)
             {
-                var bucketName = GetBucketName(request.ResourcePath);
-
-                // If there is a bucketName specified and it is DNS-compatbile,
-                // push bucketName from path to host
-                if (!string.IsNullOrEmpty(bucketName) && IsDnsCompatibleBucketName(bucketName))
+                // If using HTTPS, bucketName cannot contain a period
+                if (string.Equals(ub.Scheme, "http", StringComparison.OrdinalIgnoreCase) || bucketName.IndexOf('.') < 0)
                 {
-                    UriBuilder ub = new UriBuilder(DetermineEndpoint(request));
+                    // Add bucket to host
+                    ub.Host = string.Concat(bucketName, ".", ub.Host);
+                    request.Endpoint = ub.Uri;
 
-                    // If using HTTPS, bucketName cannot contain a period
-                    if (string.Equals(ub.Scheme, "http", StringComparison.OrdinalIgnoreCase)
-                        || bucketName.IndexOf('.') < 0)
-                    {
-                        // Add bucket to host
-                        ub.Host = string.Concat(bucketName, ".", ub.Host);
-                        request.Endpoint = ub.Uri;
+                    // Remove bucket from resource path but retain in canonical resource
+                    // prefix, so it gets included when we sign the request later
+                    var resourcePath = request.ResourcePath;
+                    var canonicalBucketName = string.Concat("/", bucketName);
+                    if (resourcePath.IndexOf(canonicalBucketName, StringComparison.Ordinal) == 0)
+                        resourcePath = resourcePath.Substring(canonicalBucketName.Length);
+                    request.ResourcePath = resourcePath;
 
-                        // Remove bucket from resource path
-                        string resourcePath = request.ResourcePath;
-                        string canonicalBucketName = string.Concat("/", bucketName);
-                        if (resourcePath.IndexOf(canonicalBucketName, StringComparison.Ordinal) == 0)
-                            resourcePath = resourcePath.Substring(canonicalBucketName.Length);
-                        request.ResourcePath = resourcePath;
-
-                        // Update canonical resource
-                        string canonicalResource = request.CanonicalResource;
-                        string newCanonicalBucketName = canonicalBucketName + "/";
-                        if (canonicalResource.IndexOf(canonicalBucketName, StringComparison.Ordinal) == 0
-                            && canonicalResource.IndexOf(newCanonicalBucketName, StringComparison.Ordinal) < 0)
-                            canonicalResource = string.Concat(newCanonicalBucketName, canonicalResource.Substring(canonicalBucketName.Length));
-                        request.CanonicalResource = canonicalResource;
-                    }
+                    request.CanonicalResourcePrefix = canonicalBucketName;
                 }
             }
         }
 
-        private static char[] separators = new char[] { '/', '?' };
+        private static readonly char[] Separators = new char[] { '/', '?' };
+
         // Gets the bucket name from resource path
         internal static string GetBucketName(string resourcePath)
         {
-            resourcePath = resourcePath.Trim().Trim(separators);
-            var parts = resourcePath.Split(separators, 2);
+            resourcePath = resourcePath.Trim().Trim(Separators);
+            var parts = resourcePath.Split(Separators, 2);
             var bucketName = parts[0];
             return bucketName;
         }

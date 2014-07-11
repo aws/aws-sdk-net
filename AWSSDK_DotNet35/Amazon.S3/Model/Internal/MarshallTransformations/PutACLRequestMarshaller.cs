@@ -21,6 +21,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using System.Globalization;
+using Amazon.Util;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -36,19 +37,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             if (putObjectAclRequest.IsSetCannedACL())
-                request.Headers.Add("x-amz-acl", S3Transforms.ToStringValue(putObjectAclRequest.CannedACL));
+                request.Headers.Add(HeaderKeys.XAmzAclHeader, S3Transforms.ToStringValue(putObjectAclRequest.CannedACL));
 
             // if we are putting the acl onto the bucket, the keyname component will collapse to empty string
-            var uriResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
-                                                S3Transforms.ToStringValue(putObjectAclRequest.BucketName),
-                                                S3Transforms.ToStringValue(putObjectAclRequest.Key));
+            request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
+                                                 S3Transforms.ToStringValue(putObjectAclRequest.BucketName),
+                                                 S3Transforms.ToStringValue(putObjectAclRequest.Key));
 
-            request.Parameters.Add("acl", null);
+            request.AddSubResource("acl");
             if (putObjectAclRequest.IsSetVersionId())
-                request.Parameters.Add("versionId", S3Transforms.ToStringValue(putObjectAclRequest.VersionId));
-
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
-            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
+                request.AddSubResource("versionId", S3Transforms.ToStringValue(putObjectAclRequest.VersionId));
 
             var stringWriter = new StringWriter(System.Globalization.CultureInfo.InvariantCulture);
             using (
@@ -150,25 +148,15 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 var content = stringWriter.ToString();
                 request.Content = Encoding.UTF8.GetBytes(content);
-                request.Headers["Content-Type"] = "application/xml";
+                request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
 
-                request.Parameters[S3QueryParameter.ContentType.ToString()] = "application/xml";
                 string checksum = AmazonS3Util.GenerateChecksumForContent(content, true);
-                request.Headers[Amazon.Util.AWSSDKUtils.ContentMD5Header] = checksum;
+                request.Headers[HeaderKeys.ContentMD5Header] = checksum;
 
             }
             catch (EncoderFallbackException e)
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
-            }
-
-            if (!request.UseQueryString)
-            {
-                var queryString = Amazon.Util.AWSSDKUtils.GetParametersAsString(request.Parameters);
-                if (!string.IsNullOrEmpty(queryString))
-                {
-                    request.ResourcePath = string.Concat(request.ResourcePath, request.ResourcePath.Contains("?") ? "&" : "?", queryString);
-                }
             }
 
             return request;

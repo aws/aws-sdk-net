@@ -87,17 +87,17 @@ namespace Amazon.Runtime.Internal.Transform
 
             AmazonWebServiceResponse response = this.Unmarshall(context);
 
-            if (!string.IsNullOrEmpty(context.ResponseData.GetHeaderValue(AWSSDKUtils.RequestIdHeader)))
+            if (!string.IsNullOrEmpty(context.ResponseData.GetHeaderValue(HeaderKeys.RequestIdHeader)))
             {
                 if(response.ResponseMetadata == null)
                     response.ResponseMetadata = new ResponseMetadata();
-                response.ResponseMetadata.RequestId = context.ResponseData.GetHeaderValue(AWSSDKUtils.RequestIdHeader);
+                response.ResponseMetadata.RequestId = context.ResponseData.GetHeaderValue(HeaderKeys.RequestIdHeader);
             }
-            else if (!string.IsNullOrEmpty(context.ResponseData.GetHeaderValue(AWSSDKUtils.S3RequestIdHeader)))
+            else if (!string.IsNullOrEmpty(context.ResponseData.GetHeaderValue(HeaderKeys.XAmzRequestIdHeader)))
             {
                 if (response.ResponseMetadata == null)
                     response.ResponseMetadata = new ResponseMetadata();
-                response.ResponseMetadata.RequestId = context.ResponseData.GetHeaderValue(AWSSDKUtils.S3RequestIdHeader);
+                response.ResponseMetadata.RequestId = context.ResponseData.GetHeaderValue(HeaderKeys.XAmzRequestIdHeader);
             }
 
             return response;
@@ -196,7 +196,7 @@ namespace Amazon.Runtime.Internal.Transform
             if (context == null)
                 throw new InvalidOperationException("Unsupported UnmarshallerContext");
 
-            string requestId = context.ResponseData.GetHeaderValue(AWSSDKUtils.RequestIdHeader);
+            string requestId = context.ResponseData.GetHeaderValue(HeaderKeys.RequestIdHeader);
             try
             {
                 var response = this.Unmarshall(context);
@@ -216,7 +216,7 @@ namespace Amazon.Runtime.Internal.Transform
                 throw new InvalidOperationException("Unsupported UnmarshallerContext");
 
             var responseException = this.UnmarshallException(context, innerException, statusCode);
-            responseException.RequestId = context.ResponseData.GetHeaderValue(AWSSDKUtils.RequestIdHeader);
+            responseException.RequestId = context.ResponseData.GetHeaderValue(HeaderKeys.RequestIdHeader);
             return responseException;
         }
 

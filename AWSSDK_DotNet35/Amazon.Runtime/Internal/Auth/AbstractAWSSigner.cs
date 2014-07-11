@@ -65,5 +65,42 @@ namespace Amazon.Runtime.Internal.Auth
         public abstract void Sign(IRequest request, ClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey);
 
         public abstract ClientProtocol Protocol { get; }
+
+        /// <summary>
+        /// Inspects the supplied evidence to return the signer appropriate for the operation
+        /// </summary>
+        /// <param name="useSigV4Setting">Global setting for the service</param>
+        /// <param name="config">Configuration for the client</param>
+        /// <returns>True if signature v4 request signing should be used</returns>
+        protected static bool UseV4Signing(bool useSigV4Setting, ClientConfig config)
+        {
+            if (useSigV4Setting || config.SignatureVersion == "4")
+                return true;
+
+            // do a cascading series of checks to try and arrive at whether we have
+            // a recognisable region; this is required to use the AWS4 signer
+            RegionEndpoint r = null;
+            if (!string.IsNullOrEmpty(config.AuthenticationRegion))
+                r = RegionEndpoint.GetBySystemName(config.AuthenticationRegion);
+
+            if (r == null && !string.IsNullOrEmpty(config.ServiceURL))
+            {
+                var parsedRegion = AWSSDKUtils.DetermineRegion(config.ServiceURL);
+                if (!string.IsNullOrEmpty(parsedRegion))
+                    r = RegionEndpoint.GetBySystemName(parsedRegion);
+            }
+
+            if (r == null && config.RegionEndpoint != null)
+                r = config.RegionEndpoint;
+
+            if (r != null)
+            {
+                var endpoint = r.GetEndpointForService(config.RegionEndpointServiceName);
+                if (endpoint != null && endpoint.SignatureVersionOverride == "4")
+                    return true;
+            }
+
+            return false;
+        }
     }
 }

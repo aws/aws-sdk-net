@@ -28,11 +28,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(headBucketRequest, "AmazonS3");
 
             request.HttpMethod = "HEAD";
-              
-            var uriResourcePath = string.Concat("/", S3Transforms.ToStringValue(headBucketRequest.BucketName));
 
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
-            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
+            request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(headBucketRequest.BucketName));
             request.UseQueryString = true;
             
             return request;

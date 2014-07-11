@@ -42,25 +42,25 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Adds", targetDepth))
+                if (context.TestExpression("adds", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
                     response.Adds = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Deletes", targetDepth))
+                if (context.TestExpression("deletes", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
                     response.Deletes = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Warnings", targetDepth))
+                if (context.TestExpression("warnings", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<DocumentServiceWarning, DocumentServiceWarningUnmarshaller>(DocumentServiceWarningUnmarshaller.Instance);
                     response.Warnings = unmarshaller.Unmarshall(context);
