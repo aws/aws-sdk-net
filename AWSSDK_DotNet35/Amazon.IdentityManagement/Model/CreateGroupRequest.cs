@@ -27,10 +27,10 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the CreateGroup operation.
     /// Creates a new group.
     /// 
-    ///         
+    ///  
     /// <para>
-    /// For information about the number of groups you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"
-    /// target="_blank">Limitations on IAM Entities</a> in <i>Using AWS Identity and Access                Management</i>.
+    /// For information about the number of groups you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+    /// on IAM Entities</a> in the <i>Using IAM</i> guide.
     /// </para>
     /// </summary>
     public partial class CreateGroupRequest : AmazonIdentityManagementServiceRequest
@@ -61,10 +61,10 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
-        /// The path to the group. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-        /// target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access                Management</i>.
+        /// The path to the group. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
+        /// for IAM Entities</a> in the <i>Using IAM</i> guide.
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// This parameter is optional. If it is not included, it defaults to a slash (/).
         /// </para>

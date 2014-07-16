@@ -26,9 +26,8 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the DeleteAccountAlias operation.
     /// Deletes the specified AWS account alias. For information about using an AWS account
-    /// alias,            see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html"
-    /// target="_blank">Using an                Alias for Your AWS Account ID</a> in <i>Using AWS Identity
-    /// and Access Management</i>.
+    /// alias, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
+    /// an Alias for Your AWS Account ID</a> in the <i>Using IAM</i> guide.
     /// </summary>
     public partial class DeleteAccountAliasRequest : AmazonIdentityManagementServiceRequest
     {

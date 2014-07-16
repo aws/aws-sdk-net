@@ -26,7 +26,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// The <code>MFADevice</code> data type contains information about an MFA device.
     /// 
-    ///         
+    ///  
     /// <para>
     ///  This data type is used as a response element in the action <a>ListMFADevices</a>.
     /// 
@@ -62,7 +62,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property SerialNumber. 
         /// <para>
         /// The serial number that uniquely identifies the MFA device. For virtual MFA devices,
-        /// the            serial number is the device ARN.
+        /// the serial number is the device ARN.
         /// </para>
         /// </summary>
         public string SerialNumber

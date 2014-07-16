@@ -26,7 +26,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// The ServerCertificate data type contains information about a server certificate.
     /// 
-    ///         
+    ///  
     /// <para>
     /// This data type is used as a response element in the action <a>GetServerCertificate</a>.
     /// </para>

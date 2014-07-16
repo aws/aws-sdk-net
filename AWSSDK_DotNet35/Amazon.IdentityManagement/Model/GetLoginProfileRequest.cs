@@ -26,7 +26,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the GetLoginProfile operation.
     /// Retrieves the user name and password-creation date for the specified user. If the
-    /// user has            not been assigned a password, the action returns a 404 (<code>NoSuchEntity</code>)
+    /// user has not been assigned a password, the action returns a 404 (<code>NoSuchEntity</code>)
     /// error.
     /// </summary>
     public partial class GetLoginProfileRequest : AmazonIdentityManagementServiceRequest

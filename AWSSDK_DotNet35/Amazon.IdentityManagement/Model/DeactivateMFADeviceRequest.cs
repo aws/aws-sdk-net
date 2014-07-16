@@ -26,7 +26,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the DeactivateMFADevice operation.
     /// Deactivates the specified MFA device and removes it from association with the user
-    /// name for            which it was originally enabled.
+    /// name for which it was originally enabled.
     /// </summary>
     public partial class DeactivateMFADeviceRequest : AmazonIdentityManagementServiceRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property SerialNumber. 
         /// <para>
         /// The serial number that uniquely identifies the MFA device. For virtual MFA devices,
-        /// the            serial number is the device ARN.
+        /// the serial number is the device ARN.
         /// </para>
         /// </summary>
         public string SerialNumber

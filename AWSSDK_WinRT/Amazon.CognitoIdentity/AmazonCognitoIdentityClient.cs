@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,8 +12,6 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
-
 using System;
 using System.Runtime.ExceptionServices;
 using System.Threading;
@@ -30,15 +28,15 @@ namespace Amazon.CognitoIdentity
 {
     /// <summary>
     /// Implementation for accessing CognitoIdentity
-    ///
-    /// Amazon Cognito 
+    /// 
+    /// Amazon Cognito
     /// <para>
     /// Amazon Cognito is a web service that facilitates the delivery of scoped, temporary
     /// credentials to mobile devices or other untrusted environments. Amazon Cognito uniquely
     /// identifies a device or user and supplies the user with a consistent identity throughout
     /// the lifetime of an application.
     /// </para>
-    ///  
+    /// 
     /// <para>
     /// Amazon Cognito lets users authenticate with third-party identity providers (Facebook,
     /// Google, or Login with Amazon). As a developer, you decide which identity providers
@@ -47,19 +45,10 @@ namespace Amazon.CognitoIdentity
     /// any information provided about third-party logins.
     /// </para>
     /// </summary>
-    public partial class AmazonCognitoIdentityClient : AmazonWebServiceClient, IAmazonCognitoIdentity
+	public partial class AmazonCognitoIdentityClient : AmazonWebServiceClient, Amazon.CognitoIdentity.IAmazonCognitoIdentity
     {
+
         AWS4Signer signer = new AWS4Signer();
-
-        #region Dispose
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-        }
-
-        #endregion
-
         #region Constructors
 
         /// <summary>
@@ -77,7 +66,7 @@ namespace Amazon.CognitoIdentity
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="region">The region to connect.</param>
         public AmazonCognitoIdentityClient(AWSCredentials credentials, RegionEndpoint region)
-            : this(credentials, new AmazonCognitoIdentityConfig{RegionEndpoint = region})
+            : this(credentials, new AmazonCognitoIdentityConfig(){RegionEndpoint=region})
         {
         }
 
@@ -115,7 +104,7 @@ namespace Amazon.CognitoIdentity
 
         /// <summary>
         /// Constructs AmazonCognitoIdentityClient with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonCognitoIdentityClient Configuration object. 
+        /// AmazonCognitoIdentityClient Configuration object.
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
@@ -144,13 +133,13 @@ namespace Amazon.CognitoIdentity
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="region">The region to connect.</param>
         public AmazonCognitoIdentityClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, RegionEndpoint region)
-            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonCognitoIdentityConfig{RegionEndpoint = region})
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonCognitoIdentityConfig(){RegionEndpoint = region})
         {
         }
 
         /// <summary>
         /// Constructs AmazonCognitoIdentityClient with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonCognitoIdentityClient Configuration object. 
+        /// AmazonCognitoIdentityClient Configuration object.
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
@@ -163,10 +152,8 @@ namespace Amazon.CognitoIdentity
 
         #endregion
 
-        
-        #region  CreateIdentityPool
-
-        internal CreateIdentityPoolResponse CreateIdentityPool(CreateIdentityPoolRequest request)
+ 
+		internal CreateIdentityPoolResponse CreateIdentityPool(CreateIdentityPoolRequest request)
         {
             var task = CreateIdentityPoolAsync(request);
             try
@@ -181,27 +168,41 @@ namespace Amazon.CognitoIdentity
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateIdentityPool operation.
-        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity"/>
+        /// Creates a new identity pool. The identity pool is a store of user identity information
+        /// that is specific to your AWS account.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIdentityPool service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateIdentityPool operation.</param>
+        /// <returns>The response from the CreateIdentityPool service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// Thrown when the service encounters an error during processing the request.
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// Thrown for missing or bad input parameter(s).
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.LimitExceededException">
+        /// Thrown when the total number of user pools has exceeded a preset limit.
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.ResourceConflictException">
+        /// Thrown when a user tries to use a login which is already linked to another account.
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// Thrown when a request is throttled.
+        /// </exception>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateIdentityPoolResponse> CreateIdentityPoolAsync(CreateIdentityPoolRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateIdentityPoolResponse> CreateIdentityPoolAsync(CreateIdentityPoolRequest createIdentityPoolRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateIdentityPoolRequestMarshaller();
-            var unmarshaller = CreateIdentityPoolResponseUnmarshaller.Instance;
-            return Invoke<IRequest, CreateIdentityPoolRequest, CreateIdentityPoolResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+            var unmarshaller = CreateIdentityPoolResponseUnmarshaller.GetInstance();
+            return Invoke<IRequest, CreateIdentityPoolRequest, CreateIdentityPoolResponse>(createIdentityPoolRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
-
-        #endregion
-        
-        #region  DeleteIdentityPool
-
-        internal DeleteIdentityPoolResponse DeleteIdentityPool(DeleteIdentityPoolRequest request)
+ 
+		internal DeleteIdentityPoolResponse DeleteIdentityPool(DeleteIdentityPoolRequest request)
         {
             var task = DeleteIdentityPoolAsync(request);
             try
@@ -216,27 +217,38 @@ namespace Amazon.CognitoIdentity
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteIdentityPool operation.
-        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity"/>
+        /// Deletes a user pool. Once a pool is deleted, users will not be able to authenticate
+        /// with the pool.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIdentityPool service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteIdentityPool operation.</param>
+        /// <returns>The response from the DeleteIdentityPool service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// Thrown when the service encounters an error during processing the request.
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// Thrown for missing or bad input parameter(s).
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// Thrown when a request is throttled.
+        /// </exception>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteIdentityPoolResponse> DeleteIdentityPoolAsync(DeleteIdentityPoolRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteIdentityPoolResponse> DeleteIdentityPoolAsync(DeleteIdentityPoolRequest deleteIdentityPoolRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteIdentityPoolRequestMarshaller();
-            var unmarshaller = DeleteIdentityPoolResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DeleteIdentityPoolRequest, DeleteIdentityPoolResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+            var unmarshaller = DeleteIdentityPoolResponseUnmarshaller.GetInstance();
+            return Invoke<IRequest, DeleteIdentityPoolRequest, DeleteIdentityPoolResponse>(deleteIdentityPoolRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
-
-        #endregion
-        
-        #region  DescribeIdentityPool
-
-        internal DescribeIdentityPoolResponse DescribeIdentityPool(DescribeIdentityPoolRequest request)
+ 
+		internal DescribeIdentityPoolResponse DescribeIdentityPool(DescribeIdentityPoolRequest request)
         {
             var task = DescribeIdentityPoolAsync(request);
             try
@@ -251,27 +263,38 @@ namespace Amazon.CognitoIdentity
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeIdentityPool operation.
-        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity"/>
+        /// Gets details about a particular identity pool, including the pool name, ID description,
+        /// creation date, and current number of users.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityPool service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityPool operation.</param>
+        /// <returns>The response from the DescribeIdentityPool service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// Thrown when the service encounters an error during processing the request.
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// Thrown for missing or bad input parameter(s).
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// Thrown when a request is throttled.
+        /// </exception>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeIdentityPoolResponse> DescribeIdentityPoolAsync(DescribeIdentityPoolRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeIdentityPoolResponse> DescribeIdentityPoolAsync(DescribeIdentityPoolRequest describeIdentityPoolRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeIdentityPoolRequestMarshaller();
-            var unmarshaller = DescribeIdentityPoolResponseUnmarshaller.Instance;
-            return Invoke<IRequest, DescribeIdentityPoolRequest, DescribeIdentityPoolResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+            var unmarshaller = DescribeIdentityPoolResponseUnmarshaller.GetInstance();
+            return Invoke<IRequest, DescribeIdentityPoolRequest, DescribeIdentityPoolResponse>(describeIdentityPoolRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
-
-        #endregion
-        
-        #region  GetId
-
-        internal GetIdResponse GetId(GetIdRequest request)
+ 
+		internal GetIdResponse GetId(GetIdRequest request)
         {
             var task = GetIdAsync(request);
             try
@@ -286,27 +309,44 @@ namespace Amazon.CognitoIdentity
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the GetId operation.
-        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity"/>
+        /// Generates (or retrieves) a Cognito ID. Supplying multiple logins will create an implicit
+        /// linked account.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetId service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetId operation.</param>
+        /// <returns>The response from the GetId service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// Thrown when the service encounters an error during processing the request.
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// Thrown for missing or bad input parameter(s).
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.LimitExceededException">
+        /// Thrown when the total number of user pools has exceeded a preset limit.
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.ResourceConflictException">
+        /// Thrown when a user tries to use a login which is already linked to another account.
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// Thrown when a request is throttled.
+        /// </exception>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetIdResponse> GetIdAsync(GetIdRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetIdResponse> GetIdAsync(GetIdRequest getIdRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetIdRequestMarshaller();
-            var unmarshaller = GetIdResponseUnmarshaller.Instance;
-            return Invoke<IRequest, GetIdRequest, GetIdResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+            var unmarshaller = GetIdResponseUnmarshaller.GetInstance();
+            return Invoke<IRequest, GetIdRequest, GetIdResponse>(getIdRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
-
-        #endregion
-        
-        #region  GetOpenIdToken
-
-        internal GetOpenIdTokenResponse GetOpenIdToken(GetOpenIdTokenRequest request)
+ 
+		internal GetOpenIdTokenResponse GetOpenIdToken(GetOpenIdTokenRequest request)
         {
             var task = GetOpenIdTokenAsync(request);
             try
@@ -321,27 +361,42 @@ namespace Amazon.CognitoIdentity
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the GetOpenIdToken operation.
-        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity"/>
+        /// Gets an OpenID token, using a known Cognito ID. This known Cognito ID is returned
+        /// from GetId. You can optionally add additional logins for the identity. Supplying multiple
+        /// logins creates an implicit link.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOpenIdToken service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetOpenIdToken operation.</param>
+        /// <returns>The response from the GetOpenIdToken service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// Thrown when the service encounters an error during processing the request.
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// Thrown for missing or bad input parameter(s).
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.ResourceConflictException">
+        /// Thrown when a user tries to use a login which is already linked to another account.
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// Thrown when a request is throttled.
+        /// </exception>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetOpenIdTokenResponse> GetOpenIdTokenAsync(GetOpenIdTokenRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetOpenIdTokenResponse> GetOpenIdTokenAsync(GetOpenIdTokenRequest getOpenIdTokenRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetOpenIdTokenRequestMarshaller();
-            var unmarshaller = GetOpenIdTokenResponseUnmarshaller.Instance;
-            return Invoke<IRequest, GetOpenIdTokenRequest, GetOpenIdTokenResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+            var unmarshaller = GetOpenIdTokenResponseUnmarshaller.GetInstance();
+            return Invoke<IRequest, GetOpenIdTokenRequest, GetOpenIdTokenResponse>(getOpenIdTokenRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
-
-        #endregion
-        
-        #region  ListIdentities
-
-        internal ListIdentitiesResponse ListIdentities(ListIdentitiesRequest request)
+ 
+		internal ListIdentitiesResponse ListIdentities(ListIdentitiesRequest request)
         {
             var task = ListIdentitiesAsync(request);
             try
@@ -356,27 +411,37 @@ namespace Amazon.CognitoIdentity
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the ListIdentities operation.
-        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity"/>
+        /// Lists the identities in a pool.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIdentities service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListIdentities operation.</param>
+        /// <returns>The response from the ListIdentities service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// Thrown when the service encounters an error during processing the request.
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// Thrown for missing or bad input parameter(s).
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// Thrown when a request is throttled.
+        /// </exception>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListIdentitiesResponse> ListIdentitiesAsync(ListIdentitiesRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListIdentitiesResponse> ListIdentitiesAsync(ListIdentitiesRequest listIdentitiesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListIdentitiesRequestMarshaller();
-            var unmarshaller = ListIdentitiesResponseUnmarshaller.Instance;
-            return Invoke<IRequest, ListIdentitiesRequest, ListIdentitiesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+            var unmarshaller = ListIdentitiesResponseUnmarshaller.GetInstance();
+            return Invoke<IRequest, ListIdentitiesRequest, ListIdentitiesResponse>(listIdentitiesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
-
-        #endregion
-        
-        #region  ListIdentityPools
-
-        internal ListIdentityPoolsResponse ListIdentityPools(ListIdentityPoolsRequest request)
+ 
+		internal ListIdentityPoolsResponse ListIdentityPools(ListIdentityPoolsRequest request)
         {
             var task = ListIdentityPoolsAsync(request);
             try
@@ -391,27 +456,34 @@ namespace Amazon.CognitoIdentity
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the ListIdentityPools operation.
-        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity"/>
+        /// Lists all of the Cognito identity pools registered for your account.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIdentityPools service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListIdentityPools operation.</param>
+        /// <returns>The response from the ListIdentityPools service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// Thrown when the service encounters an error during processing the request.
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// Thrown for missing or bad input parameter(s).
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// Thrown when a request is throttled.
+        /// </exception>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListIdentityPoolsResponse> ListIdentityPoolsAsync(ListIdentityPoolsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListIdentityPoolsResponse> ListIdentityPoolsAsync(ListIdentityPoolsRequest listIdentityPoolsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListIdentityPoolsRequestMarshaller();
-            var unmarshaller = ListIdentityPoolsResponseUnmarshaller.Instance;
-            return Invoke<IRequest, ListIdentityPoolsRequest, ListIdentityPoolsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+            var unmarshaller = ListIdentityPoolsResponseUnmarshaller.GetInstance();
+            return Invoke<IRequest, ListIdentityPoolsRequest, ListIdentityPoolsResponse>(listIdentityPoolsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
-
-        #endregion
-        
-        #region  UnlinkIdentity
-
-        internal UnlinkIdentityResponse UnlinkIdentity(UnlinkIdentityRequest request)
+ 
+		internal UnlinkIdentityResponse UnlinkIdentity(UnlinkIdentityRequest request)
         {
             var task = UnlinkIdentityAsync(request);
             try
@@ -426,27 +498,42 @@ namespace Amazon.CognitoIdentity
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the UnlinkIdentity operation.
-        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity"/>
+        /// Unlinks a federated identity from an existing account. Unlinked logins will be considered
+        /// new identities next time they are seen. Removing the last linked login will make this
+        /// identity inaccessible.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UnlinkIdentity service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the UnlinkIdentity operation.</param>
+        /// <returns>The response from the UnlinkIdentity service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// Thrown when the service encounters an error during processing the request.
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// Thrown for missing or bad input parameter(s).
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.ResourceConflictException">
+        /// Thrown when a user tries to use a login which is already linked to another account.
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// Thrown when a request is throttled.
+        /// </exception>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UnlinkIdentityResponse> UnlinkIdentityAsync(UnlinkIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UnlinkIdentityResponse> UnlinkIdentityAsync(UnlinkIdentityRequest unlinkIdentityRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UnlinkIdentityRequestMarshaller();
-            var unmarshaller = UnlinkIdentityResponseUnmarshaller.Instance;
-            return Invoke<IRequest, UnlinkIdentityRequest, UnlinkIdentityResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+            var unmarshaller = UnlinkIdentityResponseUnmarshaller.GetInstance();
+            return Invoke<IRequest, UnlinkIdentityRequest, UnlinkIdentityResponse>(unlinkIdentityRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
-
-        #endregion
-        
-        #region  UpdateIdentityPool
-
-        internal UpdateIdentityPoolResponse UpdateIdentityPool(UpdateIdentityPoolRequest request)
+ 
+		internal UpdateIdentityPoolResponse UpdateIdentityPool(UpdateIdentityPoolRequest request)
         {
             var task = UpdateIdentityPoolAsync(request);
             try
@@ -461,23 +548,37 @@ namespace Amazon.CognitoIdentity
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateIdentityPool operation.
-        /// <seealso cref="Amazon.CognitoIdentity.IAmazonCognitoIdentity"/>
+        /// Updates a user pool.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIdentityPool service method.</param>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateIdentityPool operation.</param>
+        /// <returns>The response from the UpdateIdentityPool service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// Thrown when the service encounters an error during processing the request.
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// Thrown for missing or bad input parameter(s).
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.ResourceConflictException">
+        /// Thrown when a user tries to use a login which is already linked to another account.
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
+        /// </exception>
+        /// <exception cref="T:Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// Thrown when a request is throttled.
+        /// </exception>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateIdentityPoolResponse> UpdateIdentityPoolAsync(UpdateIdentityPoolRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateIdentityPoolResponse> UpdateIdentityPoolAsync(UpdateIdentityPoolRequest updateIdentityPoolRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateIdentityPoolRequestMarshaller();
-            var unmarshaller = UpdateIdentityPoolResponseUnmarshaller.Instance;
-            return Invoke<IRequest, UpdateIdentityPoolRequest, UpdateIdentityPoolResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+            var unmarshaller = UpdateIdentityPoolResponseUnmarshaller.GetInstance();
+            return Invoke<IRequest, UpdateIdentityPoolRequest, UpdateIdentityPoolResponse>(updateIdentityPoolRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
-
-        #endregion
-        
     }
 }

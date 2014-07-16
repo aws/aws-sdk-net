@@ -27,10 +27,10 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the GetAccountSummary operation.
     /// Retrieves account level information about account entity usage and IAM quotas.
     /// 
-    ///         
+    ///  
     /// <para>
-    /// For information about limitations on IAM entities, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"
-    /// target="_blank">Limitations on IAM Entities</a> in <i>Using AWS Identity and Access                Management</i>.
+    /// For information about limitations on IAM entities, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+    /// on IAM Entities</a> in the <i>Using IAM</i> guide.
     /// </para>
     /// </summary>
     public partial class GetAccountSummaryRequest : AmazonIdentityManagementServiceRequest

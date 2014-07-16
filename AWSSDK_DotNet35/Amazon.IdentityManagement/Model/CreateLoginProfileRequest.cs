@@ -26,20 +26,21 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the CreateLoginProfile operation.
     /// Creates a password for the specified user, giving the user the ability to access AWS
-    /// services            through the AWS Management Console. For more information about managing
-    /// passwords, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html"
-    /// target="_blank">Managing Passwords</a> in <i>Using IAM</i>.
+    /// services through the AWS Management Console. For more information about managing passwords,
+    /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
+    /// Passwords</a> in the <i>Using IAM</i> guide.
     /// </summary>
     public partial class CreateLoginProfileRequest : AmazonIdentityManagementServiceRequest
     {
         private string _password;
+        private bool? _passwordResetRequired;
         private string _userName;
 
 
         /// <summary>
         /// Gets and sets the property Password. 
         /// <para>
-        /// The new password for the user name.
+        /// The new password for the user.
         /// </para>
         /// </summary>
         public string Password
@@ -52,6 +53,25 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetPassword()
         {
             return this._password != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property PasswordResetRequired. 
+        /// <para>
+        /// Specifies whether the user is required to set a new password on next sign-in.
+        /// </para>
+        /// </summary>
+        public bool PasswordResetRequired
+        {
+            get { return this._passwordResetRequired.GetValueOrDefault(); }
+            set { this._passwordResetRequired = value; }
+        }
+
+        // Check to see if PasswordResetRequired property is set
+        internal bool IsSetPasswordResetRequired()
+        {
+            return this._passwordResetRequired.HasValue; 
         }
 
 

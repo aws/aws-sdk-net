@@ -76,20 +76,6 @@ namespace Amazon.CloudSearchDomain.Model
 
         internal void SetupForFilePath()
         {
-
-
-            if (this.ContentType == ContentType.Applicationjson)
-            {
-                // Check if the encoding has a BOM and throw an exception.
-                if (Util.AWSSDKUtils.HasBOM(this.FilePath))
-                {
-                    var message = string.Format(CultureInfo.InvariantCulture,
-                        "The file {0} uses an incompatible encoding, use a document having encoding : UTF-8 without BOM.",this.FilePath);
-                    throw new AmazonClientException(message);
-                }
-            }
-
-
             this.Documents = new FileStream(this.FilePath, FileMode.Open, FileAccess.Read, FileShare.Read);
         }
 #endif

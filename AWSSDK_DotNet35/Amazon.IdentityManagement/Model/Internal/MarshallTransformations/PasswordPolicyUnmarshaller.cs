@@ -51,10 +51,34 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         unmarshalledObject.AllowUsersToChangePassword = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ExpirePasswords", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.ExpirePasswords = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("HardExpiry", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.HardExpiry = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MaxPasswordAge", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.MaxPasswordAge = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("MinimumPasswordLength", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
                         unmarshalledObject.MinimumPasswordLength = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PasswordReusePrevention", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.PasswordReusePrevention = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("RequireLowercaseCharacters", targetDepth))

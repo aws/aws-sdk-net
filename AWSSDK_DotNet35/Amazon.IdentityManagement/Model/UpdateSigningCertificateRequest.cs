@@ -26,20 +26,20 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the UpdateSigningCertificate operation.
     /// Changes the status of the specified signing certificate from active to disabled, or
-    /// vice            versa. This action can be used to disable a user's signing certificate as part
-    /// of a            certificate rotation work flow.
+    /// vice versa. This action can be used to disable a user's signing certificate as part
+    /// of a certificate rotation work flow.
     /// 
-    ///         
+    ///  
     /// <para>
-    /// If the <code>UserName</code> field is not specified, the UserName is determined implicitly            based
-    /// on the AWS access key ID used to sign the request. Because this action works for access            keys
-    /// under the AWS account, this API can be used to manage root credentials even if the
-    /// AWS            account has no associated users.
+    /// If the <code>UserName</code> field is not specified, the UserName is determined implicitly
+    /// based on the AWS access key ID used to sign the request. Because this action works
+    /// for access keys under the AWS account, this API can be used to manage root credentials
+    /// even if the AWS account has no associated users.
     /// </para>
-    ///         
+    ///  
     /// <para>
-    /// For information about rotating certificates, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html"
-    /// target="_blank">Managing Keys and Certificates</a> in <i>Using AWS Identity and Access                Management</i>.
+    /// For information about rotating certificates, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html">Managing
+    /// Keys and Certificates</a> in the <i>Using IAM</i> guide.
     /// </para>
     /// </summary>
     public partial class UpdateSigningCertificateRequest : AmazonIdentityManagementServiceRequest
@@ -71,9 +71,9 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status you want to assign to the certificate. <code>Active</code> means the certificate            can
-        /// be used for API calls to AWS, while <code>Inactive</code> means the certificate cannot
-        /// be            used.
+        /// The status you want to assign to the certificate. <code>Active</code> means the certificate
+        /// can be used for API calls to AWS, while <code>Inactive</code> means the certificate
+        /// cannot be used.
         /// </para>
         /// </summary>
         public StatusType Status

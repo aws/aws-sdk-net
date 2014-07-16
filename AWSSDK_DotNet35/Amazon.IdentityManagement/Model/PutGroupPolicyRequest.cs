@@ -25,22 +25,16 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the PutGroupPolicy operation.
-    /// Adds (or updates) a policy document associated with the specified group. For information            about
-    /// policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html"
-    /// target="_blank">Overview of Policies</a> in <i>Using AWS Identity and Access Management</i>.
+    /// Adds (or updates) a policy document associated with the specified group. For information
+    /// about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
+    /// of Policies</a> in the <i>Using IAM</i> guide.
     /// 
-    ///         
+    ///  
     /// <para>
     /// For information about limits on the number of policies you can associate with a group,
-    /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html"
-    /// target="_blank">Limitations on IAM Entities</a> in <i>Using AWS Identity and Access                Management</i>.
+    /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+    /// on IAM Entities</a> in the <i>Using IAM</i> guide.
     /// </para>
-    ///         <note>Because policy documents can be large, you should use POST rather than GET
-    /// when calling                <code>PutGroupPolicy</code>. For information about setting up signatures
-    /// and authorization            through the API, go to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html"
-    /// target="_blank">Signing AWS API Requests</a> in the <i>AWS General Reference</i>.
-    /// For general information            about using the Query API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html"
-    /// target="_blank">Making                Query Requests</a> in <i>Using IAM</i>.</note>
     /// </summary>
     public partial class PutGroupPolicyRequest : AmazonIdentityManagementServiceRequest
     {

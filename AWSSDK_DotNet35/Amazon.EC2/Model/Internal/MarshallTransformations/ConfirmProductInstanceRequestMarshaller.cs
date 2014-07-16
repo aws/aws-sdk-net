@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(confirmProductInstanceRequest, "AmazonEC2");
             request.Parameters.Add("Action", "ConfirmProductInstance");
-            request.Parameters.Add("Version", "2014-05-01");
+            request.Parameters.Add("Version", "2014-06-15");
             if (confirmProductInstanceRequest != null && confirmProductInstanceRequest.IsSetProductCode())
             {
                 request.Parameters.Add("ProductCode", StringUtils.FromString(confirmProductInstanceRequest.ProductCode));

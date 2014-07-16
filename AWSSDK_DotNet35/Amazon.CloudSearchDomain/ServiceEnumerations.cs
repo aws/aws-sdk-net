@@ -27,13 +27,13 @@ namespace Amazon.CloudSearchDomain
     {
 
         /// <summary>
-        /// Constant Applicationjson for ContentType
+        /// Constant ApplicationJson for ContentType
         /// </summary>
-        public static readonly ContentType Applicationjson = new ContentType("application/json");
+        public static readonly ContentType ApplicationJson = new ContentType("application/json");
         /// <summary>
-        /// Constant Applicationxml for ContentType
+        /// Constant ApplicationXml for ContentType
         /// </summary>
-        public static readonly ContentType Applicationxml = new ContentType("application/xml");
+        public static readonly ContentType ApplicationXml = new ContentType("application/xml");
 
         /// <summary>
         /// Default Constructor

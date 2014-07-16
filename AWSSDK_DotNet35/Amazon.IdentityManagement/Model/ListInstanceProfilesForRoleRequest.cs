@@ -26,13 +26,14 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the ListInstanceProfilesForRole operation.
     /// Lists the instance profiles that have the specified associated role. If there are
-    /// none, the            action returns an empty list. For more information about instance profiles,
+    /// none, the action returns an empty list. For more information about instance profiles,
     /// go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-    /// Instance                Profiles</a>.
+    /// Instance Profiles</a>.
     /// 
-    ///         
+    ///  
     /// <para>
-    /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>            parameters.
+    /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+    /// parameters.
     /// </para>
     /// </summary>
     public partial class ListInstanceProfilesForRoleRequest : AmazonIdentityManagementServiceRequest
@@ -46,8 +47,8 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// Use this parameter only when paginating results, and only in a subsequent request
-        /// after            you've received a response where the results are truncated. Set it to the
-        /// value of the                <code>Marker</code> element in the response you just received.
+        /// after you've received a response where the results are truncated. Set it to the value
+        /// of the <code>Marker</code> element in the response you just received.
         /// </para>
         /// </summary>
         public string Marker
@@ -67,9 +68,9 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property MaxItems. 
         /// <para>
         /// Use this parameter only when paginating results to indicate the maximum number of
-        /// user names            you want in the response. If there are additional user names beyond the
-        /// maximum you specify,            the <code>IsTruncated</code> response element is <code>true</code>.
-        /// This parameter is            optional. If you do not include it, it defaults to 100.
+        /// user names you want in the response. If there are additional user names beyond the
+        /// maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.
+        /// This parameter is optional. If you do not include it, it defaults to 100.
         /// </para>
         /// </summary>
         public int MaxItems

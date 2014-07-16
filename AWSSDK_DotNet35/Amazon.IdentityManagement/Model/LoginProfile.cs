@@ -26,15 +26,16 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// The LoginProfile data type contains the user name and password create date for a user.
     /// 
-    ///         
+    ///  
     /// <para>
     ///  This data type is used as a response element in the actions <a>CreateLoginProfile</a>
-    /// and                <a>GetLoginProfile</a>. 
+    /// and <a>GetLoginProfile</a>. 
     /// </para>
     /// </summary>
     public partial class LoginProfile
     {
         private DateTime? _createDate;
+        private bool? _passwordResetRequired;
         private string _userName;
 
 
@@ -58,9 +59,28 @@ namespace Amazon.IdentityManagement.Model
 
 
         /// <summary>
+        /// Gets and sets the property PasswordResetRequired. 
+        /// <para>
+        /// Specifies whether the user is required to set a new password on next sign-in.
+        /// </para>
+        /// </summary>
+        public bool PasswordResetRequired
+        {
+            get { return this._passwordResetRequired.GetValueOrDefault(); }
+            set { this._passwordResetRequired = value; }
+        }
+
+        // Check to see if PasswordResetRequired property is set
+        internal bool IsSetPasswordResetRequired()
+        {
+            return this._passwordResetRequired.HasValue; 
+        }
+
+
+        /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// The name of the user, which can be used for signing into the AWS Management Console.
+        /// The name of the user, which can be used for signing in to the AWS Management Console.
         /// </para>
         /// </summary>
         public string UserName

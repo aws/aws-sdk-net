@@ -26,11 +26,12 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// The Group data type contains information about a group.
     /// 
-    ///         
+    ///  
     /// <para>
     ///  This data type is used as a response element in the following actions:
     /// </para>
-    ///         <ul>            <li><a>CreateGroup</a></li>            <li><a>GetGroup</a></li>            <li><a>ListGroups</a></li>        </ul>
+    ///  <ul> <li><a>CreateGroup</a></li> <li><a>GetGroup</a></li> <li><a>ListGroups</a></li>
+    /// </ul>
     /// </summary>
     public partial class Group
     {
@@ -45,8 +46,8 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Arn. 
         /// <para>
         /// The Amazon Resource Name (ARN) specifying the group. For more information about ARNs
-        /// and how            to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-        /// target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access                Management</i>.
+        /// and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
+        /// for IAM Entities</a> in the <i>Using IAM</i> guide.
         /// </para>
         /// </summary>
         public string Arn
@@ -85,8 +86,8 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property GroupId. 
         /// <para>
         /// The stable and unique string identifying the group. For more information about IDs,
-        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-        /// target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access                Management</i>.
+        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
+        /// for IAM Entities</a> in the <i>Using IAM</i> guide.
         /// </para>
         /// </summary>
         public string GroupId
@@ -124,8 +125,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
-        /// Path to the group. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-        /// target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access                Management</i>.
+        /// Path to the group. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
+        /// for IAM Entities</a> in the <i>Using IAM</i> guide.
         /// </para>
         /// </summary>
         public string Path

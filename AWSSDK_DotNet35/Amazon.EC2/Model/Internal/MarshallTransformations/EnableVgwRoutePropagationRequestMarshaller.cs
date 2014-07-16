@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(enableVgwRoutePropagationRequest, "AmazonEC2");
             request.Parameters.Add("Action", "EnableVgwRoutePropagation");
-            request.Parameters.Add("Version", "2014-05-01");
+            request.Parameters.Add("Version", "2014-06-15");
             if (enableVgwRoutePropagationRequest != null && enableVgwRoutePropagationRequest.IsSetRouteTableId())
             {
                 request.Parameters.Add("RouteTableId", StringUtils.FromString(enableVgwRoutePropagationRequest.RouteTableId));

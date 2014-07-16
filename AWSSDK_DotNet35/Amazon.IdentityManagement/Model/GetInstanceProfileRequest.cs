@@ -26,9 +26,9 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the GetInstanceProfile operation.
     /// Retrieves information about the specified instance profile, including the instance
-    /// profile's            path, GUID, ARN, and role. For more information about instance profiles,
+    /// profile's path, GUID, ARN, and role. For more information about instance profiles,
     /// go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-    /// Instance                Profiles</a>. For more information about ARNs, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs">ARNs</a>.
+    /// Instance Profiles</a>. For more information about ARNs, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs">ARNs</a>.
     /// </summary>
     public partial class GetInstanceProfileRequest : AmazonIdentityManagementServiceRequest
     {

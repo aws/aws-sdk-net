@@ -66,11 +66,12 @@ namespace Amazon.EC2.Model
         /// <c>dns-name</c> - The public DNS name of the instance. </li> <li> <c>group-id</c> - The ID of the security group for the instance. If the
         /// instance is in EC2-Classic or a default VPC, you can use <c>group-name</c> instead. </li> <li> <c>group-name</c> - The name of the security
         /// group for the instance. If the instance is in a nondefault VPC, you must use <c>group-id</c> instead. </li> <li> <c>hypervisor</c> - The
-        /// hypervisor type of the instance (<c>ovm</c> | <c>xen</c>). </li> <li> <c>image-id</c> - The ID of the image used to launch the instance.
-        /// </li> <li> <c>instance-id</c> - The ID of the instance. </li> <li> <c>instance-lifecycle</c> - Indicates whether this is a Spot Instance
-        /// (<c>spot</c>). </li> <li> <c>instance-state-code</c> - The state of the instance, as a 16-bit unsigned integer. The high byte is an opaque
-        /// internal value and should be ignored. The low byte is set based on the state represented. The valid values are: 0 (pending), 16 (running),
-        /// 32 (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped). </li> <li> <c>instance-state-name</c> - The state of the instance
+        /// hypervisor type of the instance (<c>ovm</c> | <c>xen</c>). </li> <li> <c>iam-instance-profile.arn</c> - The instance profile associated with
+        /// the instance. Specified as an ARN. </li> <li> <c>image-id</c> - The ID of the image used to launch the instance. </li> <li>
+        /// <c>instance-id</c> - The ID of the instance. </li> <li> <c>instance-lifecycle</c> - Indicates whether this is a Spot Instance (<c>spot</c>).
+        /// </li> <li> <c>instance-state-code</c> - The state of the instance, as a 16-bit unsigned integer. The high byte is an opaque internal value
+        /// and should be ignored. The low byte is set based on the state represented. The valid values are: 0 (pending), 16 (running), 32
+        /// (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped). </li> <li> <c>instance-state-name</c> - The state of the instance
         /// (<c>pending</c> | <c>running</c> | <c>shutting-down</c> | <c>terminated</c> | <c>stopping</c> | <c>stopped</c>). </li> <li>
         /// <c>instance-type</c> - The type of instance (for example, <c>m1.small</c>). </li> <li> <c>instance.group-id</c> - The ID of the security
         /// group for the instance. If the instance is in EC2-Classic or a default VPC, you can use <c>instance.group-name</c> instead. </li> <li>
@@ -102,15 +103,16 @@ namespace Amazon.EC2.Model
         /// the <c>tag-value</c> filter. For example, if you use both the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
         /// assigned both the tag key Purpose (regardless of what the tag's value is), and the tag value X (regardless of what the tag's key is). If you
         /// want to list only resources where Purpose is X, see the <c>tag</c>:<i>key</i>=<i>value</i> filter. </li> <li> <c>tag-value</c> - The value
-        /// of a tag assigned to the resource. This filter is independent of the <c>tag-key</c> filter. </li> <li> <c>virtualization-type</c> - The
-        /// virtualization type of the instance (<c>paravirtual</c> | <c>hvm</c>). </li> <li> <c>vpc-id</c> - The ID of the VPC that the instance is
-        /// running in. </li> <li> <c>network-interface.description</c> - The description of the network interface. </li> <li>
-        /// <c>network-interface.subnet-id</c> - The ID of the subnet for the network interface. </li> <li> <c>network-interface.vpc-id</c> - The ID of
-        /// the VPC for the network interface. </li> <li> <c>network-interface.network-interface.id</c> - The ID of the network interface. </li> <li>
-        /// <c>network-interface.owner-id</c> - The ID of the owner of the network interface. </li> <li> <c>network-interface.availability-zone</c> -
-        /// The Availability Zone for the network interface. </li> <li> <c>network-interface.requester-id</c> - The requester ID for the network
-        /// interface. </li> <li> <c>network-interface.requester-managed</c> - Indicates whether the network interface is being managed by AWS. </li>
-        /// <li> <c>network-interface.status</c> - The status of the network interface (<c>available</c>) | <c>in-use</c>). </li> <li>
+        /// of a tag assigned to the resource. This filter is independent of the <c>tag-key</c> filter. </li> <li> <c>tenancy</c> - The tenancy of an
+        /// instance (<c>dedicated</c> | <c>default</c>). </li> <li> <c>virtualization-type</c> - The virtualization type of the instance
+        /// (<c>paravirtual</c> | <c>hvm</c>). </li> <li> <c>vpc-id</c> - The ID of the VPC that the instance is running in. </li> <li>
+        /// <c>network-interface.description</c> - The description of the network interface. </li> <li> <c>network-interface.subnet-id</c> - The ID of
+        /// the subnet for the network interface. </li> <li> <c>network-interface.vpc-id</c> - The ID of the VPC for the network interface. </li> <li>
+        /// <c>network-interface.network-interface.id</c> - The ID of the network interface. </li> <li> <c>network-interface.owner-id</c> - The ID of
+        /// the owner of the network interface. </li> <li> <c>network-interface.availability-zone</c> - The Availability Zone for the network interface.
+        /// </li> <li> <c>network-interface.requester-id</c> - The requester ID for the network interface. </li> <li>
+        /// <c>network-interface.requester-managed</c> - Indicates whether the network interface is being managed by AWS. </li> <li>
+        /// <c>network-interface.status</c> - The status of the network interface (<c>available</c>) | <c>in-use</c>). </li> <li>
         /// <c>network-interface.mac-address</c> - The MAC address of the network interface. </li> <li> <c>network-interface-private-dns-name</c> - The
         /// private DNS name of the network interface. </li> <li> <c>network-interface.source-destination-check</c> - Whether the network interface
         /// performs source/destination checking. A value of <c>true</c> means checking is enabled, and <c>false</c> means checking is disabled. The

@@ -26,17 +26,18 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the ListRoles operation.
     /// Lists the roles that have the specified path prefix. If there are none, the action
-    /// returns an            empty list. For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-    /// with            Roles</a>.
+    /// returns an empty list. For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
+    /// with Roles</a>.
     /// 
-    ///         
+    ///  
     /// <para>
-    /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>            parameters.
+    /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+    /// parameters.
     /// </para>
-    ///         
+    ///  
     /// <para>
     /// The returned policy is URL-encoded according to RFC 3986. For more information about
-    /// RFC            3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
+    /// RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
     /// </para>
     /// </summary>
     public partial class ListRolesRequest : AmazonIdentityManagementServiceRequest
@@ -50,8 +51,8 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// Use this parameter only when paginating results, and only in a subsequent request
-        /// after            you've received a response where the results are truncated. Set it to the
-        /// value of the                <code>Marker</code> element in the response you just received.
+        /// after you've received a response where the results are truncated. Set it to the value
+        /// of the <code>Marker</code> element in the response you just received.
         /// </para>
         /// </summary>
         public string Marker
@@ -71,9 +72,9 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property MaxItems. 
         /// <para>
         /// Use this parameter only when paginating results to indicate the maximum number of
-        /// user names            you want in the response. If there are additional user names beyond the
-        /// maximum you specify,            the <code>IsTruncated</code> response element is <code>true</code>.
-        /// This parameter is            optional. If you do not include it, it defaults to 100.
+        /// user names you want in the response. If there are additional user names beyond the
+        /// maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.
+        /// This parameter is optional. If you do not include it, it defaults to 100.
         /// </para>
         /// </summary>
         public int MaxItems
@@ -92,13 +93,13 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property PathPrefix. 
         /// <para>
-        /// The path prefix for filtering the results. For example:                <code>/application_abc/component_xyz/</code>,
-        /// which would get all roles whose path starts            with <code>/application_abc/component_xyz/</code>.
+        /// The path prefix for filtering the results. For example: <code>/application_abc/component_xyz/</code>,
+        /// which would get all roles whose path starts with <code>/application_abc/component_xyz/</code>.
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// This parameter is optional. If it is not included, it defaults to a slash (/), listing
-        /// all            roles.
+        /// all roles.
         /// </para>
         /// </summary>
         public string PathPrefix

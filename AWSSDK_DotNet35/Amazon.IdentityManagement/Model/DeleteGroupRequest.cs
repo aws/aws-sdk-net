@@ -25,7 +25,8 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteGroup operation.
-    /// Deletes the specified group. The group must not contain any users or have any attached            policies.
+    /// Deletes the specified group. The group must not contain any users or have any attached
+    /// policies.
     /// </summary>
     public partial class DeleteGroupRequest : AmazonIdentityManagementServiceRequest
     {

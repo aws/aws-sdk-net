@@ -24,7 +24,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <a>UploadSigningCertificate</a>            action.
+    /// Contains the result of a successful invocation of the <a>UploadSigningCertificate</a>
+    /// action.
     /// </summary>
     public partial class UploadSigningCertificateResult : AmazonWebServiceResponse
     {

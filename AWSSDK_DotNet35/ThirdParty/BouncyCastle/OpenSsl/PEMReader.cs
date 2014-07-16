@@ -63,19 +63,44 @@ namespace ThirdParty.BouncyCastle.OpenSsl
         {
             var rsaParams = new RSAParameters();
 
-            rsaParams.Modulus = ((DerInteger)seq[1]).Value.ToByteArrayUnsigned();
-            rsaParams.Exponent = ((DerInteger)seq[2]).Value.ToByteArrayUnsigned();
-            rsaParams.D = ((DerInteger)seq[3]).Value.ToByteArrayUnsigned();
-            rsaParams.P = ((DerInteger)seq[4]).Value.ToByteArrayUnsigned();
-            rsaParams.Q = ((DerInteger)seq[5]).Value.ToByteArrayUnsigned();
-            rsaParams.DP = ((DerInteger)seq[6]).Value.ToByteArrayUnsigned();
-            rsaParams.DQ = ((DerInteger)seq[7]).Value.ToByteArrayUnsigned();
-            rsaParams.InverseQ = ((DerInteger)seq[8]).Value.ToByteArrayUnsigned();
+            var modules = ((DerInteger)seq[1]).Value.ToByteArrayUnsigned();
+            var alignmentValue = GetAlignmentValue(modules);
 
+            rsaParams.Modulus = FixAlignment(modules, alignmentValue);
+            rsaParams.Exponent = ((DerInteger)seq[2]).Value.ToByteArrayUnsigned();
+            rsaParams.D = FixAlignment(((DerInteger)seq[3]).Value.ToByteArrayUnsigned(), alignmentValue);
+            rsaParams.P = FixAlignment(((DerInteger)seq[4]).Value.ToByteArrayUnsigned(), alignmentValue / 2);
+            rsaParams.Q = FixAlignment(((DerInteger)seq[5]).Value.ToByteArrayUnsigned(), alignmentValue / 2);
+            rsaParams.DP = FixAlignment(((DerInteger)seq[6]).Value.ToByteArrayUnsigned(), alignmentValue / 2);
+            rsaParams.DQ = FixAlignment(((DerInteger)seq[7]).Value.ToByteArrayUnsigned(), alignmentValue / 2);
+            rsaParams.InverseQ = FixAlignment(((DerInteger)seq[8]).Value.ToByteArrayUnsigned(), alignmentValue / 2);
 
             return rsaParams;
         }
 
+        private int GetAlignmentValue(Byte[] modules)
+        {
+            int bits = modules.Length * 8;
+            double logbase = System.Math.Log(bits, 2);
+            if (logbase != (int)logbase)
+            {
+                bits = (int)(logbase + 1.0);
+                bits = (int)(System.Math.Pow(2, bits));
+            }
 
+            return bits / 8;
+        }
+
+        public static byte[] FixAlignment(byte[] inputBytes, int alignment)
+        {
+            if (inputBytes.Length == alignment)
+                return inputBytes;
+
+            byte[] buf = new byte[alignment];
+
+            System.Array.Copy(inputBytes, 0, buf, alignment - inputBytes.Length, inputBytes.Length);
+
+            return buf;
+        }
 	}
 }

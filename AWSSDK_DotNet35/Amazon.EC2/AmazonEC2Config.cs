@@ -52,7 +52,7 @@ namespace Amazon.EC2
         {
             get
             {
-                return "2014-05-01";
+                return "2014-06-15";
             }
         }
     }

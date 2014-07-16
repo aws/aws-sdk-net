@@ -26,10 +26,10 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// The SigningCertificate data type contains information about an X.509 signing certificate.
     /// 
-    ///         
+    ///  
     /// <para>
-    ///  This data type is used as a response element in the actions <a>UploadSigningCertificate</a>            and
-    /// <a>ListSigningCertificates</a>. 
+    ///  This data type is used as a response element in the actions <a>UploadSigningCertificate</a>
+    /// and <a>ListSigningCertificates</a>. 
     /// </para>
     /// </summary>
     public partial class SigningCertificate
@@ -83,7 +83,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of the signing certificate. <code>Active</code> means the key is valid
-        /// for API            calls, while <code>Inactive</code> means it is not.
+        /// for API calls, while <code>Inactive</code> means it is not.
         /// </para>
         /// </summary>
         public StatusType Status

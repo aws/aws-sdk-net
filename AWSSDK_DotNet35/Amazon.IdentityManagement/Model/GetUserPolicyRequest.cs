@@ -26,8 +26,8 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the GetUserPolicy operation.
     /// Retrieves the specified policy document for the specified user. The returned policy
-    /// is            URL-encoded according to RFC 3986. For more information about RFC 3986, go to
-    /// <a href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
+    /// is URL-encoded according to RFC 3986. For more information about RFC 3986, go to <a
+    /// href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
     /// </summary>
     public partial class GetUserPolicyRequest : AmazonIdentityManagementServiceRequest
     {

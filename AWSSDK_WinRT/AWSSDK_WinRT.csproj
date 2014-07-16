@@ -119,6 +119,10 @@
     <Compile Include="Amazon.CloudTrail\IAmazonCloudTrail.cs" />
     <Compile Include="Amazon.CloudWatch\AmazonCloudWatchClient.cs" />
     <Compile Include="Amazon.CloudWatch\IAmazonCloudWatch.cs" />
+    <Compile Include="Amazon.CognitoIdentity\AmazonCognitoIdentityClient.cs" />
+    <Compile Include="Amazon.CognitoIdentity\IAmazonCognitoIdentity.cs" />
+    <Compile Include="Amazon.CognitoSync\AmazonCognitoSyncClient.cs" />
+    <Compile Include="Amazon.CognitoSync\IAmazonCognitoSync.cs" />
     <Compile Include="Amazon.DataPipeline\AmazonDataPipelineClient.cs" />
     <Compile Include="Amazon.DataPipeline\IAmazonDataPipeline.cs" />
     <Compile Include="Amazon.DirectConnect\AmazonDirectConnectClient.cs" />
@@ -327,6 +331,28 @@
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.CloudWatch\Model\Internal\MarshallTransformations\*">
+      <Visible>false</Visible>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CognitoIdentity\*" Exclude="..\AWSSDK_DotNet35\Amazon.CognitoIdentity\IAmazonCognitoIdentity.cs;..\AWSSDK_DotNet35\Amazon.CognitoIdentity\AmazonCognitoIdentityClient.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CognitoIdentity\Model\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CognitoIdentity\Model\Internal\MarshallTransformations\*">
+      <Visible>false</Visible>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CognitoSync\*" Exclude="..\AWSSDK_DotNet35\Amazon.CognitoSync\IAmazonCognitoSync.cs;..\AWSSDK_DotNet35\Amazon.CognitoSync\AmazonCognitoSyncClient.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CognitoSync\Model\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CognitoSync\Model\Internal\MarshallTransformations\*">
       <Visible>false</Visible>
     </Compile>
   </ItemGroup>

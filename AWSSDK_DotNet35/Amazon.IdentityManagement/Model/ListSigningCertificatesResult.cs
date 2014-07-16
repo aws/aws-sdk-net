@@ -24,7 +24,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <a>ListSigningCertificates</a>            action.
+    /// Contains the result of a successful invocation of the <a>ListSigningCertificates</a>
+    /// action.
     /// </summary>
     public partial class ListSigningCertificatesResult : AmazonWebServiceResponse
     {
@@ -56,8 +57,8 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property IsTruncated. 
         /// <para>
         /// A flag that indicates whether there are more certificate IDs to list. If your results
-        /// were            truncated, you can make a subsequent pagination request using the <code>Marker</code>
-        /// request            parameter to retrieve more certificates in the list.
+        /// were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more certificates in the list.
         /// </para>
         /// </summary>
         public bool IsTruncated
@@ -77,7 +78,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// If <code>IsTruncated</code> is <code>true</code>, this element is present and contains
-        /// the            value to use for the <code>Marker</code> parameter in a subsequent pagination
+        /// the value to use for the <code>Marker</code> parameter in a subsequent pagination
         /// request.
         /// </para>
         /// </summary>

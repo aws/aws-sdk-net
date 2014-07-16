@@ -26,15 +26,20 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// The PasswordPolicy data type contains information about the account password policy.
     /// 
-    ///         
+    ///  
     /// <para>
-    ///  This data type is used as a response element in the action <a>GetAccountPasswordPolicy</a>.        
+    ///  This data type is used as a response element in the action <a>GetAccountPasswordPolicy</a>.
+    /// 
     /// </para>
     /// </summary>
     public partial class PasswordPolicy
     {
         private bool? _allowUsersToChangePassword;
+        private bool? _expirePasswords;
+        private bool? _hardExpiry;
+        private int? _maxPasswordAge;
         private int? _minimumPasswordLength;
+        private int? _passwordReusePrevention;
         private bool? _requireLowercaseCharacters;
         private bool? _requireNumbers;
         private bool? _requireSymbols;
@@ -44,7 +49,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property AllowUsersToChangePassword. 
         /// <para>
-        /// Specifies whether to allow IAM users to change their own password.
+        /// Specifies whether IAM users are allowed to change their own password.
         /// </para>
         /// </summary>
         public bool AllowUsersToChangePassword
@@ -57,6 +62,65 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetAllowUsersToChangePassword()
         {
             return this._allowUsersToChangePassword.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ExpirePasswords. 
+        /// <para>
+        /// Specifies whether IAM users are required to change their password after a specified
+        /// number of days.
+        /// </para>
+        /// </summary>
+        public bool ExpirePasswords
+        {
+            get { return this._expirePasswords.GetValueOrDefault(); }
+            set { this._expirePasswords = value; }
+        }
+
+        // Check to see if ExpirePasswords property is set
+        internal bool IsSetExpirePasswords()
+        {
+            return this._expirePasswords.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property HardExpiry. 
+        /// <para>
+        /// Specifies whether IAM users are prevented from setting a new password after their
+        /// password has expired.
+        /// </para>
+        /// </summary>
+        public bool HardExpiry
+        {
+            get { return this._hardExpiry.GetValueOrDefault(); }
+            set { this._hardExpiry = value; }
+        }
+
+        // Check to see if HardExpiry property is set
+        internal bool IsSetHardExpiry()
+        {
+            return this._hardExpiry.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property MaxPasswordAge. 
+        /// <para>
+        /// The number of days that an IAM user password is valid.
+        /// </para>
+        /// </summary>
+        public int MaxPasswordAge
+        {
+            get { return this._maxPasswordAge.GetValueOrDefault(); }
+            set { this._maxPasswordAge = value; }
+        }
+
+        // Check to see if MaxPasswordAge property is set
+        internal bool IsSetMaxPasswordAge()
+        {
+            return this._maxPasswordAge.HasValue; 
         }
 
 
@@ -76,6 +140,25 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetMinimumPasswordLength()
         {
             return this._minimumPasswordLength.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property PasswordReusePrevention. 
+        /// <para>
+        /// Specifies the number of previous passwords that IAM users are prevented from reusing.
+        /// </para>
+        /// </summary>
+        public int PasswordReusePrevention
+        {
+            get { return this._passwordReusePrevention.GetValueOrDefault(); }
+            set { this._passwordReusePrevention = value; }
+        }
+
+        // Check to see if PasswordReusePrevention property is set
+        internal bool IsSetPasswordReusePrevention()
+        {
+            return this._passwordReusePrevention.HasValue; 
         }
 
 

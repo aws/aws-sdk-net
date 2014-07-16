@@ -175,7 +175,7 @@ namespace Amazon.DynamoDBv2.DataModel
                     storage.Document,
                     table.MakeKey(storage.Document),
                     new UpdateItemOperationConfig { Expected = expectedDocument, ReturnValues = ReturnValues.None },
-                    true);
+                    isAsync);
                 PopulateInstance(storage, value);
             }
         }

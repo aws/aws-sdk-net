@@ -26,23 +26,23 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// The Role data type contains information about a role.
     /// 
-    ///         
+    ///  
     /// <para>
     ///  This data type is used as a response element in the following actions:
     /// </para>
-    ///         <ul>            <li>
+    ///  <ul> <li>
     /// <para>
     /// <a>CreateRole</a>
     /// </para>
-    /// </li>            <li>
+    /// </li> <li>
     /// <para>
     /// <a>GetRole</a>
     /// </para>
-    /// </li>            <li>
+    /// </li> <li>
     /// <para>
     /// <a>ListRoles</a>
     /// </para>
-    /// </li>        </ul>
+    /// </li> </ul>
     /// </summary>
     public partial class Role
     {
@@ -58,8 +58,8 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Arn. 
         /// <para>
         /// The Amazon Resource Name (ARN) specifying the role. For more information about ARNs
-        /// and how            to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-        /// target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access                Management</i>.
+        /// and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
+        /// for IAM Entities</a> in the <i>Using IAM</i> guide.
         /// </para>
         /// </summary>
         public string Arn
@@ -80,10 +80,10 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// The policy that grants an entity permission to assume the role.
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// The returned policy is URL-encoded according to RFC 3986. For more information about
-        /// RFC            3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
+        /// RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
         /// </para>
         /// </summary>
         public string AssumeRolePolicyDocument
@@ -121,8 +121,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
-        /// Path to the role. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-        /// target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access                Management</i>.
+        /// Path to the role. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
+        /// for IAM Entities</a> in the <i>Using IAM</i> guide.
         /// </para>
         /// </summary>
         public string Path
@@ -142,8 +142,8 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property RoleId. 
         /// <para>
         /// The stable and unique string identifying the role. For more information about IDs,
-        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-        /// target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access                Management</i>.
+        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
+        /// for IAM Entities</a> in the <i>Using IAM</i> guide.
         /// </para>
         /// </summary>
         public string RoleId

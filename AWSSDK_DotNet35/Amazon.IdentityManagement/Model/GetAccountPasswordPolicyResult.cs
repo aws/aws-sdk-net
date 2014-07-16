@@ -24,7 +24,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <a>GetAccountPasswordPolicy</a>            action.
+    /// Contains the result of a successful invocation of the <a>GetAccountPasswordPolicy</a>
+    /// action.
     /// </summary>
     public partial class GetAccountPasswordPolicyResult : AmazonWebServiceResponse
     {

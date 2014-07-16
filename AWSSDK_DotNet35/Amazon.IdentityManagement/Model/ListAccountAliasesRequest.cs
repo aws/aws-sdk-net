@@ -26,13 +26,13 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the ListAccountAliases operation.
     /// Lists the account aliases associated with the account. For information about using
-    /// an AWS            account alias, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html"
-    /// target="_blank">Using an Alias for Your AWS Account ID</a> in <i>Using AWS Identity
-    /// and                Access Management</i>.
+    /// an AWS account alias, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
+    /// an Alias for Your AWS Account ID</a> in the <i>Using IAM</i> guide.
     /// 
-    ///         
+    ///  
     /// <para>
-    /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>            parameters.
+    /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+    /// parameters.
     /// </para>
     /// </summary>
     public partial class ListAccountAliasesRequest : AmazonIdentityManagementServiceRequest
@@ -45,8 +45,8 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// Use this only when paginating results, and only in a subsequent request after you've
-        /// received            a response where the results are truncated. Set it to the value of the
-        /// <code>Marker</code>            element in the response you just received.
+        /// received a response where the results are truncated. Set it to the value of the <code>Marker</code>
+        /// element in the response you just received.
         /// </para>
         /// </summary>
         public string Marker
@@ -66,9 +66,9 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property MaxItems. 
         /// <para>
         /// Use this only when paginating results to indicate the maximum number of account aliases
-        /// you            want in the response. If there are additional account aliases beyond the maximum
-        /// you specify,            the <code>IsTruncated</code> response element is <code>true</code>.
-        /// This parameter is            optional. If you do not include it, it defaults to 100.
+        /// you want in the response. If there are additional account aliases beyond the maximum
+        /// you specify, the <code>IsTruncated</code> response element is <code>true</code>. This
+        /// parameter is optional. If you do not include it, it defaults to 100.
         /// </para>
         /// </summary>
         public int MaxItems

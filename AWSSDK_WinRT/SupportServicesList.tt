@@ -37,7 +37,9 @@
 		"Amazon.SimpleWorkflow.IAmazonSimpleWorkflow",
 		//"Amazon.SQS.IAmazonSQS",
 		"Amazon.StorageGateway.IAmazonStorageGateway",
-		"Amazon.AWSSupport.IAmazonAWSSupport"
+		"Amazon.AWSSupport.IAmazonAWSSupport",
+		"Amazon.CognitoIdentity.IAmazonCognitoIdentity",
+		"Amazon.CognitoSync.IAmazonCognitoSync",		
 	};
 	
 	// Used to generate factory methods in AWSClientFactory.tt
@@ -75,6 +77,8 @@
 		"Amazon.SimpleWorkflow.IAmazonSimpleWorkflow",
 		"Amazon.SQS.IAmazonSQS",
 		"Amazon.StorageGateway.IAmazonStorageGateway",
-		"Amazon.AWSSupport.IAmazonAWSSupport"
+		"Amazon.AWSSupport.IAmazonAWSSupport",
+		"Amazon.CognitoIdentity.IAmazonCognitoIdentity",
+		"Amazon.CognitoSync.IAmazonCognitoSync"		
 	};
 #>

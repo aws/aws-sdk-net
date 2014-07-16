@@ -24,7 +24,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <a>UploadServerCertificate</a>            action.
+    /// Contains the result of a successful invocation of the <a>UploadServerCertificate</a>
+    /// action.
     /// </summary>
     public partial class UploadServerCertificateResult : AmazonWebServiceResponse
     {
@@ -34,8 +35,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property ServerCertificateMetadata. 
         /// <para>
-        /// The meta information of the uploaded server certificate without its certificate body,            certificate
-        /// chain, and private key.
+        /// The meta information of the uploaded server certificate without its certificate body,
+        /// certificate chain, and private key.
         /// </para>
         /// </summary>
         public ServerCertificateMetadata ServerCertificateMetadata

@@ -40,7 +40,7 @@ namespace Amazon.Util
         internal const string DefaultRegion = "us-east-1";
         internal const string DefaultGovRegion = "us-gov-west-1";
 
-        internal const string SDKVersionNumber = "2.1.8.0";
+        internal const string SDKVersionNumber = "2.1.9.0";
 
         internal const int DefaultMaxRetry = 3;
         private const int DefaultConnectionLimit = 50;
@@ -382,72 +382,6 @@ namespace Amazon.Util
             double milli = Math.Round(ts.TotalMilliseconds, 0) / 1000.0;
             return milli;
         }
-
-#if BCL
-        /// <summary>
-        /// Detects if the file specified by filePath as a BOM preamble.
-        /// </summary>
-        /// <param name="filePath">The file to check for BOM.</param>
-        /// <returns>True if the file has a BOM, else false.</returns>
-        internal static bool HasBOM(string filePath)
-        {
-            var calculatedEncoding = GetEncodingFromPreamble(filePath);
-            if (calculatedEncoding != null)
-            {
-                var calculatedPreamble = calculatedEncoding.GetPreamble();
-                if (calculatedPreamble.Length > 0)
-                    return true;
-            }
-
-            return false;
-        }
-
-        /// <summary>
-        /// Gets encoding for the given file.
-        /// </summary>
-        /// <param name="filePath">File path.</param>
-        /// <returns>Encoding for the given file.</returns>
-        internal static Encoding GetEncodingFromPreamble(string filePath)
-        {
-            int maxPreambleLength = 0;
-            Dictionary<Encoding, byte[]> encodingPreambleMap = new Dictionary<Encoding, byte[]>();
-            var encodingInfos = Encoding.GetEncodings();
-            foreach (var ei in encodingInfos)
-            {
-                var encoding = ei.GetEncoding();
-                var preamble = encoding.GetPreamble();
-
-                if (preamble.Length == 0)
-                    continue;
-
-                maxPreambleLength = Math.Max(maxPreambleLength, preamble.Length);
-                encodingPreambleMap.Add(encoding, preamble);
-            }
-
-            byte[] buffer = new byte[maxPreambleLength];
-            using (var stream = File.Open(filePath, FileMode.Open, FileAccess.Read, FileShare.Read))
-            {
-                stream.Read(buffer, 0, buffer.Length);
-            }
-
-            List<Encoding> possibleEncodings = new List<Encoding>();
-            foreach (var kvp in encodingPreambleMap)
-            {
-                var encoding = kvp.Key;
-                var preamble = kvp.Value;
-
-                var possiblePreamble = buffer.Take(preamble.Length).ToList();
-                if (preamble.SequenceEqual(possiblePreamble))
-                    possibleEncodings.Add(encoding);
-            }
-
-            // if more than 1 matches, sort by preamble size, placing longest preamble at the top
-            if (possibleEncodings.Count > 1)
-                possibleEncodings = possibleEncodings.OrderByDescending(e => e.GetPreamble().Length).ToList();
-
-            return possibleEncodings.FirstOrDefault();
-        }
-#endif
 
         /// <summary>
         /// Helper function to format a byte array into string

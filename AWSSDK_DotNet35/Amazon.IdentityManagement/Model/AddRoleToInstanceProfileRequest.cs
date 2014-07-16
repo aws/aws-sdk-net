@@ -26,9 +26,9 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the AddRoleToInstanceProfile operation.
     /// Adds the specified role to the specified instance profile. For more information about
-    /// roles,            go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-    /// with                Roles</a>. For more information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-    /// Instance                Profiles</a>.
+    /// roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
+    /// with Roles</a>. For more information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
+    /// Instance Profiles</a>.
     /// </summary>
     public partial class AddRoleToInstanceProfileRequest : AmazonIdentityManagementServiceRequest
     {

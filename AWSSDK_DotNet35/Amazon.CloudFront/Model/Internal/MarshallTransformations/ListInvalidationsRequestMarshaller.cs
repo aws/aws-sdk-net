@@ -54,7 +54,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             uriResourcePath = queryStringBuilder.ToString();
             // Remove the last character if it is ';' or '?' or '&'
             uriResourcePath = uriResourcePath.TrimEnd(';', '?', '&');
-            uriResourcePath = AddQueryParameters(request,uriResourcePath);
+            uriResourcePath = AddQueryParameters(request, uriResourcePath);
             request.ResourcePath = uriResourcePath;
 
 
@@ -74,7 +74,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
             foreach (string s in queryString.Split('&', ';'))
             {
-                string[] nameValuePair = s.Split('=');
+                string[] nameValuePair = s.Split(new char[] { '=' }, 2);
                 if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0)
                 {
                     request.Parameters.Add(nameValuePair[0], nameValuePair[1]);

@@ -36,98 +36,99 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// A set of key value pairs containing account-level information.
         /// </para>
-        ///         
+        ///  
         /// <para>
-        ///             <code>SummaryMap</code> contains the following keys: <ul>                <li>
+        ///  <code>SummaryMap</code> contains the following keys: <ul> <li>
         /// <para>
-        /// <code>AccessKeysPerUserQuota</code> - Maximum number of access keys that can be                        created
+        /// <code>AccessKeysPerUserQuota</code> - Maximum number of access keys that can be created
         /// per user
         /// </para>
-        /// </li>                <li>
+        /// </li> <li>
         /// <para>
         /// <code>AccountMFAEnabled</code> - 1 if the root account has an MFA device assigned
-        /// to                        it, 0 otherwise
+        /// to it, 0 otherwise
         /// </para>
-        /// </li>                <li>
+        /// </li> <li>
         /// <para>
-        /// <code>AssumeRolePolicySizeQuota</code> - Maximum allowed size for assume role policy                        documents
-        /// (in kilobytes) 
+        /// <code>AssumeRolePolicySizeQuota</code> - Maximum allowed size for assume role policy
+        /// documents (in kilobytes) 
         /// </para>
-        /// </li>                <li>
+        /// </li> <li>
         /// <para>
-        /// <code>GroupPolicySizeQuota</code> - Maximum allowed size for Group policy documents                        (in
-        /// kilobytes)
+        /// <code>GroupPolicySizeQuota</code> - Maximum allowed size for Group policy documents
+        /// (in kilobytes)
         /// </para>
-        /// </li>                <li>
+        /// </li> <li>
         /// <para>
         /// <code>Groups</code> - Number of Groups for the AWS account
         /// </para>
-        /// </li>                <li>
+        /// </li> <li>
         /// <para>
-        /// <code>GroupsPerUserQuota</code> - Maximum number of groups a user can belong                    to
+        /// <code>GroupsPerUserQuota</code> - Maximum number of groups a user can belong to
         /// </para>
-        /// </li>                <li>
+        /// </li> <li>
         /// <para>
         /// <code>GroupsQuota</code> - Maximum groups allowed for the AWS account
         /// </para>
-        /// </li>                <li>
+        /// </li> <li>
         /// <para>
-        /// <code>InstanceProfiles</code> - Number of instance profiles for the AWS                    account
+        /// <code>InstanceProfiles</code> - Number of instance profiles for the AWS account
         /// </para>
-        /// </li>                <li>
+        /// </li> <li>
         /// <para>
-        /// <code>InstanceProfilesQuota</code> - Maximum instance profiles allowed for the AWS                        account
+        /// <code>InstanceProfilesQuota</code> - Maximum instance profiles allowed for the AWS
+        /// account
         /// </para>
-        /// </li>                <li>
+        /// </li> <li>
         /// <para>
-        /// <code>MFADevices</code> - Number of MFA devices, either assigned or                    unassigned
+        /// <code>MFADevices</code> - Number of MFA devices, either assigned or unassigned
         /// </para>
-        /// </li>                <li>
+        /// </li> <li>
         /// <para>
-        /// <code>MFADevicesInUse</code> - Number of MFA devices that have been assigned to an                        IAM
-        /// user or to the root account
+        /// <code>MFADevicesInUse</code> - Number of MFA devices that have been assigned to an
+        /// IAM user or to the root account
         /// </para>
-        /// </li>                <li>
+        /// </li> <li>
         /// <para>
         /// <code>RolePolicySizeQuota</code> - Maximum allowed size for role policy documents
-        /// (in                        kilobytes) 
+        /// (in kilobytes) 
         /// </para>
-        /// </li>                <li>
+        /// </li> <li>
         /// <para>
         /// <code>Roles</code> - Number of roles for the AWS account
         /// </para>
-        /// </li>                <li>
+        /// </li> <li>
         /// <para>
         /// <code>RolesQuota</code> - Maximum roles allowed for the AWS account
         /// </para>
-        /// </li>                <li>
+        /// </li> <li>
         /// <para>
-        /// <code>ServerCertificates</code> - Number of server certificates for the AWS                        account
+        /// <code>ServerCertificates</code> - Number of server certificates for the AWS account
         /// </para>
-        /// </li>                <li>
+        /// </li> <li>
         /// <para>
-        /// <code>ServerCertificatesQuota</code> - Maximum server certificates allowed for the                        AWS
-        /// account
+        /// <code>ServerCertificatesQuota</code> - Maximum server certificates allowed for the
+        /// AWS account
         /// </para>
-        /// </li>                <li>
+        /// </li> <li>
         /// <para>
-        /// <code>SigningCertificatesPerUserQuota</code> - Maximum number of X509 certificates                        allowed
-        /// for a user
+        /// <code>SigningCertificatesPerUserQuota</code> - Maximum number of X509 certificates
+        /// allowed for a user
         /// </para>
-        /// </li>                <li>
+        /// </li> <li>
         /// <para>
         /// <code>UserPolicySizeQuota</code> - Maximum allowed size for user policy documents
-        /// (in                        kilobytes) 
+        /// (in kilobytes) 
         /// </para>
-        /// </li>                <li>
+        /// </li> <li>
         /// <para>
         /// <code>Users</code> - Number of users for the AWS account
         /// </para>
-        /// </li>                <li>
+        /// </li> <li>
         /// <para>
         /// <code>UsersQuota</code> - Maximum users allowed for the AWS account
         /// </para>
-        /// </li>            </ul>        
+        /// </li> </ul> 
         /// </para>
         /// </summary>
         public Dictionary<string, int> SummaryMap

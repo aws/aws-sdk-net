@@ -51,6 +51,12 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         unmarshalledObject.CreateDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("PasswordResetRequired", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.PasswordResetRequired = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("UserName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

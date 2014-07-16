@@ -43,6 +43,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Password", StringUtils.FromString(publicRequest.Password));
                 }
+                if(publicRequest.IsSetPasswordResetRequired())
+                {
+                    request.Parameters.Add("PasswordResetRequired", StringUtils.FromBool(publicRequest.PasswordResetRequired));
+                }
                 if(publicRequest.IsSetUserName())
                 {
                     request.Parameters.Add("UserName", StringUtils.FromString(publicRequest.UserName));

@@ -36,9 +36,9 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property IsTruncated. 
         /// <para>
-        /// A flag that indicates whether there are more user names to list. If your results were            truncated,
-        /// you can make a subsequent pagination request using the <code>Marker</code> request            parameter
-        /// to retrieve more users in the list.
+        /// A flag that indicates whether there are more user names to list. If your results were
+        /// truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more users in the list.
         /// </para>
         /// </summary>
         public bool IsTruncated
@@ -58,7 +58,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// If <code>IsTruncated</code> is <code>true</code>, this element is present and contains
-        /// the            value to use for the <code>Marker</code> parameter in a subsequent pagination
+        /// the value to use for the <code>Marker</code> parameter in a subsequent pagination
         /// request.
         /// </para>
         /// </summary>

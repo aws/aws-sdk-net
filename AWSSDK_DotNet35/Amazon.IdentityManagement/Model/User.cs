@@ -26,23 +26,23 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// The User data type contains information about a user.
     /// 
-    ///         
+    ///  
     /// <para>
     ///  This data type is used as a response element in the following actions:
     /// </para>
-    ///         <ul>            <li>
+    ///  <ul> <li>
     /// <para>
     /// <a>CreateUser</a>
     /// </para>
-    /// </li>            <li>
+    /// </li> <li>
     /// <para>
     /// <a>GetUser</a>
     /// </para>
-    /// </li>            <li>
+    /// </li> <li>
     /// <para>
     /// <a>ListUsers</a>
     /// </para>
-    /// </li>        </ul>
+    /// </li> </ul>
     /// </summary>
     public partial class User
     {
@@ -57,8 +57,8 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Arn. 
         /// <para>
         /// The Amazon Resource Name (ARN) specifying the user. For more information about ARNs
-        /// and how            to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-        /// target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access                Management</i>.
+        /// and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
+        /// for IAM Entities</a> in the <i>Using IAM</i> guide.
         /// </para>
         /// </summary>
         public string Arn
@@ -96,8 +96,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
-        /// Path to the user. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-        /// target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access                Management</i>.
+        /// Path to the user. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
+        /// for IAM Entities</a> in the <i>Using IAM</i> guide.
         /// </para>
         /// </summary>
         public string Path
@@ -117,8 +117,8 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property UserId. 
         /// <para>
         /// The stable and unique string identifying the user. For more information about IDs,
-        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-        /// target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access                Management</i>.
+        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
+        /// for IAM Entities</a> in the <i>Using IAM</i> guide.
         /// </para>
         /// </summary>
         public string UserId

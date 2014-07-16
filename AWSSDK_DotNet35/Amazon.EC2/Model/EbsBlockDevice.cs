@@ -84,7 +84,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The volume type. Default: <c>standard</c>
+        /// The volume type. <c>gp2</c> for General Purpose (SSD) volumes, <c>io1</c> for Provisioned IOPS (SSD) volumes, and <c>standard</c> for
+        /// Magnetic volumes. Default: <c>standard</c>
         ///  
         /// <para>
         /// <b>Constraints:</b>

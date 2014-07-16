@@ -65,6 +65,86 @@ namespace Amazon.IdentityManagement
 
 
     /// <summary>
+    /// Constants used for properties of type ReportFormatType.
+    /// </summary>
+    public class ReportFormatType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TextCsv for ReportFormatType
+        /// </summary>
+        public static readonly ReportFormatType TextCsv = new ReportFormatType("text/csv");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public ReportFormatType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReportFormatType FindValue(string value)
+        {
+            return FindValue<ReportFormatType>(value);
+        }
+
+        public static implicit operator ReportFormatType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReportStateType.
+    /// </summary>
+    public class ReportStateType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETE for ReportStateType
+        /// </summary>
+        public static readonly ReportStateType COMPLETE = new ReportStateType("COMPLETE");
+        /// <summary>
+        /// Constant INPROGRESS for ReportStateType
+        /// </summary>
+        public static readonly ReportStateType INPROGRESS = new ReportStateType("INPROGRESS");
+        /// <summary>
+        /// Constant STARTED for ReportStateType
+        /// </summary>
+        public static readonly ReportStateType STARTED = new ReportStateType("STARTED");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public ReportStateType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReportStateType FindValue(string value)
+        {
+            return FindValue<ReportStateType>(value);
+        }
+
+        public static implicit operator ReportStateType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StatusType.
     /// </summary>
     public class StatusType : ConstantClass

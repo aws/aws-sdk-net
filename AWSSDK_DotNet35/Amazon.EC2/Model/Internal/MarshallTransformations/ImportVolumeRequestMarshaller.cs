@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(importVolumeRequest, "AmazonEC2");
             request.Parameters.Add("Action", "ImportVolume");
-            request.Parameters.Add("Version", "2014-05-01");
+            request.Parameters.Add("Version", "2014-06-15");
             if (importVolumeRequest != null && importVolumeRequest.IsSetAvailabilityZone())
             {
                 request.Parameters.Add("AvailabilityZone", StringUtils.FromString(importVolumeRequest.AvailabilityZone));

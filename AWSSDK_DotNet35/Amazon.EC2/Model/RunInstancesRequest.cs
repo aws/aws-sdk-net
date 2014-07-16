@@ -35,10 +35,12 @@ namespace Amazon.EC2.Model
     /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para> <para>You can provide optional user data when launching an
     /// instance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html" >Instance
     /// Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para> <para>If any of the AMIs have a product code attached for which
-    /// the user has not subscribed, <c>RunInstances</c> fails.</para> <para>For more information about troubleshooting, see <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html" >What To Do If An Instance Immediately
-    /// Terminates</a> , and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html" >Troubleshooting
-    /// Connecting to Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
+    /// the user has not subscribed, <c>RunInstances</c> fails.</para> <para>T2 instance types can only be launched into a VPC. If you do not have a
+    /// default VPC, or if you do not specify a subnet ID in the request, <c>RunInstances</c> fails.</para> <para>For more information about
+    /// troubleshooting, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html" >What To Do If An
+    /// Instance Immediately Terminates</a> , and <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html" >Troubleshooting Connecting to Your
+    /// Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
     /// </summary>
     public partial class RunInstancesRequest : AmazonEC2Request
     {

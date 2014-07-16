@@ -26,13 +26,16 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the UpdateAccountPasswordPolicy operation.
     /// Updates the password policy settings for the account. For more information about using
-    /// a            password policy, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
-    /// an                IAM Password Policy</a>.
+    /// a password policy, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
+    /// an IAM Password Policy</a> in the <i>Using IAM</i> guide.
     /// </summary>
     public partial class UpdateAccountPasswordPolicyRequest : AmazonIdentityManagementServiceRequest
     {
         private bool? _allowUsersToChangePassword;
+        private bool? _hardExpiry;
+        private int? _maxPasswordAge;
         private int? _minimumPasswordLength;
+        private int? _passwordReusePrevention;
         private bool? _requireLowercaseCharacters;
         private bool? _requireNumbers;
         private bool? _requireSymbols;
@@ -40,7 +43,12 @@ namespace Amazon.IdentityManagement.Model
 
 
         /// <summary>
-        /// Gets and sets the property AllowUsersToChangePassword.
+        /// Gets and sets the property AllowUsersToChangePassword. 
+        /// <para>
+        /// Allows all IAM users in your account to use the AWS Management Console to change their
+        /// own passwords. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
+        /// IAM Users Change Their Own Passwords</a> in the <i>Using IAM</i> guide.
+        /// </para>
         /// </summary>
         public bool AllowUsersToChangePassword
         {
@@ -56,7 +64,48 @@ namespace Amazon.IdentityManagement.Model
 
 
         /// <summary>
-        /// Gets and sets the property MinimumPasswordLength.
+        /// Gets and sets the property HardExpiry. 
+        /// <para>
+        /// Prevents IAM users from setting a new password after their password has expired.
+        /// </para>
+        /// </summary>
+        public bool HardExpiry
+        {
+            get { return this._hardExpiry.GetValueOrDefault(); }
+            set { this._hardExpiry = value; }
+        }
+
+        // Check to see if HardExpiry property is set
+        internal bool IsSetHardExpiry()
+        {
+            return this._hardExpiry.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property MaxPasswordAge. 
+        /// <para>
+        /// The number of days that an IAM user password is valid.
+        /// </para>
+        /// </summary>
+        public int MaxPasswordAge
+        {
+            get { return this._maxPasswordAge.GetValueOrDefault(); }
+            set { this._maxPasswordAge = value; }
+        }
+
+        // Check to see if MaxPasswordAge property is set
+        internal bool IsSetMaxPasswordAge()
+        {
+            return this._maxPasswordAge.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property MinimumPasswordLength. 
+        /// <para>
+        /// The minimum number of characters allowed in an IAM user password.
+        /// </para>
         /// </summary>
         public int MinimumPasswordLength
         {
@@ -72,7 +121,30 @@ namespace Amazon.IdentityManagement.Model
 
 
         /// <summary>
-        /// Gets and sets the property RequireLowercaseCharacters.
+        /// Gets and sets the property PasswordReusePrevention. 
+        /// <para>
+        /// Specifies the number of previous passwords that IAM users are prevented from reusing.
+        /// </para>
+        /// </summary>
+        public int PasswordReusePrevention
+        {
+            get { return this._passwordReusePrevention.GetValueOrDefault(); }
+            set { this._passwordReusePrevention = value; }
+        }
+
+        // Check to see if PasswordReusePrevention property is set
+        internal bool IsSetPasswordReusePrevention()
+        {
+            return this._passwordReusePrevention.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property RequireLowercaseCharacters. 
+        /// <para>
+        /// Specifies whether IAM user passwords must contain at least one lowercase character
+        /// from the ISO basic Latin alphabet (a to z).
+        /// </para>
         /// </summary>
         public bool RequireLowercaseCharacters
         {
@@ -88,7 +160,11 @@ namespace Amazon.IdentityManagement.Model
 
 
         /// <summary>
-        /// Gets and sets the property RequireNumbers.
+        /// Gets and sets the property RequireNumbers. 
+        /// <para>
+        /// Specifies whether IAM user passwords must contain at least one numeric character (0
+        /// to 9).
+        /// </para>
         /// </summary>
         public bool RequireNumbers
         {
@@ -104,7 +180,9 @@ namespace Amazon.IdentityManagement.Model
 
 
         /// <summary>
-        /// Gets and sets the property RequireSymbols.
+        /// Gets and sets the property RequireSymbols. Specifies whether IAM user passwords must
+        /// contain at least one of the following non-alphanumeric characters: ! @ # $ % ^ &amp;
+        /// * ( ) _ + - = [ ] { } | '
         /// </summary>
         public bool RequireSymbols
         {
@@ -120,7 +198,11 @@ namespace Amazon.IdentityManagement.Model
 
 
         /// <summary>
-        /// Gets and sets the property RequireUppercaseCharacters.
+        /// Gets and sets the property RequireUppercaseCharacters. 
+        /// <para>
+        /// Specifies whether IAM user passwords must contain at least one uppercase character
+        /// from the ISO basic Latin alphabet (A to Z).
+        /// </para>
         /// </summary>
         public bool RequireUppercaseCharacters
         {

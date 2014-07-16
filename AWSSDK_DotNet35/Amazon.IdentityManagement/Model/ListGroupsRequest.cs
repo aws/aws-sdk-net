@@ -27,9 +27,10 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the ListGroups operation.
     /// Lists the groups that have the specified path prefix.
     /// 
-    ///         
+    ///  
     /// <para>
-    /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>            parameters.
+    /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+    /// parameters.
     /// </para>
     /// </summary>
     public partial class ListGroupsRequest : AmazonIdentityManagementServiceRequest
@@ -43,8 +44,8 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// Use this only when paginating results, and only in a subsequent request after you've
-        /// received            a response where the results are truncated. Set it to the value of the
-        /// <code>Marker</code>            element in the response you just received.
+        /// received a response where the results are truncated. Set it to the value of the <code>Marker</code>
+        /// element in the response you just received.
         /// </para>
         /// </summary>
         public string Marker
@@ -64,9 +65,9 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property MaxItems. 
         /// <para>
         /// Use this only when paginating results to indicate the maximum number of groups you
-        /// want in            the response. If there are additional groups beyond the maximum you specify,
-        /// the                <code>IsTruncated</code> response element is <code>true</code>. This parameter
-        /// is optional.            If you do not include it, it defaults to 100.
+        /// want in the response. If there are additional groups beyond the maximum you specify,
+        /// the <code>IsTruncated</code> response element is <code>true</code>. This parameter
+        /// is optional. If you do not include it, it defaults to 100.
         /// </para>
         /// </summary>
         public int MaxItems
@@ -85,13 +86,13 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property PathPrefix. 
         /// <para>
-        /// The path prefix for filtering the results. For example:                <code>/division_abc/subdivision_xyz/</code>,
-        /// which would get all groups whose path starts            with <code>/division_abc/subdivision_xyz/</code>.
+        /// The path prefix for filtering the results. For example: <code>/division_abc/subdivision_xyz/</code>,
+        /// which would get all groups whose path starts with <code>/division_abc/subdivision_xyz/</code>.
         /// </para>
-        ///         
+        ///  
         /// <para>
         /// This parameter is optional. If it is not included, it defaults to a slash (/), listing
-        /// all            groups.
+        /// all groups.
         /// </para>
         /// </summary>
         public string PathPrefix

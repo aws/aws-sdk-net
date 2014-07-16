@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(reportInstanceStatusRequest, "AmazonEC2");
             request.Parameters.Add("Action", "ReportInstanceStatus");
-            request.Parameters.Add("Version", "2014-05-01");
+            request.Parameters.Add("Version", "2014-06-15");
             if (reportInstanceStatusRequest != null)
             {
                 List<string> instancesList = reportInstanceStatusRequest.Instances;

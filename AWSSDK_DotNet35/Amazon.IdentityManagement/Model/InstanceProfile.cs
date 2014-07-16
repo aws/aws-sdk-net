@@ -26,27 +26,27 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// The InstanceProfile data type contains information about an instance profile.
     /// 
-    ///         
+    ///  
     /// <para>
     ///  This data type is used as a response element in the following actions:
     /// </para>
-    ///         <ul>            <li>
+    ///  <ul> <li>
     /// <para>
     /// <a>CreateInstanceProfile</a>
     /// </para>
-    /// </li>            <li>
+    /// </li> <li>
     /// <para>
     /// <a>GetInstanceProfile</a>
     /// </para>
-    /// </li>            <li>
+    /// </li> <li>
     /// <para>
     /// <a>ListInstanceProfiles</a>
     /// </para>
-    /// </li>            <li>
+    /// </li> <li>
     /// <para>
     /// <a>ListInstanceProfilesForRole</a>
     /// </para>
-    /// </li>        </ul>
+    /// </li> </ul>
     /// </summary>
     public partial class InstanceProfile
     {
@@ -62,8 +62,8 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Arn. 
         /// <para>
         /// The Amazon Resource Name (ARN) specifying the instance profile. For more information
-        /// about            ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-        /// target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access                Management</i>.
+        /// about ARNs and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
+        /// for IAM Entities</a> in the <i>Using IAM</i> guide.
         /// </para>
         /// </summary>
         public string Arn
@@ -102,8 +102,8 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property InstanceProfileId. 
         /// <para>
         /// The stable and unique string identifying the instance profile. For more information
-        /// about            IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-        /// target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access                Management</i>.
+        /// about IDs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
+        /// for IAM Entities</a> in the <i>Using IAM</i> guide.
         /// </para>
         /// </summary>
         public string InstanceProfileId
@@ -141,8 +141,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
-        /// Path to the instance profile. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-        /// target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access                Management</i>.
+        /// Path to the instance profile. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Identifiers
+        /// for IAM Entities</a> in the <i>Using IAM</i> guide.
         /// </para>
         /// </summary>
         public string Path

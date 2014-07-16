@@ -26,22 +26,20 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the ListAccessKeys operation.
     /// Returns information about the access key IDs associated with the specified user. If
-    /// there are            none, the action returns an empty list.
+    /// there are none, the action returns an empty list.
     /// 
-    ///         
+    ///  
     /// <para>
     /// Although each user is limited to a small number of keys, you can still paginate the
-    /// results            using the <code>MaxItems</code> and <code>Marker</code> parameters.
+    /// results using the <code>MaxItems</code> and <code>Marker</code> parameters.
     /// </para>
-    ///         
+    ///  
     /// <para>
-    /// If the <code>UserName</code> field is not specified, the UserName is determined implicitly            based
-    /// on the AWS access key ID used to sign the request. Because this action works for access            keys
-    /// under the AWS account, this API can be used to manage root credentials even if the
-    /// AWS            account has no associated users.
+    /// If the <code>UserName</code> field is not specified, the UserName is determined implicitly
+    /// based on the AWS access key ID used to sign the request. Because this action works
+    /// for access keys under the AWS account, this API can be used to manage root credentials
+    /// even if the AWS account has no associated users.
     /// </para>
-    ///         <note>To ensure the security of your AWS account, the secret access key is accessible
-    /// only            during key and user creation.</note>
     /// </summary>
     public partial class ListAccessKeysRequest : AmazonIdentityManagementServiceRequest
     {
@@ -54,8 +52,8 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// Use this parameter only when paginating results, and only in a subsequent request
-        /// after            you've received a response where the results are truncated. Set it to the
-        /// value of the                <code>Marker</code> element in the response you just received.
+        /// after you've received a response where the results are truncated. Set it to the value
+        /// of the <code>Marker</code> element in the response you just received.
         /// </para>
         /// </summary>
         public string Marker
@@ -75,9 +73,9 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property MaxItems. 
         /// <para>
         /// Use this parameter only when paginating results to indicate the maximum number of
-        /// keys you            want in the response. If there are additional keys beyond the maximum you
-        /// specify, the                <code>IsTruncated</code> response element is <code>true</code>. This
-        /// parameter is optional.            If you do not include it, it defaults to 100.
+        /// keys you want in the response. If there are additional keys beyond the maximum you
+        /// specify, the <code>IsTruncated</code> response element is <code>true</code>. This
+        /// parameter is optional. If you do not include it, it defaults to 100.
         /// </para>
         /// </summary>
         public int MaxItems

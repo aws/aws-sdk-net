@@ -26,7 +26,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the DeleteUser operation.
     /// Deletes the specified user. The user must not belong to any groups, have any keys
-    /// or signing            certificates, or have any attached policies.
+    /// or signing certificates, or have any attached policies.
     /// </summary>
     public partial class DeleteUserRequest : AmazonIdentityManagementServiceRequest
     {

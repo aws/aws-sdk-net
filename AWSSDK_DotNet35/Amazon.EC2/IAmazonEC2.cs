@@ -69,16 +69,6 @@ namespace Amazon.EC2
         /// 
         /// <returns>Returns a AcceptVpcPeeringConnectionResult from AmazonEC2.</returns>
         AcceptVpcPeeringConnectionResponse EndAcceptVpcPeeringConnection(IAsyncResult asyncResult);
-
-        /// <summary>
-        /// <para>Accept a VPC peering connection request. To accept a request, the VPC peering connection must be in the <c>pending-acceptance</c>
-        /// state, and you must be the owner of the peer VPC. Use the <c>DescribeVpcPeeringConnections</c> request to view your outstanding VPC peering
-        /// connection requests.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the AcceptVpcPeeringConnection service method, as returned by AmazonEC2.</returns>
-        /// 
-        AcceptVpcPeeringConnectionResponse AcceptVpcPeeringConnection();
         
         #endregion
         
@@ -1929,18 +1919,6 @@ namespace Amazon.EC2
         /// 
         /// <returns>Returns a CreateVpcPeeringConnectionResult from AmazonEC2.</returns>
         CreateVpcPeeringConnectionResponse EndCreateVpcPeeringConnection(IAsyncResult asyncResult);
-
-        /// <summary>
-        /// <para>Requests a VPC peering connection between two VPCs: a requester VPC that you own and a peer VPC with which to create the connection.
-        /// The peer VPC can belong to another AWS account. The requester VPC and peer VPC cannot have overlapping CIDR blocks.</para> <para>The owner
-        /// of the peer VPC must accept the the peering request to activate the peering connection. The VPC peering connection request expires after 7
-        /// days, after which it cannot be accepted or rejected.</para> <para>A <c>CreateVpcPeeringConnection</c> request between VPCs with overlapping
-        /// CIDR blocks results in the VPC peering connection having a status of <c>failed</c> .</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the CreateVpcPeeringConnection service method, as returned by AmazonEC2.</returns>
-        /// 
-        CreateVpcPeeringConnectionResponse CreateVpcPeeringConnection();
         
         #endregion
         
@@ -2720,16 +2698,6 @@ namespace Amazon.EC2
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVpcPeeringConnection.</param>
         DeleteVpcPeeringConnectionResponse EndDeleteVpcPeeringConnection(IAsyncResult asyncResult);
-
-        /// <summary>
-        /// <para>Deletes a VPC peering connection. Either the owner of the requester VPC or the owner of the peer VPC can delete the VPC peering
-        /// connection if it's in the <c>active</c> state. The owner of the requester VPC can delete a VPC peering connection in the
-        /// <c>pending-acceptance</c> state.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the DeleteVpcPeeringConnection service method, as returned by AmazonEC2.</returns>
-        /// 
-        DeleteVpcPeeringConnectionResponse DeleteVpcPeeringConnection();
         
         #endregion
         
@@ -5914,6 +5882,41 @@ namespace Amazon.EC2
         
     
 
+        #region ModifySubnetAttribute
+
+        /// <summary>
+        /// <para>Modifies a subnet attribute.</para>
+        /// </summary>
+        /// 
+        /// <param name="modifySubnetAttributeRequest">Container for the necessary parameters to execute the ModifySubnetAttribute service method on
+        ///          AmazonEC2.</param>
+        /// 
+        ModifySubnetAttributeResponse ModifySubnetAttribute(ModifySubnetAttributeRequest modifySubnetAttributeRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifySubnetAttribute operation.
+        /// <seealso cref="Amazon.EC2.IAmazonEC2.ModifySubnetAttribute"/>
+        /// </summary>
+        /// 
+        /// <param name="modifySubnetAttributeRequest">Container for the necessary parameters to execute the ModifySubnetAttribute operation on
+        ///          AmazonEC2.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        IAsyncResult BeginModifySubnetAttribute(ModifySubnetAttributeRequest modifySubnetAttributeRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the ModifySubnetAttribute operation.
+        /// <seealso cref="Amazon.EC2.IAmazonEC2.ModifySubnetAttribute"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifySubnetAttribute.</param>
+        ModifySubnetAttributeResponse EndModifySubnetAttribute(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
         #region ModifyVolumeAttribute
 
         /// <summary>
@@ -6194,15 +6197,6 @@ namespace Amazon.EC2
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRejectVpcPeeringConnection.</param>
         RejectVpcPeeringConnectionResponse EndRejectVpcPeeringConnection(IAsyncResult asyncResult);
-
-        /// <summary>
-        /// <para>Rejects a VPC peering connection request. The VPC peering connection must be in the <c>pending-acceptance</c> state. Use the
-        /// <c>DescribeVpcPeeringConnections</c> request to view your outstanding VPC peering connection requests.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the RejectVpcPeeringConnection service method, as returned by AmazonEC2.</returns>
-        /// 
-        RejectVpcPeeringConnectionResponse RejectVpcPeeringConnection();
         
         #endregion
         
@@ -6733,10 +6727,12 @@ namespace Amazon.EC2
         /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para> <para>You can provide optional user data when launching an
         /// instance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html" >Instance
         /// Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para> <para>If any of the AMIs have a product code attached for which
-        /// the user has not subscribed, <c>RunInstances</c> fails.</para> <para>For more information about troubleshooting, see <a
-        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html" >What To Do If An Instance Immediately
-        /// Terminates</a> , and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html" >Troubleshooting
-        /// Connecting to Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
+        /// the user has not subscribed, <c>RunInstances</c> fails.</para> <para>T2 instance types can only be launched into a VPC. If you do not have a
+        /// default VPC, or if you do not specify a subnet ID in the request, <c>RunInstances</c> fails.</para> <para>For more information about
+        /// troubleshooting, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html" >What To Do If An
+        /// Instance Immediately Terminates</a> , and <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html" >Troubleshooting Connecting to Your
+        /// Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="runInstancesRequest">Container for the necessary parameters to execute the RunInstances service method on AmazonEC2.</param>

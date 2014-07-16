@@ -26,10 +26,10 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// The AccessKey data type contains information about an AWS access key.
     /// 
-    ///         
+    ///  
     /// <para>
     ///  This data type is used as a response element in the actions <a>CreateAccessKey</a>
-    /// and                <a>ListAccessKeys</a>. 
+    /// and <a>ListAccessKeys</a>. 
     /// </para>
     /// </summary>
     public partial class AccessKey
@@ -102,7 +102,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of the access key. <code>Active</code> means the key is valid for API calls,
-        /// while                <code>Inactive</code> means it is not.
+        /// while <code>Inactive</code> means it is not.
         /// </para>
         /// </summary>
         public StatusType Status

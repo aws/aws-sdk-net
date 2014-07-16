@@ -43,9 +43,21 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AllowUsersToChangePassword", StringUtils.FromBool(publicRequest.AllowUsersToChangePassword));
                 }
+                if(publicRequest.IsSetHardExpiry())
+                {
+                    request.Parameters.Add("HardExpiry", StringUtils.FromBool(publicRequest.HardExpiry));
+                }
+                if(publicRequest.IsSetMaxPasswordAge())
+                {
+                    request.Parameters.Add("MaxPasswordAge", StringUtils.FromInt(publicRequest.MaxPasswordAge));
+                }
                 if(publicRequest.IsSetMinimumPasswordLength())
                 {
                     request.Parameters.Add("MinimumPasswordLength", StringUtils.FromInt(publicRequest.MinimumPasswordLength));
+                }
+                if(publicRequest.IsSetPasswordReusePrevention())
+                {
+                    request.Parameters.Add("PasswordReusePrevention", StringUtils.FromInt(publicRequest.PasswordReusePrevention));
                 }
                 if(publicRequest.IsSetRequireLowercaseCharacters())
                 {

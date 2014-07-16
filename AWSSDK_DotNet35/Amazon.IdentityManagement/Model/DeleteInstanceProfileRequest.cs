@@ -25,14 +25,16 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteInstanceProfile operation.
-    /// Deletes the specified instance profile. The instance profile must not have an associated            role.
+    /// Deletes the specified instance profile. The instance profile must not have an associated
+    /// role.
     /// 
-    ///         <important>Make sure you do not have any Amazon EC2 instances running with the instance
-    /// profile            you are about to delete. Deleting a role or instance profile that is associated
-    /// with a running            instance will break any applications running on the instance.</important>        
+    ///  <important>Make sure you do not have any Amazon EC2 instances running with the instance
+    /// profile you are about to delete. Deleting a role or instance profile that is associated
+    /// with a running instance will break any applications running on the instance.</important>
+    /// 
     /// <para>
     /// For more information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-    /// Instance                Profiles</a>.
+    /// Instance Profiles</a>.
     /// </para>
     /// </summary>
     public partial class DeleteInstanceProfileRequest : AmazonIdentityManagementServiceRequest

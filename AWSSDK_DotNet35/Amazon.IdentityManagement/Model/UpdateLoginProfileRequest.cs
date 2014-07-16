@@ -30,13 +30,14 @@ namespace Amazon.IdentityManagement.Model
     public partial class UpdateLoginProfileRequest : AmazonIdentityManagementServiceRequest
     {
         private string _password;
+        private bool? _passwordResetRequired;
         private string _userName;
 
 
         /// <summary>
         /// Gets and sets the property Password. 
         /// <para>
-        /// The new password for the user name.
+        /// The new password for the specified user.
         /// </para>
         /// </summary>
         public string Password
@@ -49,6 +50,25 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetPassword()
         {
             return this._password != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property PasswordResetRequired. 
+        /// <para>
+        /// Require the specified user to set a new password on next sign-in.
+        /// </para>
+        /// </summary>
+        public bool PasswordResetRequired
+        {
+            get { return this._passwordResetRequired.GetValueOrDefault(); }
+            set { this._passwordResetRequired = value; }
+        }
+
+        // Check to see if PasswordResetRequired property is set
+        internal bool IsSetPasswordResetRequired()
+        {
+            return this._passwordResetRequired.HasValue; 
         }
 
 

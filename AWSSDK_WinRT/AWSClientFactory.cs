@@ -53,6 +53,8 @@ using Amazon.SimpleWorkflow;
 using Amazon.SQS;
 using Amazon.StorageGateway;
 using Amazon.AWSSupport;
+using Amazon.CognitoIdentity;
+using Amazon.CognitoSync;
 
 namespace Amazon
 {
@@ -3009,6 +3011,190 @@ namespace Amazon
         public static IAmazonAWSSupport CreateAmazonAWSSupportClient(AWSCredentials credentials, AmazonAWSSupportConfig config)
         {
             return new AmazonAWSSupportClient(credentials, config);
+        }
+		#endregion
+
+		#region Amazon CognitoIdentity
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoIdentity Service with the default configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <returns>An Amazon CognitoIdentity client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCognitoIdentity CreateAmazonCognitoIdentityClient(
+            string awsAccessKey,
+            string awsSecretAccessKey
+            )
+        {
+            return new AmazonCognitoIdentityClient(awsAccessKey, awsSecretAccessKey);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoIdentity Service with the specified configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc
+        /// </param>
+        /// <returns>An Amazon CognitoIdentity client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCognitoIdentity CreateAmazonCognitoIdentityClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, AmazonCognitoIdentityConfig config
+            )
+        {
+            return new AmazonCognitoIdentityClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoIdentity Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CognitoIdentity client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCognitoIdentity CreateAmazonCognitoIdentityClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonCognitoIdentityClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoIdentity Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon CognitoIdentity client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCognitoIdentity CreateAmazonCognitoIdentityClient(AWSCredentials credentials)
+        {
+            return new AmazonCognitoIdentityClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoIdentity Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CognitoIdentity client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCognitoIdentity CreateAmazonCognitoIdentityClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonCognitoIdentityClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoIdentity Service with AWSCredentials and an AmazonCognitoIdentity Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon CognitoIdentity client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCognitoIdentity CreateAmazonCognitoIdentityClient(AWSCredentials credentials, AmazonCognitoIdentityConfig config)
+        {
+            return new AmazonCognitoIdentityClient(credentials, config);
+        }
+		#endregion
+
+		#region Amazon CognitoSync
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoSync Service with the default configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <returns>An Amazon CognitoSync client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCognitoSync CreateAmazonCognitoSyncClient(
+            string awsAccessKey,
+            string awsSecretAccessKey
+            )
+        {
+            return new AmazonCognitoSyncClient(awsAccessKey, awsSecretAccessKey);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoSync Service with the specified configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc
+        /// </param>
+        /// <returns>An Amazon CognitoSync client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCognitoSync CreateAmazonCognitoSyncClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, AmazonCognitoSyncConfig config
+            )
+        {
+            return new AmazonCognitoSyncClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoSync Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CognitoSync client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCognitoSync CreateAmazonCognitoSyncClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonCognitoSyncClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoSync Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon CognitoSync client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCognitoSync CreateAmazonCognitoSyncClient(AWSCredentials credentials)
+        {
+            return new AmazonCognitoSyncClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoSync Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CognitoSync client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCognitoSync CreateAmazonCognitoSyncClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonCognitoSyncClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CognitoSync Service with AWSCredentials and an AmazonCognitoSync Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon CognitoSync client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCognitoSync CreateAmazonCognitoSyncClient(AWSCredentials credentials, AmazonCognitoSyncConfig config)
+        {
+            return new AmazonCognitoSyncClient(credentials, config);
         }
 		#endregion
 

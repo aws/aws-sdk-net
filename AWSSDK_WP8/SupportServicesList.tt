@@ -17,6 +17,7 @@
 		"Amazon.SimpleDB.IAmazonSimpleDB",
         "Amazon.SimpleEmail.IAmazonSimpleEmailService",
 		"Amazon.SimpleNotificationService.IAmazonSimpleNotificationService",
-		"Amazon.SQS.IAmazonSQS"
+		"Amazon.SQS.IAmazonSQS",
+		"Amazon.CognitoSync.IAmazonCognitoSync",
 	};
 #>

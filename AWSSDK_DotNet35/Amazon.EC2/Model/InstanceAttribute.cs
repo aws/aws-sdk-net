@@ -219,7 +219,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Enhanced networking for the instance. A value of simple means that enhanced networking is enabled
+        /// 
+        ///  
         /// </summary>
         public string SriovNetSupport
         {

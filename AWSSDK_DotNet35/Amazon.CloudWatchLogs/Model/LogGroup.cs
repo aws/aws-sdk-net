@@ -103,9 +103,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property RetentionInDays.
         /// </summary>
-        public int RetentionInDays
+        public int? RetentionInDays
         {
-            get { return this._retentionInDays.GetValueOrDefault(); }
+            get { return this._retentionInDays; }
             set { this._retentionInDays = value; }
         }
 

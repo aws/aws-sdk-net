@@ -27,15 +27,9 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the UpdateGroup operation.
     /// Updates the name and/or the path of the specified group.
     /// 
-    ///         <important> You should understand the implications of changing a group's path or
-    /// name. For more          information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_WorkingWithGroupsAndUsers.html"
-    /// target="_blank">Renaming Users and Groups</a> in <i>Using AWS Identity and Access                Management</i>.
-    /// </important>        <note>To change a group name the requester must have appropriate permissions
-    /// on both the source            object and the target object. For example, to change Managers
-    /// to MGRs, the entity making the            request must have permission on Managers and MGRs,
-    /// or must have permission on all (*). For            more information about permissions, see
-    /// <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html"
-    /// target="blank">Permissions and Policies</a>. </note>
+    ///  <important> You should understand the implications of changing a group's path or
+    /// name. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_WorkingWithGroupsAndUsers.html">Renaming
+    /// Users and Groups</a> in the <i>Using IAM</i> guide. </important>
     /// </summary>
     public partial class UpdateGroupRequest : AmazonIdentityManagementServiceRequest
     {
@@ -48,7 +42,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property GroupName. 
         /// <para>
         /// Name of the group to update. If you're changing the name of the group, this is the
-        /// original            name.
+        /// original name.
         /// </para>
         /// </summary>
         public string GroupName

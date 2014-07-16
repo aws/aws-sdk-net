@@ -4486,6 +4486,36 @@ namespace Amazon.EC2
             return Invoke<IRequest, ModifySnapshotAttributeRequest, ModifySnapshotAttributeResponse>(modifySnapshotAttributeRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
+		internal ModifySubnetAttributeResponse ModifySubnetAttribute(ModifySubnetAttributeRequest request)
+        {
+            var task = ModifySubnetAttributeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// <para>Modifies a subnet attribute.</para>
+        /// </summary>
+        /// 
+        /// <param name="modifySubnetAttributeRequest">Container for the necessary parameters to execute the ModifySubnetAttribute service method on
+        /// AmazonEC2.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		public Task<ModifySubnetAttributeResponse> ModifySubnetAttributeAsync(ModifySubnetAttributeRequest modifySubnetAttributeRequest, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ModifySubnetAttributeRequestMarshaller();
+            var unmarshaller = ModifySubnetAttributeResponseUnmarshaller.GetInstance();
+            return Invoke<IRequest, ModifySubnetAttributeRequest, ModifySubnetAttributeResponse>(modifySubnetAttributeRequest, marshaller, unmarshaller, signer, cancellationToken);
+        }
+ 
 		internal ModifyVolumeAttributeResponse ModifyVolumeAttribute(ModifyVolumeAttributeRequest request)
         {
             var task = ModifyVolumeAttributeAsync(request);
@@ -5172,9 +5202,11 @@ namespace Amazon.EC2
         /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para> <para>You can provide optional user data when launching an
         /// instance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance
         /// Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para> <para>If any of the AMIs have a product code attached for which
-        /// the user has not subscribed, <c>RunInstances</c> fails.</para> <para>For more information about troubleshooting, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What To Do If An Instance Immediately
-        /// Terminates</a> , and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
-        /// Connecting to Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
+        /// the user has not subscribed, <c>RunInstances</c> fails.</para> <para>T2 instance types can only be launched into a VPC. If you do not have a
+        /// default VPC, or if you do not specify a subnet ID in the request, <c>RunInstances</c> fails.</para> <para>For more information about
+        /// troubleshooting, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What To Do If An
+        /// Instance Immediately Terminates</a> , and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting Connecting to Your
+        /// Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="runInstancesRequest">Container for the necessary parameters to execute the RunInstances service method on AmazonEC2.</param>
