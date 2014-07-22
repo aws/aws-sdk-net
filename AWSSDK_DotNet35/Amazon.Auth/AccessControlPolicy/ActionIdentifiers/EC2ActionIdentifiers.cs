@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -26,8 +26,10 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
     {
         public static readonly ActionIdentifier AllEC2Actions = new ActionIdentifier("ec2:*");
 
+        public static readonly ActionIdentifier AcceptVpcPeeringConnection = new ActionIdentifier("ec2:AcceptVpcPeeringConnection");
         public static readonly ActionIdentifier ActivateLicense = new ActionIdentifier("ec2:ActivateLicense");
         public static readonly ActionIdentifier AllocateAddress = new ActionIdentifier("ec2:AllocateAddress");
+        public static readonly ActionIdentifier AssignPrivateIpAddresses = new ActionIdentifier("ec2:AssignPrivateIpAddresses");
         public static readonly ActionIdentifier AssociateAddress = new ActionIdentifier("ec2:AssociateAddress");
         public static readonly ActionIdentifier AssociateDhcpOptions = new ActionIdentifier("ec2:AssociateDhcpOptions");
         public static readonly ActionIdentifier AssociateRouteTable = new ActionIdentifier("ec2:AssociateRouteTable");
@@ -41,8 +43,10 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         public static readonly ActionIdentifier CancelBundleTask = new ActionIdentifier("ec2:CancelBundleTask");
         public static readonly ActionIdentifier CancelConversionTask = new ActionIdentifier("ec2:CancelConversionTask");
         public static readonly ActionIdentifier CancelExportTask = new ActionIdentifier("ec2:CancelExportTask");
+        public static readonly ActionIdentifier CancelReservedInstancesListing = new ActionIdentifier("ec2:CancelReservedInstancesListing");
         public static readonly ActionIdentifier CancelSpotInstanceRequests = new ActionIdentifier("ec2:CancelSpotInstanceRequests");
         public static readonly ActionIdentifier ConfirmProductInstance = new ActionIdentifier("ec2:ConfirmProductInstance");
+        public static readonly ActionIdentifier CopyImage = new ActionIdentifier("ec2:CopyImage");
         public static readonly ActionIdentifier CopySnapshot = new ActionIdentifier("ec2:CopySnapshot");
         public static readonly ActionIdentifier CreateCustomerGateway = new ActionIdentifier("ec2:CreateCustomerGateway");
         public static readonly ActionIdentifier CreateDhcpOptions = new ActionIdentifier("ec2:CreateDhcpOptions");
@@ -54,6 +58,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         public static readonly ActionIdentifier CreateNetworkAclEntry = new ActionIdentifier("ec2:CreateNetworkAclEntry");
         public static readonly ActionIdentifier CreateNetworkInterface = new ActionIdentifier("ec2:CreateNetworkInterface");
         public static readonly ActionIdentifier CreatePlacementGroup = new ActionIdentifier("ec2:CreatePlacementGroup");
+        public static readonly ActionIdentifier CreateReservedInstancesListing = new ActionIdentifier("ec2:CreateReservedInstancesListing");
         public static readonly ActionIdentifier CreateRoute = new ActionIdentifier("ec2:CreateRoute");
         public static readonly ActionIdentifier CreateRouteTable = new ActionIdentifier("ec2:CreateRouteTable");
         public static readonly ActionIdentifier CreateSecurityGroup = new ActionIdentifier("ec2:CreateSecurityGroup");
@@ -63,7 +68,9 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         public static readonly ActionIdentifier CreateTags = new ActionIdentifier("ec2:CreateTags");
         public static readonly ActionIdentifier CreateVolume = new ActionIdentifier("ec2:CreateVolume");
         public static readonly ActionIdentifier CreateVpc = new ActionIdentifier("ec2:CreateVpc");
+        public static readonly ActionIdentifier CreateVpcPeeringConnection = new ActionIdentifier("ec2:CreateVpcPeeringConnection");
         public static readonly ActionIdentifier CreateVpnConnection = new ActionIdentifier("ec2:CreateVpnConnection");
+        public static readonly ActionIdentifier CreateVpnConnectionRoute = new ActionIdentifier("ec2:CreateVpnConnectionRoute");
         public static readonly ActionIdentifier CreateVpnGateway = new ActionIdentifier("ec2:CreateVpnGateway");
         public static readonly ActionIdentifier DeactivateLicense = new ActionIdentifier("ec2:DeactivateLicense");
         public static readonly ActionIdentifier DeleteCustomerGateway = new ActionIdentifier("ec2:DeleteCustomerGateway");
@@ -83,9 +90,12 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         public static readonly ActionIdentifier DeleteTags = new ActionIdentifier("ec2:DeleteTags");
         public static readonly ActionIdentifier DeleteVolume = new ActionIdentifier("ec2:DeleteVolume");
         public static readonly ActionIdentifier DeleteVpc = new ActionIdentifier("ec2:DeleteVpc");
+        public static readonly ActionIdentifier DeleteVpcPeeringConnection = new ActionIdentifier("ec2:DeleteVpcPeeringConnection");
         public static readonly ActionIdentifier DeleteVpnConnection = new ActionIdentifier("ec2:DeleteVpnConnection");
+        public static readonly ActionIdentifier DeleteVpnConnectionRoute = new ActionIdentifier("ec2:DeleteVpnConnectionRoute");
         public static readonly ActionIdentifier DeleteVpnGateway = new ActionIdentifier("ec2:DeleteVpnGateway");
         public static readonly ActionIdentifier DeregisterImage = new ActionIdentifier("ec2:DeregisterImage");
+        public static readonly ActionIdentifier DescribeAccountAttributes = new ActionIdentifier("ec2:DescribeAccountAttributes");
         public static readonly ActionIdentifier DescribeAddresses = new ActionIdentifier("ec2:DescribeAddresses");
         public static readonly ActionIdentifier DescribeAvailabilityZones = new ActionIdentifier("ec2:DescribeAvailabilityZones");
         public static readonly ActionIdentifier DescribeBundleTasks = new ActionIdentifier("ec2:DescribeBundleTasks");
@@ -107,6 +117,8 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         public static readonly ActionIdentifier DescribePlacementGroups = new ActionIdentifier("ec2:DescribePlacementGroups");
         public static readonly ActionIdentifier DescribeRegions = new ActionIdentifier("ec2:DescribeRegions");
         public static readonly ActionIdentifier DescribeReservedInstances = new ActionIdentifier("ec2:DescribeReservedInstances");
+        public static readonly ActionIdentifier DescribeReservedInstancesListings = new ActionIdentifier("ec2:DescribeReservedInstancesListings");
+        public static readonly ActionIdentifier DescribeReservedInstancesModifications = new ActionIdentifier("ec2:DescribeReservedInstancesModifications");
         public static readonly ActionIdentifier DescribeReservedInstancesOfferings = new ActionIdentifier("ec2:DescribeReservedInstancesOfferings");
         public static readonly ActionIdentifier DescribeRouteTables = new ActionIdentifier("ec2:DescribeRouteTables");
         public static readonly ActionIdentifier DescribeSecurityGroups = new ActionIdentifier("ec2:DescribeSecurityGroups");
@@ -120,15 +132,19 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         public static readonly ActionIdentifier DescribeVolumeAttribute = new ActionIdentifier("ec2:DescribeVolumeAttribute");
         public static readonly ActionIdentifier DescribeVolumeStatus = new ActionIdentifier("ec2:DescribeVolumeStatus");
         public static readonly ActionIdentifier DescribeVolumes = new ActionIdentifier("ec2:DescribeVolumes");
+        public static readonly ActionIdentifier DescribeVpcAttribute = new ActionIdentifier("ec2:DescribeVpcAttribute");
         public static readonly ActionIdentifier DescribeVpcs = new ActionIdentifier("ec2:DescribeVpcs");
+        public static readonly ActionIdentifier DescribeVpcPeeringConnection = new ActionIdentifier("ec2:DescribeVpcPeeringConnection");
         public static readonly ActionIdentifier DescribeVpnConnections = new ActionIdentifier("ec2:DescribeVpnConnections");
         public static readonly ActionIdentifier DescribeVpnGateways = new ActionIdentifier("ec2:DescribeVpnGateways");
         public static readonly ActionIdentifier DetachInternetGateway = new ActionIdentifier("ec2:DetachInternetGateway");
         public static readonly ActionIdentifier DetachNetworkInterface = new ActionIdentifier("ec2:DetachNetworkInterface");
         public static readonly ActionIdentifier DetachVolume = new ActionIdentifier("ec2:DetachVolume");
         public static readonly ActionIdentifier DetachVpnGateway = new ActionIdentifier("ec2:DetachVpnGateway");
+        public static readonly ActionIdentifier DisableVgwRoutePropagation = new ActionIdentifier("ec2:DisableVgwRoutePropagation");
         public static readonly ActionIdentifier DisassociateAddress = new ActionIdentifier("ec2:DisassociateAddress");
         public static readonly ActionIdentifier DisassociateRouteTable = new ActionIdentifier("ec2:DisassociateRouteTable");
+        public static readonly ActionIdentifier EnableVgwRoutePropagation = new ActionIdentifier("ec2:EnableVgwRoutePropagation");
         public static readonly ActionIdentifier EnableVolumeIO = new ActionIdentifier("ec2:EnableVolumeIO");
         public static readonly ActionIdentifier GetConsoleOutput = new ActionIdentifier("ec2:GetConsoleOutput");
         public static readonly ActionIdentifier GetPasswordData = new ActionIdentifier("ec2:GetPasswordData");
@@ -138,12 +154,15 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         public static readonly ActionIdentifier ModifyImageAttribute = new ActionIdentifier("ec2:ModifyImageAttribute");
         public static readonly ActionIdentifier ModifyInstanceAttribute = new ActionIdentifier("ec2:ModifyInstanceAttribute");
         public static readonly ActionIdentifier ModifyNetworkInterfaceAttribute = new ActionIdentifier("ec2:ModifyNetworkInterfaceAttribute");
+        public static readonly ActionIdentifier ModifyReservedInstances = new ActionIdentifier("ec2:ModifyReservedInstances");
         public static readonly ActionIdentifier ModifySnapshotAttribute = new ActionIdentifier("ec2:ModifySnapshotAttribute");
         public static readonly ActionIdentifier ModifyVolumeAttribute = new ActionIdentifier("ec2:ModifyVolumeAttribute");
+        public static readonly ActionIdentifier ModifyVpcAttribute = new ActionIdentifier("ec2:ModifyVpcAttribute");
         public static readonly ActionIdentifier MonitorInstances = new ActionIdentifier("ec2:MonitorInstances");
         public static readonly ActionIdentifier PurchaseReservedInstancesOffering = new ActionIdentifier("ec2:PurchaseReservedInstancesOffering");
         public static readonly ActionIdentifier RebootInstances = new ActionIdentifier("ec2:RebootInstances");
         public static readonly ActionIdentifier RegisterImage = new ActionIdentifier("ec2:RegisterImage");
+        public static readonly ActionIdentifier RejectVpcPeeringConnection = new ActionIdentifier("ec2:RejectVpcPeeringConnection");
         public static readonly ActionIdentifier ReleaseAddress = new ActionIdentifier("ec2:ReleaseAddress");
         public static readonly ActionIdentifier ReplaceNetworkAclAssociation = new ActionIdentifier("ec2:ReplaceNetworkAclAssociation");
         public static readonly ActionIdentifier ReplaceNetworkAclEntry = new ActionIdentifier("ec2:ReplaceNetworkAclEntry");
@@ -161,6 +180,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         public static readonly ActionIdentifier StartInstances = new ActionIdentifier("ec2:StartInstances");
         public static readonly ActionIdentifier StopInstances = new ActionIdentifier("ec2:StopInstances");
         public static readonly ActionIdentifier TerminateInstances = new ActionIdentifier("ec2:TerminateInstances");
+        public static readonly ActionIdentifier UnassignPrivateIpAddresses = new ActionIdentifier("ec2:UnassignPrivateIpAddresses");
         public static readonly ActionIdentifier UnmonitorInstances = new ActionIdentifier("ec2:UnmonitorInstances");
     }
 }

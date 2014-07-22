@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         public static readonly ActionIdentifier CreateInstanceProfile = new ActionIdentifier("iam:CreateInstanceProfile");
         public static readonly ActionIdentifier CreateLoginProfile = new ActionIdentifier("iam:CreateLoginProfile");
         public static readonly ActionIdentifier CreateRole = new ActionIdentifier("iam:CreateRole");
+        public static readonly ActionIdentifier CreateSAMLProvider = new ActionIdentifier("iam:CreateSAMLProvider");
         public static readonly ActionIdentifier CreateUser = new ActionIdentifier("iam:CreateUser");
         public static readonly ActionIdentifier CreateVirtualMFADevice = new ActionIdentifier("iam:CreateVirtualMFADevice");
         public static readonly ActionIdentifier DeactivateMFADevice = new ActionIdentifier("iam:DeactivateMFADevice");
@@ -47,20 +48,24 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         public static readonly ActionIdentifier DeleteLoginProfile = new ActionIdentifier("iam:DeleteLoginProfile");
         public static readonly ActionIdentifier DeleteRole = new ActionIdentifier("iam:DeleteRole");
         public static readonly ActionIdentifier DeleteRolePolicy = new ActionIdentifier("iam:DeleteRolePolicy");
+        public static readonly ActionIdentifier DeleteSAMLProvider = new ActionIdentifier("iam:DeleteSAMLProvider");
         public static readonly ActionIdentifier DeleteServerCertificate = new ActionIdentifier("iam:DeleteServerCertificate");
         public static readonly ActionIdentifier DeleteSigningCertificate = new ActionIdentifier("iam:DeleteSigningCertificate");
         public static readonly ActionIdentifier DeleteUser = new ActionIdentifier("iam:DeleteUser");
         public static readonly ActionIdentifier DeleteUserPolicy = new ActionIdentifier("iam:DeleteUserPolicy");
         public static readonly ActionIdentifier DeleteVirtualMFADevice = new ActionIdentifier("iam:DeleteVirtualMFADevice");
         public static readonly ActionIdentifier EnableMFADevice = new ActionIdentifier("iam:EnableMFADevice");
+        public static readonly ActionIdentifier GenerateCredentialReport = new ActionIdentifier("iam:GenerateCredentialReport");
         public static readonly ActionIdentifier GetAccountPasswordPolicy = new ActionIdentifier("iam:GetAccountPasswordPolicy");
         public static readonly ActionIdentifier GetAccountSummary = new ActionIdentifier("iam:GetAccountSummary");
+        public static readonly ActionIdentifier GetCredentialReport = new ActionIdentifier("iam:GetCredentialReport");
         public static readonly ActionIdentifier GetGroup = new ActionIdentifier("iam:GetGroup");
         public static readonly ActionIdentifier GetGroupPolicy = new ActionIdentifier("iam:GetGroupPolicy");
         public static readonly ActionIdentifier GetInstanceProfile = new ActionIdentifier("iam:GetInstanceProfile");
         public static readonly ActionIdentifier GetLoginProfile = new ActionIdentifier("iam:GetLoginProfile");
         public static readonly ActionIdentifier GetRole = new ActionIdentifier("iam:GetRole");
         public static readonly ActionIdentifier GetRolePolicy = new ActionIdentifier("iam:GetRolePolicy");
+        public static readonly ActionIdentifier GetSAMLProvider = new ActionIdentifier("iam:GetSAMLProvider");
         public static readonly ActionIdentifier GetServerCertificate = new ActionIdentifier("iam:GetServerCertificate");
         public static readonly ActionIdentifier GetUser = new ActionIdentifier("iam:GetUser");
         public static readonly ActionIdentifier GetUserPolicy = new ActionIdentifier("iam:GetUserPolicy");
@@ -74,6 +79,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         public static readonly ActionIdentifier ListMFADevices = new ActionIdentifier("iam:ListMFADevices");
         public static readonly ActionIdentifier ListRolePolicies = new ActionIdentifier("iam:ListRolePolicies");
         public static readonly ActionIdentifier ListRoles = new ActionIdentifier("iam:ListRoles");
+        public static readonly ActionIdentifier ListSAMLProviders = new ActionIdentifier("iam:ListSAMLProviders");
         public static readonly ActionIdentifier ListServerCertificates = new ActionIdentifier("iam:ListServerCertificates");
         public static readonly ActionIdentifier ListSigningCertificates = new ActionIdentifier("iam:ListSigningCertificates");
         public static readonly ActionIdentifier ListUserPolicies = new ActionIdentifier("iam:ListUserPolicies");
@@ -91,6 +97,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         public static readonly ActionIdentifier UpdateAssumeRolePolicy = new ActionIdentifier("iam:UpdateAssumeRolePolicy");
         public static readonly ActionIdentifier UpdateGroup = new ActionIdentifier("iam:UpdateGroup");
         public static readonly ActionIdentifier UpdateLoginProfile = new ActionIdentifier("iam:UpdateLoginProfile");
+        public static readonly ActionIdentifier UpdateSAMLProvider = new ActionIdentifier("iam:UpdateSAMLProvider");
         public static readonly ActionIdentifier UpdateServerCertificate = new ActionIdentifier("iam:UpdateServerCertificate");
         public static readonly ActionIdentifier UpdateSigningCertificate = new ActionIdentifier("iam:UpdateSigningCertificate");
         public static readonly ActionIdentifier UpdateUser = new ActionIdentifier("iam:UpdateUser");

@@ -201,6 +201,10 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.DynamoDBv2.DocumentModel.Table.#TryLoadTable(Amazon.DynamoDBv2.IAmazonDynamoDB,System.String,Amazon.DynamoDBv2.DocumentModel.Table&)")]
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.AWSSection.#Serialize(System.String)")]
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Runtime.AbstractWebServiceClient.#DontUnescapePathDotsAndSlashes(System.Uri)")]
+[module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.EC2.Import.DiskImageImporter.#UploadImageFilePart(System.Object)")]
+[module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.EC2.Import.DiskImageImporter.#DetermineRemainingUploads()")]
+[module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.EC2.Import.DiskImageImporter.#RemoveUploadedArtifacts(System.String,System.Collections.Generic.IEnumerable`1<Amazon.EC2.Util.ImageFilePart>)")]
+[module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.EC2.Import.ImageFileParts.#FetchNextPartForUpload(System.IO.Stream,System.Byte[]&)")]
 
 // Overflow operations
 [module: SuppressMessage("Microsoft.Usage", "CA2233:OperationsShouldNotOverflow", Scope = "member", Target = "Amazon.DynamoDBv2.AmazonDynamoDBClient.#pauseExponentially(System.Int32)", MessageId = "retries-1")]
@@ -312,6 +316,11 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Scope = "member", Target = "Amazon.CloudFormation.Model.UpdateStackRequest.#StackPolicyURL")]
 [module: SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Scope = "member", Target = "Amazon.CloudFormation.Model.CreateStackRequest.#StackPolicyURL")]
 [module: SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Scope = "member", Target = "Amazon.CloudFormation.Model.SetStackPolicyRequest.#StackPolicyURL")]
+[module: SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Scope = "member", Target = "Amazon.EC2.Import.ImportManifestRoot.#SelfDestructUrl")]
+[module: SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Scope = "member", Target = "Amazon.EC2.Import.ImageFilePart.#HeadUrl")]
+[module: SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Scope = "member", Target = "Amazon.EC2.Import.ImageFilePart.#DeleteUrl")]
+[module: SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Scope = "member", Target = "Amazon.EC2.Import.ImageFilePart.#GetUrl")]
+
 [module: SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Scope = "member", Target = "Amazon.CloudFront.AmazonCloudFrontUrlSigner.#BuildPolicyForSignedUrl(System.String,System.DateTime,System.String,System.DateTime)")]
 [module: SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Scope = "member", Target = "Amazon.CloudFront.AmazonCloudFrontUrlSigner.#GetCannedSignedURL(Amazon.CloudFront.AmazonCloudFrontUrlSigner+Protocol,System.String,System.IO.FileInfo,System.String,System.String,System.DateTime)")]
 [module: SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Scope = "member", Target = "Amazon.CloudFront.AmazonCloudFrontUrlSigner.#GetCannedSignedURL(Amazon.CloudFront.AmazonCloudFrontUrlSigner+Protocol,System.String,System.IO.StreamReader,System.String,System.String,System.DateTime)")]
@@ -430,6 +439,7 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Usage", "CA2237:MarkISerializableTypesWithSerializable", Scope = "type", Target = "Amazon.Runtime.AmazonClientException")]
 [module: SuppressMessage("Microsoft.Usage", "CA2237:MarkISerializableTypesWithSerializable", Scope = "type", Target = "Amazon.Runtime.Internal.Auth.SignatureException")]
 [module: SuppressMessage("Microsoft.Usage", "CA2237:MarkISerializableTypesWithSerializable", Scope = "type", Target = "Amazon.S3.Util.S3PostUploadException")]
+[module: SuppressMessage("Microsoft.Usage", "CA2237:MarkISerializableTypesWithSerializable", Scope = "type", Target = "Amazon.EC2.Import.DiskImageImporterException")]
 
 // Use generic event handler instances, breaking change
 [module: SuppressMessage("Microsoft.Design", "CA1003:UseGenericEventHandlerInstances", Scope = "type", Target = "Amazon.Runtime.RequestEventHandler")]

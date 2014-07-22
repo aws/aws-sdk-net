@@ -35,6 +35,7 @@ namespace Amazon.Runtime
     public class AmazonWebServiceClient : AbstractWebServiceClient
     {
         readonly object SERVICE_POINT_LOCK = new object();
+        bool _disposed = false;
         HttpClient httpClient;
 
 #if !(WIN_RT || WINDOWS_PHONE)
@@ -617,6 +618,22 @@ WebExceptionStatusesToRetryOn.Contains(we.Status)
                 }
                 throw new AmazonServiceException(exception);
             }
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (_disposed)
+                return;
+
+            if (disposing)
+            {
+                if (httpClient!=null)
+                    httpClient.Dispose();
+                
+                _disposed = true;
+            }
+
+            base.Dispose(disposing);
         }
     }
 }

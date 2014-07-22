@@ -49,22 +49,54 @@ namespace Amazon.S3.Util
         /// </summary>
         /// <param name="policy">JSON string representing the policy to sign</param>
         /// <param name="credentials">Credentials to sign the policy with</param>
-        /// <returns></returns>
+        /// <returns>A signed policy object for use with an S3PostUploadRequest.</returns>
         public static S3PostUploadSignedPolicy GetSignedPolicy(string policy, AWSCredentials credentials)
         {
-            var policyBytes = Encoding.UTF8.GetBytes(policy.Trim());
+            ImmutableCredentials iCreds = credentials.GetCredentials();
+
+            var policyBytes = iCreds.UseToken
+                ? addTokenToPolicy(policy, iCreds.Token)
+                : Encoding.UTF8.GetBytes(policy.Trim()); 
+
             var base64Policy = Convert.ToBase64String(policyBytes);
             
-            string signature = null;
-
-            signature = CryptoUtilFactory.CryptoInstance.HMACSign(Encoding.UTF8.GetBytes(base64Policy), credentials.GetCredentials().SecretKey, SigningAlgorithm.HmacSHA1);
+            string signature = CryptoUtilFactory.CryptoInstance.HMACSign(Encoding.UTF8.GetBytes(base64Policy), iCreds.SecretKey, SigningAlgorithm.HmacSHA1);
 
             return new S3PostUploadSignedPolicy
             {
                 Policy = base64Policy,
                 Signature = signature,
-                AccessKeyId = credentials.GetCredentials().AccessKey
+                AccessKeyId = iCreds.AccessKey,
+                SecurityToken = iCreds.Token
             };
+        }
+
+        private static byte[] addTokenToPolicy(string policy, string token)
+        {
+            var json = JsonMapper.ToObject(new JsonReader(policy));
+            var found = false;
+            var conditions = json["conditions"];
+            if (conditions != null && conditions.IsArray)
+            {
+                foreach (JsonData cond in conditions)
+                {
+                    if (cond.IsObject && cond[S3Constants.PostFormDataSecurityToken] != null)
+                    {
+                        cond[S3Constants.PostFormDataSecurityToken] = token;
+                        found = true;
+                    }
+                }
+
+                if (!found)
+                {
+                    var tokenCondition = new JsonData();
+                    tokenCondition.SetJsonType(JsonType.Object);
+                    tokenCondition[S3Constants.PostFormDataSecurityToken] = token;
+                    conditions.Add(tokenCondition);
+                }
+            }
+
+            return Encoding.UTF8.GetBytes(JsonMapper.ToJson(json).Trim());
         }
 
         /// <summary>
@@ -81,6 +113,11 @@ namespace Amazon.S3.Util
         /// The AWS Access Key Id for the credential pair that produced the signature.
         /// </summary>
         public string AccessKeyId { get; set; }
+
+        /// <summary>
+        /// The security token from session or instance credentials.
+        /// </summary>
+        public string SecurityToken { get; set; }
 
         /// <summary>
         /// Get the policy document as a human readable string.

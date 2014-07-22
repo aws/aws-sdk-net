@@ -19,14 +19,17 @@ using System.Text;
 namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
 {
     /// <summary>
-    /// The available AWS access control policy actions for AWS Security Token Service.
+    /// The available AWS access control policy actions for AWS Import Export.
     /// </summary>
     /// <see cref="Amazon.Auth.AccessControlPolicy.Statement.Actions"/>
-    public static class SecurityTokenServiceActionIdentifiers
+    public static class ImportExportActionIdentifiers
     {
-        public static readonly ActionIdentifier AllSecurityTokenServiceActions = new ActionIdentifier("sts:*");
+        public static readonly ActionIdentifier AllImportExportActions = new ActionIdentifier("importexport:*");
 
-        public static readonly ActionIdentifier GetFederationToken = new ActionIdentifier("sts:GetFederationToken");
-        public static readonly ActionIdentifier AssumeRole = new ActionIdentifier("sts:AssumeRole");
+        public static readonly ActionIdentifier CreateJob = new ActionIdentifier("importexport:CreateJob");
+        public static readonly ActionIdentifier UpdateJob = new ActionIdentifier("importexport:UpdateJob");
+        public static readonly ActionIdentifier CancelJob = new ActionIdentifier("importexport:CancelJob");
+        public static readonly ActionIdentifier ListJobs = new ActionIdentifier("importexport:ListJobs");
+        public static readonly ActionIdentifier GetStatus = new ActionIdentifier("importexport:GetStatus");
     }
 }

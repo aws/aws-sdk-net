@@ -100,9 +100,13 @@ namespace Amazon.TraceListener
         private TextWriter writer = null;
         private DateTime lastTimestamp = DateTime.MinValue;
         private static string logFileNameFormat = string.Format("{0}.{1}.log", typeof(DynamoDBTraceListener).FullName, "{0}");
+        private static string eventLogsFileName = "events.log";
+        private static string eventLogsFormat = "{0}.{1} {2} > {3}";
         private static string logFileSearchPattern = string.Format(logFileNameFormat, "*");
         private static string tempLogFileName = string.Concat(Guid.NewGuid().ToString(), ".", string.Format(logFileNameFormat, "temp"));
         private const int bufferSize = 0x1000; // 4 KB
+        private static bool canWriteToEventLog;
+        private static string eventLogSource = typeof(DynamoDBTraceListener).Name;
 
         private string _currentLogFile = null;
         private string CurrentLogFile
@@ -115,6 +119,16 @@ namespace Amazon.TraceListener
                 }
                 return _currentLogFile;
             }
+        }
+        private string _eventLogsFile = null;
+        private string GetEventLogsFileLocation()
+        {
+            if (_eventLogsFile == null)
+            {
+                if (!string.IsNullOrEmpty(_logFileDirectory))
+                    _eventLogsFile = Path.Combine(_logFileDirectory, eventLogsFileName);
+            }
+            return _eventLogsFile;
         }
         private string _logFileDirectory = null;
         private string LogFileDirectory
@@ -163,7 +177,7 @@ namespace Amazon.TraceListener
                         DisableListener("Could not determine log file directory");
                     }
                     else
-                        WriteEventLogMessage("DynamoDBTraceListener will store temporary log files under " + _logFileDirectory, EventLogEntryType.Information);
+                        WriteLogMessage("DynamoDBTraceListener will store temporary log files under " + _logFileDirectory, EventLogEntryType.Information);
                 }
                 return _logFileDirectory;
             }
@@ -228,7 +242,7 @@ namespace Amazon.TraceListener
                             {
                                 DescribeTableRequest describeRequest = new DescribeTableRequest { TableName = Configuration.TableName };
                                 DescribeTableResponse descResponse = Client.DescribeTable(describeRequest);
-                                string tableStatus = descResponse.DescribeTableResult.Table.TableStatus;
+                                string tableStatus = descResponse.Table.TableStatus;
 
                                 if (string.Equals(tableStatus, activeStatus, StringComparison.OrdinalIgnoreCase))
                                     _isTableActive = true;
@@ -408,7 +422,7 @@ namespace Amazon.TraceListener
             }
             catch (Exception e)
             {
-                WriteEventLogMessage(string.Format("Error while creating table {0}: {1}", Configuration.TableName, e.ToString()), EventLogEntryType.Error);
+                WriteLogMessage(string.Format("Error while creating table {0}: {1}", Configuration.TableName, e.ToString()), EventLogEntryType.Error);
                 return null;
             }
 
@@ -650,30 +664,87 @@ namespace Amazon.TraceListener
         }
 
         // Writes an event log message
-        private void WriteEventLogMessage(string message, EventLogEntryType logEntryType)
+        private void WriteLogMessage(string message, EventLogEntryType logEntryType)
         {
-            string source = typeof(DynamoDBTraceListener).Name;
-            if (!EventLog.SourceExists(source))
-                EventLog.CreateEventSource(source, "Application");
-            EventLog.WriteEntry(source, message, logEntryType);
+            // try the event log
+            if (canWriteToEventLog)
+            {
+                WriteToEventLog(message, logEntryType);
+        }
+
+            // if event log is not available, write to a file
+            if (!canWriteToEventLog)
+            {
+                WriteToEventFile(message, logEntryType);
+            }
+        }
+
+        // Writes event to EventLog
+        private void WriteToEventLog(string message, EventLogEntryType logEntryType)
+        {
+            try
+            {
+                EventLog.WriteEntry(eventLogSource, message, logEntryType);
+            }
+            catch
+            {
+                canWriteToEventLog = false;
+            }
+        }
+
+        // Writes event to file, if one can be written
+        private void WriteToEventFile(string message, EventLogEntryType logEntryType)
+        {
+            string logsFilePath = GetEventLogsFileLocation();
+            if (!string.IsNullOrEmpty(logsFilePath))
+            {
+                using (var stream = File.Open(logsFilePath, FileMode.Append, FileAccess.Write, FileShare.ReadWrite))
+                using (var writer = new StreamWriter(stream))
+                {
+                    writer.WriteLine(eventLogsFormat, eventLogSource, logEntryType.ToString(), DateTime.Now.ToString(), message);
+                }
+            }
         }
 
         // Disables the DynamoDBTraceListener and writes an error event log message
         private void DisableListener(string message)
         {
             IsEnabled = false;
-            WriteEventLogMessage("DynamoDBTraceListener disabled: " + message, EventLogEntryType.Error);
+            WriteLogMessage("DynamoDBTraceListener disabled: " + message, EventLogEntryType.Error);
         }
 
         // Initializes DynamoDBTraceListener
         private void Init()
+        {
+            ConfigureEventLog();
+            ConfigureWriteTimer();
+
+            IsEnabled = true;
+        }
+
+        // Sets up the write timer
+        private void ConfigureWriteTimer()
         {
             // Property Attributes isn't set yet, so set first timer to go off at minimum period
             writeTimer = new Timer(minWritePeriodMs);
             writeTimer.AutoReset = true;
             writeTimer.Elapsed += TimedWriter;
             writeTimer.Enabled = true;
-            IsEnabled = true;
+        }
+
+        // Creates source if one does not exist
+        private void ConfigureEventLog()
+        {
+            try
+            {
+                if (!EventLog.SourceExists(eventLogSource))
+                    EventLog.CreateEventSource(eventLogSource, "Application");
+                canWriteToEventLog = true;
+            }
+            catch
+            {
+                canWriteToEventLog = false;
+            }
         }
 
         #endregion

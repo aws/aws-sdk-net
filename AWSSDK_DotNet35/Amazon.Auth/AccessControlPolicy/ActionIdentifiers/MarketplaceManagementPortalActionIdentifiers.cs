@@ -19,14 +19,16 @@ using System.Text;
 namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
 {
     /// <summary>
-    /// The available AWS access control policy actions for AWS Security Token Service.
+    /// The available AWS access control policy actions for AWS Marketplace Management Portal.
     /// </summary>
     /// <see cref="Amazon.Auth.AccessControlPolicy.Statement.Actions"/>
-    public static class SecurityTokenServiceActionIdentifiers
+    public static class MarketplaceManagementPortalActionIdentifiers
     {
-        public static readonly ActionIdentifier AllSecurityTokenServiceActions = new ActionIdentifier("sts:*");
+        public static readonly ActionIdentifier AllMarketplaceManagementPortalActions = new ActionIdentifier("aws-marketplace-management:*");
 
-        public static readonly ActionIdentifier GetFederationToken = new ActionIdentifier("sts:GetFederationToken");
-        public static readonly ActionIdentifier AssumeRole = new ActionIdentifier("sts:AssumeRole");
+        public static readonly ActionIdentifier uploadFiles = new ActionIdentifier("aws-marketplace-management:uploadFiles");
+        public static readonly ActionIdentifier viewMarketing = new ActionIdentifier("aws-marketplace-management:viewMarketing");
+        public static readonly ActionIdentifier viewReports = new ActionIdentifier("aws-marketplace-management:viewReports");
+        public static readonly ActionIdentifier viewSupport = new ActionIdentifier("aws-marketplace-management:viewSupport");
     }
 }

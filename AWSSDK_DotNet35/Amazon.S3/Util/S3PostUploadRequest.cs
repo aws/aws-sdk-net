@@ -148,14 +148,6 @@ namespace Amazon.S3.Util
         }
 
         /// <summary>
-        /// Security token for the post
-        /// </summary>
-        /// <remarks>
-        /// Some policies may require an additional security token.
-        /// </remarks>
-        public string SecurityToken { get; set; }
-
-        /// <summary>
         /// Metadata to set on the uploaded object
         /// </summary>
         /// <remarks>
@@ -191,6 +183,11 @@ namespace Amazon.S3.Util
             }
 
             WriteFormDatum(outputStream, S3Constants.PostFormDataContentType, this.ContentType, boundary);
+
+            if (this.SignedPolicy != null && !string.IsNullOrEmpty(this.SignedPolicy.SecurityToken))
+            {
+                this.Metadata[S3Constants.PostFormDataSecurityToken] = this.SignedPolicy.SecurityToken;
+            }
 
             foreach (var kvp in this.Metadata)
             {

@@ -19,14 +19,14 @@ using System.Text;
 namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
 {
     /// <summary>
-    /// The available AWS access control policy actions for AWS Security Token Service.
+    /// The available AWS access control policy actions for AWS Whispersync.
     /// </summary>
     /// <see cref="Amazon.Auth.AccessControlPolicy.Statement.Actions"/>
-    public static class SecurityTokenServiceActionIdentifiers
+    public static class WhispersyncActionIdentifiers
     {
-        public static readonly ActionIdentifier AllSecurityTokenServiceActions = new ActionIdentifier("sts:*");
+        public static readonly ActionIdentifier AllWhispersyncActions = new ActionIdentifier("whispersync:*");
 
-        public static readonly ActionIdentifier GetFederationToken = new ActionIdentifier("sts:GetFederationToken");
-        public static readonly ActionIdentifier AssumeRole = new ActionIdentifier("sts:AssumeRole");
+        public static readonly ActionIdentifier GetDatamapUpdates = new ActionIdentifier("whispersync:GetDatamapUpdates");
+        public static readonly ActionIdentifier PatchDatamapUpdates = new ActionIdentifier("whispersync:PatchDatamapUpdates");
     }
 }

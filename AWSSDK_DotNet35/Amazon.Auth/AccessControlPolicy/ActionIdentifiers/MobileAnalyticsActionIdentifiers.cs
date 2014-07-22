@@ -19,14 +19,15 @@ using System.Text;
 namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
 {
     /// <summary>
-    /// The available AWS access control policy actions for AWS Security Token Service.
+    /// The available AWS access control policy actions for Amazon Mobile Analytics.
     /// </summary>
     /// <see cref="Amazon.Auth.AccessControlPolicy.Statement.Actions"/>
-    public static class SecurityTokenServiceActionIdentifiers
+    public static class MobileAnalyticsActionIdentifiers
     {
-        public static readonly ActionIdentifier AllSecurityTokenServiceActions = new ActionIdentifier("sts:*");
+        public static readonly ActionIdentifier AllMobileAnalyticsActions = new ActionIdentifier("mobileanalytics:*");
 
-        public static readonly ActionIdentifier GetFederationToken = new ActionIdentifier("sts:GetFederationToken");
-        public static readonly ActionIdentifier AssumeRole = new ActionIdentifier("sts:AssumeRole");
+        public static readonly ActionIdentifier PutEvents = new ActionIdentifier("mobileanalytics:PutEvents");
+        public static readonly ActionIdentifier GetReports = new ActionIdentifier("mobileanalytics:GetReports");
+        public static readonly ActionIdentifier GetFinancialReports = new ActionIdentifier("mobileanalytics:GetFinancialReports");
     }
 }

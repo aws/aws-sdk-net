@@ -445,6 +445,9 @@
     <Compile Include="..\AWSSDK_DotNet35\Amazon.EC2\Util\*">
       <Visible>false</Visible>
     </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.EC2\Import\*">
+      <Visible>false</Visible>
+    </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.EC2\Model\Internal\MarshallTransformations\*">
       <Visible>false</Visible>
     </Compile>
