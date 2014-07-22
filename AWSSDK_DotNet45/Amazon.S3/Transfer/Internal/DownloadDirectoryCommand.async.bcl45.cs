@@ -75,6 +75,9 @@ namespace Amazon.S3.Transfer.Internal
                 var pendingTasks = new List<Task>();
                 foreach (S3Object s3o in objs)
                 {
+                    if (s3o.Key.EndsWith("/", StringComparison.Ordinal))
+                        continue;
+
                     await asyncThrottler.WaitAsync(cancellationToken).
                             ConfigureAwait(continueOnCapturedContext: false);
 
@@ -87,9 +90,6 @@ namespace Amazon.S3.Transfer.Internal
                         // responses and throw the original exception.
                         break;
                     }
-
-                    if (s3o.Key.EndsWith("/", StringComparison.Ordinal))
-                        continue;
 
                     // Valid for serial uploads when
                     // TransferUtilityDownloadDirectoryRequest.DownloadFilesConcurrently is set to false.
