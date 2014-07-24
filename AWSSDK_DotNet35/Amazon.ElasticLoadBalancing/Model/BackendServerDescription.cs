@@ -18,58 +18,57 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para> This data type is used as a response element in the DescribeLoadBalancers action to describe the configuration of the back-end
-    /// server. </para>
+    /// This data type is used as a response element in the <a>DescribeLoadBalancers</a>
+    /// action to describe the configuration of the back-end server.
     /// </summary>
     public partial class BackendServerDescription
     {
-        
-        private int? instancePort;
-        private List<string> policyNames = new List<string>();
+        private int? _instancePort;
+        private List<string> _policyNames = new List<string>();
 
 
         /// <summary>
-        /// Provides the port on which the back-end server is listening.
-        ///  
+        /// Gets and sets the property InstancePort. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>1 - 65535</description>
-        ///     </item>
-        /// </list>
+        ///  Provides the port on which the back-end server is listening. 
         /// </para>
         /// </summary>
         public int InstancePort
         {
-            get { return this.instancePort ?? default(int); }
-            set { this.instancePort = value; }
+            get { return this._instancePort.GetValueOrDefault(); }
+            set { this._instancePort = value; }
         }
 
         // Check to see if InstancePort property is set
         internal bool IsSetInstancePort()
         {
-            return this.instancePort.HasValue;
+            return this._instancePort.HasValue; 
         }
 
+
         /// <summary>
-        /// Provides a list of policy names enabled for the back-end server.
-        ///  
+        /// Gets and sets the property PolicyNames. 
+        /// <para>
+        ///  Provides a list of policy names enabled for the back-end server. 
+        /// </para>
         /// </summary>
         public List<string> PolicyNames
         {
-            get { return this.policyNames; }
-            set { this.policyNames = value; }
+            get { return this._policyNames; }
+            set { this._policyNames = value; }
         }
 
         // Check to see if PolicyNames property is set
         internal bool IsSetPolicyNames()
         {
-            return this.policyNames.Count > 0;
+            return this._policyNames != null && this._policyNames.Count > 0; 
         }
+
     }
 }

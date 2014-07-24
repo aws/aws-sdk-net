@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,33 +17,38 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Contains the following objects or data if successful. Otherwise, returns an error.</para>
+    /// Information about the Trusted Advisor checks returned by the <a>DescribeTrustedAdvisorChecks</a>
+    /// operation.
     /// </summary>
     public partial class DescribeTrustedAdvisorChecksResult : AmazonWebServiceResponse
     {
-        
-        private List<TrustedAdvisorCheckDescription> checks = new List<TrustedAdvisorCheckDescription>();
+        private List<TrustedAdvisorCheckDescription> _checks = new List<TrustedAdvisorCheckDescription>();
 
 
         /// <summary>
+        /// Gets and sets the property Checks. 
+        /// <para>
         /// Information about all available Trusted Advisor checks.
-        ///  
+        /// </para>
         /// </summary>
         public List<TrustedAdvisorCheckDescription> Checks
         {
-            get { return this.checks; }
-            set { this.checks = value; }
+            get { return this._checks; }
+            set { this._checks = value; }
         }
 
         // Check to see if Checks property is set
         internal bool IsSetChecks()
         {
-            return this.checks.Count > 0;
+            return this._checks != null && this._checks.Count > 0; 
         }
+
     }
 }

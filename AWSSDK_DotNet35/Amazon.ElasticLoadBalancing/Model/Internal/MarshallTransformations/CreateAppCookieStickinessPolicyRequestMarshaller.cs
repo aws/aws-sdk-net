@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticLoadBalancing.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create App Cookie Stickiness Policy Request Marshaller
+    /// CreateAppCookieStickinessPolicy Request Marshaller
     /// </summary>       
     public class CreateAppCookieStickinessPolicyRequestMarshaller : IMarshaller<IRequest, CreateAppCookieStickinessPolicyRequest>
     {
-        public IRequest Marshall(CreateAppCookieStickinessPolicyRequest createAppCookieStickinessPolicyRequest)
+        public IRequest Marshall(CreateAppCookieStickinessPolicyRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(createAppCookieStickinessPolicyRequest, "AmazonElasticLoadBalancing");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticLoadBalancing");
             request.Parameters.Add("Action", "CreateAppCookieStickinessPolicy");
             request.Parameters.Add("Version", "2012-06-01");
-            if (createAppCookieStickinessPolicyRequest != null && createAppCookieStickinessPolicyRequest.IsSetLoadBalancerName())
-            {
-                request.Parameters.Add("LoadBalancerName", StringUtils.FromString(createAppCookieStickinessPolicyRequest.LoadBalancerName));
-            }
-            if (createAppCookieStickinessPolicyRequest != null && createAppCookieStickinessPolicyRequest.IsSetPolicyName())
-            {
-                request.Parameters.Add("PolicyName", StringUtils.FromString(createAppCookieStickinessPolicyRequest.PolicyName));
-            }
-            if (createAppCookieStickinessPolicyRequest != null && createAppCookieStickinessPolicyRequest.IsSetCookieName())
-            {
-                request.Parameters.Add("CookieName", StringUtils.FromString(createAppCookieStickinessPolicyRequest.CookieName));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetCookieName())
+                {
+                    request.Parameters.Add("CookieName", StringUtils.FromString(publicRequest.CookieName));
+                }
+                if(publicRequest.IsSetLoadBalancerName())
+                {
+                    request.Parameters.Add("LoadBalancerName", StringUtils.FromString(publicRequest.LoadBalancerName));
+                }
+                if(publicRequest.IsSetPolicyName())
+                {
+                    request.Parameters.Add("PolicyName", StringUtils.FromString(publicRequest.PolicyName));
+                }
+            }
             return request;
         }
     }

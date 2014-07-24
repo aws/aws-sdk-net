@@ -18,71 +18,78 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para> The policies data type. </para>
+    /// The policies data type.
     /// </summary>
     public partial class Policies
     {
-        
-        private List<AppCookieStickinessPolicy> appCookieStickinessPolicies = new List<AppCookieStickinessPolicy>();
-        private List<LBCookieStickinessPolicy> lBCookieStickinessPolicies = new List<LBCookieStickinessPolicy>();
-        private List<string> otherPolicies = new List<string>();
+        private List<AppCookieStickinessPolicy> _appCookieStickinessPolicies = new List<AppCookieStickinessPolicy>();
+        private List<LBCookieStickinessPolicy> _lBCookieStickinessPolicies = new List<LBCookieStickinessPolicy>();
+        private List<string> _otherPolicies = new List<string>();
+
 
         /// <summary>
-        /// Default constructor for a new Policies object.  Callers should use the
-        /// properties to initialize this object after creating it.
-        /// </summary>
-        public Policies() {}
-    
-
-        /// <summary>
-        /// A list of the <a>AppCookieStickinessPolicy</a> objects created with <a>CreateAppCookieStickinessPolicy</a>.
-        ///  
+        /// Gets and sets the property AppCookieStickinessPolicies. 
+        /// <para>
+        ///  A list of the <a>AppCookieStickinessPolicy</a> objects created with <a>CreateAppCookieStickinessPolicy</a>.
+        /// 
+        /// </para>
         /// </summary>
         public List<AppCookieStickinessPolicy> AppCookieStickinessPolicies
         {
-            get { return this.appCookieStickinessPolicies; }
-            set { this.appCookieStickinessPolicies = value; }
+            get { return this._appCookieStickinessPolicies; }
+            set { this._appCookieStickinessPolicies = value; }
         }
 
         // Check to see if AppCookieStickinessPolicies property is set
         internal bool IsSetAppCookieStickinessPolicies()
         {
-            return this.appCookieStickinessPolicies.Count > 0;
+            return this._appCookieStickinessPolicies != null && this._appCookieStickinessPolicies.Count > 0; 
         }
 
+
         /// <summary>
-        /// A list of <a>LBCookieStickinessPolicy</a> objects created with <a>CreateAppCookieStickinessPolicy</a>.
-        ///  
+        /// Gets and sets the property LBCookieStickinessPolicies. 
+        /// <para>
+        ///  A list of <a>LBCookieStickinessPolicy</a> objects created with <a>CreateAppCookieStickinessPolicy</a>.
+        /// 
+        /// </para>
         /// </summary>
         public List<LBCookieStickinessPolicy> LBCookieStickinessPolicies
         {
-            get { return this.lBCookieStickinessPolicies; }
-            set { this.lBCookieStickinessPolicies = value; }
+            get { return this._lBCookieStickinessPolicies; }
+            set { this._lBCookieStickinessPolicies = value; }
         }
 
         // Check to see if LBCookieStickinessPolicies property is set
         internal bool IsSetLBCookieStickinessPolicies()
         {
-            return this.lBCookieStickinessPolicies.Count > 0;
+            return this._lBCookieStickinessPolicies != null && this._lBCookieStickinessPolicies.Count > 0; 
         }
 
+
         /// <summary>
-        /// A list of policy names other than the stickiness policies.
-        ///  
+        /// Gets and sets the property OtherPolicies. 
+        /// <para>
+        ///  A list of policy names other than the stickiness policies. 
+        /// </para>
         /// </summary>
         public List<string> OtherPolicies
         {
-            get { return this.otherPolicies; }
-            set { this.otherPolicies = value; }
+            get { return this._otherPolicies; }
+            set { this._otherPolicies = value; }
         }
 
         // Check to see if OtherPolicies property is set
         internal bool IsSetOtherPolicies()
         {
-            return this.otherPolicies.Count > 0;
+            return this._otherPolicies != null && this._otherPolicies.Count > 0; 
         }
+
     }
 }

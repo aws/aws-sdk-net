@@ -12,72 +12,82 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.AWSSupport.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
+using Amazon.AWSSupport.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for TrustedAdvisorResourcesSummary Object
+    /// </summary>  
+    public class TrustedAdvisorResourcesSummaryUnmarshaller : IUnmarshaller<TrustedAdvisorResourcesSummary, XmlUnmarshallerContext>, IUnmarshaller<TrustedAdvisorResourcesSummary, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// TrustedAdvisorResourcesSummaryUnmarshaller
-      /// </summary>
-      internal class TrustedAdvisorResourcesSummaryUnmarshaller : IUnmarshaller<TrustedAdvisorResourcesSummary, XmlUnmarshallerContext>, IUnmarshaller<TrustedAdvisorResourcesSummary, JsonUnmarshallerContext>
-      {
         TrustedAdvisorResourcesSummary IUnmarshaller<TrustedAdvisorResourcesSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public TrustedAdvisorResourcesSummary Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            TrustedAdvisorResourcesSummary trustedAdvisorResourcesSummary = new TrustedAdvisorResourcesSummary();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            TrustedAdvisorResourcesSummary unmarshalledObject = new TrustedAdvisorResourcesSummary();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("resourcesProcessed", targetDepth))
-              {
-                trustedAdvisorResourcesSummary.ResourcesProcessed = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("resourcesFlagged", targetDepth))
-              {
-                trustedAdvisorResourcesSummary.ResourcesFlagged = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("resourcesIgnored", targetDepth))
-              {
-                trustedAdvisorResourcesSummary.ResourcesIgnored = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("resourcesSuppressed", targetDepth))
-              {
-                trustedAdvisorResourcesSummary.ResourcesSuppressed = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("resourcesFlagged", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ResourcesFlagged = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("resourcesIgnored", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ResourcesIgnored = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("resourcesProcessed", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ResourcesProcessed = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("resourcesSuppressed", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ResourcesSuppressed = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return trustedAdvisorResourcesSummary;
+            return unmarshalledObject;
         }
 
-        private static TrustedAdvisorResourcesSummaryUnmarshaller instance;
-        public static TrustedAdvisorResourcesSummaryUnmarshaller GetInstance()
+
+        private static TrustedAdvisorResourcesSummaryUnmarshaller _instance = new TrustedAdvisorResourcesSummaryUnmarshaller();        
+
+        public static TrustedAdvisorResourcesSummaryUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new TrustedAdvisorResourcesSummaryUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

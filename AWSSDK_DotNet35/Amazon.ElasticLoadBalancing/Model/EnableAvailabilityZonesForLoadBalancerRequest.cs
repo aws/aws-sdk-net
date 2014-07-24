@@ -25,70 +25,63 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableAvailabilityZonesForLoadBalancer operation.
-    /// <para> Adds one or more EC2 Availability Zones to the load balancer. </para> <para> The load balancer evenly distributes requests across all
-    /// its registered Availability Zones that contain instances. </para> <para><b>NOTE:</b> The new EC2 Availability Zones to be added must be in
-    /// the same EC2 Region as the Availability Zones for which the load balancer was created. </para> <para>For more information, see <a
-    /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_AddLBAvailabilityZone.html" >Expand a Load Balanced
-    /// Application to an Additional Availability Zone</a> in the <i>Elastic Load Balancing Developer Guide</i> .</para>
+    /// Adds one or more EC2 Availability Zones to the load balancer. 
+    /// 
+    ///  
+    /// <para>
+    ///  The load balancer evenly distributes requests across all its registered Availability
+    /// Zones that contain instances. 
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_AddLBAvailabilityZone.html">Expand
+    /// a Load Balanced Application to an Additional Availability Zone</a> in the <i>Elastic
+    /// Load Balancing Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class EnableAvailabilityZonesForLoadBalancerRequest : AmazonElasticLoadBalancingRequest
     {
-        private string loadBalancerName;
-        private List<string> availabilityZones = new List<string>();
+        private List<string> _availabilityZones = new List<string>();
+        private string _loadBalancerName;
+
 
         /// <summary>
-        /// Default constructor for a new EnableAvailabilityZonesForLoadBalancerRequest object.  Callers should use the
-        /// properties to initialize this object after creating it.
-        /// </summary>
-        public EnableAvailabilityZonesForLoadBalancerRequest() {}
-    
-        /// <summary>
-        /// Constructs a new EnableAvailabilityZonesForLoadBalancerRequest object.
-        /// Callers should use the properties initialize any additional object members.
-        /// </summary>
-        /// 
-        /// <param name="loadBalancerName"> The name associated with the load balancer. </param>
-        /// <param name="availabilityZones"> A list of new Availability Zones for the load balancer. Each Availability Zone must be in the same region
-        /// as the load balancer. </param>
-        public EnableAvailabilityZonesForLoadBalancerRequest(string loadBalancerName, List<string> availabilityZones)
-        {
-            this.loadBalancerName = loadBalancerName;
-            this.availabilityZones = availabilityZones;
-        }
-    
-
-        /// <summary>
-        /// The name associated with the load balancer.
-        ///  
-        /// </summary>
-        public string LoadBalancerName
-        {
-            get { return this.loadBalancerName; }
-            set { this.loadBalancerName = value; }
-        }
-
-        // Check to see if LoadBalancerName property is set
-        internal bool IsSetLoadBalancerName()
-        {
-            return this.loadBalancerName != null;
-        }
-
-        /// <summary>
-        /// A list of new Availability Zones for the load balancer. Each Availability Zone must be in the same region as the load balancer.
-        ///  
+        /// Gets and sets the property AvailabilityZones. 
+        /// <para>
+        ///  A list of new Availability Zones for the load balancer. Each Availability Zone must
+        /// be in the same region as the load balancer. 
+        /// </para>
         /// </summary>
         public List<string> AvailabilityZones
         {
-            get { return this.availabilityZones; }
-            set { this.availabilityZones = value; }
+            get { return this._availabilityZones; }
+            set { this._availabilityZones = value; }
         }
 
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this.availabilityZones.Count > 0;
+            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property LoadBalancerName. 
+        /// <para>
+        ///  The name associated with the load balancer. 
+        /// </para>
+        /// </summary>
+        public string LoadBalancerName
+        {
+            get { return this._loadBalancerName; }
+            set { this._loadBalancerName = value; }
+        }
+
+        // Check to see if LoadBalancerName property is set
+        internal bool IsSetLoadBalancerName()
+        {
+            return this._loadBalancerName != null;
         }
 
     }
 }
-    

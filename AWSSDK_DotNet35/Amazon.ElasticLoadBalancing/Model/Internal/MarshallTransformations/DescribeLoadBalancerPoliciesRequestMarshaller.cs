@@ -14,43 +14,45 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticLoadBalancing.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Load Balancer Policies Request Marshaller
+    /// DescribeLoadBalancerPolicies Request Marshaller
     /// </summary>       
     public class DescribeLoadBalancerPoliciesRequestMarshaller : IMarshaller<IRequest, DescribeLoadBalancerPoliciesRequest>
     {
-        public IRequest Marshall(DescribeLoadBalancerPoliciesRequest describeLoadBalancerPoliciesRequest)
+        public IRequest Marshall(DescribeLoadBalancerPoliciesRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describeLoadBalancerPoliciesRequest, "AmazonElasticLoadBalancing");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticLoadBalancing");
             request.Parameters.Add("Action", "DescribeLoadBalancerPolicies");
             request.Parameters.Add("Version", "2012-06-01");
-            if (describeLoadBalancerPoliciesRequest != null && describeLoadBalancerPoliciesRequest.IsSetLoadBalancerName())
-            {
-                request.Parameters.Add("LoadBalancerName", StringUtils.FromString(describeLoadBalancerPoliciesRequest.LoadBalancerName));
-            }
-            if (describeLoadBalancerPoliciesRequest != null)
-            {
-                List<string> policyNamesList = describeLoadBalancerPoliciesRequest.PolicyNames;
 
-                int policyNamesListIndex = 1;
-                foreach (string policyNamesListValue in policyNamesList)
-                { 
-                    request.Parameters.Add("PolicyNames.member." + policyNamesListIndex, StringUtils.FromString(policyNamesListValue));
-                    policyNamesListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetLoadBalancerName())
+                {
+                    request.Parameters.Add("LoadBalancerName", StringUtils.FromString(publicRequest.LoadBalancerName));
+                }
+                if(publicRequest.IsSetPolicyNames())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.PolicyNames)
+                    {
+                        request.Parameters.Add("PolicyNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
-
             return request;
         }
     }

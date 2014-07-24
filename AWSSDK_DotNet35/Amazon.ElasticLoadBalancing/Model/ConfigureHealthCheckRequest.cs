@@ -25,69 +25,58 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the ConfigureHealthCheck operation.
-    /// <para> Specifies the health check settings to use for evaluating the health state of your back-end instances. </para> <para>For more
-    /// information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#healthcheck"
-    /// >Health Check</a> in the <i>Elastic Load Balancing Developer Guide</i> .</para>
+    /// Specifies the health check settings to use for evaluating the health state of your
+    /// back-end instances. 
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#healthcheck">Health
+    /// Check</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class ConfigureHealthCheckRequest : AmazonElasticLoadBalancingRequest
     {
-        private string loadBalancerName;
-        private HealthCheck healthCheck;
+        private HealthCheck _healthCheck;
+        private string _loadBalancerName;
+
 
         /// <summary>
-        /// Default constructor for a new ConfigureHealthCheckRequest object.  Callers should use the
-        /// properties to initialize this object after creating it.
-        /// </summary>
-        public ConfigureHealthCheckRequest() {}
-    
-        /// <summary>
-        /// Constructs a new ConfigureHealthCheckRequest object.
-        /// Callers should use the properties initialize any additional object members.
-        /// </summary>
-        /// 
-        /// <param name="loadBalancerName"> The mnemonic name associated with the load balancer. The name must be unique within the set of load
-        /// balancers associated with your AWS account. </param>
-        /// <param name="healthCheck"> A structure containing the configuration information for the new healthcheck. </param>
-        public ConfigureHealthCheckRequest(string loadBalancerName, HealthCheck healthCheck)
-        {
-            this.loadBalancerName = loadBalancerName;
-            this.healthCheck = healthCheck;
-        }
-    
-
-        /// <summary>
-        /// The mnemonic name associated with the load balancer. The name must be unique within the set of load balancers associated with your AWS
-        /// account.
-        ///  
-        /// </summary>
-        public string LoadBalancerName
-        {
-            get { return this.loadBalancerName; }
-            set { this.loadBalancerName = value; }
-        }
-
-        // Check to see if LoadBalancerName property is set
-        internal bool IsSetLoadBalancerName()
-        {
-            return this.loadBalancerName != null;
-        }
-
-        /// <summary>
-        /// A structure containing the configuration information for the new healthcheck.
-        ///  
+        /// Gets and sets the property HealthCheck. 
+        /// <para>
+        ///  A structure containing the configuration information for the new healthcheck. 
+        /// </para>
         /// </summary>
         public HealthCheck HealthCheck
         {
-            get { return this.healthCheck; }
-            set { this.healthCheck = value; }
+            get { return this._healthCheck; }
+            set { this._healthCheck = value; }
         }
 
         // Check to see if HealthCheck property is set
         internal bool IsSetHealthCheck()
         {
-            return this.healthCheck != null;
+            return this._healthCheck != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property LoadBalancerName. 
+        /// <para>
+        ///  The mnemonic name associated with the load balancer. The name must be unique within
+        /// the set of load balancers associated with your AWS account. 
+        /// </para>
+        /// </summary>
+        public string LoadBalancerName
+        {
+            get { return this._loadBalancerName; }
+            set { this._loadBalancerName = value; }
+        }
+
+        // Check to see if LoadBalancerName property is set
+        internal bool IsSetLoadBalancerName()
+        {
+            return this._loadBalancerName != null;
         }
 
     }
 }
-    

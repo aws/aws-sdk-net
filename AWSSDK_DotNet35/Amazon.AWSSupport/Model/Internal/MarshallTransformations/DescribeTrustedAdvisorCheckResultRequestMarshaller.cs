@@ -29,49 +29,46 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Trusted Advisor Check Result Request Marshaller
+    /// DescribeTrustedAdvisorCheckResult Request Marshaller
     /// </summary>       
-    internal class DescribeTrustedAdvisorCheckResultRequestMarshaller : IMarshaller<IRequest, DescribeTrustedAdvisorCheckResultRequest> 
+    public class DescribeTrustedAdvisorCheckResultRequestMarshaller : IMarshaller<IRequest, DescribeTrustedAdvisorCheckResultRequest> 
     {
-        
-
-        public IRequest Marshall(DescribeTrustedAdvisorCheckResultRequest describeTrustedAdvisorCheckResultRequest) 
+        public IRequest Marshall(DescribeTrustedAdvisorCheckResultRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(describeTrustedAdvisorCheckResultRequest, "AmazonAWSSupport");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AWSSupport");
             string target = "AWSSupport_20130415.DescribeTrustedAdvisorCheckResult";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (describeTrustedAdvisorCheckResultRequest != null && describeTrustedAdvisorCheckResultRequest.IsSetCheckId()) 
+                if(publicRequest.IsSetCheckId())
                 {
                     writer.WritePropertyName("checkId");
-                    writer.Write(describeTrustedAdvisorCheckResultRequest.CheckId);
-                }
-                if (describeTrustedAdvisorCheckResultRequest != null && describeTrustedAdvisorCheckResultRequest.IsSetLanguage()) 
-                {
-                    writer.WritePropertyName("language");
-                    writer.Write(describeTrustedAdvisorCheckResultRequest.Language);
+                    writer.Write(publicRequest.CheckId);
                 }
 
+                if(publicRequest.IsSetLanguage())
+                {
+                    writer.WritePropertyName("language");
+                    writer.Write(publicRequest.Language);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

@@ -118,7 +118,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// Validates configurations and sets required fields
         /// </summary>
-        public void Validate()
+        public void Validate(DynamoDBContext context)
         {
             if (IsVersion)
                 Utils.ValidateVersionType(MemberType);    // no conversion is possible, so type must be a nullable primitive
@@ -135,11 +135,18 @@ namespace Amazon.DynamoDBv2.DataModel
 
             if (ConverterType != null)
             {
-                if (!Utils.CanInstantiate(ConverterType) || !Utils.ImplementsInterface(ConverterType, typeof(IPropertyConverter)))
+                if (!Utils.CanInstantiateConverter(ConverterType) || !Utils.ImplementsInterface(ConverterType, typeof(IPropertyConverter)))
                     throw new InvalidOperationException("Converter for " + PropertyName + " must be instantiable with no parameters and must implement IPropertyConverter");
 
-                this.Converter = Utils.Instantiate(ConverterType) as IPropertyConverter;
+                this.Converter = Utils.InstantiateConverter(ConverterType, context) as IPropertyConverter;
             }
+
+            IPropertyConverter converter;
+            if (context.ConverterCache.TryGetValue(MemberType, out converter) && converter != null)
+            {
+                this.Converter = converter;
+            }
+
         }
 
         public PropertyStorage(MemberInfo member)
@@ -402,7 +409,7 @@ namespace Amazon.DynamoDBv2.DataModel
             return dictionary;
         }
 
-        public void Denormalize()
+        public void Denormalize(DynamoDBContext context)
         {
             // analyze all PropertyStorage configs and denormalize data into other properties
             // all data must exist in PropertyStorage objects prior to denormalization
@@ -412,7 +419,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 // only add non-ignored properties
                 if (property.IsIgnored) continue;
 
-                property.Validate();
+                property.Validate(context);
                 AddPropertyStorage(property);
 
                 string propertyName = property.PropertyName;
@@ -557,7 +564,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 Table table = Context.GetTable(actualTableName);
                 PopulateConfigFromTable(config, table);
 
-                config.Denormalize();
+                config.Denormalize(Context);
             }
 
             return config;
@@ -585,7 +592,7 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 if (!ItemStorageConfig.IsValidMemberInfo(member))
                     continue;
-
+                
                 // prepare basic info
                 PropertyStorage propertyStorage = new PropertyStorage(member);
                 propertyStorage.AttributeName = GetAccurateCase(config, member.Name);
@@ -601,15 +608,16 @@ namespace Amazon.DynamoDBv2.DataModel
                     if (attribute is DynamoDBVersionAttribute)
                         propertyStorage.IsVersion = true;
 
+                    
                     DynamoDBPropertyAttribute propertyAttribute = attribute as DynamoDBPropertyAttribute;
                     if (propertyAttribute != null)
                     {
                         if (!string.IsNullOrEmpty(propertyAttribute.AttributeName))
                             propertyStorage.AttributeName = GetAccurateCase(config, propertyAttribute.AttributeName);
-
+                        
                         if (propertyAttribute.Converter != null)
                             propertyStorage.ConverterType = propertyAttribute.Converter;
-
+                        
                         if (propertyAttribute is DynamoDBHashKeyAttribute)
                         {
                             var gsiHashAttribute = propertyAttribute as DynamoDBGlobalSecondaryIndexHashKeyAttribute;
@@ -641,7 +649,7 @@ namespace Amazon.DynamoDBv2.DataModel
                         }
                     }
                 }
-
+                
                 config.Properties.Add(propertyStorage);
             }
         }

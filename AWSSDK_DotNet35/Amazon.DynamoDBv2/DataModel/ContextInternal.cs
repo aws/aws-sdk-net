@@ -120,7 +120,7 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 if (!tablesMap.TryGetValue(tableName, out table))
                 {
-                    table = Table.LoadTable(client, tableName, Table.DynamoDBConsumer.DataModel);
+                    table = Table.LoadTable(Client, tableName, Table.DynamoDBConsumer.DataModel);
                     tablesMap[tableName] = table;
                 }
             }
@@ -191,18 +191,18 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         // Deserializing DynamoDB document into an object
-        private static T DocumentToObject<T>(ItemStorage storage)
+        private T DocumentToObject<T>(ItemStorage storage)
         {
             Type type = typeof(T);
             return (T)DocumentToObject(type, storage);
         }
-        private static object DocumentToObject(Type objectType, ItemStorage storage)
+        private object DocumentToObject(Type objectType, ItemStorage storage)
         {
             if (storage == null) throw new ArgumentNullException("storage");
 
             if (storage.Document == null) return null;
 
-            object instance = Utils.Instantiate(objectType);
+            object instance = Utils.InstantiateConverter(objectType, this);
             PopulateInstance(storage, instance);
             return instance;
         }
@@ -300,7 +300,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             object output;
             var targetType = propertyStorage.MemberType;
-
+            
             Primitive primitive = value as Primitive;
             if (primitive != null && TryFromPrimitive(targetType, primitive, out output))
                 return output;

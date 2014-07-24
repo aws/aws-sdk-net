@@ -29,44 +29,40 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Trusted Advisor Checks Request Marshaller
+    /// DescribeTrustedAdvisorChecks Request Marshaller
     /// </summary>       
-    internal class DescribeTrustedAdvisorChecksRequestMarshaller : IMarshaller<IRequest, DescribeTrustedAdvisorChecksRequest> 
+    public class DescribeTrustedAdvisorChecksRequestMarshaller : IMarshaller<IRequest, DescribeTrustedAdvisorChecksRequest> 
     {
-        
-
-        public IRequest Marshall(DescribeTrustedAdvisorChecksRequest describeTrustedAdvisorChecksRequest) 
+        public IRequest Marshall(DescribeTrustedAdvisorChecksRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(describeTrustedAdvisorChecksRequest, "AmazonAWSSupport");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AWSSupport");
             string target = "AWSSupport_20130415.DescribeTrustedAdvisorChecks";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (describeTrustedAdvisorChecksRequest != null && describeTrustedAdvisorChecksRequest.IsSetLanguage()) 
+                if(publicRequest.IsSetLanguage())
                 {
                     writer.WritePropertyName("language");
-                    writer.Write(describeTrustedAdvisorChecksRequest.Language);
+                    writer.Write(publicRequest.Language);
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

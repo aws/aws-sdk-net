@@ -12,69 +12,75 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticLoadBalancing.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   SourceSecurityGroup Unmarshaller
-     /// </summary>
-    internal class SourceSecurityGroupUnmarshaller : IUnmarshaller<SourceSecurityGroup, XmlUnmarshallerContext>, IUnmarshaller<SourceSecurityGroup, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for SourceSecurityGroup Object
+    /// </summary>  
+    public class SourceSecurityGroupUnmarshaller : IUnmarshaller<SourceSecurityGroup, XmlUnmarshallerContext>, IUnmarshaller<SourceSecurityGroup, JsonUnmarshallerContext>
     {
-        public SourceSecurityGroup Unmarshall(XmlUnmarshallerContext context) 
+        public SourceSecurityGroup Unmarshall(XmlUnmarshallerContext context)
         {
-            SourceSecurityGroup sourceSecurityGroup = new SourceSecurityGroup();
+            SourceSecurityGroup unmarshalledObject = new SourceSecurityGroup();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("OwnerAlias", targetDepth))
-                    {
-                        sourceSecurityGroup.OwnerAlias = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("GroupName", targetDepth))
                     {
-                        sourceSecurityGroup.GroupName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.GroupName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("OwnerAlias", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OwnerAlias = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return sourceSecurityGroup;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return sourceSecurityGroup;
+            return unmarshalledObject;
         }
 
-        public SourceSecurityGroup Unmarshall(JsonUnmarshallerContext context) 
+        public SourceSecurityGroup Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static SourceSecurityGroupUnmarshaller instance;
 
-        public static SourceSecurityGroupUnmarshaller GetInstance() 
+        private static SourceSecurityGroupUnmarshaller _instance = new SourceSecurityGroupUnmarshaller();        
+
+        public static SourceSecurityGroupUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new SourceSecurityGroupUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

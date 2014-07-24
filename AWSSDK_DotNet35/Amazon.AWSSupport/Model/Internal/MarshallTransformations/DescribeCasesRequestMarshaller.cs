@@ -29,88 +29,93 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Cases Request Marshaller
+    /// DescribeCases Request Marshaller
     /// </summary>       
-    internal class DescribeCasesRequestMarshaller : IMarshaller<IRequest, DescribeCasesRequest> 
+    public class DescribeCasesRequestMarshaller : IMarshaller<IRequest, DescribeCasesRequest> 
     {
-        
-
-        public IRequest Marshall(DescribeCasesRequest describeCasesRequest) 
+        public IRequest Marshall(DescribeCasesRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(describeCasesRequest, "AmazonAWSSupport");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AWSSupport");
             string target = "AWSSupport_20130415.DescribeCases";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-
-                if (describeCasesRequest != null && describeCasesRequest.CaseIdList != null && describeCasesRequest.CaseIdList.Count > 0) 
-                {
-                    List<string> caseIdListList = describeCasesRequest.CaseIdList;
-                    writer.WritePropertyName("caseIdList");
-                    writer.WriteArrayStart();
-
-                    foreach (string caseIdListListValue in caseIdListList) 
-                    { 
-                        writer.Write(StringUtils.FromString(caseIdListListValue));
-                    }
-
-                    writer.WriteArrayEnd();
-                }
-                if (describeCasesRequest != null && describeCasesRequest.IsSetDisplayId()) 
-                {
-                    writer.WritePropertyName("displayId");
-                    writer.Write(describeCasesRequest.DisplayId);
-                }
-                if (describeCasesRequest != null && describeCasesRequest.IsSetAfterTime()) 
+                if(publicRequest.IsSetAfterTime())
                 {
                     writer.WritePropertyName("afterTime");
-                    writer.Write(describeCasesRequest.AfterTime);
-                }
-                if (describeCasesRequest != null && describeCasesRequest.IsSetBeforeTime()) 
-                {
-                    writer.WritePropertyName("beforeTime");
-                    writer.Write(describeCasesRequest.BeforeTime);
-                }
-                if (describeCasesRequest != null && describeCasesRequest.IsSetIncludeResolvedCases()) 
-                {
-                    writer.WritePropertyName("includeResolvedCases");
-                    writer.Write(describeCasesRequest.IncludeResolvedCases);
-                }
-                if (describeCasesRequest != null && describeCasesRequest.IsSetNextToken()) 
-                {
-                    writer.WritePropertyName("nextToken");
-                    writer.Write(describeCasesRequest.NextToken);
-                }
-                if (describeCasesRequest != null && describeCasesRequest.IsSetMaxResults()) 
-                {
-                    writer.WritePropertyName("maxResults");
-                    writer.Write(describeCasesRequest.MaxResults);
-                }
-                if (describeCasesRequest != null && describeCasesRequest.IsSetLanguage()) 
-                {
-                    writer.WritePropertyName("language");
-                    writer.Write(describeCasesRequest.Language);
+                    writer.Write(publicRequest.AfterTime);
                 }
 
+                if(publicRequest.IsSetBeforeTime())
+                {
+                    writer.WritePropertyName("beforeTime");
+                    writer.Write(publicRequest.BeforeTime);
+                }
+
+                if(publicRequest.IsSetCaseIdList())
+                {
+                    writer.WritePropertyName("caseIdList");
+                    writer.WriteArrayStart();
+                    foreach(var publicRequestCaseIdListListValue in publicRequest.CaseIdList)
+                    {
+                        writer.Write(publicRequestCaseIdListListValue);
+                    }
+                    writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetDisplayId())
+                {
+                    writer.WritePropertyName("displayId");
+                    writer.Write(publicRequest.DisplayId);
+                }
+
+                if(publicRequest.IsSetIncludeCommunications())
+                {
+                    writer.WritePropertyName("includeCommunications");
+                    writer.Write(publicRequest.IncludeCommunications);
+                }
+
+                if(publicRequest.IsSetIncludeResolvedCases())
+                {
+                    writer.WritePropertyName("includeResolvedCases");
+                    writer.Write(publicRequest.IncludeResolvedCases);
+                }
+
+                if(publicRequest.IsSetLanguage())
+                {
+                    writer.WritePropertyName("language");
+                    writer.Write(publicRequest.Language);
+                }
+
+                if(publicRequest.IsSetMaxResults())
+                {
+                    writer.WritePropertyName("maxResults");
+                    writer.Write(publicRequest.MaxResults);
+                }
+
+                if(publicRequest.IsSetNextToken())
+                {
+                    writer.WritePropertyName("nextToken");
+                    writer.Write(publicRequest.NextToken);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,6 +12,8 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+
 using System;
 using System.Runtime.ExceptionServices;
 using System.Threading;
@@ -28,8 +30,8 @@ namespace Amazon.CognitoSync
 {
     /// <summary>
     /// Implementation for accessing CognitoSync
-    /// 
-    /// Amazon Cognito Sync
+    ///
+    /// Amazon Cognito Sync 
     /// <para>
     /// Amazon Cognito Sync provides an AWS service and client library that enable cross-device
     /// syncing of application-related user data. High-level client libraries are available
@@ -41,10 +43,19 @@ namespace Amazon.CognitoSync
     /// identity.
     /// </para>
     /// </summary>
-	public partial class AmazonCognitoSyncClient : AmazonWebServiceClient, Amazon.CognitoSync.IAmazonCognitoSync
+    public partial class AmazonCognitoSyncClient : AmazonWebServiceClient, IAmazonCognitoSync
     {
-
         AWS4Signer signer = new AWS4Signer();
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+        }
+
+        #endregion
+
         #region Constructors
 
         /// <summary>
@@ -62,7 +73,7 @@ namespace Amazon.CognitoSync
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="region">The region to connect.</param>
         public AmazonCognitoSyncClient(AWSCredentials credentials, RegionEndpoint region)
-            : this(credentials, new AmazonCognitoSyncConfig(){RegionEndpoint=region})
+            : this(credentials, new AmazonCognitoSyncConfig{RegionEndpoint = region})
         {
         }
 
@@ -100,7 +111,7 @@ namespace Amazon.CognitoSync
 
         /// <summary>
         /// Constructs AmazonCognitoSyncClient with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonCognitoSyncClient Configuration object.
+        /// AmazonCognitoSyncClient Configuration object. 
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
@@ -129,13 +140,13 @@ namespace Amazon.CognitoSync
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="region">The region to connect.</param>
         public AmazonCognitoSyncClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, RegionEndpoint region)
-            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonCognitoSyncConfig(){RegionEndpoint = region})
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonCognitoSyncConfig{RegionEndpoint = region})
         {
         }
 
         /// <summary>
         /// Constructs AmazonCognitoSyncClient with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonCognitoSyncClient Configuration object.
+        /// AmazonCognitoSyncClient Configuration object. 
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
@@ -148,8 +159,10 @@ namespace Amazon.CognitoSync
 
         #endregion
 
- 
-		internal DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request)
+        
+        #region  DeleteDataset
+
+        internal DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request)
         {
             var task = DeleteDatasetAsync(request);
             try
@@ -164,36 +177,27 @@ namespace Amazon.CognitoSync
         }
 
         /// <summary>
-        /// Deletes the specific dataset. The dataset will be deleted permanently, and the action
-        /// can't be undone. Datasets that this dataset was merged with will no longer report
-        /// the merge. Any consequent operation on this dataset will result in a ResourceNotFoundException.
+        /// Initiates the asynchronous execution of the DeleteDataset operation.
+        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteDataset service method.</param>
         /// 
-        /// <returns>The response from the DeleteDataset service method, as returned by CognitoSync.</returns>
-        /// <exception cref="T:Amazon.CognitoSync.Model.InternalErrorException">
-        /// Indicates an internal service error.
-        /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.InvalidParameterException">
-        /// Thrown when a request parameter does not comply with the associated constraints.
-        /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.NotAuthorizedException">
-        /// Thrown when a user is not authorized to access the requested resource.
-        /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.ResourceNotFoundException">
-        /// Thrown if the resource doesn't exist.
-        /// </exception>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataset operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<DeleteDatasetResponse> DeleteDatasetAsync(DeleteDatasetRequest deleteDatasetRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteDatasetResponse> DeleteDatasetAsync(DeleteDatasetRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDatasetRequestMarshaller();
-            var unmarshaller = DeleteDatasetResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, DeleteDatasetRequest, DeleteDatasetResponse>(deleteDatasetRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
+            return Invoke<IRequest, DeleteDatasetRequest, DeleteDatasetResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
         }
- 
-		internal DescribeDatasetResponse DescribeDataset(DescribeDatasetRequest request)
+
+        #endregion
+        
+        #region  DescribeDataset
+
+        internal DescribeDatasetResponse DescribeDataset(DescribeDatasetRequest request)
         {
             var task = DescribeDatasetAsync(request);
             try
@@ -208,34 +212,27 @@ namespace Amazon.CognitoSync
         }
 
         /// <summary>
-        /// Gets metadata about a dataset by identity and dataset name.
+        /// Initiates the asynchronous execution of the DescribeDataset operation.
+        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeDataset service method.</param>
         /// 
-        /// <returns>The response from the DescribeDataset service method, as returned by CognitoSync.</returns>
-        /// <exception cref="T:Amazon.CognitoSync.Model.InternalErrorException">
-        /// Indicates an internal service error.
-        /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.InvalidParameterException">
-        /// Thrown when a request parameter does not comply with the associated constraints.
-        /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.NotAuthorizedException">
-        /// Thrown when a user is not authorized to access the requested resource.
-        /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.ResourceNotFoundException">
-        /// Thrown if the resource doesn't exist.
-        /// </exception>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDataset operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<DescribeDatasetResponse> DescribeDatasetAsync(DescribeDatasetRequest describeDatasetRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeDatasetResponse> DescribeDatasetAsync(DescribeDatasetRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDatasetRequestMarshaller();
-            var unmarshaller = DescribeDatasetResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, DescribeDatasetRequest, DescribeDatasetResponse>(describeDatasetRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
+            return Invoke<IRequest, DescribeDatasetRequest, DescribeDatasetResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
         }
- 
-		internal DescribeIdentityPoolUsageResponse DescribeIdentityPoolUsage(DescribeIdentityPoolUsageRequest request)
+
+        #endregion
+        
+        #region  DescribeIdentityPoolUsage
+
+        internal DescribeIdentityPoolUsageResponse DescribeIdentityPoolUsage(DescribeIdentityPoolUsageRequest request)
         {
             var task = DescribeIdentityPoolUsageAsync(request);
             try
@@ -250,34 +247,27 @@ namespace Amazon.CognitoSync
         }
 
         /// <summary>
-        /// Gets usage details (for example, data storage) about a particular identity pool.
+        /// Initiates the asynchronous execution of the DescribeIdentityPoolUsage operation.
+        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityPoolUsage service method.</param>
         /// 
-        /// <returns>The response from the DescribeIdentityPoolUsage service method, as returned by CognitoSync.</returns>
-        /// <exception cref="T:Amazon.CognitoSync.Model.InternalErrorException">
-        /// Indicates an internal service error.
-        /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.InvalidParameterException">
-        /// Thrown when a request parameter does not comply with the associated constraints.
-        /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.NotAuthorizedException">
-        /// Thrown when a user is not authorized to access the requested resource.
-        /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.ResourceNotFoundException">
-        /// Thrown if the resource doesn't exist.
-        /// </exception>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityPoolUsage operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<DescribeIdentityPoolUsageResponse> DescribeIdentityPoolUsageAsync(DescribeIdentityPoolUsageRequest describeIdentityPoolUsageRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeIdentityPoolUsageResponse> DescribeIdentityPoolUsageAsync(DescribeIdentityPoolUsageRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeIdentityPoolUsageRequestMarshaller();
-            var unmarshaller = DescribeIdentityPoolUsageResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, DescribeIdentityPoolUsageRequest, DescribeIdentityPoolUsageResponse>(describeIdentityPoolUsageRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = DescribeIdentityPoolUsageResponseUnmarshaller.Instance;
+            return Invoke<IRequest, DescribeIdentityPoolUsageRequest, DescribeIdentityPoolUsageResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
         }
- 
-		internal DescribeIdentityUsageResponse DescribeIdentityUsage(DescribeIdentityUsageRequest request)
+
+        #endregion
+        
+        #region  DescribeIdentityUsage
+
+        internal DescribeIdentityUsageResponse DescribeIdentityUsage(DescribeIdentityUsageRequest request)
         {
             var task = DescribeIdentityUsageAsync(request);
             try
@@ -292,34 +282,27 @@ namespace Amazon.CognitoSync
         }
 
         /// <summary>
-        /// Gets usage information for an identity, including number of datasets and data usage.
+        /// Initiates the asynchronous execution of the DescribeIdentityUsage operation.
+        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityUsage service method.</param>
         /// 
-        /// <returns>The response from the DescribeIdentityUsage service method, as returned by CognitoSync.</returns>
-        /// <exception cref="T:Amazon.CognitoSync.Model.InternalErrorException">
-        /// Indicates an internal service error.
-        /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.InvalidParameterException">
-        /// Thrown when a request parameter does not comply with the associated constraints.
-        /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.NotAuthorizedException">
-        /// Thrown when a user is not authorized to access the requested resource.
-        /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.ResourceNotFoundException">
-        /// Thrown if the resource doesn't exist.
-        /// </exception>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityUsage operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<DescribeIdentityUsageResponse> DescribeIdentityUsageAsync(DescribeIdentityUsageRequest describeIdentityUsageRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeIdentityUsageResponse> DescribeIdentityUsageAsync(DescribeIdentityUsageRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeIdentityUsageRequestMarshaller();
-            var unmarshaller = DescribeIdentityUsageResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, DescribeIdentityUsageRequest, DescribeIdentityUsageResponse>(describeIdentityUsageRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = DescribeIdentityUsageResponseUnmarshaller.Instance;
+            return Invoke<IRequest, DescribeIdentityUsageRequest, DescribeIdentityUsageResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
         }
- 
-		internal ListDatasetsResponse ListDatasets(ListDatasetsRequest request)
+
+        #endregion
+        
+        #region  ListDatasets
+
+        internal ListDatasetsResponse ListDatasets(ListDatasetsRequest request)
         {
             var task = ListDatasetsAsync(request);
             try
@@ -334,31 +317,27 @@ namespace Amazon.CognitoSync
         }
 
         /// <summary>
-        /// Lists datasets for an identity.
+        /// Initiates the asynchronous execution of the ListDatasets operation.
+        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ListDatasets service method.</param>
         /// 
-        /// <returns>The response from the ListDatasets service method, as returned by CognitoSync.</returns>
-        /// <exception cref="T:Amazon.CognitoSync.Model.InternalErrorException">
-        /// Indicates an internal service error.
-        /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.InvalidParameterException">
-        /// Thrown when a request parameter does not comply with the associated constraints.
-        /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.NotAuthorizedException">
-        /// Thrown when a user is not authorized to access the requested resource.
-        /// </exception>
+        /// <param name="request">Container for the necessary parameters to execute the ListDatasets operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<ListDatasetsResponse> ListDatasetsAsync(ListDatasetsRequest listDatasetsRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListDatasetsResponse> ListDatasetsAsync(ListDatasetsRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListDatasetsRequestMarshaller();
-            var unmarshaller = ListDatasetsResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, ListDatasetsRequest, ListDatasetsResponse>(listDatasetsRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = ListDatasetsResponseUnmarshaller.Instance;
+            return Invoke<IRequest, ListDatasetsRequest, ListDatasetsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
         }
- 
-		internal ListIdentityPoolUsageResponse ListIdentityPoolUsage(ListIdentityPoolUsageRequest request)
+
+        #endregion
+        
+        #region  ListIdentityPoolUsage
+
+        internal ListIdentityPoolUsageResponse ListIdentityPoolUsage(ListIdentityPoolUsageRequest request)
         {
             var task = ListIdentityPoolUsageAsync(request);
             try
@@ -373,31 +352,27 @@ namespace Amazon.CognitoSync
         }
 
         /// <summary>
-        /// Gets a list of identity pools registered with Cognito.
+        /// Initiates the asynchronous execution of the ListIdentityPoolUsage operation.
+        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ListIdentityPoolUsage service method.</param>
         /// 
-        /// <returns>The response from the ListIdentityPoolUsage service method, as returned by CognitoSync.</returns>
-        /// <exception cref="T:Amazon.CognitoSync.Model.InternalErrorException">
-        /// Indicates an internal service error.
-        /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.InvalidParameterException">
-        /// Thrown when a request parameter does not comply with the associated constraints.
-        /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.NotAuthorizedException">
-        /// Thrown when a user is not authorized to access the requested resource.
-        /// </exception>
+        /// <param name="request">Container for the necessary parameters to execute the ListIdentityPoolUsage operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<ListIdentityPoolUsageResponse> ListIdentityPoolUsageAsync(ListIdentityPoolUsageRequest listIdentityPoolUsageRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListIdentityPoolUsageResponse> ListIdentityPoolUsageAsync(ListIdentityPoolUsageRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListIdentityPoolUsageRequestMarshaller();
-            var unmarshaller = ListIdentityPoolUsageResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, ListIdentityPoolUsageRequest, ListIdentityPoolUsageResponse>(listIdentityPoolUsageRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = ListIdentityPoolUsageResponseUnmarshaller.Instance;
+            return Invoke<IRequest, ListIdentityPoolUsageRequest, ListIdentityPoolUsageResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
         }
- 
-		internal ListRecordsResponse ListRecords(ListRecordsRequest request)
+
+        #endregion
+        
+        #region  ListRecords
+
+        internal ListRecordsResponse ListRecords(ListRecordsRequest request)
         {
             var task = ListRecordsAsync(request);
             try
@@ -412,35 +387,27 @@ namespace Amazon.CognitoSync
         }
 
         /// <summary>
-        /// Gets paginated records, optionally changed after a particular sync count for a dataset
-        /// and identity.
+        /// Initiates the asynchronous execution of the ListRecords operation.
+        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ListRecords service method.</param>
         /// 
-        /// <returns>The response from the ListRecords service method, as returned by CognitoSync.</returns>
-        /// <exception cref="T:Amazon.CognitoSync.Model.InternalErrorException">
-        /// Indicates an internal service error.
-        /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.InvalidParameterException">
-        /// Thrown when a request parameter does not comply with the associated constraints.
-        /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.NotAuthorizedException">
-        /// Thrown when a user is not authorized to access the requested resource.
-        /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.TooManyRequestsException">
-        /// Thrown if the request is throttled.
-        /// </exception>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecords operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<ListRecordsResponse> ListRecordsAsync(ListRecordsRequest listRecordsRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListRecordsResponse> ListRecordsAsync(ListRecordsRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListRecordsRequestMarshaller();
-            var unmarshaller = ListRecordsResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, ListRecordsRequest, ListRecordsResponse>(listRecordsRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = ListRecordsResponseUnmarshaller.Instance;
+            return Invoke<IRequest, ListRecordsRequest, ListRecordsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
         }
- 
-		internal UpdateRecordsResponse UpdateRecords(UpdateRecordsRequest request)
+
+        #endregion
+        
+        #region  UpdateRecords
+
+        internal UpdateRecordsResponse UpdateRecords(UpdateRecordsRequest request)
         {
             var task = UpdateRecordsAsync(request);
             try
@@ -455,41 +422,23 @@ namespace Amazon.CognitoSync
         }
 
         /// <summary>
-        /// Posts updates to records and add and delete records for a dataset and user.
+        /// Initiates the asynchronous execution of the UpdateRecords operation.
+        /// <seealso cref="Amazon.CognitoSync.IAmazonCognitoSync"/>
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UpdateRecords service method.</param>
         /// 
-        /// <returns>The response from the UpdateRecords service method, as returned by CognitoSync.</returns>
-        /// <exception cref="T:Amazon.CognitoSync.Model.InternalErrorException">
-        /// Indicates an internal service error.
-        /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.InvalidParameterException">
-        /// Thrown when a request parameter does not comply with the associated constraints.
-        /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.LimitExceededException">
-        /// Thrown when the limit on the number of objects or operations has been exceeded.
-        /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.NotAuthorizedException">
-        /// Thrown when a user is not authorized to access the requested resource.
-        /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.ResourceConflictException">
-        /// Thrown if an update can't be applied because the resource was changed by another call
-        /// and this would result in a conflict.
-        /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.ResourceNotFoundException">
-        /// Thrown if the resource doesn't exist.
-        /// </exception>
-        /// <exception cref="T:Amazon.CognitoSync.Model.TooManyRequestsException">
-        /// Thrown if the request is throttled.
-        /// </exception>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRecords operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<UpdateRecordsResponse> UpdateRecordsAsync(UpdateRecordsRequest updateRecordsRequest, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateRecordsResponse> UpdateRecordsAsync(UpdateRecordsRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateRecordsRequestMarshaller();
-            var unmarshaller = UpdateRecordsResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, UpdateRecordsRequest, UpdateRecordsResponse>(updateRecordsRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var unmarshaller = UpdateRecordsResponseUnmarshaller.Instance;
+            return Invoke<IRequest, UpdateRecordsRequest, UpdateRecordsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
         }
+
+        #endregion
+        
     }
 }

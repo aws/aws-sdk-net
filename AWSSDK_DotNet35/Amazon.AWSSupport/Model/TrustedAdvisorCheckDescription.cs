@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,100 +18,121 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>The description and metadata for a Trusted Advisor check.</para>
+    /// The description and metadata for a Trusted Advisor check.
     /// </summary>
-    public class TrustedAdvisorCheckDescription
+    public partial class TrustedAdvisorCheckDescription
     {
-        
-        private string id;
-        private string name;
-        private string description;
-        private string category;
-        private List<string> metadata = new List<string>();
+        private string _category;
+        private string _description;
+        private string _id;
+        private List<string> _metadata = new List<string>();
+        private string _name;
 
 
         /// <summary>
-        /// The unique identifier for the Trusted Advisor check.
-        ///  
-        /// </summary>
-        public string Id
-        {
-            get { return this.id; }
-            set { this.id = value; }
-        }
-
-        // Check to see if Id property is set
-        internal bool IsSetId()
-        {
-            return this.id != null;
-        }
-
-        /// <summary>
-        /// The display name for the Trusted Advisor check.
-        ///  
-        /// </summary>
-        public string Name
-        {
-            get { return this.name; }
-            set { this.name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this.name != null;
-        }
-
-        /// <summary>
-        /// The description of the Trusted Advisor check, which includes the alert criteria and recommended actions (contains HTML markup).
-        ///  
-        /// </summary>
-        public string Description
-        {
-            get { return this.description; }
-            set { this.description = value; }
-        }
-
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
-        {
-            return this.description != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Category. 
+        /// <para>
         /// The category of the Trusted Advisor check.
-        ///  
+        /// </para>
         /// </summary>
         public string Category
         {
-            get { return this.category; }
-            set { this.category = value; }
+            get { return this._category; }
+            set { this._category = value; }
         }
 
         // Check to see if Category property is set
         internal bool IsSetCategory()
         {
-            return this.category != null;
+            return this._category != null;
         }
 
+
         /// <summary>
-        /// The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in
-        /// the <b>Metadata</b> element of the <a>TrustedAdvisorResourceDetail</a> for the check.
-        ///  
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of the Trusted Advisor check, which includes the alert criteria and
+        /// recommended actions (contains HTML markup).
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The unique identifier for the Trusted Advisor check.
+        /// </para>
+        /// </summary>
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        /// The column headings for the data returned by the Trusted Advisor check. The order
+        /// of the headings corresponds to the order of the data in the <b>Metadata</b> element
+        /// of the <a>TrustedAdvisorResourceDetail</a> for the check. <b>Metadata</b> contains
+        /// all the data that is shown in the Excel download, even in those cases where the UI
+        /// shows just summary data. 
+        /// </para>
         /// </summary>
         public List<string> Metadata
         {
-            get { return this.metadata; }
-            set { this.metadata = value; }
+            get { return this._metadata; }
+            set { this._metadata = value; }
         }
 
         // Check to see if Metadata property is set
         internal bool IsSetMetadata()
         {
-            return this.metadata.Count > 0;
+            return this._metadata != null && this._metadata.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The display name for the Trusted Advisor check.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
     }
 }

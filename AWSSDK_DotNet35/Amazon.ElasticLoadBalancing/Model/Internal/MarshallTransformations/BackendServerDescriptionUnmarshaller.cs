@@ -12,69 +12,76 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticLoadBalancing.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   BackendServerDescription Unmarshaller
-     /// </summary>
-    internal class BackendServerDescriptionUnmarshaller : IUnmarshaller<BackendServerDescription, XmlUnmarshallerContext>, IUnmarshaller<BackendServerDescription, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for BackendServerDescription Object
+    /// </summary>  
+    public class BackendServerDescriptionUnmarshaller : IUnmarshaller<BackendServerDescription, XmlUnmarshallerContext>, IUnmarshaller<BackendServerDescription, JsonUnmarshallerContext>
     {
-        public BackendServerDescription Unmarshall(XmlUnmarshallerContext context) 
+        public BackendServerDescription Unmarshall(XmlUnmarshallerContext context)
         {
-            BackendServerDescription backendServerDescription = new BackendServerDescription();
+            BackendServerDescription unmarshalledObject = new BackendServerDescription();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("InstancePort", targetDepth))
                     {
-                        backendServerDescription.InstancePort = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.InstancePort = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("PolicyNames/member", targetDepth))
                     {
-                        backendServerDescription.PolicyNames.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.PolicyNames.Add(item);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return backendServerDescription;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return backendServerDescription;
+            return unmarshalledObject;
         }
 
-        public BackendServerDescription Unmarshall(JsonUnmarshallerContext context) 
+        public BackendServerDescription Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static BackendServerDescriptionUnmarshaller instance;
 
-        public static BackendServerDescriptionUnmarshaller GetInstance() 
+        private static BackendServerDescriptionUnmarshaller _instance = new BackendServerDescriptionUnmarshaller();        
+
+        public static BackendServerDescriptionUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new BackendServerDescriptionUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

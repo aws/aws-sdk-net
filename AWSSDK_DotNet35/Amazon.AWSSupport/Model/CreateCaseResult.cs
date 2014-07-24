@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,34 +17,39 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>The AWS Support case ID returned by a successful completion of the CreateCase action. </para>
+    /// The AWS Support case ID returned by a successful completion of the <a>CreateCase</a>
+    /// operation.
     /// </summary>
     public partial class CreateCaseResult : AmazonWebServiceResponse
     {
-        
-        private string caseId;
+        private string _caseId;
 
 
         /// <summary>
-        /// The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example:
-        /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
-        ///  
+        /// Gets and sets the property CaseId. 
+        /// <para>
+        /// The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric
+        /// string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+        /// </para>
         /// </summary>
         public string CaseId
         {
-            get { return this.caseId; }
-            set { this.caseId = value; }
+            get { return this._caseId; }
+            set { this._caseId = value; }
         }
 
         // Check to see if CaseId property is set
         internal bool IsSetCaseId()
         {
-            return this.caseId != null;
+            return this._caseId != null;
         }
+
     }
 }

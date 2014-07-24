@@ -25,65 +25,50 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLoadBalancerListeners operation.
-    /// <para> Deletes listeners from the load balancer for the specified port. </para>
+    /// Deletes listeners from the load balancer for the specified port.
     /// </summary>
     public partial class DeleteLoadBalancerListenersRequest : AmazonElasticLoadBalancingRequest
     {
-        private string loadBalancerName;
-        private List<int> loadBalancerPorts = new List<int>();
+        private string _loadBalancerName;
+        private List<int> _loadBalancerPorts = new List<int>();
+
 
         /// <summary>
-        /// Default constructor for a new DeleteLoadBalancerListenersRequest object.  Callers should use the
-        /// properties to initialize this object after creating it.
-        /// </summary>
-        public DeleteLoadBalancerListenersRequest() {}
-    
-        /// <summary>
-        /// Constructs a new DeleteLoadBalancerListenersRequest object.
-        /// Callers should use the properties initialize any additional object members.
-        /// </summary>
-        /// 
-        /// <param name="loadBalancerName"> The mnemonic name associated with the load balancer. </param>
-        /// <param name="loadBalancerPorts"> The client port number(s) of the load balancer listener(s) to be removed. </param>
-        public DeleteLoadBalancerListenersRequest(string loadBalancerName, List<int> loadBalancerPorts)
-        {
-            this.loadBalancerName = loadBalancerName;
-            this.loadBalancerPorts = loadBalancerPorts;
-        }
-    
-
-        /// <summary>
-        /// The mnemonic name associated with the load balancer.
-        ///  
+        /// Gets and sets the property LoadBalancerName. 
+        /// <para>
+        ///  The mnemonic name associated with the load balancer. 
+        /// </para>
         /// </summary>
         public string LoadBalancerName
         {
-            get { return this.loadBalancerName; }
-            set { this.loadBalancerName = value; }
+            get { return this._loadBalancerName; }
+            set { this._loadBalancerName = value; }
         }
 
         // Check to see if LoadBalancerName property is set
         internal bool IsSetLoadBalancerName()
         {
-            return this.loadBalancerName != null;
+            return this._loadBalancerName != null;
         }
 
+
         /// <summary>
-        /// The client port number(s) of the load balancer listener(s) to be removed.
-        ///  
+        /// Gets and sets the property LoadBalancerPorts. 
+        /// <para>
+        ///  The client port number(s) of the load balancer listener(s) to be removed. 
+        /// </para>
         /// </summary>
         public List<int> LoadBalancerPorts
         {
-            get { return this.loadBalancerPorts; }
-            set { this.loadBalancerPorts = value; }
+            get { return this._loadBalancerPorts; }
+            set { this._loadBalancerPorts = value; }
         }
 
         // Check to see if LoadBalancerPorts property is set
         internal bool IsSetLoadBalancerPorts()
         {
-            return this.loadBalancerPorts.Count > 0;
+            return this._loadBalancerPorts != null && this._loadBalancerPorts.Count > 0; 
         }
 
     }
 }
-    

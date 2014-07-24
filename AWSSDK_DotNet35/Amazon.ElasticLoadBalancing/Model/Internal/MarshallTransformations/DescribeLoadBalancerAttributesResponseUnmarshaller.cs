@@ -13,46 +13,52 @@
  * permissions and limitations under the License.
  */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.ElasticLoadBalancing.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for DescribeLoadBalancerAttributes operation
-    /// </summary>
-    internal class DescribeLoadBalancerAttributesResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for DescribeLoadBalancerAttributes operation
+    /// </summary>  
+    public class DescribeLoadBalancerAttributesResponseUnmarshaller : XmlResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
             DescribeLoadBalancerAttributesResponse response = new DescribeLoadBalancerAttributesResponse();
-            
-            while (context.Read())
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
                 if (context.IsStartElement)
                 {                    
                     if(context.TestExpression("DescribeLoadBalancerAttributesResult", 2))
                     {
-                        UnmarshallResult(context,response);                        
+                        UnmarshallResult(context, response);                        
                         continue;
                     }
                     
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
                     }
                 }
             }
-                 
-                        
+
             return response;
         }
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,DescribeLoadBalancerAttributesResponse response)
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, DescribeLoadBalancerAttributesResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -61,56 +67,51 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+
                     if (context.TestExpression("LoadBalancerAttributes", targetDepth))
                     {
-                        response.LoadBalancerAttributes = LoadBalancerAttributesUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = LoadBalancerAttributesUnmarshaller.Instance;
+                        response.LoadBalancerAttributes = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return;
-                }
-            }
-                            
-
+                } 
+           }
 
             return;
         }
-        
+
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
+            if (errorResponse.Code != null && errorResponse.Code.Equals("LoadBalancerNotFound"))
+            {
+                return new AccessPointNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("LoadBalancerAttributeNotFound"))
             {
                 return new LoadBalancerAttributeNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("LoadBalancerNotFound"))
-            {
-                return new LoadBalancerNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             return new AmazonElasticLoadBalancingException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static DescribeLoadBalancerAttributesResponseUnmarshaller instance;
 
-        public static DescribeLoadBalancerAttributesResponseUnmarshaller GetInstance()
+        private static DescribeLoadBalancerAttributesResponseUnmarshaller _instance = new DescribeLoadBalancerAttributesResponseUnmarshaller();        
+
+        internal static DescribeLoadBalancerAttributesResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new DescribeLoadBalancerAttributesResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static DescribeLoadBalancerAttributesResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

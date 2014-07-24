@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,31 +25,32 @@ namespace Amazon.AWSSupport.Model
 {
     /// <summary>
     /// Container for the parameters to the ResolveCase operation.
-    /// <para>Takes a <c>CaseId</c> and returns the initial state of the case along with the state of the case after the call to ResolveCase
-    /// completed.</para>
+    /// Takes a <code>CaseId</code> and returns the initial state of the case along with the
+    /// state of the case after the call to <a>ResolveCase</a> completed.
     /// </summary>
     public partial class ResolveCaseRequest : AmazonAWSSupportRequest
     {
-        private string caseId;
+        private string _caseId;
 
 
         /// <summary>
-        /// The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example:
-        /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
-        ///  
+        /// Gets and sets the property CaseId. 
+        /// <para>
+        /// The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric
+        /// string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+        /// </para>
         /// </summary>
         public string CaseId
         {
-            get { return this.caseId; }
-            set { this.caseId = value; }
+            get { return this._caseId; }
+            set { this._caseId = value; }
         }
 
         // Check to see if CaseId property is set
         internal bool IsSetCaseId()
         {
-            return this.caseId != null;
+            return this._caseId != null;
         }
 
     }
 }
-    

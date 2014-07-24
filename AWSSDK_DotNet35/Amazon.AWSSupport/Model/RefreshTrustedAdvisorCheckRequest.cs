@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,37 +25,41 @@ namespace Amazon.AWSSupport.Model
 {
     /// <summary>
     /// Container for the parameters to the RefreshTrustedAdvisorCheck operation.
-    /// <para>Requests a refresh of the Trusted Advisor check that has the specified check ID. Check IDs can be obtained by calling
-    /// DescribeTrustedAdvisorChecks.</para> <para>The response contains a RefreshTrustedAdvisorCheckResult object, which contains these
-    /// fields:</para>
-    /// <ul>
-    /// <li> <b>Status.</b> The refresh status of the check: "none", "enqueued", "processing", "success", or "abandoned".</li>
-    /// <li> <b>MillisUntilNextRefreshable.</b> The amount of time, in milliseconds, until the check is eligible for refresh.</li>
-    /// <li> <b>CheckId.</b> The unique identifier for the check.</li>
+    /// Requests a refresh of the Trusted Advisor check that has the specified check ID. Check
+    /// IDs can be obtained by calling <a>DescribeTrustedAdvisorChecks</a>.
     /// 
-    /// </ul>
+    ///       
+    /// <para>
+    /// The response contains a <a>RefreshTrustedAdvisorCheckResult</a> object, which contains
+    /// these fields:
+    /// </para>
+    ///     <ul>      <li><b>Status.</b> The refresh status of the check: "none", "enqueued",
+    /// "processing", "success", or "abandoned".</li>      <li><b>MillisUntilNextRefreshable.</b>
+    /// The amount of time, in milliseconds, until the check is eligible for refresh.</li>
+    ///      <li><b>CheckId.</b> The unique identifier for the check.</li>    </ul>
     /// </summary>
     public partial class RefreshTrustedAdvisorCheckRequest : AmazonAWSSupportRequest
     {
-        private string checkId;
+        private string _checkId;
 
 
         /// <summary>
+        /// Gets and sets the property CheckId. 
+        /// <para>
         /// The unique identifier for the Trusted Advisor check.
-        ///  
+        /// </para>
         /// </summary>
         public string CheckId
         {
-            get { return this.checkId; }
-            set { this.checkId = value; }
+            get { return this._checkId; }
+            set { this._checkId = value; }
         }
 
         // Check to see if CheckId property is set
         internal bool IsSetCheckId()
         {
-            return this.checkId != null;
+            return this._checkId != null;
         }
 
     }
 }
-    

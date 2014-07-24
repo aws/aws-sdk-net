@@ -18,48 +18,36 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para> The Instance data type. </para>
+    /// The Instance data type.
     /// </summary>
     public partial class Instance
     {
-        
-        private string instanceId;
+        private string _instanceId;
+
 
         /// <summary>
-        /// Default constructor for a new Instance object.  Callers should use the
-        /// properties to initialize this object after creating it.
-        /// </summary>
-        public Instance() {}
-    
-        /// <summary>
-        /// Constructs a new Instance object.
-        /// Callers should use the properties initialize any additional object members.
-        /// </summary>
-        /// 
-        /// <param name="instanceId"> Provides an EC2 instance ID. </param>
-        public Instance(string instanceId)
-        {
-            this.instanceId = instanceId;
-        }
-    
-
-        /// <summary>
-        /// Provides an EC2 instance ID.
-        ///  
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        ///  Provides an EC2 instance ID. 
+        /// </para>
         /// </summary>
         public string InstanceId
         {
-            get { return this.instanceId; }
-            set { this.instanceId = value; }
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
         }
 
         // Check to see if InstanceId property is set
         internal bool IsSetInstanceId()
         {
-            return this.instanceId != null;
+            return this._instanceId != null;
         }
+
     }
 }

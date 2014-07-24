@@ -29,53 +29,45 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Trusted Advisor Check Summaries Request Marshaller
+    /// DescribeTrustedAdvisorCheckSummaries Request Marshaller
     /// </summary>       
-    internal class DescribeTrustedAdvisorCheckSummariesRequestMarshaller : IMarshaller<IRequest, DescribeTrustedAdvisorCheckSummariesRequest> 
+    public class DescribeTrustedAdvisorCheckSummariesRequestMarshaller : IMarshaller<IRequest, DescribeTrustedAdvisorCheckSummariesRequest> 
     {
-        
-
-        public IRequest Marshall(DescribeTrustedAdvisorCheckSummariesRequest describeTrustedAdvisorCheckSummariesRequest) 
+        public IRequest Marshall(DescribeTrustedAdvisorCheckSummariesRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(describeTrustedAdvisorCheckSummariesRequest, "AmazonAWSSupport");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AWSSupport");
             string target = "AWSSupport_20130415.DescribeTrustedAdvisorCheckSummaries";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-
-                if (describeTrustedAdvisorCheckSummariesRequest != null && describeTrustedAdvisorCheckSummariesRequest.CheckIds != null && describeTrustedAdvisorCheckSummariesRequest.CheckIds.Count > 0) 
+                if(publicRequest.IsSetCheckIds())
                 {
-                    List<string> checkIdsList = describeTrustedAdvisorCheckSummariesRequest.CheckIds;
                     writer.WritePropertyName("checkIds");
                     writer.WriteArrayStart();
-
-                    foreach (string checkIdsListValue in checkIdsList) 
-                    { 
-                        writer.Write(StringUtils.FromString(checkIdsListValue));
+                    foreach(var publicRequestCheckIdsListValue in publicRequest.CheckIds)
+                    {
+                        writer.Write(publicRequestCheckIdsListValue);
                     }
-
                     writer.WriteArrayEnd();
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

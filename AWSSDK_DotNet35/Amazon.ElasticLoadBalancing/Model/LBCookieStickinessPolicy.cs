@@ -18,70 +18,59 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para>The LBCookieStickinessPolicy data type. </para>
+    /// The LBCookieStickinessPolicy data type.
     /// </summary>
     public partial class LBCookieStickinessPolicy
     {
-        
-        private string policyName;
-        private long? cookieExpirationPeriod;
+        private long? _cookieExpirationPeriod;
+        private string _policyName;
+
 
         /// <summary>
-        /// Default constructor for a new LBCookieStickinessPolicy object.  Callers should use the
-        /// properties to initialize this object after creating it.
-        /// </summary>
-        public LBCookieStickinessPolicy() {}
-    
-        /// <summary>
-        /// Constructs a new LBCookieStickinessPolicy object.
-        /// Callers should use the properties initialize any additional object members.
-        /// </summary>
-        /// 
-        /// <param name="policyName"> The name for the policy being created. The name must be unique within the set of policies for this load balancer.
-        /// </param>
-        /// <param name="cookieExpirationPeriod"> The time period in seconds after which the cookie should be considered stale. Not specifying this
-        /// parameter indicates that the stickiness session will last for the duration of the browser session. </param>
-        public LBCookieStickinessPolicy(string policyName, long cookieExpirationPeriod)
-        {
-            this.policyName = policyName;
-            this.cookieExpirationPeriod = cookieExpirationPeriod;
-        }
-    
-
-        /// <summary>
-        /// The name for the policy being created. The name must be unique within the set of policies for this load balancer.
-        ///  
-        /// </summary>
-        public string PolicyName
-        {
-            get { return this.policyName; }
-            set { this.policyName = value; }
-        }
-
-        // Check to see if PolicyName property is set
-        internal bool IsSetPolicyName()
-        {
-            return this.policyName != null;
-        }
-
-        /// <summary>
-        /// The time period in seconds after which the cookie should be considered stale. Not specifying this parameter indicates that the stickiness
-        /// session will last for the duration of the browser session.
-        ///  
+        /// Gets and sets the property CookieExpirationPeriod. 
+        /// <para>
+        /// The time period in seconds after which the cookie should be considered stale. Not
+        /// specifying this parameter indicates that the stickiness session will last for the
+        /// duration of the browser session. 
+        /// </para>
         /// </summary>
         public long CookieExpirationPeriod
         {
-            get { return this.cookieExpirationPeriod ?? default(long); }
-            set { this.cookieExpirationPeriod = value; }
+            get { return this._cookieExpirationPeriod.GetValueOrDefault(); }
+            set { this._cookieExpirationPeriod = value; }
         }
 
         // Check to see if CookieExpirationPeriod property is set
         internal bool IsSetCookieExpirationPeriod()
         {
-            return this.cookieExpirationPeriod.HasValue;
+            return this._cookieExpirationPeriod.HasValue; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property PolicyName. 
+        /// <para>
+        /// The name for the policy being created. The name must be unique within the set of policies
+        /// for this load balancer. 
+        /// </para>
+        /// </summary>
+        public string PolicyName
+        {
+            get { return this._policyName; }
+            set { this._policyName = value; }
+        }
+
+        // Check to see if PolicyName property is set
+        internal bool IsSetPolicyName()
+        {
+            return this._policyName != null;
+        }
+
     }
 }

@@ -25,51 +25,44 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLoadBalancer operation.
-    /// <para> Deletes the specified load balancer. </para> <para> If attempting to recreate the load balancer, you must reconfigure all the
-    /// settings. The DNS name associated with a deleted load balancer will no longer be usable. Once deleted, the name and associated DNS record of
-    /// the load balancer no longer exist and traffic sent to any of its IP addresses will no longer be delivered to back-end instances. </para>
-    /// <para> To successfully call this API, you must provide the same account credentials as were used to create the load balancer. </para>
-    /// <para><b>NOTE:</b> By design, if the load balancer does not exist or has already been deleted, a call to DeleteLoadBalancer action still
-    /// succeeds. </para>
+    /// Deletes the specified load balancer. 
+    /// 
+    ///  
+    /// <para>
+    ///  If attempting to recreate the load balancer, you must reconfigure all the settings.
+    /// The DNS name associated with a deleted load balancer will no longer be usable. Once
+    /// deleted, the name and associated DNS record of the load balancer no longer exist and
+    /// traffic sent to any of its IP addresses will no longer be delivered to back-end instances.
+    /// 
+    /// </para>
+    ///  
+    /// <para>
+    ///  To successfully call this API, you must provide the same account credentials as were
+    /// used to create the load balancer. 
+    /// </para>
     /// </summary>
     public partial class DeleteLoadBalancerRequest : AmazonElasticLoadBalancingRequest
     {
-        private string loadBalancerName;
+        private string _loadBalancerName;
+
 
         /// <summary>
-        /// Default constructor for a new DeleteLoadBalancerRequest object.  Callers should use the
-        /// properties to initialize this object after creating it.
-        /// </summary>
-        public DeleteLoadBalancerRequest() {}
-    
-        /// <summary>
-        /// Constructs a new DeleteLoadBalancerRequest object.
-        /// Callers should use the properties initialize any additional object members.
-        /// </summary>
-        /// 
-        /// <param name="loadBalancerName"> The name associated with the load balancer. </param>
-        public DeleteLoadBalancerRequest(string loadBalancerName)
-        {
-            this.loadBalancerName = loadBalancerName;
-        }
-    
-
-        /// <summary>
-        /// The name associated with the load balancer.
-        ///  
+        /// Gets and sets the property LoadBalancerName. 
+        /// <para>
+        ///  The name associated with the load balancer. 
+        /// </para>
         /// </summary>
         public string LoadBalancerName
         {
-            get { return this.loadBalancerName; }
-            set { this.loadBalancerName = value; }
+            get { return this._loadBalancerName; }
+            set { this._loadBalancerName = value; }
         }
 
         // Check to see if LoadBalancerName property is set
         internal bool IsSetLoadBalancerName()
         {
-            return this.loadBalancerName != null;
+            return this._loadBalancerName != null;
         }
 
     }
 }
-    

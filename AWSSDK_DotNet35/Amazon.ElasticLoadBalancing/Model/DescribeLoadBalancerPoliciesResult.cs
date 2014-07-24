@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para>The output for the DescribeLoadBalancerPolicies action. </para>
+    /// The output for the <a>DescribeLoadBalancerPolicies</a> action.
     /// </summary>
     public partial class DescribeLoadBalancerPoliciesResult : AmazonWebServiceResponse
     {
-        
-        private List<PolicyDescription> policyDescriptions = new List<PolicyDescription>();
+        private List<PolicyDescription> _policyDescriptions = new List<PolicyDescription>();
 
 
         /// <summary>
-        /// A list of policy description structures.
-        ///  
+        /// Gets and sets the property PolicyDescriptions. 
+        /// <para>
+        ///  A list of policy description structures. 
+        /// </para>
         /// </summary>
         public List<PolicyDescription> PolicyDescriptions
         {
-            get { return this.policyDescriptions; }
-            set { this.policyDescriptions = value; }
+            get { return this._policyDescriptions; }
+            set { this._policyDescriptions = value; }
         }
 
         // Check to see if PolicyDescriptions property is set
         internal bool IsSetPolicyDescriptions()
         {
-            return this.policyDescriptions.Count > 0;
+            return this._policyDescriptions != null && this._policyDescriptions.Count > 0; 
         }
+
     }
 }

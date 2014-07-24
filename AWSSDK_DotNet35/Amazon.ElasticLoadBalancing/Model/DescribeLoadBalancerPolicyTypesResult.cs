@@ -17,34 +17,39 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para> The output for the DescribeLoadBalancerPolicyTypes action. </para>
+    /// The output for the <a>DescribeLoadBalancerPolicyTypes</a> action.
     /// </summary>
     public partial class DescribeLoadBalancerPolicyTypesResult : AmazonWebServiceResponse
     {
-        
-        private List<PolicyTypeDescription> policyTypeDescriptions = new List<PolicyTypeDescription>();
+        private List<PolicyTypeDescription> _policyTypeDescriptions = new List<PolicyTypeDescription>();
 
 
         /// <summary>
-        /// List of policy type description structures of the specified policy type. If no policy type names are specified, returns the description of
-        /// all the policy types defined by Elastic Load Balancing service.
-        ///  
+        /// Gets and sets the property PolicyTypeDescriptions. 
+        /// <para>
+        ///  List of policy type description structures of the specified policy type. If no policy
+        /// type names are specified, returns the description of all the policy types defined
+        /// by Elastic Load Balancing service. 
+        /// </para>
         /// </summary>
         public List<PolicyTypeDescription> PolicyTypeDescriptions
         {
-            get { return this.policyTypeDescriptions; }
-            set { this.policyTypeDescriptions = value; }
+            get { return this._policyTypeDescriptions; }
+            set { this._policyTypeDescriptions = value; }
         }
 
         // Check to see if PolicyTypeDescriptions property is set
         internal bool IsSetPolicyTypeDescriptions()
         {
-            return this.policyTypeDescriptions.Count > 0;
+            return this._policyTypeDescriptions != null && this._policyTypeDescriptions.Count > 0; 
         }
+
     }
 }

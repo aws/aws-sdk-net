@@ -18,65 +18,76 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para> The <c>PolicyDescription</c> data type. </para>
+    /// The <code>PolicyDescription</code> data type.
     /// </summary>
     public partial class PolicyDescription
     {
-        
-        private string policyName;
-        private string policyTypeName;
-        private List<PolicyAttributeDescription> policyAttributeDescriptions = new List<PolicyAttributeDescription>();
+        private List<PolicyAttributeDescription> _policyAttributeDescriptions = new List<PolicyAttributeDescription>();
+        private string _policyName;
+        private string _policyTypeName;
 
 
         /// <summary>
-        /// The name of the policy associated with the load balancer.
-        ///  
-        /// </summary>
-        public string PolicyName
-        {
-            get { return this.policyName; }
-            set { this.policyName = value; }
-        }
-
-        // Check to see if PolicyName property is set
-        internal bool IsSetPolicyName()
-        {
-            return this.policyName != null;
-        }
-
-        /// <summary>
-        /// The name of the policy type associated with the load balancer.
-        ///  
-        /// </summary>
-        public string PolicyTypeName
-        {
-            get { return this.policyTypeName; }
-            set { this.policyTypeName = value; }
-        }
-
-        // Check to see if PolicyTypeName property is set
-        internal bool IsSetPolicyTypeName()
-        {
-            return this.policyTypeName != null;
-        }
-
-        /// <summary>
-        /// A list of policy attribute description structures.
-        ///  
+        /// Gets and sets the property PolicyAttributeDescriptions. 
+        /// <para>
+        ///  A list of policy attribute description structures. 
+        /// </para>
         /// </summary>
         public List<PolicyAttributeDescription> PolicyAttributeDescriptions
         {
-            get { return this.policyAttributeDescriptions; }
-            set { this.policyAttributeDescriptions = value; }
+            get { return this._policyAttributeDescriptions; }
+            set { this._policyAttributeDescriptions = value; }
         }
 
         // Check to see if PolicyAttributeDescriptions property is set
         internal bool IsSetPolicyAttributeDescriptions()
         {
-            return this.policyAttributeDescriptions.Count > 0;
+            return this._policyAttributeDescriptions != null && this._policyAttributeDescriptions.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property PolicyName. 
+        /// <para>
+        ///  The name of the policy associated with the load balancer. 
+        /// </para>
+        /// </summary>
+        public string PolicyName
+        {
+            get { return this._policyName; }
+            set { this._policyName = value; }
+        }
+
+        // Check to see if PolicyName property is set
+        internal bool IsSetPolicyName()
+        {
+            return this._policyName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property PolicyTypeName. 
+        /// <para>
+        ///  The name of the policy type associated with the load balancer. 
+        /// </para>
+        /// </summary>
+        public string PolicyTypeName
+        {
+            get { return this._policyTypeName; }
+            set { this._policyTypeName = value; }
+        }
+
+        // Check to see if PolicyTypeName property is set
+        internal bool IsSetPolicyTypeName()
+        {
+            return this._policyTypeName != null;
+        }
+
     }
 }

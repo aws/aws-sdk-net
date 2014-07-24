@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// Returns information about the  CreateLBCookieStickinessPolicy response and response metadata.
+    /// Configuration for accessing Amazon CreateLBCookieStickinessPolicy service
     /// </summary>
     public partial class CreateLBCookieStickinessPolicyResponse : CreateLBCookieStickinessPolicyResult
     {
         /// <summary>
         /// Gets and sets the CreateLBCookieStickinessPolicyResult property.
-        /// The output for the CreateLBCookieStickinessPolicy action.
+        /// Represents the output of a CreateLBCookieStickinessPolicy operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateLBCookieStickinessPolicyResult class are now available on the CreateLBCookieStickinessPolicyResponse class. You should use the properties on CreateLBCookieStickinessPolicyResponse instead of accessing them through CreateLBCookieStickinessPolicyResult.")]
         public CreateLBCookieStickinessPolicyResult CreateLBCookieStickinessPolicyResult
@@ -40,4 +36,3 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
     }
 }
-    

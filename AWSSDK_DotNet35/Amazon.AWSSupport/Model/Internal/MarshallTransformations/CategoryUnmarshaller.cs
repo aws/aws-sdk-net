@@ -12,60 +12,70 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.AWSSupport.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
+using Amazon.AWSSupport.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for Category Object
+    /// </summary>  
+    public class CategoryUnmarshaller : IUnmarshaller<Category, XmlUnmarshallerContext>, IUnmarshaller<Category, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// CategoryUnmarshaller
-      /// </summary>
-      internal class CategoryUnmarshaller : IUnmarshaller<Category, XmlUnmarshallerContext>, IUnmarshaller<Category, JsonUnmarshallerContext>
-      {
         Category IUnmarshaller<Category, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Category Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            Category category = new Category();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            Category unmarshalledObject = new Category();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("code", targetDepth))
-              {
-                category.Code = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("name", targetDepth))
-              {
-                category.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("code", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Code = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return category;
+            return unmarshalledObject;
         }
 
-        private static CategoryUnmarshaller instance;
-        public static CategoryUnmarshaller GetInstance()
+
+        private static CategoryUnmarshaller _instance = new CategoryUnmarshaller();        
+
+        public static CategoryUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new CategoryUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeLoadBalancers response and response metadata.
+    /// Configuration for accessing Amazon DescribeLoadBalancers service
     /// </summary>
     public partial class DescribeLoadBalancersResponse : DescribeLoadBalancersResult
     {
         /// <summary>
         /// Gets and sets the DescribeLoadBalancersResult property.
-        /// The output for the DescribeLoadBalancers action.
+        /// Represents the output of a DescribeLoadBalancers operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeLoadBalancersResult class are now available on the DescribeLoadBalancersResponse class. You should use the properties on DescribeLoadBalancersResponse instead of accessing them through DescribeLoadBalancersResult.")]
         public DescribeLoadBalancersResult DescribeLoadBalancersResult
@@ -40,4 +36,3 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
     }
 }
-    

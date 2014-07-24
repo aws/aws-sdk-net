@@ -13,46 +13,52 @@
  * permissions and limitations under the License.
  */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.ElasticLoadBalancing.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for ApplySecurityGroupsToLoadBalancer operation
-    /// </summary>
-    internal class ApplySecurityGroupsToLoadBalancerResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for ApplySecurityGroupsToLoadBalancer operation
+    /// </summary>  
+    public class ApplySecurityGroupsToLoadBalancerResponseUnmarshaller : XmlResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
             ApplySecurityGroupsToLoadBalancerResponse response = new ApplySecurityGroupsToLoadBalancerResponse();
-            
-            while (context.Read())
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
                 if (context.IsStartElement)
                 {                    
                     if(context.TestExpression("ApplySecurityGroupsToLoadBalancerResult", 2))
                     {
-                        UnmarshallResult(context,response);                        
+                        UnmarshallResult(context, response);                        
                         continue;
                     }
                     
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
                     }
                 }
             }
-                 
-                        
+
             return response;
         }
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,ApplySecurityGroupsToLoadBalancerResponse response)
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, ApplySecurityGroupsToLoadBalancerResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -61,61 +67,56 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+
                     if (context.TestExpression("SecurityGroups/member", targetDepth))
                     {
-                        response.SecurityGroups.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.SecurityGroups.Add(item);
                         continue;
                     }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return;
-                }
-            }
-                            
-
+                } 
+           }
 
             return;
         }
-        
+
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
+            if (errorResponse.Code != null && errorResponse.Code.Equals("LoadBalancerNotFound"))
+            {
+                return new AccessPointNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidConfigurationRequest"))
             {
                 return new InvalidConfigurationRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidSecurityGroup"))
             {
                 return new InvalidSecurityGroupException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("LoadBalancerNotFound"))
-            {
-                return new LoadBalancerNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             return new AmazonElasticLoadBalancingException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static ApplySecurityGroupsToLoadBalancerResponseUnmarshaller instance;
 
-        public static ApplySecurityGroupsToLoadBalancerResponseUnmarshaller GetInstance()
+        private static ApplySecurityGroupsToLoadBalancerResponseUnmarshaller _instance = new ApplySecurityGroupsToLoadBalancerResponseUnmarshaller();        
+
+        internal static ApplySecurityGroupsToLoadBalancerResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new ApplySecurityGroupsToLoadBalancerResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static ApplySecurityGroupsToLoadBalancerResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

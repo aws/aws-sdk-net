@@ -29,58 +29,51 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Services Request Marshaller
+    /// DescribeServices Request Marshaller
     /// </summary>       
-    internal class DescribeServicesRequestMarshaller : IMarshaller<IRequest, DescribeServicesRequest> 
+    public class DescribeServicesRequestMarshaller : IMarshaller<IRequest, DescribeServicesRequest> 
     {
-        
-
-        public IRequest Marshall(DescribeServicesRequest describeServicesRequest) 
+        public IRequest Marshall(DescribeServicesRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(describeServicesRequest, "AmazonAWSSupport");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AWSSupport");
             string target = "AWSSupport_20130415.DescribeServices";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-
-                if (describeServicesRequest != null && describeServicesRequest.ServiceCodeList != null && describeServicesRequest.ServiceCodeList.Count > 0) 
-                {
-                    List<string> serviceCodeListList = describeServicesRequest.ServiceCodeList;
-                    writer.WritePropertyName("serviceCodeList");
-                    writer.WriteArrayStart();
-
-                    foreach (string serviceCodeListListValue in serviceCodeListList) 
-                    { 
-                        writer.Write(StringUtils.FromString(serviceCodeListListValue));
-                    }
-
-                    writer.WriteArrayEnd();
-                }
-                if (describeServicesRequest != null && describeServicesRequest.IsSetLanguage()) 
+                if(publicRequest.IsSetLanguage())
                 {
                     writer.WritePropertyName("language");
-                    writer.Write(describeServicesRequest.Language);
+                    writer.Write(publicRequest.Language);
                 }
 
+                if(publicRequest.IsSetServiceCodeList())
+                {
+                    writer.WritePropertyName("serviceCodeList");
+                    writer.WriteArrayStart();
+                    foreach(var publicRequestServiceCodeListListValue in publicRequest.ServiceCodeList)
+                    {
+                        writer.Write(publicRequestServiceCodeListListValue);
+                    }
+                    writer.WriteArrayEnd();
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

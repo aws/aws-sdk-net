@@ -14,39 +14,41 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticLoadBalancing.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Load Balancer Policy Types Request Marshaller
+    /// DescribeLoadBalancerPolicyTypes Request Marshaller
     /// </summary>       
     public class DescribeLoadBalancerPolicyTypesRequestMarshaller : IMarshaller<IRequest, DescribeLoadBalancerPolicyTypesRequest>
     {
-        public IRequest Marshall(DescribeLoadBalancerPolicyTypesRequest describeLoadBalancerPolicyTypesRequest)
+        public IRequest Marshall(DescribeLoadBalancerPolicyTypesRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describeLoadBalancerPolicyTypesRequest, "AmazonElasticLoadBalancing");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticLoadBalancing");
             request.Parameters.Add("Action", "DescribeLoadBalancerPolicyTypes");
             request.Parameters.Add("Version", "2012-06-01");
-            if (describeLoadBalancerPolicyTypesRequest != null)
-            {
-                List<string> policyTypeNamesList = describeLoadBalancerPolicyTypesRequest.PolicyTypeNames;
 
-                int policyTypeNamesListIndex = 1;
-                foreach (string policyTypeNamesListValue in policyTypeNamesList)
-                { 
-                    request.Parameters.Add("PolicyTypeNames.member." + policyTypeNamesListIndex, StringUtils.FromString(policyTypeNamesListValue));
-                    policyTypeNamesListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetPolicyTypeNames())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.PolicyTypeNames)
+                    {
+                        request.Parameters.Add("PolicyTypeNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
-
             return request;
         }
     }

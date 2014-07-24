@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para> The output for the CreateLoadBalancer action. </para>
+    /// The output for the <a>CreateLoadBalancer</a> action.
     /// </summary>
     public partial class CreateLoadBalancerResult : AmazonWebServiceResponse
     {
-        
-        private string dNSName;
+        private string _dNSName;
 
 
         /// <summary>
-        /// The DNS name for the load balancer.
-        ///  
+        /// Gets and sets the property DNSName. 
+        /// <para>
+        ///  The DNS name for the load balancer. 
+        /// </para>
         /// </summary>
         public string DNSName
         {
-            get { return this.dNSName; }
-            set { this.dNSName = value; }
+            get { return this._dNSName; }
+            set { this._dNSName = value; }
         }
 
         // Check to see if DNSName property is set
         internal bool IsSetDNSName()
         {
-            return this.dNSName != null;
+            return this._dNSName != null;
         }
+
     }
 }

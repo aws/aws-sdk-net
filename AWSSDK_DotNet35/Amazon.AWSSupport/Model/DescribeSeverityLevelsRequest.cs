@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,31 +25,34 @@ namespace Amazon.AWSSupport.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSeverityLevels operation.
-    /// <para>Returns the list of severity levels that you can assign to an AWS Support case. The severity level for a case is also a field in the
-    /// CaseDetails data type included in any CreateCase request. </para>
+    /// Returns the list of severity levels that you can assign to an AWS Support case. The
+    /// severity level for a case is also a field in the <a>CaseDetails</a> data type included
+    /// in any <a>CreateCase</a> request.
     /// </summary>
     public partial class DescribeSeverityLevelsRequest : AmazonAWSSupportRequest
     {
-        private string language;
+        private string _language;
 
 
         /// <summary>
-        /// The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en") and Japanese ("ja").
-        /// Language parameters must be passed explicitly for operations that take them.
-        ///  
+        /// Gets and sets the property Language. 
+        /// <para>
+        /// The ISO 639-1 code for the language in which AWS provides support. AWS Support currently
+        /// supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly
+        /// for operations that take them.
+        /// </para>
         /// </summary>
         public string Language
         {
-            get { return this.language; }
-            set { this.language = value; }
+            get { return this._language; }
+            set { this._language = value; }
         }
 
         // Check to see if Language property is set
         internal bool IsSetLanguage()
         {
-            return this.language != null;
+            return this._language != null;
         }
 
     }
 }
-    

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,30 +25,31 @@ namespace Amazon.AWSSupport.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTrustedAdvisorCheckRefreshStatuses operation.
-    /// <para>Returns the refresh status of the Trusted Advisor checks that have the specified check IDs. Check IDs can be obtained by calling
-    /// DescribeTrustedAdvisorChecks.</para>
+    /// Returns the refresh status of the Trusted Advisor checks that have the specified check
+    /// IDs. Check IDs can be obtained by calling <a>DescribeTrustedAdvisorChecks</a>.
     /// </summary>
     public partial class DescribeTrustedAdvisorCheckRefreshStatusesRequest : AmazonAWSSupportRequest
     {
-        private List<string> checkIds = new List<string>();
+        private List<string> _checkIds = new List<string>();
 
 
         /// <summary>
+        /// Gets and sets the property CheckIds. 
+        /// <para>
         /// The IDs of the Trusted Advisor checks.
-        ///  
+        /// </para>
         /// </summary>
         public List<string> CheckIds
         {
-            get { return this.checkIds; }
-            set { this.checkIds = value; }
+            get { return this._checkIds; }
+            set { this._checkIds = value; }
         }
 
         // Check to see if CheckIds property is set
         internal bool IsSetCheckIds()
         {
-            return this.checkIds.Count > 0;
+            return this._checkIds != null && this._checkIds.Count > 0; 
         }
 
     }
 }
-    

@@ -25,78 +25,80 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterInstancesWithLoadBalancer operation.
-    /// <para> Adds new instances to the load balancer. </para> <para> Once the instance is registered, it starts receiving traffic and requests
-    /// from the load balancer. Any instance that is not in any of the Availability Zones registered for the load balancer will be moved to the
-    /// <i>OutOfService</i> state. It will move to the <i>InService</i> state when the Availability Zone is added to the load balancer. </para>
-    /// <para>When an instance registered with a load balancer is stopped and then restarted, the IP addresses associated with the instance changes.
-    /// Elastic Load Balancing cannot recognize the new IP address, which prevents it from routing traffic to the instances. We recommend that you
-    /// de-register your Amazon EC2 instances from your load balancer after you stop your instance, and then register the load balancer with your
-    /// instance after you've restarted. To de-register your instances from load balancer, use DeregisterInstancesFromLoadBalancer action.</para>
-    /// <para>For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html"
-    /// >De-register and Register Amazon EC2 Instances</a> in the <i>Elastic Load Balancing Developer Guide</i> .</para> <para><b>NOTE:</b> In order
-    /// for this call to be successful, you must provide the same account credentials as those that were used to create the load balancer. </para>
-    /// <para><b>NOTE:</b> Completion of this API does not guarantee that operation has completed. Rather, it means that the request has been
-    /// registered and the changes will happen shortly. </para> <para>You can use DescribeLoadBalancers or DescribeInstanceHealth action to check
-    /// the state of the newly registered instances.</para>
+    /// Adds new instances to the load balancer. 
+    /// 
+    ///  
+    /// <para>
+    ///  Once the instance is registered, it starts receiving traffic and requests from the
+    /// load balancer. Any instance that is not in any of the Availability Zones registered
+    /// for the load balancer will be moved to the <i>OutOfService</i> state. It will move
+    /// to the <i>InService</i> state when the Availability Zone is added to the load balancer.
+    /// 
+    /// </para>
+    ///  
+    /// <para>
+    /// When an instance registered with a load balancer is stopped and then restarted, the
+    /// IP addresses associated with the instance changes. Elastic Load Balancing cannot recognize
+    /// the new IP address, which prevents it from routing traffic to the instances. We recommend
+    /// that you de-register your Amazon EC2 instances from your load balancer after you stop
+    /// your instance, and then register the load balancer with your instance after you've
+    /// restarted. To de-register your instances from load balancer, use <a>DeregisterInstancesFromLoadBalancer</a>
+    /// action.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html">De-register
+    /// and Register Amazon EC2 Instances</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can use <a>DescribeLoadBalancers</a> or <a>DescribeInstanceHealth</a> action to
+    /// check the state of the newly registered instances.
+    /// </para>
     /// </summary>
     public partial class RegisterInstancesWithLoadBalancerRequest : AmazonElasticLoadBalancingRequest
     {
-        private string loadBalancerName;
-        private List<Instance> instances = new List<Instance>();
+        private List<Instance> _instances = new List<Instance>();
+        private string _loadBalancerName;
+
 
         /// <summary>
-        /// Default constructor for a new RegisterInstancesWithLoadBalancerRequest object.  Callers should use the
-        /// properties to initialize this object after creating it.
-        /// </summary>
-        public RegisterInstancesWithLoadBalancerRequest() {}
-    
-        /// <summary>
-        /// Constructs a new RegisterInstancesWithLoadBalancerRequest object.
-        /// Callers should use the properties initialize any additional object members.
-        /// </summary>
-        /// 
-        /// <param name="loadBalancerName"> The name associated with the load balancer. The name must be unique within your set of load balancers.
-        /// </param>
-        /// <param name="instances"> A list of instance IDs that should be registered with the load balancer. </param>
-        public RegisterInstancesWithLoadBalancerRequest(string loadBalancerName, List<Instance> instances)
-        {
-            this.loadBalancerName = loadBalancerName;
-            this.instances = instances;
-        }
-    
-
-        /// <summary>
-        /// The name associated with the load balancer. The name must be unique within your set of load balancers.
-        ///  
-        /// </summary>
-        public string LoadBalancerName
-        {
-            get { return this.loadBalancerName; }
-            set { this.loadBalancerName = value; }
-        }
-
-        // Check to see if LoadBalancerName property is set
-        internal bool IsSetLoadBalancerName()
-        {
-            return this.loadBalancerName != null;
-        }
-
-        /// <summary>
-        /// A list of instance IDs that should be registered with the load balancer.
-        ///  
+        /// Gets and sets the property Instances. 
+        /// <para>
+        ///  A list of instance IDs that should be registered with the load balancer.
+        /// </para>
         /// </summary>
         public List<Instance> Instances
         {
-            get { return this.instances; }
-            set { this.instances = value; }
+            get { return this._instances; }
+            set { this._instances = value; }
         }
 
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this.instances.Count > 0;
+            return this._instances != null && this._instances.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property LoadBalancerName. 
+        /// <para>
+        ///  The name associated with the load balancer. The name must be unique within your set
+        /// of load balancers. 
+        /// </para>
+        /// </summary>
+        public string LoadBalancerName
+        {
+            get { return this._loadBalancerName; }
+            set { this._loadBalancerName = value; }
+        }
+
+        // Check to see if LoadBalancerName property is set
+        internal bool IsSetLoadBalancerName()
+        {
+            return this._loadBalancerName != null;
         }
 
     }
 }
-    

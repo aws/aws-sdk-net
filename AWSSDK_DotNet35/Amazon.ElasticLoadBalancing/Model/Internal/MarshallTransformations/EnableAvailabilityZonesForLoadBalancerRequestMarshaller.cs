@@ -14,43 +14,45 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticLoadBalancing.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Enable Availability Zones For Load Balancer Request Marshaller
+    /// EnableAvailabilityZonesForLoadBalancer Request Marshaller
     /// </summary>       
     public class EnableAvailabilityZonesForLoadBalancerRequestMarshaller : IMarshaller<IRequest, EnableAvailabilityZonesForLoadBalancerRequest>
     {
-        public IRequest Marshall(EnableAvailabilityZonesForLoadBalancerRequest enableAvailabilityZonesForLoadBalancerRequest)
+        public IRequest Marshall(EnableAvailabilityZonesForLoadBalancerRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(enableAvailabilityZonesForLoadBalancerRequest, "AmazonElasticLoadBalancing");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticLoadBalancing");
             request.Parameters.Add("Action", "EnableAvailabilityZonesForLoadBalancer");
             request.Parameters.Add("Version", "2012-06-01");
-            if (enableAvailabilityZonesForLoadBalancerRequest != null && enableAvailabilityZonesForLoadBalancerRequest.IsSetLoadBalancerName())
-            {
-                request.Parameters.Add("LoadBalancerName", StringUtils.FromString(enableAvailabilityZonesForLoadBalancerRequest.LoadBalancerName));
-            }
-            if (enableAvailabilityZonesForLoadBalancerRequest != null)
-            {
-                List<string> availabilityZonesList = enableAvailabilityZonesForLoadBalancerRequest.AvailabilityZones;
 
-                int availabilityZonesListIndex = 1;
-                foreach (string availabilityZonesListValue in availabilityZonesList)
-                { 
-                    request.Parameters.Add("AvailabilityZones.member." + availabilityZonesListIndex, StringUtils.FromString(availabilityZonesListValue));
-                    availabilityZonesListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAvailabilityZones())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.AvailabilityZones)
+                    {
+                        request.Parameters.Add("AvailabilityZones" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetLoadBalancerName())
+                {
+                    request.Parameters.Add("LoadBalancerName", StringUtils.FromString(publicRequest.LoadBalancerName));
                 }
             }
-
             return request;
         }
     }

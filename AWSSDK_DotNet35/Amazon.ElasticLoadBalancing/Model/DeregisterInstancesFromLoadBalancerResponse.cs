@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// Returns information about the  DeregisterInstancesFromLoadBalancer response and response metadata.
+    /// Configuration for accessing Amazon DeregisterInstancesFromLoadBalancer service
     /// </summary>
     public partial class DeregisterInstancesFromLoadBalancerResponse : DeregisterInstancesFromLoadBalancerResult
     {
         /// <summary>
         /// Gets and sets the DeregisterInstancesFromLoadBalancerResult property.
-        /// The output for the DeregisterInstancesFromLoadBalancer action.
+        /// Represents the output of a DeregisterInstancesFromLoadBalancer operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DeregisterInstancesFromLoadBalancerResult class are now available on the DeregisterInstancesFromLoadBalancerResponse class. You should use the properties on DeregisterInstancesFromLoadBalancerResponse instead of accessing them through DeregisterInstancesFromLoadBalancerResult.")]
         public DeregisterInstancesFromLoadBalancerResult DeregisterInstancesFromLoadBalancerResult
@@ -40,4 +36,3 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
     }
 }
-    

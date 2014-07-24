@@ -12,153 +12,165 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticLoadBalancing.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   LoadBalancerDescription Unmarshaller
-     /// </summary>
-    internal class LoadBalancerDescriptionUnmarshaller : IUnmarshaller<LoadBalancerDescription, XmlUnmarshallerContext>, IUnmarshaller<LoadBalancerDescription, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for LoadBalancerDescription Object
+    /// </summary>  
+    public class LoadBalancerDescriptionUnmarshaller : IUnmarshaller<LoadBalancerDescription, XmlUnmarshallerContext>, IUnmarshaller<LoadBalancerDescription, JsonUnmarshallerContext>
     {
-        public LoadBalancerDescription Unmarshall(XmlUnmarshallerContext context) 
+        public LoadBalancerDescription Unmarshall(XmlUnmarshallerContext context)
         {
-            LoadBalancerDescription loadBalancerDescription = new LoadBalancerDescription();
+            LoadBalancerDescription unmarshalledObject = new LoadBalancerDescription();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("LoadBalancerName", targetDepth))
+                    if (context.TestExpression("AvailabilityZones/member", targetDepth))
                     {
-                        loadBalancerDescription.LoadBalancerName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("DNSName", targetDepth))
-                    {
-                        loadBalancerDescription.DNSName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("CanonicalHostedZoneName", targetDepth))
-                    {
-                        loadBalancerDescription.CanonicalHostedZoneName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("CanonicalHostedZoneNameID", targetDepth))
-                    {
-                        loadBalancerDescription.CanonicalHostedZoneNameID = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("ListenerDescriptions/member", targetDepth))
-                    {
-                        loadBalancerDescription.ListenerDescriptions.Add(ListenerDescriptionUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Policies", targetDepth))
-                    {
-                        loadBalancerDescription.Policies = PoliciesUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AvailabilityZones.Add(item);
                         continue;
                     }
                     if (context.TestExpression("BackendServerDescriptions/member", targetDepth))
                     {
-                        loadBalancerDescription.BackendServerDescriptions.Add(BackendServerDescriptionUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = BackendServerDescriptionUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.BackendServerDescriptions.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("AvailabilityZones/member", targetDepth))
+                    if (context.TestExpression("CanonicalHostedZoneName", targetDepth))
                     {
-                        loadBalancerDescription.AvailabilityZones.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CanonicalHostedZoneName = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Subnets/member", targetDepth))
+                    if (context.TestExpression("CanonicalHostedZoneNameID", targetDepth))
                     {
-                        loadBalancerDescription.Subnets.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("VPCId", targetDepth))
-                    {
-                        loadBalancerDescription.VPCId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Instances/member", targetDepth))
-                    {
-                        loadBalancerDescription.Instances.Add(InstanceUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("HealthCheck", targetDepth))
-                    {
-                        loadBalancerDescription.HealthCheck = HealthCheckUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("SourceSecurityGroup", targetDepth))
-                    {
-                        loadBalancerDescription.SourceSecurityGroup = SourceSecurityGroupUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("SecurityGroups/member", targetDepth))
-                    {
-                        loadBalancerDescription.SecurityGroups.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CanonicalHostedZoneNameID = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("CreatedTime", targetDepth))
                     {
-                        loadBalancerDescription.CreatedTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("DNSName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DNSName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("HealthCheck", targetDepth))
+                    {
+                        var unmarshaller = HealthCheckUnmarshaller.Instance;
+                        unmarshalledObject.HealthCheck = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Instances/member", targetDepth))
+                    {
+                        var unmarshaller = InstanceUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Instances.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("ListenerDescriptions/member", targetDepth))
+                    {
+                        var unmarshaller = ListenerDescriptionUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ListenerDescriptions.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("LoadBalancerName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.LoadBalancerName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Policies", targetDepth))
+                    {
+                        var unmarshaller = PoliciesUnmarshaller.Instance;
+                        unmarshalledObject.Policies = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Scheme", targetDepth))
                     {
-                        loadBalancerDescription.Scheme = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Scheme = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SecurityGroups/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SecurityGroups.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("SourceSecurityGroup", targetDepth))
+                    {
+                        var unmarshaller = SourceSecurityGroupUnmarshaller.Instance;
+                        unmarshalledObject.SourceSecurityGroup = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Subnets/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Subnets.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("VPCId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VPCId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return loadBalancerDescription;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return loadBalancerDescription;
+            return unmarshalledObject;
         }
 
-        public LoadBalancerDescription Unmarshall(JsonUnmarshallerContext context) 
+        public LoadBalancerDescription Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static LoadBalancerDescriptionUnmarshaller instance;
 
-        public static LoadBalancerDescriptionUnmarshaller GetInstance() 
+        private static LoadBalancerDescriptionUnmarshaller _instance = new LoadBalancerDescriptionUnmarshaller();        
+
+        public static LoadBalancerDescriptionUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new LoadBalancerDescriptionUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

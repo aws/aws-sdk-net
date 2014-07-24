@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticLoadBalancing.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Set Load Balancer Listener S S L Certificate Request Marshaller
+    /// SetLoadBalancerListenerSSLCertificate Request Marshaller
     /// </summary>       
     public class SetLoadBalancerListenerSSLCertificateRequestMarshaller : IMarshaller<IRequest, SetLoadBalancerListenerSSLCertificateRequest>
     {
-        public IRequest Marshall(SetLoadBalancerListenerSSLCertificateRequest setLoadBalancerListenerSSLCertificateRequest)
+        public IRequest Marshall(SetLoadBalancerListenerSSLCertificateRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(setLoadBalancerListenerSSLCertificateRequest, "AmazonElasticLoadBalancing");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticLoadBalancing");
             request.Parameters.Add("Action", "SetLoadBalancerListenerSSLCertificate");
             request.Parameters.Add("Version", "2012-06-01");
-            if (setLoadBalancerListenerSSLCertificateRequest != null && setLoadBalancerListenerSSLCertificateRequest.IsSetLoadBalancerName())
-            {
-                request.Parameters.Add("LoadBalancerName", StringUtils.FromString(setLoadBalancerListenerSSLCertificateRequest.LoadBalancerName));
-            }
-            if (setLoadBalancerListenerSSLCertificateRequest != null && setLoadBalancerListenerSSLCertificateRequest.IsSetLoadBalancerPort())
-            {
-                request.Parameters.Add("LoadBalancerPort", StringUtils.FromInt(setLoadBalancerListenerSSLCertificateRequest.LoadBalancerPort));
-            }
-            if (setLoadBalancerListenerSSLCertificateRequest != null && setLoadBalancerListenerSSLCertificateRequest.IsSetSSLCertificateId())
-            {
-                request.Parameters.Add("SSLCertificateId", StringUtils.FromString(setLoadBalancerListenerSSLCertificateRequest.SSLCertificateId));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetLoadBalancerName())
+                {
+                    request.Parameters.Add("LoadBalancerName", StringUtils.FromString(publicRequest.LoadBalancerName));
+                }
+                if(publicRequest.IsSetLoadBalancerPort())
+                {
+                    request.Parameters.Add("LoadBalancerPort", StringUtils.FromInt(publicRequest.LoadBalancerPort));
+                }
+                if(publicRequest.IsSetSSLCertificateId())
+                {
+                    request.Parameters.Add("SSLCertificateId", StringUtils.FromString(publicRequest.SSLCertificateId));
+                }
+            }
             return request;
         }
     }

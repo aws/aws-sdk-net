@@ -12,60 +12,70 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.AWSSupport.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
+using Amazon.AWSSupport.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for SeverityLevel Object
+    /// </summary>  
+    public class SeverityLevelUnmarshaller : IUnmarshaller<SeverityLevel, XmlUnmarshallerContext>, IUnmarshaller<SeverityLevel, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// SeverityLevelUnmarshaller
-      /// </summary>
-      internal class SeverityLevelUnmarshaller : IUnmarshaller<SeverityLevel, XmlUnmarshallerContext>, IUnmarshaller<SeverityLevel, JsonUnmarshallerContext>
-      {
         SeverityLevel IUnmarshaller<SeverityLevel, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public SeverityLevel Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            SeverityLevel severityLevel = new SeverityLevel();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            SeverityLevel unmarshalledObject = new SeverityLevel();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("code", targetDepth))
-              {
-                severityLevel.Code = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("name", targetDepth))
-              {
-                severityLevel.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("code", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Code = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return severityLevel;
+            return unmarshalledObject;
         }
 
-        private static SeverityLevelUnmarshaller instance;
-        public static SeverityLevelUnmarshaller GetInstance()
+
+        private static SeverityLevelUnmarshaller _instance = new SeverityLevelUnmarshaller();        
+
+        public static SeverityLevelUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new SeverityLevelUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

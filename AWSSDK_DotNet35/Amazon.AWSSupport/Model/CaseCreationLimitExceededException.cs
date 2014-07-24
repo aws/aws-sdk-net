@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.AWSSupport.Model
 {
     ///<summary>
-    /// AmazonAWSSupport exception
+    /// AWSSupport exception
     /// </summary>
     public class CaseCreationLimitExceededException : AmazonAWSSupportException 
     {
@@ -45,6 +45,5 @@ namespace Amazon.AWSSupport.Model
         public CaseCreationLimitExceededException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
-        
     }
 }

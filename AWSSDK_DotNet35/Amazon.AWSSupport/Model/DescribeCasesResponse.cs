@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeCases response and response metadata.
+    /// Configuration for accessing Amazon DescribeCases service
     /// </summary>
-    public class DescribeCasesResponse : DescribeCasesResult
+    public partial class DescribeCasesResponse : DescribeCasesResult
     {
         /// <summary>
         /// Gets and sets the DescribeCasesResult property.
-        /// Returns an array of CaseDetails objects and a NextToken that defines a point for pagination in the result set.
+        /// Represents the output of a DescribeCases operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeCasesResult class are now available on the DescribeCasesResponse class. You should use the properties on DescribeCasesResponse instead of accessing them through DescribeCasesResult.")]
         public DescribeCasesResult DescribeCasesResult
@@ -40,4 +36,3 @@ namespace Amazon.AWSSupport.Model
         }
     }
 }
-    

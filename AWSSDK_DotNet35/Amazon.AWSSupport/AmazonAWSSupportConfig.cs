@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,15 +12,17 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+
 using System;
 
 using Amazon.Runtime;
 
+
 namespace Amazon.AWSSupport
 {
-
     /// <summary>
-    /// Configuration for accessing AWS Support service
+    /// Configuration for accessing Amazon AWSSupport service
     /// </summary>
     public partial class AmazonAWSSupportConfig : ClientConfig
     {
@@ -39,9 +41,7 @@ namespace Amazon.AWSSupport
         {
             get
             {
-                
                 return "support";
-                    
             }
         }
 
@@ -57,5 +57,3 @@ namespace Amazon.AWSSupport
         }
     }
 }
-
-    

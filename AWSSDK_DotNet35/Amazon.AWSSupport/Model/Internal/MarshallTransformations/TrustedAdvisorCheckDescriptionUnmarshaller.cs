@@ -12,82 +12,88 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.AWSSupport.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
+using Amazon.AWSSupport.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for TrustedAdvisorCheckDescription Object
+    /// </summary>  
+    public class TrustedAdvisorCheckDescriptionUnmarshaller : IUnmarshaller<TrustedAdvisorCheckDescription, XmlUnmarshallerContext>, IUnmarshaller<TrustedAdvisorCheckDescription, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// TrustedAdvisorCheckDescriptionUnmarshaller
-      /// </summary>
-      internal class TrustedAdvisorCheckDescriptionUnmarshaller : IUnmarshaller<TrustedAdvisorCheckDescription, XmlUnmarshallerContext>, IUnmarshaller<TrustedAdvisorCheckDescription, JsonUnmarshallerContext>
-      {
         TrustedAdvisorCheckDescription IUnmarshaller<TrustedAdvisorCheckDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public TrustedAdvisorCheckDescription Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            TrustedAdvisorCheckDescription trustedAdvisorCheckDescription = new TrustedAdvisorCheckDescription();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            TrustedAdvisorCheckDescription unmarshalledObject = new TrustedAdvisorCheckDescription();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("id", targetDepth))
-              {
-                trustedAdvisorCheckDescription.Id = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("name", targetDepth))
-              {
-                trustedAdvisorCheckDescription.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("description", targetDepth))
-              {
-                trustedAdvisorCheckDescription.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("category", targetDepth))
-              {
-                trustedAdvisorCheckDescription.Category = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("metadata", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<String,StringUnmarshaller>(
-                    StringUnmarshaller.GetInstance());                  
-                trustedAdvisorCheckDescription.Metadata = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
+                if (context.TestExpression("category", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Category = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("description", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("id", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("metadata", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Metadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return trustedAdvisorCheckDescription;
+            return unmarshalledObject;
         }
 
-        private static TrustedAdvisorCheckDescriptionUnmarshaller instance;
-        public static TrustedAdvisorCheckDescriptionUnmarshaller GetInstance()
+
+        private static TrustedAdvisorCheckDescriptionUnmarshaller _instance = new TrustedAdvisorCheckDescriptionUnmarshaller();        
+
+        public static TrustedAdvisorCheckDescriptionUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new TrustedAdvisorCheckDescriptionUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

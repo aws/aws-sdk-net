@@ -14,43 +14,45 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticLoadBalancing.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Load Balancer Listeners Request Marshaller
+    /// DeleteLoadBalancerListeners Request Marshaller
     /// </summary>       
     public class DeleteLoadBalancerListenersRequestMarshaller : IMarshaller<IRequest, DeleteLoadBalancerListenersRequest>
     {
-        public IRequest Marshall(DeleteLoadBalancerListenersRequest deleteLoadBalancerListenersRequest)
+        public IRequest Marshall(DeleteLoadBalancerListenersRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(deleteLoadBalancerListenersRequest, "AmazonElasticLoadBalancing");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticLoadBalancing");
             request.Parameters.Add("Action", "DeleteLoadBalancerListeners");
             request.Parameters.Add("Version", "2012-06-01");
-            if (deleteLoadBalancerListenersRequest != null && deleteLoadBalancerListenersRequest.IsSetLoadBalancerName())
-            {
-                request.Parameters.Add("LoadBalancerName", StringUtils.FromString(deleteLoadBalancerListenersRequest.LoadBalancerName));
-            }
-            if (deleteLoadBalancerListenersRequest != null)
-            {
-                List<int> loadBalancerPortsList = deleteLoadBalancerListenersRequest.LoadBalancerPorts;
 
-                int loadBalancerPortsListIndex = 1;
-                foreach (int loadBalancerPortsListValue in loadBalancerPortsList)
-                { 
-                    request.Parameters.Add("LoadBalancerPorts.member." + loadBalancerPortsListIndex, StringUtils.FromInt(loadBalancerPortsListValue));
-                    loadBalancerPortsListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetLoadBalancerName())
+                {
+                    request.Parameters.Add("LoadBalancerName", StringUtils.FromString(publicRequest.LoadBalancerName));
+                }
+                if(publicRequest.IsSetLoadBalancerPorts())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.LoadBalancerPorts)
+                    {
+                        request.Parameters.Add("LoadBalancerPorts" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromInt(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
-
             return request;
         }
     }

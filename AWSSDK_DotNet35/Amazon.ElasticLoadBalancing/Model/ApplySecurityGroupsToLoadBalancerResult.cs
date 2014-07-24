@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para> The out for the ApplySecurityGroupsToLoadBalancer action. </para>
+    /// The out for the <a>ApplySecurityGroupsToLoadBalancer</a> action.
     /// </summary>
     public partial class ApplySecurityGroupsToLoadBalancerResult : AmazonWebServiceResponse
     {
-        
-        private List<string> securityGroups = new List<string>();
+        private List<string> _securityGroups = new List<string>();
 
 
         /// <summary>
-        /// A list of security group IDs associated with your load balancer.
-        ///  
+        /// Gets and sets the property SecurityGroups. 
+        /// <para>
+        ///  A list of security group IDs associated with your load balancer. 
+        /// </para>
         /// </summary>
         public List<string> SecurityGroups
         {
-            get { return this.securityGroups; }
-            set { this.securityGroups = value; }
+            get { return this._securityGroups; }
+            set { this._securityGroups = value; }
         }
 
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this.securityGroups.Count > 0;
+            return this._securityGroups != null && this._securityGroups.Count > 0; 
         }
+
     }
 }

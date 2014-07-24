@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,32 +25,35 @@ namespace Amazon.AWSSupport.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTrustedAdvisorChecks operation.
-    /// <para>Returns information about all available Trusted Advisor checks, including name, ID, category, description, and metadata. You must
-    /// specify a language code; English ("en") and Japanese ("ja") are currently supported. The response contains a TrustedAdvisorCheckDescription
-    /// for each check.</para>
+    /// Returns information about all available Trusted Advisor checks, including name, ID,
+    /// category, description, and metadata. You must specify a language code; English ("en")
+    /// and Japanese ("ja") are currently supported. The response contains a <a>TrustedAdvisorCheckDescription</a>
+    /// for each check.
     /// </summary>
     public partial class DescribeTrustedAdvisorChecksRequest : AmazonAWSSupportRequest
     {
-        private string language;
+        private string _language;
 
 
         /// <summary>
-        /// The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en") and Japanese ("ja").
-        /// Language parameters must be passed explicitly for operations that take them.
-        ///  
+        /// Gets and sets the property Language. 
+        /// <para>
+        /// The ISO 639-1 code for the language in which AWS provides support. AWS Support currently
+        /// supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly
+        /// for operations that take them.
+        /// </para>
         /// </summary>
         public string Language
         {
-            get { return this.language; }
-            set { this.language = value; }
+            get { return this._language; }
+            set { this._language = value; }
         }
 
         // Check to see if Language property is set
         internal bool IsSetLanguage()
         {
-            return this.language != null;
+            return this._language != null;
         }
 
     }
 }
-    

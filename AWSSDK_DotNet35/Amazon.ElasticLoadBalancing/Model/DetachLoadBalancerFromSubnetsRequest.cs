@@ -25,49 +25,60 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the DetachLoadBalancerFromSubnets operation.
-    /// <para> Removes subnets from the set of configured subnets in the Amazon Virtual Private Cloud (Amazon VPC) for the load balancer. </para>
-    /// <para> After a subnet is removed all of the EC2 instances registered with the load balancer that are in the removed subnet will go into the
-    /// <i>OutOfService</i> state. When a subnet is removed, the load balancer will balance the traffic among the remaining routable subnets for the
-    /// load balancer. </para>
+    /// Removes subnets from the set of configured subnets in the Amazon Virtual Private
+    /// Cloud (Amazon VPC) for the load balancer. 
+    /// 
+    ///  
+    /// <para>
+    ///  After a subnet is removed all of the EC2 instances registered with the load balancer
+    /// that are in the removed subnet will go into the <i>OutOfService</i> state. When a
+    /// subnet is removed, the load balancer will balance the traffic among the remaining
+    /// routable subnets for the load balancer. 
+    /// </para>
     /// </summary>
     public partial class DetachLoadBalancerFromSubnetsRequest : AmazonElasticLoadBalancingRequest
     {
-        private string loadBalancerName;
-        private List<string> subnets = new List<string>();
+        private string _loadBalancerName;
+        private List<string> _subnets = new List<string>();
 
 
         /// <summary>
-        /// The name associated with the load balancer to be detached.
-        ///  
+        /// Gets and sets the property LoadBalancerName. 
+        /// <para>
+        ///  The name associated with the load balancer to be detached. 
+        /// </para>
         /// </summary>
         public string LoadBalancerName
         {
-            get { return this.loadBalancerName; }
-            set { this.loadBalancerName = value; }
+            get { return this._loadBalancerName; }
+            set { this._loadBalancerName = value; }
         }
 
         // Check to see if LoadBalancerName property is set
         internal bool IsSetLoadBalancerName()
         {
-            return this.loadBalancerName != null;
+            return this._loadBalancerName != null;
         }
 
+
         /// <summary>
-        /// A list of subnet IDs to remove from the set of configured subnets for the load balancer.
-        ///  
+        /// Gets and sets the property Subnets. 
+        /// <para>
+        ///  A list of subnet IDs to remove from the set of configured subnets for the load balancer.
+        /// 
+        /// </para>
         /// </summary>
         public List<string> Subnets
         {
-            get { return this.subnets; }
-            set { this.subnets = value; }
+            get { return this._subnets; }
+            set { this._subnets = value; }
         }
 
         // Check to see if Subnets property is set
         internal bool IsSetSubnets()
         {
-            return this.subnets.Count > 0;
+            return this._subnets != null && this._subnets.Count > 0; 
         }
 
     }
 }
-    

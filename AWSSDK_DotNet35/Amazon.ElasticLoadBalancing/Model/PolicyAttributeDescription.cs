@@ -18,49 +18,57 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para> The <c>PolicyAttributeDescription</c> data type. This data type is used to describe the attributes and values associated with a
-    /// policy. </para>
+    /// The <code>PolicyAttributeDescription</code> data type. This data type is used to
+    /// describe the attributes and values associated with a policy.
     /// </summary>
     public partial class PolicyAttributeDescription
     {
-        
-        private string attributeName;
-        private string attributeValue;
+        private string _attributeName;
+        private string _attributeValue;
 
 
         /// <summary>
-        /// The name of the attribute associated with the policy.
-        ///  
+        /// Gets and sets the property AttributeName. 
+        /// <para>
+        ///  The name of the attribute associated with the policy. 
+        /// </para>
         /// </summary>
         public string AttributeName
         {
-            get { return this.attributeName; }
-            set { this.attributeName = value; }
+            get { return this._attributeName; }
+            set { this._attributeName = value; }
         }
 
         // Check to see if AttributeName property is set
         internal bool IsSetAttributeName()
         {
-            return this.attributeName != null;
+            return this._attributeName != null;
         }
 
+
         /// <summary>
-        /// The value of the attribute associated with the policy.
-        ///  
+        /// Gets and sets the property AttributeValue. 
+        /// <para>
+        ///  The value of the attribute associated with the policy. 
+        /// </para>
         /// </summary>
         public string AttributeValue
         {
-            get { return this.attributeValue; }
-            set { this.attributeValue = value; }
+            get { return this._attributeValue; }
+            set { this._attributeValue = value; }
         }
 
         // Check to see if AttributeValue property is set
         internal bool IsSetAttributeValue()
         {
-            return this.attributeValue != null;
+            return this._attributeValue != null;
         }
+
     }
 }

@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// Returns information about the  DisableAvailabilityZonesForLoadBalancer response and response metadata.
+    /// Configuration for accessing Amazon DisableAvailabilityZonesForLoadBalancer service
     /// </summary>
     public partial class DisableAvailabilityZonesForLoadBalancerResponse : DisableAvailabilityZonesForLoadBalancerResult
     {
         /// <summary>
         /// Gets and sets the DisableAvailabilityZonesForLoadBalancerResult property.
-        /// The output for the DisableAvailabilityZonesForLoadBalancer action.
+        /// Represents the output of a DisableAvailabilityZonesForLoadBalancer operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DisableAvailabilityZonesForLoadBalancerResult class are now available on the DisableAvailabilityZonesForLoadBalancerResponse class. You should use the properties on DisableAvailabilityZonesForLoadBalancerResponse instead of accessing them through DisableAvailabilityZonesForLoadBalancerResult.")]
         public DisableAvailabilityZonesForLoadBalancerResult DisableAvailabilityZonesForLoadBalancerResult
@@ -40,4 +36,3 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
     }
 }
-    

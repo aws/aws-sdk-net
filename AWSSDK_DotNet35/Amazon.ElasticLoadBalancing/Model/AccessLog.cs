@@ -18,83 +18,102 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para>The <c>AccessLog</c> data type.</para>
+    /// The <code>AccessLog</code> data type.
     /// </summary>
     public partial class AccessLog
     {
-        
-        private bool? enabled;
-        private string s3BucketName;
-        private int? emitInterval;
-        private string s3BucketPrefix;
+        private int? _emitInterval;
+        private bool? _enabled;
+        private string _s3BucketName;
+        private string _s3BucketPrefix;
 
 
         /// <summary>
-        /// Specifies whether access log is enabled for the load balancer.
+        /// Gets and sets the property EmitInterval. 
+        /// <para>
+        /// The interval for publishing the access logs. You can specify an interval of either
+        /// 5 minutes or 60 minutes.
+        /// </para>
         ///  
-        /// </summary>
-        public bool Enabled
-        {
-            get { return this.enabled ?? default(bool); }
-            set { this.enabled = value; }
-        }
-
-        // Check to see if Enabled property is set
-        internal bool IsSetEnabled()
-        {
-            return this.enabled.HasValue;
-        }
-
-        /// <summary>
-        /// The name of the Amazon S3 bucket where the access logs are stored.
-        ///  
-        /// </summary>
-        public string S3BucketName
-        {
-            get { return this.s3BucketName; }
-            set { this.s3BucketName = value; }
-        }
-
-        // Check to see if S3BucketName property is set
-        internal bool IsSetS3BucketName()
-        {
-            return this.s3BucketName != null;
-        }
-
-        /// <summary>
-        /// The interval for publishing the access logs. You can specify an interval of either 5 minutes or 60 minutes. Default: 60 minutes
-        ///  
+        /// <para>
+        /// Default: 60 minutes
+        /// </para>
         /// </summary>
         public int EmitInterval
         {
-            get { return this.emitInterval ?? default(int); }
-            set { this.emitInterval = value; }
+            get { return this._emitInterval.GetValueOrDefault(); }
+            set { this._emitInterval = value; }
         }
 
         // Check to see if EmitInterval property is set
         internal bool IsSetEmitInterval()
         {
-            return this.emitInterval.HasValue;
+            return this._emitInterval.HasValue; 
         }
 
+
         /// <summary>
-        /// The logical hierarchy you created for your Amazon S3 bucket, for example <c>my-bucket-prefix/prod</c>. If the prefix is not provided, the
-        /// log is placed at the root level of the bucket.
-        ///  
+        /// Gets and sets the property Enabled. 
+        /// <para>
+        /// Specifies whether access log is enabled for the load balancer.
+        /// </para>
+        /// </summary>
+        public bool Enabled
+        {
+            get { return this._enabled.GetValueOrDefault(); }
+            set { this._enabled = value; }
+        }
+
+        // Check to see if Enabled property is set
+        internal bool IsSetEnabled()
+        {
+            return this._enabled.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property S3BucketName. 
+        /// <para>
+        /// The name of the Amazon S3 bucket where the access logs are stored.
+        /// </para>
+        /// </summary>
+        public string S3BucketName
+        {
+            get { return this._s3BucketName; }
+            set { this._s3BucketName = value; }
+        }
+
+        // Check to see if S3BucketName property is set
+        internal bool IsSetS3BucketName()
+        {
+            return this._s3BucketName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property S3BucketPrefix. 
+        /// <para>
+        /// The logical hierarchy you created for your Amazon S3 bucket, for example <code>my-bucket-prefix/prod</code>.
+        /// If the prefix is not provided, the log is placed at the root level of the bucket.
+        /// </para>
         /// </summary>
         public string S3BucketPrefix
         {
-            get { return this.s3BucketPrefix; }
-            set { this.s3BucketPrefix = value; }
+            get { return this._s3BucketPrefix; }
+            set { this._s3BucketPrefix = value; }
         }
 
         // Check to see if S3BucketPrefix property is set
         internal bool IsSetS3BucketPrefix()
         {
-            return this.s3BucketPrefix != null;
+            return this._s3BucketPrefix != null;
         }
+
     }
 }

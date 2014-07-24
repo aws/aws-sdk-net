@@ -12,75 +12,82 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticLoadBalancing.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   PolicyTypeDescription Unmarshaller
-     /// </summary>
-    internal class PolicyTypeDescriptionUnmarshaller : IUnmarshaller<PolicyTypeDescription, XmlUnmarshallerContext>, IUnmarshaller<PolicyTypeDescription, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for PolicyTypeDescription Object
+    /// </summary>  
+    public class PolicyTypeDescriptionUnmarshaller : IUnmarshaller<PolicyTypeDescription, XmlUnmarshallerContext>, IUnmarshaller<PolicyTypeDescription, JsonUnmarshallerContext>
     {
-        public PolicyTypeDescription Unmarshall(XmlUnmarshallerContext context) 
+        public PolicyTypeDescription Unmarshall(XmlUnmarshallerContext context)
         {
-            PolicyTypeDescription policyTypeDescription = new PolicyTypeDescription();
+            PolicyTypeDescription unmarshalledObject = new PolicyTypeDescription();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("PolicyTypeName", targetDepth))
-                    {
-                        policyTypeDescription.PolicyTypeName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("Description", targetDepth))
                     {
-                        policyTypeDescription.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("PolicyAttributeTypeDescriptions/member", targetDepth))
                     {
-                        policyTypeDescription.PolicyAttributeTypeDescriptions.Add(PolicyAttributeTypeDescriptionUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = PolicyAttributeTypeDescriptionUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.PolicyAttributeTypeDescriptions.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("PolicyTypeName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PolicyTypeName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return policyTypeDescription;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return policyTypeDescription;
+            return unmarshalledObject;
         }
 
-        public PolicyTypeDescription Unmarshall(JsonUnmarshallerContext context) 
+        public PolicyTypeDescription Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static PolicyTypeDescriptionUnmarshaller instance;
 
-        public static PolicyTypeDescriptionUnmarshaller GetInstance() 
+        private static PolicyTypeDescriptionUnmarshaller _instance = new PolicyTypeDescriptionUnmarshaller();        
+
+        public static PolicyTypeDescriptionUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new PolicyTypeDescriptionUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

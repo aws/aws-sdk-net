@@ -12,63 +12,69 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticLoadBalancing.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   CrossZoneLoadBalancing Unmarshaller
-     /// </summary>
-    internal class CrossZoneLoadBalancingUnmarshaller : IUnmarshaller<CrossZoneLoadBalancing, XmlUnmarshallerContext>, IUnmarshaller<CrossZoneLoadBalancing, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for CrossZoneLoadBalancing Object
+    /// </summary>  
+    public class CrossZoneLoadBalancingUnmarshaller : IUnmarshaller<CrossZoneLoadBalancing, XmlUnmarshallerContext>, IUnmarshaller<CrossZoneLoadBalancing, JsonUnmarshallerContext>
     {
-        public CrossZoneLoadBalancing Unmarshall(XmlUnmarshallerContext context) 
+        public CrossZoneLoadBalancing Unmarshall(XmlUnmarshallerContext context)
         {
-            CrossZoneLoadBalancing crossZoneLoadBalancing = new CrossZoneLoadBalancing();
+            CrossZoneLoadBalancing unmarshalledObject = new CrossZoneLoadBalancing();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("Enabled", targetDepth))
                     {
-                        crossZoneLoadBalancing.Enabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return crossZoneLoadBalancing;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return crossZoneLoadBalancing;
+            return unmarshalledObject;
         }
 
-        public CrossZoneLoadBalancing Unmarshall(JsonUnmarshallerContext context) 
+        public CrossZoneLoadBalancing Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static CrossZoneLoadBalancingUnmarshaller instance;
 
-        public static CrossZoneLoadBalancingUnmarshaller GetInstance() 
+        private static CrossZoneLoadBalancingUnmarshaller _instance = new CrossZoneLoadBalancingUnmarshaller();        
+
+        public static CrossZoneLoadBalancingUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new CrossZoneLoadBalancingUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

@@ -18,102 +18,120 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para> The <c>PolicyAttributeTypeDescription</c> data type. This data type is used to describe values that are acceptable for the policy
-    /// attribute. </para>
+    /// The <code>PolicyAttributeTypeDescription</code> data type. This data type is used
+    /// to describe values that are acceptable for the policy attribute.
     /// </summary>
     public partial class PolicyAttributeTypeDescription
     {
-        
-        private string attributeName;
-        private string attributeType;
-        private string description;
-        private string defaultValue;
-        private string cardinality;
+        private string _attributeName;
+        private string _attributeType;
+        private string _cardinality;
+        private string _defaultValue;
+        private string _description;
 
 
         /// <summary>
-        /// The name of the attribute associated with the policy type.
-        ///  
+        /// Gets and sets the property AttributeName. 
+        /// <para>
+        ///  The name of the attribute associated with the policy type. 
+        /// </para>
         /// </summary>
         public string AttributeName
         {
-            get { return this.attributeName; }
-            set { this.attributeName = value; }
+            get { return this._attributeName; }
+            set { this._attributeName = value; }
         }
 
         // Check to see if AttributeName property is set
         internal bool IsSetAttributeName()
         {
-            return this.attributeName != null;
+            return this._attributeName != null;
         }
 
+
         /// <summary>
-        /// The type of attribute. For example, Boolean, Integer, etc.
-        ///  
+        /// Gets and sets the property AttributeType. 
+        /// <para>
+        ///  The type of attribute. For example, Boolean, Integer, etc. 
+        /// </para>
         /// </summary>
         public string AttributeType
         {
-            get { return this.attributeType; }
-            set { this.attributeType = value; }
+            get { return this._attributeType; }
+            set { this._attributeType = value; }
         }
 
         // Check to see if AttributeType property is set
         internal bool IsSetAttributeType()
         {
-            return this.attributeType != null;
+            return this._attributeType != null;
         }
+
 
         /// <summary>
-        /// A human-readable description of the attribute.
-        ///  
-        /// </summary>
-        public string Description
-        {
-            get { return this.description; }
-            set { this.description = value; }
-        }
-
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
-        {
-            return this.description != null;
-        }
-
-        /// <summary>
-        /// The default value of the attribute, if applicable.
-        ///  
-        /// </summary>
-        public string DefaultValue
-        {
-            get { return this.defaultValue; }
-            set { this.defaultValue = value; }
-        }
-
-        // Check to see if DefaultValue property is set
-        internal bool IsSetDefaultValue()
-        {
-            return this.defaultValue != null;
-        }
-
-        /// <summary>
-        /// The cardinality of the attribute. Valid Values: <ul> <li>ONE(1) : Single value required</li> <li>ZERO_OR_ONE(0..1) : Up to one value can be
-        /// supplied</li> <li>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</li> <li>ONE_OR_MORE(1..*0) : Required. Multiple values are
-        /// allowed</li> </ul>
-        ///  
+        /// Gets and sets the property Cardinality. 
+        /// <para>
+        ///  The cardinality of the attribute. Valid Values: <ul> <li>ONE(1) : Single value required</li>
+        /// <li>ZERO_OR_ONE(0..1) : Up to one value can be supplied</li> <li>ZERO_OR_MORE(0..*)
+        /// : Optional. Multiple values are allowed</li> <li>ONE_OR_MORE(1..*0) : Required. Multiple
+        /// values are allowed</li> </ul> 
+        /// </para>
         /// </summary>
         public string Cardinality
         {
-            get { return this.cardinality; }
-            set { this.cardinality = value; }
+            get { return this._cardinality; }
+            set { this._cardinality = value; }
         }
 
         // Check to see if Cardinality property is set
         internal bool IsSetCardinality()
         {
-            return this.cardinality != null;
+            return this._cardinality != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property DefaultValue. 
+        /// <para>
+        ///  The default value of the attribute, if applicable. 
+        /// </para>
+        /// </summary>
+        public string DefaultValue
+        {
+            get { return this._defaultValue; }
+            set { this._defaultValue = value; }
+        }
+
+        // Check to see if DefaultValue property is set
+        internal bool IsSetDefaultValue()
+        {
+            return this._defaultValue != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        ///  A human-readable description of the attribute. 
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
+
     }
 }

@@ -25,50 +25,61 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the ApplySecurityGroupsToLoadBalancer operation.
-    /// <para> Associates one or more security groups with your load balancer in Amazon Virtual Private Cloud (Amazon VPC). The provided security
-    /// group IDs will override any currently applied security groups. </para> <para>For more information, see <a
-    /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/USVPC_ApplySG.html" >Manage Security Groups in Amazon VPC</a> in
-    /// the <i>Elastic Load Balancing Developer Guide</i> .</para>
+    /// Associates one or more security groups with your load balancer in Amazon Virtual
+    /// Private Cloud (Amazon VPC). The provided security group IDs will override any currently
+    /// applied security groups. 
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/USVPC_ApplySG.html">Manage
+    /// Security Groups in Amazon VPC</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class ApplySecurityGroupsToLoadBalancerRequest : AmazonElasticLoadBalancingRequest
     {
-        private string loadBalancerName;
-        private List<string> securityGroups = new List<string>();
+        private string _loadBalancerName;
+        private List<string> _securityGroups = new List<string>();
 
 
         /// <summary>
-        /// The name associated with the load balancer. The name must be unique within the set of load balancers associated with your AWS account.
-        ///  
+        /// Gets and sets the property LoadBalancerName. 
+        /// <para>
+        ///  The name associated with the load balancer. The name must be unique within the set
+        /// of load balancers associated with your AWS account. 
+        /// </para>
         /// </summary>
         public string LoadBalancerName
         {
-            get { return this.loadBalancerName; }
-            set { this.loadBalancerName = value; }
+            get { return this._loadBalancerName; }
+            set { this._loadBalancerName = value; }
         }
 
         // Check to see if LoadBalancerName property is set
         internal bool IsSetLoadBalancerName()
         {
-            return this.loadBalancerName != null;
+            return this._loadBalancerName != null;
         }
 
+
         /// <summary>
-        /// A list of security group IDs to associate with your load balancer in VPC. The security group IDs must be provided as the ID and not the
-        /// security group name (For example, sg-1234).
-        ///  
+        /// Gets and sets the property SecurityGroups. 
+        /// <para>
+        ///  A list of security group IDs to associate with your load balancer in VPC. The security
+        /// group IDs must be provided as the ID and not the security group name (For example,
+        /// sg-1234). 
+        /// </para>
         /// </summary>
         public List<string> SecurityGroups
         {
-            get { return this.securityGroups; }
-            set { this.securityGroups = value; }
+            get { return this._securityGroups; }
+            set { this._securityGroups = value; }
         }
 
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this.securityGroups.Count > 0;
+            return this._securityGroups != null && this._securityGroups.Count > 0; 
         }
 
     }
 }
-    

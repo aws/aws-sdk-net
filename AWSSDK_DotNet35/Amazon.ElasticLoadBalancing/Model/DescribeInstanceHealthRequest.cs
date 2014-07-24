@@ -25,65 +25,52 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInstanceHealth operation.
-    /// <para> Returns the current state of the specified instances registered with the specified load balancer. If no instances are specified, the
-    /// state of all the instances registered with the load balancer is returned. </para> <para><b>NOTE:</b> You must provide the same account
-    /// credentials as those that were used to create the load balancer. </para>
+    /// Returns the current state of the specified instances registered with the specified
+    /// load balancer. If no instances are specified, the state of all the instances registered
+    /// with the load balancer is returned.
     /// </summary>
     public partial class DescribeInstanceHealthRequest : AmazonElasticLoadBalancingRequest
     {
-        private string loadBalancerName;
-        private List<Instance> instances = new List<Instance>();
+        private List<Instance> _instances = new List<Instance>();
+        private string _loadBalancerName;
+
 
         /// <summary>
-        /// Default constructor for a new DescribeInstanceHealthRequest object.  Callers should use the
-        /// properties to initialize this object after creating it.
-        /// </summary>
-        public DescribeInstanceHealthRequest() {}
-    
-        /// <summary>
-        /// Constructs a new DescribeInstanceHealthRequest object.
-        /// Callers should use the properties initialize any additional object members.
-        /// </summary>
-        /// 
-        /// <param name="loadBalancerName"> The name of the load balancer. </param>
-        public DescribeInstanceHealthRequest(string loadBalancerName)
-        {
-            this.loadBalancerName = loadBalancerName;
-        }
-    
-
-        /// <summary>
-        /// The name of the load balancer.
-        ///  
-        /// </summary>
-        public string LoadBalancerName
-        {
-            get { return this.loadBalancerName; }
-            set { this.loadBalancerName = value; }
-        }
-
-        // Check to see if LoadBalancerName property is set
-        internal bool IsSetLoadBalancerName()
-        {
-            return this.loadBalancerName != null;
-        }
-
-        /// <summary>
-        /// A list of instance IDs whose states are being queried.
-        ///  
+        /// Gets and sets the property Instances. 
+        /// <para>
+        ///  A list of instance IDs whose states are being queried. 
+        /// </para>
         /// </summary>
         public List<Instance> Instances
         {
-            get { return this.instances; }
-            set { this.instances = value; }
+            get { return this._instances; }
+            set { this._instances = value; }
         }
 
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this.instances.Count > 0;
+            return this._instances != null && this._instances.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property LoadBalancerName. 
+        /// <para>
+        ///  The name of the load balancer. 
+        /// </para>
+        /// </summary>
+        public string LoadBalancerName
+        {
+            get { return this._loadBalancerName; }
+            set { this._loadBalancerName = value; }
+        }
+
+        // Check to see if LoadBalancerName property is set
+        internal bool IsSetLoadBalancerName()
+        {
+            return this._loadBalancerName != null;
         }
 
     }
 }
-    

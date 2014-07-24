@@ -17,50 +17,57 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para> The output for the DescribeLoadBalancers action. </para>
+    /// The output for the <a>DescribeLoadBalancers</a> action.
     /// </summary>
     public partial class DescribeLoadBalancersResult : AmazonWebServiceResponse
     {
-        
-        private List<LoadBalancerDescription> loadBalancerDescriptions = new List<LoadBalancerDescription>();
-        private string nextMarker;
+        private List<LoadBalancerDescription> _loadBalancerDescriptions = new List<LoadBalancerDescription>();
+        private string _nextMarker;
 
 
         /// <summary>
-        /// A list of load balancer description structures.
-        ///  
+        /// Gets and sets the property LoadBalancerDescriptions. 
+        /// <para>
+        ///  A list of load balancer description structures. 
+        /// </para>
         /// </summary>
         public List<LoadBalancerDescription> LoadBalancerDescriptions
         {
-            get { return this.loadBalancerDescriptions; }
-            set { this.loadBalancerDescriptions = value; }
+            get { return this._loadBalancerDescriptions; }
+            set { this._loadBalancerDescriptions = value; }
         }
 
         // Check to see if LoadBalancerDescriptions property is set
         internal bool IsSetLoadBalancerDescriptions()
         {
-            return this.loadBalancerDescriptions.Count > 0;
+            return this._loadBalancerDescriptions != null && this._loadBalancerDescriptions.Count > 0; 
         }
 
+
         /// <summary>
-        /// An optional parameter reserved for future use.
-        ///  
+        /// Gets and sets the property NextMarker. 
+        /// <para>
+        ///  An optional parameter reserved for future use. 
+        /// </para>
         /// </summary>
         public string NextMarker
         {
-            get { return this.nextMarker; }
-            set { this.nextMarker = value; }
+            get { return this._nextMarker; }
+            set { this._nextMarker = value; }
         }
 
         // Check to see if NextMarker property is set
         internal bool IsSetNextMarker()
         {
-            return this.nextMarker != null;
+            return this._nextMarker != null;
         }
+
     }
 }

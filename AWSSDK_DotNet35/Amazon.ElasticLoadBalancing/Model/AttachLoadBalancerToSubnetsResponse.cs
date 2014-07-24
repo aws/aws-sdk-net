@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// Returns information about the  AttachLoadBalancerToSubnets response and response metadata.
+    /// Configuration for accessing Amazon AttachLoadBalancerToSubnets service
     /// </summary>
     public partial class AttachLoadBalancerToSubnetsResponse : AttachLoadBalancerToSubnetsResult
     {
         /// <summary>
         /// Gets and sets the AttachLoadBalancerToSubnetsResult property.
-        /// The output for the AttachLoadBalancerToSubnets action.
+        /// Represents the output of a AttachLoadBalancerToSubnets operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the AttachLoadBalancerToSubnetsResult class are now available on the AttachLoadBalancerToSubnetsResponse class. You should use the properties on AttachLoadBalancerToSubnetsResponse instead of accessing them through AttachLoadBalancerToSubnetsResult.")]
         public AttachLoadBalancerToSubnetsResult AttachLoadBalancerToSubnetsResult
@@ -40,4 +36,3 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
     }
 }
-    

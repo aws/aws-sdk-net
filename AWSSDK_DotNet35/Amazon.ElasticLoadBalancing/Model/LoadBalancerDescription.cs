@@ -18,303 +18,363 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para> Contains the result of a successful invocation of DescribeLoadBalancers. </para>
+    /// Contains the result of a successful invocation of <a>DescribeLoadBalancers</a>.
     /// </summary>
     public partial class LoadBalancerDescription
     {
-        
-        private string loadBalancerName;
-        private string dNSName;
-        private string canonicalHostedZoneName;
-        private string canonicalHostedZoneNameID;
-        private List<ListenerDescription> listenerDescriptions = new List<ListenerDescription>();
-        private Policies policies;
-        private List<BackendServerDescription> backendServerDescriptions = new List<BackendServerDescription>();
-        private List<string> availabilityZones = new List<string>();
-        private List<string> subnets = new List<string>();
-        private string vPCId;
-        private List<Instance> instances = new List<Instance>();
-        private HealthCheck healthCheck;
-        private SourceSecurityGroup sourceSecurityGroup;
-        private List<string> securityGroups = new List<string>();
-        private DateTime? createdTime;
-        private string scheme;
+        private List<string> _availabilityZones = new List<string>();
+        private List<BackendServerDescription> _backendServerDescriptions = new List<BackendServerDescription>();
+        private string _canonicalHostedZoneName;
+        private string _canonicalHostedZoneNameID;
+        private DateTime? _createdTime;
+        private string _dNSName;
+        private HealthCheck _healthCheck;
+        private List<Instance> _instances = new List<Instance>();
+        private List<ListenerDescription> _listenerDescriptions = new List<ListenerDescription>();
+        private string _loadBalancerName;
+        private Policies _policies;
+        private string _scheme;
+        private List<string> _securityGroups = new List<string>();
+        private SourceSecurityGroup _sourceSecurityGroup;
+        private List<string> _subnets = new List<string>();
+        private string _vPCId;
+
 
         /// <summary>
-        /// Default constructor for a new LoadBalancerDescription object.  Callers should use the
-        /// properties to initialize this object after creating it.
-        /// </summary>
-        public LoadBalancerDescription() {}
-    
-
-        /// <summary>
-        /// Specifies the name associated with the load balancer.
-        ///  
-        /// </summary>
-        public string LoadBalancerName
-        {
-            get { return this.loadBalancerName; }
-            set { this.loadBalancerName = value; }
-        }
-
-        // Check to see if LoadBalancerName property is set
-        internal bool IsSetLoadBalancerName()
-        {
-            return this.loadBalancerName != null;
-        }
-
-        /// <summary>
-        /// Specifies the external DNS name associated with the load balancer.
-        ///  
-        /// </summary>
-        public string DNSName
-        {
-            get { return this.dNSName; }
-            set { this.dNSName = value; }
-        }
-
-        // Check to see if DNSName property is set
-        internal bool IsSetDNSName()
-        {
-            return this.dNSName != null;
-        }
-
-        /// <summary>
-        /// Provides the name of the Amazon Route 53 hosted zone that is associated with the load balancer. For information on how to associate your
-        /// load balancer with a hosted zone, go to <a
-        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using Domain Names With
-        /// Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.
-        ///  
-        /// </summary>
-        public string CanonicalHostedZoneName
-        {
-            get { return this.canonicalHostedZoneName; }
-            set { this.canonicalHostedZoneName = value; }
-        }
-
-        // Check to see if CanonicalHostedZoneName property is set
-        internal bool IsSetCanonicalHostedZoneName()
-        {
-            return this.canonicalHostedZoneName != null;
-        }
-
-        /// <summary>
-        /// Provides the ID of the Amazon Route 53 hosted zone name that is associated with the load balancer. For information on how to associate or
-        /// disassociate your load balancer with a hosted zone, go to <a
-        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using Domain Names With
-        /// Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.
-        ///  
-        /// </summary>
-        public string CanonicalHostedZoneNameID
-        {
-            get { return this.canonicalHostedZoneNameID; }
-            set { this.canonicalHostedZoneNameID = value; }
-        }
-
-        // Check to see if CanonicalHostedZoneNameID property is set
-        internal bool IsSetCanonicalHostedZoneNameID()
-        {
-            return this.canonicalHostedZoneNameID != null;
-        }
-
-        /// <summary>
-        /// LoadBalancerPort, InstancePort, Protocol, InstanceProtocol, and PolicyNames are returned in a list of tuples in the ListenerDescriptions
-        /// element.
-        ///  
-        /// </summary>
-        public List<ListenerDescription> ListenerDescriptions
-        {
-            get { return this.listenerDescriptions; }
-            set { this.listenerDescriptions = value; }
-        }
-
-        // Check to see if ListenerDescriptions property is set
-        internal bool IsSetListenerDescriptions()
-        {
-            return this.listenerDescriptions.Count > 0;
-        }
-
-        /// <summary>
-        /// Provides a list of policies defined for the load balancer.
-        ///  
-        /// </summary>
-        public Policies Policies
-        {
-            get { return this.policies; }
-            set { this.policies = value; }
-        }
-
-        // Check to see if Policies property is set
-        internal bool IsSetPolicies()
-        {
-            return this.policies != null;
-        }
-
-        /// <summary>
-        /// Contains a list of back-end server descriptions.
-        ///  
-        /// </summary>
-        public List<BackendServerDescription> BackendServerDescriptions
-        {
-            get { return this.backendServerDescriptions; }
-            set { this.backendServerDescriptions = value; }
-        }
-
-        // Check to see if BackendServerDescriptions property is set
-        internal bool IsSetBackendServerDescriptions()
-        {
-            return this.backendServerDescriptions.Count > 0;
-        }
-
-        /// <summary>
-        /// Specifies a list of Availability Zones.
-        ///  
+        /// Gets and sets the property AvailabilityZones. 
+        /// <para>
+        ///  Specifies a list of Availability Zones. 
+        /// </para>
         /// </summary>
         public List<string> AvailabilityZones
         {
-            get { return this.availabilityZones; }
-            set { this.availabilityZones = value; }
+            get { return this._availabilityZones; }
+            set { this._availabilityZones = value; }
         }
 
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this.availabilityZones.Count > 0;
+            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
         }
 
+
         /// <summary>
-        /// Provides a list of VPC subnet IDs for the load balancer.
-        ///  
+        /// Gets and sets the property BackendServerDescriptions. 
+        /// <para>
+        ///  Contains a list of back-end server descriptions. 
+        /// </para>
         /// </summary>
-        public List<string> Subnets
+        public List<BackendServerDescription> BackendServerDescriptions
         {
-            get { return this.subnets; }
-            set { this.subnets = value; }
+            get { return this._backendServerDescriptions; }
+            set { this._backendServerDescriptions = value; }
         }
 
-        // Check to see if Subnets property is set
-        internal bool IsSetSubnets()
+        // Check to see if BackendServerDescriptions property is set
+        internal bool IsSetBackendServerDescriptions()
         {
-            return this.subnets.Count > 0;
+            return this._backendServerDescriptions != null && this._backendServerDescriptions.Count > 0; 
         }
+
 
         /// <summary>
-        /// Provides the ID of the VPC attached to the load balancer.
-        ///  
+        /// Gets and sets the property CanonicalHostedZoneName. 
+        /// <para>
+        ///  Provides the name of the Amazon Route 53 hosted zone that is associated with the
+        /// load balancer. For information on how to associate your load balancer with a hosted
+        /// zone, go to <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
+        /// Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer
+        /// Guide</i>. 
+        /// </para>
         /// </summary>
-        public string VPCId
+        public string CanonicalHostedZoneName
         {
-            get { return this.vPCId; }
-            set { this.vPCId = value; }
+            get { return this._canonicalHostedZoneName; }
+            set { this._canonicalHostedZoneName = value; }
         }
 
-        // Check to see if VPCId property is set
-        internal bool IsSetVPCId()
+        // Check to see if CanonicalHostedZoneName property is set
+        internal bool IsSetCanonicalHostedZoneName()
         {
-            return this.vPCId != null;
+            return this._canonicalHostedZoneName != null;
         }
+
 
         /// <summary>
-        /// Provides a list of EC2 instance IDs for the load balancer.
-        ///  
+        /// Gets and sets the property CanonicalHostedZoneNameID. 
+        /// <para>
+        ///  Provides the ID of the Amazon Route 53 hosted zone name that is associated with the
+        /// load balancer. For information on how to associate or disassociate your load balancer
+        /// with a hosted zone, go to <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
+        /// Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer
+        /// Guide</i>. 
+        /// </para>
         /// </summary>
-        public List<Instance> Instances
+        public string CanonicalHostedZoneNameID
         {
-            get { return this.instances; }
-            set { this.instances = value; }
+            get { return this._canonicalHostedZoneNameID; }
+            set { this._canonicalHostedZoneNameID = value; }
         }
 
-        // Check to see if Instances property is set
-        internal bool IsSetInstances()
+        // Check to see if CanonicalHostedZoneNameID property is set
+        internal bool IsSetCanonicalHostedZoneNameID()
         {
-            return this.instances.Count > 0;
+            return this._canonicalHostedZoneNameID != null;
         }
 
-        /// <summary>
-        /// Specifies information regarding the various health probes conducted on the load balancer.
-        ///  
-        /// </summary>
-        public HealthCheck HealthCheck
-        {
-            get { return this.healthCheck; }
-            set { this.healthCheck = value; }
-        }
-
-        // Check to see if HealthCheck property is set
-        internal bool IsSetHealthCheck()
-        {
-            return this.healthCheck != null;
-        }
 
         /// <summary>
-        /// The security group that you can use as part of your inbound rules for your load balancer's back-end Amazon EC2 application instances. To
-        /// only allow traffic from load balancers, add a security group rule to your back end instance that specifies this source security group as the
-        /// inbound source.
-        ///  
-        /// </summary>
-        public SourceSecurityGroup SourceSecurityGroup
-        {
-            get { return this.sourceSecurityGroup; }
-            set { this.sourceSecurityGroup = value; }
-        }
-
-        // Check to see if SourceSecurityGroup property is set
-        internal bool IsSetSourceSecurityGroup()
-        {
-            return this.sourceSecurityGroup != null;
-        }
-
-        /// <summary>
-        /// The security groups the load balancer is a member of (VPC only).
-        ///  
-        /// </summary>
-        public List<string> SecurityGroups
-        {
-            get { return this.securityGroups; }
-            set { this.securityGroups = value; }
-        }
-
-        // Check to see if SecurityGroups property is set
-        internal bool IsSetSecurityGroups()
-        {
-            return this.securityGroups.Count > 0;
-        }
-
-        /// <summary>
-        /// Provides the date and time the load balancer was created.
-        ///  
+        /// Gets and sets the property CreatedTime. 
+        /// <para>
+        ///  Provides the date and time the load balancer was created. 
+        /// </para>
         /// </summary>
         public DateTime CreatedTime
         {
-            get { return this.createdTime ?? default(DateTime); }
-            set { this.createdTime = value; }
+            get { return this._createdTime.GetValueOrDefault(); }
+            set { this._createdTime = value; }
         }
 
         // Check to see if CreatedTime property is set
         internal bool IsSetCreatedTime()
         {
-            return this.createdTime.HasValue;
+            return this._createdTime.HasValue; 
         }
 
+
         /// <summary>
-        /// Specifies the type of load balancer. If the <c>Scheme</c> is <c>internet-facing</c>, the load balancer has a publicly resolvable DNS name
-        /// that resolves to public IP addresses. If the <c>Scheme</c> is <c>internal</c>, the load balancer has a publicly resolvable DNS name that
-        /// resolves to private IP addresses. This option is only available for load balancers attached to an Amazon VPC.
+        /// Gets and sets the property DNSName. 
+        /// <para>
+        ///  Specifies the external DNS name associated with the load balancer. 
+        /// </para>
+        /// </summary>
+        public string DNSName
+        {
+            get { return this._dNSName; }
+            set { this._dNSName = value; }
+        }
+
+        // Check to see if DNSName property is set
+        internal bool IsSetDNSName()
+        {
+            return this._dNSName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property HealthCheck. 
+        /// <para>
+        ///  Specifies information regarding the various health probes conducted on the load balancer.
+        /// 
+        /// </para>
+        /// </summary>
+        public HealthCheck HealthCheck
+        {
+            get { return this._healthCheck; }
+            set { this._healthCheck = value; }
+        }
+
+        // Check to see if HealthCheck property is set
+        internal bool IsSetHealthCheck()
+        {
+            return this._healthCheck != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Instances. 
+        /// <para>
+        ///  Provides a list of EC2 instance IDs for the load balancer. 
+        /// </para>
+        /// </summary>
+        public List<Instance> Instances
+        {
+            get { return this._instances; }
+            set { this._instances = value; }
+        }
+
+        // Check to see if Instances property is set
+        internal bool IsSetInstances()
+        {
+            return this._instances != null && this._instances.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ListenerDescriptions. 
+        /// <para>
+        ///  LoadBalancerPort, InstancePort, Protocol, InstanceProtocol, and PolicyNames are returned
+        /// in a list of tuples in the ListenerDescriptions element. 
+        /// </para>
+        /// </summary>
+        public List<ListenerDescription> ListenerDescriptions
+        {
+            get { return this._listenerDescriptions; }
+            set { this._listenerDescriptions = value; }
+        }
+
+        // Check to see if ListenerDescriptions property is set
+        internal bool IsSetListenerDescriptions()
+        {
+            return this._listenerDescriptions != null && this._listenerDescriptions.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property LoadBalancerName. 
+        /// <para>
+        ///  Specifies the name associated with the load balancer. 
+        /// </para>
+        /// </summary>
+        public string LoadBalancerName
+        {
+            get { return this._loadBalancerName; }
+            set { this._loadBalancerName = value; }
+        }
+
+        // Check to see if LoadBalancerName property is set
+        internal bool IsSetLoadBalancerName()
+        {
+            return this._loadBalancerName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Policies. 
+        /// <para>
+        ///  Provides a list of policies defined for the load balancer. 
+        /// </para>
+        /// </summary>
+        public Policies Policies
+        {
+            get { return this._policies; }
+            set { this._policies = value; }
+        }
+
+        // Check to see if Policies property is set
+        internal bool IsSetPolicies()
+        {
+            return this._policies != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Scheme. 
+        /// <para>
+        /// Specifies the type of load balancer.
+        /// </para>
         ///  
+        /// <para>
+        /// If the <code>Scheme</code> is <code>internet-facing</code>, the load balancer has
+        /// a publicly resolvable DNS name that resolves to public IP addresses.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <code>Scheme</code> is <code>internal</code>, the load balancer has a publicly
+        /// resolvable DNS name that resolves to private IP addresses.
+        /// </para>
+        ///  
+        /// <para>
+        ///  This option is only available for load balancers attached to an Amazon VPC. 
+        /// </para>
         /// </summary>
         public string Scheme
         {
-            get { return this.scheme; }
-            set { this.scheme = value; }
+            get { return this._scheme; }
+            set { this._scheme = value; }
         }
 
         // Check to see if Scheme property is set
         internal bool IsSetScheme()
         {
-            return this.scheme != null;
+            return this._scheme != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property SecurityGroups. 
+        /// <para>
+        ///  The security groups the load balancer is a member of (VPC only). 
+        /// </para>
+        /// </summary>
+        public List<string> SecurityGroups
+        {
+            get { return this._securityGroups; }
+            set { this._securityGroups = value; }
+        }
+
+        // Check to see if SecurityGroups property is set
+        internal bool IsSetSecurityGroups()
+        {
+            return this._securityGroups != null && this._securityGroups.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SourceSecurityGroup. 
+        /// <para>
+        ///  The security group that you can use as part of your inbound rules for your load balancer's
+        /// back-end Amazon EC2 application instances. To only allow traffic from load balancers,
+        /// add a security group rule to your back end instance that specifies this source security
+        /// group as the inbound source. 
+        /// </para>
+        /// </summary>
+        public SourceSecurityGroup SourceSecurityGroup
+        {
+            get { return this._sourceSecurityGroup; }
+            set { this._sourceSecurityGroup = value; }
+        }
+
+        // Check to see if SourceSecurityGroup property is set
+        internal bool IsSetSourceSecurityGroup()
+        {
+            return this._sourceSecurityGroup != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Subnets. 
+        /// <para>
+        ///  Provides a list of VPC subnet IDs for the load balancer. 
+        /// </para>
+        /// </summary>
+        public List<string> Subnets
+        {
+            get { return this._subnets; }
+            set { this._subnets = value; }
+        }
+
+        // Check to see if Subnets property is set
+        internal bool IsSetSubnets()
+        {
+            return this._subnets != null && this._subnets.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property VPCId. 
+        /// <para>
+        ///  Provides the ID of the VPC attached to the load balancer. 
+        /// </para>
+        /// </summary>
+        public string VPCId
+        {
+            get { return this._vPCId; }
+            set { this._vPCId = value; }
+        }
+
+        // Check to see if VPCId property is set
+        internal bool IsSetVPCId()
+        {
+            return this._vPCId != null;
+        }
+
     }
 }

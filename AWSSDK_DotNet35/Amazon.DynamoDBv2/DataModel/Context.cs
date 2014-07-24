@@ -15,10 +15,8 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 using Amazon.DynamoDBv2.DocumentModel;
-using Amazon.DynamoDBv2.Model;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -32,7 +30,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         private bool disposed;
         private bool ownClient;
-        private IAmazonDynamoDB client;
+        internal IAmazonDynamoDB Client { get; private set; }
         private Dictionary<string, Table> tablesMap;
         private readonly object tablesMapLock = new object();
         internal DynamoDBContextConfig Config { get; private set; }
@@ -40,10 +38,19 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #endregion
 
+        #region Public properties
 
+        /// <summary>
+        /// This cache is a way to store Converters for objects which provides a way to expand Context
+        /// </summary>
+        public Dictionary<Type, IPropertyConverter> ConverterCache { get; private set; }
+
+        #endregion
+        
         #region Constructors
 
 #if !(WIN_RT || WINDOWS_PHONE)
+
         /// <summary>
         /// Constructs a DynamoDBContext object with a default AmazonDynamoDBClient
         /// client and a default DynamoDBContextConfig object for configuration.
@@ -76,6 +83,7 @@ namespace Amazon.DynamoDBv2.DataModel
         public DynamoDBContext(RegionEndpoint region, DynamoDBContextConfig config)
             : this(new AmazonDynamoDBClient(region), true, config) { }
 #endif
+
         /// <summary>
         /// Constructs a DynamoDBContext object with the specified DynamoDB client.
         /// Uses default DynamoDBContextConfig object for configuration.
@@ -93,12 +101,14 @@ namespace Amazon.DynamoDBv2.DataModel
         public DynamoDBContext(IAmazonDynamoDB client, DynamoDBContextConfig config)
             : this(client, false, config) { }
 
-
         private DynamoDBContext(IAmazonDynamoDB client, bool ownClient, DynamoDBContextConfig config)
         {
             if (client == null) throw new ArgumentNullException("client");
 
-            this.client = client;
+            this.ConverterCache = new Dictionary<Type, IPropertyConverter>();
+            this.ConverterCache.Add(typeof(S3Link), new S3Link.S3LinkConverter(this));
+
+            this.Client = client;
             this.tablesMap = new Dictionary<string, Table>();
             this.ownClient = ownClient;
             this.Config = config ?? new DynamoDBContextConfig();
@@ -118,13 +128,13 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             if (!this.disposed)
             {
-                if (disposing && client != null)
+                if (disposing && Client != null)
                 {
                     if (ownClient)
                     {
-                        client.Dispose();
+                        Client.Dispose();
                     }
-                    client = null;
+                    Client = null;
                 }
                 this.disposed = true;
             }
@@ -279,7 +289,6 @@ namespace Amazon.DynamoDBv2.DataModel
             T instance = DocumentToObject<T>(storage);
             return instance;
         }
-
 
         /// <summary>
         /// Deserializes a collections of documents to a collection of instances of type T.

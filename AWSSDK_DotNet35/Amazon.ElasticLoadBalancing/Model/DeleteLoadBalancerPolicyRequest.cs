@@ -25,65 +25,51 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLoadBalancerPolicy operation.
-    /// <para> Deletes a policy from the load balancer. The specified policy must not be enabled for any listeners. </para>
+    /// Deletes a policy from the load balancer. The specified policy must not be enabled
+    /// for any listeners.
     /// </summary>
     public partial class DeleteLoadBalancerPolicyRequest : AmazonElasticLoadBalancingRequest
     {
-        private string loadBalancerName;
-        private string policyName;
+        private string _loadBalancerName;
+        private string _policyName;
+
 
         /// <summary>
-        /// Default constructor for a new DeleteLoadBalancerPolicyRequest object.  Callers should use the
-        /// properties to initialize this object after creating it.
-        /// </summary>
-        public DeleteLoadBalancerPolicyRequest() {}
-    
-        /// <summary>
-        /// Constructs a new DeleteLoadBalancerPolicyRequest object.
-        /// Callers should use the properties initialize any additional object members.
-        /// </summary>
-        /// 
-        /// <param name="loadBalancerName"> The mnemonic name associated with the load balancer. </param>
-        /// <param name="policyName"> The mnemonic name for the policy being deleted. </param>
-        public DeleteLoadBalancerPolicyRequest(string loadBalancerName, string policyName)
-        {
-            this.loadBalancerName = loadBalancerName;
-            this.policyName = policyName;
-        }
-    
-
-        /// <summary>
-        /// The mnemonic name associated with the load balancer.
-        ///  
+        /// Gets and sets the property LoadBalancerName. 
+        /// <para>
+        ///  The mnemonic name associated with the load balancer. 
+        /// </para>
         /// </summary>
         public string LoadBalancerName
         {
-            get { return this.loadBalancerName; }
-            set { this.loadBalancerName = value; }
+            get { return this._loadBalancerName; }
+            set { this._loadBalancerName = value; }
         }
 
         // Check to see if LoadBalancerName property is set
         internal bool IsSetLoadBalancerName()
         {
-            return this.loadBalancerName != null;
+            return this._loadBalancerName != null;
         }
 
+
         /// <summary>
-        /// The mnemonic name for the policy being deleted.
-        ///  
+        /// Gets and sets the property PolicyName. 
+        /// <para>
+        ///  The mnemonic name for the policy being deleted. 
+        /// </para>
         /// </summary>
         public string PolicyName
         {
-            get { return this.policyName; }
-            set { this.policyName = value; }
+            get { return this._policyName; }
+            set { this._policyName = value; }
         }
 
         // Check to see if PolicyName property is set
         internal bool IsSetPolicyName()
         {
-            return this.policyName != null;
+            return this._policyName != null;
         }
 
     }
 }
-    

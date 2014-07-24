@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     ///<summary>
-    /// AmazonElasticLoadBalancing exception
+    /// ElasticLoadBalancing exception
     /// </summary>
     public class LoadBalancerAttributeNotFoundException : AmazonElasticLoadBalancingException 
     {
@@ -45,6 +45,5 @@ namespace Amazon.ElasticLoadBalancing.Model
         public LoadBalancerAttributeNotFoundException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
-        
     }
 }

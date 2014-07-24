@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// Returns information about the  CreateLoadBalancerPolicy response and response metadata.
+    /// Configuration for accessing Amazon CreateLoadBalancerPolicy service
     /// </summary>
     public partial class CreateLoadBalancerPolicyResponse : CreateLoadBalancerPolicyResult
     {
         /// <summary>
         /// Gets and sets the CreateLoadBalancerPolicyResult property.
-        /// The output for the CreateLoadBalancerPolicy action.
+        /// Represents the output of a CreateLoadBalancerPolicy operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateLoadBalancerPolicyResult class are now available on the CreateLoadBalancerPolicyResponse class. You should use the properties on CreateLoadBalancerPolicyResponse instead of accessing them through CreateLoadBalancerPolicyResult.")]
         public CreateLoadBalancerPolicyResult CreateLoadBalancerPolicyResult
@@ -40,4 +36,3 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
     }
 }
-    

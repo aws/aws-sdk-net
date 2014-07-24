@@ -14,43 +14,45 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticLoadBalancing.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Detach Load Balancer From Subnets Request Marshaller
+    /// DetachLoadBalancerFromSubnets Request Marshaller
     /// </summary>       
     public class DetachLoadBalancerFromSubnetsRequestMarshaller : IMarshaller<IRequest, DetachLoadBalancerFromSubnetsRequest>
     {
-        public IRequest Marshall(DetachLoadBalancerFromSubnetsRequest detachLoadBalancerFromSubnetsRequest)
+        public IRequest Marshall(DetachLoadBalancerFromSubnetsRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(detachLoadBalancerFromSubnetsRequest, "AmazonElasticLoadBalancing");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticLoadBalancing");
             request.Parameters.Add("Action", "DetachLoadBalancerFromSubnets");
             request.Parameters.Add("Version", "2012-06-01");
-            if (detachLoadBalancerFromSubnetsRequest != null && detachLoadBalancerFromSubnetsRequest.IsSetLoadBalancerName())
-            {
-                request.Parameters.Add("LoadBalancerName", StringUtils.FromString(detachLoadBalancerFromSubnetsRequest.LoadBalancerName));
-            }
-            if (detachLoadBalancerFromSubnetsRequest != null)
-            {
-                List<string> subnetsList = detachLoadBalancerFromSubnetsRequest.Subnets;
 
-                int subnetsListIndex = 1;
-                foreach (string subnetsListValue in subnetsList)
-                { 
-                    request.Parameters.Add("Subnets.member." + subnetsListIndex, StringUtils.FromString(subnetsListValue));
-                    subnetsListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetLoadBalancerName())
+                {
+                    request.Parameters.Add("LoadBalancerName", StringUtils.FromString(publicRequest.LoadBalancerName));
+                }
+                if(publicRequest.IsSetSubnets())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Subnets)
+                    {
+                        request.Parameters.Add("Subnets" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
-
             return request;
         }
     }

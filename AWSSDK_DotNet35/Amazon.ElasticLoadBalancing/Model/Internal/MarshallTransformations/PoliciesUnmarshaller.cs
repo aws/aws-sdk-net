@@ -12,75 +12,84 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticLoadBalancing.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Policies Unmarshaller
-     /// </summary>
-    internal class PoliciesUnmarshaller : IUnmarshaller<Policies, XmlUnmarshallerContext>, IUnmarshaller<Policies, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Policies Object
+    /// </summary>  
+    public class PoliciesUnmarshaller : IUnmarshaller<Policies, XmlUnmarshallerContext>, IUnmarshaller<Policies, JsonUnmarshallerContext>
     {
-        public Policies Unmarshall(XmlUnmarshallerContext context) 
+        public Policies Unmarshall(XmlUnmarshallerContext context)
         {
-            Policies policies = new Policies();
+            Policies unmarshalledObject = new Policies();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("AppCookieStickinessPolicies/member", targetDepth))
                     {
-                        policies.AppCookieStickinessPolicies.Add(AppCookieStickinessPolicyUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = AppCookieStickinessPolicyUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AppCookieStickinessPolicies.Add(item);
                         continue;
                     }
                     if (context.TestExpression("LBCookieStickinessPolicies/member", targetDepth))
                     {
-                        policies.LBCookieStickinessPolicies.Add(LBCookieStickinessPolicyUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = LBCookieStickinessPolicyUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.LBCookieStickinessPolicies.Add(item);
                         continue;
                     }
                     if (context.TestExpression("OtherPolicies/member", targetDepth))
                     {
-                        policies.OtherPolicies.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.OtherPolicies.Add(item);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return policies;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return policies;
+            return unmarshalledObject;
         }
 
-        public Policies Unmarshall(JsonUnmarshallerContext context) 
+        public Policies Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static PoliciesUnmarshaller instance;
 
-        public static PoliciesUnmarshaller GetInstance() 
+        private static PoliciesUnmarshaller _instance = new PoliciesUnmarshaller();        
+
+        public static PoliciesUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new PoliciesUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

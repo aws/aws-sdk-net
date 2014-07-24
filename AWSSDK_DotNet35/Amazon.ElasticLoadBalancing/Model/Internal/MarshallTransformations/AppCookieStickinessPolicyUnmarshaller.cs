@@ -12,69 +12,75 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticLoadBalancing.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   AppCookieStickinessPolicy Unmarshaller
-     /// </summary>
-    internal class AppCookieStickinessPolicyUnmarshaller : IUnmarshaller<AppCookieStickinessPolicy, XmlUnmarshallerContext>, IUnmarshaller<AppCookieStickinessPolicy, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for AppCookieStickinessPolicy Object
+    /// </summary>  
+    public class AppCookieStickinessPolicyUnmarshaller : IUnmarshaller<AppCookieStickinessPolicy, XmlUnmarshallerContext>, IUnmarshaller<AppCookieStickinessPolicy, JsonUnmarshallerContext>
     {
-        public AppCookieStickinessPolicy Unmarshall(XmlUnmarshallerContext context) 
+        public AppCookieStickinessPolicy Unmarshall(XmlUnmarshallerContext context)
         {
-            AppCookieStickinessPolicy appCookieStickinessPolicy = new AppCookieStickinessPolicy();
+            AppCookieStickinessPolicy unmarshalledObject = new AppCookieStickinessPolicy();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("PolicyName", targetDepth))
-                    {
-                        appCookieStickinessPolicy.PolicyName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("CookieName", targetDepth))
                     {
-                        appCookieStickinessPolicy.CookieName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CookieName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PolicyName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PolicyName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return appCookieStickinessPolicy;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return appCookieStickinessPolicy;
+            return unmarshalledObject;
         }
 
-        public AppCookieStickinessPolicy Unmarshall(JsonUnmarshallerContext context) 
+        public AppCookieStickinessPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static AppCookieStickinessPolicyUnmarshaller instance;
 
-        public static AppCookieStickinessPolicyUnmarshaller GetInstance() 
+        private static AppCookieStickinessPolicyUnmarshaller _instance = new AppCookieStickinessPolicyUnmarshaller();        
+
+        public static AppCookieStickinessPolicyUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new AppCookieStickinessPolicyUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

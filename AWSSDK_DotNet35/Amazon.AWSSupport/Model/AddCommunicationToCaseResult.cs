@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Contains the following objects or data if successful. Otherwise, returns an error.</para>
+    /// The result of the <a>AddCommunicationToCase</a> operation.
     /// </summary>
     public partial class AddCommunicationToCaseResult : AmazonWebServiceResponse
     {
-        
-        private bool? result;
+        private bool? _result;
 
 
         /// <summary>
+        /// Gets and sets the property Result. 
+        /// <para>
         /// True if <a>AddCommunicationToCase</a> succeeds. Otherwise, returns an error.
-        ///  
+        /// </para>
         /// </summary>
         public bool Result
         {
-            get { return this.result ?? default(bool); }
-            set { this.result = value; }
+            get { return this._result.GetValueOrDefault(); }
+            set { this._result = value; }
         }
 
         // Check to see if Result property is set
         internal bool IsSetResult()
         {
-            return this.result.HasValue;
+            return this._result.HasValue; 
         }
+
     }
 }

@@ -12,64 +12,70 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.AWSSupport.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
+using Amazon.AWSSupport.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for RecentCaseCommunications Object
+    /// </summary>  
+    public class RecentCaseCommunicationsUnmarshaller : IUnmarshaller<RecentCaseCommunications, XmlUnmarshallerContext>, IUnmarshaller<RecentCaseCommunications, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// RecentCaseCommunicationsUnmarshaller
-      /// </summary>
-      internal class RecentCaseCommunicationsUnmarshaller : IUnmarshaller<RecentCaseCommunications, XmlUnmarshallerContext>, IUnmarshaller<RecentCaseCommunications, JsonUnmarshallerContext>
-      {
         RecentCaseCommunications IUnmarshaller<RecentCaseCommunications, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public RecentCaseCommunications Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            RecentCaseCommunications recentCaseCommunications = new RecentCaseCommunications();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            RecentCaseCommunications unmarshalledObject = new RecentCaseCommunications();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("communications", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<Communication,CommunicationUnmarshaller>(
-                    CommunicationUnmarshaller.GetInstance());                  
-                recentCaseCommunications.Communications = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
-              if (context.TestExpression("nextToken", targetDepth))
-              {
-                recentCaseCommunications.NextToken = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("communications", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Communication, CommunicationUnmarshaller>(CommunicationUnmarshaller.Instance);
+                    unmarshalledObject.Communications = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("nextToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NextToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return recentCaseCommunications;
+            return unmarshalledObject;
         }
 
-        private static RecentCaseCommunicationsUnmarshaller instance;
-        public static RecentCaseCommunicationsUnmarshaller GetInstance()
+
+        private static RecentCaseCommunicationsUnmarshaller _instance = new RecentCaseCommunicationsUnmarshaller();        
+
+        public static RecentCaseCommunicationsUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new RecentCaseCommunicationsUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

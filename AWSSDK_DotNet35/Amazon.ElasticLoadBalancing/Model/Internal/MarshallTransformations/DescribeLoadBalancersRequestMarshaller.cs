@@ -14,43 +14,49 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticLoadBalancing.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Load Balancers Request Marshaller
+    /// DescribeLoadBalancers Request Marshaller
     /// </summary>       
     public class DescribeLoadBalancersRequestMarshaller : IMarshaller<IRequest, DescribeLoadBalancersRequest>
     {
-        public IRequest Marshall(DescribeLoadBalancersRequest describeLoadBalancersRequest)
+        public IRequest Marshall(DescribeLoadBalancersRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describeLoadBalancersRequest, "AmazonElasticLoadBalancing");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticLoadBalancing");
             request.Parameters.Add("Action", "DescribeLoadBalancers");
             request.Parameters.Add("Version", "2012-06-01");
-            if (describeLoadBalancersRequest != null)
-            {
-                List<string> loadBalancerNamesList = describeLoadBalancersRequest.LoadBalancerNames;
 
-                int loadBalancerNamesListIndex = 1;
-                foreach (string loadBalancerNamesListValue in loadBalancerNamesList)
-                { 
-                    request.Parameters.Add("LoadBalancerNames.member." + loadBalancerNamesListIndex, StringUtils.FromString(loadBalancerNamesListValue));
-                    loadBalancerNamesListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetLoadBalancerNames())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.LoadBalancerNames)
+                    {
+                        request.Parameters.Add("LoadBalancerNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetMarker())
+                {
+                    request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
+                }
+                if(publicRequest.IsSetPageSize())
+                {
+                    request.Parameters.Add("PageSize", StringUtils.FromInt(publicRequest.PageSize));
                 }
             }
-            if (describeLoadBalancersRequest != null && describeLoadBalancersRequest.IsSetMarker())
-            {
-                request.Parameters.Add("Marker", StringUtils.FromString(describeLoadBalancersRequest.Marker));
-            }
-
             return request;
         }
     }

@@ -18,67 +18,57 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para> The PolicyAttribute data type. This data type contains a key/value pair that defines properties of a specific policy. </para>
+    /// The <a>PolicyAttribute</a> data type. This data type contains a key/value pair that
+    /// defines properties of a specific policy.
     /// </summary>
     public partial class PolicyAttribute
     {
-        
-        private string attributeName;
-        private string attributeValue;
+        private string _attributeName;
+        private string _attributeValue;
+
 
         /// <summary>
-        /// Default constructor for a new PolicyAttribute object.  Callers should use the
-        /// properties to initialize this object after creating it.
-        /// </summary>
-        public PolicyAttribute() {}
-    
-        /// <summary>
-        /// Constructs a new PolicyAttribute object.
-        /// Callers should use the properties initialize any additional object members.
-        /// </summary>
-        /// 
-        /// <param name="attributeName"> The name of the attribute associated with the policy. </param>
-        /// <param name="attributeValue"> The value of the attribute associated with the policy. </param>
-        public PolicyAttribute(string attributeName, string attributeValue)
-        {
-            this.attributeName = attributeName;
-            this.attributeValue = attributeValue;
-        }
-    
-
-        /// <summary>
-        /// The name of the attribute associated with the policy.
-        ///  
+        /// Gets and sets the property AttributeName. 
+        /// <para>
+        ///  The name of the attribute associated with the policy. 
+        /// </para>
         /// </summary>
         public string AttributeName
         {
-            get { return this.attributeName; }
-            set { this.attributeName = value; }
+            get { return this._attributeName; }
+            set { this._attributeName = value; }
         }
 
         // Check to see if AttributeName property is set
         internal bool IsSetAttributeName()
         {
-            return this.attributeName != null;
+            return this._attributeName != null;
         }
 
+
         /// <summary>
-        /// The value of the attribute associated with the policy.
-        ///  
+        /// Gets and sets the property AttributeValue. 
+        /// <para>
+        ///  The value of the attribute associated with the policy. 
+        /// </para>
         /// </summary>
         public string AttributeValue
         {
-            get { return this.attributeValue; }
-            set { this.attributeValue = value; }
+            get { return this._attributeValue; }
+            set { this._attributeValue = value; }
         }
 
         // Check to see if AttributeValue property is set
         internal bool IsSetAttributeValue()
         {
-            return this.attributeValue != null;
+            return this._attributeValue != null;
         }
+
     }
 }

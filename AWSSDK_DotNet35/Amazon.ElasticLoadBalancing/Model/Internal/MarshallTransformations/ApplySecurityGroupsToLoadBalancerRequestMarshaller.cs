@@ -14,43 +14,45 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticLoadBalancing.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Apply Security Groups To Load Balancer Request Marshaller
+    /// ApplySecurityGroupsToLoadBalancer Request Marshaller
     /// </summary>       
     public class ApplySecurityGroupsToLoadBalancerRequestMarshaller : IMarshaller<IRequest, ApplySecurityGroupsToLoadBalancerRequest>
     {
-        public IRequest Marshall(ApplySecurityGroupsToLoadBalancerRequest applySecurityGroupsToLoadBalancerRequest)
+        public IRequest Marshall(ApplySecurityGroupsToLoadBalancerRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(applySecurityGroupsToLoadBalancerRequest, "AmazonElasticLoadBalancing");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticLoadBalancing");
             request.Parameters.Add("Action", "ApplySecurityGroupsToLoadBalancer");
             request.Parameters.Add("Version", "2012-06-01");
-            if (applySecurityGroupsToLoadBalancerRequest != null && applySecurityGroupsToLoadBalancerRequest.IsSetLoadBalancerName())
-            {
-                request.Parameters.Add("LoadBalancerName", StringUtils.FromString(applySecurityGroupsToLoadBalancerRequest.LoadBalancerName));
-            }
-            if (applySecurityGroupsToLoadBalancerRequest != null)
-            {
-                List<string> securityGroupsList = applySecurityGroupsToLoadBalancerRequest.SecurityGroups;
 
-                int securityGroupsListIndex = 1;
-                foreach (string securityGroupsListValue in securityGroupsList)
-                { 
-                    request.Parameters.Add("SecurityGroups.member." + securityGroupsListIndex, StringUtils.FromString(securityGroupsListValue));
-                    securityGroupsListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetLoadBalancerName())
+                {
+                    request.Parameters.Add("LoadBalancerName", StringUtils.FromString(publicRequest.LoadBalancerName));
+                }
+                if(publicRequest.IsSetSecurityGroups())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.SecurityGroups)
+                    {
+                        request.Parameters.Add("SecurityGroups" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
-
             return request;
         }
     }

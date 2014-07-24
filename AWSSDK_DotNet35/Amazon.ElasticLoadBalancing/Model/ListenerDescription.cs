@@ -18,54 +18,54 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para> The ListenerDescription data type. </para>
+    /// The ListenerDescription data type.
     /// </summary>
     public partial class ListenerDescription
     {
-        
-        private Listener listener;
-        private List<string> policyNames = new List<string>();
+        private Listener _listener;
+        private List<string> _policyNames = new List<string>();
+
 
         /// <summary>
-        /// Default constructor for a new ListenerDescription object.  Callers should use the
-        /// properties to initialize this object after creating it.
-        /// </summary>
-        public ListenerDescription() {}
-    
-
-        /// <summary>
-        /// The Listener data type.
-        ///  
+        /// Gets and sets the property Listener.
         /// </summary>
         public Listener Listener
         {
-            get { return this.listener; }
-            set { this.listener = value; }
+            get { return this._listener; }
+            set { this._listener = value; }
         }
 
         // Check to see if Listener property is set
         internal bool IsSetListener()
         {
-            return this.listener != null;
+            return this._listener != null;
         }
 
+
         /// <summary>
-        /// A list of policies enabled for this listener. An empty list indicates that no policies are enabled.
-        ///  
+        /// Gets and sets the property PolicyNames. 
+        /// <para>
+        ///  A list of policies enabled for this listener. An empty list indicates that no policies
+        /// are enabled. 
+        /// </para>
         /// </summary>
         public List<string> PolicyNames
         {
-            get { return this.policyNames; }
-            set { this.policyNames = value; }
+            get { return this._policyNames; }
+            set { this._policyNames = value; }
         }
 
         // Check to see if PolicyNames property is set
         internal bool IsSetPolicyNames()
         {
-            return this.policyNames.Count > 0;
+            return this._policyNames != null && this._policyNames.Count > 0; 
         }
+
     }
 }

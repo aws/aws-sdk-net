@@ -14,32 +14,36 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticLoadBalancing.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Load Balancer Attributes Request Marshaller
+    /// DescribeLoadBalancerAttributes Request Marshaller
     /// </summary>       
     public class DescribeLoadBalancerAttributesRequestMarshaller : IMarshaller<IRequest, DescribeLoadBalancerAttributesRequest>
     {
-        public IRequest Marshall(DescribeLoadBalancerAttributesRequest describeLoadBalancerAttributesRequest)
+        public IRequest Marshall(DescribeLoadBalancerAttributesRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describeLoadBalancerAttributesRequest, "AmazonElasticLoadBalancing");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticLoadBalancing");
             request.Parameters.Add("Action", "DescribeLoadBalancerAttributes");
             request.Parameters.Add("Version", "2012-06-01");
-            if (describeLoadBalancerAttributesRequest != null && describeLoadBalancerAttributesRequest.IsSetLoadBalancerName())
-            {
-                request.Parameters.Add("LoadBalancerName", StringUtils.FromString(describeLoadBalancerAttributesRequest.LoadBalancerName));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetLoadBalancerName())
+                {
+                    request.Parameters.Add("LoadBalancerName", StringUtils.FromString(publicRequest.LoadBalancerName));
+                }
+            }
             return request;
         }
     }

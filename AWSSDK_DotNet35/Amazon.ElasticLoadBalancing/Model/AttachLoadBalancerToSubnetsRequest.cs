@@ -25,50 +25,61 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the AttachLoadBalancerToSubnets operation.
-    /// <para> Adds one or more subnets to the set of configured subnets in the Amazon Virtual Private Cloud (Amazon VPC) for the load balancer.
-    /// </para> <para> The load balancers evenly distribute requests across all of the registered subnets. For more information, see <a
-    /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html" >Deploy Elastic Load Balancing in
-    /// Amazon VPC</a> in the <i>Elastic Load Balancing Developer Guide</i> .
+    /// Adds one or more subnets to the set of configured subnets in the Amazon Virtual Private
+    /// Cloud (Amazon VPC) for the load balancer. 
+    /// 
+    ///  
+    /// <para>
+    ///  The load balancers evenly distribute requests across all of the registered subnets.
+    /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html">Deploy
+    /// Elastic Load Balancing in Amazon VPC</a> in the <i>Elastic Load Balancing Developer
+    /// Guide</i>. 
     /// </para>
     /// </summary>
     public partial class AttachLoadBalancerToSubnetsRequest : AmazonElasticLoadBalancingRequest
     {
-        private string loadBalancerName;
-        private List<string> subnets = new List<string>();
+        private string _loadBalancerName;
+        private List<string> _subnets = new List<string>();
 
 
         /// <summary>
-        /// The name associated with the load balancer. The name must be unique within the set of load balancers associated with your AWS account.
-        ///  
+        /// Gets and sets the property LoadBalancerName. 
+        /// <para>
+        ///  The name associated with the load balancer. The name must be unique within the set
+        /// of load balancers associated with your AWS account. 
+        /// </para>
         /// </summary>
         public string LoadBalancerName
         {
-            get { return this.loadBalancerName; }
-            set { this.loadBalancerName = value; }
+            get { return this._loadBalancerName; }
+            set { this._loadBalancerName = value; }
         }
 
         // Check to see if LoadBalancerName property is set
         internal bool IsSetLoadBalancerName()
         {
-            return this.loadBalancerName != null;
+            return this._loadBalancerName != null;
         }
 
+
         /// <summary>
-        /// A list of subnet IDs to add for the load balancer. You can add only one subnet per Availability Zone.
-        ///  
+        /// Gets and sets the property Subnets. 
+        /// <para>
+        ///  A list of subnet IDs to add for the load balancer. You can add only one subnet per
+        /// Availability Zone. 
+        /// </para>
         /// </summary>
         public List<string> Subnets
         {
-            get { return this.subnets; }
-            set { this.subnets = value; }
+            get { return this._subnets; }
+            set { this._subnets = value; }
         }
 
         // Check to see if Subnets property is set
         internal bool IsSetSubnets()
         {
-            return this.subnets.Count > 0;
+            return this._subnets != null && this._subnets.Count > 0; 
         }
 
     }
 }
-    

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,110 +25,129 @@ namespace Amazon.AWSSupport.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCommunications operation.
-    /// <para>Returns communications regarding the support case. You can use the <c>AfterTime</c> and <c>BeforeTime</c> parameters to filter by
-    /// date. The <c>CaseId</c> parameter enables you to identify a specific case by its <c>CaseId</c> value.</para> <para>The <c>MaxResults</c> and
-    /// <c>NextToken</c> parameters enable you to control the pagination of the result set. Set <c>MaxResults</c> to the number of cases you want
-    /// displayed on each page, and use <c>NextToken</c> to specify the resumption of pagination.</para>
+    /// Returns communications (and attachments) for one or more support cases. You can use
+    /// the <code>AfterTime</code> and <code>BeforeTime</code> parameters to filter by date.
+    /// You can use the <code>CaseId</code> parameter to restrict the results to a particular
+    /// case.
+    /// 
+    ///     
+    /// <para>
+    /// Case data is available for 12 months after creation. If a case was created more than
+    /// 12 months ago, a request for data might cause an error. 
+    /// </para>
+    ///     
+    /// <para>
+    /// You can use the <code>MaxResults</code> and <code>NextToken</code> parameters to control
+    /// the pagination of the result set. Set <code>MaxResults</code> to the number of cases
+    /// you want displayed on each page, and use  <code>NextToken</code> to specify the resumption
+    /// of pagination.
+    /// </para>
     /// </summary>
     public partial class DescribeCommunicationsRequest : AmazonAWSSupportRequest
     {
-        private string caseId;
-        private string beforeTime;
-        private string afterTime;
-        private string nextToken;
-        private int? maxResults;
+        private string _afterTime;
+        private string _beforeTime;
+        private string _caseId;
+        private int? _maxResults;
+        private string _nextToken;
 
 
         /// <summary>
-        /// The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example:
-        /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
-        ///  
-        /// </summary>
-        public string CaseId
-        {
-            get { return this.caseId; }
-            set { this.caseId = value; }
-        }
-
-        // Check to see if CaseId property is set
-        internal bool IsSetCaseId()
-        {
-            return this.caseId != null;
-        }
-
-        /// <summary>
-        /// The end date for a filtered date search on support case communications.
-        ///  
-        /// </summary>
-        public string BeforeTime
-        {
-            get { return this.beforeTime; }
-            set { this.beforeTime = value; }
-        }
-
-        // Check to see if BeforeTime property is set
-        internal bool IsSetBeforeTime()
-        {
-            return this.beforeTime != null;
-        }
-
-        /// <summary>
-        /// The start date for a filtered date search on support case communications.
-        ///  
+        /// Gets and sets the property AfterTime. 
+        /// <para>
+        /// The start date for a filtered date search on support case communications. Case communications
+        /// are available for 12 months after creation.
+        /// </para>
         /// </summary>
         public string AfterTime
         {
-            get { return this.afterTime; }
-            set { this.afterTime = value; }
+            get { return this._afterTime; }
+            set { this._afterTime = value; }
         }
 
         // Check to see if AfterTime property is set
         internal bool IsSetAfterTime()
         {
-            return this.afterTime != null;
+            return this._afterTime != null;
         }
+
 
         /// <summary>
-        /// A resumption point for pagination.
-        ///  
-        /// </summary>
-        public string NextToken
-        {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
-        }
-
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
-        {
-            return this.nextToken != null;
-        }
-
-        /// <summary>
-        /// The maximum number of results to return before paginating.
-        ///  
+        /// Gets and sets the property BeforeTime. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>10 - 100</description>
-        ///     </item>
-        /// </list>
+        /// The end date for a filtered date search on support case communications. Case communications
+        /// are available for 12 months after creation.
+        /// </para>
+        /// </summary>
+        public string BeforeTime
+        {
+            get { return this._beforeTime; }
+            set { this._beforeTime = value; }
+        }
+
+        // Check to see if BeforeTime property is set
+        internal bool IsSetBeforeTime()
+        {
+            return this._beforeTime != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property CaseId. 
+        /// <para>
+        /// The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric
+        /// string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+        /// </para>
+        /// </summary>
+        public string CaseId
+        {
+            get { return this._caseId; }
+            set { this._caseId = value; }
+        }
+
+        // Check to see if CaseId property is set
+        internal bool IsSetCaseId()
+        {
+            return this._caseId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return before paginating.
         /// </para>
         /// </summary>
         public int MaxResults
         {
-            get { return this.maxResults ?? default(int); }
-            set { this.maxResults = value; }
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
         }
 
         // Check to see if MaxResults property is set
         internal bool IsSetMaxResults()
         {
-            return this.maxResults.HasValue;
+            return this._maxResults.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// A resumption point for pagination.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }
 }
-    

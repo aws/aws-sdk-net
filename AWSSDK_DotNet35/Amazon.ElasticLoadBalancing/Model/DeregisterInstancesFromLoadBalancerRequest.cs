@@ -25,70 +25,67 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the DeregisterInstancesFromLoadBalancer operation.
-    /// <para> Deregisters instances from the load balancer. Once the instance is deregistered, it will stop receiving traffic from the load
-    /// balancer. </para> <para> In order to successfully call this API, the same account credentials as those used to create the load balancer must
-    /// be provided. </para> <para>For more information, see <a
-    /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html" >De-register and Register Amazon
-    /// EC2 Instances</a> in the <i>Elastic Load Balancing Developer Guide</i> .</para> <para>You can use DescribeLoadBalancers to verify if the
-    /// instance is deregistered from the load balancer.</para>
+    /// Deregisters instances from the load balancer. Once the instance is deregistered,
+    /// it will stop receiving traffic from the load balancer. 
+    /// 
+    ///  
+    /// <para>
+    ///  In order to successfully call this API, the same account credentials as those used
+    /// to create the load balancer must be provided. 
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html">De-register
+    /// and Register Amazon EC2 Instances</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can use <a>DescribeLoadBalancers</a> to verify if the instance is deregistered
+    /// from the load balancer.
+    /// </para>
     /// </summary>
     public partial class DeregisterInstancesFromLoadBalancerRequest : AmazonElasticLoadBalancingRequest
     {
-        private string loadBalancerName;
-        private List<Instance> instances = new List<Instance>();
+        private List<Instance> _instances = new List<Instance>();
+        private string _loadBalancerName;
+
 
         /// <summary>
-        /// Default constructor for a new DeregisterInstancesFromLoadBalancerRequest object.  Callers should use the
-        /// properties to initialize this object after creating it.
-        /// </summary>
-        public DeregisterInstancesFromLoadBalancerRequest() {}
-    
-        /// <summary>
-        /// Constructs a new DeregisterInstancesFromLoadBalancerRequest object.
-        /// Callers should use the properties initialize any additional object members.
-        /// </summary>
-        /// 
-        /// <param name="loadBalancerName"> The name associated with the load balancer. </param>
-        /// <param name="instances"> A list of EC2 instance IDs consisting of all instances to be deregistered. </param>
-        public DeregisterInstancesFromLoadBalancerRequest(string loadBalancerName, List<Instance> instances)
-        {
-            this.loadBalancerName = loadBalancerName;
-            this.instances = instances;
-        }
-    
-
-        /// <summary>
-        /// The name associated with the load balancer.
-        ///  
-        /// </summary>
-        public string LoadBalancerName
-        {
-            get { return this.loadBalancerName; }
-            set { this.loadBalancerName = value; }
-        }
-
-        // Check to see if LoadBalancerName property is set
-        internal bool IsSetLoadBalancerName()
-        {
-            return this.loadBalancerName != null;
-        }
-
-        /// <summary>
-        /// A list of EC2 instance IDs consisting of all instances to be deregistered.
-        ///  
+        /// Gets and sets the property Instances. 
+        /// <para>
+        ///  A list of EC2 instance IDs consisting of all instances to be deregistered. 
+        /// </para>
         /// </summary>
         public List<Instance> Instances
         {
-            get { return this.instances; }
-            set { this.instances = value; }
+            get { return this._instances; }
+            set { this._instances = value; }
         }
 
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this.instances.Count > 0;
+            return this._instances != null && this._instances.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property LoadBalancerName. 
+        /// <para>
+        ///  The name associated with the load balancer. 
+        /// </para>
+        /// </summary>
+        public string LoadBalancerName
+        {
+            get { return this._loadBalancerName; }
+            set { this._loadBalancerName = value; }
+        }
+
+        // Check to see if LoadBalancerName property is set
+        internal bool IsSetLoadBalancerName()
+        {
+            return this._loadBalancerName != null;
         }
 
     }
 }
-    

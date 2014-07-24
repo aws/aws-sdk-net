@@ -12,124 +12,130 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.AWSSupport.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
+using Amazon.AWSSupport.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for CaseDetails Object
+    /// </summary>  
+    public class CaseDetailsUnmarshaller : IUnmarshaller<CaseDetails, XmlUnmarshallerContext>, IUnmarshaller<CaseDetails, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// CaseDetailsUnmarshaller
-      /// </summary>
-      internal class CaseDetailsUnmarshaller : IUnmarshaller<CaseDetails, XmlUnmarshallerContext>, IUnmarshaller<CaseDetails, JsonUnmarshallerContext>
-      {
         CaseDetails IUnmarshaller<CaseDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public CaseDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            CaseDetails caseDetails = new CaseDetails();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            CaseDetails unmarshalledObject = new CaseDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("caseId", targetDepth))
-              {
-                caseDetails.CaseId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("displayId", targetDepth))
-              {
-                caseDetails.DisplayId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("subject", targetDepth))
-              {
-                caseDetails.Subject = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("status", targetDepth))
-              {
-                caseDetails.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("serviceCode", targetDepth))
-              {
-                caseDetails.ServiceCode = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("categoryCode", targetDepth))
-              {
-                caseDetails.CategoryCode = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("severityCode", targetDepth))
-              {
-                caseDetails.SeverityCode = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("submittedBy", targetDepth))
-              {
-                caseDetails.SubmittedBy = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("timeCreated", targetDepth))
-              {
-                caseDetails.TimeCreated = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("recentCommunications", targetDepth))
-              {
-                caseDetails.RecentCommunications = RecentCaseCommunicationsUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("ccEmailAddresses", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<String,StringUnmarshaller>(
-                    StringUnmarshaller.GetInstance());                  
-                caseDetails.CcEmailAddresses = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
-              if (context.TestExpression("language", targetDepth))
-              {
-                caseDetails.Language = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("caseId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CaseId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("categoryCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CategoryCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ccEmailAddresses", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.CcEmailAddresses = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("displayId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DisplayId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("language", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Language = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("recentCommunications", targetDepth))
+                {
+                    var unmarshaller = RecentCaseCommunicationsUnmarshaller.Instance;
+                    unmarshalledObject.RecentCommunications = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("serviceCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ServiceCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("severityCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SeverityCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("subject", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Subject = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("submittedBy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SubmittedBy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("timeCreated", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TimeCreated = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return caseDetails;
+            return unmarshalledObject;
         }
 
-        private static CaseDetailsUnmarshaller instance;
-        public static CaseDetailsUnmarshaller GetInstance()
+
+        private static CaseDetailsUnmarshaller _instance = new CaseDetailsUnmarshaller();        
+
+        public static CaseDetailsUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new CaseDetailsUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

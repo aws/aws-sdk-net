@@ -14,47 +14,48 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticLoadBalancing.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Instance Health Request Marshaller
+    /// DescribeInstanceHealth Request Marshaller
     /// </summary>       
     public class DescribeInstanceHealthRequestMarshaller : IMarshaller<IRequest, DescribeInstanceHealthRequest>
     {
-        public IRequest Marshall(DescribeInstanceHealthRequest describeInstanceHealthRequest)
+        public IRequest Marshall(DescribeInstanceHealthRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describeInstanceHealthRequest, "AmazonElasticLoadBalancing");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticLoadBalancing");
             request.Parameters.Add("Action", "DescribeInstanceHealth");
             request.Parameters.Add("Version", "2012-06-01");
-            if (describeInstanceHealthRequest != null && describeInstanceHealthRequest.IsSetLoadBalancerName())
-            {
-                request.Parameters.Add("LoadBalancerName", StringUtils.FromString(describeInstanceHealthRequest.LoadBalancerName));
-            }
 
-            if (describeInstanceHealthRequest != null)
+            if(publicRequest != null)
             {
-                List<Instance> instancesList = describeInstanceHealthRequest.Instances;
-                int instancesListIndex = 1;
-                foreach (Instance instancesListValue in instancesList)
+                if(publicRequest.IsSetInstances())
                 {
-                    if (instancesListValue != null && instancesListValue.IsSetInstanceId())
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Instances)
                     {
-                        request.Parameters.Add("Instances.member." + instancesListIndex + ".InstanceId", StringUtils.FromString(instancesListValue.InstanceId));
+                        if(publicRequestlistValue.IsSetInstanceId())
+                        {
+                            request.Parameters.Add("Instances" + "." + "member" + "." + publicRequestlistValueIndex + "." + "InstanceId", StringUtils.FromString(publicRequestlistValue.InstanceId));
+                        }
+                        publicRequestlistValueIndex++;
                     }
-
-                    instancesListIndex++;
+                }
+                if(publicRequest.IsSetLoadBalancerName())
+                {
+                    request.Parameters.Add("LoadBalancerName", StringUtils.FromString(publicRequest.LoadBalancerName));
                 }
             }
-
             return request;
         }
     }

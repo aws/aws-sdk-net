@@ -14,47 +14,49 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticLoadBalancing.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Set Load Balancer Policies For Backend Server Request Marshaller
+    /// SetLoadBalancerPoliciesForBackendServer Request Marshaller
     /// </summary>       
     public class SetLoadBalancerPoliciesForBackendServerRequestMarshaller : IMarshaller<IRequest, SetLoadBalancerPoliciesForBackendServerRequest>
     {
-        public IRequest Marshall(SetLoadBalancerPoliciesForBackendServerRequest setLoadBalancerPoliciesForBackendServerRequest)
+        public IRequest Marshall(SetLoadBalancerPoliciesForBackendServerRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(setLoadBalancerPoliciesForBackendServerRequest, "AmazonElasticLoadBalancing");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticLoadBalancing");
             request.Parameters.Add("Action", "SetLoadBalancerPoliciesForBackendServer");
             request.Parameters.Add("Version", "2012-06-01");
-            if (setLoadBalancerPoliciesForBackendServerRequest != null && setLoadBalancerPoliciesForBackendServerRequest.IsSetLoadBalancerName())
-            {
-                request.Parameters.Add("LoadBalancerName", StringUtils.FromString(setLoadBalancerPoliciesForBackendServerRequest.LoadBalancerName));
-            }
-            if (setLoadBalancerPoliciesForBackendServerRequest != null && setLoadBalancerPoliciesForBackendServerRequest.IsSetInstancePort())
-            {
-                request.Parameters.Add("InstancePort", StringUtils.FromInt(setLoadBalancerPoliciesForBackendServerRequest.InstancePort));
-            }
-            if (setLoadBalancerPoliciesForBackendServerRequest != null)
-            {
-                List<string> policyNamesList = setLoadBalancerPoliciesForBackendServerRequest.PolicyNames;
 
-                int policyNamesListIndex = 1;
-                foreach (string policyNamesListValue in policyNamesList)
-                { 
-                    request.Parameters.Add("PolicyNames.member." + policyNamesListIndex, StringUtils.FromString(policyNamesListValue));
-                    policyNamesListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetInstancePort())
+                {
+                    request.Parameters.Add("InstancePort", StringUtils.FromInt(publicRequest.InstancePort));
+                }
+                if(publicRequest.IsSetLoadBalancerName())
+                {
+                    request.Parameters.Add("LoadBalancerName", StringUtils.FromString(publicRequest.LoadBalancerName));
+                }
+                if(publicRequest.IsSetPolicyNames())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.PolicyNames)
+                    {
+                        request.Parameters.Add("PolicyNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
-
             return request;
         }
     }

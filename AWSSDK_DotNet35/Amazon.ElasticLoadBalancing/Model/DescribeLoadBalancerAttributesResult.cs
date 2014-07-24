@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para>The following element is returned in a structure named <c>DescribeLoadBalancerAttributesResult</c> .</para>
+    /// The following element is returned in a structure named <code>DescribeLoadBalancerAttributesResult</code>.
     /// </summary>
     public partial class DescribeLoadBalancerAttributesResult : AmazonWebServiceResponse
     {
-        
-        private LoadBalancerAttributes loadBalancerAttributes;
+        private LoadBalancerAttributes _loadBalancerAttributes;
 
 
         /// <summary>
+        /// Gets and sets the property LoadBalancerAttributes. 
+        /// <para>
         /// The load balancer attributes structure.
-        ///  
+        /// </para>
         /// </summary>
         public LoadBalancerAttributes LoadBalancerAttributes
         {
-            get { return this.loadBalancerAttributes; }
-            set { this.loadBalancerAttributes = value; }
+            get { return this._loadBalancerAttributes; }
+            set { this._loadBalancerAttributes = value; }
         }
 
         // Check to see if LoadBalancerAttributes property is set
         internal bool IsSetLoadBalancerAttributes()
         {
-            return this.loadBalancerAttributes != null;
+            return this._loadBalancerAttributes != null;
         }
+
     }
 }

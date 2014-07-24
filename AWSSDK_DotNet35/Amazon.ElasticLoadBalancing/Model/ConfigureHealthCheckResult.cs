@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para> The output for the ConfigureHealthCheck action. </para>
+    /// The output for the <a>ConfigureHealthCheck</a> action.
     /// </summary>
     public partial class ConfigureHealthCheckResult : AmazonWebServiceResponse
     {
-        
-        private HealthCheck healthCheck;
+        private HealthCheck _healthCheck;
 
 
         /// <summary>
-        /// The updated healthcheck for the instances.
-        ///  
+        /// Gets and sets the property HealthCheck. 
+        /// <para>
+        ///  The updated healthcheck for the instances. 
+        /// </para>
         /// </summary>
         public HealthCheck HealthCheck
         {
-            get { return this.healthCheck; }
-            set { this.healthCheck = value; }
+            get { return this._healthCheck; }
+            set { this._healthCheck = value; }
         }
 
         // Check to see if HealthCheck property is set
         internal bool IsSetHealthCheck()
         {
-            return this.healthCheck != null;
+            return this._healthCheck != null;
         }
+
     }
 }

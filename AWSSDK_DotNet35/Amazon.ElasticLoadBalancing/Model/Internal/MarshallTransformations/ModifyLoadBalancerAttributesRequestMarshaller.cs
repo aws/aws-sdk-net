@@ -14,76 +14,83 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticLoadBalancing.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Modify Load Balancer Attributes Request Marshaller
+    /// ModifyLoadBalancerAttributes Request Marshaller
     /// </summary>       
     public class ModifyLoadBalancerAttributesRequestMarshaller : IMarshaller<IRequest, ModifyLoadBalancerAttributesRequest>
     {
-        public IRequest Marshall(ModifyLoadBalancerAttributesRequest modifyLoadBalancerAttributesRequest)
+        public IRequest Marshall(ModifyLoadBalancerAttributesRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(modifyLoadBalancerAttributesRequest, "AmazonElasticLoadBalancing");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticLoadBalancing");
             request.Parameters.Add("Action", "ModifyLoadBalancerAttributes");
             request.Parameters.Add("Version", "2012-06-01");
-            if (modifyLoadBalancerAttributesRequest != null && modifyLoadBalancerAttributesRequest.IsSetLoadBalancerName())
-            {
-                request.Parameters.Add("LoadBalancerName", StringUtils.FromString(modifyLoadBalancerAttributesRequest.LoadBalancerName));
-            }
-            if (modifyLoadBalancerAttributesRequest != null)
-            {
-                LoadBalancerAttributes loadBalancerAttributes = modifyLoadBalancerAttributesRequest.LoadBalancerAttributes;
-                if (loadBalancerAttributes != null)
-                {
-                    CrossZoneLoadBalancing crossZoneLoadBalancing = loadBalancerAttributes.CrossZoneLoadBalancing;
-                    if (crossZoneLoadBalancing != null && crossZoneLoadBalancing.IsSetEnabled())
-                    {
-                        request.Parameters.Add("LoadBalancerAttributes.CrossZoneLoadBalancing.Enabled", StringUtils.FromBool(crossZoneLoadBalancing.Enabled));
-                    }
-                }
-                if (loadBalancerAttributes != null)
-                {
-                    AccessLog accessLog = loadBalancerAttributes.AccessLog;
-                    if (accessLog != null && accessLog.IsSetEnabled())
-                    {
-                        request.Parameters.Add("LoadBalancerAttributes.AccessLog.Enabled", StringUtils.FromBool(accessLog.Enabled));
-                    }
-                    if (accessLog != null && accessLog.IsSetS3BucketName())
-                    {
-                        request.Parameters.Add("LoadBalancerAttributes.AccessLog.S3BucketName", StringUtils.FromString(accessLog.S3BucketName));
-                    }
-                    if (accessLog != null && accessLog.IsSetEmitInterval())
-                    {
-                        request.Parameters.Add("LoadBalancerAttributes.AccessLog.EmitInterval", StringUtils.FromInt(accessLog.EmitInterval));
-                    }
-                    if (accessLog != null && accessLog.IsSetS3BucketPrefix())
-                    {
-                        request.Parameters.Add("LoadBalancerAttributes.AccessLog.S3BucketPrefix", StringUtils.FromString(accessLog.S3BucketPrefix));
-                    }
-                }
-                if (loadBalancerAttributes != null)
-                {
-                    ConnectionDraining connectionDraining = loadBalancerAttributes.ConnectionDraining;
-                    if (connectionDraining != null && connectionDraining.IsSetEnabled())
-                    {
-                        request.Parameters.Add("LoadBalancerAttributes.ConnectionDraining.Enabled", StringUtils.FromBool(connectionDraining.Enabled));
-                    }
-                    if (connectionDraining != null && connectionDraining.IsSetTimeout())
-                    {
-                        request.Parameters.Add("LoadBalancerAttributes.ConnectionDraining.Timeout", StringUtils.FromInt(connectionDraining.Timeout));
-                    }
-                }
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetLoadBalancerAttributes())
+                {
+                    if(publicRequest.LoadBalancerAttributes.IsSetAccessLog())
+                    {
+                        if(publicRequest.LoadBalancerAttributes.AccessLog.IsSetEmitInterval())
+                        {
+                            request.Parameters.Add("LoadBalancerAttributes" + "." + "AccessLog" + "." + "EmitInterval", StringUtils.FromInt(publicRequest.LoadBalancerAttributes.AccessLog.EmitInterval));
+                        }
+                        if(publicRequest.LoadBalancerAttributes.AccessLog.IsSetEnabled())
+                        {
+                            request.Parameters.Add("LoadBalancerAttributes" + "." + "AccessLog" + "." + "Enabled", StringUtils.FromBool(publicRequest.LoadBalancerAttributes.AccessLog.Enabled));
+                        }
+                        if(publicRequest.LoadBalancerAttributes.AccessLog.IsSetS3BucketName())
+                        {
+                            request.Parameters.Add("LoadBalancerAttributes" + "." + "AccessLog" + "." + "S3BucketName", StringUtils.FromString(publicRequest.LoadBalancerAttributes.AccessLog.S3BucketName));
+                        }
+                        if(publicRequest.LoadBalancerAttributes.AccessLog.IsSetS3BucketPrefix())
+                        {
+                            request.Parameters.Add("LoadBalancerAttributes" + "." + "AccessLog" + "." + "S3BucketPrefix", StringUtils.FromString(publicRequest.LoadBalancerAttributes.AccessLog.S3BucketPrefix));
+                        }
+                    }
+                    if(publicRequest.LoadBalancerAttributes.IsSetConnectionDraining())
+                    {
+                        if(publicRequest.LoadBalancerAttributes.ConnectionDraining.IsSetEnabled())
+                        {
+                            request.Parameters.Add("LoadBalancerAttributes" + "." + "ConnectionDraining" + "." + "Enabled", StringUtils.FromBool(publicRequest.LoadBalancerAttributes.ConnectionDraining.Enabled));
+                        }
+                        if(publicRequest.LoadBalancerAttributes.ConnectionDraining.IsSetTimeout())
+                        {
+                            request.Parameters.Add("LoadBalancerAttributes" + "." + "ConnectionDraining" + "." + "Timeout", StringUtils.FromInt(publicRequest.LoadBalancerAttributes.ConnectionDraining.Timeout));
+                        }
+                    }
+                    if(publicRequest.LoadBalancerAttributes.IsSetConnectionSettings())
+                    {
+                        if(publicRequest.LoadBalancerAttributes.ConnectionSettings.IsSetIdleTimeout())
+                        {
+                            request.Parameters.Add("LoadBalancerAttributes" + "." + "ConnectionSettings" + "." + "IdleTimeout", StringUtils.FromInt(publicRequest.LoadBalancerAttributes.ConnectionSettings.IdleTimeout));
+                        }
+                    }
+                    if(publicRequest.LoadBalancerAttributes.IsSetCrossZoneLoadBalancing())
+                    {
+                        if(publicRequest.LoadBalancerAttributes.CrossZoneLoadBalancing.IsSetEnabled())
+                        {
+                            request.Parameters.Add("LoadBalancerAttributes" + "." + "CrossZoneLoadBalancing" + "." + "Enabled", StringUtils.FromBool(publicRequest.LoadBalancerAttributes.CrossZoneLoadBalancing.Enabled));
+                        }
+                    }
+                }
+                if(publicRequest.IsSetLoadBalancerName())
+                {
+                    request.Parameters.Add("LoadBalancerName", StringUtils.FromString(publicRequest.LoadBalancerName));
+                }
+            }
             return request;
         }
     }

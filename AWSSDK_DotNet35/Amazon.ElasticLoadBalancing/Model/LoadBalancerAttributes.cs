@@ -18,72 +18,129 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para>The <c>LoadBalancerAttributes</c> data type.</para>
+    /// The <code>LoadBalancerAttributes</code> data type.
     /// </summary>
     public partial class LoadBalancerAttributes
     {
-        
-        private CrossZoneLoadBalancing crossZoneLoadBalancing;
-        private AccessLog accessLog;
-        private ConnectionDraining connectionDraining;
+        private AccessLog _accessLog;
+        private ConnectionDraining _connectionDraining;
+        private ConnectionSettings _connectionSettings;
+        private CrossZoneLoadBalancing _crossZoneLoadBalancing;
 
 
         /// <summary>
-        /// The name of the load balancer attribute. If enabled, the load balancer routes the request traffic evenly across all back-end instances
-        /// regardless of the Availability Zones. For more information, see <a
-        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-disable-crosszone-lb.html">Enable Cross-Zone Load
-        /// Balancing</a>.
+        /// Gets and sets the property AccessLog. 
+        /// <para>
+        /// The name of the load balancer attribute. If enabled, the load balancer captures detailed
+        /// information of all the requests and delivers the information to the Amazon S3 bucket
+        /// you specify.
+        /// </para>
         ///  
-        /// </summary>
-        public CrossZoneLoadBalancing CrossZoneLoadBalancing
-        {
-            get { return this.crossZoneLoadBalancing; }
-            set { this.crossZoneLoadBalancing = value; }
-        }
-
-        // Check to see if CrossZoneLoadBalancing property is set
-        internal bool IsSetCrossZoneLoadBalancing()
-        {
-            return this.crossZoneLoadBalancing != null;
-        }
-
-        /// <summary>
-        /// The name of the load balancer attribute. If enabled, the load balancer captures detailed information of all the requests and delivers the
-        /// information to the Amazon S3 bucket you specify. For more information, see <a
-        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-access-logs.html">Enable Access Logs</a>.
-        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-access-logs.html">Enable
+        /// Access Logs</a>.
+        /// </para>
         /// </summary>
         public AccessLog AccessLog
         {
-            get { return this.accessLog; }
-            set { this.accessLog = value; }
+            get { return this._accessLog; }
+            set { this._accessLog = value; }
         }
 
         // Check to see if AccessLog property is set
         internal bool IsSetAccessLog()
         {
-            return this.accessLog != null;
+            return this._accessLog != null;
         }
 
+
         /// <summary>
-        /// The name of the load balancer attribute. If enabled, the load balancer allows existing requests to complete before the load balancer shifts
-        /// traffic away from a deregistered or unhealthy back-end instance. For more information, see <a
-        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-conn-drain.html">Enable Connection Draining</a>.
+        /// Gets and sets the property ConnectionDraining. 
+        /// <para>
+        /// The name of the load balancer attribute. If enabled, the load balancer allows existing
+        /// requests to complete before the load balancer shifts traffic away from a deregistered
+        /// or unhealthy back-end instance. 
+        /// </para>
         ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-conn-drain.html">Enable
+        /// Connection Draining</a>.
+        /// </para>
         /// </summary>
         public ConnectionDraining ConnectionDraining
         {
-            get { return this.connectionDraining; }
-            set { this.connectionDraining = value; }
+            get { return this._connectionDraining; }
+            set { this._connectionDraining = value; }
         }
 
         // Check to see if ConnectionDraining property is set
         internal bool IsSetConnectionDraining()
         {
-            return this.connectionDraining != null;
+            return this._connectionDraining != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property ConnectionSettings. 
+        /// <para>
+        /// The name of the load balancer attribute. 
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, Elastic Load Balancing maintains a 60-second idle connection timeout for
+        /// both front-end and back-end connections of your load balancer. If <code>ConnectionSettings</code>
+        /// attribute is set, Elastic Load Balancing will allow the connections to remain idle
+        /// (no data is sent over the connection) for the specified duration.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-idle-timeout.html">Configure
+        /// Idle Connection Timeout</a>.
+        /// </para>
+        /// </summary>
+        public ConnectionSettings ConnectionSettings
+        {
+            get { return this._connectionSettings; }
+            set { this._connectionSettings = value; }
+        }
+
+        // Check to see if ConnectionSettings property is set
+        internal bool IsSetConnectionSettings()
+        {
+            return this._connectionSettings != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property CrossZoneLoadBalancing. 
+        /// <para>
+        /// The name of the load balancer attribute. If enabled, the load balancer routes the
+        /// request traffic evenly across all back-end instances regardless of the Availability
+        /// Zones.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-disable-crosszone-lb.html">Enable
+        /// Cross-Zone Load Balancing</a>.
+        /// </para>
+        /// </summary>
+        public CrossZoneLoadBalancing CrossZoneLoadBalancing
+        {
+            get { return this._crossZoneLoadBalancing; }
+            set { this._crossZoneLoadBalancing = value; }
+        }
+
+        // Check to see if CrossZoneLoadBalancing property is set
+        internal bool IsSetCrossZoneLoadBalancing()
+        {
+            return this._crossZoneLoadBalancing != null;
+        }
+
     }
 }

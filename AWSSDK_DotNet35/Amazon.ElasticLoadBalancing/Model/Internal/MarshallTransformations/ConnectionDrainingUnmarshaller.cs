@@ -12,69 +12,75 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticLoadBalancing.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ConnectionDraining Unmarshaller
-     /// </summary>
-    internal class ConnectionDrainingUnmarshaller : IUnmarshaller<ConnectionDraining, XmlUnmarshallerContext>, IUnmarshaller<ConnectionDraining, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ConnectionDraining Object
+    /// </summary>  
+    public class ConnectionDrainingUnmarshaller : IUnmarshaller<ConnectionDraining, XmlUnmarshallerContext>, IUnmarshaller<ConnectionDraining, JsonUnmarshallerContext>
     {
-        public ConnectionDraining Unmarshall(XmlUnmarshallerContext context) 
+        public ConnectionDraining Unmarshall(XmlUnmarshallerContext context)
         {
-            ConnectionDraining connectionDraining = new ConnectionDraining();
+            ConnectionDraining unmarshalledObject = new ConnectionDraining();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("Enabled", targetDepth))
                     {
-                        connectionDraining.Enabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Timeout", targetDepth))
                     {
-                        connectionDraining.Timeout = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.Timeout = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return connectionDraining;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return connectionDraining;
+            return unmarshalledObject;
         }
 
-        public ConnectionDraining Unmarshall(JsonUnmarshallerContext context) 
+        public ConnectionDraining Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static ConnectionDrainingUnmarshaller instance;
 
-        public static ConnectionDrainingUnmarshaller GetInstance() 
+        private static ConnectionDrainingUnmarshaller _instance = new ConnectionDrainingUnmarshaller();        
+
+        public static ConnectionDrainingUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new ConnectionDrainingUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

@@ -128,6 +128,7 @@
     <Compile Include="Amazon.DirectConnect\AmazonDirectConnectClient.cs" />
     <Compile Include="Amazon.DirectConnect\IAmazonDirectConnect.cs" />
     <Compile Include="Amazon.DynamoDBv2\AmazonDynamoDBClient.cs" />
+    <Compile Include="Amazon.DynamoDBv2\DataModel\S3Link.storagefile.cs" />
     <Compile Include="Amazon.DynamoDBv2\IAmazonDynamoDB.cs" />
     <Compile Include="Amazon.EC2\AmazonEC2Client.cs" />
     <Compile Include="Amazon.EC2\IAmazonEC2.cs" />
@@ -394,7 +395,7 @@
     <Compile Include="..\AWSSDK_DotNet45\Amazon.DynamoDBv2\DocumentModel\*.Async.cs">
       <Visible>false</Visible>
     </Compile>
-    <Compile Include="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DataModel\*" Exclude="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DataModel\*.Sync.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DataModel\*.Async.cs">
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DataModel\*" Exclude="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DataModel\*.Sync.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DataModel\*.Async.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DataModel\*.bcl35.cs">
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet45\Amazon.DynamoDBv2\DataModel\*.Async.cs;..\AWSSDK_DotNet45\Amazon.DynamoDBv2\DataModel\Context.cs">
@@ -726,6 +727,7 @@
   <ItemGroup>
     <None Include="README.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <Import Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\TextTemplating\v10.0\Microsoft.TextTemplating.targets')" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\TextTemplating\v10.0\Microsoft.TextTemplating.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

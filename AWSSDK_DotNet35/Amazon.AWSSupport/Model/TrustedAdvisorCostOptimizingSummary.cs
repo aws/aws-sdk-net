@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,48 +18,58 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>The estimated cost savings that might be realized if the recommended actions are taken.</para>
+    /// The estimated cost savings that might be realized if the recommended actions are taken.
     /// </summary>
-    public class TrustedAdvisorCostOptimizingSummary
+    public partial class TrustedAdvisorCostOptimizingSummary
     {
-        
-        private double? estimatedMonthlySavings;
-        private double? estimatedPercentMonthlySavings;
+        private double? _estimatedMonthlySavings;
+        private double? _estimatedPercentMonthlySavings;
 
 
         /// <summary>
-        /// The estimated monthly savings that might be realized if the recommended actions are taken.
-        ///  
+        /// Gets and sets the property EstimatedMonthlySavings. 
+        /// <para>
+        /// The estimated monthly savings that might be realized if the recommended actions are
+        /// taken.
+        /// </para>
         /// </summary>
         public double EstimatedMonthlySavings
         {
-            get { return this.estimatedMonthlySavings ?? default(double); }
-            set { this.estimatedMonthlySavings = value; }
+            get { return this._estimatedMonthlySavings.GetValueOrDefault(); }
+            set { this._estimatedMonthlySavings = value; }
         }
 
         // Check to see if EstimatedMonthlySavings property is set
         internal bool IsSetEstimatedMonthlySavings()
         {
-            return this.estimatedMonthlySavings.HasValue;
+            return this._estimatedMonthlySavings.HasValue; 
         }
 
+
         /// <summary>
-        /// The estimated percentage of savings that might be realized if the recommended actions are taken.
-        ///  
+        /// Gets and sets the property EstimatedPercentMonthlySavings. 
+        /// <para>
+        /// The estimated percentage of savings that might be realized if the recommended actions
+        /// are taken.
+        /// </para>
         /// </summary>
         public double EstimatedPercentMonthlySavings
         {
-            get { return this.estimatedPercentMonthlySavings ?? default(double); }
-            set { this.estimatedPercentMonthlySavings = value; }
+            get { return this._estimatedPercentMonthlySavings.GetValueOrDefault(); }
+            set { this._estimatedPercentMonthlySavings = value; }
         }
 
         // Check to see if EstimatedPercentMonthlySavings property is set
         internal bool IsSetEstimatedPercentMonthlySavings()
         {
-            return this.estimatedPercentMonthlySavings.HasValue;
+            return this._estimatedPercentMonthlySavings.HasValue; 
         }
+
     }
 }

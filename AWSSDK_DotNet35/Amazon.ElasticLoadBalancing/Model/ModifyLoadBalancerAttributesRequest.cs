@@ -25,52 +25,67 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyLoadBalancerAttributes operation.
-    /// <para>Modifies the attributes of a specified load balancer.</para> <para>You can modify the load balancer attributes, such as
-    /// <c>AccessLogs</c> ,
-    /// <c>ConnectionDraining</c> , and <c>CrossZoneLoadBalancing</c> by either enabling or disabling them.</para> <para>For
-    /// information on cross-zone load balancing, see <b>Request Routing</b> and for information on connection draining, see <b>Connection
-    /// Draining</b> in the <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html"
-    /// >Concepts</a> section of the <i>Elastic Load Balancer Developer Guide</i> . For information on access logs, see <a
-    /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/access-log-collection.html" >Access Logs</a> .</para>
+    /// Modifies the attributes of a specified load balancer.
+    /// 
+    ///  
+    /// <para>
+    /// You can modify the load balancer attributes, such as <code>AccessLogs</code>, <code>ConnectionDraining</code>,
+    /// and <code>CrossZoneLoadBalancing</code> by either enabling or disabling them. Or,
+    /// you can modify the load balancer attribute <code>ConnectionSettings</code>, by specifying
+    /// an idle connection timeout value for your load balancer.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see the following:
+    /// </para>
+    ///  <ul> <li><a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.htmll#request-routing">Cross-Zone
+    /// Load Balancing</a></li> <li><a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.htmll##conn-drain">Connection
+    /// Draining</a></li> <li> <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/access-log-collection.html">Access
+    /// Logs</a>.</li> <li> <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#idle-timeout">Connection
+    /// Settings</a>.</li> </ul>
     /// </summary>
     public partial class ModifyLoadBalancerAttributesRequest : AmazonElasticLoadBalancingRequest
     {
-        private string loadBalancerName;
-        private LoadBalancerAttributes loadBalancerAttributes;
+        private LoadBalancerAttributes _loadBalancerAttributes;
+        private string _loadBalancerName;
 
 
         /// <summary>
-        /// The name of the load balancer.
-        ///  
-        /// </summary>
-        public string LoadBalancerName
-        {
-            get { return this.loadBalancerName; }
-            set { this.loadBalancerName = value; }
-        }
-
-        // Check to see if LoadBalancerName property is set
-        internal bool IsSetLoadBalancerName()
-        {
-            return this.loadBalancerName != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property LoadBalancerAttributes. 
+        /// <para>
         /// Attributes of the load balancer.
-        ///  
+        /// </para>
         /// </summary>
         public LoadBalancerAttributes LoadBalancerAttributes
         {
-            get { return this.loadBalancerAttributes; }
-            set { this.loadBalancerAttributes = value; }
+            get { return this._loadBalancerAttributes; }
+            set { this._loadBalancerAttributes = value; }
         }
 
         // Check to see if LoadBalancerAttributes property is set
         internal bool IsSetLoadBalancerAttributes()
         {
-            return this.loadBalancerAttributes != null;
+            return this._loadBalancerAttributes != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property LoadBalancerName. 
+        /// <para>
+        /// The name of the load balancer.
+        /// </para>
+        /// </summary>
+        public string LoadBalancerName
+        {
+            get { return this._loadBalancerName; }
+            set { this._loadBalancerName = value; }
+        }
+
+        // Check to see if LoadBalancerName property is set
+        internal bool IsSetLoadBalancerName()
+        {
+            return this._loadBalancerName != null;
         }
 
     }
 }
-    

@@ -12,15 +12,17 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+
 using System;
 
 using Amazon.Runtime;
 
+
 namespace Amazon.ElasticLoadBalancing
 {
-
     /// <summary>
-    /// Configuration for accessing Elastic Load Balancing service
+    /// Configuration for accessing Amazon ElasticLoadBalancing service
     /// </summary>
     public partial class AmazonElasticLoadBalancingConfig : ClientConfig
     {
@@ -39,9 +41,7 @@ namespace Amazon.ElasticLoadBalancing
         {
             get
             {
-                
                 return "elasticloadbalancing";
-                    
             }
         }
 
@@ -57,5 +57,3 @@ namespace Amazon.ElasticLoadBalancing
         }
     }
 }
-
-    

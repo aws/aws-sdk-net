@@ -14,63 +14,64 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticLoadBalancing.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Load Balancer Listeners Request Marshaller
+    /// CreateLoadBalancerListeners Request Marshaller
     /// </summary>       
     public class CreateLoadBalancerListenersRequestMarshaller : IMarshaller<IRequest, CreateLoadBalancerListenersRequest>
     {
-        public IRequest Marshall(CreateLoadBalancerListenersRequest createLoadBalancerListenersRequest)
+        public IRequest Marshall(CreateLoadBalancerListenersRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(createLoadBalancerListenersRequest, "AmazonElasticLoadBalancing");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticLoadBalancing");
             request.Parameters.Add("Action", "CreateLoadBalancerListeners");
             request.Parameters.Add("Version", "2012-06-01");
-            if (createLoadBalancerListenersRequest != null && createLoadBalancerListenersRequest.IsSetLoadBalancerName())
-            {
-                request.Parameters.Add("LoadBalancerName", StringUtils.FromString(createLoadBalancerListenersRequest.LoadBalancerName));
-            }
 
-            if (createLoadBalancerListenersRequest != null)
+            if(publicRequest != null)
             {
-                List<Listener> listenersList = createLoadBalancerListenersRequest.Listeners;
-                int listenersListIndex = 1;
-                foreach (Listener listenersListValue in listenersList)
+                if(publicRequest.IsSetListeners())
                 {
-                    if (listenersListValue != null && listenersListValue.IsSetProtocol())
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Listeners)
                     {
-                        request.Parameters.Add("Listeners.member." + listenersListIndex + ".Protocol", StringUtils.FromString(listenersListValue.Protocol));
+                        if(publicRequestlistValue.IsSetInstancePort())
+                        {
+                            request.Parameters.Add("Listeners" + "." + "member" + "." + publicRequestlistValueIndex + "." + "InstancePort", StringUtils.FromInt(publicRequestlistValue.InstancePort));
+                        }
+                        if(publicRequestlistValue.IsSetInstanceProtocol())
+                        {
+                            request.Parameters.Add("Listeners" + "." + "member" + "." + publicRequestlistValueIndex + "." + "InstanceProtocol", StringUtils.FromString(publicRequestlistValue.InstanceProtocol));
+                        }
+                        if(publicRequestlistValue.IsSetLoadBalancerPort())
+                        {
+                            request.Parameters.Add("Listeners" + "." + "member" + "." + publicRequestlistValueIndex + "." + "LoadBalancerPort", StringUtils.FromInt(publicRequestlistValue.LoadBalancerPort));
+                        }
+                        if(publicRequestlistValue.IsSetProtocol())
+                        {
+                            request.Parameters.Add("Listeners" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Protocol", StringUtils.FromString(publicRequestlistValue.Protocol));
+                        }
+                        if(publicRequestlistValue.IsSetSSLCertificateId())
+                        {
+                            request.Parameters.Add("Listeners" + "." + "member" + "." + publicRequestlistValueIndex + "." + "SSLCertificateId", StringUtils.FromString(publicRequestlistValue.SSLCertificateId));
+                        }
+                        publicRequestlistValueIndex++;
                     }
-                    if (listenersListValue != null && listenersListValue.IsSetLoadBalancerPort())
-                    {
-                        request.Parameters.Add("Listeners.member." + listenersListIndex + ".LoadBalancerPort", StringUtils.FromInt(listenersListValue.LoadBalancerPort));
-                    }
-                    if (listenersListValue != null && listenersListValue.IsSetInstanceProtocol())
-                    {
-                        request.Parameters.Add("Listeners.member." + listenersListIndex + ".InstanceProtocol", StringUtils.FromString(listenersListValue.InstanceProtocol));
-                    }
-                    if (listenersListValue != null && listenersListValue.IsSetInstancePort())
-                    {
-                        request.Parameters.Add("Listeners.member." + listenersListIndex + ".InstancePort", StringUtils.FromInt(listenersListValue.InstancePort));
-                    }
-                    if (listenersListValue != null && listenersListValue.IsSetSSLCertificateId())
-                    {
-                        request.Parameters.Add("Listeners.member." + listenersListIndex + ".SSLCertificateId", StringUtils.FromString(listenersListValue.SSLCertificateId));
-                    }
-
-                    listenersListIndex++;
+                }
+                if(publicRequest.IsSetLoadBalancerName())
+                {
+                    request.Parameters.Add("LoadBalancerName", StringUtils.FromString(publicRequest.LoadBalancerName));
                 }
             }
-
             return request;
         }
     }

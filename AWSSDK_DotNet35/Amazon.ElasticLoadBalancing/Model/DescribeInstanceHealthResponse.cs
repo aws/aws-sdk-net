@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeInstanceHealth response and response metadata.
+    /// Configuration for accessing Amazon DescribeInstanceHealth service
     /// </summary>
     public partial class DescribeInstanceHealthResponse : DescribeInstanceHealthResult
     {
         /// <summary>
         /// Gets and sets the DescribeInstanceHealthResult property.
-        /// The output for the DescribeInstanceHealth action.
+        /// Represents the output of a DescribeInstanceHealth operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeInstanceHealthResult class are now available on the DescribeInstanceHealthResponse class. You should use the properties on DescribeInstanceHealthResponse instead of accessing them through DescribeInstanceHealthResult.")]
         public DescribeInstanceHealthResult DescribeInstanceHealthResult
@@ -40,4 +36,3 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
     }
 }
-    

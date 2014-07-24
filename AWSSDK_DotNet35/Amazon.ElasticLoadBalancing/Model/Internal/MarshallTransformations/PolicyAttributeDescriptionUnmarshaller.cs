@@ -12,69 +12,75 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticLoadBalancing.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   PolicyAttributeDescription Unmarshaller
-     /// </summary>
-    internal class PolicyAttributeDescriptionUnmarshaller : IUnmarshaller<PolicyAttributeDescription, XmlUnmarshallerContext>, IUnmarshaller<PolicyAttributeDescription, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for PolicyAttributeDescription Object
+    /// </summary>  
+    public class PolicyAttributeDescriptionUnmarshaller : IUnmarshaller<PolicyAttributeDescription, XmlUnmarshallerContext>, IUnmarshaller<PolicyAttributeDescription, JsonUnmarshallerContext>
     {
-        public PolicyAttributeDescription Unmarshall(XmlUnmarshallerContext context) 
+        public PolicyAttributeDescription Unmarshall(XmlUnmarshallerContext context)
         {
-            PolicyAttributeDescription policyAttributeDescription = new PolicyAttributeDescription();
+            PolicyAttributeDescription unmarshalledObject = new PolicyAttributeDescription();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("AttributeName", targetDepth))
                     {
-                        policyAttributeDescription.AttributeName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AttributeName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("AttributeValue", targetDepth))
                     {
-                        policyAttributeDescription.AttributeValue = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AttributeValue = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return policyAttributeDescription;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return policyAttributeDescription;
+            return unmarshalledObject;
         }
 
-        public PolicyAttributeDescription Unmarshall(JsonUnmarshallerContext context) 
+        public PolicyAttributeDescription Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static PolicyAttributeDescriptionUnmarshaller instance;
 
-        public static PolicyAttributeDescriptionUnmarshaller GetInstance() 
+        private static PolicyAttributeDescriptionUnmarshaller _instance = new PolicyAttributeDescriptionUnmarshaller();        
+
+        public static PolicyAttributeDescriptionUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new PolicyAttributeDescriptionUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

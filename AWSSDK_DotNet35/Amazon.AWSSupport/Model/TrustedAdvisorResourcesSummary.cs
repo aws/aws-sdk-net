@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,82 +18,97 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Details about AWS resources that were analyzed in a call to Trusted Advisor DescribeTrustedAdvisorCheckSummaries. </para>
+    /// Details about AWS resources that were analyzed in a call to Trusted Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>.
     /// </summary>
-    public class TrustedAdvisorResourcesSummary
+    public partial class TrustedAdvisorResourcesSummary
     {
-        
-        private long? resourcesProcessed;
-        private long? resourcesFlagged;
-        private long? resourcesIgnored;
-        private long? resourcesSuppressed;
+        private long? _resourcesFlagged;
+        private long? _resourcesIgnored;
+        private long? _resourcesProcessed;
+        private long? _resourcesSuppressed;
 
 
         /// <summary>
-        /// The number of AWS resources that were analyzed by the Trusted Advisor check.
-        ///  
-        /// </summary>
-        public long ResourcesProcessed
-        {
-            get { return this.resourcesProcessed ?? default(long); }
-            set { this.resourcesProcessed = value; }
-        }
-
-        // Check to see if ResourcesProcessed property is set
-        internal bool IsSetResourcesProcessed()
-        {
-            return this.resourcesProcessed.HasValue;
-        }
-
-        /// <summary>
+        /// Gets and sets the property ResourcesFlagged. 
+        /// <para>
         /// The number of AWS resources that were flagged (listed) by the Trusted Advisor check.
-        ///  
+        /// </para>
         /// </summary>
         public long ResourcesFlagged
         {
-            get { return this.resourcesFlagged ?? default(long); }
-            set { this.resourcesFlagged = value; }
+            get { return this._resourcesFlagged.GetValueOrDefault(); }
+            set { this._resourcesFlagged = value; }
         }
 
         // Check to see if ResourcesFlagged property is set
         internal bool IsSetResourcesFlagged()
         {
-            return this.resourcesFlagged.HasValue;
+            return this._resourcesFlagged.HasValue; 
         }
 
+
         /// <summary>
+        /// Gets and sets the property ResourcesIgnored. 
+        /// <para>
         /// The number of AWS resources ignored by Trusted Advisor because information was unavailable.
-        ///  
+        /// </para>
         /// </summary>
         public long ResourcesIgnored
         {
-            get { return this.resourcesIgnored ?? default(long); }
-            set { this.resourcesIgnored = value; }
+            get { return this._resourcesIgnored.GetValueOrDefault(); }
+            set { this._resourcesIgnored = value; }
         }
 
         // Check to see if ResourcesIgnored property is set
         internal bool IsSetResourcesIgnored()
         {
-            return this.resourcesIgnored.HasValue;
+            return this._resourcesIgnored.HasValue; 
         }
 
+
         /// <summary>
-        /// The number of AWS resources ignored by Trusted Advisor because they were marked as suppressed by the user.
-        ///  
+        /// Gets and sets the property ResourcesProcessed. 
+        /// <para>
+        /// The number of AWS resources that were analyzed by the Trusted Advisor check.
+        /// </para>
+        /// </summary>
+        public long ResourcesProcessed
+        {
+            get { return this._resourcesProcessed.GetValueOrDefault(); }
+            set { this._resourcesProcessed = value; }
+        }
+
+        // Check to see if ResourcesProcessed property is set
+        internal bool IsSetResourcesProcessed()
+        {
+            return this._resourcesProcessed.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ResourcesSuppressed. 
+        /// <para>
+        /// The number of AWS resources ignored by Trusted Advisor because they were marked as
+        /// suppressed by the user.
+        /// </para>
         /// </summary>
         public long ResourcesSuppressed
         {
-            get { return this.resourcesSuppressed ?? default(long); }
-            set { this.resourcesSuppressed = value; }
+            get { return this._resourcesSuppressed.GetValueOrDefault(); }
+            set { this._resourcesSuppressed = value; }
         }
 
         // Check to see if ResourcesSuppressed property is set
         internal bool IsSetResourcesSuppressed()
         {
-            return this.resourcesSuppressed.HasValue;
+            return this._resourcesSuppressed.HasValue; 
         }
+
     }
 }

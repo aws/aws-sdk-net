@@ -12,84 +12,94 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.AWSSupport.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
+using Amazon.AWSSupport.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for TrustedAdvisorCheckSummary Object
+    /// </summary>  
+    public class TrustedAdvisorCheckSummaryUnmarshaller : IUnmarshaller<TrustedAdvisorCheckSummary, XmlUnmarshallerContext>, IUnmarshaller<TrustedAdvisorCheckSummary, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// TrustedAdvisorCheckSummaryUnmarshaller
-      /// </summary>
-      internal class TrustedAdvisorCheckSummaryUnmarshaller : IUnmarshaller<TrustedAdvisorCheckSummary, XmlUnmarshallerContext>, IUnmarshaller<TrustedAdvisorCheckSummary, JsonUnmarshallerContext>
-      {
         TrustedAdvisorCheckSummary IUnmarshaller<TrustedAdvisorCheckSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public TrustedAdvisorCheckSummary Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            TrustedAdvisorCheckSummary trustedAdvisorCheckSummary = new TrustedAdvisorCheckSummary();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            TrustedAdvisorCheckSummary unmarshalledObject = new TrustedAdvisorCheckSummary();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("checkId", targetDepth))
-              {
-                trustedAdvisorCheckSummary.CheckId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("timestamp", targetDepth))
-              {
-                trustedAdvisorCheckSummary.Timestamp = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("status", targetDepth))
-              {
-                trustedAdvisorCheckSummary.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("hasFlaggedResources", targetDepth))
-              {
-                trustedAdvisorCheckSummary.HasFlaggedResources = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("resourcesSummary", targetDepth))
-              {
-                trustedAdvisorCheckSummary.ResourcesSummary = TrustedAdvisorResourcesSummaryUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("categorySpecificSummary", targetDepth))
-              {
-                trustedAdvisorCheckSummary.CategorySpecificSummary = TrustedAdvisorCategorySpecificSummaryUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("categorySpecificSummary", targetDepth))
+                {
+                    var unmarshaller = TrustedAdvisorCategorySpecificSummaryUnmarshaller.Instance;
+                    unmarshalledObject.CategorySpecificSummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("checkId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CheckId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("hasFlaggedResources", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.HasFlaggedResources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("resourcesSummary", targetDepth))
+                {
+                    var unmarshaller = TrustedAdvisorResourcesSummaryUnmarshaller.Instance;
+                    unmarshalledObject.ResourcesSummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("timestamp", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return trustedAdvisorCheckSummary;
+            return unmarshalledObject;
         }
 
-        private static TrustedAdvisorCheckSummaryUnmarshaller instance;
-        public static TrustedAdvisorCheckSummaryUnmarshaller GetInstance()
+
+        private static TrustedAdvisorCheckSummaryUnmarshaller _instance = new TrustedAdvisorCheckSummaryUnmarshaller();        
+
+        public static TrustedAdvisorCheckSummaryUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new TrustedAdvisorCheckSummaryUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

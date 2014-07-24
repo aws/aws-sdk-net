@@ -12,66 +12,76 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.AWSSupport.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
+using Amazon.AWSSupport.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for TrustedAdvisorCheckRefreshStatus Object
+    /// </summary>  
+    public class TrustedAdvisorCheckRefreshStatusUnmarshaller : IUnmarshaller<TrustedAdvisorCheckRefreshStatus, XmlUnmarshallerContext>, IUnmarshaller<TrustedAdvisorCheckRefreshStatus, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// TrustedAdvisorCheckRefreshStatusUnmarshaller
-      /// </summary>
-      internal class TrustedAdvisorCheckRefreshStatusUnmarshaller : IUnmarshaller<TrustedAdvisorCheckRefreshStatus, XmlUnmarshallerContext>, IUnmarshaller<TrustedAdvisorCheckRefreshStatus, JsonUnmarshallerContext>
-      {
         TrustedAdvisorCheckRefreshStatus IUnmarshaller<TrustedAdvisorCheckRefreshStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public TrustedAdvisorCheckRefreshStatus Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            TrustedAdvisorCheckRefreshStatus trustedAdvisorCheckRefreshStatus = new TrustedAdvisorCheckRefreshStatus();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            TrustedAdvisorCheckRefreshStatus unmarshalledObject = new TrustedAdvisorCheckRefreshStatus();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("checkId", targetDepth))
-              {
-                trustedAdvisorCheckRefreshStatus.CheckId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("status", targetDepth))
-              {
-                trustedAdvisorCheckRefreshStatus.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("millisUntilNextRefreshable", targetDepth))
-              {
-                trustedAdvisorCheckRefreshStatus.MillisUntilNextRefreshable = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("checkId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CheckId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("millisUntilNextRefreshable", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.MillisUntilNextRefreshable = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return trustedAdvisorCheckRefreshStatus;
+            return unmarshalledObject;
         }
 
-        private static TrustedAdvisorCheckRefreshStatusUnmarshaller instance;
-        public static TrustedAdvisorCheckRefreshStatusUnmarshaller GetInstance()
+
+        private static TrustedAdvisorCheckRefreshStatusUnmarshaller _instance = new TrustedAdvisorCheckRefreshStatusUnmarshaller();        
+
+        public static TrustedAdvisorCheckRefreshStatusUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new TrustedAdvisorCheckRefreshStatusUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

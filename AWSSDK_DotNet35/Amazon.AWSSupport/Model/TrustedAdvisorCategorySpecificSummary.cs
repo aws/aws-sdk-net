@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,31 +18,38 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>The container for summary information that relates to the category of the Trusted Advisor check.</para>
+    /// The container for summary information that relates to the category of the Trusted
+    /// Advisor check.
     /// </summary>
-    public class TrustedAdvisorCategorySpecificSummary
+    public partial class TrustedAdvisorCategorySpecificSummary
     {
-        
-        private TrustedAdvisorCostOptimizingSummary costOptimizing;
+        private TrustedAdvisorCostOptimizingSummary _costOptimizing;
 
 
         /// <summary>
-        /// The summary information about cost savings for a Trusted Advisor check that is in the Cost Optimizing category.
-        ///  
+        /// Gets and sets the property CostOptimizing. 
+        /// <para>
+        /// The summary information about cost savings for a Trusted Advisor check that is in
+        /// the Cost Optimizing category.
+        /// </para>
         /// </summary>
         public TrustedAdvisorCostOptimizingSummary CostOptimizing
         {
-            get { return this.costOptimizing; }
-            set { this.costOptimizing = value; }
+            get { return this._costOptimizing; }
+            set { this._costOptimizing = value; }
         }
 
         // Check to see if CostOptimizing property is set
         internal bool IsSetCostOptimizing()
         {
-            return this.costOptimizing != null;
+            return this._costOptimizing != null;
         }
+
     }
 }

@@ -18,10 +18,9 @@ using Amazon.Runtime;
 namespace Amazon.ElasticLoadBalancing
 {
     /// <summary>
-    /// Base class for AmazonElasticLoadBalancing operation requests.
+    /// Base class for ElasticLoadBalancing operation requests.
     /// </summary>
     public partial class AmazonElasticLoadBalancingRequest : AmazonWebServiceRequest
     {
     }
 }
-    

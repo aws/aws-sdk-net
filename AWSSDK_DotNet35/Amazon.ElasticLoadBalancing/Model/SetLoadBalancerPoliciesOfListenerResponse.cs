@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// Returns information about the  SetLoadBalancerPoliciesOfListener response and response metadata.
+    /// Configuration for accessing Amazon SetLoadBalancerPoliciesOfListener service
     /// </summary>
     public partial class SetLoadBalancerPoliciesOfListenerResponse : SetLoadBalancerPoliciesOfListenerResult
     {
         /// <summary>
         /// Gets and sets the SetLoadBalancerPoliciesOfListenerResult property.
-        /// The output for the SetLoadBalancerPoliciesOfListener action.
+        /// Represents the output of a SetLoadBalancerPoliciesOfListener operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the SetLoadBalancerPoliciesOfListenerResult class are now available on the SetLoadBalancerPoliciesOfListenerResponse class. You should use the properties on SetLoadBalancerPoliciesOfListenerResponse instead of accessing them through SetLoadBalancerPoliciesOfListenerResult.")]
         public SetLoadBalancerPoliciesOfListenerResult SetLoadBalancerPoliciesOfListenerResult
@@ -40,4 +36,3 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
     }
 }
-    

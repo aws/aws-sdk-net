@@ -29,44 +29,40 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Resolve Case Request Marshaller
+    /// ResolveCase Request Marshaller
     /// </summary>       
-    internal class ResolveCaseRequestMarshaller : IMarshaller<IRequest, ResolveCaseRequest> 
+    public class ResolveCaseRequestMarshaller : IMarshaller<IRequest, ResolveCaseRequest> 
     {
-        
-
-        public IRequest Marshall(ResolveCaseRequest resolveCaseRequest) 
+        public IRequest Marshall(ResolveCaseRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(resolveCaseRequest, "AmazonAWSSupport");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AWSSupport");
             string target = "AWSSupport_20130415.ResolveCase";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (resolveCaseRequest != null && resolveCaseRequest.IsSetCaseId()) 
+                if(publicRequest.IsSetCaseId())
                 {
                     writer.WritePropertyName("caseId");
-                    writer.Write(resolveCaseRequest.CaseId);
+                    writer.Write(publicRequest.CaseId);
                 }
 
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

@@ -334,6 +334,7 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Scope = "member", Target = "Amazon.S3.IAmazonS3.#GetPreSignedURL(Amazon.S3.Model.GetPreSignedUrlRequest)")]
 [module: SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Scope = "member", Target = "Amazon.S3.Util.AmazonS3Util.#UrlEncode(System.String,System.Boolean)")]
 [module: SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Scope = "member", Target = "Amazon.Util.AWSSDKUtils.#UrlEncode(System.String,System.Boolean)")]
+[module: SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Scope = "member", Target = "Amazon.DynamoDBv2.DataModel.S3Link.#GetPreSignedURL(System.DateTime)")]
 
 // Use properties, breaking changes
 [module: SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Scope = "member", Target = "Amazon.DynamoDBv2.DocumentModel.Document.#GetAttributeNames()")]

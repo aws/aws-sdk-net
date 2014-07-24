@@ -14,59 +14,60 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticLoadBalancing.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Load Balancer Policy Request Marshaller
+    /// CreateLoadBalancerPolicy Request Marshaller
     /// </summary>       
     public class CreateLoadBalancerPolicyRequestMarshaller : IMarshaller<IRequest, CreateLoadBalancerPolicyRequest>
     {
-        public IRequest Marshall(CreateLoadBalancerPolicyRequest createLoadBalancerPolicyRequest)
+        public IRequest Marshall(CreateLoadBalancerPolicyRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(createLoadBalancerPolicyRequest, "AmazonElasticLoadBalancing");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticLoadBalancing");
             request.Parameters.Add("Action", "CreateLoadBalancerPolicy");
             request.Parameters.Add("Version", "2012-06-01");
-            if (createLoadBalancerPolicyRequest != null && createLoadBalancerPolicyRequest.IsSetLoadBalancerName())
-            {
-                request.Parameters.Add("LoadBalancerName", StringUtils.FromString(createLoadBalancerPolicyRequest.LoadBalancerName));
-            }
-            if (createLoadBalancerPolicyRequest != null && createLoadBalancerPolicyRequest.IsSetPolicyName())
-            {
-                request.Parameters.Add("PolicyName", StringUtils.FromString(createLoadBalancerPolicyRequest.PolicyName));
-            }
-            if (createLoadBalancerPolicyRequest != null && createLoadBalancerPolicyRequest.IsSetPolicyTypeName())
-            {
-                request.Parameters.Add("PolicyTypeName", StringUtils.FromString(createLoadBalancerPolicyRequest.PolicyTypeName));
-            }
 
-            if (createLoadBalancerPolicyRequest != null)
+            if(publicRequest != null)
             {
-                List<PolicyAttribute> policyAttributesList = createLoadBalancerPolicyRequest.PolicyAttributes;
-                int policyAttributesListIndex = 1;
-                foreach (PolicyAttribute policyAttributesListValue in policyAttributesList)
+                if(publicRequest.IsSetLoadBalancerName())
                 {
-                    if (policyAttributesListValue != null && policyAttributesListValue.IsSetAttributeName())
+                    request.Parameters.Add("LoadBalancerName", StringUtils.FromString(publicRequest.LoadBalancerName));
+                }
+                if(publicRequest.IsSetPolicyAttributes())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.PolicyAttributes)
                     {
-                        request.Parameters.Add("PolicyAttributes.member." + policyAttributesListIndex + ".AttributeName", StringUtils.FromString(policyAttributesListValue.AttributeName));
+                        if(publicRequestlistValue.IsSetAttributeName())
+                        {
+                            request.Parameters.Add("PolicyAttributes" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AttributeName", StringUtils.FromString(publicRequestlistValue.AttributeName));
+                        }
+                        if(publicRequestlistValue.IsSetAttributeValue())
+                        {
+                            request.Parameters.Add("PolicyAttributes" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AttributeValue", StringUtils.FromString(publicRequestlistValue.AttributeValue));
+                        }
+                        publicRequestlistValueIndex++;
                     }
-                    if (policyAttributesListValue != null && policyAttributesListValue.IsSetAttributeValue())
-                    {
-                        request.Parameters.Add("PolicyAttributes.member." + policyAttributesListIndex + ".AttributeValue", StringUtils.FromString(policyAttributesListValue.AttributeValue));
-                    }
-
-                    policyAttributesListIndex++;
+                }
+                if(publicRequest.IsSetPolicyName())
+                {
+                    request.Parameters.Add("PolicyName", StringUtils.FromString(publicRequest.PolicyName));
+                }
+                if(publicRequest.IsSetPolicyTypeName())
+                {
+                    request.Parameters.Add("PolicyTypeName", StringUtils.FromString(publicRequest.PolicyTypeName));
                 }
             }
-
             return request;
         }
     }

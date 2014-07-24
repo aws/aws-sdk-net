@@ -18,89 +18,106 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para> The InstanceState data type. </para>
+    /// The InstanceState data type.
     /// </summary>
     public partial class InstanceState
     {
-        
-        private string instanceId;
-        private string state;
-        private string reasonCode;
-        private string description;
+        private string _description;
+        private string _instanceId;
+        private string _reasonCode;
+        private string _state;
+
 
         /// <summary>
-        /// Default constructor for a new InstanceState object.  Callers should use the
-        /// properties to initialize this object after creating it.
-        /// </summary>
-        public InstanceState() {}
-    
-
-        /// <summary>
-        /// Provides an EC2 instance ID.
-        ///  
-        /// </summary>
-        public string InstanceId
-        {
-            get { return this.instanceId; }
-            set { this.instanceId = value; }
-        }
-
-        // Check to see if InstanceId property is set
-        internal bool IsSetInstanceId()
-        {
-            return this.instanceId != null;
-        }
-
-        /// <summary>
-        /// Specifies the current state of the instance. Valid value: <c>InService</c>|<c>OutOfService</c>
-        ///  
-        /// </summary>
-        public string State
-        {
-            get { return this.state; }
-            set { this.state = value; }
-        }
-
-        // Check to see if State property is set
-        internal bool IsSetState()
-        {
-            return this.state != null;
-        }
-
-        /// <summary>
-        /// Provides information about the cause of <i>OutOfService</i> instances. Specifically, it indicates whether the cause is Elastic Load
-        /// Balancing or the instance behind the load balancer. Valid value: <c>ELB</c>|<c>Instance</c>|<c>N/A</c>
-        ///  
-        /// </summary>
-        public string ReasonCode
-        {
-            get { return this.reasonCode; }
-            set { this.reasonCode = value; }
-        }
-
-        // Check to see if ReasonCode property is set
-        internal bool IsSetReasonCode()
-        {
-            return this.reasonCode != null;
-        }
-
-        /// <summary>
-        /// Provides a description of the instance state.
-        ///  
+        /// Gets and sets the property Description. 
+        /// <para>
+        ///  Provides a description of the instance state. 
+        /// </para>
         /// </summary>
         public string Description
         {
-            get { return this.description; }
-            set { this.description = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
 
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;
+            return this._description != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        ///  Provides an EC2 instance ID. 
+        /// </para>
+        /// </summary>
+        public string InstanceId
+        {
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
+        }
+
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
+        {
+            return this._instanceId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ReasonCode. 
+        /// <para>
+        ///  Provides information about the cause of <i>OutOfService</i> instances. Specifically,
+        /// it indicates whether the cause is Elastic Load Balancing or the instance behind the
+        /// load balancer. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid value: <code>ELB</code>|<code>Instance</code>|<code>N/A</code>
+        /// </para>
+        /// </summary>
+        public string ReasonCode
+        {
+            get { return this._reasonCode; }
+            set { this._reasonCode = value; }
+        }
+
+        // Check to see if ReasonCode property is set
+        internal bool IsSetReasonCode()
+        {
+            return this._reasonCode != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// Specifies the current state of the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid value: <code>InService</code>|<code>OutOfService</code>|<code>Unknown</code>
+        /// </para>
+        /// </summary>
+        public string State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
+        }
+
     }
 }

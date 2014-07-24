@@ -18,68 +18,57 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para>The AppCookieStickinessPolicy data type. </para>
+    /// The AppCookieStickinessPolicy data type.
     /// </summary>
     public partial class AppCookieStickinessPolicy
     {
-        
-        private string policyName;
-        private string cookieName;
+        private string _cookieName;
+        private string _policyName;
+
 
         /// <summary>
-        /// Default constructor for a new AppCookieStickinessPolicy object.  Callers should use the
-        /// properties to initialize this object after creating it.
-        /// </summary>
-        public AppCookieStickinessPolicy() {}
-    
-        /// <summary>
-        /// Constructs a new AppCookieStickinessPolicy object.
-        /// Callers should use the properties initialize any additional object members.
-        /// </summary>
-        /// 
-        /// <param name="policyName"> The mnemonic name for the policy being created. The name must be unique within a set of policies for this load
-        /// balancer. </param>
-        /// <param name="cookieName"> The name of the application cookie used for stickiness. </param>
-        public AppCookieStickinessPolicy(string policyName, string cookieName)
-        {
-            this.policyName = policyName;
-            this.cookieName = cookieName;
-        }
-    
-
-        /// <summary>
-        /// The mnemonic name for the policy being created. The name must be unique within a set of policies for this load balancer.
-        ///  
-        /// </summary>
-        public string PolicyName
-        {
-            get { return this.policyName; }
-            set { this.policyName = value; }
-        }
-
-        // Check to see if PolicyName property is set
-        internal bool IsSetPolicyName()
-        {
-            return this.policyName != null;
-        }
-
-        /// <summary>
-        /// The name of the application cookie used for stickiness.
-        ///  
+        /// Gets and sets the property CookieName. 
+        /// <para>
+        /// The name of the application cookie used for stickiness. 
+        /// </para>
         /// </summary>
         public string CookieName
         {
-            get { return this.cookieName; }
-            set { this.cookieName = value; }
+            get { return this._cookieName; }
+            set { this._cookieName = value; }
         }
 
         // Check to see if CookieName property is set
         internal bool IsSetCookieName()
         {
-            return this.cookieName != null;
+            return this._cookieName != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property PolicyName. 
+        /// <para>
+        /// The mnemonic name for the policy being created. The name must be unique within a set
+        /// of policies for this load balancer. 
+        /// </para>
+        /// </summary>
+        public string PolicyName
+        {
+            get { return this._policyName; }
+            set { this._policyName = value; }
+        }
+
+        // Check to see if PolicyName property is set
+        internal bool IsSetPolicyName()
+        {
+            return this._policyName != null;
+        }
+
     }
 }

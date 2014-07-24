@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para> The output for the AttachLoadBalancerToSubnets action. </para>
+    /// The output for the <a>AttachLoadBalancerToSubnets</a> action.
     /// </summary>
     public partial class AttachLoadBalancerToSubnetsResult : AmazonWebServiceResponse
     {
-        
-        private List<string> subnets = new List<string>();
+        private List<string> _subnets = new List<string>();
 
 
         /// <summary>
-        /// A list of subnet IDs attached to the load balancer.
-        ///  
+        /// Gets and sets the property Subnets. 
+        /// <para>
+        ///  A list of subnet IDs attached to the load balancer. 
+        /// </para>
         /// </summary>
         public List<string> Subnets
         {
-            get { return this.subnets; }
-            set { this.subnets = value; }
+            get { return this._subnets; }
+            set { this._subnets = value; }
         }
 
         // Check to see if Subnets property is set
         internal bool IsSetSubnets()
         {
-            return this.subnets.Count > 0;
+            return this._subnets != null && this._subnets.Count > 0; 
         }
+
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,33 +17,38 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Contains the following objects or data if successful. Otherwise, returns an error.</para>
+    /// The result of the Trusted Advisor check returned by the <a>DescribeTrustedAdvisorCheckResult</a>
+    /// operation.
     /// </summary>
     public partial class DescribeTrustedAdvisorCheckResultResult : AmazonWebServiceResponse
     {
-        
-        private TrustedAdvisorCheckResult result;
+        private TrustedAdvisorCheckResult _result;
 
 
         /// <summary>
+        /// Gets and sets the property Result. 
+        /// <para>
         /// The detailed results of the Trusted Advisor check.
-        ///  
+        /// </para>
         /// </summary>
         public TrustedAdvisorCheckResult Result
         {
-            get { return this.result; }
-            set { this.result = value; }
+            get { return this._result; }
+            set { this._result = value; }
         }
 
         // Check to see if Result property is set
         internal bool IsSetResult()
         {
-            return this.result != null;
+            return this._result != null;
         }
+
     }
 }

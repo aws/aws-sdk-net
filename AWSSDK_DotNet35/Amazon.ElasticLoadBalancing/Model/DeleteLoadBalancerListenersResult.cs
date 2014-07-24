@@ -17,16 +17,17 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para> The output for the DeleteLoadBalancerListeners action. </para>
+    /// The output for the <a>DeleteLoadBalancerListeners</a> action.
     /// </summary>
     public partial class DeleteLoadBalancerListenersResult : AmazonWebServiceResponse
     {
-        
 
     }
 }

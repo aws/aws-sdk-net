@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,65 +18,78 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>The refresh status of a Trusted Advisor check. </para>
+    /// The refresh status of a Trusted Advisor check.
     /// </summary>
-    public class TrustedAdvisorCheckRefreshStatus
+    public partial class TrustedAdvisorCheckRefreshStatus
     {
-        
-        private string checkId;
-        private string status;
-        private long? millisUntilNextRefreshable;
+        private string _checkId;
+        private long? _millisUntilNextRefreshable;
+        private string _status;
 
 
         /// <summary>
+        /// Gets and sets the property CheckId. 
+        /// <para>
         /// The unique identifier for the Trusted Advisor check.
-        ///  
+        /// </para>
         /// </summary>
         public string CheckId
         {
-            get { return this.checkId; }
-            set { this.checkId = value; }
+            get { return this._checkId; }
+            set { this._checkId = value; }
         }
 
         // Check to see if CheckId property is set
         internal bool IsSetCheckId()
         {
-            return this.checkId != null;
+            return this._checkId != null;
         }
+
 
         /// <summary>
-        /// The status of the Trusted Advisor check for which a refresh has been requested: "none", "enqueued", "processing", "success", or "abandoned".
-        ///  
-        /// </summary>
-        public string Status
-        {
-            get { return this.status; }
-            set { this.status = value; }
-        }
-
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
-        {
-            return this.status != null;
-        }
-
-        /// <summary>
-        /// The amount of time, in milliseconds, until the Trusted Advisor check is eligible for refresh.
-        ///  
+        /// Gets and sets the property MillisUntilNextRefreshable. 
+        /// <para>
+        /// The amount of time, in milliseconds, until the Trusted Advisor check is eligible for
+        /// refresh.
+        /// </para>
         /// </summary>
         public long MillisUntilNextRefreshable
         {
-            get { return this.millisUntilNextRefreshable ?? default(long); }
-            set { this.millisUntilNextRefreshable = value; }
+            get { return this._millisUntilNextRefreshable.GetValueOrDefault(); }
+            set { this._millisUntilNextRefreshable = value; }
         }
 
         // Check to see if MillisUntilNextRefreshable property is set
         internal bool IsSetMillisUntilNextRefreshable()
         {
-            return this.millisUntilNextRefreshable.HasValue;
+            return this._millisUntilNextRefreshable.HasValue; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the Trusted Advisor check for which a refresh has been requested: "none",
+        /// "enqueued", "processing", "success", or "abandoned".
+        /// </para>
+        /// </summary>
+        public string Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
     }
 }

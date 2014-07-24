@@ -14,36 +14,40 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticLoadBalancing.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Load Balancer Policy Request Marshaller
+    /// DeleteLoadBalancerPolicy Request Marshaller
     /// </summary>       
     public class DeleteLoadBalancerPolicyRequestMarshaller : IMarshaller<IRequest, DeleteLoadBalancerPolicyRequest>
     {
-        public IRequest Marshall(DeleteLoadBalancerPolicyRequest deleteLoadBalancerPolicyRequest)
+        public IRequest Marshall(DeleteLoadBalancerPolicyRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(deleteLoadBalancerPolicyRequest, "AmazonElasticLoadBalancing");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticLoadBalancing");
             request.Parameters.Add("Action", "DeleteLoadBalancerPolicy");
             request.Parameters.Add("Version", "2012-06-01");
-            if (deleteLoadBalancerPolicyRequest != null && deleteLoadBalancerPolicyRequest.IsSetLoadBalancerName())
-            {
-                request.Parameters.Add("LoadBalancerName", StringUtils.FromString(deleteLoadBalancerPolicyRequest.LoadBalancerName));
-            }
-            if (deleteLoadBalancerPolicyRequest != null && deleteLoadBalancerPolicyRequest.IsSetPolicyName())
-            {
-                request.Parameters.Add("PolicyName", StringUtils.FromString(deleteLoadBalancerPolicyRequest.PolicyName));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetLoadBalancerName())
+                {
+                    request.Parameters.Add("LoadBalancerName", StringUtils.FromString(publicRequest.LoadBalancerName));
+                }
+                if(publicRequest.IsSetPolicyName())
+                {
+                    request.Parameters.Add("PolicyName", StringUtils.FromString(publicRequest.PolicyName));
+                }
+            }
             return request;
         }
     }

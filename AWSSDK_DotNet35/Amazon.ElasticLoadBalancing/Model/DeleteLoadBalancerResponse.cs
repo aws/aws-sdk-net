@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// Returns information about the  DeleteLoadBalancer response and response metadata.
+    /// Configuration for accessing Amazon DeleteLoadBalancer service
     /// </summary>
     public partial class DeleteLoadBalancerResponse : DeleteLoadBalancerResult
     {
         /// <summary>
         /// Gets and sets the DeleteLoadBalancerResult property.
-        /// The output for the DeleteLoadBalancer action.
+        /// Represents the output of a DeleteLoadBalancer operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DeleteLoadBalancerResult class are now available on the DeleteLoadBalancerResponse class. You should use the properties on DeleteLoadBalancerResponse instead of accessing them through DeleteLoadBalancerResult.")]
         public DeleteLoadBalancerResult DeleteLoadBalancerResult
@@ -40,4 +36,3 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
     }
 }
-    

@@ -18,31 +18,36 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para>The <c>CrossZoneLoadBalancing</c> data type.</para>
+    /// The <code>CrossZoneLoadBalancing</code> data type.
     /// </summary>
     public partial class CrossZoneLoadBalancing
     {
-        
-        private bool? enabled;
+        private bool? _enabled;
 
 
         /// <summary>
+        /// Gets and sets the property Enabled. 
+        /// <para>
         /// Specifies whether cross-zone load balancing is enabled for the load balancer.
-        ///  
+        /// </para>
         /// </summary>
         public bool Enabled
         {
-            get { return this.enabled ?? default(bool); }
-            set { this.enabled = value; }
+            get { return this._enabled.GetValueOrDefault(); }
+            set { this._enabled = value; }
         }
 
         // Check to see if Enabled property is set
         internal bool IsSetEnabled()
         {
-            return this.enabled.HasValue;
+            return this._enabled.HasValue; 
         }
+
     }
 }

@@ -12,68 +12,71 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Net;
-    using System.Collections.Generic;
-    using ThirdParty.Json.LitJson;
-    using Amazon.AWSSupport.Model;
-    using Amazon.Runtime;
-    using Amazon.Runtime.Internal;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
+using Amazon.AWSSupport.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for DescribeTrustedAdvisorCheckSummaries operation
+    /// </summary>  
+    public class DescribeTrustedAdvisorCheckSummariesResponseUnmarshaller : JsonResponseUnmarshaller
     {
-      /// <summary>
-      /// Response Unmarshaller for DescribeTrustedAdvisorCheckSummaries operation
-      /// </summary>
-      internal class DescribeTrustedAdvisorCheckSummariesResponseUnmarshaller : JsonResponseUnmarshaller
-      {
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeTrustedAdvisorCheckSummariesResponse response = new DescribeTrustedAdvisorCheckSummariesResponse();       
-          
+            DescribeTrustedAdvisorCheckSummariesResponse response = new DescribeTrustedAdvisorCheckSummariesResponse();
+
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("summaries", targetDepth))
-              {
-                
-                var unmarshaller = new ListUnmarshaller<TrustedAdvisorCheckSummary,TrustedAdvisorCheckSummaryUnmarshaller>(
-                    TrustedAdvisorCheckSummaryUnmarshaller.GetInstance());                  
-                response.Summaries = unmarshaller.Unmarshall(context);
-                
-                continue;
-              }
-  
+                if (context.TestExpression("summaries", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<TrustedAdvisorCheckSummary, TrustedAdvisorCheckSummaryUnmarshaller>(TrustedAdvisorCheckSummaryUnmarshaller.Instance);
+                    response.Summaries = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
-                        
+ 
+
             return response;
-        }                        
-        
-        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
-        {
-          ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);                    
-          
-          if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerErrorException"))
-          {
-            return new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          return new AmazonAWSSupportException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DescribeTrustedAdvisorCheckSummariesResponseUnmarshaller instance;
-        public static DescribeTrustedAdvisorCheckSummariesResponseUnmarshaller GetInstance()
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-          if (instance == null)
-          {
-            instance = new DescribeTrustedAdvisorCheckSummariesResponseUnmarshaller();
-          }
-          return instance;
+            ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerError"))
+            {
+                return new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            return new AmazonAWSSupportException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-  
-      }
+
+        private static DescribeTrustedAdvisorCheckSummariesResponseUnmarshaller _instance = new DescribeTrustedAdvisorCheckSummariesResponseUnmarshaller();        
+
+        internal static DescribeTrustedAdvisorCheckSummariesResponseUnmarshaller GetInstance()
+        {
+            return _instance;
+        }
+        public static DescribeTrustedAdvisorCheckSummariesResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
-  
+}

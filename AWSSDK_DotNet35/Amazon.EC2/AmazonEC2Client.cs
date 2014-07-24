@@ -1605,10 +1605,8 @@ namespace Amazon.EC2
         
         IAsyncResult invokeCopySnapshot(CopySnapshotRequest copySnapshotRequest, AsyncCallback callback, object state, bool synchronized)
         {
-            IRequest irequest = new CopySnapshotRequestMarshaller().Marshall(copySnapshotRequest);
             var unmarshaller = CopySnapshotResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
+            var result = Invoke<IRequest, CopySnapshotRequest>(copySnapshotRequest, callback, state, synchronized, new CopySnapshotRequestMarshaller(), unmarshaller, this.signer);
             return result;
         }
         

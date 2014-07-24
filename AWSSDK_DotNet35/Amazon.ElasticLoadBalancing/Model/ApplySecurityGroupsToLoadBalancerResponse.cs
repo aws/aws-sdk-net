@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// Returns information about the  ApplySecurityGroupsToLoadBalancer response and response metadata.
+    /// Configuration for accessing Amazon ApplySecurityGroupsToLoadBalancer service
     /// </summary>
     public partial class ApplySecurityGroupsToLoadBalancerResponse : ApplySecurityGroupsToLoadBalancerResult
     {
         /// <summary>
         /// Gets and sets the ApplySecurityGroupsToLoadBalancerResult property.
-        /// The out for the ApplySecurityGroupsToLoadBalancer action.
+        /// Represents the output of a ApplySecurityGroupsToLoadBalancer operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ApplySecurityGroupsToLoadBalancerResult class are now available on the ApplySecurityGroupsToLoadBalancerResponse class. You should use the properties on ApplySecurityGroupsToLoadBalancerResponse instead of accessing them through ApplySecurityGroupsToLoadBalancerResult.")]
         public ApplySecurityGroupsToLoadBalancerResult ApplySecurityGroupsToLoadBalancerResult
@@ -40,4 +36,3 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
     }
 }
-    

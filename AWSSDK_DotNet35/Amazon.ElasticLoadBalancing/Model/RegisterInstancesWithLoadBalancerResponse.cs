@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// Returns information about the  RegisterInstancesWithLoadBalancer response and response metadata.
+    /// Configuration for accessing Amazon RegisterInstancesWithLoadBalancer service
     /// </summary>
     public partial class RegisterInstancesWithLoadBalancerResponse : RegisterInstancesWithLoadBalancerResult
     {
         /// <summary>
         /// Gets and sets the RegisterInstancesWithLoadBalancerResult property.
-        /// The output for the RegisterInstancesWithLoadBalancer action.
+        /// Represents the output of a RegisterInstancesWithLoadBalancer operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the RegisterInstancesWithLoadBalancerResult class are now available on the RegisterInstancesWithLoadBalancerResponse class. You should use the properties on RegisterInstancesWithLoadBalancerResponse instead of accessing them through RegisterInstancesWithLoadBalancerResult.")]
         public RegisterInstancesWithLoadBalancerResult RegisterInstancesWithLoadBalancerResult
@@ -40,4 +36,3 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
     }
 }
-    

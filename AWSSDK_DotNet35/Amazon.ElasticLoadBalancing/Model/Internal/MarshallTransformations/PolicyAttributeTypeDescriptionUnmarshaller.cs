@@ -12,87 +12,93 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticLoadBalancing.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   PolicyAttributeTypeDescription Unmarshaller
-     /// </summary>
-    internal class PolicyAttributeTypeDescriptionUnmarshaller : IUnmarshaller<PolicyAttributeTypeDescription, XmlUnmarshallerContext>, IUnmarshaller<PolicyAttributeTypeDescription, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for PolicyAttributeTypeDescription Object
+    /// </summary>  
+    public class PolicyAttributeTypeDescriptionUnmarshaller : IUnmarshaller<PolicyAttributeTypeDescription, XmlUnmarshallerContext>, IUnmarshaller<PolicyAttributeTypeDescription, JsonUnmarshallerContext>
     {
-        public PolicyAttributeTypeDescription Unmarshall(XmlUnmarshallerContext context) 
+        public PolicyAttributeTypeDescription Unmarshall(XmlUnmarshallerContext context)
         {
-            PolicyAttributeTypeDescription policyAttributeTypeDescription = new PolicyAttributeTypeDescription();
+            PolicyAttributeTypeDescription unmarshalledObject = new PolicyAttributeTypeDescription();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("AttributeName", targetDepth))
                     {
-                        policyAttributeTypeDescription.AttributeName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AttributeName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("AttributeType", targetDepth))
                     {
-                        policyAttributeTypeDescription.AttributeType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Description", targetDepth))
-                    {
-                        policyAttributeTypeDescription.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("DefaultValue", targetDepth))
-                    {
-                        policyAttributeTypeDescription.DefaultValue = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AttributeType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Cardinality", targetDepth))
                     {
-                        policyAttributeTypeDescription.Cardinality = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Cardinality = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("DefaultValue", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DefaultValue = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Description", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return policyAttributeTypeDescription;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return policyAttributeTypeDescription;
+            return unmarshalledObject;
         }
 
-        public PolicyAttributeTypeDescription Unmarshall(JsonUnmarshallerContext context) 
+        public PolicyAttributeTypeDescription Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static PolicyAttributeTypeDescriptionUnmarshaller instance;
 
-        public static PolicyAttributeTypeDescriptionUnmarshaller GetInstance() 
+        private static PolicyAttributeTypeDescriptionUnmarshaller _instance = new PolicyAttributeTypeDescriptionUnmarshaller();        
+
+        public static PolicyAttributeTypeDescriptionUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new PolicyAttributeTypeDescriptionUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

@@ -25,69 +25,82 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the SetLoadBalancerPoliciesForBackendServer operation.
-    /// <para> Replaces the current set of policies associated with a port on which the back-end server is listening with a new set of policies.
-    /// After the policies have been created using CreateLoadBalancerPolicy, they can be applied here as a list. At this time, only the back-end
-    /// server authentication policy type can be applied to the back-end ports; this policy type is composed of multiple public key policies.
-    /// </para> <para><b>NOTE:</b> The SetLoadBalancerPoliciesForBackendServer replaces the current set of policies associated with the specified
-    /// instance port. Every time you use this action to enable the policies, use the PolicyNames parameter to list all the policies you want to
-    /// enable. </para> <para>You can use DescribeLoadBalancers or DescribeLoadBalancerPolicies action to verify that the policy has been associated
-    /// with the back-end server.</para>
+    /// Replaces the current set of policies associated with a port on which the back-end
+    /// server is listening with a new set of policies. After the policies have been created
+    /// using <a>CreateLoadBalancerPolicy</a>, they can be applied here as a list. At this
+    /// time, only the back-end server authentication policy type can be applied to the back-end
+    /// ports; this policy type is composed of multiple public key policies. 
+    /// 
+    ///  
+    /// <para>
+    /// You can use <a>DescribeLoadBalancers</a> or <a>DescribeLoadBalancerPolicies</a> action
+    /// to verify that the policy has been associated with the back-end server.
+    /// </para>
     /// </summary>
     public partial class SetLoadBalancerPoliciesForBackendServerRequest : AmazonElasticLoadBalancingRequest
     {
-        private string loadBalancerName;
-        private int? instancePort;
-        private List<string> policyNames = new List<string>();
+        private int? _instancePort;
+        private string _loadBalancerName;
+        private List<string> _policyNames = new List<string>();
 
 
         /// <summary>
-        /// The mnemonic name associated with the load balancer. This name must be unique within the set of your load balancers.
-        ///  
-        /// </summary>
-        public string LoadBalancerName
-        {
-            get { return this.loadBalancerName; }
-            set { this.loadBalancerName = value; }
-        }
-
-        // Check to see if LoadBalancerName property is set
-        internal bool IsSetLoadBalancerName()
-        {
-            return this.loadBalancerName != null;
-        }
-
-        /// <summary>
-        /// The port number associated with the back-end server.
-        ///  
+        /// Gets and sets the property InstancePort. 
+        /// <para>
+        ///  The port number associated with the back-end server. 
+        /// </para>
         /// </summary>
         public int InstancePort
         {
-            get { return this.instancePort ?? default(int); }
-            set { this.instancePort = value; }
+            get { return this._instancePort.GetValueOrDefault(); }
+            set { this._instancePort = value; }
         }
 
         // Check to see if InstancePort property is set
         internal bool IsSetInstancePort()
         {
-            return this.instancePort.HasValue;
+            return this._instancePort.HasValue; 
         }
 
+
         /// <summary>
-        /// List of policy names to be set. If the list is empty, then all current polices are removed from the back-end server.
-        ///  
+        /// Gets and sets the property LoadBalancerName. 
+        /// <para>
+        ///  The mnemonic name associated with the load balancer. This name must be unique within
+        /// the set of your load balancers. 
+        /// </para>
+        /// </summary>
+        public string LoadBalancerName
+        {
+            get { return this._loadBalancerName; }
+            set { this._loadBalancerName = value; }
+        }
+
+        // Check to see if LoadBalancerName property is set
+        internal bool IsSetLoadBalancerName()
+        {
+            return this._loadBalancerName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property PolicyNames. 
+        /// <para>
+        ///  List of policy names to be set. If the list is empty, then all current polices are
+        /// removed from the back-end server. 
+        /// </para>
         /// </summary>
         public List<string> PolicyNames
         {
-            get { return this.policyNames; }
-            set { this.policyNames = value; }
+            get { return this._policyNames; }
+            set { this._policyNames = value; }
         }
 
         // Check to see if PolicyNames property is set
         internal bool IsSetPolicyNames()
         {
-            return this.policyNames.Count > 0;
+            return this._policyNames != null && this._policyNames.Count > 0; 
         }
 
     }
 }
-    

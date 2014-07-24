@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para> The output for the DescribeInstanceHealth action. </para>
+    /// The output for the <a>DescribeInstanceHealth</a> action.
     /// </summary>
     public partial class DescribeInstanceHealthResult : AmazonWebServiceResponse
     {
-        
-        private List<InstanceState> instanceStates = new List<InstanceState>();
+        private List<InstanceState> _instanceStates = new List<InstanceState>();
 
 
         /// <summary>
-        /// A list containing health information for the specified instances.
-        ///  
+        /// Gets and sets the property InstanceStates. 
+        /// <para>
+        ///  A list containing health information for the specified instances. 
+        /// </para>
         /// </summary>
         public List<InstanceState> InstanceStates
         {
-            get { return this.instanceStates; }
-            set { this.instanceStates = value; }
+            get { return this._instanceStates; }
+            set { this._instanceStates = value; }
         }
 
         // Check to see if InstanceStates property is set
         internal bool IsSetInstanceStates()
         {
-            return this.instanceStates.Count > 0;
+            return this._instanceStates != null && this._instanceStates.Count > 0; 
         }
+
     }
 }

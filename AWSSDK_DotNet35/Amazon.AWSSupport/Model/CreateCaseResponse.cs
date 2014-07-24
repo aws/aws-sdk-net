@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// Returns information about the  CreateCase response and response metadata.
+    /// Configuration for accessing Amazon CreateCase service
     /// </summary>
-    public class CreateCaseResponse : CreateCaseResult
+    public partial class CreateCaseResponse : CreateCaseResult
     {
         /// <summary>
         /// Gets and sets the CreateCaseResult property.
-        /// The AWS Support case ID returned by a successful completion of the CreateCase action.
+        /// Represents the output of a CreateCase operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateCaseResult class are now available on the CreateCaseResponse class. You should use the properties on CreateCaseResponse instead of accessing them through CreateCaseResult.")]
         public CreateCaseResult CreateCaseResult
@@ -40,4 +36,3 @@ namespace Amazon.AWSSupport.Model
         }
     }
 }
-    

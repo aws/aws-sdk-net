@@ -25,83 +25,96 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLoadBalancerPolicy operation.
-    /// <para> Creates a new policy that contains the necessary attributes depending on the policy type. Policies are settings that are saved for
-    /// your load balancer and that can be applied to the front-end listener, or the back-end application server, depending on your policy type.
-    /// </para>
+    /// Creates a new policy that contains the necessary attributes depending on the policy
+    /// type. Policies are settings that are saved for your load balancer and that can be
+    /// applied to the front-end listener, or the back-end application server, depending on
+    /// your policy type.
     /// </summary>
     public partial class CreateLoadBalancerPolicyRequest : AmazonElasticLoadBalancingRequest
     {
-        private string loadBalancerName;
-        private string policyName;
-        private string policyTypeName;
-        private List<PolicyAttribute> policyAttributes = new List<PolicyAttribute>();
+        private string _loadBalancerName;
+        private List<PolicyAttribute> _policyAttributes = new List<PolicyAttribute>();
+        private string _policyName;
+        private string _policyTypeName;
 
 
         /// <summary>
-        /// The name associated with the LoadBalancer for which the policy is being created.
-        ///  
+        /// Gets and sets the property LoadBalancerName. 
+        /// <para>
+        ///  The name associated with the LoadBalancer for which the policy is being created.
+        /// 
+        /// </para>
         /// </summary>
         public string LoadBalancerName
         {
-            get { return this.loadBalancerName; }
-            set { this.loadBalancerName = value; }
+            get { return this._loadBalancerName; }
+            set { this._loadBalancerName = value; }
         }
 
         // Check to see if LoadBalancerName property is set
         internal bool IsSetLoadBalancerName()
         {
-            return this.loadBalancerName != null;
+            return this._loadBalancerName != null;
         }
+
 
         /// <summary>
-        /// The name of the load balancer policy being created. The name must be unique within the set of policies for this load balancer.
-        ///  
-        /// </summary>
-        public string PolicyName
-        {
-            get { return this.policyName; }
-            set { this.policyName = value; }
-        }
-
-        // Check to see if PolicyName property is set
-        internal bool IsSetPolicyName()
-        {
-            return this.policyName != null;
-        }
-
-        /// <summary>
-        /// The name of the base policy type being used to create this policy. To get the list of policy types, use the
-        /// <a>DescribeLoadBalancerPolicyTypes</a> action.
-        ///  
-        /// </summary>
-        public string PolicyTypeName
-        {
-            get { return this.policyTypeName; }
-            set { this.policyTypeName = value; }
-        }
-
-        // Check to see if PolicyTypeName property is set
-        internal bool IsSetPolicyTypeName()
-        {
-            return this.policyTypeName != null;
-        }
-
-        /// <summary>
-        /// A list of attributes associated with the policy being created.
-        ///  
+        /// Gets and sets the property PolicyAttributes. 
+        /// <para>
+        ///  A list of attributes associated with the policy being created. 
+        /// </para>
         /// </summary>
         public List<PolicyAttribute> PolicyAttributes
         {
-            get { return this.policyAttributes; }
-            set { this.policyAttributes = value; }
+            get { return this._policyAttributes; }
+            set { this._policyAttributes = value; }
         }
 
         // Check to see if PolicyAttributes property is set
         internal bool IsSetPolicyAttributes()
         {
-            return this.policyAttributes.Count > 0;
+            return this._policyAttributes != null && this._policyAttributes.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property PolicyName. 
+        /// <para>
+        ///  The name of the load balancer policy being created. The name must be unique within
+        /// the set of policies for this load balancer. 
+        /// </para>
+        /// </summary>
+        public string PolicyName
+        {
+            get { return this._policyName; }
+            set { this._policyName = value; }
+        }
+
+        // Check to see if PolicyName property is set
+        internal bool IsSetPolicyName()
+        {
+            return this._policyName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property PolicyTypeName. 
+        /// <para>
+        ///  The name of the base policy type being used to create this policy. To get the list
+        /// of policy types, use the <a>DescribeLoadBalancerPolicyTypes</a> action. 
+        /// </para>
+        /// </summary>
+        public string PolicyTypeName
+        {
+            get { return this._policyTypeName; }
+            set { this._policyTypeName = value; }
+        }
+
+        // Check to see if PolicyTypeName property is set
+        internal bool IsSetPolicyTypeName()
+        {
+            return this._policyTypeName != null;
         }
 
     }
 }
-    

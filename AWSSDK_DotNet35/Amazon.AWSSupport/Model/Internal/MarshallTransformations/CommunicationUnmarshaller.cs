@@ -12,72 +12,88 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.AWSSupport.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
+using Amazon.AWSSupport.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for Communication Object
+    /// </summary>  
+    public class CommunicationUnmarshaller : IUnmarshaller<Communication, XmlUnmarshallerContext>, IUnmarshaller<Communication, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// CommunicationUnmarshaller
-      /// </summary>
-      internal class CommunicationUnmarshaller : IUnmarshaller<Communication, XmlUnmarshallerContext>, IUnmarshaller<Communication, JsonUnmarshallerContext>
-      {
         Communication IUnmarshaller<Communication, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Communication Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            Communication communication = new Communication();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            Communication unmarshalledObject = new Communication();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("caseId", targetDepth))
-              {
-                communication.CaseId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("body", targetDepth))
-              {
-                communication.Body = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("submittedBy", targetDepth))
-              {
-                communication.SubmittedBy = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("timeCreated", targetDepth))
-              {
-                communication.TimeCreated = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("attachmentSet", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AttachmentDetails, AttachmentDetailsUnmarshaller>(AttachmentDetailsUnmarshaller.Instance);
+                    unmarshalledObject.AttachmentSet = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("body", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Body = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("caseId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CaseId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("submittedBy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SubmittedBy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("timeCreated", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TimeCreated = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return communication;
+            return unmarshalledObject;
         }
 
-        private static CommunicationUnmarshaller instance;
-        public static CommunicationUnmarshaller GetInstance()
+
+        private static CommunicationUnmarshaller _instance = new CommunicationUnmarshaller();        
+
+        public static CommunicationUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new CommunicationUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

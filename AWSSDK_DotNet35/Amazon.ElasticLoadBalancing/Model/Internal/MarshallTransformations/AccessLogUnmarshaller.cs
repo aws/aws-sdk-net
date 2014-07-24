@@ -12,81 +12,87 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticLoadBalancing.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   AccessLog Unmarshaller
-     /// </summary>
-    internal class AccessLogUnmarshaller : IUnmarshaller<AccessLog, XmlUnmarshallerContext>, IUnmarshaller<AccessLog, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for AccessLog Object
+    /// </summary>  
+    public class AccessLogUnmarshaller : IUnmarshaller<AccessLog, XmlUnmarshallerContext>, IUnmarshaller<AccessLog, JsonUnmarshallerContext>
     {
-        public AccessLog Unmarshall(XmlUnmarshallerContext context) 
+        public AccessLog Unmarshall(XmlUnmarshallerContext context)
         {
-            AccessLog accessLog = new AccessLog();
+            AccessLog unmarshalledObject = new AccessLog();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("EmitInterval", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.EmitInterval = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Enabled", targetDepth))
                     {
-                        accessLog.Enabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("S3BucketName", targetDepth))
                     {
-                        accessLog.S3BucketName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("EmitInterval", targetDepth))
-                    {
-                        accessLog.EmitInterval = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.S3BucketName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("S3BucketPrefix", targetDepth))
                     {
-                        accessLog.S3BucketPrefix = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.S3BucketPrefix = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return accessLog;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return accessLog;
+            return unmarshalledObject;
         }
 
-        public AccessLog Unmarshall(JsonUnmarshallerContext context) 
+        public AccessLog Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static AccessLogUnmarshaller instance;
 
-        public static AccessLogUnmarshaller GetInstance() 
+        private static AccessLogUnmarshaller _instance = new AccessLogUnmarshaller();        
+
+        public static AccessLogUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new AccessLogUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

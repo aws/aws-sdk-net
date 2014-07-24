@@ -233,10 +233,10 @@
     <Compile Include="..\AWSSDK_DotNet45\Amazon.DynamoDBv2\DocumentModel\*.Async.cs">
       <Visible>false</Visible>
     </Compile>
-    <Compile Include="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DataModel\*" Exclude="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DataModel\*.Sync.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DataModel\*.Async.cs">
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DataModel\*" Exclude="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DataModel\*.Sync.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DataModel\*.Async.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DataModel\*.bcl35.cs">
       <Visible>false</Visible>
     </Compile>
-    <Compile Include="..\AWSSDK_DotNet45\Amazon.DynamoDBv2\DataModel\*.Async.cs;..\AWSSDK_DotNet45\Amazon.DynamoDBv2\DataModel\Context.cs">
+    <Compile Include="..\AWSSDK_DotNet45\Amazon.DynamoDBv2\DataModel\*.Async.cs;..\AWSSDK_DotNet45\Amazon.DynamoDBv2\DataModel\Context.cs;..\AWSSDK_WinRT\Amazon.DynamoDBv2\DataModel\S3Link.storagefile.cs">
       <Visible>false</Visible>
     </Compile>
   </ItemGroup>

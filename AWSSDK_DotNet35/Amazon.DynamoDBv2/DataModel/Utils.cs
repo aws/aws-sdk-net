@@ -138,30 +138,88 @@ namespace Amazon.DynamoDBv2.DataModel
             sb[0] = char.ToLowerInvariant(sb[0]);
             return sb.ToString();
         }
+
+        private static ITypeInfo[][] validConstructorInputs = new ITypeInfo[][]
+        {
+            TypeFactory.EmptyTypes,
+        };
+        private static ITypeInfo[][] validConverterConstructorInputs = new ITypeInfo[][]
+        {
+            TypeFactory.EmptyTypes,
+            new ITypeInfo[] { TypeFactory.GetTypeInfo(typeof(DynamoDBContext)) }
+        };
+
+        public static object InstantiateConverter(Type objectType, IDynamoDBContext context)
+        {
+            return InstantiateHelper(objectType, validConverterConstructorInputs, new object[] { context });
+        }
         public static object Instantiate(Type objectType)
+        {
+            return InstantiateHelper(objectType, validConstructorInputs, null);
+        }
+        private static object InstantiateHelper(Type objectType, ITypeInfo[][] validConstructorInputs, object[] optionalInput = null)
         {
             if (objectType == null)
                 throw new ArgumentNullException("objectType");
-            if (!CanInstantiate(objectType))
+            if (!CanInstantiateHelper(objectType, validConstructorInputs))
                 throw new InvalidOperationException("Cannot instantiate type " + objectType.FullName);
 
             var objectTypeWrapper = TypeFactory.GetTypeInfo(objectType);
-            var constructorInfo = objectTypeWrapper.GetConstructor(TypeFactory.EmptyTypes);
-            if (constructorInfo == null) throw new InvalidOperationException("Type must have a parameterless constructor");
-            object instance = constructorInfo.Invoke(null);
-            return instance;
+            var constructors = GetConstructors(objectTypeWrapper, validConverterConstructorInputs).ToList();
+
+            if (constructors != null && constructors.Count > 0)
+            {
+                foreach (var constructor in constructors)
+                {
+                    var inputs = constructor.GetParameters();
+                    object[] constructorParameters = inputs.Length == 0 ?
+                        null : optionalInput;
+                    object instance = constructor.Invoke(constructorParameters);
+                    return instance;
+                }
+            }
+
+            throw new InvalidOperationException("Unable to find valid constructor for type " + objectType.FullName);
         }
+        private static IEnumerable<ConstructorInfo> GetConstructors(ITypeInfo typeInfo, ITypeInfo[][] validConstructorInputs)
+        {
+            foreach(var inputTypes in validConstructorInputs)
+            {
+                var constructor = typeInfo.GetConstructor(inputTypes);
+                if (constructor != null)
+                    yield return constructor;
+            }
+        }
+
         public static bool CanInstantiate(Type objectType)
         {
+            return CanInstantiateHelper(objectType, validConstructorInputs);
+        }
+        public static bool CanInstantiateConverter(Type objectType)
+        {
+            return CanInstantiateHelper(objectType, validConverterConstructorInputs);
+        }
+        private static bool CanInstantiateHelper(Type objectType, ITypeInfo[][] validConstructorInputs)
+        {
             var objectTypeWrapper = TypeFactory.GetTypeInfo(objectType);
-            return
+
+            bool candidate =
                 //objectType.IsPublic &&
                 objectTypeWrapper.IsClass &&
                 !objectTypeWrapper.IsInterface &&
                 !objectTypeWrapper.IsAbstract &&
                 !objectTypeWrapper.IsGenericTypeDefinition &&
-                !objectTypeWrapper.ContainsGenericParameters &&
-                objectTypeWrapper.GetConstructor(TypeFactory.EmptyTypes) != null; // parameterless constructor present?
+                !objectTypeWrapper.ContainsGenericParameters;
+
+            if (!candidate)
+                return false;
+
+            // check valid constructor inputs
+            var constructors = GetConstructors(objectTypeWrapper, validConstructorInputs).ToList();
+            if (constructors.Count == 0)
+                return false;
+
+            return true;
         }
         public static Type GetType(MemberInfo member)
         {

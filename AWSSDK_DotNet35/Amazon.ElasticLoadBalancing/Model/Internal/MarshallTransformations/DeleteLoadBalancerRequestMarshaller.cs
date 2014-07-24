@@ -14,32 +14,36 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticLoadBalancing.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Load Balancer Request Marshaller
+    /// DeleteLoadBalancer Request Marshaller
     /// </summary>       
     public class DeleteLoadBalancerRequestMarshaller : IMarshaller<IRequest, DeleteLoadBalancerRequest>
     {
-        public IRequest Marshall(DeleteLoadBalancerRequest deleteLoadBalancerRequest)
+        public IRequest Marshall(DeleteLoadBalancerRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(deleteLoadBalancerRequest, "AmazonElasticLoadBalancing");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticLoadBalancing");
             request.Parameters.Add("Action", "DeleteLoadBalancer");
             request.Parameters.Add("Version", "2012-06-01");
-            if (deleteLoadBalancerRequest != null && deleteLoadBalancerRequest.IsSetLoadBalancerName())
-            {
-                request.Parameters.Add("LoadBalancerName", StringUtils.FromString(deleteLoadBalancerRequest.LoadBalancerName));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetLoadBalancerName())
+                {
+                    request.Parameters.Add("LoadBalancerName", StringUtils.FromString(publicRequest.LoadBalancerName));
+                }
+            }
             return request;
         }
     }

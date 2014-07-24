@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Contains the following objects or data if successful. Otherwise, returns an error.</para>
+    /// The list of AWS services returned by the <a>DescribeServices</a> operation.
     /// </summary>
     public partial class DescribeServicesResult : AmazonWebServiceResponse
     {
-        
-        private List<Service> services = new List<Service>();
+        private List<Service> _services = new List<Service>();
 
 
         /// <summary>
+        /// Gets and sets the property Services. 
+        /// <para>
         /// A JSON-formatted list of AWS services.
-        ///  
+        /// </para>
         /// </summary>
         public List<Service> Services
         {
-            get { return this.services; }
-            set { this.services = value; }
+            get { return this._services; }
+            set { this._services = value; }
         }
 
         // Check to see if Services property is set
         internal bool IsSetServices()
         {
-            return this.services.Count > 0;
+            return this._services != null && this._services.Count > 0; 
         }
+
     }
 }

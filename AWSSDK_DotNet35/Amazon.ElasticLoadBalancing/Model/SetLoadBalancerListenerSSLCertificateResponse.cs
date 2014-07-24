@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// Returns information about the  SetLoadBalancerListenerSSLCertificate response and response metadata.
+    /// Configuration for accessing Amazon SetLoadBalancerListenerSSLCertificate service
     /// </summary>
     public partial class SetLoadBalancerListenerSSLCertificateResponse : SetLoadBalancerListenerSSLCertificateResult
     {
         /// <summary>
         /// Gets and sets the SetLoadBalancerListenerSSLCertificateResult property.
-        /// The output for the SetLoadBalancerListenerSSLCertificate action.
+        /// Represents the output of a SetLoadBalancerListenerSSLCertificate operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the SetLoadBalancerListenerSSLCertificateResult class are now available on the SetLoadBalancerListenerSSLCertificateResponse class. You should use the properties on SetLoadBalancerListenerSSLCertificateResponse instead of accessing them through SetLoadBalancerListenerSSLCertificateResult.")]
         public SetLoadBalancerListenerSSLCertificateResult SetLoadBalancerListenerSSLCertificateResult
@@ -40,4 +36,3 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
     }
 }
-    

@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para> The output for the DisableAvailabilityZonesForLoadBalancer action. </para>
+    /// The output for the <a>DisableAvailabilityZonesForLoadBalancer</a> action.
     /// </summary>
     public partial class DisableAvailabilityZonesForLoadBalancerResult : AmazonWebServiceResponse
     {
-        
-        private List<string> availabilityZones = new List<string>();
+        private List<string> _availabilityZones = new List<string>();
 
 
         /// <summary>
-        /// A list of updated Availability Zones for the load balancer.
-        ///  
+        /// Gets and sets the property AvailabilityZones. 
+        /// <para>
+        ///  A list of updated Availability Zones for the load balancer. 
+        /// </para>
         /// </summary>
         public List<string> AvailabilityZones
         {
-            get { return this.availabilityZones; }
-            set { this.availabilityZones = value; }
+            get { return this._availabilityZones; }
+            set { this._availabilityZones = value; }
         }
 
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this.availabilityZones.Count > 0;
+            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
         }
+
     }
 }

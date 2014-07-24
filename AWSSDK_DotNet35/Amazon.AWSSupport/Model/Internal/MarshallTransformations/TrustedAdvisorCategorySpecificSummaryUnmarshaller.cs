@@ -12,54 +12,64 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.AWSSupport.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
+using Amazon.AWSSupport.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for TrustedAdvisorCategorySpecificSummary Object
+    /// </summary>  
+    public class TrustedAdvisorCategorySpecificSummaryUnmarshaller : IUnmarshaller<TrustedAdvisorCategorySpecificSummary, XmlUnmarshallerContext>, IUnmarshaller<TrustedAdvisorCategorySpecificSummary, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// TrustedAdvisorCategorySpecificSummaryUnmarshaller
-      /// </summary>
-      internal class TrustedAdvisorCategorySpecificSummaryUnmarshaller : IUnmarshaller<TrustedAdvisorCategorySpecificSummary, XmlUnmarshallerContext>, IUnmarshaller<TrustedAdvisorCategorySpecificSummary, JsonUnmarshallerContext>
-      {
         TrustedAdvisorCategorySpecificSummary IUnmarshaller<TrustedAdvisorCategorySpecificSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public TrustedAdvisorCategorySpecificSummary Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            TrustedAdvisorCategorySpecificSummary trustedAdvisorCategorySpecificSummary = new TrustedAdvisorCategorySpecificSummary();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            TrustedAdvisorCategorySpecificSummary unmarshalledObject = new TrustedAdvisorCategorySpecificSummary();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("costOptimizing", targetDepth))
-              {
-                trustedAdvisorCategorySpecificSummary.CostOptimizing = TrustedAdvisorCostOptimizingSummaryUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("costOptimizing", targetDepth))
+                {
+                    var unmarshaller = TrustedAdvisorCostOptimizingSummaryUnmarshaller.Instance;
+                    unmarshalledObject.CostOptimizing = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return trustedAdvisorCategorySpecificSummary;
+            return unmarshalledObject;
         }
 
-        private static TrustedAdvisorCategorySpecificSummaryUnmarshaller instance;
-        public static TrustedAdvisorCategorySpecificSummaryUnmarshaller GetInstance()
+
+        private static TrustedAdvisorCategorySpecificSummaryUnmarshaller _instance = new TrustedAdvisorCategorySpecificSummaryUnmarshaller();        
+
+        public static TrustedAdvisorCategorySpecificSummaryUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new TrustedAdvisorCategorySpecificSummaryUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

@@ -12,69 +12,75 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticLoadBalancing.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   LBCookieStickinessPolicy Unmarshaller
-     /// </summary>
-    internal class LBCookieStickinessPolicyUnmarshaller : IUnmarshaller<LBCookieStickinessPolicy, XmlUnmarshallerContext>, IUnmarshaller<LBCookieStickinessPolicy, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for LBCookieStickinessPolicy Object
+    /// </summary>  
+    public class LBCookieStickinessPolicyUnmarshaller : IUnmarshaller<LBCookieStickinessPolicy, XmlUnmarshallerContext>, IUnmarshaller<LBCookieStickinessPolicy, JsonUnmarshallerContext>
     {
-        public LBCookieStickinessPolicy Unmarshall(XmlUnmarshallerContext context) 
+        public LBCookieStickinessPolicy Unmarshall(XmlUnmarshallerContext context)
         {
-            LBCookieStickinessPolicy lBCookieStickinessPolicy = new LBCookieStickinessPolicy();
+            LBCookieStickinessPolicy unmarshalledObject = new LBCookieStickinessPolicy();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("PolicyName", targetDepth))
-                    {
-                        lBCookieStickinessPolicy.PolicyName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("CookieExpirationPeriod", targetDepth))
                     {
-                        lBCookieStickinessPolicy.CookieExpirationPeriod = LongUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = LongUnmarshaller.Instance;
+                        unmarshalledObject.CookieExpirationPeriod = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PolicyName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PolicyName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return lBCookieStickinessPolicy;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return lBCookieStickinessPolicy;
+            return unmarshalledObject;
         }
 
-        public LBCookieStickinessPolicy Unmarshall(JsonUnmarshallerContext context) 
+        public LBCookieStickinessPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static LBCookieStickinessPolicyUnmarshaller instance;
 
-        public static LBCookieStickinessPolicyUnmarshaller GetInstance() 
+        private static LBCookieStickinessPolicyUnmarshaller _instance = new LBCookieStickinessPolicyUnmarshaller();        
+
+        public static LBCookieStickinessPolicyUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new LBCookieStickinessPolicyUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

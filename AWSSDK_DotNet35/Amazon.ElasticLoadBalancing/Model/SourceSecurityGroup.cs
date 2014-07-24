@@ -18,54 +18,63 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para> This data type is used as a response element in the DescribeLoadBalancers action. For information about Elastic Load Balancing
-    /// security groups, go to <a
-    /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-security-features.html#using-elb-security-groups" >Using
-    /// Security Groups With Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i> .
-    /// </para>
+    /// This data type is used as a response element in the <a>DescribeLoadBalancers</a>
+    /// action. For information about Elastic Load Balancing security groups, go to <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-security-features.html#using-elb-security-groups">Using
+    /// Security Groups With Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer
+    /// Guide</i>.
     /// </summary>
     public partial class SourceSecurityGroup
     {
-        
-        private string ownerAlias;
-        private string groupName;
+        private string _groupName;
+        private string _ownerAlias;
 
 
         /// <summary>
-        /// Owner of the source security group. Use this value for the <c>--source-group-user</c> parameter of the <c>ec2-authorize</c> command in the
-        /// Amazon EC2 command line tool.
-        ///  
-        /// </summary>
-        public string OwnerAlias
-        {
-            get { return this.ownerAlias; }
-            set { this.ownerAlias = value; }
-        }
-
-        // Check to see if OwnerAlias property is set
-        internal bool IsSetOwnerAlias()
-        {
-            return this.ownerAlias != null;
-        }
-
-        /// <summary>
-        /// Name of the source security group. Use this value for the <c>--source-group</c> parameter of the <c>ec2-authorize</c> command in the Amazon
-        /// EC2 command line tool.
-        ///  
+        /// Gets and sets the property GroupName. 
+        /// <para>
+        ///  Name of the source security group. Use this value for the <code>--source-group</code>
+        /// parameter of the <code>ec2-authorize</code> command in the Amazon EC2 command line
+        /// tool. 
+        /// </para>
         /// </summary>
         public string GroupName
         {
-            get { return this.groupName; }
-            set { this.groupName = value; }
+            get { return this._groupName; }
+            set { this._groupName = value; }
         }
 
         // Check to see if GroupName property is set
         internal bool IsSetGroupName()
         {
-            return this.groupName != null;
+            return this._groupName != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property OwnerAlias. 
+        /// <para>
+        ///  Owner of the source security group. Use this value for the <code>--source-group-user</code>
+        /// parameter of the <code>ec2-authorize</code> command in the Amazon EC2 command line
+        /// tool. 
+        /// </para>
+        /// </summary>
+        public string OwnerAlias
+        {
+            get { return this._ownerAlias; }
+            set { this._ownerAlias = value; }
+        }
+
+        // Check to see if OwnerAlias property is set
+        internal bool IsSetOwnerAlias()
+        {
+            return this._ownerAlias != null;
+        }
+
     }
 }

@@ -18,177 +18,121 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para> The HealthCheck data type. </para>
+    /// The HealthCheck data type.
     /// </summary>
     public partial class HealthCheck
     {
-        
-        private string target;
-        private int? interval;
-        private int? timeout;
-        private int? unhealthyThreshold;
-        private int? healthyThreshold;
+        private int? _healthyThreshold;
+        private int? _interval;
+        private string _target;
+        private int? _timeout;
+        private int? _unhealthyThreshold;
+
 
         /// <summary>
-        /// Default constructor for a new HealthCheck object.  Callers should use the
-        /// properties to initialize this object after creating it.
-        /// </summary>
-        public HealthCheck() {}
-    
-        /// <summary>
-        /// Constructs a new HealthCheck object.
-        /// Callers should use the properties initialize any additional object members.
-        /// </summary>
-        /// 
-        /// <param name="target"> Specifies the instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL. The range of valid ports is one
-        /// (1) through 65535. <note> TCP is the default, specified as a TCP: port pair, for example "TCP:5000". In this case a healthcheck simply
-        /// attempts to open a TCP connection to the instance on the specified port. Failure to connect within the configured timeout is considered
-        /// unhealthy. SSL is also specified as SSL: port pair, for example, SSL:5000. For HTTP or HTTPS protocol, the situation is different. You have
-        /// to include a ping path in the string. HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example "HTTP:80/weather/us/wa/seattle".
-        /// In this case, a HTTP GET request is issued to the instance on the given port and path. Any answer other than "200 OK" within the timeout
-        /// period is considered unhealthy. The total length of the HTTP ping target needs to be 1024 16-bit Unicode characters or less. </note>
-        /// </param>
-        /// <param name="interval"> Specifies the approximate interval, in seconds, between health checks of an individual instance. </param>
-        /// <param name="timeout"> Specifies the amount of time, in seconds, during which no response means a failed health probe. <note> This value
-        /// must be less than the <i>Interval</i> value. </note> </param>
-        /// <param name="unhealthyThreshold"> Specifies the number of consecutive health probe failures required before moving the instance to the
-        /// <i>Unhealthy</i> state. </param>
-        /// <param name="healthyThreshold"> Specifies the number of consecutive health probe successes required before moving the instance to the
-        /// <i>Healthy</i> state. </param>
-        public HealthCheck(string target, int interval, int timeout, int unhealthyThreshold, int healthyThreshold)
-        {
-            this.target = target;
-            this.interval = interval;
-            this.timeout = timeout;
-            this.unhealthyThreshold = unhealthyThreshold;
-            this.healthyThreshold = healthyThreshold;
-        }
-    
-
-        /// <summary>
-        /// Specifies the instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL. The range of valid ports is one (1) through 65535.
-        /// <note> TCP is the default, specified as a TCP: port pair, for example "TCP:5000". In this case a healthcheck simply attempts to open a TCP
-        /// connection to the instance on the specified port. Failure to connect within the configured timeout is considered unhealthy. SSL is also
-        /// specified as SSL: port pair, for example, SSL:5000. For HTTP or HTTPS protocol, the situation is different. You have to include a ping path
-        /// in the string. HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example "HTTP:80/weather/us/wa/seattle". In this case, a HTTP
-        /// GET request is issued to the instance on the given port and path. Any answer other than "200 OK" within the timeout period is considered
-        /// unhealthy. The total length of the HTTP ping target needs to be 1024 16-bit Unicode characters or less. </note>
-        ///  
-        /// </summary>
-        public string Target
-        {
-            get { return this.target; }
-            set { this.target = value; }
-        }
-
-        // Check to see if Target property is set
-        internal bool IsSetTarget()
-        {
-            return this.target != null;
-        }
-
-        /// <summary>
-        /// Specifies the approximate interval, in seconds, between health checks of an individual instance.
-        ///  
+        /// Gets and sets the property HealthyThreshold. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>1 - 300</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public int Interval
-        {
-            get { return this.interval ?? default(int); }
-            set { this.interval = value; }
-        }
-
-        // Check to see if Interval property is set
-        internal bool IsSetInterval()
-        {
-            return this.interval.HasValue;
-        }
-
-        /// <summary>
-        /// Specifies the amount of time, in seconds, during which no response means a failed health probe. <note> This value must be less than the
-        /// <i>Interval</i> value. </note>
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>1 - 300</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public int Timeout
-        {
-            get { return this.timeout ?? default(int); }
-            set { this.timeout = value; }
-        }
-
-        // Check to see if Timeout property is set
-        internal bool IsSetTimeout()
-        {
-            return this.timeout.HasValue;
-        }
-
-        /// <summary>
-        /// Specifies the number of consecutive health probe failures required before moving the instance to the <i>Unhealthy</i> state.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>2 - 10</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public int UnhealthyThreshold
-        {
-            get { return this.unhealthyThreshold ?? default(int); }
-            set { this.unhealthyThreshold = value; }
-        }
-
-        // Check to see if UnhealthyThreshold property is set
-        internal bool IsSetUnhealthyThreshold()
-        {
-            return this.unhealthyThreshold.HasValue;
-        }
-
-        /// <summary>
-        /// Specifies the number of consecutive health probe successes required before moving the instance to the <i>Healthy</i> state.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>2 - 10</description>
-        ///     </item>
-        /// </list>
+        ///  Specifies the number of consecutive health probe successes required before moving
+        /// the instance to the <i>Healthy</i> state. 
         /// </para>
         /// </summary>
         public int HealthyThreshold
         {
-            get { return this.healthyThreshold ?? default(int); }
-            set { this.healthyThreshold = value; }
+            get { return this._healthyThreshold.GetValueOrDefault(); }
+            set { this._healthyThreshold = value; }
         }
 
         // Check to see if HealthyThreshold property is set
         internal bool IsSetHealthyThreshold()
         {
-            return this.healthyThreshold.HasValue;
+            return this._healthyThreshold.HasValue; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Interval. 
+        /// <para>
+        ///  Specifies the approximate interval, in seconds, between health checks of an individual
+        /// instance. 
+        /// </para>
+        /// </summary>
+        public int Interval
+        {
+            get { return this._interval.GetValueOrDefault(); }
+            set { this._interval = value; }
+        }
+
+        // Check to see if Interval property is set
+        internal bool IsSetInterval()
+        {
+            return this._interval.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Target. 
+        /// <para>
+        ///  Specifies the instance being checked. The protocol is either TCP, HTTP, HTTPS, or
+        /// SSL. The range of valid ports is one (1) through 65535. 
+        /// </para>
+        /// </summary>
+        public string Target
+        {
+            get { return this._target; }
+            set { this._target = value; }
+        }
+
+        // Check to see if Target property is set
+        internal bool IsSetTarget()
+        {
+            return this._target != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Timeout. 
+        /// <para>
+        ///  Specifies the amount of time, in seconds, during which no response means a failed
+        /// health probe. 
+        /// </para>
+        /// </summary>
+        public int Timeout
+        {
+            get { return this._timeout.GetValueOrDefault(); }
+            set { this._timeout = value; }
+        }
+
+        // Check to see if Timeout property is set
+        internal bool IsSetTimeout()
+        {
+            return this._timeout.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property UnhealthyThreshold. 
+        /// <para>
+        ///  Specifies the number of consecutive health probe failures required before moving
+        /// the instance to the <i>Unhealthy</i> state. 
+        /// </para>
+        /// </summary>
+        public int UnhealthyThreshold
+        {
+            get { return this._unhealthyThreshold.GetValueOrDefault(); }
+            set { this._unhealthyThreshold = value; }
+        }
+
+        // Check to see if UnhealthyThreshold property is set
+        internal bool IsSetUnhealthyThreshold()
+        {
+            return this._unhealthyThreshold.HasValue; 
+        }
+
     }
 }

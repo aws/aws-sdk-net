@@ -29,63 +29,63 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Add Communication To Case Request Marshaller
+    /// AddCommunicationToCase Request Marshaller
     /// </summary>       
-    internal class AddCommunicationToCaseRequestMarshaller : IMarshaller<IRequest, AddCommunicationToCaseRequest> 
+    public class AddCommunicationToCaseRequestMarshaller : IMarshaller<IRequest, AddCommunicationToCaseRequest> 
     {
-        
-
-        public IRequest Marshall(AddCommunicationToCaseRequest addCommunicationToCaseRequest) 
+        public IRequest Marshall(AddCommunicationToCaseRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(addCommunicationToCaseRequest, "AmazonAWSSupport");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AWSSupport");
             string target = "AWSSupport_20130415.AddCommunicationToCase";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (addCommunicationToCaseRequest != null && addCommunicationToCaseRequest.IsSetCaseId()) 
+                if(publicRequest.IsSetAttachmentSetId())
+                {
+                    writer.WritePropertyName("attachmentSetId");
+                    writer.Write(publicRequest.AttachmentSetId);
+                }
+
+                if(publicRequest.IsSetCaseId())
                 {
                     writer.WritePropertyName("caseId");
-                    writer.Write(addCommunicationToCaseRequest.CaseId);
-                }
-                if (addCommunicationToCaseRequest != null && addCommunicationToCaseRequest.IsSetCommunicationBody()) 
-                {
-                    writer.WritePropertyName("communicationBody");
-                    writer.Write(addCommunicationToCaseRequest.CommunicationBody);
+                    writer.Write(publicRequest.CaseId);
                 }
 
-                if (addCommunicationToCaseRequest != null && addCommunicationToCaseRequest.CcEmailAddresses != null && addCommunicationToCaseRequest.CcEmailAddresses.Count > 0) 
+                if(publicRequest.IsSetCcEmailAddresses())
                 {
-                    List<string> ccEmailAddressesList = addCommunicationToCaseRequest.CcEmailAddresses;
                     writer.WritePropertyName("ccEmailAddresses");
                     writer.WriteArrayStart();
-
-                    foreach (string ccEmailAddressesListValue in ccEmailAddressesList) 
-                    { 
-                        writer.Write(StringUtils.FromString(ccEmailAddressesListValue));
+                    foreach(var publicRequestCcEmailAddressesListValue in publicRequest.CcEmailAddresses)
+                    {
+                        writer.Write(publicRequestCcEmailAddressesListValue);
                     }
-
                     writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetCommunicationBody())
+                {
+                    writer.WritePropertyName("communicationBody");
+                    writer.Write(publicRequest.CommunicationBody);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

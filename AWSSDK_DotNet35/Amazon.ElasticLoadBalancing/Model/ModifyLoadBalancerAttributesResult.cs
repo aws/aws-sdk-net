@@ -17,50 +17,54 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para>The output for the ModifyLoadBalancerAttributes action.</para>
+    /// The output for the <a>ModifyLoadBalancerAttributes</a> action.
     /// </summary>
     public partial class ModifyLoadBalancerAttributesResult : AmazonWebServiceResponse
     {
-        
-        private string loadBalancerName;
-        private LoadBalancerAttributes loadBalancerAttributes;
+        private LoadBalancerAttributes _loadBalancerAttributes;
+        private string _loadBalancerName;
 
 
         /// <summary>
-        /// The name of the load balancer.
-        ///  
-        /// </summary>
-        public string LoadBalancerName
-        {
-            get { return this.loadBalancerName; }
-            set { this.loadBalancerName = value; }
-        }
-
-        // Check to see if LoadBalancerName property is set
-        internal bool IsSetLoadBalancerName()
-        {
-            return this.loadBalancerName != null;
-        }
-
-        /// <summary>
-        /// The <c>LoadBalancerAttributes</c> data type.
-        ///  
+        /// Gets and sets the property LoadBalancerAttributes.
         /// </summary>
         public LoadBalancerAttributes LoadBalancerAttributes
         {
-            get { return this.loadBalancerAttributes; }
-            set { this.loadBalancerAttributes = value; }
+            get { return this._loadBalancerAttributes; }
+            set { this._loadBalancerAttributes = value; }
         }
 
         // Check to see if LoadBalancerAttributes property is set
         internal bool IsSetLoadBalancerAttributes()
         {
-            return this.loadBalancerAttributes != null;
+            return this._loadBalancerAttributes != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property LoadBalancerName. 
+        /// <para>
+        /// The name of the load balancer.
+        /// </para>
+        /// </summary>
+        public string LoadBalancerName
+        {
+            get { return this._loadBalancerName; }
+            set { this._loadBalancerName = value; }
+        }
+
+        // Check to see if LoadBalancerName property is set
+        internal bool IsSetLoadBalancerName()
+        {
+            return this._loadBalancerName != null;
+        }
+
     }
 }

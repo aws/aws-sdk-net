@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,50 +17,57 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Contains the following objects or data if successful. Otherwise, returns an error.</para>
+    /// The status of the case returned by the <a>ResolveCase</a> operation.
     /// </summary>
     public partial class ResolveCaseResult : AmazonWebServiceResponse
     {
-        
-        private string initialCaseStatus;
-        private string finalCaseStatus;
+        private string _finalCaseStatus;
+        private string _initialCaseStatus;
 
 
         /// <summary>
-        /// The status of the case when the <a>ResolveCase</a> request was sent.
-        ///  
-        /// </summary>
-        public string InitialCaseStatus
-        {
-            get { return this.initialCaseStatus; }
-            set { this.initialCaseStatus = value; }
-        }
-
-        // Check to see if InitialCaseStatus property is set
-        internal bool IsSetInitialCaseStatus()
-        {
-            return this.initialCaseStatus != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property FinalCaseStatus. 
+        /// <para>
         /// The status of the case after the <a>ResolveCase</a> request was processed.
-        ///  
+        /// </para>
         /// </summary>
         public string FinalCaseStatus
         {
-            get { return this.finalCaseStatus; }
-            set { this.finalCaseStatus = value; }
+            get { return this._finalCaseStatus; }
+            set { this._finalCaseStatus = value; }
         }
 
         // Check to see if FinalCaseStatus property is set
         internal bool IsSetFinalCaseStatus()
         {
-            return this.finalCaseStatus != null;
+            return this._finalCaseStatus != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property InitialCaseStatus. 
+        /// <para>
+        /// The status of the case when the <a>ResolveCase</a> request was sent.
+        /// </para>
+        /// </summary>
+        public string InitialCaseStatus
+        {
+            get { return this._initialCaseStatus; }
+            set { this._initialCaseStatus = value; }
+        }
+
+        // Check to see if InitialCaseStatus property is set
+        internal bool IsSetInitialCaseStatus()
+        {
+            return this._initialCaseStatus != null;
+        }
+
     }
 }

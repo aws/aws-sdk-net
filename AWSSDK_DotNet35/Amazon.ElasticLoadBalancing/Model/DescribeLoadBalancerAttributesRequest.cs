@@ -25,29 +25,31 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLoadBalancerAttributes operation.
-    /// <para>Returns detailed information about all of the attributes associated with the specified load balancer.</para>
+    /// Returns detailed information about all of the attributes associated with the specified
+    /// load balancer.
     /// </summary>
     public partial class DescribeLoadBalancerAttributesRequest : AmazonElasticLoadBalancingRequest
     {
-        private string loadBalancerName;
+        private string _loadBalancerName;
 
 
         /// <summary>
+        /// Gets and sets the property LoadBalancerName. 
+        /// <para>
         /// The name of the load balancer.
-        ///  
+        /// </para>
         /// </summary>
         public string LoadBalancerName
         {
-            get { return this.loadBalancerName; }
-            set { this.loadBalancerName = value; }
+            get { return this._loadBalancerName; }
+            set { this._loadBalancerName = value; }
         }
 
         // Check to see if LoadBalancerName property is set
         internal bool IsSetLoadBalancerName()
         {
-            return this.loadBalancerName != null;
+            return this._loadBalancerName != null;
         }
 
     }
 }
-    

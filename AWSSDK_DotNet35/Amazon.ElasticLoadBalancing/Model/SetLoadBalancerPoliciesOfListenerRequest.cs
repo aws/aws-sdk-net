@@ -25,86 +25,72 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the SetLoadBalancerPoliciesOfListener operation.
-    /// <para> Associates, updates, or disables a policy with a listener on the load balancer. You can associate multiple policies with a listener.
-    /// </para>
+    /// Associates, updates, or disables a policy with a listener on the load balancer. You
+    /// can associate multiple policies with a listener.
     /// </summary>
     public partial class SetLoadBalancerPoliciesOfListenerRequest : AmazonElasticLoadBalancingRequest
     {
-        private string loadBalancerName;
-        private int? loadBalancerPort;
-        private List<string> policyNames = new List<string>();
+        private string _loadBalancerName;
+        private int? _loadBalancerPort;
+        private List<string> _policyNames = new List<string>();
+
 
         /// <summary>
-        /// Default constructor for a new SetLoadBalancerPoliciesOfListenerRequest object.  Callers should use the
-        /// properties to initialize this object after creating it.
-        /// </summary>
-        public SetLoadBalancerPoliciesOfListenerRequest() {}
-    
-        /// <summary>
-        /// Constructs a new SetLoadBalancerPoliciesOfListenerRequest object.
-        /// Callers should use the properties initialize any additional object members.
-        /// </summary>
-        /// 
-        /// <param name="loadBalancerName"> The name of the load balancer. </param>
-        /// <param name="loadBalancerPort"> The external port of the load balancer to associate the policy. </param>
-        /// <param name="policyNames"> List of policies to be associated with the listener. If the list is empty, the current policy is removed from the
-        /// listener. </param>
-        public SetLoadBalancerPoliciesOfListenerRequest(string loadBalancerName, int loadBalancerPort, List<string> policyNames)
-        {
-            this.loadBalancerName = loadBalancerName;
-            this.loadBalancerPort = loadBalancerPort;
-            this.policyNames = policyNames;
-        }
-    
-
-        /// <summary>
-        /// The name of the load balancer.
-        ///  
+        /// Gets and sets the property LoadBalancerName. 
+        /// <para>
+        ///  The name of the load balancer. 
+        /// </para>
         /// </summary>
         public string LoadBalancerName
         {
-            get { return this.loadBalancerName; }
-            set { this.loadBalancerName = value; }
+            get { return this._loadBalancerName; }
+            set { this._loadBalancerName = value; }
         }
 
         // Check to see if LoadBalancerName property is set
         internal bool IsSetLoadBalancerName()
         {
-            return this.loadBalancerName != null;
+            return this._loadBalancerName != null;
         }
 
+
         /// <summary>
-        /// The external port of the load balancer to associate the policy.
-        ///  
+        /// Gets and sets the property LoadBalancerPort. 
+        /// <para>
+        ///  The external port of the load balancer to associate the policy. 
+        /// </para>
         /// </summary>
         public int LoadBalancerPort
         {
-            get { return this.loadBalancerPort ?? default(int); }
-            set { this.loadBalancerPort = value; }
+            get { return this._loadBalancerPort.GetValueOrDefault(); }
+            set { this._loadBalancerPort = value; }
         }
 
         // Check to see if LoadBalancerPort property is set
         internal bool IsSetLoadBalancerPort()
         {
-            return this.loadBalancerPort.HasValue;
+            return this._loadBalancerPort.HasValue; 
         }
 
+
         /// <summary>
-        /// List of policies to be associated with the listener. If the list is empty, the current policy is removed from the listener.
-        ///  
+        /// Gets and sets the property PolicyNames. 
+        /// <para>
+        ///  List of policies to be associated with the listener. If the list is empty, the current
+        /// policy is removed from the listener. 
+        /// </para>
         /// </summary>
         public List<string> PolicyNames
         {
-            get { return this.policyNames; }
-            set { this.policyNames = value; }
+            get { return this._policyNames; }
+            set { this._policyNames = value; }
         }
 
         // Check to see if PolicyNames property is set
         internal bool IsSetPolicyNames()
         {
-            return this.policyNames.Count > 0;
+            return this._policyNames != null && this._policyNames.Count > 0; 
         }
 
     }
 }
-    

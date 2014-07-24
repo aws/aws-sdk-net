@@ -12,60 +12,70 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using ThirdParty.Json.LitJson;
-    using Amazon.AWSSupport.Model;
-    using Amazon.Runtime.Internal.Transform;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
-    namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
+using Amazon.AWSSupport.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for TrustedAdvisorCostOptimizingSummary Object
+    /// </summary>  
+    public class TrustedAdvisorCostOptimizingSummaryUnmarshaller : IUnmarshaller<TrustedAdvisorCostOptimizingSummary, XmlUnmarshallerContext>, IUnmarshaller<TrustedAdvisorCostOptimizingSummary, JsonUnmarshallerContext>
     {
-      /// <summary>
-      /// TrustedAdvisorCostOptimizingSummaryUnmarshaller
-      /// </summary>
-      internal class TrustedAdvisorCostOptimizingSummaryUnmarshaller : IUnmarshaller<TrustedAdvisorCostOptimizingSummary, XmlUnmarshallerContext>, IUnmarshaller<TrustedAdvisorCostOptimizingSummary, JsonUnmarshallerContext>
-      {
         TrustedAdvisorCostOptimizingSummary IUnmarshaller<TrustedAdvisorCostOptimizingSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public TrustedAdvisorCostOptimizingSummary Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) return null;
-            TrustedAdvisorCostOptimizingSummary trustedAdvisorCostOptimizingSummary = new TrustedAdvisorCostOptimizingSummary();
-        
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            TrustedAdvisorCostOptimizingSummary unmarshalledObject = new TrustedAdvisorCostOptimizingSummary();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-              
-              if (context.TestExpression("estimatedMonthlySavings", targetDepth))
-              {
-                trustedAdvisorCostOptimizingSummary.EstimatedMonthlySavings = DoubleUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("estimatedPercentMonthlySavings", targetDepth))
-              {
-                trustedAdvisorCostOptimizingSummary.EstimatedPercentMonthlySavings = DoubleUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
+                if (context.TestExpression("estimatedMonthlySavings", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.EstimatedMonthlySavings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("estimatedPercentMonthlySavings", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.EstimatedPercentMonthlySavings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
-            return trustedAdvisorCostOptimizingSummary;
+            return unmarshalledObject;
         }
 
-        private static TrustedAdvisorCostOptimizingSummaryUnmarshaller instance;
-        public static TrustedAdvisorCostOptimizingSummaryUnmarshaller GetInstance()
+
+        private static TrustedAdvisorCostOptimizingSummaryUnmarshaller _instance = new TrustedAdvisorCostOptimizingSummaryUnmarshaller();        
+
+        public static TrustedAdvisorCostOptimizingSummaryUnmarshaller Instance
         {
-            if (instance == null)
-                instance = new TrustedAdvisorCostOptimizingSummaryUnmarshaller();
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-  

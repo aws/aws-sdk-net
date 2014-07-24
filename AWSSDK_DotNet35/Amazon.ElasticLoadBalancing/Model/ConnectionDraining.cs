@@ -18,48 +18,57 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para>The <c>ConnectionDraining</c> data type.</para>
+    /// The <code>ConnectionDraining</code> data type.
     /// </summary>
     public partial class ConnectionDraining
     {
-        
-        private bool? enabled;
-        private int? timeout;
+        private bool? _enabled;
+        private int? _timeout;
 
 
         /// <summary>
+        /// Gets and sets the property Enabled. 
+        /// <para>
         /// Specifies whether connection draining is enabled for the load balancer.
-        ///  
+        /// </para>
         /// </summary>
         public bool Enabled
         {
-            get { return this.enabled ?? default(bool); }
-            set { this.enabled = value; }
+            get { return this._enabled.GetValueOrDefault(); }
+            set { this._enabled = value; }
         }
 
         // Check to see if Enabled property is set
         internal bool IsSetEnabled()
         {
-            return this.enabled.HasValue;
+            return this._enabled.HasValue; 
         }
 
+
         /// <summary>
-        /// Specifies the maximum time (in seconds) to keep the existing connections open before deregistering the instances.
-        ///  
+        /// Gets and sets the property Timeout. 
+        /// <para>
+        /// Specifies the maximum time (in seconds) to keep the existing connections open before
+        /// deregistering the instances.
+        /// </para>
         /// </summary>
         public int Timeout
         {
-            get { return this.timeout ?? default(int); }
-            set { this.timeout = value; }
+            get { return this._timeout.GetValueOrDefault(); }
+            set { this._timeout = value; }
         }
 
         // Check to see if Timeout property is set
         internal bool IsSetTimeout()
         {
-            return this.timeout.HasValue;
+            return this._timeout.HasValue; 
         }
+
     }
 }

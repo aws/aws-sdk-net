@@ -12,87 +12,93 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticLoadBalancing.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Listener Unmarshaller
-     /// </summary>
-    internal class ListenerUnmarshaller : IUnmarshaller<Listener, XmlUnmarshallerContext>, IUnmarshaller<Listener, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Listener Object
+    /// </summary>  
+    public class ListenerUnmarshaller : IUnmarshaller<Listener, XmlUnmarshallerContext>, IUnmarshaller<Listener, JsonUnmarshallerContext>
     {
-        public Listener Unmarshall(XmlUnmarshallerContext context) 
+        public Listener Unmarshall(XmlUnmarshallerContext context)
         {
-            Listener listener = new Listener();
+            Listener unmarshalledObject = new Listener();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Protocol", targetDepth))
+                    if (context.TestExpression("InstancePort", targetDepth))
                     {
-                        listener.Protocol = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("LoadBalancerPort", targetDepth))
-                    {
-                        listener.LoadBalancerPort = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.InstancePort = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("InstanceProtocol", targetDepth))
                     {
-                        listener.InstanceProtocol = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.InstanceProtocol = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("InstancePort", targetDepth))
+                    if (context.TestExpression("LoadBalancerPort", targetDepth))
                     {
-                        listener.InstancePort = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.LoadBalancerPort = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Protocol", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Protocol = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SSLCertificateId", targetDepth))
                     {
-                        listener.SSLCertificateId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SSLCertificateId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return listener;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return listener;
+            return unmarshalledObject;
         }
 
-        public Listener Unmarshall(JsonUnmarshallerContext context) 
+        public Listener Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static ListenerUnmarshaller instance;
 
-        public static ListenerUnmarshaller GetInstance() 
+        private static ListenerUnmarshaller _instance = new ListenerUnmarshaller();        
+
+        public static ListenerUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new ListenerUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

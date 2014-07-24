@@ -25,69 +25,59 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLoadBalancerListeners operation.
-    /// <para> Creates one or more listeners on a load balancer for the specified port. If a listener with the given port does not already exist, it
-    /// will be created; otherwise, the properties of the new listener must match the properties of the existing listener. </para> <para>For more
-    /// information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/us-add-listener.html" >Add a Listener to
-    /// Your Load Balancer</a> in the <i>Elastic Load Balancing Developer Guide</i> .</para>
+    /// Creates one or more listeners on a load balancer for the specified port. If a listener
+    /// with the given port does not already exist, it will be created; otherwise, the properties
+    /// of the new listener must match the properties of the existing listener. 
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/us-add-listener.html">Add
+    /// a Listener to Your Load Balancer</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class CreateLoadBalancerListenersRequest : AmazonElasticLoadBalancingRequest
     {
-        private string loadBalancerName;
-        private List<Listener> listeners = new List<Listener>();
+        private List<Listener> _listeners = new List<Listener>();
+        private string _loadBalancerName;
+
 
         /// <summary>
-        /// Default constructor for a new CreateLoadBalancerListenersRequest object.  Callers should use the
-        /// properties to initialize this object after creating it.
-        /// </summary>
-        public CreateLoadBalancerListenersRequest() {}
-    
-        /// <summary>
-        /// Constructs a new CreateLoadBalancerListenersRequest object.
-        /// Callers should use the properties initialize any additional object members.
-        /// </summary>
-        /// 
-        /// <param name="loadBalancerName"> The name of the load balancer. </param>
-        /// <param name="listeners"> A list of <c>LoadBalancerPort</c>, <c>InstancePort</c>, <c>Protocol</c>, and <c>SSLCertificateId</c> items.
-        /// </param>
-        public CreateLoadBalancerListenersRequest(string loadBalancerName, List<Listener> listeners)
-        {
-            this.loadBalancerName = loadBalancerName;
-            this.listeners = listeners;
-        }
-    
-
-        /// <summary>
-        /// The name of the load balancer.
-        ///  
-        /// </summary>
-        public string LoadBalancerName
-        {
-            get { return this.loadBalancerName; }
-            set { this.loadBalancerName = value; }
-        }
-
-        // Check to see if LoadBalancerName property is set
-        internal bool IsSetLoadBalancerName()
-        {
-            return this.loadBalancerName != null;
-        }
-
-        /// <summary>
-        /// A list of <c>LoadBalancerPort</c>, <c>InstancePort</c>, <c>Protocol</c>, and <c>SSLCertificateId</c> items.
-        ///  
+        /// Gets and sets the property Listeners. 
+        /// <para>
+        ///  A list of <code>LoadBalancerPort</code>, <code>InstancePort</code>, <code>Protocol</code>,
+        /// <code>InstanceProtocol</code>, and <code>SSLCertificateId</code> items. 
+        /// </para>
         /// </summary>
         public List<Listener> Listeners
         {
-            get { return this.listeners; }
-            set { this.listeners = value; }
+            get { return this._listeners; }
+            set { this._listeners = value; }
         }
 
         // Check to see if Listeners property is set
         internal bool IsSetListeners()
         {
-            return this.listeners.Count > 0;
+            return this._listeners != null && this._listeners.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property LoadBalancerName. 
+        /// <para>
+        ///  The name of the load balancer. 
+        /// </para>
+        /// </summary>
+        public string LoadBalancerName
+        {
+            get { return this._loadBalancerName; }
+            set { this._loadBalancerName = value; }
+        }
+
+        // Check to see if LoadBalancerName property is set
+        internal bool IsSetLoadBalancerName()
+        {
+            return this._loadBalancerName != null;
         }
 
     }
 }
-    

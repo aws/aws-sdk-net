@@ -29,64 +29,64 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Communications Request Marshaller
+    /// DescribeCommunications Request Marshaller
     /// </summary>       
-    internal class DescribeCommunicationsRequestMarshaller : IMarshaller<IRequest, DescribeCommunicationsRequest> 
+    public class DescribeCommunicationsRequestMarshaller : IMarshaller<IRequest, DescribeCommunicationsRequest> 
     {
-        
-
-        public IRequest Marshall(DescribeCommunicationsRequest describeCommunicationsRequest) 
+        public IRequest Marshall(DescribeCommunicationsRequest publicRequest)
         {
-
-            IRequest request = new DefaultRequest(describeCommunicationsRequest, "AmazonAWSSupport");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AWSSupport");
             string target = "AWSSupport_20130415.DescribeCommunications";
             request.Headers["X-Amz-Target"] = target;
-            
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            
-            string uriResourcePath = ""; 
+            request.HttpMethod = "POST";
+
+            string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            
-             
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
-                
-                if (describeCommunicationsRequest != null && describeCommunicationsRequest.IsSetCaseId()) 
-                {
-                    writer.WritePropertyName("caseId");
-                    writer.Write(describeCommunicationsRequest.CaseId);
-                }
-                if (describeCommunicationsRequest != null && describeCommunicationsRequest.IsSetBeforeTime()) 
-                {
-                    writer.WritePropertyName("beforeTime");
-                    writer.Write(describeCommunicationsRequest.BeforeTime);
-                }
-                if (describeCommunicationsRequest != null && describeCommunicationsRequest.IsSetAfterTime()) 
+                if(publicRequest.IsSetAfterTime())
                 {
                     writer.WritePropertyName("afterTime");
-                    writer.Write(describeCommunicationsRequest.AfterTime);
-                }
-                if (describeCommunicationsRequest != null && describeCommunicationsRequest.IsSetNextToken()) 
-                {
-                    writer.WritePropertyName("nextToken");
-                    writer.Write(describeCommunicationsRequest.NextToken);
-                }
-                if (describeCommunicationsRequest != null && describeCommunicationsRequest.IsSetMaxResults()) 
-                {
-                    writer.WritePropertyName("maxResults");
-                    writer.Write(describeCommunicationsRequest.MaxResults);
+                    writer.Write(publicRequest.AfterTime);
                 }
 
+                if(publicRequest.IsSetBeforeTime())
+                {
+                    writer.WritePropertyName("beforeTime");
+                    writer.Write(publicRequest.BeforeTime);
+                }
+
+                if(publicRequest.IsSetCaseId())
+                {
+                    writer.WritePropertyName("caseId");
+                    writer.Write(publicRequest.CaseId);
+                }
+
+                if(publicRequest.IsSetMaxResults())
+                {
+                    writer.WritePropertyName("maxResults");
+                    writer.Write(publicRequest.MaxResults);
+                }
+
+                if(publicRequest.IsSetNextToken())
+                {
+                    writer.WritePropertyName("nextToken");
+                    writer.Write(publicRequest.NextToken);
+                }
+
+        
                 writer.WriteObjectEnd();
-                
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-        
+
 
             return request;
         }
+
+
     }
 }

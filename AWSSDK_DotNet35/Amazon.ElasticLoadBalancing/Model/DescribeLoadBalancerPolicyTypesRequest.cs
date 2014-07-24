@@ -25,32 +25,34 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLoadBalancerPolicyTypes operation.
-    /// <para> Returns meta-information on the specified load balancer policies defined by the Elastic Load Balancing service. The policy types
-    /// that are returned from this action can be used in a CreateLoadBalancerPolicy action to instantiate specific policy configurations that will
-    /// be applied to a load balancer. </para>
+    /// Returns meta-information on the specified load balancer policies defined by the Elastic
+    /// Load Balancing service. The policy types that are returned from this action can be
+    /// used in a <a>CreateLoadBalancerPolicy</a> action to instantiate specific policy configurations
+    /// that will be applied to a load balancer.
     /// </summary>
     public partial class DescribeLoadBalancerPolicyTypesRequest : AmazonElasticLoadBalancingRequest
     {
-        private List<string> policyTypeNames = new List<string>();
+        private List<string> _policyTypeNames = new List<string>();
 
 
         /// <summary>
-        /// Specifies the name of the policy types. If no names are specified, returns the description of all the policy types defined by Elastic Load
-        /// Balancing service.
-        ///  
+        /// Gets and sets the property PolicyTypeNames. 
+        /// <para>
+        ///  Specifies the name of the policy types. If no names are specified, returns the description
+        /// of all the policy types defined by Elastic Load Balancing service. 
+        /// </para>
         /// </summary>
         public List<string> PolicyTypeNames
         {
-            get { return this.policyTypeNames; }
-            set { this.policyTypeNames = value; }
+            get { return this._policyTypeNames; }
+            set { this._policyTypeNames = value; }
         }
 
         // Check to see if PolicyTypeNames property is set
         internal bool IsSetPolicyTypeNames()
         {
-            return this.policyTypeNames.Count > 0;
+            return this._policyTypeNames != null && this._policyTypeNames.Count > 0; 
         }
 
     }
 }
-    

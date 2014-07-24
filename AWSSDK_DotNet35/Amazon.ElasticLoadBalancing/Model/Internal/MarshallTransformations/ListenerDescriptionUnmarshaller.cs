@@ -12,69 +12,76 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElasticLoadBalancing.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ListenerDescription Unmarshaller
-     /// </summary>
-    internal class ListenerDescriptionUnmarshaller : IUnmarshaller<ListenerDescription, XmlUnmarshallerContext>, IUnmarshaller<ListenerDescription, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ListenerDescription Object
+    /// </summary>  
+    public class ListenerDescriptionUnmarshaller : IUnmarshaller<ListenerDescription, XmlUnmarshallerContext>, IUnmarshaller<ListenerDescription, JsonUnmarshallerContext>
     {
-        public ListenerDescription Unmarshall(XmlUnmarshallerContext context) 
+        public ListenerDescription Unmarshall(XmlUnmarshallerContext context)
         {
-            ListenerDescription listenerDescription = new ListenerDescription();
+            ListenerDescription unmarshalledObject = new ListenerDescription();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("Listener", targetDepth))
                     {
-                        listenerDescription.Listener = ListenerUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = ListenerUnmarshaller.Instance;
+                        unmarshalledObject.Listener = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("PolicyNames/member", targetDepth))
                     {
-                        listenerDescription.PolicyNames.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.PolicyNames.Add(item);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return listenerDescription;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return listenerDescription;
+            return unmarshalledObject;
         }
 
-        public ListenerDescription Unmarshall(JsonUnmarshallerContext context) 
+        public ListenerDescription Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static ListenerDescriptionUnmarshaller instance;
 
-        public static ListenerDescriptionUnmarshaller GetInstance() 
+        private static ListenerDescriptionUnmarshaller _instance = new ListenerDescriptionUnmarshaller();        
+
+        public static ListenerDescriptionUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new ListenerDescriptionUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// <para> The output for the DeregisterInstancesFromLoadBalancer action. </para>
+    /// The output for the <a>DeregisterInstancesFromLoadBalancer</a> action.
     /// </summary>
     public partial class DeregisterInstancesFromLoadBalancerResult : AmazonWebServiceResponse
     {
-        
-        private List<Instance> instances = new List<Instance>();
+        private List<Instance> _instances = new List<Instance>();
 
 
         /// <summary>
-        /// An updated list of remaining instances registered with the load balancer.
-        ///  
+        /// Gets and sets the property Instances. 
+        /// <para>
+        ///  An updated list of remaining instances registered with the load balancer. 
+        /// </para>
         /// </summary>
         public List<Instance> Instances
         {
-            get { return this.instances; }
-            set { this.instances = value; }
+            get { return this._instances; }
+            set { this._instances = value; }
         }
 
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this.instances.Count > 0;
+            return this._instances != null && this._instances.Count > 0; 
         }
+
     }
 }

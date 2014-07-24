@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,10 +18,9 @@ using Amazon.Runtime;
 namespace Amazon.AWSSupport
 {
     /// <summary>
-    /// Base class for AmazonAWSSupport operation requests.
+    /// Base class for AWSSupport operation requests.
     /// </summary>
     public partial class AmazonAWSSupportRequest : AmazonWebServiceRequest
     {
     }
 }
-    

@@ -25,50 +25,59 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLoadBalancerPolicies operation.
-    /// <para>Returns detailed descriptions of the policies. If you specify a load balancer name, the action returns the descriptions of all the
-    /// policies created for the load balancer. If you specify a policy name associated with your load balancer, the action returns the description
-    /// of that policy. If you don't specify a load balancer name, the action returns descriptions of the specified sample policies, or descriptions
-    /// of all the sample policies. The names of the sample policies have the <c>ELBSample-</c> prefix. </para>
+    /// Returns detailed descriptions of the policies. If you specify a load balancer name,
+    /// the action returns the descriptions of all the policies created for the load balancer.
+    /// If you specify a policy name associated with your load balancer, the action returns
+    /// the description of that policy. If you don't specify a load balancer name, the action
+    /// returns descriptions of the specified sample policies, or descriptions of all the
+    /// sample policies. The names of the sample policies have the <code>ELBSample-</code>
+    /// prefix.
     /// </summary>
     public partial class DescribeLoadBalancerPoliciesRequest : AmazonElasticLoadBalancingRequest
     {
-        private string loadBalancerName;
-        private List<string> policyNames = new List<string>();
+        private string _loadBalancerName;
+        private List<string> _policyNames = new List<string>();
 
 
         /// <summary>
-        /// The mnemonic name associated with the load balancer. If no name is specified, the operation returns the attributes of either all the sample
-        /// policies pre-defined by Elastic Load Balancing or the specified sample polices.
-        ///  
+        /// Gets and sets the property LoadBalancerName. 
+        /// <para>
+        ///  The mnemonic name associated with the load balancer. If no name is specified, the
+        /// operation returns the attributes of either all the sample policies pre-defined by
+        /// Elastic Load Balancing or the specified sample polices. 
+        /// </para>
         /// </summary>
         public string LoadBalancerName
         {
-            get { return this.loadBalancerName; }
-            set { this.loadBalancerName = value; }
+            get { return this._loadBalancerName; }
+            set { this._loadBalancerName = value; }
         }
 
         // Check to see if LoadBalancerName property is set
         internal bool IsSetLoadBalancerName()
         {
-            return this.loadBalancerName != null;
+            return this._loadBalancerName != null;
         }
 
+
         /// <summary>
-        /// The names of load balancer policies you've created or Elastic Load Balancing sample policy names.
-        ///  
+        /// Gets and sets the property PolicyNames. 
+        /// <para>
+        ///  The names of load balancer policies you've created or Elastic Load Balancing sample
+        /// policy names. 
+        /// </para>
         /// </summary>
         public List<string> PolicyNames
         {
-            get { return this.policyNames; }
-            set { this.policyNames = value; }
+            get { return this._policyNames; }
+            set { this._policyNames = value; }
         }
 
         // Check to see if PolicyNames property is set
         internal bool IsSetPolicyNames()
         {
-            return this.policyNames.Count > 0;
+            return this._policyNames != null && this._policyNames.Count > 0; 
         }
 
     }
 }
-    
