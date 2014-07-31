@@ -50,7 +50,7 @@ namespace Amazon.SessionProvider
     ///          AWSProfilesLocation=".aws/credentials"
     ///          Region="us-east-1"
     ///          Table="ASP.NET_SessionState"
-    ///          Shard="true"
+    ///          Shard="flase"
     ///          /&gt;
     ///   &lt;/providers&gt;
     /// &lt;/sessionState&gt;
@@ -106,7 +106,7 @@ namespace Amazon.SessionProvider
     ///     </item>
     ///     <item>
     ///         <term>Shard</term>
-    ///         <description>Optional boolean attribute. Shard controls whether the session will be auto-split into chunks less than 64K, allowing large sessions. Default is true.</description>
+    ///         <description>Optional boolean attribute. Shard controls whether the session will be auto-split into chunks less than 64K, allowing large sessions. Default is false.</description>
     ///     </item>
     /// </list>
     /// </para>
@@ -176,7 +176,7 @@ namespace Amazon.SessionProvider
         int _initialReadUnits = 10;
         int _initialWriteUnits = 5;
         bool _createIfNotExist = true;
-        bool _shard = true;
+        bool _shard = false;
 
         IAmazonDynamoDB _ddbClient;
         Table _table;
