@@ -12,15 +12,17 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+
 using System;
 
 using Amazon.Runtime;
 
+
 namespace Amazon.AutoScaling
 {
-
     /// <summary>
-    /// Configuration for accessing Auto Scaling service
+    /// Configuration for accessing Amazon AutoScaling service
     /// </summary>
     public partial class AmazonAutoScalingConfig : ClientConfig
     {
@@ -39,9 +41,7 @@ namespace Amazon.AutoScaling
         {
             get
             {
-                
                 return "autoscaling";
-                    
             }
         }
 
@@ -57,5 +57,3 @@ namespace Amazon.AutoScaling
         }
     }
 }
-
-    

@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeLaunchConfigurations response and response metadata.
+    /// Configuration for accessing Amazon DescribeLaunchConfigurations service
     /// </summary>
     public partial class DescribeLaunchConfigurationsResponse : DescribeLaunchConfigurationsResult
     {
         /// <summary>
         /// Gets and sets the DescribeLaunchConfigurationsResult property.
-        /// The LaunchConfigurationsType data type.
+        /// Represents the output of a DescribeLaunchConfigurations operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeLaunchConfigurationsResult class are now available on the DescribeLaunchConfigurationsResponse class. You should use the properties on DescribeLaunchConfigurationsResponse instead of accessing them through DescribeLaunchConfigurationsResult.")]
         public DescribeLaunchConfigurationsResult DescribeLaunchConfigurationsResult
@@ -40,4 +36,3 @@ namespace Amazon.AutoScaling.Model
         }
     }
 }
-    

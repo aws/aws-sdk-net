@@ -18,74 +18,56 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para>The Alarm data type.</para>
+    /// The Alarm data type.
     /// </summary>
     public partial class Alarm
     {
-        
-        private string alarmName;
-        private string alarmARN;
+        private string _alarmARN;
+        private string _alarmName;
 
 
         /// <summary>
-        /// The name of the alarm.
-        ///  
+        /// Gets and sets the property AlarmARN. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string AlarmName
-        {
-            get { return this.alarmName; }
-            set { this.alarmName = value; }
-        }
-
-        // Check to see if AlarmName property is set
-        internal bool IsSetAlarmName()
-        {
-            return this.alarmName != null;
-        }
-
-        /// <summary>
         /// The Amazon Resource Name (ARN) of the alarm.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1600</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
         /// </para>
         /// </summary>
         public string AlarmARN
         {
-            get { return this.alarmARN; }
-            set { this.alarmARN = value; }
+            get { return this._alarmARN; }
+            set { this._alarmARN = value; }
         }
 
         // Check to see if AlarmARN property is set
         internal bool IsSetAlarmARN()
         {
-            return this.alarmARN != null;
+            return this._alarmARN != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property AlarmName. 
+        /// <para>
+        /// The name of the alarm.
+        /// </para>
+        /// </summary>
+        public string AlarmName
+        {
+            get { return this._alarmName; }
+            set { this._alarmName = value; }
+        }
+
+        // Check to see if AlarmName property is set
+        internal bool IsSetAlarmName()
+        {
+            return this._alarmName != null;
+        }
+
     }
 }

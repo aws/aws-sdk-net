@@ -18,10 +18,9 @@ using Amazon.Runtime;
 namespace Amazon.ElastiCache
 {
     /// <summary>
-    /// Base class for AmazonElastiCache operation requests.
+    /// Base class for ElastiCache operation requests.
     /// </summary>
     public partial class AmazonElastiCacheRequest : AmazonWebServiceRequest
     {
     }
 }
-    

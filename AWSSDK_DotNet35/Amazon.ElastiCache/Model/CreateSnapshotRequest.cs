@@ -25,46 +25,52 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSnapshot operation.
-    /// <para>The <i>CreateSnapshot</i> operation creates a copy of an entire cache cluster at a specific moment in time.</para>
+    /// The <i>CreateSnapshot</i> operation creates a copy of an entire cache cluster at a
+    /// specific moment in time.
     /// </summary>
     public partial class CreateSnapshotRequest : AmazonElastiCacheRequest
     {
-        private string cacheClusterId;
-        private string snapshotName;
+        private string _cacheClusterId;
+        private string _snapshotName;
 
 
         /// <summary>
-        /// The identifier of an existing cache cluster. The snapshot will be created from this cache cluster.
-        ///  
+        /// Gets and sets the property CacheClusterId. 
+        /// <para>
+        /// The identifier of an existing cache cluster. The snapshot will be created from this
+        /// cache cluster.
+        /// </para>
         /// </summary>
         public string CacheClusterId
         {
-            get { return this.cacheClusterId; }
-            set { this.cacheClusterId = value; }
+            get { return this._cacheClusterId; }
+            set { this._cacheClusterId = value; }
         }
 
         // Check to see if CacheClusterId property is set
         internal bool IsSetCacheClusterId()
         {
-            return this.cacheClusterId != null;
+            return this._cacheClusterId != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property SnapshotName. 
+        /// <para>
         /// A name for the snapshot being created.
-        ///  
+        /// </para>
         /// </summary>
         public string SnapshotName
         {
-            get { return this.snapshotName; }
-            set { this.snapshotName = value; }
+            get { return this._snapshotName; }
+            set { this._snapshotName = value; }
         }
 
         // Check to see if SnapshotName property is set
         internal bool IsSetSnapshotName()
         {
-            return this.snapshotName != null;
+            return this._snapshotName != null;
         }
 
     }
 }
-    

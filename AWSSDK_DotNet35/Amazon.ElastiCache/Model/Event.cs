@@ -18,93 +18,100 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para>Represents a single occurrence of something interesting within the system. Some examples of events are creating a cache cluster,
-    /// adding or removing a cache node, or rebooting a node.</para>
+    /// Represents a single occurrence of something interesting within the system. Some examples
+    /// of events are creating a cache cluster, adding or removing a cache node, or rebooting
+    /// a node.
     /// </summary>
     public partial class Event
     {
-        
-        private string sourceIdentifier;
-        private SourceType sourceType;
-        private string message;
-        private DateTime? date;
+        private DateTime? _date;
+        private string _message;
+        private string _sourceIdentifier;
+        private SourceType _sourceType;
 
 
         /// <summary>
-        /// The identifier for the source of the event. For example, if the event occurred at the cache cluster level, the identifier would be the name
-        /// of the cache cluster.
-        ///  
-        /// </summary>
-        public string SourceIdentifier
-        {
-            get { return this.sourceIdentifier; }
-            set { this.sourceIdentifier = value; }
-        }
-
-        // Check to see if SourceIdentifier property is set
-        internal bool IsSetSourceIdentifier()
-        {
-            return this.sourceIdentifier != null;
-        }
-
-        /// <summary>
-        /// Specifies the origin of this event - a cache cluster, a parameter group, a security group, etc.
-        ///  
+        /// Gets and sets the property Date. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>cache-cluster, cache-parameter-group, cache-security-group, cache-subnet-group</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public SourceType SourceType
-        {
-            get { return this.sourceType; }
-            set { this.sourceType = value; }
-        }
-
-        // Check to see if SourceType property is set
-        internal bool IsSetSourceType()
-        {
-            return this.sourceType != null;
-        }
-
-        /// <summary>
-        /// The text of the event.
-        ///  
-        /// </summary>
-        public string Message
-        {
-            get { return this.message; }
-            set { this.message = value; }
-        }
-
-        // Check to see if Message property is set
-        internal bool IsSetMessage()
-        {
-            return this.message != null;
-        }
-
-        /// <summary>
         /// The date and time when the event occurred.
-        ///  
+        /// </para>
         /// </summary>
         public DateTime Date
         {
-            get { return this.date ?? default(DateTime); }
-            set { this.date = value; }
+            get { return this._date.GetValueOrDefault(); }
+            set { this._date = value; }
         }
 
         // Check to see if Date property is set
         internal bool IsSetDate()
         {
-            return this.date.HasValue;
+            return this._date.HasValue; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Message. 
+        /// <para>
+        /// The text of the event.
+        /// </para>
+        /// </summary>
+        public string Message
+        {
+            get { return this._message; }
+            set { this._message = value; }
+        }
+
+        // Check to see if Message property is set
+        internal bool IsSetMessage()
+        {
+            return this._message != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SourceIdentifier. 
+        /// <para>
+        /// The identifier for the source of the event. For example, if the event occurred at
+        /// the cache cluster level, the identifier would be the name of the cache cluster.
+        /// </para>
+        /// </summary>
+        public string SourceIdentifier
+        {
+            get { return this._sourceIdentifier; }
+            set { this._sourceIdentifier = value; }
+        }
+
+        // Check to see if SourceIdentifier property is set
+        internal bool IsSetSourceIdentifier()
+        {
+            return this._sourceIdentifier != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SourceType. 
+        /// <para>
+        /// Specifies the origin of this event - a cache cluster, a parameter group, a security
+        /// group, etc.
+        /// </para>
+        /// </summary>
+        public SourceType SourceType
+        {
+            get { return this._sourceType; }
+            set { this._sourceType = value; }
+        }
+
+        // Check to see if SourceType property is set
+        internal bool IsSetSourceType()
+        {
+            return this._sourceType != null;
+        }
+
     }
 }

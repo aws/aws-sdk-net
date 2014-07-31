@@ -17,59 +17,57 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The <c>PoliciesType</c> data type. </para>
+    /// The <code>PoliciesType</code> data type.
     /// </summary>
     public partial class DescribePoliciesResult : AmazonWebServiceResponse
     {
-        
-        private List<ScalingPolicy> scalingPolicies = new List<ScalingPolicy>();
-        private string nextToken;
+        private string _nextToken;
+        private List<ScalingPolicy> _scalingPolicies = new List<ScalingPolicy>();
 
 
         /// <summary>
-        /// A list of scaling policies.
-        ///  
-        /// </summary>
-        public List<ScalingPolicy> ScalingPolicies
-        {
-            get { return this.scalingPolicies; }
-            set { this.scalingPolicies = value; }
-        }
-
-        // Check to see if ScalingPolicies property is set
-        internal bool IsSetScalingPolicies()
-        {
-            return this.scalingPolicies.Count > 0;
-        }
-
-        /// <summary>
-        /// A string that marks the start of the next batch of returned results.
-        ///  
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  A string that marks the start of the next batch of returned results. 
         /// </para>
         /// </summary>
         public string NextToken
         {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;
+            return this._nextToken != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property ScalingPolicies. 
+        /// <para>
+        ///  A list of scaling policies. 
+        /// </para>
+        /// </summary>
+        public List<ScalingPolicy> ScalingPolicies
+        {
+            get { return this._scalingPolicies; }
+            set { this._scalingPolicies = value; }
+        }
+
+        // Check to see if ScalingPolicies property is set
+        internal bool IsSetScalingPolicies()
+        {
+            return this._scalingPolicies != null && this._scalingPolicies.Count > 0; 
+        }
+
     }
 }

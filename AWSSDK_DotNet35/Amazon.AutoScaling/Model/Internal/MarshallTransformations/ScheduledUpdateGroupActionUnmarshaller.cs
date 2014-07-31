@@ -12,117 +12,123 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ScheduledUpdateGroupAction Unmarshaller
-     /// </summary>
-    internal class ScheduledUpdateGroupActionUnmarshaller : IUnmarshaller<ScheduledUpdateGroupAction, XmlUnmarshallerContext>, IUnmarshaller<ScheduledUpdateGroupAction, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ScheduledUpdateGroupAction Object
+    /// </summary>  
+    public class ScheduledUpdateGroupActionUnmarshaller : IUnmarshaller<ScheduledUpdateGroupAction, XmlUnmarshallerContext>, IUnmarshaller<ScheduledUpdateGroupAction, JsonUnmarshallerContext>
     {
-        public ScheduledUpdateGroupAction Unmarshall(XmlUnmarshallerContext context) 
+        public ScheduledUpdateGroupAction Unmarshall(XmlUnmarshallerContext context)
         {
-            ScheduledUpdateGroupAction scheduledUpdateGroupAction = new ScheduledUpdateGroupAction();
+            ScheduledUpdateGroupAction unmarshalledObject = new ScheduledUpdateGroupAction();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("AutoScalingGroupName", targetDepth))
                     {
-                        scheduledUpdateGroupAction.AutoScalingGroupName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("ScheduledActionName", targetDepth))
-                    {
-                        scheduledUpdateGroupAction.ScheduledActionName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("ScheduledActionARN", targetDepth))
-                    {
-                        scheduledUpdateGroupAction.ScheduledActionARN = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Time", targetDepth))
-                    {
-                        scheduledUpdateGroupAction.Time = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("StartTime", targetDepth))
-                    {
-                        scheduledUpdateGroupAction.StartTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("EndTime", targetDepth))
-                    {
-                        scheduledUpdateGroupAction.EndTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Recurrence", targetDepth))
-                    {
-                        scheduledUpdateGroupAction.Recurrence = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("MinSize", targetDepth))
-                    {
-                        scheduledUpdateGroupAction.MinSize = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("MaxSize", targetDepth))
-                    {
-                        scheduledUpdateGroupAction.MaxSize = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AutoScalingGroupName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DesiredCapacity", targetDepth))
                     {
-                        scheduledUpdateGroupAction.DesiredCapacity = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.DesiredCapacity = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("EndTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MaxSize", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.MaxSize = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MinSize", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.MinSize = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Recurrence", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Recurrence = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ScheduledActionARN", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ScheduledActionARN = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ScheduledActionName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ScheduledActionName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StartTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Time", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.Time = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return scheduledUpdateGroupAction;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return scheduledUpdateGroupAction;
+            return unmarshalledObject;
         }
 
-        public ScheduledUpdateGroupAction Unmarshall(JsonUnmarshallerContext context) 
+        public ScheduledUpdateGroupAction Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static ScheduledUpdateGroupActionUnmarshaller instance;
 
-        public static ScheduledUpdateGroupActionUnmarshaller GetInstance() 
+        private static ScheduledUpdateGroupActionUnmarshaller _instance = new ScheduledUpdateGroupActionUnmarshaller();        
+
+        public static ScheduledUpdateGroupActionUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new ScheduledUpdateGroupActionUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

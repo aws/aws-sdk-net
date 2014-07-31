@@ -14,136 +14,131 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Auto Scaling Group Request Marshaller
+    /// CreateAutoScalingGroup Request Marshaller
     /// </summary>       
     public class CreateAutoScalingGroupRequestMarshaller : IMarshaller<IRequest, CreateAutoScalingGroupRequest>
     {
-        public IRequest Marshall(CreateAutoScalingGroupRequest createAutoScalingGroupRequest)
+        public IRequest Marshall(CreateAutoScalingGroupRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(createAutoScalingGroupRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AutoScaling");
             request.Parameters.Add("Action", "CreateAutoScalingGroup");
             request.Parameters.Add("Version", "2011-01-01");
-            if (createAutoScalingGroupRequest != null && createAutoScalingGroupRequest.IsSetAutoScalingGroupName())
-            {
-                request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(createAutoScalingGroupRequest.AutoScalingGroupName));
-            }
-            if (createAutoScalingGroupRequest != null && createAutoScalingGroupRequest.IsSetLaunchConfigurationName())
-            {
-                request.Parameters.Add("LaunchConfigurationName", StringUtils.FromString(createAutoScalingGroupRequest.LaunchConfigurationName));
-            }
-            if (createAutoScalingGroupRequest != null && createAutoScalingGroupRequest.IsSetInstanceId())
-            {
-                request.Parameters.Add("InstanceId", StringUtils.FromString(createAutoScalingGroupRequest.InstanceId));
-            }
-            if (createAutoScalingGroupRequest != null && createAutoScalingGroupRequest.IsSetMinSize())
-            {
-                request.Parameters.Add("MinSize", StringUtils.FromInt(createAutoScalingGroupRequest.MinSize));
-            }
-            if (createAutoScalingGroupRequest != null && createAutoScalingGroupRequest.IsSetMaxSize())
-            {
-                request.Parameters.Add("MaxSize", StringUtils.FromInt(createAutoScalingGroupRequest.MaxSize));
-            }
-            if (createAutoScalingGroupRequest != null && createAutoScalingGroupRequest.IsSetDesiredCapacity())
-            {
-                request.Parameters.Add("DesiredCapacity", StringUtils.FromInt(createAutoScalingGroupRequest.DesiredCapacity));
-            }
-            if (createAutoScalingGroupRequest != null && createAutoScalingGroupRequest.IsSetDefaultCooldown())
-            {
-                request.Parameters.Add("DefaultCooldown", StringUtils.FromInt(createAutoScalingGroupRequest.DefaultCooldown));
-            }
-            if (createAutoScalingGroupRequest != null)
-            {
-                List<string> availabilityZonesList = createAutoScalingGroupRequest.AvailabilityZones;
 
-                int availabilityZonesListIndex = 1;
-                foreach (string availabilityZonesListValue in availabilityZonesList)
-                { 
-                    request.Parameters.Add("AvailabilityZones.member." + availabilityZonesListIndex, StringUtils.FromString(availabilityZonesListValue));
-                    availabilityZonesListIndex++;
-                }
-            }
-            if (createAutoScalingGroupRequest != null)
+            if(publicRequest != null)
             {
-                List<string> loadBalancerNamesList = createAutoScalingGroupRequest.LoadBalancerNames;
-
-                int loadBalancerNamesListIndex = 1;
-                foreach (string loadBalancerNamesListValue in loadBalancerNamesList)
-                { 
-                    request.Parameters.Add("LoadBalancerNames.member." + loadBalancerNamesListIndex, StringUtils.FromString(loadBalancerNamesListValue));
-                    loadBalancerNamesListIndex++;
-                }
-            }
-            if (createAutoScalingGroupRequest != null && createAutoScalingGroupRequest.IsSetHealthCheckType())
-            {
-                request.Parameters.Add("HealthCheckType", StringUtils.FromString(createAutoScalingGroupRequest.HealthCheckType));
-            }
-            if (createAutoScalingGroupRequest != null && createAutoScalingGroupRequest.IsSetHealthCheckGracePeriod())
-            {
-                request.Parameters.Add("HealthCheckGracePeriod", StringUtils.FromInt(createAutoScalingGroupRequest.HealthCheckGracePeriod));
-            }
-            if (createAutoScalingGroupRequest != null && createAutoScalingGroupRequest.IsSetPlacementGroup())
-            {
-                request.Parameters.Add("PlacementGroup", StringUtils.FromString(createAutoScalingGroupRequest.PlacementGroup));
-            }
-            if (createAutoScalingGroupRequest != null && createAutoScalingGroupRequest.IsSetVPCZoneIdentifier())
-            {
-                request.Parameters.Add("VPCZoneIdentifier", StringUtils.FromString(createAutoScalingGroupRequest.VPCZoneIdentifier));
-            }
-            if (createAutoScalingGroupRequest != null)
-            {
-                List<string> terminationPoliciesList = createAutoScalingGroupRequest.TerminationPolicies;
-
-                int terminationPoliciesListIndex = 1;
-                foreach (string terminationPoliciesListValue in terminationPoliciesList)
-                { 
-                    request.Parameters.Add("TerminationPolicies.member." + terminationPoliciesListIndex, StringUtils.FromString(terminationPoliciesListValue));
-                    terminationPoliciesListIndex++;
-                }
-            }
-
-            if (createAutoScalingGroupRequest != null)
-            {
-                List<Tag> tagsList = createAutoScalingGroupRequest.Tags;
-                int tagsListIndex = 1;
-                foreach (Tag tagsListValue in tagsList)
+                if(publicRequest.IsSetAutoScalingGroupName())
                 {
-                    if (tagsListValue != null && tagsListValue.IsSetResourceId())
+                    request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
+                }
+                if(publicRequest.IsSetAvailabilityZones())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.AvailabilityZones)
                     {
-                        request.Parameters.Add("Tags.member." + tagsListIndex + ".ResourceId", StringUtils.FromString(tagsListValue.ResourceId));
+                        request.Parameters.Add("AvailabilityZones" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
                     }
-                    if (tagsListValue != null && tagsListValue.IsSetResourceType())
+                }
+                if(publicRequest.IsSetDefaultCooldown())
+                {
+                    request.Parameters.Add("DefaultCooldown", StringUtils.FromInt(publicRequest.DefaultCooldown));
+                }
+                if(publicRequest.IsSetDesiredCapacity())
+                {
+                    request.Parameters.Add("DesiredCapacity", StringUtils.FromInt(publicRequest.DesiredCapacity));
+                }
+                if(publicRequest.IsSetHealthCheckGracePeriod())
+                {
+                    request.Parameters.Add("HealthCheckGracePeriod", StringUtils.FromInt(publicRequest.HealthCheckGracePeriod));
+                }
+                if(publicRequest.IsSetHealthCheckType())
+                {
+                    request.Parameters.Add("HealthCheckType", StringUtils.FromString(publicRequest.HealthCheckType));
+                }
+                if(publicRequest.IsSetInstanceId())
+                {
+                    request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
+                }
+                if(publicRequest.IsSetLaunchConfigurationName())
+                {
+                    request.Parameters.Add("LaunchConfigurationName", StringUtils.FromString(publicRequest.LaunchConfigurationName));
+                }
+                if(publicRequest.IsSetLoadBalancerNames())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.LoadBalancerNames)
                     {
-                        request.Parameters.Add("Tags.member." + tagsListIndex + ".ResourceType", StringUtils.FromString(tagsListValue.ResourceType));
+                        request.Parameters.Add("LoadBalancerNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
                     }
-                    if (tagsListValue != null && tagsListValue.IsSetKey())
+                }
+                if(publicRequest.IsSetMaxSize())
+                {
+                    request.Parameters.Add("MaxSize", StringUtils.FromInt(publicRequest.MaxSize));
+                }
+                if(publicRequest.IsSetMinSize())
+                {
+                    request.Parameters.Add("MinSize", StringUtils.FromInt(publicRequest.MinSize));
+                }
+                if(publicRequest.IsSetPlacementGroup())
+                {
+                    request.Parameters.Add("PlacementGroup", StringUtils.FromString(publicRequest.PlacementGroup));
+                }
+                if(publicRequest.IsSetTags())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Tags)
                     {
-                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Key", StringUtils.FromString(tagsListValue.Key));
+                        if(publicRequestlistValue.IsSetKey())
+                        {
+                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
+                        }
+                        if(publicRequestlistValue.IsSetPropagateAtLaunch())
+                        {
+                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "PropagateAtLaunch", StringUtils.FromBool(publicRequestlistValue.PropagateAtLaunch));
+                        }
+                        if(publicRequestlistValue.IsSetResourceId())
+                        {
+                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceId", StringUtils.FromString(publicRequestlistValue.ResourceId));
+                        }
+                        if(publicRequestlistValue.IsSetResourceType())
+                        {
+                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
+                        }
+                        if(publicRequestlistValue.IsSetValue())
+                        {
+                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                        }
+                        publicRequestlistValueIndex++;
                     }
-                    if (tagsListValue != null && tagsListValue.IsSetValue())
+                }
+                if(publicRequest.IsSetTerminationPolicies())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.TerminationPolicies)
                     {
-                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Value", StringUtils.FromString(tagsListValue.Value));
+                        request.Parameters.Add("TerminationPolicies" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
                     }
-                    if (tagsListValue != null && tagsListValue.IsSetPropagateAtLaunch())
-                    {
-                        request.Parameters.Add("Tags.member." + tagsListIndex + ".PropagateAtLaunch", StringUtils.FromBool(tagsListValue.PropagateAtLaunch));
-                    }
-
-                    tagsListIndex++;
+                }
+                if(publicRequest.IsSetVPCZoneIdentifier())
+                {
+                    request.Parameters.Add("VPCZoneIdentifier", StringUtils.FromString(publicRequest.VPCZoneIdentifier));
                 }
             }
-
             return request;
         }
     }

@@ -12,24 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
+
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Returns information about the CreateCacheSecurityGroup response and response metadata.
+    /// Configuration for accessing Amazon CreateCacheSecurityGroup service
     /// </summary>
     public partial class CreateCacheSecurityGroupResponse : CreateCacheSecurityGroupResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the CreateCacheSecurityGroupResult property.
-        /// Contains the result of a successful invocation of the CreateCacheSecurityGroup
-        /// action.
-        /// 
+        /// Represents the output of a CreateCacheSecurityGroup operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateCacheSecurityGroupResult class are now available on the CreateCacheSecurityGroupResponse class. You should use the properties on CreateCacheSecurityGroupResponse instead of accessing them through CreateCacheSecurityGroupResult.")]
         public CreateCacheSecurityGroupResult CreateCacheSecurityGroupResult
         {
@@ -40,4 +36,3 @@ namespace Amazon.ElastiCache.Model
         }
     }
 }
-    

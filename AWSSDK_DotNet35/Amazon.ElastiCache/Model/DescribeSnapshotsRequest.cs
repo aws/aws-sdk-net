@@ -25,102 +25,130 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSnapshots operation.
-    /// <para>The <i>DescribeSnapshots</i> operation returns information about cache cluster snapshots. By default, <i>DescribeSnapshots</i> lists
-    /// all of your snapshots; it can optionally describe a single snapshot, or just the snapshots associated with a particular cache
-    /// cluster.</para>
+    /// The <i>DescribeSnapshots</i> operation returns information about cache cluster snapshots.
+    /// By default, <i>DescribeSnapshots</i> lists all of your snapshots; it can optionally
+    /// describe a single snapshot, or just the snapshots associated with a particular cache
+    /// cluster.
     /// </summary>
     public partial class DescribeSnapshotsRequest : AmazonElastiCacheRequest
     {
-        private string cacheClusterId;
-        private string snapshotName;
-        private string snapshotSource;
-        private string marker;
-        private int? maxRecords;
+        private string _cacheClusterId;
+        private string _marker;
+        private int? _maxRecords;
+        private string _snapshotName;
+        private string _snapshotSource;
 
 
         /// <summary>
-        /// A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cache cluster will be
-        /// described.
-        ///  
+        /// Gets and sets the property CacheClusterId. 
+        /// <para>
+        /// A user-supplied cluster identifier. If this parameter is specified, only snapshots
+        /// associated with that specific cache cluster will be described.
+        /// </para>
         /// </summary>
         public string CacheClusterId
         {
-            get { return this.cacheClusterId; }
-            set { this.cacheClusterId = value; }
+            get { return this._cacheClusterId; }
+            set { this._cacheClusterId = value; }
         }
 
         // Check to see if CacheClusterId property is set
         internal bool IsSetCacheClusterId()
         {
-            return this.cacheClusterId != null;
+            return this._cacheClusterId != null;
         }
+
 
         /// <summary>
-        /// A user-supplied name of the snapshot. If this parameter is specified, only this snapshot will be described.
-        ///  
-        /// </summary>
-        public string SnapshotName
-        {
-            get { return this.snapshotName; }
-            set { this.snapshotName = value; }
-        }
-
-        // Check to see if SnapshotName property is set
-        internal bool IsSetSnapshotName()
-        {
-            return this.snapshotName != null;
-        }
-
-        /// <summary>
-        /// Indicates whether the snapshot is from an automatic backup (<c>automated</c>) or was created manually (<c>manual</c>).
-        ///  
-        /// </summary>
-        public string SnapshotSource
-        {
-            get { return this.snapshotSource; }
-            set { this.snapshotSource = value; }
-        }
-
-        // Check to see if SnapshotSource property is set
-        internal bool IsSetSnapshotSource()
-        {
-            return this.snapshotSource != null;
-        }
-
-        /// <summary>
-        /// An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.
-        ///  
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// An optional marker returned from a prior request. Use this marker for pagination of
+        /// results from this operation. If this parameter is specified, the response includes
+        /// only records beyond the marker, up to the value specified by <i>MaxRecords</i>.
+        /// </para>
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
         }
 
+
         /// <summary>
-        /// The maximum number of records to include in the response. If more records exist than the specified <c>MaxRecords</c> value, a marker is
-        /// included in the response so that the remaining results can be retrieved. Default: 50Constraints: minimum 20; maximum 50.
+        /// Gets and sets the property MaxRecords. 
+        /// <para>
+        /// The maximum number of records to include in the response. If more records exist than
+        /// the specified <code>MaxRecords</code> value, a marker is included in the response
+        /// so that the remaining results can be retrieved.
+        /// </para>
         ///  
+        /// <para>
+        /// Default: 50
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: minimum 20; maximum 50.
+        /// </para>
         /// </summary>
         public int MaxRecords
         {
-            get { return this.maxRecords ?? default(int); }
-            set { this.maxRecords = value; }
+            get { return this._maxRecords.GetValueOrDefault(); }
+            set { this._maxRecords = value; }
         }
 
         // Check to see if MaxRecords property is set
         internal bool IsSetMaxRecords()
         {
-            return this.maxRecords.HasValue;
+            return this._maxRecords.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SnapshotName. 
+        /// <para>
+        /// A user-supplied name of the snapshot. If this parameter is specified, only this snapshot
+        /// will be described.
+        /// </para>
+        /// </summary>
+        public string SnapshotName
+        {
+            get { return this._snapshotName; }
+            set { this._snapshotName = value; }
+        }
+
+        // Check to see if SnapshotName property is set
+        internal bool IsSetSnapshotName()
+        {
+            return this._snapshotName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SnapshotSource. 
+        /// <para>
+        /// If set to <code>system</code>, the output shows snapshots that were automatically
+        /// created by ElastiCache. If set to <code>user</code> the output shows snapshots that
+        /// were manually created. If omitted, the output shows both automatically and manually
+        /// created snapshots.
+        /// </para>
+        /// </summary>
+        public string SnapshotSource
+        {
+            get { return this._snapshotSource; }
+            set { this._snapshotSource = value; }
+        }
+
+        // Check to see if SnapshotSource property is set
+        internal bool IsSetSnapshotSource()
+        {
+            return this._snapshotSource != null;
         }
 
     }
 }
-    

@@ -17,59 +17,57 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> </para>
+    /// 
     /// </summary>
     public partial class DescribeTagsResult : AmazonWebServiceResponse
     {
-        
-        private List<TagDescription> tags = new List<TagDescription>();
-        private string nextToken;
+        private string _nextToken;
+        private List<TagDescription> _tags = new List<TagDescription>();
 
 
         /// <summary>
-        /// The list of tags.
-        ///  
-        /// </summary>
-        public List<TagDescription> Tags
-        {
-            get { return this.tags; }
-            set { this.tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this.tags.Count > 0;
-        }
-
-        /// <summary>
-        /// A string used to mark the start of the next batch of returned results.
-        ///  
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  A string used to mark the start of the next batch of returned results. 
         /// </para>
         /// </summary>
         public string NextToken
         {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;
+            return this._nextToken != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        ///  The list of tags. 
+        /// </para>
+        /// </summary>
+        public List<TagDescription> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
     }
 }

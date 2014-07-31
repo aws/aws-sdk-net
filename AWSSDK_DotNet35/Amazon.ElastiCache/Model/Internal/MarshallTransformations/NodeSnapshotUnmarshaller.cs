@@ -12,84 +12,87 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   NodeSnapshot Unmarshaller
-     /// </summary>
-    internal class NodeSnapshotUnmarshaller : IUnmarshaller<NodeSnapshot, XmlUnmarshallerContext>, IUnmarshaller<NodeSnapshot, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for NodeSnapshot Object
+    /// </summary>  
+    public class NodeSnapshotUnmarshaller : IUnmarshaller<NodeSnapshot, XmlUnmarshallerContext>, IUnmarshaller<NodeSnapshot, JsonUnmarshallerContext>
     {
-        public NodeSnapshot Unmarshall(XmlUnmarshallerContext context) 
+        public NodeSnapshot Unmarshall(XmlUnmarshallerContext context)
         {
-            NodeSnapshot nodeSnapshot = new NodeSnapshot();
+            NodeSnapshot unmarshalledObject = new NodeSnapshot();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            if (context.IsStartOfDocument) 
-               targetDepth++;
-            
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("CacheNodeCreateTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.CacheNodeCreateTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("CacheNodeId", targetDepth))
                     {
-                        nodeSnapshot.CacheNodeId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CacheNodeId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("CacheSize", targetDepth))
                     {
-                        nodeSnapshot.CacheSize = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("CacheNodeCreateTime", targetDepth))
-                    {
-                        nodeSnapshot.CacheNodeCreateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CacheSize = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SnapshotCreateTime", targetDepth))
                     {
-                        nodeSnapshot.SnapshotCreateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.SnapshotCreateTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return nodeSnapshot;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return nodeSnapshot;
+            return unmarshalledObject;
         }
 
-        public NodeSnapshot Unmarshall(JsonUnmarshallerContext context) 
+        public NodeSnapshot Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static NodeSnapshotUnmarshaller instance;
 
-        public static NodeSnapshotUnmarshaller GetInstance() 
+        private static NodeSnapshotUnmarshaller _instance = new NodeSnapshotUnmarshaller();        
+
+        public static NodeSnapshotUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new NodeSnapshotUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

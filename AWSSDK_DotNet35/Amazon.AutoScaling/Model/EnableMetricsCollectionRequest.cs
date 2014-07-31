@@ -25,94 +25,114 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableMetricsCollection operation.
-    /// <para> Enables monitoring of group metrics for the Auto Scaling group specified in <c>AutoScalingGroupName</c> .
-    /// You can specify the list of enabled metrics with the <c>Metrics</c> parameter. </para> <para> Auto Scaling metrics collection
-    /// can be turned on only if the <c>InstanceMonitoring</c> flag, in the Auto Scaling group's launch configuration, is set to <c>True</c> .
+    /// Enables monitoring of group metrics for the Auto Scaling group specified in <code>AutoScalingGroupName</code>.
+    /// You can specify the list of enabled metrics with the <code>Metrics</code> parameter.
+    /// 
+    /// 
+    ///  
+    /// <para>
+    ///  Auto Scaling metrics collection can be turned on only if the <code>InstanceMonitoring</code>
+    /// flag, in the Auto Scaling group's launch configuration, is set to <code>True</code>.
+    /// 
     /// </para>
     /// </summary>
     public partial class EnableMetricsCollectionRequest : AmazonAutoScalingRequest
     {
-        private string autoScalingGroupName;
-        private List<string> metrics = new List<string>();
-        private string granularity;
+        private string _autoScalingGroupName;
+        private string _granularity;
+        private List<string> _metrics = new List<string>();
 
 
         /// <summary>
-        /// The name or ARN of the Auto Scaling group.
-        ///  
+        /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1600</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// The name or ARN of the Auto Scaling group.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
         {
-            get { return this.autoScalingGroupName; }
-            set { this.autoScalingGroupName = value; }
+            get { return this._autoScalingGroupName; }
+            set { this._autoScalingGroupName = value; }
         }
 
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;
+            return this._autoScalingGroupName != null;
         }
+
 
         /// <summary>
-        /// The list of metrics to collect. If no metrics are specified, all metrics are enabled. The following metrics are supported: <ul>
-        /// <li>GroupMinSize</li> <li>GroupMaxSize</li> <li>GroupDesiredCapacity</li> <li>GroupInServiceInstances</li> <li>GroupPendingInstances</li>
-        /// <li>GroupTerminatingInstances</li> <li>GroupTotalInstances</li> </ul>
-        ///  
-        /// </summary>
-        public List<string> Metrics
-        {
-            get { return this.metrics; }
-            set { this.metrics = value; }
-        }
-
-        // Check to see if Metrics property is set
-        internal bool IsSetMetrics()
-        {
-            return this.metrics.Count > 0;
-        }
-
-        /// <summary>
-        /// The granularity to associate with the metrics to collect. Currently, the only legal granularity is "1Minute".
-        ///  
+        /// Gets and sets the property Granularity. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  The granularity to associate with the metrics to collect. Currently, the only legal
+        /// granularity is "1Minute". 
         /// </para>
         /// </summary>
         public string Granularity
         {
-            get { return this.granularity; }
-            set { this.granularity = value; }
+            get { return this._granularity; }
+            set { this._granularity = value; }
         }
 
         // Check to see if Granularity property is set
         internal bool IsSetGranularity()
         {
-            return this.granularity != null;
+            return this._granularity != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Metrics. 
+        /// <para>
+        ///  The list of metrics to collect. If no metrics are specified, all metrics are enabled.
+        /// The following metrics are supported: 
+        /// </para>
+        ///  <ul> <li>
+        /// <para>
+        /// GroupMinSize
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// GroupMaxSize
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// GroupDesiredCapacity
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// GroupInServiceInstances
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// GroupPendingInstances
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// GroupStandbyInstances
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// GroupTerminatingInstances
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// GroupTotalInstances
+        /// </para>
+        /// </li> </ul>
+        /// </summary>
+        public List<string> Metrics
+        {
+            get { return this._metrics; }
+            set { this._metrics = value; }
+        }
+
+        // Check to see if Metrics property is set
+        internal bool IsSetMetrics()
+        {
+            return this._metrics != null && this._metrics.Count > 0; 
         }
 
     }
 }
-    

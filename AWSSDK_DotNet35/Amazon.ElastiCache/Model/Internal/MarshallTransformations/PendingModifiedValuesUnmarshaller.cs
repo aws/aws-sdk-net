@@ -12,75 +12,82 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   PendingModifiedValues Unmarshaller
-     /// </summary>
-    internal class PendingModifiedValuesUnmarshaller : IUnmarshaller<PendingModifiedValues, XmlUnmarshallerContext>, IUnmarshaller<PendingModifiedValues, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for PendingModifiedValues Object
+    /// </summary>  
+    public class PendingModifiedValuesUnmarshaller : IUnmarshaller<PendingModifiedValues, XmlUnmarshallerContext>, IUnmarshaller<PendingModifiedValues, JsonUnmarshallerContext>
     {
-        public PendingModifiedValues Unmarshall(XmlUnmarshallerContext context) 
+        public PendingModifiedValues Unmarshall(XmlUnmarshallerContext context)
         {
-            PendingModifiedValues pendingModifiedValues = new PendingModifiedValues();
+            PendingModifiedValues unmarshalledObject = new PendingModifiedValues();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("NumCacheNodes", targetDepth))
-                    {
-                        pendingModifiedValues.NumCacheNodes = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("CacheNodeIdsToRemove/CacheNodeId", targetDepth))
                     {
-                        pendingModifiedValues.CacheNodeIdsToRemove.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.CacheNodeIdsToRemove.Add(item);
                         continue;
                     }
                     if (context.TestExpression("EngineVersion", targetDepth))
                     {
-                        pendingModifiedValues.EngineVersion = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("NumCacheNodes", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.NumCacheNodes = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return pendingModifiedValues;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return pendingModifiedValues;
+            return unmarshalledObject;
         }
 
-        public PendingModifiedValues Unmarshall(JsonUnmarshallerContext context) 
+        public PendingModifiedValues Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static PendingModifiedValuesUnmarshaller instance;
 
-        public static PendingModifiedValuesUnmarshaller GetInstance() 
+        private static PendingModifiedValuesUnmarshaller _instance = new PendingModifiedValuesUnmarshaller();        
+
+        public static PendingModifiedValuesUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new PendingModifiedValuesUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

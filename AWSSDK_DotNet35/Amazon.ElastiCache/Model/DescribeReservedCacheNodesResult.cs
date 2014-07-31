@@ -17,50 +17,58 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para>Represents the output of a <i>DescribeReservedCacheNodes</i> operation.</para>
+    /// Represents the output of a <i>DescribeReservedCacheNodes</i> operation.
     /// </summary>
     public partial class DescribeReservedCacheNodesResult : AmazonWebServiceResponse
     {
-        
-        private string marker;
-        private List<ReservedCacheNode> reservedCacheNodes = new List<ReservedCacheNode>();
+        private string _marker;
+        private List<ReservedCacheNode> _reservedCacheNodes = new List<ReservedCacheNode>();
 
 
         /// <summary>
+        /// Gets and sets the property Marker. 
+        /// <para>
         /// Provides an identifier to allow retrieval of paginated results.
-        ///  
+        /// </para>
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
         }
 
+
         /// <summary>
-        /// A list of reserved cache nodes. Each element in the list contains detailed information about one node.
-        ///  
+        /// Gets and sets the property ReservedCacheNodes. 
+        /// <para>
+        /// A list of reserved cache nodes. Each element in the list contains detailed information
+        /// about one node.
+        /// </para>
         /// </summary>
         public List<ReservedCacheNode> ReservedCacheNodes
         {
-            get { return this.reservedCacheNodes; }
-            set { this.reservedCacheNodes = value; }
+            get { return this._reservedCacheNodes; }
+            set { this._reservedCacheNodes = value; }
         }
 
         // Check to see if ReservedCacheNodes property is set
         internal bool IsSetReservedCacheNodes()
         {
-            return this.reservedCacheNodes.Count > 0;
+            return this._reservedCacheNodes != null && this._reservedCacheNodes.Count > 0; 
         }
+
     }
 }

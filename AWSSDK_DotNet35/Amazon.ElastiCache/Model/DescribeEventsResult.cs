@@ -17,50 +17,58 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para>Represents the output of a <i>DescribeEvents</i> operation.</para>
+    /// Represents the output of a <i>DescribeEvents</i> operation.
     /// </summary>
     public partial class DescribeEventsResult : AmazonWebServiceResponse
     {
-        
-        private string marker;
-        private List<Event> events = new List<Event>();
+        private List<Event> _events = new List<Event>();
+        private string _marker;
 
 
         /// <summary>
-        /// Provides an identifier to allow retrieval of paginated results.
-        ///  
-        /// </summary>
-        public string Marker
-        {
-            get { return this.marker; }
-            set { this.marker = value; }
-        }
-
-        // Check to see if Marker property is set
-        internal bool IsSetMarker()
-        {
-            return this.marker != null;
-        }
-
-        /// <summary>
-        /// A list of events. Each element in the list contains detailed information about one event.
-        ///  
+        /// Gets and sets the property Events. 
+        /// <para>
+        /// A list of events. Each element in the list contains detailed information about one
+        /// event.
+        /// </para>
         /// </summary>
         public List<Event> Events
         {
-            get { return this.events; }
-            set { this.events = value; }
+            get { return this._events; }
+            set { this._events = value; }
         }
 
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this.events.Count > 0;
+            return this._events != null && this._events.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// Provides an identifier to allow retrieval of paginated results.
+        /// </para>
+        /// </summary>
+        public string Marker
+        {
+            get { return this._marker; }
+            set { this._marker = value; }
+        }
+
+        // Check to see if Marker property is set
+        internal bool IsSetMarker()
+        {
+            return this._marker != null;
+        }
+
     }
 }

@@ -12,24 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
+
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Returns information about the CopySnapshot response and response metadata.
+    /// Configuration for accessing Amazon CopySnapshot service
     /// </summary>
     public partial class CopySnapshotResponse : CopySnapshotResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the CopySnapshotResult property.
-        /// Contains the result of a successful invocation of the CopySnapshot
-        /// action.
-        /// 
+        /// Represents the output of a CopySnapshot operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CopySnapshotResult class are now available on the CopySnapshotResponse class. You should use the properties on CopySnapshotResponse instead of accessing them through CopySnapshotResult.")]
         public CopySnapshotResult CopySnapshotResult
         {
@@ -40,4 +36,3 @@ namespace Amazon.ElastiCache.Model
         }
     }
 }
-    

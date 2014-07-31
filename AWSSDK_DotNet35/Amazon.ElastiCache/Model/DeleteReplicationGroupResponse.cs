@@ -12,24 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
+
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Returns information about the DeleteReplicationGroup response and response metadata.
+    /// Configuration for accessing Amazon DeleteReplicationGroup service
     /// </summary>
     public partial class DeleteReplicationGroupResponse : DeleteReplicationGroupResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the DeleteReplicationGroupResult property.
-        /// Contains the result of a successful invocation of the DeleteReplicationGroup
-        /// action.
-        /// 
+        /// Represents the output of a DeleteReplicationGroup operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DeleteReplicationGroupResult class are now available on the DeleteReplicationGroupResponse class. You should use the properties on DeleteReplicationGroupResponse instead of accessing them through DeleteReplicationGroupResult.")]
         public DeleteReplicationGroupResult DeleteReplicationGroupResult
         {
@@ -40,4 +36,3 @@ namespace Amazon.ElastiCache.Model
         }
     }
 }
-    

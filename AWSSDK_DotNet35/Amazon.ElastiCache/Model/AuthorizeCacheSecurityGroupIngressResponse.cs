@@ -12,24 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
+
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Returns information about the AuthorizeCacheSecurityGroupIngress response and response metadata.
+    /// Configuration for accessing Amazon AuthorizeCacheSecurityGroupIngress service
     /// </summary>
     public partial class AuthorizeCacheSecurityGroupIngressResponse : AuthorizeCacheSecurityGroupIngressResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the AuthorizeCacheSecurityGroupIngressResult property.
-        /// Contains the result of a successful invocation of the AuthorizeCacheSecurityGroupIngress
-        /// action.
-        /// 
+        /// Represents the output of a AuthorizeCacheSecurityGroupIngress operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the AuthorizeCacheSecurityGroupIngressResult class are now available on the AuthorizeCacheSecurityGroupIngressResponse class. You should use the properties on AuthorizeCacheSecurityGroupIngressResponse instead of accessing them through AuthorizeCacheSecurityGroupIngressResult.")]
         public AuthorizeCacheSecurityGroupIngressResult AuthorizeCacheSecurityGroupIngressResult
         {
@@ -40,4 +36,3 @@ namespace Amazon.ElastiCache.Model
         }
     }
 }
-    

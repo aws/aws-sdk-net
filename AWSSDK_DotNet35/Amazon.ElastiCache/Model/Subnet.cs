@@ -18,49 +18,57 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para>Represents the subnet associated with a cache cluster. This parameter refers to subnets defined in Amazon Virtual Private Cloud
-    /// (Amazon VPC) and used with ElastiCache.</para>
+    /// Represents the subnet associated with a cache cluster. This parameter refers to subnets
+    /// defined in Amazon Virtual Private Cloud (Amazon VPC) and used with ElastiCache.
     /// </summary>
     public partial class Subnet
     {
-        
-        private string subnetIdentifier;
-        private AvailabilityZone subnetAvailabilityZone;
+        private AvailabilityZone _subnetAvailabilityZone;
+        private string _subnetIdentifier;
 
 
         /// <summary>
-        /// The unique identifier for the subnet
-        ///  
-        /// </summary>
-        public string SubnetIdentifier
-        {
-            get { return this.subnetIdentifier; }
-            set { this.subnetIdentifier = value; }
-        }
-
-        // Check to see if SubnetIdentifier property is set
-        internal bool IsSetSubnetIdentifier()
-        {
-            return this.subnetIdentifier != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property SubnetAvailabilityZone. 
+        /// <para>
         /// The Availability Zone associated with the subnet
-        ///  
+        /// </para>
         /// </summary>
         public AvailabilityZone SubnetAvailabilityZone
         {
-            get { return this.subnetAvailabilityZone; }
-            set { this.subnetAvailabilityZone = value; }
+            get { return this._subnetAvailabilityZone; }
+            set { this._subnetAvailabilityZone = value; }
         }
 
         // Check to see if SubnetAvailabilityZone property is set
         internal bool IsSetSubnetAvailabilityZone()
         {
-            return this.subnetAvailabilityZone != null;
+            return this._subnetAvailabilityZone != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property SubnetIdentifier. 
+        /// <para>
+        /// The unique identifier for the subnet
+        /// </para>
+        /// </summary>
+        public string SubnetIdentifier
+        {
+            get { return this._subnetIdentifier; }
+            set { this._subnetIdentifier = value; }
+        }
+
+        // Check to see if SubnetIdentifier property is set
+        internal bool IsSetSubnetIdentifier()
+        {
+            return this._subnetIdentifier != null;
+        }
+
     }
 }

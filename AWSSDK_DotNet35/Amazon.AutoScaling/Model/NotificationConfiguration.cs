@@ -18,104 +18,77 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The <c>NotificationConfiguration</c> data type. </para>
+    /// The <code>NotificationConfiguration</code> data type.
     /// </summary>
     public partial class NotificationConfiguration
     {
-        
-        private string autoScalingGroupName;
-        private string topicARN;
-        private string notificationType;
+        private string _autoScalingGroupName;
+        private string _notificationType;
+        private string _topicARN;
 
 
         /// <summary>
-        /// Specifies the Auto Scaling group name.
-        ///  
+        /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1600</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  Specifies the Auto Scaling group name. 
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
         {
-            get { return this.autoScalingGroupName; }
-            set { this.autoScalingGroupName = value; }
+            get { return this._autoScalingGroupName; }
+            set { this._autoScalingGroupName = value; }
         }
 
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;
+            return this._autoScalingGroupName != null;
         }
+
 
         /// <summary>
-        /// The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.
-        ///  
+        /// Gets and sets the property NotificationType. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1600</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string TopicARN
-        {
-            get { return this.topicARN; }
-            set { this.topicARN = value; }
-        }
-
-        // Check to see if TopicARN property is set
-        internal bool IsSetTopicARN()
-        {
-            return this.topicARN != null;
-        }
-
-        /// <summary>
-        /// The types of events for an action to start.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  The types of events for an action to start. 
         /// </para>
         /// </summary>
         public string NotificationType
         {
-            get { return this.notificationType; }
-            set { this.notificationType = value; }
+            get { return this._notificationType; }
+            set { this._notificationType = value; }
         }
 
         // Check to see if NotificationType property is set
         internal bool IsSetNotificationType()
         {
-            return this.notificationType != null;
+            return this._notificationType != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property TopicARN. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.
+        /// 
+        /// </para>
+        /// </summary>
+        public string TopicARN
+        {
+            get { return this._topicARN; }
+            set { this._topicARN = value; }
+        }
+
+        // Check to see if TopicARN property is set
+        internal bool IsSetTopicARN()
+        {
+            return this._topicARN != null;
+        }
+
     }
 }

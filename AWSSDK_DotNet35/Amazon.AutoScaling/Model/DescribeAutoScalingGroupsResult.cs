@@ -17,59 +17,57 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The <c>AutoScalingGroupsType</c> data type. </para>
+    /// The <code>AutoScalingGroupsType</code> data type.
     /// </summary>
     public partial class DescribeAutoScalingGroupsResult : AmazonWebServiceResponse
     {
-        
-        private List<AutoScalingGroup> autoScalingGroups = new List<AutoScalingGroup>();
-        private string nextToken;
+        private List<AutoScalingGroup> _autoScalingGroups = new List<AutoScalingGroup>();
+        private string _nextToken;
 
 
         /// <summary>
-        /// A list of Auto Scaling groups.
-        ///  
+        /// Gets and sets the property AutoScalingGroups. 
+        /// <para>
+        ///  A list of Auto Scaling groups. 
+        /// </para>
         /// </summary>
         public List<AutoScalingGroup> AutoScalingGroups
         {
-            get { return this.autoScalingGroups; }
-            set { this.autoScalingGroups = value; }
+            get { return this._autoScalingGroups; }
+            set { this._autoScalingGroups = value; }
         }
 
         // Check to see if AutoScalingGroups property is set
         internal bool IsSetAutoScalingGroups()
         {
-            return this.autoScalingGroups.Count > 0;
+            return this._autoScalingGroups != null && this._autoScalingGroups.Count > 0; 
         }
 
+
         /// <summary>
-        /// A string that marks the start of the next batch of returned results.
-        ///  
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  A string that marks the start of the next batch of returned results. 
         /// </para>
         /// </summary>
         public string NextToken
         {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;
+            return this._nextToken != null;
         }
+
     }
 }

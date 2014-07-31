@@ -25,65 +25,84 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCacheSubnetGroup operation.
-    /// <para>The <i>CreateCacheSubnetGroup</i> operation creates a new cache subnet group.</para> <para>Use this parameter only when you are
-    /// creating a cluster in an Amazon Virtual Private Cloud (VPC).</para>
+    /// The <i>CreateCacheSubnetGroup</i> operation creates a new cache subnet group.
+    /// 
+    ///  
+    /// <para>
+    /// Use this parameter only when you are creating a cluster in an Amazon Virtual Private
+    /// Cloud (VPC).
+    /// </para>
     /// </summary>
     public partial class CreateCacheSubnetGroupRequest : AmazonElastiCacheRequest
     {
-        private string cacheSubnetGroupName;
-        private string cacheSubnetGroupDescription;
-        private List<string> subnetIds = new List<string>();
+        private string _cacheSubnetGroupDescription;
+        private string _cacheSubnetGroupName;
+        private List<string> _subnetIds = new List<string>();
 
 
         /// <summary>
-        /// A name for the cache subnet group. This value is stored as a lowercase string. Constraints: Must contain no more than 255 alphanumeric
-        /// characters or hyphens. Example: <c>mysubnetgroup</c>
-        ///  
-        /// </summary>
-        public string CacheSubnetGroupName
-        {
-            get { return this.cacheSubnetGroupName; }
-            set { this.cacheSubnetGroupName = value; }
-        }
-
-        // Check to see if CacheSubnetGroupName property is set
-        internal bool IsSetCacheSubnetGroupName()
-        {
-            return this.cacheSubnetGroupName != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property CacheSubnetGroupDescription. 
+        /// <para>
         /// A description for the cache subnet group.
-        ///  
+        /// </para>
         /// </summary>
         public string CacheSubnetGroupDescription
         {
-            get { return this.cacheSubnetGroupDescription; }
-            set { this.cacheSubnetGroupDescription = value; }
+            get { return this._cacheSubnetGroupDescription; }
+            set { this._cacheSubnetGroupDescription = value; }
         }
 
         // Check to see if CacheSubnetGroupDescription property is set
         internal bool IsSetCacheSubnetGroupDescription()
         {
-            return this.cacheSubnetGroupDescription != null;
+            return this._cacheSubnetGroupDescription != null;
         }
 
+
         /// <summary>
-        /// A list of VPC subnet IDs for the cache subnet group.
+        /// Gets and sets the property CacheSubnetGroupName. 
+        /// <para>
+        /// A name for the cache subnet group. This value is stored as a lowercase string.
+        /// </para>
         ///  
+        /// <para>
+        /// Constraints: Must contain no more than 255 alphanumeric characters or hyphens.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>mysubnetgroup</code>
+        /// </para>
+        /// </summary>
+        public string CacheSubnetGroupName
+        {
+            get { return this._cacheSubnetGroupName; }
+            set { this._cacheSubnetGroupName = value; }
+        }
+
+        // Check to see if CacheSubnetGroupName property is set
+        internal bool IsSetCacheSubnetGroupName()
+        {
+            return this._cacheSubnetGroupName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SubnetIds. 
+        /// <para>
+        /// A list of VPC subnet IDs for the cache subnet group.
+        /// </para>
         /// </summary>
         public List<string> SubnetIds
         {
-            get { return this.subnetIds; }
-            set { this.subnetIds = value; }
+            get { return this._subnetIds; }
+            set { this._subnetIds = value; }
         }
 
         // Check to see if SubnetIds property is set
         internal bool IsSetSubnetIds()
         {
-            return this.subnetIds.Count > 0;
+            return this._subnetIds != null && this._subnetIds.Count > 0; 
         }
 
     }
 }
-    

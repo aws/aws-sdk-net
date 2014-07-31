@@ -12,87 +12,93 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   CacheEngineVersion Unmarshaller
-     /// </summary>
-    internal class CacheEngineVersionUnmarshaller : IUnmarshaller<CacheEngineVersion, XmlUnmarshallerContext>, IUnmarshaller<CacheEngineVersion, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for CacheEngineVersion Object
+    /// </summary>  
+    public class CacheEngineVersionUnmarshaller : IUnmarshaller<CacheEngineVersion, XmlUnmarshallerContext>, IUnmarshaller<CacheEngineVersion, JsonUnmarshallerContext>
     {
-        public CacheEngineVersion Unmarshall(XmlUnmarshallerContext context) 
+        public CacheEngineVersion Unmarshall(XmlUnmarshallerContext context)
         {
-            CacheEngineVersion cacheEngineVersion = new CacheEngineVersion();
+            CacheEngineVersion unmarshalledObject = new CacheEngineVersion();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Engine", targetDepth))
-                    {
-                        cacheEngineVersion.Engine = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("EngineVersion", targetDepth))
-                    {
-                        cacheEngineVersion.EngineVersion = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("CacheParameterGroupFamily", targetDepth))
-                    {
-                        cacheEngineVersion.CacheParameterGroupFamily = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("CacheEngineDescription", targetDepth))
                     {
-                        cacheEngineVersion.CacheEngineDescription = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CacheEngineDescription = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("CacheEngineVersionDescription", targetDepth))
                     {
-                        cacheEngineVersion.CacheEngineVersionDescription = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CacheEngineVersionDescription = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("CacheParameterGroupFamily", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CacheParameterGroupFamily = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Engine", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Engine = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("EngineVersion", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return cacheEngineVersion;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return cacheEngineVersion;
+            return unmarshalledObject;
         }
 
-        public CacheEngineVersion Unmarshall(JsonUnmarshallerContext context) 
+        public CacheEngineVersion Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static CacheEngineVersionUnmarshaller instance;
 
-        public static CacheEngineVersionUnmarshaller GetInstance() 
+        private static CacheEngineVersionUnmarshaller _instance = new CacheEngineVersionUnmarshaller();        
+
+        public static CacheEngineVersionUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new CacheEngineVersionUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

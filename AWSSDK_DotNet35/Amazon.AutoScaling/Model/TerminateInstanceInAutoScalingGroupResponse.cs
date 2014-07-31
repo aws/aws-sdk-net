@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the  TerminateInstanceInAutoScalingGroup response and response metadata.
+    /// Configuration for accessing Amazon TerminateInstanceInAutoScalingGroup service
     /// </summary>
     public partial class TerminateInstanceInAutoScalingGroupResponse : TerminateInstanceInAutoScalingGroupResult
     {
         /// <summary>
         /// Gets and sets the TerminateInstanceInAutoScalingGroupResult property.
-        /// The output for the TerminateInstanceInAutoScalingGroup action.
+        /// Represents the output of a TerminateInstanceInAutoScalingGroup operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the TerminateInstanceInAutoScalingGroupResult class are now available on the TerminateInstanceInAutoScalingGroupResponse class. You should use the properties on TerminateInstanceInAutoScalingGroupResponse instead of accessing them through TerminateInstanceInAutoScalingGroupResult.")]
         public TerminateInstanceInAutoScalingGroupResult TerminateInstanceInAutoScalingGroupResult
@@ -40,4 +36,3 @@ namespace Amazon.AutoScaling.Model
         }
     }
 }
-    

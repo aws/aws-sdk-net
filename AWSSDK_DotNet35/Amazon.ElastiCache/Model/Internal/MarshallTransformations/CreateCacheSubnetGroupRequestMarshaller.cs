@@ -14,47 +14,49 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Cache Subnet Group Request Marshaller
+    /// CreateCacheSubnetGroup Request Marshaller
     /// </summary>       
     public class CreateCacheSubnetGroupRequestMarshaller : IMarshaller<IRequest, CreateCacheSubnetGroupRequest>
     {
-        public IRequest Marshall(CreateCacheSubnetGroupRequest createCacheSubnetGroupRequest)
+        public IRequest Marshall(CreateCacheSubnetGroupRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(createCacheSubnetGroupRequest, "AmazonElastiCache");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElastiCache");
             request.Parameters.Add("Action", "CreateCacheSubnetGroup");
-            request.Parameters.Add("Version", "2014-03-24");
-            if (createCacheSubnetGroupRequest != null && createCacheSubnetGroupRequest.IsSetCacheSubnetGroupName())
-            {
-                request.Parameters.Add("CacheSubnetGroupName", StringUtils.FromString(createCacheSubnetGroupRequest.CacheSubnetGroupName));
-            }
-            if (createCacheSubnetGroupRequest != null && createCacheSubnetGroupRequest.IsSetCacheSubnetGroupDescription())
-            {
-                request.Parameters.Add("CacheSubnetGroupDescription", StringUtils.FromString(createCacheSubnetGroupRequest.CacheSubnetGroupDescription));
-            }
-            if (createCacheSubnetGroupRequest != null)
-            {
-                List<string> subnetIdsList = createCacheSubnetGroupRequest.SubnetIds;
+            request.Parameters.Add("Version", "2014-07-15");
 
-                int subnetIdsListIndex = 1;
-                foreach (string subnetIdsListValue in subnetIdsList)
-                { 
-                    request.Parameters.Add("SubnetIds.member." + subnetIdsListIndex, StringUtils.FromString(subnetIdsListValue));
-                    subnetIdsListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetCacheSubnetGroupDescription())
+                {
+                    request.Parameters.Add("CacheSubnetGroupDescription", StringUtils.FromString(publicRequest.CacheSubnetGroupDescription));
+                }
+                if(publicRequest.IsSetCacheSubnetGroupName())
+                {
+                    request.Parameters.Add("CacheSubnetGroupName", StringUtils.FromString(publicRequest.CacheSubnetGroupName));
+                }
+                if(publicRequest.IsSetSubnetIds())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.SubnetIds)
+                    {
+                        request.Parameters.Add("SubnetIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
-
             return request;
         }
     }

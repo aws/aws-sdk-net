@@ -25,30 +25,30 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCacheSecurityGroup operation.
-    /// <para>The <i>DeleteCacheSecurityGroup</i> operation deletes a cache security group.</para> <para><b>NOTE:</b>You cannot delete a cache
-    /// security group if it is associated with any cache clusters.</para>
+    /// The <i>DeleteCacheSecurityGroup</i> operation deletes a cache security group.
     /// </summary>
     public partial class DeleteCacheSecurityGroupRequest : AmazonElastiCacheRequest
     {
-        private string cacheSecurityGroupName;
+        private string _cacheSecurityGroupName;
 
 
         /// <summary>
-        /// The name of the cache security group to delete. <note>You cannot delete the default security group.</note>
-        ///  
+        /// Gets and sets the property CacheSecurityGroupName. 
+        /// <para>
+        /// The name of the cache security group to delete.
+        /// </para>
         /// </summary>
         public string CacheSecurityGroupName
         {
-            get { return this.cacheSecurityGroupName; }
-            set { this.cacheSecurityGroupName = value; }
+            get { return this._cacheSecurityGroupName; }
+            set { this._cacheSecurityGroupName = value; }
         }
 
         // Check to see if CacheSecurityGroupName property is set
         internal bool IsSetCacheSecurityGroupName()
         {
-            return this.cacheSecurityGroupName != null;
+            return this._cacheSecurityGroupName != null;
         }
 
     }
 }
-    

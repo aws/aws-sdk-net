@@ -17,220 +17,257 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para>Represents the output of a <i>PurchaseReservedCacheNodesOffering</i> operation.</para>
+    /// Represents the output of a <i>PurchaseReservedCacheNodesOffering</i> operation.
     /// </summary>
-    public partial class ReservedCacheNode : AmazonWebServiceResponse
+    public partial class ReservedCacheNode
     {
-        
-        private string reservedCacheNodeId;
-        private string reservedCacheNodesOfferingId;
-        private string cacheNodeType;
-        private DateTime? startTime;
-        private int? duration;
-        private double? fixedPrice;
-        private double? usagePrice;
-        private int? cacheNodeCount;
-        private string productDescription;
-        private string offeringType;
-        private string state;
-        private List<RecurringCharge> recurringCharges = new List<RecurringCharge>();
+        private int? _cacheNodeCount;
+        private string _cacheNodeType;
+        private int? _duration;
+        private double? _fixedPrice;
+        private string _offeringType;
+        private string _productDescription;
+        private List<RecurringCharge> _recurringCharges = new List<RecurringCharge>();
+        private string _reservedCacheNodeId;
+        private string _reservedCacheNodesOfferingId;
+        private DateTime? _startTime;
+        private string _state;
+        private double? _usagePrice;
 
 
         /// <summary>
-        /// The unique identifier for the reservation.
-        ///  
-        /// </summary>
-        public string ReservedCacheNodeId
-        {
-            get { return this.reservedCacheNodeId; }
-            set { this.reservedCacheNodeId = value; }
-        }
-
-        // Check to see if ReservedCacheNodeId property is set
-        internal bool IsSetReservedCacheNodeId()
-        {
-            return this.reservedCacheNodeId != null;
-        }
-
-        /// <summary>
-        /// The offering identifier.
-        ///  
-        /// </summary>
-        public string ReservedCacheNodesOfferingId
-        {
-            get { return this.reservedCacheNodesOfferingId; }
-            set { this.reservedCacheNodesOfferingId = value; }
-        }
-
-        // Check to see if ReservedCacheNodesOfferingId property is set
-        internal bool IsSetReservedCacheNodesOfferingId()
-        {
-            return this.reservedCacheNodesOfferingId != null;
-        }
-
-        /// <summary>
-        /// The cache node type for the reserved cache nodes.
-        ///  
-        /// </summary>
-        public string CacheNodeType
-        {
-            get { return this.cacheNodeType; }
-            set { this.cacheNodeType = value; }
-        }
-
-        // Check to see if CacheNodeType property is set
-        internal bool IsSetCacheNodeType()
-        {
-            return this.cacheNodeType != null;
-        }
-
-        /// <summary>
-        /// The time the reservation started.
-        ///  
-        /// </summary>
-        public DateTime StartTime
-        {
-            get { return this.startTime ?? default(DateTime); }
-            set { this.startTime = value; }
-        }
-
-        // Check to see if StartTime property is set
-        internal bool IsSetStartTime()
-        {
-            return this.startTime.HasValue;
-        }
-
-        /// <summary>
-        /// The duration of the reservation in seconds.
-        ///  
-        /// </summary>
-        public int Duration
-        {
-            get { return this.duration ?? default(int); }
-            set { this.duration = value; }
-        }
-
-        // Check to see if Duration property is set
-        internal bool IsSetDuration()
-        {
-            return this.duration.HasValue;
-        }
-
-        /// <summary>
-        /// The fixed price charged for this reserved cache node.
-        ///  
-        /// </summary>
-        public double FixedPrice
-        {
-            get { return this.fixedPrice ?? default(double); }
-            set { this.fixedPrice = value; }
-        }
-
-        // Check to see if FixedPrice property is set
-        internal bool IsSetFixedPrice()
-        {
-            return this.fixedPrice.HasValue;
-        }
-
-        /// <summary>
-        /// The hourly price charged for this reserved cache node.
-        ///  
-        /// </summary>
-        public double UsagePrice
-        {
-            get { return this.usagePrice ?? default(double); }
-            set { this.usagePrice = value; }
-        }
-
-        // Check to see if UsagePrice property is set
-        internal bool IsSetUsagePrice()
-        {
-            return this.usagePrice.HasValue;
-        }
-
-        /// <summary>
+        /// Gets and sets the property CacheNodeCount. 
+        /// <para>
         /// The number of cache nodes that have been reserved.
-        ///  
+        /// </para>
         /// </summary>
         public int CacheNodeCount
         {
-            get { return this.cacheNodeCount ?? default(int); }
-            set { this.cacheNodeCount = value; }
+            get { return this._cacheNodeCount.GetValueOrDefault(); }
+            set { this._cacheNodeCount = value; }
         }
 
         // Check to see if CacheNodeCount property is set
         internal bool IsSetCacheNodeCount()
         {
-            return this.cacheNodeCount.HasValue;
+            return this._cacheNodeCount.HasValue; 
         }
 
+
         /// <summary>
-        /// The description of the reserved cache node.
-        ///  
+        /// Gets and sets the property CacheNodeType. 
+        /// <para>
+        /// The cache node type for the reserved cache nodes.
+        /// </para>
         /// </summary>
-        public string ProductDescription
+        public string CacheNodeType
         {
-            get { return this.productDescription; }
-            set { this.productDescription = value; }
+            get { return this._cacheNodeType; }
+            set { this._cacheNodeType = value; }
         }
 
-        // Check to see if ProductDescription property is set
-        internal bool IsSetProductDescription()
+        // Check to see if CacheNodeType property is set
+        internal bool IsSetCacheNodeType()
         {
-            return this.productDescription != null;
+            return this._cacheNodeType != null;
         }
+
 
         /// <summary>
+        /// Gets and sets the property Duration. 
+        /// <para>
+        /// The duration of the reservation in seconds.
+        /// </para>
+        /// </summary>
+        public int Duration
+        {
+            get { return this._duration.GetValueOrDefault(); }
+            set { this._duration = value; }
+        }
+
+        // Check to see if Duration property is set
+        internal bool IsSetDuration()
+        {
+            return this._duration.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property FixedPrice. 
+        /// <para>
+        /// The fixed price charged for this reserved cache node.
+        /// </para>
+        /// </summary>
+        public double FixedPrice
+        {
+            get { return this._fixedPrice.GetValueOrDefault(); }
+            set { this._fixedPrice = value; }
+        }
+
+        // Check to see if FixedPrice property is set
+        internal bool IsSetFixedPrice()
+        {
+            return this._fixedPrice.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property OfferingType. 
+        /// <para>
         /// The offering type of this reserved cache node.
-        ///  
+        /// </para>
         /// </summary>
         public string OfferingType
         {
-            get { return this.offeringType; }
-            set { this.offeringType = value; }
+            get { return this._offeringType; }
+            set { this._offeringType = value; }
         }
 
         // Check to see if OfferingType property is set
         internal bool IsSetOfferingType()
         {
-            return this.offeringType != null;
+            return this._offeringType != null;
         }
 
+
         /// <summary>
-        /// The state of the reserved cache node.
-        ///  
+        /// Gets and sets the property ProductDescription. 
+        /// <para>
+        /// The description of the reserved cache node.
+        /// </para>
         /// </summary>
-        public string State
+        public string ProductDescription
         {
-            get { return this.state; }
-            set { this.state = value; }
+            get { return this._productDescription; }
+            set { this._productDescription = value; }
         }
 
-        // Check to see if State property is set
-        internal bool IsSetState()
+        // Check to see if ProductDescription property is set
+        internal bool IsSetProductDescription()
         {
-            return this.state != null;
+            return this._productDescription != null;
         }
+
 
         /// <summary>
+        /// Gets and sets the property RecurringCharges. 
+        /// <para>
         /// The recurring price charged to run this reserved cache node.
-        ///  
+        /// </para>
         /// </summary>
         public List<RecurringCharge> RecurringCharges
         {
-            get { return this.recurringCharges; }
-            set { this.recurringCharges = value; }
+            get { return this._recurringCharges; }
+            set { this._recurringCharges = value; }
         }
 
         // Check to see if RecurringCharges property is set
         internal bool IsSetRecurringCharges()
         {
-            return this.recurringCharges.Count > 0;
+            return this._recurringCharges != null && this._recurringCharges.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property ReservedCacheNodeId. 
+        /// <para>
+        /// The unique identifier for the reservation.
+        /// </para>
+        /// </summary>
+        public string ReservedCacheNodeId
+        {
+            get { return this._reservedCacheNodeId; }
+            set { this._reservedCacheNodeId = value; }
+        }
+
+        // Check to see if ReservedCacheNodeId property is set
+        internal bool IsSetReservedCacheNodeId()
+        {
+            return this._reservedCacheNodeId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ReservedCacheNodesOfferingId. 
+        /// <para>
+        /// The offering identifier.
+        /// </para>
+        /// </summary>
+        public string ReservedCacheNodesOfferingId
+        {
+            get { return this._reservedCacheNodesOfferingId; }
+            set { this._reservedCacheNodesOfferingId = value; }
+        }
+
+        // Check to see if ReservedCacheNodesOfferingId property is set
+        internal bool IsSetReservedCacheNodesOfferingId()
+        {
+            return this._reservedCacheNodesOfferingId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        /// The time the reservation started.
+        /// </para>
+        /// </summary>
+        public DateTime StartTime
+        {
+            get { return this._startTime.GetValueOrDefault(); }
+            set { this._startTime = value; }
+        }
+
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
+        {
+            return this._startTime.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The state of the reserved cache node.
+        /// </para>
+        /// </summary>
+        public string State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property UsagePrice. 
+        /// <para>
+        /// The hourly price charged for this reserved cache node.
+        /// </para>
+        /// </summary>
+        public double UsagePrice
+        {
+            get { return this._usagePrice.GetValueOrDefault(); }
+            set { this._usagePrice = value; }
+        }
+
+        // Check to see if UsagePrice property is set
+        internal bool IsSetUsagePrice()
+        {
+            return this._usagePrice.HasValue; 
+        }
+
     }
 }

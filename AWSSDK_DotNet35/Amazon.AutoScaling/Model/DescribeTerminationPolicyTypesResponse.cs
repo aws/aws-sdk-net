@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeTerminationPolicyTypes response and response metadata.
+    /// Configuration for accessing Amazon DescribeTerminationPolicyTypes service
     /// </summary>
     public partial class DescribeTerminationPolicyTypesResponse : DescribeTerminationPolicyTypesResult
     {
         /// <summary>
         /// Gets and sets the DescribeTerminationPolicyTypesResult property.
-        /// The TerminationPolicyTypes data type.
+        /// Represents the output of a DescribeTerminationPolicyTypes operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeTerminationPolicyTypesResult class are now available on the DescribeTerminationPolicyTypesResponse class. You should use the properties on DescribeTerminationPolicyTypesResponse instead of accessing them through DescribeTerminationPolicyTypesResult.")]
         public DescribeTerminationPolicyTypesResult DescribeTerminationPolicyTypesResult
@@ -40,4 +36,3 @@ namespace Amazon.AutoScaling.Model
         }
     }
 }
-    

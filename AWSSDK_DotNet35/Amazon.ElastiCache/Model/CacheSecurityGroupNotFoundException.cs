@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.ElastiCache.Model
 {
     ///<summary>
-    /// AmazonElastiCache exception
+    /// ElastiCache exception
     /// </summary>
     public class CacheSecurityGroupNotFoundException : AmazonElastiCacheException 
     {
@@ -45,6 +45,5 @@ namespace Amazon.ElastiCache.Model
         public CacheSecurityGroupNotFoundException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
-        
     }
 }

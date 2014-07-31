@@ -12,24 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
+
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Returns information about the DeleteCacheCluster response and response metadata.
+    /// Configuration for accessing Amazon DeleteCacheCluster service
     /// </summary>
     public partial class DeleteCacheClusterResponse : DeleteCacheClusterResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the DeleteCacheClusterResult property.
-        /// Contains the result of a successful invocation of the DeleteCacheCluster
-        /// action.
-        /// 
+        /// Represents the output of a DeleteCacheCluster operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DeleteCacheClusterResult class are now available on the DeleteCacheClusterResponse class. You should use the properties on DeleteCacheClusterResponse instead of accessing them through DeleteCacheClusterResult.")]
         public DeleteCacheClusterResult DeleteCacheClusterResult
         {
@@ -40,4 +36,3 @@ namespace Amazon.ElastiCache.Model
         }
     }
 }
-    

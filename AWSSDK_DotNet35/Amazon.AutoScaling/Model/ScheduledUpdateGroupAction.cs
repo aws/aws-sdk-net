@@ -18,237 +18,228 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> This data type stores information about a scheduled update to an Auto Scaling group. </para>
+    /// This data type stores information about a scheduled update to an Auto Scaling group.
     /// </summary>
     public partial class ScheduledUpdateGroupAction
     {
-        
-        private string autoScalingGroupName;
-        private string scheduledActionName;
-        private string scheduledActionARN;
-        private DateTime? time;
-        private DateTime? startTime;
-        private DateTime? endTime;
-        private string recurrence;
-        private int? minSize;
-        private int? maxSize;
-        private int? desiredCapacity;
+        private string _autoScalingGroupName;
+        private int? _desiredCapacity;
+        private DateTime? _endTime;
+        private int? _maxSize;
+        private int? _minSize;
+        private string _recurrence;
+        private string _scheduledActionARN;
+        private string _scheduledActionName;
+        private DateTime? _startTime;
+        private DateTime? _time;
 
 
         /// <summary>
-        /// The name of the Auto Scaling group to be updated.
-        ///  
+        /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  The name of the Auto Scaling group to be updated. 
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
         {
-            get { return this.autoScalingGroupName; }
-            set { this.autoScalingGroupName = value; }
+            get { return this._autoScalingGroupName; }
+            set { this._autoScalingGroupName = value; }
         }
 
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;
+            return this._autoScalingGroupName != null;
         }
 
+
         /// <summary>
-        /// The name of this scheduled action.
-        ///  
+        /// Gets and sets the property DesiredCapacity. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  The number of instances you prefer to maintain in your Auto Scaling group. 
         /// </para>
-        /// </summary>
-        public string ScheduledActionName
-        {
-            get { return this.scheduledActionName; }
-            set { this.scheduledActionName = value; }
-        }
-
-        // Check to see if ScheduledActionName property is set
-        internal bool IsSetScheduledActionName()
-        {
-            return this.scheduledActionName != null;
-        }
-
-        /// <summary>
-        /// The Amazon Resource Name (ARN) of this scheduled action.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1600</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string ScheduledActionARN
-        {
-            get { return this.scheduledActionARN; }
-            set { this.scheduledActionARN = value; }
-        }
-
-        // Check to see if ScheduledActionARN property is set
-        internal bool IsSetScheduledActionARN()
-        {
-            return this.scheduledActionARN != null;
-        }
-
-        /// <summary>
-        /// <c>Time</c> is deprecated. The time that the action is scheduled to begin. <c>Time</c> is an alias for <c>StartTime</c>.
-        ///  
-        /// </summary>
-        public DateTime Time
-        {
-            get { return this.time ?? default(DateTime); }
-            set { this.time = value; }
-        }
-
-        // Check to see if Time property is set
-        internal bool IsSetTime()
-        {
-            return this.time.HasValue;
-        }
-
-        /// <summary>
-        /// The time that the action is scheduled to begin. This value can be up to one month in the future. When <c>StartTime</c> and <c>EndTime</c>
-        /// are specified with <c>Recurrence</c>, they form the boundaries of when the recurring action will start and stop.
-        ///  
-        /// </summary>
-        public DateTime StartTime
-        {
-            get { return this.startTime ?? default(DateTime); }
-            set { this.startTime = value; }
-        }
-
-        // Check to see if StartTime property is set
-        internal bool IsSetStartTime()
-        {
-            return this.startTime.HasValue;
-        }
-
-        /// <summary>
-        /// The time that the action is scheduled to end. This value can be up to one month in the future.
-        ///  
-        /// </summary>
-        public DateTime EndTime
-        {
-            get { return this.endTime ?? default(DateTime); }
-            set { this.endTime = value; }
-        }
-
-        // Check to see if EndTime property is set
-        internal bool IsSetEndTime()
-        {
-            return this.endTime.HasValue;
-        }
-
-        /// <summary>
-        /// The regular schedule that an action occurs.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string Recurrence
-        {
-            get { return this.recurrence; }
-            set { this.recurrence = value; }
-        }
-
-        // Check to see if Recurrence property is set
-        internal bool IsSetRecurrence()
-        {
-            return this.recurrence != null;
-        }
-
-        /// <summary>
-        /// The minimum size of the Auto Scaling group.
-        ///  
-        /// </summary>
-        public int MinSize
-        {
-            get { return this.minSize ?? default(int); }
-            set { this.minSize = value; }
-        }
-
-        // Check to see if MinSize property is set
-        internal bool IsSetMinSize()
-        {
-            return this.minSize.HasValue;
-        }
-
-        /// <summary>
-        /// The maximum size of the Auto Scaling group.
-        ///  
-        /// </summary>
-        public int MaxSize
-        {
-            get { return this.maxSize ?? default(int); }
-            set { this.maxSize = value; }
-        }
-
-        // Check to see if MaxSize property is set
-        internal bool IsSetMaxSize()
-        {
-            return this.maxSize.HasValue;
-        }
-
-        /// <summary>
-        /// The number of instances you prefer to maintain in your Auto Scaling group.
-        ///  
         /// </summary>
         public int DesiredCapacity
         {
-            get { return this.desiredCapacity ?? default(int); }
-            set { this.desiredCapacity = value; }
+            get { return this._desiredCapacity.GetValueOrDefault(); }
+            set { this._desiredCapacity = value; }
         }
 
         // Check to see if DesiredCapacity property is set
         internal bool IsSetDesiredCapacity()
         {
-            return this.desiredCapacity.HasValue;
+            return this._desiredCapacity.HasValue; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property EndTime. 
+        /// <para>
+        ///  The time that the action is scheduled to end. This value can be up to one month in
+        /// the future. 
+        /// </para>
+        /// </summary>
+        public DateTime EndTime
+        {
+            get { return this._endTime.GetValueOrDefault(); }
+            set { this._endTime = value; }
+        }
+
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
+        {
+            return this._endTime.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property MaxSize. 
+        /// <para>
+        ///  The maximum size of the Auto Scaling group. 
+        /// </para>
+        /// </summary>
+        public int MaxSize
+        {
+            get { return this._maxSize.GetValueOrDefault(); }
+            set { this._maxSize = value; }
+        }
+
+        // Check to see if MaxSize property is set
+        internal bool IsSetMaxSize()
+        {
+            return this._maxSize.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property MinSize. 
+        /// <para>
+        ///  The minimum size of the Auto Scaling group. 
+        /// </para>
+        /// </summary>
+        public int MinSize
+        {
+            get { return this._minSize.GetValueOrDefault(); }
+            set { this._minSize = value; }
+        }
+
+        // Check to see if MinSize property is set
+        internal bool IsSetMinSize()
+        {
+            return this._minSize.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Recurrence. 
+        /// <para>
+        ///  The regular schedule that an action occurs. 
+        /// </para>
+        /// </summary>
+        public string Recurrence
+        {
+            get { return this._recurrence; }
+            set { this._recurrence = value; }
+        }
+
+        // Check to see if Recurrence property is set
+        internal bool IsSetRecurrence()
+        {
+            return this._recurrence != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ScheduledActionARN. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of this scheduled action. 
+        /// </para>
+        /// </summary>
+        public string ScheduledActionARN
+        {
+            get { return this._scheduledActionARN; }
+            set { this._scheduledActionARN = value; }
+        }
+
+        // Check to see if ScheduledActionARN property is set
+        internal bool IsSetScheduledActionARN()
+        {
+            return this._scheduledActionARN != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ScheduledActionName. 
+        /// <para>
+        ///  The name of this scheduled action. 
+        /// </para>
+        /// </summary>
+        public string ScheduledActionName
+        {
+            get { return this._scheduledActionName; }
+            set { this._scheduledActionName = value; }
+        }
+
+        // Check to see if ScheduledActionName property is set
+        internal bool IsSetScheduledActionName()
+        {
+            return this._scheduledActionName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        ///  The time that the action is scheduled to begin. This value can be up to one month
+        /// in the future. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>,
+        /// they form the boundaries of when the recurring action will start and stop.
+        /// </para>
+        /// </summary>
+        public DateTime StartTime
+        {
+            get { return this._startTime.GetValueOrDefault(); }
+            set { this._startTime = value; }
+        }
+
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
+        {
+            return this._startTime.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Time. 
+        /// <para>
+        ///  <code>Time</code> is deprecated.
+        /// </para>
+        ///  
+        /// <para>
+        /// The time that the action is scheduled to begin. <code>Time</code> is an alias for
+        /// <code>StartTime</code>. 
+        /// </para>
+        /// </summary>
+        public DateTime Time
+        {
+            get { return this._time.GetValueOrDefault(); }
+            set { this._time = value; }
+        }
+
+        // Check to see if Time property is set
+        internal bool IsSetTime()
+        {
+            return this._time.HasValue; 
+        }
+
     }
 }

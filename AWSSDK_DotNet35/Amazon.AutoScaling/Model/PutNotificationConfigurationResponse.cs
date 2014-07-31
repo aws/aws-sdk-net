@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the PutNotificationConfiguration response metadata.
-    /// The PutNotificationConfiguration operation has a void result type.
+    /// Configuration for accessing Amazon PutNotificationConfiguration service
     /// </summary>
-    public partial class PutNotificationConfigurationResponse : AmazonWebServiceResponse
+    public partial class PutNotificationConfigurationResponse : PutNotificationConfigurationResult
     {
+        /// <summary>
+        /// Gets and sets the PutNotificationConfigurationResult property.
+        /// Represents the output of a PutNotificationConfiguration operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the PutNotificationConfigurationResult class are now available on the PutNotificationConfigurationResponse class. You should use the properties on PutNotificationConfigurationResponse instead of accessing them through PutNotificationConfigurationResult.")]
+        public PutNotificationConfigurationResult PutNotificationConfigurationResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

@@ -25,72 +25,50 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePolicy operation.
-    /// <para>Deletes a policy created by PutScalingPolicy.</para>
+    /// Deletes a policy created by <a>PutScalingPolicy</a>.
     /// </summary>
     public partial class DeletePolicyRequest : AmazonAutoScalingRequest
     {
-        private string autoScalingGroupName;
-        private string policyName;
+        private string _autoScalingGroupName;
+        private string _policyName;
 
 
         /// <summary>
-        /// The name of the Auto Scaling group.
-        ///  
+        /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1600</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// The name of the Auto Scaling group.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
         {
-            get { return this.autoScalingGroupName; }
-            set { this.autoScalingGroupName = value; }
+            get { return this._autoScalingGroupName; }
+            set { this._autoScalingGroupName = value; }
         }
 
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;
+            return this._autoScalingGroupName != null;
         }
 
+
         /// <summary>
-        /// The name or PolicyARN of the policy you want to delete.
-        ///  
+        /// Gets and sets the property PolicyName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1600</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// The name or PolicyARN of the policy you want to delete.
         /// </para>
         /// </summary>
         public string PolicyName
         {
-            get { return this.policyName; }
-            set { this.policyName = value; }
+            get { return this._policyName; }
+            set { this._policyName = value; }
         }
 
         // Check to see if PolicyName property is set
         internal bool IsSetPolicyName()
         {
-            return this.policyName != null;
+            return this._policyName != null;
         }
 
     }
 }
-    

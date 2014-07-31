@@ -14,55 +14,56 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Reset Cache Parameter Group Request Marshaller
+    /// ResetCacheParameterGroup Request Marshaller
     /// </summary>       
     public class ResetCacheParameterGroupRequestMarshaller : IMarshaller<IRequest, ResetCacheParameterGroupRequest>
     {
-        public IRequest Marshall(ResetCacheParameterGroupRequest resetCacheParameterGroupRequest)
+        public IRequest Marshall(ResetCacheParameterGroupRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(resetCacheParameterGroupRequest, "AmazonElastiCache");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElastiCache");
             request.Parameters.Add("Action", "ResetCacheParameterGroup");
-            request.Parameters.Add("Version", "2014-03-24");
-            if (resetCacheParameterGroupRequest != null && resetCacheParameterGroupRequest.IsSetCacheParameterGroupName())
-            {
-                request.Parameters.Add("CacheParameterGroupName", StringUtils.FromString(resetCacheParameterGroupRequest.CacheParameterGroupName));
-            }
-            if (resetCacheParameterGroupRequest != null && resetCacheParameterGroupRequest.IsSetResetAllParameters())
-            {
-                request.Parameters.Add("ResetAllParameters", StringUtils.FromBool(resetCacheParameterGroupRequest.ResetAllParameters));
-            }
+            request.Parameters.Add("Version", "2014-07-15");
 
-            if (resetCacheParameterGroupRequest != null)
+            if(publicRequest != null)
             {
-                List<ParameterNameValue> parameterNameValuesList = resetCacheParameterGroupRequest.ParameterNameValues;
-                int parameterNameValuesListIndex = 1;
-                foreach (ParameterNameValue parameterNameValuesListValue in parameterNameValuesList)
+                if(publicRequest.IsSetCacheParameterGroupName())
                 {
-                    if (parameterNameValuesListValue != null && parameterNameValuesListValue.IsSetParameterName())
+                    request.Parameters.Add("CacheParameterGroupName", StringUtils.FromString(publicRequest.CacheParameterGroupName));
+                }
+                if(publicRequest.IsSetParameterNameValues())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.ParameterNameValues)
                     {
-                        request.Parameters.Add("ParameterNameValues.member." + parameterNameValuesListIndex + ".ParameterName", StringUtils.FromString(parameterNameValuesListValue.ParameterName));
+                        if(publicRequestlistValue.IsSetParameterName())
+                        {
+                            request.Parameters.Add("ParameterNameValues" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ParameterName", StringUtils.FromString(publicRequestlistValue.ParameterName));
+                        }
+                        if(publicRequestlistValue.IsSetParameterValue())
+                        {
+                            request.Parameters.Add("ParameterNameValues" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ParameterValue", StringUtils.FromString(publicRequestlistValue.ParameterValue));
+                        }
+                        publicRequestlistValueIndex++;
                     }
-                    if (parameterNameValuesListValue != null && parameterNameValuesListValue.IsSetParameterValue())
-                    {
-                        request.Parameters.Add("ParameterNameValues.member." + parameterNameValuesListIndex + ".ParameterValue", StringUtils.FromString(parameterNameValuesListValue.ParameterValue));
-                    }
-
-                    parameterNameValuesListIndex++;
+                }
+                if(publicRequest.IsSetResetAllParameters())
+                {
+                    request.Parameters.Add("ResetAllParameters", StringUtils.FromBool(publicRequest.ResetAllParameters));
                 }
             }
-
             return request;
         }
     }

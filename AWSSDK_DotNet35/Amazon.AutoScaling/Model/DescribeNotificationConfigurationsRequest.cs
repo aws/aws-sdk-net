@@ -25,72 +25,72 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeNotificationConfigurations operation.
-    /// <para> Returns a list of notification actions associated with Auto Scaling groups for specified events. </para>
+    /// Returns a list of notification actions associated with Auto Scaling groups for specified
+    /// events.
     /// </summary>
     public partial class DescribeNotificationConfigurationsRequest : AmazonAutoScalingRequest
     {
-        private List<string> autoScalingGroupNames = new List<string>();
-        private string nextToken;
-        private int? maxRecords;
+        private List<string> _autoScalingGroupNames = new List<string>();
+        private int? _maxRecords;
+        private string _nextToken;
 
 
         /// <summary>
-        /// The name of the Auto Scaling group.
-        ///  
+        /// Gets and sets the property AutoScalingGroupNames. 
+        /// <para>
+        ///  The name of the Auto Scaling group. 
+        /// </para>
         /// </summary>
         public List<string> AutoScalingGroupNames
         {
-            get { return this.autoScalingGroupNames; }
-            set { this.autoScalingGroupNames = value; }
+            get { return this._autoScalingGroupNames; }
+            set { this._autoScalingGroupNames = value; }
         }
 
         // Check to see if AutoScalingGroupNames property is set
         internal bool IsSetAutoScalingGroupNames()
         {
-            return this.autoScalingGroupNames.Count > 0;
+            return this._autoScalingGroupNames != null && this._autoScalingGroupNames.Count > 0; 
         }
 
+
         /// <summary>
-        /// A string that is used to mark the start of the next batch of returned results for pagination.
-        ///  
+        /// Gets and sets the property MaxRecords. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// Maximum number of records to be returned. 
         /// </para>
-        /// </summary>
-        public string NextToken
-        {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
-        }
-
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
-        {
-            return this.nextToken != null;
-        }
-
-        /// <summary>
-        /// Maximum number of records to be returned.
-        ///  
         /// </summary>
         public int MaxRecords
         {
-            get { return this.maxRecords ?? default(int); }
-            set { this.maxRecords = value; }
+            get { return this._maxRecords.GetValueOrDefault(); }
+            set { this._maxRecords = value; }
         }
 
         // Check to see if MaxRecords property is set
         internal bool IsSetMaxRecords()
         {
-            return this.maxRecords.HasValue;
+            return this._maxRecords.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        ///  A string that is used to mark the start of the next batch of returned results for
+        /// pagination. 
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }
 }
-    

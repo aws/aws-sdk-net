@@ -16,27 +16,24 @@ using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// The results from the RebootCacheCluster action.
+    /// Contains all of the attributes of a specific cache cluster.
     /// </summary>
     public partial class RebootCacheClusterResult : AmazonWebServiceResponse
     {
-        private CacheCluster cacheClusterValue;
+        private CacheCluster _response;
 
-        /// <summary>
-        /// Gets and sets the RebootCacheClusterResult property.
-        /// Contains the result of a successful invocation of the RebootCacheCluster
-        /// action.
-        /// </summary>
         public CacheCluster CacheCluster
         {
-            get { return this.cacheClusterValue; }
-            set { this.cacheClusterValue = value; }
+            get { return this._response; }
+            set { this._response = value; }
         }
     }
 }
-    

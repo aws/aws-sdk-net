@@ -25,46 +25,50 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the CopySnapshot operation.
-    /// <para>The <i>CopySnapshot</i> operation makes a copy of an existing snapshot.</para>
+    /// The <i>CopySnapshot</i> operation makes a copy of an existing snapshot.
     /// </summary>
     public partial class CopySnapshotRequest : AmazonElastiCacheRequest
     {
-        private string sourceSnapshotName;
-        private string targetSnapshotName;
+        private string _sourceSnapshotName;
+        private string _targetSnapshotName;
 
 
         /// <summary>
+        /// Gets and sets the property SourceSnapshotName. 
+        /// <para>
         /// The name of an existing snapshot from which to copy.
-        ///  
+        /// </para>
         /// </summary>
         public string SourceSnapshotName
         {
-            get { return this.sourceSnapshotName; }
-            set { this.sourceSnapshotName = value; }
+            get { return this._sourceSnapshotName; }
+            set { this._sourceSnapshotName = value; }
         }
 
         // Check to see if SourceSnapshotName property is set
         internal bool IsSetSourceSnapshotName()
         {
-            return this.sourceSnapshotName != null;
+            return this._sourceSnapshotName != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property TargetSnapshotName. 
+        /// <para>
         /// A name for the copied snapshot.
-        ///  
+        /// </para>
         /// </summary>
         public string TargetSnapshotName
         {
-            get { return this.targetSnapshotName; }
-            set { this.targetSnapshotName = value; }
+            get { return this._targetSnapshotName; }
+            set { this._targetSnapshotName = value; }
         }
 
         // Check to see if TargetSnapshotName property is set
         internal bool IsSetTargetSnapshotName()
         {
-            return this.targetSnapshotName != null;
+            return this._targetSnapshotName != null;
         }
 
     }
 }
-    

@@ -25,51 +25,65 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the RebootCacheCluster operation.
-    /// <para>The <i>RebootCacheCluster</i> operation reboots some, or all, of the cache cluster nodes within a provisioned cache cluster. This API
-    /// will apply any modified cache parameter groups to the cache cluster. The reboot action takes place as soon as possible, and results in a
-    /// momentary outage to the cache cluster. During the reboot, the cache cluster status is set to REBOOTING.</para> <para>The reboot causes the
-    /// contents of the cache (for each cache cluster node being rebooted) to be lost.</para> <para>When the reboot is complete, a cache cluster
-    /// event is created.</para>
+    /// The <i>RebootCacheCluster</i> operation reboots some, or all, of the cache nodes within
+    /// a provisioned cache cluster. This API will apply any modified cache parameter groups
+    /// to the cache cluster. The reboot action takes place as soon as possible, and results
+    /// in a momentary outage to the cache cluster. During the reboot, the cache cluster status
+    /// is set to REBOOTING.
+    /// 
+    ///  
+    /// <para>
+    /// The reboot causes the contents of the cache (for each cache node being rebooted) to
+    /// be lost.
+    /// </para>
+    ///  
+    /// <para>
+    /// When the reboot is complete, a cache cluster event is created.
+    /// </para>
     /// </summary>
     public partial class RebootCacheClusterRequest : AmazonElastiCacheRequest
     {
-        private string cacheClusterId;
-        private List<string> cacheNodeIdsToReboot = new List<string>();
+        private string _cacheClusterId;
+        private List<string> _cacheNodeIdsToReboot = new List<string>();
 
 
         /// <summary>
+        /// Gets and sets the property CacheClusterId. 
+        /// <para>
         /// The cache cluster identifier. This parameter is stored as a lowercase string.
-        ///  
+        /// </para>
         /// </summary>
         public string CacheClusterId
         {
-            get { return this.cacheClusterId; }
-            set { this.cacheClusterId = value; }
+            get { return this._cacheClusterId; }
+            set { this._cacheClusterId = value; }
         }
 
         // Check to see if CacheClusterId property is set
         internal bool IsSetCacheClusterId()
         {
-            return this.cacheClusterId != null;
+            return this._cacheClusterId != null;
         }
 
+
         /// <summary>
-        /// A list of cache cluster node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cache cluster, specify
-        /// all of the cache cluster node IDs.
-        ///  
+        /// Gets and sets the property CacheNodeIdsToReboot. 
+        /// <para>
+        /// A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002,
+        /// etc.). To reboot an entire cache cluster, specify all of the cache node IDs.
+        /// </para>
         /// </summary>
         public List<string> CacheNodeIdsToReboot
         {
-            get { return this.cacheNodeIdsToReboot; }
-            set { this.cacheNodeIdsToReboot = value; }
+            get { return this._cacheNodeIdsToReboot; }
+            set { this._cacheNodeIdsToReboot = value; }
         }
 
         // Check to see if CacheNodeIdsToReboot property is set
         internal bool IsSetCacheNodeIdsToReboot()
         {
-            return this.cacheNodeIdsToReboot.Count > 0;
+            return this._cacheNodeIdsToReboot != null && this._cacheNodeIdsToReboot.Count > 0; 
         }
 
     }
 }
-    

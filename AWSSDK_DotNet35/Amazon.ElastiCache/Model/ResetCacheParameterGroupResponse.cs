@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Returns information about the  ResetCacheParameterGroup response and response metadata.
+    /// Configuration for accessing Amazon ResetCacheParameterGroup service
     /// </summary>
     public partial class ResetCacheParameterGroupResponse : ResetCacheParameterGroupResult
     {
         /// <summary>
         /// Gets and sets the ResetCacheParameterGroupResult property.
-        /// Represents the output of one of the following operations: ModifyCacheParameterGroup ResetCacheParameterGroup
+        /// Represents the output of a ResetCacheParameterGroup operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ResetCacheParameterGroupResult class are now available on the ResetCacheParameterGroupResponse class. You should use the properties on ResetCacheParameterGroupResponse instead of accessing them through ResetCacheParameterGroupResult.")]
         public ResetCacheParameterGroupResult ResetCacheParameterGroupResult
@@ -40,4 +36,3 @@ namespace Amazon.ElastiCache.Model
         }
     }
 }
-    

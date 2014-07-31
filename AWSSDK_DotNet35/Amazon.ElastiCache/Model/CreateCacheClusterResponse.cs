@@ -12,24 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
+
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Returns information about the CreateCacheCluster response and response metadata.
+    /// Configuration for accessing Amazon CreateCacheCluster service
     /// </summary>
     public partial class CreateCacheClusterResponse : CreateCacheClusterResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the CreateCacheClusterResult property.
-        /// Contains the result of a successful invocation of the CreateCacheCluster
-        /// action.
-        /// 
+        /// Represents the output of a CreateCacheCluster operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateCacheClusterResult class are now available on the CreateCacheClusterResponse class. You should use the properties on CreateCacheClusterResponse instead of accessing them through CreateCacheClusterResult.")]
         public CreateCacheClusterResult CreateCacheClusterResult
         {
@@ -40,4 +36,3 @@ namespace Amazon.ElastiCache.Model
         }
     }
 }
-    

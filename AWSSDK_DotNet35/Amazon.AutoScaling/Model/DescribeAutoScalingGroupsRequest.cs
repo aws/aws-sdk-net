@@ -25,75 +25,79 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAutoScalingGroups operation.
-    /// <para> Returns a full description of each Auto Scaling group in the given list. This includes all Amazon EC2 instances that are members of
-    /// the group. If a list of names is not provided, the service returns the full details of all Auto Scaling groups. </para> <para> This action
-    /// supports pagination by returning a token if there are more pages to retrieve. To get the next page, call this action again with the returned
-    /// token as the <c>NextToken</c> parameter. </para>
+    /// Returns a full description of each Auto Scaling group in the given list. This includes
+    /// all Amazon EC2 instances that are members of the group. If a list of names is not
+    /// provided, the service returns the full details of all Auto Scaling groups. 
+    /// 
+    ///  
+    /// <para>
+    ///  This action supports pagination by returning a token if there are more pages to retrieve.
+    /// To get the next page, call this action again with the returned token as the <code>NextToken</code>
+    /// parameter. 
+    /// </para>
     /// </summary>
     public partial class DescribeAutoScalingGroupsRequest : AmazonAutoScalingRequest
     {
-        private List<string> autoScalingGroupNames = new List<string>();
-        private string nextToken;
-        private int? maxRecords;
+        private List<string> _autoScalingGroupNames = new List<string>();
+        private int? _maxRecords;
+        private string _nextToken;
 
 
         /// <summary>
-        /// A list of Auto Scaling group names.
-        ///  
+        /// Gets and sets the property AutoScalingGroupNames. 
+        /// <para>
+        ///  A list of Auto Scaling group names. 
+        /// </para>
         /// </summary>
         public List<string> AutoScalingGroupNames
         {
-            get { return this.autoScalingGroupNames; }
-            set { this.autoScalingGroupNames = value; }
+            get { return this._autoScalingGroupNames; }
+            set { this._autoScalingGroupNames = value; }
         }
 
         // Check to see if AutoScalingGroupNames property is set
         internal bool IsSetAutoScalingGroupNames()
         {
-            return this.autoScalingGroupNames.Count > 0;
+            return this._autoScalingGroupNames != null && this._autoScalingGroupNames.Count > 0; 
         }
 
+
         /// <summary>
-        /// A string that marks the start of the next batch of returned results.
-        ///  
+        /// Gets and sets the property MaxRecords. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  The maximum number of records to return. 
         /// </para>
-        /// </summary>
-        public string NextToken
-        {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
-        }
-
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
-        {
-            return this.nextToken != null;
-        }
-
-        /// <summary>
-        /// The maximum number of records to return.
-        ///  
         /// </summary>
         public int MaxRecords
         {
-            get { return this.maxRecords ?? default(int); }
-            set { this.maxRecords = value; }
+            get { return this._maxRecords.GetValueOrDefault(); }
+            set { this._maxRecords = value; }
         }
 
         // Check to see if MaxRecords property is set
         internal bool IsSetMaxRecords()
         {
-            return this.maxRecords.HasValue;
+            return this._maxRecords.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        ///  A string that marks the start of the next batch of returned results. 
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }
 }
-    

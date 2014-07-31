@@ -17,38 +17,40 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para>Represents the output of one of the following operations:</para>
-    /// <ul>
-    /// <li> <i>ModifyCacheParameterGroup</i> </li>
-    /// <li> <i>ResetCacheParameterGroup</i> </li>
+    /// Represents the output of one of the following operations:
     /// 
-    /// </ul>
+    ///  <ul> <li> <i>ModifyCacheParameterGroup</i> </li> <li> <i>ResetCacheParameterGroup</i>
+    /// </li> </ul>
     /// </summary>
     public partial class ModifyCacheParameterGroupResult : AmazonWebServiceResponse
     {
-        
-        private string cacheParameterGroupName;
+        private string _cacheParameterGroupName;
 
 
         /// <summary>
+        /// Gets and sets the property CacheParameterGroupName. 
+        /// <para>
         /// The name of the cache parameter group.
-        ///  
+        /// </para>
         /// </summary>
         public string CacheParameterGroupName
         {
-            get { return this.cacheParameterGroupName; }
-            set { this.cacheParameterGroupName = value; }
+            get { return this._cacheParameterGroupName; }
+            set { this._cacheParameterGroupName = value; }
         }
 
         // Check to see if CacheParameterGroupName property is set
         internal bool IsSetCacheParameterGroupName()
         {
-            return this.cacheParameterGroupName != null;
+            return this._cacheParameterGroupName != null;
         }
+
     }
 }

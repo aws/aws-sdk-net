@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeAdjustmentTypes response and response metadata.
+    /// Configuration for accessing Amazon DescribeAdjustmentTypes service
     /// </summary>
     public partial class DescribeAdjustmentTypesResponse : DescribeAdjustmentTypesResult
     {
         /// <summary>
         /// Gets and sets the DescribeAdjustmentTypesResult property.
-        /// The output of the DescribeAdjustmentTypes action.
+        /// Represents the output of a DescribeAdjustmentTypes operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeAdjustmentTypesResult class are now available on the DescribeAdjustmentTypesResponse class. You should use the properties on DescribeAdjustmentTypesResponse instead of accessing them through DescribeAdjustmentTypesResult.")]
         public DescribeAdjustmentTypesResult DescribeAdjustmentTypesResult
@@ -40,4 +36,3 @@ namespace Amazon.AutoScaling.Model
         }
     }
 }
-    

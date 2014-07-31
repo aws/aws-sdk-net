@@ -12,180 +12,184 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Snapshot Unmarshaller
-     /// </summary>
-    internal class SnapshotUnmarshaller : IUnmarshaller<Snapshot, XmlUnmarshallerContext>, IUnmarshaller<Snapshot, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Snapshot Object
+    /// </summary>  
+    public class SnapshotUnmarshaller : IUnmarshaller<Snapshot, XmlUnmarshallerContext>, IUnmarshaller<Snapshot, JsonUnmarshallerContext>
     {
-        public Snapshot Unmarshall(XmlUnmarshallerContext context) 
+        public Snapshot Unmarshall(XmlUnmarshallerContext context)
         {
-            Snapshot snapshot = new Snapshot();
+            Snapshot unmarshalledObject = new Snapshot();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            if (context.IsStartOfDocument) 
-               targetDepth++;
-            
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("SnapshotName", targetDepth))
+                    if (context.TestExpression("AutoMinorVersionUpgrade", targetDepth))
                     {
-                        snapshot.SnapshotName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("CacheClusterId", targetDepth))
-                    {
-                        snapshot.CacheClusterId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("SnapshotStatus", targetDepth))
-                    {
-                        snapshot.SnapshotStatus = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("SnapshotSource", targetDepth))
-                    {
-                        snapshot.SnapshotSource = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("CacheNodeType", targetDepth))
-                    {
-                        snapshot.CacheNodeType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Engine", targetDepth))
-                    {
-                        snapshot.Engine = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("EngineVersion", targetDepth))
-                    {
-                        snapshot.EngineVersion = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("NumCacheNodes", targetDepth))
-                    {
-                        snapshot.NumCacheNodes = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("PreferredAvailabilityZone", targetDepth))
-                    {
-                        snapshot.PreferredAvailabilityZone = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.AutoMinorVersionUpgrade = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("CacheClusterCreateTime", targetDepth))
                     {
-                        snapshot.CacheClusterCreateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.CacheClusterCreateTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("PreferredMaintenanceWindow", targetDepth))
+                    if (context.TestExpression("CacheClusterId", targetDepth))
                     {
-                        snapshot.PreferredMaintenanceWindow = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CacheClusterId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("TopicArn", targetDepth))
+                    if (context.TestExpression("CacheNodeType", targetDepth))
                     {
-                        snapshot.TopicArn = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Port", targetDepth))
-                    {
-                        snapshot.Port = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CacheNodeType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("CacheParameterGroupName", targetDepth))
                     {
-                        snapshot.CacheParameterGroupName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CacheParameterGroupName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("CacheSubnetGroupName", targetDepth))
                     {
-                        snapshot.CacheSubnetGroupName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CacheSubnetGroupName = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("VpcId", targetDepth))
+                    if (context.TestExpression("Engine", targetDepth))
                     {
-                        snapshot.VpcId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Engine = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("AutoMinorVersionUpgrade", targetDepth))
+                    if (context.TestExpression("EngineVersion", targetDepth))
                     {
-                        snapshot.AutoMinorVersionUpgrade = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("SnapshotRetentionLimit", targetDepth))
-                    {
-                        snapshot.SnapshotRetentionLimit = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("SnapshotWindow", targetDepth))
-                    {
-                        snapshot.SnapshotWindow = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("NodeSnapshots/NodeSnapshot", targetDepth))
                     {
-                        snapshot.NodeSnapshots.Add(NodeSnapshotUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = NodeSnapshotUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.NodeSnapshots.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("NumCacheNodes", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.NumCacheNodes = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Port", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.Port = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PreferredAvailabilityZone", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PreferredAvailabilityZone = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PreferredMaintenanceWindow", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PreferredMaintenanceWindow = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SnapshotName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SnapshotName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SnapshotRetentionLimit", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.SnapshotRetentionLimit = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SnapshotSource", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SnapshotSource = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SnapshotStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SnapshotStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SnapshotWindow", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SnapshotWindow = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TopicArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TopicArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("VpcId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return snapshot;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return snapshot;
+            return unmarshalledObject;
         }
 
-        public Snapshot Unmarshall(JsonUnmarshallerContext context) 
+        public Snapshot Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static SnapshotUnmarshaller instance;
 
-        public static SnapshotUnmarshaller GetInstance() 
+        private static SnapshotUnmarshaller _instance = new SnapshotUnmarshaller();        
+
+        public static SnapshotUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new SnapshotUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

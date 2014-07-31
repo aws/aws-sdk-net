@@ -25,72 +25,50 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteNotificationConfiguration operation.
-    /// <para>Deletes notifications created by PutNotificationConfiguration.</para>
+    /// Deletes notifications created by <a>PutNotificationConfiguration</a>.
     /// </summary>
     public partial class DeleteNotificationConfigurationRequest : AmazonAutoScalingRequest
     {
-        private string autoScalingGroupName;
-        private string topicARN;
+        private string _autoScalingGroupName;
+        private string _topicARN;
 
 
         /// <summary>
-        /// The name of the Auto Scaling group.
-        ///  
+        /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1600</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// The name of the Auto Scaling group.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
         {
-            get { return this.autoScalingGroupName; }
-            set { this.autoScalingGroupName = value; }
+            get { return this._autoScalingGroupName; }
+            set { this._autoScalingGroupName = value; }
         }
 
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;
+            return this._autoScalingGroupName != null;
         }
 
+
         /// <summary>
-        /// The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.
-        ///  
+        /// Gets and sets the property TopicARN. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1600</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.
         /// </para>
         /// </summary>
         public string TopicARN
         {
-            get { return this.topicARN; }
-            set { this.topicARN = value; }
+            get { return this._topicARN; }
+            set { this._topicARN = value; }
         }
 
         // Check to see if TopicARN property is set
         internal bool IsSetTopicARN()
         {
-            return this.topicARN != null;
+            return this._topicARN != null;
         }
 
     }
 }
-    

@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Purchase Reserved Cache Nodes Offering Request Marshaller
+    /// PurchaseReservedCacheNodesOffering Request Marshaller
     /// </summary>       
     public class PurchaseReservedCacheNodesOfferingRequestMarshaller : IMarshaller<IRequest, PurchaseReservedCacheNodesOfferingRequest>
     {
-        public IRequest Marshall(PurchaseReservedCacheNodesOfferingRequest purchaseReservedCacheNodesOfferingRequest)
+        public IRequest Marshall(PurchaseReservedCacheNodesOfferingRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(purchaseReservedCacheNodesOfferingRequest, "AmazonElastiCache");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElastiCache");
             request.Parameters.Add("Action", "PurchaseReservedCacheNodesOffering");
-            request.Parameters.Add("Version", "2014-03-24");
-            if (purchaseReservedCacheNodesOfferingRequest != null && purchaseReservedCacheNodesOfferingRequest.IsSetReservedCacheNodesOfferingId())
-            {
-                request.Parameters.Add("ReservedCacheNodesOfferingId", StringUtils.FromString(purchaseReservedCacheNodesOfferingRequest.ReservedCacheNodesOfferingId));
-            }
-            if (purchaseReservedCacheNodesOfferingRequest != null && purchaseReservedCacheNodesOfferingRequest.IsSetReservedCacheNodeId())
-            {
-                request.Parameters.Add("ReservedCacheNodeId", StringUtils.FromString(purchaseReservedCacheNodesOfferingRequest.ReservedCacheNodeId));
-            }
-            if (purchaseReservedCacheNodesOfferingRequest != null && purchaseReservedCacheNodesOfferingRequest.IsSetCacheNodeCount())
-            {
-                request.Parameters.Add("CacheNodeCount", StringUtils.FromInt(purchaseReservedCacheNodesOfferingRequest.CacheNodeCount));
-            }
+            request.Parameters.Add("Version", "2014-07-15");
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetCacheNodeCount())
+                {
+                    request.Parameters.Add("CacheNodeCount", StringUtils.FromInt(publicRequest.CacheNodeCount));
+                }
+                if(publicRequest.IsSetReservedCacheNodeId())
+                {
+                    request.Parameters.Add("ReservedCacheNodeId", StringUtils.FromString(publicRequest.ReservedCacheNodeId));
+                }
+                if(publicRequest.IsSetReservedCacheNodesOfferingId())
+                {
+                    request.Parameters.Add("ReservedCacheNodesOfferingId", StringUtils.FromString(publicRequest.ReservedCacheNodesOfferingId));
+                }
+            }
             return request;
         }
     }

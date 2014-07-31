@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The output for the TerminateInstanceInAutoScalingGroup action. </para>
+    /// The output for the <a>TerminateInstanceInAutoScalingGroup</a> action.
     /// </summary>
     public partial class TerminateInstanceInAutoScalingGroupResult : AmazonWebServiceResponse
     {
-        
-        private Activity activity;
+        private Activity _activity;
 
 
         /// <summary>
-        /// A scaling Activity.
-        ///  
+        /// Gets and sets the property Activity. 
+        /// <para>
+        ///  A scaling Activity. 
+        /// </para>
         /// </summary>
         public Activity Activity
         {
-            get { return this.activity; }
-            set { this.activity = value; }
+            get { return this._activity; }
+            set { this._activity = value; }
         }
 
         // Check to see if Activity property is set
         internal bool IsSetActivity()
         {
-            return this.activity != null;
+            return this._activity != null;
         }
+
     }
 }

@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Authorize Cache Security Group Ingress Request Marshaller
+    /// AuthorizeCacheSecurityGroupIngress Request Marshaller
     /// </summary>       
     public class AuthorizeCacheSecurityGroupIngressRequestMarshaller : IMarshaller<IRequest, AuthorizeCacheSecurityGroupIngressRequest>
     {
-        public IRequest Marshall(AuthorizeCacheSecurityGroupIngressRequest authorizeCacheSecurityGroupIngressRequest)
+        public IRequest Marshall(AuthorizeCacheSecurityGroupIngressRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(authorizeCacheSecurityGroupIngressRequest, "AmazonElastiCache");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElastiCache");
             request.Parameters.Add("Action", "AuthorizeCacheSecurityGroupIngress");
-            request.Parameters.Add("Version", "2014-03-24");
-            if (authorizeCacheSecurityGroupIngressRequest != null && authorizeCacheSecurityGroupIngressRequest.IsSetCacheSecurityGroupName())
-            {
-                request.Parameters.Add("CacheSecurityGroupName", StringUtils.FromString(authorizeCacheSecurityGroupIngressRequest.CacheSecurityGroupName));
-            }
-            if (authorizeCacheSecurityGroupIngressRequest != null && authorizeCacheSecurityGroupIngressRequest.IsSetEC2SecurityGroupName())
-            {
-                request.Parameters.Add("EC2SecurityGroupName", StringUtils.FromString(authorizeCacheSecurityGroupIngressRequest.EC2SecurityGroupName));
-            }
-            if (authorizeCacheSecurityGroupIngressRequest != null && authorizeCacheSecurityGroupIngressRequest.IsSetEC2SecurityGroupOwnerId())
-            {
-                request.Parameters.Add("EC2SecurityGroupOwnerId", StringUtils.FromString(authorizeCacheSecurityGroupIngressRequest.EC2SecurityGroupOwnerId));
-            }
+            request.Parameters.Add("Version", "2014-07-15");
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetCacheSecurityGroupName())
+                {
+                    request.Parameters.Add("CacheSecurityGroupName", StringUtils.FromString(publicRequest.CacheSecurityGroupName));
+                }
+                if(publicRequest.IsSetEC2SecurityGroupName())
+                {
+                    request.Parameters.Add("EC2SecurityGroupName", StringUtils.FromString(publicRequest.EC2SecurityGroupName));
+                }
+                if(publicRequest.IsSetEC2SecurityGroupOwnerId())
+                {
+                    request.Parameters.Add("EC2SecurityGroupOwnerId", StringUtils.FromString(publicRequest.EC2SecurityGroupOwnerId));
+                }
+            }
             return request;
         }
     }

@@ -13,112 +13,112 @@
  * permissions and limitations under the License.
  */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.ElastiCache.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for DeleteSnapshot operation
-    /// </summary>
-    internal class DeleteSnapshotResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for DeleteSnapshot operation
+    /// </summary>  
+    public class DeleteSnapshotResponseUnmarshaller : XmlResponseUnmarshaller
     {
-
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             DeleteSnapshotResponse response = new DeleteSnapshotResponse();
-            
-            while (context.Read())
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
-                
                 if (context.IsStartElement)
-                {
-                    
+                {                    
                     if(context.TestExpression("DeleteSnapshotResult", 2))
                     {
-                        UnmarshallResult(context,response);                    
+                        UnmarshallResult(context, response);                        
                         continue;
                     }
                     
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
                     }
                 }
-                
             }
-                
 
             return response;
         }
-        
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,DeleteSnapshotResponse response)
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, DeleteSnapshotResponse response)
         {
+            
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Snapshot", targetDepth))
+
+                    if ( context.TestExpression("Snapshot", targetDepth))
                     {
-                        response.Snapshot = SnapshotUnmarshaller.GetInstance().Unmarshall(context);
+                        response.Snapshot = SnapshotUnmarshaller.Instance.Unmarshall(context);
                         continue;
                     }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return;
-                }
-            }
+                } 
+           }
+
+            return;
         }
-        
+
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidSnapshotState"))
-            {
-                return new InvalidSnapshotStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValue"))
-            {
-                return new InvalidParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("SnapshotNotFoundFault"))
-            {
-                return new SnapshotNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterCombination"))
             {
                 return new InvalidParameterCombinationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValue"))
+            {
+                return new InvalidParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidSnapshotState"))
+            {
+                return new InvalidSnapshotStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("SnapshotNotFoundFault"))
+            {
+                return new SnapshotNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonElastiCacheException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static DeleteSnapshotResponseUnmarshaller instance;
 
-        public static DeleteSnapshotResponseUnmarshaller GetInstance()
+        private static DeleteSnapshotResponseUnmarshaller _instance = new DeleteSnapshotResponseUnmarshaller();        
+
+        internal static DeleteSnapshotResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new DeleteSnapshotResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static DeleteSnapshotResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

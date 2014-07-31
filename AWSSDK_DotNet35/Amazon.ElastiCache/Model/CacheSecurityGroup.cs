@@ -17,90 +17,101 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para>Represents the output of one of the following operations:</para>
-    /// <ul>
-    /// <li> <i>AuthorizeCacheSecurityGroupIngress</i> </li>
-    /// <li> <i>CreateCacheSecurityGroup</i> </li>
-    /// <li> <i>RevokeCacheSecurityGroupIngress</i> </li>
+    /// Represents the output of one of the following operations:
     /// 
-    /// </ul>
+    ///  <ul> <li> <i>AuthorizeCacheSecurityGroupIngress</i> </li> <li> <i>CreateCacheSecurityGroup</i>
+    /// </li> <li> <i>RevokeCacheSecurityGroupIngress</i> </li> </ul>
     /// </summary>
-    public partial class CacheSecurityGroup : AmazonWebServiceResponse
+    public partial class CacheSecurityGroup
     {
-        
-        private string ownerId;
-        private string cacheSecurityGroupName;
-        private string description;
-        private List<EC2SecurityGroup> eC2SecurityGroups = new List<EC2SecurityGroup>();
+        private string _cacheSecurityGroupName;
+        private string _description;
+        private List<EC2SecurityGroup> _eC2SecurityGroups = new List<EC2SecurityGroup>();
+        private string _ownerId;
 
 
         /// <summary>
-        /// The AWS account ID of the cache security group owner.
-        ///  
-        /// </summary>
-        public string OwnerId
-        {
-            get { return this.ownerId; }
-            set { this.ownerId = value; }
-        }
-
-        // Check to see if OwnerId property is set
-        internal bool IsSetOwnerId()
-        {
-            return this.ownerId != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property CacheSecurityGroupName. 
+        /// <para>
         /// The name of the cache security group.
-        ///  
+        /// </para>
         /// </summary>
         public string CacheSecurityGroupName
         {
-            get { return this.cacheSecurityGroupName; }
-            set { this.cacheSecurityGroupName = value; }
+            get { return this._cacheSecurityGroupName; }
+            set { this._cacheSecurityGroupName = value; }
         }
 
         // Check to see if CacheSecurityGroupName property is set
         internal bool IsSetCacheSecurityGroupName()
         {
-            return this.cacheSecurityGroupName != null;
+            return this._cacheSecurityGroupName != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
         /// The description of the cache security group.
-        ///  
+        /// </para>
         /// </summary>
         public string Description
         {
-            get { return this.description; }
-            set { this.description = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
 
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;
+            return this._description != null;
         }
 
+
         /// <summary>
-        /// A list of Amazon EC2 security groups that are associated with this cache security group.
-        ///  
+        /// Gets and sets the property EC2SecurityGroups. 
+        /// <para>
+        /// A list of Amazon EC2 security groups that are associated with this cache security
+        /// group.
+        /// </para>
         /// </summary>
         public List<EC2SecurityGroup> EC2SecurityGroups
         {
-            get { return this.eC2SecurityGroups; }
-            set { this.eC2SecurityGroups = value; }
+            get { return this._eC2SecurityGroups; }
+            set { this._eC2SecurityGroups = value; }
         }
 
         // Check to see if EC2SecurityGroups property is set
         internal bool IsSetEC2SecurityGroups()
         {
-            return this.eC2SecurityGroups.Count > 0;
+            return this._eC2SecurityGroups != null && this._eC2SecurityGroups.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property OwnerId. 
+        /// <para>
+        /// The AWS account ID of the cache security group owner.
+        /// </para>
+        /// </summary>
+        public string OwnerId
+        {
+            get { return this._ownerId; }
+            set { this._ownerId = value; }
+        }
+
+        // Check to see if OwnerId property is set
+        internal bool IsSetOwnerId()
+        {
+            return this._ownerId != null;
+        }
+
     }
 }

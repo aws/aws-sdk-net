@@ -17,50 +17,58 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para>Represents the output of a <i>DescribeCacheParameterGroups</i> operation.</para>
+    /// Represents the output of a <i>DescribeCacheParameterGroups</i> operation.
     /// </summary>
     public partial class DescribeCacheParameterGroupsResult : AmazonWebServiceResponse
     {
-        
-        private string marker;
-        private List<CacheParameterGroup> cacheParameterGroups = new List<CacheParameterGroup>();
+        private List<CacheParameterGroup> _cacheParameterGroups = new List<CacheParameterGroup>();
+        private string _marker;
 
 
         /// <summary>
-        /// Provides an identifier to allow retrieval of paginated results.
-        ///  
-        /// </summary>
-        public string Marker
-        {
-            get { return this.marker; }
-            set { this.marker = value; }
-        }
-
-        // Check to see if Marker property is set
-        internal bool IsSetMarker()
-        {
-            return this.marker != null;
-        }
-
-        /// <summary>
-        /// A list of cache parameter groups. Each element in the list contains detailed information about one cache parameter group.
-        ///  
+        /// Gets and sets the property CacheParameterGroups. 
+        /// <para>
+        /// A list of cache parameter groups. Each element in the list contains detailed information
+        /// about one cache parameter group.
+        /// </para>
         /// </summary>
         public List<CacheParameterGroup> CacheParameterGroups
         {
-            get { return this.cacheParameterGroups; }
-            set { this.cacheParameterGroups = value; }
+            get { return this._cacheParameterGroups; }
+            set { this._cacheParameterGroups = value; }
         }
 
         // Check to see if CacheParameterGroups property is set
         internal bool IsSetCacheParameterGroups()
         {
-            return this.cacheParameterGroups.Count > 0;
+            return this._cacheParameterGroups != null && this._cacheParameterGroups.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// Provides an identifier to allow retrieval of paginated results.
+        /// </para>
+        /// </summary>
+        public string Marker
+        {
+            get { return this._marker; }
+            set { this._marker = value; }
+        }
+
+        // Check to see if Marker property is set
+        internal bool IsSetMarker()
+        {
+            return this._marker != null;
+        }
+
     }
 }

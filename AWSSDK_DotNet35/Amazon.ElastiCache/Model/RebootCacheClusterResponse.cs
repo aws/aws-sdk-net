@@ -12,24 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
+
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Returns information about the RebootCacheCluster response and response metadata.
+    /// Configuration for accessing Amazon RebootCacheCluster service
     /// </summary>
     public partial class RebootCacheClusterResponse : RebootCacheClusterResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the RebootCacheClusterResult property.
-        /// Contains the result of a successful invocation of the RebootCacheCluster
-        /// action.
-        /// 
+        /// Represents the output of a RebootCacheCluster operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the RebootCacheClusterResult class are now available on the RebootCacheClusterResponse class. You should use the properties on RebootCacheClusterResponse instead of accessing them through RebootCacheClusterResult.")]
         public RebootCacheClusterResult RebootCacheClusterResult
         {
@@ -40,4 +36,3 @@ namespace Amazon.ElastiCache.Model
         }
     }
 }
-    

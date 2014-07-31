@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the DeleteTags response metadata.
-    /// The DeleteTags operation has a void result type.
+    /// Configuration for accessing Amazon DeleteTags service
     /// </summary>
-    public partial class DeleteTagsResponse : AmazonWebServiceResponse
+    public partial class DeleteTagsResponse : DeleteTagsResult
     {
+        /// <summary>
+        /// Gets and sets the DeleteTagsResult property.
+        /// Represents the output of a DeleteTags operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DeleteTagsResult class are now available on the DeleteTagsResponse class. You should use the properties on DeleteTagsResponse instead of accessing them through DeleteTagsResult.")]
+        public DeleteTagsResult DeleteTagsResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

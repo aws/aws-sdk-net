@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Returns information about the  ModifyCacheParameterGroup response and response metadata.
+    /// Configuration for accessing Amazon ModifyCacheParameterGroup service
     /// </summary>
     public partial class ModifyCacheParameterGroupResponse : ModifyCacheParameterGroupResult
     {
         /// <summary>
         /// Gets and sets the ModifyCacheParameterGroupResult property.
-        /// Represents the output of one of the following operations: ModifyCacheParameterGroup ResetCacheParameterGroup
+        /// Represents the output of a ModifyCacheParameterGroup operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ModifyCacheParameterGroupResult class are now available on the ModifyCacheParameterGroupResponse class. You should use the properties on ModifyCacheParameterGroupResponse instead of accessing them through ModifyCacheParameterGroupResult.")]
         public ModifyCacheParameterGroupResult ModifyCacheParameterGroupResult
@@ -40,4 +36,3 @@ namespace Amazon.ElastiCache.Model
         }
     }
 }
-    

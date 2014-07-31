@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the CreateOrUpdateTags response metadata.
-    /// The CreateOrUpdateTags operation has a void result type.
+    /// Configuration for accessing Amazon CreateOrUpdateTags service
     /// </summary>
-    public partial class CreateOrUpdateTagsResponse : AmazonWebServiceResponse
+    public partial class CreateOrUpdateTagsResponse : CreateOrUpdateTagsResult
     {
+        /// <summary>
+        /// Gets and sets the CreateOrUpdateTagsResult property.
+        /// Represents the output of a CreateOrUpdateTags operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the CreateOrUpdateTagsResult class are now available on the CreateOrUpdateTagsResponse class. You should use the properties on CreateOrUpdateTagsResponse instead of accessing them through CreateOrUpdateTagsResult.")]
+        public CreateOrUpdateTagsResult CreateOrUpdateTagsResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

@@ -17,61 +17,64 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> A scaling action that is scheduled for a future time and date. An action can be scheduled up to thirty days in advance. </para>
-    /// <para> Starting with API version 2011-01-01, you can use <c>recurrence</c> to specify that a scaling action occurs regularly on a schedule.
+    /// A scaling action that is scheduled for a future time and date. An action can be scheduled
+    /// up to thirty days in advance. 
+    /// 
+    ///  
+    /// <para>
+    ///  Starting with API version 2011-01-01, you can use <code>recurrence</code> to specify
+    /// that a scaling action occurs regularly on a schedule. 
     /// </para>
     /// </summary>
     public partial class DescribeScheduledActionsResult : AmazonWebServiceResponse
     {
-        
-        private List<ScheduledUpdateGroupAction> scheduledUpdateGroupActions = new List<ScheduledUpdateGroupAction>();
-        private string nextToken;
+        private string _nextToken;
+        private List<ScheduledUpdateGroupAction> _scheduledUpdateGroupActions = new List<ScheduledUpdateGroupAction>();
 
 
         /// <summary>
-        /// A list of scheduled actions designed to update an Auto Scaling group.
-        ///  
-        /// </summary>
-        public List<ScheduledUpdateGroupAction> ScheduledUpdateGroupActions
-        {
-            get { return this.scheduledUpdateGroupActions; }
-            set { this.scheduledUpdateGroupActions = value; }
-        }
-
-        // Check to see if ScheduledUpdateGroupActions property is set
-        internal bool IsSetScheduledUpdateGroupActions()
-        {
-            return this.scheduledUpdateGroupActions.Count > 0;
-        }
-
-        /// <summary>
-        /// A string that marks the start of the next batch of returned results.
-        ///  
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  A string that marks the start of the next batch of returned results. 
         /// </para>
         /// </summary>
         public string NextToken
         {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;
+            return this._nextToken != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property ScheduledUpdateGroupActions. 
+        /// <para>
+        ///  A list of scheduled actions designed to update an Auto Scaling group. 
+        /// </para>
+        /// </summary>
+        public List<ScheduledUpdateGroupAction> ScheduledUpdateGroupActions
+        {
+            get { return this._scheduledUpdateGroupActions; }
+            set { this._scheduledUpdateGroupActions = value; }
+        }
+
+        // Check to see if ScheduledUpdateGroupActions property is set
+        internal bool IsSetScheduledUpdateGroupActions()
+        {
+            return this._scheduledUpdateGroupActions != null && this._scheduledUpdateGroupActions.Count > 0; 
+        }
+
     }
 }

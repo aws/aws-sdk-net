@@ -25,61 +25,51 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the TerminateInstanceInAutoScalingGroup operation.
-    /// <para> Terminates the specified instance. Optionally, the desired group size can be adjusted. </para> <para><b>NOTE:</b> This call simply
-    /// registers a termination request. The termination of the instance cannot happen immediately. </para>
+    /// Terminates the specified instance. Optionally, the desired group size can be adjusted.
     /// </summary>
     public partial class TerminateInstanceInAutoScalingGroupRequest : AmazonAutoScalingRequest
     {
-        private string instanceId;
-        private bool? shouldDecrementDesiredCapacity;
+        private string _instanceId;
+        private bool? _shouldDecrementDesiredCapacity;
 
 
         /// <summary>
-        /// The ID of the Amazon EC2 instance to be terminated.
-        ///  
+        /// Gets and sets the property InstanceId. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 16</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  The ID of the Amazon EC2 instance to be terminated. 
         /// </para>
         /// </summary>
         public string InstanceId
         {
-            get { return this.instanceId; }
-            set { this.instanceId = value; }
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
         }
 
         // Check to see if InstanceId property is set
         internal bool IsSetInstanceId()
         {
-            return this.instanceId != null;
+            return this._instanceId != null;
         }
 
+
         /// <summary>
-        /// Specifies whether (<i>true</i>) or not (<i>false</i>) terminating this instance should also decrement the size of the
-        /// <a>AutoScalingGroup</a>.
-        ///  
+        /// Gets and sets the property ShouldDecrementDesiredCapacity. 
+        /// <para>
+        ///  Specifies whether (<i>true</i>) or not (<i>false</i>) terminating this instance should
+        /// also decrement the size of the <a>AutoScalingGroup</a>. 
+        /// </para>
         /// </summary>
         public bool ShouldDecrementDesiredCapacity
         {
-            get { return this.shouldDecrementDesiredCapacity ?? default(bool); }
-            set { this.shouldDecrementDesiredCapacity = value; }
+            get { return this._shouldDecrementDesiredCapacity.GetValueOrDefault(); }
+            set { this._shouldDecrementDesiredCapacity = value; }
         }
 
         // Check to see if ShouldDecrementDesiredCapacity property is set
         internal bool IsSetShouldDecrementDesiredCapacity()
         {
-            return this.shouldDecrementDesiredCapacity.HasValue;
+            return this._shouldDecrementDesiredCapacity.HasValue; 
         }
 
     }
 }
-    

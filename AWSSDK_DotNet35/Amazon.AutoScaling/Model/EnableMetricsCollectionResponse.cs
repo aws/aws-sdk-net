@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the EnableMetricsCollection response metadata.
-    /// The EnableMetricsCollection operation has a void result type.
+    /// Configuration for accessing Amazon EnableMetricsCollection service
     /// </summary>
-    public partial class EnableMetricsCollectionResponse : AmazonWebServiceResponse
+    public partial class EnableMetricsCollectionResponse : EnableMetricsCollectionResult
     {
+        /// <summary>
+        /// Gets and sets the EnableMetricsCollectionResult property.
+        /// Represents the output of a EnableMetricsCollection operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the EnableMetricsCollectionResult class are now available on the EnableMetricsCollectionResponse class. You should use the properties on EnableMetricsCollectionResponse instead of accessing them through EnableMetricsCollectionResult.")]
+        public EnableMetricsCollectionResult EnableMetricsCollectionResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

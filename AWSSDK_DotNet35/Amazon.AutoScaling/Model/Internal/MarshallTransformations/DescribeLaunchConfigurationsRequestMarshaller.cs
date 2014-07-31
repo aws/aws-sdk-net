@@ -14,47 +14,49 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Launch Configurations Request Marshaller
+    /// DescribeLaunchConfigurations Request Marshaller
     /// </summary>       
     public class DescribeLaunchConfigurationsRequestMarshaller : IMarshaller<IRequest, DescribeLaunchConfigurationsRequest>
     {
-        public IRequest Marshall(DescribeLaunchConfigurationsRequest describeLaunchConfigurationsRequest)
+        public IRequest Marshall(DescribeLaunchConfigurationsRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describeLaunchConfigurationsRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AutoScaling");
             request.Parameters.Add("Action", "DescribeLaunchConfigurations");
             request.Parameters.Add("Version", "2011-01-01");
-            if (describeLaunchConfigurationsRequest != null)
-            {
-                List<string> launchConfigurationNamesList = describeLaunchConfigurationsRequest.LaunchConfigurationNames;
 
-                int launchConfigurationNamesListIndex = 1;
-                foreach (string launchConfigurationNamesListValue in launchConfigurationNamesList)
-                { 
-                    request.Parameters.Add("LaunchConfigurationNames.member." + launchConfigurationNamesListIndex, StringUtils.FromString(launchConfigurationNamesListValue));
-                    launchConfigurationNamesListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetLaunchConfigurationNames())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.LaunchConfigurationNames)
+                    {
+                        request.Parameters.Add("LaunchConfigurationNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetMaxRecords())
+                {
+                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
+                }
+                if(publicRequest.IsSetNextToken())
+                {
+                    request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
             }
-            if (describeLaunchConfigurationsRequest != null && describeLaunchConfigurationsRequest.IsSetNextToken())
-            {
-                request.Parameters.Add("NextToken", StringUtils.FromString(describeLaunchConfigurationsRequest.NextToken));
-            }
-            if (describeLaunchConfigurationsRequest != null && describeLaunchConfigurationsRequest.IsSetMaxRecords())
-            {
-                request.Parameters.Add("MaxRecords", StringUtils.FromInt(describeLaunchConfigurationsRequest.MaxRecords));
-            }
-
             return request;
         }
     }

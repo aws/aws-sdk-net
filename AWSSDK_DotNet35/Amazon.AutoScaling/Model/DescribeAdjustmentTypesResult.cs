@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The output of the DescribeAdjustmentTypes action. </para>
+    /// The output of the <a>DescribeAdjustmentTypes</a> action.
     /// </summary>
     public partial class DescribeAdjustmentTypesResult : AmazonWebServiceResponse
     {
-        
-        private List<AdjustmentType> adjustmentTypes = new List<AdjustmentType>();
+        private List<AdjustmentType> _adjustmentTypes = new List<AdjustmentType>();
 
 
         /// <summary>
-        /// A list of specific policy adjustment types.
-        ///  
+        /// Gets and sets the property AdjustmentTypes. 
+        /// <para>
+        ///  A list of specific policy adjustment types. 
+        /// </para>
         /// </summary>
         public List<AdjustmentType> AdjustmentTypes
         {
-            get { return this.adjustmentTypes; }
-            set { this.adjustmentTypes = value; }
+            get { return this._adjustmentTypes; }
+            set { this._adjustmentTypes = value; }
         }
 
         // Check to see if AdjustmentTypes property is set
         internal bool IsSetAdjustmentTypes()
         {
-            return this.adjustmentTypes.Count > 0;
+            return this._adjustmentTypes != null && this._adjustmentTypes.Count > 0; 
         }
+
     }
 }

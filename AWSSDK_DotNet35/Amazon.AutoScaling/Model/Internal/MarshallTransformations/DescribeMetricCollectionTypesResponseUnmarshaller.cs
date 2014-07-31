@@ -13,46 +13,52 @@
  * permissions and limitations under the License.
  */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for DescribeMetricCollectionTypes operation
-    /// </summary>
-    internal class DescribeMetricCollectionTypesResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for DescribeMetricCollectionTypes operation
+    /// </summary>  
+    public class DescribeMetricCollectionTypesResponseUnmarshaller : XmlResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
             DescribeMetricCollectionTypesResponse response = new DescribeMetricCollectionTypesResponse();
-            
-            while (context.Read())
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
                 if (context.IsStartElement)
                 {                    
                     if(context.TestExpression("DescribeMetricCollectionTypesResult", 2))
                     {
-                        UnmarshallResult(context,response);                        
+                        UnmarshallResult(context, response);                        
                         continue;
                     }
                     
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
                     }
                 }
             }
-                 
-                        
+
             return response;
         }
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,DescribeMetricCollectionTypesResponse response)
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, DescribeMetricCollectionTypesResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -61,52 +67,51 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Metrics/member", targetDepth))
-                    {
-                        response.Metrics.Add(MetricCollectionTypeUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    }
+
                     if (context.TestExpression("Granularities/member", targetDepth))
                     {
-                        response.Granularities.Add(MetricGranularityTypeUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = MetricGranularityTypeUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.Granularities.Add(item);
                         continue;
                     }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return;
-                }
-            }
-                            
-
+                    if (context.TestExpression("Metrics/member", targetDepth))
+                    {
+                        var unmarshaller = MetricCollectionTypeUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.Metrics.Add(item);
+                        continue;
+                    }
+                } 
+           }
 
             return;
         }
-        
+
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             return new AmazonAutoScalingException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static DescribeMetricCollectionTypesResponseUnmarshaller instance;
 
-        public static DescribeMetricCollectionTypesResponseUnmarshaller GetInstance()
+        private static DescribeMetricCollectionTypesResponseUnmarshaller _instance = new DescribeMetricCollectionTypesResponseUnmarshaller();        
+
+        internal static DescribeMetricCollectionTypesResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new DescribeMetricCollectionTypesResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static DescribeMetricCollectionTypesResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

@@ -12,87 +12,93 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   NodeGroupMember Unmarshaller
-     /// </summary>
-    internal class NodeGroupMemberUnmarshaller : IUnmarshaller<NodeGroupMember, XmlUnmarshallerContext>, IUnmarshaller<NodeGroupMember, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for NodeGroupMember Object
+    /// </summary>  
+    public class NodeGroupMemberUnmarshaller : IUnmarshaller<NodeGroupMember, XmlUnmarshallerContext>, IUnmarshaller<NodeGroupMember, JsonUnmarshallerContext>
     {
-        public NodeGroupMember Unmarshall(XmlUnmarshallerContext context) 
+        public NodeGroupMember Unmarshall(XmlUnmarshallerContext context)
         {
-            NodeGroupMember nodeGroupMember = new NodeGroupMember();
+            NodeGroupMember unmarshalledObject = new NodeGroupMember();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("CacheClusterId", targetDepth))
                     {
-                        nodeGroupMember.CacheClusterId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CacheClusterId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("CacheNodeId", targetDepth))
                     {
-                        nodeGroupMember.CacheNodeId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("ReadEndpoint", targetDepth))
-                    {
-                        nodeGroupMember.ReadEndpoint = EndpointUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("PreferredAvailabilityZone", targetDepth))
-                    {
-                        nodeGroupMember.PreferredAvailabilityZone = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CacheNodeId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("CurrentRole", targetDepth))
                     {
-                        nodeGroupMember.CurrentRole = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CurrentRole = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PreferredAvailabilityZone", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PreferredAvailabilityZone = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ReadEndpoint", targetDepth))
+                    {
+                        var unmarshaller = EndpointUnmarshaller.Instance;
+                        unmarshalledObject.ReadEndpoint = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return nodeGroupMember;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return nodeGroupMember;
+            return unmarshalledObject;
         }
 
-        public NodeGroupMember Unmarshall(JsonUnmarshallerContext context) 
+        public NodeGroupMember Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static NodeGroupMemberUnmarshaller instance;
 
-        public static NodeGroupMemberUnmarshaller GetInstance() 
+        private static NodeGroupMemberUnmarshaller _instance = new NodeGroupMemberUnmarshaller();        
+
+        public static NodeGroupMemberUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new NodeGroupMemberUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

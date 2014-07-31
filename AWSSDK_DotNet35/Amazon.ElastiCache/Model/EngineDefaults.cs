@@ -17,84 +17,99 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para>Represents the output of a <i>DescribeEngineDefaultParameters</i> operation.</para>
+    /// Represents the output of a <i>DescribeEngineDefaultParameters</i> operation.
     /// </summary>
-    public partial class EngineDefaults : AmazonWebServiceResponse
+    public partial class EngineDefaults
     {
-        
-        private string cacheParameterGroupFamily;
-        private string marker;
-        private List<Parameter> parameters = new List<Parameter>();
-        private List<CacheNodeTypeSpecificParameter> cacheNodeTypeSpecificParameters = new List<CacheNodeTypeSpecificParameter>();
+        private List<CacheNodeTypeSpecificParameter> _cacheNodeTypeSpecificParameters = new List<CacheNodeTypeSpecificParameter>();
+        private string _cacheParameterGroupFamily;
+        private string _marker;
+        private List<Parameter> _parameters = new List<Parameter>();
 
 
         /// <summary>
-        /// Specifies the name of the cache parameter group family to which the engine default parameters apply.
-        ///  
-        /// </summary>
-        public string CacheParameterGroupFamily
-        {
-            get { return this.cacheParameterGroupFamily; }
-            set { this.cacheParameterGroupFamily = value; }
-        }
-
-        // Check to see if CacheParameterGroupFamily property is set
-        internal bool IsSetCacheParameterGroupFamily()
-        {
-            return this.cacheParameterGroupFamily != null;
-        }
-
-        /// <summary>
-        /// Provides an identifier to allow retrieval of paginated results.
-        ///  
-        /// </summary>
-        public string Marker
-        {
-            get { return this.marker; }
-            set { this.marker = value; }
-        }
-
-        // Check to see if Marker property is set
-        internal bool IsSetMarker()
-        {
-            return this.marker != null;
-        }
-
-        /// <summary>
-        /// Contains a list of engine default parameters.
-        ///  
-        /// </summary>
-        public List<Parameter> Parameters
-        {
-            get { return this.parameters; }
-            set { this.parameters = value; }
-        }
-
-        // Check to see if Parameters property is set
-        internal bool IsSetParameters()
-        {
-            return this.parameters.Count > 0;
-        }
-
-        /// <summary>
-        /// A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.
-        ///  
+        /// Gets and sets the property CacheNodeTypeSpecificParameters. 
+        /// <para>
+        /// A list of parameters specific to a particular cache node type. Each element in the
+        /// list contains detailed information about one parameter.
+        /// </para>
         /// </summary>
         public List<CacheNodeTypeSpecificParameter> CacheNodeTypeSpecificParameters
         {
-            get { return this.cacheNodeTypeSpecificParameters; }
-            set { this.cacheNodeTypeSpecificParameters = value; }
+            get { return this._cacheNodeTypeSpecificParameters; }
+            set { this._cacheNodeTypeSpecificParameters = value; }
         }
 
         // Check to see if CacheNodeTypeSpecificParameters property is set
         internal bool IsSetCacheNodeTypeSpecificParameters()
         {
-            return this.cacheNodeTypeSpecificParameters.Count > 0;
+            return this._cacheNodeTypeSpecificParameters != null && this._cacheNodeTypeSpecificParameters.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property CacheParameterGroupFamily. 
+        /// <para>
+        /// Specifies the name of the cache parameter group family to which the engine default
+        /// parameters apply.
+        /// </para>
+        /// </summary>
+        public string CacheParameterGroupFamily
+        {
+            get { return this._cacheParameterGroupFamily; }
+            set { this._cacheParameterGroupFamily = value; }
+        }
+
+        // Check to see if CacheParameterGroupFamily property is set
+        internal bool IsSetCacheParameterGroupFamily()
+        {
+            return this._cacheParameterGroupFamily != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// Provides an identifier to allow retrieval of paginated results.
+        /// </para>
+        /// </summary>
+        public string Marker
+        {
+            get { return this._marker; }
+            set { this._marker = value; }
+        }
+
+        // Check to see if Marker property is set
+        internal bool IsSetMarker()
+        {
+            return this._marker != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        /// Contains a list of engine default parameters.
+        /// </para>
+        /// </summary>
+        public List<Parameter> Parameters
+        {
+            get { return this._parameters; }
+            set { this._parameters = value; }
+        }
+
+        // Check to see if Parameters property is set
+        internal bool IsSetParameters()
+        {
+            return this._parameters != null && this._parameters.Count > 0; 
+        }
+
     }
 }

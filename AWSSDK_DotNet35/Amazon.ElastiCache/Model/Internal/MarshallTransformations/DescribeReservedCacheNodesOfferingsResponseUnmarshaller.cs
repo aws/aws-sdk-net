@@ -13,46 +13,52 @@
  * permissions and limitations under the License.
  */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.ElastiCache.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for DescribeReservedCacheNodesOfferings operation
-    /// </summary>
-    internal class DescribeReservedCacheNodesOfferingsResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for DescribeReservedCacheNodesOfferings operation
+    /// </summary>  
+    public class DescribeReservedCacheNodesOfferingsResponseUnmarshaller : XmlResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
             DescribeReservedCacheNodesOfferingsResponse response = new DescribeReservedCacheNodesOfferingsResponse();
-            
-            while (context.Read())
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
                 if (context.IsStartElement)
                 {                    
                     if(context.TestExpression("DescribeReservedCacheNodesOfferingsResult", 2))
                     {
-                        UnmarshallResult(context,response);                        
+                        UnmarshallResult(context, response);                        
                         continue;
                     }
                     
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
                     }
                 }
             }
-                 
-                        
+
             return response;
         }
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,DescribeReservedCacheNodesOfferingsResponse response)
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, DescribeReservedCacheNodesOfferingsResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -61,67 +67,62 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+
                     if (context.TestExpression("Marker", targetDepth))
                     {
-                        response.Marker = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.Marker = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ReservedCacheNodesOfferings/ReservedCacheNodesOffering", targetDepth))
                     {
-                        response.ReservedCacheNodesOfferings.Add(ReservedCacheNodesOfferingUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = ReservedCacheNodesOfferingUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.ReservedCacheNodesOfferings.Add(item);
                         continue;
                     }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return;
-                }
-            }
-                            
-
+                } 
+           }
 
             return;
         }
-        
+
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValue"))
-            {
-                return new InvalidParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ReservedCacheNodesOfferingNotFound"))
-            {
-                return new ReservedCacheNodesOfferingNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterCombination"))
             {
                 return new InvalidParameterCombinationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValue"))
+            {
+                return new InvalidParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ReservedCacheNodesOfferingNotFound"))
+            {
+                return new ReservedCacheNodesOfferingNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonElastiCacheException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static DescribeReservedCacheNodesOfferingsResponseUnmarshaller instance;
 
-        public static DescribeReservedCacheNodesOfferingsResponseUnmarshaller GetInstance()
+        private static DescribeReservedCacheNodesOfferingsResponseUnmarshaller _instance = new DescribeReservedCacheNodesOfferingsResponseUnmarshaller();        
+
+        internal static DescribeReservedCacheNodesOfferingsResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new DescribeReservedCacheNodesOfferingsResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static DescribeReservedCacheNodesOfferingsResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

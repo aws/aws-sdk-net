@@ -18,74 +18,56 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The <c>EnabledMetric</c> data type. </para>
+    /// The <code>EnabledMetric</code> data type.
     /// </summary>
     public partial class EnabledMetric
     {
-        
-        private string metric;
-        private string granularity;
+        private string _granularity;
+        private string _metric;
 
 
         /// <summary>
-        /// The name of the enabled metric.
-        ///  
+        /// Gets and sets the property Granularity. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string Metric
-        {
-            get { return this.metric; }
-            set { this.metric = value; }
-        }
-
-        // Check to see if Metric property is set
-        internal bool IsSetMetric()
-        {
-            return this.metric != null;
-        }
-
-        /// <summary>
-        /// The granularity of the enabled metric.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  The granularity of the enabled metric. 
         /// </para>
         /// </summary>
         public string Granularity
         {
-            get { return this.granularity; }
-            set { this.granularity = value; }
+            get { return this._granularity; }
+            set { this._granularity = value; }
         }
 
         // Check to see if Granularity property is set
         internal bool IsSetGranularity()
         {
-            return this.granularity != null;
+            return this._granularity != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Metric. 
+        /// <para>
+        ///  The name of the enabled metric. 
+        /// </para>
+        /// </summary>
+        public string Metric
+        {
+            get { return this._metric; }
+            set { this._metric = value; }
+        }
+
+        // Check to see if Metric property is set
+        internal bool IsSetMetric()
+        {
+            return this._metric != null;
+        }
+
     }
 }

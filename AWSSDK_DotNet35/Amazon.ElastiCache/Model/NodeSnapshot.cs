@@ -18,82 +18,97 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para>Represents an individual cache node in a snapshot of a cache cluster.</para>
+    /// Represents an individual cache node in a snapshot of a cache cluster.
     /// </summary>
     public partial class NodeSnapshot
     {
-        
-        private string cacheNodeId;
-        private string cacheSize;
-        private DateTime? cacheNodeCreateTime;
-        private DateTime? snapshotCreateTime;
+        private DateTime? _cacheNodeCreateTime;
+        private string _cacheNodeId;
+        private string _cacheSize;
+        private DateTime? _snapshotCreateTime;
 
 
         /// <summary>
-        /// The cache node identifier for the node in the source cache cluster.
-        ///  
-        /// </summary>
-        public string CacheNodeId
-        {
-            get { return this.cacheNodeId; }
-            set { this.cacheNodeId = value; }
-        }
-
-        // Check to see if CacheNodeId property is set
-        internal bool IsSetCacheNodeId()
-        {
-            return this.cacheNodeId != null;
-        }
-
-        /// <summary>
-        /// The size of the cache on the source cache node.
-        ///  
-        /// </summary>
-        public string CacheSize
-        {
-            get { return this.cacheSize; }
-            set { this.cacheSize = value; }
-        }
-
-        // Check to see if CacheSize property is set
-        internal bool IsSetCacheSize()
-        {
-            return this.cacheSize != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property CacheNodeCreateTime. 
+        /// <para>
         /// The date and time when the cache node was created in the source cache cluster.
-        ///  
+        /// </para>
         /// </summary>
         public DateTime CacheNodeCreateTime
         {
-            get { return this.cacheNodeCreateTime ?? default(DateTime); }
-            set { this.cacheNodeCreateTime = value; }
+            get { return this._cacheNodeCreateTime.GetValueOrDefault(); }
+            set { this._cacheNodeCreateTime = value; }
         }
 
         // Check to see if CacheNodeCreateTime property is set
         internal bool IsSetCacheNodeCreateTime()
         {
-            return this.cacheNodeCreateTime.HasValue;
+            return this._cacheNodeCreateTime.HasValue; 
         }
 
+
         /// <summary>
-        /// The date and time when the source node's metadata and cache data set was obtained for the snapshot.
-        ///  
+        /// Gets and sets the property CacheNodeId. 
+        /// <para>
+        /// The cache node identifier for the node in the source cache cluster.
+        /// </para>
+        /// </summary>
+        public string CacheNodeId
+        {
+            get { return this._cacheNodeId; }
+            set { this._cacheNodeId = value; }
+        }
+
+        // Check to see if CacheNodeId property is set
+        internal bool IsSetCacheNodeId()
+        {
+            return this._cacheNodeId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property CacheSize. 
+        /// <para>
+        /// The size of the cache on the source cache node.
+        /// </para>
+        /// </summary>
+        public string CacheSize
+        {
+            get { return this._cacheSize; }
+            set { this._cacheSize = value; }
+        }
+
+        // Check to see if CacheSize property is set
+        internal bool IsSetCacheSize()
+        {
+            return this._cacheSize != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SnapshotCreateTime. 
+        /// <para>
+        /// The date and time when the source node's metadata and cache data set was obtained
+        /// for the snapshot.
+        /// </para>
         /// </summary>
         public DateTime SnapshotCreateTime
         {
-            get { return this.snapshotCreateTime ?? default(DateTime); }
-            set { this.snapshotCreateTime = value; }
+            get { return this._snapshotCreateTime.GetValueOrDefault(); }
+            set { this._snapshotCreateTime = value; }
         }
 
         // Check to see if SnapshotCreateTime property is set
         internal bool IsSetSnapshotCreateTime()
         {
-            return this.snapshotCreateTime.HasValue;
+            return this._snapshotCreateTime.HasValue; 
         }
+
     }
 }

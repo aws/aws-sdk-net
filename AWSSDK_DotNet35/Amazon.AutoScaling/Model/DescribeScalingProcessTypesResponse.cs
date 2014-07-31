@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeScalingProcessTypes response and response metadata.
+    /// Configuration for accessing Amazon DescribeScalingProcessTypes service
     /// </summary>
     public partial class DescribeScalingProcessTypesResponse : DescribeScalingProcessTypesResult
     {
         /// <summary>
         /// Gets and sets the DescribeScalingProcessTypesResult property.
-        /// The output of the DescribeScalingProcessTypes action.
+        /// Represents the output of a DescribeScalingProcessTypes operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeScalingProcessTypesResult class are now available on the DescribeScalingProcessTypesResponse class. You should use the properties on DescribeScalingProcessTypesResponse instead of accessing them through DescribeScalingProcessTypesResult.")]
         public DescribeScalingProcessTypesResult DescribeScalingProcessTypesResult
@@ -40,4 +36,3 @@ namespace Amazon.AutoScaling.Model
         }
     }
 }
-    

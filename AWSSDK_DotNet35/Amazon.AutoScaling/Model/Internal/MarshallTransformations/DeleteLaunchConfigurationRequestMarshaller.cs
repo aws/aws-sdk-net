@@ -14,32 +14,36 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Launch Configuration Request Marshaller
+    /// DeleteLaunchConfiguration Request Marshaller
     /// </summary>       
     public class DeleteLaunchConfigurationRequestMarshaller : IMarshaller<IRequest, DeleteLaunchConfigurationRequest>
     {
-        public IRequest Marshall(DeleteLaunchConfigurationRequest deleteLaunchConfigurationRequest)
+        public IRequest Marshall(DeleteLaunchConfigurationRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(deleteLaunchConfigurationRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AutoScaling");
             request.Parameters.Add("Action", "DeleteLaunchConfiguration");
             request.Parameters.Add("Version", "2011-01-01");
-            if (deleteLaunchConfigurationRequest != null && deleteLaunchConfigurationRequest.IsSetLaunchConfigurationName())
-            {
-                request.Parameters.Add("LaunchConfigurationName", StringUtils.FromString(deleteLaunchConfigurationRequest.LaunchConfigurationName));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetLaunchConfigurationName())
+                {
+                    request.Parameters.Add("LaunchConfigurationName", StringUtils.FromString(publicRequest.LaunchConfigurationName));
+                }
+            }
             return request;
         }
     }

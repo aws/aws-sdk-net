@@ -12,84 +12,88 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   CacheSubnetGroup Unmarshaller
-     /// </summary>
-    internal class CacheSubnetGroupUnmarshaller : IUnmarshaller<CacheSubnetGroup, XmlUnmarshallerContext>, IUnmarshaller<CacheSubnetGroup, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for CacheSubnetGroup Object
+    /// </summary>  
+    public class CacheSubnetGroupUnmarshaller : IUnmarshaller<CacheSubnetGroup, XmlUnmarshallerContext>, IUnmarshaller<CacheSubnetGroup, JsonUnmarshallerContext>
     {
-        public CacheSubnetGroup Unmarshall(XmlUnmarshallerContext context) 
+        public CacheSubnetGroup Unmarshall(XmlUnmarshallerContext context)
         {
-            CacheSubnetGroup cacheSubnetGroup = new CacheSubnetGroup();
+            CacheSubnetGroup unmarshalledObject = new CacheSubnetGroup();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            if (context.IsStartOfDocument) 
-               targetDepth++;
-            
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("CacheSubnetGroupName", targetDepth))
-                    {
-                        cacheSubnetGroup.CacheSubnetGroupName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("CacheSubnetGroupDescription", targetDepth))
                     {
-                        cacheSubnetGroup.CacheSubnetGroupDescription = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CacheSubnetGroupDescription = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("VpcId", targetDepth))
+                    if (context.TestExpression("CacheSubnetGroupName", targetDepth))
                     {
-                        cacheSubnetGroup.VpcId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CacheSubnetGroupName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Subnets/Subnet", targetDepth))
                     {
-                        cacheSubnetGroup.Subnets.Add(SubnetUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = SubnetUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Subnets.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("VpcId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return cacheSubnetGroup;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return cacheSubnetGroup;
+            return unmarshalledObject;
         }
 
-        public CacheSubnetGroup Unmarshall(JsonUnmarshallerContext context) 
+        public CacheSubnetGroup Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static CacheSubnetGroupUnmarshaller instance;
 
-        public static CacheSubnetGroupUnmarshaller GetInstance() 
+        private static CacheSubnetGroupUnmarshaller _instance = new CacheSubnetGroupUnmarshaller();        
+
+        public static CacheSubnetGroupUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new CacheSubnetGroupUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

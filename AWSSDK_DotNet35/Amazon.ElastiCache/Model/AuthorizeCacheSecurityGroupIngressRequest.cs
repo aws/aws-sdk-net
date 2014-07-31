@@ -25,66 +25,74 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the AuthorizeCacheSecurityGroupIngress operation.
-    /// <para>The <i>AuthorizeCacheSecurityGroupIngress</i> operation allows network ingress to a cache security group. Applications using
-    /// ElastiCache must be running on Amazon EC2, and Amazon EC2 security groups are used as the authorization mechanism.</para> <para><b>NOTE:</b>
-    /// You cannot authorize ingress from an Amazon EC2 security group in one Region to an ElastiCache cluster in another Region. </para>
+    /// The <i>AuthorizeCacheSecurityGroupIngress</i> operation allows network ingress to
+    /// a cache security group. Applications using ElastiCache must be running on Amazon EC2,
+    /// and Amazon EC2 security groups are used as the authorization mechanism.
     /// </summary>
     public partial class AuthorizeCacheSecurityGroupIngressRequest : AmazonElastiCacheRequest
     {
-        private string cacheSecurityGroupName;
-        private string eC2SecurityGroupName;
-        private string eC2SecurityGroupOwnerId;
+        private string _cacheSecurityGroupName;
+        private string _eC2SecurityGroupName;
+        private string _eC2SecurityGroupOwnerId;
 
 
         /// <summary>
+        /// Gets and sets the property CacheSecurityGroupName. 
+        /// <para>
         /// The cache security group which will allow network ingress.
-        ///  
+        /// </para>
         /// </summary>
         public string CacheSecurityGroupName
         {
-            get { return this.cacheSecurityGroupName; }
-            set { this.cacheSecurityGroupName = value; }
+            get { return this._cacheSecurityGroupName; }
+            set { this._cacheSecurityGroupName = value; }
         }
 
         // Check to see if CacheSecurityGroupName property is set
         internal bool IsSetCacheSecurityGroupName()
         {
-            return this.cacheSecurityGroupName != null;
+            return this._cacheSecurityGroupName != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property EC2SecurityGroupName. 
+        /// <para>
         /// The Amazon EC2 security group to be authorized for ingress to the cache security group.
-        ///  
+        /// </para>
         /// </summary>
         public string EC2SecurityGroupName
         {
-            get { return this.eC2SecurityGroupName; }
-            set { this.eC2SecurityGroupName = value; }
+            get { return this._eC2SecurityGroupName; }
+            set { this._eC2SecurityGroupName = value; }
         }
 
         // Check to see if EC2SecurityGroupName property is set
         internal bool IsSetEC2SecurityGroupName()
         {
-            return this.eC2SecurityGroupName != null;
+            return this._eC2SecurityGroupName != null;
         }
 
+
         /// <summary>
-        /// The AWS account number of the Amazon EC2 security group owner. Note that this is not the same thing as an AWS access key ID - you must
-        /// provide a valid AWS account number for this parameter.
-        ///  
+        /// Gets and sets the property EC2SecurityGroupOwnerId. 
+        /// <para>
+        /// The AWS account number of the Amazon EC2 security group owner. Note that this is not
+        /// the same thing as an AWS access key ID - you must provide a valid AWS account number
+        /// for this parameter.
+        /// </para>
         /// </summary>
         public string EC2SecurityGroupOwnerId
         {
-            get { return this.eC2SecurityGroupOwnerId; }
-            set { this.eC2SecurityGroupOwnerId = value; }
+            get { return this._eC2SecurityGroupOwnerId; }
+            set { this._eC2SecurityGroupOwnerId = value; }
         }
 
         // Check to see if EC2SecurityGroupOwnerId property is set
         internal bool IsSetEC2SecurityGroupOwnerId()
         {
-            return this.eC2SecurityGroupOwnerId != null;
+            return this._eC2SecurityGroupOwnerId != null;
         }
 
     }
 }
-    

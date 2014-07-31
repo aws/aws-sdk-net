@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the  DescribePolicies response and response metadata.
+    /// Configuration for accessing Amazon DescribePolicies service
     /// </summary>
     public partial class DescribePoliciesResponse : DescribePoliciesResult
     {
         /// <summary>
         /// Gets and sets the DescribePoliciesResult property.
-        /// The PoliciesType data type.
+        /// Represents the output of a DescribePolicies operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribePoliciesResult class are now available on the DescribePoliciesResponse class. You should use the properties on DescribePoliciesResponse instead of accessing them through DescribePoliciesResult.")]
         public DescribePoliciesResult DescribePoliciesResult
@@ -40,4 +36,3 @@ namespace Amazon.AutoScaling.Model
         }
     }
 }
-    

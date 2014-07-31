@@ -25,48 +25,56 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCacheCluster operation.
-    /// <para>The <i>DeleteCacheCluster</i> operation deletes a previously provisioned cache cluster. <i>DeleteCacheCluster</i> deletes all
-    /// associated cache nodes, node endpoints and the cache cluster itself. When you receive a successful response from this operation, Amazon
-    /// ElastiCache immediately begins deleting the cache cluster; you cannot cancel or revert this operation.</para>
+    /// The <i>DeleteCacheCluster</i> operation deletes a previously provisioned cache cluster.
+    /// <i>DeleteCacheCluster</i> deletes all associated cache nodes, node endpoints and the
+    /// cache cluster itself. When you receive a successful response from this operation,
+    /// Amazon ElastiCache immediately begins deleting the cache cluster; you cannot cancel
+    /// or revert this operation.
     /// </summary>
     public partial class DeleteCacheClusterRequest : AmazonElastiCacheRequest
     {
-        private string cacheClusterId;
-        private string finalSnapshotIdentifier;
+        private string _cacheClusterId;
+        private string _finalSnapshotIdentifier;
 
 
         /// <summary>
-        /// The cache cluster identifier for the cluster to be deleted. This parameter is not case sensitive.
-        ///  
+        /// Gets and sets the property CacheClusterId. 
+        /// <para>
+        /// The cache cluster identifier for the cluster to be deleted. This parameter is not
+        /// case sensitive.
+        /// </para>
         /// </summary>
         public string CacheClusterId
         {
-            get { return this.cacheClusterId; }
-            set { this.cacheClusterId = value; }
+            get { return this._cacheClusterId; }
+            set { this._cacheClusterId = value; }
         }
 
         // Check to see if CacheClusterId property is set
         internal bool IsSetCacheClusterId()
         {
-            return this.cacheClusterId != null;
+            return this._cacheClusterId != null;
         }
 
+
         /// <summary>
-        /// The name of a final cache cluster snapshot. ElastiCache creates the snapshot, and then deletes the cache cluster immediately afterward.
-        ///  
+        /// Gets and sets the property FinalSnapshotIdentifier. 
+        /// <para>
+        /// The name of a final cache cluster snapshot. ElastiCache creates the snapshot, and
+        /// then deletes the cache cluster immediately afterward.
+        /// </para>
         /// </summary>
         public string FinalSnapshotIdentifier
         {
-            get { return this.finalSnapshotIdentifier; }
-            set { this.finalSnapshotIdentifier = value; }
+            get { return this._finalSnapshotIdentifier; }
+            set { this._finalSnapshotIdentifier = value; }
         }
 
         // Check to see if FinalSnapshotIdentifier property is set
         internal bool IsSetFinalSnapshotIdentifier()
         {
-            return this.finalSnapshotIdentifier != null;
+            return this._finalSnapshotIdentifier != null;
         }
 
     }
 }
-    

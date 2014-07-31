@@ -12,78 +12,81 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   CacheParameterGroup Unmarshaller
-     /// </summary>
-    internal class CacheParameterGroupUnmarshaller : IUnmarshaller<CacheParameterGroup, XmlUnmarshallerContext>, IUnmarshaller<CacheParameterGroup, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for CacheParameterGroup Object
+    /// </summary>  
+    public class CacheParameterGroupUnmarshaller : IUnmarshaller<CacheParameterGroup, XmlUnmarshallerContext>, IUnmarshaller<CacheParameterGroup, JsonUnmarshallerContext>
     {
-        public CacheParameterGroup Unmarshall(XmlUnmarshallerContext context) 
+        public CacheParameterGroup Unmarshall(XmlUnmarshallerContext context)
         {
-            CacheParameterGroup cacheParameterGroup = new CacheParameterGroup();
+            CacheParameterGroup unmarshalledObject = new CacheParameterGroup();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            if (context.IsStartOfDocument) 
-               targetDepth++;
-            
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("CacheParameterGroupName", targetDepth))
-                    {
-                        cacheParameterGroup.CacheParameterGroupName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("CacheParameterGroupFamily", targetDepth))
                     {
-                        cacheParameterGroup.CacheParameterGroupFamily = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CacheParameterGroupFamily = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("CacheParameterGroupName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CacheParameterGroupName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Description", targetDepth))
                     {
-                        cacheParameterGroup.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return cacheParameterGroup;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return cacheParameterGroup;
+            return unmarshalledObject;
         }
 
-        public CacheParameterGroup Unmarshall(JsonUnmarshallerContext context) 
+        public CacheParameterGroup Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static CacheParameterGroupUnmarshaller instance;
 
-        public static CacheParameterGroupUnmarshaller GetInstance() 
+        private static CacheParameterGroupUnmarshaller _instance = new CacheParameterGroupUnmarshaller();        
+
+        public static CacheParameterGroupUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new CacheParameterGroupUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

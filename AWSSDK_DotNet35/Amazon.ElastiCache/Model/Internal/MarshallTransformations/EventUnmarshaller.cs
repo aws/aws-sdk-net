@@ -12,81 +12,87 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Event Unmarshaller
-     /// </summary>
-    internal class EventUnmarshaller : IUnmarshaller<Event, XmlUnmarshallerContext>, IUnmarshaller<Event, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Event Object
+    /// </summary>  
+    public class EventUnmarshaller : IUnmarshaller<Event, XmlUnmarshallerContext>, IUnmarshaller<Event, JsonUnmarshallerContext>
     {
-        public Event Unmarshall(XmlUnmarshallerContext context) 
+        public Event Unmarshall(XmlUnmarshallerContext context)
         {
-            Event eventValue = new Event();
+            Event unmarshalledObject = new Event();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("SourceIdentifier", targetDepth))
+                    if (context.TestExpression("Date", targetDepth))
                     {
-                        eventValue.SourceIdentifier = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("SourceType", targetDepth))
-                    {
-                        eventValue.SourceType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.Date = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Message", targetDepth))
                     {
-                        eventValue.Message = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Message = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Date", targetDepth))
+                    if (context.TestExpression("SourceIdentifier", targetDepth))
                     {
-                        eventValue.Date = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SourceIdentifier = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SourceType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SourceType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return eventValue;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return eventValue;
+            return unmarshalledObject;
         }
 
-        public Event Unmarshall(JsonUnmarshallerContext context) 
+        public Event Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static EventUnmarshaller instance;
 
-        public static EventUnmarshaller GetInstance() 
+        private static EventUnmarshaller _instance = new EventUnmarshaller();        
+
+        public static EventUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new EventUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

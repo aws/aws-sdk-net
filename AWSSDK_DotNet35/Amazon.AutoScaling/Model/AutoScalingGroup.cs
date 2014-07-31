@@ -18,459 +18,430 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The AutoScalingGroup data type. </para>
+    /// The AutoScalingGroup data type.
     /// </summary>
     public partial class AutoScalingGroup
     {
-        
-        private string autoScalingGroupName;
-        private string autoScalingGroupARN;
-        private string launchConfigurationName;
-        private int? minSize;
-        private int? maxSize;
-        private int? desiredCapacity;
-        private int? defaultCooldown;
-        private List<string> availabilityZones = new List<string>();
-        private List<string> loadBalancerNames = new List<string>();
-        private string healthCheckType;
-        private int? healthCheckGracePeriod;
-        private List<Instance> instances = new List<Instance>();
-        private DateTime? createdTime;
-        private List<SuspendedProcess> suspendedProcesses = new List<SuspendedProcess>();
-        private string placementGroup;
-        private string vPCZoneIdentifier;
-        private List<EnabledMetric> enabledMetrics = new List<EnabledMetric>();
-        private string status;
-        private List<TagDescription> tags = new List<TagDescription>();
-        private List<string> terminationPolicies = new List<string>();
+        private string _autoScalingGroupARN;
+        private string _autoScalingGroupName;
+        private List<string> _availabilityZones = new List<string>();
+        private DateTime? _createdTime;
+        private int? _defaultCooldown;
+        private int? _desiredCapacity;
+        private List<EnabledMetric> _enabledMetrics = new List<EnabledMetric>();
+        private int? _healthCheckGracePeriod;
+        private string _healthCheckType;
+        private List<Instance> _instances = new List<Instance>();
+        private string _launchConfigurationName;
+        private List<string> _loadBalancerNames = new List<string>();
+        private int? _maxSize;
+        private int? _minSize;
+        private string _placementGroup;
+        private string _status;
+        private List<SuspendedProcess> _suspendedProcesses = new List<SuspendedProcess>();
+        private List<TagDescription> _tags = new List<TagDescription>();
+        private List<string> _terminationPolicies = new List<string>();
+        private string _vPCZoneIdentifier;
 
 
         /// <summary>
-        /// Specifies the name of the group.
-        ///  
+        /// Gets and sets the property AutoScalingGroupARN. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string AutoScalingGroupName
-        {
-            get { return this.autoScalingGroupName; }
-            set { this.autoScalingGroupName = value; }
-        }
-
-        // Check to see if AutoScalingGroupName property is set
-        internal bool IsSetAutoScalingGroupName()
-        {
-            return this.autoScalingGroupName != null;
-        }
-
-        /// <summary>
-        /// The Amazon Resource Name (ARN) of the Auto Scaling group.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1600</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  The Amazon Resource Name (ARN) of the Auto Scaling group. 
         /// </para>
         /// </summary>
         public string AutoScalingGroupARN
         {
-            get { return this.autoScalingGroupARN; }
-            set { this.autoScalingGroupARN = value; }
+            get { return this._autoScalingGroupARN; }
+            set { this._autoScalingGroupARN = value; }
         }
 
         // Check to see if AutoScalingGroupARN property is set
         internal bool IsSetAutoScalingGroupARN()
         {
-            return this.autoScalingGroupARN != null;
+            return this._autoScalingGroupARN != null;
         }
 
+
         /// <summary>
-        /// Specifies the name of the associated <a>LaunchConfiguration</a>.
-        ///  
+        /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  Specifies the name of the group. 
         /// </para>
         /// </summary>
-        public string LaunchConfigurationName
+        public string AutoScalingGroupName
         {
-            get { return this.launchConfigurationName; }
-            set { this.launchConfigurationName = value; }
+            get { return this._autoScalingGroupName; }
+            set { this._autoScalingGroupName = value; }
         }
 
-        // Check to see if LaunchConfigurationName property is set
-        internal bool IsSetLaunchConfigurationName()
+        // Check to see if AutoScalingGroupName property is set
+        internal bool IsSetAutoScalingGroupName()
         {
-            return this.launchConfigurationName != null;
+            return this._autoScalingGroupName != null;
         }
 
-        /// <summary>
-        /// Contains the minimum size of the Auto Scaling group.
-        ///  
-        /// </summary>
-        public int MinSize
-        {
-            get { return this.minSize ?? default(int); }
-            set { this.minSize = value; }
-        }
-
-        // Check to see if MinSize property is set
-        internal bool IsSetMinSize()
-        {
-            return this.minSize.HasValue;
-        }
 
         /// <summary>
-        /// Contains the maximum size of the Auto Scaling group.
-        ///  
-        /// </summary>
-        public int MaxSize
-        {
-            get { return this.maxSize ?? default(int); }
-            set { this.maxSize = value; }
-        }
-
-        // Check to see if MaxSize property is set
-        internal bool IsSetMaxSize()
-        {
-            return this.maxSize.HasValue;
-        }
-
-        /// <summary>
-        /// Specifies the desired capacity for the Auto Scaling group.
-        ///  
-        /// </summary>
-        public int DesiredCapacity
-        {
-            get { return this.desiredCapacity ?? default(int); }
-            set { this.desiredCapacity = value; }
-        }
-
-        // Check to see if DesiredCapacity property is set
-        internal bool IsSetDesiredCapacity()
-        {
-            return this.desiredCapacity.HasValue;
-        }
-
-        /// <summary>
-        /// The number of seconds after a scaling activity completes before any further scaling activities can start.
-        ///  
-        /// </summary>
-        public int DefaultCooldown
-        {
-            get { return this.defaultCooldown ?? default(int); }
-            set { this.defaultCooldown = value; }
-        }
-
-        // Check to see if DefaultCooldown property is set
-        internal bool IsSetDefaultCooldown()
-        {
-            return this.defaultCooldown.HasValue;
-        }
-
-        /// <summary>
-        /// Contains a list of Availability Zones for the group.
-        ///  
+        /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - </description>
-        ///     </item>
-        /// </list>
+        ///  Contains a list of Availability Zones for the group. 
         /// </para>
         /// </summary>
         public List<string> AvailabilityZones
         {
-            get { return this.availabilityZones; }
-            set { this.availabilityZones = value; }
+            get { return this._availabilityZones; }
+            set { this._availabilityZones = value; }
         }
 
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this.availabilityZones.Count > 0;
+            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
         }
+
 
         /// <summary>
-        /// A list of load balancers associated with this Auto Scaling group.
-        ///  
-        /// </summary>
-        public List<string> LoadBalancerNames
-        {
-            get { return this.loadBalancerNames; }
-            set { this.loadBalancerNames = value; }
-        }
-
-        // Check to see if LoadBalancerNames property is set
-        internal bool IsSetLoadBalancerNames()
-        {
-            return this.loadBalancerNames.Count > 0;
-        }
-
-        /// <summary>
-        /// The service of interest for the health status check, either "EC2" for Amazon EC2 or "ELB" for Elastic Load Balancing.
-        ///  
+        /// Gets and sets the property CreatedTime. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 32</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  Specifies the date and time the Auto Scaling group was created. 
         /// </para>
-        /// </summary>
-        public string HealthCheckType
-        {
-            get { return this.healthCheckType; }
-            set { this.healthCheckType = value; }
-        }
-
-        // Check to see if HealthCheckType property is set
-        internal bool IsSetHealthCheckType()
-        {
-            return this.healthCheckType != null;
-        }
-
-        /// <summary>
-        /// The length of time that Auto Scaling waits before checking an instance's health status. The grace period begins when an instance comes into
-        /// service.
-        ///  
-        /// </summary>
-        public int HealthCheckGracePeriod
-        {
-            get { return this.healthCheckGracePeriod ?? default(int); }
-            set { this.healthCheckGracePeriod = value; }
-        }
-
-        // Check to see if HealthCheckGracePeriod property is set
-        internal bool IsSetHealthCheckGracePeriod()
-        {
-            return this.healthCheckGracePeriod.HasValue;
-        }
-
-        /// <summary>
-        /// Provides a summary list of Amazon EC2 instances.
-        ///  
-        /// </summary>
-        public List<Instance> Instances
-        {
-            get { return this.instances; }
-            set { this.instances = value; }
-        }
-
-        // Check to see if Instances property is set
-        internal bool IsSetInstances()
-        {
-            return this.instances.Count > 0;
-        }
-
-        /// <summary>
-        /// Specifies the date and time the Auto Scaling group was created.
-        ///  
         /// </summary>
         public DateTime CreatedTime
         {
-            get { return this.createdTime ?? default(DateTime); }
-            set { this.createdTime = value; }
+            get { return this._createdTime.GetValueOrDefault(); }
+            set { this._createdTime = value; }
         }
 
         // Check to see if CreatedTime property is set
         internal bool IsSetCreatedTime()
         {
-            return this.createdTime.HasValue;
+            return this._createdTime.HasValue; 
         }
+
 
         /// <summary>
-        /// Suspended processes associated with this Auto Scaling group.
-        ///  
-        /// </summary>
-        public List<SuspendedProcess> SuspendedProcesses
-        {
-            get { return this.suspendedProcesses; }
-            set { this.suspendedProcesses = value; }
-        }
-
-        // Check to see if SuspendedProcesses property is set
-        internal bool IsSetSuspendedProcesses()
-        {
-            return this.suspendedProcesses.Count > 0;
-        }
-
-        /// <summary>
-        /// The name of the cluster placement group, if applicable. For more information, go to <a
-        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Using Cluster Instances</a> in the Amazon EC2 User
-        /// Guide.
-        ///  
+        /// Gets and sets the property DefaultCooldown. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  The number of seconds after a scaling activity completes before any further scaling
+        /// activities can start. 
         /// </para>
         /// </summary>
-        public string PlacementGroup
+        public int DefaultCooldown
         {
-            get { return this.placementGroup; }
-            set { this.placementGroup = value; }
+            get { return this._defaultCooldown.GetValueOrDefault(); }
+            set { this._defaultCooldown = value; }
         }
 
-        // Check to see if PlacementGroup property is set
-        internal bool IsSetPlacementGroup()
+        // Check to see if DefaultCooldown property is set
+        internal bool IsSetDefaultCooldown()
         {
-            return this.placementGroup != null;
+            return this._defaultCooldown.HasValue; 
         }
+
 
         /// <summary>
-        /// The subnet identifier for the Amazon VPC connection, if applicable. You can specify several subnets in a comma-separated list. When you
-        /// specify <c>VPCZoneIdentifier</c> with <c>AvailabilityZones</c>, ensure that the subnets' Availability Zones match the values you specify for
-        /// <c>AvailabilityZones</c>.
-        ///  
+        /// Gets and sets the property DesiredCapacity. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  Specifies the desired capacity for the Auto Scaling group. 
         /// </para>
         /// </summary>
-        public string VPCZoneIdentifier
+        public int DesiredCapacity
         {
-            get { return this.vPCZoneIdentifier; }
-            set { this.vPCZoneIdentifier = value; }
+            get { return this._desiredCapacity.GetValueOrDefault(); }
+            set { this._desiredCapacity = value; }
         }
 
-        // Check to see if VPCZoneIdentifier property is set
-        internal bool IsSetVPCZoneIdentifier()
+        // Check to see if DesiredCapacity property is set
+        internal bool IsSetDesiredCapacity()
         {
-            return this.vPCZoneIdentifier != null;
+            return this._desiredCapacity.HasValue; 
         }
+
 
         /// <summary>
-        /// A list of metrics enabled for this Auto Scaling group.
-        ///  
+        /// Gets and sets the property EnabledMetrics. 
+        /// <para>
+        ///  A list of metrics enabled for this Auto Scaling group. 
+        /// </para>
         /// </summary>
         public List<EnabledMetric> EnabledMetrics
         {
-            get { return this.enabledMetrics; }
-            set { this.enabledMetrics = value; }
+            get { return this._enabledMetrics; }
+            set { this._enabledMetrics = value; }
         }
 
         // Check to see if EnabledMetrics property is set
         internal bool IsSetEnabledMetrics()
         {
-            return this.enabledMetrics.Count > 0;
+            return this._enabledMetrics != null && this._enabledMetrics.Count > 0; 
         }
 
+
         /// <summary>
-        /// The current state of the Auto Scaling group when a <a>DeleteAutoScalingGroup</a> action is in progress.
-        ///  
+        /// Gets and sets the property HealthCheckGracePeriod. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  The length of time that Auto Scaling waits before checking an instance's health status.
+        /// The grace period begins when an instance comes into service. 
+        /// </para>
+        /// </summary>
+        public int HealthCheckGracePeriod
+        {
+            get { return this._healthCheckGracePeriod.GetValueOrDefault(); }
+            set { this._healthCheckGracePeriod = value; }
+        }
+
+        // Check to see if HealthCheckGracePeriod property is set
+        internal bool IsSetHealthCheckGracePeriod()
+        {
+            return this._healthCheckGracePeriod.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property HealthCheckType. 
+        /// <para>
+        ///  The service of interest for the health status check, either "EC2" for Amazon EC2
+        /// or "ELB" for Elastic Load Balancing. 
+        /// </para>
+        /// </summary>
+        public string HealthCheckType
+        {
+            get { return this._healthCheckType; }
+            set { this._healthCheckType = value; }
+        }
+
+        // Check to see if HealthCheckType property is set
+        internal bool IsSetHealthCheckType()
+        {
+            return this._healthCheckType != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Instances. 
+        /// <para>
+        ///  Provides a summary list of Amazon EC2 instances. 
+        /// </para>
+        /// </summary>
+        public List<Instance> Instances
+        {
+            get { return this._instances; }
+            set { this._instances = value; }
+        }
+
+        // Check to see if Instances property is set
+        internal bool IsSetInstances()
+        {
+            return this._instances != null && this._instances.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property LaunchConfigurationName. 
+        /// <para>
+        ///  Specifies the name of the associated <a>LaunchConfiguration</a>. 
+        /// </para>
+        /// </summary>
+        public string LaunchConfigurationName
+        {
+            get { return this._launchConfigurationName; }
+            set { this._launchConfigurationName = value; }
+        }
+
+        // Check to see if LaunchConfigurationName property is set
+        internal bool IsSetLaunchConfigurationName()
+        {
+            return this._launchConfigurationName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property LoadBalancerNames. 
+        /// <para>
+        ///  A list of load balancers associated with this Auto Scaling group. 
+        /// </para>
+        /// </summary>
+        public List<string> LoadBalancerNames
+        {
+            get { return this._loadBalancerNames; }
+            set { this._loadBalancerNames = value; }
+        }
+
+        // Check to see if LoadBalancerNames property is set
+        internal bool IsSetLoadBalancerNames()
+        {
+            return this._loadBalancerNames != null && this._loadBalancerNames.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property MaxSize. 
+        /// <para>
+        ///  Contains the maximum size of the Auto Scaling group. 
+        /// </para>
+        /// </summary>
+        public int MaxSize
+        {
+            get { return this._maxSize.GetValueOrDefault(); }
+            set { this._maxSize = value; }
+        }
+
+        // Check to see if MaxSize property is set
+        internal bool IsSetMaxSize()
+        {
+            return this._maxSize.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property MinSize. 
+        /// <para>
+        ///  Contains the minimum size of the Auto Scaling group. 
+        /// </para>
+        /// </summary>
+        public int MinSize
+        {
+            get { return this._minSize.GetValueOrDefault(); }
+            set { this._minSize = value; }
+        }
+
+        // Check to see if MinSize property is set
+        internal bool IsSetMinSize()
+        {
+            return this._minSize.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property PlacementGroup. 
+        /// <para>
+        ///  The name of the cluster placement group, if applicable. For more information, go
+        /// to <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+        /// Using Cluster Instances</a> in the Amazon EC2 User Guide. 
+        /// </para>
+        /// </summary>
+        public string PlacementGroup
+        {
+            get { return this._placementGroup; }
+            set { this._placementGroup = value; }
+        }
+
+        // Check to see if PlacementGroup property is set
+        internal bool IsSetPlacementGroup()
+        {
+            return this._placementGroup != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        ///  The current state of the Auto Scaling group when a <a>DeleteAutoScalingGroup</a>
+        /// action is in progress. 
         /// </para>
         /// </summary>
         public string Status
         {
-            get { return this.status; }
-            set { this.status = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;
+            return this._status != null;
         }
 
+
         /// <summary>
-        /// A list of tags for the Auto Scaling group.
-        ///  
+        /// Gets and sets the property SuspendedProcesses. 
+        /// <para>
+        ///  Suspended processes associated with this Auto Scaling group. 
+        /// </para>
+        /// </summary>
+        public List<SuspendedProcess> SuspendedProcesses
+        {
+            get { return this._suspendedProcesses; }
+            set { this._suspendedProcesses = value; }
+        }
+
+        // Check to see if SuspendedProcesses property is set
+        internal bool IsSetSuspendedProcesses()
+        {
+            return this._suspendedProcesses != null && this._suspendedProcesses.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        ///  A list of tags for the Auto Scaling group. 
+        /// </para>
         /// </summary>
         public List<TagDescription> Tags
         {
-            get { return this.tags; }
-            set { this.tags = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this.tags.Count > 0;
+            return this._tags != null && this._tags.Count > 0; 
         }
 
+
         /// <summary>
-        /// A standalone termination policy or a list of termination policies for this Auto Scaling group.
-        ///  
+        /// Gets and sets the property TerminationPolicies. 
+        /// <para>
+        ///  A standalone termination policy or a list of termination policies for this Auto Scaling
+        /// group. 
+        /// </para>
         /// </summary>
         public List<string> TerminationPolicies
         {
-            get { return this.terminationPolicies; }
-            set { this.terminationPolicies = value; }
+            get { return this._terminationPolicies; }
+            set { this._terminationPolicies = value; }
         }
 
         // Check to see if TerminationPolicies property is set
         internal bool IsSetTerminationPolicies()
         {
-            return this.terminationPolicies.Count > 0;
+            return this._terminationPolicies != null && this._terminationPolicies.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property VPCZoneIdentifier. 
+        /// <para>
+        ///  The subnet identifier for the Amazon VPC connection, if applicable. You can specify
+        /// several subnets in a comma-separated list. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  When you specify <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>,
+        /// ensure that the subnets' Availability Zones match the values you specify for <code>AvailabilityZones</code>.
+        /// 
+        /// </para>
+        /// </summary>
+        public string VPCZoneIdentifier
+        {
+            get { return this._vPCZoneIdentifier; }
+            set { this._vPCZoneIdentifier = value; }
+        }
+
+        // Check to see if VPCZoneIdentifier property is set
+        internal bool IsSetVPCZoneIdentifier()
+        {
+            return this._vPCZoneIdentifier != null;
+        }
+
     }
 }

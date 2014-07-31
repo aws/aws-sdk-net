@@ -12,24 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
+
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Returns information about the DescribeEngineDefaultParameters response and response metadata.
+    /// Configuration for accessing Amazon DescribeEngineDefaultParameters service
     /// </summary>
     public partial class DescribeEngineDefaultParametersResponse : DescribeEngineDefaultParametersResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the DescribeEngineDefaultParametersResult property.
-        /// Contains the result of a successful invocation of the DescribeEngineDefaultParameters
-        /// action.
-        /// 
+        /// Represents the output of a DescribeEngineDefaultParameters operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeEngineDefaultParametersResult class are now available on the DescribeEngineDefaultParametersResponse class. You should use the properties on DescribeEngineDefaultParametersResponse instead of accessing them through DescribeEngineDefaultParametersResult.")]
         public DescribeEngineDefaultParametersResult DescribeEngineDefaultParametersResult
         {
@@ -40,4 +36,3 @@ namespace Amazon.ElastiCache.Model
         }
     }
 }
-    

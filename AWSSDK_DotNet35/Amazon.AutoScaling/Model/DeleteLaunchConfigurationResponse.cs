@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the DeleteLaunchConfiguration response metadata.
-    /// The DeleteLaunchConfiguration operation has a void result type.
+    /// Configuration for accessing Amazon DeleteLaunchConfiguration service
     /// </summary>
-    public partial class DeleteLaunchConfigurationResponse : AmazonWebServiceResponse
+    public partial class DeleteLaunchConfigurationResponse : DeleteLaunchConfigurationResult
     {
+        /// <summary>
+        /// Gets and sets the DeleteLaunchConfigurationResult property.
+        /// Represents the output of a DeleteLaunchConfiguration operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DeleteLaunchConfigurationResult class are now available on the DeleteLaunchConfigurationResponse class. You should use the properties on DeleteLaunchConfigurationResponse instead of accessing them through DeleteLaunchConfigurationResult.")]
+        public DeleteLaunchConfigurationResult DeleteLaunchConfigurationResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

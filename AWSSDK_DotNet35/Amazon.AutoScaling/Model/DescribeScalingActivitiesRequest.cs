@@ -25,107 +25,108 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeScalingActivities operation.
-    /// <para> Returns the scaling activities for the specified Auto Scaling group. </para> <para> If the specified <c>ActivityIds</c> list is
-    /// empty, all the activities from the past six weeks are returned. Activities are sorted by the start time. Activities still in progress appear
-    /// first on the list. </para> <para> This action supports pagination. If the response includes a token, there are more records available. To
-    /// get the additional records, repeat the request with the response token as the <c>NextToken</c> parameter. </para>
+    /// Returns the scaling activities for the specified Auto Scaling group. 
+    /// 
+    ///  
+    /// <para>
+    ///  If the specified <code>ActivityIds</code> list is empty, all the activities from
+    /// the past six weeks are returned. Activities are sorted by the start time. Activities
+    /// still in progress appear first on the list. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  This action supports pagination. If the response includes a token, there are more
+    /// records available. To get the additional records, repeat the request with the response
+    /// token as the <code>NextToken</code> parameter. 
+    /// </para>
     /// </summary>
     public partial class DescribeScalingActivitiesRequest : AmazonAutoScalingRequest
     {
-        private List<string> activityIds = new List<string>();
-        private string autoScalingGroupName;
-        private int? maxRecords;
-        private string nextToken;
+        private List<string> _activityIds = new List<string>();
+        private string _autoScalingGroupName;
+        private int? _maxRecords;
+        private string _nextToken;
 
 
         /// <summary>
-        /// A list containing the activity IDs of the desired scaling activities. If this list is omitted, all activities are described. If an
-        /// <c>AutoScalingGroupName</c> is provided, the results are limited to that group. The list of requested activities cannot contain more than 50
-        /// items. If unknown activities are requested, they are ignored with no error.
-        ///  
+        /// Gets and sets the property ActivityIds. 
+        /// <para>
+        ///  A list containing the activity IDs of the desired scaling activities. If this list
+        /// is omitted, all activities are described. If an <code>AutoScalingGroupName</code>
+        /// is provided, the results are limited to that group. The list of requested activities
+        /// cannot contain more than 50 items. If unknown activities are requested, they are ignored
+        /// with no error. 
+        /// </para>
         /// </summary>
         public List<string> ActivityIds
         {
-            get { return this.activityIds; }
-            set { this.activityIds = value; }
+            get { return this._activityIds; }
+            set { this._activityIds = value; }
         }
 
         // Check to see if ActivityIds property is set
         internal bool IsSetActivityIds()
         {
-            return this.activityIds.Count > 0;
+            return this._activityIds != null && this._activityIds.Count > 0; 
         }
 
+
         /// <summary>
-        /// The name of the <a>AutoScalingGroup</a>.
-        ///  
+        /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1600</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  The name of the <a>AutoScalingGroup</a>. 
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
         {
-            get { return this.autoScalingGroupName; }
-            set { this.autoScalingGroupName = value; }
+            get { return this._autoScalingGroupName; }
+            set { this._autoScalingGroupName = value; }
         }
 
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;
+            return this._autoScalingGroupName != null;
         }
 
+
         /// <summary>
-        /// The maximum number of scaling activities to return.
-        ///  
+        /// Gets and sets the property MaxRecords. 
+        /// <para>
+        ///  The maximum number of scaling activities to return. 
+        /// </para>
         /// </summary>
         public int MaxRecords
         {
-            get { return this.maxRecords ?? default(int); }
-            set { this.maxRecords = value; }
+            get { return this._maxRecords.GetValueOrDefault(); }
+            set { this._maxRecords = value; }
         }
 
         // Check to see if MaxRecords property is set
         internal bool IsSetMaxRecords()
         {
-            return this.maxRecords.HasValue;
+            return this._maxRecords.HasValue; 
         }
 
+
         /// <summary>
-        /// A string that marks the start of the next batch of returned results for pagination.
-        ///  
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  A string that marks the start of the next batch of returned results for pagination.
+        /// 
         /// </para>
         /// </summary>
         public string NextToken
         {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;
+            return this._nextToken != null;
         }
 
     }
 }
-    

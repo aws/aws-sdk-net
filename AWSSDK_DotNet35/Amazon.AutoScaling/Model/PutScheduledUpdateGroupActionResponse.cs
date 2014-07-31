@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the PutScheduledUpdateGroupAction response metadata.
-    /// The PutScheduledUpdateGroupAction operation has a void result type.
+    /// Configuration for accessing Amazon PutScheduledUpdateGroupAction service
     /// </summary>
-    public partial class PutScheduledUpdateGroupActionResponse : AmazonWebServiceResponse
+    public partial class PutScheduledUpdateGroupActionResponse : PutScheduledUpdateGroupActionResult
     {
+        /// <summary>
+        /// Gets and sets the PutScheduledUpdateGroupActionResult property.
+        /// Represents the output of a PutScheduledUpdateGroupAction operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the PutScheduledUpdateGroupActionResult class are now available on the PutScheduledUpdateGroupActionResponse class. You should use the properties on PutScheduledUpdateGroupActionResponse instead of accessing them through PutScheduledUpdateGroupActionResult.")]
+        public PutScheduledUpdateGroupActionResult PutScheduledUpdateGroupActionResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

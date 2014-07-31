@@ -25,12 +25,10 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeMetricCollectionTypes operation.
-    /// <para> Returns a list of metrics and a corresponding list of granularities for each metric. </para>
+    /// Returns a list of metrics and a corresponding list of granularities for each metric.
     /// </summary>
     public partial class DescribeMetricCollectionTypesRequest : AmazonAutoScalingRequest
     {
 
-
     }
 }
-    

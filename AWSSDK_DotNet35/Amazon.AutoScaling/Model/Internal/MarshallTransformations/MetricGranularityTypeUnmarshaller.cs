@@ -12,63 +12,69 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   MetricGranularityType Unmarshaller
-     /// </summary>
-    internal class MetricGranularityTypeUnmarshaller : IUnmarshaller<MetricGranularityType, XmlUnmarshallerContext>, IUnmarshaller<MetricGranularityType, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for MetricGranularityType Object
+    /// </summary>  
+    public class MetricGranularityTypeUnmarshaller : IUnmarshaller<MetricGranularityType, XmlUnmarshallerContext>, IUnmarshaller<MetricGranularityType, JsonUnmarshallerContext>
     {
-        public MetricGranularityType Unmarshall(XmlUnmarshallerContext context) 
+        public MetricGranularityType Unmarshall(XmlUnmarshallerContext context)
         {
-            MetricGranularityType metricGranularityType = new MetricGranularityType();
+            MetricGranularityType unmarshalledObject = new MetricGranularityType();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("Granularity", targetDepth))
                     {
-                        metricGranularityType.Granularity = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Granularity = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return metricGranularityType;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return metricGranularityType;
+            return unmarshalledObject;
         }
 
-        public MetricGranularityType Unmarshall(JsonUnmarshallerContext context) 
+        public MetricGranularityType Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static MetricGranularityTypeUnmarshaller instance;
 
-        public static MetricGranularityTypeUnmarshaller GetInstance() 
+        private static MetricGranularityTypeUnmarshaller _instance = new MetricGranularityTypeUnmarshaller();        
+
+        public static MetricGranularityTypeUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new MetricGranularityTypeUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

@@ -25,105 +25,98 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribePolicies operation.
-    /// <para> Returns descriptions of what each policy does. This action supports pagination. If the response includes a token, there are more
-    /// records available. To get the additional records, repeat the request with the response token as the <c>NextToken</c> parameter. </para>
+    /// Returns descriptions of what each policy does. This action supports pagination. If
+    /// the response includes a token, there are more records available. To get the additional
+    /// records, repeat the request with the response token as the <code>NextToken</code>
+    /// parameter.
     /// </summary>
     public partial class DescribePoliciesRequest : AmazonAutoScalingRequest
     {
-        private string autoScalingGroupName;
-        private List<string> policyNames = new List<string>();
-        private string nextToken;
-        private int? maxRecords;
+        private string _autoScalingGroupName;
+        private int? _maxRecords;
+        private string _nextToken;
+        private List<string> _policyNames = new List<string>();
 
 
         /// <summary>
-        /// The name of the Auto Scaling group.
-        ///  
+        /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1600</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  The name of the Auto Scaling group. 
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
         {
-            get { return this.autoScalingGroupName; }
-            set { this.autoScalingGroupName = value; }
+            get { return this._autoScalingGroupName; }
+            set { this._autoScalingGroupName = value; }
         }
 
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;
+            return this._autoScalingGroupName != null;
         }
+
 
         /// <summary>
-        /// A list of policy names or policy ARNs to be described. If this list is omitted, all policy names are described. If an auto scaling group
-        /// name is provided, the results are limited to that group. The list of requested policy names cannot contain more than 50 items. If unknown
-        /// policy names are requested, they are ignored with no error.
-        ///  
-        /// </summary>
-        public List<string> PolicyNames
-        {
-            get { return this.policyNames; }
-            set { this.policyNames = value; }
-        }
-
-        // Check to see if PolicyNames property is set
-        internal bool IsSetPolicyNames()
-        {
-            return this.policyNames.Count > 0;
-        }
-
-        /// <summary>
-        /// A string that is used to mark the start of the next batch of returned results for pagination.
-        ///  
+        /// Gets and sets the property MaxRecords. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  The maximum number of policies that will be described with each call. 
         /// </para>
-        /// </summary>
-        public string NextToken
-        {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
-        }
-
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
-        {
-            return this.nextToken != null;
-        }
-
-        /// <summary>
-        /// The maximum number of policies that will be described with each call.
-        ///  
         /// </summary>
         public int MaxRecords
         {
-            get { return this.maxRecords ?? default(int); }
-            set { this.maxRecords = value; }
+            get { return this._maxRecords.GetValueOrDefault(); }
+            set { this._maxRecords = value; }
         }
 
         // Check to see if MaxRecords property is set
         internal bool IsSetMaxRecords()
         {
-            return this.maxRecords.HasValue;
+            return this._maxRecords.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        ///  A string that is used to mark the start of the next batch of returned results for
+        /// pagination. 
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property PolicyNames. 
+        /// <para>
+        ///  A list of policy names or policy ARNs to be described. If this list is omitted, all
+        /// policy names are described. If an auto scaling group name is provided, the results
+        /// are limited to that group. The list of requested policy names cannot contain more
+        /// than 50 items. If unknown policy names are requested, they are ignored with no error.
+        /// 
+        /// </para>
+        /// </summary>
+        public List<string> PolicyNames
+        {
+            get { return this._policyNames; }
+            set { this._policyNames = value; }
+        }
+
+        // Check to see if PolicyNames property is set
+        internal bool IsSetPolicyNames()
+        {
+            return this._policyNames != null && this._policyNames.Count > 0; 
         }
 
     }
 }
-    

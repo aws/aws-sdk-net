@@ -25,67 +25,79 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the ResetCacheParameterGroup operation.
-    /// <para>The <i>ResetCacheParameterGroup</i> operation modifies the parameters of a cache parameter group to the engine or system default
-    /// value. You can reset specific parameters by submitting a list of parameter names. To reset the entire cache parameter group, specify the
-    /// <i>ResetAllParameters</i> and <i>CacheParameterGroupName</i> parameters.</para>
+    /// The <i>ResetCacheParameterGroup</i> operation modifies the parameters of a cache parameter
+    /// group to the engine or system default value. You can reset specific parameters by
+    /// submitting a list of parameter names. To reset the entire cache parameter group, specify
+    /// the <i>ResetAllParameters</i> and <i>CacheParameterGroupName</i> parameters.
     /// </summary>
     public partial class ResetCacheParameterGroupRequest : AmazonElastiCacheRequest
     {
-        private string cacheParameterGroupName;
-        private bool? resetAllParameters;
-        private List<ParameterNameValue> parameterNameValues = new List<ParameterNameValue>();
+        private string _cacheParameterGroupName;
+        private List<ParameterNameValue> _parameterNameValues = new List<ParameterNameValue>();
+        private bool? _resetAllParameters;
 
 
         /// <summary>
+        /// Gets and sets the property CacheParameterGroupName. 
+        /// <para>
         /// The name of the cache parameter group to reset.
-        ///  
+        /// </para>
         /// </summary>
         public string CacheParameterGroupName
         {
-            get { return this.cacheParameterGroupName; }
-            set { this.cacheParameterGroupName = value; }
+            get { return this._cacheParameterGroupName; }
+            set { this._cacheParameterGroupName = value; }
         }
 
         // Check to see if CacheParameterGroupName property is set
         internal bool IsSetCacheParameterGroupName()
         {
-            return this.cacheParameterGroupName != null;
+            return this._cacheParameterGroupName != null;
         }
+
 
         /// <summary>
-        /// If <i>true</i>, all parameters in the cache parameter group will be reset to default values. If <i>false</i>, no such action occurs. Valid
-        /// values: <c>true</c> | <c>false</c>
-        ///  
-        /// </summary>
-        public bool ResetAllParameters
-        {
-            get { return this.resetAllParameters ?? default(bool); }
-            set { this.resetAllParameters = value; }
-        }
-
-        // Check to see if ResetAllParameters property is set
-        internal bool IsSetResetAllParameters()
-        {
-            return this.resetAllParameters.HasValue;
-        }
-
-        /// <summary>
-        /// An array of parameter names to be reset. If you are not resetting the entire cache parameter group, you must specify at least one parameter
-        /// name.
-        ///  
+        /// Gets and sets the property ParameterNameValues. 
+        /// <para>
+        /// An array of parameter names to be reset. If you are not resetting the entire cache
+        /// parameter group, you must specify at least one parameter name.
+        /// </para>
         /// </summary>
         public List<ParameterNameValue> ParameterNameValues
         {
-            get { return this.parameterNameValues; }
-            set { this.parameterNameValues = value; }
+            get { return this._parameterNameValues; }
+            set { this._parameterNameValues = value; }
         }
 
         // Check to see if ParameterNameValues property is set
         internal bool IsSetParameterNameValues()
         {
-            return this.parameterNameValues.Count > 0;
+            return this._parameterNameValues != null && this._parameterNameValues.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ResetAllParameters. 
+        /// <para>
+        /// If <i>true</i>, all parameters in the cache parameter group will be reset to default
+        /// values. If <i>false</i>, no such action occurs.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>true</code> | <code>false</code>
+        /// </para>
+        /// </summary>
+        public bool ResetAllParameters
+        {
+            get { return this._resetAllParameters.GetValueOrDefault(); }
+            set { this._resetAllParameters = value; }
+        }
+
+        // Check to see if ResetAllParameters property is set
+        internal bool IsSetResetAllParameters()
+        {
+            return this._resetAllParameters.HasValue; 
         }
 
     }
 }
-    

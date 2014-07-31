@@ -17,46 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The <c>PolicyARNType</c> data type. </para>
+    /// The <code>PolicyARNType</code> data type.
     /// </summary>
     public partial class PutScalingPolicyResult : AmazonWebServiceResponse
     {
-        
-        private string policyARN;
+        private string _policyARN;
 
 
         /// <summary>
-        /// A policy's Amazon Resource Name (ARN).
-        ///  
+        /// Gets and sets the property PolicyARN. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1600</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  A policy's Amazon Resource Name (ARN). 
         /// </para>
         /// </summary>
         public string PolicyARN
         {
-            get { return this.policyARN; }
-            set { this.policyARN = value; }
+            get { return this._policyARN; }
+            set { this._policyARN = value; }
         }
 
         // Check to see if PolicyARN property is set
         internal bool IsSetPolicyARN()
         {
-            return this.policyARN != null;
+            return this._policyARN != null;
         }
+
     }
 }

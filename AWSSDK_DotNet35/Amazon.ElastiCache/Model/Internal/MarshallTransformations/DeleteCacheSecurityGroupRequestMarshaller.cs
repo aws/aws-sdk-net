@@ -14,32 +14,36 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Cache Security Group Request Marshaller
+    /// DeleteCacheSecurityGroup Request Marshaller
     /// </summary>       
     public class DeleteCacheSecurityGroupRequestMarshaller : IMarshaller<IRequest, DeleteCacheSecurityGroupRequest>
     {
-        public IRequest Marshall(DeleteCacheSecurityGroupRequest deleteCacheSecurityGroupRequest)
+        public IRequest Marshall(DeleteCacheSecurityGroupRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(deleteCacheSecurityGroupRequest, "AmazonElastiCache");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElastiCache");
             request.Parameters.Add("Action", "DeleteCacheSecurityGroup");
-            request.Parameters.Add("Version", "2014-03-24");
-            if (deleteCacheSecurityGroupRequest != null && deleteCacheSecurityGroupRequest.IsSetCacheSecurityGroupName())
-            {
-                request.Parameters.Add("CacheSecurityGroupName", StringUtils.FromString(deleteCacheSecurityGroupRequest.CacheSecurityGroupName));
-            }
+            request.Parameters.Add("Version", "2014-07-15");
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetCacheSecurityGroupName())
+                {
+                    request.Parameters.Add("CacheSecurityGroupName", StringUtils.FromString(publicRequest.CacheSecurityGroupName));
+                }
+            }
             return request;
         }
     }

@@ -17,50 +17,58 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para>Represents the output of a <i>DescribeReplicationGroups</i> operation.</para>
+    /// Represents the output of a <i>DescribeReplicationGroups</i> operation.
     /// </summary>
     public partial class DescribeReplicationGroupsResult : AmazonWebServiceResponse
     {
-        
-        private string marker;
-        private List<ReplicationGroup> replicationGroups = new List<ReplicationGroup>();
+        private string _marker;
+        private List<ReplicationGroup> _replicationGroups = new List<ReplicationGroup>();
 
 
         /// <summary>
+        /// Gets and sets the property Marker. 
+        /// <para>
         /// Provides an identifier to allow retrieval of paginated results.
-        ///  
+        /// </para>
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
         }
 
+
         /// <summary>
-        /// A list of replication groups. Each item in the list contains detailed information about one replication group.
-        ///  
+        /// Gets and sets the property ReplicationGroups. 
+        /// <para>
+        /// A list of replication groups. Each item in the list contains detailed information
+        /// about one replication group.
+        /// </para>
         /// </summary>
         public List<ReplicationGroup> ReplicationGroups
         {
-            get { return this.replicationGroups; }
-            set { this.replicationGroups = value; }
+            get { return this._replicationGroups; }
+            set { this._replicationGroups = value; }
         }
 
         // Check to see if ReplicationGroups property is set
         internal bool IsSetReplicationGroups()
         {
-            return this.replicationGroups.Count > 0;
+            return this._replicationGroups != null && this._replicationGroups.Count > 0; 
         }
+
     }
 }

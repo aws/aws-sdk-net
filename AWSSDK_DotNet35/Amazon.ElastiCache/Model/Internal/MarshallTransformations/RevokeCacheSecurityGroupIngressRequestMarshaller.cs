@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Revoke Cache Security Group Ingress Request Marshaller
+    /// RevokeCacheSecurityGroupIngress Request Marshaller
     /// </summary>       
     public class RevokeCacheSecurityGroupIngressRequestMarshaller : IMarshaller<IRequest, RevokeCacheSecurityGroupIngressRequest>
     {
-        public IRequest Marshall(RevokeCacheSecurityGroupIngressRequest revokeCacheSecurityGroupIngressRequest)
+        public IRequest Marshall(RevokeCacheSecurityGroupIngressRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(revokeCacheSecurityGroupIngressRequest, "AmazonElastiCache");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElastiCache");
             request.Parameters.Add("Action", "RevokeCacheSecurityGroupIngress");
-            request.Parameters.Add("Version", "2014-03-24");
-            if (revokeCacheSecurityGroupIngressRequest != null && revokeCacheSecurityGroupIngressRequest.IsSetCacheSecurityGroupName())
-            {
-                request.Parameters.Add("CacheSecurityGroupName", StringUtils.FromString(revokeCacheSecurityGroupIngressRequest.CacheSecurityGroupName));
-            }
-            if (revokeCacheSecurityGroupIngressRequest != null && revokeCacheSecurityGroupIngressRequest.IsSetEC2SecurityGroupName())
-            {
-                request.Parameters.Add("EC2SecurityGroupName", StringUtils.FromString(revokeCacheSecurityGroupIngressRequest.EC2SecurityGroupName));
-            }
-            if (revokeCacheSecurityGroupIngressRequest != null && revokeCacheSecurityGroupIngressRequest.IsSetEC2SecurityGroupOwnerId())
-            {
-                request.Parameters.Add("EC2SecurityGroupOwnerId", StringUtils.FromString(revokeCacheSecurityGroupIngressRequest.EC2SecurityGroupOwnerId));
-            }
+            request.Parameters.Add("Version", "2014-07-15");
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetCacheSecurityGroupName())
+                {
+                    request.Parameters.Add("CacheSecurityGroupName", StringUtils.FromString(publicRequest.CacheSecurityGroupName));
+                }
+                if(publicRequest.IsSetEC2SecurityGroupName())
+                {
+                    request.Parameters.Add("EC2SecurityGroupName", StringUtils.FromString(publicRequest.EC2SecurityGroupName));
+                }
+                if(publicRequest.IsSetEC2SecurityGroupOwnerId())
+                {
+                    request.Parameters.Add("EC2SecurityGroupOwnerId", StringUtils.FromString(publicRequest.EC2SecurityGroupOwnerId));
+                }
+            }
             return request;
         }
     }

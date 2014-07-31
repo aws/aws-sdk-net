@@ -17,67 +17,78 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para>Represents the output of a <i>CreateCacheParameterGroup</i> operation.</para>
+    /// Represents the output of a <i>CreateCacheParameterGroup</i> operation.
     /// </summary>
-    public partial class CacheParameterGroup : AmazonWebServiceResponse
+    public partial class CacheParameterGroup
     {
-        
-        private string cacheParameterGroupName;
-        private string cacheParameterGroupFamily;
-        private string description;
+        private string _cacheParameterGroupFamily;
+        private string _cacheParameterGroupName;
+        private string _description;
 
 
         /// <summary>
-        /// The name of the cache parameter group.
-        ///  
-        /// </summary>
-        public string CacheParameterGroupName
-        {
-            get { return this.cacheParameterGroupName; }
-            set { this.cacheParameterGroupName = value; }
-        }
-
-        // Check to see if CacheParameterGroupName property is set
-        internal bool IsSetCacheParameterGroupName()
-        {
-            return this.cacheParameterGroupName != null;
-        }
-
-        /// <summary>
-        /// The name of the cache parameter group family that this cache parameter group is compatible with.
-        ///  
+        /// Gets and sets the property CacheParameterGroupFamily. 
+        /// <para>
+        /// The name of the cache parameter group family that this cache parameter group is compatible
+        /// with.
+        /// </para>
         /// </summary>
         public string CacheParameterGroupFamily
         {
-            get { return this.cacheParameterGroupFamily; }
-            set { this.cacheParameterGroupFamily = value; }
+            get { return this._cacheParameterGroupFamily; }
+            set { this._cacheParameterGroupFamily = value; }
         }
 
         // Check to see if CacheParameterGroupFamily property is set
         internal bool IsSetCacheParameterGroupFamily()
         {
-            return this.cacheParameterGroupFamily != null;
+            return this._cacheParameterGroupFamily != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property CacheParameterGroupName. 
+        /// <para>
+        /// The name of the cache parameter group.
+        /// </para>
+        /// </summary>
+        public string CacheParameterGroupName
+        {
+            get { return this._cacheParameterGroupName; }
+            set { this._cacheParameterGroupName = value; }
+        }
+
+        // Check to see if CacheParameterGroupName property is set
+        internal bool IsSetCacheParameterGroupName()
+        {
+            return this._cacheParameterGroupName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
         /// The description for this cache parameter group.
-        ///  
+        /// </para>
         /// </summary>
         public string Description
         {
-            get { return this.description; }
-            set { this.description = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
 
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;
+            return this._description != null;
         }
+
     }
 }

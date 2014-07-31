@@ -14,47 +14,49 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Enable Metrics Collection Request Marshaller
+    /// EnableMetricsCollection Request Marshaller
     /// </summary>       
     public class EnableMetricsCollectionRequestMarshaller : IMarshaller<IRequest, EnableMetricsCollectionRequest>
     {
-        public IRequest Marshall(EnableMetricsCollectionRequest enableMetricsCollectionRequest)
+        public IRequest Marshall(EnableMetricsCollectionRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(enableMetricsCollectionRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AutoScaling");
             request.Parameters.Add("Action", "EnableMetricsCollection");
             request.Parameters.Add("Version", "2011-01-01");
-            if (enableMetricsCollectionRequest != null && enableMetricsCollectionRequest.IsSetAutoScalingGroupName())
-            {
-                request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(enableMetricsCollectionRequest.AutoScalingGroupName));
-            }
-            if (enableMetricsCollectionRequest != null)
-            {
-                List<string> metricsList = enableMetricsCollectionRequest.Metrics;
 
-                int metricsListIndex = 1;
-                foreach (string metricsListValue in metricsList)
-                { 
-                    request.Parameters.Add("Metrics.member." + metricsListIndex, StringUtils.FromString(metricsListValue));
-                    metricsListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAutoScalingGroupName())
+                {
+                    request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
+                }
+                if(publicRequest.IsSetGranularity())
+                {
+                    request.Parameters.Add("Granularity", StringUtils.FromString(publicRequest.Granularity));
+                }
+                if(publicRequest.IsSetMetrics())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Metrics)
+                    {
+                        request.Parameters.Add("Metrics" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
-            if (enableMetricsCollectionRequest != null && enableMetricsCollectionRequest.IsSetGranularity())
-            {
-                request.Parameters.Add("Granularity", StringUtils.FromString(enableMetricsCollectionRequest.Granularity));
-            }
-
             return request;
         }
     }

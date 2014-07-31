@@ -12,17 +12,13 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeReplicationGroups response and response metadata.
+    /// Configuration for accessing Amazon DescribeReplicationGroups service
     /// </summary>
     public partial class DescribeReplicationGroupsResponse : DescribeReplicationGroupsResult
     {
@@ -40,4 +36,3 @@ namespace Amazon.ElastiCache.Model
         }
     }
 }
-    

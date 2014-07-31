@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the CreateAutoScalingGroup response metadata.
-    /// The CreateAutoScalingGroup operation has a void result type.
+    /// Configuration for accessing Amazon CreateAutoScalingGroup service
     /// </summary>
-    public partial class CreateAutoScalingGroupResponse : AmazonWebServiceResponse
+    public partial class CreateAutoScalingGroupResponse : CreateAutoScalingGroupResult
     {
+        /// <summary>
+        /// Gets and sets the CreateAutoScalingGroupResult property.
+        /// Represents the output of a CreateAutoScalingGroup operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the CreateAutoScalingGroupResult class are now available on the CreateAutoScalingGroupResponse class. You should use the properties on CreateAutoScalingGroupResponse instead of accessing them through CreateAutoScalingGroupResult.")]
+        public CreateAutoScalingGroupResult CreateAutoScalingGroupResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

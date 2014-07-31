@@ -25,63 +25,83 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the PurchaseReservedCacheNodesOffering operation.
-    /// <para>The <i>PurchaseReservedCacheNodesOffering</i> operation allows you to purchase a reserved cache node offering.</para>
+    /// The <i>PurchaseReservedCacheNodesOffering</i> operation allows you to purchase a reserved
+    /// cache node offering.
     /// </summary>
     public partial class PurchaseReservedCacheNodesOfferingRequest : AmazonElastiCacheRequest
     {
-        private string reservedCacheNodesOfferingId;
-        private string reservedCacheNodeId;
-        private int? cacheNodeCount;
+        private int? _cacheNodeCount;
+        private string _reservedCacheNodeId;
+        private string _reservedCacheNodesOfferingId;
 
 
         /// <summary>
-        /// The ID of the reserved cache node offering to purchase. Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706
+        /// Gets and sets the property CacheNodeCount. 
+        /// <para>
+        /// The number of cache node instances to reserve.
+        /// </para>
         ///  
-        /// </summary>
-        public string ReservedCacheNodesOfferingId
-        {
-            get { return this.reservedCacheNodesOfferingId; }
-            set { this.reservedCacheNodesOfferingId = value; }
-        }
-
-        // Check to see if ReservedCacheNodesOfferingId property is set
-        internal bool IsSetReservedCacheNodesOfferingId()
-        {
-            return this.reservedCacheNodesOfferingId != null;
-        }
-
-        /// <summary>
-        /// A customer-specified identifier to track this reservation. Example: myreservationID
-        ///  
-        /// </summary>
-        public string ReservedCacheNodeId
-        {
-            get { return this.reservedCacheNodeId; }
-            set { this.reservedCacheNodeId = value; }
-        }
-
-        // Check to see if ReservedCacheNodeId property is set
-        internal bool IsSetReservedCacheNodeId()
-        {
-            return this.reservedCacheNodeId != null;
-        }
-
-        /// <summary>
-        /// The number of cache node instances to reserve. Default: <c>1</c>
-        ///  
+        /// <para>
+        /// Default: <code>1</code>
+        /// </para>
         /// </summary>
         public int CacheNodeCount
         {
-            get { return this.cacheNodeCount ?? default(int); }
-            set { this.cacheNodeCount = value; }
+            get { return this._cacheNodeCount.GetValueOrDefault(); }
+            set { this._cacheNodeCount = value; }
         }
 
         // Check to see if CacheNodeCount property is set
         internal bool IsSetCacheNodeCount()
         {
-            return this.cacheNodeCount.HasValue;
+            return this._cacheNodeCount.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ReservedCacheNodeId. 
+        /// <para>
+        /// A customer-specified identifier to track this reservation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: myreservationID
+        /// </para>
+        /// </summary>
+        public string ReservedCacheNodeId
+        {
+            get { return this._reservedCacheNodeId; }
+            set { this._reservedCacheNodeId = value; }
+        }
+
+        // Check to see if ReservedCacheNodeId property is set
+        internal bool IsSetReservedCacheNodeId()
+        {
+            return this._reservedCacheNodeId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ReservedCacheNodesOfferingId. 
+        /// <para>
+        /// The ID of the reserved cache node offering to purchase.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706
+        /// </para>
+        /// </summary>
+        public string ReservedCacheNodesOfferingId
+        {
+            get { return this._reservedCacheNodesOfferingId; }
+            set { this._reservedCacheNodesOfferingId = value; }
+        }
+
+        // Check to see if ReservedCacheNodesOfferingId property is set
+        internal bool IsSetReservedCacheNodesOfferingId()
+        {
+            return this._reservedCacheNodesOfferingId != null;
         }
 
     }
 }
-    

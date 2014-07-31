@@ -25,93 +25,82 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the ExecutePolicy operation.
-    /// <para>Executes the specified policy. </para>
+    /// Executes the specified policy.
     /// </summary>
     public partial class ExecutePolicyRequest : AmazonAutoScalingRequest
     {
-        private string autoScalingGroupName;
-        private string policyName;
-        private bool? honorCooldown;
+        private string _autoScalingGroupName;
+        private bool? _honorCooldown;
+        private string _policyName;
 
 
         /// <summary>
-        /// The name or the Amazon Resource Name (ARN) of the Auto Scaling group.
-        ///  
+        /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1600</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  The name or the Amazon Resource Name (ARN) of the Auto Scaling group. 
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
         {
-            get { return this.autoScalingGroupName; }
-            set { this.autoScalingGroupName = value; }
+            get { return this._autoScalingGroupName; }
+            set { this._autoScalingGroupName = value; }
         }
 
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;
+            return this._autoScalingGroupName != null;
         }
 
+
         /// <summary>
-        /// The name or ARN of the policy you want to run.
+        /// Gets and sets the property HonorCooldown. 
+        /// <para>
+        /// Set to <code>True</code> if you want Auto Scaling to wait for the cooldown period
+        /// associated with the Auto Scaling group to complete before executing the policy.
+        /// </para>
         ///  
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1600</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// Set to <code>False</code> if you want Auto Scaling to circumvent the cooldown period
+        /// associated with the Auto Scaling group and execute the policy before the cooldown
+        /// period ends. 
         /// </para>
-        /// </summary>
-        public string PolicyName
-        {
-            get { return this.policyName; }
-            set { this.policyName = value; }
-        }
-
-        // Check to see if PolicyName property is set
-        internal bool IsSetPolicyName()
-        {
-            return this.policyName != null;
-        }
-
-        /// <summary>
-        /// Set to <c>True</c> if you want Auto Scaling to wait for the cooldown period associated with the Auto Scaling group to complete before
-        /// executing the policy. Set to <c>False</c> if you want Auto Scaling to circumvent the cooldown period associated with the Auto Scaling group
-        /// and execute the policy before the cooldown period ends. For information about cooldown period, see <a
-        /// href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown Period</a> in the <i>Auto Scaling
-        /// Developer Guide</i>.
         ///  
+        /// <para>
+        /// For information about cooldown period, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown
+        /// Period</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// </para>
         /// </summary>
         public bool HonorCooldown
         {
-            get { return this.honorCooldown ?? default(bool); }
-            set { this.honorCooldown = value; }
+            get { return this._honorCooldown.GetValueOrDefault(); }
+            set { this._honorCooldown = value; }
         }
 
         // Check to see if HonorCooldown property is set
         internal bool IsSetHonorCooldown()
         {
-            return this.honorCooldown.HasValue;
+            return this._honorCooldown.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property PolicyName. 
+        /// <para>
+        ///  The name or ARN of the policy you want to run. 
+        /// </para>
+        /// </summary>
+        public string PolicyName
+        {
+            get { return this._policyName; }
+            set { this._policyName = value; }
+        }
+
+        // Check to see if PolicyName property is set
+        internal bool IsSetPolicyName()
+        {
+            return this._policyName != null;
         }
 
     }
 }
-    

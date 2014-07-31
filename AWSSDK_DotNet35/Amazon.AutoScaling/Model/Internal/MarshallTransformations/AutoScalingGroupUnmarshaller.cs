@@ -12,177 +12,190 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   AutoScalingGroup Unmarshaller
-     /// </summary>
-    internal class AutoScalingGroupUnmarshaller : IUnmarshaller<AutoScalingGroup, XmlUnmarshallerContext>, IUnmarshaller<AutoScalingGroup, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for AutoScalingGroup Object
+    /// </summary>  
+    public class AutoScalingGroupUnmarshaller : IUnmarshaller<AutoScalingGroup, XmlUnmarshallerContext>, IUnmarshaller<AutoScalingGroup, JsonUnmarshallerContext>
     {
-        public AutoScalingGroup Unmarshall(XmlUnmarshallerContext context) 
+        public AutoScalingGroup Unmarshall(XmlUnmarshallerContext context)
         {
-            AutoScalingGroup autoScalingGroup = new AutoScalingGroup();
+            AutoScalingGroup unmarshalledObject = new AutoScalingGroup();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("AutoScalingGroupName", targetDepth))
-                    {
-                        autoScalingGroup.AutoScalingGroupName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("AutoScalingGroupARN", targetDepth))
                     {
-                        autoScalingGroup.AutoScalingGroupARN = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AutoScalingGroupARN = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("LaunchConfigurationName", targetDepth))
+                    if (context.TestExpression("AutoScalingGroupName", targetDepth))
                     {
-                        autoScalingGroup.LaunchConfigurationName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("MinSize", targetDepth))
-                    {
-                        autoScalingGroup.MinSize = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("MaxSize", targetDepth))
-                    {
-                        autoScalingGroup.MaxSize = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("DesiredCapacity", targetDepth))
-                    {
-                        autoScalingGroup.DesiredCapacity = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("DefaultCooldown", targetDepth))
-                    {
-                        autoScalingGroup.DefaultCooldown = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AutoScalingGroupName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("AvailabilityZones/member", targetDepth))
                     {
-                        autoScalingGroup.AvailabilityZones.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("LoadBalancerNames/member", targetDepth))
-                    {
-                        autoScalingGroup.LoadBalancerNames.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("HealthCheckType", targetDepth))
-                    {
-                        autoScalingGroup.HealthCheckType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("HealthCheckGracePeriod", targetDepth))
-                    {
-                        autoScalingGroup.HealthCheckGracePeriod = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Instances/member", targetDepth))
-                    {
-                        autoScalingGroup.Instances.Add(InstanceUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AvailabilityZones.Add(item);
                         continue;
                     }
                     if (context.TestExpression("CreatedTime", targetDepth))
                     {
-                        autoScalingGroup.CreatedTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("SuspendedProcesses/member", targetDepth))
+                    if (context.TestExpression("DefaultCooldown", targetDepth))
                     {
-                        autoScalingGroup.SuspendedProcesses.Add(SuspendedProcessUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.DefaultCooldown = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("PlacementGroup", targetDepth))
+                    if (context.TestExpression("DesiredCapacity", targetDepth))
                     {
-                        autoScalingGroup.PlacementGroup = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("VPCZoneIdentifier", targetDepth))
-                    {
-                        autoScalingGroup.VPCZoneIdentifier = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.DesiredCapacity = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("EnabledMetrics/member", targetDepth))
                     {
-                        autoScalingGroup.EnabledMetrics.Add(EnabledMetricUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = EnabledMetricUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.EnabledMetrics.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("HealthCheckGracePeriod", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.HealthCheckGracePeriod = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("HealthCheckType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.HealthCheckType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Instances/member", targetDepth))
+                    {
+                        var unmarshaller = InstanceUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Instances.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("LaunchConfigurationName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.LaunchConfigurationName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("LoadBalancerNames/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.LoadBalancerNames.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("MaxSize", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.MaxSize = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MinSize", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.MinSize = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PlacementGroup", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PlacementGroup = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Status", targetDepth))
                     {
-                        autoScalingGroup.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SuspendedProcesses/member", targetDepth))
+                    {
+                        var unmarshaller = SuspendedProcessUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SuspendedProcesses.Add(item);
                         continue;
                     }
                     if (context.TestExpression("Tags/member", targetDepth))
                     {
-                        autoScalingGroup.Tags.Add(TagDescriptionUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = TagDescriptionUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Tags.Add(item);
                         continue;
                     }
                     if (context.TestExpression("TerminationPolicies/member", targetDepth))
                     {
-                        autoScalingGroup.TerminationPolicies.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.TerminationPolicies.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("VPCZoneIdentifier", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VPCZoneIdentifier = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return autoScalingGroup;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return autoScalingGroup;
+            return unmarshalledObject;
         }
 
-        public AutoScalingGroup Unmarshall(JsonUnmarshallerContext context) 
+        public AutoScalingGroup Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static AutoScalingGroupUnmarshaller instance;
 
-        public static AutoScalingGroupUnmarshaller GetInstance() 
+        private static AutoScalingGroupUnmarshaller _instance = new AutoScalingGroupUnmarshaller();        
+
+        public static AutoScalingGroupUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new AutoScalingGroupUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

@@ -12,84 +12,89 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   EngineDefaults Unmarshaller
-     /// </summary>
-    internal class EngineDefaultsUnmarshaller : IUnmarshaller<EngineDefaults, XmlUnmarshallerContext>, IUnmarshaller<EngineDefaults, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for EngineDefaults Object
+    /// </summary>  
+    public class EngineDefaultsUnmarshaller : IUnmarshaller<EngineDefaults, XmlUnmarshallerContext>, IUnmarshaller<EngineDefaults, JsonUnmarshallerContext>
     {
-        public EngineDefaults Unmarshall(XmlUnmarshallerContext context) 
+        public EngineDefaults Unmarshall(XmlUnmarshallerContext context)
         {
-            EngineDefaults engineDefaults = new EngineDefaults();
+            EngineDefaults unmarshalledObject = new EngineDefaults();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            if (context.IsStartOfDocument) 
-               targetDepth++;
-            
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("CacheNodeTypeSpecificParameters/CacheNodeTypeSpecificParameter", targetDepth))
+                    {
+                        var unmarshaller = CacheNodeTypeSpecificParameterUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.CacheNodeTypeSpecificParameters.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("CacheParameterGroupFamily", targetDepth))
                     {
-                        engineDefaults.CacheParameterGroupFamily = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CacheParameterGroupFamily = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Marker", targetDepth))
                     {
-                        engineDefaults.Marker = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Marker = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Parameters/Parameter", targetDepth))
                     {
-                        engineDefaults.Parameters.Add(ParameterUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("CacheNodeTypeSpecificParameters/CacheNodeTypeSpecificParameter", targetDepth))
-                    {
-                        engineDefaults.CacheNodeTypeSpecificParameters.Add(CacheNodeTypeSpecificParameterUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = ParameterUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Parameters.Add(item);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return engineDefaults;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return engineDefaults;
+            return unmarshalledObject;
         }
 
-        public EngineDefaults Unmarshall(JsonUnmarshallerContext context) 
+        public EngineDefaults Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static EngineDefaultsUnmarshaller instance;
 
-        public static EngineDefaultsUnmarshaller GetInstance() 
+        private static EngineDefaultsUnmarshaller _instance = new EngineDefaultsUnmarshaller();        
+
+        public static EngineDefaultsUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new EngineDefaultsUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

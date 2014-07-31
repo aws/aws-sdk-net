@@ -18,49 +18,58 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para>Represents a cache cluster's status within a particular cache security group.</para>
+    /// Represents a cache cluster's status within a particular cache security group.
     /// </summary>
     public partial class CacheSecurityGroupMembership
     {
-        
-        private string cacheSecurityGroupName;
-        private string status;
+        private string _cacheSecurityGroupName;
+        private string _status;
 
 
         /// <summary>
+        /// Gets and sets the property CacheSecurityGroupName. 
+        /// <para>
         /// The name of the cache security group.
-        ///  
+        /// </para>
         /// </summary>
         public string CacheSecurityGroupName
         {
-            get { return this.cacheSecurityGroupName; }
-            set { this.cacheSecurityGroupName = value; }
+            get { return this._cacheSecurityGroupName; }
+            set { this._cacheSecurityGroupName = value; }
         }
 
         // Check to see if CacheSecurityGroupName property is set
         internal bool IsSetCacheSecurityGroupName()
         {
-            return this.cacheSecurityGroupName != null;
+            return this._cacheSecurityGroupName != null;
         }
 
+
         /// <summary>
-        /// The membership status in the cache security group. The status changes when a cache security group is modified, or when the cache security
-        /// groups assigned to a cache cluster are modified.
-        ///  
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The membership status in the cache security group. The status changes when a cache
+        /// security group is modified, or when the cache security groups assigned to a cache
+        /// cluster are modified.
+        /// </para>
         /// </summary>
         public string Status
         {
-            get { return this.status; }
-            set { this.status = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;
+            return this._status != null;
         }
+
     }
 }

@@ -14,51 +14,53 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Policies Request Marshaller
+    /// DescribePolicies Request Marshaller
     /// </summary>       
     public class DescribePoliciesRequestMarshaller : IMarshaller<IRequest, DescribePoliciesRequest>
     {
-        public IRequest Marshall(DescribePoliciesRequest describePoliciesRequest)
+        public IRequest Marshall(DescribePoliciesRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describePoliciesRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AutoScaling");
             request.Parameters.Add("Action", "DescribePolicies");
             request.Parameters.Add("Version", "2011-01-01");
-            if (describePoliciesRequest != null && describePoliciesRequest.IsSetAutoScalingGroupName())
-            {
-                request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(describePoliciesRequest.AutoScalingGroupName));
-            }
-            if (describePoliciesRequest != null)
-            {
-                List<string> policyNamesList = describePoliciesRequest.PolicyNames;
 
-                int policyNamesListIndex = 1;
-                foreach (string policyNamesListValue in policyNamesList)
-                { 
-                    request.Parameters.Add("PolicyNames.member." + policyNamesListIndex, StringUtils.FromString(policyNamesListValue));
-                    policyNamesListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAutoScalingGroupName())
+                {
+                    request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
+                }
+                if(publicRequest.IsSetMaxRecords())
+                {
+                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
+                }
+                if(publicRequest.IsSetNextToken())
+                {
+                    request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+                }
+                if(publicRequest.IsSetPolicyNames())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.PolicyNames)
+                    {
+                        request.Parameters.Add("PolicyNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
-            if (describePoliciesRequest != null && describePoliciesRequest.IsSetNextToken())
-            {
-                request.Parameters.Add("NextToken", StringUtils.FromString(describePoliciesRequest.NextToken));
-            }
-            if (describePoliciesRequest != null && describePoliciesRequest.IsSetMaxRecords())
-            {
-                request.Parameters.Add("MaxRecords", StringUtils.FromInt(describePoliciesRequest.MaxRecords));
-            }
-
             return request;
         }
     }

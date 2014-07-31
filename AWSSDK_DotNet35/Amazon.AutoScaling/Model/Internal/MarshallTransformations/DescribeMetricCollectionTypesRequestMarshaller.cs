@@ -14,28 +14,32 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Metric Collection Types Request Marshaller
+    /// DescribeMetricCollectionTypes Request Marshaller
     /// </summary>       
     public class DescribeMetricCollectionTypesRequestMarshaller : IMarshaller<IRequest, DescribeMetricCollectionTypesRequest>
     {
-        public IRequest Marshall(DescribeMetricCollectionTypesRequest describeMetricCollectionTypesRequest)
+        public IRequest Marshall(DescribeMetricCollectionTypesRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describeMetricCollectionTypesRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AutoScaling");
             request.Parameters.Add("Action", "DescribeMetricCollectionTypes");
             request.Parameters.Add("Version", "2011-01-01");
 
+            if(publicRequest != null)
+            {
+            }
             return request;
         }
     }

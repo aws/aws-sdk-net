@@ -14,43 +14,45 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Reboot Cache Cluster Request Marshaller
+    /// RebootCacheCluster Request Marshaller
     /// </summary>       
     public class RebootCacheClusterRequestMarshaller : IMarshaller<IRequest, RebootCacheClusterRequest>
     {
-        public IRequest Marshall(RebootCacheClusterRequest rebootCacheClusterRequest)
+        public IRequest Marshall(RebootCacheClusterRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(rebootCacheClusterRequest, "AmazonElastiCache");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElastiCache");
             request.Parameters.Add("Action", "RebootCacheCluster");
-            request.Parameters.Add("Version", "2014-03-24");
-            if (rebootCacheClusterRequest != null && rebootCacheClusterRequest.IsSetCacheClusterId())
-            {
-                request.Parameters.Add("CacheClusterId", StringUtils.FromString(rebootCacheClusterRequest.CacheClusterId));
-            }
-            if (rebootCacheClusterRequest != null)
-            {
-                List<string> cacheNodeIdsToRebootList = rebootCacheClusterRequest.CacheNodeIdsToReboot;
+            request.Parameters.Add("Version", "2014-07-15");
 
-                int cacheNodeIdsToRebootListIndex = 1;
-                foreach (string cacheNodeIdsToRebootListValue in cacheNodeIdsToRebootList)
-                { 
-                    request.Parameters.Add("CacheNodeIdsToReboot.member." + cacheNodeIdsToRebootListIndex, StringUtils.FromString(cacheNodeIdsToRebootListValue));
-                    cacheNodeIdsToRebootListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetCacheClusterId())
+                {
+                    request.Parameters.Add("CacheClusterId", StringUtils.FromString(publicRequest.CacheClusterId));
+                }
+                if(publicRequest.IsSetCacheNodeIdsToReboot())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.CacheNodeIdsToReboot)
+                    {
+                        request.Parameters.Add("CacheNodeIdsToReboot" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
-
             return request;
         }
     }

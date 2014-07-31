@@ -18,48 +18,56 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para>A value that applies only to a certain cache node type.</para>
+    /// A value that applies only to a certain cache node type.
     /// </summary>
     public partial class CacheNodeTypeSpecificValue
     {
-        
-        private string cacheNodeType;
-        private string value;
+        private string _cacheNodeType;
+        private string _value;
 
 
         /// <summary>
+        /// Gets and sets the property CacheNodeType. 
+        /// <para>
         /// The cache node type for which this value applies.
-        ///  
+        /// </para>
         /// </summary>
         public string CacheNodeType
         {
-            get { return this.cacheNodeType; }
-            set { this.cacheNodeType = value; }
+            get { return this._cacheNodeType; }
+            set { this._cacheNodeType = value; }
         }
 
         // Check to see if CacheNodeType property is set
         internal bool IsSetCacheNodeType()
         {
-            return this.cacheNodeType != null;
+            return this._cacheNodeType != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property Value. 
+        /// <para>
         /// The value for the cache node type.
-        ///  
+        /// </para>
         /// </summary>
         public string Value
         {
-            get { return this.value; }
-            set { this.value = value; }
+            get { return this._value; }
+            set { this._value = value; }
         }
 
         // Check to see if Value property is set
         internal bool IsSetValue()
         {
-            return this.value != null;
+            return this._value != null;
         }
+
     }
 }

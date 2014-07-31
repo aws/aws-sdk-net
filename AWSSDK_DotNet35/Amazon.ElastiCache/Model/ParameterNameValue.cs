@@ -18,48 +18,56 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para>Describes a name-value pair that is used to update the value of a parameter.</para>
+    /// Describes a name-value pair that is used to update the value of a parameter.
     /// </summary>
     public partial class ParameterNameValue
     {
-        
-        private string parameterName;
-        private string parameterValue;
+        private string _parameterName;
+        private string _parameterValue;
 
 
         /// <summary>
+        /// Gets and sets the property ParameterName. 
+        /// <para>
         /// The name of the parameter.
-        ///  
+        /// </para>
         /// </summary>
         public string ParameterName
         {
-            get { return this.parameterName; }
-            set { this.parameterName = value; }
+            get { return this._parameterName; }
+            set { this._parameterName = value; }
         }
 
         // Check to see if ParameterName property is set
         internal bool IsSetParameterName()
         {
-            return this.parameterName != null;
+            return this._parameterName != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property ParameterValue. 
+        /// <para>
         /// The value of the parameter.
-        ///  
+        /// </para>
         /// </summary>
         public string ParameterValue
         {
-            get { return this.parameterValue; }
-            set { this.parameterValue = value; }
+            get { return this._parameterValue; }
+            set { this._parameterValue = value; }
         }
 
         // Check to see if ParameterValue property is set
         internal bool IsSetParameterValue()
         {
-            return this.parameterValue != null;
+            return this._parameterValue != null;
         }
+
     }
 }

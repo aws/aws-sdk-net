@@ -16,27 +16,24 @@ using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// The results from the DescribeEngineDefaultParameters action.
+    /// Represents the output of a <i>DescribeEngineDefaultParameters</i> operation.
     /// </summary>
     public partial class DescribeEngineDefaultParametersResult : AmazonWebServiceResponse
     {
-        private EngineDefaults engineDefaultsValue;
+        private EngineDefaults _response;
 
-        /// <summary>
-        /// Gets and sets the DescribeEngineDefaultParametersResult property.
-        /// Contains the result of a successful invocation of the DescribeEngineDefaultParameters
-        /// action.
-        /// </summary>
         public EngineDefaults EngineDefaults
         {
-            get { return this.engineDefaultsValue; }
-            set { this.engineDefaultsValue = value; }
+            get { return this._response; }
+            set { this._response = value; }
         }
     }
 }
-    

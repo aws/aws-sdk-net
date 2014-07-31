@@ -14,36 +14,40 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Cache Security Group Request Marshaller
+    /// CreateCacheSecurityGroup Request Marshaller
     /// </summary>       
     public class CreateCacheSecurityGroupRequestMarshaller : IMarshaller<IRequest, CreateCacheSecurityGroupRequest>
     {
-        public IRequest Marshall(CreateCacheSecurityGroupRequest createCacheSecurityGroupRequest)
+        public IRequest Marshall(CreateCacheSecurityGroupRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(createCacheSecurityGroupRequest, "AmazonElastiCache");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElastiCache");
             request.Parameters.Add("Action", "CreateCacheSecurityGroup");
-            request.Parameters.Add("Version", "2014-03-24");
-            if (createCacheSecurityGroupRequest != null && createCacheSecurityGroupRequest.IsSetCacheSecurityGroupName())
-            {
-                request.Parameters.Add("CacheSecurityGroupName", StringUtils.FromString(createCacheSecurityGroupRequest.CacheSecurityGroupName));
-            }
-            if (createCacheSecurityGroupRequest != null && createCacheSecurityGroupRequest.IsSetDescription())
-            {
-                request.Parameters.Add("Description", StringUtils.FromString(createCacheSecurityGroupRequest.Description));
-            }
+            request.Parameters.Add("Version", "2014-07-15");
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetCacheSecurityGroupName())
+                {
+                    request.Parameters.Add("CacheSecurityGroupName", StringUtils.FromString(publicRequest.CacheSecurityGroupName));
+                }
+                if(publicRequest.IsSetDescription())
+                {
+                    request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
+                }
+            }
             return request;
         }
     }

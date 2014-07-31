@@ -25,43 +25,37 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLaunchConfiguration operation.
-    /// <para> Deletes the specified LaunchConfiguration. </para> <para> The specified launch configuration must not be attached to an Auto Scaling
-    /// group. When this call completes, the launch configuration is no longer available for use. </para>
+    /// Deletes the specified <a>LaunchConfiguration</a>. 
+    /// 
+    ///  
+    /// <para>
+    ///  The specified launch configuration must not be attached to an Auto Scaling group.
+    /// When this call completes, the launch configuration is no longer available for use.
+    /// 
+    /// </para>
     /// </summary>
     public partial class DeleteLaunchConfigurationRequest : AmazonAutoScalingRequest
     {
-        private string launchConfigurationName;
+        private string _launchConfigurationName;
 
 
         /// <summary>
-        /// The name of the launch configuration.
-        ///  
+        /// Gets and sets the property LaunchConfigurationName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1600</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  The name of the launch configuration. 
         /// </para>
         /// </summary>
         public string LaunchConfigurationName
         {
-            get { return this.launchConfigurationName; }
-            set { this.launchConfigurationName = value; }
+            get { return this._launchConfigurationName; }
+            set { this._launchConfigurationName = value; }
         }
 
         // Check to see if LaunchConfigurationName property is set
         internal bool IsSetLaunchConfigurationName()
         {
-            return this.launchConfigurationName != null;
+            return this._launchConfigurationName != null;
         }
 
     }
 }
-    

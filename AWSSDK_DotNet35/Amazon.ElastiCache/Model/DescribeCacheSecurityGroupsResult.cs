@@ -17,50 +17,58 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para>Represents the output of a <i>DescribeCacheSecurityGroups</i> operation.</para>
+    /// Represents the output of a <i>DescribeCacheSecurityGroups</i> operation.
     /// </summary>
     public partial class DescribeCacheSecurityGroupsResult : AmazonWebServiceResponse
     {
-        
-        private string marker;
-        private List<CacheSecurityGroup> cacheSecurityGroups = new List<CacheSecurityGroup>();
+        private List<CacheSecurityGroup> _cacheSecurityGroups = new List<CacheSecurityGroup>();
+        private string _marker;
 
 
         /// <summary>
-        /// Provides an identifier to allow retrieval of paginated results.
-        ///  
-        /// </summary>
-        public string Marker
-        {
-            get { return this.marker; }
-            set { this.marker = value; }
-        }
-
-        // Check to see if Marker property is set
-        internal bool IsSetMarker()
-        {
-            return this.marker != null;
-        }
-
-        /// <summary>
-        /// A list of cache security groups. Each element in the list contains detailed information about one group.
-        ///  
+        /// Gets and sets the property CacheSecurityGroups. 
+        /// <para>
+        /// A list of cache security groups. Each element in the list contains detailed information
+        /// about one group.
+        /// </para>
         /// </summary>
         public List<CacheSecurityGroup> CacheSecurityGroups
         {
-            get { return this.cacheSecurityGroups; }
-            set { this.cacheSecurityGroups = value; }
+            get { return this._cacheSecurityGroups; }
+            set { this._cacheSecurityGroups = value; }
         }
 
         // Check to see if CacheSecurityGroups property is set
         internal bool IsSetCacheSecurityGroups()
         {
-            return this.cacheSecurityGroups.Count > 0;
+            return this._cacheSecurityGroups != null && this._cacheSecurityGroups.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// Provides an identifier to allow retrieval of paginated results.
+        /// </para>
+        /// </summary>
+        public string Marker
+        {
+            get { return this._marker; }
+            set { this._marker = value; }
+        }
+
+        // Check to see if Marker property is set
+        internal bool IsSetMarker()
+        {
+            return this._marker != null;
+        }
+
     }
 }

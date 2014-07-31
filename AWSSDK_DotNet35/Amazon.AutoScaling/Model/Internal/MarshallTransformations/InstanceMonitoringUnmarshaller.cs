@@ -12,63 +12,69 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   InstanceMonitoring Unmarshaller
-     /// </summary>
-    internal class InstanceMonitoringUnmarshaller : IUnmarshaller<InstanceMonitoring, XmlUnmarshallerContext>, IUnmarshaller<InstanceMonitoring, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for InstanceMonitoring Object
+    /// </summary>  
+    public class InstanceMonitoringUnmarshaller : IUnmarshaller<InstanceMonitoring, XmlUnmarshallerContext>, IUnmarshaller<InstanceMonitoring, JsonUnmarshallerContext>
     {
-        public InstanceMonitoring Unmarshall(XmlUnmarshallerContext context) 
+        public InstanceMonitoring Unmarshall(XmlUnmarshallerContext context)
         {
-            InstanceMonitoring instanceMonitoring = new InstanceMonitoring();
+            InstanceMonitoring unmarshalledObject = new InstanceMonitoring();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("Enabled", targetDepth))
                     {
-                        instanceMonitoring.Enabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return instanceMonitoring;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return instanceMonitoring;
+            return unmarshalledObject;
         }
 
-        public InstanceMonitoring Unmarshall(JsonUnmarshallerContext context) 
+        public InstanceMonitoring Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static InstanceMonitoringUnmarshaller instance;
 
-        public static InstanceMonitoringUnmarshaller GetInstance() 
+        private static InstanceMonitoringUnmarshaller _instance = new InstanceMonitoringUnmarshaller();        
+
+        public static InstanceMonitoringUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new InstanceMonitoringUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

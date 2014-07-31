@@ -18,66 +18,77 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para>The status of the cache parameter group.</para>
+    /// The status of the cache parameter group.
     /// </summary>
     public partial class CacheParameterGroupStatus
     {
-        
-        private string cacheParameterGroupName;
-        private string parameterApplyStatus;
-        private List<string> cacheNodeIdsToReboot = new List<string>();
+        private List<string> _cacheNodeIdsToReboot = new List<string>();
+        private string _cacheParameterGroupName;
+        private string _parameterApplyStatus;
 
 
         /// <summary>
-        /// The name of the cache parameter group.
-        ///  
-        /// </summary>
-        public string CacheParameterGroupName
-        {
-            get { return this.cacheParameterGroupName; }
-            set { this.cacheParameterGroupName = value; }
-        }
-
-        // Check to see if CacheParameterGroupName property is set
-        internal bool IsSetCacheParameterGroupName()
-        {
-            return this.cacheParameterGroupName != null;
-        }
-
-        /// <summary>
-        /// The status of parameter updates.
-        ///  
-        /// </summary>
-        public string ParameterApplyStatus
-        {
-            get { return this.parameterApplyStatus; }
-            set { this.parameterApplyStatus = value; }
-        }
-
-        // Check to see if ParameterApplyStatus property is set
-        internal bool IsSetParameterApplyStatus()
-        {
-            return this.parameterApplyStatus != null;
-        }
-
-        /// <summary>
-        /// A list of the cache node IDs which need to be rebooted for parameter changes to be applied. A node ID is a numeric identifier (0001, 0002,
-        /// etc.).
-        ///  
+        /// Gets and sets the property CacheNodeIdsToReboot. 
+        /// <para>
+        /// A list of the cache node IDs which need to be rebooted for parameter changes to be
+        /// applied. A node ID is a numeric identifier (0001, 0002, etc.).
+        /// </para>
         /// </summary>
         public List<string> CacheNodeIdsToReboot
         {
-            get { return this.cacheNodeIdsToReboot; }
-            set { this.cacheNodeIdsToReboot = value; }
+            get { return this._cacheNodeIdsToReboot; }
+            set { this._cacheNodeIdsToReboot = value; }
         }
 
         // Check to see if CacheNodeIdsToReboot property is set
         internal bool IsSetCacheNodeIdsToReboot()
         {
-            return this.cacheNodeIdsToReboot.Count > 0;
+            return this._cacheNodeIdsToReboot != null && this._cacheNodeIdsToReboot.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property CacheParameterGroupName. 
+        /// <para>
+        /// The name of the cache parameter group.
+        /// </para>
+        /// </summary>
+        public string CacheParameterGroupName
+        {
+            get { return this._cacheParameterGroupName; }
+            set { this._cacheParameterGroupName = value; }
+        }
+
+        // Check to see if CacheParameterGroupName property is set
+        internal bool IsSetCacheParameterGroupName()
+        {
+            return this._cacheParameterGroupName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ParameterApplyStatus. 
+        /// <para>
+        /// The status of parameter updates.
+        /// </para>
+        /// </summary>
+        public string ParameterApplyStatus
+        {
+            get { return this._parameterApplyStatus; }
+            set { this._parameterApplyStatus = value; }
+        }
+
+        // Check to see if ParameterApplyStatus property is set
+        internal bool IsSetParameterApplyStatus()
+        {
+            return this._parameterApplyStatus != null;
+        }
+
     }
 }

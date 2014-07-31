@@ -14,56 +14,60 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Reserved Cache Nodes Offerings Request Marshaller
+    /// DescribeReservedCacheNodesOfferings Request Marshaller
     /// </summary>       
     public class DescribeReservedCacheNodesOfferingsRequestMarshaller : IMarshaller<IRequest, DescribeReservedCacheNodesOfferingsRequest>
     {
-        public IRequest Marshall(DescribeReservedCacheNodesOfferingsRequest describeReservedCacheNodesOfferingsRequest)
+        public IRequest Marshall(DescribeReservedCacheNodesOfferingsRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describeReservedCacheNodesOfferingsRequest, "AmazonElastiCache");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElastiCache");
             request.Parameters.Add("Action", "DescribeReservedCacheNodesOfferings");
-            request.Parameters.Add("Version", "2014-03-24");
-            if (describeReservedCacheNodesOfferingsRequest != null && describeReservedCacheNodesOfferingsRequest.IsSetReservedCacheNodesOfferingId())
-            {
-                request.Parameters.Add("ReservedCacheNodesOfferingId", StringUtils.FromString(describeReservedCacheNodesOfferingsRequest.ReservedCacheNodesOfferingId));
-            }
-            if (describeReservedCacheNodesOfferingsRequest != null && describeReservedCacheNodesOfferingsRequest.IsSetCacheNodeType())
-            {
-                request.Parameters.Add("CacheNodeType", StringUtils.FromString(describeReservedCacheNodesOfferingsRequest.CacheNodeType));
-            }
-            if (describeReservedCacheNodesOfferingsRequest != null && describeReservedCacheNodesOfferingsRequest.IsSetDuration())
-            {
-                request.Parameters.Add("Duration", StringUtils.FromString(describeReservedCacheNodesOfferingsRequest.Duration));
-            }
-            if (describeReservedCacheNodesOfferingsRequest != null && describeReservedCacheNodesOfferingsRequest.IsSetProductDescription())
-            {
-                request.Parameters.Add("ProductDescription", StringUtils.FromString(describeReservedCacheNodesOfferingsRequest.ProductDescription));
-            }
-            if (describeReservedCacheNodesOfferingsRequest != null && describeReservedCacheNodesOfferingsRequest.IsSetOfferingType())
-            {
-                request.Parameters.Add("OfferingType", StringUtils.FromString(describeReservedCacheNodesOfferingsRequest.OfferingType));
-            }
-            if (describeReservedCacheNodesOfferingsRequest != null && describeReservedCacheNodesOfferingsRequest.IsSetMaxRecords())
-            {
-                request.Parameters.Add("MaxRecords", StringUtils.FromInt(describeReservedCacheNodesOfferingsRequest.MaxRecords));
-            }
-            if (describeReservedCacheNodesOfferingsRequest != null && describeReservedCacheNodesOfferingsRequest.IsSetMarker())
-            {
-                request.Parameters.Add("Marker", StringUtils.FromString(describeReservedCacheNodesOfferingsRequest.Marker));
-            }
+            request.Parameters.Add("Version", "2014-07-15");
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetCacheNodeType())
+                {
+                    request.Parameters.Add("CacheNodeType", StringUtils.FromString(publicRequest.CacheNodeType));
+                }
+                if(publicRequest.IsSetDuration())
+                {
+                    request.Parameters.Add("Duration", StringUtils.FromString(publicRequest.Duration));
+                }
+                if(publicRequest.IsSetMarker())
+                {
+                    request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
+                }
+                if(publicRequest.IsSetMaxRecords())
+                {
+                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
+                }
+                if(publicRequest.IsSetOfferingType())
+                {
+                    request.Parameters.Add("OfferingType", StringUtils.FromString(publicRequest.OfferingType));
+                }
+                if(publicRequest.IsSetProductDescription())
+                {
+                    request.Parameters.Add("ProductDescription", StringUtils.FromString(publicRequest.ProductDescription));
+                }
+                if(publicRequest.IsSetReservedCacheNodesOfferingId())
+                {
+                    request.Parameters.Add("ReservedCacheNodesOfferingId", StringUtils.FromString(publicRequest.ReservedCacheNodesOfferingId));
+                }
+            }
             return request;
         }
     }

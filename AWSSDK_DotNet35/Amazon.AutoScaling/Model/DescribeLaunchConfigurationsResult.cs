@@ -17,59 +17,57 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The <c>LaunchConfigurationsType</c> data type. </para>
+    /// The <code>LaunchConfigurationsType</code> data type.
     /// </summary>
     public partial class DescribeLaunchConfigurationsResult : AmazonWebServiceResponse
     {
-        
-        private List<LaunchConfiguration> launchConfigurations = new List<LaunchConfiguration>();
-        private string nextToken;
+        private List<LaunchConfiguration> _launchConfigurations = new List<LaunchConfiguration>();
+        private string _nextToken;
 
 
         /// <summary>
-        /// A list of launch configurations.
-        ///  
+        /// Gets and sets the property LaunchConfigurations. 
+        /// <para>
+        ///  A list of launch configurations. 
+        /// </para>
         /// </summary>
         public List<LaunchConfiguration> LaunchConfigurations
         {
-            get { return this.launchConfigurations; }
-            set { this.launchConfigurations = value; }
+            get { return this._launchConfigurations; }
+            set { this._launchConfigurations = value; }
         }
 
         // Check to see if LaunchConfigurations property is set
         internal bool IsSetLaunchConfigurations()
         {
-            return this.launchConfigurations.Count > 0;
+            return this._launchConfigurations != null && this._launchConfigurations.Count > 0; 
         }
 
+
         /// <summary>
-        /// A string that marks the start of the next batch of returned results.
-        ///  
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  A string that marks the start of the next batch of returned results. 
         /// </para>
         /// </summary>
         public string NextToken
         {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;
+            return this._nextToken != null;
         }
+
     }
 }

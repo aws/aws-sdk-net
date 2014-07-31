@@ -25,30 +25,34 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCacheSubnetGroup operation.
-    /// <para>The <i>DeleteCacheSubnetGroup</i> operation deletes a cache subnet group.</para> <para><b>NOTE:</b>You cannot delete a cache subnet
-    /// group if it is associated with any cache clusters.</para>
+    /// The <i>DeleteCacheSubnetGroup</i> operation deletes a cache subnet group.
     /// </summary>
     public partial class DeleteCacheSubnetGroupRequest : AmazonElastiCacheRequest
     {
-        private string cacheSubnetGroupName;
+        private string _cacheSubnetGroupName;
 
 
         /// <summary>
-        /// The name of the cache subnet group to delete. Constraints: Must contain no more than 255 alphanumeric characters or hyphens.
+        /// Gets and sets the property CacheSubnetGroupName. 
+        /// <para>
+        /// The name of the cache subnet group to delete.
+        /// </para>
         ///  
+        /// <para>
+        /// Constraints: Must contain no more than 255 alphanumeric characters or hyphens.
+        /// </para>
         /// </summary>
         public string CacheSubnetGroupName
         {
-            get { return this.cacheSubnetGroupName; }
-            set { this.cacheSubnetGroupName = value; }
+            get { return this._cacheSubnetGroupName; }
+            set { this._cacheSubnetGroupName = value; }
         }
 
         // Check to see if CacheSubnetGroupName property is set
         internal bool IsSetCacheSubnetGroupName()
         {
-            return this.cacheSubnetGroupName != null;
+            return this._cacheSubnetGroupName != null;
         }
 
     }
 }
-    

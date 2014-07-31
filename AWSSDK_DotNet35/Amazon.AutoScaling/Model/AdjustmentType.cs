@@ -18,45 +18,38 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> Specifies whether the PutScalingPolicy <c>ScalingAdjustment</c> parameter is an absolute number or a percentage of the current
-    /// capacity. </para>
+    /// Specifies whether the <a>PutScalingPolicy</a> <code>ScalingAdjustment</code> parameter
+    /// is an absolute number or a percentage of the current capacity.
     /// </summary>
     public partial class AdjustmentType
     {
-        
-        private string type;
+        private string _adjustmentType;
 
 
         /// <summary>
-        /// A policy adjustment type. Valid values are <c>ChangeInCapacity</c>, <c>ExactCapacity</c>, and <c>PercentChangeInCapacity</c>.
-        ///  
+        /// Gets and sets the property Type. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// A policy adjustment type. Valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>,
+        /// and <code>PercentChangeInCapacity</code>.
         /// </para>
         /// </summary>
         public string Type
         {
-            get { return this.type; }
-            set { this.type = value; }
+            get { return this._adjustmentType; }
+            set { this._adjustmentType = value; }
         }
 
         // Check to see if Type property is set
         internal bool IsSetType()
         {
-            return this.type != null;
+            return this._adjustmentType != null;
         }
+
     }
 }

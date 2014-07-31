@@ -434,6 +434,15 @@
     <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.Route53Domains\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Route53Domains\Model\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Route53Domains\Model\Internal\MarshallTransformations\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.Runtime\Internal\Auth\NullSigner.cs" />
     <Compile Include="Amazon.Runtime\Internal\AutoConstructedTypes.cs" />
     <Compile Include="Amazon.Runtime\Internal\Settings\PersistenceManager.cs" />

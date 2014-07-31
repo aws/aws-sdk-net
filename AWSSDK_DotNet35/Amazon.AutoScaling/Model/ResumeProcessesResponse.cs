@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the ResumeProcesses response metadata.
-    /// The ResumeProcesses operation has a void result type.
+    /// Configuration for accessing Amazon ResumeProcesses service
     /// </summary>
-    public partial class ResumeProcessesResponse : AmazonWebServiceResponse
+    public partial class ResumeProcessesResponse : ResumeProcessesResult
     {
+        /// <summary>
+        /// Gets and sets the ResumeProcessesResult property.
+        /// Represents the output of a ResumeProcesses operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the ResumeProcessesResult class are now available on the ResumeProcessesResponse class. You should use the properties on ResumeProcessesResponse instead of accessing them through ResumeProcessesResult.")]
+        public ResumeProcessesResult ResumeProcessesResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

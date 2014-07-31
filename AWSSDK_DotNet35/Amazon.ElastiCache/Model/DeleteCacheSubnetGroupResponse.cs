@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Returns information about the DeleteCacheSubnetGroup response metadata.
-    /// The DeleteCacheSubnetGroup operation has a void result type.
+    /// Configuration for accessing Amazon DeleteCacheSubnetGroup service
     /// </summary>
-    public partial class DeleteCacheSubnetGroupResponse : AmazonWebServiceResponse
+    public partial class DeleteCacheSubnetGroupResponse : DeleteCacheSubnetGroupResult
     {
+        /// <summary>
+        /// Gets and sets the DeleteCacheSubnetGroupResult property.
+        /// Represents the output of a DeleteCacheSubnetGroup operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DeleteCacheSubnetGroupResult class are now available on the DeleteCacheSubnetGroupResponse class. You should use the properties on DeleteCacheSubnetGroupResponse instead of accessing them through DeleteCacheSubnetGroupResult.")]
+        public DeleteCacheSubnetGroupResult DeleteCacheSubnetGroupResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

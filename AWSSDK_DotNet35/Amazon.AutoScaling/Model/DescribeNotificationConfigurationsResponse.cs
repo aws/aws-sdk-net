@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeNotificationConfigurations response and response metadata.
+    /// Configuration for accessing Amazon DescribeNotificationConfigurations service
     /// </summary>
     public partial class DescribeNotificationConfigurationsResponse : DescribeNotificationConfigurationsResult
     {
         /// <summary>
         /// Gets and sets the DescribeNotificationConfigurationsResult property.
-        /// The output of the DescribeNotificationConfigurations action.
+        /// Represents the output of a DescribeNotificationConfigurations operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeNotificationConfigurationsResult class are now available on the DescribeNotificationConfigurationsResponse class. You should use the properties on DescribeNotificationConfigurationsResponse instead of accessing them through DescribeNotificationConfigurationsResult.")]
         public DescribeNotificationConfigurationsResult DescribeNotificationConfigurationsResult
@@ -40,4 +36,3 @@ namespace Amazon.AutoScaling.Model
         }
     }
 }
-    

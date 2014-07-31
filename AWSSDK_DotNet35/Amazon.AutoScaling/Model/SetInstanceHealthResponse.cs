@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the SetInstanceHealth response metadata.
-    /// The SetInstanceHealth operation has a void result type.
+    /// Configuration for accessing Amazon SetInstanceHealth service
     /// </summary>
-    public partial class SetInstanceHealthResponse : AmazonWebServiceResponse
+    public partial class SetInstanceHealthResponse : SetInstanceHealthResult
     {
+        /// <summary>
+        /// Gets and sets the SetInstanceHealthResult property.
+        /// Represents the output of a SetInstanceHealth operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the SetInstanceHealthResult class are now available on the SetInstanceHealthResponse class. You should use the properties on SetInstanceHealthResponse instead of accessing them through SetInstanceHealthResult.")]
+        public SetInstanceHealthResult SetInstanceHealthResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

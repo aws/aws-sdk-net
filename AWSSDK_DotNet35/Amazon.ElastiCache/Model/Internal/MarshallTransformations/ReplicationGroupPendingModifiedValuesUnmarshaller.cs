@@ -12,63 +12,69 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ReplicationGroupPendingModifiedValues Unmarshaller
-     /// </summary>
-    internal class ReplicationGroupPendingModifiedValuesUnmarshaller : IUnmarshaller<ReplicationGroupPendingModifiedValues, XmlUnmarshallerContext>, IUnmarshaller<ReplicationGroupPendingModifiedValues, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ReplicationGroupPendingModifiedValues Object
+    /// </summary>  
+    public class ReplicationGroupPendingModifiedValuesUnmarshaller : IUnmarshaller<ReplicationGroupPendingModifiedValues, XmlUnmarshallerContext>, IUnmarshaller<ReplicationGroupPendingModifiedValues, JsonUnmarshallerContext>
     {
-        public ReplicationGroupPendingModifiedValues Unmarshall(XmlUnmarshallerContext context) 
+        public ReplicationGroupPendingModifiedValues Unmarshall(XmlUnmarshallerContext context)
         {
-            ReplicationGroupPendingModifiedValues replicationGroupPendingModifiedValues = new ReplicationGroupPendingModifiedValues();
+            ReplicationGroupPendingModifiedValues unmarshalledObject = new ReplicationGroupPendingModifiedValues();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("PrimaryClusterId", targetDepth))
                     {
-                        replicationGroupPendingModifiedValues.PrimaryClusterId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PrimaryClusterId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return replicationGroupPendingModifiedValues;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return replicationGroupPendingModifiedValues;
+            return unmarshalledObject;
         }
 
-        public ReplicationGroupPendingModifiedValues Unmarshall(JsonUnmarshallerContext context) 
+        public ReplicationGroupPendingModifiedValues Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static ReplicationGroupPendingModifiedValuesUnmarshaller instance;
 
-        public static ReplicationGroupPendingModifiedValuesUnmarshaller GetInstance() 
+        private static ReplicationGroupPendingModifiedValuesUnmarshaller _instance = new ReplicationGroupPendingModifiedValuesUnmarshaller();        
+
+        public static ReplicationGroupPendingModifiedValuesUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new ReplicationGroupPendingModifiedValuesUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

@@ -18,99 +18,114 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para>Represents a single node within a node group.</para>
+    /// Represents a single node within a node group.
     /// </summary>
     public partial class NodeGroupMember
     {
-        
-        private string cacheClusterId;
-        private string cacheNodeId;
-        private Endpoint readEndpoint;
-        private string preferredAvailabilityZone;
-        private string currentRole;
+        private string _cacheClusterId;
+        private string _cacheNodeId;
+        private string _currentRole;
+        private string _preferredAvailabilityZone;
+        private Endpoint _readEndpoint;
 
 
         /// <summary>
+        /// Gets and sets the property CacheClusterId. 
+        /// <para>
         /// The ID of the cache cluster to which the node belongs.
-        ///  
+        /// </para>
         /// </summary>
         public string CacheClusterId
         {
-            get { return this.cacheClusterId; }
-            set { this.cacheClusterId = value; }
+            get { return this._cacheClusterId; }
+            set { this._cacheClusterId = value; }
         }
 
         // Check to see if CacheClusterId property is set
         internal bool IsSetCacheClusterId()
         {
-            return this.cacheClusterId != null;
+            return this._cacheClusterId != null;
         }
 
+
         /// <summary>
-        /// The ID of the node within its cache cluster. A node ID is a numeric identifier (0001, 0002, etc.).
-        ///  
+        /// Gets and sets the property CacheNodeId. 
+        /// <para>
+        /// The ID of the node within its cache cluster. A node ID is a numeric identifier (0001,
+        /// 0002, etc.).
+        /// </para>
         /// </summary>
         public string CacheNodeId
         {
-            get { return this.cacheNodeId; }
-            set { this.cacheNodeId = value; }
+            get { return this._cacheNodeId; }
+            set { this._cacheNodeId = value; }
         }
 
         // Check to see if CacheNodeId property is set
         internal bool IsSetCacheNodeId()
         {
-            return this.cacheNodeId != null;
+            return this._cacheNodeId != null;
         }
+
 
         /// <summary>
-        /// Represents the information required for client programs to connect to a cache node.
-        ///  
-        /// </summary>
-        public Endpoint ReadEndpoint
-        {
-            get { return this.readEndpoint; }
-            set { this.readEndpoint = value; }
-        }
-
-        // Check to see if ReadEndpoint property is set
-        internal bool IsSetReadEndpoint()
-        {
-            return this.readEndpoint != null;
-        }
-
-        /// <summary>
-        /// The name of the Availability Zone in which the node is located.
-        ///  
-        /// </summary>
-        public string PreferredAvailabilityZone
-        {
-            get { return this.preferredAvailabilityZone; }
-            set { this.preferredAvailabilityZone = value; }
-        }
-
-        // Check to see if PreferredAvailabilityZone property is set
-        internal bool IsSetPreferredAvailabilityZone()
-        {
-            return this.preferredAvailabilityZone != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property CurrentRole. 
+        /// <para>
         /// The role that is currently assigned to the node - <i>primary</i> or <i>replica</i>.
-        ///  
+        /// </para>
         /// </summary>
         public string CurrentRole
         {
-            get { return this.currentRole; }
-            set { this.currentRole = value; }
+            get { return this._currentRole; }
+            set { this._currentRole = value; }
         }
 
         // Check to see if CurrentRole property is set
         internal bool IsSetCurrentRole()
         {
-            return this.currentRole != null;
+            return this._currentRole != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property PreferredAvailabilityZone. 
+        /// <para>
+        /// The name of the Availability Zone in which the node is located.
+        /// </para>
+        /// </summary>
+        public string PreferredAvailabilityZone
+        {
+            get { return this._preferredAvailabilityZone; }
+            set { this._preferredAvailabilityZone = value; }
+        }
+
+        // Check to see if PreferredAvailabilityZone property is set
+        internal bool IsSetPreferredAvailabilityZone()
+        {
+            return this._preferredAvailabilityZone != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ReadEndpoint.
+        /// </summary>
+        public Endpoint ReadEndpoint
+        {
+            get { return this._readEndpoint; }
+            set { this._readEndpoint = value; }
+        }
+
+        // Check to see if ReadEndpoint property is set
+        internal bool IsSetReadEndpoint()
+        {
+            return this._readEndpoint != null;
+        }
+
     }
 }

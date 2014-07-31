@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the DeleteAutoScalingGroup response metadata.
-    /// The DeleteAutoScalingGroup operation has a void result type.
+    /// Configuration for accessing Amazon DeleteAutoScalingGroup service
     /// </summary>
-    public partial class DeleteAutoScalingGroupResponse : AmazonWebServiceResponse
+    public partial class DeleteAutoScalingGroupResponse : DeleteAutoScalingGroupResult
     {
+        /// <summary>
+        /// Gets and sets the DeleteAutoScalingGroupResult property.
+        /// Represents the output of a DeleteAutoScalingGroup operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DeleteAutoScalingGroupResult class are now available on the DeleteAutoScalingGroupResponse class. You should use the properties on DeleteAutoScalingGroupResponse instead of accessing them through DeleteAutoScalingGroupResult.")]
+        public DeleteAutoScalingGroupResult DeleteAutoScalingGroupResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

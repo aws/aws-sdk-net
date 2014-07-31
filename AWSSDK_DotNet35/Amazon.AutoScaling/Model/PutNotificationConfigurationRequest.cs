@@ -25,93 +25,85 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the PutNotificationConfiguration operation.
-    /// <para> Configures an Auto Scaling group to send notifications when specified events take place. Subscribers to this topic can have messages
-    /// for events delivered to an endpoint such as a web server or email address. </para> <para>For more information see <a
-    /// href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASGettingNotifications.html" >Get Email Notifications When Your Auto
-    /// Scaling Group Changes</a> </para> <para>A new <c>PutNotificationConfiguration</c> overwrites an existing configuration. </para>
+    /// Configures an Auto Scaling group to send notifications when specified events take
+    /// place. Subscribers to this topic can have messages for events delivered to an endpoint
+    /// such as a web server or email address. 
+    /// 
+    ///  
+    /// <para>
+    /// For more information see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASGettingNotifications.html">Get
+    /// Email Notifications When Your Auto Scaling Group Changes</a>
+    /// </para>
+    ///  
+    /// <para>
+    /// A new <code>PutNotificationConfiguration</code> overwrites an existing configuration.
+    /// 
+    /// </para>
     /// </summary>
     public partial class PutNotificationConfigurationRequest : AmazonAutoScalingRequest
     {
-        private string autoScalingGroupName;
-        private string topicARN;
-        private List<string> notificationTypes = new List<string>();
+        private string _autoScalingGroupName;
+        private List<string> _notificationTypes = new List<string>();
+        private string _topicARN;
 
 
         /// <summary>
-        /// The name of the Auto Scaling group.
-        ///  
+        /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1600</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  The name of the Auto Scaling group. 
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
         {
-            get { return this.autoScalingGroupName; }
-            set { this.autoScalingGroupName = value; }
+            get { return this._autoScalingGroupName; }
+            set { this._autoScalingGroupName = value; }
         }
 
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;
+            return this._autoScalingGroupName != null;
         }
 
+
         /// <summary>
-        /// The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.
-        ///  
+        /// Gets and sets the property NotificationTypes. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1600</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// The type of event that will cause the notification to be sent. For details about notification
+        /// types supported by Auto Scaling, see <a>DescribeAutoScalingNotificationTypes</a>.
         /// </para>
-        /// </summary>
-        public string TopicARN
-        {
-            get { return this.topicARN; }
-            set { this.topicARN = value; }
-        }
-
-        // Check to see if TopicARN property is set
-        internal bool IsSetTopicARN()
-        {
-            return this.topicARN != null;
-        }
-
-        /// <summary>
-        /// The type of event that will cause the notification to be sent. For details about notification types supported by Auto Scaling, see
-        /// <a>DescribeAutoScalingNotificationTypes</a>.
-        ///  
         /// </summary>
         public List<string> NotificationTypes
         {
-            get { return this.notificationTypes; }
-            set { this.notificationTypes = value; }
+            get { return this._notificationTypes; }
+            set { this._notificationTypes = value; }
         }
 
         // Check to see if NotificationTypes property is set
         internal bool IsSetNotificationTypes()
         {
-            return this.notificationTypes.Count > 0;
+            return this._notificationTypes != null && this._notificationTypes.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property TopicARN. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.
+        /// 
+        /// </para>
+        /// </summary>
+        public string TopicARN
+        {
+            get { return this._topicARN; }
+            set { this._topicARN = value; }
+        }
+
+        // Check to see if TopicARN property is set
+        internal bool IsSetTopicARN()
+        {
+            return this._topicARN != null;
         }
 
     }
 }
-    

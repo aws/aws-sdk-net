@@ -25,73 +25,77 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLaunchConfigurations operation.
-    /// <para> Returns a full description of the launch configurations, or the specified launch configurations, if they exist. </para> <para> If no
-    /// name is specified, then the full details of all launch configurations are returned. </para>
+    /// Returns a full description of the launch configurations, or the specified launch
+    /// configurations, if they exist. 
+    /// 
+    ///  
+    /// <para>
+    ///  If no name is specified, then the full details of all launch configurations are returned.
+    /// 
+    /// </para>
     /// </summary>
     public partial class DescribeLaunchConfigurationsRequest : AmazonAutoScalingRequest
     {
-        private List<string> launchConfigurationNames = new List<string>();
-        private string nextToken;
-        private int? maxRecords;
+        private List<string> _launchConfigurationNames = new List<string>();
+        private int? _maxRecords;
+        private string _nextToken;
 
 
         /// <summary>
-        /// A list of launch configuration names.
-        ///  
+        /// Gets and sets the property LaunchConfigurationNames. 
+        /// <para>
+        ///  A list of launch configuration names. 
+        /// </para>
         /// </summary>
         public List<string> LaunchConfigurationNames
         {
-            get { return this.launchConfigurationNames; }
-            set { this.launchConfigurationNames = value; }
+            get { return this._launchConfigurationNames; }
+            set { this._launchConfigurationNames = value; }
         }
 
         // Check to see if LaunchConfigurationNames property is set
         internal bool IsSetLaunchConfigurationNames()
         {
-            return this.launchConfigurationNames.Count > 0;
+            return this._launchConfigurationNames != null && this._launchConfigurationNames.Count > 0; 
         }
 
+
         /// <summary>
-        /// A string that marks the start of the next batch of returned results.
-        ///  
+        /// Gets and sets the property MaxRecords. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  The maximum number of launch configurations. The default is 100. 
         /// </para>
-        /// </summary>
-        public string NextToken
-        {
-            get { return this.nextToken; }
-            set { this.nextToken = value; }
-        }
-
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
-        {
-            return this.nextToken != null;
-        }
-
-        /// <summary>
-        /// The maximum number of launch configurations. The default is 100.
-        ///  
         /// </summary>
         public int MaxRecords
         {
-            get { return this.maxRecords ?? default(int); }
-            set { this.maxRecords = value; }
+            get { return this._maxRecords.GetValueOrDefault(); }
+            set { this._maxRecords = value; }
         }
 
         // Check to see if MaxRecords property is set
         internal bool IsSetMaxRecords()
         {
-            return this.maxRecords.HasValue;
+            return this._maxRecords.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        ///  A string that marks the start of the next batch of returned results. 
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }
 }
-    

@@ -14,43 +14,45 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Suspend Processes Request Marshaller
+    /// SuspendProcesses Request Marshaller
     /// </summary>       
     public class SuspendProcessesRequestMarshaller : IMarshaller<IRequest, SuspendProcessesRequest>
     {
-        public IRequest Marshall(SuspendProcessesRequest suspendProcessesRequest)
+        public IRequest Marshall(SuspendProcessesRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(suspendProcessesRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AutoScaling");
             request.Parameters.Add("Action", "SuspendProcesses");
             request.Parameters.Add("Version", "2011-01-01");
-            if (suspendProcessesRequest != null && suspendProcessesRequest.IsSetAutoScalingGroupName())
-            {
-                request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(suspendProcessesRequest.AutoScalingGroupName));
-            }
-            if (suspendProcessesRequest != null)
-            {
-                List<string> scalingProcessesList = suspendProcessesRequest.ScalingProcesses;
 
-                int scalingProcessesListIndex = 1;
-                foreach (string scalingProcessesListValue in scalingProcessesList)
-                { 
-                    request.Parameters.Add("ScalingProcesses.member." + scalingProcessesListIndex, StringUtils.FromString(scalingProcessesListValue));
-                    scalingProcessesListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAutoScalingGroupName())
+                {
+                    request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
+                }
+                if(publicRequest.IsSetScalingProcesses())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.ScalingProcesses)
+                    {
+                        request.Parameters.Add("ScalingProcesses" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
-
             return request;
         }
     }

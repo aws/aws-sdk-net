@@ -13,46 +13,52 @@
  * permissions and limitations under the License.
  */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for DescribePolicies operation
-    /// </summary>
-    internal class DescribePoliciesResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for DescribePolicies operation
+    /// </summary>  
+    public class DescribePoliciesResponseUnmarshaller : XmlResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
             DescribePoliciesResponse response = new DescribePoliciesResponse();
-            
-            while (context.Read())
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
                 if (context.IsStartElement)
                 {                    
                     if(context.TestExpression("DescribePoliciesResult", 2))
                     {
-                        UnmarshallResult(context,response);                        
+                        UnmarshallResult(context, response);                        
                         continue;
                     }
                     
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
                     }
                 }
             }
-                 
-                        
+
             return response;
         }
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,DescribePoliciesResponse response)
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, DescribePoliciesResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -61,57 +67,54 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("ScalingPolicies/member", targetDepth))
-                    {
-                        response.ScalingPolicies.Add(ScalingPolicyUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    }
+
                     if (context.TestExpression("NextToken", targetDepth))
                     {
-                        response.NextToken = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.NextToken = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return;
-                }
-            }
-                            
-
+                    if (context.TestExpression("ScalingPolicies/member", targetDepth))
+                    {
+                        var unmarshaller = ScalingPolicyUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.ScalingPolicies.Add(item);
+                        continue;
+                    }
+                } 
+           }
 
             return;
         }
-        
+
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidNextToken"))
             {
                 return new InvalidNextTokenException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
             return new AmazonAutoScalingException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static DescribePoliciesResponseUnmarshaller instance;
 
-        public static DescribePoliciesResponseUnmarshaller GetInstance()
+        private static DescribePoliciesResponseUnmarshaller _instance = new DescribePoliciesResponseUnmarshaller();        
+
+        internal static DescribePoliciesResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new DescribePoliciesResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static DescribePoliciesResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

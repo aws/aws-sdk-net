@@ -14,28 +14,32 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Account Limits Request Marshaller
+    /// DescribeAccountLimits Request Marshaller
     /// </summary>       
     public class DescribeAccountLimitsRequestMarshaller : IMarshaller<IRequest, DescribeAccountLimitsRequest>
     {
-        public IRequest Marshall(DescribeAccountLimitsRequest describeAccountLimitsRequest)
+        public IRequest Marshall(DescribeAccountLimitsRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describeAccountLimitsRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AutoScaling");
             request.Parameters.Add("Action", "DescribeAccountLimits");
             request.Parameters.Add("Version", "2011-01-01");
 
+            if(publicRequest != null)
+            {
+            }
             return request;
         }
     }

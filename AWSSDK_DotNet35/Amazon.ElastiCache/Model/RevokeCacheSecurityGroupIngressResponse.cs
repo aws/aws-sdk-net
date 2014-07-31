@@ -12,24 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
+
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Returns information about the RevokeCacheSecurityGroupIngress response and response metadata.
+    /// Configuration for accessing Amazon RevokeCacheSecurityGroupIngress service
     /// </summary>
     public partial class RevokeCacheSecurityGroupIngressResponse : RevokeCacheSecurityGroupIngressResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the RevokeCacheSecurityGroupIngressResult property.
-        /// Contains the result of a successful invocation of the RevokeCacheSecurityGroupIngress
-        /// action.
-        /// 
+        /// Represents the output of a RevokeCacheSecurityGroupIngress operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the RevokeCacheSecurityGroupIngressResult class are now available on the RevokeCacheSecurityGroupIngressResponse class. You should use the properties on RevokeCacheSecurityGroupIngressResponse instead of accessing them through RevokeCacheSecurityGroupIngressResult.")]
         public RevokeCacheSecurityGroupIngressResult RevokeCacheSecurityGroupIngressResult
         {
@@ -40,4 +36,3 @@ namespace Amazon.ElastiCache.Model
         }
     }
 }
-    

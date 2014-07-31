@@ -16,27 +16,25 @@ using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// The results from the CreateSnapshot action.
+    /// Represents a copy of an entire cache cluster as of the time when the snapshot was
+    /// taken.
     /// </summary>
     public partial class CreateSnapshotResult : AmazonWebServiceResponse
     {
-        private Snapshot snapshotValue;
+        private Snapshot _response;
 
-        /// <summary>
-        /// Gets and sets the CreateSnapshotResult property.
-        /// Contains the result of a successful invocation of the CreateSnapshot
-        /// action.
-        /// </summary>
         public Snapshot Snapshot
         {
-            get { return this.snapshotValue; }
-            set { this.snapshotValue = value; }
+            get { return this._response; }
+            set { this._response = value; }
         }
     }
 }
-    

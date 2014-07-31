@@ -12,192 +12,198 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   CacheCluster Unmarshaller
-     /// </summary>
-    internal class CacheClusterUnmarshaller : IUnmarshaller<CacheCluster, XmlUnmarshallerContext>, IUnmarshaller<CacheCluster, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for CacheCluster Object
+    /// </summary>  
+    public class CacheClusterUnmarshaller : IUnmarshaller<CacheCluster, XmlUnmarshallerContext>, IUnmarshaller<CacheCluster, JsonUnmarshallerContext>
     {
-        public CacheCluster Unmarshall(XmlUnmarshallerContext context) 
+        public CacheCluster Unmarshall(XmlUnmarshallerContext context)
         {
-            CacheCluster cacheCluster = new CacheCluster();
+            CacheCluster unmarshalledObject = new CacheCluster();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            if (context.IsStartOfDocument) 
-               targetDepth++;
-            
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("CacheClusterId", targetDepth))
+                    if (context.TestExpression("AutoMinorVersionUpgrade", targetDepth))
                     {
-                        cacheCluster.CacheClusterId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("ConfigurationEndpoint", targetDepth))
-                    {
-                        cacheCluster.ConfigurationEndpoint = EndpointUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("ClientDownloadLandingPage", targetDepth))
-                    {
-                        cacheCluster.ClientDownloadLandingPage = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("CacheNodeType", targetDepth))
-                    {
-                        cacheCluster.CacheNodeType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Engine", targetDepth))
-                    {
-                        cacheCluster.Engine = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("EngineVersion", targetDepth))
-                    {
-                        cacheCluster.EngineVersion = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("CacheClusterStatus", targetDepth))
-                    {
-                        cacheCluster.CacheClusterStatus = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("NumCacheNodes", targetDepth))
-                    {
-                        cacheCluster.NumCacheNodes = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("PreferredAvailabilityZone", targetDepth))
-                    {
-                        cacheCluster.PreferredAvailabilityZone = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.AutoMinorVersionUpgrade = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("CacheClusterCreateTime", targetDepth))
                     {
-                        cacheCluster.CacheClusterCreateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.CacheClusterCreateTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("PreferredMaintenanceWindow", targetDepth))
+                    if (context.TestExpression("CacheClusterId", targetDepth))
                     {
-                        cacheCluster.PreferredMaintenanceWindow = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CacheClusterId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("PendingModifiedValues", targetDepth))
+                    if (context.TestExpression("CacheClusterStatus", targetDepth))
                     {
-                        cacheCluster.PendingModifiedValues = PendingModifiedValuesUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("NotificationConfiguration", targetDepth))
-                    {
-                        cacheCluster.NotificationConfiguration = NotificationConfigurationUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("CacheSecurityGroups/CacheSecurityGroup", targetDepth))
-                    {
-                        cacheCluster.CacheSecurityGroups.Add(CacheSecurityGroupMembershipUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("CacheParameterGroup", targetDepth))
-                    {
-                        cacheCluster.CacheParameterGroup = CacheParameterGroupStatusUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("CacheSubnetGroupName", targetDepth))
-                    {
-                        cacheCluster.CacheSubnetGroupName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CacheClusterStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("CacheNodes/CacheNode", targetDepth))
                     {
-                        cacheCluster.CacheNodes.Add(CacheNodeUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = CacheNodeUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.CacheNodes.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("AutoMinorVersionUpgrade", targetDepth))
+                    if (context.TestExpression("CacheNodeType", targetDepth))
                     {
-                        cacheCluster.AutoMinorVersionUpgrade = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CacheNodeType = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("SecurityGroups/member", targetDepth))
+                    if (context.TestExpression("CacheParameterGroup", targetDepth))
                     {
-                        cacheCluster.SecurityGroups.Add(SecurityGroupMembershipUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = CacheParameterGroupStatusUnmarshaller.Instance;
+                        unmarshalledObject.CacheParameterGroup = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("CacheSecurityGroups/CacheSecurityGroup", targetDepth))
+                    {
+                        var unmarshaller = CacheSecurityGroupMembershipUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.CacheSecurityGroups.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("CacheSubnetGroupName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CacheSubnetGroupName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ClientDownloadLandingPage", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ClientDownloadLandingPage = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ConfigurationEndpoint", targetDepth))
+                    {
+                        var unmarshaller = EndpointUnmarshaller.Instance;
+                        unmarshalledObject.ConfigurationEndpoint = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Engine", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Engine = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("EngineVersion", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("NotificationConfiguration", targetDepth))
+                    {
+                        var unmarshaller = NotificationConfigurationUnmarshaller.Instance;
+                        unmarshalledObject.NotificationConfiguration = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("NumCacheNodes", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.NumCacheNodes = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PendingModifiedValues", targetDepth))
+                    {
+                        var unmarshaller = PendingModifiedValuesUnmarshaller.Instance;
+                        unmarshalledObject.PendingModifiedValues = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PreferredAvailabilityZone", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PreferredAvailabilityZone = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PreferredMaintenanceWindow", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PreferredMaintenanceWindow = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ReplicationGroupId", targetDepth))
                     {
-                        cacheCluster.ReplicationGroupId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ReplicationGroupId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SecurityGroups/member", targetDepth))
+                    {
+                        var unmarshaller = SecurityGroupMembershipUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SecurityGroups.Add(item);
                         continue;
                     }
                     if (context.TestExpression("SnapshotRetentionLimit", targetDepth))
                     {
-                        cacheCluster.SnapshotRetentionLimit = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.SnapshotRetentionLimit = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SnapshotWindow", targetDepth))
                     {
-                        cacheCluster.SnapshotWindow = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SnapshotWindow = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return cacheCluster;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return cacheCluster;
+            return unmarshalledObject;
         }
 
-        public CacheCluster Unmarshall(JsonUnmarshallerContext context) 
+        public CacheCluster Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static CacheClusterUnmarshaller instance;
 
-        public static CacheClusterUnmarshaller GetInstance() 
+        private static CacheClusterUnmarshaller _instance = new CacheClusterUnmarshaller();        
+
+        public static CacheClusterUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new CacheClusterUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

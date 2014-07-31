@@ -16,27 +16,27 @@ using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// The results from the RevokeCacheSecurityGroupIngress action.
+    /// Represents the output of one of the following operations:
+    /// 
+    ///  <ul> <li> <i>AuthorizeCacheSecurityGroupIngress</i> </li> <li> <i>CreateCacheSecurityGroup</i>
+    /// </li> <li> <i>RevokeCacheSecurityGroupIngress</i> </li> </ul>
     /// </summary>
     public partial class RevokeCacheSecurityGroupIngressResult : AmazonWebServiceResponse
     {
-        private CacheSecurityGroup cacheSecurityGroupValue;
+        private CacheSecurityGroup _response;
 
-        /// <summary>
-        /// Gets and sets the RevokeCacheSecurityGroupIngressResult property.
-        /// Contains the result of a successful invocation of the RevokeCacheSecurityGroupIngress
-        /// action.
-        /// </summary>
         public CacheSecurityGroup CacheSecurityGroup
         {
-            get { return this.cacheSecurityGroupValue; }
-            set { this.cacheSecurityGroupValue = value; }
+            get { return this._response; }
+            set { this._response = value; }
         }
     }
 }
-    

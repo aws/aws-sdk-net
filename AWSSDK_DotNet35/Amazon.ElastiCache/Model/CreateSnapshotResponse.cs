@@ -12,24 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
+
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Returns information about the CreateSnapshot response and response metadata.
+    /// Configuration for accessing Amazon CreateSnapshot service
     /// </summary>
     public partial class CreateSnapshotResponse : CreateSnapshotResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the CreateSnapshotResult property.
-        /// Contains the result of a successful invocation of the CreateSnapshot
-        /// action.
-        /// 
+        /// Represents the output of a CreateSnapshot operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateSnapshotResult class are now available on the CreateSnapshotResponse class. You should use the properties on CreateSnapshotResponse instead of accessing them through CreateSnapshotResult.")]
         public CreateSnapshotResult CreateSnapshotResult
         {
@@ -40,4 +36,3 @@ namespace Amazon.ElastiCache.Model
         }
     }
 }
-    

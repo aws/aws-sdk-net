@@ -18,82 +18,94 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para>Represents a collection of cache nodes in a replication group.</para>
+    /// Represents a collection of cache nodes in a replication group.
     /// </summary>
     public partial class NodeGroup
     {
-        
-        private string nodeGroupId;
-        private string status;
-        private Endpoint primaryEndpoint;
-        private List<NodeGroupMember> nodeGroupMembers = new List<NodeGroupMember>();
+        private string _nodeGroupId;
+        private List<NodeGroupMember> _nodeGroupMembers = new List<NodeGroupMember>();
+        private Endpoint _primaryEndpoint;
+        private string _status;
 
 
         /// <summary>
-        /// The identifier for the node group. A replication group contains only one node group; therefore, the node group ID is 0001.
-        ///  
+        /// Gets and sets the property NodeGroupId. 
+        /// <para>
+        /// The identifier for the node group. A replication group contains only one node group;
+        /// therefore, the node group ID is 0001.
+        /// </para>
         /// </summary>
         public string NodeGroupId
         {
-            get { return this.nodeGroupId; }
-            set { this.nodeGroupId = value; }
+            get { return this._nodeGroupId; }
+            set { this._nodeGroupId = value; }
         }
 
         // Check to see if NodeGroupId property is set
         internal bool IsSetNodeGroupId()
         {
-            return this.nodeGroupId != null;
+            return this._nodeGroupId != null;
         }
+
 
         /// <summary>
-        /// The current state of this replication group - <i>creating</i>, <i>available</i>, etc.
-        ///  
-        /// </summary>
-        public string Status
-        {
-            get { return this.status; }
-            set { this.status = value; }
-        }
-
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
-        {
-            return this.status != null;
-        }
-
-        /// <summary>
-        /// Represents the information required for client programs to connect to a cache node.
-        ///  
-        /// </summary>
-        public Endpoint PrimaryEndpoint
-        {
-            get { return this.primaryEndpoint; }
-            set { this.primaryEndpoint = value; }
-        }
-
-        // Check to see if PrimaryEndpoint property is set
-        internal bool IsSetPrimaryEndpoint()
-        {
-            return this.primaryEndpoint != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property NodeGroupMembers. 
+        /// <para>
         /// A list containing information about individual nodes within the node group.
-        ///  
+        /// </para>
         /// </summary>
         public List<NodeGroupMember> NodeGroupMembers
         {
-            get { return this.nodeGroupMembers; }
-            set { this.nodeGroupMembers = value; }
+            get { return this._nodeGroupMembers; }
+            set { this._nodeGroupMembers = value; }
         }
 
         // Check to see if NodeGroupMembers property is set
         internal bool IsSetNodeGroupMembers()
         {
-            return this.nodeGroupMembers.Count > 0;
+            return this._nodeGroupMembers != null && this._nodeGroupMembers.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property PrimaryEndpoint.
+        /// </summary>
+        public Endpoint PrimaryEndpoint
+        {
+            get { return this._primaryEndpoint; }
+            set { this._primaryEndpoint = value; }
+        }
+
+        // Check to see if PrimaryEndpoint property is set
+        internal bool IsSetPrimaryEndpoint()
+        {
+            return this._primaryEndpoint != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The current state of this replication group - <i>creating</i>, <i>available</i>, etc.
+        /// </para>
+        /// </summary>
+        public string Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
     }
 }

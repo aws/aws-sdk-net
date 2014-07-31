@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Replication Group Request Marshaller
+    /// CreateReplicationGroup Request Marshaller
     /// </summary>       
     public class CreateReplicationGroupRequestMarshaller : IMarshaller<IRequest, CreateReplicationGroupRequest>
     {
-        public IRequest Marshall(CreateReplicationGroupRequest createReplicationGroupRequest)
+        public IRequest Marshall(CreateReplicationGroupRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(createReplicationGroupRequest, "AmazonElastiCache");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElastiCache");
             request.Parameters.Add("Action", "CreateReplicationGroup");
-            request.Parameters.Add("Version", "2014-03-24");
-            if (createReplicationGroupRequest != null && createReplicationGroupRequest.IsSetReplicationGroupId())
-            {
-                request.Parameters.Add("ReplicationGroupId", StringUtils.FromString(createReplicationGroupRequest.ReplicationGroupId));
-            }
-            if (createReplicationGroupRequest != null && createReplicationGroupRequest.IsSetPrimaryClusterId())
-            {
-                request.Parameters.Add("PrimaryClusterId", StringUtils.FromString(createReplicationGroupRequest.PrimaryClusterId));
-            }
-            if (createReplicationGroupRequest != null && createReplicationGroupRequest.IsSetReplicationGroupDescription())
-            {
-                request.Parameters.Add("ReplicationGroupDescription", StringUtils.FromString(createReplicationGroupRequest.ReplicationGroupDescription));
-            }
+            request.Parameters.Add("Version", "2014-07-15");
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetPrimaryClusterId())
+                {
+                    request.Parameters.Add("PrimaryClusterId", StringUtils.FromString(publicRequest.PrimaryClusterId));
+                }
+                if(publicRequest.IsSetReplicationGroupDescription())
+                {
+                    request.Parameters.Add("ReplicationGroupDescription", StringUtils.FromString(publicRequest.ReplicationGroupDescription));
+                }
+                if(publicRequest.IsSetReplicationGroupId())
+                {
+                    request.Parameters.Add("ReplicationGroupId", StringUtils.FromString(publicRequest.ReplicationGroupId));
+                }
+            }
             return request;
         }
     }

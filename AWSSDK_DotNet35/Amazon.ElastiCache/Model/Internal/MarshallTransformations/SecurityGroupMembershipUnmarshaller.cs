@@ -12,69 +12,75 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   SecurityGroupMembership Unmarshaller
-     /// </summary>
-    internal class SecurityGroupMembershipUnmarshaller : IUnmarshaller<SecurityGroupMembership, XmlUnmarshallerContext>, IUnmarshaller<SecurityGroupMembership, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for SecurityGroupMembership Object
+    /// </summary>  
+    public class SecurityGroupMembershipUnmarshaller : IUnmarshaller<SecurityGroupMembership, XmlUnmarshallerContext>, IUnmarshaller<SecurityGroupMembership, JsonUnmarshallerContext>
     {
-        public SecurityGroupMembership Unmarshall(XmlUnmarshallerContext context) 
+        public SecurityGroupMembership Unmarshall(XmlUnmarshallerContext context)
         {
-            SecurityGroupMembership securityGroupMembership = new SecurityGroupMembership();
+            SecurityGroupMembership unmarshalledObject = new SecurityGroupMembership();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("SecurityGroupId", targetDepth))
                     {
-                        securityGroupMembership.SecurityGroupId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SecurityGroupId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Status", targetDepth))
                     {
-                        securityGroupMembership.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return securityGroupMembership;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return securityGroupMembership;
+            return unmarshalledObject;
         }
 
-        public SecurityGroupMembership Unmarshall(JsonUnmarshallerContext context) 
+        public SecurityGroupMembership Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static SecurityGroupMembershipUnmarshaller instance;
 
-        public static SecurityGroupMembershipUnmarshaller GetInstance() 
+        private static SecurityGroupMembershipUnmarshaller _instance = new SecurityGroupMembershipUnmarshaller();        
+
+        public static SecurityGroupMembershipUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new SecurityGroupMembershipUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

@@ -12,81 +12,88 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   NodeGroup Unmarshaller
-     /// </summary>
-    internal class NodeGroupUnmarshaller : IUnmarshaller<NodeGroup, XmlUnmarshallerContext>, IUnmarshaller<NodeGroup, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for NodeGroup Object
+    /// </summary>  
+    public class NodeGroupUnmarshaller : IUnmarshaller<NodeGroup, XmlUnmarshallerContext>, IUnmarshaller<NodeGroup, JsonUnmarshallerContext>
     {
-        public NodeGroup Unmarshall(XmlUnmarshallerContext context) 
+        public NodeGroup Unmarshall(XmlUnmarshallerContext context)
         {
-            NodeGroup nodeGroup = new NodeGroup();
+            NodeGroup unmarshalledObject = new NodeGroup();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("NodeGroupId", targetDepth))
                     {
-                        nodeGroup.NodeGroupId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Status", targetDepth))
-                    {
-                        nodeGroup.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("PrimaryEndpoint", targetDepth))
-                    {
-                        nodeGroup.PrimaryEndpoint = EndpointUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.NodeGroupId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("NodeGroupMembers/NodeGroupMember", targetDepth))
                     {
-                        nodeGroup.NodeGroupMembers.Add(NodeGroupMemberUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = NodeGroupMemberUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.NodeGroupMembers.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("PrimaryEndpoint", targetDepth))
+                    {
+                        var unmarshaller = EndpointUnmarshaller.Instance;
+                        unmarshalledObject.PrimaryEndpoint = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Status", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return nodeGroup;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return nodeGroup;
+            return unmarshalledObject;
         }
 
-        public NodeGroup Unmarshall(JsonUnmarshallerContext context) 
+        public NodeGroup Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static NodeGroupUnmarshaller instance;
 
-        public static NodeGroupUnmarshaller GetInstance() 
+        private static NodeGroupUnmarshaller _instance = new NodeGroupUnmarshaller();        
+
+        public static NodeGroupUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new NodeGroupUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

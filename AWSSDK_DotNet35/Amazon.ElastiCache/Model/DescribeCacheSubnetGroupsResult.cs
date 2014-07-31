@@ -17,50 +17,58 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para>Represents the output of a <i>DescribeCacheSubnetGroups</i> operation.</para>
+    /// Represents the output of a <i>DescribeCacheSubnetGroups</i> operation.
     /// </summary>
     public partial class DescribeCacheSubnetGroupsResult : AmazonWebServiceResponse
     {
-        
-        private string marker;
-        private List<CacheSubnetGroup> cacheSubnetGroups = new List<CacheSubnetGroup>();
+        private List<CacheSubnetGroup> _cacheSubnetGroups = new List<CacheSubnetGroup>();
+        private string _marker;
 
 
         /// <summary>
-        /// Provides an identifier to allow retrieval of paginated results.
-        ///  
-        /// </summary>
-        public string Marker
-        {
-            get { return this.marker; }
-            set { this.marker = value; }
-        }
-
-        // Check to see if Marker property is set
-        internal bool IsSetMarker()
-        {
-            return this.marker != null;
-        }
-
-        /// <summary>
-        /// A list of cache subnet groups. Each element in the list contains detailed information about one group.
-        ///  
+        /// Gets and sets the property CacheSubnetGroups. 
+        /// <para>
+        /// A list of cache subnet groups. Each element in the list contains detailed information
+        /// about one group.
+        /// </para>
         /// </summary>
         public List<CacheSubnetGroup> CacheSubnetGroups
         {
-            get { return this.cacheSubnetGroups; }
-            set { this.cacheSubnetGroups = value; }
+            get { return this._cacheSubnetGroups; }
+            set { this._cacheSubnetGroups = value; }
         }
 
         // Check to see if CacheSubnetGroups property is set
         internal bool IsSetCacheSubnetGroups()
         {
-            return this.cacheSubnetGroups.Count > 0;
+            return this._cacheSubnetGroups != null && this._cacheSubnetGroups.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// Provides an identifier to allow retrieval of paginated results.
+        /// </para>
+        /// </summary>
+        public string Marker
+        {
+            get { return this._marker; }
+            set { this._marker = value; }
+        }
+
+        // Check to see if Marker property is set
+        internal bool IsSetMarker()
+        {
+            return this._marker != null;
+        }
+
     }
 }

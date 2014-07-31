@@ -19,7 +19,7 @@ using Amazon.Runtime;
 namespace Amazon.AutoScaling.Model
 {
     ///<summary>
-    /// AmazonAutoScaling exception
+    /// AutoScaling exception
     /// </summary>
     public class LimitExceededException : AmazonAutoScalingException 
     {
@@ -45,6 +45,5 @@ namespace Amazon.AutoScaling.Model
         public LimitExceededException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
-        
     }
 }

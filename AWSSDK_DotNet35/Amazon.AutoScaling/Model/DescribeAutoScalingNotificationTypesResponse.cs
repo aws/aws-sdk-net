@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeAutoScalingNotificationTypes response and response metadata.
+    /// Configuration for accessing Amazon DescribeAutoScalingNotificationTypes service
     /// </summary>
     public partial class DescribeAutoScalingNotificationTypesResponse : DescribeAutoScalingNotificationTypesResult
     {
         /// <summary>
         /// Gets and sets the DescribeAutoScalingNotificationTypesResult property.
-        /// The AutoScalingNotificationTypes data type.
+        /// Represents the output of a DescribeAutoScalingNotificationTypes operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeAutoScalingNotificationTypesResult class are now available on the DescribeAutoScalingNotificationTypesResponse class. You should use the properties on DescribeAutoScalingNotificationTypesResponse instead of accessing them through DescribeAutoScalingNotificationTypesResult.")]
         public DescribeAutoScalingNotificationTypesResult DescribeAutoScalingNotificationTypesResult
@@ -40,4 +36,3 @@ namespace Amazon.AutoScaling.Model
         }
     }
 }
-    

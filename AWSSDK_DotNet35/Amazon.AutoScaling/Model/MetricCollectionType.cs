@@ -18,44 +18,33 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The MetricCollectionType data type. </para>
+    /// The MetricCollectionType data type.
     /// </summary>
     public partial class MetricCollectionType
     {
-        
-        private string metric;
+        private string _metric;
 
 
         /// <summary>
-        /// 
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
+        /// Gets and sets the property Metric.
         /// </summary>
         public string Metric
         {
-            get { return this.metric; }
-            set { this.metric = value; }
+            get { return this._metric; }
+            set { this._metric = value; }
         }
 
         // Check to see if Metric property is set
         internal bool IsSetMetric()
         {
-            return this.metric != null;
+            return this._metric != null;
         }
+
     }
 }

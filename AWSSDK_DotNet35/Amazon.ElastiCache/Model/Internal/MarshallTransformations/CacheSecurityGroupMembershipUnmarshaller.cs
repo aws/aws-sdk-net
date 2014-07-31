@@ -12,69 +12,75 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   CacheSecurityGroupMembership Unmarshaller
-     /// </summary>
-    internal class CacheSecurityGroupMembershipUnmarshaller : IUnmarshaller<CacheSecurityGroupMembership, XmlUnmarshallerContext>, IUnmarshaller<CacheSecurityGroupMembership, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for CacheSecurityGroupMembership Object
+    /// </summary>  
+    public class CacheSecurityGroupMembershipUnmarshaller : IUnmarshaller<CacheSecurityGroupMembership, XmlUnmarshallerContext>, IUnmarshaller<CacheSecurityGroupMembership, JsonUnmarshallerContext>
     {
-        public CacheSecurityGroupMembership Unmarshall(XmlUnmarshallerContext context) 
+        public CacheSecurityGroupMembership Unmarshall(XmlUnmarshallerContext context)
         {
-            CacheSecurityGroupMembership cacheSecurityGroupMembership = new CacheSecurityGroupMembership();
+            CacheSecurityGroupMembership unmarshalledObject = new CacheSecurityGroupMembership();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("CacheSecurityGroupName", targetDepth))
                     {
-                        cacheSecurityGroupMembership.CacheSecurityGroupName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CacheSecurityGroupName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Status", targetDepth))
                     {
-                        cacheSecurityGroupMembership.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return cacheSecurityGroupMembership;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return cacheSecurityGroupMembership;
+            return unmarshalledObject;
         }
 
-        public CacheSecurityGroupMembership Unmarshall(JsonUnmarshallerContext context) 
+        public CacheSecurityGroupMembership Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static CacheSecurityGroupMembershipUnmarshaller instance;
 
-        public static CacheSecurityGroupMembershipUnmarshaller GetInstance() 
+        private static CacheSecurityGroupMembershipUnmarshaller _instance = new CacheSecurityGroupMembershipUnmarshaller();        
+
+        public static CacheSecurityGroupMembershipUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new CacheSecurityGroupMembershipUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

@@ -12,69 +12,75 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   SuspendedProcess Unmarshaller
-     /// </summary>
-    internal class SuspendedProcessUnmarshaller : IUnmarshaller<SuspendedProcess, XmlUnmarshallerContext>, IUnmarshaller<SuspendedProcess, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for SuspendedProcess Object
+    /// </summary>  
+    public class SuspendedProcessUnmarshaller : IUnmarshaller<SuspendedProcess, XmlUnmarshallerContext>, IUnmarshaller<SuspendedProcess, JsonUnmarshallerContext>
     {
-        public SuspendedProcess Unmarshall(XmlUnmarshallerContext context) 
+        public SuspendedProcess Unmarshall(XmlUnmarshallerContext context)
         {
-            SuspendedProcess suspendedProcess = new SuspendedProcess();
+            SuspendedProcess unmarshalledObject = new SuspendedProcess();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("ProcessName", targetDepth))
                     {
-                        suspendedProcess.ProcessName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ProcessName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SuspensionReason", targetDepth))
                     {
-                        suspendedProcess.SuspensionReason = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SuspensionReason = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return suspendedProcess;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return suspendedProcess;
+            return unmarshalledObject;
         }
 
-        public SuspendedProcess Unmarshall(JsonUnmarshallerContext context) 
+        public SuspendedProcess Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static SuspendedProcessUnmarshaller instance;
 
-        public static SuspendedProcessUnmarshaller GetInstance() 
+        private static SuspendedProcessUnmarshaller _instance = new SuspendedProcessUnmarshaller();        
+
+        public static SuspendedProcessUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new SuspendedProcessUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

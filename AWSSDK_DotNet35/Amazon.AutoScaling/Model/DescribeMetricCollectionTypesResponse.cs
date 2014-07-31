@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeMetricCollectionTypes response and response metadata.
+    /// Configuration for accessing Amazon DescribeMetricCollectionTypes service
     /// </summary>
     public partial class DescribeMetricCollectionTypesResponse : DescribeMetricCollectionTypesResult
     {
         /// <summary>
         /// Gets and sets the DescribeMetricCollectionTypesResult property.
-        /// The output of the DescribeMetricCollectionTypes action.
+        /// Represents the output of a DescribeMetricCollectionTypes operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeMetricCollectionTypesResult class are now available on the DescribeMetricCollectionTypesResponse class. You should use the properties on DescribeMetricCollectionTypesResponse instead of accessing them through DescribeMetricCollectionTypesResult.")]
         public DescribeMetricCollectionTypesResult DescribeMetricCollectionTypesResult
@@ -40,4 +36,3 @@ namespace Amazon.AutoScaling.Model
         }
     }
 }
-    

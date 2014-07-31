@@ -18,49 +18,57 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para>Contains the specific price and frequency of a recurring charges for a reserved cache node, or for a reserved cache node
-    /// offering.</para>
+    /// Contains the specific price and frequency of a recurring charges for a reserved cache
+    /// node, or for a reserved cache node offering.
     /// </summary>
     public partial class RecurringCharge
     {
-        
-        private double? recurringChargeAmount;
-        private string recurringChargeFrequency;
+        private double? _recurringChargeAmount;
+        private string _recurringChargeFrequency;
 
 
         /// <summary>
+        /// Gets and sets the property RecurringChargeAmount. 
+        /// <para>
         /// The monetary amount of the recurring charge.
-        ///  
+        /// </para>
         /// </summary>
         public double RecurringChargeAmount
         {
-            get { return this.recurringChargeAmount ?? default(double); }
-            set { this.recurringChargeAmount = value; }
+            get { return this._recurringChargeAmount.GetValueOrDefault(); }
+            set { this._recurringChargeAmount = value; }
         }
 
         // Check to see if RecurringChargeAmount property is set
         internal bool IsSetRecurringChargeAmount()
         {
-            return this.recurringChargeAmount.HasValue;
+            return this._recurringChargeAmount.HasValue; 
         }
 
+
         /// <summary>
+        /// Gets and sets the property RecurringChargeFrequency. 
+        /// <para>
         /// The frequency of the recurring charge.
-        ///  
+        /// </para>
         /// </summary>
         public string RecurringChargeFrequency
         {
-            get { return this.recurringChargeFrequency; }
-            set { this.recurringChargeFrequency = value; }
+            get { return this._recurringChargeFrequency; }
+            set { this._recurringChargeFrequency = value; }
         }
 
         // Check to see if RecurringChargeFrequency property is set
         internal bool IsSetRecurringChargeFrequency()
         {
-            return this.recurringChargeFrequency != null;
+            return this._recurringChargeFrequency != null;
         }
+
     }
 }

@@ -18,109 +18,96 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The <c>BlockDeviceMapping</c> data type. </para>
+    /// The <code>BlockDeviceMapping</code> data type.
     /// </summary>
     public partial class BlockDeviceMapping
     {
-        
-        private string virtualName;
-        private string deviceName;
-        private Ebs ebs;
-        private bool? noDevice;
+        private string _deviceName;
+        private Ebs _ebs;
+        private bool? _noDevice;
+        private string _virtualName;
 
 
         /// <summary>
-        /// The virtual name associated with the device.
-        ///  
+        /// Gets and sets the property DeviceName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string VirtualName
-        {
-            get { return this.virtualName; }
-            set { this.virtualName = value; }
-        }
-
-        // Check to see if VirtualName property is set
-        internal bool IsSetVirtualName()
-        {
-            return this.virtualName != null;
-        }
-
-        /// <summary>
-        /// The name of the device within Amazon EC2 (for example, /dev/sdh or xvdh).
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  The name of the device within Amazon EC2 (for example, /dev/sdh or xvdh). 
         /// </para>
         /// </summary>
         public string DeviceName
         {
-            get { return this.deviceName; }
-            set { this.deviceName = value; }
+            get { return this._deviceName; }
+            set { this._deviceName = value; }
         }
 
         // Check to see if DeviceName property is set
         internal bool IsSetDeviceName()
         {
-            return this.deviceName != null;
+            return this._deviceName != null;
         }
 
+
         /// <summary>
-        /// The Elastic Block Storage volume information.
-        ///  
+        /// Gets and sets the property Ebs. 
+        /// <para>
+        ///  The Elastic Block Storage volume information. 
+        /// </para>
         /// </summary>
         public Ebs Ebs
         {
-            get { return this.ebs; }
-            set { this.ebs = value; }
+            get { return this._ebs; }
+            set { this._ebs = value; }
         }
 
         // Check to see if Ebs property is set
         internal bool IsSetEbs()
         {
-            return this.ebs != null;
+            return this._ebs != null;
         }
 
+
         /// <summary>
-        /// Suppresses the device mapping. <note>If <c>NoDevice</c> is set to <c>true</c> for the root device, the instance might fail the EC2 health
-        /// check. Auto Scaling launches a replacement instance if the instance fails the health check.</note>
-        ///  
+        /// Gets and sets the property NoDevice. 
+        /// <para>
+        ///  Suppresses the device mapping. 
+        /// </para>
         /// </summary>
         public bool NoDevice
         {
-            get { return this.noDevice ?? default(bool); }
-            set { this.noDevice = value; }
+            get { return this._noDevice.GetValueOrDefault(); }
+            set { this._noDevice = value; }
         }
 
         // Check to see if NoDevice property is set
         internal bool IsSetNoDevice()
         {
-            return this.noDevice.HasValue;
+            return this._noDevice.HasValue; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property VirtualName. 
+        /// <para>
+        /// The virtual name associated with the device. 
+        /// </para>
+        /// </summary>
+        public string VirtualName
+        {
+            get { return this._virtualName; }
+            set { this._virtualName = value; }
+        }
+
+        // Check to see if VirtualName property is set
+        internal bool IsSetVirtualName()
+        {
+            return this._virtualName != null;
+        }
+
     }
 }

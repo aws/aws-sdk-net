@@ -12,24 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
+
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Returns information about the ModifyCacheSubnetGroup response and response metadata.
+    /// Configuration for accessing Amazon ModifyCacheSubnetGroup service
     /// </summary>
     public partial class ModifyCacheSubnetGroupResponse : ModifyCacheSubnetGroupResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the ModifyCacheSubnetGroupResult property.
-        /// Contains the result of a successful invocation of the ModifyCacheSubnetGroup
-        /// action.
-        /// 
+        /// Represents the output of a ModifyCacheSubnetGroup operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ModifyCacheSubnetGroupResult class are now available on the ModifyCacheSubnetGroupResponse class. You should use the properties on ModifyCacheSubnetGroupResponse instead of accessing them through ModifyCacheSubnetGroupResult.")]
         public ModifyCacheSubnetGroupResult ModifyCacheSubnetGroupResult
         {
@@ -40,4 +36,3 @@ namespace Amazon.ElastiCache.Model
         }
     }
 }
-    

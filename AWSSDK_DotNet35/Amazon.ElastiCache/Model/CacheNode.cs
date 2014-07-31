@@ -18,119 +18,161 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para>Represents an individual cache node within a cache cluster. Each cache node runs its own instance of the cluster's protocol-compliant
-    /// caching software - either Memcached or Redis.</para>
+    /// Represents an individual cache node within a cache cluster. Each cache node runs its
+    /// own instance of the cluster's protocol-compliant caching software - either Memcached
+    /// or Redis.
     /// </summary>
     public partial class CacheNode
     {
-        
-        private string cacheNodeId;
-        private string cacheNodeStatus;
-        private DateTime? cacheNodeCreateTime;
-        private Endpoint endpoint;
-        private string parameterGroupStatus;
-        private string sourceCacheNodeId;
+        private DateTime? _cacheNodeCreateTime;
+        private string _cacheNodeId;
+        private string _cacheNodeStatus;
+        private string _customerAvailabilityZone;
+        private Endpoint _endpoint;
+        private string _parameterGroupStatus;
+        private string _sourceCacheNodeId;
 
 
         /// <summary>
-        /// The cache node identifier. A node ID is a numeric identifier (0001, 0002, etc.). The combination of cluster ID and node ID uniquely
-        /// identifies every cache node used in a customer's AWS account.
-        ///  
-        /// </summary>
-        public string CacheNodeId
-        {
-            get { return this.cacheNodeId; }
-            set { this.cacheNodeId = value; }
-        }
-
-        // Check to see if CacheNodeId property is set
-        internal bool IsSetCacheNodeId()
-        {
-            return this.cacheNodeId != null;
-        }
-
-        /// <summary>
-        /// The current state of this cache node.
-        ///  
-        /// </summary>
-        public string CacheNodeStatus
-        {
-            get { return this.cacheNodeStatus; }
-            set { this.cacheNodeStatus = value; }
-        }
-
-        // Check to see if CacheNodeStatus property is set
-        internal bool IsSetCacheNodeStatus()
-        {
-            return this.cacheNodeStatus != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property CacheNodeCreateTime. 
+        /// <para>
         /// The date and time when the cache node was created.
-        ///  
+        /// </para>
         /// </summary>
         public DateTime CacheNodeCreateTime
         {
-            get { return this.cacheNodeCreateTime ?? default(DateTime); }
-            set { this.cacheNodeCreateTime = value; }
+            get { return this._cacheNodeCreateTime.GetValueOrDefault(); }
+            set { this._cacheNodeCreateTime = value; }
         }
 
         // Check to see if CacheNodeCreateTime property is set
         internal bool IsSetCacheNodeCreateTime()
         {
-            return this.cacheNodeCreateTime.HasValue;
+            return this._cacheNodeCreateTime.HasValue; 
         }
 
+
         /// <summary>
+        /// Gets and sets the property CacheNodeId. 
+        /// <para>
+        /// The cache node identifier. A node ID is a numeric identifier (0001, 0002, etc.). The
+        /// combination of cluster ID and node ID uniquely identifies every cache node used in
+        /// a customer's AWS account.
+        /// </para>
+        /// </summary>
+        public string CacheNodeId
+        {
+            get { return this._cacheNodeId; }
+            set { this._cacheNodeId = value; }
+        }
+
+        // Check to see if CacheNodeId property is set
+        internal bool IsSetCacheNodeId()
+        {
+            return this._cacheNodeId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property CacheNodeStatus. 
+        /// <para>
+        /// The current state of this cache node.
+        /// </para>
+        /// </summary>
+        public string CacheNodeStatus
+        {
+            get { return this._cacheNodeStatus; }
+            set { this._cacheNodeStatus = value; }
+        }
+
+        // Check to see if CacheNodeStatus property is set
+        internal bool IsSetCacheNodeStatus()
+        {
+            return this._cacheNodeStatus != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property CustomerAvailabilityZone. 
+        /// <para>
+        /// The Availability Zone where this node was created and now resides.
+        /// </para>
+        /// </summary>
+        public string CustomerAvailabilityZone
+        {
+            get { return this._customerAvailabilityZone; }
+            set { this._customerAvailabilityZone = value; }
+        }
+
+        // Check to see if CustomerAvailabilityZone property is set
+        internal bool IsSetCustomerAvailabilityZone()
+        {
+            return this._customerAvailabilityZone != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Endpoint. 
+        /// <para>
         /// The hostname and IP address for connecting to this cache node.
-        ///  
+        /// </para>
         /// </summary>
         public Endpoint Endpoint
         {
-            get { return this.endpoint; }
-            set { this.endpoint = value; }
+            get { return this._endpoint; }
+            set { this._endpoint = value; }
         }
 
         // Check to see if Endpoint property is set
         internal bool IsSetEndpoint()
         {
-            return this.endpoint != null;
+            return this._endpoint != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property ParameterGroupStatus. 
+        /// <para>
         /// The status of the parameter group applied to this cache node.
-        ///  
+        /// </para>
         /// </summary>
         public string ParameterGroupStatus
         {
-            get { return this.parameterGroupStatus; }
-            set { this.parameterGroupStatus = value; }
+            get { return this._parameterGroupStatus; }
+            set { this._parameterGroupStatus = value; }
         }
 
         // Check to see if ParameterGroupStatus property is set
         internal bool IsSetParameterGroupStatus()
         {
-            return this.parameterGroupStatus != null;
+            return this._parameterGroupStatus != null;
         }
 
+
         /// <summary>
-        /// The ID of the primary node to which this read replica node is synchronized. If this field is empty, then this node is not associated with a
-        /// primary cache cluster.
-        ///  
+        /// Gets and sets the property SourceCacheNodeId. 
+        /// <para>
+        /// The ID of the primary node to which this read replica node is synchronized. If this
+        /// field is empty, then this node is not associated with a primary cache cluster.
+        /// </para>
         /// </summary>
         public string SourceCacheNodeId
         {
-            get { return this.sourceCacheNodeId; }
-            set { this.sourceCacheNodeId = value; }
+            get { return this._sourceCacheNodeId; }
+            set { this._sourceCacheNodeId = value; }
         }
 
         // Check to see if SourceCacheNodeId property is set
         internal bool IsSetSourceCacheNodeId()
         {
-            return this.sourceCacheNodeId != null;
+            return this._sourceCacheNodeId != null;
         }
+
     }
 }

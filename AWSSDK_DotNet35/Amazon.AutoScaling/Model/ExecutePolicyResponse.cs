@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the ExecutePolicy response metadata.
-    /// The ExecutePolicy operation has a void result type.
+    /// Configuration for accessing Amazon ExecutePolicy service
     /// </summary>
-    public partial class ExecutePolicyResponse : AmazonWebServiceResponse
+    public partial class ExecutePolicyResponse : ExecutePolicyResult
     {
+        /// <summary>
+        /// Gets and sets the ExecutePolicyResult property.
+        /// Represents the output of a ExecutePolicy operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the ExecutePolicyResult class are now available on the ExecutePolicyResponse class. You should use the properties on ExecutePolicyResponse instead of accessing them through ExecutePolicyResult.")]
+        public ExecutePolicyResult ExecutePolicyResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

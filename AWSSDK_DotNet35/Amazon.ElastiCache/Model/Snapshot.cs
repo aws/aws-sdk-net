@@ -17,358 +17,440 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para>Represents a copy of an entire cache cluster as of the time when the snapshot was taken.</para>
+    /// Represents a copy of an entire cache cluster as of the time when the snapshot was
+    /// taken.
     /// </summary>
-    public partial class Snapshot : AmazonWebServiceResponse
+    public partial class Snapshot
     {
-        
-        private string snapshotName;
-        private string cacheClusterId;
-        private string snapshotStatus;
-        private string snapshotSource;
-        private string cacheNodeType;
-        private string engine;
-        private string engineVersion;
-        private int? numCacheNodes;
-        private string preferredAvailabilityZone;
-        private DateTime? cacheClusterCreateTime;
-        private string preferredMaintenanceWindow;
-        private string topicArn;
-        private int? port;
-        private string cacheParameterGroupName;
-        private string cacheSubnetGroupName;
-        private string vpcId;
-        private bool? autoMinorVersionUpgrade;
-        private int? snapshotRetentionLimit;
-        private string snapshotWindow;
-        private List<NodeSnapshot> nodeSnapshots = new List<NodeSnapshot>();
+        private bool? _autoMinorVersionUpgrade;
+        private DateTime? _cacheClusterCreateTime;
+        private string _cacheClusterId;
+        private string _cacheNodeType;
+        private string _cacheParameterGroupName;
+        private string _cacheSubnetGroupName;
+        private string _engine;
+        private string _engineVersion;
+        private List<NodeSnapshot> _nodeSnapshots = new List<NodeSnapshot>();
+        private int? _numCacheNodes;
+        private int? _port;
+        private string _preferredAvailabilityZone;
+        private string _preferredMaintenanceWindow;
+        private string _snapshotName;
+        private int? _snapshotRetentionLimit;
+        private string _snapshotSource;
+        private string _snapshotStatus;
+        private string _snapshotWindow;
+        private string _topicArn;
+        private string _vpcId;
 
 
         /// <summary>
-        /// The name of a snapshot. For an automatic snapshot, the name is system-generated; for a manual snapshot, this is the user-provided name.
-        ///  
-        /// </summary>
-        public string SnapshotName
-        {
-            get { return this.snapshotName; }
-            set { this.snapshotName = value; }
-        }
-
-        // Check to see if SnapshotName property is set
-        internal bool IsSetSnapshotName()
-        {
-            return this.snapshotName != null;
-        }
-
-        /// <summary>
-        /// The user-supplied identifier of the source cache cluster.
-        ///  
-        /// </summary>
-        public string CacheClusterId
-        {
-            get { return this.cacheClusterId; }
-            set { this.cacheClusterId = value; }
-        }
-
-        // Check to see if CacheClusterId property is set
-        internal bool IsSetCacheClusterId()
-        {
-            return this.cacheClusterId != null;
-        }
-
-        /// <summary>
-        /// The status of the snapshot. Valid values: <c>creating</c> | <c>available</c> | <c>restoring</c> | <c>deleting</c>.
-        ///  
-        /// </summary>
-        public string SnapshotStatus
-        {
-            get { return this.snapshotStatus; }
-            set { this.snapshotStatus = value; }
-        }
-
-        // Check to see if SnapshotStatus property is set
-        internal bool IsSetSnapshotStatus()
-        {
-            return this.snapshotStatus != null;
-        }
-
-        /// <summary>
-        /// Indicates whether the snapshot is from an automatic backup (<c>automated</c>) or was created manually (<c>manual</c>).
-        ///  
-        /// </summary>
-        public string SnapshotSource
-        {
-            get { return this.snapshotSource; }
-            set { this.snapshotSource = value; }
-        }
-
-        // Check to see if SnapshotSource property is set
-        internal bool IsSetSnapshotSource()
-        {
-            return this.snapshotSource != null;
-        }
-
-        /// <summary>
-        /// The name of the compute and memory capacity node type for the source cache cluster.
-        ///  
-        /// </summary>
-        public string CacheNodeType
-        {
-            get { return this.cacheNodeType; }
-            set { this.cacheNodeType = value; }
-        }
-
-        // Check to see if CacheNodeType property is set
-        internal bool IsSetCacheNodeType()
-        {
-            return this.cacheNodeType != null;
-        }
-
-        /// <summary>
-        /// The name of the cache engine (<i>memcached</i> or <i>redis</i>) used by the source cache cluster.
-        ///  
-        /// </summary>
-        public string Engine
-        {
-            get { return this.engine; }
-            set { this.engine = value; }
-        }
-
-        // Check to see if Engine property is set
-        internal bool IsSetEngine()
-        {
-            return this.engine != null;
-        }
-
-        /// <summary>
-        /// The version of the cache engine version that is used by the source cache cluster.
-        ///  
-        /// </summary>
-        public string EngineVersion
-        {
-            get { return this.engineVersion; }
-            set { this.engineVersion = value; }
-        }
-
-        // Check to see if EngineVersion property is set
-        internal bool IsSetEngineVersion()
-        {
-            return this.engineVersion != null;
-        }
-
-        /// <summary>
-        /// The number of cache nodes in the source cache cluster.
-        ///  
-        /// </summary>
-        public int NumCacheNodes
-        {
-            get { return this.numCacheNodes ?? default(int); }
-            set { this.numCacheNodes = value; }
-        }
-
-        // Check to see if NumCacheNodes property is set
-        internal bool IsSetNumCacheNodes()
-        {
-            return this.numCacheNodes.HasValue;
-        }
-
-        /// <summary>
-        /// The name of the Availability Zone in which the source cache cluster is located.
-        ///  
-        /// </summary>
-        public string PreferredAvailabilityZone
-        {
-            get { return this.preferredAvailabilityZone; }
-            set { this.preferredAvailabilityZone = value; }
-        }
-
-        // Check to see if PreferredAvailabilityZone property is set
-        internal bool IsSetPreferredAvailabilityZone()
-        {
-            return this.preferredAvailabilityZone != null;
-        }
-
-        /// <summary>
-        /// The date and time when the source cache cluster was created.
-        ///  
-        /// </summary>
-        public DateTime CacheClusterCreateTime
-        {
-            get { return this.cacheClusterCreateTime ?? default(DateTime); }
-            set { this.cacheClusterCreateTime = value; }
-        }
-
-        // Check to see if CacheClusterCreateTime property is set
-        internal bool IsSetCacheClusterCreateTime()
-        {
-            return this.cacheClusterCreateTime.HasValue;
-        }
-
-        /// <summary>
-        /// The time range (in UTC) during which weekly system maintenance can occur on the source cache cluster.
-        ///  
-        /// </summary>
-        public string PreferredMaintenanceWindow
-        {
-            get { return this.preferredMaintenanceWindow; }
-            set { this.preferredMaintenanceWindow = value; }
-        }
-
-        // Check to see if PreferredMaintenanceWindow property is set
-        internal bool IsSetPreferredMaintenanceWindow()
-        {
-            return this.preferredMaintenanceWindow != null;
-        }
-
-        /// <summary>
-        /// The Amazon Resource Name (ARN) for the topic used by the source cache cluster for publishing notifications.
-        ///  
-        /// </summary>
-        public string TopicArn
-        {
-            get { return this.topicArn; }
-            set { this.topicArn = value; }
-        }
-
-        // Check to see if TopicArn property is set
-        internal bool IsSetTopicArn()
-        {
-            return this.topicArn != null;
-        }
-
-        /// <summary>
-        /// The port number used by each cache nodes in the source cache cluster.
-        ///  
-        /// </summary>
-        public int Port
-        {
-            get { return this.port ?? default(int); }
-            set { this.port = value; }
-        }
-
-        // Check to see if Port property is set
-        internal bool IsSetPort()
-        {
-            return this.port.HasValue;
-        }
-
-        /// <summary>
-        /// The cache parameter group that is associated with the source cache cluster.
-        ///  
-        /// </summary>
-        public string CacheParameterGroupName
-        {
-            get { return this.cacheParameterGroupName; }
-            set { this.cacheParameterGroupName = value; }
-        }
-
-        // Check to see if CacheParameterGroupName property is set
-        internal bool IsSetCacheParameterGroupName()
-        {
-            return this.cacheParameterGroupName != null;
-        }
-
-        /// <summary>
-        /// The name of the cache subnet group associated with the source cache cluster.
-        ///  
-        /// </summary>
-        public string CacheSubnetGroupName
-        {
-            get { return this.cacheSubnetGroupName; }
-            set { this.cacheSubnetGroupName = value; }
-        }
-
-        // Check to see if CacheSubnetGroupName property is set
-        internal bool IsSetCacheSubnetGroupName()
-        {
-            return this.cacheSubnetGroupName != null;
-        }
-
-        /// <summary>
-        /// The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet group for the source cache cluster.
-        ///  
-        /// </summary>
-        public string VpcId
-        {
-            get { return this.vpcId; }
-            set { this.vpcId = value; }
-        }
-
-        // Check to see if VpcId property is set
-        internal bool IsSetVpcId()
-        {
-            return this.vpcId != null;
-        }
-
-        /// <summary>
-        /// For the source cache cluster, indicates whether minor version patches are applied automatically (<c>true</c>) or not (<c>false</c>).
-        ///  
+        /// Gets and sets the property AutoMinorVersionUpgrade. 
+        /// <para>
+        /// For the source cache cluster, indicates whether minor version patches are applied
+        /// automatically (<code>true</code>) or not (<code>false</code>).
+        /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
         {
-            get { return this.autoMinorVersionUpgrade ?? default(bool); }
-            set { this.autoMinorVersionUpgrade = value; }
+            get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
+            set { this._autoMinorVersionUpgrade = value; }
         }
 
         // Check to see if AutoMinorVersionUpgrade property is set
         internal bool IsSetAutoMinorVersionUpgrade()
         {
-            return this.autoMinorVersionUpgrade.HasValue;
+            return this._autoMinorVersionUpgrade.HasValue; 
         }
 
+
         /// <summary>
-        /// For an automatic snapshot, the number of days for which ElastiCache will retain the snapshot before deleting it. For manual snapshots, this
-        /// field reflects the <i>SnapshotRetentionLimit</i> for the source cache cluster when the snapshot was created. This field is otherwise
-        /// ignored: Manual snapshots do not expire, and can only be deleted using the <i>DeleteSnapshot</i> action.
-        ///  
+        /// Gets and sets the property CacheClusterCreateTime. 
+        /// <para>
+        /// The date and time when the source cache cluster was created.
+        /// </para>
         /// </summary>
-        public int SnapshotRetentionLimit
+        public DateTime CacheClusterCreateTime
         {
-            get { return this.snapshotRetentionLimit ?? default(int); }
-            set { this.snapshotRetentionLimit = value; }
+            get { return this._cacheClusterCreateTime.GetValueOrDefault(); }
+            set { this._cacheClusterCreateTime = value; }
         }
 
-        // Check to see if SnapshotRetentionLimit property is set
-        internal bool IsSetSnapshotRetentionLimit()
+        // Check to see if CacheClusterCreateTime property is set
+        internal bool IsSetCacheClusterCreateTime()
         {
-            return this.snapshotRetentionLimit.HasValue;
+            return this._cacheClusterCreateTime.HasValue; 
         }
+
 
         /// <summary>
-        /// The daily time range during which ElastiCache takes daily snapshots of the source cache cluster.
-        ///  
+        /// Gets and sets the property CacheClusterId. 
+        /// <para>
+        /// The user-supplied identifier of the source cache cluster.
+        /// </para>
         /// </summary>
-        public string SnapshotWindow
+        public string CacheClusterId
         {
-            get { return this.snapshotWindow; }
-            set { this.snapshotWindow = value; }
+            get { return this._cacheClusterId; }
+            set { this._cacheClusterId = value; }
         }
 
-        // Check to see if SnapshotWindow property is set
-        internal bool IsSetSnapshotWindow()
+        // Check to see if CacheClusterId property is set
+        internal bool IsSetCacheClusterId()
         {
-            return this.snapshotWindow != null;
+            return this._cacheClusterId != null;
         }
+
 
         /// <summary>
-        /// A list of the cache cluster nodes in the source cache cluster.
-        ///  
+        /// Gets and sets the property CacheNodeType. 
+        /// <para>
+        /// The name of the compute and memory capacity node type for the source cache cluster.
+        /// </para>
+        /// </summary>
+        public string CacheNodeType
+        {
+            get { return this._cacheNodeType; }
+            set { this._cacheNodeType = value; }
+        }
+
+        // Check to see if CacheNodeType property is set
+        internal bool IsSetCacheNodeType()
+        {
+            return this._cacheNodeType != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property CacheParameterGroupName. 
+        /// <para>
+        /// The cache parameter group that is associated with the source cache cluster.
+        /// </para>
+        /// </summary>
+        public string CacheParameterGroupName
+        {
+            get { return this._cacheParameterGroupName; }
+            set { this._cacheParameterGroupName = value; }
+        }
+
+        // Check to see if CacheParameterGroupName property is set
+        internal bool IsSetCacheParameterGroupName()
+        {
+            return this._cacheParameterGroupName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property CacheSubnetGroupName. 
+        /// <para>
+        /// The name of the cache subnet group associated with the source cache cluster.
+        /// </para>
+        /// </summary>
+        public string CacheSubnetGroupName
+        {
+            get { return this._cacheSubnetGroupName; }
+            set { this._cacheSubnetGroupName = value; }
+        }
+
+        // Check to see if CacheSubnetGroupName property is set
+        internal bool IsSetCacheSubnetGroupName()
+        {
+            return this._cacheSubnetGroupName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Engine. 
+        /// <para>
+        /// The name of the cache engine (<i>memcached</i> or <i>redis</i>) used by the source
+        /// cache cluster.
+        /// </para>
+        /// </summary>
+        public string Engine
+        {
+            get { return this._engine; }
+            set { this._engine = value; }
+        }
+
+        // Check to see if Engine property is set
+        internal bool IsSetEngine()
+        {
+            return this._engine != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property EngineVersion. 
+        /// <para>
+        /// The version of the cache engine version that is used by the source cache cluster.
+        /// </para>
+        /// </summary>
+        public string EngineVersion
+        {
+            get { return this._engineVersion; }
+            set { this._engineVersion = value; }
+        }
+
+        // Check to see if EngineVersion property is set
+        internal bool IsSetEngineVersion()
+        {
+            return this._engineVersion != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property NodeSnapshots. 
+        /// <para>
+        /// A list of the cache nodes in the source cache cluster.
+        /// </para>
         /// </summary>
         public List<NodeSnapshot> NodeSnapshots
         {
-            get { return this.nodeSnapshots; }
-            set { this.nodeSnapshots = value; }
+            get { return this._nodeSnapshots; }
+            set { this._nodeSnapshots = value; }
         }
 
         // Check to see if NodeSnapshots property is set
         internal bool IsSetNodeSnapshots()
         {
-            return this.nodeSnapshots.Count > 0;
+            return this._nodeSnapshots != null && this._nodeSnapshots.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property NumCacheNodes. 
+        /// <para>
+        /// The number of cache nodes in the source cache cluster.
+        /// </para>
+        /// </summary>
+        public int NumCacheNodes
+        {
+            get { return this._numCacheNodes.GetValueOrDefault(); }
+            set { this._numCacheNodes = value; }
+        }
+
+        // Check to see if NumCacheNodes property is set
+        internal bool IsSetNumCacheNodes()
+        {
+            return this._numCacheNodes.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Port. 
+        /// <para>
+        /// The port number used by each cache nodes in the source cache cluster.
+        /// </para>
+        /// </summary>
+        public int Port
+        {
+            get { return this._port.GetValueOrDefault(); }
+            set { this._port = value; }
+        }
+
+        // Check to see if Port property is set
+        internal bool IsSetPort()
+        {
+            return this._port.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property PreferredAvailabilityZone. 
+        /// <para>
+        /// The name of the Availability Zone in which the source cache cluster is located.
+        /// </para>
+        /// </summary>
+        public string PreferredAvailabilityZone
+        {
+            get { return this._preferredAvailabilityZone; }
+            set { this._preferredAvailabilityZone = value; }
+        }
+
+        // Check to see if PreferredAvailabilityZone property is set
+        internal bool IsSetPreferredAvailabilityZone()
+        {
+            return this._preferredAvailabilityZone != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property PreferredMaintenanceWindow. 
+        /// <para>
+        ///  The time range (in UTC) during which weekly system maintenance can occur on the source
+        /// cache cluster.
+        /// </para>
+        /// </summary>
+        public string PreferredMaintenanceWindow
+        {
+            get { return this._preferredMaintenanceWindow; }
+            set { this._preferredMaintenanceWindow = value; }
+        }
+
+        // Check to see if PreferredMaintenanceWindow property is set
+        internal bool IsSetPreferredMaintenanceWindow()
+        {
+            return this._preferredMaintenanceWindow != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SnapshotName. 
+        /// <para>
+        /// The name of a snapshot. For an automatic snapshot, the name is system-generated; for
+        /// a manual snapshot, this is the user-provided name.
+        /// </para>
+        /// </summary>
+        public string SnapshotName
+        {
+            get { return this._snapshotName; }
+            set { this._snapshotName = value; }
+        }
+
+        // Check to see if SnapshotName property is set
+        internal bool IsSetSnapshotName()
+        {
+            return this._snapshotName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SnapshotRetentionLimit. 
+        /// <para>
+        /// For an automatic snapshot, the number of days for which ElastiCache will retain the
+        /// snapshot before deleting it.
+        /// </para>
+        ///  
+        /// <para>
+        /// For manual snapshots, this field reflects the <i>SnapshotRetentionLimit</i> for the
+        /// source cache cluster when the snapshot was created. This field is otherwise ignored:
+        /// Manual snapshots do not expire, and can only be deleted using the <i>DeleteSnapshot</i>
+        /// action. 
+        /// </para>
+        ///  
+        /// <para>
+        /// <b>Important</b>If the value of SnapshotRetentionLimit is set to zero (0), backups
+        /// are turned off.
+        /// </para>
+        /// </summary>
+        public int SnapshotRetentionLimit
+        {
+            get { return this._snapshotRetentionLimit.GetValueOrDefault(); }
+            set { this._snapshotRetentionLimit = value; }
+        }
+
+        // Check to see if SnapshotRetentionLimit property is set
+        internal bool IsSetSnapshotRetentionLimit()
+        {
+            return this._snapshotRetentionLimit.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SnapshotSource. 
+        /// <para>
+        /// Indicates whether the snapshot is from an automatic backup (<code>automated</code>)
+        /// or was created manually (<code>manual</code>).
+        /// </para>
+        /// </summary>
+        public string SnapshotSource
+        {
+            get { return this._snapshotSource; }
+            set { this._snapshotSource = value; }
+        }
+
+        // Check to see if SnapshotSource property is set
+        internal bool IsSetSnapshotSource()
+        {
+            return this._snapshotSource != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SnapshotStatus. 
+        /// <para>
+        /// The status of the snapshot. Valid values: <code>creating</code> | <code>available</code>
+        /// | <code>restoring</code> | <code>copying</code> | <code>deleting</code>.
+        /// </para>
+        /// </summary>
+        public string SnapshotStatus
+        {
+            get { return this._snapshotStatus; }
+            set { this._snapshotStatus = value; }
+        }
+
+        // Check to see if SnapshotStatus property is set
+        internal bool IsSetSnapshotStatus()
+        {
+            return this._snapshotStatus != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property SnapshotWindow. 
+        /// <para>
+        /// The daily time range during which ElastiCache takes daily snapshots of the source
+        /// cache cluster.
+        /// </para>
+        /// </summary>
+        public string SnapshotWindow
+        {
+            get { return this._snapshotWindow; }
+            set { this._snapshotWindow = value; }
+        }
+
+        // Check to see if SnapshotWindow property is set
+        internal bool IsSetSnapshotWindow()
+        {
+            return this._snapshotWindow != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property TopicArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the topic used by the source cache cluster for
+        /// publishing notifications.
+        /// </para>
+        /// </summary>
+        public string TopicArn
+        {
+            get { return this._topicArn; }
+            set { this._topicArn = value; }
+        }
+
+        // Check to see if TopicArn property is set
+        internal bool IsSetTopicArn()
+        {
+            return this._topicArn != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property VpcId. 
+        /// <para>
+        /// The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet group for
+        /// the source cache cluster.
+        /// </para>
+        /// </summary>
+        public string VpcId
+        {
+            get { return this._vpcId; }
+            set { this._vpcId = value; }
+        }
+
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
+        {
+            return this._vpcId != null;
+        }
+
     }
 }

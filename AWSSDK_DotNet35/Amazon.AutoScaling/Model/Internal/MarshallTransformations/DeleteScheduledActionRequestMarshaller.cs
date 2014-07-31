@@ -14,36 +14,40 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Scheduled Action Request Marshaller
+    /// DeleteScheduledAction Request Marshaller
     /// </summary>       
     public class DeleteScheduledActionRequestMarshaller : IMarshaller<IRequest, DeleteScheduledActionRequest>
     {
-        public IRequest Marshall(DeleteScheduledActionRequest deleteScheduledActionRequest)
+        public IRequest Marshall(DeleteScheduledActionRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(deleteScheduledActionRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AutoScaling");
             request.Parameters.Add("Action", "DeleteScheduledAction");
             request.Parameters.Add("Version", "2011-01-01");
-            if (deleteScheduledActionRequest != null && deleteScheduledActionRequest.IsSetAutoScalingGroupName())
-            {
-                request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(deleteScheduledActionRequest.AutoScalingGroupName));
-            }
-            if (deleteScheduledActionRequest != null && deleteScheduledActionRequest.IsSetScheduledActionName())
-            {
-                request.Parameters.Add("ScheduledActionName", StringUtils.FromString(deleteScheduledActionRequest.ScheduledActionName));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAutoScalingGroupName())
+                {
+                    request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
+                }
+                if(publicRequest.IsSetScheduledActionName())
+                {
+                    request.Parameters.Add("ScheduledActionName", StringUtils.FromString(publicRequest.ScheduledActionName));
+                }
+            }
             return request;
         }
     }

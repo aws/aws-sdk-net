@@ -18,144 +18,119 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> The tag applied to an Auto Scaling group. </para>
+    /// The tag applied to an Auto Scaling group.
     /// </summary>
     public partial class Tag
     {
-        
-        private string resourceId;
-        private string resourceType;
-        private string key;
-        private string value;
-        private bool? propagateAtLaunch;
+        private string _key;
+        private bool? _propagateAtLaunch;
+        private string _resourceId;
+        private string _resourceType;
+        private string _value;
 
 
         /// <summary>
-        /// The name of the Auto Scaling group.
-        ///  
+        /// Gets and sets the property Key. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string ResourceId
-        {
-            get { return this.resourceId; }
-            set { this.resourceId = value; }
-        }
-
-        // Check to see if ResourceId property is set
-        internal bool IsSetResourceId()
-        {
-            return this.resourceId != null;
-        }
-
-        /// <summary>
-        /// The kind of resource to which the tag is applied. Currently, Auto Scaling supports the <c>auto-scaling-group</c> resource type.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string ResourceType
-        {
-            get { return this.resourceType; }
-            set { this.resourceType = value; }
-        }
-
-        // Check to see if ResourceType property is set
-        internal bool IsSetResourceType()
-        {
-            return this.resourceType != null;
-        }
-
-        /// <summary>
-        /// The key of the tag.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 128</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  The key of the tag. 
         /// </para>
         /// </summary>
         public string Key
         {
-            get { return this.key; }
-            set { this.key = value; }
+            get { return this._key; }
+            set { this._key = value; }
         }
 
         // Check to see if Key property is set
         internal bool IsSetKey()
         {
-            return this.key != null;
+            return this._key != null;
         }
 
+
         /// <summary>
-        /// The value of the tag.
-        ///  
+        /// Gets and sets the property PropagateAtLaunch. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 256</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  Specifies whether the new tag will be applied to instances launched after the tag
+        /// is created. The same behavior applies to updates: If you change a tag, the changed
+        /// tag will be applied to all instances launched after you made the change. 
         /// </para>
-        /// </summary>
-        public string Value
-        {
-            get { return this.value; }
-            set { this.value = value; }
-        }
-
-        // Check to see if Value property is set
-        internal bool IsSetValue()
-        {
-            return this.value != null;
-        }
-
-        /// <summary>
-        /// Specifies whether the new tag will be applied to instances launched after the tag is created. The same behavior applies to updates: If you
-        /// change a tag, the changed tag will be applied to all instances launched after you made the change.
-        ///  
         /// </summary>
         public bool PropagateAtLaunch
         {
-            get { return this.propagateAtLaunch ?? default(bool); }
-            set { this.propagateAtLaunch = value; }
+            get { return this._propagateAtLaunch.GetValueOrDefault(); }
+            set { this._propagateAtLaunch = value; }
         }
 
         // Check to see if PropagateAtLaunch property is set
         internal bool IsSetPropagateAtLaunch()
         {
-            return this.propagateAtLaunch.HasValue;
+            return this._propagateAtLaunch.HasValue; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property ResourceId. 
+        /// <para>
+        ///  The name of the Auto Scaling group. 
+        /// </para>
+        /// </summary>
+        public string ResourceId
+        {
+            get { return this._resourceId; }
+            set { this._resourceId = value; }
+        }
+
+        // Check to see if ResourceId property is set
+        internal bool IsSetResourceId()
+        {
+            return this._resourceId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ResourceType. 
+        /// <para>
+        ///  The kind of resource to which the tag is applied. Currently, Auto Scaling supports
+        /// the <code>auto-scaling-group</code> resource type. 
+        /// </para>
+        /// </summary>
+        public string ResourceType
+        {
+            get { return this._resourceType; }
+            set { this._resourceType = value; }
+        }
+
+        // Check to see if ResourceType property is set
+        internal bool IsSetResourceType()
+        {
+            return this._resourceType != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Value. 
+        /// <para>
+        ///  The value of the tag. 
+        /// </para>
+        /// </summary>
+        public string Value
+        {
+            get { return this._value; }
+            set { this._value = value; }
+        }
+
+        // Check to see if Value property is set
+        internal bool IsSetValue()
+        {
+            return this._value != null;
+        }
+
     }
 }

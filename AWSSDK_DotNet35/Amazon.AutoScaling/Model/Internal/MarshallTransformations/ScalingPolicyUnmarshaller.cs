@@ -12,105 +12,112 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ScalingPolicy Unmarshaller
-     /// </summary>
-    internal class ScalingPolicyUnmarshaller : IUnmarshaller<ScalingPolicy, XmlUnmarshallerContext>, IUnmarshaller<ScalingPolicy, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ScalingPolicy Object
+    /// </summary>  
+    public class ScalingPolicyUnmarshaller : IUnmarshaller<ScalingPolicy, XmlUnmarshallerContext>, IUnmarshaller<ScalingPolicy, JsonUnmarshallerContext>
     {
-        public ScalingPolicy Unmarshall(XmlUnmarshallerContext context) 
+        public ScalingPolicy Unmarshall(XmlUnmarshallerContext context)
         {
-            ScalingPolicy scalingPolicy = new ScalingPolicy();
+            ScalingPolicy unmarshalledObject = new ScalingPolicy();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("AutoScalingGroupName", targetDepth))
-                    {
-                        scalingPolicy.AutoScalingGroupName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("PolicyName", targetDepth))
-                    {
-                        scalingPolicy.PolicyName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("ScalingAdjustment", targetDepth))
-                    {
-                        scalingPolicy.ScalingAdjustment = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("AdjustmentType", targetDepth))
                     {
-                        scalingPolicy.AdjustmentType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Cooldown", targetDepth))
-                    {
-                        scalingPolicy.Cooldown = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("PolicyARN", targetDepth))
-                    {
-                        scalingPolicy.PolicyARN = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AdjustmentType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Alarms/member", targetDepth))
                     {
-                        scalingPolicy.Alarms.Add(AlarmUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = AlarmUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Alarms.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("AutoScalingGroupName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AutoScalingGroupName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Cooldown", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.Cooldown = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MinAdjustmentStep", targetDepth))
                     {
-                        scalingPolicy.MinAdjustmentStep = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.MinAdjustmentStep = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PolicyARN", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PolicyARN = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PolicyName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PolicyName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ScalingAdjustment", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.ScalingAdjustment = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return scalingPolicy;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return scalingPolicy;
+            return unmarshalledObject;
         }
 
-        public ScalingPolicy Unmarshall(JsonUnmarshallerContext context) 
+        public ScalingPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static ScalingPolicyUnmarshaller instance;
 
-        public static ScalingPolicyUnmarshaller GetInstance() 
+        private static ScalingPolicyUnmarshaller _instance = new ScalingPolicyUnmarshaller();        
+
+        public static ScalingPolicyUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new ScalingPolicyUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

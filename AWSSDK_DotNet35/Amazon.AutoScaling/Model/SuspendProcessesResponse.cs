@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the SuspendProcesses response metadata.
-    /// The SuspendProcesses operation has a void result type.
+    /// Configuration for accessing Amazon SuspendProcesses service
     /// </summary>
-    public partial class SuspendProcessesResponse : AmazonWebServiceResponse
+    public partial class SuspendProcessesResponse : SuspendProcessesResult
     {
+        /// <summary>
+        /// Gets and sets the SuspendProcessesResult property.
+        /// Represents the output of a SuspendProcesses operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the SuspendProcessesResult class are now available on the SuspendProcessesResponse class. You should use the properties on SuspendProcessesResponse instead of accessing them through SuspendProcessesResult.")]
+        public SuspendProcessesResult SuspendProcessesResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

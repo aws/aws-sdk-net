@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the DeletePolicy response metadata.
-    /// The DeletePolicy operation has a void result type.
+    /// Configuration for accessing Amazon DeletePolicy service
     /// </summary>
-    public partial class DeletePolicyResponse : AmazonWebServiceResponse
+    public partial class DeletePolicyResponse : DeletePolicyResult
     {
+        /// <summary>
+        /// Gets and sets the DeletePolicyResult property.
+        /// Represents the output of a DeletePolicy operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DeletePolicyResult class are now available on the DeletePolicyResponse class. You should use the properties on DeletePolicyResponse instead of accessing them through DeletePolicyResult.")]
+        public DeletePolicyResult DeletePolicyResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

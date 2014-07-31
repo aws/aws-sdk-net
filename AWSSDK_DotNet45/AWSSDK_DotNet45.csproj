@@ -154,6 +154,8 @@
     <Compile Include="Amazon.Redshift\IAmazonRedshift.cs" />
     <Compile Include="Amazon.Route53\AmazonRoute53Client.cs" />
     <Compile Include="Amazon.Route53\IAmazonRoute53.cs" />
+    <Compile Include="Amazon.Route53Domains\AmazonRoute53DomainsClient.cs" />
+    <Compile Include="Amazon.Route53Domains\IAmazonRoute53Domains.cs" />
     <Compile Include="Amazon.Runtime\AmazonWebServiceClient.cs" />
     <Compile Include="Amazon.Runtime\AWSCredentials.async.cs" />
     <Compile Include="Amazon.Runtime\Internal\AsyncRunner.cs" />
@@ -605,6 +607,17 @@
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.Route53\Model\Internal\MarshallTransformations\*">
+      <Visible>false</Visible>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Route53Domains\*" Exclude="..\AWSSDK_DotNet35\Amazon.Route53Domains\IAmazonRoute53Domains.cs;..\AWSSDK_DotNet35\Amazon.Route53Domains\AmazonRoute53DomainsClient.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Route53Domains\Model\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Route53Domains\Model\Internal\MarshallTransformations\*">
       <Visible>false</Visible>
     </Compile>
   </ItemGroup>

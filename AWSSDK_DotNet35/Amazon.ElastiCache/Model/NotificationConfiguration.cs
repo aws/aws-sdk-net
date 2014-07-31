@@ -18,49 +18,57 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para>Describes a notification topic and its status. Notification topics are used for publishing ElastiCache events to subscribers using
-    /// Amazon Simple Notification Service (SNS).</para>
+    /// Describes a notification topic and its status. Notification topics are used for publishing
+    /// ElastiCache events to subscribers using Amazon Simple Notification Service (SNS).
     /// </summary>
     public partial class NotificationConfiguration
     {
-        
-        private string topicArn;
-        private string topicStatus;
+        private string _topicArn;
+        private string _topicStatus;
 
 
         /// <summary>
+        /// Gets and sets the property TopicArn. 
+        /// <para>
         /// The Amazon Resource Name (ARN) that identifies the topic.
-        ///  
+        /// </para>
         /// </summary>
         public string TopicArn
         {
-            get { return this.topicArn; }
-            set { this.topicArn = value; }
+            get { return this._topicArn; }
+            set { this._topicArn = value; }
         }
 
         // Check to see if TopicArn property is set
         internal bool IsSetTopicArn()
         {
-            return this.topicArn != null;
+            return this._topicArn != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property TopicStatus. 
+        /// <para>
         /// The current state of the topic.
-        ///  
+        /// </para>
         /// </summary>
         public string TopicStatus
         {
-            get { return this.topicStatus; }
-            set { this.topicStatus = value; }
+            get { return this._topicStatus; }
+            set { this._topicStatus = value; }
         }
 
         // Check to see if TopicStatus property is set
         internal bool IsSetTopicStatus()
         {
-            return this.topicStatus != null;
+            return this._topicStatus != null;
         }
+
     }
 }

@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the DeleteScheduledAction response metadata.
-    /// The DeleteScheduledAction operation has a void result type.
+    /// Configuration for accessing Amazon DeleteScheduledAction service
     /// </summary>
-    public partial class DeleteScheduledActionResponse : AmazonWebServiceResponse
+    public partial class DeleteScheduledActionResponse : DeleteScheduledActionResult
     {
+        /// <summary>
+        /// Gets and sets the DeleteScheduledActionResult property.
+        /// Represents the output of a DeleteScheduledAction operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DeleteScheduledActionResult class are now available on the DeleteScheduledActionResponse class. You should use the properties on DeleteScheduledActionResponse instead of accessing them through DeleteScheduledActionResult.")]
+        public DeleteScheduledActionResult DeleteScheduledActionResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

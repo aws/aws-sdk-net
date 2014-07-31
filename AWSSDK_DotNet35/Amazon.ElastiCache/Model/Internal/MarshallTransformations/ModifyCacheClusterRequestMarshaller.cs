@@ -14,105 +14,116 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Modify Cache Cluster Request Marshaller
+    /// ModifyCacheCluster Request Marshaller
     /// </summary>       
     public class ModifyCacheClusterRequestMarshaller : IMarshaller<IRequest, ModifyCacheClusterRequest>
     {
-        public IRequest Marshall(ModifyCacheClusterRequest modifyCacheClusterRequest)
+        public IRequest Marshall(ModifyCacheClusterRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(modifyCacheClusterRequest, "AmazonElastiCache");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElastiCache");
             request.Parameters.Add("Action", "ModifyCacheCluster");
-            request.Parameters.Add("Version", "2014-03-24");
-            if (modifyCacheClusterRequest != null && modifyCacheClusterRequest.IsSetCacheClusterId())
-            {
-                request.Parameters.Add("CacheClusterId", StringUtils.FromString(modifyCacheClusterRequest.CacheClusterId));
-            }
-            if (modifyCacheClusterRequest != null && modifyCacheClusterRequest.IsSetNumCacheNodes())
-            {
-                request.Parameters.Add("NumCacheNodes", StringUtils.FromInt(modifyCacheClusterRequest.NumCacheNodes));
-            }
-            if (modifyCacheClusterRequest != null)
-            {
-                List<string> cacheNodeIdsToRemoveList = modifyCacheClusterRequest.CacheNodeIdsToRemove;
+            request.Parameters.Add("Version", "2014-07-15");
 
-                int cacheNodeIdsToRemoveListIndex = 1;
-                foreach (string cacheNodeIdsToRemoveListValue in cacheNodeIdsToRemoveList)
-                { 
-                    request.Parameters.Add("CacheNodeIdsToRemove.member." + cacheNodeIdsToRemoveListIndex, StringUtils.FromString(cacheNodeIdsToRemoveListValue));
-                    cacheNodeIdsToRemoveListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetApplyImmediately())
+                {
+                    request.Parameters.Add("ApplyImmediately", StringUtils.FromBool(publicRequest.ApplyImmediately));
+                }
+                if(publicRequest.IsSetAutoMinorVersionUpgrade())
+                {
+                    request.Parameters.Add("AutoMinorVersionUpgrade", StringUtils.FromBool(publicRequest.AutoMinorVersionUpgrade));
+                }
+                if(publicRequest.IsSetAZMode())
+                {
+                    request.Parameters.Add("AZMode", StringUtils.FromString(publicRequest.AZMode));
+                }
+                if(publicRequest.IsSetCacheClusterId())
+                {
+                    request.Parameters.Add("CacheClusterId", StringUtils.FromString(publicRequest.CacheClusterId));
+                }
+                if(publicRequest.IsSetCacheNodeIdsToRemove())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.CacheNodeIdsToRemove)
+                    {
+                        request.Parameters.Add("CacheNodeIdsToRemove" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetCacheParameterGroupName())
+                {
+                    request.Parameters.Add("CacheParameterGroupName", StringUtils.FromString(publicRequest.CacheParameterGroupName));
+                }
+                if(publicRequest.IsSetCacheSecurityGroupNames())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.CacheSecurityGroupNames)
+                    {
+                        request.Parameters.Add("CacheSecurityGroupNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetEngineVersion())
+                {
+                    request.Parameters.Add("EngineVersion", StringUtils.FromString(publicRequest.EngineVersion));
+                }
+                if(publicRequest.IsSetNewAvailabilityZones())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.NewAvailabilityZones)
+                    {
+                        request.Parameters.Add("NewAvailabilityZones" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetNotificationTopicArn())
+                {
+                    request.Parameters.Add("NotificationTopicArn", StringUtils.FromString(publicRequest.NotificationTopicArn));
+                }
+                if(publicRequest.IsSetNotificationTopicStatus())
+                {
+                    request.Parameters.Add("NotificationTopicStatus", StringUtils.FromString(publicRequest.NotificationTopicStatus));
+                }
+                if(publicRequest.IsSetNumCacheNodes())
+                {
+                    request.Parameters.Add("NumCacheNodes", StringUtils.FromInt(publicRequest.NumCacheNodes));
+                }
+                if(publicRequest.IsSetPreferredMaintenanceWindow())
+                {
+                    request.Parameters.Add("PreferredMaintenanceWindow", StringUtils.FromString(publicRequest.PreferredMaintenanceWindow));
+                }
+                if(publicRequest.IsSetSecurityGroupIds())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.SecurityGroupIds)
+                    {
+                        request.Parameters.Add("SecurityGroupIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetSnapshotRetentionLimit())
+                {
+                    request.Parameters.Add("SnapshotRetentionLimit", StringUtils.FromInt(publicRequest.SnapshotRetentionLimit));
+                }
+                if(publicRequest.IsSetSnapshotWindow())
+                {
+                    request.Parameters.Add("SnapshotWindow", StringUtils.FromString(publicRequest.SnapshotWindow));
                 }
             }
-            if (modifyCacheClusterRequest != null)
-            {
-                List<string> cacheSecurityGroupNamesList = modifyCacheClusterRequest.CacheSecurityGroupNames;
-
-                int cacheSecurityGroupNamesListIndex = 1;
-                foreach (string cacheSecurityGroupNamesListValue in cacheSecurityGroupNamesList)
-                { 
-                    request.Parameters.Add("CacheSecurityGroupNames.member." + cacheSecurityGroupNamesListIndex, StringUtils.FromString(cacheSecurityGroupNamesListValue));
-                    cacheSecurityGroupNamesListIndex++;
-                }
-            }
-            if (modifyCacheClusterRequest != null)
-            {
-                List<string> securityGroupIdsList = modifyCacheClusterRequest.SecurityGroupIds;
-
-                int securityGroupIdsListIndex = 1;
-                foreach (string securityGroupIdsListValue in securityGroupIdsList)
-                { 
-                    request.Parameters.Add("SecurityGroupIds.member." + securityGroupIdsListIndex, StringUtils.FromString(securityGroupIdsListValue));
-                    securityGroupIdsListIndex++;
-                }
-            }
-            if (modifyCacheClusterRequest != null && modifyCacheClusterRequest.IsSetPreferredMaintenanceWindow())
-            {
-                request.Parameters.Add("PreferredMaintenanceWindow", StringUtils.FromString(modifyCacheClusterRequest.PreferredMaintenanceWindow));
-            }
-            if (modifyCacheClusterRequest != null && modifyCacheClusterRequest.IsSetNotificationTopicArn())
-            {
-                request.Parameters.Add("NotificationTopicArn", StringUtils.FromString(modifyCacheClusterRequest.NotificationTopicArn));
-            }
-            if (modifyCacheClusterRequest != null && modifyCacheClusterRequest.IsSetCacheParameterGroupName())
-            {
-                request.Parameters.Add("CacheParameterGroupName", StringUtils.FromString(modifyCacheClusterRequest.CacheParameterGroupName));
-            }
-            if (modifyCacheClusterRequest != null && modifyCacheClusterRequest.IsSetNotificationTopicStatus())
-            {
-                request.Parameters.Add("NotificationTopicStatus", StringUtils.FromString(modifyCacheClusterRequest.NotificationTopicStatus));
-            }
-            if (modifyCacheClusterRequest != null && modifyCacheClusterRequest.IsSetApplyImmediately())
-            {
-                request.Parameters.Add("ApplyImmediately", StringUtils.FromBool(modifyCacheClusterRequest.ApplyImmediately));
-            }
-            if (modifyCacheClusterRequest != null && modifyCacheClusterRequest.IsSetEngineVersion())
-            {
-                request.Parameters.Add("EngineVersion", StringUtils.FromString(modifyCacheClusterRequest.EngineVersion));
-            }
-            if (modifyCacheClusterRequest != null && modifyCacheClusterRequest.IsSetAutoMinorVersionUpgrade())
-            {
-                request.Parameters.Add("AutoMinorVersionUpgrade", StringUtils.FromBool(modifyCacheClusterRequest.AutoMinorVersionUpgrade));
-            }
-            if (modifyCacheClusterRequest != null && modifyCacheClusterRequest.IsSetSnapshotRetentionLimit())
-            {
-                request.Parameters.Add("SnapshotRetentionLimit", StringUtils.FromInt(modifyCacheClusterRequest.SnapshotRetentionLimit));
-            }
-            if (modifyCacheClusterRequest != null && modifyCacheClusterRequest.IsSetSnapshotWindow())
-            {
-                request.Parameters.Add("SnapshotWindow", StringUtils.FromString(modifyCacheClusterRequest.SnapshotWindow));
-            }
-
             return request;
         }
     }

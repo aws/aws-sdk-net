@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeTags response and response metadata.
+    /// Configuration for accessing Amazon DescribeTags service
     /// </summary>
     public partial class DescribeTagsResponse : DescribeTagsResult
     {
         /// <summary>
         /// Gets and sets the DescribeTagsResult property.
-        /// 
+        /// Represents the output of a DescribeTags operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeTagsResult class are now available on the DescribeTagsResponse class. You should use the properties on DescribeTagsResponse instead of accessing them through DescribeTagsResult.")]
         public DescribeTagsResult DescribeTagsResult
@@ -40,4 +36,3 @@ namespace Amazon.AutoScaling.Model
         }
     }
 }
-    

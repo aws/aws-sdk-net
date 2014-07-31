@@ -14,47 +14,49 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Auto Scaling Groups Request Marshaller
+    /// DescribeAutoScalingGroups Request Marshaller
     /// </summary>       
     public class DescribeAutoScalingGroupsRequestMarshaller : IMarshaller<IRequest, DescribeAutoScalingGroupsRequest>
     {
-        public IRequest Marshall(DescribeAutoScalingGroupsRequest describeAutoScalingGroupsRequest)
+        public IRequest Marshall(DescribeAutoScalingGroupsRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describeAutoScalingGroupsRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AutoScaling");
             request.Parameters.Add("Action", "DescribeAutoScalingGroups");
             request.Parameters.Add("Version", "2011-01-01");
-            if (describeAutoScalingGroupsRequest != null)
-            {
-                List<string> autoScalingGroupNamesList = describeAutoScalingGroupsRequest.AutoScalingGroupNames;
 
-                int autoScalingGroupNamesListIndex = 1;
-                foreach (string autoScalingGroupNamesListValue in autoScalingGroupNamesList)
-                { 
-                    request.Parameters.Add("AutoScalingGroupNames.member." + autoScalingGroupNamesListIndex, StringUtils.FromString(autoScalingGroupNamesListValue));
-                    autoScalingGroupNamesListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAutoScalingGroupNames())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.AutoScalingGroupNames)
+                    {
+                        request.Parameters.Add("AutoScalingGroupNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetMaxRecords())
+                {
+                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
+                }
+                if(publicRequest.IsSetNextToken())
+                {
+                    request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
             }
-            if (describeAutoScalingGroupsRequest != null && describeAutoScalingGroupsRequest.IsSetNextToken())
-            {
-                request.Parameters.Add("NextToken", StringUtils.FromString(describeAutoScalingGroupsRequest.NextToken));
-            }
-            if (describeAutoScalingGroupsRequest != null && describeAutoScalingGroupsRequest.IsSetMaxRecords())
-            {
-                request.Parameters.Add("MaxRecords", StringUtils.FromInt(describeAutoScalingGroupsRequest.MaxRecords));
-            }
-
             return request;
         }
     }

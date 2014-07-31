@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the AttachInstances response metadata.
-    /// The AttachInstances operation has a void result type.
+    /// Configuration for accessing Amazon AttachInstances service
     /// </summary>
-    public partial class AttachInstancesResponse : AmazonWebServiceResponse
+    public partial class AttachInstancesResponse : AttachInstancesResult
     {
+        /// <summary>
+        /// Gets and sets the AttachInstancesResult property.
+        /// Represents the output of a AttachInstances operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the AttachInstancesResult class are now available on the AttachInstancesResponse class. You should use the properties on AttachInstancesResponse instead of accessing them through AttachInstancesResult.")]
+        public AttachInstancesResult AttachInstancesResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

@@ -25,31 +25,32 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCacheParameterGroup operation.
-    /// <para>The <i>DeleteCacheParameterGroup</i> operation deletes the specified cache parameter group. You cannot delete a cache parameter group
-    /// if it is associated with any cache clusters.</para>
+    /// The <i>DeleteCacheParameterGroup</i> operation deletes the specified cache parameter
+    /// group. You cannot delete a cache parameter group if it is associated with any cache
+    /// clusters.
     /// </summary>
     public partial class DeleteCacheParameterGroupRequest : AmazonElastiCacheRequest
     {
-        private string cacheParameterGroupName;
+        private string _cacheParameterGroupName;
 
 
         /// <summary>
-        /// The name of the cache parameter group to delete. <note> The specified cache security group must not be associated with any cache clusters.
-        /// </note>
-        ///  
+        /// Gets and sets the property CacheParameterGroupName. 
+        /// <para>
+        /// The name of the cache parameter group to delete.
+        /// </para>
         /// </summary>
         public string CacheParameterGroupName
         {
-            get { return this.cacheParameterGroupName; }
-            set { this.cacheParameterGroupName = value; }
+            get { return this._cacheParameterGroupName; }
+            set { this._cacheParameterGroupName = value; }
         }
 
         // Check to see if CacheParameterGroupName property is set
         internal bool IsSetCacheParameterGroupName()
         {
-            return this.cacheParameterGroupName != null;
+            return this._cacheParameterGroupName != null;
         }
 
     }
 }
-    

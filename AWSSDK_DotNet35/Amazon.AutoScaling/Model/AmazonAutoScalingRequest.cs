@@ -18,10 +18,9 @@ using Amazon.Runtime;
 namespace Amazon.AutoScaling
 {
     /// <summary>
-    /// Base class for AmazonAutoScaling operation requests.
+    /// Base class for AutoScaling operation requests.
     /// </summary>
     public partial class AmazonAutoScalingRequest : AmazonWebServiceRequest
     {
     }
 }
-    

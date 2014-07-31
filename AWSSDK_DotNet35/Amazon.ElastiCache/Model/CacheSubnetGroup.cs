@@ -17,89 +17,100 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para>Represents the output of one of the following operations:</para>
-    /// <ul>
-    /// <li> <i>CreateCacheSubnetGroup</i> </li>
-    /// <li> <i>ModifyCacheSubnetGroup</i> </li>
+    /// Represents the output of one of the following operations:
     /// 
-    /// </ul>
+    ///  <ul> <li> <i>CreateCacheSubnetGroup</i> </li> <li> <i>ModifyCacheSubnetGroup</i>
+    /// </li> </ul>
     /// </summary>
-    public partial class CacheSubnetGroup : AmazonWebServiceResponse
+    public partial class CacheSubnetGroup
     {
-        
-        private string cacheSubnetGroupName;
-        private string cacheSubnetGroupDescription;
-        private string vpcId;
-        private List<Subnet> subnets = new List<Subnet>();
+        private string _cacheSubnetGroupDescription;
+        private string _cacheSubnetGroupName;
+        private List<Subnet> _subnets = new List<Subnet>();
+        private string _vpcId;
 
 
         /// <summary>
-        /// The name of the cache subnet group.
-        ///  
-        /// </summary>
-        public string CacheSubnetGroupName
-        {
-            get { return this.cacheSubnetGroupName; }
-            set { this.cacheSubnetGroupName = value; }
-        }
-
-        // Check to see if CacheSubnetGroupName property is set
-        internal bool IsSetCacheSubnetGroupName()
-        {
-            return this.cacheSubnetGroupName != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property CacheSubnetGroupDescription. 
+        /// <para>
         /// The description of the cache subnet group.
-        ///  
+        /// </para>
         /// </summary>
         public string CacheSubnetGroupDescription
         {
-            get { return this.cacheSubnetGroupDescription; }
-            set { this.cacheSubnetGroupDescription = value; }
+            get { return this._cacheSubnetGroupDescription; }
+            set { this._cacheSubnetGroupDescription = value; }
         }
 
         // Check to see if CacheSubnetGroupDescription property is set
         internal bool IsSetCacheSubnetGroupDescription()
         {
-            return this.cacheSubnetGroupDescription != null;
+            return this._cacheSubnetGroupDescription != null;
         }
 
+
         /// <summary>
-        /// The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet group.
-        ///  
+        /// Gets and sets the property CacheSubnetGroupName. 
+        /// <para>
+        /// The name of the cache subnet group.
+        /// </para>
         /// </summary>
-        public string VpcId
+        public string CacheSubnetGroupName
         {
-            get { return this.vpcId; }
-            set { this.vpcId = value; }
+            get { return this._cacheSubnetGroupName; }
+            set { this._cacheSubnetGroupName = value; }
         }
 
-        // Check to see if VpcId property is set
-        internal bool IsSetVpcId()
+        // Check to see if CacheSubnetGroupName property is set
+        internal bool IsSetCacheSubnetGroupName()
         {
-            return this.vpcId != null;
+            return this._cacheSubnetGroupName != null;
         }
+
 
         /// <summary>
+        /// Gets and sets the property Subnets. 
+        /// <para>
         /// A list of subnets associated with the cache subnet group.
-        ///  
+        /// </para>
         /// </summary>
         public List<Subnet> Subnets
         {
-            get { return this.subnets; }
-            set { this.subnets = value; }
+            get { return this._subnets; }
+            set { this._subnets = value; }
         }
 
         // Check to see if Subnets property is set
         internal bool IsSetSubnets()
         {
-            return this.subnets.Count > 0;
+            return this._subnets != null && this._subnets.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property VpcId. 
+        /// <para>
+        /// The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet group.
+        /// </para>
+        /// </summary>
+        public string VpcId
+        {
+            get { return this._vpcId; }
+            set { this._vpcId = value; }
+        }
+
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
+        {
+            return this._vpcId != null;
+        }
+
     }
 }

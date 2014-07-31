@@ -25,30 +25,32 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteSnapshot operation.
-    /// <para>The <i>DeleteSnapshot</i> operation deletes an existing snapshot. When you receive a successful response from this operation,
-    /// ElastiCache immediately begins deleting the snapshot; you cannot cancel or revert this operation.</para>
+    /// The <i>DeleteSnapshot</i> operation deletes an existing snapshot. When you receive
+    /// a successful response from this operation, ElastiCache immediately begins deleting
+    /// the snapshot; you cannot cancel or revert this operation.
     /// </summary>
     public partial class DeleteSnapshotRequest : AmazonElastiCacheRequest
     {
-        private string snapshotName;
+        private string _snapshotName;
 
 
         /// <summary>
+        /// Gets and sets the property SnapshotName. 
+        /// <para>
         /// The name of the snapshot to be deleted.
-        ///  
+        /// </para>
         /// </summary>
         public string SnapshotName
         {
-            get { return this.snapshotName; }
-            set { this.snapshotName = value; }
+            get { return this._snapshotName; }
+            set { this._snapshotName = value; }
         }
 
         // Check to see if SnapshotName property is set
         internal bool IsSetSnapshotName()
         {
-            return this.snapshotName != null;
+            return this._snapshotName != null;
         }
 
     }
 }
-    

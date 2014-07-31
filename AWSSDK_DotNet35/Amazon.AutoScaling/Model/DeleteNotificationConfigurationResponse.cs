@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the DeleteNotificationConfiguration response metadata.
-    /// The DeleteNotificationConfiguration operation has a void result type.
+    /// Configuration for accessing Amazon DeleteNotificationConfiguration service
     /// </summary>
-    public partial class DeleteNotificationConfigurationResponse : AmazonWebServiceResponse
+    public partial class DeleteNotificationConfigurationResponse : DeleteNotificationConfigurationResult
     {
+        /// <summary>
+        /// Gets and sets the DeleteNotificationConfigurationResult property.
+        /// Represents the output of a DeleteNotificationConfiguration operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DeleteNotificationConfigurationResult class are now available on the DeleteNotificationConfigurationResponse class. You should use the properties on DeleteNotificationConfigurationResponse instead of accessing them through DeleteNotificationConfigurationResult.")]
+        public DeleteNotificationConfigurationResult DeleteNotificationConfigurationResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

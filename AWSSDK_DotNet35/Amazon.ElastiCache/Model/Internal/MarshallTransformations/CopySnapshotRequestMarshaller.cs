@@ -14,36 +14,40 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Copy Snapshot Request Marshaller
+    /// CopySnapshot Request Marshaller
     /// </summary>       
     public class CopySnapshotRequestMarshaller : IMarshaller<IRequest, CopySnapshotRequest>
     {
-        public IRequest Marshall(CopySnapshotRequest copySnapshotRequest)
+        public IRequest Marshall(CopySnapshotRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(copySnapshotRequest, "AmazonElastiCache");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElastiCache");
             request.Parameters.Add("Action", "CopySnapshot");
-            request.Parameters.Add("Version", "2014-03-24");
-            if (copySnapshotRequest != null && copySnapshotRequest.IsSetSourceSnapshotName())
-            {
-                request.Parameters.Add("SourceSnapshotName", StringUtils.FromString(copySnapshotRequest.SourceSnapshotName));
-            }
-            if (copySnapshotRequest != null && copySnapshotRequest.IsSetTargetSnapshotName())
-            {
-                request.Parameters.Add("TargetSnapshotName", StringUtils.FromString(copySnapshotRequest.TargetSnapshotName));
-            }
+            request.Parameters.Add("Version", "2014-07-15");
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetSourceSnapshotName())
+                {
+                    request.Parameters.Add("SourceSnapshotName", StringUtils.FromString(publicRequest.SourceSnapshotName));
+                }
+                if(publicRequest.IsSetTargetSnapshotName())
+                {
+                    request.Parameters.Add("TargetSnapshotName", StringUtils.FromString(publicRequest.TargetSnapshotName));
+                }
+            }
             return request;
         }
     }

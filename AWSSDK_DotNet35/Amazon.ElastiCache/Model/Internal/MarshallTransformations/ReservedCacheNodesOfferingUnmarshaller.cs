@@ -12,108 +12,112 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   ReservedCacheNodesOffering Unmarshaller
-     /// </summary>
-    internal class ReservedCacheNodesOfferingUnmarshaller : IUnmarshaller<ReservedCacheNodesOffering, XmlUnmarshallerContext>, IUnmarshaller<ReservedCacheNodesOffering, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for ReservedCacheNodesOffering Object
+    /// </summary>  
+    public class ReservedCacheNodesOfferingUnmarshaller : IUnmarshaller<ReservedCacheNodesOffering, XmlUnmarshallerContext>, IUnmarshaller<ReservedCacheNodesOffering, JsonUnmarshallerContext>
     {
-        public ReservedCacheNodesOffering Unmarshall(XmlUnmarshallerContext context) 
+        public ReservedCacheNodesOffering Unmarshall(XmlUnmarshallerContext context)
         {
-            ReservedCacheNodesOffering reservedCacheNodesOffering = new ReservedCacheNodesOffering();
+            ReservedCacheNodesOffering unmarshalledObject = new ReservedCacheNodesOffering();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            if (context.IsStartOfDocument) 
-               targetDepth++;
-            
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("ReservedCacheNodesOfferingId", targetDepth))
-                    {
-                        reservedCacheNodesOffering.ReservedCacheNodesOfferingId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("CacheNodeType", targetDepth))
                     {
-                        reservedCacheNodesOffering.CacheNodeType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CacheNodeType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Duration", targetDepth))
                     {
-                        reservedCacheNodesOffering.Duration = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.Duration = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("FixedPrice", targetDepth))
                     {
-                        reservedCacheNodesOffering.FixedPrice = DoubleUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("UsagePrice", targetDepth))
-                    {
-                        reservedCacheNodesOffering.UsagePrice = DoubleUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("ProductDescription", targetDepth))
-                    {
-                        reservedCacheNodesOffering.ProductDescription = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        unmarshalledObject.FixedPrice = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("OfferingType", targetDepth))
                     {
-                        reservedCacheNodesOffering.OfferingType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OfferingType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ProductDescription", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ProductDescription = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("RecurringCharges/RecurringCharge", targetDepth))
                     {
-                        reservedCacheNodesOffering.RecurringCharges.Add(RecurringChargeUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = RecurringChargeUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.RecurringCharges.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("ReservedCacheNodesOfferingId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ReservedCacheNodesOfferingId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("UsagePrice", targetDepth))
+                    {
+                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        unmarshalledObject.UsagePrice = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return reservedCacheNodesOffering;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return reservedCacheNodesOffering;
+            return unmarshalledObject;
         }
 
-        public ReservedCacheNodesOffering Unmarshall(JsonUnmarshallerContext context) 
+        public ReservedCacheNodesOffering Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static ReservedCacheNodesOfferingUnmarshaller instance;
 
-        public static ReservedCacheNodesOfferingUnmarshaller GetInstance() 
+        private static ReservedCacheNodesOfferingUnmarshaller _instance = new ReservedCacheNodesOfferingUnmarshaller();        
+
+        public static ReservedCacheNodesOfferingUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new ReservedCacheNodesOfferingUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

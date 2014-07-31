@@ -12,24 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
+
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Returns information about the ModifyCacheCluster response and response metadata.
+    /// Configuration for accessing Amazon ModifyCacheCluster service
     /// </summary>
     public partial class ModifyCacheClusterResponse : ModifyCacheClusterResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the ModifyCacheClusterResult property.
-        /// Contains the result of a successful invocation of the ModifyCacheCluster
-        /// action.
-        /// 
+        /// Represents the output of a ModifyCacheCluster operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ModifyCacheClusterResult class are now available on the ModifyCacheClusterResponse class. You should use the properties on ModifyCacheClusterResponse instead of accessing them through ModifyCacheClusterResult.")]
         public ModifyCacheClusterResult ModifyCacheClusterResult
         {
@@ -40,4 +36,3 @@ namespace Amazon.ElastiCache.Model
         }
     }
 }
-    

@@ -14,44 +14,48 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Cache Clusters Request Marshaller
+    /// DescribeCacheClusters Request Marshaller
     /// </summary>       
     public class DescribeCacheClustersRequestMarshaller : IMarshaller<IRequest, DescribeCacheClustersRequest>
     {
-        public IRequest Marshall(DescribeCacheClustersRequest describeCacheClustersRequest)
+        public IRequest Marshall(DescribeCacheClustersRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describeCacheClustersRequest, "AmazonElastiCache");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElastiCache");
             request.Parameters.Add("Action", "DescribeCacheClusters");
-            request.Parameters.Add("Version", "2014-03-24");
-            if (describeCacheClustersRequest != null && describeCacheClustersRequest.IsSetCacheClusterId())
-            {
-                request.Parameters.Add("CacheClusterId", StringUtils.FromString(describeCacheClustersRequest.CacheClusterId));
-            }
-            if (describeCacheClustersRequest != null && describeCacheClustersRequest.IsSetMaxRecords())
-            {
-                request.Parameters.Add("MaxRecords", StringUtils.FromInt(describeCacheClustersRequest.MaxRecords));
-            }
-            if (describeCacheClustersRequest != null && describeCacheClustersRequest.IsSetMarker())
-            {
-                request.Parameters.Add("Marker", StringUtils.FromString(describeCacheClustersRequest.Marker));
-            }
-            if (describeCacheClustersRequest != null && describeCacheClustersRequest.IsSetShowCacheNodeInfo())
-            {
-                request.Parameters.Add("ShowCacheNodeInfo", StringUtils.FromBool(describeCacheClustersRequest.ShowCacheNodeInfo));
-            }
+            request.Parameters.Add("Version", "2014-07-15");
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetCacheClusterId())
+                {
+                    request.Parameters.Add("CacheClusterId", StringUtils.FromString(publicRequest.CacheClusterId));
+                }
+                if(publicRequest.IsSetMarker())
+                {
+                    request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
+                }
+                if(publicRequest.IsSetMaxRecords())
+                {
+                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
+                }
+                if(publicRequest.IsSetShowCacheNodeInfo())
+                {
+                    request.Parameters.Add("ShowCacheNodeInfo", StringUtils.FromBool(publicRequest.ShowCacheNodeInfo));
+                }
+            }
             return request;
         }
     }

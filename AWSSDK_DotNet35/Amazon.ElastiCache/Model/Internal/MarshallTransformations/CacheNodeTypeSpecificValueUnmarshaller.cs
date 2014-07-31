@@ -12,69 +12,75 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   CacheNodeTypeSpecificValue Unmarshaller
-     /// </summary>
-    internal class CacheNodeTypeSpecificValueUnmarshaller : IUnmarshaller<CacheNodeTypeSpecificValue, XmlUnmarshallerContext>, IUnmarshaller<CacheNodeTypeSpecificValue, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for CacheNodeTypeSpecificValue Object
+    /// </summary>  
+    public class CacheNodeTypeSpecificValueUnmarshaller : IUnmarshaller<CacheNodeTypeSpecificValue, XmlUnmarshallerContext>, IUnmarshaller<CacheNodeTypeSpecificValue, JsonUnmarshallerContext>
     {
-        public CacheNodeTypeSpecificValue Unmarshall(XmlUnmarshallerContext context) 
+        public CacheNodeTypeSpecificValue Unmarshall(XmlUnmarshallerContext context)
         {
-            CacheNodeTypeSpecificValue cacheNodeTypeSpecificValue = new CacheNodeTypeSpecificValue();
+            CacheNodeTypeSpecificValue unmarshalledObject = new CacheNodeTypeSpecificValue();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("CacheNodeType", targetDepth))
                     {
-                        cacheNodeTypeSpecificValue.CacheNodeType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CacheNodeType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Value", targetDepth))
                     {
-                        cacheNodeTypeSpecificValue.Value = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return cacheNodeTypeSpecificValue;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return cacheNodeTypeSpecificValue;
+            return unmarshalledObject;
         }
 
-        public CacheNodeTypeSpecificValue Unmarshall(JsonUnmarshallerContext context) 
+        public CacheNodeTypeSpecificValue Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static CacheNodeTypeSpecificValueUnmarshaller instance;
 
-        public static CacheNodeTypeSpecificValueUnmarshaller GetInstance() 
+        private static CacheNodeTypeSpecificValueUnmarshaller _instance = new CacheNodeTypeSpecificValueUnmarshaller();        
+
+        public static CacheNodeTypeSpecificValueUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new CacheNodeTypeSpecificValueUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

@@ -25,65 +25,77 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCacheParameterGroup operation.
-    /// <para>The <i>CreateCacheParameterGroup</i> operation creates a new cache parameter group. A cache parameter group is a collection of
-    /// parameters that you apply to all of the nodes in a cache cluster.</para>
+    /// The <i>CreateCacheParameterGroup</i> operation creates a new cache parameter group.
+    /// A cache parameter group is a collection of parameters that you apply to all of the
+    /// nodes in a cache cluster.
     /// </summary>
     public partial class CreateCacheParameterGroupRequest : AmazonElastiCacheRequest
     {
-        private string cacheParameterGroupName;
-        private string cacheParameterGroupFamily;
-        private string description;
+        private string _cacheParameterGroupFamily;
+        private string _cacheParameterGroupName;
+        private string _description;
 
 
         /// <summary>
-        /// A user-specified name for the cache parameter group.
+        /// Gets and sets the property CacheParameterGroupFamily. 
+        /// <para>
+        /// The name of the cache parameter group family the cache parameter group can be used
+        /// with.
+        /// </para>
         ///  
-        /// </summary>
-        public string CacheParameterGroupName
-        {
-            get { return this.cacheParameterGroupName; }
-            set { this.cacheParameterGroupName = value; }
-        }
-
-        // Check to see if CacheParameterGroupName property is set
-        internal bool IsSetCacheParameterGroupName()
-        {
-            return this.cacheParameterGroupName != null;
-        }
-
-        /// <summary>
-        /// The name of the cache parameter group family the cache parameter group can be used with. Valid values are: <c>memcached1.4</c> |
-        /// <c>redis2.6</c> | <c>redis2.8</c>
-        ///  
+        /// <para>
+        /// Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code>
+        /// </para>
         /// </summary>
         public string CacheParameterGroupFamily
         {
-            get { return this.cacheParameterGroupFamily; }
-            set { this.cacheParameterGroupFamily = value; }
+            get { return this._cacheParameterGroupFamily; }
+            set { this._cacheParameterGroupFamily = value; }
         }
 
         // Check to see if CacheParameterGroupFamily property is set
         internal bool IsSetCacheParameterGroupFamily()
         {
-            return this.cacheParameterGroupFamily != null;
+            return this._cacheParameterGroupFamily != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property CacheParameterGroupName. 
+        /// <para>
+        /// A user-specified name for the cache parameter group.
+        /// </para>
+        /// </summary>
+        public string CacheParameterGroupName
+        {
+            get { return this._cacheParameterGroupName; }
+            set { this._cacheParameterGroupName = value; }
+        }
+
+        // Check to see if CacheParameterGroupName property is set
+        internal bool IsSetCacheParameterGroupName()
+        {
+            return this._cacheParameterGroupName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
         /// A user-specified description for the cache parameter group.
-        ///  
+        /// </para>
         /// </summary>
         public string Description
         {
-            get { return this.description; }
-            set { this.description = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
 
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;
+            return this._description != null;
         }
 
     }
 }
-    

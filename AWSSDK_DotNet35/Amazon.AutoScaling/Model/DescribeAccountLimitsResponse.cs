@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeAccountLimits response and response metadata.
+    /// Configuration for accessing Amazon DescribeAccountLimits service
     /// </summary>
     public partial class DescribeAccountLimitsResponse : DescribeAccountLimitsResult
     {
         /// <summary>
         /// Gets and sets the DescribeAccountLimitsResult property.
-        /// The output of the DescribeAccountLimitsResult action.
+        /// Represents the output of a DescribeAccountLimits operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeAccountLimitsResult class are now available on the DescribeAccountLimitsResponse class. You should use the properties on DescribeAccountLimitsResponse instead of accessing them through DescribeAccountLimitsResult.")]
         public DescribeAccountLimitsResult DescribeAccountLimitsResult
@@ -40,4 +36,3 @@ namespace Amazon.AutoScaling.Model
         }
     }
 }
-    

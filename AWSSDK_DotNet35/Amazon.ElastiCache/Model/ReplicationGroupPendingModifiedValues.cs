@@ -18,32 +18,38 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para>The settings to be applied to the replication group, either immediately or during the next maintenance window.</para>
+    /// The settings to be applied to the replication group, either immediately or during
+    /// the next maintenance window.
     /// </summary>
     public partial class ReplicationGroupPendingModifiedValues
     {
-        
-        private string primaryClusterId;
+        private string _primaryClusterId;
 
 
         /// <summary>
-        /// The primary cluster ID which will be applied immediately (if <c>--apply-immediately</c> was specified), or during the next maintenance
-        /// window.
-        ///  
+        /// Gets and sets the property PrimaryClusterId. 
+        /// <para>
+        /// The primary cluster ID which will be applied immediately (if <code>--apply-immediately</code>
+        /// was specified), or during the next maintenance window.
+        /// </para>
         /// </summary>
         public string PrimaryClusterId
         {
-            get { return this.primaryClusterId; }
-            set { this.primaryClusterId = value; }
+            get { return this._primaryClusterId; }
+            set { this._primaryClusterId = value; }
         }
 
         // Check to see if PrimaryClusterId property is set
         internal bool IsSetPrimaryClusterId()
         {
-            return this.primaryClusterId != null;
+            return this._primaryClusterId != null;
         }
+
     }
 }

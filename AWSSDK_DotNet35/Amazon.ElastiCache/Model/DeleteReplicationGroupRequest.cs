@@ -25,68 +25,84 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteReplicationGroup operation.
-    /// <para>The <i>DeleteReplicationGroup</i> operation deletes an existing replication group. By default, this operation deletes the entire
-    /// replication group, including the primary cache cluster and all of the read replicas. You can optionally delete only the read replicas, while
-    /// retaining the primary cache cluster.</para> <para>When you receive a successful response from this operation, Amazon ElastiCache immediately
-    /// begins deleting the selected resources; you cannot cancel or revert this operation.</para>
+    /// The <i>DeleteReplicationGroup</i> operation deletes an existing replication group.
+    /// By default, this operation deletes the entire replication group, including the primary
+    /// cache cluster and all of the read replicas. You can optionally delete only the read
+    /// replicas, while retaining the primary cache cluster.
+    /// 
+    ///  
+    /// <para>
+    /// When you receive a successful response from this operation, Amazon ElastiCache immediately
+    /// begins deleting the selected resources; you cannot cancel or revert this operation.
+    /// </para>
     /// </summary>
     public partial class DeleteReplicationGroupRequest : AmazonElastiCacheRequest
     {
-        private string replicationGroupId;
-        private bool? retainPrimaryCluster;
-        private string finalSnapshotIdentifier;
+        private string _finalSnapshotIdentifier;
+        private string _replicationGroupId;
+        private bool? _retainPrimaryCluster;
 
 
         /// <summary>
-        /// The identifier for the replication group to be deleted. This parameter is not case sensitive.
-        ///  
-        /// </summary>
-        public string ReplicationGroupId
-        {
-            get { return this.replicationGroupId; }
-            set { this.replicationGroupId = value; }
-        }
-
-        // Check to see if ReplicationGroupId property is set
-        internal bool IsSetReplicationGroupId()
-        {
-            return this.replicationGroupId != null;
-        }
-
-        /// <summary>
-        /// If set to <i>true</i>, all of the read replicas will be deleted, but the primary cache cluster will be retained.
-        ///  
-        /// </summary>
-        public bool RetainPrimaryCluster
-        {
-            get { return this.retainPrimaryCluster ?? default(bool); }
-            set { this.retainPrimaryCluster = value; }
-        }
-
-        // Check to see if RetainPrimaryCluster property is set
-        internal bool IsSetRetainPrimaryCluster()
-        {
-            return this.retainPrimaryCluster.HasValue;
-        }
-
-        /// <summary>
-        /// The name of a final cache cluster snapshot. ElastiCache creates the snapshot from the primary cluster in the replication group, rather than
-        /// one of the replicas; this is to ensure that it captures the freshest data. After the final snapshot is taken, the replication group is
-        /// deleted immediately afterward.
-        ///  
+        /// Gets and sets the property FinalSnapshotIdentifier. 
+        /// <para>
+        /// The name of a final cache cluster snapshot. ElastiCache creates the snapshot from
+        /// the primary cluster in the replication group, rather than one of the replicas; this
+        /// is to ensure that it captures the freshest data. After the final snapshot is taken,
+        /// the replication group is deleted immediately afterward.
+        /// </para>
         /// </summary>
         public string FinalSnapshotIdentifier
         {
-            get { return this.finalSnapshotIdentifier; }
-            set { this.finalSnapshotIdentifier = value; }
+            get { return this._finalSnapshotIdentifier; }
+            set { this._finalSnapshotIdentifier = value; }
         }
 
         // Check to see if FinalSnapshotIdentifier property is set
         internal bool IsSetFinalSnapshotIdentifier()
         {
-            return this.finalSnapshotIdentifier != null;
+            return this._finalSnapshotIdentifier != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ReplicationGroupId. 
+        /// <para>
+        /// The identifier for the replication group to be deleted. This parameter is not case
+        /// sensitive.
+        /// </para>
+        /// </summary>
+        public string ReplicationGroupId
+        {
+            get { return this._replicationGroupId; }
+            set { this._replicationGroupId = value; }
+        }
+
+        // Check to see if ReplicationGroupId property is set
+        internal bool IsSetReplicationGroupId()
+        {
+            return this._replicationGroupId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property RetainPrimaryCluster. 
+        /// <para>
+        /// If set to <i>true</i>, all of the read replicas will be deleted, but the primary cache
+        /// cluster will be retained.
+        /// </para>
+        /// </summary>
+        public bool RetainPrimaryCluster
+        {
+            get { return this._retainPrimaryCluster.GetValueOrDefault(); }
+            set { this._retainPrimaryCluster = value; }
+        }
+
+        // Check to see if RetainPrimaryCluster property is set
+        internal bool IsSetRetainPrimaryCluster()
+        {
+            return this._retainPrimaryCluster.HasValue; 
         }
 
     }
 }
-    

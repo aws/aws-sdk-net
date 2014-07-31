@@ -18,152 +18,180 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para>A parameter that has a different value for each cache node type it is applied to. For example, in a Redis cache cluster, a
-    /// <i>cache.m1.large</i> cache node type would have a larger <i>maxmemory</i> value than a <i>cache.m1.small</i> type.</para>
+    /// A parameter that has a different value for each cache node type it is applied to.
+    /// For example, in a Redis cache cluster, a <i>cache.m1.large</i> cache node type would
+    /// have a larger <i>maxmemory</i> value than a <i>cache.m1.small</i> type.
     /// </summary>
     public partial class CacheNodeTypeSpecificParameter
     {
-        
-        private string parameterName;
-        private string description;
-        private string source;
-        private string dataType;
-        private string allowedValues;
-        private bool? isModifiable;
-        private string minimumEngineVersion;
-        private List<CacheNodeTypeSpecificValue> cacheNodeTypeSpecificValues = new List<CacheNodeTypeSpecificValue>();
+        private string _allowedValues;
+        private List<CacheNodeTypeSpecificValue> _cacheNodeTypeSpecificValues = new List<CacheNodeTypeSpecificValue>();
+        private string _dataType;
+        private string _description;
+        private bool? _isModifiable;
+        private string _minimumEngineVersion;
+        private string _parameterName;
+        private string _source;
 
 
         /// <summary>
-        /// The name of the parameter.
-        ///  
-        /// </summary>
-        public string ParameterName
-        {
-            get { return this.parameterName; }
-            set { this.parameterName = value; }
-        }
-
-        // Check to see if ParameterName property is set
-        internal bool IsSetParameterName()
-        {
-            return this.parameterName != null;
-        }
-
-        /// <summary>
-        /// A description of the parameter.
-        ///  
-        /// </summary>
-        public string Description
-        {
-            get { return this.description; }
-            set { this.description = value; }
-        }
-
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
-        {
-            return this.description != null;
-        }
-
-        /// <summary>
-        /// The source of the parameter value.
-        ///  
-        /// </summary>
-        public string Source
-        {
-            get { return this.source; }
-            set { this.source = value; }
-        }
-
-        // Check to see if Source property is set
-        internal bool IsSetSource()
-        {
-            return this.source != null;
-        }
-
-        /// <summary>
-        /// The valid data type for the parameter.
-        ///  
-        /// </summary>
-        public string DataType
-        {
-            get { return this.dataType; }
-            set { this.dataType = value; }
-        }
-
-        // Check to see if DataType property is set
-        internal bool IsSetDataType()
-        {
-            return this.dataType != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property AllowedValues. 
+        /// <para>
         /// The valid range of values for the parameter.
-        ///  
+        /// </para>
         /// </summary>
         public string AllowedValues
         {
-            get { return this.allowedValues; }
-            set { this.allowedValues = value; }
+            get { return this._allowedValues; }
+            set { this._allowedValues = value; }
         }
 
         // Check to see if AllowedValues property is set
         internal bool IsSetAllowedValues()
         {
-            return this.allowedValues != null;
+            return this._allowedValues != null;
         }
+
 
         /// <summary>
-        /// Indicates whether (<c>true</c>) or not (<c>false</c>) the parameter can be modified. Some parameters have security or operational
-        /// implications that prevent them from being changed.
-        ///  
-        /// </summary>
-        public bool IsModifiable
-        {
-            get { return this.isModifiable ?? default(bool); }
-            set { this.isModifiable = value; }
-        }
-
-        // Check to see if IsModifiable property is set
-        internal bool IsSetIsModifiable()
-        {
-            return this.isModifiable.HasValue;
-        }
-
-        /// <summary>
-        /// The earliest cache engine version to which the parameter can apply.
-        ///  
-        /// </summary>
-        public string MinimumEngineVersion
-        {
-            get { return this.minimumEngineVersion; }
-            set { this.minimumEngineVersion = value; }
-        }
-
-        // Check to see if MinimumEngineVersion property is set
-        internal bool IsSetMinimumEngineVersion()
-        {
-            return this.minimumEngineVersion != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property CacheNodeTypeSpecificValues. 
+        /// <para>
         /// A list of cache node types and their corresponding values for this parameter.
-        ///  
+        /// </para>
         /// </summary>
         public List<CacheNodeTypeSpecificValue> CacheNodeTypeSpecificValues
         {
-            get { return this.cacheNodeTypeSpecificValues; }
-            set { this.cacheNodeTypeSpecificValues = value; }
+            get { return this._cacheNodeTypeSpecificValues; }
+            set { this._cacheNodeTypeSpecificValues = value; }
         }
 
         // Check to see if CacheNodeTypeSpecificValues property is set
         internal bool IsSetCacheNodeTypeSpecificValues()
         {
-            return this.cacheNodeTypeSpecificValues.Count > 0;
+            return this._cacheNodeTypeSpecificValues != null && this._cacheNodeTypeSpecificValues.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property DataType. 
+        /// <para>
+        /// The valid data type for the parameter.
+        /// </para>
+        /// </summary>
+        public string DataType
+        {
+            get { return this._dataType; }
+            set { this._dataType = value; }
+        }
+
+        // Check to see if DataType property is set
+        internal bool IsSetDataType()
+        {
+            return this._dataType != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description of the parameter.
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property IsModifiable. 
+        /// <para>
+        /// Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can
+        /// be modified. Some parameters have security or operational implications that prevent
+        /// them from being changed.
+        /// </para>
+        /// </summary>
+        public bool IsModifiable
+        {
+            get { return this._isModifiable.GetValueOrDefault(); }
+            set { this._isModifiable = value; }
+        }
+
+        // Check to see if IsModifiable property is set
+        internal bool IsSetIsModifiable()
+        {
+            return this._isModifiable.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property MinimumEngineVersion. 
+        /// <para>
+        /// The earliest cache engine version to which the parameter can apply.
+        /// </para>
+        /// </summary>
+        public string MinimumEngineVersion
+        {
+            get { return this._minimumEngineVersion; }
+            set { this._minimumEngineVersion = value; }
+        }
+
+        // Check to see if MinimumEngineVersion property is set
+        internal bool IsSetMinimumEngineVersion()
+        {
+            return this._minimumEngineVersion != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property ParameterName. 
+        /// <para>
+        /// The name of the parameter.
+        /// </para>
+        /// </summary>
+        public string ParameterName
+        {
+            get { return this._parameterName; }
+            set { this._parameterName = value; }
+        }
+
+        // Check to see if ParameterName property is set
+        internal bool IsSetParameterName()
+        {
+            return this._parameterName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Source. 
+        /// <para>
+        /// The source of the parameter value.
+        /// </para>
+        /// </summary>
+        public string Source
+        {
+            get { return this._source; }
+            set { this._source = value; }
+        }
+
+        // Check to see if Source property is set
+        internal bool IsSetSource()
+        {
+            return this._source != null;
+        }
+
     }
 }

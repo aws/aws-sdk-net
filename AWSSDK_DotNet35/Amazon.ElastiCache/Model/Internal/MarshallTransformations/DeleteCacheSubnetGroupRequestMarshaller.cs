@@ -14,32 +14,36 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Cache Subnet Group Request Marshaller
+    /// DeleteCacheSubnetGroup Request Marshaller
     /// </summary>       
     public class DeleteCacheSubnetGroupRequestMarshaller : IMarshaller<IRequest, DeleteCacheSubnetGroupRequest>
     {
-        public IRequest Marshall(DeleteCacheSubnetGroupRequest deleteCacheSubnetGroupRequest)
+        public IRequest Marshall(DeleteCacheSubnetGroupRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(deleteCacheSubnetGroupRequest, "AmazonElastiCache");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElastiCache");
             request.Parameters.Add("Action", "DeleteCacheSubnetGroup");
-            request.Parameters.Add("Version", "2014-03-24");
-            if (deleteCacheSubnetGroupRequest != null && deleteCacheSubnetGroupRequest.IsSetCacheSubnetGroupName())
-            {
-                request.Parameters.Add("CacheSubnetGroupName", StringUtils.FromString(deleteCacheSubnetGroupRequest.CacheSubnetGroupName));
-            }
+            request.Parameters.Add("Version", "2014-07-15");
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetCacheSubnetGroupName())
+                {
+                    request.Parameters.Add("CacheSubnetGroupName", StringUtils.FromString(publicRequest.CacheSubnetGroupName));
+                }
+            }
             return request;
         }
     }

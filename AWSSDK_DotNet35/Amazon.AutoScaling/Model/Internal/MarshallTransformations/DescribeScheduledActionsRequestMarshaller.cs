@@ -14,59 +14,61 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Scheduled Actions Request Marshaller
+    /// DescribeScheduledActions Request Marshaller
     /// </summary>       
     public class DescribeScheduledActionsRequestMarshaller : IMarshaller<IRequest, DescribeScheduledActionsRequest>
     {
-        public IRequest Marshall(DescribeScheduledActionsRequest describeScheduledActionsRequest)
+        public IRequest Marshall(DescribeScheduledActionsRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describeScheduledActionsRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AutoScaling");
             request.Parameters.Add("Action", "DescribeScheduledActions");
             request.Parameters.Add("Version", "2011-01-01");
-            if (describeScheduledActionsRequest != null && describeScheduledActionsRequest.IsSetAutoScalingGroupName())
-            {
-                request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(describeScheduledActionsRequest.AutoScalingGroupName));
-            }
-            if (describeScheduledActionsRequest != null)
-            {
-                List<string> scheduledActionNamesList = describeScheduledActionsRequest.ScheduledActionNames;
 
-                int scheduledActionNamesListIndex = 1;
-                foreach (string scheduledActionNamesListValue in scheduledActionNamesList)
-                { 
-                    request.Parameters.Add("ScheduledActionNames.member." + scheduledActionNamesListIndex, StringUtils.FromString(scheduledActionNamesListValue));
-                    scheduledActionNamesListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAutoScalingGroupName())
+                {
+                    request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
+                }
+                if(publicRequest.IsSetEndTime())
+                {
+                    request.Parameters.Add("EndTime", StringUtils.FromDateTime(publicRequest.EndTime));
+                }
+                if(publicRequest.IsSetMaxRecords())
+                {
+                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
+                }
+                if(publicRequest.IsSetNextToken())
+                {
+                    request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+                }
+                if(publicRequest.IsSetScheduledActionNames())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.ScheduledActionNames)
+                    {
+                        request.Parameters.Add("ScheduledActionNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetStartTime())
+                {
+                    request.Parameters.Add("StartTime", StringUtils.FromDateTime(publicRequest.StartTime));
                 }
             }
-            if (describeScheduledActionsRequest != null && describeScheduledActionsRequest.IsSetStartTime())
-            {
-                request.Parameters.Add("StartTime", StringUtils.FromDateTime(describeScheduledActionsRequest.StartTime));
-            }
-            if (describeScheduledActionsRequest != null && describeScheduledActionsRequest.IsSetEndTime())
-            {
-                request.Parameters.Add("EndTime", StringUtils.FromDateTime(describeScheduledActionsRequest.EndTime));
-            }
-            if (describeScheduledActionsRequest != null && describeScheduledActionsRequest.IsSetNextToken())
-            {
-                request.Parameters.Add("NextToken", StringUtils.FromString(describeScheduledActionsRequest.NextToken));
-            }
-            if (describeScheduledActionsRequest != null && describeScheduledActionsRequest.IsSetMaxRecords())
-            {
-                request.Parameters.Add("MaxRecords", StringUtils.FromInt(describeScheduledActionsRequest.MaxRecords));
-            }
-
             return request;
         }
     }

@@ -13,46 +13,52 @@
  * permissions and limitations under the License.
  */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.ElastiCache.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for DescribeCacheSubnetGroups operation
-    /// </summary>
-    internal class DescribeCacheSubnetGroupsResponseUnmarshaller : XmlResponseUnmarshaller
+    /// Response Unmarshaller for DescribeCacheSubnetGroups operation
+    /// </summary>  
+    public class DescribeCacheSubnetGroupsResponseUnmarshaller : XmlResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
             DescribeCacheSubnetGroupsResponse response = new DescribeCacheSubnetGroupsResponse();
-            
-            while (context.Read())
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
                 if (context.IsStartElement)
                 {                    
                     if(context.TestExpression("DescribeCacheSubnetGroupsResult", 2))
                     {
-                        UnmarshallResult(context,response);                        
+                        UnmarshallResult(context, response);                        
                         continue;
                     }
                     
                     if (context.TestExpression("ResponseMetadata", 2))
                     {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
                     }
                 }
             }
-                 
-                        
+
             return response;
         }
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,DescribeCacheSubnetGroupsResponse response)
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, DescribeCacheSubnetGroupsResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -61,57 +67,54 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Marker", targetDepth))
-                    {
-                        response.Marker = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
+
                     if (context.TestExpression("CacheSubnetGroups/CacheSubnetGroup", targetDepth))
                     {
-                        response.CacheSubnetGroups.Add(CacheSubnetGroupUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = CacheSubnetGroupUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.CacheSubnetGroups.Add(item);
                         continue;
                     }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return;
-                }
-            }
-                            
-
+                    if (context.TestExpression("Marker", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.Marker = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                } 
+           }
 
             return;
         }
-        
+
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             if (errorResponse.Code != null && errorResponse.Code.Equals("CacheSubnetGroupNotFoundFault"))
             {
                 return new CacheSubnetGroupNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
             return new AmazonElastiCacheException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static DescribeCacheSubnetGroupsResponseUnmarshaller instance;
 
-        public static DescribeCacheSubnetGroupsResponseUnmarshaller GetInstance()
+        private static DescribeCacheSubnetGroupsResponseUnmarshaller _instance = new DescribeCacheSubnetGroupsResponseUnmarshaller();        
+
+        internal static DescribeCacheSubnetGroupsResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new DescribeCacheSubnetGroupsResponseUnmarshaller();
-            }
-            return instance;
+            return _instance;
         }
-    
+        public static DescribeCacheSubnetGroupsResponseUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }
-    

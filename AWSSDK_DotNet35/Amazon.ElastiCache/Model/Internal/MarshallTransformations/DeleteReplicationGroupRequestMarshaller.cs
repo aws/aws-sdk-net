@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Replication Group Request Marshaller
+    /// DeleteReplicationGroup Request Marshaller
     /// </summary>       
     public class DeleteReplicationGroupRequestMarshaller : IMarshaller<IRequest, DeleteReplicationGroupRequest>
     {
-        public IRequest Marshall(DeleteReplicationGroupRequest deleteReplicationGroupRequest)
+        public IRequest Marshall(DeleteReplicationGroupRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(deleteReplicationGroupRequest, "AmazonElastiCache");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElastiCache");
             request.Parameters.Add("Action", "DeleteReplicationGroup");
-            request.Parameters.Add("Version", "2014-03-24");
-            if (deleteReplicationGroupRequest != null && deleteReplicationGroupRequest.IsSetReplicationGroupId())
-            {
-                request.Parameters.Add("ReplicationGroupId", StringUtils.FromString(deleteReplicationGroupRequest.ReplicationGroupId));
-            }
-            if (deleteReplicationGroupRequest != null && deleteReplicationGroupRequest.IsSetRetainPrimaryCluster())
-            {
-                request.Parameters.Add("RetainPrimaryCluster", StringUtils.FromBool(deleteReplicationGroupRequest.RetainPrimaryCluster));
-            }
-            if (deleteReplicationGroupRequest != null && deleteReplicationGroupRequest.IsSetFinalSnapshotIdentifier())
-            {
-                request.Parameters.Add("FinalSnapshotIdentifier", StringUtils.FromString(deleteReplicationGroupRequest.FinalSnapshotIdentifier));
-            }
+            request.Parameters.Add("Version", "2014-07-15");
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetFinalSnapshotIdentifier())
+                {
+                    request.Parameters.Add("FinalSnapshotIdentifier", StringUtils.FromString(publicRequest.FinalSnapshotIdentifier));
+                }
+                if(publicRequest.IsSetReplicationGroupId())
+                {
+                    request.Parameters.Add("ReplicationGroupId", StringUtils.FromString(publicRequest.ReplicationGroupId));
+                }
+                if(publicRequest.IsSetRetainPrimaryCluster())
+                {
+                    request.Parameters.Add("RetainPrimaryCluster", StringUtils.FromBool(publicRequest.RetainPrimaryCluster));
+                }
+            }
             return request;
         }
     }

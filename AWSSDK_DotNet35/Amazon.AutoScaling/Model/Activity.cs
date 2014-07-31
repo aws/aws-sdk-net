@@ -18,261 +18,219 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para> A scaling Activity is a long-running process that represents a change to your AutoScalingGroup, such as changing the size of the
-    /// group. It can also be a process to replace an instance, or a process to perform any other long-running operations supported by the API.
-    /// </para>
+    /// A scaling Activity is a long-running process that represents a change to your AutoScalingGroup,
+    /// such as changing the size of the group. It can also be a process to replace an instance,
+    /// or a process to perform any other long-running operations supported by the API.
     /// </summary>
     public partial class Activity
     {
-        
-        private string activityId;
-        private string autoScalingGroupName;
-        private string description;
-        private string cause;
-        private DateTime? startTime;
-        private DateTime? endTime;
-        private ScalingActivityStatusCode statusCode;
-        private string statusMessage;
-        private int? progress;
-        private string details;
+        private string _activityId;
+        private string _autoScalingGroupName;
+        private string _cause;
+        private string _description;
+        private string _details;
+        private DateTime? _endTime;
+        private int? _progress;
+        private DateTime? _startTime;
+        private ScalingActivityStatusCode _statusCode;
+        private string _statusMessage;
 
 
         /// <summary>
-        /// Specifies the ID of the activity.
-        ///  
+        /// Gets and sets the property ActivityId. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  Specifies the ID of the activity. 
         /// </para>
         /// </summary>
         public string ActivityId
         {
-            get { return this.activityId; }
-            set { this.activityId = value; }
+            get { return this._activityId; }
+            set { this._activityId = value; }
         }
 
         // Check to see if ActivityId property is set
         internal bool IsSetActivityId()
         {
-            return this.activityId != null;
+            return this._activityId != null;
         }
 
+
         /// <summary>
-        /// The name of the Auto Scaling group.
-        ///  
+        /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  The name of the Auto Scaling group. 
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
         {
-            get { return this.autoScalingGroupName; }
-            set { this.autoScalingGroupName = value; }
+            get { return this._autoScalingGroupName; }
+            set { this._autoScalingGroupName = value; }
         }
 
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;
+            return this._autoScalingGroupName != null;
         }
+
 
         /// <summary>
-        /// Contains a friendly, more verbose description of the scaling activity.
-        ///  
+        /// Gets and sets the property Cause. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string Description
-        {
-            get { return this.description; }
-            set { this.description = value; }
-        }
-
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
-        {
-            return this.description != null;
-        }
-
-        /// <summary>
-        /// Contains the reason the activity was begun.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1023</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  Contains the reason the activity was begun. 
         /// </para>
         /// </summary>
         public string Cause
         {
-            get { return this.cause; }
-            set { this.cause = value; }
+            get { return this._cause; }
+            set { this._cause = value; }
         }
 
         // Check to see if Cause property is set
         internal bool IsSetCause()
         {
-            return this.cause != null;
+            return this._cause != null;
         }
+
 
         /// <summary>
-        /// Provides the start time of this activity.
-        ///  
-        /// </summary>
-        public DateTime StartTime
-        {
-            get { return this.startTime ?? default(DateTime); }
-            set { this.startTime = value; }
-        }
-
-        // Check to see if StartTime property is set
-        internal bool IsSetStartTime()
-        {
-            return this.startTime.HasValue;
-        }
-
-        /// <summary>
-        /// Provides the end time of this activity.
-        ///  
-        /// </summary>
-        public DateTime EndTime
-        {
-            get { return this.endTime ?? default(DateTime); }
-            set { this.endTime = value; }
-        }
-
-        // Check to see if EndTime property is set
-        internal bool IsSetEndTime()
-        {
-            return this.endTime.HasValue;
-        }
-
-        /// <summary>
-        /// Contains the current status of the activity.
-        ///  
+        /// Gets and sets the property Description. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>WaitingForSpotInstanceRequestId, WaitingForSpotInstanceId, WaitingForInstanceId, PreInService, InProgress, Successful, Failed, Cancelled</description>
-        ///     </item>
-        /// </list>
+        ///  Contains a friendly, more verbose description of the scaling activity. 
         /// </para>
         /// </summary>
-        public ScalingActivityStatusCode StatusCode
+        public string Description
         {
-            get { return this.statusCode; }
-            set { this.statusCode = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
 
-        // Check to see if StatusCode property is set
-        internal bool IsSetStatusCode()
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
         {
-            return this.statusCode != null;
+            return this._description != null;
         }
+
 
         /// <summary>
-        /// Contains a friendly, more verbose description of the activity status.
-        ///  
+        /// Gets and sets the property Details. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string StatusMessage
-        {
-            get { return this.statusMessage; }
-            set { this.statusMessage = value; }
-        }
-
-        // Check to see if StatusMessage property is set
-        internal bool IsSetStatusMessage()
-        {
-            return this.statusMessage != null;
-        }
-
-        /// <summary>
-        /// Specifies a value between 0 and 100 that indicates the progress of the activity.
-        ///  
-        /// </summary>
-        public int Progress
-        {
-            get { return this.progress ?? default(int); }
-            set { this.progress = value; }
-        }
-
-        // Check to see if Progress property is set
-        internal bool IsSetProgress()
-        {
-            return this.progress.HasValue;
-        }
-
-        /// <summary>
-        /// Contains details of the scaling activity.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  Contains details of the scaling activity. 
         /// </para>
         /// </summary>
         public string Details
         {
-            get { return this.details; }
-            set { this.details = value; }
+            get { return this._details; }
+            set { this._details = value; }
         }
 
         // Check to see if Details property is set
         internal bool IsSetDetails()
         {
-            return this.details != null;
+            return this._details != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property EndTime. 
+        /// <para>
+        ///  Provides the end time of this activity. 
+        /// </para>
+        /// </summary>
+        public DateTime EndTime
+        {
+            get { return this._endTime.GetValueOrDefault(); }
+            set { this._endTime = value; }
+        }
+
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
+        {
+            return this._endTime.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Progress. 
+        /// <para>
+        ///  Specifies a value between 0 and 100 that indicates the progress of the activity.
+        /// 
+        /// </para>
+        /// </summary>
+        public int Progress
+        {
+            get { return this._progress.GetValueOrDefault(); }
+            set { this._progress = value; }
+        }
+
+        // Check to see if Progress property is set
+        internal bool IsSetProgress()
+        {
+            return this._progress.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        ///  Provides the start time of this activity. 
+        /// </para>
+        /// </summary>
+        public DateTime StartTime
+        {
+            get { return this._startTime.GetValueOrDefault(); }
+            set { this._startTime = value; }
+        }
+
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
+        {
+            return this._startTime.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property StatusCode. 
+        /// <para>
+        ///  Contains the current status of the activity. 
+        /// </para>
+        /// </summary>
+        public ScalingActivityStatusCode StatusCode
+        {
+            get { return this._statusCode; }
+            set { this._statusCode = value; }
+        }
+
+        // Check to see if StatusCode property is set
+        internal bool IsSetStatusCode()
+        {
+            return this._statusCode != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property StatusMessage. 
+        /// <para>
+        ///  Contains a friendly, more verbose description of the activity status. 
+        /// </para>
+        /// </summary>
+        public string StatusMessage
+        {
+            get { return this._statusMessage; }
+            set { this._statusMessage = value; }
+        }
+
+        // Check to see if StatusMessage property is set
+        internal bool IsSetStatusMessage()
+        {
+            return this._statusMessage != null;
+        }
+
     }
 }

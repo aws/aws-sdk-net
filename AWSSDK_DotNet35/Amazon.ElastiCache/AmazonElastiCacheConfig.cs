@@ -12,13 +12,15 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+
 using System;
 
 using Amazon.Runtime;
 
+
 namespace Amazon.ElastiCache
 {
-
     /// <summary>
     /// Configuration for accessing Amazon ElastiCache service
     /// </summary>
@@ -39,9 +41,7 @@ namespace Amazon.ElastiCache
         {
             get
             {
-                
                 return "elasticache";
-                    
             }
         }
 
@@ -52,10 +52,8 @@ namespace Amazon.ElastiCache
         {
             get
             {
-                return "2014-03-24";
+                return "2014-07-15";
             }
         }
     }
 }
-
-    

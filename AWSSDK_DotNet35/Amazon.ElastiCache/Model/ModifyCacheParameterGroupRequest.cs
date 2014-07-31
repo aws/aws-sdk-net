@@ -25,48 +25,54 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyCacheParameterGroup operation.
-    /// <para>The <i>ModifyCacheParameterGroup</i> operation modifies the parameters of a cache parameter group. You can modify up to 20 parameters
-    /// in a single request by submitting a list parameter name and value pairs.</para>
+    /// The <i>ModifyCacheParameterGroup</i> operation modifies the parameters of a cache
+    /// parameter group. You can modify up to 20 parameters in a single request by submitting
+    /// a list parameter name and value pairs.
     /// </summary>
     public partial class ModifyCacheParameterGroupRequest : AmazonElastiCacheRequest
     {
-        private string cacheParameterGroupName;
-        private List<ParameterNameValue> parameterNameValues = new List<ParameterNameValue>();
+        private string _cacheParameterGroupName;
+        private List<ParameterNameValue> _parameterNameValues = new List<ParameterNameValue>();
 
 
         /// <summary>
+        /// Gets and sets the property CacheParameterGroupName. 
+        /// <para>
         /// The name of the cache parameter group to modify.
-        ///  
+        /// </para>
         /// </summary>
         public string CacheParameterGroupName
         {
-            get { return this.cacheParameterGroupName; }
-            set { this.cacheParameterGroupName = value; }
+            get { return this._cacheParameterGroupName; }
+            set { this._cacheParameterGroupName = value; }
         }
 
         // Check to see if CacheParameterGroupName property is set
         internal bool IsSetCacheParameterGroupName()
         {
-            return this.cacheParameterGroupName != null;
+            return this._cacheParameterGroupName != null;
         }
 
+
         /// <summary>
-        /// An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments
-        /// are optional. A maximum of 20 parameters may be modified per request.
-        ///  
+        /// Gets and sets the property ParameterNameValues. 
+        /// <para>
+        /// An array of parameter names and values for the parameter update. You must supply at
+        /// least one parameter name and value; subsequent arguments are optional. A maximum of
+        /// 20 parameters may be modified per request.
+        /// </para>
         /// </summary>
         public List<ParameterNameValue> ParameterNameValues
         {
-            get { return this.parameterNameValues; }
-            set { this.parameterNameValues = value; }
+            get { return this._parameterNameValues; }
+            set { this._parameterNameValues = value; }
         }
 
         // Check to see if ParameterNameValues property is set
         internal bool IsSetParameterNameValues()
         {
-            return this.parameterNameValues.Count > 0;
+            return this._parameterNameValues != null && this._parameterNameValues.Count > 0; 
         }
 
     }
 }
-    

@@ -25,82 +25,108 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCacheParameters operation.
-    /// <para>The <i>DescribeCacheParameters</i> operation returns the detailed parameter list for a particular cache parameter group.</para>
+    /// The <i>DescribeCacheParameters</i> operation returns the detailed parameter list for
+    /// a particular cache parameter group.
     /// </summary>
     public partial class DescribeCacheParametersRequest : AmazonElastiCacheRequest
     {
-        private string cacheParameterGroupName;
-        private string source;
-        private int? maxRecords;
-        private string marker;
+        private string _cacheParameterGroupName;
+        private string _marker;
+        private int? _maxRecords;
+        private string _source;
 
 
         /// <summary>
+        /// Gets and sets the property CacheParameterGroupName. 
+        /// <para>
         /// The name of a specific cache parameter group to return details for.
-        ///  
+        /// </para>
         /// </summary>
         public string CacheParameterGroupName
         {
-            get { return this.cacheParameterGroupName; }
-            set { this.cacheParameterGroupName = value; }
+            get { return this._cacheParameterGroupName; }
+            set { this._cacheParameterGroupName = value; }
         }
 
         // Check to see if CacheParameterGroupName property is set
         internal bool IsSetCacheParameterGroupName()
         {
-            return this.cacheParameterGroupName != null;
+            return this._cacheParameterGroupName != null;
         }
+
 
         /// <summary>
-        /// The parameter types to return. Valid values: <c>user</c> | <c>system</c> | <c>engine-default</c>
-        ///  
-        /// </summary>
-        public string Source
-        {
-            get { return this.source; }
-            set { this.source = value; }
-        }
-
-        // Check to see if Source property is set
-        internal bool IsSetSource()
-        {
-            return this.source != null;
-        }
-
-        /// <summary>
-        /// The maximum number of records to include in the response. If more records exist than the specified <c>MaxRecords</c> value, a marker is
-        /// included in the response so that the remaining results can be retrieved. Default: 100Constraints: minimum 20; maximum 100.
-        ///  
-        /// </summary>
-        public int MaxRecords
-        {
-            get { return this.maxRecords ?? default(int); }
-            set { this.maxRecords = value; }
-        }
-
-        // Check to see if MaxRecords property is set
-        internal bool IsSetMaxRecords()
-        {
-            return this.maxRecords.HasValue;
-        }
-
-        /// <summary>
-        /// An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.
-        ///  
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// An optional marker returned from a prior request. Use this marker for pagination of
+        /// results from this operation. If this parameter is specified, the response includes
+        /// only records beyond the marker, up to the value specified by <i>MaxRecords</i>.
+        /// </para>
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property MaxRecords. 
+        /// <para>
+        /// The maximum number of records to include in the response. If more records exist than
+        /// the specified <code>MaxRecords</code> value, a marker is included in the response
+        /// so that the remaining results can be retrieved.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: 100
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: minimum 20; maximum 100.
+        /// </para>
+        /// </summary>
+        public int MaxRecords
+        {
+            get { return this._maxRecords.GetValueOrDefault(); }
+            set { this._maxRecords = value; }
+        }
+
+        // Check to see if MaxRecords property is set
+        internal bool IsSetMaxRecords()
+        {
+            return this._maxRecords.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Source. 
+        /// <para>
+        /// The parameter types to return.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>user</code> | <code>system</code> | <code>engine-default</code>
+        /// 
+        /// </para>
+        /// </summary>
+        public string Source
+        {
+            get { return this._source; }
+            set { this._source = value; }
+        }
+
+        // Check to see if Source property is set
+        internal bool IsSetSource()
+        {
+            return this._source != null;
         }
 
     }
 }
-    

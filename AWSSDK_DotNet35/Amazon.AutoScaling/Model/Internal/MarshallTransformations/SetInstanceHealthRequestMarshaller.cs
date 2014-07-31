@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Set Instance Health Request Marshaller
+    /// SetInstanceHealth Request Marshaller
     /// </summary>       
     public class SetInstanceHealthRequestMarshaller : IMarshaller<IRequest, SetInstanceHealthRequest>
     {
-        public IRequest Marshall(SetInstanceHealthRequest setInstanceHealthRequest)
+        public IRequest Marshall(SetInstanceHealthRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(setInstanceHealthRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AutoScaling");
             request.Parameters.Add("Action", "SetInstanceHealth");
             request.Parameters.Add("Version", "2011-01-01");
-            if (setInstanceHealthRequest != null && setInstanceHealthRequest.IsSetInstanceId())
-            {
-                request.Parameters.Add("InstanceId", StringUtils.FromString(setInstanceHealthRequest.InstanceId));
-            }
-            if (setInstanceHealthRequest != null && setInstanceHealthRequest.IsSetHealthStatus())
-            {
-                request.Parameters.Add("HealthStatus", StringUtils.FromString(setInstanceHealthRequest.HealthStatus));
-            }
-            if (setInstanceHealthRequest != null && setInstanceHealthRequest.IsSetShouldRespectGracePeriod())
-            {
-                request.Parameters.Add("ShouldRespectGracePeriod", StringUtils.FromBool(setInstanceHealthRequest.ShouldRespectGracePeriod));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetHealthStatus())
+                {
+                    request.Parameters.Add("HealthStatus", StringUtils.FromString(publicRequest.HealthStatus));
+                }
+                if(publicRequest.IsSetInstanceId())
+                {
+                    request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
+                }
+                if(publicRequest.IsSetShouldRespectGracePeriod())
+                {
+                    request.Parameters.Add("ShouldRespectGracePeriod", StringUtils.FromBool(publicRequest.ShouldRespectGracePeriod));
+                }
+            }
             return request;
         }
     }

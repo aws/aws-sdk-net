@@ -12,24 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Returns information about the  DescribeScheduledActions response and response metadata.
+    /// Configuration for accessing Amazon DescribeScheduledActions service
     /// </summary>
     public partial class DescribeScheduledActionsResponse : DescribeScheduledActionsResult
     {
         /// <summary>
         /// Gets and sets the DescribeScheduledActionsResult property.
-        /// A scaling action that is scheduled for a future time and date. An action can be scheduled up to thirty days in advance. Starting with API
-        /// version 2011-01-01, you can use recurrence to specify that a scaling action occurs regularly on a schedule.
+        /// Represents the output of a DescribeScheduledActions operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeScheduledActionsResult class are now available on the DescribeScheduledActionsResponse class. You should use the properties on DescribeScheduledActionsResponse instead of accessing them through DescribeScheduledActionsResult.")]
         public DescribeScheduledActionsResult DescribeScheduledActionsResult
@@ -41,4 +36,3 @@ namespace Amazon.AutoScaling.Model
         }
     }
 }
-    

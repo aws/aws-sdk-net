@@ -12,45 +12,72 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 using System;
 
 using Amazon.Runtime;
 
-
 namespace Amazon.AutoScaling
 {
 
-
-    /// <summary>Lifecycle State
+    /// <summary>
+    /// Constants used for properties of type LifecycleState.
     /// </summary>
     public class LifecycleState : ConstantClass
     {
 
-
-       /// <summary>Constant InService for LifecycleState
-       /// </summary>
+        /// <summary>
+        /// Constant Detached for LifecycleState
+        /// </summary>
+        public static readonly LifecycleState Detached = new LifecycleState("Detached");
+        /// <summary>
+        /// Constant Detaching for LifecycleState
+        /// </summary>
+        public static readonly LifecycleState Detaching = new LifecycleState("Detaching");
+        /// <summary>
+        /// Constant EnteringStandby for LifecycleState
+        /// </summary>
+        public static readonly LifecycleState EnteringStandby = new LifecycleState("EnteringStandby");
+        /// <summary>
+        /// Constant InService for LifecycleState
+        /// </summary>
         public static readonly LifecycleState InService = new LifecycleState("InService");
-    
-
-       /// <summary>Constant Pending for LifecycleState
-       /// </summary>
+        /// <summary>
+        /// Constant Pending for LifecycleState
+        /// </summary>
         public static readonly LifecycleState Pending = new LifecycleState("Pending");
-    
-
-       /// <summary>Constant Quarantined for LifecycleState
-       /// </summary>
+        /// <summary>
+        /// Constant PendingProceed for LifecycleState
+        /// </summary>
+        public static readonly LifecycleState PendingProceed = new LifecycleState("Pending:Proceed");
+        /// <summary>
+        /// Constant PendingWait for LifecycleState
+        /// </summary>
+        public static readonly LifecycleState PendingWait = new LifecycleState("Pending:Wait");
+        /// <summary>
+        /// Constant Quarantined for LifecycleState
+        /// </summary>
         public static readonly LifecycleState Quarantined = new LifecycleState("Quarantined");
-    
-
-       /// <summary>Constant Terminated for LifecycleState
-       /// </summary>
+        /// <summary>
+        /// Constant Standby for LifecycleState
+        /// </summary>
+        public static readonly LifecycleState Standby = new LifecycleState("Standby");
+        /// <summary>
+        /// Constant Terminated for LifecycleState
+        /// </summary>
         public static readonly LifecycleState Terminated = new LifecycleState("Terminated");
-    
-
-       /// <summary>Constant Terminating for LifecycleState
-       /// </summary>
+        /// <summary>
+        /// Constant Terminating for LifecycleState
+        /// </summary>
         public static readonly LifecycleState Terminating = new LifecycleState("Terminating");
-    
+        /// <summary>
+        /// Constant TerminatingProceed for LifecycleState
+        /// </summary>
+        public static readonly LifecycleState TerminatingProceed = new LifecycleState("Terminating:Proceed");
+        /// <summary>
+        /// Constant TerminatingWait for LifecycleState
+        /// </summary>
+        public static readonly LifecycleState TerminatingWait = new LifecycleState("Terminating:Wait");
 
         /// <summary>
         /// Default Constructor
@@ -75,53 +102,54 @@ namespace Amazon.AutoScaling
             return FindValue(value);
         }
     }
-    
 
-    /// <summary>Scaling Activity Status Code
+
+    /// <summary>
+    /// Constants used for properties of type ScalingActivityStatusCode.
     /// </summary>
     public class ScalingActivityStatusCode : ConstantClass
     {
 
-
-       /// <summary>Constant Cancelled for ScalingActivityStatusCode
-       /// </summary>
+        /// <summary>
+        /// Constant Cancelled for ScalingActivityStatusCode
+        /// </summary>
         public static readonly ScalingActivityStatusCode Cancelled = new ScalingActivityStatusCode("Cancelled");
-    
-
-       /// <summary>Constant Failed for ScalingActivityStatusCode
-       /// </summary>
+        /// <summary>
+        /// Constant Failed for ScalingActivityStatusCode
+        /// </summary>
         public static readonly ScalingActivityStatusCode Failed = new ScalingActivityStatusCode("Failed");
-    
-
-       /// <summary>Constant InProgress for ScalingActivityStatusCode
-       /// </summary>
+        /// <summary>
+        /// Constant InProgress for ScalingActivityStatusCode
+        /// </summary>
         public static readonly ScalingActivityStatusCode InProgress = new ScalingActivityStatusCode("InProgress");
-    
-
-       /// <summary>Constant PreInService for ScalingActivityStatusCode
-       /// </summary>
+        /// <summary>
+        /// Constant MidLifecycleAction for ScalingActivityStatusCode
+        /// </summary>
+        public static readonly ScalingActivityStatusCode MidLifecycleAction = new ScalingActivityStatusCode("MidLifecycleAction");
+        /// <summary>
+        /// Constant PreInService for ScalingActivityStatusCode
+        /// </summary>
         public static readonly ScalingActivityStatusCode PreInService = new ScalingActivityStatusCode("PreInService");
-    
-
-       /// <summary>Constant Successful for ScalingActivityStatusCode
-       /// </summary>
+        /// <summary>
+        /// Constant Successful for ScalingActivityStatusCode
+        /// </summary>
         public static readonly ScalingActivityStatusCode Successful = new ScalingActivityStatusCode("Successful");
-    
-
-       /// <summary>Constant WaitingForInstanceId for ScalingActivityStatusCode
-       /// </summary>
+        /// <summary>
+        /// Constant WaitingForELBConnectionDraining for ScalingActivityStatusCode
+        /// </summary>
+        public static readonly ScalingActivityStatusCode WaitingForELBConnectionDraining = new ScalingActivityStatusCode("WaitingForELBConnectionDraining");
+        /// <summary>
+        /// Constant WaitingForInstanceId for ScalingActivityStatusCode
+        /// </summary>
         public static readonly ScalingActivityStatusCode WaitingForInstanceId = new ScalingActivityStatusCode("WaitingForInstanceId");
-    
-
-       /// <summary>Constant WaitingForSpotInstanceId for ScalingActivityStatusCode
-       /// </summary>
+        /// <summary>
+        /// Constant WaitingForSpotInstanceId for ScalingActivityStatusCode
+        /// </summary>
         public static readonly ScalingActivityStatusCode WaitingForSpotInstanceId = new ScalingActivityStatusCode("WaitingForSpotInstanceId");
-    
-
-       /// <summary>Constant WaitingForSpotInstanceRequestId for ScalingActivityStatusCode
-       /// </summary>
+        /// <summary>
+        /// Constant WaitingForSpotInstanceRequestId for ScalingActivityStatusCode
+        /// </summary>
         public static readonly ScalingActivityStatusCode WaitingForSpotInstanceRequestId = new ScalingActivityStatusCode("WaitingForSpotInstanceRequestId");
-    
 
         /// <summary>
         /// Default Constructor
@@ -146,7 +174,5 @@ namespace Amazon.AutoScaling
             return FindValue(value);
         }
     }
-    
 
 }
-        

@@ -12,69 +12,75 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   EnabledMetric Unmarshaller
-     /// </summary>
-    internal class EnabledMetricUnmarshaller : IUnmarshaller<EnabledMetric, XmlUnmarshallerContext>, IUnmarshaller<EnabledMetric, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for EnabledMetric Object
+    /// </summary>  
+    public class EnabledMetricUnmarshaller : IUnmarshaller<EnabledMetric, XmlUnmarshallerContext>, IUnmarshaller<EnabledMetric, JsonUnmarshallerContext>
     {
-        public EnabledMetric Unmarshall(XmlUnmarshallerContext context) 
+        public EnabledMetric Unmarshall(XmlUnmarshallerContext context)
         {
-            EnabledMetric enabledMetric = new EnabledMetric();
+            EnabledMetric unmarshalledObject = new EnabledMetric();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Metric", targetDepth))
-                    {
-                        enabledMetric.Metric = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("Granularity", targetDepth))
                     {
-                        enabledMetric.Granularity = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Granularity = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Metric", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Metric = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return enabledMetric;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return enabledMetric;
+            return unmarshalledObject;
         }
 
-        public EnabledMetric Unmarshall(JsonUnmarshallerContext context) 
+        public EnabledMetric Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static EnabledMetricUnmarshaller instance;
 
-        public static EnabledMetricUnmarshaller GetInstance() 
+        private static EnabledMetricUnmarshaller _instance = new EnabledMetricUnmarshaller();        
+
+        public static EnabledMetricUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new EnabledMetricUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

@@ -25,62 +25,60 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the AttachInstances operation.
-    /// <para> Attaches one or more Amazon EC2 instances to an existing Auto Scaling group. After the instance(s) is attached, it becomes a part of
-    /// the Auto Scaling group. </para> <para>For more information, see <a
-    /// href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html" >Attach Amazon EC2 Instance(s) to Your Existing
-    /// Auto Scaling Group</a> in the <i>Auto Scaling Developer Guide</i> .</para>
+    /// Attaches one or more Amazon EC2 instances to an existing Auto Scaling group. After
+    /// the instance(s) is attached, it becomes a part of the Auto Scaling group. 
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html">Attach
+    /// Amazon EC2 Instances to Your Existing Auto Scaling Group</a> in the <i>Auto Scaling
+    /// Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class AttachInstancesRequest : AmazonAutoScalingRequest
     {
-        private List<string> instanceIds = new List<string>();
-        private string autoScalingGroupName;
+        private string _autoScalingGroupName;
+        private List<string> _instanceIds = new List<string>();
 
 
         /// <summary>
-        /// One or more IDs of the Amazon EC2 instances to attach to the specified Auto Scaling group. You must specify at least one instance ID.
-        ///  
-        /// </summary>
-        public List<string> InstanceIds
-        {
-            get { return this.instanceIds; }
-            set { this.instanceIds = value; }
-        }
-
-        // Check to see if InstanceIds property is set
-        internal bool IsSetInstanceIds()
-        {
-            return this.instanceIds.Count > 0;
-        }
-
-        /// <summary>
-        /// The name of the Auto Scaling group to which to attach the specified instance(s).
-        ///  
+        /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1600</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        ///  The name of the Auto Scaling group to which to attach the specified instance(s).
+        /// 
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
         {
-            get { return this.autoScalingGroupName; }
-            set { this.autoScalingGroupName = value; }
+            get { return this._autoScalingGroupName; }
+            set { this._autoScalingGroupName = value; }
         }
 
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;
+            return this._autoScalingGroupName != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property InstanceIds. 
+        /// <para>
+        ///  One or more IDs of the Amazon EC2 instances to attach to the specified Auto Scaling
+        /// group. You must specify at least one instance ID. 
+        /// </para>
+        /// </summary>
+        public List<string> InstanceIds
+        {
+            get { return this._instanceIds; }
+            set { this._instanceIds = value; }
+        }
+
+        // Check to see if InstanceIds property is set
+        internal bool IsSetInstanceIds()
+        {
+            return this._instanceIds != null && this._instanceIds.Count > 0; 
         }
 
     }
 }
-    

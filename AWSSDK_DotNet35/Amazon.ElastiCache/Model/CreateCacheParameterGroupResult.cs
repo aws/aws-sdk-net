@@ -16,27 +16,24 @@ using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// The results from the CreateCacheParameterGroup action.
+    /// Represents the output of a <i>CreateCacheParameterGroup</i> operation.
     /// </summary>
     public partial class CreateCacheParameterGroupResult : AmazonWebServiceResponse
     {
-        private CacheParameterGroup cacheParameterGroupValue;
+        private CacheParameterGroup _response;
 
-        /// <summary>
-        /// Gets and sets the CreateCacheParameterGroupResult property.
-        /// Contains the result of a successful invocation of the CreateCacheParameterGroup
-        /// action.
-        /// </summary>
         public CacheParameterGroup CacheParameterGroup
         {
-            get { return this.cacheParameterGroupValue; }
-            set { this.cacheParameterGroupValue = value; }
+            get { return this._response; }
+            set { this._response = value; }
         }
     }
 }
-    

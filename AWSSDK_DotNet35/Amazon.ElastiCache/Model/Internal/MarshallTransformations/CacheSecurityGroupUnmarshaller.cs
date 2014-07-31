@@ -12,84 +12,88 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   CacheSecurityGroup Unmarshaller
-     /// </summary>
-    internal class CacheSecurityGroupUnmarshaller : IUnmarshaller<CacheSecurityGroup, XmlUnmarshallerContext>, IUnmarshaller<CacheSecurityGroup, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for CacheSecurityGroup Object
+    /// </summary>  
+    public class CacheSecurityGroupUnmarshaller : IUnmarshaller<CacheSecurityGroup, XmlUnmarshallerContext>, IUnmarshaller<CacheSecurityGroup, JsonUnmarshallerContext>
     {
-        public CacheSecurityGroup Unmarshall(XmlUnmarshallerContext context) 
+        public CacheSecurityGroup Unmarshall(XmlUnmarshallerContext context)
         {
-            CacheSecurityGroup cacheSecurityGroup = new CacheSecurityGroup();
+            CacheSecurityGroup unmarshalledObject = new CacheSecurityGroup();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            if (context.IsStartOfDocument) 
-               targetDepth++;
-            
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("OwnerId", targetDepth))
-                    {
-                        cacheSecurityGroup.OwnerId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("CacheSecurityGroupName", targetDepth))
                     {
-                        cacheSecurityGroup.CacheSecurityGroupName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CacheSecurityGroupName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Description", targetDepth))
                     {
-                        cacheSecurityGroup.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("EC2SecurityGroups/EC2SecurityGroup", targetDepth))
                     {
-                        cacheSecurityGroup.EC2SecurityGroups.Add(EC2SecurityGroupUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = EC2SecurityGroupUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.EC2SecurityGroups.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("OwnerId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return cacheSecurityGroup;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return cacheSecurityGroup;
+            return unmarshalledObject;
         }
 
-        public CacheSecurityGroup Unmarshall(JsonUnmarshallerContext context) 
+        public CacheSecurityGroup Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static CacheSecurityGroupUnmarshaller instance;
 
-        public static CacheSecurityGroupUnmarshaller GetInstance() 
+        private static CacheSecurityGroupUnmarshaller _instance = new CacheSecurityGroupUnmarshaller();        
+
+        public static CacheSecurityGroupUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new CacheSecurityGroupUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

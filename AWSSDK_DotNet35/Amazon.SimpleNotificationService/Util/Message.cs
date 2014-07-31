@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
-
+using System.Text.RegularExpressions;
 using Amazon.Util;
 
 using ThirdParty.Json.LitJson;
@@ -66,7 +66,7 @@ namespace Amazon.SimpleNotificationService.Util
             message.MessageText = extractField("Message");
             message.Signature = extractField("Signature");
             message.SignatureVersion = extractField("SignatureVersion");
-            message.SigningCertURL = extractField("SigningCertURL");
+            message.SigningCertURL = ValidateCertUrl(extractField("SigningCertURL"));
             message.SubscribeURL = extractField("SubscribeURL");
             message.Subject = extractField("Subject");
             message.TimestampString = extractField("Timestamp");
@@ -225,6 +225,26 @@ namespace Amazon.SimpleNotificationService.Util
         {
             get;
             private set;
+        }
+
+        /// <summary>
+        /// Verifies that the signing certificate url is from a recognizable source. 
+        /// Returns the cert url if it cen be verified, otherwise throws an exception.
+        /// </summary>
+        /// <param name="certUrl"></param>
+        /// <returns></returns>
+        private static string ValidateCertUrl(string certUrl)
+        {
+            var uri = new Uri(certUrl);
+            if (uri.Scheme == "https" && certUrl.EndsWith(".pem"))
+            {
+                const string pattern = @"^sns\.[a-zA-Z0-9\-]{3,}\.amazonaws\.com(\.cn)?$";
+                var regex = new Regex(pattern);
+                if (regex.IsMatch(uri.Host))
+                    return certUrl;
+            }
+
+            throw new Exception("Signing certificate url is not from a recognised source.");
         }
 
 #if BCL

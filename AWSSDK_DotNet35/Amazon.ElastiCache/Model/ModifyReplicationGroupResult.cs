@@ -16,27 +16,24 @@ using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// The results from the ModifyReplicationGroup action.
+    /// Contains all of the attributes of a specific replication group.
     /// </summary>
     public partial class ModifyReplicationGroupResult : AmazonWebServiceResponse
     {
-        private ReplicationGroup replicationGroupValue;
+        private ReplicationGroup _response;
 
-        /// <summary>
-        /// Gets and sets the ModifyReplicationGroupResult property.
-        /// Contains the result of a successful invocation of the ModifyReplicationGroup
-        /// action.
-        /// </summary>
         public ReplicationGroup ReplicationGroup
         {
-            get { return this.replicationGroupValue; }
-            set { this.replicationGroupValue = value; }
+            get { return this._response; }
+            set { this._response = value; }
         }
     }
 }
-    

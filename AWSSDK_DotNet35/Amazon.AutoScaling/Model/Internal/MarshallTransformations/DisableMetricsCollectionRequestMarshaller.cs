@@ -14,43 +14,45 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Disable Metrics Collection Request Marshaller
+    /// DisableMetricsCollection Request Marshaller
     /// </summary>       
     public class DisableMetricsCollectionRequestMarshaller : IMarshaller<IRequest, DisableMetricsCollectionRequest>
     {
-        public IRequest Marshall(DisableMetricsCollectionRequest disableMetricsCollectionRequest)
+        public IRequest Marshall(DisableMetricsCollectionRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(disableMetricsCollectionRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AutoScaling");
             request.Parameters.Add("Action", "DisableMetricsCollection");
             request.Parameters.Add("Version", "2011-01-01");
-            if (disableMetricsCollectionRequest != null && disableMetricsCollectionRequest.IsSetAutoScalingGroupName())
-            {
-                request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(disableMetricsCollectionRequest.AutoScalingGroupName));
-            }
-            if (disableMetricsCollectionRequest != null)
-            {
-                List<string> metricsList = disableMetricsCollectionRequest.Metrics;
 
-                int metricsListIndex = 1;
-                foreach (string metricsListValue in metricsList)
-                { 
-                    request.Parameters.Add("Metrics.member." + metricsListIndex, StringUtils.FromString(metricsListValue));
-                    metricsListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAutoScalingGroupName())
+                {
+                    request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
+                }
+                if(publicRequest.IsSetMetrics())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Metrics)
+                    {
+                        request.Parameters.Add("Metrics" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
-
             return request;
         }
     }

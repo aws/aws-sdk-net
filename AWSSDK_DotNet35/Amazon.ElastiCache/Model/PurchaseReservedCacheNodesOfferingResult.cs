@@ -16,27 +16,24 @@ using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// The results from the PurchaseReservedCacheNodesOffering action.
+    /// Represents the output of a <i>PurchaseReservedCacheNodesOffering</i> operation.
     /// </summary>
     public partial class PurchaseReservedCacheNodesOfferingResult : AmazonWebServiceResponse
     {
-        private ReservedCacheNode reservedCacheNodeValue;
+        private ReservedCacheNode _response;
 
-        /// <summary>
-        /// Gets and sets the PurchaseReservedCacheNodesOfferingResult property.
-        /// Contains the result of a successful invocation of the PurchaseReservedCacheNodesOffering
-        /// action.
-        /// </summary>
         public ReservedCacheNode ReservedCacheNode
         {
-            get { return this.reservedCacheNodeValue; }
-            set { this.reservedCacheNodeValue = value; }
+            get { return this._response; }
+            set { this._response = value; }
         }
     }
 }
-    

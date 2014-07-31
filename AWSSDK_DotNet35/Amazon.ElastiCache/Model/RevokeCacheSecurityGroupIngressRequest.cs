@@ -25,65 +25,74 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the RevokeCacheSecurityGroupIngress operation.
-    /// <para>The <i>RevokeCacheSecurityGroupIngress</i> operation revokes ingress from a cache security group. Use this operation to disallow
-    /// access from an Amazon EC2 security group that had been previously authorized.</para>
+    /// The <i>RevokeCacheSecurityGroupIngress</i> operation revokes ingress from a cache
+    /// security group. Use this operation to disallow access from an Amazon EC2 security
+    /// group that had been previously authorized.
     /// </summary>
     public partial class RevokeCacheSecurityGroupIngressRequest : AmazonElastiCacheRequest
     {
-        private string cacheSecurityGroupName;
-        private string eC2SecurityGroupName;
-        private string eC2SecurityGroupOwnerId;
+        private string _cacheSecurityGroupName;
+        private string _eC2SecurityGroupName;
+        private string _eC2SecurityGroupOwnerId;
 
 
         /// <summary>
+        /// Gets and sets the property CacheSecurityGroupName. 
+        /// <para>
         /// The name of the cache security group to revoke ingress from.
-        ///  
+        /// </para>
         /// </summary>
         public string CacheSecurityGroupName
         {
-            get { return this.cacheSecurityGroupName; }
-            set { this.cacheSecurityGroupName = value; }
+            get { return this._cacheSecurityGroupName; }
+            set { this._cacheSecurityGroupName = value; }
         }
 
         // Check to see if CacheSecurityGroupName property is set
         internal bool IsSetCacheSecurityGroupName()
         {
-            return this.cacheSecurityGroupName != null;
+            return this._cacheSecurityGroupName != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property EC2SecurityGroupName. 
+        /// <para>
         /// The name of the Amazon EC2 security group to revoke access from.
-        ///  
+        /// </para>
         /// </summary>
         public string EC2SecurityGroupName
         {
-            get { return this.eC2SecurityGroupName; }
-            set { this.eC2SecurityGroupName = value; }
+            get { return this._eC2SecurityGroupName; }
+            set { this._eC2SecurityGroupName = value; }
         }
 
         // Check to see if EC2SecurityGroupName property is set
         internal bool IsSetEC2SecurityGroupName()
         {
-            return this.eC2SecurityGroupName != null;
+            return this._eC2SecurityGroupName != null;
         }
 
+
         /// <summary>
-        /// The AWS account number of the Amazon EC2 security group owner. Note that this is not the same thing as an AWS access key ID - you must
-        /// provide a valid AWS account number for this parameter.
-        ///  
+        /// Gets and sets the property EC2SecurityGroupOwnerId. 
+        /// <para>
+        /// The AWS account number of the Amazon EC2 security group owner. Note that this is not
+        /// the same thing as an AWS access key ID - you must provide a valid AWS account number
+        /// for this parameter.
+        /// </para>
         /// </summary>
         public string EC2SecurityGroupOwnerId
         {
-            get { return this.eC2SecurityGroupOwnerId; }
-            set { this.eC2SecurityGroupOwnerId = value; }
+            get { return this._eC2SecurityGroupOwnerId; }
+            set { this._eC2SecurityGroupOwnerId = value; }
         }
 
         // Check to see if EC2SecurityGroupOwnerId property is set
         internal bool IsSetEC2SecurityGroupOwnerId()
         {
-            return this.eC2SecurityGroupOwnerId != null;
+            return this._eC2SecurityGroupOwnerId != null;
         }
 
     }
 }
-    

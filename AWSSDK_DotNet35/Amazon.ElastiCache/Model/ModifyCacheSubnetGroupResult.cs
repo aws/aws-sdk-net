@@ -16,27 +16,27 @@ using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// The results from the ModifyCacheSubnetGroup action.
+    /// Represents the output of one of the following operations:
+    /// 
+    ///  <ul> <li> <i>CreateCacheSubnetGroup</i> </li> <li> <i>ModifyCacheSubnetGroup</i>
+    /// </li> </ul>
     /// </summary>
     public partial class ModifyCacheSubnetGroupResult : AmazonWebServiceResponse
     {
-        private CacheSubnetGroup cacheSubnetGroupValue;
+        private CacheSubnetGroup _response;
 
-        /// <summary>
-        /// Gets and sets the ModifyCacheSubnetGroupResult property.
-        /// Contains the result of a successful invocation of the ModifyCacheSubnetGroup
-        /// action.
-        /// </summary>
         public CacheSubnetGroup CacheSubnetGroup
         {
-            get { return this.cacheSubnetGroupValue; }
-            set { this.cacheSubnetGroupValue = value; }
+            get { return this._response; }
+            set { this._response = value; }
         }
     }
 }
-    

@@ -12,93 +12,105 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   CacheNode Unmarshaller
-     /// </summary>
-    internal class CacheNodeUnmarshaller : IUnmarshaller<CacheNode, XmlUnmarshallerContext>, IUnmarshaller<CacheNode, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for CacheNode Object
+    /// </summary>  
+    public class CacheNodeUnmarshaller : IUnmarshaller<CacheNode, XmlUnmarshallerContext>, IUnmarshaller<CacheNode, JsonUnmarshallerContext>
     {
-        public CacheNode Unmarshall(XmlUnmarshallerContext context) 
+        public CacheNode Unmarshall(XmlUnmarshallerContext context)
         {
-            CacheNode cacheNode = new CacheNode();
+            CacheNode unmarshalledObject = new CacheNode();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("CacheNodeCreateTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.CacheNodeCreateTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("CacheNodeId", targetDepth))
                     {
-                        cacheNode.CacheNodeId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CacheNodeId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("CacheNodeStatus", targetDepth))
                     {
-                        cacheNode.CacheNodeStatus = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CacheNodeStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("CacheNodeCreateTime", targetDepth))
+                    if (context.TestExpression("CustomerAvailabilityZone", targetDepth))
                     {
-                        cacheNode.CacheNodeCreateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CustomerAvailabilityZone = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Endpoint", targetDepth))
                     {
-                        cacheNode.Endpoint = EndpointUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = EndpointUnmarshaller.Instance;
+                        unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ParameterGroupStatus", targetDepth))
                     {
-                        cacheNode.ParameterGroupStatus = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ParameterGroupStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SourceCacheNodeId", targetDepth))
                     {
-                        cacheNode.SourceCacheNodeId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SourceCacheNodeId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return cacheNode;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return cacheNode;
+            return unmarshalledObject;
         }
 
-        public CacheNode Unmarshall(JsonUnmarshallerContext context) 
+        public CacheNode Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
-        private static CacheNodeUnmarshaller instance;
 
-        public static CacheNodeUnmarshaller GetInstance() 
+        private static CacheNodeUnmarshaller _instance = new CacheNodeUnmarshaller();        
+
+        public static CacheNodeUnmarshaller Instance
         {
-            if (instance == null) 
-               instance = new CacheNodeUnmarshaller();
-
-            return instance;
+            get
+            {
+                return _instance;
+            }
         }
     }
 }
-    

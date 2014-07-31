@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Execute Policy Request Marshaller
+    /// ExecutePolicy Request Marshaller
     /// </summary>       
     public class ExecutePolicyRequestMarshaller : IMarshaller<IRequest, ExecutePolicyRequest>
     {
-        public IRequest Marshall(ExecutePolicyRequest executePolicyRequest)
+        public IRequest Marshall(ExecutePolicyRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(executePolicyRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AutoScaling");
             request.Parameters.Add("Action", "ExecutePolicy");
             request.Parameters.Add("Version", "2011-01-01");
-            if (executePolicyRequest != null && executePolicyRequest.IsSetAutoScalingGroupName())
-            {
-                request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(executePolicyRequest.AutoScalingGroupName));
-            }
-            if (executePolicyRequest != null && executePolicyRequest.IsSetPolicyName())
-            {
-                request.Parameters.Add("PolicyName", StringUtils.FromString(executePolicyRequest.PolicyName));
-            }
-            if (executePolicyRequest != null && executePolicyRequest.IsSetHonorCooldown())
-            {
-                request.Parameters.Add("HonorCooldown", StringUtils.FromBool(executePolicyRequest.HonorCooldown));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAutoScalingGroupName())
+                {
+                    request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
+                }
+                if(publicRequest.IsSetHonorCooldown())
+                {
+                    request.Parameters.Add("HonorCooldown", StringUtils.FromBool(publicRequest.HonorCooldown));
+                }
+                if(publicRequest.IsSetPolicyName())
+                {
+                    request.Parameters.Add("PolicyName", StringUtils.FromString(publicRequest.PolicyName));
+                }
+            }
             return request;
         }
     }

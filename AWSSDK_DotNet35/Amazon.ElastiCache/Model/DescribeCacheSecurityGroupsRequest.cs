@@ -25,66 +25,84 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCacheSecurityGroups operation.
-    /// <para>The <i>DescribeCacheSecurityGroups</i> operation returns a list of cache security group descriptions. If a cache security group name
-    /// is specified, the list will contain only the description of that group.</para>
+    /// The <i>DescribeCacheSecurityGroups</i> operation returns a list of cache security
+    /// group descriptions. If a cache security group name is specified, the list will contain
+    /// only the description of that group.
     /// </summary>
     public partial class DescribeCacheSecurityGroupsRequest : AmazonElastiCacheRequest
     {
-        private string cacheSecurityGroupName;
-        private int? maxRecords;
-        private string marker;
+        private string _cacheSecurityGroupName;
+        private string _marker;
+        private int? _maxRecords;
 
 
         /// <summary>
+        /// Gets and sets the property CacheSecurityGroupName. 
+        /// <para>
         /// The name of the cache security group to return details for.
-        ///  
+        /// </para>
         /// </summary>
         public string CacheSecurityGroupName
         {
-            get { return this.cacheSecurityGroupName; }
-            set { this.cacheSecurityGroupName = value; }
+            get { return this._cacheSecurityGroupName; }
+            set { this._cacheSecurityGroupName = value; }
         }
 
         // Check to see if CacheSecurityGroupName property is set
         internal bool IsSetCacheSecurityGroupName()
         {
-            return this.cacheSecurityGroupName != null;
+            return this._cacheSecurityGroupName != null;
         }
+
 
         /// <summary>
-        /// The maximum number of records to include in the response. If more records exist than the specified <c>MaxRecords</c> value, a marker is
-        /// included in the response so that the remaining results can be retrieved. Default: 100Constraints: minimum 20; maximum 100.
-        ///  
-        /// </summary>
-        public int MaxRecords
-        {
-            get { return this.maxRecords ?? default(int); }
-            set { this.maxRecords = value; }
-        }
-
-        // Check to see if MaxRecords property is set
-        internal bool IsSetMaxRecords()
-        {
-            return this.maxRecords.HasValue;
-        }
-
-        /// <summary>
-        /// An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.
-        ///  
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// An optional marker returned from a prior request. Use this marker for pagination of
+        /// results from this operation. If this parameter is specified, the response includes
+        /// only records beyond the marker, up to the value specified by <i>MaxRecords</i>.
+        /// </para>
         /// </summary>
         public string Marker
         {
-            get { return this.marker; }
-            set { this.marker = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
 
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;
+            return this._marker != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property MaxRecords. 
+        /// <para>
+        /// The maximum number of records to include in the response. If more records exist than
+        /// the specified <code>MaxRecords</code> value, a marker is included in the response
+        /// so that the remaining results can be retrieved.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: 100
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: minimum 20; maximum 100.
+        /// </para>
+        /// </summary>
+        public int MaxRecords
+        {
+            get { return this._maxRecords.GetValueOrDefault(); }
+            set { this._maxRecords = value; }
+        }
+
+        // Check to see if MaxRecords property is set
+        internal bool IsSetMaxRecords()
+        {
+            return this._maxRecords.HasValue; 
         }
 
     }
 }
-    

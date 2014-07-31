@@ -18,142 +18,154 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// <para>The Ebs data type.</para>
+    /// The Ebs data type.
     /// </summary>
     public partial class Ebs
     {
-        
-        private string snapshotId;
-        private int? volumeSize;
-        private string volumeType;
-        private bool? deleteOnTermination;
-        private int? iops;
+        private bool? _deleteOnTermination;
+        private int? _iops;
+        private string _snapshotId;
+        private int? _volumeSize;
+        private string _volumeType;
 
 
         /// <summary>
-        /// The snapshot ID.
+        /// Gets and sets the property DeleteOnTermination. 
+        /// <para>
+        /// Indicates whether to delete the volume on instance termination. 
+        /// </para>
         ///  
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
-        ///     </item>
-        /// </list>
+        /// Default: <code>true</code> 
         /// </para>
-        /// </summary>
-        public string SnapshotId
-        {
-            get { return this.snapshotId; }
-            set { this.snapshotId = value; }
-        }
-
-        // Check to see if SnapshotId property is set
-        internal bool IsSetSnapshotId()
-        {
-            return this.snapshotId != null;
-        }
-
-        /// <summary>
-        /// The volume size, in gigabytes. Valid values: If the volume type is <c>io1</c>, the minimum size of the volume is 10. Default: If you're
-        /// creating the volume from a snapshot, and you don't specify a volume size, the default is the snapshot size. Required: Required when the
-        /// volume type is <c>io1</c>.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>1 - 1024</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public int VolumeSize
-        {
-            get { return this.volumeSize ?? default(int); }
-            set { this.volumeSize = value; }
-        }
-
-        // Check to see if VolumeSize property is set
-        internal bool IsSetVolumeSize()
-        {
-            return this.volumeSize.HasValue;
-        }
-
-        /// <summary>
-        /// The volume type. Valid values: <c>standard | io1</c> Default: <c>standard</c>
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 255</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string VolumeType
-        {
-            get { return this.volumeType; }
-            set { this.volumeType = value; }
-        }
-
-        // Check to see if VolumeType property is set
-        internal bool IsSetVolumeType()
-        {
-            return this.volumeType != null;
-        }
-
-        /// <summary>
-        /// Indicates whether to delete the volume on instance termination. Default: <c>true</c>
-        ///  
         /// </summary>
         public bool DeleteOnTermination
         {
-            get { return this.deleteOnTermination ?? default(bool); }
-            set { this.deleteOnTermination = value; }
+            get { return this._deleteOnTermination.GetValueOrDefault(); }
+            set { this._deleteOnTermination = value; }
         }
 
         // Check to see if DeleteOnTermination property is set
         internal bool IsSetDeleteOnTermination()
         {
-            return this.deleteOnTermination.HasValue;
+            return this._deleteOnTermination.HasValue; 
         }
 
+
         /// <summary>
-        /// The number of I/O operations per second (IOPS) that the volume supports. The maximum ratio of IOPS to volume size is 30.0 Valid Values:
-        /// Range is 100 to 4000. Default: None.
+        /// Gets and sets the property Iops. 
+        /// <para>
+        /// The number of I/O operations per second (IOPS) that the volume supports.
+        /// </para>
         ///  
         /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>100 - 4000</description>
-        ///     </item>
-        /// </list>
+        /// The maximum ratio of IOPS to volume size is 30.0
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: Range is 100 to 4000.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: None.
         /// </para>
         /// </summary>
         public int Iops
         {
-            get { return this.iops ?? default(int); }
-            set { this.iops = value; }
+            get { return this._iops.GetValueOrDefault(); }
+            set { this._iops = value; }
         }
 
         // Check to see if Iops property is set
         internal bool IsSetIops()
         {
-            return this.iops.HasValue;
+            return this._iops.HasValue; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property SnapshotId. 
+        /// <para>
+        ///  The snapshot ID. 
+        /// </para>
+        /// </summary>
+        public string SnapshotId
+        {
+            get { return this._snapshotId; }
+            set { this._snapshotId = value; }
+        }
+
+        // Check to see if SnapshotId property is set
+        internal bool IsSetSnapshotId()
+        {
+            return this._snapshotId != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property VolumeSize. 
+        /// <para>
+        /// The volume size, in gigabytes.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: If the volume type is <code>io1</code>, the minimum size of the volume
+        /// is 10.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: If you're creating the volume from a snapshot, and you don't specify a volume
+        /// size, the default is the snapshot size.
+        /// </para>
+        ///  
+        /// <para>
+        /// Required: Required when the volume type is <code>io1</code>. 
+        /// </para>
+        /// </summary>
+        public int VolumeSize
+        {
+            get { return this._volumeSize.GetValueOrDefault(); }
+            set { this._volumeSize = value; }
+        }
+
+        // Check to see if VolumeSize property is set
+        internal bool IsSetVolumeSize()
+        {
+            return this._volumeSize.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property VolumeType. 
+        /// <para>
+        /// The volume type.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>standard | io1</code>
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>standard</code>
+        /// </para>
+        /// </summary>
+        public string VolumeType
+        {
+            get { return this._volumeType; }
+            set { this._volumeType = value; }
+        }
+
+        // Check to see if VolumeType property is set
+        internal bool IsSetVolumeType()
+        {
+            return this._volumeType != null;
+        }
+
     }
 }

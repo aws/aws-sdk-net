@@ -14,102 +14,102 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Modify Replication Group Request Marshaller
+    /// ModifyReplicationGroup Request Marshaller
     /// </summary>       
     public class ModifyReplicationGroupRequestMarshaller : IMarshaller<IRequest, ModifyReplicationGroupRequest>
     {
-        public IRequest Marshall(ModifyReplicationGroupRequest modifyReplicationGroupRequest)
+        public IRequest Marshall(ModifyReplicationGroupRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(modifyReplicationGroupRequest, "AmazonElastiCache");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElastiCache");
             request.Parameters.Add("Action", "ModifyReplicationGroup");
-            request.Parameters.Add("Version", "2014-03-24");
-            if (modifyReplicationGroupRequest != null && modifyReplicationGroupRequest.IsSetReplicationGroupId())
-            {
-                request.Parameters.Add("ReplicationGroupId", StringUtils.FromString(modifyReplicationGroupRequest.ReplicationGroupId));
-            }
-            if (modifyReplicationGroupRequest != null && modifyReplicationGroupRequest.IsSetReplicationGroupDescription())
-            {
-                request.Parameters.Add("ReplicationGroupDescription", StringUtils.FromString(modifyReplicationGroupRequest.ReplicationGroupDescription));
-            }
-            if (modifyReplicationGroupRequest != null)
-            {
-                List<string> cacheSecurityGroupNamesList = modifyReplicationGroupRequest.CacheSecurityGroupNames;
+            request.Parameters.Add("Version", "2014-07-15");
 
-                int cacheSecurityGroupNamesListIndex = 1;
-                foreach (string cacheSecurityGroupNamesListValue in cacheSecurityGroupNamesList)
-                { 
-                    request.Parameters.Add("CacheSecurityGroupNames.member." + cacheSecurityGroupNamesListIndex, StringUtils.FromString(cacheSecurityGroupNamesListValue));
-                    cacheSecurityGroupNamesListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetApplyImmediately())
+                {
+                    request.Parameters.Add("ApplyImmediately", StringUtils.FromBool(publicRequest.ApplyImmediately));
+                }
+                if(publicRequest.IsSetAutoMinorVersionUpgrade())
+                {
+                    request.Parameters.Add("AutoMinorVersionUpgrade", StringUtils.FromBool(publicRequest.AutoMinorVersionUpgrade));
+                }
+                if(publicRequest.IsSetCacheParameterGroupName())
+                {
+                    request.Parameters.Add("CacheParameterGroupName", StringUtils.FromString(publicRequest.CacheParameterGroupName));
+                }
+                if(publicRequest.IsSetCacheSecurityGroupNames())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.CacheSecurityGroupNames)
+                    {
+                        request.Parameters.Add("CacheSecurityGroupNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetEngineVersion())
+                {
+                    request.Parameters.Add("EngineVersion", StringUtils.FromString(publicRequest.EngineVersion));
+                }
+                if(publicRequest.IsSetNotificationTopicArn())
+                {
+                    request.Parameters.Add("NotificationTopicArn", StringUtils.FromString(publicRequest.NotificationTopicArn));
+                }
+                if(publicRequest.IsSetNotificationTopicStatus())
+                {
+                    request.Parameters.Add("NotificationTopicStatus", StringUtils.FromString(publicRequest.NotificationTopicStatus));
+                }
+                if(publicRequest.IsSetPreferredMaintenanceWindow())
+                {
+                    request.Parameters.Add("PreferredMaintenanceWindow", StringUtils.FromString(publicRequest.PreferredMaintenanceWindow));
+                }
+                if(publicRequest.IsSetPrimaryClusterId())
+                {
+                    request.Parameters.Add("PrimaryClusterId", StringUtils.FromString(publicRequest.PrimaryClusterId));
+                }
+                if(publicRequest.IsSetReplicationGroupDescription())
+                {
+                    request.Parameters.Add("ReplicationGroupDescription", StringUtils.FromString(publicRequest.ReplicationGroupDescription));
+                }
+                if(publicRequest.IsSetReplicationGroupId())
+                {
+                    request.Parameters.Add("ReplicationGroupId", StringUtils.FromString(publicRequest.ReplicationGroupId));
+                }
+                if(publicRequest.IsSetSecurityGroupIds())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.SecurityGroupIds)
+                    {
+                        request.Parameters.Add("SecurityGroupIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetSnapshotRetentionLimit())
+                {
+                    request.Parameters.Add("SnapshotRetentionLimit", StringUtils.FromInt(publicRequest.SnapshotRetentionLimit));
+                }
+                if(publicRequest.IsSetSnapshottingClusterId())
+                {
+                    request.Parameters.Add("SnapshottingClusterId", StringUtils.FromString(publicRequest.SnapshottingClusterId));
+                }
+                if(publicRequest.IsSetSnapshotWindow())
+                {
+                    request.Parameters.Add("SnapshotWindow", StringUtils.FromString(publicRequest.SnapshotWindow));
                 }
             }
-            if (modifyReplicationGroupRequest != null)
-            {
-                List<string> securityGroupIdsList = modifyReplicationGroupRequest.SecurityGroupIds;
-
-                int securityGroupIdsListIndex = 1;
-                foreach (string securityGroupIdsListValue in securityGroupIdsList)
-                { 
-                    request.Parameters.Add("SecurityGroupIds.member." + securityGroupIdsListIndex, StringUtils.FromString(securityGroupIdsListValue));
-                    securityGroupIdsListIndex++;
-                }
-            }
-            if (modifyReplicationGroupRequest != null && modifyReplicationGroupRequest.IsSetPreferredMaintenanceWindow())
-            {
-                request.Parameters.Add("PreferredMaintenanceWindow", StringUtils.FromString(modifyReplicationGroupRequest.PreferredMaintenanceWindow));
-            }
-            if (modifyReplicationGroupRequest != null && modifyReplicationGroupRequest.IsSetNotificationTopicArn())
-            {
-                request.Parameters.Add("NotificationTopicArn", StringUtils.FromString(modifyReplicationGroupRequest.NotificationTopicArn));
-            }
-            if (modifyReplicationGroupRequest != null && modifyReplicationGroupRequest.IsSetCacheParameterGroupName())
-            {
-                request.Parameters.Add("CacheParameterGroupName", StringUtils.FromString(modifyReplicationGroupRequest.CacheParameterGroupName));
-            }
-            if (modifyReplicationGroupRequest != null && modifyReplicationGroupRequest.IsSetNotificationTopicStatus())
-            {
-                request.Parameters.Add("NotificationTopicStatus", StringUtils.FromString(modifyReplicationGroupRequest.NotificationTopicStatus));
-            }
-            if (modifyReplicationGroupRequest != null && modifyReplicationGroupRequest.IsSetApplyImmediately())
-            {
-                request.Parameters.Add("ApplyImmediately", StringUtils.FromBool(modifyReplicationGroupRequest.ApplyImmediately));
-            }
-            if (modifyReplicationGroupRequest != null && modifyReplicationGroupRequest.IsSetEngineVersion())
-            {
-                request.Parameters.Add("EngineVersion", StringUtils.FromString(modifyReplicationGroupRequest.EngineVersion));
-            }
-            if (modifyReplicationGroupRequest != null && modifyReplicationGroupRequest.IsSetAutoMinorVersionUpgrade())
-            {
-                request.Parameters.Add("AutoMinorVersionUpgrade", StringUtils.FromBool(modifyReplicationGroupRequest.AutoMinorVersionUpgrade));
-            }
-            if (modifyReplicationGroupRequest != null && modifyReplicationGroupRequest.IsSetPrimaryClusterId())
-            {
-                request.Parameters.Add("PrimaryClusterId", StringUtils.FromString(modifyReplicationGroupRequest.PrimaryClusterId));
-            }
-            if (modifyReplicationGroupRequest != null && modifyReplicationGroupRequest.IsSetSnapshotRetentionLimit())
-            {
-                request.Parameters.Add("SnapshotRetentionLimit", StringUtils.FromInt(modifyReplicationGroupRequest.SnapshotRetentionLimit));
-            }
-            if (modifyReplicationGroupRequest != null && modifyReplicationGroupRequest.IsSetSnapshotWindow())
-            {
-                request.Parameters.Add("SnapshotWindow", StringUtils.FromString(modifyReplicationGroupRequest.SnapshotWindow));
-            }
-            if (modifyReplicationGroupRequest != null && modifyReplicationGroupRequest.IsSetSnapshottingClusterId())
-            {
-                request.Parameters.Add("SnapshottingClusterId", StringUtils.FromString(modifyReplicationGroupRequest.SnapshottingClusterId));
-            }
-
             return request;
         }
     }

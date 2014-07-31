@@ -14,59 +14,60 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.AutoScaling.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Or Update Tags Request Marshaller
+    /// CreateOrUpdateTags Request Marshaller
     /// </summary>       
     public class CreateOrUpdateTagsRequestMarshaller : IMarshaller<IRequest, CreateOrUpdateTagsRequest>
     {
-        public IRequest Marshall(CreateOrUpdateTagsRequest createOrUpdateTagsRequest)
+        public IRequest Marshall(CreateOrUpdateTagsRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(createOrUpdateTagsRequest, "AmazonAutoScaling");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AutoScaling");
             request.Parameters.Add("Action", "CreateOrUpdateTags");
             request.Parameters.Add("Version", "2011-01-01");
 
-            if (createOrUpdateTagsRequest != null)
+            if(publicRequest != null)
             {
-                List<Tag> tagsList = createOrUpdateTagsRequest.Tags;
-                int tagsListIndex = 1;
-                foreach (Tag tagsListValue in tagsList)
+                if(publicRequest.IsSetTags())
                 {
-                    if (tagsListValue != null && tagsListValue.IsSetResourceId())
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Tags)
                     {
-                        request.Parameters.Add("Tags.member." + tagsListIndex + ".ResourceId", StringUtils.FromString(tagsListValue.ResourceId));
+                        if(publicRequestlistValue.IsSetKey())
+                        {
+                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
+                        }
+                        if(publicRequestlistValue.IsSetPropagateAtLaunch())
+                        {
+                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "PropagateAtLaunch", StringUtils.FromBool(publicRequestlistValue.PropagateAtLaunch));
+                        }
+                        if(publicRequestlistValue.IsSetResourceId())
+                        {
+                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceId", StringUtils.FromString(publicRequestlistValue.ResourceId));
+                        }
+                        if(publicRequestlistValue.IsSetResourceType())
+                        {
+                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
+                        }
+                        if(publicRequestlistValue.IsSetValue())
+                        {
+                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                        }
+                        publicRequestlistValueIndex++;
                     }
-                    if (tagsListValue != null && tagsListValue.IsSetResourceType())
-                    {
-                        request.Parameters.Add("Tags.member." + tagsListIndex + ".ResourceType", StringUtils.FromString(tagsListValue.ResourceType));
-                    }
-                    if (tagsListValue != null && tagsListValue.IsSetKey())
-                    {
-                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Key", StringUtils.FromString(tagsListValue.Key));
-                    }
-                    if (tagsListValue != null && tagsListValue.IsSetValue())
-                    {
-                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Value", StringUtils.FromString(tagsListValue.Value));
-                    }
-                    if (tagsListValue != null && tagsListValue.IsSetPropagateAtLaunch())
-                    {
-                        request.Parameters.Add("Tags.member." + tagsListIndex + ".PropagateAtLaunch", StringUtils.FromBool(tagsListValue.PropagateAtLaunch));
-                    }
-
-                    tagsListIndex++;
                 }
             }
-
             return request;
         }
     }

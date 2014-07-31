@@ -12,24 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
+
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Returns information about the ModifyReplicationGroup response and response metadata.
+    /// Configuration for accessing Amazon ModifyReplicationGroup service
     /// </summary>
     public partial class ModifyReplicationGroupResponse : ModifyReplicationGroupResult
     {
-        /// 
+        /// <summary>
         /// Gets and sets the ModifyReplicationGroupResult property.
-        /// Contains the result of a successful invocation of the ModifyReplicationGroup
-        /// action.
-        /// 
+        /// Represents the output of a ModifyReplicationGroup operation.
+        /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ModifyReplicationGroupResult class are now available on the ModifyReplicationGroupResponse class. You should use the properties on ModifyReplicationGroupResponse instead of accessing them through ModifyReplicationGroupResult.")]
         public ModifyReplicationGroupResult ModifyReplicationGroupResult
         {
@@ -40,4 +36,3 @@ namespace Amazon.ElastiCache.Model
         }
     }
 }
-    

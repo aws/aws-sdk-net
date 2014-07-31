@@ -14,32 +14,36 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Cache Parameter Group Request Marshaller
+    /// DeleteCacheParameterGroup Request Marshaller
     /// </summary>       
     public class DeleteCacheParameterGroupRequestMarshaller : IMarshaller<IRequest, DeleteCacheParameterGroupRequest>
     {
-        public IRequest Marshall(DeleteCacheParameterGroupRequest deleteCacheParameterGroupRequest)
+        public IRequest Marshall(DeleteCacheParameterGroupRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(deleteCacheParameterGroupRequest, "AmazonElastiCache");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElastiCache");
             request.Parameters.Add("Action", "DeleteCacheParameterGroup");
-            request.Parameters.Add("Version", "2014-03-24");
-            if (deleteCacheParameterGroupRequest != null && deleteCacheParameterGroupRequest.IsSetCacheParameterGroupName())
-            {
-                request.Parameters.Add("CacheParameterGroupName", StringUtils.FromString(deleteCacheParameterGroupRequest.CacheParameterGroupName));
-            }
+            request.Parameters.Add("Version", "2014-07-15");
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetCacheParameterGroupName())
+                {
+                    request.Parameters.Add("CacheParameterGroupName", StringUtils.FromString(publicRequest.CacheParameterGroupName));
+                }
+            }
             return request;
         }
     }

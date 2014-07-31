@@ -25,12 +25,11 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeScalingProcessTypes operation.
-    /// <para>Returns scaling process types for use in the ResumeProcesses and SuspendProcesses actions.</para>
+    /// Returns scaling process types for use in the <a>ResumeProcesses</a> and <a>SuspendProcesses</a>
+    /// actions.
     /// </summary>
     public partial class DescribeScalingProcessTypesRequest : AmazonAutoScalingRequest
     {
 
-
     }
 }
-    

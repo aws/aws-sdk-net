@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Cache Security Groups Request Marshaller
+    /// DescribeCacheSecurityGroups Request Marshaller
     /// </summary>       
     public class DescribeCacheSecurityGroupsRequestMarshaller : IMarshaller<IRequest, DescribeCacheSecurityGroupsRequest>
     {
-        public IRequest Marshall(DescribeCacheSecurityGroupsRequest describeCacheSecurityGroupsRequest)
+        public IRequest Marshall(DescribeCacheSecurityGroupsRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describeCacheSecurityGroupsRequest, "AmazonElastiCache");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElastiCache");
             request.Parameters.Add("Action", "DescribeCacheSecurityGroups");
-            request.Parameters.Add("Version", "2014-03-24");
-            if (describeCacheSecurityGroupsRequest != null && describeCacheSecurityGroupsRequest.IsSetCacheSecurityGroupName())
-            {
-                request.Parameters.Add("CacheSecurityGroupName", StringUtils.FromString(describeCacheSecurityGroupsRequest.CacheSecurityGroupName));
-            }
-            if (describeCacheSecurityGroupsRequest != null && describeCacheSecurityGroupsRequest.IsSetMaxRecords())
-            {
-                request.Parameters.Add("MaxRecords", StringUtils.FromInt(describeCacheSecurityGroupsRequest.MaxRecords));
-            }
-            if (describeCacheSecurityGroupsRequest != null && describeCacheSecurityGroupsRequest.IsSetMarker())
-            {
-                request.Parameters.Add("Marker", StringUtils.FromString(describeCacheSecurityGroupsRequest.Marker));
-            }
+            request.Parameters.Add("Version", "2014-07-15");
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetCacheSecurityGroupName())
+                {
+                    request.Parameters.Add("CacheSecurityGroupName", StringUtils.FromString(publicRequest.CacheSecurityGroupName));
+                }
+                if(publicRequest.IsSetMarker())
+                {
+                    request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
+                }
+                if(publicRequest.IsSetMaxRecords())
+                {
+                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
+                }
+            }
             return request;
         }
     }

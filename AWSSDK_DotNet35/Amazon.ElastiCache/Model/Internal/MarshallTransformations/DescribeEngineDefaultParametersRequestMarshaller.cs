@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Describe Engine Default Parameters Request Marshaller
+    /// DescribeEngineDefaultParameters Request Marshaller
     /// </summary>       
     public class DescribeEngineDefaultParametersRequestMarshaller : IMarshaller<IRequest, DescribeEngineDefaultParametersRequest>
     {
-        public IRequest Marshall(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest)
+        public IRequest Marshall(DescribeEngineDefaultParametersRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(describeEngineDefaultParametersRequest, "AmazonElastiCache");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElastiCache");
             request.Parameters.Add("Action", "DescribeEngineDefaultParameters");
-            request.Parameters.Add("Version", "2014-03-24");
-            if (describeEngineDefaultParametersRequest != null && describeEngineDefaultParametersRequest.IsSetCacheParameterGroupFamily())
-            {
-                request.Parameters.Add("CacheParameterGroupFamily", StringUtils.FromString(describeEngineDefaultParametersRequest.CacheParameterGroupFamily));
-            }
-            if (describeEngineDefaultParametersRequest != null && describeEngineDefaultParametersRequest.IsSetMaxRecords())
-            {
-                request.Parameters.Add("MaxRecords", StringUtils.FromInt(describeEngineDefaultParametersRequest.MaxRecords));
-            }
-            if (describeEngineDefaultParametersRequest != null && describeEngineDefaultParametersRequest.IsSetMarker())
-            {
-                request.Parameters.Add("Marker", StringUtils.FromString(describeEngineDefaultParametersRequest.Marker));
-            }
+            request.Parameters.Add("Version", "2014-07-15");
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetCacheParameterGroupFamily())
+                {
+                    request.Parameters.Add("CacheParameterGroupFamily", StringUtils.FromString(publicRequest.CacheParameterGroupFamily));
+                }
+                if(publicRequest.IsSetMarker())
+                {
+                    request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
+                }
+                if(publicRequest.IsSetMaxRecords())
+                {
+                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
+                }
+            }
             return request;
         }
     }

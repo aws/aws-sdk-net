@@ -12,1755 +12,2215 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+
 using System;
 
-using Amazon.ElastiCache;
 using Amazon.ElastiCache.Model;
 
 namespace Amazon.ElastiCache
 {
     /// <summary>
-    /// Interface for accessing AmazonElastiCache.
+    /// Implementation for accessing ElastiCache
+    ///
+    /// Amazon ElastiCache 
+    /// <para>
+    /// Amazon ElastiCache is a web service that makes it easier to set up, operate, and scale
+    /// a distributed cache in the cloud.
+    /// </para>
     ///  
-    ///  Amazon ElastiCache <para>Amazon ElastiCache is a web service that makes it easier to set up, operate, and scale a distributed cache in the
-    /// cloud.</para> <para>With ElastiCache, customers gain all of the benefits of a high-performance, in-memory cache with far less of the
-    /// administrative burden of launching and managing a distributed cache. The service makes set-up, scaling, and cluster failure handling much
-    /// simpler than in a self-managed cache deployment.</para> <para>In addition, through integration with Amazon CloudWatch, customers get
-    /// enhanced visibility into the key performance statistics associated with their cache and can receive alarms if a part of their cache runs
-    /// hot.</para>
+    /// <para>
+    /// With ElastiCache, customers gain all of the benefits of a high-performance, in-memory
+    /// cache with far less of the administrative burden of launching and managing a distributed
+    /// cache. The service makes set-up, scaling, and cluster failure handling much simpler
+    /// than in a self-managed cache deployment.
+    /// </para>
+    ///  
+    /// <para>
+    /// In addition, through integration with Amazon CloudWatch, customers get enhanced visibility
+    /// into the key performance statistics associated with their cache and can receive alarms
+    /// if a part of their cache runs hot.
+    /// </para>
     /// </summary>
     public partial interface IAmazonElastiCache : IDisposable
     {
 
+        
+        #region  AuthorizeCacheSecurityGroupIngress
 
-        #region AuthorizeCacheSecurityGroupIngress
 
         /// <summary>
-        /// <para>The <i>AuthorizeCacheSecurityGroupIngress</i> operation allows network ingress to a cache security group. Applications using
-        /// ElastiCache must be running on Amazon EC2, and Amazon EC2 security groups are used as the authorization mechanism.</para> <para><b>NOTE:</b>
-        /// You cannot authorize ingress from an Amazon EC2 security group in one Region to an ElastiCache cluster in another Region. </para>
+        /// The <i>AuthorizeCacheSecurityGroupIngress</i> operation allows network ingress to
+        /// a cache security group. Applications using ElastiCache must be running on Amazon EC2,
+        /// and Amazon EC2 security groups are used as the authorization mechanism.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AuthorizeCacheSecurityGroupIngress service method.</param>
         /// 
-        /// <param name="authorizeCacheSecurityGroupIngressRequest">Container for the necessary parameters to execute the
-        ///          AuthorizeCacheSecurityGroupIngress service method on AmazonElastiCache.</param>
-        /// 
-        /// <returns>The response from the AuthorizeCacheSecurityGroupIngress service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="AuthorizationAlreadyExistsException"/>
-        /// <exception cref="InvalidCacheSecurityGroupStateException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        /// <exception cref="CacheSecurityGroupNotFoundException"/>
-        AuthorizeCacheSecurityGroupIngressResponse AuthorizeCacheSecurityGroupIngress(AuthorizeCacheSecurityGroupIngressRequest authorizeCacheSecurityGroupIngressRequest);
+        /// <returns>The response from the AuthorizeCacheSecurityGroupIngress service method, as returned by ElastiCache.</returns>
+        /// <exception cref="AuthorizationAlreadyExistsException">
+        /// The specified Amazon EC2 security group is already authorized for the specified cache
+        /// security group.
+        /// </exception>
+        /// <exception cref="CacheSecurityGroupNotFoundException">
+        /// The requested cache security group name does not refer to an existing cache security
+        /// group.
+        /// </exception>
+        /// <exception cref="InvalidCacheSecurityGroupStateException">
+        /// The current state of the cache security group does not allow deletion.
+        /// </exception>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        AuthorizeCacheSecurityGroupIngressResponse AuthorizeCacheSecurityGroupIngress(AuthorizeCacheSecurityGroupIngressRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the AuthorizeCacheSecurityGroupIngress operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.AuthorizeCacheSecurityGroupIngress"/>
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
-        /// <param name="authorizeCacheSecurityGroupIngressRequest">Container for the necessary parameters to execute the
-        ///          AuthorizeCacheSecurityGroupIngress operation on AmazonElastiCache.</param>
+        /// <param name="request">Container for the necessary parameters to execute the AuthorizeCacheSecurityGroupIngress operation on AmazonElastiCacheClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndAuthorizeCacheSecurityGroupIngress operation.</returns>
-        IAsyncResult BeginAuthorizeCacheSecurityGroupIngress(AuthorizeCacheSecurityGroupIngressRequest authorizeCacheSecurityGroupIngressRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAuthorizeCacheSecurityGroupIngress
+        ///         operation.</returns>
+        IAsyncResult BeginAuthorizeCacheSecurityGroupIngress(AuthorizeCacheSecurityGroupIngressRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the AuthorizeCacheSecurityGroupIngress operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.AuthorizeCacheSecurityGroupIngress"/>
+        /// Finishes the asynchronous execution of the  AuthorizeCacheSecurityGroupIngress operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAuthorizeCacheSecurityGroupIngress.</param>
         /// 
-        /// <returns>Returns a CacheSecurityGroup from AmazonElastiCache.</returns>
+        /// <returns>Returns a  AuthorizeCacheSecurityGroupIngressResult from ElastiCache.</returns>
         AuthorizeCacheSecurityGroupIngressResponse EndAuthorizeCacheSecurityGroupIngress(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
+        #region  CopySnapshot
 
-        #region CopySnapshot
 
         /// <summary>
-        /// <para>The <i>CopySnapshot</i> operation makes a copy of an existing snapshot.</para>
+        /// The <i>CopySnapshot</i> operation makes a copy of an existing snapshot.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopySnapshot service method.</param>
         /// 
-        /// <param name="copySnapshotRequest">Container for the necessary parameters to execute the CopySnapshot service method on
-        ///          AmazonElastiCache.</param>
-        /// 
-        /// <returns>The response from the CopySnapshot service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="InvalidSnapshotStateException"/>
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="SnapshotNotFoundException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        /// <exception cref="SnapshotAlreadyExistsException"/>
-        /// <exception cref="SnapshotQuotaExceededException"/>
-        CopySnapshotResponse CopySnapshot(CopySnapshotRequest copySnapshotRequest);
+        /// <returns>The response from the CopySnapshot service method, as returned by ElastiCache.</returns>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="InvalidSnapshotStateException">
+        /// The current state of the snapshot does not allow the requested action to occur.
+        /// </exception>
+        /// <exception cref="SnapshotAlreadyExistsException">
+        /// You already have a snapshot with the given name.
+        /// </exception>
+        /// <exception cref="SnapshotNotFoundException">
+        /// The requested snapshot name does not refer to an existing snapshot.
+        /// </exception>
+        /// <exception cref="SnapshotQuotaExceededException">
+        /// The request cannot be processed because it would exceed the maximum number of snapshots.
+        /// </exception>
+        CopySnapshotResponse CopySnapshot(CopySnapshotRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the CopySnapshot operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.CopySnapshot"/>
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
-        /// <param name="copySnapshotRequest">Container for the necessary parameters to execute the CopySnapshot operation on AmazonElastiCache.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CopySnapshot operation on AmazonElastiCacheClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCopySnapshot
         ///         operation.</returns>
-        IAsyncResult BeginCopySnapshot(CopySnapshotRequest copySnapshotRequest, AsyncCallback callback, object state);
+        IAsyncResult BeginCopySnapshot(CopySnapshotRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the CopySnapshot operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.CopySnapshot"/>
+        /// Finishes the asynchronous execution of the  CopySnapshot operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCopySnapshot.</param>
         /// 
-        /// <returns>Returns a Snapshot from AmazonElastiCache.</returns>
+        /// <returns>Returns a  CopySnapshotResult from ElastiCache.</returns>
         CopySnapshotResponse EndCopySnapshot(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
+        #region  CreateCacheCluster
 
-        #region CreateCacheCluster
 
         /// <summary>
-        /// <para>The <i>CreateCacheCluster</i> operation creates a new cache cluster. All nodes in the cache cluster run the same protocol-compliant
-        /// cache engine software - either Memcached or Redis.</para>
+        /// The <i>CreateCacheCluster</i> operation creates a new cache cluster. All nodes in
+        /// the cache cluster run the same protocol-compliant cache engine software - either Memcached
+        /// or Redis.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCacheCluster service method.</param>
         /// 
-        /// <param name="createCacheClusterRequest">Container for the necessary parameters to execute the CreateCacheCluster service method on
-        ///          AmazonElastiCache.</param>
-        /// 
-        /// <returns>The response from the CreateCacheCluster service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="NodeQuotaForCustomerExceededException"/>
-        /// <exception cref="ClusterQuotaForCustomerExceededException"/>
-        /// <exception cref="CacheClusterAlreadyExistsException"/>
-        /// <exception cref="InsufficientCacheClusterCapacityException"/>
-        /// <exception cref="ReplicationGroupNotFoundException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        /// <exception cref="CacheParameterGroupNotFoundException"/>
-        /// <exception cref="CacheSecurityGroupNotFoundException"/>
-        /// <exception cref="NodeQuotaForClusterExceededException"/>
-        /// <exception cref="CacheSubnetGroupNotFoundException"/>
-        /// <exception cref="InvalidReplicationGroupStateException"/>
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="InvalidVPCNetworkStateException"/>
-        CreateCacheClusterResponse CreateCacheCluster(CreateCacheClusterRequest createCacheClusterRequest);
+        /// <returns>The response from the CreateCacheCluster service method, as returned by ElastiCache.</returns>
+        /// <exception cref="CacheClusterAlreadyExistsException">
+        /// You already have a cache cluster with the given identifier.
+        /// </exception>
+        /// <exception cref="CacheParameterGroupNotFoundException">
+        /// The requested cache parameter group name does not refer to an existing cache parameter
+        /// group.
+        /// </exception>
+        /// <exception cref="CacheSecurityGroupNotFoundException">
+        /// The requested cache security group name does not refer to an existing cache security
+        /// group.
+        /// </exception>
+        /// <exception cref="CacheSubnetGroupNotFoundException">
+        /// The requested cache subnet group name does not refer to an existing cache subnet group.
+        /// </exception>
+        /// <exception cref="ClusterQuotaForCustomerExceededException">
+        /// The request cannot be processed because it would exceed the allowed number of cache
+        /// clusters per customer.
+        /// </exception>
+        /// <exception cref="InsufficientCacheClusterCapacityException">
+        /// The requested cache node type is not available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="InvalidReplicationGroupStateException">
+        /// The requested replication group is not in the <i>available</i> state.
+        /// </exception>
+        /// <exception cref="InvalidVPCNetworkStateException">
+        /// The VPC network is in an invalid state.
+        /// </exception>
+        /// <exception cref="NodeQuotaForClusterExceededException">
+        /// The request cannot be processed because it would exceed the allowed number of cache
+        /// nodes in a single cache cluster.
+        /// </exception>
+        /// <exception cref="NodeQuotaForCustomerExceededException">
+        /// The request cannot be processed because it would exceed the allowed number of cache
+        /// nodes per customer.
+        /// </exception>
+        /// <exception cref="ReplicationGroupNotFoundException">
+        /// The specified replication group does not exist.
+        /// </exception>
+        CreateCacheClusterResponse CreateCacheCluster(CreateCacheClusterRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCacheCluster operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.CreateCacheCluster"/>
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
-        /// <param name="createCacheClusterRequest">Container for the necessary parameters to execute the CreateCacheCluster operation on
-        ///          AmazonElastiCache.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCacheCluster operation on AmazonElastiCacheClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndCreateCacheCluster operation.</returns>
-        IAsyncResult BeginCreateCacheCluster(CreateCacheClusterRequest createCacheClusterRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCacheCluster
+        ///         operation.</returns>
+        IAsyncResult BeginCreateCacheCluster(CreateCacheClusterRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the CreateCacheCluster operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.CreateCacheCluster"/>
+        /// Finishes the asynchronous execution of the  CreateCacheCluster operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCacheCluster.</param>
         /// 
-        /// <returns>Returns a CacheCluster from AmazonElastiCache.</returns>
+        /// <returns>Returns a  CreateCacheClusterResult from ElastiCache.</returns>
         CreateCacheClusterResponse EndCreateCacheCluster(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
+        #region  CreateCacheParameterGroup
 
-        #region CreateCacheParameterGroup
 
         /// <summary>
-        /// <para>The <i>CreateCacheParameterGroup</i> operation creates a new cache parameter group. A cache parameter group is a collection of
-        /// parameters that you apply to all of the nodes in a cache cluster.</para>
+        /// The <i>CreateCacheParameterGroup</i> operation creates a new cache parameter group.
+        /// A cache parameter group is a collection of parameters that you apply to all of the
+        /// nodes in a cache cluster.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCacheParameterGroup service method.</param>
         /// 
-        /// <param name="createCacheParameterGroupRequest">Container for the necessary parameters to execute the CreateCacheParameterGroup service
-        ///          method on AmazonElastiCache.</param>
-        /// 
-        /// <returns>The response from the CreateCacheParameterGroup service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="CacheParameterGroupQuotaExceededException"/>
-        /// <exception cref="CacheParameterGroupAlreadyExistsException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        /// <exception cref="InvalidCacheParameterGroupStateException"/>
-        CreateCacheParameterGroupResponse CreateCacheParameterGroup(CreateCacheParameterGroupRequest createCacheParameterGroupRequest);
+        /// <returns>The response from the CreateCacheParameterGroup service method, as returned by ElastiCache.</returns>
+        /// <exception cref="CacheParameterGroupAlreadyExistsException">
+        /// A cache parameter group with the requested name already exists.
+        /// </exception>
+        /// <exception cref="CacheParameterGroupQuotaExceededException">
+        /// The request cannot be processed because it would exceed the maximum number of cache
+        /// security groups.
+        /// </exception>
+        /// <exception cref="InvalidCacheParameterGroupStateException">
+        /// The current state of the cache parameter group does not allow the requested action
+        /// to occur.
+        /// </exception>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        CreateCacheParameterGroupResponse CreateCacheParameterGroup(CreateCacheParameterGroupRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCacheParameterGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.CreateCacheParameterGroup"/>
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
-        /// <param name="createCacheParameterGroupRequest">Container for the necessary parameters to execute the CreateCacheParameterGroup operation on
-        ///          AmazonElastiCache.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCacheParameterGroup operation on AmazonElastiCacheClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndCreateCacheParameterGroup operation.</returns>
-        IAsyncResult BeginCreateCacheParameterGroup(CreateCacheParameterGroupRequest createCacheParameterGroupRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCacheParameterGroup
+        ///         operation.</returns>
+        IAsyncResult BeginCreateCacheParameterGroup(CreateCacheParameterGroupRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the CreateCacheParameterGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.CreateCacheParameterGroup"/>
+        /// Finishes the asynchronous execution of the  CreateCacheParameterGroup operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCacheParameterGroup.</param>
         /// 
-        /// <returns>Returns a CacheParameterGroup from AmazonElastiCache.</returns>
+        /// <returns>Returns a  CreateCacheParameterGroupResult from ElastiCache.</returns>
         CreateCacheParameterGroupResponse EndCreateCacheParameterGroup(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
+        #region  CreateCacheSecurityGroup
 
-        #region CreateCacheSecurityGroup
 
         /// <summary>
-        /// <para>The <i>CreateCacheSecurityGroup</i> operation creates a new cache security group. Use a cache security group to control access to one
-        /// or more cache clusters.</para> <para>Cache security groups are only used when you are creating a cluster outside of an Amazon Virtual
-        /// Private Cloud (VPC). If you are creating a cluster inside of a VPC, use a cache subnet group instead. For more information, see
-        /// <i>CreateCacheSubnetGroup</i> .</para>
+        /// The <i>CreateCacheSecurityGroup</i> operation creates a new cache security group.
+        /// Use a cache security group to control access to one or more cache clusters.
+        /// 
+        ///  
+        /// <para>
+        /// Cache security groups are only used when you are creating a cluster outside of an
+        /// Amazon Virtual Private Cloud (VPC). If you are creating a cluster inside of a VPC,
+        /// use a cache subnet group instead. For more information, see <i>CreateCacheSubnetGroup</i>.
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCacheSecurityGroup service method.</param>
         /// 
-        /// <param name="createCacheSecurityGroupRequest">Container for the necessary parameters to execute the CreateCacheSecurityGroup service method
-        ///          on AmazonElastiCache.</param>
-        /// 
-        /// <returns>The response from the CreateCacheSecurityGroup service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="CacheSecurityGroupAlreadyExistsException"/>
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="CacheSecurityGroupQuotaExceededException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        CreateCacheSecurityGroupResponse CreateCacheSecurityGroup(CreateCacheSecurityGroupRequest createCacheSecurityGroupRequest);
+        /// <returns>The response from the CreateCacheSecurityGroup service method, as returned by ElastiCache.</returns>
+        /// <exception cref="CacheSecurityGroupAlreadyExistsException">
+        /// A cache security group with the specified name already exists.
+        /// </exception>
+        /// <exception cref="CacheSecurityGroupQuotaExceededException">
+        /// The request cannot be processed because it would exceed the allowed number of cache
+        /// security groups.
+        /// </exception>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        CreateCacheSecurityGroupResponse CreateCacheSecurityGroup(CreateCacheSecurityGroupRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCacheSecurityGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.CreateCacheSecurityGroup"/>
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
-        /// <param name="createCacheSecurityGroupRequest">Container for the necessary parameters to execute the CreateCacheSecurityGroup operation on
-        ///          AmazonElastiCache.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCacheSecurityGroup operation on AmazonElastiCacheClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndCreateCacheSecurityGroup operation.</returns>
-        IAsyncResult BeginCreateCacheSecurityGroup(CreateCacheSecurityGroupRequest createCacheSecurityGroupRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCacheSecurityGroup
+        ///         operation.</returns>
+        IAsyncResult BeginCreateCacheSecurityGroup(CreateCacheSecurityGroupRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the CreateCacheSecurityGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.CreateCacheSecurityGroup"/>
+        /// Finishes the asynchronous execution of the  CreateCacheSecurityGroup operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCacheSecurityGroup.</param>
         /// 
-        /// <returns>Returns a CacheSecurityGroup from AmazonElastiCache.</returns>
+        /// <returns>Returns a  CreateCacheSecurityGroupResult from ElastiCache.</returns>
         CreateCacheSecurityGroupResponse EndCreateCacheSecurityGroup(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
+        #region  CreateCacheSubnetGroup
 
-        #region CreateCacheSubnetGroup
 
         /// <summary>
-        /// <para>The <i>CreateCacheSubnetGroup</i> operation creates a new cache subnet group.</para> <para>Use this parameter only when you are
-        /// creating a cluster in an Amazon Virtual Private Cloud (VPC).</para>
+        /// The <i>CreateCacheSubnetGroup</i> operation creates a new cache subnet group.
+        /// 
+        ///  
+        /// <para>
+        /// Use this parameter only when you are creating a cluster in an Amazon Virtual Private
+        /// Cloud (VPC).
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCacheSubnetGroup service method.</param>
         /// 
-        /// <param name="createCacheSubnetGroupRequest">Container for the necessary parameters to execute the CreateCacheSubnetGroup service method on
-        ///          AmazonElastiCache.</param>
-        /// 
-        /// <returns>The response from the CreateCacheSubnetGroup service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="CacheSubnetGroupAlreadyExistsException"/>
-        /// <exception cref="CacheSubnetGroupQuotaExceededException"/>
-        /// <exception cref="CacheSubnetQuotaExceededException"/>
-        /// <exception cref="InvalidSubnetException"/>
-        CreateCacheSubnetGroupResponse CreateCacheSubnetGroup(CreateCacheSubnetGroupRequest createCacheSubnetGroupRequest);
+        /// <returns>The response from the CreateCacheSubnetGroup service method, as returned by ElastiCache.</returns>
+        /// <exception cref="CacheSubnetGroupAlreadyExistsException">
+        /// The requested cache subnet group name is already in use by an existing cache subnet
+        /// group.
+        /// </exception>
+        /// <exception cref="CacheSubnetGroupQuotaExceededException">
+        /// The request cannot be processed because it would exceed the allowed number of cache
+        /// subnet groups.
+        /// </exception>
+        /// <exception cref="CacheSubnetQuotaExceededException">
+        /// The request cannot be processed because it would exceed the allowed number of subnets
+        /// in a cache subnet group.
+        /// </exception>
+        /// <exception cref="InvalidSubnetException">
+        /// An invalid subnet identifier was specified.
+        /// </exception>
+        CreateCacheSubnetGroupResponse CreateCacheSubnetGroup(CreateCacheSubnetGroupRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateCacheSubnetGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.CreateCacheSubnetGroup"/>
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
-        /// <param name="createCacheSubnetGroupRequest">Container for the necessary parameters to execute the CreateCacheSubnetGroup operation on
-        ///          AmazonElastiCache.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCacheSubnetGroup operation on AmazonElastiCacheClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndCreateCacheSubnetGroup operation.</returns>
-        IAsyncResult BeginCreateCacheSubnetGroup(CreateCacheSubnetGroupRequest createCacheSubnetGroupRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCacheSubnetGroup
+        ///         operation.</returns>
+        IAsyncResult BeginCreateCacheSubnetGroup(CreateCacheSubnetGroupRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the CreateCacheSubnetGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.CreateCacheSubnetGroup"/>
+        /// Finishes the asynchronous execution of the  CreateCacheSubnetGroup operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCacheSubnetGroup.</param>
         /// 
-        /// <returns>Returns a CacheSubnetGroup from AmazonElastiCache.</returns>
+        /// <returns>Returns a  CreateCacheSubnetGroupResult from ElastiCache.</returns>
         CreateCacheSubnetGroupResponse EndCreateCacheSubnetGroup(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
+        #region  CreateReplicationGroup
 
-        #region CreateReplicationGroup
 
         /// <summary>
-        /// <para>The <i>CreateReplicationGroup</i> operation creates a replication group. A replication group is a collection of cache clusters, where
-        /// one of the clusters is a read/write primary and the other clusters are read-only replicas. Writes to the primary are automatically
-        /// propagated to the replicas.</para> <para>When you create a replication group, you must specify an existing cache cluster that is in the
-        /// primary role. When the replication group has been successfully created, you can add one or more read replica replicas to it, up to a total
-        /// of five read replicas.</para>
+        /// The <i>CreateReplicationGroup</i> operation creates a replication group. A replication
+        /// group is a collection of cache clusters, where one of the clusters is a read/write
+        /// primary and the other clusters are read-only replicas. Writes to the primary are automatically
+        /// propagated to the replicas.
+        /// 
+        ///  
+        /// <para>
+        /// When you create a replication group, you must specify an existing cache cluster that
+        /// is in the primary role. When the replication group has been successfully created,
+        /// you can add one or more read replica replicas to it, up to a total of five read replicas.
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateReplicationGroup service method.</param>
         /// 
-        /// <param name="createReplicationGroupRequest">Container for the necessary parameters to execute the CreateReplicationGroup service method on
-        ///          AmazonElastiCache.</param>
-        /// 
-        /// <returns>The response from the CreateReplicationGroup service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="ReplicationGroupAlreadyExistsException"/>
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="CacheClusterNotFoundException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        /// <exception cref="InvalidCacheClusterStateException"/>
-        CreateReplicationGroupResponse CreateReplicationGroup(CreateReplicationGroupRequest createReplicationGroupRequest);
+        /// <returns>The response from the CreateReplicationGroup service method, as returned by ElastiCache.</returns>
+        /// <exception cref="CacheClusterNotFoundException">
+        /// The requested cache cluster ID does not refer to an existing cache cluster.
+        /// </exception>
+        /// <exception cref="InvalidCacheClusterStateException">
+        /// The requested cache cluster is not in the <i>available</i> state.
+        /// </exception>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="ReplicationGroupAlreadyExistsException">
+        /// The specified replication group already exists.
+        /// </exception>
+        CreateReplicationGroupResponse CreateReplicationGroup(CreateReplicationGroupRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateReplicationGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.CreateReplicationGroup"/>
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
-        /// <param name="createReplicationGroupRequest">Container for the necessary parameters to execute the CreateReplicationGroup operation on
-        ///          AmazonElastiCache.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateReplicationGroup operation on AmazonElastiCacheClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndCreateReplicationGroup operation.</returns>
-        IAsyncResult BeginCreateReplicationGroup(CreateReplicationGroupRequest createReplicationGroupRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateReplicationGroup
+        ///         operation.</returns>
+        IAsyncResult BeginCreateReplicationGroup(CreateReplicationGroupRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the CreateReplicationGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.CreateReplicationGroup"/>
+        /// Finishes the asynchronous execution of the  CreateReplicationGroup operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateReplicationGroup.</param>
         /// 
-        /// <returns>Returns a ReplicationGroup from AmazonElastiCache.</returns>
+        /// <returns>Returns a  CreateReplicationGroupResult from ElastiCache.</returns>
         CreateReplicationGroupResponse EndCreateReplicationGroup(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
+        #region  CreateSnapshot
 
-        #region CreateSnapshot
 
         /// <summary>
-        /// <para>The <i>CreateSnapshot</i> operation creates a copy of an entire cache cluster at a specific moment in time.</para>
+        /// The <i>CreateSnapshot</i> operation creates a copy of an entire cache cluster at a
+        /// specific moment in time.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSnapshot service method.</param>
         /// 
-        /// <param name="createSnapshotRequest">Container for the necessary parameters to execute the CreateSnapshot service method on
-        ///          AmazonElastiCache.</param>
+        /// <returns>The response from the CreateSnapshot service method, as returned by ElastiCache.</returns>
+        /// <exception cref="CacheClusterNotFoundException">
+        /// The requested cache cluster ID does not refer to an existing cache cluster.
+        /// </exception>
+        /// <exception cref="InvalidCacheClusterStateException">
+        /// The requested cache cluster is not in the <i>available</i> state.
+        /// </exception>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="SnapshotAlreadyExistsException">
+        /// You already have a snapshot with the given name.
+        /// </exception>
+        /// <exception cref="SnapshotFeatureNotSupportedException">
+        /// You attempted one of the following actions:
         /// 
-        /// <returns>The response from the CreateSnapshot service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="SnapshotFeatureNotSupportedException"/>
-        /// <exception cref="CacheClusterNotFoundException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        /// <exception cref="SnapshotAlreadyExistsException"/>
-        /// <exception cref="InvalidCacheClusterStateException"/>
-        /// <exception cref="SnapshotQuotaExceededException"/>
-        CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest createSnapshotRequest);
+        ///  <ul> <li> 
+        /// <para>
+        /// Creating a snapshot of a Redis cache cluster running on a a <i>t1.micro</i> cache
+        /// node.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Creating a snapshot of a cache cluster that is running Memcached rather than Redis.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Neither of these are supported by ElastiCache.
+        /// </para>
+        /// </exception>
+        /// <exception cref="SnapshotQuotaExceededException">
+        /// The request cannot be processed because it would exceed the maximum number of snapshots.
+        /// </exception>
+        CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the CreateSnapshot operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.CreateSnapshot"/>
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
-        /// <param name="createSnapshotRequest">Container for the necessary parameters to execute the CreateSnapshot operation on
-        ///          AmazonElastiCache.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSnapshot operation on AmazonElastiCacheClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSnapshot
         ///         operation.</returns>
-        IAsyncResult BeginCreateSnapshot(CreateSnapshotRequest createSnapshotRequest, AsyncCallback callback, object state);
+        IAsyncResult BeginCreateSnapshot(CreateSnapshotRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the CreateSnapshot operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.CreateSnapshot"/>
+        /// Finishes the asynchronous execution of the  CreateSnapshot operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSnapshot.</param>
         /// 
-        /// <returns>Returns a Snapshot from AmazonElastiCache.</returns>
+        /// <returns>Returns a  CreateSnapshotResult from ElastiCache.</returns>
         CreateSnapshotResponse EndCreateSnapshot(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
+        #region  DeleteCacheCluster
 
-        #region DeleteCacheCluster
 
         /// <summary>
-        /// <para>The <i>DeleteCacheCluster</i> operation deletes a previously provisioned cache cluster. <i>DeleteCacheCluster</i> deletes all
-        /// associated cache nodes, node endpoints and the cache cluster itself. When you receive a successful response from this operation, Amazon
-        /// ElastiCache immediately begins deleting the cache cluster; you cannot cancel or revert this operation.</para>
+        /// The <i>DeleteCacheCluster</i> operation deletes a previously provisioned cache cluster.
+        /// <i>DeleteCacheCluster</i> deletes all associated cache nodes, node endpoints and the
+        /// cache cluster itself. When you receive a successful response from this operation,
+        /// Amazon ElastiCache immediately begins deleting the cache cluster; you cannot cancel
+        /// or revert this operation.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCacheCluster service method.</param>
         /// 
-        /// <param name="deleteCacheClusterRequest">Container for the necessary parameters to execute the DeleteCacheCluster service method on
-        ///          AmazonElastiCache.</param>
+        /// <returns>The response from the DeleteCacheCluster service method, as returned by ElastiCache.</returns>
+        /// <exception cref="CacheClusterNotFoundException">
+        /// The requested cache cluster ID does not refer to an existing cache cluster.
+        /// </exception>
+        /// <exception cref="InvalidCacheClusterStateException">
+        /// The requested cache cluster is not in the <i>available</i> state.
+        /// </exception>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="SnapshotAlreadyExistsException">
+        /// You already have a snapshot with the given name.
+        /// </exception>
+        /// <exception cref="SnapshotFeatureNotSupportedException">
+        /// You attempted one of the following actions:
         /// 
-        /// <returns>The response from the DeleteCacheCluster service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="SnapshotFeatureNotSupportedException"/>
-        /// <exception cref="CacheClusterNotFoundException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        /// <exception cref="InvalidCacheClusterStateException"/>
-        /// <exception cref="SnapshotAlreadyExistsException"/>
-        /// <exception cref="SnapshotQuotaExceededException"/>
-        DeleteCacheClusterResponse DeleteCacheCluster(DeleteCacheClusterRequest deleteCacheClusterRequest);
+        ///  <ul> <li> 
+        /// <para>
+        /// Creating a snapshot of a Redis cache cluster running on a a <i>t1.micro</i> cache
+        /// node.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Creating a snapshot of a cache cluster that is running Memcached rather than Redis.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Neither of these are supported by ElastiCache.
+        /// </para>
+        /// </exception>
+        /// <exception cref="SnapshotQuotaExceededException">
+        /// The request cannot be processed because it would exceed the maximum number of snapshots.
+        /// </exception>
+        DeleteCacheClusterResponse DeleteCacheCluster(DeleteCacheClusterRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCacheCluster operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DeleteCacheCluster"/>
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
-        /// <param name="deleteCacheClusterRequest">Container for the necessary parameters to execute the DeleteCacheCluster operation on
-        ///          AmazonElastiCache.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCacheCluster operation on AmazonElastiCacheClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDeleteCacheCluster operation.</returns>
-        IAsyncResult BeginDeleteCacheCluster(DeleteCacheClusterRequest deleteCacheClusterRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCacheCluster
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteCacheCluster(DeleteCacheClusterRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DeleteCacheCluster operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DeleteCacheCluster"/>
+        /// Finishes the asynchronous execution of the  DeleteCacheCluster operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCacheCluster.</param>
         /// 
-        /// <returns>Returns a CacheCluster from AmazonElastiCache.</returns>
+        /// <returns>Returns a  DeleteCacheClusterResult from ElastiCache.</returns>
         DeleteCacheClusterResponse EndDeleteCacheCluster(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
+        #region  DeleteCacheParameterGroup
 
-        #region DeleteCacheParameterGroup
 
         /// <summary>
-        /// <para>The <i>DeleteCacheParameterGroup</i> operation deletes the specified cache parameter group. You cannot delete a cache parameter group
-        /// if it is associated with any cache clusters.</para>
+        /// The <i>DeleteCacheParameterGroup</i> operation deletes the specified cache parameter
+        /// group. You cannot delete a cache parameter group if it is associated with any cache
+        /// clusters.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCacheParameterGroup service method.</param>
         /// 
-        /// <param name="deleteCacheParameterGroupRequest">Container for the necessary parameters to execute the DeleteCacheParameterGroup service
-        ///          method on AmazonElastiCache.</param>
-        /// 
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        /// <exception cref="InvalidCacheParameterGroupStateException"/>
-        /// <exception cref="CacheParameterGroupNotFoundException"/>
-        DeleteCacheParameterGroupResponse DeleteCacheParameterGroup(DeleteCacheParameterGroupRequest deleteCacheParameterGroupRequest);
+        /// <returns>The response from the DeleteCacheParameterGroup service method, as returned by ElastiCache.</returns>
+        /// <exception cref="CacheParameterGroupNotFoundException">
+        /// The requested cache parameter group name does not refer to an existing cache parameter
+        /// group.
+        /// </exception>
+        /// <exception cref="InvalidCacheParameterGroupStateException">
+        /// The current state of the cache parameter group does not allow the requested action
+        /// to occur.
+        /// </exception>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        DeleteCacheParameterGroupResponse DeleteCacheParameterGroup(DeleteCacheParameterGroupRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCacheParameterGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DeleteCacheParameterGroup"/>
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
-        /// <param name="deleteCacheParameterGroupRequest">Container for the necessary parameters to execute the DeleteCacheParameterGroup operation on
-        ///          AmazonElastiCache.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCacheParameterGroup operation on AmazonElastiCacheClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginDeleteCacheParameterGroup(DeleteCacheParameterGroupRequest deleteCacheParameterGroupRequest, AsyncCallback callback, object state);
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCacheParameterGroup
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteCacheParameterGroup(DeleteCacheParameterGroupRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DeleteCacheParameterGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DeleteCacheParameterGroup"/>
+        /// Finishes the asynchronous execution of the  DeleteCacheParameterGroup operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCacheParameterGroup.</param>
+        /// 
+        /// <returns>Returns a  DeleteCacheParameterGroupResult from ElastiCache.</returns>
         DeleteCacheParameterGroupResponse EndDeleteCacheParameterGroup(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
+        #region  DeleteCacheSecurityGroup
 
-        #region DeleteCacheSecurityGroup
 
         /// <summary>
-        /// <para>The <i>DeleteCacheSecurityGroup</i> operation deletes a cache security group.</para> <para><b>NOTE:</b>You cannot delete a cache
-        /// security group if it is associated with any cache clusters.</para>
+        /// The <i>DeleteCacheSecurityGroup</i> operation deletes a cache security group.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCacheSecurityGroup service method.</param>
         /// 
-        /// <param name="deleteCacheSecurityGroupRequest">Container for the necessary parameters to execute the DeleteCacheSecurityGroup service method
-        ///          on AmazonElastiCache.</param>
-        /// 
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="InvalidCacheSecurityGroupStateException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        /// <exception cref="CacheSecurityGroupNotFoundException"/>
-        DeleteCacheSecurityGroupResponse DeleteCacheSecurityGroup(DeleteCacheSecurityGroupRequest deleteCacheSecurityGroupRequest);
+        /// <returns>The response from the DeleteCacheSecurityGroup service method, as returned by ElastiCache.</returns>
+        /// <exception cref="CacheSecurityGroupNotFoundException">
+        /// The requested cache security group name does not refer to an existing cache security
+        /// group.
+        /// </exception>
+        /// <exception cref="InvalidCacheSecurityGroupStateException">
+        /// The current state of the cache security group does not allow deletion.
+        /// </exception>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        DeleteCacheSecurityGroupResponse DeleteCacheSecurityGroup(DeleteCacheSecurityGroupRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCacheSecurityGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DeleteCacheSecurityGroup"/>
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
-        /// <param name="deleteCacheSecurityGroupRequest">Container for the necessary parameters to execute the DeleteCacheSecurityGroup operation on
-        ///          AmazonElastiCache.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCacheSecurityGroup operation on AmazonElastiCacheClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginDeleteCacheSecurityGroup(DeleteCacheSecurityGroupRequest deleteCacheSecurityGroupRequest, AsyncCallback callback, object state);
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCacheSecurityGroup
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteCacheSecurityGroup(DeleteCacheSecurityGroupRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DeleteCacheSecurityGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DeleteCacheSecurityGroup"/>
+        /// Finishes the asynchronous execution of the  DeleteCacheSecurityGroup operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCacheSecurityGroup.</param>
+        /// 
+        /// <returns>Returns a  DeleteCacheSecurityGroupResult from ElastiCache.</returns>
         DeleteCacheSecurityGroupResponse EndDeleteCacheSecurityGroup(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
+        #region  DeleteCacheSubnetGroup
 
-        #region DeleteCacheSubnetGroup
 
         /// <summary>
-        /// <para>The <i>DeleteCacheSubnetGroup</i> operation deletes a cache subnet group.</para> <para><b>NOTE:</b>You cannot delete a cache subnet
-        /// group if it is associated with any cache clusters.</para>
+        /// The <i>DeleteCacheSubnetGroup</i> operation deletes a cache subnet group.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCacheSubnetGroup service method.</param>
         /// 
-        /// <param name="deleteCacheSubnetGroupRequest">Container for the necessary parameters to execute the DeleteCacheSubnetGroup service method on
-        ///          AmazonElastiCache.</param>
-        /// 
-        /// <exception cref="CacheSubnetGroupNotFoundException"/>
-        /// <exception cref="CacheSubnetGroupInUseException"/>
-        DeleteCacheSubnetGroupResponse DeleteCacheSubnetGroup(DeleteCacheSubnetGroupRequest deleteCacheSubnetGroupRequest);
+        /// <returns>The response from the DeleteCacheSubnetGroup service method, as returned by ElastiCache.</returns>
+        /// <exception cref="CacheSubnetGroupInUseException">
+        /// The requested cache subnet group is currently in use.
+        /// </exception>
+        /// <exception cref="CacheSubnetGroupNotFoundException">
+        /// The requested cache subnet group name does not refer to an existing cache subnet group.
+        /// </exception>
+        DeleteCacheSubnetGroupResponse DeleteCacheSubnetGroup(DeleteCacheSubnetGroupRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCacheSubnetGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DeleteCacheSubnetGroup"/>
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
-        /// <param name="deleteCacheSubnetGroupRequest">Container for the necessary parameters to execute the DeleteCacheSubnetGroup operation on
-        ///          AmazonElastiCache.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCacheSubnetGroup operation on AmazonElastiCacheClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginDeleteCacheSubnetGroup(DeleteCacheSubnetGroupRequest deleteCacheSubnetGroupRequest, AsyncCallback callback, object state);
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCacheSubnetGroup
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteCacheSubnetGroup(DeleteCacheSubnetGroupRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DeleteCacheSubnetGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DeleteCacheSubnetGroup"/>
+        /// Finishes the asynchronous execution of the  DeleteCacheSubnetGroup operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCacheSubnetGroup.</param>
+        /// 
+        /// <returns>Returns a  DeleteCacheSubnetGroupResult from ElastiCache.</returns>
         DeleteCacheSubnetGroupResponse EndDeleteCacheSubnetGroup(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
+        #region  DeleteReplicationGroup
 
-        #region DeleteReplicationGroup
 
         /// <summary>
-        /// <para>The <i>DeleteReplicationGroup</i> operation deletes an existing replication group. By default, this operation deletes the entire
-        /// replication group, including the primary cache cluster and all of the read replicas. You can optionally delete only the read replicas, while
-        /// retaining the primary cache cluster.</para> <para>When you receive a successful response from this operation, Amazon ElastiCache immediately
-        /// begins deleting the selected resources; you cannot cancel or revert this operation.</para>
+        /// The <i>DeleteReplicationGroup</i> operation deletes an existing replication group.
+        /// By default, this operation deletes the entire replication group, including the primary
+        /// cache cluster and all of the read replicas. You can optionally delete only the read
+        /// replicas, while retaining the primary cache cluster.
+        /// 
+        ///  
+        /// <para>
+        /// When you receive a successful response from this operation, Amazon ElastiCache immediately
+        /// begins deleting the selected resources; you cannot cancel or revert this operation.
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReplicationGroup service method.</param>
         /// 
-        /// <param name="deleteReplicationGroupRequest">Container for the necessary parameters to execute the DeleteReplicationGroup service method on
-        ///          AmazonElastiCache.</param>
+        /// <returns>The response from the DeleteReplicationGroup service method, as returned by ElastiCache.</returns>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="InvalidReplicationGroupStateException">
+        /// The requested replication group is not in the <i>available</i> state.
+        /// </exception>
+        /// <exception cref="ReplicationGroupNotFoundException">
+        /// The specified replication group does not exist.
+        /// </exception>
+        /// <exception cref="SnapshotAlreadyExistsException">
+        /// You already have a snapshot with the given name.
+        /// </exception>
+        /// <exception cref="SnapshotFeatureNotSupportedException">
+        /// You attempted one of the following actions:
         /// 
-        /// <returns>The response from the DeleteReplicationGroup service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="InvalidReplicationGroupStateException"/>
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="SnapshotFeatureNotSupportedException"/>
-        /// <exception cref="ReplicationGroupNotFoundException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        /// <exception cref="SnapshotAlreadyExistsException"/>
-        /// <exception cref="SnapshotQuotaExceededException"/>
-        DeleteReplicationGroupResponse DeleteReplicationGroup(DeleteReplicationGroupRequest deleteReplicationGroupRequest);
+        ///  <ul> <li> 
+        /// <para>
+        /// Creating a snapshot of a Redis cache cluster running on a a <i>t1.micro</i> cache
+        /// node.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Creating a snapshot of a cache cluster that is running Memcached rather than Redis.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Neither of these are supported by ElastiCache.
+        /// </para>
+        /// </exception>
+        /// <exception cref="SnapshotQuotaExceededException">
+        /// The request cannot be processed because it would exceed the maximum number of snapshots.
+        /// </exception>
+        DeleteReplicationGroupResponse DeleteReplicationGroup(DeleteReplicationGroupRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteReplicationGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DeleteReplicationGroup"/>
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
-        /// <param name="deleteReplicationGroupRequest">Container for the necessary parameters to execute the DeleteReplicationGroup operation on
-        ///          AmazonElastiCache.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReplicationGroup operation on AmazonElastiCacheClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDeleteReplicationGroup operation.</returns>
-        IAsyncResult BeginDeleteReplicationGroup(DeleteReplicationGroupRequest deleteReplicationGroupRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteReplicationGroup
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteReplicationGroup(DeleteReplicationGroupRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DeleteReplicationGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DeleteReplicationGroup"/>
+        /// Finishes the asynchronous execution of the  DeleteReplicationGroup operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteReplicationGroup.</param>
         /// 
-        /// <returns>Returns a ReplicationGroup from AmazonElastiCache.</returns>
+        /// <returns>Returns a  DeleteReplicationGroupResult from ElastiCache.</returns>
         DeleteReplicationGroupResponse EndDeleteReplicationGroup(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
+        #region  DeleteSnapshot
 
-        #region DeleteSnapshot
 
         /// <summary>
-        /// <para>The <i>DeleteSnapshot</i> operation deletes an existing snapshot. When you receive a successful response from this operation,
-        /// ElastiCache immediately begins deleting the snapshot; you cannot cancel or revert this operation.</para>
+        /// The <i>DeleteSnapshot</i> operation deletes an existing snapshot. When you receive
+        /// a successful response from this operation, ElastiCache immediately begins deleting
+        /// the snapshot; you cannot cancel or revert this operation.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSnapshot service method.</param>
         /// 
-        /// <param name="deleteSnapshotRequest">Container for the necessary parameters to execute the DeleteSnapshot service method on
-        ///          AmazonElastiCache.</param>
-        /// 
-        /// <returns>The response from the DeleteSnapshot service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="InvalidSnapshotStateException"/>
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="SnapshotNotFoundException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest deleteSnapshotRequest);
+        /// <returns>The response from the DeleteSnapshot service method, as returned by ElastiCache.</returns>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="InvalidSnapshotStateException">
+        /// The current state of the snapshot does not allow the requested action to occur.
+        /// </exception>
+        /// <exception cref="SnapshotNotFoundException">
+        /// The requested snapshot name does not refer to an existing snapshot.
+        /// </exception>
+        DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteSnapshot operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DeleteSnapshot"/>
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
-        /// <param name="deleteSnapshotRequest">Container for the necessary parameters to execute the DeleteSnapshot operation on
-        ///          AmazonElastiCache.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSnapshot operation on AmazonElastiCacheClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSnapshot
         ///         operation.</returns>
-        IAsyncResult BeginDeleteSnapshot(DeleteSnapshotRequest deleteSnapshotRequest, AsyncCallback callback, object state);
+        IAsyncResult BeginDeleteSnapshot(DeleteSnapshotRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DeleteSnapshot operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DeleteSnapshot"/>
+        /// Finishes the asynchronous execution of the  DeleteSnapshot operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSnapshot.</param>
         /// 
-        /// <returns>Returns a Snapshot from AmazonElastiCache.</returns>
+        /// <returns>Returns a  DeleteSnapshotResult from ElastiCache.</returns>
         DeleteSnapshotResponse EndDeleteSnapshot(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
-
-        #region DescribeCacheClusters
+        #region  DescribeCacheClusters
 
         /// <summary>
-        /// <para>The <i>DescribeCacheClusters</i> operation returns information about all provisioned cache clusters if no cache cluster identifier is
-        /// specified, or about a specific cache cluster if a cache cluster identifier is supplied.</para> <para>By default, abbreviated information
-        /// about the cache clusters(s) will be returned. You can use the optional <i>ShowDetails</i> flag to retrieve detailed information about the
-        /// cache nodes associated with the cache clusters. These details include the DNS address and port for the cache node endpoint.</para> <para>If
-        /// the cluster is in the CREATING state, only cluster level information will be displayed until all of the nodes are successfully
-        /// provisioned.</para> <para>If the cluster is in the DELETING state, only cluster level information will be displayed.</para> <para>If cache
-        /// nodes are currently being added to the cache cluster, node endpoint information and creation time for the additional nodes will not be
-        /// displayed until they are completely provisioned. When the cache cluster state is <i>available</i> , the cluster is ready for use.</para>
-        /// <para>If cache nodes are currently being removed from the cache cluster, no endpoint information for the removed nodes is displayed.</para>
+        /// The <i>DescribeCacheClusters</i> operation returns information about all provisioned
+        /// cache clusters if no cache cluster identifier is specified, or about a specific cache
+        /// cluster if a cache cluster identifier is supplied.
+        /// 
+        ///  
+        /// <para>
+        /// By default, abbreviated information about the cache clusters(s) will be returned.
+        /// You can use the optional <i>ShowDetails</i> flag to retrieve detailed information
+        /// about the cache nodes associated with the cache clusters. These details include the
+        /// DNS address and port for the cache node endpoint.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the cluster is in the CREATING state, only cluster level information will be displayed
+        /// until all of the nodes are successfully provisioned.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the cluster is in the DELETING state, only cluster level information will be displayed.
+        /// </para>
+        ///  
+        /// <para>
+        /// If cache nodes are currently being added to the cache cluster, node endpoint information
+        /// and creation time for the additional nodes will not be displayed until they are completely
+        /// provisioned. When the cache cluster state is <i>available</i>, the cluster is ready
+        /// for use.
+        /// </para>
+        ///  
+        /// <para>
+        /// If cache nodes are currently being removed from the cache cluster, no endpoint information
+        /// for the removed nodes is displayed.
+        /// </para>
         /// </summary>
         /// 
-        /// <param name="describeCacheClustersRequest">Container for the necessary parameters to execute the DescribeCacheClusters service method on
-        ///          AmazonElastiCache.</param>
+        /// <returns>The response from the DescribeCacheClusters service method, as returned by ElastiCache.</returns>
+        /// <exception cref="CacheClusterNotFoundException">
+        /// The requested cache cluster ID does not refer to an existing cache cluster.
+        /// </exception>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        DescribeCacheClustersResponse DescribeCacheClusters();
+
+        /// <summary>
+        /// The <i>DescribeCacheClusters</i> operation returns information about all provisioned
+        /// cache clusters if no cache cluster identifier is specified, or about a specific cache
+        /// cluster if a cache cluster identifier is supplied.
         /// 
-        /// <returns>The response from the DescribeCacheClusters service method, as returned by AmazonElastiCache.</returns>
+        ///  
+        /// <para>
+        /// By default, abbreviated information about the cache clusters(s) will be returned.
+        /// You can use the optional <i>ShowDetails</i> flag to retrieve detailed information
+        /// about the cache nodes associated with the cache clusters. These details include the
+        /// DNS address and port for the cache node endpoint.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the cluster is in the CREATING state, only cluster level information will be displayed
+        /// until all of the nodes are successfully provisioned.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the cluster is in the DELETING state, only cluster level information will be displayed.
+        /// </para>
+        ///  
+        /// <para>
+        /// If cache nodes are currently being added to the cache cluster, node endpoint information
+        /// and creation time for the additional nodes will not be displayed until they are completely
+        /// provisioned. When the cache cluster state is <i>available</i>, the cluster is ready
+        /// for use.
+        /// </para>
+        ///  
+        /// <para>
+        /// If cache nodes are currently being removed from the cache cluster, no endpoint information
+        /// for the removed nodes is displayed.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCacheClusters service method.</param>
         /// 
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="CacheClusterNotFoundException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        DescribeCacheClustersResponse DescribeCacheClusters(DescribeCacheClustersRequest describeCacheClustersRequest);
+        /// <returns>The response from the DescribeCacheClusters service method, as returned by ElastiCache.</returns>
+        /// <exception cref="CacheClusterNotFoundException">
+        /// The requested cache cluster ID does not refer to an existing cache cluster.
+        /// </exception>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        DescribeCacheClustersResponse DescribeCacheClusters(DescribeCacheClustersRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCacheClusters operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DescribeCacheClusters"/>
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
-        /// <param name="describeCacheClustersRequest">Container for the necessary parameters to execute the DescribeCacheClusters operation on
-        ///          AmazonElastiCache.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCacheClusters operation on AmazonElastiCacheClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeCacheClusters operation.</returns>
-        IAsyncResult BeginDescribeCacheClusters(DescribeCacheClustersRequest describeCacheClustersRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCacheClusters
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeCacheClusters(DescribeCacheClustersRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeCacheClusters operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DescribeCacheClusters"/>
+        /// Finishes the asynchronous execution of the  DescribeCacheClusters operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCacheClusters.</param>
         /// 
-        /// <returns>Returns a DescribeCacheClustersResult from AmazonElastiCache.</returns>
+        /// <returns>Returns a  DescribeCacheClustersResult from ElastiCache.</returns>
         DescribeCacheClustersResponse EndDescribeCacheClusters(IAsyncResult asyncResult);
 
-        /// <summary>
-        /// <para>The <i>DescribeCacheClusters</i> operation returns information about all provisioned cache clusters if no cache cluster identifier is
-        /// specified, or about a specific cache cluster if a cache cluster identifier is supplied.</para> <para>By default, abbreviated information
-        /// about the cache clusters(s) will be returned. You can use the optional <i>ShowDetails</i> flag to retrieve detailed information about the
-        /// cache nodes associated with the cache clusters. These details include the DNS address and port for the cache node endpoint.</para> <para>If
-        /// the cluster is in the CREATING state, only cluster level information will be displayed until all of the nodes are successfully
-        /// provisioned.</para> <para>If the cluster is in the DELETING state, only cluster level information will be displayed.</para> <para>If cache
-        /// nodes are currently being added to the cache cluster, node endpoint information and creation time for the additional nodes will not be
-        /// displayed until they are completely provisioned. When the cache cluster state is <i>available</i> , the cluster is ready for use.</para>
-        /// <para>If cache nodes are currently being removed from the cache cluster, no endpoint information for the removed nodes is displayed.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the DescribeCacheClusters service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="CacheClusterNotFoundException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        DescribeCacheClustersResponse DescribeCacheClusters();
-        
         #endregion
         
-    
-
-        #region DescribeCacheEngineVersions
+        #region  DescribeCacheEngineVersions
 
         /// <summary>
-        /// <para>The <i>DescribeCacheEngineVersions</i> operation returns a list of the available cache engines and their versions.</para>
+        /// The <i>DescribeCacheEngineVersions</i> operation returns a list of the available cache
+        /// engines and their versions.
         /// </summary>
         /// 
-        /// <param name="describeCacheEngineVersionsRequest">Container for the necessary parameters to execute the DescribeCacheEngineVersions service
-        ///          method on AmazonElastiCache.</param>
+        /// <returns>The response from the DescribeCacheEngineVersions service method, as returned by ElastiCache.</returns>
+        DescribeCacheEngineVersionsResponse DescribeCacheEngineVersions();
+
+        /// <summary>
+        /// The <i>DescribeCacheEngineVersions</i> operation returns a list of the available cache
+        /// engines and their versions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCacheEngineVersions service method.</param>
         /// 
-        /// <returns>The response from the DescribeCacheEngineVersions service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        DescribeCacheEngineVersionsResponse DescribeCacheEngineVersions(DescribeCacheEngineVersionsRequest describeCacheEngineVersionsRequest);
+        /// <returns>The response from the DescribeCacheEngineVersions service method, as returned by ElastiCache.</returns>
+        DescribeCacheEngineVersionsResponse DescribeCacheEngineVersions(DescribeCacheEngineVersionsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCacheEngineVersions operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DescribeCacheEngineVersions"/>
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
-        /// <param name="describeCacheEngineVersionsRequest">Container for the necessary parameters to execute the DescribeCacheEngineVersions operation
-        ///          on AmazonElastiCache.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCacheEngineVersions operation on AmazonElastiCacheClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeCacheEngineVersions operation.</returns>
-        IAsyncResult BeginDescribeCacheEngineVersions(DescribeCacheEngineVersionsRequest describeCacheEngineVersionsRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCacheEngineVersions
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeCacheEngineVersions(DescribeCacheEngineVersionsRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeCacheEngineVersions operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DescribeCacheEngineVersions"/>
+        /// Finishes the asynchronous execution of the  DescribeCacheEngineVersions operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCacheEngineVersions.</param>
         /// 
-        /// <returns>Returns a DescribeCacheEngineVersionsResult from AmazonElastiCache.</returns>
+        /// <returns>Returns a  DescribeCacheEngineVersionsResult from ElastiCache.</returns>
         DescribeCacheEngineVersionsResponse EndDescribeCacheEngineVersions(IAsyncResult asyncResult);
 
-        /// <summary>
-        /// <para>The <i>DescribeCacheEngineVersions</i> operation returns a list of the available cache engines and their versions.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the DescribeCacheEngineVersions service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        DescribeCacheEngineVersionsResponse DescribeCacheEngineVersions();
-        
         #endregion
         
-    
-
-        #region DescribeCacheParameterGroups
+        #region  DescribeCacheParameterGroups
 
         /// <summary>
-        /// <para>The <i>DescribeCacheParameterGroups</i> operation returns a list of cache parameter group descriptions. If a cache parameter group
-        /// name is specified, the list will contain only the descriptions for that group.</para>
+        /// The <i>DescribeCacheParameterGroups</i> operation returns a list of cache parameter
+        /// group descriptions. If a cache parameter group name is specified, the list will contain
+        /// only the descriptions for that group.
         /// </summary>
         /// 
-        /// <param name="describeCacheParameterGroupsRequest">Container for the necessary parameters to execute the DescribeCacheParameterGroups service
-        ///          method on AmazonElastiCache.</param>
+        /// <returns>The response from the DescribeCacheParameterGroups service method, as returned by ElastiCache.</returns>
+        /// <exception cref="CacheParameterGroupNotFoundException">
+        /// The requested cache parameter group name does not refer to an existing cache parameter
+        /// group.
+        /// </exception>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        DescribeCacheParameterGroupsResponse DescribeCacheParameterGroups();
+
+        /// <summary>
+        /// The <i>DescribeCacheParameterGroups</i> operation returns a list of cache parameter
+        /// group descriptions. If a cache parameter group name is specified, the list will contain
+        /// only the descriptions for that group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCacheParameterGroups service method.</param>
         /// 
-        /// <returns>The response from the DescribeCacheParameterGroups service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        /// <exception cref="CacheParameterGroupNotFoundException"/>
-        DescribeCacheParameterGroupsResponse DescribeCacheParameterGroups(DescribeCacheParameterGroupsRequest describeCacheParameterGroupsRequest);
+        /// <returns>The response from the DescribeCacheParameterGroups service method, as returned by ElastiCache.</returns>
+        /// <exception cref="CacheParameterGroupNotFoundException">
+        /// The requested cache parameter group name does not refer to an existing cache parameter
+        /// group.
+        /// </exception>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        DescribeCacheParameterGroupsResponse DescribeCacheParameterGroups(DescribeCacheParameterGroupsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCacheParameterGroups operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DescribeCacheParameterGroups"/>
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
-        /// <param name="describeCacheParameterGroupsRequest">Container for the necessary parameters to execute the DescribeCacheParameterGroups
-        ///          operation on AmazonElastiCache.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCacheParameterGroups operation on AmazonElastiCacheClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeCacheParameterGroups operation.</returns>
-        IAsyncResult BeginDescribeCacheParameterGroups(DescribeCacheParameterGroupsRequest describeCacheParameterGroupsRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCacheParameterGroups
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeCacheParameterGroups(DescribeCacheParameterGroupsRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeCacheParameterGroups operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DescribeCacheParameterGroups"/>
+        /// Finishes the asynchronous execution of the  DescribeCacheParameterGroups operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCacheParameterGroups.</param>
         /// 
-        /// <returns>Returns a DescribeCacheParameterGroupsResult from AmazonElastiCache.</returns>
+        /// <returns>Returns a  DescribeCacheParameterGroupsResult from ElastiCache.</returns>
         DescribeCacheParameterGroupsResponse EndDescribeCacheParameterGroups(IAsyncResult asyncResult);
 
-        /// <summary>
-        /// <para>The <i>DescribeCacheParameterGroups</i> operation returns a list of cache parameter group descriptions. If a cache parameter group
-        /// name is specified, the list will contain only the descriptions for that group.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the DescribeCacheParameterGroups service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        /// <exception cref="CacheParameterGroupNotFoundException"/>
-        DescribeCacheParameterGroupsResponse DescribeCacheParameterGroups();
-        
         #endregion
         
-    
+        #region  DescribeCacheParameters
 
-        #region DescribeCacheParameters
 
         /// <summary>
-        /// <para>The <i>DescribeCacheParameters</i> operation returns the detailed parameter list for a particular cache parameter group.</para>
+        /// The <i>DescribeCacheParameters</i> operation returns the detailed parameter list for
+        /// a particular cache parameter group.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCacheParameters service method.</param>
         /// 
-        /// <param name="describeCacheParametersRequest">Container for the necessary parameters to execute the DescribeCacheParameters service method on
-        ///          AmazonElastiCache.</param>
-        /// 
-        /// <returns>The response from the DescribeCacheParameters service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        /// <exception cref="CacheParameterGroupNotFoundException"/>
-        DescribeCacheParametersResponse DescribeCacheParameters(DescribeCacheParametersRequest describeCacheParametersRequest);
+        /// <returns>The response from the DescribeCacheParameters service method, as returned by ElastiCache.</returns>
+        /// <exception cref="CacheParameterGroupNotFoundException">
+        /// The requested cache parameter group name does not refer to an existing cache parameter
+        /// group.
+        /// </exception>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        DescribeCacheParametersResponse DescribeCacheParameters(DescribeCacheParametersRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCacheParameters operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DescribeCacheParameters"/>
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
-        /// <param name="describeCacheParametersRequest">Container for the necessary parameters to execute the DescribeCacheParameters operation on
-        ///          AmazonElastiCache.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCacheParameters operation on AmazonElastiCacheClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeCacheParameters operation.</returns>
-        IAsyncResult BeginDescribeCacheParameters(DescribeCacheParametersRequest describeCacheParametersRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCacheParameters
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeCacheParameters(DescribeCacheParametersRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeCacheParameters operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DescribeCacheParameters"/>
+        /// Finishes the asynchronous execution of the  DescribeCacheParameters operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCacheParameters.</param>
         /// 
-        /// <returns>Returns a DescribeCacheParametersResult from AmazonElastiCache.</returns>
+        /// <returns>Returns a  DescribeCacheParametersResult from ElastiCache.</returns>
         DescribeCacheParametersResponse EndDescribeCacheParameters(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
-
-        #region DescribeCacheSecurityGroups
+        #region  DescribeCacheSecurityGroups
 
         /// <summary>
-        /// <para>The <i>DescribeCacheSecurityGroups</i> operation returns a list of cache security group descriptions. If a cache security group name
-        /// is specified, the list will contain only the description of that group.</para>
+        /// The <i>DescribeCacheSecurityGroups</i> operation returns a list of cache security
+        /// group descriptions. If a cache security group name is specified, the list will contain
+        /// only the description of that group.
         /// </summary>
         /// 
-        /// <param name="describeCacheSecurityGroupsRequest">Container for the necessary parameters to execute the DescribeCacheSecurityGroups service
-        ///          method on AmazonElastiCache.</param>
+        /// <returns>The response from the DescribeCacheSecurityGroups service method, as returned by ElastiCache.</returns>
+        /// <exception cref="CacheSecurityGroupNotFoundException">
+        /// The requested cache security group name does not refer to an existing cache security
+        /// group.
+        /// </exception>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        DescribeCacheSecurityGroupsResponse DescribeCacheSecurityGroups();
+
+        /// <summary>
+        /// The <i>DescribeCacheSecurityGroups</i> operation returns a list of cache security
+        /// group descriptions. If a cache security group name is specified, the list will contain
+        /// only the description of that group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCacheSecurityGroups service method.</param>
         /// 
-        /// <returns>The response from the DescribeCacheSecurityGroups service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        /// <exception cref="CacheSecurityGroupNotFoundException"/>
-        DescribeCacheSecurityGroupsResponse DescribeCacheSecurityGroups(DescribeCacheSecurityGroupsRequest describeCacheSecurityGroupsRequest);
+        /// <returns>The response from the DescribeCacheSecurityGroups service method, as returned by ElastiCache.</returns>
+        /// <exception cref="CacheSecurityGroupNotFoundException">
+        /// The requested cache security group name does not refer to an existing cache security
+        /// group.
+        /// </exception>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        DescribeCacheSecurityGroupsResponse DescribeCacheSecurityGroups(DescribeCacheSecurityGroupsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCacheSecurityGroups operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DescribeCacheSecurityGroups"/>
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
-        /// <param name="describeCacheSecurityGroupsRequest">Container for the necessary parameters to execute the DescribeCacheSecurityGroups operation
-        ///          on AmazonElastiCache.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCacheSecurityGroups operation on AmazonElastiCacheClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeCacheSecurityGroups operation.</returns>
-        IAsyncResult BeginDescribeCacheSecurityGroups(DescribeCacheSecurityGroupsRequest describeCacheSecurityGroupsRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCacheSecurityGroups
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeCacheSecurityGroups(DescribeCacheSecurityGroupsRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeCacheSecurityGroups operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DescribeCacheSecurityGroups"/>
+        /// Finishes the asynchronous execution of the  DescribeCacheSecurityGroups operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCacheSecurityGroups.</param>
         /// 
-        /// <returns>Returns a DescribeCacheSecurityGroupsResult from AmazonElastiCache.</returns>
+        /// <returns>Returns a  DescribeCacheSecurityGroupsResult from ElastiCache.</returns>
         DescribeCacheSecurityGroupsResponse EndDescribeCacheSecurityGroups(IAsyncResult asyncResult);
 
-        /// <summary>
-        /// <para>The <i>DescribeCacheSecurityGroups</i> operation returns a list of cache security group descriptions. If a cache security group name
-        /// is specified, the list will contain only the description of that group.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the DescribeCacheSecurityGroups service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        /// <exception cref="CacheSecurityGroupNotFoundException"/>
-        DescribeCacheSecurityGroupsResponse DescribeCacheSecurityGroups();
-        
         #endregion
         
-    
-
-        #region DescribeCacheSubnetGroups
+        #region  DescribeCacheSubnetGroups
 
         /// <summary>
-        /// <para>The <i>DescribeCacheSubnetGroups</i> operation returns a list of cache subnet group descriptions. If a subnet group name is specified,
-        /// the list will contain only the description of that group.</para>
+        /// The <i>DescribeCacheSubnetGroups</i> operation returns a list of cache subnet group
+        /// descriptions. If a subnet group name is specified, the list will contain only the
+        /// description of that group.
         /// </summary>
         /// 
-        /// <param name="describeCacheSubnetGroupsRequest">Container for the necessary parameters to execute the DescribeCacheSubnetGroups service
-        ///          method on AmazonElastiCache.</param>
+        /// <returns>The response from the DescribeCacheSubnetGroups service method, as returned by ElastiCache.</returns>
+        /// <exception cref="CacheSubnetGroupNotFoundException">
+        /// The requested cache subnet group name does not refer to an existing cache subnet group.
+        /// </exception>
+        DescribeCacheSubnetGroupsResponse DescribeCacheSubnetGroups();
+
+        /// <summary>
+        /// The <i>DescribeCacheSubnetGroups</i> operation returns a list of cache subnet group
+        /// descriptions. If a subnet group name is specified, the list will contain only the
+        /// description of that group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCacheSubnetGroups service method.</param>
         /// 
-        /// <returns>The response from the DescribeCacheSubnetGroups service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="CacheSubnetGroupNotFoundException"/>
-        DescribeCacheSubnetGroupsResponse DescribeCacheSubnetGroups(DescribeCacheSubnetGroupsRequest describeCacheSubnetGroupsRequest);
+        /// <returns>The response from the DescribeCacheSubnetGroups service method, as returned by ElastiCache.</returns>
+        /// <exception cref="CacheSubnetGroupNotFoundException">
+        /// The requested cache subnet group name does not refer to an existing cache subnet group.
+        /// </exception>
+        DescribeCacheSubnetGroupsResponse DescribeCacheSubnetGroups(DescribeCacheSubnetGroupsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeCacheSubnetGroups operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DescribeCacheSubnetGroups"/>
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
-        /// <param name="describeCacheSubnetGroupsRequest">Container for the necessary parameters to execute the DescribeCacheSubnetGroups operation on
-        ///          AmazonElastiCache.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCacheSubnetGroups operation on AmazonElastiCacheClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeCacheSubnetGroups operation.</returns>
-        IAsyncResult BeginDescribeCacheSubnetGroups(DescribeCacheSubnetGroupsRequest describeCacheSubnetGroupsRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCacheSubnetGroups
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeCacheSubnetGroups(DescribeCacheSubnetGroupsRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeCacheSubnetGroups operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DescribeCacheSubnetGroups"/>
+        /// Finishes the asynchronous execution of the  DescribeCacheSubnetGroups operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCacheSubnetGroups.</param>
         /// 
-        /// <returns>Returns a DescribeCacheSubnetGroupsResult from AmazonElastiCache.</returns>
+        /// <returns>Returns a  DescribeCacheSubnetGroupsResult from ElastiCache.</returns>
         DescribeCacheSubnetGroupsResponse EndDescribeCacheSubnetGroups(IAsyncResult asyncResult);
 
-        /// <summary>
-        /// <para>The <i>DescribeCacheSubnetGroups</i> operation returns a list of cache subnet group descriptions. If a subnet group name is specified,
-        /// the list will contain only the description of that group.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the DescribeCacheSubnetGroups service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="CacheSubnetGroupNotFoundException"/>
-        DescribeCacheSubnetGroupsResponse DescribeCacheSubnetGroups();
-        
         #endregion
         
-    
+        #region  DescribeEngineDefaultParameters
 
-        #region DescribeEngineDefaultParameters
 
         /// <summary>
-        /// <para>The <i>DescribeEngineDefaultParameters</i> operation returns the default engine and system parameter information for the specified
-        /// cache engine.</para>
+        /// The <i>DescribeEngineDefaultParameters</i> operation returns the default engine and
+        /// system parameter information for the specified cache engine.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEngineDefaultParameters service method.</param>
         /// 
-        /// <param name="describeEngineDefaultParametersRequest">Container for the necessary parameters to execute the DescribeEngineDefaultParameters
-        ///          service method on AmazonElastiCache.</param>
-        /// 
-        /// <returns>The response from the DescribeEngineDefaultParameters service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        DescribeEngineDefaultParametersResponse DescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest);
+        /// <returns>The response from the DescribeEngineDefaultParameters service method, as returned by ElastiCache.</returns>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        DescribeEngineDefaultParametersResponse DescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEngineDefaultParameters operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DescribeEngineDefaultParameters"/>
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
-        /// <param name="describeEngineDefaultParametersRequest">Container for the necessary parameters to execute the DescribeEngineDefaultParameters
-        ///          operation on AmazonElastiCache.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEngineDefaultParameters operation on AmazonElastiCacheClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeEngineDefaultParameters operation.</returns>
-        IAsyncResult BeginDescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEngineDefaultParameters
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeEngineDefaultParameters operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DescribeEngineDefaultParameters"/>
+        /// Finishes the asynchronous execution of the  DescribeEngineDefaultParameters operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEngineDefaultParameters.</param>
         /// 
-        /// <returns>Returns a EngineDefaults from AmazonElastiCache.</returns>
+        /// <returns>Returns a  DescribeEngineDefaultParametersResult from ElastiCache.</returns>
         DescribeEngineDefaultParametersResponse EndDescribeEngineDefaultParameters(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
-
-        #region DescribeEvents
+        #region  DescribeEvents
 
         /// <summary>
-        /// <para>The <i>DescribeEvents</i> operation returns events related to cache clusters, cache security groups, and cache parameter groups. You
-        /// can obtain events specific to a particular cache cluster, cache security group, or cache parameter group by providing the name as a
-        /// parameter.</para> <para>By default, only the events occurring within the last hour are returned; however, you can retrieve up to 14 days'
-        /// worth of events if necessary.</para>
+        /// The <i>DescribeEvents</i> operation returns events related to cache clusters, cache
+        /// security groups, and cache parameter groups. You can obtain events specific to a particular
+        /// cache cluster, cache security group, or cache parameter group by providing the name
+        /// as a parameter.
+        /// 
+        ///  
+        /// <para>
+        /// By default, only the events occurring within the last hour are returned; however,
+        /// you can retrieve up to 14 days' worth of events if necessary.
+        /// </para>
         /// </summary>
         /// 
-        /// <param name="describeEventsRequest">Container for the necessary parameters to execute the DescribeEvents service method on
-        ///          AmazonElastiCache.</param>
+        /// <returns>The response from the DescribeEvents service method, as returned by ElastiCache.</returns>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        DescribeEventsResponse DescribeEvents();
+
+        /// <summary>
+        /// The <i>DescribeEvents</i> operation returns events related to cache clusters, cache
+        /// security groups, and cache parameter groups. You can obtain events specific to a particular
+        /// cache cluster, cache security group, or cache parameter group by providing the name
+        /// as a parameter.
         /// 
-        /// <returns>The response from the DescribeEvents service method, as returned by AmazonElastiCache.</returns>
+        ///  
+        /// <para>
+        /// By default, only the events occurring within the last hour are returned; however,
+        /// you can retrieve up to 14 days' worth of events if necessary.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEvents service method.</param>
         /// 
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        DescribeEventsResponse DescribeEvents(DescribeEventsRequest describeEventsRequest);
+        /// <returns>The response from the DescribeEvents service method, as returned by ElastiCache.</returns>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        DescribeEventsResponse DescribeEvents(DescribeEventsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeEvents operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DescribeEvents"/>
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
-        /// <param name="describeEventsRequest">Container for the necessary parameters to execute the DescribeEvents operation on
-        ///          AmazonElastiCache.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEvents operation on AmazonElastiCacheClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEvents
         ///         operation.</returns>
-        IAsyncResult BeginDescribeEvents(DescribeEventsRequest describeEventsRequest, AsyncCallback callback, object state);
+        IAsyncResult BeginDescribeEvents(DescribeEventsRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeEvents operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DescribeEvents"/>
+        /// Finishes the asynchronous execution of the  DescribeEvents operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEvents.</param>
         /// 
-        /// <returns>Returns a DescribeEventsResult from AmazonElastiCache.</returns>
+        /// <returns>Returns a  DescribeEventsResult from ElastiCache.</returns>
         DescribeEventsResponse EndDescribeEvents(IAsyncResult asyncResult);
 
-        /// <summary>
-        /// <para>The <i>DescribeEvents</i> operation returns events related to cache clusters, cache security groups, and cache parameter groups. You
-        /// can obtain events specific to a particular cache cluster, cache security group, or cache parameter group by providing the name as a
-        /// parameter.</para> <para>By default, only the events occurring within the last hour are returned; however, you can retrieve up to 14 days'
-        /// worth of events if necessary.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the DescribeEvents service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        DescribeEventsResponse DescribeEvents();
-        
         #endregion
         
-    
-
-        #region DescribeReplicationGroups
+        #region  DescribeReplicationGroups
 
         /// <summary>
-        /// <para>The <i>DescribeReplicationGroups</i> operation returns information about a particular replication group. If no identifier is
-        /// specified, <i>DescribeReplicationGroups</i> returns information about all replication groups.</para>
+        /// The <i>DescribeReplicationGroups</i> operation returns information about a particular
+        /// replication group. If no identifier is specified, <i>DescribeReplicationGroups</i>
+        /// returns information about all replication groups.
         /// </summary>
         /// 
-        /// <param name="describeReplicationGroupsRequest">Container for the necessary parameters to execute the DescribeReplicationGroups service
-        ///          method on AmazonElastiCache.</param>
+        /// <returns>The response from the DescribeReplicationGroups service method, as returned by ElastiCache.</returns>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="ReplicationGroupNotFoundException">
+        /// The specified replication group does not exist.
+        /// </exception>
+        DescribeReplicationGroupsResponse DescribeReplicationGroups();
+
+        /// <summary>
+        /// The <i>DescribeReplicationGroups</i> operation returns information about a particular
+        /// replication group. If no identifier is specified, <i>DescribeReplicationGroups</i>
+        /// returns information about all replication groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationGroups service method.</param>
         /// 
-        /// <returns>The response from the DescribeReplicationGroups service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="ReplicationGroupNotFoundException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        DescribeReplicationGroupsResponse DescribeReplicationGroups(DescribeReplicationGroupsRequest describeReplicationGroupsRequest);
+        /// <returns>The response from the DescribeReplicationGroups service method, as returned by ElastiCache.</returns>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="ReplicationGroupNotFoundException">
+        /// The specified replication group does not exist.
+        /// </exception>
+        DescribeReplicationGroupsResponse DescribeReplicationGroups(DescribeReplicationGroupsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReplicationGroups operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DescribeReplicationGroups"/>
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
-        /// <param name="describeReplicationGroupsRequest">Container for the necessary parameters to execute the DescribeReplicationGroups operation on
-        ///          AmazonElastiCache.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationGroups operation on AmazonElastiCacheClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeReplicationGroups operation.</returns>
-        IAsyncResult BeginDescribeReplicationGroups(DescribeReplicationGroupsRequest describeReplicationGroupsRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReplicationGroups
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeReplicationGroups(DescribeReplicationGroupsRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeReplicationGroups operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DescribeReplicationGroups"/>
+        /// Finishes the asynchronous execution of the  DescribeReplicationGroups operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReplicationGroups.</param>
         /// 
-        /// <returns>Returns a DescribeReplicationGroupsResult from AmazonElastiCache.</returns>
+        /// <returns>Returns a  DescribeReplicationGroupsResult from ElastiCache.</returns>
         DescribeReplicationGroupsResponse EndDescribeReplicationGroups(IAsyncResult asyncResult);
 
-        /// <summary>
-        /// <para>The <i>DescribeReplicationGroups</i> operation returns information about a particular replication group. If no identifier is
-        /// specified, <i>DescribeReplicationGroups</i> returns information about all replication groups.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the DescribeReplicationGroups service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="ReplicationGroupNotFoundException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        DescribeReplicationGroupsResponse DescribeReplicationGroups();
-        
         #endregion
         
-    
-
-        #region DescribeReservedCacheNodes
+        #region  DescribeReservedCacheNodes
 
         /// <summary>
-        /// <para>The <i>DescribeReservedCacheNodes</i> operation returns information about reserved cache nodes for this account, or about a specified
-        /// reserved cache node.</para>
+        /// The <i>DescribeReservedCacheNodes</i> operation returns information about reserved
+        /// cache nodes for this account, or about a specified reserved cache node.
         /// </summary>
         /// 
-        /// <param name="describeReservedCacheNodesRequest">Container for the necessary parameters to execute the DescribeReservedCacheNodes service
-        ///          method on AmazonElastiCache.</param>
+        /// <returns>The response from the DescribeReservedCacheNodes service method, as returned by ElastiCache.</returns>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="ReservedCacheNodeNotFoundException">
+        /// The requested reserved cache node was not found.
+        /// </exception>
+        DescribeReservedCacheNodesResponse DescribeReservedCacheNodes();
+
+        /// <summary>
+        /// The <i>DescribeReservedCacheNodes</i> operation returns information about reserved
+        /// cache nodes for this account, or about a specified reserved cache node.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReservedCacheNodes service method.</param>
         /// 
-        /// <returns>The response from the DescribeReservedCacheNodes service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="ReservedCacheNodeNotFoundException"/>
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        DescribeReservedCacheNodesResponse DescribeReservedCacheNodes(DescribeReservedCacheNodesRequest describeReservedCacheNodesRequest);
+        /// <returns>The response from the DescribeReservedCacheNodes service method, as returned by ElastiCache.</returns>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="ReservedCacheNodeNotFoundException">
+        /// The requested reserved cache node was not found.
+        /// </exception>
+        DescribeReservedCacheNodesResponse DescribeReservedCacheNodes(DescribeReservedCacheNodesRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedCacheNodes operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DescribeReservedCacheNodes"/>
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
-        /// <param name="describeReservedCacheNodesRequest">Container for the necessary parameters to execute the DescribeReservedCacheNodes operation
-        ///          on AmazonElastiCache.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReservedCacheNodes operation on AmazonElastiCacheClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeReservedCacheNodes operation.</returns>
-        IAsyncResult BeginDescribeReservedCacheNodes(DescribeReservedCacheNodesRequest describeReservedCacheNodesRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReservedCacheNodes
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeReservedCacheNodes(DescribeReservedCacheNodesRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeReservedCacheNodes operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DescribeReservedCacheNodes"/>
+        /// Finishes the asynchronous execution of the  DescribeReservedCacheNodes operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReservedCacheNodes.</param>
         /// 
-        /// <returns>Returns a DescribeReservedCacheNodesResult from AmazonElastiCache.</returns>
+        /// <returns>Returns a  DescribeReservedCacheNodesResult from ElastiCache.</returns>
         DescribeReservedCacheNodesResponse EndDescribeReservedCacheNodes(IAsyncResult asyncResult);
 
-        /// <summary>
-        /// <para>The <i>DescribeReservedCacheNodes</i> operation returns information about reserved cache nodes for this account, or about a specified
-        /// reserved cache node.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the DescribeReservedCacheNodes service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="ReservedCacheNodeNotFoundException"/>
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        DescribeReservedCacheNodesResponse DescribeReservedCacheNodes();
-        
         #endregion
         
-    
-
-        #region DescribeReservedCacheNodesOfferings
+        #region  DescribeReservedCacheNodesOfferings
 
         /// <summary>
-        /// <para>The <i>DescribeReservedCacheNodesOfferings</i> operation lists available reserved cache node offerings.</para>
+        /// The <i>DescribeReservedCacheNodesOfferings</i> operation lists available reserved
+        /// cache node offerings.
         /// </summary>
         /// 
-        /// <param name="describeReservedCacheNodesOfferingsRequest">Container for the necessary parameters to execute the
-        ///          DescribeReservedCacheNodesOfferings service method on AmazonElastiCache.</param>
+        /// <returns>The response from the DescribeReservedCacheNodesOfferings service method, as returned by ElastiCache.</returns>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="ReservedCacheNodesOfferingNotFoundException">
+        /// The requested cache node offering does not exist.
+        /// </exception>
+        DescribeReservedCacheNodesOfferingsResponse DescribeReservedCacheNodesOfferings();
+
+        /// <summary>
+        /// The <i>DescribeReservedCacheNodesOfferings</i> operation lists available reserved
+        /// cache node offerings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReservedCacheNodesOfferings service method.</param>
         /// 
-        /// <returns>The response from the DescribeReservedCacheNodesOfferings service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="ReservedCacheNodesOfferingNotFoundException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        DescribeReservedCacheNodesOfferingsResponse DescribeReservedCacheNodesOfferings(DescribeReservedCacheNodesOfferingsRequest describeReservedCacheNodesOfferingsRequest);
+        /// <returns>The response from the DescribeReservedCacheNodesOfferings service method, as returned by ElastiCache.</returns>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="ReservedCacheNodesOfferingNotFoundException">
+        /// The requested cache node offering does not exist.
+        /// </exception>
+        DescribeReservedCacheNodesOfferingsResponse DescribeReservedCacheNodesOfferings(DescribeReservedCacheNodesOfferingsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeReservedCacheNodesOfferings operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DescribeReservedCacheNodesOfferings"/>
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
-        /// <param name="describeReservedCacheNodesOfferingsRequest">Container for the necessary parameters to execute the
-        ///          DescribeReservedCacheNodesOfferings operation on AmazonElastiCache.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReservedCacheNodesOfferings operation on AmazonElastiCacheClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeReservedCacheNodesOfferings operation.</returns>
-        IAsyncResult BeginDescribeReservedCacheNodesOfferings(DescribeReservedCacheNodesOfferingsRequest describeReservedCacheNodesOfferingsRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReservedCacheNodesOfferings
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeReservedCacheNodesOfferings(DescribeReservedCacheNodesOfferingsRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeReservedCacheNodesOfferings operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DescribeReservedCacheNodesOfferings"/>
+        /// Finishes the asynchronous execution of the  DescribeReservedCacheNodesOfferings operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReservedCacheNodesOfferings.</param>
         /// 
-        /// <returns>Returns a DescribeReservedCacheNodesOfferingsResult from AmazonElastiCache.</returns>
+        /// <returns>Returns a  DescribeReservedCacheNodesOfferingsResult from ElastiCache.</returns>
         DescribeReservedCacheNodesOfferingsResponse EndDescribeReservedCacheNodesOfferings(IAsyncResult asyncResult);
 
-        /// <summary>
-        /// <para>The <i>DescribeReservedCacheNodesOfferings</i> operation lists available reserved cache node offerings.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the DescribeReservedCacheNodesOfferings service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="ReservedCacheNodesOfferingNotFoundException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        DescribeReservedCacheNodesOfferingsResponse DescribeReservedCacheNodesOfferings();
-        
         #endregion
         
-    
-
-        #region DescribeSnapshots
+        #region  DescribeSnapshots
 
         /// <summary>
-        /// <para>The <i>DescribeSnapshots</i> operation returns information about cache cluster snapshots. By default, <i>DescribeSnapshots</i> lists
-        /// all of your snapshots; it can optionally describe a single snapshot, or just the snapshots associated with a particular cache
-        /// cluster.</para>
+        /// The <i>DescribeSnapshots</i> operation returns information about cache cluster snapshots.
+        /// By default, <i>DescribeSnapshots</i> lists all of your snapshots; it can optionally
+        /// describe a single snapshot, or just the snapshots associated with a particular cache
+        /// cluster.
         /// </summary>
         /// 
-        /// <param name="describeSnapshotsRequest">Container for the necessary parameters to execute the DescribeSnapshots service method on
-        ///          AmazonElastiCache.</param>
+        /// <returns>The response from the DescribeSnapshots service method, as returned by ElastiCache.</returns>
+        /// <exception cref="CacheClusterNotFoundException">
+        /// The requested cache cluster ID does not refer to an existing cache cluster.
+        /// </exception>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="SnapshotNotFoundException">
+        /// The requested snapshot name does not refer to an existing snapshot.
+        /// </exception>
+        DescribeSnapshotsResponse DescribeSnapshots();
+
+        /// <summary>
+        /// The <i>DescribeSnapshots</i> operation returns information about cache cluster snapshots.
+        /// By default, <i>DescribeSnapshots</i> lists all of your snapshots; it can optionally
+        /// describe a single snapshot, or just the snapshots associated with a particular cache
+        /// cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshots service method.</param>
         /// 
-        /// <returns>The response from the DescribeSnapshots service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="SnapshotNotFoundException"/>
-        /// <exception cref="CacheClusterNotFoundException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        DescribeSnapshotsResponse DescribeSnapshots(DescribeSnapshotsRequest describeSnapshotsRequest);
+        /// <returns>The response from the DescribeSnapshots service method, as returned by ElastiCache.</returns>
+        /// <exception cref="CacheClusterNotFoundException">
+        /// The requested cache cluster ID does not refer to an existing cache cluster.
+        /// </exception>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="SnapshotNotFoundException">
+        /// The requested snapshot name does not refer to an existing snapshot.
+        /// </exception>
+        DescribeSnapshotsResponse DescribeSnapshots(DescribeSnapshotsRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DescribeSnapshots operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DescribeSnapshots"/>
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
-        /// <param name="describeSnapshotsRequest">Container for the necessary parameters to execute the DescribeSnapshots operation on
-        ///          AmazonElastiCache.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshots operation on AmazonElastiCacheClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSnapshots
         ///         operation.</returns>
-        IAsyncResult BeginDescribeSnapshots(DescribeSnapshotsRequest describeSnapshotsRequest, AsyncCallback callback, object state);
+        IAsyncResult BeginDescribeSnapshots(DescribeSnapshotsRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeSnapshots operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DescribeSnapshots"/>
+        /// Finishes the asynchronous execution of the  DescribeSnapshots operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSnapshots.</param>
         /// 
-        /// <returns>Returns a DescribeSnapshotsResult from AmazonElastiCache.</returns>
+        /// <returns>Returns a  DescribeSnapshotsResult from ElastiCache.</returns>
         DescribeSnapshotsResponse EndDescribeSnapshots(IAsyncResult asyncResult);
 
-        /// <summary>
-        /// <para>The <i>DescribeSnapshots</i> operation returns information about cache cluster snapshots. By default, <i>DescribeSnapshots</i> lists
-        /// all of your snapshots; it can optionally describe a single snapshot, or just the snapshots associated with a particular cache
-        /// cluster.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the DescribeSnapshots service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="SnapshotNotFoundException"/>
-        /// <exception cref="CacheClusterNotFoundException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        DescribeSnapshotsResponse DescribeSnapshots();
-        
         #endregion
         
-    
+        #region  ModifyCacheCluster
 
-        #region ModifyCacheCluster
 
         /// <summary>
-        /// <para>The <i>ModifyCacheCluster</i> operation modifies the settings for a cache cluster. You can use this operation to change one or more
-        /// cluster configuration parameters by specifying the parameters and the new values.</para>
+        /// The <i>ModifyCacheCluster</i> operation modifies the settings for a cache cluster.
+        /// You can use this operation to change one or more cluster configuration parameters
+        /// by specifying the parameters and the new values.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCacheCluster service method.</param>
         /// 
-        /// <param name="modifyCacheClusterRequest">Container for the necessary parameters to execute the ModifyCacheCluster service method on
-        ///          AmazonElastiCache.</param>
-        /// 
-        /// <returns>The response from the ModifyCacheCluster service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="NodeQuotaForCustomerExceededException"/>
-        /// <exception cref="NodeQuotaForClusterExceededException"/>
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="InvalidCacheSecurityGroupStateException"/>
-        /// <exception cref="InvalidVPCNetworkStateException"/>
-        /// <exception cref="CacheClusterNotFoundException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        /// <exception cref="CacheParameterGroupNotFoundException"/>
-        /// <exception cref="InvalidCacheClusterStateException"/>
-        /// <exception cref="CacheSecurityGroupNotFoundException"/>
-        ModifyCacheClusterResponse ModifyCacheCluster(ModifyCacheClusterRequest modifyCacheClusterRequest);
+        /// <returns>The response from the ModifyCacheCluster service method, as returned by ElastiCache.</returns>
+        /// <exception cref="CacheClusterNotFoundException">
+        /// The requested cache cluster ID does not refer to an existing cache cluster.
+        /// </exception>
+        /// <exception cref="CacheParameterGroupNotFoundException">
+        /// The requested cache parameter group name does not refer to an existing cache parameter
+        /// group.
+        /// </exception>
+        /// <exception cref="CacheSecurityGroupNotFoundException">
+        /// The requested cache security group name does not refer to an existing cache security
+        /// group.
+        /// </exception>
+        /// <exception cref="InsufficientCacheClusterCapacityException">
+        /// The requested cache node type is not available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="InvalidCacheClusterStateException">
+        /// The requested cache cluster is not in the <i>available</i> state.
+        /// </exception>
+        /// <exception cref="InvalidCacheSecurityGroupStateException">
+        /// The current state of the cache security group does not allow deletion.
+        /// </exception>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="InvalidVPCNetworkStateException">
+        /// The VPC network is in an invalid state.
+        /// </exception>
+        /// <exception cref="NodeQuotaForClusterExceededException">
+        /// The request cannot be processed because it would exceed the allowed number of cache
+        /// nodes in a single cache cluster.
+        /// </exception>
+        /// <exception cref="NodeQuotaForCustomerExceededException">
+        /// The request cannot be processed because it would exceed the allowed number of cache
+        /// nodes per customer.
+        /// </exception>
+        ModifyCacheClusterResponse ModifyCacheCluster(ModifyCacheClusterRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyCacheCluster operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.ModifyCacheCluster"/>
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
-        /// <param name="modifyCacheClusterRequest">Container for the necessary parameters to execute the ModifyCacheCluster operation on
-        ///          AmazonElastiCache.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCacheCluster operation on AmazonElastiCacheClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndModifyCacheCluster operation.</returns>
-        IAsyncResult BeginModifyCacheCluster(ModifyCacheClusterRequest modifyCacheClusterRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyCacheCluster
+        ///         operation.</returns>
+        IAsyncResult BeginModifyCacheCluster(ModifyCacheClusterRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the ModifyCacheCluster operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.ModifyCacheCluster"/>
+        /// Finishes the asynchronous execution of the  ModifyCacheCluster operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyCacheCluster.</param>
         /// 
-        /// <returns>Returns a CacheCluster from AmazonElastiCache.</returns>
+        /// <returns>Returns a  ModifyCacheClusterResult from ElastiCache.</returns>
         ModifyCacheClusterResponse EndModifyCacheCluster(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
+        #region  ModifyCacheParameterGroup
 
-        #region ModifyCacheParameterGroup
 
         /// <summary>
-        /// <para>The <i>ModifyCacheParameterGroup</i> operation modifies the parameters of a cache parameter group. You can modify up to 20 parameters
-        /// in a single request by submitting a list parameter name and value pairs.</para>
+        /// The <i>ModifyCacheParameterGroup</i> operation modifies the parameters of a cache
+        /// parameter group. You can modify up to 20 parameters in a single request by submitting
+        /// a list parameter name and value pairs.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCacheParameterGroup service method.</param>
         /// 
-        /// <param name="modifyCacheParameterGroupRequest">Container for the necessary parameters to execute the ModifyCacheParameterGroup service
-        ///          method on AmazonElastiCache.</param>
-        /// 
-        /// <returns>The response from the ModifyCacheParameterGroup service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        /// <exception cref="CacheParameterGroupNotFoundException"/>
-        /// <exception cref="InvalidCacheParameterGroupStateException"/>
-        ModifyCacheParameterGroupResponse ModifyCacheParameterGroup(ModifyCacheParameterGroupRequest modifyCacheParameterGroupRequest);
+        /// <returns>The response from the ModifyCacheParameterGroup service method, as returned by ElastiCache.</returns>
+        /// <exception cref="CacheParameterGroupNotFoundException">
+        /// The requested cache parameter group name does not refer to an existing cache parameter
+        /// group.
+        /// </exception>
+        /// <exception cref="InvalidCacheParameterGroupStateException">
+        /// The current state of the cache parameter group does not allow the requested action
+        /// to occur.
+        /// </exception>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        ModifyCacheParameterGroupResponse ModifyCacheParameterGroup(ModifyCacheParameterGroupRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyCacheParameterGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.ModifyCacheParameterGroup"/>
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
-        /// <param name="modifyCacheParameterGroupRequest">Container for the necessary parameters to execute the ModifyCacheParameterGroup operation on
-        ///          AmazonElastiCache.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCacheParameterGroup operation on AmazonElastiCacheClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndModifyCacheParameterGroup operation.</returns>
-        IAsyncResult BeginModifyCacheParameterGroup(ModifyCacheParameterGroupRequest modifyCacheParameterGroupRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyCacheParameterGroup
+        ///         operation.</returns>
+        IAsyncResult BeginModifyCacheParameterGroup(ModifyCacheParameterGroupRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the ModifyCacheParameterGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.ModifyCacheParameterGroup"/>
+        /// Finishes the asynchronous execution of the  ModifyCacheParameterGroup operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyCacheParameterGroup.</param>
         /// 
-        /// <returns>Returns a ModifyCacheParameterGroupResult from AmazonElastiCache.</returns>
+        /// <returns>Returns a  ModifyCacheParameterGroupResult from ElastiCache.</returns>
         ModifyCacheParameterGroupResponse EndModifyCacheParameterGroup(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
+        #region  ModifyCacheSubnetGroup
 
-        #region ModifyCacheSubnetGroup
 
         /// <summary>
-        /// <para>The <i>ModifyCacheSubnetGroup</i> operation modifies an existing cache subnet group.</para>
+        /// The <i>ModifyCacheSubnetGroup</i> operation modifies an existing cache subnet group.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCacheSubnetGroup service method.</param>
         /// 
-        /// <param name="modifyCacheSubnetGroupRequest">Container for the necessary parameters to execute the ModifyCacheSubnetGroup service method on
-        ///          AmazonElastiCache.</param>
-        /// 
-        /// <returns>The response from the ModifyCacheSubnetGroup service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="CacheSubnetGroupNotFoundException"/>
-        /// <exception cref="CacheSubnetQuotaExceededException"/>
-        /// <exception cref="InvalidSubnetException"/>
-        /// <exception cref="SubnetInUseException"/>
-        ModifyCacheSubnetGroupResponse ModifyCacheSubnetGroup(ModifyCacheSubnetGroupRequest modifyCacheSubnetGroupRequest);
+        /// <returns>The response from the ModifyCacheSubnetGroup service method, as returned by ElastiCache.</returns>
+        /// <exception cref="CacheSubnetGroupNotFoundException">
+        /// The requested cache subnet group name does not refer to an existing cache subnet group.
+        /// </exception>
+        /// <exception cref="CacheSubnetQuotaExceededException">
+        /// The request cannot be processed because it would exceed the allowed number of subnets
+        /// in a cache subnet group.
+        /// </exception>
+        /// <exception cref="InvalidSubnetException">
+        /// An invalid subnet identifier was specified.
+        /// </exception>
+        /// <exception cref="SubnetInUseException">
+        /// The requested subnet is being used by another cache subnet group.
+        /// </exception>
+        ModifyCacheSubnetGroupResponse ModifyCacheSubnetGroup(ModifyCacheSubnetGroupRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyCacheSubnetGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.ModifyCacheSubnetGroup"/>
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
-        /// <param name="modifyCacheSubnetGroupRequest">Container for the necessary parameters to execute the ModifyCacheSubnetGroup operation on
-        ///          AmazonElastiCache.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCacheSubnetGroup operation on AmazonElastiCacheClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndModifyCacheSubnetGroup operation.</returns>
-        IAsyncResult BeginModifyCacheSubnetGroup(ModifyCacheSubnetGroupRequest modifyCacheSubnetGroupRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyCacheSubnetGroup
+        ///         operation.</returns>
+        IAsyncResult BeginModifyCacheSubnetGroup(ModifyCacheSubnetGroupRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the ModifyCacheSubnetGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.ModifyCacheSubnetGroup"/>
+        /// Finishes the asynchronous execution of the  ModifyCacheSubnetGroup operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyCacheSubnetGroup.</param>
         /// 
-        /// <returns>Returns a CacheSubnetGroup from AmazonElastiCache.</returns>
+        /// <returns>Returns a  ModifyCacheSubnetGroupResult from ElastiCache.</returns>
         ModifyCacheSubnetGroupResponse EndModifyCacheSubnetGroup(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
+        #region  ModifyReplicationGroup
 
-        #region ModifyReplicationGroup
 
         /// <summary>
-        /// <para>The <i>ModifyReplicationGroup</i> operation modifies the settings for a replication group.</para>
+        /// The <i>ModifyReplicationGroup</i> operation modifies the settings for a replication
+        /// group.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyReplicationGroup service method.</param>
         /// 
-        /// <param name="modifyReplicationGroupRequest">Container for the necessary parameters to execute the ModifyReplicationGroup service method on
-        ///          AmazonElastiCache.</param>
-        /// 
-        /// <returns>The response from the ModifyReplicationGroup service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="InvalidReplicationGroupStateException"/>
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="InvalidCacheSecurityGroupStateException"/>
-        /// <exception cref="InvalidVPCNetworkStateException"/>
-        /// <exception cref="ReplicationGroupNotFoundException"/>
-        /// <exception cref="CacheClusterNotFoundException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        /// <exception cref="CacheParameterGroupNotFoundException"/>
-        /// <exception cref="InvalidCacheClusterStateException"/>
-        /// <exception cref="CacheSecurityGroupNotFoundException"/>
-        ModifyReplicationGroupResponse ModifyReplicationGroup(ModifyReplicationGroupRequest modifyReplicationGroupRequest);
+        /// <returns>The response from the ModifyReplicationGroup service method, as returned by ElastiCache.</returns>
+        /// <exception cref="CacheClusterNotFoundException">
+        /// The requested cache cluster ID does not refer to an existing cache cluster.
+        /// </exception>
+        /// <exception cref="CacheParameterGroupNotFoundException">
+        /// The requested cache parameter group name does not refer to an existing cache parameter
+        /// group.
+        /// </exception>
+        /// <exception cref="CacheSecurityGroupNotFoundException">
+        /// The requested cache security group name does not refer to an existing cache security
+        /// group.
+        /// </exception>
+        /// <exception cref="InvalidCacheClusterStateException">
+        /// The requested cache cluster is not in the <i>available</i> state.
+        /// </exception>
+        /// <exception cref="InvalidCacheSecurityGroupStateException">
+        /// The current state of the cache security group does not allow deletion.
+        /// </exception>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="InvalidReplicationGroupStateException">
+        /// The requested replication group is not in the <i>available</i> state.
+        /// </exception>
+        /// <exception cref="InvalidVPCNetworkStateException">
+        /// The VPC network is in an invalid state.
+        /// </exception>
+        /// <exception cref="ReplicationGroupNotFoundException">
+        /// The specified replication group does not exist.
+        /// </exception>
+        ModifyReplicationGroupResponse ModifyReplicationGroup(ModifyReplicationGroupRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the ModifyReplicationGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.ModifyReplicationGroup"/>
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
-        /// <param name="modifyReplicationGroupRequest">Container for the necessary parameters to execute the ModifyReplicationGroup operation on
-        ///          AmazonElastiCache.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyReplicationGroup operation on AmazonElastiCacheClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndModifyReplicationGroup operation.</returns>
-        IAsyncResult BeginModifyReplicationGroup(ModifyReplicationGroupRequest modifyReplicationGroupRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyReplicationGroup
+        ///         operation.</returns>
+        IAsyncResult BeginModifyReplicationGroup(ModifyReplicationGroupRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the ModifyReplicationGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.ModifyReplicationGroup"/>
+        /// Finishes the asynchronous execution of the  ModifyReplicationGroup operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyReplicationGroup.</param>
         /// 
-        /// <returns>Returns a ReplicationGroup from AmazonElastiCache.</returns>
+        /// <returns>Returns a  ModifyReplicationGroupResult from ElastiCache.</returns>
         ModifyReplicationGroupResponse EndModifyReplicationGroup(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
+        #region  PurchaseReservedCacheNodesOffering
 
-        #region PurchaseReservedCacheNodesOffering
 
         /// <summary>
-        /// <para>The <i>PurchaseReservedCacheNodesOffering</i> operation allows you to purchase a reserved cache node offering.</para>
+        /// The <i>PurchaseReservedCacheNodesOffering</i> operation allows you to purchase a reserved
+        /// cache node offering.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PurchaseReservedCacheNodesOffering service method.</param>
         /// 
-        /// <param name="purchaseReservedCacheNodesOfferingRequest">Container for the necessary parameters to execute the
-        ///          PurchaseReservedCacheNodesOffering service method on AmazonElastiCache.</param>
-        /// 
-        /// <returns>The response from the PurchaseReservedCacheNodesOffering service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="ReservedCacheNodeQuotaExceededException"/>
-        /// <exception cref="ReservedCacheNodeAlreadyExistsException"/>
-        /// <exception cref="ReservedCacheNodesOfferingNotFoundException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        PurchaseReservedCacheNodesOfferingResponse PurchaseReservedCacheNodesOffering(PurchaseReservedCacheNodesOfferingRequest purchaseReservedCacheNodesOfferingRequest);
+        /// <returns>The response from the PurchaseReservedCacheNodesOffering service method, as returned by ElastiCache.</returns>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="ReservedCacheNodeAlreadyExistsException">
+        /// You already have a reservation with the given identifier.
+        /// </exception>
+        /// <exception cref="ReservedCacheNodeQuotaExceededException">
+        /// The request cannot be processed because it would exceed the user's cache node quota.
+        /// </exception>
+        /// <exception cref="ReservedCacheNodesOfferingNotFoundException">
+        /// The requested cache node offering does not exist.
+        /// </exception>
+        PurchaseReservedCacheNodesOfferingResponse PurchaseReservedCacheNodesOffering(PurchaseReservedCacheNodesOfferingRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the PurchaseReservedCacheNodesOffering operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.PurchaseReservedCacheNodesOffering"/>
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
-        /// <param name="purchaseReservedCacheNodesOfferingRequest">Container for the necessary parameters to execute the
-        ///          PurchaseReservedCacheNodesOffering operation on AmazonElastiCache.</param>
+        /// <param name="request">Container for the necessary parameters to execute the PurchaseReservedCacheNodesOffering operation on AmazonElastiCacheClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndPurchaseReservedCacheNodesOffering operation.</returns>
-        IAsyncResult BeginPurchaseReservedCacheNodesOffering(PurchaseReservedCacheNodesOfferingRequest purchaseReservedCacheNodesOfferingRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPurchaseReservedCacheNodesOffering
+        ///         operation.</returns>
+        IAsyncResult BeginPurchaseReservedCacheNodesOffering(PurchaseReservedCacheNodesOfferingRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the PurchaseReservedCacheNodesOffering operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.PurchaseReservedCacheNodesOffering"/>
+        /// Finishes the asynchronous execution of the  PurchaseReservedCacheNodesOffering operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPurchaseReservedCacheNodesOffering.</param>
         /// 
-        /// <returns>Returns a ReservedCacheNode from AmazonElastiCache.</returns>
+        /// <returns>Returns a  PurchaseReservedCacheNodesOfferingResult from ElastiCache.</returns>
         PurchaseReservedCacheNodesOfferingResponse EndPurchaseReservedCacheNodesOffering(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
+        #region  RebootCacheCluster
 
-        #region RebootCacheCluster
 
         /// <summary>
-        /// <para>The <i>RebootCacheCluster</i> operation reboots some, or all, of the cache cluster nodes within a provisioned cache cluster. This API
-        /// will apply any modified cache parameter groups to the cache cluster. The reboot action takes place as soon as possible, and results in a
-        /// momentary outage to the cache cluster. During the reboot, the cache cluster status is set to REBOOTING.</para> <para>The reboot causes the
-        /// contents of the cache (for each cache cluster node being rebooted) to be lost.</para> <para>When the reboot is complete, a cache cluster
-        /// event is created.</para>
+        /// The <i>RebootCacheCluster</i> operation reboots some, or all, of the cache nodes within
+        /// a provisioned cache cluster. This API will apply any modified cache parameter groups
+        /// to the cache cluster. The reboot action takes place as soon as possible, and results
+        /// in a momentary outage to the cache cluster. During the reboot, the cache cluster status
+        /// is set to REBOOTING.
+        /// 
+        ///  
+        /// <para>
+        /// The reboot causes the contents of the cache (for each cache node being rebooted) to
+        /// be lost.
+        /// </para>
+        ///  
+        /// <para>
+        /// When the reboot is complete, a cache cluster event is created.
+        /// </para>
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RebootCacheCluster service method.</param>
         /// 
-        /// <param name="rebootCacheClusterRequest">Container for the necessary parameters to execute the RebootCacheCluster service method on
-        ///          AmazonElastiCache.</param>
-        /// 
-        /// <returns>The response from the RebootCacheCluster service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="CacheClusterNotFoundException"/>
-        /// <exception cref="InvalidCacheClusterStateException"/>
-        RebootCacheClusterResponse RebootCacheCluster(RebootCacheClusterRequest rebootCacheClusterRequest);
+        /// <returns>The response from the RebootCacheCluster service method, as returned by ElastiCache.</returns>
+        /// <exception cref="CacheClusterNotFoundException">
+        /// The requested cache cluster ID does not refer to an existing cache cluster.
+        /// </exception>
+        /// <exception cref="InvalidCacheClusterStateException">
+        /// The requested cache cluster is not in the <i>available</i> state.
+        /// </exception>
+        RebootCacheClusterResponse RebootCacheCluster(RebootCacheClusterRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the RebootCacheCluster operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.RebootCacheCluster"/>
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
-        /// <param name="rebootCacheClusterRequest">Container for the necessary parameters to execute the RebootCacheCluster operation on
-        ///          AmazonElastiCache.</param>
+        /// <param name="request">Container for the necessary parameters to execute the RebootCacheCluster operation on AmazonElastiCacheClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndRebootCacheCluster operation.</returns>
-        IAsyncResult BeginRebootCacheCluster(RebootCacheClusterRequest rebootCacheClusterRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRebootCacheCluster
+        ///         operation.</returns>
+        IAsyncResult BeginRebootCacheCluster(RebootCacheClusterRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the RebootCacheCluster operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.RebootCacheCluster"/>
+        /// Finishes the asynchronous execution of the  RebootCacheCluster operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRebootCacheCluster.</param>
         /// 
-        /// <returns>Returns a CacheCluster from AmazonElastiCache.</returns>
+        /// <returns>Returns a  RebootCacheClusterResult from ElastiCache.</returns>
         RebootCacheClusterResponse EndRebootCacheCluster(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
+        #region  ResetCacheParameterGroup
 
-        #region ResetCacheParameterGroup
 
         /// <summary>
-        /// <para>The <i>ResetCacheParameterGroup</i> operation modifies the parameters of a cache parameter group to the engine or system default
-        /// value. You can reset specific parameters by submitting a list of parameter names. To reset the entire cache parameter group, specify the
-        /// <i>ResetAllParameters</i> and <i>CacheParameterGroupName</i> parameters.</para>
+        /// The <i>ResetCacheParameterGroup</i> operation modifies the parameters of a cache parameter
+        /// group to the engine or system default value. You can reset specific parameters by
+        /// submitting a list of parameter names. To reset the entire cache parameter group, specify
+        /// the <i>ResetAllParameters</i> and <i>CacheParameterGroupName</i> parameters.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetCacheParameterGroup service method.</param>
         /// 
-        /// <param name="resetCacheParameterGroupRequest">Container for the necessary parameters to execute the ResetCacheParameterGroup service method
-        ///          on AmazonElastiCache.</param>
-        /// 
-        /// <returns>The response from the ResetCacheParameterGroup service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        /// <exception cref="InvalidCacheParameterGroupStateException"/>
-        /// <exception cref="CacheParameterGroupNotFoundException"/>
-        ResetCacheParameterGroupResponse ResetCacheParameterGroup(ResetCacheParameterGroupRequest resetCacheParameterGroupRequest);
+        /// <returns>The response from the ResetCacheParameterGroup service method, as returned by ElastiCache.</returns>
+        /// <exception cref="CacheParameterGroupNotFoundException">
+        /// The requested cache parameter group name does not refer to an existing cache parameter
+        /// group.
+        /// </exception>
+        /// <exception cref="InvalidCacheParameterGroupStateException">
+        /// The current state of the cache parameter group does not allow the requested action
+        /// to occur.
+        /// </exception>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        ResetCacheParameterGroupResponse ResetCacheParameterGroup(ResetCacheParameterGroupRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the ResetCacheParameterGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.ResetCacheParameterGroup"/>
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
-        /// <param name="resetCacheParameterGroupRequest">Container for the necessary parameters to execute the ResetCacheParameterGroup operation on
-        ///          AmazonElastiCache.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ResetCacheParameterGroup operation on AmazonElastiCacheClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndResetCacheParameterGroup operation.</returns>
-        IAsyncResult BeginResetCacheParameterGroup(ResetCacheParameterGroupRequest resetCacheParameterGroupRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResetCacheParameterGroup
+        ///         operation.</returns>
+        IAsyncResult BeginResetCacheParameterGroup(ResetCacheParameterGroupRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the ResetCacheParameterGroup operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.ResetCacheParameterGroup"/>
+        /// Finishes the asynchronous execution of the  ResetCacheParameterGroup operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResetCacheParameterGroup.</param>
         /// 
-        /// <returns>Returns a ResetCacheParameterGroupResult from AmazonElastiCache.</returns>
+        /// <returns>Returns a  ResetCacheParameterGroupResult from ElastiCache.</returns>
         ResetCacheParameterGroupResponse EndResetCacheParameterGroup(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
+        #region  RevokeCacheSecurityGroupIngress
 
-        #region RevokeCacheSecurityGroupIngress
 
         /// <summary>
-        /// <para>The <i>RevokeCacheSecurityGroupIngress</i> operation revokes ingress from a cache security group. Use this operation to disallow
-        /// access from an Amazon EC2 security group that had been previously authorized.</para>
+        /// The <i>RevokeCacheSecurityGroupIngress</i> operation revokes ingress from a cache
+        /// security group. Use this operation to disallow access from an Amazon EC2 security
+        /// group that had been previously authorized.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeCacheSecurityGroupIngress service method.</param>
         /// 
-        /// <param name="revokeCacheSecurityGroupIngressRequest">Container for the necessary parameters to execute the RevokeCacheSecurityGroupIngress
-        ///          service method on AmazonElastiCache.</param>
-        /// 
-        /// <returns>The response from the RevokeCacheSecurityGroupIngress service method, as returned by AmazonElastiCache.</returns>
-        /// 
-        /// <exception cref="InvalidParameterValueException"/>
-        /// <exception cref="InvalidCacheSecurityGroupStateException"/>
-        /// <exception cref="AuthorizationNotFoundException"/>
-        /// <exception cref="InvalidParameterCombinationException"/>
-        /// <exception cref="CacheSecurityGroupNotFoundException"/>
-        RevokeCacheSecurityGroupIngressResponse RevokeCacheSecurityGroupIngress(RevokeCacheSecurityGroupIngressRequest revokeCacheSecurityGroupIngressRequest);
+        /// <returns>The response from the RevokeCacheSecurityGroupIngress service method, as returned by ElastiCache.</returns>
+        /// <exception cref="AuthorizationNotFoundException">
+        /// The specified Amazon EC2 security group is not authorized for the specified cache
+        /// security group.
+        /// </exception>
+        /// <exception cref="CacheSecurityGroupNotFoundException">
+        /// The requested cache security group name does not refer to an existing cache security
+        /// group.
+        /// </exception>
+        /// <exception cref="InvalidCacheSecurityGroupStateException">
+        /// The current state of the cache security group does not allow deletion.
+        /// </exception>
+        /// <exception cref="InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        RevokeCacheSecurityGroupIngressResponse RevokeCacheSecurityGroupIngress(RevokeCacheSecurityGroupIngressRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the RevokeCacheSecurityGroupIngress operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.RevokeCacheSecurityGroupIngress"/>
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
-        /// <param name="revokeCacheSecurityGroupIngressRequest">Container for the necessary parameters to execute the RevokeCacheSecurityGroupIngress
-        ///          operation on AmazonElastiCache.</param>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeCacheSecurityGroupIngress operation on AmazonElastiCacheClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndRevokeCacheSecurityGroupIngress operation.</returns>
-        IAsyncResult BeginRevokeCacheSecurityGroupIngress(RevokeCacheSecurityGroupIngressRequest revokeCacheSecurityGroupIngressRequest, AsyncCallback callback, object state);
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRevokeCacheSecurityGroupIngress
+        ///         operation.</returns>
+        IAsyncResult BeginRevokeCacheSecurityGroupIngress(RevokeCacheSecurityGroupIngressRequest request, AsyncCallback callback, object state);
+
+
 
         /// <summary>
-        /// Finishes the asynchronous execution of the RevokeCacheSecurityGroupIngress operation.
-        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.RevokeCacheSecurityGroupIngress"/>
+        /// Finishes the asynchronous execution of the  RevokeCacheSecurityGroupIngress operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache"/>
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRevokeCacheSecurityGroupIngress.</param>
         /// 
-        /// <returns>Returns a CacheSecurityGroup from AmazonElastiCache.</returns>
+        /// <returns>Returns a  RevokeCacheSecurityGroupIngressResult from ElastiCache.</returns>
         RevokeCacheSecurityGroupIngressResponse EndRevokeCacheSecurityGroupIngress(IAsyncResult asyncResult);
-        
+
         #endregion
         
-    
     }
 }
-    

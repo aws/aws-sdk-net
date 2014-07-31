@@ -14,32 +14,36 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Snapshot Request Marshaller
+    /// DeleteSnapshot Request Marshaller
     /// </summary>       
     public class DeleteSnapshotRequestMarshaller : IMarshaller<IRequest, DeleteSnapshotRequest>
     {
-        public IRequest Marshall(DeleteSnapshotRequest deleteSnapshotRequest)
+        public IRequest Marshall(DeleteSnapshotRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(deleteSnapshotRequest, "AmazonElastiCache");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElastiCache");
             request.Parameters.Add("Action", "DeleteSnapshot");
-            request.Parameters.Add("Version", "2014-03-24");
-            if (deleteSnapshotRequest != null && deleteSnapshotRequest.IsSetSnapshotName())
-            {
-                request.Parameters.Add("SnapshotName", StringUtils.FromString(deleteSnapshotRequest.SnapshotName));
-            }
+            request.Parameters.Add("Version", "2014-07-15");
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetSnapshotName())
+                {
+                    request.Parameters.Add("SnapshotName", StringUtils.FromString(publicRequest.SnapshotName));
+                }
+            }
             return request;
         }
     }

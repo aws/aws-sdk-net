@@ -18,99 +18,116 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para>Provides all of the details about a particular cache engine version.</para>
+    /// Provides all of the details about a particular cache engine version.
     /// </summary>
     public partial class CacheEngineVersion
     {
-        
-        private string engine;
-        private string engineVersion;
-        private string cacheParameterGroupFamily;
-        private string cacheEngineDescription;
-        private string cacheEngineVersionDescription;
+        private string _cacheEngineDescription;
+        private string _cacheEngineVersionDescription;
+        private string _cacheParameterGroupFamily;
+        private string _engine;
+        private string _engineVersion;
 
 
         /// <summary>
-        /// The name of the cache engine.
-        ///  
-        /// </summary>
-        public string Engine
-        {
-            get { return this.engine; }
-            set { this.engine = value; }
-        }
-
-        // Check to see if Engine property is set
-        internal bool IsSetEngine()
-        {
-            return this.engine != null;
-        }
-
-        /// <summary>
-        /// The version number of the cache engine.
-        ///  
-        /// </summary>
-        public string EngineVersion
-        {
-            get { return this.engineVersion; }
-            set { this.engineVersion = value; }
-        }
-
-        // Check to see if EngineVersion property is set
-        internal bool IsSetEngineVersion()
-        {
-            return this.engineVersion != null;
-        }
-
-        /// <summary>
-        /// The name of the cache parameter group family associated with this cache engine.
-        ///  
-        /// </summary>
-        public string CacheParameterGroupFamily
-        {
-            get { return this.cacheParameterGroupFamily; }
-            set { this.cacheParameterGroupFamily = value; }
-        }
-
-        // Check to see if CacheParameterGroupFamily property is set
-        internal bool IsSetCacheParameterGroupFamily()
-        {
-            return this.cacheParameterGroupFamily != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property CacheEngineDescription. 
+        /// <para>
         /// The description of the cache engine.
-        ///  
+        /// </para>
         /// </summary>
         public string CacheEngineDescription
         {
-            get { return this.cacheEngineDescription; }
-            set { this.cacheEngineDescription = value; }
+            get { return this._cacheEngineDescription; }
+            set { this._cacheEngineDescription = value; }
         }
 
         // Check to see if CacheEngineDescription property is set
         internal bool IsSetCacheEngineDescription()
         {
-            return this.cacheEngineDescription != null;
+            return this._cacheEngineDescription != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property CacheEngineVersionDescription. 
+        /// <para>
         /// The description of the cache engine version.
-        ///  
+        /// </para>
         /// </summary>
         public string CacheEngineVersionDescription
         {
-            get { return this.cacheEngineVersionDescription; }
-            set { this.cacheEngineVersionDescription = value; }
+            get { return this._cacheEngineVersionDescription; }
+            set { this._cacheEngineVersionDescription = value; }
         }
 
         // Check to see if CacheEngineVersionDescription property is set
         internal bool IsSetCacheEngineVersionDescription()
         {
-            return this.cacheEngineVersionDescription != null;
+            return this._cacheEngineVersionDescription != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property CacheParameterGroupFamily. 
+        /// <para>
+        /// The name of the cache parameter group family associated with this cache engine.
+        /// </para>
+        /// </summary>
+        public string CacheParameterGroupFamily
+        {
+            get { return this._cacheParameterGroupFamily; }
+            set { this._cacheParameterGroupFamily = value; }
+        }
+
+        // Check to see if CacheParameterGroupFamily property is set
+        internal bool IsSetCacheParameterGroupFamily()
+        {
+            return this._cacheParameterGroupFamily != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Engine. 
+        /// <para>
+        /// The name of the cache engine.
+        /// </para>
+        /// </summary>
+        public string Engine
+        {
+            get { return this._engine; }
+            set { this._engine = value; }
+        }
+
+        // Check to see if Engine property is set
+        internal bool IsSetEngine()
+        {
+            return this._engine != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property EngineVersion. 
+        /// <para>
+        /// The version number of the cache engine.
+        /// </para>
+        /// </summary>
+        public string EngineVersion
+        {
+            get { return this._engineVersion; }
+            set { this._engineVersion = value; }
+        }
+
+        // Check to see if EngineVersion property is set
+        internal bool IsSetEngineVersion()
+        {
+            return this._engineVersion != null;
+        }
+
     }
 }

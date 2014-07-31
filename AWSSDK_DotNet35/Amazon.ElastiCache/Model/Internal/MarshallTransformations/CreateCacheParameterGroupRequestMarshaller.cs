@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.ElastiCache.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Cache Parameter Group Request Marshaller
+    /// CreateCacheParameterGroup Request Marshaller
     /// </summary>       
     public class CreateCacheParameterGroupRequestMarshaller : IMarshaller<IRequest, CreateCacheParameterGroupRequest>
     {
-        public IRequest Marshall(CreateCacheParameterGroupRequest createCacheParameterGroupRequest)
+        public IRequest Marshall(CreateCacheParameterGroupRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(createCacheParameterGroupRequest, "AmazonElastiCache");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.ElastiCache");
             request.Parameters.Add("Action", "CreateCacheParameterGroup");
-            request.Parameters.Add("Version", "2014-03-24");
-            if (createCacheParameterGroupRequest != null && createCacheParameterGroupRequest.IsSetCacheParameterGroupName())
-            {
-                request.Parameters.Add("CacheParameterGroupName", StringUtils.FromString(createCacheParameterGroupRequest.CacheParameterGroupName));
-            }
-            if (createCacheParameterGroupRequest != null && createCacheParameterGroupRequest.IsSetCacheParameterGroupFamily())
-            {
-                request.Parameters.Add("CacheParameterGroupFamily", StringUtils.FromString(createCacheParameterGroupRequest.CacheParameterGroupFamily));
-            }
-            if (createCacheParameterGroupRequest != null && createCacheParameterGroupRequest.IsSetDescription())
-            {
-                request.Parameters.Add("Description", StringUtils.FromString(createCacheParameterGroupRequest.Description));
-            }
+            request.Parameters.Add("Version", "2014-07-15");
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetCacheParameterGroupFamily())
+                {
+                    request.Parameters.Add("CacheParameterGroupFamily", StringUtils.FromString(publicRequest.CacheParameterGroupFamily));
+                }
+                if(publicRequest.IsSetCacheParameterGroupName())
+                {
+                    request.Parameters.Add("CacheParameterGroupName", StringUtils.FromString(publicRequest.CacheParameterGroupName));
+                }
+                if(publicRequest.IsSetDescription())
+                {
+                    request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
+                }
+            }
             return request;
         }
     }
