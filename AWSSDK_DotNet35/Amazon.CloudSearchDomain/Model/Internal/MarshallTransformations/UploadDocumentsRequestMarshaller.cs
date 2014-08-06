@@ -39,7 +39,8 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/2013-01-01/documents/batch?format=sdk";
+            string uriResourcePath = "/2013-01-01/documents/batch";
+            request.AddSubResource("format", "sdk");
             request.ContentStream =  publicRequest.Documents;
             request.Headers["Content-Type"] = "binary/octet-stream";
         

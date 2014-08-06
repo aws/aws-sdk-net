@@ -667,19 +667,19 @@ namespace Amazon.DynamoDBv2.DataModel
                 {
                     object[] conditionValues = condition.Values;
                     PropertyStorage conditionProperty = storageConfig.GetPropertyStorage(condition.PropertyName);
-                    List<AttributeValue> attributeValues = ConvertConditionValues(conditionValues, conditionProperty);
+                    List<AttributeValue> attributeValues = ConvertConditionValues(conditionValues, conditionProperty, true);
                     filter.AddCondition(conditionProperty.AttributeName, condition.Operator, attributeValues);
                 }
             }
             return filter;
         }
 
-        private static List<AttributeValue> ConvertConditionValues(object[] conditionValues, PropertyStorage conditionProperty)
+        private static List<AttributeValue> ConvertConditionValues(object[] conditionValues, PropertyStorage conditionProperty, bool canReturnPrimitiveInsteadOfList = false)
         {
             List<AttributeValue> attributeValues = new List<AttributeValue>();
             foreach (var conditionValue in conditionValues)
             {
-                DynamoDBEntry entry = ToDynamoDBEntry(conditionProperty, conditionValue);
+                DynamoDBEntry entry = ToDynamoDBEntry(conditionProperty, conditionValue, canReturnPrimitiveInsteadOfList);
                 AttributeValue attributeValue = entry.ConvertToAttributeValue();
                 attributeValues.Add(attributeValue);
             }
