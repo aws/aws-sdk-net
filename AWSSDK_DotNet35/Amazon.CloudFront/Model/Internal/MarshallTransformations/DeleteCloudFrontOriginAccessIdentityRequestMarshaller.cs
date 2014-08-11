@@ -37,8 +37,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "DELETE";
-            var uriResourcePath = "/2014-05-31/origin-access-identity/cloudfront/{Id}";
-
+            string uriResourcePath = "/2014-05-31/origin-access-identity/cloudfront/{Id}";
         
             if(publicRequest.IsSetIfMatch())     
                 request.Headers["If-Match"] = publicRequest.IfMatch;

@@ -37,8 +37,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "GET";
-            var uriResourcePath = "/2014-05-31/origin-access-identity/cloudfront/{Id}/config";
-
+            string uriResourcePath = "/2014-05-31/origin-access-identity/cloudfront/{Id}/config";
             uriResourcePath = uriResourcePath.Replace("{Id}", publicRequest.IsSetId() ? StringUtils.FromString(publicRequest.Id) : string.Empty);
             request.ResourcePath = uriResourcePath;
 

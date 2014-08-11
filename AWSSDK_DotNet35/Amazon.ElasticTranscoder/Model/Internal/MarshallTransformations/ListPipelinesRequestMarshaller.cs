@@ -39,51 +39,18 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             string uriResourcePath = "/2012-09-25/pipelines";
-            var queryStringBuilder = new StringBuilder(uriResourcePath);
-            if(uriResourcePath.Contains("?"))
-                queryStringBuilder.Append("&"); // URI contains static query params
-            else
-                queryStringBuilder.Append("?"); // URI does not contain any query params
             
             if (publicRequest.IsSetAscending())
-                queryStringBuilder.AppendFormat("{0}={1}&", "Ascending", StringUtils.FromString(publicRequest.Ascending));
+                request.Parameters.Add("Ascending", StringUtils.FromString(publicRequest.Ascending));
             
             if (publicRequest.IsSetPageToken())
-                queryStringBuilder.AppendFormat("{0}={1}&", "PageToken", StringUtils.FromString(publicRequest.PageToken));
-            uriResourcePath = queryStringBuilder.ToString();
-            // Remove the last character if it is ';' or '?' or '&'
-            uriResourcePath = uriResourcePath.TrimEnd(';', '?', '&');
-            uriResourcePath = AddQueryParameters(request, uriResourcePath);
+                request.Parameters.Add("PageToken", StringUtils.FromString(publicRequest.PageToken));
             request.ResourcePath = uriResourcePath;
             request.UseQueryString = true;
 
             return request;
         }
 
-        private static string AddQueryParameters(IRequest request, string uriResourcePath)
-        {            
-            int queryIndex = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
-
-            if (queryIndex < 0)
-                return uriResourcePath;
-
-            string queryString = uriResourcePath.Substring(queryIndex + 1);
-            uriResourcePath = uriResourcePath.Substring(0, queryIndex);
-
-            foreach (string s in queryString.Split('&', ';'))
-            {
-                string[] nameValuePair = s.Split(new char[] { '=' }, 2);
-                if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0)
-                {
-                    request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                }
-                else
-                {
-                    request.Parameters.Add(nameValuePair[0], null);
-                }
-            }            
-            return uriResourcePath;
-        }
 
     }
 }

@@ -37,8 +37,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "POST";
-            var uriResourcePath = "/2014-05-31/distribution/{DistributionId}/invalidation";
-
+            string uriResourcePath = "/2014-05-31/distribution/{DistributionId}/invalidation";
             uriResourcePath = uriResourcePath.Replace("{DistributionId}", publicRequest.IsSetDistributionId() ? StringUtils.FromString(publicRequest.DistributionId) : string.Empty);
             request.ResourcePath = uriResourcePath;
 

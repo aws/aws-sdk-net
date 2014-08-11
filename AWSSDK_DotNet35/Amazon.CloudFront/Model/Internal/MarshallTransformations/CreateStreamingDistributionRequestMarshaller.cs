@@ -37,8 +37,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "POST";
-            var uriResourcePath = "/2014-05-31/streaming-distribution";
-
+            string uriResourcePath = "/2014-05-31/streaming-distribution";
             request.ResourcePath = uriResourcePath;
 
             var stringWriter = new StringWriter(CultureInfo.InvariantCulture);

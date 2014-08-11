@@ -164,7 +164,7 @@ namespace Amazon.S3
                 request.Headers.Add(HeaderKeys.XAmzSSECustomerAlgorithmHeader, getPreSignedUrlRequest.ServerSideEncryptionCustomerMethod);
             if (getPreSignedUrlRequest.IsSetServerSideEncryptionCustomerProvidedKey())
                 request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyHeader, getPreSignedUrlRequest.ServerSideEncryptionCustomerProvidedKey);
-            if (getPreSignedUrlRequest.IsSetServerSideEncryptionCustomerMethod())
+            if (getPreSignedUrlRequest.IsSetServerSideEncryptionCustomerProvidedKeyMD5())
                 request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyMD5Header, getPreSignedUrlRequest.ServerSideEncryptionCustomerProvidedKeyMD5);
 
             var queryParameters = request.Parameters;

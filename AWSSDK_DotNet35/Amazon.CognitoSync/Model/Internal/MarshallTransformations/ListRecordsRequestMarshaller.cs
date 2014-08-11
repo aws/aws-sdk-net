@@ -42,57 +42,24 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
             uriResourcePath = uriResourcePath.Replace("{DatasetName}", publicRequest.IsSetDatasetName() ? StringUtils.FromString(publicRequest.DatasetName) : string.Empty);
             uriResourcePath = uriResourcePath.Replace("{IdentityId}", publicRequest.IsSetIdentityId() ? StringUtils.FromString(publicRequest.IdentityId) : string.Empty);
             uriResourcePath = uriResourcePath.Replace("{IdentityPoolId}", publicRequest.IsSetIdentityPoolId() ? StringUtils.FromString(publicRequest.IdentityPoolId) : string.Empty);
-            var queryStringBuilder = new StringBuilder(uriResourcePath);
-            if(uriResourcePath.Contains("?"))
-                queryStringBuilder.Append("&"); // URI contains static query params
-            else
-                queryStringBuilder.Append("?"); // URI does not contain any query params
             
             if (publicRequest.IsSetLastSyncCount())
-                queryStringBuilder.AppendFormat("{0}={1}&", "lastSyncCount", StringUtils.FromLong(publicRequest.LastSyncCount));
+                request.Parameters.Add("lastSyncCount", StringUtils.FromLong(publicRequest.LastSyncCount));
             
             if (publicRequest.IsSetMaxResults())
-                queryStringBuilder.AppendFormat("{0}={1}&", "maxResults", StringUtils.FromInt(publicRequest.MaxResults));
+                request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
             if (publicRequest.IsSetNextToken())
-                queryStringBuilder.AppendFormat("{0}={1}&", "nextToken", StringUtils.FromString(publicRequest.NextToken));
+                request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             
             if (publicRequest.IsSetSyncSessionToken())
-                queryStringBuilder.AppendFormat("{0}={1}&", "syncSessionToken", StringUtils.FromString(publicRequest.SyncSessionToken));
-            uriResourcePath = queryStringBuilder.ToString();
-            // Remove the last character if it is ';' or '?' or '&'
-            uriResourcePath = uriResourcePath.TrimEnd(';', '?', '&');
-            uriResourcePath = AddQueryParameters(request, uriResourcePath);
+                request.Parameters.Add("syncSessionToken", StringUtils.FromString(publicRequest.SyncSessionToken));
             request.ResourcePath = uriResourcePath;
             request.UseQueryString = true;
 
             return request;
         }
 
-        private static string AddQueryParameters(IRequest request, string uriResourcePath)
-        {            
-            int queryIndex = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
-
-            if (queryIndex < 0)
-                return uriResourcePath;
-
-            string queryString = uriResourcePath.Substring(queryIndex + 1);
-            uriResourcePath = uriResourcePath.Substring(0, queryIndex);
-
-            foreach (string s in queryString.Split('&', ';'))
-            {
-                string[] nameValuePair = s.Split(new char[] { '=' }, 2);
-                if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0)
-                {
-                    request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                }
-                else
-                {
-                    request.Parameters.Add(nameValuePair[0], null);
-                }
-            }            
-            return uriResourcePath;
-        }
 
     }
 }

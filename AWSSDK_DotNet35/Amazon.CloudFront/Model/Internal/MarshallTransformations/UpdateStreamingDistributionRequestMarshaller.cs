@@ -37,8 +37,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "PUT";
-            var uriResourcePath = "/2014-05-31/streaming-distribution/{Id}/config";
-
+            string uriResourcePath = "/2014-05-31/streaming-distribution/{Id}/config";
         
             if(publicRequest.IsSetIfMatch())     
                 request.Headers["If-Match"] = publicRequest.IfMatch;

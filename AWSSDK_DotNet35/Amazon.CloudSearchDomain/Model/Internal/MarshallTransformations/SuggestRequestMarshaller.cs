@@ -38,55 +38,24 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudSearchDomain");
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/2013-01-01/suggest?format=sdk&pretty=true";
-            var queryStringBuilder = new StringBuilder(uriResourcePath);
-            if(uriResourcePath.Contains("?"))
-                queryStringBuilder.Append("&"); // URI contains static query params
-            else
-                queryStringBuilder.Append("?"); // URI does not contain any query params
+            string uriResourcePath = "/2013-01-01/suggest";
+            request.AddSubResource("format", "sdk");
+            request.AddSubResource("pretty", "true");
             
             if (publicRequest.IsSetQuery())
-                queryStringBuilder.AppendFormat("{0}={1}&", "q", StringUtils.FromString(publicRequest.Query));
+                request.Parameters.Add("q", StringUtils.FromString(publicRequest.Query));
             
             if (publicRequest.IsSetSize())
-                queryStringBuilder.AppendFormat("{0}={1}&", "size", StringUtils.FromLong(publicRequest.Size));
+                request.Parameters.Add("size", StringUtils.FromLong(publicRequest.Size));
             
             if (publicRequest.IsSetSuggester())
-                queryStringBuilder.AppendFormat("{0}={1}&", "suggester", StringUtils.FromString(publicRequest.Suggester));
-            uriResourcePath = queryStringBuilder.ToString();
-            // Remove the last character if it is ';' or '?' or '&'
-            uriResourcePath = uriResourcePath.TrimEnd(';', '?', '&');
-            uriResourcePath = AddQueryParameters(request, uriResourcePath);
+                request.Parameters.Add("suggester", StringUtils.FromString(publicRequest.Suggester));
             request.ResourcePath = uriResourcePath;
             request.UseQueryString = true;
 
             return request;
         }
 
-        private static string AddQueryParameters(IRequest request, string uriResourcePath)
-        {            
-            int queryIndex = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
-
-            if (queryIndex < 0)
-                return uriResourcePath;
-
-            string queryString = uriResourcePath.Substring(queryIndex + 1);
-            uriResourcePath = uriResourcePath.Substring(0, queryIndex);
-
-            foreach (string s in queryString.Split('&', ';'))
-            {
-                string[] nameValuePair = s.Split(new char[] { '=' }, 2);
-                if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0)
-                {
-                    request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                }
-                else
-                {
-                    request.Parameters.Add(nameValuePair[0], null);
-                }
-            }            
-            return uriResourcePath;
-        }
 
     }
 }

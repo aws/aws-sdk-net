@@ -38,85 +38,54 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudSearchDomain");
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/2013-01-01/search?format=sdk&pretty=true";
-            var queryStringBuilder = new StringBuilder(uriResourcePath);
-            if(uriResourcePath.Contains("?"))
-                queryStringBuilder.Append("&"); // URI contains static query params
-            else
-                queryStringBuilder.Append("?"); // URI does not contain any query params
+            string uriResourcePath = "/2013-01-01/search";
+            request.AddSubResource("format", "sdk");
+            request.AddSubResource("pretty", "true");
             
             if (publicRequest.IsSetCursor())
-                queryStringBuilder.AppendFormat("{0}={1}&", "cursor", StringUtils.FromString(publicRequest.Cursor));
+                request.Parameters.Add("cursor", StringUtils.FromString(publicRequest.Cursor));
             
             if (publicRequest.IsSetExpr())
-                queryStringBuilder.AppendFormat("{0}={1}&", "expr", StringUtils.FromString(publicRequest.Expr));
+                request.Parameters.Add("expr", StringUtils.FromString(publicRequest.Expr));
             
             if (publicRequest.IsSetFacet())
-                queryStringBuilder.AppendFormat("{0}={1}&", "facet", StringUtils.FromString(publicRequest.Facet));
+                request.Parameters.Add("facet", StringUtils.FromString(publicRequest.Facet));
             
             if (publicRequest.IsSetFilterQuery())
-                queryStringBuilder.AppendFormat("{0}={1}&", "fq", StringUtils.FromString(publicRequest.FilterQuery));
+                request.Parameters.Add("fq", StringUtils.FromString(publicRequest.FilterQuery));
             
             if (publicRequest.IsSetHighlight())
-                queryStringBuilder.AppendFormat("{0}={1}&", "highlight", StringUtils.FromString(publicRequest.Highlight));
+                request.Parameters.Add("highlight", StringUtils.FromString(publicRequest.Highlight));
             
             if (publicRequest.IsSetPartial())
-                queryStringBuilder.AppendFormat("{0}={1}&", "partial", StringUtils.FromBool(publicRequest.Partial));
+                request.Parameters.Add("partial", StringUtils.FromBool(publicRequest.Partial));
             
             if (publicRequest.IsSetQuery())
-                queryStringBuilder.AppendFormat("{0}={1}&", "q", StringUtils.FromString(publicRequest.Query));
+                request.Parameters.Add("q", StringUtils.FromString(publicRequest.Query));
             
             if (publicRequest.IsSetQueryOptions())
-                queryStringBuilder.AppendFormat("{0}={1}&", "q.options", StringUtils.FromString(publicRequest.QueryOptions));
+                request.Parameters.Add("q.options", StringUtils.FromString(publicRequest.QueryOptions));
             
             if (publicRequest.IsSetQueryParser())
-                queryStringBuilder.AppendFormat("{0}={1}&", "q.parser", StringUtils.FromString(publicRequest.QueryParser));
+                request.Parameters.Add("q.parser", StringUtils.FromString(publicRequest.QueryParser));
             
             if (publicRequest.IsSetReturn())
-                queryStringBuilder.AppendFormat("{0}={1}&", "return", StringUtils.FromString(publicRequest.Return));
+                request.Parameters.Add("return", StringUtils.FromString(publicRequest.Return));
             
             if (publicRequest.IsSetSize())
-                queryStringBuilder.AppendFormat("{0}={1}&", "size", StringUtils.FromLong(publicRequest.Size));
+                request.Parameters.Add("size", StringUtils.FromLong(publicRequest.Size));
             
             if (publicRequest.IsSetSort())
-                queryStringBuilder.AppendFormat("{0}={1}&", "sort", StringUtils.FromString(publicRequest.Sort));
+                request.Parameters.Add("sort", StringUtils.FromString(publicRequest.Sort));
             
             if (publicRequest.IsSetStart())
-                queryStringBuilder.AppendFormat("{0}={1}&", "start", StringUtils.FromLong(publicRequest.Start));
-            uriResourcePath = queryStringBuilder.ToString();
-            // Remove the last character if it is ';' or '?' or '&'
-            uriResourcePath = uriResourcePath.TrimEnd(';', '?', '&');
-            uriResourcePath = AddQueryParameters(request, uriResourcePath);
+                request.Parameters.Add("start", StringUtils.FromLong(publicRequest.Start));
             request.ResourcePath = uriResourcePath;
             request.UseQueryString = true;
 
             return request;
         }
 
-        private static string AddQueryParameters(IRequest request, string uriResourcePath)
-        {            
-            int queryIndex = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
-
-            if (queryIndex < 0)
-                return uriResourcePath;
-
-            string queryString = uriResourcePath.Substring(queryIndex + 1);
-            uriResourcePath = uriResourcePath.Substring(0, queryIndex);
-
-            foreach (string s in queryString.Split('&', ';'))
-            {
-                string[] nameValuePair = s.Split(new char[] { '=' }, 2);
-                if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0)
-                {
-                    request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                }
-                else
-                {
-                    request.Parameters.Add(nameValuePair[0], null);
-                }
-            }            
-            return uriResourcePath;
-        }
 
     }
 }
