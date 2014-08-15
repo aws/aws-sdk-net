@@ -56,7 +56,7 @@ namespace Amazon.Runtime.Internal.Auth
             request.Parameters["SignatureMethod"] = clientConfig.SignatureMethod.ToString();
             request.Parameters["Timestamp"] = AWSSDKUtils.FormattedCurrentTimestampISO8601;
 
-            string toSign = AWSSDKUtils.CalculateStringToSignV2(request.Parameters, clientConfig.DetermineServiceURL());
+            string toSign = AWSSDKUtils.CalculateStringToSignV2(request.Parameters, request.Endpoint.AbsoluteUri);
             metrics.AddProperty(Metric.StringToSign, toSign);
             string auth = ComputeHash(toSign, awsSecretAccessKey, clientConfig.SignatureMethod);
             request.Parameters["Signature"] = auth;

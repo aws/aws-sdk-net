@@ -32,7 +32,8 @@ namespace Amazon.SecurityToken
         public AmazonSecurityTokenServiceConfig()
         {
             this.AuthenticationServiceName = "sts";
-            this.RegionEndpoint = RegionEndpoint.USEast1;
+            if (this.RegionEndpoint == null)
+                this.RegionEndpoint = RegionEndpoint.USEast1;
         }
 
         /// <summary>

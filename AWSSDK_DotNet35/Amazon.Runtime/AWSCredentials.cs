@@ -1012,7 +1012,7 @@ namespace Amazon.Runtime
         }
 
         private static AWSCredentials cachedCredentials;
-        internal static AWSCredentials GetCredentials()
+        internal static AWSCredentials GetCredentials(bool fallbackToAnonymous = false)
         {
             if (cachedCredentials != null)
                 return cachedCredentials;
@@ -1037,6 +1037,11 @@ namespace Amazon.Runtime
 
             if (cachedCredentials == null)
             {
+                if (fallbackToAnonymous)
+                {
+                    return new AnonymousAWSCredentials();
+                }
+
                 using (StringWriter writer = new StringWriter(CultureInfo.InvariantCulture))
                 {
                     writer.WriteLine("Unable to find credentials");

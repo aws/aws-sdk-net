@@ -23,7 +23,9 @@ using System.Text;
 using System.Threading;
 using System.Xml;
 using System.Xml.Serialization;
+
 using Amazon.Runtime;
+using Amazon.Util;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
@@ -1037,7 +1039,7 @@ namespace Amazon.EC2.Import
                 var format = fileFormat;
                 if (string.IsNullOrEmpty(format))
                 {
-                    var ext = Path.GetExtension(ImageFilePath);
+                    var ext = AWSSDKUtils.GetExtension(ImageFilePath);
                     if (string.IsNullOrEmpty(ext))
                         throw new ArgumentException("The image filename does not have an exception, so file format cannot be inferred.");
 

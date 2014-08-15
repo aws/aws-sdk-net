@@ -25,13 +25,114 @@ namespace Amazon.CloudSearchDomain
 {
     public partial class AmazonCloudSearchDomainClient : AmazonWebServiceClient
     {
+        /// <summary>
+        /// Constructs AmazonCloudSearchDomainClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="serviceUrl">The URL of the search or document service.</param>
         public AmazonCloudSearchDomainClient(string serviceUrl)
-            : base(new AnonymousAWSCredentials(), new AmazonCloudSearchDomainConfig { ServiceURL = serviceUrl }, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(FallbackCredentialsFactory.GetCredentials(true), new AmazonCloudSearchDomainConfig { ServiceURL = serviceUrl }, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
+        /// <summary>
+        /// Constructs AmazonCloudSearchDomainClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="config">The AmazonCloudSearchDomainClient Configuration Object</param>
         public AmazonCloudSearchDomainClient(AmazonCloudSearchDomainConfig config)
-            : base(new AnonymousAWSCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(FallbackCredentialsFactory.GetCredentials(true), config, AuthenticationTypes.User | AuthenticationTypes.Session)
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonCloudSearchDomainClient with AWS Credentials
+        /// </summary>
+        /// <param name="serviceUrl">The URL of the search or document service.</param>
+        /// <param name="credentials">AWS Credentials</param>
+        public AmazonCloudSearchDomainClient(string serviceUrl, AWSCredentials credentials)
+            : this(credentials, new AmazonCloudSearchDomainConfig { ServiceURL = serviceUrl })
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonCloudSearchDomainClient with AWS Credentials and an
+        /// AmazonCloudSearchDomainClient Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="clientConfig">The AmazonCloudSearchDomainClient Configuration Object</param>
+        public AmazonCloudSearchDomainClient(AWSCredentials credentials, AmazonCloudSearchDomainConfig clientConfig)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonCloudSearchDomainClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="serviceUrl">The URL of the search or document service.</param>
+        public AmazonCloudSearchDomainClient(string awsAccessKeyId, string awsSecretAccessKey, string serviceUrl)
+            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonCloudSearchDomainConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonCloudSearchDomainClient with AWS Access Key ID, AWS Secret Key and an
+        /// AmazonCloudSearchDomainClient Configuration object. 
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="clientConfig">The AmazonCloudSearchDomainClient Configuration Object</param>
+        public AmazonCloudSearchDomainClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonCloudSearchDomainConfig clientConfig)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonCloudSearchDomainClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        /// <param name="serviceUrl">The URL of the search or document service.</param>
+        public AmazonCloudSearchDomainClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, string serviceUrl)
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonCloudSearchDomainConfig{ ServiceURL = serviceUrl})
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonCloudSearchDomainClient with AWS Access Key ID, AWS Secret Key and an
+        /// AmazonCloudSearchDomainClient Configuration object. 
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        /// <param name="clientConfig">The AmazonCloudSearchDomainClient Configuration Object</param>
+        public AmazonCloudSearchDomainClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonCloudSearchDomainConfig clientConfig)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 

@@ -40,7 +40,7 @@ namespace Amazon.Util
         internal const string DefaultRegion = "us-east-1";
         internal const string DefaultGovRegion = "us-gov-west-1";
 
-        internal const string SDKVersionNumber = "2.2.2.2";
+        internal const string SDKVersionNumber = "2.2.3.0";
 
         internal const int DefaultMaxRetry = 3;
         private const int DefaultConnectionLimit = 50;
@@ -189,6 +189,43 @@ namespace Amazon.Util
 
         #region Internal Methods
 
+        /// <summary>
+        /// Returns an extension of a path.
+        /// This has the same behavior as System.IO.Path.GetExtension, but does not
+        /// check the path for invalid characters.
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        internal static string GetExtension(string path)
+        {
+            if (path == null)
+                return null;
+            int length = path.Length;
+            int index = length;
+
+            while (--index >= 0)
+            {
+                char ch = path[index];
+                if (ch == '.')
+                {
+                    if (index != length - 1)
+                        return path.Substring(index, length - index);
+                    else
+                        return string.Empty;
+                }
+                else if (IsPathSeparator(ch))
+                    break;
+            }
+            return string.Empty;
+        }
+
+        // Checks if the character is one \ / :
+        private static bool IsPathSeparator(char ch)
+        {
+            return (ch == '\\' ||
+                    ch == '/' ||
+                    ch == ':');
+        }
 
         /*
          * Determines the string to be signed based on the input parameters for
@@ -299,6 +336,10 @@ namespace Amazon.Util
             if (awsIndex < 0)
                 return DefaultRegion;
             string serviceAndRegion = url.Substring(0, awsIndex);
+
+            int cloudSearchIndex = url.IndexOf(".cloudsearch.amazonaws.com", StringComparison.Ordinal);
+            if (cloudSearchIndex > 0)
+                serviceAndRegion = url.Substring(0, cloudSearchIndex);
 
             int queueIndex = serviceAndRegion.IndexOf("queue", StringComparison.Ordinal);
             if (queueIndex == 0)

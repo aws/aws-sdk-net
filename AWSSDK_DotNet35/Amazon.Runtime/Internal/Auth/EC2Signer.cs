@@ -18,27 +18,12 @@ using Amazon.Util;
 
 namespace Amazon.Runtime.Internal.Auth
 {
-    internal class EC2Signer : QueryStringSigner
+    internal class EC2Signer : AbstractAWSSigner
     {
+        // QueryStringSigner
+        private QueryStringSigner querySigner = new QueryStringSigner();
+
         private bool _useSigV4 = false;
-
-        AWS4Signer _aws4Signer;
-        AWS4Signer AWS4SignerInstance
-        {
-            get
-            {
-                if (_aws4Signer == null)
-                {
-                    lock (this)
-                    {
-                        if (_aws4Signer == null)
-                            _aws4Signer = new AWS4Signer();
-                    }
-                }
-
-                return _aws4Signer;
-            }
-        }
 
         /// <summary>
         /// EC2 signer constructor
@@ -48,17 +33,9 @@ namespace Amazon.Runtime.Internal.Auth
             _useSigV4 = AWSConfigs.EC2Config.UseSignatureVersion4;
         }
 
-        /// <summary>
-        /// Inspects the supplied evidence to return the signer appropriate for the operation
-        /// </summary>
-        /// <param name="config"></param>
-        /// <returns></returns>
-        AbstractAWSSigner SelectSigner(ClientConfig config)
+        public override ClientProtocol Protocol
         {
-            if (UseV4Signing(_useSigV4, config))
-                return AWS4SignerInstance;
-
-            return this;
+            get { return ClientProtocol.QueryStringProtocol; }
         }
 
         /// <summary>
@@ -72,11 +49,21 @@ namespace Amazon.Runtime.Internal.Auth
         /// <exception cref="Amazon.Runtime.SignatureException">If any problems are encountered while signing the request</exception>
         public override void Sign(IRequest request, ClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
         {
-            var aws4Signer = SelectSigner(clientConfig) as AWS4Signer;
-            if (aws4Signer != null)
-                aws4Signer.Sign(request, clientConfig, metrics, awsAccessKeyId, awsSecretAccessKey);
-            else
-                base.Sign(request, clientConfig, metrics, awsAccessKeyId, awsSecretAccessKey);
+            var signer = SelectSigner(querySigner, _useSigV4, clientConfig);
+            var useV4 = signer is AWS4Signer;
+
+            if (useV4)
+            {
+                if (request.Parameters.ContainsKey("SecurityToken"))
+                {
+                    var token = request.Parameters["SecurityToken"];
+                    request.Parameters.Remove("SecurityToken");
+
+                    request.Headers[HeaderKeys.XAmzSecurityTokenHeader] = token;
+                }
+            }
+
+            signer.Sign(request, clientConfig, metrics, awsAccessKeyId, awsSecretAccessKey);
         }
     }
 }

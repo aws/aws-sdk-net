@@ -54,7 +54,7 @@ namespace Amazon.CloudSearchDomain.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The  facet value being counted.
+        /// The facet value being counted.
         /// </para>
         /// </summary>
         public string Value

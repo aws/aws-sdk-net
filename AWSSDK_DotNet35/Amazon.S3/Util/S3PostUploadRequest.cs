@@ -47,6 +47,7 @@ namespace Amazon.S3.Util
     {
         private S3StorageClass _storageClass;
         private HttpStatusCode _actionStatus;
+        private RegionEndpoint _region = RegionEndpoint.USEast1;
 
         private bool
             _isSetStorageClass = false,
@@ -145,6 +146,21 @@ namespace Amazon.S3.Util
                 this._storageClass = value; 
                 this._isSetStorageClass = true; 
             }
+        }
+
+        /// <summary>
+        /// The AWS region where the bucket is located.
+        /// </summary>
+        /// <remarks>
+        /// Depending upon the bucket name, POST uploads will be
+        /// successfully redirected, but for buckets with non-DNS-compliant
+        /// characters, redirects will fail. Setting this to the appropriate 
+        /// region will avoid the redirect.
+        /// </remarks>
+        public RegionEndpoint Region
+        {
+            get { return this._region; }
+            set { this._region = value; }
         }
 
         /// <summary>

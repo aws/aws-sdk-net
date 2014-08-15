@@ -25,35 +25,31 @@ namespace Amazon.ElasticLoadBalancing
     /// 
     /// Elastic Load Balancing
     /// <para>
-    /// Elastic Load Balancing is a cost-effective and easy to use web service to help you
-    /// improve the availability and scalability of your application running on Amazon Elastic
-    /// Cloud Compute (Amazon EC2). It makes it easy for you to distribute application loads
-    /// between two or more EC2 instances. Elastic Load Balancing supports the growth in traffic
-    /// of your application by enabling availability through redundancy.
+    /// Elastic Load Balancing is a way to automatically distribute incoming web traffic across
+    /// applications that run on multiple Amazon Elastic Compute Cloud (Amazon EC2) instances.
+    /// 
     /// </para>
     /// 
     /// <para>
-    /// This guide provides detailed information about Elastic Load Balancing actions, data
-    /// types, and parameters that can be used for sending a query request. Query requests
-    /// are HTTP or HTTPS requests that use the HTTP verb GET or POST and a query parameter
-    /// named Action or Operation. Action is used throughout this documentation, although
-    /// Operation is supported for backward compatibility with other AWS Query APIs.
+    /// You can create, access, and manage Elastic Load Balancing using the AWS Management
+    /// Console or the Elastic Load Balancing API. For more information about Elastic Load
+    /// Balancing interfaces, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/SvcIntro_Interfaces.html">Accessing
+    /// Elastic Load Balancing</a>.
     /// </para>
     /// 
     /// <para>
-    /// For detailed information on constructing a query request using the actions, data types,
-    /// and parameters mentioned in this guide, go to <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-query-api.html">Using
-    /// the Query API</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+    /// This reference guide contains documentation for the Query API and the AWS command
+    /// line interface commands, to manage Elastic Load Balancing.
     /// </para>
     /// 
     /// <para>
     /// For detailed information about Elastic Load Balancing features and their associated
-    /// actions, go to <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenarios.html">Using
-    /// Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+    /// actions or commands, go to <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenarios.html">Managing
+    /// Load Balancers</a> in the <i>Elastic Load Balancing Developer Guide</i>.
     /// </para>
     /// 
     /// <para>
-    /// This reference guide is based on the current WSDL, which is available at: <a href="http://ec2-downloads.s3.amazonaws.com/ElasticLoadBalancing.wsdl"></a>
+    /// This reference guide is based on the current WSDL, which is available at: <a href="http://ec2-downloads.s3.amazonaws.com/ElasticLoadBalancing.wsdl"></a>.
     /// 
     /// </para>
     /// 
@@ -74,6 +70,49 @@ namespace Amazon.ElasticLoadBalancing
     /// </summary>
 	public partial interface IAmazonElasticLoadBalancing : IDisposable
     {
+ 
+
+        /// <summary>
+        /// Adds one or more tags for the specified load balancer. Each load balancer can have
+        /// a maximum of 10 tags. Each tag consists of a key and an optional value.
+        /// 
+        /// 
+        /// <para>
+        /// Tag keys must be unique for each load balancer. If a tag with the same key is already
+        /// associated with the load balancer, this action will update the value of the key.
+        /// </para>
+        /// 
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#tagging-elb">Tagging</a>
+        /// in the <i>Elastic Load Balancing Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddTags service method.</param>
+        /// 
+        /// <returns>The response from the AddTags service method, as returned by ElasticLoadBalancing.</returns>
+        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
+        /// The specified load balancer could not be found.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.DuplicateTagKeysException">
+        /// The same tag key specified multiple times.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.TooManyTagsException">
+        /// The quota for the number of tags that can be assigned to a load balancer has been
+        /// reached.
+        /// </exception>
+		AddTagsResponse AddTags(AddTagsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddTags operation.
+        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.AddTags"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+		Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
  
 
         /// <summary>
@@ -308,8 +347,8 @@ namespace Amazon.ElasticLoadBalancing
         /// in which the load balance was created. For example, if your load balancer was created
         /// in the United States, the DNS name might end with either of the following:
         /// </para>
-        /// <ul> <li> <i>us-east-1.elb.amazonaws.com</i> (for the Northern Virginia Region) </li>
-        /// <li> <i>us-west-1.elb.amazonaws.com</i> (for the Northern California Region) </li>
+        /// <ul> <li> <i>us-east-1.elb.amazonaws.com</i> (for the Northern Virginia region) </li>
+        /// <li> <i>us-west-1.elb.amazonaws.com</i> (for the Northern California region) </li>
         /// </ul>
         /// <para>
         /// For information about the AWS regions supported by Elastic Load Balancing, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Regions
@@ -344,7 +383,10 @@ namespace Amazon.ElasticLoadBalancing
         /// and Access Management Service.
         /// </exception>
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.DuplicateAccessPointNameException">
-        /// Load balancer name already exists for this account. Please choose another name.
+        /// The load balancer name already exists for this account. Please choose another name.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.DuplicateTagKeysException">
+        /// The same tag key specified multiple times.
         /// </exception>
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
         /// Requested configuration change is invalid.
@@ -363,6 +405,10 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.TooManyAccessPointsException">
         /// The quota for the number of load balancers has already been reached.
+        /// </exception>
+        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.TooManyTagsException">
+        /// The quota for the number of tags that can be assigned to a load balancer has been
+        /// reached.
         /// </exception>
 		CreateLoadBalancerResponse CreateLoadBalancer(CreateLoadBalancerRequest request);
 
@@ -781,6 +827,30 @@ namespace Amazon.ElasticLoadBalancing
  
 
         /// <summary>
+        /// Describes the tags associated with one or more load balancers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTags service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTags service method, as returned by ElasticLoadBalancing.</returns>
+        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
+        /// The specified load balancer could not be found.
+        /// </exception>
+		DescribeTagsResponse DescribeTags(DescribeTagsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTags operation.
+        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.DescribeTags"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+		Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+ 
+
+        /// <summary>
         /// Removes subnets from the set of configured subnets in the Amazon Virtual Private
         /// Cloud (Amazon VPC) for the load balancer.
         /// 
@@ -903,18 +973,18 @@ namespace Amazon.ElasticLoadBalancing
         /// <para>
         /// You can modify the load balancer attributes, such as <code>AccessLogs</code>, <code>ConnectionDraining</code>,
         /// and <code>CrossZoneLoadBalancing</code> by either enabling or disabling them. Or,
-        /// you can modify the load balancer attribute <code>ConnectionSettings</code>, by specifying
+        /// you can modify the load balancer attribute <code>ConnectionSettings</code> by specifying
         /// an idle connection timeout value for your load balancer.
         /// </para>
         /// 
         /// <para>
         /// For more information, see the following:
         /// </para>
-        /// <ul> <li><a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.htmll#request-routing">Cross-Zone
-        /// Load Balancing</a></li> <li><a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.htmll##conn-drain">Connection
-        /// Draining</a></li> <li> <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/access-log-collection.html">Access
-        /// Logs</a>.</li> <li> <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#idle-timeout">Connection
-        /// Settings</a>.</li> </ul>
+        /// <ul> <li><a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#request-routing">Cross-Zone
+        /// Load Balancing</a></li> <li><a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection
+        /// Draining</a></li> <li><a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/access-log-collection.html">Access
+        /// Logs</a></li> <li><a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#idle-timeout">Idle
+        /// Connection Timeout</a></li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyLoadBalancerAttributes service method.</param>
         /// 
@@ -997,6 +1067,30 @@ namespace Amazon.ElasticLoadBalancing
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<RegisterInstancesWithLoadBalancerResponse> RegisterInstancesWithLoadBalancerAsync(RegisterInstancesWithLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+ 
+
+        /// <summary>
+        /// Removes one or more tags from the specified load balancer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTags service method.</param>
+        /// 
+        /// <returns>The response from the RemoveTags service method, as returned by ElasticLoadBalancing.</returns>
+        /// <exception cref="T:Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
+        /// The specified load balancer could not be found.
+        /// </exception>
+		RemoveTagsResponse RemoveTags(RemoveTagsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveTags operation.
+        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.RemoveTags"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+		Task<RemoveTagsResponse> RemoveTagsAsync(RemoveTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
  
 
         /// <summary>

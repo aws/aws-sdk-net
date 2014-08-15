@@ -27,44 +27,12 @@ namespace Amazon.Runtime.Internal.Auth
     {
         private readonly bool _useSigV4;
 
-        AWS4Signer _aws4Signer;
-        AWS4Signer AWS4SignerInstance 
-        {
-            get
-            {
-                if (_aws4Signer == null)
-                {
-                    lock (this)
-                    {
-                        if (_aws4Signer == null)
-                            _aws4Signer = new AWS4Signer();
-                    }
-                }
-
-                return _aws4Signer;
-            }
-        }
-
         /// <summary>
         /// S3 signer constructor
         /// </summary>
         public S3Signer()
         {
             _useSigV4 = AWSConfigs.S3Config.UseSignatureVersion4;
-        }
-
-        /// <summary>
-        /// Inspects the supplied evidence to return the signer appropriate for the operation and
-        /// precomputes the body hash for the request if AWS4 protocol is selected.
-        /// </summary>
-        /// <param name="config"></param>
-        /// <returns></returns>
-        private AbstractAWSSigner SelectSigner(ClientConfig config)
-        {
-            if (UseV4Signing(_useSigV4, config))
-                return AWS4SignerInstance;
-
-            return this;
         }
 
         public override ClientProtocol Protocol
@@ -74,8 +42,12 @@ namespace Amazon.Runtime.Internal.Auth
 
         public override void Sign(IRequest request, ClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
         {
-            var aws4Signer = SelectSigner(clientConfig) as AWS4Signer;
-            if (aws4Signer != null)
+            var signer = SelectSigner(this, _useSigV4, clientConfig);
+            var aws4Signer = signer as AWS4Signer;
+            var useV4 = aws4Signer != null;
+
+            //var aws4Signer = SelectSigner(clientConfig) as AWS4Signer;
+            if (useV4)
             {
                 var signingResult = aws4Signer.SignRequest(request, clientConfig, metrics, awsAccessKeyId, awsSecretAccessKey);
                 request.Headers[HeaderKeys.AuthorizationHeader] = signingResult.ForAuthorizationHeader;

@@ -58,7 +58,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///  An optional parameter reserved for future use. 
+        ///  An optional parameter used for pagination of results from this call. If specified,
+        /// the response includes only records beyond the marker. 
         /// </para>
         /// </summary>
         public string Marker
@@ -77,7 +78,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property PageSize. 
         /// <para>
-        ///  The size of the page returned by this call. 
+        ///  The number of results returned in each page. The default is 400. You cannot specify
+        /// a page size greater than 400 or less than 1. 
         /// </para>
         /// </summary>
         public int PageSize

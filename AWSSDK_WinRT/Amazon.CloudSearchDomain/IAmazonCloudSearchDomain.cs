@@ -29,7 +29,7 @@ namespace Amazon.CloudSearchDomain
     /// You use the AmazonCloudSearch2013 API to upload documents to a search domain and search
     /// those documents. 
     /// 
-    ///                
+    ///  
     /// <para>
     /// The endpoints for submitting <code>UploadDocuments</code>, <code>Search</code>, and
     /// <code>Suggest</code> requests are domain-specific. To get the endpoints for your domain,
@@ -37,7 +37,7 @@ namespace Amazon.CloudSearchDomain
     /// The domain endpoints are also displayed on the domain dashboard in the Amazon CloudSearch
     /// console. You submit suggest requests to the search endpoint. 
     /// </para>
-    ///          
+    ///  
     /// <para>
     /// For more information, see the <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide">Amazon
     /// CloudSearch Developer Guide</a>.

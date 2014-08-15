@@ -26,6 +26,25 @@ namespace Amazon.Runtime.Internal.Auth
 
     public abstract class AbstractAWSSigner
     {
+        private AWS4Signer _aws4Signer;
+        private AWS4Signer AWS4SignerInstance
+        {
+            get
+            {
+                if (_aws4Signer == null)
+                {
+                    lock (this)
+                    {
+                        if (_aws4Signer == null)
+                            _aws4Signer = new AWS4Signer();
+                    }
+                }
+
+                return _aws4Signer;
+            }
+        }
+
+
         protected const string DEFAULT_ENCODING = "UTF-8";
 
         /// <summary>
@@ -101,6 +120,25 @@ namespace Amazon.Runtime.Internal.Auth
             }
 
             return false;
+        }
+
+        
+        protected AbstractAWSSigner SelectSigner(ClientConfig config)
+        {
+            return SelectSigner(this, useSigV4Setting: false, config: config);
+        }
+        protected AbstractAWSSigner SelectSigner(bool useSigV4Setting,  ClientConfig config)
+        {
+            return SelectSigner(this, useSigV4Setting, config);
+        }
+        protected AbstractAWSSigner SelectSigner(AbstractAWSSigner defaultSigner,bool useSigV4Setting,  ClientConfig config)
+        {
+            bool usev4Signing = UseV4Signing(useSigV4Setting, config);
+
+            if (usev4Signing)
+                return AWS4SignerInstance;
+            else
+                return defaultSigner;
         }
     }
 }

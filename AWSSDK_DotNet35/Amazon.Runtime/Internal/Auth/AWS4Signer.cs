@@ -125,7 +125,7 @@ namespace Amazon.Runtime.Internal.Auth
         {
             var signedAt = InitializeHeaders(request.Headers, request.Endpoint);
             var service = DetermineService(clientConfig);
-            var region = DetermineSigningRegion(clientConfig, service);
+            var region = DetermineSigningRegion(clientConfig, service, request.AlternateEndpoint);
 
             var parametersToCanonicalize = GetParametersToCanonicalize(request);
             var canonicalParameters = CanonicalizeQueryParameters(parametersToCanonicalize);
@@ -429,7 +429,9 @@ namespace Amazon.Runtime.Internal.Auth
 
         #region Private Signing Helpers
 
-        internal static string DetermineSigningRegion(ClientConfig clientConfig, string serviceName)
+        internal static string DetermineSigningRegion(ClientConfig clientConfig, 
+                                                      string serviceName, 
+                                                      RegionEndpoint alternateEndpoint)
         {
             if (!string.IsNullOrEmpty(clientConfig.AuthenticationRegion))
                 return clientConfig.AuthenticationRegion.ToLower(CultureInfo.InvariantCulture);
@@ -441,13 +443,14 @@ namespace Amazon.Runtime.Internal.Auth
                     return parsedRegion.ToLower(CultureInfo.InvariantCulture);
             }
 
-            if (clientConfig.RegionEndpoint != null)
+            var endpoint = alternateEndpoint ?? clientConfig.RegionEndpoint;
+            if (endpoint != null)
             {
-                var serviceEndpoint = clientConfig.RegionEndpoint.GetEndpointForService(serviceName);
+                var serviceEndpoint = endpoint.GetEndpointForService(serviceName);
                 if (serviceEndpoint.AuthRegion != null)
                     return serviceEndpoint.AuthRegion;
 
-                return clientConfig.RegionEndpoint.SystemName; 
+                return endpoint.SystemName; 
             }
 
             return string.Empty;
@@ -873,7 +876,7 @@ namespace Amazon.Runtime.Internal.Auth
             }
 
             var signedAt = DateTime.UtcNow;
-            var region = overrideSigningRegion ?? DetermineSigningRegion(clientConfig, service);
+            var region = overrideSigningRegion ?? DetermineSigningRegion(clientConfig, service, request.AlternateEndpoint);
 
             // AWS4 presigned urls got S3 are expected to contain a 'UNSIGNED-PAYLOAD' magic string
             // during signing (other services use the empty-body sha)

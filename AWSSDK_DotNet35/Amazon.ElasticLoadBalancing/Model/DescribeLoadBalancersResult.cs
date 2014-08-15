@@ -54,7 +54,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property NextMarker. 
         /// <para>
-        ///  An optional parameter reserved for future use. 
+        ///  Specifies the value of next marker if the request returned more than one page of
+        /// results. 
         /// </para>
         /// </summary>
         public string NextMarker

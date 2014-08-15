@@ -53,6 +53,21 @@ namespace Amazon.EC2
             this.AfterResponseEvent += AfterResponseEvents;
         }
 
+        protected override void ProcessRequestHandlers(IRequest request)
+        {
+            base.ProcessRequestHandlers(request);
+
+            var copySnapshotRequest = request.OriginalRequest as CopySnapshotRequest;
+            if (copySnapshotRequest != null)
+            {
+                if (!string.IsNullOrEmpty(copySnapshotRequest.DestinationRegion))
+                {
+                    request.AlternateEndpoint = RegionEndpoint.GetBySystemName(copySnapshotRequest.DestinationRegion);
+                    request.Endpoint = DetermineEndpoint(request);
+                }
+            }
+        }
+
         protected override void ProcessPreRequestHandlers(AmazonWebServiceRequest request)
         {
             base.ProcessPreRequestHandlers(request);
@@ -62,7 +77,7 @@ namespace Amazon.EC2
             {
                 if(string.IsNullOrEmpty(requestCopySnapshot.DestinationRegion))
                 {
-                    requestCopySnapshot.DestinationRegion = AWS4Signer.DetermineSigningRegion(this.Config, "ec2");
+                    requestCopySnapshot.DestinationRegion = AWS4Signer.DetermineSigningRegion(this.Config, "ec2", alternateEndpoint: null);
                 }
                 if(string.IsNullOrEmpty(requestCopySnapshot.SourceRegion))
                 {

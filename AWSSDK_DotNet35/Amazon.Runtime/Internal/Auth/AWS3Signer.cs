@@ -55,13 +55,21 @@ namespace Amazon.Runtime.Internal.Auth
         /// <exception cref="Amazon.Runtime.SignatureException">If any problems are encountered while signing the request</exception>
         public override void Sign(IRequest request, ClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey) 
         {
-            if (UseAws3Https)
-            {
-                SignHttps(request, clientConfig, metrics, awsAccessKeyId, awsSecretAccessKey);
-            }
+            var signer = SelectSigner(clientConfig);
+            var useV4 = signer is AWS4Signer;
+
+            if (useV4)
+                signer.Sign(request, clientConfig, metrics, awsAccessKeyId, awsSecretAccessKey);
             else
             {
-                SignHttp(request, metrics, awsAccessKeyId, awsSecretAccessKey);
+                if (UseAws3Https)
+                {
+                    SignHttps(request, clientConfig, metrics, awsAccessKeyId, awsSecretAccessKey);
+                }
+                else
+                {
+                    SignHttp(request, metrics, awsAccessKeyId, awsSecretAccessKey);
+                }
             }
         }
 

@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -25,12 +26,11 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
 using Amazon.S3.Model;
 using Amazon.S3.Model.Internal.MarshallTransformations;
 using Amazon.S3.Util;
-using Amazon.Util;
 using Map = System.Collections.Generic.Dictionary<Amazon.S3.S3QueryParameter, string>;
-using System.Globalization;
 
 #if BCL45 || WIN_RT || WINDOWS_PHONE
 using System.Threading.Tasks;
@@ -75,7 +75,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("The Expires specified is null!");
 
             var aws4Signing = AWSConfigs.S3Config.UseSignatureVersion4;
-            var region = AWS4Signer.DetermineSigningRegion(Config, "s3");
+            var region = AWS4Signer.DetermineSigningRegion(Config, "s3", alternateEndpoint: null);
             if (aws4Signing && string.IsNullOrEmpty(region))
                 throw new InvalidOperationException("To use AWS4 signing, a region must be specified in the client configuration using the AuthenticationRegion or Region properties, or be determinable from the service URL.");
 
@@ -408,14 +408,14 @@ namespace Amazon.S3
                     // Try the key as well.
                     string ext = null;
                     if(!string.IsNullOrEmpty(putObjectRequest.FilePath))
-                        ext = Path.GetExtension(putObjectRequest.FilePath);
+                        ext = AWSSDKUtils.GetExtension(putObjectRequest.FilePath);
 #if WIN_RT || WINDOWS_PHONE
                     if(putObjectRequest.StorageFile != null)
-                        ext = Path.GetExtension(putObjectRequest.StorageFile.Path);
+                        ext = AWSSDKUtils.GetExtension(putObjectRequest.StorageFile.Path);
 #endif
                     if (String.IsNullOrEmpty(ext) && putObjectRequest.IsSetKey())
                     {
-                        ext = Path.GetExtension(putObjectRequest.Key);
+                        ext = AWSSDKUtils.GetExtension(putObjectRequest.Key);
                     }
                     // Use the extension to get the mime-type
                     if (!String.IsNullOrEmpty(ext))
@@ -520,7 +520,7 @@ namespace Amazon.S3
                 if (!initMultipartRequest.Headers.IsSetContentType())
                 {
                     // Get the extension of the object key.
-                    string ext = Path.GetExtension(initMultipartRequest.Key);
+                    string ext = AWSSDKUtils.GetExtension(initMultipartRequest.Key);
 
                     // Use the extension to get the mime-type
                     if (!String.IsNullOrEmpty(ext))

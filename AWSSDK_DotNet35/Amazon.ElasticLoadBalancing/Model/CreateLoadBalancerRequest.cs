@@ -34,8 +34,8 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// in which the load balance was created. For example, if your load balancer was created
     /// in the United States, the DNS name might end with either of the following:
     /// </para>
-    ///  <ul> <li> <i>us-east-1.elb.amazonaws.com</i> (for the Northern Virginia Region) </li>
-    /// <li> <i>us-west-1.elb.amazonaws.com</i> (for the Northern California Region) </li>
+    ///  <ul> <li> <i>us-east-1.elb.amazonaws.com</i> (for the Northern Virginia region) </li>
+    /// <li> <i>us-west-1.elb.amazonaws.com</i> (for the Northern California region) </li>
     /// </ul> 
     /// <para>
     /// For information about the AWS regions supported by Elastic Load Balancing, see <a
@@ -72,6 +72,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         private string _scheme;
         private List<string> _securityGroups = new List<string>();
         private List<string> _subnets = new List<string>();
+        private List<Tag> _tags = new List<Tag>();
 
 
         /// <summary>
@@ -128,7 +129,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// Gets and sets the property LoadBalancerName. 
         /// <para>
         ///  The name associated with the load balancer. The name must be unique within your set
-        /// of load balancers. 
+        /// of load balancers, must have a maximum of 32 characters, and must only contain alphanumeric
+        /// characters or hyphens. 
         /// </para>
         /// </summary>
         public string LoadBalancerName
@@ -152,8 +154,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         ///  
         /// <para>
         /// By default, Elastic Load Balancing creates an Internet-facing load balancer with a
-        /// publicly resolvable DNS name, which resolves to public IP addresses. For more informationabout
-        /// Internet-facing and Internal load balancers, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/vpc-loadbalancer-types.html">Internet-facing
+        /// publicly resolvable DNS name, which resolves to public IP addresses. For more information
+        /// about Internet-facing and Internal load balancers, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/vpc-loadbalancer-types.html">Internet-facing
         /// and Internal Load Balancers</a>.
         /// </para>
         ///  
@@ -211,6 +213,29 @@ namespace Amazon.ElasticLoadBalancing.Model
         internal bool IsSetSubnets()
         {
             return this._subnets != null && this._subnets.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags to assign to the load balancer.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about setting tags for your load balancer, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#tagging-elb">Tagging</a>.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

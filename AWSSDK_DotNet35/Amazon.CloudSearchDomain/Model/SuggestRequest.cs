@@ -32,13 +32,13 @@ namespace Amazon.CloudSearchDomain.Model
     /// field start with the specified query string. The beginning of the field must match
     /// the query string to be considered a match. 
     /// 
-    ///       
+    ///  
     /// <para>
     /// For more information about configuring suggesters and retrieving suggestions, see
     /// <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html">Getting
     /// Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i>. 
     /// </para>
-    ///             
+    ///  
     /// <para>
     /// The endpoint for submitting <code>Suggest</code> requests is domain-specific. You
     /// submit suggest requests to a domain's search endpoint. To get the search endpoint

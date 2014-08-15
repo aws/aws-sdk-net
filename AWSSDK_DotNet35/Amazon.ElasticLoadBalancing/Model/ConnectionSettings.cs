@@ -34,8 +34,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property IdleTimeout. 
         /// <para>
-        /// Specifies the maximum time the connection is allowed to be idle (no data has been
-        /// sent over the connection) before it is closed by the load balancer.
+        /// Specifies the time (in seconds) the connection is allowed to be idle (no data has
+        /// been sent over the connection) before it is closed by the load balancer.
         /// </para>
         /// </summary>
         public int IdleTimeout

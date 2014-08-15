@@ -33,35 +33,31 @@ namespace Amazon.ElasticLoadBalancing
     ///
     /// Elastic Load Balancing 
     /// <para>
-    ///  Elastic Load Balancing is a cost-effective and easy to use web service to help you
-    /// improve the availability and scalability of your application running on Amazon Elastic
-    /// Cloud Compute (Amazon EC2). It makes it easy for you to distribute application loads
-    /// between two or more EC2 instances. Elastic Load Balancing supports the growth in traffic
-    /// of your application by enabling availability through redundancy. 
+    /// Elastic Load Balancing is a way to automatically distribute incoming web traffic across
+    /// applications that run on multiple Amazon Elastic Compute Cloud (Amazon EC2) instances.
+    /// 
     /// </para>
     ///  
     /// <para>
-    /// This guide provides detailed information about Elastic Load Balancing actions, data
-    /// types, and parameters that can be used for sending a query request. Query requests
-    /// are HTTP or HTTPS requests that use the HTTP verb GET or POST and a query parameter
-    /// named Action or Operation. Action is used throughout this documentation, although
-    /// Operation is supported for backward compatibility with other AWS Query APIs.
+    /// You can create, access, and manage Elastic Load Balancing using the AWS Management
+    /// Console or the Elastic Load Balancing API. For more information about Elastic Load
+    /// Balancing interfaces, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/SvcIntro_Interfaces.html">Accessing
+    /// Elastic Load Balancing</a>.
     /// </para>
     ///  
     /// <para>
-    /// For detailed information on constructing a query request using the actions, data types,
-    /// and parameters mentioned in this guide, go to <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-query-api.html">Using
-    /// the Query API</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+    /// This reference guide contains documentation for the Query API and the AWS command
+    /// line interface commands, to manage Elastic Load Balancing. 
     /// </para>
     ///  
     /// <para>
     /// For detailed information about Elastic Load Balancing features and their associated
-    /// actions, go to <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenarios.html">Using
-    /// Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+    /// actions or commands, go to <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenarios.html">Managing
+    /// Load Balancers</a> in the <i>Elastic Load Balancing Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// This reference guide is based on the current WSDL, which is available at: <a href="http://ec2-downloads.s3.amazonaws.com/ElasticLoadBalancing.wsdl"></a>
+    /// This reference guide is based on the current WSDL, which is available at: <a href="http://ec2-downloads.s3.amazonaws.com/ElasticLoadBalancing.wsdl"></a>.
     /// 
     /// </para>
     ///  
@@ -196,6 +192,41 @@ namespace Amazon.ElasticLoadBalancing
 
         #endregion
 
+        
+        #region  AddTags
+
+        internal AddTagsResponse AddTags(AddTagsRequest request)
+        {
+            var task = AddTagsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddTags operation.
+        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AddTagsRequestMarshaller();
+            var unmarshaller = AddTagsResponseUnmarshaller.Instance;
+            return Invoke<IRequest, AddTagsRequest, AddTagsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+        }
+
+        #endregion
         
         #region  ApplySecurityGroupsToLoadBalancer
 
@@ -804,6 +835,41 @@ namespace Amazon.ElasticLoadBalancing
 
         #endregion
         
+        #region  DescribeTags
+
+        internal DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
+        {
+            var task = DescribeTagsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTags operation.
+        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeTagsRequestMarshaller();
+            var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
+            return Invoke<IRequest, DescribeTagsRequest, DescribeTagsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+        }
+
+        #endregion
+        
         #region  DetachLoadBalancerFromSubnets
 
         internal DetachLoadBalancerFromSubnetsResponse DetachLoadBalancerFromSubnets(DetachLoadBalancerFromSubnetsRequest request)
@@ -975,6 +1041,41 @@ namespace Amazon.ElasticLoadBalancing
             var marshaller = new RegisterInstancesWithLoadBalancerRequestMarshaller();
             var unmarshaller = RegisterInstancesWithLoadBalancerResponseUnmarshaller.Instance;
             return Invoke<IRequest, RegisterInstancesWithLoadBalancerRequest, RegisterInstancesWithLoadBalancerResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
+        }
+
+        #endregion
+        
+        #region  RemoveTags
+
+        internal RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
+        {
+            var task = RemoveTagsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveTags operation.
+        /// <seealso cref="Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RemoveTagsResponse> RemoveTagsAsync(RemoveTagsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RemoveTagsRequestMarshaller();
+            var unmarshaller = RemoveTagsResponseUnmarshaller.Instance;
+            return Invoke<IRequest, RemoveTagsRequest, RemoveTagsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);            
         }
 
         #endregion

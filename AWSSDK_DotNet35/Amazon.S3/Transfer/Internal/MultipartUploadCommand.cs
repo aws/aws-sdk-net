@@ -25,11 +25,12 @@ using System.IO;
 using System.Text;
 using System.Threading;
 
+using Amazon.Runtime;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
 
 using Amazon.S3.Model;
 using Amazon.S3.Util;
-using Amazon.Runtime;
 
 namespace Amazon.S3.Transfer.Internal
 {
@@ -112,11 +113,11 @@ namespace Amazon.S3.Transfer.Internal
             {
                 // Get the extension of the file from the path.
                 // Try the key as well.
-                string ext = Path.GetExtension(this._fileTransporterRequest.FilePath);
+                string ext = AWSSDKUtils.GetExtension(this._fileTransporterRequest.FilePath);
                 if (String.IsNullOrEmpty(ext) &&
                     this._fileTransporterRequest.IsSetKey())
                 {
-                    ext = Path.GetExtension(this._fileTransporterRequest.Key);
+                    ext = AWSSDKUtils.GetExtension(this._fileTransporterRequest.Key);
                 }
 
                 string type = AmazonS3Util.MimeTypeFromExtension(ext);

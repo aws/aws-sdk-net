@@ -39,7 +39,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <para>
         /// The name of the load balancer attribute. If enabled, the load balancer captures detailed
         /// information of all the requests and delivers the information to the Amazon S3 bucket
-        /// you specify.
+        /// that you specify.
         /// </para>
         ///  
         /// <para>
@@ -94,7 +94,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         ///  
         /// <para>
         /// By default, Elastic Load Balancing maintains a 60-second idle connection timeout for
-        /// both front-end and back-end connections of your load balancer. If <code>ConnectionSettings</code>
+        /// both front-end and back-end connections of your load balancer. If the <code>ConnectionSettings</code>
         /// attribute is set, Elastic Load Balancing will allow the connections to remain idle
         /// (no data is sent over the connection) for the specified duration.
         /// </para>

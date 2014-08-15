@@ -1507,6 +1507,13 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>storagegateway.cn-north-1.amazonaws.com.cn</Hostname>
+        <SignatureVersionOverride>4</SignatureVersionOverride>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>support</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>support.cn-north-1.amazonaws.com.cn</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>elasticloadbalancing</ServiceName>
@@ -1519,6 +1526,7 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>swf.cn-north-1.amazonaws.com.cn</Hostname>
+        <SignatureVersionOverride>4</SignatureVersionOverride>
       </Endpoint>
       <Endpoint>
         <ServiceName>glacier</ServiceName>
@@ -1913,6 +1921,7 @@
       <Name>support</Name>
       <FullName>AWS Support</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>cn-north-1</RegionName>
     </Service>
     <Service>
       <Name>elasticloadbalancing</Name>

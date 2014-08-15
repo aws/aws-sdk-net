@@ -52,7 +52,7 @@ namespace Amazon.Util
                 if (value == null)
                     Region = null;
                 else 
-                    Region = value.DisplayName;
+                    Region = value.SystemName;
             }
         }
 

@@ -56,14 +56,8 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 return new S3Link(cacheFromKey, bucket, key, region.SystemName);
             }
-            var client = ((AmazonDynamoDBClient)context.Client);
-            S3ClientCache cache = new S3ClientCache(client.GetCredentials(), client.CloneConfig<AmazonS3Config>());
 
-            lock (S3Link.cacheLock)
-            {
-                S3Link.Caches.Add(context, cache);                
-            }
-
+            S3ClientCache cache = CreatClientCacheFromContext(context);
             return new S3Link(cache, bucket, key, region.SystemName);
         }
 
@@ -191,6 +185,19 @@ namespace Amazon.DynamoDBv2.DataModel
             return this.s3ClientCache.GetTransferUtility(regionEndpoint);
         }
 
+        internal static S3ClientCache CreatClientCacheFromContext(DynamoDBContext context)
+        {
+            var client = ((AmazonDynamoDBClient)context.Client);
+            var cache = new S3ClientCache(client.GetCredentials(), client.CloneConfig<AmazonS3Config>());
+
+            lock (S3Link.cacheLock)
+            {
+                S3Link.Caches[context] = cache;
+            }
+
+            return cache;
+        }
+
         #endregion
 
         #region Misc
@@ -272,7 +279,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 S3ClientCache cache;
                 if (!S3Link.Caches.TryGetValue(context, out cache))
                 {
-                    throw new InvalidOperationException("Must use S3Link.Create");
+                    cache = S3Link.CreatClientCacheFromContext(context);
                 }
                 return new S3Link(cache, entry.AsString());
             }            

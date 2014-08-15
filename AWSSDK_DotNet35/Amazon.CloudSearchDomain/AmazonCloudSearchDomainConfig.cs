@@ -31,7 +31,7 @@ namespace Amazon.CloudSearchDomain
         /// </summary>
         public AmazonCloudSearchDomainConfig()
         {
-            this.AuthenticationServiceName = "cloudsearchdomain";
+            this.AuthenticationServiceName = "cloudsearch";
         }
 
         /// <summary>
