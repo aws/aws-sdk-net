@@ -27,11 +27,11 @@ namespace Amazon.OpsWorks.Model
     /// Container for the parameters to the DetachElasticLoadBalancer operation.
     /// Detaches a specified Elastic Load Balancing instance from its layer.
     /// 
-    ///     
+    ///  
     /// <para>
     /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached       policy that explicitly grants permissions.
-    /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// level for the stack, or an attached policy that explicitly grants permissions. For
+    /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
     /// User Permissions</a>.
     /// </para>
     /// </summary>

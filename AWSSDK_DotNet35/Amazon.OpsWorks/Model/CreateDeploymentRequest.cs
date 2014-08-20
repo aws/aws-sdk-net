@@ -27,20 +27,20 @@ namespace Amazon.OpsWorks.Model
     /// Container for the parameters to the CreateDeployment operation.
     /// Deploys a stack or app.
     /// 
-    ///   <ul>  <li>App deployment generates a <code>deploy</code> event, which runs the associated
-    /// recipes and passes them a JSON stack configuration object            that includes
-    /// information about the app. </li>  <li>Stack deployment runs the <code>deploy</code>
-    /// recipes but does not raise an event.</li>  </ul>  
+    ///  <ul> <li>App deployment generates a <code>deploy</code> event, which runs the associated
+    /// recipes and passes them a JSON stack configuration object that includes information
+    /// about the app. </li> <li>Stack deployment runs the <code>deploy</code> recipes but
+    /// does not raise an event.</li> </ul> 
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html">Deploying
-    /// Apps</a>         and <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html">Run
+    /// Apps</a> and <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html">Run
     /// Stack Commands</a>.
     /// </para>
-    ///     
+    ///  
     /// <para>
     /// <b>Required Permissions</b>: To use this action, an IAM user must have a Deploy or
-    /// Manage permissions level for the stack, or an attached       policy that explicitly
-    /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// Manage permissions level for the stack, or an attached policy that explicitly grants
+    /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
     /// User Permissions</a>.
     /// </para>
     /// </summary>
@@ -120,11 +120,11 @@ namespace Amazon.OpsWorks.Model
         /// default stack configuration JSON values. The string should be in the following format
         /// and must escape characters such as '"'.:
         /// </para>
-        ///     
+        ///  
         /// <para>
         /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
         /// </para>
-        ///   
+        ///  
         /// <para>
         /// For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
         /// Custom JSON to Modify the Stack Configuration JSON</a>.

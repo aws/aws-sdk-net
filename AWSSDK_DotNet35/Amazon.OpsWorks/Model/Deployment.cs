@@ -138,14 +138,14 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property CustomJson. 
         /// <para>
         /// A string that contains user-defined custom JSON. It is used to override the corresponding
-        /// default stack configuration JSON values for          stack. The string should be in
-        /// the following format and must escape characters such as '"'.:
+        /// default stack configuration JSON values for stack. The string should be in the following
+        /// format and must escape characters such as '"'.:
         /// </para>
-        ///     
+        ///  
         /// <para>
         /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
         /// </para>
-        ///   
+        ///  
         /// <para>
         /// For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
         /// Custom JSON to Modify the Stack Configuration JSON</a>.
@@ -264,7 +264,7 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The deployment status:
         /// </para>
-        ///   <ul>  <li>running</li>  <li>successful</li>  <li>failed</li>  </ul>
+        ///  <ul> <li>running</li> <li>successful</li> <li>failed</li> </ul>
         /// </summary>
         public string Status
         {

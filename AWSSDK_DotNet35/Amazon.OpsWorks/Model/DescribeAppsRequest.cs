@@ -27,15 +27,11 @@ namespace Amazon.OpsWorks.Model
     /// Container for the parameters to the DescribeApps operation.
     /// Requests a description of a specified set of apps.
     /// 
-    ///   <note>      
-    /// <para>
-    /// You must specify at least one of the parameters.
-    /// </para>
-    ///     </note>    
+    ///  
     /// <para>
     /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
-    /// or Manage permissions level for the stack, or an attached       policy that explicitly
-    /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// or Manage permissions level for the stack, or an attached policy that explicitly grants
+    /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
     /// User Permissions</a>.
     /// </para>
     /// </summary>
@@ -49,8 +45,8 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property AppIds. 
         /// <para>
         /// An array of app IDs for the apps to be described. If you use this parameter, <code>DescribeApps</code>
-        /// returns a description of the         specified apps.  Otherwise, it returns a description
-        /// of every app.
+        /// returns a description of the specified apps. Otherwise, it returns a description of
+        /// every app.
         /// </para>
         /// </summary>
         public List<string> AppIds
@@ -70,7 +66,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property StackId. 
         /// <para>
         /// The app stack ID. If you use this parameter, <code>DescribeApps</code> returns a description
-        /// of the         apps in the specified stack.
+        /// of the apps in the specified stack.
         /// </para>
         /// </summary>
         public string StackId

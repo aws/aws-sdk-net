@@ -35,7 +35,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property StackId. 
         /// <para>
         /// The stack ID, which is an opaque string that you use to identify the stack when performing
-        /// actions         such as <code>DescribeStacks</code>.
+        /// actions such as <code>DescribeStacks</code>.
         /// </para>
         /// </summary>
         public string StackId

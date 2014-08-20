@@ -72,8 +72,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property AutoAssignElasticIps. 
         /// <para>
         /// Whether to automatically assign an <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-        ///         IP address</a> to the layer's instances.         For more information, see
-        /// <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+        /// IP address</a> to the layer's instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
         /// to Edit a Layer</a>.
         /// </para>
         /// </summary>
@@ -94,7 +93,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property AutoAssignPublicIps. 
         /// <para>
         /// For stacks that are running in a VPC, whether to automatically assign a public IP
-        /// address to the layer's instances.         For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+        /// address to the layer's instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
         /// to Edit a Layer</a>.
         /// </para>
         /// </summary>
@@ -134,7 +133,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property CustomInstanceProfileArn. 
         /// <para>
         /// The ARN of the default IAM profile to be used for the layer's EC2 instances. For more
-        /// information about IAM ARNs, see  <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+        /// information about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
         /// Identifiers</a>.
         /// </para>
         /// </summary>
@@ -247,18 +246,11 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property InstallUpdatesOnBoot. 
         /// <para>
         /// Whether to install operating system and package updates when the instance boots. The
-        /// default value is <code>true</code>.         If this value is set to <code>false</code>,
-        /// you must then update your instances manually by         using <a>CreateDeployment</a>
-        /// to run the <code>update_dependencies</code> stack command or         manually running
-        /// <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.
-        ///  
+        /// default value is <code>true</code>. If this value is set to <code>false</code>, you
+        /// must then update your instances manually by using <a>CreateDeployment</a> to run the
+        /// <code>update_dependencies</code> stack command or manually running <code>yum</code>
+        /// (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. 
         /// </para>
-        ///   <note>      
-        /// <para>
-        /// We strongly recommend using the default value of <code>true</code>, to ensure that
-        /// your        instances have the latest security updates.
-        /// </para>
-        ///     </note>
         /// </summary>
         public bool InstallUpdatesOnBoot
         {
@@ -373,9 +365,9 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The layer type, which must be one of the following:
         /// </para>
-        ///   <ul>  <li>Custom</li>  <li>GangliaMonitoringMaster</li>  <li>HaProxy</li>  <li>MemcachedServer</li>
-        ///  <li>MySqlMaster</li>  <li>NodeJsAppServer</li>  <li>PhpAppServer</li>  <li>RailsAppServer</li>
-        ///  <li>WebServer</li>  </ul>
+        ///  <ul> <li>Custom</li> <li>GangliaMonitoringMaster</li> <li>HaProxy</li> <li>MemcachedServer</li>
+        /// <li>MySqlMaster</li> <li>NodeJsAppServer</li> <li>PhpAppServer</li> <li>RailsAppServer</li>
+        /// <li>WebServer</li> </ul>
         /// </summary>
         public LayerType Type
         {

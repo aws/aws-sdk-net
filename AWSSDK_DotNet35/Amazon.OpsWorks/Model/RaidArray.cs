@@ -39,13 +39,14 @@ namespace Amazon.OpsWorks.Model
         private string _raidArrayId;
         private int? _raidLevel;
         private int? _size;
+        private string _stackId;
         private string _volumeType;
 
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The array's Availability Zone. For more information, see  <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
+        /// The array's Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
         /// and Endpoints</a>.
         /// </para>
         /// </summary>
@@ -249,6 +250,25 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetSize()
         {
             return this._size.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property StackId. 
+        /// <para>
+        /// The stack ID.
+        /// </para>
+        /// </summary>
+        public string StackId
+        {
+            get { return this._stackId; }
+            set { this._stackId = value; }
+        }
+
+        // Check to see if StackId property is set
+        internal bool IsSetStackId()
+        {
+            return this._stackId != null;
         }
 
 

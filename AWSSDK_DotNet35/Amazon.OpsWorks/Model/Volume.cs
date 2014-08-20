@@ -46,7 +46,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The volume Availability Zone. For more information, see  <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
+        /// The volume Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
         /// and Endpoints</a>.
         /// </para>
         /// </summary>
@@ -199,7 +199,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The AWS region. For more information about AWS regions, see  <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
+        /// The AWS region. For more information about AWS regions, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
         /// and Endpoints</a>.
         /// </para>
         /// </summary>
@@ -238,7 +238,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The value returned by  <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.
+        /// The value returned by <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.
         /// </para>
         /// </summary>
         public string Status

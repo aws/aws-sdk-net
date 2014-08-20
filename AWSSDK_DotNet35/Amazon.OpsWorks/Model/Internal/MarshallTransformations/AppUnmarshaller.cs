@@ -98,6 +98,12 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     unmarshalledObject.EnableSsl = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Environment", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<EnvironmentVariable, EnvironmentVariableUnmarshaller>(EnvironmentVariableUnmarshaller.Instance);
+                    unmarshalledObject.Environment = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

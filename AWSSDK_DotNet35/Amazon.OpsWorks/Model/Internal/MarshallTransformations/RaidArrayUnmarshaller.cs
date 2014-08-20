@@ -116,6 +116,12 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     unmarshalledObject.Size = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("StackId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StackId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("VolumeType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -71,6 +71,10 @@ namespace Amazon.OpsWorks
     {
 
         /// <summary>
+        /// Constant Java for AppType
+        /// </summary>
+        public static readonly AppType Java = new AppType("java");
+        /// <summary>
         /// Constant Nodejs for AppType
         /// </summary>
         public static readonly AppType Nodejs = new AppType("nodejs");
@@ -411,6 +415,10 @@ namespace Amazon.OpsWorks
         /// </summary>
         public static readonly LayerType DbMaster = new LayerType("db-master");
         /// <summary>
+        /// Constant JavaApp for LayerType
+        /// </summary>
+        public static readonly LayerType JavaApp = new LayerType("java-app");
+        /// <summary>
         /// Constant Lb for LayerType
         /// </summary>
         public static readonly LayerType Lb = new LayerType("lb");
@@ -582,6 +590,46 @@ namespace Amazon.OpsWorks
         }
 
         public static implicit operator StackAttributesKeys(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VirtualizationType.
+    /// </summary>
+    public class VirtualizationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Hvm for VirtualizationType
+        /// </summary>
+        public static readonly VirtualizationType Hvm = new VirtualizationType("hvm");
+        /// <summary>
+        /// Constant Paravirtual for VirtualizationType
+        /// </summary>
+        public static readonly VirtualizationType Paravirtual = new VirtualizationType("paravirtual");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public VirtualizationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VirtualizationType FindValue(string value)
+        {
+            return FindValue<VirtualizationType>(value);
+        }
+
+        public static implicit operator VirtualizationType(string value)
         {
             return FindValue(value);
         }

@@ -93,7 +93,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property ChefConfiguration. 
         /// <para>
         /// A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf
-        /// and the Berkshelf version.    For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
+        /// and the Berkshelf version. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
         /// a New Stack</a>.
         /// </para>
         /// </summary>
@@ -168,14 +168,14 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property CustomJson. 
         /// <para>
         /// A string that contains user-defined, custom JSON. It is used to override the corresponding
-        /// default stack configuration JSON values.The string should be in the following format
+        /// default stack configuration JSON values. The string should be in the following format
         /// and must escape characters such as '"'.:
         /// </para>
-        ///     
+        ///  
         /// <para>
         /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
         /// </para>
-        ///   
+        ///  
         /// <para>
         /// For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
         /// Custom JSON to Modify the Stack Configuration JSON</a>.
@@ -197,7 +197,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property DefaultAvailabilityZone. 
         /// <para>
-        /// The stack's default Availability Zone. For more information, see  <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
+        /// The stack's default Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
         /// and Endpoints</a>.
         /// </para>
         /// </summary>
@@ -218,7 +218,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property DefaultInstanceProfileArn. 
         /// <para>
         /// The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances.
-        /// For more information about IAM ARNs, see  <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+        /// For more information about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
         /// Identifiers</a>.
         /// </para>
         /// </summary>
@@ -238,9 +238,9 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property DefaultOs. 
         /// <para>
-        /// The stack's default operating system, which must be set to <code>Amazon Linux</code>
-        /// or <code>Ubuntu 12.04 LTS</code>.         The default option is <code>Amazon Linux</code>.
-        ///  
+        /// The stack's default operating system, which must be set to <code>Amazon Linux</code>,
+        /// <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>. The default option
+        /// is <code>Amazon Linux</code>. 
         /// </para>
         /// </summary>
         public string DefaultOs
@@ -260,8 +260,8 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property DefaultRootDeviceType. 
         /// <para>
         /// The default root device type. This value is used by default for all instances in the
-        /// stack,         but you can override it when you create an instance. For more information,
-        /// see  <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+        /// stack, but you can override it when you create an instance. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
         /// for the Root Device</a>.
         /// </para>
         /// </summary>
@@ -359,7 +359,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property Region. 
         /// <para>
         /// The stack AWS region, such as "us-east-1". For more information about AWS regions,
-        /// see  <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
         /// Endpoints</a>.
         /// </para>
         /// </summary>

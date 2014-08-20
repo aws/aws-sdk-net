@@ -27,11 +27,11 @@ namespace Amazon.OpsWorks.Model
     /// Container for the parameters to the UpdateApp operation.
     /// Updates a specified app.
     /// 
-    ///     
+    ///  
     /// <para>
     /// <b>Required Permissions</b>: To use this action, an IAM user must have a Deploy or
-    /// Manage permissions level for the stack,      or an attached policy that explicitly
-    /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// Manage permissions level for the stack, or an attached policy that explicitly grants
+    /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
     /// User Permissions</a>.
     /// </para>
     /// </summary>
@@ -44,6 +44,7 @@ namespace Amazon.OpsWorks.Model
         private string _description;
         private List<string> _domains = new List<string>();
         private bool? _enableSsl;
+        private List<EnvironmentVariable> _environment = new List<EnvironmentVariable>();
         private string _name;
         private SslConfiguration _sslConfiguration;
         private AppType _type;
@@ -180,6 +181,27 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetEnableSsl()
         {
             return this._enableSsl.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Environment. 
+        /// <para>
+        /// An array of <code>EnvironmentVariable</code> objects that specify environment variables
+        /// to be associated with the app. You can specify up to ten environment variables. After
+        /// you deploy the app, these variables are defined on the associated app server instances.
+        /// </para>
+        /// </summary>
+        public List<EnvironmentVariable> Environment
+        {
+            get { return this._environment; }
+            set { this._environment = value; }
+        }
+
+        // Check to see if Environment property is set
+        internal bool IsSetEnvironment()
+        {
+            return this._environment != null && this._environment.Count > 0; 
         }
 
 

@@ -41,7 +41,7 @@ namespace Amazon.S3.IO
     public interface IS3FileSystemInfo
     {
         /// <summary>
-        /// Return ture if the item exists in S3.
+        /// Returns true if the item exists in S3.
         /// </summary>
         bool Exists
         {
@@ -89,7 +89,7 @@ namespace Amazon.S3.IO
         }
 
         /// <summary>
-        /// Indicated what time of item this object represents.
+        /// Indicates what type of item this object represents.
         /// </summary>
         FileSystemType Type
         {

@@ -157,6 +157,36 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     writer.Write(publicRequest.EnableSsl);
                 }
 
+                if(publicRequest.IsSetEnvironment())
+                {
+                    writer.WritePropertyName("Environment");
+                    writer.WriteArrayStart();
+                    foreach(var publicRequestEnvironmentListValue in publicRequest.Environment)
+                    {
+                        writer.WriteObjectStart();
+                        if(publicRequestEnvironmentListValue.IsSetKey())
+                        {
+                            writer.WritePropertyName("Key");
+                            writer.Write(publicRequestEnvironmentListValue.Key);
+                        }
+
+                        if(publicRequestEnvironmentListValue.IsSetSecure())
+                        {
+                            writer.WritePropertyName("Secure");
+                            writer.Write(publicRequestEnvironmentListValue.Secure);
+                        }
+
+                        if(publicRequestEnvironmentListValue.IsSetValue())
+                        {
+                            writer.WritePropertyName("Value");
+                            writer.Write(publicRequestEnvironmentListValue.Value);
+                        }
+
+                        writer.WriteObjectEnd();
+                    }
+                    writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     writer.WritePropertyName("Name");

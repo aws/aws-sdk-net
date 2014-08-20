@@ -64,6 +64,12 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetStackId())
+                {
+                    writer.WritePropertyName("StackId");
+                    writer.Write(publicRequest.StackId);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

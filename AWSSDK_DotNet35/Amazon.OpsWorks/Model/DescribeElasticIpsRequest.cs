@@ -28,15 +28,11 @@ namespace Amazon.OpsWorks.Model
     /// Describes <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
     /// IP addresses</a>.
     /// 
-    ///   <note>      
-    /// <para>
-    /// You must specify at least one of the parameters.
-    /// </para>
-    ///     </note>    
+    ///  
     /// <para>
     /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
-    /// or Manage permissions level for the stack, or an attached       policy that explicitly
-    /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// or Manage permissions level for the stack, or an attached policy that explicitly grants
+    /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
     /// User Permissions</a>.
     /// </para>
     /// </summary>
@@ -51,7 +47,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property InstanceId. 
         /// <para>
         /// The instance ID. If you include this parameter, <code>DescribeElasticIps</code> returns
-        /// a description of the         Elastic IP addresses associated with the specified instance.
+        /// a description of the Elastic IP addresses associated with the specified instance.
         /// </para>
         /// </summary>
         public string InstanceId
@@ -71,8 +67,8 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property Ips. 
         /// <para>
         /// An array of Elastic IP addresses to be described. If you include this parameter, <code>DescribeElasticIps</code>
-        /// returns a description of         the specified Elastic IP addresses. Otherwise, it
-        /// returns a description of every Elastic IP address.
+        /// returns a description of the specified Elastic IP addresses. Otherwise, it returns
+        /// a description of every Elastic IP address.
         /// </para>
         /// </summary>
         public List<string> Ips
@@ -92,8 +88,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property StackId. 
         /// <para>
         /// A stack ID. If you include this parameter, <code>DescribeElasticIps</code> returns
-        /// a description of      the Elastic IP addresses that are registered with the specified
-        /// stack.
+        /// a description of the Elastic IP addresses that are registered with the specified stack.
         /// </para>
         /// </summary>
         public string StackId

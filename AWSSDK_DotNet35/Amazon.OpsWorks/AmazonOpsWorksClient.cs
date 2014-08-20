@@ -29,56 +29,56 @@ namespace Amazon.OpsWorks
     /// <summary>
     /// Implementation for accessing OpsWorks
     ///
-    /// AWS OpsWorks   
+    /// AWS OpsWorks 
     /// <para>
-    /// Welcome to the  <i>AWS OpsWorks API Reference</i>. This guide provides descriptions,
-    /// syntax, and usage examples about AWS OpsWorks         actions and data types, including
-    /// common parameters and error codes. 
+    /// Welcome to the <i>AWS OpsWorks API Reference</i>. This guide provides descriptions,
+    /// syntax, and usage examples about AWS OpsWorks actions and data types, including common
+    /// parameters and error codes. 
     /// </para>
-    ///   
+    ///  
     /// <para>
     /// AWS OpsWorks is an application management service that provides an integrated experience
-    /// for overseeing the         complete application lifecycle. For information about this
-    /// product, go to the  <a href="http://aws.amazon.com/opsworks/">AWS OpsWorks</a> details
-    /// page. 
+    /// for overseeing the complete application lifecycle. For information about this product,
+    /// go to the <a href="http://aws.amazon.com/opsworks/">AWS OpsWorks</a> details page.
+    /// 
     /// </para>
-    ///   
+    ///  
     /// <para>
     /// <b>SDKs and CLI</b> 
     /// </para>
-    ///   
+    ///  
     /// <para>
     /// The most common way to use the AWS OpsWorks API is by using the AWS Command Line Interface
-    /// (CLI) or   by using one of the AWS SDKs to implement applications in your preferred
+    /// (CLI) or by using one of the AWS SDKs to implement applications in your preferred
     /// language. For more information, see:
     /// </para>
-    ///   <ul>    <li><a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html">AWS
-    /// CLI</a></li>    <li><a href="http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/opsworks/AWSOpsWorksClient.html">AWS
-    /// SDK for Java</a></li>    <li><a href="http://docs.aws.amazon.com/sdkfornet/latest/apidocs/html/N_Amazon_OpsWorks.htm">AWS
-    /// SDK for .NET</a></li>    <li><a href="http://docs.aws.amazon.com/aws-sdk-php-2/latest/class-Aws.OpsWorks.OpsWorksClient.html">AWS
-    /// SDK for PHP 2</a></li>    <li><a href="http://docs.aws.amazon.com/AWSRubySDK/latest/AWS/OpsWorks/Client.html">AWS
-    /// SDK for Ruby</a></li>    <li><a href="http://aws.amazon.com/documentation/sdkforjavascript/">AWS
-    /// SDK for Node.js</a></li>    <li><a href="http://docs.pythonboto.org/en/latest/ref/opsworks.html">AWS
-    /// SDK for Python(Boto)</a></li>  </ul>      
+    ///  <ul> <li><a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html">AWS
+    /// CLI</a></li> <li><a href="http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/opsworks/AWSOpsWorksClient.html">AWS
+    /// SDK for Java</a></li> <li><a href="http://docs.aws.amazon.com/sdkfornet/latest/apidocs/html/N_Amazon_OpsWorks.htm">AWS
+    /// SDK for .NET</a></li> <li><a href="http://docs.aws.amazon.com/aws-sdk-php-2/latest/class-Aws.OpsWorks.OpsWorksClient.html">AWS
+    /// SDK for PHP 2</a></li> <li><a href="http://docs.aws.amazon.com/AWSRubySDK/latest/AWS/OpsWorks/Client.html">AWS
+    /// SDK for Ruby</a></li> <li><a href="http://aws.amazon.com/documentation/sdkforjavascript/">AWS
+    /// SDK for Node.js</a></li> <li><a href="http://docs.pythonboto.org/en/latest/ref/opsworks.html">AWS
+    /// SDK for Python(Boto)</a></li> </ul> 
     /// <para>
     /// <b>Endpoints</b>
     /// </para>
-    ///   
+    ///  
     /// <para>
     /// AWS OpsWorks supports only one endpoint, opsworks.us-east-1.amazonaws.com (HTTPS),
-    /// so you must connect to that endpoint. You can then use the API         to direct AWS
-    /// OpsWorks to create stacks in any AWS Region.
+    /// so you must connect to that endpoint. You can then use the API to direct AWS OpsWorks
+    /// to create stacks in any AWS Region.
     /// </para>
-    ///   
+    ///  
     /// <para>
-    /// <b>Chef Version</b>
+    /// <b>Chef Versions</b>
     /// </para>
-    ///   
+    ///  
     /// <para>
     /// When you call <a>CreateStack</a>, <a>CloneStack</a>, or <a>UpdateStack</a> we recommend
-    /// you use         the <code>ConfigurationManager</code> parameter to specify the Chef
-    /// version, 0.9, 11.4, or 11.10.         The default value is currently 11.4.       
-    ///  For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html">Chef
+    /// you use the <code>ConfigurationManager</code> parameter to specify the Chef version,
+    /// 0.9, 11.4, or 11.10. The default value is currently 11.10. For more information, see
+    /// <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html">Chef
     /// Versions</a>.
     /// </para>
     /// </summary>
@@ -260,15 +260,15 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Assigns one of the stack's registered Amazon EBS volumes to a specified instance.
-        /// The volume must first be registered      with the stack by calling <a>RegisterVolume</a>.
-        /// For more information, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
+        /// The volume must first be registered with the stack by calling <a>RegisterVolume</a>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
         /// Management</a>.
         /// 
-        ///      
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack, or an attached       policy that explicitly grants permissions.
-        /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -334,15 +334,15 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Associates one of the stack's registered Elastic IP addresses with a specified instance.
-        /// The address    must first be registered with the stack by calling <a>RegisterElasticIp</a>.
-        /// For more information, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
+        /// The address must first be registered with the stack by calling <a>RegisterElasticIp</a>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
         /// Management</a>.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack, or an attached       policy that explicitly grants permissions.
-        /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -408,20 +408,14 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Attaches an Elastic Load Balancing load balancer to a specified layer. For more information,
-        /// see     <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/load-balancer-elb.html">Elastic
+        /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/load-balancer-elb.html">Elastic
         /// Load Balancing</a>.
         /// 
-        ///   <note>      
-        /// <para>
-        /// You must create the Elastic Load Balancing instance separately, by using the Elastic
-        /// Load Balancing console, API, or CLI. For        more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/Welcome.html">
-        ///          Elastic Load Balancing Developer Guide</a>.
-        /// </para>
-        ///     </note>    
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack, or an attached       policy that explicitly grants permissions.
-        /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -486,14 +480,14 @@ namespace Amazon.OpsWorks
 
 
         /// <summary>
-        /// Creates a clone of a specified stack. For more information, see  <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html">Clone
+        /// Creates a clone of a specified stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html">Clone
         /// a Stack</a>.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have an attached
-        ///       policy that explicitly grants permissions. For more information on user permissions,
-        /// see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// policy that explicitly grants permissions. For more information on user permissions,
+        /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -558,14 +552,14 @@ namespace Amazon.OpsWorks
 
 
         /// <summary>
-        /// Creates an app for a specified stack. For more information, see  <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
+        /// Creates an app for a specified stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
         /// Apps</a>.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack, or an attached       policy that explicitly grants permissions.
-        /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -632,20 +626,20 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Deploys a stack or app.
         /// 
-        ///   <ul>  <li>App deployment generates a <code>deploy</code> event, which runs the associated
-        /// recipes and passes them a JSON stack configuration object            that includes
-        /// information about the app. </li>  <li>Stack deployment runs the <code>deploy</code>
-        /// recipes but does not raise an event.</li>  </ul>  
+        ///  <ul> <li>App deployment generates a <code>deploy</code> event, which runs the associated
+        /// recipes and passes them a JSON stack configuration object that includes information
+        /// about the app. </li> <li>Stack deployment runs the <code>deploy</code> recipes but
+        /// does not raise an event.</li> </ul> 
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html">Deploying
-        /// Apps</a>         and <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html">Run
+        /// Apps</a> and <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html">Run
         /// Stack Commands</a>.
         /// </para>
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Deploy or
-        /// Manage permissions level for the stack, or an attached       policy that explicitly
-        /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// Manage permissions level for the stack, or an attached policy that explicitly grants
+        /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -710,14 +704,14 @@ namespace Amazon.OpsWorks
 
 
         /// <summary>
-        /// Creates an instance in a specified stack. For more information, see  <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">Adding
+        /// Creates an instance in a specified stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">Adding
         /// an Instance to a Layer</a>.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack, or an attached       policy that explicitly grants permissions.
-        /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -782,23 +776,14 @@ namespace Amazon.OpsWorks
 
 
         /// <summary>
-        /// Creates a layer. For more information, see  <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html">How
+        /// Creates a layer. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html">How
         /// to Create a Layer</a>.
         /// 
-        ///   <note>      
-        /// <para>
-        /// You should use <b>CreateLayer</b> for noncustom layer types such as PHP App Server
-        /// only if the stack        does not have an existing layer of that type. A stack can
-        /// have at most one instance of each        noncustom layer; if you attempt to create
-        /// a second instance, <b>CreateLayer</b> fails. A        stack can have an arbitrary
-        /// number of custom layers, so you can call <b>CreateLayer</b> as        many times as
-        /// you like for that layer type.
-        /// </para>
-        ///     </note>    
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack, or an attached       policy that explicitly grants permissions.
-        /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -863,14 +848,14 @@ namespace Amazon.OpsWorks
 
 
         /// <summary>
-        /// Creates a new stack. For more information, see  <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html">Create
+        /// Creates a new stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html">Create
         /// a New Stack</a>.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have an attached
-        ///       policy that explicitly grants permissions. For more information on user permissions,
-        /// see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// policy that explicitly grants permissions. For more information on user permissions,
+        /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -934,11 +919,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Creates a new user profile.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have an attached
-        ///       policy that explicitly grants permissions. For more information on user permissions,
-        /// see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// policy that explicitly grants permissions. For more information on user permissions,
+        /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -1002,11 +987,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Deletes a specified app.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack, or an attached       policy that explicitly grants permissions.
-        /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -1072,14 +1057,14 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Deletes a specified instance. You must stop an instance before you can delete it.
-        /// For more information, see  <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-delete.html">Deleting
+        /// For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-delete.html">Deleting
         /// Instances</a>.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack, or an attached       policy that explicitly grants permissions.
-        /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -1145,14 +1130,14 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Deletes a specified layer. You must first stop and then delete all associated instances.
-        ///  For more information, see  <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-delete.html">How
+        /// For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-delete.html">How
         /// to Delete a Layer</a>.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack, or an attached       policy that explicitly grants permissions.
-        /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -1218,14 +1203,14 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Deletes a specified stack. You must first delete all instances, layers, and apps.
-        ///         For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html">Shut
+        /// For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html">Shut
         /// Down a Stack</a>.
         /// 
-        ///      
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack, or an attached       policy that explicitly grants permissions.
-        /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -1292,11 +1277,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Deletes a user profile.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have an attached
-        ///       policy that explicitly grants permissions. For more information on user permissions,
-        /// see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// policy that explicitly grants permissions. For more information on user permissions,
+        /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -1362,14 +1347,14 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Deregisters a specified Elastic IP address. The address can then be registered by
-        /// another stack.  For more information, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
+        /// another stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
         /// Management</a>.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack, or an attached       policy that explicitly grants permissions.
-        /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -1435,6 +1420,14 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Deregisters an Amazon RDS instance.
+        /// 
+        ///  
+        /// <para>
+        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// User Permissions</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterRdsDbInstance service method.</param>
         /// 
@@ -1497,15 +1490,15 @@ namespace Amazon.OpsWorks
 
 
         /// <summary>
-        /// Deregisters an Amazon EBS volume.      The volume can then be registered by another
-        /// stack. For more information, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
+        /// Deregisters an Amazon EBS volume. The volume can then be registered by another stack.
+        /// For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
         /// Management</a>.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack, or an attached       policy that explicitly grants permissions.
-        /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -1572,15 +1565,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Requests a description of a specified set of apps.
         /// 
-        ///   <note>      
-        /// <para>
-        /// You must specify at least one of the parameters.
-        /// </para>
-        ///     </note>    
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
-        /// or Manage permissions level for the stack, or an attached       policy that explicitly
-        /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// or Manage permissions level for the stack, or an attached policy that explicitly grants
+        /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -1647,15 +1636,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Describes the results of specified commands.
         /// 
-        ///   <note>      
-        /// <para>
-        /// You must specify at least one of the parameters.
-        /// </para>
-        ///     </note>    
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
-        /// or Manage permissions level for the stack, or an attached       policy that explicitly
-        /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// or Manage permissions level for the stack, or an attached policy that explicitly grants
+        /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -1722,15 +1707,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Requests a description of a specified set of deployments.
         /// 
-        ///   <note>      
-        /// <para>
-        /// You must specify at least one of the parameters.
-        /// </para>
-        ///     </note>    
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
-        /// or Manage permissions level for the stack, or an attached       policy that explicitly
-        /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// or Manage permissions level for the stack, or an attached policy that explicitly grants
+        /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -1798,15 +1779,11 @@ namespace Amazon.OpsWorks
         /// Describes <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
         /// IP addresses</a>.
         /// 
-        ///   <note>      
-        /// <para>
-        /// You must specify at least one of the parameters.
-        /// </para>
-        ///     </note>    
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
-        /// or Manage permissions level for the stack, or an attached       policy that explicitly
-        /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// or Manage permissions level for the stack, or an attached policy that explicitly grants
+        /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -1872,15 +1849,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Describes a stack's Elastic Load Balancing instances.
         /// 
-        ///   <note>      
-        /// <para>
-        /// You must specify at least one of the parameters.
-        /// </para>
-        ///     </note>    
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
-        /// or Manage permissions level for the stack, or an attached       policy that explicitly
-        /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// or Manage permissions level for the stack, or an attached policy that explicitly grants
+        /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -1900,15 +1873,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Describes a stack's Elastic Load Balancing instances.
         /// 
-        ///   <note>      
-        /// <para>
-        /// You must specify at least one of the parameters.
-        /// </para>
-        ///     </note>    
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
-        /// or Manage permissions level for the stack, or an attached       policy that explicitly
-        /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// or Manage permissions level for the stack, or an attached policy that explicitly grants
+        /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -1975,15 +1944,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Requests a description of a set of instances.
         /// 
-        ///         <note>      
-        /// <para>
-        /// You must specify at least one of the parameters.
-        /// </para>
-        ///     </note>    
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
-        /// or Manage permissions level for the stack, or an attached       policy that explicitly
-        /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// or Manage permissions level for the stack, or an attached policy that explicitly grants
+        /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -2050,15 +2015,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Requests a description of one or more layers in a specified stack.
         /// 
-        ///   <note>      
-        /// <para>
-        /// You must specify at least one of the parameters.
-        /// </para>
-        ///     </note>    
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
-        /// or Manage permissions level for the stack, or an attached       policy that explicitly
-        /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// or Manage permissions level for the stack, or an attached policy that explicitly grants
+        /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -2125,15 +2086,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Describes load-based auto scaling configurations for specified layers.
         /// 
-        ///   <note>      
-        /// <para>
-        /// You must specify at least one of the parameters.
-        /// </para>
-        ///     </note>    
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
-        /// or Manage permissions level for the stack, or an attached       policy that explicitly
-        /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// or Manage permissions level for the stack, or an attached policy that explicitly grants
+        /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -2199,11 +2156,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Describes a user's SSH information.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have self-management
-        /// enabled      or an attached policy that explicitly grants permissions. For more information
-        /// on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// enabled or an attached policy that explicitly grants permissions. For more information
+        /// on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -2217,11 +2174,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Describes a user's SSH information.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have self-management
-        /// enabled      or an attached policy that explicitly grants permissions. For more information
-        /// on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// enabled or an attached policy that explicitly grants permissions. For more information
+        /// on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -2282,11 +2239,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Describes the permissions for a specified stack.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack, or an attached       policy that explicitly grants permissions.
-        /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -2353,15 +2310,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Describe an instance's RAID arrays.
         /// 
-        ///   <note>      
-        /// <para>
-        /// You must specify at least one of the parameters.
-        /// </para>
-        ///     </note>    
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
-        /// or Manage       permissions level for the stack, or an attached policy that explicitly
-        /// grants permissions.       For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// or Manage permissions level for the stack, or an attached policy that explicitly grants
+        /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -2427,6 +2380,14 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Describes Amazon RDS instances.
+        /// 
+        ///  
+        /// <para>
+        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        /// or Manage permissions level for the stack, or an attached policy that explicitly grants
+        /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// User Permissions</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRdsDbInstances service method.</param>
         /// 
@@ -2490,11 +2451,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Describes AWS OpsWorks service errors.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
-        /// or Manage       permissions level for the stack, or an attached policy that explicitly
-        /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// or Manage permissions level for the stack, or an attached policy that explicitly grants
+        /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -2514,11 +2475,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Describes AWS OpsWorks service errors.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
-        /// or Manage       permissions level for the stack, or an attached policy that explicitly
-        /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// or Manage permissions level for the stack, or an attached policy that explicitly grants
+        /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -2584,11 +2545,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Requests a description of one or more stacks.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
-        /// or Manage       permissions level for the stack, or an attached policy that explicitly
-        /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// or Manage permissions level for the stack, or an attached policy that explicitly grants
+        /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -2608,11 +2569,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Requests a description of one or more stacks.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
-        /// or Manage       permissions level for the stack, or an attached policy that explicitly
-        /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// or Manage permissions level for the stack, or an attached policy that explicitly grants
+        /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -2678,13 +2639,13 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Describes the number of layers and apps in a specified stack, and the number of instances
-        /// in      each state, such as <code>running_setup</code> or <code>online</code>.
+        /// in each state, such as <code>running_setup</code> or <code>online</code>.
         /// 
-        ///      
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
-        /// or Manage       permissions level for the stack, or an attached policy that explicitly
-        /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// or Manage permissions level for the stack, or an attached policy that explicitly grants
+        /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -2751,15 +2712,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Describes time-based auto scaling configurations for specified instances.
         /// 
-        ///   <note>      
-        /// <para>
-        /// You must specify at least one of the parameters.
-        /// </para>
-        ///     </note>    
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
-        /// or Manage       permissions level for the stack, or an attached policy that explicitly
-        /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// or Manage permissions level for the stack, or an attached policy that explicitly grants
+        /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -2825,11 +2782,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Describe specified users.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have an attached
-        /// policy that explicitly grants permissions.      For more information on user permissions,
-        /// see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// policy that explicitly grants permissions. For more information on user permissions,
+        /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -2849,11 +2806,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Describe specified users.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have an attached
-        /// policy that explicitly grants permissions.      For more information on user permissions,
-        /// see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// policy that explicitly grants permissions. For more information on user permissions,
+        /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -2920,15 +2877,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Describes an instance's Amazon EBS volumes.
         /// 
-        ///   <note>      
-        /// <para>
-        /// You must specify at least one of the parameters.
-        /// </para>
-        ///     </note>    
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
-        /// or Manage permissions       level for the stack, or an attached policy that explicitly
-        /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// or Manage permissions level for the stack, or an attached policy that explicitly grants
+        /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -2995,11 +2948,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Detaches a specified Elastic Load Balancing instance from its layer.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack, or an attached       policy that explicitly grants permissions.
-        /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -3062,14 +3015,14 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Disassociates an Elastic IP address from its instance. The address remains registered
-        /// with the stack. For more information, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
+        /// with the stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
         /// Management</a>.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack, or an attached       policy that explicitly grants permissions.
-        /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -3137,11 +3090,11 @@ namespace Amazon.OpsWorks
         /// Gets a generated host name for the specified layer, based on the current host name
         /// theme.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack, or an attached       policy that explicitly grants permissions.
-        /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -3206,14 +3159,14 @@ namespace Amazon.OpsWorks
 
 
         /// <summary>
-        /// Reboots a specified instance.  For more information, see  <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting,
+        /// Reboots a specified instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting,
         /// Stopping, and Rebooting Instances</a>.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack, or an attached       policy that explicitly grants permissions.
-        /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -3278,17 +3231,17 @@ namespace Amazon.OpsWorks
 
 
         /// <summary>
-        /// Registers an Elastic IP address with a specified stack. An address can be    registered
+        /// Registers an Elastic IP address with a specified stack. An address can be registered
         /// with only one stack at a time. If the address is already registered, you must first
-        /// deregister it      by calling <a>DeregisterElasticIp</a>. For more information, see
-        ///      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
+        /// deregister it by calling <a>DeregisterElasticIp</a>. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
         /// Management</a>.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack, or an attached       policy that explicitly grants permissions.
-        /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -3354,6 +3307,14 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Registers an Amazon RDS instance with a stack.
+        /// 
+        ///  
+        /// <para>
+        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// User Permissions</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterRdsDbInstance service method.</param>
         /// 
@@ -3416,17 +3377,16 @@ namespace Amazon.OpsWorks
 
 
         /// <summary>
-        /// Registers an Amazon EBS volume with a specified stack. A volume can be    registered
+        /// Registers an Amazon EBS volume with a specified stack. A volume can be registered
         /// with only one stack at a time. If the volume is already registered, you must first
-        /// deregister it      by calling <a>DeregisterVolume</a>. For more information, see 
-        ///     <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
+        /// deregister it by calling <a>DeregisterVolume</a>. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
         /// Management</a>.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack, or an attached       policy that explicitly grants permissions.
-        /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -3492,21 +3452,14 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Specify the load-based auto scaling configuration for a specified layer. For more
-        /// information, see  <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">Managing
-        /// Load            with Time-based and Load-based Instances</a>.
+        /// information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">Managing
+        /// Load with Time-based and Load-based Instances</a>.
         /// 
-        ///   <note>      
-        /// <para>
-        /// To use load-based auto scaling, you must create a set of load-based auto scaling instances.
-        ///        Load-based auto scaling operates only on the instances from that set, so you
-        /// must ensure        that you have created enough instances to handle the maximum anticipated
-        /// load.
-        /// </para>
-        ///     </note>    
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack, or an attached       policy that explicitly grants permissions.
-        /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -3571,14 +3524,14 @@ namespace Amazon.OpsWorks
 
 
         /// <summary>
-        /// Specifies a user's permissions.  For more information, see  <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html">Security
+        /// Specifies a user's permissions. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html">Security
         /// and Permissions</a>.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack, or an attached       policy that explicitly grants permissions.
-        /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -3644,14 +3597,14 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Specify the time-based auto scaling configuration for a specified instance. For more
-        /// information,         see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">Managing
-        /// Load            with Time-based and Load-based Instances</a>.
+        /// information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">Managing
+        /// Load with Time-based and Load-based Instances</a>.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack, or an attached       policy that explicitly grants permissions.
-        /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -3716,14 +3669,14 @@ namespace Amazon.OpsWorks
 
 
         /// <summary>
-        /// Starts a specified instance. For more information, see  <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting,
-        /// Stopping,            and Rebooting Instances</a>.
+        /// Starts a specified instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting,
+        /// Stopping, and Rebooting Instances</a>.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack, or an attached       policy that explicitly grants permissions.
-        /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -3790,11 +3743,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Starts a stack's instances. 
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack, or an attached       policy that explicitly grants permissions.
-        /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -3860,15 +3813,15 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Stops a specified instance. When you stop a standard instance, the data disappears
-        /// and must         be reinstalled when you restart the instance. You can stop an Amazon
-        /// EBS-backed instance without losing data.         For more information, see  <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting,
-        /// Stopping,            and Rebooting Instances</a>.
+        /// and must be reinstalled when you restart the instance. You can stop an Amazon EBS-backed
+        /// instance without losing data. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting,
+        /// Stopping, and Rebooting Instances</a>.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack, or an attached       policy that explicitly grants permissions.
-        /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -3935,11 +3888,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Stops a specified stack.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack, or an attached       policy that explicitly grants permissions.
-        /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -4005,14 +3958,14 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Unassigns an assigned Amazon EBS volume. The volume remains registered with the stack.
-        /// For more information, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
+        /// For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
         /// Management</a>.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack, or an attached       policy that explicitly grants permissions.
-        /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -4079,11 +4032,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Updates a specified app.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Deploy or
-        /// Manage permissions level for the stack,      or an attached policy that explicitly
-        /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// Manage permissions level for the stack, or an attached policy that explicitly grants
+        /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -4148,15 +4101,14 @@ namespace Amazon.OpsWorks
 
 
         /// <summary>
-        /// Updates a registered Elastic IP address's name. For more information, see      <a
-        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
+        /// Updates a registered Elastic IP address's name. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
         /// Management</a>.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack, or an attached       policy that explicitly grants permissions.
-        /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -4223,11 +4175,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Updates a specified instance.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack, or an attached       policy that explicitly grants permissions.
-        /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -4294,11 +4246,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Updates a specified layer.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack, or an attached       policy that explicitly grants permissions.
-        /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -4364,11 +4316,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Updates a user's SSH public key.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have self-management
-        /// enabled or an attached       policy that explicitly grants permissions. For more information
-        /// on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// enabled or an attached policy that explicitly grants permissions. For more information
+        /// on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -4385,11 +4337,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Updates a user's SSH public key.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have self-management
-        /// enabled or an attached       policy that explicitly grants permissions. For more information
-        /// on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// enabled or an attached policy that explicitly grants permissions. For more information
+        /// on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -4452,6 +4404,14 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Updates an Amazon RDS instance.
+        /// 
+        ///  
+        /// <para>
+        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// User Permissions</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRdsDbInstance service method.</param>
         /// 
@@ -4516,11 +4476,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Updates a specified stack.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack, or an attached       policy that explicitly grants permissions.
-        /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -4587,11 +4547,11 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Updates a specified user profile.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have an attached
-        ///       policy that explicitly grants permissions. For more information on user permissions,
-        /// see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// policy that explicitly grants permissions. For more information on user permissions,
+        /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>
@@ -4656,15 +4616,14 @@ namespace Amazon.OpsWorks
 
 
         /// <summary>
-        /// Updates an Amazon EBS volume's name or mount point. For more information, see    
-        ///  <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
+        /// Updates an Amazon EBS volume's name or mount point. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
         /// Management</a>.
         /// 
-        ///     
+        ///  
         /// <para>
         /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-        /// level for the stack, or an attached       policy that explicitly grants permissions.
-        /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// level for the stack, or an attached policy that explicitly grants permissions. For
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>

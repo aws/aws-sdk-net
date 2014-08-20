@@ -27,15 +27,11 @@ namespace Amazon.OpsWorks.Model
     /// Container for the parameters to the DescribeRaidArrays operation.
     /// Describe an instance's RAID arrays.
     /// 
-    ///   <note>      
-    /// <para>
-    /// You must specify at least one of the parameters.
-    /// </para>
-    ///     </note>    
+    ///  
     /// <para>
     /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
-    /// or Manage       permissions level for the stack, or an attached policy that explicitly
-    /// grants permissions.       For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// or Manage permissions level for the stack, or an attached policy that explicitly grants
+    /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
     /// User Permissions</a>.
     /// </para>
     /// </summary>
@@ -43,13 +39,14 @@ namespace Amazon.OpsWorks.Model
     {
         private string _instanceId;
         private List<string> _raidArrayIds = new List<string>();
+        private string _stackId;
 
 
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
         /// The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns
-        ///         descriptions of the RAID arrays associated with the specified instance. 
+        /// descriptions of the RAID arrays associated with the specified instance. 
         /// </para>
         /// </summary>
         public string InstanceId
@@ -69,7 +66,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property RaidArrayIds. 
         /// <para>
         /// An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code>
-        /// returns         descriptions of the specified arrays. Otherwise, it returns a description
+        /// returns descriptions of the specified arrays. Otherwise, it returns a description
         /// of every array.
         /// </para>
         /// </summary>
@@ -83,6 +80,25 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetRaidArrayIds()
         {
             return this._raidArrayIds != null && this._raidArrayIds.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property StackId. 
+        /// <para>
+        /// The stack ID.
+        /// </para>
+        /// </summary>
+        public string StackId
+        {
+            get { return this._stackId; }
+            set { this._stackId = value; }
+        }
+
+        // Check to see if StackId property is set
+        internal bool IsSetStackId()
+        {
+            return this._stackId != null;
         }
 
     }

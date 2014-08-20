@@ -36,6 +36,7 @@ namespace Amazon.OpsWorks.Model
         private string _description;
         private List<string> _domains = new List<string>();
         private bool? _enableSsl;
+        private List<EnvironmentVariable> _environment = new List<EnvironmentVariable>();
         private string _name;
         private string _shortname;
         private SslConfiguration _sslConfiguration;
@@ -193,6 +194,27 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetEnableSsl()
         {
             return this._enableSsl.HasValue; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Environment. 
+        /// <para>
+        /// An array of <code>EnvironmentVariable</code> objects that specify environment variables
+        /// to be associated with the app. You can specify up to ten environment variables. After
+        /// you deploy the app, these variables are defined on the associated app server instances.
+        /// </para>
+        /// </summary>
+        public List<EnvironmentVariable> Environment
+        {
+            get { return this._environment; }
+            set { this._environment = value; }
+        }
+
+        // Check to see if Environment property is set
+        internal bool IsSetEnvironment()
+        {
+            return this._environment != null && this._environment.Count > 0; 
         }
 
 

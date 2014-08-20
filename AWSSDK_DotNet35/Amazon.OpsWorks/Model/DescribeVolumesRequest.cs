@@ -27,15 +27,11 @@ namespace Amazon.OpsWorks.Model
     /// Container for the parameters to the DescribeVolumes operation.
     /// Describes an instance's Amazon EBS volumes.
     /// 
-    ///   <note>      
-    /// <para>
-    /// You must specify at least one of the parameters.
-    /// </para>
-    ///     </note>    
+    ///  
     /// <para>
     /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
-    /// or Manage permissions       level for the stack, or an attached policy that explicitly
-    /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// or Manage permissions level for the stack, or an attached policy that explicitly grants
+    /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
     /// User Permissions</a>.
     /// </para>
     /// </summary>
@@ -50,8 +46,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The instance ID. If you use this parameter, <code>DescribeVolumes</code> returns 
-        ///        descriptions of the volumes associated with the specified instance.
+        /// The instance ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions
+        /// of the volumes associated with the specified instance.
         /// </para>
         /// </summary>
         public string InstanceId
@@ -70,8 +66,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property RaidArrayId. 
         /// <para>
-        /// The RAID array ID.  If you use this parameter, <code>DescribeVolumes</code> returns
-        ///         descriptions of the volumes associated with the specified RAID array.
+        /// The RAID array ID. If you use this parameter, <code>DescribeVolumes</code> returns
+        /// descriptions of the volumes associated with the specified RAID array.
         /// </para>
         /// </summary>
         public string RaidArrayId
@@ -110,8 +106,8 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property VolumeIds. 
         /// <para>
         /// Am array of volume IDs. If you use this parameter, <code>DescribeVolumes</code> returns
-        ///         descriptions of the specified volumes. Otherwise, it returns a description
-        /// of every volume.
+        /// descriptions of the specified volumes. Otherwise, it returns a description of every
+        /// volume.
         /// </para>
         /// </summary>
         public List<string> VolumeIds

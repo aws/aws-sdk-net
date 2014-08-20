@@ -138,8 +138,8 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property MissingOnRds. 
         /// <para>
         /// Set to <code>true</code> if AWS OpsWorks was unable to discover the Amazon RDS instance.
-        ///    AWS OpsWorks attempts to discover the instance only once. If this value is set
-        /// to <code>true</code>,    you must deregister the instance and then register it again.
+        /// AWS OpsWorks attempts to discover the instance only once. If this value is set to
+        /// <code>true</code>, you must deregister the instance and then register it again.
         /// </para>
         /// </summary>
         public bool MissingOnRds

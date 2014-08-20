@@ -27,15 +27,11 @@ namespace Amazon.OpsWorks.Model
     /// Container for the parameters to the DescribeCommands operation.
     /// Describes the results of specified commands.
     /// 
-    ///   <note>      
-    /// <para>
-    /// You must specify at least one of the parameters.
-    /// </para>
-    ///     </note>    
+    ///  
     /// <para>
     /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
-    /// or Manage permissions level for the stack, or an attached       policy that explicitly
-    /// grants permissions. For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// or Manage permissions level for the stack, or an attached policy that explicitly grants
+    /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
     /// User Permissions</a>.
     /// </para>
     /// </summary>
@@ -50,7 +46,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property CommandIds. 
         /// <para>
         /// An array of command IDs. If you include this parameter, <code>DescribeCommands</code>
-        /// returns a description of the specified commands.         Otherwise, it returns a description
+        /// returns a description of the specified commands. Otherwise, it returns a description
         /// of every command.
         /// </para>
         /// </summary>
@@ -71,7 +67,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property DeploymentId. 
         /// <para>
         /// The deployment ID. If you include this parameter, <code>DescribeCommands</code> returns
-        /// a description of the commands         associated with the specified deployment.
+        /// a description of the commands associated with the specified deployment.
         /// </para>
         /// </summary>
         public string DeploymentId
@@ -91,7 +87,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property InstanceId. 
         /// <para>
         /// The instance ID. If you include this parameter, <code>DescribeCommands</code> returns
-        /// a description of the commands         associated with the specified instance.
+        /// a description of the commands associated with the specified instance.
         /// </para>
         /// </summary>
         public string InstanceId

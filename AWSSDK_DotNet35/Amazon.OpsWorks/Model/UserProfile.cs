@@ -39,7 +39,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property AllowSelfManagement. 
         /// <para>
         /// Whether users can specify their own SSH public key through the My Settings page. For
-        /// more information, see    <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing
+        /// more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing
         /// User Permissions</a>.
         /// </para>
         /// </summary>

@@ -57,15 +57,15 @@ namespace Amazon.OpsWorks.Model
         private string _stackId;
         private string _status;
         private string _subnetId;
-        private string _virtualizationType;
+        private VirtualizationType _virtualizationType;
 
 
         /// <summary>
         /// Gets and sets the property AmiId. 
         /// <para>
         /// A custom AMI ID to be used to create the instance. The AMI should be based on one
-        /// of the standard AWS OpsWorks APIs:         Amazon Linux or Ubuntu 12.04 LTS. For more
-        /// information, see  <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>
+        /// of the standard AWS OpsWorks APIs: Amazon Linux, Ubuntu 12.04 LTS, or Ubuntu 14.04
+        /// LTS. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>
         /// </para>
         /// </summary>
         public string AmiId
@@ -105,11 +105,11 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The instance's auto scaling type, which has three possible values:
         /// </para>
-        ///   <ul>  <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected by auto scaling.</li>
-        ///  <li><b>TimeBasedAutoScaling</b>: A time-based auto scaling instance, which is started
-        /// and stopped based on a specified schedule.</li>  <li><b>LoadBasedAutoScaling</b>:
+        ///  <ul> <li> <b>AlwaysRunning</b>: A 24/7 instance, which is not affected by auto scaling.</li>
+        /// <li> <b>TimeBasedAutoScaling</b>: A time-based auto scaling instance, which is started
+        /// and stopped based on a specified schedule.</li> <li> <b>LoadBasedAutoScaling</b>:
         /// A load-based auto scaling instance, which is started and stopped based on load metrics.</li>
-        ///  </ul>
+        /// </ul>
         /// </summary>
         public AutoScalingType AutoScalingType
         {
@@ -127,7 +127,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The instance Availability Zone. For more information, see  <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
+        /// The instance Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
         /// and Endpoints</a>.
         /// </para>
         /// </summary>
@@ -244,18 +244,11 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property InstallUpdatesOnBoot. 
         /// <para>
         /// Whether to install operating system and package updates when the instance boots. The
-        /// default value is <code>true</code>.         If this value is set to <code>false</code>,
-        /// you must then update your instances manually by         using <a>CreateDeployment</a>
-        /// to run the <code>update_dependencies</code> stack command or         manually running
-        /// <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.
-        ///  
+        /// default value is <code>true</code>. If this value is set to <code>false</code>, you
+        /// must then update your instances manually by using <a>CreateDeployment</a> to run the
+        /// <code>update_dependencies</code> stack command or manually running <code>yum</code>
+        /// (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. 
         /// </para>
-        ///   <note>      
-        /// <para>
-        /// We strongly recommend using the default value of <code>true</code>, to ensure that
-        /// your        instances have the latest security updates.
-        /// </para>
-        ///     </note>
         /// </summary>
         public bool InstallUpdatesOnBoot
         {
@@ -292,7 +285,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property InstanceProfileArn. 
         /// <para>
-        /// The ARN of the instance's IAM profile. For more information about IAM ARNs, see  <a
+        /// The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a
         /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
         /// Identifiers</a>.
         /// </para>
@@ -314,9 +307,9 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property InstanceType. 
         /// <para>
         /// The instance type. AWS OpsWorks supports all instance types except Cluster Compute,
-        /// Cluster GPU, and High Memory Cluster.         For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// Families and Types</a>.         The parameter values that specify the various types
-        /// are in the API Name column of the Available Instance Types table.
+        /// Cluster GPU, and High Memory Cluster. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+        /// Families and Types</a>. The parameter values that specify the various types are in
+        /// the API Name column of the Available Instance Types table.
         /// </para>
         /// </summary>
         public string InstanceType
@@ -468,7 +461,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property RootDeviceType. 
         /// <para>
-        /// The instance root device type. For more information, see  <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+        /// The instance root device type. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
         /// for the Root Device</a>.
         /// </para>
         /// </summary>
@@ -604,10 +597,10 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The instance status:
         /// </para>
-        ///   <ul>  <li><code>requested</code></li>  <li><code>booting</code></li>  <li><code>running_setup</code></li>
-        ///  <li><code>online</code></li>  <li><code>setup_failed</code></li>  <li><code>start_failed</code></li>
-        ///  <li><code>terminating</code></li>  <li><code>terminated</code></li>  <li><code>stopped</code></li>
-        ///  <li><code>connection_lost</code></li>  </ul>
+        ///  <ul> <li><code>booting</code></li> <li><code>connection_lost</code></li> <li><code>online</code></li>
+        /// <li><code>rebooting</code></li> <li><code>requested</code></li> <li><code>running_setup</code></li>
+        /// <li><code>setup_failed</code></li> <li><code>start_failed</code></li> <li><code>stopped</code></li>
+        /// <li><code>terminated</code></li> <li><code>terminating</code></li> </ul>
         /// </summary>
         public string Status
         {
@@ -647,7 +640,7 @@ namespace Amazon.OpsWorks.Model
         /// The instance's virtualization type, <code>paravirtual</code> or <code>hvm</code>.
         /// </para>
         /// </summary>
-        public string VirtualizationType
+        public VirtualizationType VirtualizationType
         {
             get { return this._virtualizationType; }
             set { this._virtualizationType = value; }

@@ -26,14 +26,14 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// Container for the parameters to the DeleteStack operation.
     /// Deletes a specified stack. You must first delete all instances, layers, and apps.
-    ///         For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html">Shut
+    /// For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html">Shut
     /// Down a Stack</a>.
     /// 
-    ///      
+    ///  
     /// <para>
     /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached       policy that explicitly grants permissions.
-    /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// level for the stack, or an attached policy that explicitly grants permissions. For
+    /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
     /// User Permissions</a>.
     /// </para>
     /// </summary>

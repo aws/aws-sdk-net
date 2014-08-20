@@ -38,8 +38,8 @@ namespace Amazon.EC2.Import
     /// Callback signature to report progress on the manifest creation and upload process.
     /// </summary>
     /// <param name="message">Describes the current in-progress task</param>
-    /// <param name="percentComplete">If not null, the percent completed of the image file upload</param>
-    public delegate void ImporterProgressCallback(string message, int? percentComplete);
+    /// <param name="percentComplete">If not null, the percentage completion of the image file upload</param>
+    public delegate void ImportProgressCallback(string message, int? percentComplete);
 
     /// <summary>
     /// Helper class to import a virtual machine image or disk image to Amazon EC2 
@@ -47,6 +47,19 @@ namespace Amazon.EC2.Import
     /// </summary>
     public class DiskImageImporter
     {
+        const string ManifestFileVersion = "2010-11-15";
+        const string ManifestFileImporterName = "ec2-upload-disk-image";
+        const string ManifestFileImporterVersion = "1.0.0";
+        const string ManifestFileImporterRelease = ManifestFileVersion;
+
+        const string ManifestSuffix = "manifest.xml";
+        const string PartSuffix = "part";
+
+        const long OneMb = 1024 * 1024;
+        const long OneGb = 1024 * OneMb;
+
+        const long DefaultPartSize = 10 * OneMb;
+
         /// <summary>
         /// The default number of threads that will be used to upload the parts comprising
         /// the image file. Each thread will consume a 10MB buffer to process the part data.
@@ -57,14 +70,12 @@ namespace Amazon.EC2.Import
         /// The default validity period for the signed Amazon S3 URLs that allow Amazon EC2
         /// to access the manifest.
         /// </summary>
-        public const int DefaultUrlExpirationInDays = 30; 
+        public const int DefaultUrlExpirationInDays = 30;
 
         /// <summary>
         /// The maximum number of threads that can be used to upload the image file parts.
         /// </summary>
         public const int MaxUploadThreads = 30;
-
-        int _uploadThreads = DefaultUploadThreads;
 
         /// <summary>
         /// <para>
@@ -127,8 +138,6 @@ namespace Amazon.EC2.Import
         /// </summary>
         public bool RollbackOnUploadError { get; set; }
 
-        private int _urlExpirationInDays = DefaultUrlExpirationInDays;
-
         /// <summary>
         /// The maximum age, in days, before the Amazon S3 presigned urls 
         /// generated in the import manifest expire. The default value
@@ -146,19 +155,6 @@ namespace Amazon.EC2.Import
             }
         }
 
-        const string ManifestFileVersion = "2010-11-15";
-        const string ManifestFileImporterName = "ec2-upload-disk-image";
-        const string ManifestFileImporterVersion = "1.0.0";
-        const string ManifestFileImporterRelease = ManifestFileVersion;
-
-        const string ManifestSuffix = "manifest.xml";
-        const string PartSuffix = "part";
-
-        const long OneMb = 1024 * 1024;
-        const long OneGb = 1024 * OneMb;
-
-        const long DefaultPartSize = 10 * OneMb;
-
         /// <summary>
         /// The name of the bucket that will hold the artifacts. An attempt will
         /// be made to create the bucket if it does not already exist.
@@ -170,7 +166,7 @@ namespace Amazon.EC2.Import
         /// the bucket; by convention this is a GUID preceeded by any custom 
         /// prefix the user has specified.
         /// </summary>
-        public string ArtifactsKeyPrefix { get; protected set; }
+        public string ArtifactsKeyPrefix { get; private set; }
 
         /// <summary>
         /// The region in which the import will take place.
@@ -178,18 +174,22 @@ namespace Amazon.EC2.Import
         public RegionEndpoint Region { get; private set; }
 
         /// <summary>
-        /// Created-on-demand client for S3 operations, using the credentials and
-        /// region scoping we were handed on construction.
+        /// Client for S3 operations, created using the credentials and region scoping 
+        /// we are handed on construction, or assigned from an existing S3 client instance.
         /// </summary>
-        protected IAmazonS3 S3Client { get; set; }
+        public IAmazonS3 S3Client { get; private set; }
 
         /// <summary>
-        /// Created-on-demand client for EC2 operations, using the credentials and
-        /// region scoping we were handed on construction.
+        /// Client for EC2 operations, created using the credentials and region scoping 
+        /// we are handed on construction, or assigned from an existing EC2 client instance.
         /// </summary>
-        protected IAmazonEC2 EC2Client { get; set; }
+        public IAmazonEC2 EC2Client { get; private set; }
 
-        string _presignedManifestUrl;
+        private string _presignedManifestUrl;
+        private int _urlExpirationInDays = DefaultUrlExpirationInDays;
+        private int _uploadThreads = DefaultUploadThreads;
+
+        private static int _activeUploadWorkers = 0;
 
         /// <summary>
         /// Constructs an image importer to upload and convert virtual machine image 
@@ -284,7 +284,7 @@ namespace Amazon.EC2.Import
                                                      long? volumeSize,
                                                      string keyPrefix,
                                                      ImportLaunchConfiguration launchConfiguration,
-                                                     ImporterProgressCallback progressCallback)
+                                                     ImportProgressCallback progressCallback)
         {
             Upload(imageFilepath, fileFormat, volumeSize, keyPrefix, progressCallback, false);
             return StartInstanceConversion(launchConfiguration);
@@ -320,7 +320,7 @@ namespace Amazon.EC2.Import
                                                  string keyPrefix,
                                                  string availabilityZone, 
                                                  string description,
-                                                 ImporterProgressCallback progressCallback)
+                                                 ImportProgressCallback progressCallback)
         {
             Upload(imageFilepath, fileFormat, volumeSize, keyPrefix, progressCallback, false);
             return StartVolumeConversion(availabilityZone, description);
@@ -387,7 +387,7 @@ namespace Amazon.EC2.Import
                              string fileFormat,
                              long? volumeSize,
                              string keyPrefix,
-                             ImporterProgressCallback progressCallback,
+                             ImportProgressCallback progressCallback,
                              bool resumeUpload)
         {
             ImageFilePath = imageFilepath;
@@ -450,7 +450,7 @@ namespace Amazon.EC2.Import
             }
             catch (AmazonS3Exception e)
             {
-                var msg = string.Format(CultureInfo.CurrentCulture,
+                var msg = string.Format(CultureInfo.InvariantCulture,
                                         "Failed to download the specified manifest from bucket {0} with key {1}",
                                         bucketName, 
                                         manifestFileKey);
@@ -729,7 +729,7 @@ namespace Amazon.EC2.Import
         /// with optional progress callback.
         /// </summary>
         /// <param name="progressCallback">Optional callback to track upload progress.</param>
-        void UploadManifest(ImporterProgressCallback progressCallback = null)
+        void UploadManifest(ImportProgressCallback progressCallback = null)
         {
             if (string.IsNullOrEmpty(ManifestFileKey))
                 throw new InvalidOperationException("Expected ManifestFileKey to have been constructed");
@@ -791,12 +791,12 @@ namespace Amazon.EC2.Import
         /// up successfully uploaded parts before returning the error to the caller.
         /// </summary>
         /// <param name="progressCallback">Optional callback to track upload progress.</param>
-        void UploadImageParts(ImporterProgressCallback progressCallback = null)
+        void UploadImageParts(ImportProgressCallback progressCallback = null)
         {
             var imageFileinfo = new FileInfo(ImageFilePath);
             var partsList = ImportManifest.ImportData.PartsList;
 
-            var activityMessage = string.Format(CultureInfo.CurrentCulture, 
+            var activityMessage = string.Format(CultureInfo.InvariantCulture, 
                                                 "Uploading image file ({0:N0} bytes across {1:N0} parts).", 
                                                 imageFileinfo.Length, 
                                                 partsList.Count);
@@ -937,8 +937,6 @@ namespace Amazon.EC2.Import
 
             return allRemoved;
         }
-
-        private static int _activeUploadWorkers = 0;
 
         /// <summary>
         /// Threadpool delegate to process image file parts one by one and upload to

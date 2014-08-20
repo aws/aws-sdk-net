@@ -27,11 +27,11 @@ namespace Amazon.OpsWorks.Model
     /// Container for the parameters to the UpdateLayer operation.
     /// Updates a specified layer.
     /// 
-    ///     
+    ///  
     /// <para>
     /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached       policy that explicitly grants permissions.
-    /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// level for the stack, or an attached policy that explicitly grants permissions. For
+    /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
     /// User Permissions</a>.
     /// </para>
     /// </summary>
@@ -76,8 +76,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property AutoAssignElasticIps. 
         /// <para>
         /// Whether to automatically assign an <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-        ///         IP address</a> to the layer's instances.         For more information, see
-        /// <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+        /// IP address</a> to the layer's instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
         /// to Edit a Layer</a>.
         /// </para>
         /// </summary>
@@ -98,7 +97,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property AutoAssignPublicIps. 
         /// <para>
         /// For stacks that are running in a VPC, whether to automatically assign a public IP
-        /// address to the layer's instances.         For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+        /// address to the layer's instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
         /// to Edit a Layer</a>.
         /// </para>
         /// </summary>
@@ -119,7 +118,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property CustomInstanceProfileArn. 
         /// <para>
         /// The ARN of an IAM profile to be used for all of the layer's EC2 instances. For more
-        /// information about IAM ARNs, see  <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+        /// information about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
         /// Identifiers</a>.
         /// </para>
         /// </summary>
@@ -197,18 +196,12 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property InstallUpdatesOnBoot. 
         /// <para>
         /// Whether to install operating system and package updates when the instance boots. The
-        /// default value is <code>true</code>.         To control when updates are installed,
-        /// set this value to <code>false</code>. You must then update your instances manually
-        /// by         using <a>CreateDeployment</a> to run the <code>update_dependencies</code>
-        /// stack command or         manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code>
-        /// (Ubuntu) on the instances.  
+        /// default value is <code>true</code>. To control when updates are installed, set this
+        /// value to <code>false</code>. You must then update your instances manually by using
+        /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command
+        /// or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu)
+        /// on the instances. 
         /// </para>
-        ///   <note>      
-        /// <para>
-        /// We strongly recommend using the default value of <code>true</code>, to ensure that
-        /// your        instances have the latest security updates.
-        /// </para>
-        ///     </note>
         /// </summary>
         public bool InstallUpdatesOnBoot
         {
@@ -284,9 +277,8 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property Shortname. 
         /// <para>
         /// The layer short name, which is used internally by AWS OpsWorksand by Chef. The short
-        /// name is also used as the name for the         directory where your app files are installed.
-        /// It can have a maximum of 200 characters and must be in the following format:     
-        ///    /\A[a-z0-9\-\_\.]+\Z/.
+        /// name is also used as the name for the directory where your app files are installed.
+        /// It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
         /// </para>
         /// </summary>
         public string Shortname

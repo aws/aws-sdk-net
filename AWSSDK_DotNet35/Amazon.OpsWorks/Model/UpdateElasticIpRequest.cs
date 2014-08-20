@@ -25,15 +25,14 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateElasticIp operation.
-    /// Updates a registered Elastic IP address's name. For more information, see      <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
+    /// Updates a registered Elastic IP address's name. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
     /// Management</a>.
     /// 
-    ///     
+    ///  
     /// <para>
     /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached       policy that explicitly grants permissions.
-    /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// level for the stack, or an attached policy that explicitly grants permissions. For
+    /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
     /// User Permissions</a>.
     /// </para>
     /// </summary>

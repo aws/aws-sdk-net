@@ -25,8 +25,8 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Contains the information required to retrieve an app or cookbook from a repository.
-    /// For more information, see  <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
-    /// Apps</a> or  <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom
+    /// For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
+    /// Apps</a> or <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom
     /// Recipes and Cookbooks</a>.
     /// </summary>
     public partial class Source
@@ -44,9 +44,9 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// This parameter depends on the repository type. 
         /// </para>
-        ///   <ul>    <li>For Amazon S3 bundles, set <code>Password</code> to the appropriate
-        /// IAM secret access key.</li>    <li>For HTTP bundles and Subversion repositories, set
-        /// <code>Password</code> to the password.</li>  </ul>  
+        ///  <ul> <li>For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM
+        /// secret access key.</li> <li>For HTTP bundles and Subversion repositories, set <code>Password</code>
+        /// to the password.</li> </ul> 
         /// <para>
         /// For more information on how to safely handle IAM credentials, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"></a>.
         /// </para>
@@ -68,9 +68,8 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property Revision. 
         /// <para>
         /// The application's version. AWS OpsWorks enables you to easily deploy new versions
-        /// of an application.         One of the simplest approaches is to have branches or revisions
-        /// in your repository that represent different         versions that can potentially
-        /// be deployed.
+        /// of an application. One of the simplest approaches is to have branches or revisions
+        /// in your repository that represent different versions that can potentially be deployed.
         /// </para>
         /// </summary>
         public string Revision
@@ -148,9 +147,9 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// This parameter depends on the repository type. 
         /// </para>
-        ///   <ul>  <li>For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM
-        /// access key ID.</li>  <li>For HTTP bundles, Git repositories, and Subversion repositories,
-        /// set <code>Username</code> to the user name.</li>  </ul>
+        ///  <ul> <li>For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM
+        /// access key ID.</li> <li>For HTTP bundles, Git repositories, and Subversion repositories,
+        /// set <code>Username</code> to the user name.</li> </ul>
         /// </summary>
         public string Username
         {

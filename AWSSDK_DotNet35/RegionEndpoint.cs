@@ -185,16 +185,34 @@ namespace Amazon
 #if BCL
         static bool TryLoadEndpointDefinitionsFromAssemblyDir()
         {
-            var assembly = typeof(Amazon.RegionEndpoint).Assembly;
-            var codeBase = assembly.CodeBase;
-            var uri = new Uri(codeBase);
-            var dirPath = Path.GetDirectoryName(uri.LocalPath);
-            var dirInfo = new DirectoryInfo(dirPath);
-            var files = dirInfo.GetFiles(REGIONS_FILE, SearchOption.TopDirectoryOnly);
-            if (files.Length != 1)
+            string endpointsFile;
+            try
+            {
+                var assembly = typeof(Amazon.RegionEndpoint).Assembly;
+                var codeBase = assembly.CodeBase;
+                if (string.IsNullOrEmpty(codeBase))
+                    return false;
+
+                var uri = new Uri(codeBase);
+                var dirPath = Path.GetDirectoryName(uri.LocalPath);
+                var dirInfo = new DirectoryInfo(dirPath);
+                if (!dirInfo.Exists)
+                    return false;
+
+                var files = dirInfo.GetFiles(REGIONS_FILE, SearchOption.TopDirectoryOnly);
+                if (files.Length != 1)
+                    return false;
+
+                endpointsFile = files[0].FullName;
+            }
+            catch
+            {
+                endpointsFile = null;
+            }
+
+            if (string.IsNullOrEmpty(endpointsFile))
                 return false;
 
-            var endpointsFile = files[0].FullName;
             LoadEndpointDefinitionFromFilePath(endpointsFile);
             return true;
         }

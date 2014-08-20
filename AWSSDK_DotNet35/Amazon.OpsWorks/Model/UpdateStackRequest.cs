@@ -27,11 +27,11 @@ namespace Amazon.OpsWorks.Model
     /// Container for the parameters to the UpdateStack operation.
     /// Updates a specified stack.
     /// 
-    ///     
+    ///  
     /// <para>
     /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached       policy that explicitly grants permissions.
-    /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// level for the stack, or an attached policy that explicitly grants permissions. For
+    /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
     /// User Permissions</a>.
     /// </para>
     /// </summary>
@@ -79,7 +79,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property ChefConfiguration. 
         /// <para>
         /// A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf
-        /// and the Berkshelf version on Chef 11.10 stacks.    For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
+        /// and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
         /// a New Stack</a>.
         /// </para>
         /// </summary>
@@ -100,8 +100,8 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property ConfigurationManager. 
         /// <para>
         /// The configuration manager. When you clone a stack we recommend that you use the configuration
-        /// manager to         specify the Chef version, 0.9, 11.4, or 11.10. The default value
-        /// is currently 11.4.
+        /// manager to specify the Chef version, 0.9, 11.4, or 11.10. The default value is currently
+        /// 11.4.
         /// </para>
         /// </summary>
         public StackConfigurationManager ConfigurationManager
@@ -140,11 +140,11 @@ namespace Amazon.OpsWorks.Model
         /// default stack configuration JSON values. The string should be in the following format
         /// and must escape characters such as '"'.:
         /// </para>
-        ///     
+        ///  
         /// <para>
         /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
         /// </para>
-        ///   
+        ///  
         /// <para>
         /// For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
         /// Custom JSON to Modify the Stack Configuration JSON</a>.
@@ -167,10 +167,9 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property DefaultAvailabilityZone. 
         /// <para>
         /// The stack's default Availability Zone, which must be in the specified region. For
-        /// more information, see  <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-        /// and Endpoints</a>.         If you also specify a value for <code>DefaultSubnetId</code>,
-        /// the subnet must be in the same zone.         For more information, see <a>CreateStack</a>.
-        ///  
+        /// more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
+        /// and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the
+        /// subnet must be in the same zone. For more information, see <a>CreateStack</a>. 
         /// </para>
         /// </summary>
         public string DefaultAvailabilityZone
@@ -190,7 +189,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property DefaultInstanceProfileArn. 
         /// <para>
         /// The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances.
-        /// For more information about IAM ARNs, see  <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+        /// For more information about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
         /// Identifiers</a>.
         /// </para>
         /// </summary>
@@ -210,9 +209,9 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property DefaultOs. 
         /// <para>
-        /// The stack's default operating system, which must be set to <code>Amazon Linux</code>
-        /// or <code>Ubuntu 12.04 LTS</code>.         The default option is <code>Amazon Linux</code>.
-        ///  
+        /// The stack's default operating system, which must be set to <code>Amazon Linux</code>,
+        /// <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>. The default option
+        /// is <code>Amazon Linux</code>. 
         /// </para>
         /// </summary>
         public string DefaultOs
@@ -232,8 +231,8 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property DefaultRootDeviceType. 
         /// <para>
         /// The default root device type. This value is used by default for all instances in the
-        /// stack,         but you can override it when you create an instance.         For more
-        /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+        /// stack, but you can override it when you create an instance. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
         /// for the Root Device</a>.
         /// </para>
         /// </summary>
@@ -273,10 +272,12 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property DefaultSubnetId. 
         /// <para>
-        /// The stack's default subnet ID.         All instances will be launched into this subnet
-        /// unless you specify otherwise when you create the instance.         If you also specify
-        /// a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone.
-        ///         For more information, see <a>CreateStack</a>.  
+        /// The stack's default VPC subnet ID. This parameter is required if you specify a value
+        /// for the <code>VpcId</code> parameter. All instances are launched into this subnet
+        /// unless you specify otherwise when you create the instance. If you also specify a value
+        /// for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information
+        /// on default values and when this parameter is required, see the <code>VpcId</code>
+        /// parameter description. 
         /// </para>
         /// </summary>
         public string DefaultSubnetId
@@ -296,14 +297,14 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property HostnameTheme. 
         /// <para>
         /// The stack's new host name theme, with spaces are replaced by underscores. The theme
-        /// is used to      generate host names for the stack's instances. By default, <code>HostnameTheme</code>
-        /// is set      to <code>Layer_Dependent</code>, which creates host names by appending
-        /// integers to the layer's      short name. The other themes are:
+        /// is used to generate host names for the stack's instances. By default, <code>HostnameTheme</code>
+        /// is set to <code>Layer_Dependent</code>, which creates host names by appending integers
+        /// to the layer's short name. The other themes are:
         /// </para>
-        ///   <ul>  <li><code>Baked_Goods</code></li>  <li><code>Clouds</code></li>  <li><code>European_Cities</code></li>
-        ///  <li><code>Fruits</code></li>  <li><code>Greek_Deities</code></li>  <li><code>Legendary_Creatures_from_Japan</code></li>
-        ///  <li><code>Planets_and_Moons</code></li>  <li><code>Roman_Deities</code></li>  <li><code>Scottish_Islands</code></li>
-        ///  <li><code>US_Cities</code></li>  <li><code>Wild_Cats</code></li>  </ul>  
+        ///  <ul> <li><code>Baked_Goods</code></li> <li><code>Clouds</code></li> <li><code>European_Cities</code></li>
+        /// <li><code>Fruits</code></li> <li><code>Greek_Deities</code></li> <li><code>Legendary_Creatures_from_Japan</code></li>
+        /// <li><code>Planets_and_Moons</code></li> <li><code>Roman_Deities</code></li> <li><code>Scottish_Islands</code></li>
+        /// <li><code>US_Cities</code></li> <li><code>Wild_Cats</code></li> </ul> 
         /// <para>
         /// To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns
         /// a host name based on the current theme.
@@ -345,18 +346,11 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property ServiceRoleArn. 
         /// <para>
         /// The stack AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks
-        /// to work with AWS resources on your behalf.         You must set this parameter to
-        /// the Amazon Resource Name (ARN) for an existing IAM role. For more information about
-        /// IAM ARNs, see  <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+        /// to work with AWS resources on your behalf. You must set this parameter to the Amazon
+        /// Resource Name (ARN) for an existing IAM role. For more information about IAM ARNs,
+        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
         /// Identifiers</a>.
         /// </para>
-        ///      <note>      
-        /// <para>
-        /// You must set this parameter to a valid service role ARN or the action will fail; there
-        /// is        no default value. You can specify the stack's current service role ARN,
-        /// if you prefer, but        you must do so explicitly.
-        /// </para>
-        ///     </note>
         /// </summary>
         public string ServiceRoleArn
         {
@@ -414,22 +408,21 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// Whether to associate the AWS OpsWorks built-in security groups with the stack's layers.
         /// </para>
-        ///     
+        ///  
         /// <para>
         /// AWS OpsWorks provides a standard set of built-in security groups, one for each layer,
-        /// which are associated with layers by default.      <code>UseOpsworksSecurityGroups</code>
-        /// allows you to instead provide your own custom security groups.      <code>UseOpsworksSecurityGroups</code>
-        /// has the following settings:    
+        /// which are associated with layers by default. <code>UseOpsworksSecurityGroups</code>
+        /// allows you to instead provide your own custom security groups. <code>UseOpsworksSecurityGroups</code>
+        /// has the following settings: 
         /// </para>
-        ///     <ul>      <li>True - AWS OpsWorks automatically associates the appropriate built-in
-        /// security group with each layer (default setting).        You can associate additional
-        /// security groups with a layer after you create it but you cannot delete the built-in
-        /// security group.      </li>      <li>False - AWS OpsWorks does not associate built-in
-        /// security groups with layers.        You must create appropriate EC2 security groups
-        /// and associate a security group with each layer that you create.        However, you
-        /// can still manually associate a built-in security group with a layer on creation; custom
-        /// security        groups are required only for those layers that need custom settings.
-        ///      </li>    </ul>    
+        ///  <ul> <li>True - AWS OpsWorks automatically associates the appropriate built-in security
+        /// group with each layer (default setting). You can associate additional security groups
+        /// with a layer after you create it but you cannot delete the built-in security group.
+        /// </li> <li>False - AWS OpsWorks does not associate built-in security groups with layers.
+        /// You must create appropriate EC2 security groups and associate a security group with
+        /// each layer that you create. However, you can still manually associate a built-in security
+        /// group with a layer on creation; custom security groups are required only for those
+        /// layers that need custom settings. </li> </ul> 
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
         /// a New Stack</a>.

@@ -25,7 +25,7 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Describes a load-based auto scaling upscaling or downscaling threshold configuration,
-    /// which specifies         when AWS OpsWorks starts or stops load-based instances.
+    /// which specifies when AWS OpsWorks starts or stops load-based instances.
     /// </summary>
     public partial class AutoScalingThresholds
     {
@@ -60,13 +60,12 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property IgnoreMetricsTime. 
         /// <para>
         /// The amount of time (in minutes) after a scaling event occurs that AWS OpsWorks should
-        /// ignore metrics         and not raise any additional scaling events.         For example,
-        /// AWS OpsWorks adds new instances following an upscaling event but the instances   
-        ///      won't start reducing the load until they have been booted and configured.   
-        ///      There is no point in raising additional scaling events during that operation,
-        /// which typically takes several minutes.  <code>IgnoreMetricsTime</code> allows you
-        /// to direct AWS OpsWorks to not raise any scaling events long enough         to get
-        /// the new instances online.
+        /// ignore metrics and not raise any additional scaling events. For example, AWS OpsWorks
+        /// adds new instances following an upscaling event but the instances won't start reducing
+        /// the load until they have been booted and configured. There is no point in raising
+        /// additional scaling events during that operation, which typically takes several minutes.
+        /// <code>IgnoreMetricsTime</code> allows you to direct AWS OpsWorks to not raise any
+        /// scaling events long enough to get the new instances online.
         /// </para>
         /// </summary>
         public int IgnoreMetricsTime
@@ -104,7 +103,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property LoadThreshold. 
         /// <para>
-        /// The load threshold. For more information about how load is computed, see  <a href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
+        /// The load threshold. For more information about how load is computed, see <a href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
         /// (computing)</a>.
         /// </para>
         /// </summary>

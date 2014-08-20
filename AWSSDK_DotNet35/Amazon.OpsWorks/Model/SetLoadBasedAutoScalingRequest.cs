@@ -26,21 +26,14 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// Container for the parameters to the SetLoadBasedAutoScaling operation.
     /// Specify the load-based auto scaling configuration for a specified layer. For more
-    /// information, see  <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">Managing
-    /// Load            with Time-based and Load-based Instances</a>.
+    /// information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">Managing
+    /// Load with Time-based and Load-based Instances</a>.
     /// 
-    ///   <note>      
-    /// <para>
-    /// To use load-based auto scaling, you must create a set of load-based auto scaling instances.
-    ///        Load-based auto scaling operates only on the instances from that set, so you
-    /// must ensure        that you have created enough instances to handle the maximum anticipated
-    /// load.
-    /// </para>
-    ///     </note>    
+    ///  
     /// <para>
     /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached       policy that explicitly grants permissions.
-    /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// level for the stack, or an attached policy that explicitly grants permissions. For
+    /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
     /// User Permissions</a>.
     /// </para>
     /// </summary>
@@ -56,8 +49,8 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property DownScaling. 
         /// <para>
         /// An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration.
-        /// If the load falls         below these thresholds for a specified amount of time, AWS
-        /// OpsWorks stops a specified number of instances.
+        /// If the load falls below these thresholds for a specified amount of time, AWS OpsWorks
+        /// stops a specified number of instances.
         /// </para>
         /// </summary>
         public AutoScalingThresholds DownScaling
@@ -115,7 +108,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property UpScaling. 
         /// <para>
         /// An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration.
-        /// If the load exceeds         these thresholds for a specified amount of time, AWS OpsWorks
+        /// If the load exceeds these thresholds for a specified amount of time, AWS OpsWorks
         /// starts a specified number of instances.
         /// </para>
         /// </summary>

@@ -275,40 +275,17 @@
     <Compile Include="Amazon.EC2\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Import\ImportCleanup.cs" />
     <Compile Include="Amazon.EC2\Model\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.EC2\Model\Internal\MarshallTransformations\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.EC2\Import\*.cs">
+    <Compile Include="Amazon.EC2\Import\DiskImageImporter.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.EC2\Util\EC2Metadata.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.EC2\Util\ImageUtilities.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.EC2\Util\LaunchNATInstanceRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.EC2\Util\LaunchVPCWithPublicAndPrivateSubnetsRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.EC2\Util\LaunchVPCWithPublicAndPrivateSubnetsResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.EC2\Util\LaunchVPCWithPublicSubnetRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.EC2\Util\LaunchVPCWithPublicSubnetResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.EC2\Util\S3UploadPolicy.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.EC2\Util\VPCUtilities.cs">
+    <Compile Include="Amazon.EC2\Util\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.ElastiCache\*.cs">
@@ -455,6 +432,7 @@
     <Compile Include="Amazon.S3\Model\LifecycleRuleNoncurrentVersionExpiration.cs" />
     <Compile Include="Amazon.S3\Model\LifecycleRuleNoncurrentVersionTransition.cs" />
     <Compile Include="Amazon.S3\Model\StreamSizeMismatchException.cs" />
+    <Compile Include="Amazon.S3\Util\AmazonS3Uri.cs" />
     <Compile Include="Amazon.SecurityToken\*.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -25,23 +25,14 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLayer operation.
-    /// Creates a layer. For more information, see  <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html">How
+    /// Creates a layer. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html">How
     /// to Create a Layer</a>.
     /// 
-    ///   <note>      
-    /// <para>
-    /// You should use <b>CreateLayer</b> for noncustom layer types such as PHP App Server
-    /// only if the stack        does not have an existing layer of that type. A stack can
-    /// have at most one instance of each        noncustom layer; if you attempt to create
-    /// a second instance, <b>CreateLayer</b> fails. A        stack can have an arbitrary
-    /// number of custom layers, so you can call <b>CreateLayer</b> as        many times as
-    /// you like for that layer type.
-    /// </para>
-    ///     </note>    
+    ///  
     /// <para>
     /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached       policy that explicitly grants permissions.
-    /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// level for the stack, or an attached policy that explicitly grants permissions. For
+    /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
     /// User Permissions</a>.
     /// </para>
     /// </summary>
@@ -87,8 +78,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property AutoAssignElasticIps. 
         /// <para>
         /// Whether to automatically assign an <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-        ///         IP address</a> to the layer's instances.         For more information, see
-        /// <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+        /// IP address</a> to the layer's instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
         /// to Edit a Layer</a>.
         /// </para>
         /// </summary>
@@ -109,7 +99,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property AutoAssignPublicIps. 
         /// <para>
         /// For stacks that are running in a VPC, whether to automatically assign a public IP
-        /// address to the layer's instances.         For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+        /// address to the layer's instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
         /// to Edit a Layer</a>.
         /// </para>
         /// </summary>
@@ -130,7 +120,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property CustomInstanceProfileArn. 
         /// <para>
         /// The ARN of an IAM profile that to be used for the layer's EC2 instances. For more
-        /// information about IAM ARNs, see  <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+        /// information about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
         /// Identifiers</a>.
         /// </para>
         /// </summary>
@@ -208,18 +198,12 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property InstallUpdatesOnBoot. 
         /// <para>
         /// Whether to install operating system and package updates when the instance boots. The
-        /// default value is <code>true</code>.         To control when updates are installed,
-        /// set this value to <code>false</code>. You must then update your instances manually
-        /// by         using <a>CreateDeployment</a> to run the <code>update_dependencies</code>
-        /// stack command or         manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code>
-        /// (Ubuntu) on the instances.  
+        /// default value is <code>true</code>. To control when updates are installed, set this
+        /// value to <code>false</code>. You must then update your instances manually by using
+        /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command
+        /// or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu)
+        /// on the instances. 
         /// </para>
-        ///   <note>      
-        /// <para>
-        /// We strongly recommend using the default value of <code>true</code>, to ensure that
-        /// your        instances have the latest security updates.
-        /// </para>
-        ///     </note>
         /// </summary>
         public bool InstallUpdatesOnBoot
         {
@@ -276,9 +260,9 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property Shortname. 
         /// <para>
         /// The layer short name, which is used internally by AWS OpsWorks and by Chef recipes.
-        /// The short name is also used as the name for the         directory where your app files
-        /// are installed. It can have a maximum of 200 characters, which are limited to the alphanumeric
-        ///         characters, '-', '_', and '.'.
+        /// The short name is also used as the name for the directory where your app files are
+        /// installed. It can have a maximum of 200 characters, which are limited to the alphanumeric
+        /// characters, '-', '_', and '.'.
         /// </para>
         /// </summary>
         public string Shortname
@@ -317,14 +301,14 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The layer type. A stack cannot have more than one built-in layer of the same type.
-        /// It can have any number of custom layers.    This parameter must be set to one of the
+        /// It can have any number of custom layers. This parameter must be set to one of the
         /// following:
         /// </para>
-        ///   <ul>    <li>custom: A custom layer</li>    <li>db-master: A MySQL layer</li>   
-        /// <li>java-app: A Java App Server layer</li>    <li>rails-app: A Rails App Server layer</li>
-        ///    <li>lb: An HAProxy layer</li>    <li>memcached: A Memcached layer</li>    <li>monitoring-master:
-        /// A Ganglia layer</li>    <li>nodejs-app: A Node.js App Server layer</li>    <li>php-app:
-        /// A PHP App Server layer</li>    <li>web: A Static Web Server layer</li>  </ul>
+        ///  <ul> <li>custom: A custom layer</li> <li>db-master: A MySQL layer</li> <li>java-app:
+        /// A Java App Server layer</li> <li>rails-app: A Rails App Server layer</li> <li>lb:
+        /// An HAProxy layer</li> <li>memcached: A Memcached layer</li> <li>monitoring-master:
+        /// A Ganglia layer</li> <li>nodejs-app: A Node.js App Server layer</li> <li>php-app:
+        /// A PHP App Server layer</li> <li>web: A Static Web Server layer</li> </ul>
         /// </summary>
         public LayerType Type
         {

@@ -27,11 +27,11 @@ namespace Amazon.OpsWorks.Model
     /// Container for the parameters to the UpdateInstance operation.
     /// Updates a specified instance.
     /// 
-    ///     
+    ///  
     /// <para>
     /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached       policy that explicitly grants permissions.
-    /// For more information on user permissions, see      <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+    /// level for the stack, or an attached policy that explicitly grants permissions. For
+    /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
     /// User Permissions</a>.
     /// </para>
     /// </summary>
@@ -54,8 +54,8 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property AmiId. 
         /// <para>
         /// A custom AMI ID to be used to create the instance. The AMI should be based on one
-        /// of the standard AWS OpsWorks APIs:         Amazon Linux or Ubuntu 12.04 LTS. For more
-        /// information, see  <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>
+        /// of the standard AWS OpsWorks AMIs: Amazon Linux, Ubuntu 12.04 LTS, or Ubuntu 14.04
+        /// LTS. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>
         /// </para>
         /// </summary>
         public string AmiId
@@ -75,8 +75,8 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property Architecture. 
         /// <para>
         /// The instance architecture. Instance types do not necessarily support both architectures.
-        ///         For a list of the architectures that are supported by the different instance
-        /// types, see  <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+        /// For a list of the architectures that are supported by the different instance types,
+        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
         /// Families and Types</a>.
         /// </para>
         /// </summary>
@@ -98,11 +98,11 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The instance's auto scaling type, which has three possible values:
         /// </para>
-        ///   <ul>  <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected by auto scaling.</li>
-        ///  <li><b>TimeBasedAutoScaling</b>: A time-based auto scaling instance, which is started
-        /// and stopped based on a specified schedule.</li>  <li><b>LoadBasedAutoScaling</b>:
+        ///  <ul> <li> <b>AlwaysRunning</b>: A 24/7 instance, which is not affected by auto scaling.</li>
+        /// <li> <b>TimeBasedAutoScaling</b>: A time-based auto scaling instance, which is started
+        /// and stopped based on a specified schedule.</li> <li> <b>LoadBasedAutoScaling</b>:
         /// A load-based auto scaling instance, which is started and stopped based on load metrics.</li>
-        ///  </ul>
+        /// </ul>
         /// </summary>
         public AutoScalingType AutoScalingType
         {
@@ -159,18 +159,12 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property InstallUpdatesOnBoot. 
         /// <para>
         /// Whether to install operating system and package updates when the instance boots. The
-        /// default value is <code>true</code>.         To control when updates are installed,
-        /// set this value to <code>false</code>. You must then update your instances manually
-        /// by         using <a>CreateDeployment</a> to run the <code>update_dependencies</code>
-        /// stack command or         manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code>
-        /// (Ubuntu) on the instances.  
+        /// default value is <code>true</code>. To control when updates are installed, set this
+        /// value to <code>false</code>. You must then update your instances manually by using
+        /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command
+        /// or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu)
+        /// on the instances. 
         /// </para>
-        ///   <note>      
-        /// <para>
-        /// We strongly recommend using the default value of <code>true</code>, to ensure that
-        /// your        instances have the latest security updates.
-        /// </para>
-        ///     </note>
         /// </summary>
         public bool InstallUpdatesOnBoot
         {
@@ -208,9 +202,9 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property InstanceType. 
         /// <para>
         /// The instance type. AWS OpsWorks supports all instance types except Cluster Compute,
-        /// Cluster GPU, and High Memory Cluster.         For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// Families and Types</a>.         The parameter values that you use to specify the various
-        /// types are in the API Name column of the Available Instance Types table.
+        /// Cluster GPU, and High Memory Cluster. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+        /// Families and Types</a>. The parameter values that you use to specify the various types
+        /// are in the API Name column of the Available Instance Types table.
         /// </para>
         /// </summary>
         public string InstanceType
@@ -250,15 +244,15 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The instance operating system, which must be set to one of the following.
         /// </para>
-        ///   <ul>  <li>Standard operating systems: <code>Amazon Linux</code> or <code>Ubuntu
-        /// 12.04 LTS</code></li>  <li>Custom AMIs: <code>Custom</code></li>  </ul>  
+        ///  <ul> <li>Standard operating systems: <code>Amazon Linux</code>, <code>Ubuntu 12.04
+        /// LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>Custom AMIs: <code>Custom</code>
+        /// </li> </ul> 
         /// <para>
         /// The default option is <code>Amazon Linux</code>. If you set this parameter to <code>Custom</code>,
-        /// you must use the  <a>CreateInstance</a> action's AmiId parameter to specify      
-        ///   the custom AMI that you want to use. For more information on the standard operating
-        /// systems, see  <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-        /// Systems</a>For more information         on how to use custom AMIs with OpsWorks, see
-        ///  <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+        /// you must use the <a>CreateInstance</a> action's AmiId parameter to specify the custom
+        /// AMI that you want to use. For more information on the standard operating systems,
+        /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
+        /// Systems</a>For more information on how to use custom AMIs with OpsWorks, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
         /// Custom AMIs</a>.
         /// </para>
         /// </summary>

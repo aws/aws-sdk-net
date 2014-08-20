@@ -77,7 +77,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property IamUserArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role.
-        /// For more information about IAM ARNs, see  <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+        /// For more information about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
         /// Identifiers</a>.
         /// </para>
         /// </summary>
@@ -99,10 +99,10 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The user's permission level, which must be the following:
         /// </para>
-        ///   <ul>    <li><code>deny</code></li>    <li><code>show</code></li>    <li><code>deploy</code></li>
-        ///    <li><code>manage</code></li>    <li><code>iam_only</code></li>  </ul>  
+        ///  <ul> <li><code>deny</code></li> <li><code>show</code></li> <li><code>deploy</code></li>
+        /// <li><code>manage</code></li> <li><code>iam_only</code></li> </ul> 
         /// <para>
-        /// For more information on the permissions associated with these levels, see    <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+        /// For more information on the permissions associated with these levels, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>
         /// </para>
         /// </summary>
