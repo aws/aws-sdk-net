@@ -126,13 +126,6 @@ namespace Amazon.DynamoDBv2.DataModel
             if (IsHashKey && IsRangeKey)
                 throw new InvalidOperationException("Property " + PropertyName + " cannot be both hash and range key");
 
-            if (IsKey || IsGSIKey)
-                if (Converter == null && !Utils.IsPrimitive(MemberType))
-                    throw new InvalidOperationException("Key " + PropertyName + " must be of primitive type");
-
-            foreach (var index in Indexes)
-                IndexNames.AddRange(index.IndexNames);
-
             if (ConverterType != null)
             {
                 if (!Utils.CanInstantiateConverter(ConverterType) || !Utils.ImplementsInterface(ConverterType, typeof(IPropertyConverter)))
@@ -146,6 +139,13 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 this.Converter = converter;
             }
+
+            if (IsKey || IsGSIKey)
+                if (Converter == null && !Utils.IsPrimitive(MemberType))
+                    throw new InvalidOperationException("Key " + PropertyName + " must be of primitive type");
+
+            foreach (var index in Indexes)
+                IndexNames.AddRange(index.IndexNames);
 
         }
 
