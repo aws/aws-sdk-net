@@ -143,7 +143,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Iops", StringUtils.FromInt(ebs.Iops));
                         }
-                        if (ebs != null && ebs.IsSetEncrypted())
+                        if (ebs != null && ebs.IsSetEncrypted() && !ebs.IsSetSnapshotId())
                         {
                             request.Parameters.Add("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Encrypted", StringUtils.FromBool(ebs.Encrypted));
                         }
