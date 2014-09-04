@@ -133,7 +133,7 @@ namespace Amazon.Util
         {
             AWSCredentials credentials;
             if (!TryGetAWSCredentials(profileName, out credentials))
-                throw new AmazonClientException(string.Format(CultureInfo.InvariantCulture, "The account name {0} has not been registred.", profileName));
+                throw new AmazonClientException(string.Format(CultureInfo.InvariantCulture, "The account name {0} has not been registered.", profileName));
 
             return credentials;
         }
