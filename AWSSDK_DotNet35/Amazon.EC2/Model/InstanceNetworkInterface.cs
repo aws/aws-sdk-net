@@ -32,6 +32,7 @@ namespace Amazon.EC2.Model
         private string description;
         private string ownerId;
         private NetworkInterfaceStatus status;
+        private string macAddress;
         private string privateIpAddress;
         private string privateDnsName;
         private bool? sourceDestCheck;
@@ -144,6 +145,22 @@ namespace Amazon.EC2.Model
         internal bool IsSetStatus()
         {
             return this.status != null;
+        }
+
+        /// <summary>
+        /// The MAC address of the network interface.
+        ///  
+        /// </summary>
+        public string MacAddress
+        {
+            get { return this.macAddress; }
+            set { this.macAddress = value; }
+        }
+
+        // Check to see if MacAddress property is set
+        internal bool IsSetMacAddress()
+        {
+            return this.macAddress != null;
         }
 
         /// <summary>

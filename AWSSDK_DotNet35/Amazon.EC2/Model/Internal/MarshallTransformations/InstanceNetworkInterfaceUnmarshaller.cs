@@ -73,6 +73,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             
                         continue;
                     }
+                    if (context.TestExpression("macAddress", targetDepth))
+                    {
+                        instanceNetworkInterface.MacAddress = StringUnmarshaller.GetInstance().Unmarshall(context);
+
+                        continue;
+                    }
                     if (context.TestExpression("privateIpAddress", targetDepth))
                     {
                         instanceNetworkInterface.PrivateIpAddress = StringUnmarshaller.GetInstance().Unmarshall(context);
